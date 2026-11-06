@@ -22,6 +22,11 @@ Spanish number/symbol readings, checksums, resume without live source, measured
 scene subtitles, assembly and output locking. The synthesis loop is also tested
 with CPU-only stubs; those tests do not verify GPU speed or voice quality.
 
+The separate `validate-tts` GitHub Actions job runs these tests with Python 3.12
+and only the CPU requirements plus the lecture exporter's Node dependencies.
+It does not install PyTorch, download Ming or require a GPU. The web validation
+job and container build remain independent of Python.
+
 The default output is `data-src/inferencia-estadistica/_work/audio/`, ignored by
 Git and the container build. Use `--output` to keep generated material outside
 the checkout. Each lesson has its own numbered unit/lesson directory containing:
