@@ -44,6 +44,12 @@ after the intuitive introduction and notation. Only explicitly additional
 material is labelled as an optional extension, rather than hiding required
 theory under a generic depth disclosure.
 
+Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
+density, marginals, continuous conditioning and the bivariate normal. Each starts
+with a concrete question and ends with an interpretation. Figures reuse the
+laboratory calculations and canvas renderer without mounting the classroom,
+changing progress or duplicating the laboratory controls.
+
 Guided practice selects only questions appropriate to the lesson and starts with
 different data from the solved example, skipping duplicate seeded variants. The complete
 exercise bank keeps the full generators. Seven additional generators cover

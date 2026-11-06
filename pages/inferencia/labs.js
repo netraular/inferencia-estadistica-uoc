@@ -804,7 +804,7 @@ function draw(canvas, visual, width, height) {
 
 let mountSequence = 0;
 
-export function mountLab(container, labId, {formatMath, params: initialParams = {}} = {}) {
+export function mountLab(container, labId, {formatMath, params: initialParams = {}, compact = false} = {}) {
   if (!container?.ownerDocument || typeof container.append !== 'function') throw new TypeError('Se requiere un contenedor DOM.');
   const firstResult = calculateLab(labId, initialParams);
   const doc = container.ownerDocument;
@@ -831,7 +831,8 @@ export function mountLab(container, labId, {formatMath, params: initialParams = 
   root.style.minWidth = '0';
   const heading = element('h3');
   heading.id = `${instance}-title`;
-  root.setAttribute('aria-labelledby', heading.id);
+  if (compact) root.setAttribute('aria-label', firstResult.title);
+  else root.setAttribute('aria-labelledby', heading.id);
   const guide = element('section', 'lab-guide');
   const basicGuides = {
     proportions:['Comparar semillas germinadas con todas las sembradas.', 'Conserva el total y aumenta la parte; después conserva la parte y aumenta el total.', 'Con el mismo total, una parte mayor aumenta la proporción. Con la misma parte, un total mayor la reduce.', 'La barra cero es la parte germinada y la barra uno el total. La proporción se obtiene dividiendo, no restando.', 'Son números de un ejemplo. No explican por sí solos por qué germinan las semillas.'],
@@ -883,7 +884,8 @@ export function mountLab(container, labId, {formatMath, params: initialParams = 
   reset.append(resetIcon, element('span', '', 'Restablecer valores'));
   stage.append(canvas);
   figure.append(stage, caption);
-  root.append(heading, guide, controls, reset, error, figure, metrics, formula);
+  if (compact) root.append(figure);
+  else root.append(heading, guide, controls, reset, error, figure, metrics, formula);
   container.append(root);
   let current;
   const resize = () => {
@@ -1031,7 +1033,7 @@ export function mountLab(container, labId, {formatMath, params: initialParams = 
   if (observer) observer.observe(stage);
   else if (typeof view.addEventListener === 'function') listen(view, 'resize', schedule);
   try {
-    buildControls();
+    if (!compact) buildControls();
     render(firstResult);
   } catch (problem) {
     observer?.disconnect();

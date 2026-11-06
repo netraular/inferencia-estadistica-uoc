@@ -79,7 +79,12 @@ test('36 MDX pages preserve theory, formulas, method, solved examples and intera
     assert.ok(text.includes(`<LessonContent lessonId="${lesson.id}">`), lesson.id);
     assert.ok(text.indexOf('<LessonContent ') < text.indexOf('## Al terminar esta leccion'), lesson.id);
     assert.ok(text.trimEnd().endsWith('</LessonContent>'), lesson.id);
-    assert.ok(!text.includes('<InteractiveLesson '), lesson.id);
+    assert.equal(text.includes('<InteractiveLesson '),Boolean(lesson.illustration),lesson.id);
+    if (lesson.illustration) {
+      assert.ok(text.includes(`<InteractiveLesson lessonId="${lesson.id}" view="figure" />`),lesson.id);
+      assert.ok(text.includes(`## ${lesson.illustration.title}`),lesson.id);
+      assert.ok(text.indexOf('view="figure"')<text.indexOf('## Palabras y símbolos'),lesson.id);
+    }
     assert.ok(text.includes('Ejemplo resuelto con el metodo'), lesson.id);
   }
   assert.equal(lessons.length, 36);

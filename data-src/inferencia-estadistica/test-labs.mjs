@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {createRequire} from 'node:module';
 import {LAB_IDS, LAB_GUIDES, calculateLab, mountLab} from '../../pages/inferencia/labs.js';
+import {COURSE} from '../../pages/inferencia/course.js';
 
 globalThis.jStat = createRequire(import.meta.url)('../../pages/inferencia/vendor/jstat.min.js').jStat;
 const close = (actual, expected, tolerance = 1e-9) => assert.ok(Number.isFinite(actual) && Math.abs(actual - expected) <= tolerance, `${actual} ≠ ${expected}`);
@@ -419,6 +420,32 @@ function domFixture({width = 320, reduced = true, observer = true} = {}) {
   const flush = () => { const pending = [...frames.values()]; frames.clear(); pending.forEach(callback => callback()); };
   return {container, calls, frames, resizeListeners, observers, nodes, flush};
 }
+
+test('Las seis ilustraciones de lectura reutilizan cálculos y gráficos accesibles sin controles', () => {
+  const lessons = COURSE.units.flatMap(unit=>unit.lessons).filter(lesson=>lesson.illustration);
+  assert.equal(lessons.length,6);
+  for (const lesson of lessons) for (const width of [320,960]) {
+    const {illustration} = lesson;
+    assert.ok(illustration.title.length>20 && illustration.question.length>80 && illustration.explanation.length>100,lesson.id);
+    const calculated = calculateLab(lesson.visual,illustration.params);
+    const fixture = domFixture({width});
+    const cleanup = mountLab(fixture.container,lesson.visual,{params:illustration.params,compact:true});
+    try {
+      const nodes = fixture.nodes();
+      const canvas = nodes.find(node=>node.tag==='canvas');
+      const caption = nodes.find(node=>node.tag==='figcaption');
+      assert.equal(canvas.getAttribute('aria-label'),calculated.title,lesson.id);
+      assert.equal(canvas.getAttribute('aria-describedby'),caption.id,lesson.id);
+      assert.equal(canvas.width,width*2,lesson.id);
+      assert.equal(canvas.height,width*2*9/16,lesson.id);
+      assert.ok(caption.textContent.includes(calculated.explanation),lesson.id);
+      assert.ok(fixture.calls.some(call=>call.key==='fillText'),lesson.id);
+      assert.equal(nodes.some(node=>['input','select','button'].includes(node.tag)),false,lesson.id);
+    } finally {cleanup();}
+    assert.equal(fixture.container.children.length,0,lesson.id);
+    assert.ok(fixture.observers.every(observer=>observer.disconnected),lesson.id);
+  }
+});
 
 test('Montaje simulado: ejes, leyendas, pie accesible, 16:9 y limpieza idempotente', () => {
   for (const id of LAB_IDS) for (const width of [320, 960]) {

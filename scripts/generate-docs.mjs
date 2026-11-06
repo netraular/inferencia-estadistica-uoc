@@ -37,12 +37,13 @@ for (const [unitIndex, unit] of COURSE.units.entries()) {
     const complete = text.replace('sidebar_position:', `sidebar_label: ${JSON.stringify(`${unit.number}.${lessonIndex + 1} ${lesson.title}`)}\nsidebar_position:`).replace("import Formula from '@site/src/components/Formula';", `import Formula from '@site/src/components/Formula';\nimport LessonContent from '@site/src/components/LessonContent';\n\n<LessonContent lessonId=${JSON.stringify(lesson.id)}>\n`).replace('## Errores que conviene evitar', `${workedText}\n\n## Errores que conviene evitar`);
     const notation = `## Palabras y símbolos de esta lección\n\n<Notation topic=${JSON.stringify(lesson.id)} />\n\n`;
     const basicSections = lesson.sections.filter(section => section.introductory).map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
+    const illustration = lesson.illustration ? `\n\n## ${lesson.illustration.title}\n\n<InteractiveLesson lessonId=${JSON.stringify(lesson.id)} view="figure" />` : '';
     const development = lesson.sections.filter(section => !section.introductory && !section.optional).map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
     const allSections = lesson.sections.map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
     const depth = lesson.sections.some(section => section.optional) || lesson.formulas.some(item => item.optional) ? `<details className="lesson-depth">\n<summary>Ampliación opcional</summary>\n\n${lesson.sections.filter(section => section.optional).map(section => `### ${section.title}\n\n${section.body}`).join('\n\n')}\n\n${lesson.formulas.filter(item => item.optional).map(formula).join('\n\n')}\n\n</details>\n\n` : '';
     const guided = complete
-      .replace("import Formula from '@site/src/components/Formula';", "import Formula, {Notation} from '@site/src/components/Formula';")
-      .replace(allSections, basicSections)
+      .replace("import Formula from '@site/src/components/Formula';", `import Formula, {Notation} from '@site/src/components/Formula';${lesson.illustration ? "\nimport InteractiveLesson from '@site/src/components/InteractiveLesson';" : ''}`)
+      .replace(allSections, `${basicSections}${illustration}`)
       .replace('## La idea en simbolos', `${notation}${development}\n\n## La idea en simbolos`)
       .replace(lesson.formulas.map(formula).join('\n\n'), lesson.formulas.filter(item => !item.optional).map(formula).join('\n\n'))
       .replace('### Datos y supuestos', `<Notation topic=${JSON.stringify(worked.type)} />\n\n### Datos y supuestos`)

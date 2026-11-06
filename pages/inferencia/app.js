@@ -1,8 +1,8 @@
-import {COURSE} from './course.js?v=7ff36b4e8038';
+import {COURSE} from './course.js?v=3a03b9951fb9';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=5612f67797c5';
 import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=3ee24ce6937f';
-import {mountLab} from './labs.js?v=03403da19f18';
+import {mountLab} from './labs.js?v=2f4aa757b74f';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));

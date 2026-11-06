@@ -2,8 +2,10 @@ import React, {useEffect, useRef, useState} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import shell from '../generated/aula-shell.json';
 import audio from '../../static/audio/manifest.json';
+import {COURSE} from '../../pages/inferencia/course.js';
 
 export default function InteractiveLesson({lessonId, view = 'lab'}) {
+  const illustration = view === 'figure' ? COURSE.units.flatMap(unit=>unit.lessons).find(lesson=>lesson.id===lessonId)?.illustration : null;
   const host = useRef(null);
   const [error, setError] = useState('');
   const [ready, setReady] = useState(false);
@@ -14,7 +16,7 @@ export default function InteractiveLesson({lessonId, view = 'lab'}) {
     setReady(false);
     setError('');
     Promise.all([
-      import('../classroom/embed.mjs'),
+      view === 'figure' ? import('../../pages/inferencia/labs.js') : import('../classroom/embed.mjs'),
       import('jstat'),
       import('katex'),
       import('../../pages/inferencia/vendor/lucide.min.js'),
@@ -25,15 +27,23 @@ export default function InteractiveLesson({lessonId, view = 'lab'}) {
       globalThis.jStat = stats.default?.jStat || stats.jStat || stats.default;
       window.katex = math.default || math;
       window.lucide = icons.default || icons;
-      mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false, audio, createWhiteboard:whiteboard?.createWhiteboard});
+      if (view === 'figure') {
+        const lesson = COURSE.units.flatMap(unit=>unit.lessons).find(item=>item.id===lessonId);
+        if (!lesson?.illustration) throw new Error('Esta leccion no tiene una ilustracion definida');
+        mounted = {dispose:engine.mountLab(host.current, lesson.visual, {params:lesson.illustration.params, compact:true})};
+      } else {
+        mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false, audio, createWhiteboard:whiteboard?.createWhiteboard});
+      }
       setReady(true);
     }).catch(failure => {if (active) setError(failure.message);});
     return () => {active = false; mounted?.dispose();};
   }, [lessonId, baseUrl, view]);
-  return <section className="course-activities" aria-label="Actividades de la leccion">
+  return <section className="course-activities" aria-label={illustration?.title || 'Actividades de la leccion'}>
+    {illustration && <p>{illustration.question}</p>}
     {view === 'animation' && audio.lessons[lessonId]?.cueTiming === 'scene-measured-cues-estimated' && <p className="audio-timing">Audio sincronizado por diapositiva; resaltado de frases aproximado.</p>}
     {!ready && !error && <p role="status">Cargando actividades...</p>}
     {error && <p role="alert">No se pudieron cargar las actividades: {error}. Recarga la pagina para reintentarlo.</p>}
     <div ref={host} />
+    {illustration && <p>{illustration.explanation}</p>}
   </section>;
 }

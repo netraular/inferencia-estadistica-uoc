@@ -1000,6 +1000,45 @@ const SCOPED_QUESTIONS = {
 
 const FORMAL_FORMULAS = {'momentos-transformaciones':[1]};
 
+const ILLUSTRATIONS = {
+  'bayes-diagnostico': {
+    title:'Un positivo no equivale a un diagnóstico',
+    question:'En una cohorte de 1000 individuos, el 1% tiene la enfermedad. La prueba detecta al 90% de los enfermos y clasifica correctamente al 95% de los sanos. ¿De qué grupo proceden los positivos?',
+    params:{prevalence:0.01,sensitivity:0.9,specificity:0.95,cohort:1000},
+    explanation:'Se esperan 9 verdaderos positivos y 49,5 falsos positivos. Entre todos los positivos, la proporción de enfermos es 9 / (9 + 49,5), aproximadamente el 15,4%. Los recuentos son valores esperados, no personas fraccionadas. La probabilidad después del positivo depende también de la prevalencia.'
+  },
+  'variable-cdf': {
+    title:'La acumulada conserva lo que ya se ha sumado',
+    question:'X puede valer 0, 1, 2 o 3, con probabilidades 1/8, 3/8, 3/8 y 1/8. ¿Qué representa la altura del escalón entre 1 y 2?',
+    params:{weights:[1,3,3,1],display:'cdf',threshold:1},
+    explanation:'Hasta 1 se acumula 1/8 + 3/8 = 1/2. Entre 1 y 2 no aparecen nuevos resultados posibles: F(1,5) sigue siendo 1/2. En 2 se añade su masa y la acumulada sube a 7/8. La altura de un escalón es una probabilidad acumulada; el salto, no esa altura, representa la masa del punto.'
+  },
+  densidad: {
+    title:'Una densidad de 2 no es una probabilidad de 2',
+    question:'X es uniforme entre 0 y 0,5. Su densidad tiene altura 2. ¿Qué probabilidad corresponde al intervalo entre 0,1 y 0,3?',
+    params:{family:'uniform',a:0,b:0.5,lower:0.1,upper:0.3},
+    explanation:'El intervalo tiene anchura 0,2 y altura 2: su área es 0,4. El soporte completo tiene área 0,5 por 2, que vale 1. Una densidad puede superar 1 porque es una altura, no una probabilidad puntual. Un punto aislado tiene anchura cero y, en este modelo, probabilidad cero.'
+  },
+  marginales: {
+    title:'De las celdas conjuntas a un total marginal',
+    question:'En esta tabla A nombra las filas y B las columnas. Los cuatro recuentos ficticios son 3, 2, 1 y 4. ¿Qué cambia entre mirar la celda inferior derecha y mirar toda la segunda columna?',
+    params:{weights:[3,2,1,4],row:1,column:1},
+    explanation:'La celda inferior derecha contiene 4 de los 10 casos: P(A=1, B=1)=0,4. Al sumar la segunda columna se incluyen también los 2 casos de la primera fila: P(B=1)=0,6. Obtener una marginal elimina la condición sobre la otra variable sumando todos sus valores; no selecciona una sola celda.'
+  },
+  'conjunta-condicional': {
+    title:'Condicionar recorta el soporte y obliga a normalizar',
+    question:'Dos cantidades no negativas X e Y comparten un máximo de 2 unidades y tienen densidad conjunta constante en ese triángulo. Si conocemos X=0,5, ¿qué valores puede tomar Y y qué parte supera 0,8?',
+    params:{limit:2,knownX:0.5,threshold:0.8},
+    explanation:'El corte deja a Y entre 0 y 1,5. Su densidad condicional es 1/1,5 para que el área del corte sea 1. El tramo por encima de 0,8 mide 0,7, y la probabilidad condicional es 0,7/1,5, aproximadamente 0,467. Normalizamos con densidades: no dividimos por P(X=0,5), que vale cero en este modelo continuo.'
+  },
+  'normal-bivariante': {
+    title:'Conocer X cambia la distribución de Y',
+    question:'Supongamos normalidad conjunta, medias 12 y 30, desviaciones típicas 2 y 4 y correlación 0,6. Si observamos X=14, ¿cómo cambia nuestra incertidumbre sobre Y?',
+    params:{muX:12,muY:30,sigmaX:2,sigmaY:4,rho:0.6,knownX:14,threshold:35},
+    explanation:'La curva rosa mantiene la marginal de Y, con media 30 y desviación 4. La azul representa Y dado X=14: su media es 32,4 y su desviación es 3,2, no su varianza, que vale 10,24. Conocer X desplaza el centro y reduce la dispersión bajo este modelo; no determina exactamente Y ni demuestra causalidad.'
+  }
+};
+
 for (const unit of COURSE.units) {
   for (const lesson of unit.lessons) {
     lesson.method = METHODS[lesson.id];
@@ -1016,6 +1055,7 @@ for (const unit of COURSE.units) {
     if (PRACTICE[lesson.id]) lesson.exerciseTypes = PRACTICE[lesson.id];
     if (SCOPED_QUESTIONS[lesson.id]) lesson.exerciseQuestions = SCOPED_QUESTIONS[lesson.id];
     if (['proporciones','algebra','funciones','regiones-matrices'].includes(lesson.id)) lesson.visual = 'math';
+    if (ILLUSTRATIONS[lesson.id]) lesson.illustration = ILLUSTRATIONS[lesson.id];
   }
 }
 
