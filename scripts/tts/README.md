@@ -105,6 +105,8 @@ python scripts/tts/generate-course.py --status --output /path/to/course-audio
 python scripts/tts/generate-course.py --lesson proporciones --max-scenes 1
 ```
 
-The batch already running from the separate local TTS installation is not
-changed by this tooling. Do not start a second generator against its output.
-Only switch its entry point after that service finishes or is explicitly stopped.
+If another batch is running from the separate local TTS installation, do not
+start a second generator against its output. Only switch its entry point after
+that service finishes or is explicitly stopped. The [Spanish local guide](../../TTS.md)
+explains how to prepare a new batch for updated lesson texts without restarting
+the old course snapshot.

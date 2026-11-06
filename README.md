@@ -86,6 +86,10 @@ generate and resume scene checkpoints, and assemble one WAV per lesson with
 measured scene subtitles. The source defaults to this repository; external Ming
 code, model paths and output directories are configurable.
 
+For local commands and regenerating audio after changing lesson texts, see the
+[Spanish TTS guide](TTS.md). A resumed batch reads its saved course snapshot;
+use a new output directory to narrate a new revision without mixing old scripts.
+
 Python preparation and tests run without PyTorch or a GPU. Synthesis requires
 an external CUDA/Ming installation. Weights, environments and generated audio
 stay outside Git; neither the site build nor its runtime needs Python or CUDA.
