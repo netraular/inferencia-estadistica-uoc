@@ -143,8 +143,8 @@ test('Las rutas y el texto externo se validan', () => {
 });
 
 test('La portada registra el curso y todos los controles tienen iconos disponibles', () => {
-  const metadata = JSON.parse(readFileSync(new URL('../../webs.json', import.meta.url), 'utf8'));
-  assert.match(metadata['inferencia-estadistica.html'].title, /Inferencia/);
+  const config = readFileSync(new URL('../../docusaurus.config.js', import.meta.url), 'utf8');
+  assert.match(config, /title: 'Inferencia/);
   const modules = ['app.js','animations.js','labs.js'].map(file => readFileSync(new URL(`../../pages/inferencia/${file}`, import.meta.url), 'utf8')).join('\n');
   const names = new Set([...`${html}\n${modules}`.matchAll(/data-lucide=["']([^"']+)["']|button\('([^']+)'/g)].map(match => match[1] || match[2]));
   const iconNames = new Set(Object.keys(lucide.icons).map(name => name.replace(/-/g, '').toLowerCase()));

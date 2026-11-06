@@ -13,6 +13,7 @@ export default {
     blog: false,
     theme: {customCss: './src/css/custom.css'}
   }]],
+  themes: [['@easyops-cn/docusaurus-search-local', {hashed: true, language: ['es'], docsRouteBasePath: '/', indexBlog: false, highlightSearchTermsOnTargetPage: true}]],
   themeConfig: {
     colorMode: {defaultMode: 'light', disableSwitch: true},
     navbar: {

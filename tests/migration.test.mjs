@@ -1,0 +1,66 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync, readdirSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import {parseHTML} from 'linkedom';
+import {COURSE} from '../pages/inferencia/course.js';
+import {mountEmbeddedClassroom} from '../src/classroom/embed.mjs';
+import {STORAGE_KEY, freshProgress} from '../pages/inferencia/progress.js';
+
+const require = createRequire(import.meta.url);
+globalThis.jStat = require('jstat').jStat;
+const shell = readFileSync(new URL('../pages/inferencia-estadistica.html', import.meta.url), 'utf8');
+const lessons = COURSE.units.flatMap(unit => unit.lessons);
+
+test('36 MDX pages preserve theory, formulas, method, solved examples and interactive lesson IDs', () => {
+  for (const unit of COURSE.units) for (const lesson of unit.lessons) {
+    const text = readFileSync(new URL(`../docs/${unit.id}/${lesson.id}.mdx`, import.meta.url), 'utf8');
+    for (const section of lesson.sections) assert.ok(text.includes(section.body), lesson.id);
+    for (const step of lesson.method) assert.ok(text.includes(step), lesson.id);
+    for (const formula of lesson.formulas) assert.ok(text.includes(JSON.stringify(formula.tex)), lesson.id);
+    assert.ok(text.includes(`<InteractiveLesson lessonId="${lesson.id}" />`), lesson.id);
+    assert.ok(text.includes('Ejemplo resuelto con el metodo'), lesson.id);
+  }
+  assert.equal(lessons.length, 36);
+});
+
+test('embedded classroom keeps routing and titles isolated and retains progress and exercise grading', () => {
+  const {document, window} = parseHTML('<html><head><title>Docusaurus lesson</title></head><body><div id="host"></div></body></html>');
+  window.HTMLCanvasElement.prototype.getContext = () => null;
+  window.HTMLElement.prototype.getBoundingClientRect = () => ({width:640, height:360});
+  window.HTMLElement.prototype.focus = () => {};
+  Object.defineProperty(window.HTMLSelectElement.prototype, 'value', {
+    configurable:true,
+    get() {return this.querySelector('option[selected]')?.value || this.querySelector('option')?.value || '';},
+    set(value) {for (const option of this.querySelectorAll('option')) {if (option.value === String(value)) option.setAttribute('selected', ''); else option.removeAttribute('selected');}}
+  });
+  window.matchMedia = () => ({matches:false});
+  window.katex = require('katex');
+  window.lucide = {createIcons() {}};
+  const previous = freshProgress(COURSE);
+  previous.studied = ['sucesos'];
+  const values = new Map([[STORAGE_KEY, JSON.stringify(previous)]]);
+  const storage = {getItem: key => values.get(key), setItem: (key, value) => values.set(key, value)};
+  const mounted = mountEmbeddedClassroom(document.getElementById('host'), {shell, baseUrl:'/inferencia/', lessonId:'bayes-diagnostico', storage});
+  try {
+    assert.equal(document.title, 'Docusaurus lesson');
+    assert.equal(document.getElementById('courseNav'), null);
+    assert.deepEqual(mounted.aula.progress.studied, ['sucesos']);
+    for (const view of ['theory', 'lab', 'practice', 'animation']) {
+      assert.equal(mounted.aula.setView(view), true);
+      assert.equal(mounted.root.getElementById(`panel-${view}`).hidden, false);
+    }
+    mounted.aula.setView('practice');
+    const question = mounted.aula.exercise.questions[0];
+    mounted.root.getElementById(`answer-${question.id}`).value = String(question.answer);
+    mounted.root.querySelector(`[data-grade-form="${question.id}"]`).dispatchEvent(new window.Event('submit', {bubbles:true, cancelable:true}));
+    assert.ok(mounted.root.getElementById(`feedback-${question.id}`).classList.contains('correct'));
+    assert.equal(document.title, 'Docusaurus lesson');
+    assert.equal(JSON.parse(values.get(STORAGE_KEY)).lastLesson, 'bayes-diagnostico');
+  } finally {mounted.dispose();}
+  assert.equal(document.getElementById('host').shadowRoot.childNodes.length, 0);
+});
+
+test('public assets exclude original PDFs and executable vendor copies', () => {
+  assert.deepEqual(readdirSync(new URL('../static/vendor/', import.meta.url)).sort(), ['atkinson-latin-400.woff2', 'atkinson-latin-700.woff2']);
+});

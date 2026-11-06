@@ -354,7 +354,7 @@ export function mountAula(document, environment = {}) {
       element('importStatus').textContent = 'Copia importada correctamente.';
     } catch (error) { if (element('importStatus')) element('importStatus').textContent = `No se importó la copia: ${error.message}`; }
   });
-  listen(window, 'hashchange', () => {
+  if (environment.manageHistory !== false) listen(window, 'hashchange', () => {
     if (!location.hash || location.hash === '#inicio') { showOverview(); return; }
     const next = parseRoute(location.hash, progress.lastLesson);
     navigate(next.lessonId, next.view);
@@ -372,7 +372,7 @@ export function mountAula(document, environment = {}) {
   }};
 }
 
-if (typeof document !== 'undefined') {
+if (typeof document !== 'undefined' && document.getElementById('courseNav')) {
   try { mountAula(document); }
   catch (error) {
     const status = document.getElementById('appStatus');
