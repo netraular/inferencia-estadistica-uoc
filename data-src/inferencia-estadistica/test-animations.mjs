@@ -921,6 +921,34 @@ test('manual play, pause, speed, seek, boundaries, reset and completion', () => 
   dom.cleanupCheck();
 });
 
+test('play and pause preserve keyboard focus without moving focus from unrelated controls',()=>{
+  for(const embedded of [false,true]){
+    const dom=fakeDom();
+    const tree=embedded ? {activeElement:null} : dom.document;
+    if(embedded)dom.container.getRootNode=()=>tree;
+    const cleanup=mountAnimation(dom.container,'math');
+    const play=dom.byLabel('Reproducir');
+    const pause=dom.byLabel('Pausar');
+    if(embedded){
+      play.focus=()=>{tree.activeElement=play;};
+      pause.focus=()=>{tree.activeElement=pause;};
+    }
+    play.focus();play.click();
+    assert.equal(tree.activeElement,pause);
+    assert.equal(pause.hidden,false);
+    pause.click();
+    assert.equal(tree.activeElement,play);
+    assert.equal(play.hidden,false);
+    const unrelated=dom.byLabel('Tiempo de reproducción');
+    tree.activeElement=unrelated;
+    play.click();
+    assert.equal(tree.activeElement,unrelated);
+    pause.click();
+    assert.equal(tree.activeElement,unrelated);
+    cleanup();dom.cleanupCheck();
+  }
+});
+
 test('account for elapsed time at the old speed before a speed change', () => {
   const dom = fakeDom();
   const cleanup = mountAnimation(dom.container, 'math');

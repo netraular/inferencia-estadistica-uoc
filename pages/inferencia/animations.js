@@ -1127,12 +1127,15 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   }
 
   function syncControls() {
+    const active = focusedElement();
     back.disabled = index === 0;
     next.disabled = index === animation.steps.length - 1;
     play.disabled = running;
     pause.disabled = !running;
     play.hidden = running;
     pause.hidden = !running;
+    if (active === play && running) pause.focus?.();
+    else if (active === pause && !running) play.focus?.();
     seek.value = String(index);
     if (outline) outline.value = String(index);
     seek.setAttribute('aria-valuetext', `${index + 1} de ${animation.steps.length}: ${animation.steps[index].title}`);
