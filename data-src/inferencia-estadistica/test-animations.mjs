@@ -1038,6 +1038,71 @@ test('las clases sincronizan frases y diapositivas, también con movimiento redu
   }
 });
 
+test('la lectura ordena pizarra, controles y un párrafo continuo de narración',()=>{
+  const lecture=fullLectures()[0];
+  for(const width of [320,1280]){
+    const dom=fakeDom({width});
+    const cleanup=mountAnimation(dom.container,lecture);
+    const find=name=>dom.created.find(node=>node.className===name);
+    const layout=find('lecture-layout');
+    const media=find('lecture-media');
+    const narration=find('lecture-narration');
+    const controls=find('animation-controls');
+    assert.deepEqual(layout.children,[media,narration]);
+    assert.deepEqual(media.children.slice(0,2),[find('animation-stage'),controls]);
+    assert.equal(find('animation-transport').children.filter(node=>!node.hidden).length,3);
+    assert.equal(dom.byLabel('Escena actual y total').parent,find('animation-options'));
+    const cues=find('animation-cues');
+    assert.equal(cues.tagName,'p');
+    assert.equal(cues.children.map(row=>row.children[0].textContent).join(' '),lecture.steps[0].caption);
+    for(const row of cues.children){
+      assert.equal(row.tagName,'span');
+      assert.equal(row.children[0].attributes.role,'button');
+      assert.equal(row.children[0].tabIndex,0);
+      assert.equal(row.children[1].textContent,' ');
+    }
+    cleanup();dom.cleanupCheck();
+  }
+});
+
+test('el párrafo conserva saltos por teclado y no acumula eventos al cambiar de escena',()=>{
+  const lecture=fullLectures()[0];
+  const dom=fakeDom();
+  const cleanup=mountAnimation(dom.container,lecture);
+  const cues=dom.created.find(node=>node.className==='animation-cues');
+  for(const key of ['Enter',' ']){
+    let prevented=false;
+    const jump=cues.children[1].children[0];
+    cues.dispatch('keydown',{target:jump,key,preventDefault(){prevented=true;}});
+    assert.ok(prevented);
+    close(Number(dom.byLabel('Tiempo de reproducción').value),lecture.steps[0].cues[1].start);
+    assert.equal(cues.children[1].attributes['aria-current'],'true');
+  }
+  const old=cues.children[1].children[0];
+  const beforeListeners=cues.listenerCount();
+  const outline=dom.byLabel('Ir a una parte de la clase');
+  for(let scene=1;scene<lecture.steps.length;scene++){
+    outline.value=String(scene);outline.dispatch('change');
+    assert.equal(cues.listenerCount(),beforeListeners);
+  }
+  const position=dom.byLabel('Tiempo de reproducción').value;
+  cues.dispatch('keydown',{target:old,key:'Enter',preventDefault(){throw new Error('frase desmontada');}});
+  assert.equal(dom.byLabel('Tiempo de reproducción').value,position);
+  assert.equal(old.onclick,null);
+  cleanup();dom.cleanupCheck();
+});
+
+test('la pizarra conserva su diseño al ampliar y salir de la lectura',()=>{
+  const dom=fakeDom();
+  const cleanup=mountAnimation(dom.container,fullLectures()[0],{createWhiteboard:()=>({render(){},resize(){},dispose(){}})});
+  const root=dom.container.children[0];
+  dom.byLabel('Ampliar clase').click();
+  assert.equal(root.className,'animation-player has-whiteboard is-focused');
+  dom.byLabel('Salir de la vista ampliada').click();
+  assert.equal(root.className,'animation-player has-whiteboard');
+  cleanup();dom.cleanupCheck();
+});
+
 test('transcript is exact, math fallback is text, downloads are separate and URLs revoked', async () => {
   const dom = fakeDom();
   const cleanup = mountAnimation(dom.container, 'models', {formatMath: () => { throw new Error('KaTeX unavailable'); }});

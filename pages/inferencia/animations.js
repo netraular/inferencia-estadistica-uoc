@@ -892,8 +892,15 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const layout = element('div','lecture-layout');
   const media = element('div','lecture-media');
   const narration = element('div','lecture-narration');
-  const cueList = element('ol','animation-cues');
+  const cueList = element('p','animation-cues');
   cueList.setAttribute('aria-label','Fragmentos de la escena');
+  listen(cueList,'keydown',event=>{
+    const cueIndex=cueNodes.findIndex(row=>row.children[0]===event.target);
+    if (cueIndex>=0 && (event.key==='Enter' || event.key===' ')) {
+      event.preventDefault();
+      if (!disposed) seekTo(scenes()[index].cues[cueIndex].start);
+    }
+  });
   narration.append(element('p','eyebrow','NARRACIÓN'),caption,cueList);
   media.append(stage);
   layout.append(media,narration);
@@ -906,6 +913,8 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const back = button('step-back', 'Escena anterior', () => goTo(index - 1));
   const play = button('play', 'Reproducir', start);
   const pause = button('pause', 'Pausar', stop);
+  play.className += ' animation-primary';
+  pause.className += ' animation-primary';
   const next = button('step-forward', 'Escena siguiente', () => goTo(index + 1));
   const reset = button('rotate-ccw', 'Reiniciar', () => { stop(); goTo(0); });
   const expand = button('maximize','Ampliar clase', toggleFullscreen);
@@ -930,7 +939,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   timeSeek.setAttribute('aria-label','Tiempo de reproducción');
   timelineField.append(timeSeek);
   listen(timeSeek,'input',()=>{ seekTo(Number(timeSeek.value)); });
-  const speedField = element('label', 'control-field', 'Velocidad');
+  const speedField = element('label', 'control-field animation-speed');
   const speedSelect = element('select');
   speedSelect.setAttribute('aria-label', 'Velocidad de reproducción');
   for (const value of [0.5, 1, 1.5, 2]) {
@@ -952,14 +961,18 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     syncControls();
     draw();
   });
-  const position = element('output');
+  const position = element('output','animation-position');
   position.setAttribute('aria-label', 'Escena actual y total');
-  const clock = element('output');
+  const clock = element('output','animation-clock');
   clock.setAttribute('aria-label', 'Tiempo de la lección');
-  controls.append(back, play, pause, next, expand, speedField, position, clock, timelineField);
+  const transport = element('div','animation-transport');
+  transport.append(back,play,pause,next);
+  const settings = element('div','animation-settings');
+  settings.append(speedField,expand);
+  controls.append(timelineField,clock,transport,settings);
   const options = element('details','animation-options');
   options.append(element('summary','','Opciones'));
-  options.append(reset,seekField);
+  options.append(position,reset,seekField);
   let outline = null;
   if (animation.kind === 'lecture') {
     const field = element('label','control-field lecture-outline','Parte de la clase');
@@ -995,7 +1008,8 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   vttDownload.disabled = txtDownload.disabled = !view.URL?.createObjectURL || !view.Blob;
   downloads.append(vttDownload, txtDownload);
   options.append(transcript,downloads);
-  root.append(heading, layout, controls, error, options);
+  media.append(controls,error);
+  root.append(heading, layout, options);
   container.replaceChildren(root);
 
   if (timeline) {
@@ -1046,7 +1060,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   function expanded() { return fullscreenElement() === root || root.className.includes('is-focused'); }
 
   function focusMode(focused) {
-    root.className = focused ? 'animation-player is-focused' : 'animation-player';
+    root.className = `animation-player${whiteboard ? ' has-whiteboard' : ''}${focused ? ' is-focused' : ''}`;
     expand.setAttribute('aria-pressed',String(focused));
     const label = focused ? 'Salir de la vista ampliada' : 'Ampliar clase';
     expand.title = label;
@@ -1188,13 +1202,14 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     cueList.replaceChildren();
     lastCue = -1;
     cueNodes = scenes()[index].cues.map((cue,cueIndex)=>{
-      const row = element('li');
-      const jump = element('button','cue-jump',cue.text);
-      jump.type = 'button';
+      const row = element('span','narration-cue');
+      const jump = element('span','cue-jump',cue.text);
+      jump.tabIndex = 0;
+      jump.setAttribute('role','button');
       jump.title = `Ir al fragmento ${cueIndex+1}`;
       jump.setAttribute('aria-label',`${jump.title}: ${cue.text}`);
       jump.onclick = () => { if (!disposed) seekTo(scenes()[index].cues[cueIndex].start); };
-      row.append(jump);
+      row.append(jump,element('span','',' '));
       cueList.append(row);
       return row;
     });

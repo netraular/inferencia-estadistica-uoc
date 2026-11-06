@@ -160,6 +160,31 @@ test('CSS válido y recursos locales existentes, sin PDF ni dependencias remotas
   for (const file of ['jstat.LICENSE','lucide.LICENSE','atkinson.LICENSE','katex/LICENSE']) assert.ok(existsSync(new URL(`../../pages/inferencia/vendor/${file}`, import.meta.url)), file);
 });
 
+test('La lectura usa una columna y frases inline sin tarjetas ni filas separadas',()=>{
+  const css=cssTree.parse(readFileSync(new URL('../../pages/inferencia/aula.css',import.meta.url),'utf8'));
+  const rule=selector=>{
+    const node=css.children.toArray().find(item=>item.type==='Rule' && cssTree.generate(item.prelude)===selector);
+    assert.ok(node,selector);
+    return new Map(node.block.children.toArray().filter(item=>item.type==='Declaration').map(item=>[item.property,cssTree.generate(item.value)]));
+  };
+  assert.equal(rule('.lecture-layout').get('grid-template-columns'),'minmax(0,1fr)');
+  assert.equal(rule('.narration-cue').get('display'),'inline');
+  assert.equal(rule('.animation-cues .cue-jump').get('display'),'inline');
+  assert.equal(rule('.animation-cues .cue-jump').get('box-decoration-break'),'clone');
+  assert.equal(rule('.animation-controls .animation-primary').get('width'),'48px');
+  assert.equal(rule('.animation-player.is-focused .lecture-media').get('flex-direction'),'column');
+  const {document,aula}=harness();
+  try{
+    aula.navigate('proporciones','animation');
+    const media=document.querySelector('.lecture-media');
+    assert.equal(media.children[0].className,'animation-stage');
+    assert.equal(media.children[1].className,'animation-controls');
+    assert.equal(media.nextElementSibling.className,'lecture-narration');
+    assert.equal(document.querySelectorAll('p.animation-cues').length,1);
+    assert.equal(document.querySelectorAll('.animation-cues li,.animation-cues button').length,0);
+  }finally{aula.dispose();}
+});
+
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
