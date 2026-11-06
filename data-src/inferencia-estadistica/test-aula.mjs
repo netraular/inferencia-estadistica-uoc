@@ -163,7 +163,7 @@ test('CSS válido y recursos locales existentes, sin PDF ni dependencias remotas
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','course.js','exercises.js','labs.js','progress.js','teaching.js']);
+  assert.deepEqual(files, ['animations.js','app.js','course.js','exercises.js','labs.js','lecture-story.js','progress.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
@@ -208,7 +208,8 @@ test('Cada lección monta sus cuatro vistas y limpia los gráficos anteriores', 
         assert.equal(document.getElementById('lessonTitle').textContent, lesson.title);
         assert.ok(document.getElementById('lessonReference').textContent.includes(lesson.source.section));
         assert.equal(document.querySelectorAll('.lesson-panel:not([hidden])').length, 1);
-        assert.equal(document.querySelectorAll('canvas').length, view === 'practice' ? 0 : 1);
+        assert.equal(document.querySelectorAll('canvas:not(.story-plot)').length, view === 'practice' ? 0 : 1);
+        for(const plot of document.querySelectorAll('.story-plot')) assert.ok(plot.closest('.slide-board'));
         assert.equal(document.getElementById(`tab-${view}`).getAttribute('aria-selected'), 'true');
         if (view === 'theory') {
           assert.equal(document.querySelectorAll('.lesson-method li').length, 3);
@@ -370,7 +371,7 @@ test('El versionado de recursos es determinista e idempotente', () => {
   const root = versionFixture();
   try {
     const first = versionAssets(root);
-    assert.equal(Object.keys(first.versions).length, 12);
+    assert.equal(Object.keys(first.versions).length, 13);
     assert.deepEqual(versionAssets(root).changed, []);
     const generated = readFileSync(join(root, 'pages', 'inferencia-estadistica.html'), 'utf8');
     for (const match of generated.matchAll(/(?:src|href)="(inferencia\/[^"?]+\.(?:js|css))\?v=([a-f0-9]+)"/g)) {
@@ -409,4 +410,21 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
     const url = new URL(match[1], appUrl);
     assert.equal(url.searchParams.get('v'), assetVersion(readFileSync(url)), `${url.pathname}: ejecuta node version-assets.mjs`);
   }
+  const animationUrl = new URL('../../pages/inferencia/animations.js', import.meta.url);
+  const storyPath = readFileSync(animationUrl,'utf8').match(/from ['"]([^'"]*lecture-story\.js\?v=[a-f0-9]+)['"]/)[1];
+  const storyUrl = new URL(storyPath,animationUrl);
+  assert.equal(storyUrl.searchParams.get('v'),assetVersion(readFileSync(storyUrl)));
+});
+
+test('Cambiar el guion hablado renueva su URL, el reproductor y el HTML',()=>{
+  const root=versionFixture();
+  try{
+    const before=versionAssets(root);
+    const file=join(root,'pages','inferencia','lecture-story.js');
+    writeFileSync(file,readFileSync(file,'utf8')+'\n');
+    const after=versionAssets(root);
+    for(const asset of ['lecture-story.js','animations.js','app.js']) assert.notEqual(after.versions[`inferencia/${asset}`],before.versions[`inferencia/${asset}`]);
+    assert.deepEqual(after.changed,['pages/inferencia/animations.js','pages/inferencia/app.js','pages/inferencia-estadistica.html']);
+    assert.deepEqual(versionAssets(root).changed,[]);
+  }finally{rmSync(root,{recursive:true,force:true});}
 });

@@ -39,6 +39,19 @@ Las rutas anteriores son configuracion local, no requisitos del repositorio.
 
 ## Exportar y revisar los guiones
 
+Las lecturas usan un guion hablado propio para las 36 lecciones en
+`pages/inferencia/lecture-story.js`, no una lectura literal de los apartados
+de la web. Cada ejemplo avanza en intervenciones conectadas; cada dato, formula
+o grafico se asocia a la intervencion que lo introduce. La practica resuelta se
+incorpora desde `pages/inferencia/animations.js`, conservando los datos del
+generador. Para cambiar lo que se dice y cuando aparece, modifica esas fuentes,
+no los TXT del lote.
+
+Sin audio, los tiempos de frase son estimados. El reproductor puede usar los
+tiempos de los fragmentos del audio compatible cuando existan; esto no supone
+alineacion palabra por palabra. El movimiento reducido mantiene la aparicion
+progresiva de los datos: elimina movimiento, no adelanta las respuestas.
+
 Este paso utiliza los textos actuales del repositorio y no usa la GPU:
 
 ```bash

@@ -14,6 +14,13 @@ export function versionAssets(root = fileURLToPath(new URL('../../', import.meta
     writeFileSync(join(root, file), after, 'utf8');
     changed.push(file);
   };
+  const narrationFile = 'pages/inferencia/animations.js';
+  const narrationBefore = readFileSync(join(root, narrationFile), 'utf8');
+  const storyVersion = assetVersion(readFileSync(join(directory, 'lecture-story.js')));
+  versions['inferencia/lecture-story.js'] = storyVersion;
+  const narrationAfter = narrationBefore.replace(/from (['"])\.\/lecture-story\.js(?:\?v=[a-f0-9]+)?\1/, (match, quote) => `from ${quote}./lecture-story.js?v=${storyVersion}${quote}`);
+  if (narrationAfter === narrationBefore && !narrationBefore.includes(`lecture-story.js?v=${storyVersion}`)) throw new Error('Falta la dependencia del guion hablado en animations.js.');
+  save(narrationFile, narrationBefore, narrationAfter);
   const appFile = 'pages/inferencia/app.js';
   const appBefore = readFileSync(join(root, appFile), 'utf8');
   let imports = 0;

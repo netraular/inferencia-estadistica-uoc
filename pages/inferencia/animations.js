@@ -1,3 +1,5 @@
+import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=d8e63f82b934';
+
 const COLORS = ['#0369a1', '#15803d', '#be123c', '#b45309'];
 const scene = (title, caption, kind, data, tex, duration = 10) => ({title, caption, duration: Math.max(duration, Math.ceil(caption.split(/\s+/).length / 2.5)), kind, data, ...(tex ? {tex} : {})});
 const bars = (labels, values, extra = {}) => ({labels, values, xTitle: 'Resultado', yTitle: 'Probabilidad', legend: 'Probabilidad exacta', ...extra});
@@ -283,55 +285,39 @@ export function createLessonAnimation(lesson, createExercise, paragraphs) {
     const allowed = lesson.exerciseQuestions?.[type];
     return allowed ? {...generated,questions:generated.questions.filter(question=>allowed.includes(question.id))} : generated;
   });
-  const narrate = (title, caption, chapter, tex) => ({title,caption,kind:'lesson',data:{chapter},...(tex ? {tex} : {})});
-  const steps = [narrate(lesson.title, `Vamos a estudiar esta lección desde su significado hasta el cálculo. ${lesson.objectives.join(' ')} Empezaremos por las ideas, leeremos las fórmulas y resolveremos ejemplos explicando por qué hacemos cada operación.`, 'Objetivos')];
-  for (const section of lesson.sections.filter(section=>!section.optional)) {
-    paragraphs(section.body).forEach((text,index) => steps.push(narrate(`${section.title} · ${index+1}`,text,'Teoría')));
-  }
-  for (const item of lesson.notation || []) steps.push(narrate(`${item.term}: lectura y significado`, `Se lee ${item.reading}. ${item.definition} Por ejemplo: ${item.example}`, 'Notación'));
-  lesson.formulas.filter(formula=>!formula.optional).forEach((formula,index) => steps.push(narrate(`Fórmula ${index+1}: significado y condiciones`, `Se lee así: ${formula.reading} ${formula.meaning}`, 'Fórmulas', formula.tex)));
-  lesson.method.forEach((text,index) => steps.push(narrate(`Método · Paso ${index+1}`,text,'Método')));
-  paragraphs(lesson.example.body).forEach((text,index) => steps.push(narrate(`${lesson.example.title} · ${index+1}`,text,'Ejemplo de la lección')));
-  const demoId = {proporciones:'proportions-intro',funciones:'functions-intro','regiones-matrices':'regions-intro',axiomas:'events','uniforme-montecarlo':'cdf','calculo-modelos':'normal','combinaciones-incorrelacion':'covariance'}[lesson.id] || lesson.animation;
-  const demo = ANIMATIONS.find(item => item.id === demoId);
-  if (demo) steps.push(...demo.steps.filter(step=>!(['sucesos','axiomas'].includes(lesson.id) && /Condicionar/.test(step.title))).map(step => ({...step,title:`Demostración · ${step.title}`,data:{...step.data,chapter:'Demostración visual'}})));
+  const steps = lessonStory(lesson);
+  const spoken = text => text.replace(/;?\s*jStat\.[\w.]+(?:\([^)]*\))?[^.;]*(?:[.;]|$)/g,'').trim();
   exercises.forEach((exercise,index) => {
-    const given = exercise.given.map(value => ({value}));
-    steps.push({...narrate(`Ejercicio ${index+1}: planteamiento`, `Resolvamos ahora un problema nuevo. ${exercise.prompt} Los datos son los siguientes. ${exercise.given.join(' ')} Antes de calcular, fijamos los supuestos. ${exercise.assumptions.join(' ')}`, 'Ejercicios resueltos'), visual:{label:exercise.title, lines:given}});
+    steps.push(storyScene(`Ejercicio ${index+1}: cambiamos los datos`,'Ejercicios resueltos',[
+      {say:`Vamos a probar la misma idea con otros datos. ${exercise.prompt}`},
+      ...exercise.given.map(value=>({say:spoken(value),show:[{label:'Dato del problema',value}]})),
+      {say:`Antes de hacer la cuenta, necesitamos que se cumpla esto: ${exercise.assumptions.map(spoken).join(' ')}`}
+    ]));
     exercise.questions.forEach((question,questionIndex) => {
-      const derivation = question.steps.map(step => {
-        const calculations = step.explanation.split(/[:;]/).map(value=>value.trim().replace(/\.$/,'')).filter(value=>/\d/.test(value) && value.includes('=') && /^[\d\s.,()+−\-×·*/^²³√!=<>≤≥]+$/u.test(value));
-        return [...(step.tex ? [{label:step.title,tex:step.tex}] : []),...calculations.map(value=>({label:step.title,value}))];
+      steps.push(storyScene(`Ejercicio ${index+1} · Qué queremos saber`,'Ejercicios resueltos',[
+        {say:`Ahora la pregunta es esta: ${question.prompt}`},
+        {say:`Pensemos qué necesitamos antes de sustituir números. ${question.hint}`,show:[{label:'Qué buscamos',value:question.prompt}]}
+      ]));
+      question.steps.slice(1,-1).forEach((step,stepIndex) => {
+        const calculations = Array.from(step.explanation.matchAll(/(?<![\p{L}\d])[\d][\d\s.,()+−\-×·*/^²³√!<>≤≥]*=[\d\s.,()+−\-×·*/^²³√!=<>≤≥]+/gu),match=>match[0].trim().replace(/\.$/,''));
+        const show = [...(step.tex ? [{label:step.title,tex:step.tex}] : []),...calculations.slice(-1).map(value=>({label:step.title,value}))];
+        steps.push(storyScene(`E${index+1}.${questionIndex+1} · ${step.title}`,'Ejercicios resueltos',[
+          {say:stepIndex ? ['Ahora podemos hacer la cuenta.','Con eso ya podemos dar el siguiente paso.','Veamos qué cambia al usar estos datos.'][stepIndex%3] : 'Vamos a hacerlo despacio, manteniendo la pregunta a la vista.'},
+          {say:spoken(step.explanation),show}
+        ]));
       });
-      steps.push({...narrate(`Ejercicio ${index+1} · Apartado ${questionIndex+1}`, `La pregunta es: ${question.prompt} Buscamos ${question.unit}. Pensemos primero qué conjunto, intervalo o cantidad representa esa pregunta. ${question.hint}`, 'Ejercicios resueltos'), visual:{label:question.prompt,lines:given}});
-      question.steps.forEach((step,stepIndex) => {
-        const result = stepIndex === question.steps.length-1 ? [{label:question.unit,value:number(question.answer)}] : [];
-        steps.push({...narrate(`E${index+1}.${questionIndex+1} · Paso ${stepIndex+1}: ${step.title}`,step.explanation,'Ejercicios resueltos',step.tex),visual:{label:step.title,lines:[...given,...derivation.slice(0,stepIndex+1).flat(),...result]}});
-      });
+      steps.push(storyScene(`Ejercicio ${index+1} · Qué significa la respuesta`,'Ejercicios resueltos',[
+        {say:`Nos sale ${number(question.answer)} ${question.unit}. Vamos a devolver ese número a la pregunta que habíamos hecho.`,show:[{label:'Resultado',value:`${number(question.answer)} ${question.unit}`} ]},
+        {say:`${question.interpretation} Esa interpretación es la que debemos conservar, no solo el número de la calculadora.`}
+      ]));
     });
   });
-  steps.push(narrate('Errores que conviene reconocer', `Antes de terminar, repasemos los errores que pueden cambiar el significado del resultado. ${lesson.pitfalls.join(' ')} Un número correcto solo es útil si responde a la pregunta original y respeta sus supuestos.`, 'Repaso'));
-  steps.push(narrate('Comprueba que puedes explicarlo', `${lesson.check.question} La respuesta es ${lesson.check.options[lesson.check.answer]}. ${lesson.check.explanation} Ahora intenta reproducir el método y resolver una variante sin consultar la solución.`, 'Repaso'));
-  return {id:lesson.id,title:lesson.title,kind:'lecture',source:lesson.source,steps:steps.map(step => {
-    const segments = [];
-    for (const item of new Intl.Segmenter('es',{granularity:'sentence'}).segment(step.caption)) {
-      if (segments.length && !/\s$/.test(segments.at(-1))) segments[segments.length-1]+=item.segment;
-      else segments.push(item.segment);
-    }
-    const chunks = [];
-    for (const segment of segments) {
-      const words = segment.trim().split(/\s+/);
-      for (let index=0;index<words.length;index+=26) chunks.push(words.slice(index,index+26).join(' '));
-    }
-    let time = 0;
-    const cues = chunks.map(text => { const start=time; time+=Math.max(2,text.split(/\s+/).length/2.5+0.6); return {text,start,end:time}; });
-    const visual = step.visual || (step.kind === 'lesson' ? {
-      label:step.data.chapter,
-      lines:step.tex ? [{tex:step.tex}] : [],
-      process:lesson.method.map((text,index) => ({label:`${index+1}`,value:text.split(/\s+/).slice(0,7).join(' ')}))
-    } : undefined);
-    return {...step,...(visual ? {visual} : {}),cues,duration:time};
-  })};
+  steps.push(storyScene('Qué nos llevamos de esta lección','Repaso',[
+    {say:`Antes de terminar, volvamos a una pregunta corta. ${lesson.check.question} Piensa qué responderías y, sobre todo, por qué.`},
+    {say:`La respuesta que encaja es esta: ${lesson.check.options[lesson.check.answer]}. ${lesson.check.explanation}`,show:[{label:'La idea que importa',value:lesson.check.options[lesson.check.answer]}]},
+    {say:`Y quédate con esta precaución para el próximo problema: ${lesson.pitfalls[0]}`}
+  ]));
+  return {id:lesson.id,title:lesson.title,kind:'lecture',source:lesson.source,steps};
 }
 
 function findAnimation(animationId) {
@@ -376,6 +362,41 @@ function shortText(context, text, xPosition, yPosition, width, align = 'left') {
   if (label !== String(text)) label = `${label.slice(0, -1)}…`;
   context.textAlign = align;
   context.fillText(label, xPosition, yPosition);
+}
+
+function drawStoryPlot(context,width,height,plot) {
+  const points=plot.points;
+  const minX=points[0][0];
+  const maxX=points.at(-1)[0];
+  const maxY=Math.max(...points.map(point=>point[1]))*1.15;
+  const x=value=>42+(value-minX)/(maxX-minX)*(width-58);
+  const y=value=>height-28-value/maxY*(height-64);
+  context.clearRect(0,0,width,height);
+  context.font='13px sans-serif';
+  context.strokeStyle='#63716c';
+  context.beginPath();context.moveTo(42,25);context.lineTo(42,height-28);context.lineTo(width-16,height-28);context.stroke();
+  if(plot.shade){
+    const interpolate=value=>{
+      const upper=points.findIndex(point=>point[0]>=value);
+      if(upper<=0)return points[0][1];
+      const [left,right]=[points[upper-1],points[upper]];
+      return left[1]+(right[1]-left[1])*(value-left[0])/(right[0]-left[0]);
+    };
+    const [from,to]=plot.shade;
+    const selected=[[from,interpolate(from)],...points.filter(point=>point[0]>from && point[0]<to),[to,interpolate(to)]];
+    context.beginPath();context.moveTo(x(from),y(0));
+    selected.forEach(point=>context.lineTo(x(point[0]),y(point[1])));
+    context.lineTo(x(to),y(0));context.closePath();context.fillStyle='#d5ebe2';context.fill();
+  }
+  context.beginPath();points.forEach((point,index)=>index ? context.lineTo(x(point[0]),y(point[1])) : context.moveTo(x(point[0]),y(point[1])));
+  context.strokeStyle='#117568';context.lineWidth=2;context.stroke();
+  if(Number.isFinite(plot.cut)){
+    const bound=points[0][1];
+    context.beginPath();context.moveTo(x(plot.cut),y(0));context.lineTo(x(plot.cut),y(bound-plot.cut));context.strokeStyle='#a93458';context.stroke();
+  }
+  context.fillStyle='#253330';
+  shortText(context,plot.yLabel,42,16,width-58);
+  shortText(context,plot.xLabel,width/2,height-6,width-58,'center');
 }
 
 function axes(context, width, height, data, xMin, xMax, yMin, yMax, categorical = false) {
@@ -1135,11 +1156,29 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
       const derivation = element('ol','board-derivation');
       for (const line of [...visual.lines,...(visual.process || [])]) {
         const row = element('li','board-line');
+        if (Number.isInteger(line.cue)) row.setAttribute('data-story-cue',String(line.cue));
         if (line.label) row.append(element('span','board-label',line.label));
         const expression = element('div',line.tex ? 'board-expression' : 'board-value');
         if (line.tex) mathContent(expression,line.tex);
         else expression.textContent = line.value;
         row.append(expression);
+        if (line.bar) {
+          const quantity = element('progress','board-quantity');
+          quantity.max = line.bar.total;
+          quantity.value = line.bar.part;
+          quantity.setAttribute('aria-label',`${line.label}: ${line.bar.part} de ${line.bar.total}`);
+          row.append(quantity);
+        }
+        if (line.plot) {
+          const diagram=element('canvas','story-plot');
+          diagram.width=Math.max(280,Math.min(900,logicalWidth-80));
+          diagram.height=220;
+          diagram.setAttribute('role','img');
+          diagram.setAttribute('aria-label',`${line.plot.yLabel}; ${line.plot.xLabel}`);
+          const drawing=diagram.getContext('2d');
+          if(drawing)drawStoryPlot(drawing,diagram.width,diagram.height,line.plot);
+          row.append(diagram);
+        }
         derivation.append(row);
         boardNodes.push(row);
       }
@@ -1171,7 +1210,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     syncSubtitle();
     if (disposed) return;
     if (whiteboard) {
-      whiteboard.render({step:animation.steps[index], index, progress:reducedMotion ? 1 : Math.max(0, Math.min(1, elapsed / (scenes()[index].end - scenes()[index].start))), time:currentTime, reducedMotion});
+      whiteboard.render({step:animation.steps[index], index, cueIndex:lastCue, progress:reducedMotion ? 1 : Math.max(0, Math.min(1, elapsed / (scenes()[index].end - scenes()[index].start))), time:currentTime, reducedMotion});
       return;
     }
     if (!context) return;
@@ -1270,9 +1309,11 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     }
     const progress = reducedMotion ? 1 : Math.max(0,Math.min(1,elapsed/(scenes()[index].end-scenes()[index].start)));
     stage.setAttribute('data-progress',String(progress));
-    const visible = reducedMotion ? boardNodes.length : Math.max(1,Math.ceil(progress*boardNodes.length));
+    const story = animation.steps[index].story;
+    const visible = story ? storyLines(animation.steps[index],cueIndex).length : reducedMotion ? boardNodes.length : Math.max(1,Math.ceil(progress*boardNodes.length));
     boardNodes.forEach((node,position)=>{
-      const reveal = reducedMotion ? 1 : Math.max(0,Math.min(1,progress*boardNodes.length-position+1));
+      const reveal = story ? Number(position<visible) : reducedMotion ? 1 : Math.max(0,Math.min(1,progress*boardNodes.length-position+1));
+      node.hidden = Boolean(story) && position>=visible;
       node.setAttribute('data-revealed',String(position<visible));
       node.style.opacity = String(reveal);
       node.style.transform = reducedMotion ? 'none' : `translateY(${(1-reveal)*10}px)`;

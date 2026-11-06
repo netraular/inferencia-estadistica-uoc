@@ -36,6 +36,7 @@ export function planWhiteboardScene(lessonId, step) {
   if (!WHITEBOARD_LESSONS.includes(lessonId)) return null;
   const chapter = step.data?.chapter;
   const common = {label:step.title.replace(/^Demostración · /, ''), equation:step.tex || ''};
+  if (step.story) return {...common,kind:'story',lines:step.visual.lines};
   if (chapter === 'Ejercicios resueltos') {
     const lines = step.visual?.lines || [];
     return {...common, kind:'working', equations:lines.filter(line=>line.tex).map(line=>line.tex).slice(-2), givens:lines.filter(line=>line.value && !line.label).map(line=>line.value).slice(0,3)};
@@ -181,7 +182,56 @@ export function createWhiteboard(host, {animation}) {
     if (label.height()>64) label.fontSize(22);
     const state = {reveal:0,focus:0,resolve:0};
     timeline.to(state,{reveal:1,duration:0.3,ease:'power1.inOut'},0.05).to(state,{focus:1,duration:0.28,ease:'power2.inOut'},0.28).to(state,{resolve:1,duration:0.22,ease:'power2.inOut'},0.65);
-    if (plan.kind === 'proportion') {
+    if (plan.kind === 'story') {
+      const weights=plan.lines.reduce((total,item)=>total+(item.plot ? 2 : 1),0);
+      const slot = Math.min(128,(size.height-100)/Math.max(1,weights));
+      let nextTop=94;
+      plan.lines.forEach((item,position)=>{
+        const group = new Konva.Group({listening:false});
+        sceneRoot.add(group);
+        const top = nextTop;
+        const itemHeight=slot*(item.plot ? 2 : 1);
+        nextTop+=itemHeight;
+        if (item.label) group.add(new Konva.Text({text:item.label,x:40,y:top,width:size.width-80,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:21,fill:palette.muted,lineHeight:1.2,listening:false}));
+        if (item.tex) group.add(formulaGraphic(item.tex,{x:40,y:top+22,width:size.width-80,height:Math.min(62,slot-26),color:palette.teal}));
+        else {
+          const value = new Konva.Text({text:item.value || '',x:40,y:top+26,width:size.width-80,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:28,fill:palette.ink,lineHeight:1.2,listening:false});
+          while(value.height()>slot-30 && value.fontSize()>16)value.fontSize(value.fontSize()-1);
+          group.add(value);
+        }
+        if (item.bar) {
+          const barWidth=size.width-80;
+          group.add(new Konva.Rect({x:40,y:top+slot-14,width:barWidth,height:8,fill:palette.line,listening:false}));
+          group.add(new Konva.Rect({x:40,y:top+slot-14,width:barWidth*item.bar.part/item.bar.total,height:8,fill:palette.teal,listening:false}));
+        }
+        if(item.plot){
+          const plot=item.plot;
+          const minX=plot.points[0][0];
+          const maxX=plot.points.at(-1)[0];
+          const maxY=Math.max(...plot.points.map(point=>point[1]))*1.15;
+          const bottom=top+itemHeight-25;
+          const mapX=value=>65+(value-minX)/(maxX-minX)*(size.width-110);
+          const mapY=value=>bottom-value/maxY*(itemHeight-108);
+          group.add(new Konva.Line({points:[65,top+80,65,bottom,size.width-45,bottom],stroke:palette.muted,strokeWidth:2,listening:false}));
+          if(plot.shade){
+            const [from,to]=plot.shade;
+            const interpolate=value=>{
+              const upper=plot.points.findIndex(point=>point[0]>=value);
+              if(upper<=0)return plot.points[0][1];
+              const [left,right]=[plot.points[upper-1],plot.points[upper]];
+              return left[1]+(right[1]-left[1])*(value-left[0])/(right[0]-left[0]);
+            };
+            const selected=[[from,interpolate(from)],...plot.points.filter(point=>point[0]>from && point[0]<to),[to,interpolate(to)]];
+            group.add(new Konva.Line({points:[mapX(from),mapY(0),...selected.flatMap(point=>[mapX(point[0]),mapY(point[1])]),mapX(to),mapY(0)],closed:true,fill:'#d5ebe2',listening:false}));
+          }
+          group.add(new Konva.Line({points:plot.points.flatMap(point=>[mapX(point[0]),mapY(point[1])]),stroke:palette.teal,strokeWidth:3,listening:false}));
+          if(Number.isFinite(plot.cut))group.add(new Konva.Line({points:[mapX(plot.cut),bottom,mapX(plot.cut),mapY(plot.points[0][1]-plot.cut)],stroke:palette.rose,strokeWidth:3,listening:false}));
+          group.add(new Konva.Text({text:plot.yLabel,x:65,y:top+59,width:size.width-110,fontSize:17,fill:palette.muted,listening:false}));
+          group.add(new Konva.Text({text:plot.xLabel,x:65,y:bottom+6,width:size.width-110,align:'center',fontSize:17,fill:palette.muted,listening:false}));
+        }
+        actors.push(()=>group.visible((lastFrame?.cueIndex ?? -1)>=item.cue));
+      });
+    } else if (plan.kind === 'proportion') {
       const gap = 24;
       const panelWidth = (size.width-64-gap*(plan.groups.length-1))/plan.groups.length;
       for (const [groupIndex,[selected,total]] of plan.groups.entries()) {

@@ -19,6 +19,14 @@ const {document}=parseHTML('<html><body></body></html>');
 const paragraphs=html=>{const node=document.createElement('div');node.innerHTML=html;return Array.from(node.querySelectorAll('p'),paragraph=>paragraph.textContent);};
 const lectures=COURSE.units[0].lessons.map(lesson=>createLessonAnimation(lesson,generateExercise,paragraphs));
 
+test('storyboards use explicit scene items instead of inferring unrelated examples from words',()=>{
+  const step={title:'Miramos las semillas',story:true,visual:{lines:[{cue:1,label:'Sembradas',value:'60'},{cue:2,tex:'12/60'}]}};
+  const plan=planWhiteboardScene('proporciones',step);
+  assert.equal(plan.kind,'story');
+  assert.deepEqual(plan.lines,step.visual.lines);
+  assert.equal(plan.groups,undefined);
+});
+
 test('all five topic zero lessons have a whiteboard plan for every unchanged narration scene',()=>{
   assert.deepEqual(WHITEBOARD_LESSONS,COURSE.units[0].lessons.map(lesson=>lesson.id));
   let count=0;
@@ -29,47 +37,40 @@ test('all five topic zero lessons have a whiteboard plan for every unchanged nar
     assert.equal(JSON.stringify(step),before);
     count++;
   }
-  assert.ok(count>100);
+  assert.equal(count,lectures.reduce((total,lecture)=>total+lecture.steps.length,0));
   assert.equal(planWhiteboardScene('sucesos',lectures[0].steps[0]),null);
 });
 
 test('worked examples keep their real inputs and current equations instead of unrelated sample values',()=>{
   for(const lecture of lectures) for(const step of lecture.steps.filter(step=>step.data.chapter==='Ejercicios resueltos')){
     const plan=planWhiteboardScene(lecture.id,step);
-    assert.equal(plan.kind,'working');
-    assert.deepEqual(plan.equations,step.visual.lines.filter(line=>line.tex).map(line=>line.tex).slice(-2));
-    assert.ok(plan.givens.every(value=>step.visual.lines.some(line=>line.value===value)));
+    assert.equal(plan.kind,'story');
+    assert.deepEqual(plan.lines,step.visual.lines);
+    assert.ok(plan.lines.every(item=>Number.isInteger(item.cue)));
   }
 });
 
 test('the seed comparison preserves counts and demonstrates why more successes need not mean a higher proportion',()=>{
   const lecture=lectures[0];
-  const plan=planWhiteboardScene(lecture.id,lecture.steps.find(step=>step.data.chapter==='Ejemplo de la lección'));
-  assert.deepEqual(plan.groups,[[18,72],[30,200]]);
+  const groups=lecture.steps.slice(0,2).flatMap(step=>planWhiteboardScene(lecture.id,step).lines.filter(line=>line.bar).map(line=>[line.bar.part,line.bar.total]));
+  assert.deepEqual(groups,[[18,72],[30,200]]);
   assert.ok(18/72>30/200);
-  assert.match(plan.equation,/25/);
+  assert.match(lecture.steps[0].visual.lines.at(-1).tex,/25/);
 });
 
-test('integral scenes preserve exact areas and left rectangle approximations',()=>{
-  for(const step of lectures.find(lecture=>lecture.id==='calculo').steps.filter(step=>step.kind==='curve')){
-    const plan=planWhiteboardScene('calculo',step);
-    const geometry=integralGeometry(plan);
-    assert.equal(geometry.area,0.25);
-    if(step.data.rectangles){
-      const area=geometry.rectangles.reduce((sum,rectangle)=>sum+rectangle.width*rectangle.height,0);
-      assert.equal(area,step.data.approximation);
-      assert.equal(geometry.rectangles.length,step.data.rectangles.count);
-    }
-  }
-  const example=lectures.find(lecture=>lecture.id==='calculo').steps.find(step=>step.data.chapter==='Ejemplo de la lección');
-  assert.ok(Math.abs(integralGeometry(planWhiteboardScene('calculo',example)).area-0.4)<1e-12);
+test('spoken integral examples preserve their exact shaded intervals and densities',()=>{
+  const plots=lectures.find(lecture=>lecture.id==='calculo').steps.slice(0,2).map(step=>step.visual.lines.find(item=>item.plot).plot);
+  assert.deepEqual(plots[0].shade,[0.4,1.2]);
+  assert.ok(Math.abs((1.2-0.4)*plots[0].points[0][1]-0.4)<1e-12);
+  assert.deepEqual(plots[1].shade,[0,1]);
+  assert.equal(plots[1].points.find(point=>point[0]===1)[1]/2,0.25);
 });
 
 test('every scene equation converts to actual vector paths with finite bounds',()=>{
   const equations=new Set();
   for(const lecture of lectures) for(const step of lecture.steps){
     const plan=planWhiteboardScene(lecture.id,step);
-    for(const tex of [plan.equation,...(plan.equations || [])].filter(Boolean)) equations.add(tex);
+    for(const tex of [plan.equation,...(plan.equations || []),...(plan.lines || []).map(line=>line.tex)].filter(Boolean)) equations.add(tex);
   }
   for(const tex of equations){
     const vector=formulaVector(tex);
@@ -86,25 +87,20 @@ test('every scene equation converts to actual vector paths with finite bounds',(
 });
 
 test('final checks use their own weights and strict integer boundary',()=>{
-  const algebra=lectures.find(lecture=>lecture.id==='algebra');
-  assert.deepEqual(planWhiteboardScene('algebra',algebra.steps.at(-1)).values,[1,2,7]);
-  const functions=lectures.find(lecture=>lecture.id==='funciones');
-  const plan=planWhiteboardScene('funciones',functions.steps.at(-1));
-  assert.equal(plan.kind,'interval');
-  assert.equal(plan.threshold,2);
-  assert.match(plan.equation,/0,1/);
+  for(const lecture of lectures){
+    const lesson=COURSE.units[0].lessons.find(item=>item.id===lecture.id);
+    const plan=planWhiteboardScene(lecture.id,lecture.steps.at(-1));
+    assert.equal(plan.lines[0].value,lesson.check.options[lesson.check.answer]);
+    assert.ok(plan.lines[0].cue>0,'la pregunta no revela su respuesta');
+  }
 });
 
-test('joint demonstration preserves descending marginal and conditional density areas',()=>{
+test('resource diagram preserves the triangle and the cut mentioned in speech',()=>{
   const lecture=lectures.find(lecture=>lecture.id==='regiones-matrices');
-  for(const step of lecture.steps.filter(step=>step.kind==='curve')) {
-    const plan=planWhiteboardScene(lecture.id,step);
-    assert.equal(plan.kind,'integral');
-    const geometry=integralGeometry(plan);
-    assert.ok(Math.abs(geometry.area-step.data.probability)<1e-12);
-    if(step.data.descending){assert.equal(geometry.density(0),1);assert.equal(geometry.density(2),0);}
-    else assert.equal(geometry.density(0),step.data.density);
-  }
+  const plot=lecture.steps[0].visual.lines.find(item=>item.plot).plot;
+  assert.deepEqual(plot.points,[[0,1],[1,0]]);
+  assert.equal(plot.cut,0.3);
+  assert.deepEqual(plot.shade,[0,1]);
 });
 
 test('production Babel preserves SVG translations and scales from MathJax',()=>{
@@ -164,7 +160,7 @@ test('real Konva canvas draws every scene, fits text at desktop and mobile sizes
         const context=stage.getLayers()[0].getCanvas().getContext();
         const pixels=()=>Buffer.from(context.getImageData(0,0,width,height).data);
         for(const [index,step] of lecture.steps.entries()) {
-          board.render({index,step,progress:1,time:index,reducedMotion:true});
+          board.render({index,step,progress:1,time:index,cueIndex:step.cues.length-1,reducedMotion:true});
           const scene=stage.getLayers()[0].getChildren()[0];
           for(const node of scene.find('Text')) {
             const rect=node.getClientRect({relativeTo:scene});
@@ -173,13 +169,14 @@ test('real Konva canvas draws every scene, fits text at desktop and mobile sizes
             assert.ok(rect.x>=-1 && rect.y>=-1 && rect.x+rect.width<=logicalWidth+1 && rect.y+rect.height<=logicalHeight+1,`${lecture.id}: ${step.title}: ${node.text()}: ${JSON.stringify(rect)}`);
           }
         }
-        const frame={index:0,step:lecture.steps[0],time:0,reducedMotion:false};
-        board.render({...frame,progress:0.15}); const before=pixels();
-        board.render({...frame,progress:1}); const after=pixels();
+        const frame={index:0,step:lecture.steps[0],time:0,progress:1,reducedMotion:false};
+        board.render({...frame,cueIndex:-1}); const before=pixels();
+        board.render({...frame,cueIndex:frame.step.cues.length-1}); const after=pixels();
         assert.notDeepEqual(before,after,lecture.id);
         assert.ok(after.some((value,position)=>position%4===0 && value<180),'actual ink pixels');
-        board.render({...frame,progress:0.15}); assert.deepEqual(pixels(),before,`${lecture.id}: reverse seek`);
-        board.render({...frame,progress:0.15,reducedMotion:true}); assert.deepEqual(pixels(),after,`${lecture.id}: reduced motion`);
+        board.render({...frame,cueIndex:-1}); assert.deepEqual(pixels(),before,`${lecture.id}: reverse seek`);
+        board.render({...frame,cueIndex:-1,reducedMotion:true}); assert.deepEqual(pixels(),before,`${lecture.id}: reduced motion must not reveal future phrases`);
+        board.render({...frame,cueIndex:frame.step.cues.length-1,reducedMotion:true}); assert.deepEqual(pixels(),after,`${lecture.id}: reduced motion final state`);
       } finally {board.dispose();board.dispose();}
     }
     assert.equal(Konva.stages.length,stageCount);

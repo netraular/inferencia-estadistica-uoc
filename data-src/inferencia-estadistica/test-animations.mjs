@@ -10,6 +10,7 @@ import {COURSE} from '../../pages/inferencia/course.js';
 import {generateExercise, scopeExercise} from '../../pages/inferencia/exercises.js';
 import * as api from '../../pages/inferencia/animations.js';
 import {exportLectures} from './export-lecturas.mjs';
+import {storyScene,storyLines} from '../../pages/inferencia/lecture-story.js';
 
 const {ANIMATIONS, animationDuration, buildVtt, createLessonAnimation, mountAnimation} = api;
 const require = createRequire(import.meta.url);
@@ -17,6 +18,22 @@ globalThis.jStat = require('../../pages/inferencia/vendor/jstat.min.js').jStat;
 const katex = require('../../pages/inferencia/vendor/katex/katex.min.js');
 const paragraphs = html => [...parseHTML(`<div>${html}</div>`).document.querySelectorAll('p')].map(node=>node.textContent);
 const fullLectures = () => COURSE.units.flatMap(unit=>unit.lessons).map(current=>createLessonAnimation(current,generateExercise,paragraphs));
+
+test('Los elementos se revelan con la frase que los presenta y desaparecen al retroceder', () => {
+  const step = storyScene('Un cultivo','Ejemplo',[
+    {say:'Vamos a comparar dos grupos de semillas.',show:[]},
+    {say:'Primero sembramos sesenta semillas.',show:[{label:'Sembradas',value:'60'}]},
+    {say:'De ellas germinan doce.',show:[{label:'Germinadas',value:'12'}]},
+    {say:'Ahora dividimos doce entre sesenta.',show:[{tex:String.raw`12/60=0{,}20`} ]}
+  ]);
+  assert.deepEqual(storyLines(step,0),[]);
+  assert.equal(storyLines(step,1).length,1);
+  assert.equal(storyLines(step,2).length,2);
+  assert.equal(storyLines(step,3).length,3);
+  assert.deepEqual(storyLines(step,0),[]);
+  assert.equal(step.cues.map(cue=>cue.text).join(' '),step.caption);
+  assert.ok(step.cues.every(cue=>cue.end>cue.start));
+});
 
 test('La descarga VTT usa los tiempos del audio cuando se aporta su línea temporal', () => {
   const animation = {kind:'lecture', steps:[
@@ -32,17 +49,24 @@ test('La descarga VTT usa los tiempos del audio cuando se aporta su línea tempo
   assert.match(buildVtt(animation), /00:00:02.000 --> 00:00:05.000/);
 });
 
-test('36 clases contienen la teoría básica, lectura de notación, métodos y soluciones de su nivel', () => {
+test('36 clases tienen un relato propio, ejemplos conectados y soluciones completas de su nivel', () => {
   const lessons = COURSE.units.flatMap(unit=>unit.lessons);
   for (const [index,lecture] of fullLectures().entries()) {
     const current = lessons[index];
     const script = lecture.steps.map(step=>step.caption).join('\n');
     assert.equal(lecture.id,current.id);
-    assert.ok(lecture.steps.length>20,current.id);
+    assert.ok(lecture.steps.length>4,current.id);
     assert.doesNotMatch(script,/undefined|\[object Object\]/);
-    for (const text of [...current.sections.filter(section=>!section.optional).flatMap(section=>paragraphs(section.body)),...current.method,...paragraphs(current.example.body),...current.formulas.filter(formula=>!formula.optional).flatMap(formula=>[formula.meaning,formula.reading]),...current.notation.flatMap(item=>[item.reading,item.definition,item.example]),...current.pitfalls]) assert.ok(script.includes(text),`${current.id}: ${text}`);
+    assert.ok(lecture.steps.slice(0,2).every(step=>step.story && step.caption.split(/\s+/).length>65),current.id);
+    assert.ok(!script.startsWith(current.objectives.join(' ')));
+    assert.ok(script.includes(current.check.explanation));
+    assert.ok(script.includes(current.pitfalls[0]));
     const worked = scopeExercise(current,generateExercise(current.exerciseTypes[0],1));
-    for (const question of worked.questions) for (const step of question.steps) assert.ok(script.includes(step.explanation),current.id);
+    for (const question of worked.questions) {
+      assert.ok(script.includes(question.prompt),current.id);
+      assert.ok(script.includes(question.interpretation),current.id);
+      for (const step of question.steps.slice(1,-1)) if(!step.explanation.includes('jStat.')) assert.ok(script.includes(step.explanation),`${current.id}: ${step.title}`);
+    }
     let end = 0;
     for (const step of lecture.steps) {
       assert.equal(step.cues.map(cue=>cue.text).join(' ').replace(/\s+/g,' '),step.caption.replace(/\s+/g,' '));
@@ -54,6 +78,13 @@ test('36 clases contienen la teoría básica, lectura de notación, métodos y s
         if (cueIndex) close(cue.start,step.cues[cueIndex-1].end);
       }
       if (step.tex) assert.doesNotThrow(()=>katex.renderToString(step.tex,{throwOnError:true}));
+      for(const item of step.visual.lines){
+        assert.ok(Number.isInteger(item.cue) && item.cue<step.cues.length,current.id);
+        assert.ok(!storyLines(step,item.cue-1).includes(item));
+        assert.ok(storyLines(step,item.cue).includes(item));
+        if(item.tex)assert.doesNotThrow(()=>katex.renderToString(item.tex,{throwOnError:true}));
+        if(item.plot)assert.ok(item.plot.points.flat().every(Number.isFinite));
+      }
       end += step.duration;
     }
     close(end,animationDuration(lecture));
@@ -1083,8 +1114,9 @@ test('36 pizarras conservan datos pertinentes y todos los cues fuera del escenar
       assert.notEqual(cues.parent,stage);
       assert.equal(dom.created.find(node=>node.className==='animation-math').parent,stage);
       if (step.kind === 'lesson') {
-        assert.ok(step.visual?.lines.length || step.visual?.process?.length,`${lecture.id}: ${step.title}`);
-        assert.ok(board.children[1].children.length);
+        assert.ok(Array.isArray(step.visual?.lines),`${lecture.id}: ${step.title}`);
+        assert.equal(board.children[1].children.length,step.visual.lines.length);
+        for (const item of step.visual.lines) assert.ok(Number.isInteger(item.cue) && item.cue<step.cues.length,`${lecture.id}: ${step.title}`);
         const values = board.children[1].children.map(row=>row.children.at(-1).textContent);
         assert.ok(!values.includes(step.caption),'la pizarra no es un subtítulo');
         for (const value of step.visual.lines) if (value.tex) assert.doesNotThrow(()=>katex.renderToString(value.tex,{throwOnError:true}));
@@ -1125,7 +1157,7 @@ test('cues completos son navegables y aria-current sigue seek y fin de escena', 
   dom.cleanupCheck();
 });
 
-test('el revelado de gráficos, fórmulas y derivaciones depende del tiempo; reduced motion es completo y estático', () => {
+test('gráficos clásicos conservan su animación; las historias revelan por frase incluso sin movimiento', () => {
   const dom = fakeDom();
   const cleanup = mountAnimation(dom.container,'math');
   const stage = dom.created.find(node=>node.className==='animation-stage');
@@ -1155,13 +1187,18 @@ test('el revelado de gráficos, fórmulas y derivaciones depende del tiempo; red
     const rows = board.children[1].children;
     assert.ok(rows.length>1);
     const first = rows.map(row=>row.style.opacity);
-    boardDom.byLabel('Reproducir').click();
-    boardDom.advance(2000);
+    const seek=boardDom.byLabel('Tiempo de reproducción');
+    seek.value=String(fullLectures()[0].steps[0].cues.at(-1).start);
+    seek.dispatch('input');
     const second = rows.map(row=>row.style.opacity);
+    assert.notDeepEqual(second,first);
+    assert.ok(rows.every(row=>!row.hidden));
     if (reducedMotion) {
       assert.ok(rows.every(row=>row.style.opacity==='1' && row.style.transform==='none'));
-      assert.deepEqual(second,first);
-    } else assert.notDeepEqual(second,first);
+    }
+    seek.value='0';seek.dispatch('input');
+    assert.deepEqual(rows.map(row=>row.style.opacity),first);
+    assert.ok(rows.every(row=>row.hidden));
     dispose();
     boardDom.cleanupCheck();
   }
@@ -1344,7 +1381,7 @@ function estimatesFor(animation,index,fraction) {
   return sum(animation.steps.slice(0,index).map(step=>step.duration))+animation.steps[index].duration*fraction;
 }
 
-test('la derivación acumula fórmulas y sustituciones literales, sin anticipar el resultado final', () => {
+test('la derivación conserva sustituciones reales y no anticipa las respuestas de cada apartado', () => {
   const lectures = fullLectures();
   let numeric = 0;
   for (const lecture of lectures) {
@@ -1358,14 +1395,33 @@ test('la derivación acumula fórmulas y sustituciones literales, sin anticipar 
         }
       }
     }
-    const start = exercises.find(step=>step.title.startsWith('Ejercicio 1 · Apartado 1'));
+    const start = exercises.find(step=>step.title==='Ejercicio 1 · Qué queremos saber');
     assert.ok(start);
     assert.ok(start.visual.lines.every(line=>line.value && !line.tex));
-    const result = exercises.find(step=>step.title.includes('Comprobar e interpretar'));
+    assert.ok(start.visual.lines.every(line=>line.cue>0));
+    const result = exercises.find(step=>step.title==='Ejercicio 1 · Qué significa la respuesta');
     assert.ok(result.visual.lines.at(-1).label);
     assert.ok(result.visual.lines.at(-1).value);
   }
   assert.ok(numeric>50,'hay sustituciones reales además de fórmulas simbólicas');
+});
+
+test('las referencias visuales siguen los cues medidos del audio, no un porcentaje estimado',()=>{
+  const lecture=fullLectures()[0];
+  const audio=measuredAudio(lecture);
+  for(const reducedMotion of [false,true]){
+    const dom=fakeDom({reducedMotion});
+    const cleanup=mountAnimation(dom.container,lecture,{audio});
+    const media=dom.byTag('audio');
+    const rows=dom.created.find(node=>node.className==='slide-board').children[1].children;
+    for(const cueIndex of [0,2,4,0,lecture.steps[0].cues.length-1,0]){
+      const current=Math.min(cueIndex,audio.scenes[0].cues.length-1);
+      media.currentTime=audio.scenes[0].cues[current].start+0.001;
+      media.dispatch('timeupdate');
+      rows.forEach((row,index)=>assert.equal(row.hidden,lecture.steps[0].visual.lines[index].cue>current));
+    }
+    cleanup();dom.cleanupCheck();
+  }
 });
 
 test('audio pausado o descartado no puede revivir por un play tardío', async () => {
