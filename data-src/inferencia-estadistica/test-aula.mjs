@@ -1,3 +1,25 @@
+test('La resolución revela cada operación sin perder la interpretación ni el registro de ayuda', () => {
+  const {document, aula, click} = harness();
+  try {
+    aula.setView('practice');
+    const solution = document.querySelector('[data-solution]');
+    solution.open = true;
+    const steps = Array.from(solution.querySelectorAll('[data-worked-step]'));
+    assert.ok(steps.length > 1);
+    assert.equal(steps.filter(step => !step.hidden).length, 1);
+    const forward = solution.querySelector('[data-solution-step="1"]');
+    for (let index = 1; index < steps.length; index++) {
+      click(forward);
+      assert.equal(steps.filter(step => !step.hidden).length, index + 1);
+      assert.equal(steps[index].getAttribute('aria-current'), 'step');
+    }
+    assert.equal(solution.querySelector('.interpretation').hidden, false);
+    assert.equal(forward.disabled, true);
+    click(solution.querySelector('[data-solution-step="-1"]'));
+    assert.equal(solution.querySelector('.interpretation').hidden, true);
+    assert.ok(Object.values(aula.progress.attempts).some(attempt => attempt.assisted));
+  } finally {aula.dispose();}
+});
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync, existsSync, readdirSync, cpSync, mkdtempSync, rmSync, writeFileSync} from 'node:fs';

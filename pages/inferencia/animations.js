@@ -276,10 +276,18 @@ export function createLessonAnimation(lesson, createExercise, paragraphs) {
   const demo = ANIMATIONS.find(item => item.id === demoId);
   if (demo) steps.push(...demo.steps.map(step => ({...step,title:`Demostración · ${step.title}`,data:{...step.data,chapter:'Demostración visual'}})));
   exercises.forEach((exercise,index) => {
-    steps.push(narrate(`Ejercicio ${index+1}: planteamiento`, `Resolvamos ahora un problema nuevo. ${exercise.prompt} Los datos son los siguientes. ${exercise.given.join(' ')} Antes de calcular, fijamos los supuestos. ${exercise.assumptions.join(' ')}`, 'Ejercicios resueltos'));
+    const given = exercise.given.map(value => ({value}));
+    steps.push({...narrate(`Ejercicio ${index+1}: planteamiento`, `Resolvamos ahora un problema nuevo. ${exercise.prompt} Los datos son los siguientes. ${exercise.given.join(' ')} Antes de calcular, fijamos los supuestos. ${exercise.assumptions.join(' ')}`, 'Ejercicios resueltos'), visual:{label:exercise.title, lines:given}});
     exercise.questions.forEach((question,questionIndex) => {
-      steps.push(narrate(`Ejercicio ${index+1} · Apartado ${questionIndex+1}`, `La pregunta es: ${question.prompt} Buscamos ${question.unit}. Pensemos primero qué conjunto, intervalo o cantidad representa esa pregunta. ${question.hint}`, 'Ejercicios resueltos'));
-      question.steps.forEach((step,stepIndex) => steps.push(narrate(`E${index+1}.${questionIndex+1} · Paso ${stepIndex+1}: ${step.title}`,step.explanation,'Ejercicios resueltos',step.tex)));
+      const derivation = question.steps.map(step => {
+        const calculations = step.explanation.split(/[:;]/).map(value=>value.trim().replace(/\.$/,'')).filter(value=>/\d/.test(value) && value.includes('=') && /^[\d\s.,()+−\-×·*/^²³√!=<>≤≥]+$/u.test(value));
+        return [...(step.tex ? [{label:step.title,tex:step.tex}] : []),...calculations.map(value=>({label:step.title,value}))];
+      });
+      steps.push({...narrate(`Ejercicio ${index+1} · Apartado ${questionIndex+1}`, `La pregunta es: ${question.prompt} Buscamos ${question.unit}. Pensemos primero qué conjunto, intervalo o cantidad representa esa pregunta. ${question.hint}`, 'Ejercicios resueltos'), visual:{label:question.prompt,lines:given}});
+      question.steps.forEach((step,stepIndex) => {
+        const result = stepIndex === question.steps.length-1 ? [{label:question.unit,value:number(question.answer)}] : [];
+        steps.push({...narrate(`E${index+1}.${questionIndex+1} · Paso ${stepIndex+1}: ${step.title}`,step.explanation,'Ejercicios resueltos',step.tex),visual:{label:step.title,lines:[...given,...derivation.slice(0,stepIndex+1).flat(),...result]}});
+      });
     });
   });
   steps.push(narrate('Errores que conviene reconocer', `Antes de terminar, repasemos los errores que pueden cambiar el significado del resultado. ${lesson.pitfalls.join(' ')} Un número correcto solo es útil si responde a la pregunta original y respeta sus supuestos.`, 'Repaso'));
@@ -297,7 +305,12 @@ export function createLessonAnimation(lesson, createExercise, paragraphs) {
     }
     let time = 0;
     const cues = chunks.map(text => { const start=time; time+=Math.max(2,text.split(/\s+/).length/2.5+0.6); return {text,start,end:time}; });
-    return {...step,cues,duration:time};
+    const visual = step.visual || (step.kind === 'lesson' ? {
+      label:step.data.chapter,
+      lines:step.tex ? [{tex:step.tex}] : lesson.formulas.map(formula => ({tex:formula.tex})),
+      process:lesson.method.map((text,index) => ({label:`${index+1}`,value:text.split(/\s+/).slice(0,7).join(' ')}))
+    } : undefined);
+    return {...step,...(visual ? {visual} : {}),cues,duration:time};
   })};
 }
 
@@ -320,13 +333,14 @@ function timestamp(seconds) {
   return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(wholeSeconds).padStart(2, '0')}.${String(milliseconds % 1000).padStart(3, '0')}`;
 }
 
-export function buildVtt(animationId) {
+export function buildVtt(animationId, timeline) {
   let start = 0;
   let identifier = 0;
-  const cues = findAnimation(animationId).steps.flatMap(step => {
-    const result = (step.cues || [{text:step.caption,start:0,end:step.duration}]).map(segment => {
+  const cues = findAnimation(animationId).steps.flatMap((step, index) => {
+    const result = (timeline?.[index].cues || step.cues || [{text:step.caption,start:0,end:step.duration}]).map(segment => {
       const caption = segment.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      return `${++identifier}\n${timestamp(start+segment.start)} --> ${timestamp(start+segment.end)}\n${caption}\n`;
+      const offset = timeline ? 0 : start;
+      return `${++identifier}\n${timestamp(offset+segment.start)} --> ${timestamp(offset+segment.end)}\n${caption}\n`;
     });
     start += step.duration;
     return result;
@@ -699,18 +713,40 @@ function drawScatter(context, width, height, data, progress) {
 
 const renderers = {bars: drawBars, curve: drawCurve, dots: drawDots, matrix: drawMatrix, scatter: drawScatter};
 const mountedPlayers = new WeakMap();
+let activePlayback = null;
 
-export function mountAnimation(container, animationId, {formatMath} = {}) {
+function audioTimeline(audio, animation) {
+  if (!audio || typeof audio.src !== 'string' || !/^(?:https?:\/\/|\/|\.\.?\/)/.test(audio.src) || !Number.isFinite(audio.duration) || audio.duration <= 0 || !Array.isArray(audio.scenes) || audio.scenes.length !== animation.steps.length) return null;
+  const coherent = (start, end) => Number.isFinite(start) && Number.isFinite(end) && start >= 0 && end > start && end <= audio.duration;
+  let previous = 0;
+  for (const [index, measured] of audio.scenes.entries()) {
+    const expected = animation.steps[index].cues || [{text:animation.steps[index].caption}];
+    if (!coherent(measured?.start, measured?.end) || measured.start < previous || !Array.isArray(measured.cues) || measured.cues.length !== expected.length) return null;
+    let cueEnd = measured.start;
+    for (const [cueIndex, cue] of measured.cues.entries()) {
+      if (!coherent(cue?.start, cue?.end) || cue.start < cueEnd || cue.start < measured.start || cue.end > measured.end || cue.text !== expected[cueIndex].text) return null;
+      cueEnd = cue.end;
+    }
+    previous = measured.end;
+  }
+  return audio.scenes;
+}
+
+export function mountAnimation(container, animationId, {formatMath, audio} = {}) {
   const animation = findAnimation(animationId);
   const document = container?.ownerDocument;
   if (!document?.createElement || typeof container.replaceChildren !== 'function') throw new TypeError('Se necesita un contenedor DOM');
   mountedPlayers.get(container)?.();
+  const tree = container.getRootNode?.() || document;
+  const fullscreenElement = () => tree.fullscreenElement || document.fullscreenElement;
+  const focusedElement = () => tree.activeElement || document.activeElement;
   const view = document.defaultView || globalThis;
   const now = () => view.performance?.now?.() ?? Date.now();
   const hasRaf = typeof view.requestAnimationFrame === 'function' && typeof view.cancelAnimationFrame === 'function';
   const requestFrame = handler => hasRaf ? view.requestAnimationFrame(handler) : view.setTimeout(() => handler(now()), 33);
   const cancelFrame = handle => hasRaf ? view.cancelAnimationFrame(handle) : view.clearTimeout(handle);
-  const reducedMotion = view.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+  const motionQuery = view.matchMedia?.('(prefers-reduced-motion: reduce)');
+  let reducedMotion = motionQuery?.matches ?? false;
   const listeners = [];
   const urls = new Set();
   const downloadTimers = new Set();
@@ -725,6 +761,27 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   let logicalWidth = 640;
   let logicalHeight = 360;
   let pixelRatio = 1;
+  let timeline = audioTimeline(audio, animation);
+  let mediaClock = null;
+  let playAttempt = 0;
+  let fullscreenAttempt = 0;
+  let focusBeforeExpand = null;
+  let cueNodes = [];
+  let boardNodes = [];
+  let lastCue = -1;
+  let lastBoardReveal = -1;
+  let currentTime = 0;
+  const estimatedTimeline = () => {
+    let offset = 0;
+    return animation.steps.map(step => {
+      const start = offset;
+      offset += step.duration;
+      return {start,end:offset,cues:(step.cues || [{text:step.caption,start:0,end:step.duration}]).map(cue => ({...cue,start:start+cue.start,end:start+cue.end}))};
+    });
+  };
+  const estimates = estimatedTimeline();
+  const scenes = () => timeline || estimates;
+  const duration = () => timeline ? audio.duration : estimates.at(-1).end;
 
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -772,15 +829,21 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   stage.append(board);
   const math = element('div', 'animation-math');
   math.style.overflowX = 'auto';
+  stage.append(math);
   const caption = element('p', 'animation-caption');
   caption.setAttribute('aria-live', 'polite');
   caption.setAttribute('aria-atomic', 'true');
   const layout = element('div','lecture-layout');
   const media = element('div','lecture-media');
   const narration = element('div','lecture-narration');
-  narration.append(element('p','eyebrow','NARRACIÓN · SUBTÍTULOS'),caption);
-  media.append(stage,math);
+  const cueList = element('ol','animation-cues');
+  cueList.setAttribute('aria-label','Fragmentos de la escena');
+  narration.append(element('p','eyebrow','NARRACIÓN'),caption,cueList);
+  media.append(stage);
   layout.append(media,narration);
+  const error = element('p','animation-audio-error');
+  error.setAttribute('role','status');
+  error.hidden = true;
   const controls = element('div', 'animation-controls');
   controls.setAttribute('role', 'group');
   controls.setAttribute('aria-label', 'Reproducción de la lección');
@@ -789,13 +852,10 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   const pause = button('pause', 'Pausar', stop);
   const next = button('step-forward', 'Escena siguiente', () => goTo(index + 1));
   const reset = button('rotate-ccw', 'Reiniciar', () => { stop(); goTo(0); });
-  const expand = button('maximize','Ampliar clase', () => {
-    const focused = root.className.includes('is-focused');
-    root.className = focused ? 'animation-player' : 'animation-player is-focused';
-    expand.setAttribute('aria-pressed',String(!focused));
-    expand.title = focused ? 'Ampliar clase' : 'Salir de la vista ampliada';
-    resize();
-  });
+  const expand = button('maximize','Ampliar clase', toggleFullscreen);
+  const minimizeIcon = icon('minimize');
+  minimizeIcon.setAttribute('hidden','');
+  expand.append(minimizeIcon);
   expand.setAttribute('aria-pressed','false');
   const seekField = element('label', 'control-field', 'Escena');
   const seek = element('input');
@@ -806,6 +866,14 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   seek.setAttribute('aria-label', 'Seleccionar escena');
   seekField.append(seek);
   listen(seek, 'input', () => { goTo(Number(seek.value)); syncControls(); });
+  const timelineField = element('label','control-field animation-timeline');
+  const timeSeek = element('input');
+  timeSeek.type = 'range';
+  timeSeek.min = '0';
+  timeSeek.step = '0.01';
+  timeSeek.setAttribute('aria-label','Tiempo de reproducción');
+  timelineField.append(timeSeek);
+  listen(timeSeek,'input',()=>{ seekTo(Number(timeSeek.value)); });
   const speedField = element('label', 'control-field', 'Velocidad');
   const speedSelect = element('select');
   speedSelect.setAttribute('aria-label', 'Velocidad de reproducción');
@@ -821,6 +889,9 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
     if (![0.5, 1, 1.5, 2].includes(requestedSpeed)) { speedSelect.value = String(speed); return; }
     if (running) advance(now());
     speed = requestedSpeed;
+    if (mediaClock) {
+      try { mediaClock.playbackRate = speed; } catch { failAudio(); }
+    }
     previousTime = running ? now() : null;
     syncControls();
     draw();
@@ -829,7 +900,10 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   position.setAttribute('aria-label', 'Escena actual y total');
   const clock = element('output');
   clock.setAttribute('aria-label', 'Tiempo de la lección');
-  controls.append(back, play, pause, next, reset, expand, seekField, speedField, position, clock);
+  controls.append(back, play, pause, next, expand, speedField, position, clock, timelineField);
+  const options = element('details','animation-options');
+  options.append(element('summary','','Opciones'));
+  options.append(reset,seekField);
   let outline = null;
   if (animation.kind === 'lecture') {
     const field = element('label','control-field lecture-outline','Parte de la clase');
@@ -847,7 +921,7 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
       chapter.append(option);
     }
     field.append(outline);
-    controls.append(field);
+    options.append(field);
     listen(outline,'change',()=>{ goTo(Number(outline.value)); syncControls(); });
   }
   const transcript = element('details', 'animation-transcript');
@@ -860,12 +934,108 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   });
   transcript.append(transcriptList);
   const downloads = element('div', 'animation-downloads');
-  const vttDownload = button('download', 'Descargar subtítulos WebVTT', () => download(buildVtt(animationId), 'vtt', 'text/vtt;charset=utf-8'), 'Subtítulos .vtt');
+  const vttDownload = button('download', 'Descargar subtítulos WebVTT', () => download(buildVtt(animationId, scenes()), 'vtt', 'text/vtt;charset=utf-8'), 'Subtítulos .vtt');
   const txtDownload = button('file-text', 'Descargar guion de narración', () => download(animation.steps.map(step => step.caption).join('\n\n'), 'txt', 'text/plain;charset=utf-8'), 'Guion .txt');
   vttDownload.disabled = txtDownload.disabled = !view.URL?.createObjectURL || !view.Blob;
   downloads.append(vttDownload, txtDownload);
-  root.append(heading, layout, controls, transcript, downloads);
+  options.append(transcript,downloads);
+  root.append(heading, layout, controls, error, options);
   container.replaceChildren(root);
+
+  if (timeline) {
+    try {
+      mediaClock = element('audio');
+      mediaClock.preload = 'metadata';
+      mediaClock.src = audio.src;
+      mediaClock.hidden = true;
+      root.append(mediaClock);
+      listen(mediaClock,'error',failAudio);
+      listen(mediaClock,'loadedmetadata',()=>{
+        if (mediaClock && (!Number.isFinite(mediaClock.duration) || Math.abs(mediaClock.duration-audio.duration)>Math.max(0.5,audio.duration*0.01))) failAudio();
+      });
+      listen(mediaClock,'timeupdate',()=>{ if (mediaClock) { seekFromClock(); syncControls(); draw(); } });
+      listen(mediaClock,'seeking',()=>{ if (mediaClock) { seekFromClock(); syncControls(); draw(); } });
+      listen(mediaClock,'ended',()=>{ if (mediaClock) { setPosition(duration()); stop(false); } });
+      listen(mediaClock,'pause',()=>{ if (mediaClock && running) { seekFromClock(); stop(false); } });
+      listen(mediaClock,'play',()=>{
+        if (mediaClock && (!running || disposed)) mediaClock.pause();
+      });
+    } catch { failAudio(); }
+  } else if (audio) {
+    error.textContent = 'Audio incompatible con el guion. Reproducción sin audio.';
+    error.hidden = false;
+  }
+
+  function failAudio() {
+    if (disposed || !timeline) return;
+    const measured = scenes()[index];
+    const fraction = Math.max(0,Math.min(1,elapsed/(measured.end-measured.start)));
+    const failed = mediaClock;
+    mediaClock = null;
+    timeline = null;
+    playAttempt++;
+    failed?.pause();
+    failed?.removeAttribute('src');
+    failed?.load?.();
+    failed?.remove();
+    error.textContent = 'No se pudo reproducir el audio. Continúa sin audio.';
+    error.hidden = false;
+    previousTime = running ? now() : null;
+    setPosition(estimates[index].start+fraction*animation.steps[index].duration);
+    syncControls();
+    draw();
+    if (running && frame === null) frame = requestFrame(tick);
+  }
+
+  function expanded() { return fullscreenElement() === root || root.className.includes('is-focused'); }
+
+  function focusMode(focused) {
+    root.className = focused ? 'animation-player is-focused' : 'animation-player';
+    expand.setAttribute('aria-pressed',String(focused));
+    const label = focused ? 'Salir de la vista ampliada' : 'Ampliar clase';
+    expand.title = label;
+    expand.setAttribute('aria-label',label);
+    Array.from(expand.children).forEach((node,index)=>{
+      if ((index === 0) === focused) node.setAttribute('hidden','');
+      else node.removeAttribute('hidden');
+    });
+    if (focused) {
+      root.setAttribute('role','dialog');
+      root.setAttribute('aria-modal','true');
+      focusBeforeExpand ||= focusedElement();
+      expand.focus?.();
+    } else {
+      root.removeAttribute('role');
+      root.removeAttribute('aria-modal');
+      focusBeforeExpand?.focus?.();
+      focusBeforeExpand = null;
+    }
+    resize();
+  }
+
+  function exitFullscreen() {
+    fullscreenAttempt++;
+    if (fullscreenElement() === root && document.exitFullscreen) {
+      try { Promise.resolve(document.exitFullscreen()).catch(()=>{}); } catch {}
+    }
+    focusMode(false);
+  }
+
+  function toggleFullscreen() {
+    if (disposed) return;
+    if (expanded()) { exitFullscreen(); return; }
+    const attempt = ++fullscreenAttempt;
+    focusMode(true);
+    if (root.requestFullscreen) {
+      try {
+        Promise.resolve(root.requestFullscreen()).then(()=>{
+          if (disposed || attempt !== fullscreenAttempt) {
+            if (fullscreenElement() === root) Promise.resolve(document.exitFullscreen?.()).catch(()=>{});
+          } else focusMode(true);
+        }).catch(()=>{ if (!disposed && attempt === fullscreenAttempt) focusMode(true); });
+      } catch { focusMode(true); }
+    }
+  }
 
   function download(text, extension, mime) {
     if (disposed || !view.URL?.createObjectURL || !view.Blob) return;
@@ -891,13 +1061,28 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
     next.disabled = index === animation.steps.length - 1;
     play.disabled = running;
     pause.disabled = !running;
+    play.hidden = running;
+    pause.hidden = !running;
     seek.value = String(index);
     if (outline) outline.value = String(index);
     seek.setAttribute('aria-valuetext', `${index + 1} de ${animation.steps.length}: ${animation.steps[index].title}`);
     position.textContent = `Escena ${index + 1} de ${animation.steps.length}`;
-    const totalElapsed = animation.steps.slice(0, index).reduce((sum, step) => sum + step.duration, 0) + elapsed;
+    const totalElapsed = currentTime;
+    timeSeek.max = String(duration());
+    timeSeek.value = String(totalElapsed);
     const clockText = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
-    clock.textContent = `${clockText(totalElapsed)} / ${clockText(animationDuration(animationId))}`;
+    clock.textContent = `${clockText(totalElapsed)} / ${clockText(duration())}`;
+    timeSeek.setAttribute('aria-valuetext',clock.textContent);
+  }
+
+  function mathContent(node, tex) {
+    node.textContent = tex || '';
+    if (tex && typeof formatMath === 'function') {
+      try {
+        const html = formatMath(tex);
+        if (typeof html === 'string') node.innerHTML = html;
+      } catch { node.textContent = tex; }
+    }
   }
 
   function syncScene() {
@@ -906,24 +1091,44 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
     board.hidden = step.kind !== 'lesson';
     canvas.style.display = step.kind === 'lesson' ? 'none' : 'block';
     board.replaceChildren();
+    boardNodes = [];
+    lastBoardReveal = -1;
+    board.scrollTop = 0;
     if (step.kind === 'lesson') {
-      board.append(element('p','eyebrow',step.data.chapter),element('h3','',step.title));
-      const points = element('ol','slide-points');
-      step.cues.forEach(cue => points.append(element('li','',cue.text)));
-      board.append(points);
-      board.scrollTop = 0;
+      const visual = step.visual || {label:step.title,lines:step.tex ? [{tex:step.tex}] : []};
+      board.append(element('p','eyebrow',visual.label));
+      const derivation = element('ol','board-derivation');
+      for (const line of [...visual.lines,...(visual.process || [])]) {
+        const row = element('li','board-line');
+        if (line.label) row.append(element('span','board-label',line.label));
+        const expression = element('div',line.tex ? 'board-expression' : 'board-value');
+        if (line.tex) mathContent(expression,line.tex);
+        else expression.textContent = line.value;
+        row.append(expression);
+        derivation.append(row);
+        boardNodes.push(row);
+      }
+      board.append(derivation);
     }
+    for (const row of cueNodes) row.children[0].onclick = null;
+    cueList.replaceChildren();
+    lastCue = -1;
+    cueNodes = scenes()[index].cues.map((cue,cueIndex)=>{
+      const row = element('li');
+      const jump = element('button','cue-jump',cue.text);
+      jump.type = 'button';
+      jump.title = `Ir al fragmento ${cueIndex+1}`;
+      jump.setAttribute('aria-label',`${jump.title}: ${cue.text}`);
+      jump.onclick = () => { if (!disposed) seekTo(scenes()[index].cues[cueIndex].start); };
+      row.append(jump);
+      cueList.append(row);
+      return row;
+    });
     syncSubtitle();
     canvas.textContent = step.caption;
     canvas.setAttribute('aria-label', `${step.title}. ${step.caption}`);
-    math.hidden = !step.tex;
-    math.textContent = step.tex || '';
-    if (step.tex && typeof formatMath === 'function') {
-      try {
-        const html = formatMath(step.tex);
-        if (typeof html === 'string') math.innerHTML = html;
-      } catch { math.textContent = step.tex; }
-    }
+    math.hidden = !step.tex || step.kind === 'lesson';
+    mathContent(math,step.tex);
   }
 
   function draw() {
@@ -937,7 +1142,18 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
     context.textAlign = 'left';
     const step = animation.steps[index];
     if (step.kind === 'lesson') return;
-    renderers[step.kind](context, logicalWidth, logicalHeight, step.data, reducedMotion ? 0 : elapsed / step.duration);
+    const progress = reducedMotion ? 1 : Math.max(0,Math.min(1,elapsed/(scenes()[index].end-scenes()[index].start)));
+    stage.setAttribute('data-progress',String(progress));
+    const reveal = reducedMotion ? 1 : Math.min(1,progress*2.5);
+    context.save();
+    context.beginPath();
+    context.rect(0,0,logicalWidth,48);
+    context.rect(0,logicalHeight-48,logicalWidth,48);
+    context.rect(0,48,52,logicalHeight-96);
+    context.rect(52,48,(logicalWidth-52)*reveal,logicalHeight-96);
+    context.clip();
+    renderers[step.kind](context, logicalWidth, logicalHeight, step.data, progress);
+    context.restore();
   }
 
   function resize(entries) {
@@ -958,48 +1174,75 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
 
   function goTo(requestedIndex) {
     if (disposed || !Number.isInteger(requestedIndex) || requestedIndex < 0 || requestedIndex >= animation.steps.length) return;
-    index = requestedIndex;
-    elapsed = 0;
+    seekTo(scenes()[requestedIndex].start);
+  }
+
+  function setPosition(seconds) {
+    currentTime = Math.max(0,Math.min(duration(),seconds));
+    const oldIndex = index;
+    const found = scenes().findIndex((step,sceneIndex)=> currentTime < (scenes()[sceneIndex+1]?.start ?? duration()) && currentTime >= step.start);
+    index = found < 0 ? (currentTime < scenes()[0].start ? 0 : animation.steps.length-1) : found;
+    elapsed = Math.max(0,Math.min(scenes()[index].end-scenes()[index].start,currentTime-scenes()[index].start));
+    if (oldIndex !== index || !cueNodes.length) syncScene();
+    syncSubtitle();
+  }
+
+  function seekTo(seconds) {
+    if (disposed || !Number.isFinite(seconds)) return;
+    if (mediaClock) {
+      try { mediaClock.currentTime = Math.max(0,Math.min(duration(),seconds)); } catch { failAudio(); }
+    }
+    setPosition(seconds);
     previousTime = running ? now() : null;
-    syncScene();
+    if (currentTime >= duration()) stop(false);
     syncControls();
     draw();
   }
 
+  function seekFromClock() {
+    if (mediaClock && Number.isFinite(mediaClock.currentTime)) {
+      setPosition(mediaClock.currentTime);
+      if (currentTime >= duration()) stop(false);
+    }
+  }
+
   function advance(time) {
     if (!running) return;
-    elapsed += Math.max(0, time - previousTime) / 1000 * speed;
+    if (mediaClock) { seekFromClock(); return; }
+    setPosition(currentTime+Math.max(0,time-previousTime)/1000*speed);
     previousTime = time;
-    const oldIndex = index;
-    while (elapsed >= animation.steps[index].duration) {
-      if (index === animation.steps.length - 1) {
-        elapsed = animation.steps[index].duration;
-        running = false;
-        if (frame !== null) cancelFrame(frame);
-        frame = null;
-        previousTime = null;
-        break;
-      }
-      elapsed -= animation.steps[index].duration;
-      index++;
-    }
-    if (index !== oldIndex) syncScene();
-    syncSubtitle();
+    if (currentTime >= duration()) stop(false);
   }
 
   function syncSubtitle() {
-    const step = animation.steps[index];
-    if (!step.cues) { caption.textContent=step.caption; return; }
-    const active = Math.max(0,step.cues.findIndex(cue=>elapsed<cue.end));
-    const cueIndex = elapsed >= step.duration ? step.cues.length-1 : active;
-    const changed = caption.textContent !== step.cues[cueIndex].text;
-    if (changed) caption.textContent=step.cues[cueIndex].text;
-    const points = board.children[2]?.children || [];
-    for (const [pointIndex,point] of Array.from(points).entries()) {
-      point.setAttribute('data-revealed',String(reducedMotion || pointIndex<=cueIndex));
-      point.setAttribute('data-active',String(pointIndex===cueIndex));
-      if (changed && pointIndex===cueIndex && point.offsetTop > board.scrollTop+board.clientHeight-80) board.scrollTop = point.offsetTop-board.offsetTop-100;
+    const cues = scenes()[index].cues;
+    let cueIndex = 0;
+    for (const [candidate,cue] of cues.entries()) if (currentTime >= cue.start) cueIndex = candidate;
+    if (caption.textContent !== cues[cueIndex].text) caption.textContent = cues[cueIndex].text;
+    if (lastCue !== cueIndex) {
+      cueNodes.forEach((node,position)=>{
+        if (position === cueIndex) node.setAttribute('aria-current','true');
+        else node.removeAttribute('aria-current');
+      });
+      lastCue = cueIndex;
     }
+    const progress = reducedMotion ? 1 : Math.max(0,Math.min(1,elapsed/(scenes()[index].end-scenes()[index].start)));
+    stage.setAttribute('data-progress',String(progress));
+    const visible = reducedMotion ? boardNodes.length : Math.max(1,Math.ceil(progress*boardNodes.length));
+    boardNodes.forEach((node,position)=>{
+      const reveal = reducedMotion ? 1 : Math.max(0,Math.min(1,progress*boardNodes.length-position+1));
+      node.setAttribute('data-revealed',String(position<visible));
+      node.style.opacity = String(reveal);
+      node.style.transform = reducedMotion ? 'none' : `translateY(${(1-reveal)*10}px)`;
+    });
+    if (!reducedMotion && visible !== lastBoardReveal && boardNodes.length && board.clientHeight > 0) {
+      const current = boardNodes[Math.min(visible - 1, boardNodes.length - 1)];
+      const bottom = current.offsetTop + current.offsetHeight + 16;
+      if (bottom > board.scrollTop + board.clientHeight) board.scrollTop = bottom - board.clientHeight;
+      lastBoardReveal = visible;
+    }
+    const formulaProgress = reducedMotion ? 1 : Math.max(0,Math.min(1,(progress-0.2)/0.6));
+    math.style.clipPath = `inset(0 ${(1-formulaProgress)*100}% 0 0)`;
   }
 
   function tick(time) {
@@ -1015,17 +1258,33 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
 
   function start() {
     if (disposed || running || document.hidden || document.visibilityState === 'hidden' || root.closest?.('[hidden]')) return;
-    if (index === animation.steps.length - 1 && elapsed >= animation.steps[index].duration) goTo(0);
+    if (currentTime >= duration()) goTo(0);
+    activePlayback?.();
+    activePlayback = stop;
     running = true;
     previousTime = now();
     syncControls();
     frame = requestFrame(tick);
+    if (mediaClock) {
+      const attempt = ++playAttempt;
+      const requestedMedia = mediaClock;
+      try { Promise.resolve(requestedMedia.play()).then(()=>{
+        if ((disposed || !running || attempt !== playAttempt) && (mediaClock !== requestedMedia || !running)) requestedMedia.pause();
+      }).catch(()=>{ if (!disposed && running && attempt === playAttempt) failAudio(); }); }
+      catch { failAudio(); }
+    }
   }
 
-  function stop() {
+  function stop(account = true) {
     if (disposed) return;
-    if (running && !document.hidden && document.visibilityState !== 'hidden') advance(now());
+    if (account && running) {
+      if (mediaClock) seekFromClock();
+      else if (!document.hidden && document.visibilityState !== 'hidden') advance(now());
+    }
     running = false;
+    playAttempt++;
+    mediaClock?.pause();
+    if (activePlayback === stop) activePlayback = null;
     previousTime = null;
     if (frame !== null) cancelFrame(frame);
     frame = null;
@@ -1035,12 +1294,23 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
 
   listen(document, 'visibilitychange', () => { if (document.hidden || document.visibilityState === 'hidden') stop(); });
   listen(view,'keydown',event => {
-    if (event.key === 'Escape' && root.className.includes('is-focused')) { root.className='animation-player'; expand.setAttribute('aria-pressed','false'); expand.title='Ampliar clase'; resize(); }
+    if (event.key === 'Escape' && expanded()) exitFullscreen();
+    if (event.key === 'Tab' && expanded() && root.querySelectorAll) {
+      const nodes = Array.from(root.querySelectorAll('button:not([disabled]), input, select, summary')).filter(node=>!node.hidden && (!node.closest('details:not([open])') || (node.tagName.toLowerCase() === 'summary' && !node.parentElement.parentElement.closest('details:not([open])'))));
+      const first = nodes[0], last = nodes.at(-1);
+      if (event.shiftKey && focusedElement() === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && focusedElement() === last) { event.preventDefault(); first?.focus(); }
+    }
   });
+  const syncFullscreen = () => { if (!disposed) focusMode(fullscreenElement() === root); };
+  listen(document,'fullscreenchange',syncFullscreen);
+  listen(root,'fullscreenchange',syncFullscreen);
+  if (motionQuery?.addEventListener) listen(motionQuery,'change',event=>{ reducedMotion = event.matches; draw(); });
   if (typeof view.ResizeObserver === 'function') {
     observer = new view.ResizeObserver(resize);
     observer.observe(stage);
-  } else listen(view, 'resize', resize);
+  }
+  listen(view, 'resize', resize);
   syncScene();
   syncControls();
   resize();
@@ -1048,7 +1318,19 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   const cleanup = () => {
     if (disposed) return;
     disposed = true;
+    playAttempt++;
+    fullscreenAttempt++;
     running = false;
+    if (activePlayback === stop) activePlayback = null;
+    if (fullscreenElement() === root) {
+      try { Promise.resolve(document.exitFullscreen?.()).catch(()=>{}); } catch {}
+    }
+    focusBeforeExpand?.focus?.();
+    const detachedMedia = mediaClock;
+    mediaClock = null;
+    detachedMedia?.pause();
+    detachedMedia?.removeAttribute('src');
+    detachedMedia?.load?.();
     if (frame !== null) cancelFrame(frame);
     frame = null;
     for (const timer of downloadTimers) view.clearTimeout(timer);
@@ -1057,6 +1339,7 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
     urls.clear();
     observer?.disconnect();
     for (const removeListener of listeners) removeListener();
+    for (const row of cueNodes) row.children[0].onclick = null;
     root.remove();
     if (mountedPlayers.get(container) === cleanup) mountedPlayers.delete(container);
   };

@@ -21,10 +21,11 @@ export default {
       items: [
         {to: '/', label: 'Mi progreso', position: 'left', activeBaseRegex: '^/inferencia/?$'},
         {to: '/temario/', label: 'Temario', position: 'left', activeBaseRegex: '^/inferencia/(temario|lecciones)(/|$)'},
+        {type: 'custom-symbols', label: 'Símbolos', position: 'left'},
+        {to: '/materiales/', label: 'Materiales', position: 'left'},
         {href: 'https://github.com/netraular/inferencia-estadistica-uoc', label: 'GitHub', position: 'right'}
       ]
     },
-    footer: {style: 'light', copyright: 'Material de apoyo independiente. No es una web oficial de la UOC.'},
     docs: {sidebar: {hideable: true}}
   }
 };

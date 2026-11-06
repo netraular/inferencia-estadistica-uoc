@@ -2,7 +2,6 @@
 
 Independent Spanish statistics classroom, published at
 https://webs.raular.com/inferencia/ from the `main` branch.
-It is not an official UOC website.
 
 ## Content and activities
 
@@ -10,8 +9,10 @@ It is not an official UOC website.
 - Prerendered theory, heading links, a table of contents and local full-text search.
 - 17 visual laboratories, 29 seeded exercise generators and 36 animated classes.
 - Concept checks, hints, worked solutions, subtitles, transcripts and downloads.
-- Each lesson starts with tabs for theory, concept checks, laboratory, exercises
-  and animated reading. The selected activity is linkable with `?actividad=...`;
+- Each lesson starts with four tabs: lesson, laboratory, exercises and animated
+  reading. Concept checks and the studied mark sit at the end of the lesson.
+  Symbols and downloadable materials are global navigation items.
+  The selected activity is linkable with `?actividad=...`;
   only the selected activity is mounted, with no duplicate internal navigation.
 - The short `/inferencia/` URL opens personal progress and a brief course overview;
   `/temario/` holds the reference map, with topics 0 to 4 and numbered lessons.
@@ -31,8 +32,10 @@ React embeds the existing classroom engine in an isolated Shadow DOM. Its
 navigation and CSS cannot overwrite Docusaurus routes, headings or styles.
 The old HTML is a tested, nonpublished activity-shell fixture, not a second site.
 
-Teaching PDFs, current assessments, credentials and local TTS output are not
-included. The examples are fictitious, not experimental evidence or medical advice.
+The eight supplied PDFs are published under `static/materiales/`, including the
+assessment statement. These downloads are public on the existing public site.
+Credentials, model weights and raw local TTS output are not included. The examples
+are fictitious, not experimental evidence or medical advice.
 
 ## Development and verification
 
@@ -72,6 +75,29 @@ Python preparation and tests run without PyTorch or a GPU. Synthesis requires
 an external CUDA/Ming installation. Weights, environments and generated audio
 stay outside Git; neither the site build nor its runtime needs Python or CUDA.
 The existing local audio-generation service is not migrated or restarted.
+
+## Published materials and audio
+
+Prepared MP3 files and their timing manifest live under `static/audio/`. Only
+complete lesson aggregates whose frozen scripts match the current course are
+included. The player uses audio time for playback, seeking and speed changes;
+lessons without audio use the estimated clock without autoplay. The visual
+whiteboard, progressive calculations and full scene captions share one player.
+Fullscreen uses the native browser API with an expanded fallback for mobile.
+
+Refresh the published assets after more lessons finish:
+
+```sh
+node scripts/prepare-media.mjs --pdf-root '/path/to/documents' --audio-root '/path/to/outputs/inferencia-estadistica'
+```
+
+The preparer verifies source signatures and complete WAVs, then encodes mono
+48 kbps MP3 using ffmpeg/ffprobe with one CPU thread. Those tools and local source
+directories are not required by the site build. Already validated assets can be
+retained when the source directories are unavailable. Scene boundaries come
+from measured audio; where phrase alignment is unavailable, cue highlighting is
+proportional within each scene and explicitly marked as approximate. It is not
+word-level forced alignment. The downloaded VTT uses the player's timeline.
 
 ## Deployment
 

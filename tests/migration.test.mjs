@@ -107,6 +107,13 @@ test('embedded classroom keeps routing and titles isolated and retains progress 
     assert.equal(document.title, 'Docusaurus lesson');
     assert.equal(document.getElementById('courseNav'), null);
     assert.deepEqual(mounted.aula.progress.studied, ['sucesos']);
+    mounted.root.getElementById('glossaryToggle').dispatchEvent(new window.Event('click', {bubbles:true}));
+    const dialog = mounted.root.getElementById('utilityDialog');
+    assert.equal(dialog.hasAttribute('open'), true);
+    mounted.root.getElementById('dialogContent').dispatchEvent(new window.Event('click', {bubbles:true}));
+    assert.equal(dialog.hasAttribute('open'), true);
+    dialog.dispatchEvent(new window.Event('click', {bubbles:true}));
+    assert.equal(dialog.hasAttribute('open'), false);
     for (const view of ['theory', 'lab', 'practice', 'animation']) {
       assert.equal(mounted.aula.setView(view), true);
       assert.equal(mounted.root.getElementById(`panel-${view}`).hidden, false);

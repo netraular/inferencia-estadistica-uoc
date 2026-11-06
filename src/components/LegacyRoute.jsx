@@ -7,7 +7,8 @@ export default function LegacyRoute() {
   useEffect(() => {
     const [lessonId, view] = window.location.hash.replace(/^#\/?/, '').split('/');
     if (!COURSE.units.some(unit => unit.lessons.some(lesson => lesson.id === lessonId))) return;
-    const query = ['theory', 'lab', 'practice', 'animation'].includes(view) ? `?actividad=${view}` : '';
+    const activity = view === 'theory' ? 'lesson' : view;
+    const query = ['lesson', 'lab', 'practice', 'animation'].includes(activity) ? `?actividad=${activity}` : '';
     window.location.replace(`${baseUrl}lecciones/${lessonId}/${query}`);
   }, [baseUrl]);
   return null;

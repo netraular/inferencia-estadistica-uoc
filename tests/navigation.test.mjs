@@ -1,0 +1,289 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import {runInNewContext} from 'node:vm';
+import path from 'node:path';
+import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {parseHTML} from 'linkedom';
+import {COURSE} from '../pages/inferencia/course.js';
+import {generateExercise} from '../pages/inferencia/exercises.js';
+import {mountAula} from '../pages/inferencia/app.js';
+
+const require = createRequire(import.meta.url);
+const babel = require('@babel/core');
+const preset = require.resolve('@docusaurus/core/lib/babel/preset');
+globalThis.jStat = require('jstat').jStat;
+
+function loadCompiled(relative, imports = {}, globals = {}) {
+  const filename = new URL(relative, import.meta.url);
+  const localRequire = createRequire(filename);
+  const {code} = babel.transformFileSync(filename.pathname, {
+    presets:[preset], plugins:['@babel/plugin-transform-modules-commonjs'], babelrc:false, configFile:false
+  });
+  const module = {exports:{}};
+  runInNewContext(code, {module, exports:module.exports, URLSearchParams,
+    require:specifier => Object.hasOwn(imports, specifier) ? imports[specifier] : localRequire(specifier), ...globals});
+  return module.exports;
+}
+
+function elements(element) {
+  if (!React.isValidElement(element)) return [];
+  return [element, ...React.Children.toArray(element.props.children).flatMap(elements)];
+}
+
+test('four Docusaurus tabs keep theory, studied state and progress inside lesson, and preserve old queries', () => {
+  const effects = [];
+  const studied = [];
+  const replacements = [];
+  const location = {pathname:'/inferencia/lecciones/sucesos/', search:'?actividad=theory&origen=temario', hash:'#ejemplo', state:{kept:true}};
+  const {default:LessonContent} = loadCompiled('../src/components/LessonContent.jsx', {
+    react:{...React, useEffect:effect => effects.push(effect)},
+    '@docusaurus/router':{useHistory:() => ({replace:value => replacements.push(value)}), useLocation:() => location},
+    '@theme/Tabs':({values, children}) => React.createElement('div', {'data-tabs':values.map(value => value.value).join(',')}, children),
+    '@theme/TabItem':({value, children}) => React.createElement('section', {'data-view':value}, children),
+    './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive':view}),
+    '../classroom/useCourseProgress':lessonId => {
+      assert.equal(lessonId, 'sucesos');
+      return {progress:{studied:['sucesos']}, warning:'Aviso de guardado', setStudied:value => studied.push(value)};
+    }
+  });
+  const element = LessonContent({lessonId:'sucesos', children:React.createElement('p', null, 'Contenido conservado')});
+  const {document} = parseHTML(renderToStaticMarkup(element));
+  assert.equal(document.querySelector('[data-tabs]').getAttribute('data-tabs'), 'lesson,lab,practice,animation');
+  const lesson = document.querySelector('[data-view="lesson"]');
+  assert.match(lesson.textContent, /Contenido conservado/);
+  assert.ok(lesson.querySelector('[data-interactive="theory"]'));
+  assert.ok(lesson.querySelector('input[type="checkbox"][checked]'));
+  assert.ok(lesson.querySelector('[role="status"]'));
+  assert.equal(document.querySelectorAll('input[type="checkbox"]').length, 1);
+  assert.equal(document.querySelectorAll('[data-view]:not([data-view="lesson"]) input').length, 0);
+  const tabs = elements(element).find(node => node.props.queryString === 'actividad');
+  assert.equal(tabs.props.lazy, true);
+  assert.equal(tabs.props.defaultValue, 'lesson');
+  elements(element).find(node => node.type === 'input').props.onChange({target:{checked:false}});
+  assert.deepEqual(studied, [false]);
+  effects[0]();
+  assert.equal(replacements[0].search, '?actividad=lesson&origen=temario');
+  assert.equal(replacements[0].pathname, location.pathname);
+  assert.equal(replacements[0].hash, location.hash);
+  assert.equal(replacements[0].state, location.state);
+  location.search = '?actividad=practice';
+  effects[0]();
+  assert.equal(replacements.length, 1);
+});
+
+test('legacy lesson links preserve every activity and normalize theory to lesson under baseUrl', () => {
+  const redirects = [];
+  const window = {location:{hash:'', replace:value => redirects.push(value)}};
+  const {default:LegacyRoute} = loadCompiled('../src/components/LegacyRoute.jsx', {
+    react:{useEffect:effect => effect()},
+    '@docusaurus/useBaseUrl':() => '/curso/',
+    '../../pages/inferencia/course.js':{COURSE}
+  }, {window});
+  for (const [view, expected] of [['theory','lesson'], ['lab','lab'], ['practice','practice'], ['animation','animation'], ['lesson','lesson']]) {
+    window.location.hash = `#/sucesos/${view}`;
+    LegacyRoute();
+    assert.equal(redirects.at(-1), `/curso/lecciones/sucesos/?actividad=${expected}`);
+  }
+  window.location.hash = '#sucesos';
+  LegacyRoute();
+  assert.equal(redirects.at(-1), '/curso/lecciones/sucesos/');
+  window.location.hash = '#not-a-lesson/theory';
+  LegacyRoute();
+  assert.equal(redirects.length, 6);
+});
+
+function renderSymbols(query = '') {
+  const effects = [];
+  const changes = [];
+  const focus = [];
+  let closed = 0;
+  const dialog = {
+    ownerDocument:{activeElement:{isConnected:true, focus:() => focus.push('trigger')}},
+    showModal:() => focus.push('modal'), close:() => focus.push('closed'),
+    querySelector:() => ({focus:() => focus.push('search')}),
+    getBoundingClientRect:() => ({left:100, right:600, top:100, bottom:700})
+  };
+  const components = loadCompiled('../src/components/SymbolsNavbarItem.jsx', {
+    react:{...React, useEffect:effect => effects.push(effect), useRef:() => ({current:dialog}), useId:() => 'symbols-test', useState:() => [query, value => changes.push(value)]},
+    '../../pages/inferencia/course.js':{COURSE}
+  });
+  const element = components.SymbolsDialog({id:'symbols-test', onClose:() => closed++});
+  return {element, components, dialog, effects, changes, focus, closed:() => closed};
+}
+
+test('native symbols modal preserves the glossary, labels, search, focus, X and Escape', () => {
+  const result = renderSymbols();
+  const {document} = parseHTML(renderToStaticMarkup(result.element));
+  assert.equal(document.querySelectorAll('dt').length, COURSE.glossary.length);
+  assert.equal(result.element.type, 'dialog');
+  assert.equal(result.element.props['aria-modal'], 'true');
+  assert.ok(document.getElementById(result.element.props['aria-labelledby']));
+  assert.ok(document.querySelector('label[for="symbols-test-search"]'));
+  const cleanup = result.effects[0]();
+  assert.deepEqual(result.focus, ['modal', 'search']);
+  elements(result.element).find(node => node.type === 'input').props.onChange({target:{value:'distribucion'}});
+  assert.deepEqual(result.changes, ['distribucion']);
+  let prevented = false;
+  result.element.props.onCancel({preventDefault() {prevented = true;}});
+  assert.equal(prevented, true);
+  elements(result.element).find(node => node.type === 'button').props.onClick();
+  assert.equal(result.closed(), 2);
+  cleanup();
+  assert.deepEqual(result.focus, ['modal', 'search', 'closed', 'trigger']);
+  const filtered = parseHTML(renderToStaticMarkup(renderSymbols('distribucion').element)).document;
+  assert.ok(filtered.querySelectorAll('dt').length > 0);
+  assert.ok(filtered.querySelectorAll('dt').length < COURSE.glossary.length);
+  assert.match(filtered.textContent || filtered.toString(), /distribuci/);
+  const symbol = parseHTML(renderToStaticMarkup(renderSymbols('\u03a9').element)).document;
+  assert.match(symbol.toString(), /Espacio muestral/);
+  const empty = parseHTML(renderToStaticMarkup(renderSymbols('no-such-symbol').element)).document;
+  assert.equal(empty.querySelectorAll('dt').length, 0);
+  assert.match(empty.toString(), /No hay coincidencias/);
+  const trigger = result.components.default({mobile:true, label:'Simbolos'});
+  assert.equal(trigger.type, 'li');
+  assert.equal(trigger.props.className, 'menu__list-item');
+  const button = elements(trigger).find(node => node.type === 'button');
+  assert.equal(button.props['aria-haspopup'], 'dialog');
+  assert.match(button.props.className, /menu__link/);
+  button.props.onClick();
+  assert.equal(result.changes.at(-1), true);
+});
+
+test('symbols modal closes only on a real click outside, never on content or dialog padding', () => {
+  const result = renderSymbols();
+  const click = result.element.props.onClick;
+  click({target:{}, currentTarget:result.dialog, clientX:0, clientY:0});
+  click({target:result.dialog, currentTarget:result.dialog, clientX:110, clientY:110});
+  assert.equal(result.closed(), 0);
+  click({target:result.dialog, currentTarget:result.dialog, clientX:90, clientY:110});
+  assert.equal(result.closed(), 1);
+  click({target:result.dialog, currentTarget:result.dialog, clientX:110, clientY:710});
+  assert.equal(result.closed(), 2);
+});
+
+test('materials group the manifest inventory and encode original download filenames under baseUrl', () => {
+  const documents = [
+    {title:'Documento de prueba', filename:'Tema con espacios + \u03a9 #?.pdf', size:2048, category:'Apuntes'},
+    {title:'Segundo documento', filename:'otra prueba.pdf', size:2097152, category:'Ejercicios'}
+  ];
+  const {default:MaterialsPage} = loadCompiled('../src/pages/materiales.jsx', {
+    '@theme/Layout':({children}) => React.createElement('div', null, children),
+    '@docusaurus/useBaseUrl':value => {assert.equal(value, '/materiales/'); return '/curso/pruebas/materiales/';},
+    '@site/static/materiales/manifest.json':{documents}
+  });
+  const {document} = parseHTML(renderToStaticMarkup(React.createElement(MaterialsPage)));
+  assert.equal(document.querySelectorAll('main section').length, 2);
+  const links = Array.from(document.querySelectorAll('a[download]'));
+  assert.equal(links.length, documents.length);
+  for (const [index, item] of documents.entries()) {
+    assert.equal(links[index].getAttribute('href'), `/curso/pruebas/materiales/${encodeURIComponent(item.filename)}`);
+    assert.equal(links[index].getAttribute('download'), item.filename);
+    assert.ok(links[index].getAttribute('aria-label').includes(item.title));
+  }
+  assert.match(document.toString(), /2 KiB/);
+  assert.match(document.toString(), /2 MiB/);
+});
+
+test('navbar registers global symbols and materials and has no general disclaimer footer', () => {
+  const source = readFileSync(new URL('../docusaurus.config.js', import.meta.url), 'utf8');
+  const {code} = babel.transformSync(source, {plugins:['@babel/plugin-transform-modules-commonjs'], babelrc:false, configFile:false});
+  const module = {exports:{}};
+  runInNewContext(code, {module, exports:module.exports});
+  const config = module.exports.default;
+  assert.equal(config.themeConfig.footer, undefined);
+  assert.equal(config.themeConfig.navbar.items.filter(item => item.type === 'custom-symbols').length, 1);
+  assert.equal(config.themeConfig.navbar.items.filter(item => item.to === '/materiales/').length, 1);
+  const original = () => null;
+  const symbols = () => null;
+  const registry = loadCompiled('../src/theme/NavbarItem/ComponentTypes.js', {
+    '@theme-original/NavbarItem/ComponentTypes':{default:original},
+    '@site/src/components/SymbolsNavbarItem':symbols
+  }).default;
+  assert.equal(registry.default, original);
+  assert.equal(registry['custom-symbols'], symbols);
+});
+
+test('production-compiled embed hides utilities without navigation and retains them for standalone use', () => {
+  const {document, window} = parseHTML('<html><body><div id="host"></div></body></html>');
+  window.HTMLCanvasElement.prototype.getContext = () => null;
+  window.HTMLElement.prototype.getBoundingClientRect = () => ({width:640, height:360});
+  window.HTMLElement.prototype.focus = () => {};
+  Object.defineProperty(window.HTMLSelectElement.prototype, 'value', {
+    configurable:true,
+    get() {return this.querySelector('option[selected]')?.value || this.querySelector('option')?.value || '';},
+    set(value) {for (const option of this.querySelectorAll('option')) {if (option.value === String(value)) option.setAttribute('selected', ''); else option.removeAttribute('selected');}}
+  });
+  window.matchMedia = () => ({matches:false});
+  const Parser = window.DOMParser;
+  window.DOMParser = class {
+    parseFromString(...args) {
+      const parsed = new Parser().parseFromString(...args);
+      const nodes = parsed.body.childNodes;
+      return {body:{childNodes:{length:nodes.length, [Symbol.iterator]:() => nodes[Symbol.iterator]()}}};
+    }
+  };
+  const {mountEmbeddedClassroom} = loadCompiled('../src/classroom/embed.mjs', {'../../pages/inferencia/app.js':{mountAula}});
+  const shell = readFileSync(new URL('../pages/inferencia-estadistica.html', import.meta.url), 'utf8');
+  const values = new Map();
+  const storage = {getItem:key => values.get(key), setItem:(key, value) => values.set(key, value)};
+  try {
+    for (const showNavigation of [false, true]) {
+      const mounted = mountEmbeddedClassroom(document.getElementById('host'), {shell, baseUrl:'/inferencia/', lessonId:'sucesos', view:'theory', storage, showNavigation});
+      try {
+        assert.ok(mounted.root.querySelector('.knowledge-check'));
+        assert.equal(mounted.root.querySelectorAll('.embedded-utilities button').length, showNavigation ? 3 : 0);
+        if (!showNavigation) {
+          assert.equal(mounted.root.getElementById('lessonTabs').style.display, 'none');
+          assert.equal(mounted.root.querySelector('.lesson-heading').style.display, 'none');
+          assert.ok(mounted.root.getElementById('glossaryToggle').closest('.sidebar'));
+          assert.ok(mounted.root.getElementById('sourcesToggle').closest('.sidebar'));
+          assert.ok(mounted.root.getElementById('settingsToggle').closest('.topbar'));
+        }
+      } finally {mounted.dispose();}
+    }
+  } finally {window.DOMParser = Parser;}
+});
+
+test('curriculum generation retains all lesson content and 0..4 links in native disclosures without the disclaimer', async () => {
+  const source = readFileSync(new URL('../scripts/generate-docs.mjs', import.meta.url), 'utf8');
+  const ast = babel.parseSync(source, {sourceType:'module', babelrc:false, configFile:false});
+  ast.program.body = ast.program.body.filter(node => node.type !== 'ImportDeclaration' && !(node.type === 'VariableDeclaration' && node.declarations.some(declaration => ['root','require'].includes(declaration.id.name))));
+  const {code} = babel.transformFromAstSync(ast, source, {babelrc:false, configFile:false});
+  const writes = new Map();
+  await runInNewContext(`(async () => {${code}})()`, {
+    root:'/fixture', path, COURSE, generateExercise, require,
+    mkdir:async () => {}, rm:async () => {}, cp:async () => {},
+    readFile:async () => '<html></html>', writeFile:async (filename, content) => writes.set(filename, content),
+    console:{log() {}}
+  });
+  const curriculum = writes.get('/fixture/docs/index.mdx');
+  const {compile} = await import('@mdx-js/mdx');
+  await compile(curriculum);
+  assert.match(curriculum, /slug: \/temario\n/);
+  assert.equal(Array.from(curriculum.matchAll(/<details className="curriculum-topic"/g)).length, 5);
+  assert.equal(Array.from(curriculum.matchAll(/<\/details>/g)).length, 5);
+  assert.ok(!/independiente|afiliada|no oficial|No se publican los PDF/.test(curriculum));
+  assert.match(curriculum, /Los ejemplos no son resultados experimentales ni recomendaciones clinicas/);
+  let count = 0;
+  for (const unit of COURSE.units) {
+    assert.ok(curriculum.includes(`<summary>Tema ${unit.number}: ${unit.title}`));
+    assert.ok(curriculum.includes(unit.description));
+    for (const [index, lesson] of unit.lessons.entries()) {
+      assert.ok(curriculum.includes(`[${unit.number}.${index + 1} ${lesson.title}](./${unit.id}/${lesson.id}.mdx)`));
+      const mdx = writes.get(`/fixture/docs/${unit.id}/${lesson.id}.mdx`);
+      assert.ok(mdx.includes(`slug: /lecciones/${lesson.id}`));
+      assert.ok(mdx.includes(`<LessonContent lessonId="${lesson.id}">`));
+      for (const section of lesson.sections) assert.ok(mdx.includes(section.body), lesson.id);
+      for (const formula of lesson.formulas) assert.ok(mdx.includes(JSON.stringify(formula.tex)), lesson.id);
+      for (const step of lesson.method) assert.ok(mdx.includes(step), lesson.id);
+      assert.ok(mdx.includes(lesson.example.body), lesson.id);
+      for (const pitfall of lesson.pitfalls) assert.ok(mdx.includes(pitfall), lesson.id);
+      assert.ok(mdx.includes('Ejemplo resuelto con el metodo'), lesson.id);
+      count++;
+    }
+  }
+  assert.equal(count, 36);
+});

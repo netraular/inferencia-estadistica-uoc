@@ -1,6 +1,6 @@
 import {COURSE} from './course.js?v=34212586c1fb';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer} from './exercises.js?v=bc4ede56ecec';
-import {createLessonAnimation, mountAnimation} from './animations.js?v=170dda6a1623';
+import {createLessonAnimation, mountAnimation} from './animations.js?v=ad9efe668113';
 import {mountLab} from './labs.js?v=49b11cab1519';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
@@ -149,7 +149,7 @@ export function mountAula(document, environment = {}) {
       const key = `${activeExercise.id}/${question.id}`;
       if (mode === 'guided' && !progress.attempts[key]?.solved) recordAssistance(progress, key);
       const solved = progress.attempts[key]?.solved;
-      return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}. ${solved ? 'Ya resolviste esta respuesta.' : ''}</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><ol>${question.steps.map(step => `<li><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
+      return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}. ${solved ? 'Ya resolviste esta respuesta.' : ''}</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><div class="worked-controls"><button type="button" class="icon-button" data-solution-step="-1" aria-label="Paso anterior" title="Paso anterior" disabled><i data-lucide="arrow-left" aria-hidden="true"></i></button><span data-step-position role="status">Paso 1 de ${question.steps.length}</span><button type="button" class="icon-button" data-solution-step="1" aria-label="Paso siguiente" title="Paso siguiente"${question.steps.length <= 1 ? ' disabled' : ''}><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ol>${question.steps.map((step, stepIndex) => `<li data-worked-step="${stepIndex}"${stepIndex ? ' hidden' : ' aria-current="step"'}><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math worked-calculation">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"${question.steps.length > 1 ? ' hidden' : ''}><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
     }).join('')}`;
     element('panel-practice').querySelectorAll('[data-solution]').forEach(details => {
       details.addEventListener('toggle', () => {
@@ -168,7 +168,7 @@ export function mountAula(document, environment = {}) {
 
   function renderAnimation() {
     const paragraphs = html => readParagraphs(document, html);
-    activeCleanup = mountAnimation(element('panel-animation'), createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math});
+    activeCleanup = mountAnimation(element('panel-animation'), createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math, audio:environment.getAudio?.(lesson().id)});
   }
 
   function renderView() {
@@ -296,6 +296,9 @@ export function mountAula(document, environment = {}) {
   });
   listen(element('settingsToggle'), 'click', settings);
   listen(element('dialogClose'), 'click', closeDialog);
+  listen(element('utilityDialog'), 'click', event => {
+    if (event.target === element('utilityDialog')) closeDialog();
+  });
   listen(element('glossaryToggle'), 'click', () => openDialog('Diccionario de símbolos', `<table class="symbol-table"><thead><tr><th>Símbolo</th><th>Nombre</th><th>Significado</th></tr></thead><tbody>${COURSE.glossary.map(item => `<tr><td>${escapeHtml(item.symbol)}</td><td>${escapeHtml(item.term)}</td><td>${escapeHtml(item.definition)}</td></tr>`).join('')}</tbody></table>`));
   listen(element('sourcesToggle'), 'click', () => openDialog('Materiales y cobertura', `<p>36 lecciones originales organizadas a partir de los cuatro temas aportados. El puente matemático es material adicional. La numeración de los ejercicios de multivariantes no coincide con la del Tema 4.</p>${COURSE.coverage.map(item => `<section><h3>${escapeHtml(item.document)}</h3><ul class="coverage-list">${item.topics.map(topic => `<li>${escapeHtml(topic)}</li>`).join('')}</ul></section>`).join('')}<section><h3>Práctica y límites</h3><p>Los ejercicios son nuevos ejemplos didácticos con variantes, no reproducciones de la PEC vigente. Las estimaciones, contrastes y el teorema central del límite que aparezcan como contexto adicional se distinguen del temario aportado. Los originales docentes no se publican en esta aula.</p><p>Las cifras biológicas son ficticias y las visualizaciones no son evidencia experimental. Las probabilidades se calculan con jStat 1.9.6; las fórmulas se representan con KaTeX 0.16.25.</p></section>`));
   listen(element('panel-practice'), 'change', event => {
@@ -307,6 +310,22 @@ export function mountAula(document, environment = {}) {
     const button = event.target.closest('button');
     if (!button) return;
     if (button.id === 'newExercise') { seed = seed === 4294967295 ? 1 : seed + 1; renderPractice(); icons(); }
+    if (button.dataset.solutionStep) {
+      const solution = button.closest('[data-solution]');
+      const steps = Array.from(solution.querySelectorAll('[data-worked-step]'));
+      const next = Math.max(0, Math.min(steps.length - 1, Number(solution.dataset.step || 0) + Number(button.dataset.solutionStep)));
+      solution.dataset.step = String(next);
+      steps.forEach((step, index) => {
+        step.hidden = index > next;
+        if (index === next) step.setAttribute('aria-current', 'step');
+        else step.removeAttribute('aria-current');
+      });
+      solution.querySelector('[data-step-position]').textContent = `Paso ${next + 1} de ${steps.length}`;
+      solution.querySelector('[data-solution-step="-1"]').disabled = next === 0;
+      solution.querySelector('[data-solution-step="1"]').disabled = next === steps.length - 1;
+      solution.querySelector('.interpretation').hidden = next < steps.length - 1;
+      assistance(solution.dataset.solution);
+    }
     if (button.dataset.hint) { element(`hint-${button.dataset.hint}`).hidden = false; assistance(button.dataset.hint); }
   });
   listen(element('panel-practice'), 'submit', event => {
