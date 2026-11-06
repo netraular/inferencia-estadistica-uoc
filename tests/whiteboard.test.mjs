@@ -41,6 +41,18 @@ test('all five topic zero lessons have a whiteboard plan for every unchanged nar
   assert.equal(planWhiteboardScene('sucesos',lectures[0].steps[0]),null);
 });
 
+test('scenes without explicit graphics never invent examples from lesson names or narration',()=>{
+  for(const id of WHITEBOARD_LESSONS){
+    const plan=planWhiteboardScene(id,{title:'Una explicación',caption:'Semillas, logaritmos, soporte, derivadas y matrices.',kind:'lesson',data:{chapter:'Teoría'}});
+    assert.equal(plan.kind,'working');
+    assert.deepEqual(plan.givens,[]);
+    assert.deepEqual(plan.equations,[]);
+  }
+  const plan=planWhiteboardScene('proporciones',{title:'Nuestro cultivo',kind:'lesson',visual:{lines:[{label:'Sembradas',value:'80'},{label:'Cálculo',tex:'16/80=0.2'}]}});
+  assert.deepEqual(plan.givens,['80']);
+  assert.deepEqual(plan.equations,['16/80=0.2']);
+});
+
 test('worked examples keep their real inputs and current equations instead of unrelated sample values',()=>{
   for(const lecture of lectures) for(const step of lecture.steps.filter(step=>step.data.chapter==='Ejercicios resueltos')){
     const plan=planWhiteboardScene(lecture.id,step);
@@ -48,6 +60,18 @@ test('worked examples keep their real inputs and current equations instead of un
     assert.deepEqual(plan.lines,step.visual.lines);
     assert.ok(plan.lines.every(item=>Number.isInteger(item.cue)));
   }
+});
+
+test('explicit demonstration data retains bars, areas and supported regions',()=>{
+  const bars=planWhiteboardScene('algebra',{title:'Pesos',kind:'bars',data:{values:[1,4,5],labels:['A','B','C']}});
+  assert.equal(bars.kind,'bars');
+  assert.deepEqual(bars.values,[1,4,5]);
+  const integral=planWhiteboardScene('calculo',{title:'Área',kind:'curve',data:{family:'uniform',height:2,support:[0,0.5],interval:[0,0.1]}});
+  assert.equal(integral.kind,'integral');
+  assert.equal(integralGeometry(integral).area,0.2);
+  const region=planWhiteboardScene('regiones-matrices',{title:'Recurso',kind:'scatter',data:{region:true,points:[[0,0],[2,0],[0,2]]}});
+  assert.equal(region.kind,'region');
+  assert.equal(region.bound,2);
 });
 
 test('the seed comparison preserves counts and demonstrates why more successes need not mean a higher proportion',()=>{

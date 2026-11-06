@@ -34,42 +34,13 @@ export function formulaVector(tex) {
 
 export function planWhiteboardScene(lessonId, step) {
   if (!WHITEBOARD_LESSONS.includes(lessonId)) return null;
-  const chapter = step.data?.chapter;
   const common = {label:step.title.replace(/^Demostración · /, ''), equation:step.tex || ''};
   if (step.story) return {...common,kind:'story',lines:step.visual.lines};
-  if (chapter === 'Ejercicios resueltos') {
-    const lines = step.visual?.lines || [];
-    return {...common, kind:'working', equations:lines.filter(line=>line.tex).map(line=>line.tex).slice(-2), givens:lines.filter(line=>line.value && !line.label).map(line=>line.value).slice(0,3)};
-  }
   if (step.kind === 'bars') return {...common, kind:'bars', ...step.data};
   if (step.kind === 'curve' && ['linear', 'linear-cdf', 'uniform'].includes(step.data?.family)) return {...common, kind:'integral', ...step.data};
   if (step.kind === 'scatter' && step.data?.region) return {...common, kind:'region', bound:Math.max(...step.data.points.flat()), ...step.data};
-  if (step.kind !== 'lesson') return {...common, kind:'working', equations:step.tex ? [step.tex] : [], givens:[step.data?.legend].filter(Boolean)};
-  const text = step.caption;
-  if (lessonId === 'proporciones') {
-    if (chapter === 'Ejemplo de la lección') return {...common, kind:'proportion', groups:[[18,72],[30,200]], equation:String.raw`\frac{18}{72}=25\%\qquad\frac{30}{200}=15\%`};
-    if (/miligramos|microgramos|potencias de diez/.test(text) || /mg|mu g/.test(step.tex || '')) return {...common, kind:'units', equation:String.raw`1\,\mathrm{mg}=1000\,\mathrm{\mu g}`};
-    if (/Una tasa|colonias por mililitro/.test(text)) return {...common, kind:'rate', equation:String.raw`\frac{2\text{ colonias}}{1\,\mathrm{mL}}=2\,\mathrm{colonias/mL}`};
-    if (chapter === 'Repaso') return {...common, kind:'proportion', groups:[[4,100]], equation:String.raw`\frac{4}{100}=0{,}04=4\%`};
-    return {...common, kind:'proportion', groups:[[12,60]], equation:step.tex || String.raw`\frac{12}{60}=0{,}20=20\%`};
-  }
-  if (lessonId === 'algebra') {
-    if (step.title === 'Comprueba que puedes explicarlo') return {...common, kind:'normalize', values:[1,2,7], equation:String.raw`c(1+2+7)=1\quad\Longrightarrow\quad c=\frac1{10}`};
-    if (/logaritmo|exponencial|e\^/.test(`${text} ${step.tex || ''}`) && chapter !== 'Ejemplo de la lección') return {...common, kind:'exponential', scale:6, equation:step.tex || String.raw`e^{-t/6}=\frac12\quad\Longrightarrow\quad t=6\log2`};
-    return {...common, kind:'normalize', values:[2,3,5], equation:step.tex || String.raw`c(2+3+5)=1\quad\Longrightarrow\quad c=\frac1{10}`};
-  }
-  if (lessonId === 'funciones') {
-    if (step.title === 'Comprueba que puedes explicarlo') return {...common, kind:'interval', threshold:2, equation:String.raw`X<2\quad\Longrightarrow\quad X\in\{0,1\}`};
-    if (/tramos|dominio|soporte/.test(text) && chapter === 'Teoría') return {...common, kind:'support', equation:String.raw`f(x)=\begin{cases}\frac12&0\leq x\leq2\\0&\text{fuera}\end{cases}`};
-    return {...common, kind:'discrete', values:[0,2,5], masses:[0.1,0.6,0.3], threshold:3, mean:/media/.test(text), equation:step.tex || (/media/.test(text) ? String.raw`E(X)=0\cdot0{,}1+2\cdot0{,}6+5\cdot0{,}3=2{,}7` : String.raw`P(X<3)=0{,}1+0{,}6=0{,}7`)};
-  }
-  if (lessonId === 'calculo') {
-    if (chapter === 'Ejemplo de la lección') return {...common, kind:'integral', family:'uniform', interval:[0.4,1.2], equation:String.raw`P(0{,}4<T<1{,}2)=0{,}5\cdot0{,}8=0{,}4`};
-    if (chapter === 'Repaso') return {...common, kind:'integral', family:'uniform', height:2, support:[0,0.5], interval:[0,0.1], equation:String.raw`2\cdot0{,}1=0{,}2`};
-    return {...common, kind:'integral', family:/pendiente|derivada/.test(text) ? 'linear-cdf' : 'linear', interval:[0,1], rectangles:/franjas/.test(text) ? {lower:0,upper:1,count:8} : undefined, equation:step.tex || String.raw`\int_0^1\frac{t}{2}\,dt=\frac14`};
-  }
-  if (/vector|matriz|covarianza|filas|columnas/.test(text) && chapter !== 'Ejemplo de la lección') return {...common, kind:'matrix', equation:step.tex || String.raw`\Sigma=\begin{pmatrix}\sigma_1^2&c\\c&\sigma_2^2\end{pmatrix}`};
-  return {...common, kind:'region', bound:1, slice:chapter === 'Repaso' ? 0.4 : 0.3, equation:step.tex || String.raw`0\leq y\leq1-x`};
+  const lines = step.visual?.lines || [];
+  return {...common,kind:'working',equations:[...lines.filter(line=>line.tex).map(line=>line.tex),...(step.tex ? [step.tex] : [])].slice(-2),givens:lines.filter(line=>line.value).map(line=>line.value).slice(0,3)};
 }
 
 export function integralGeometry(plan) {
@@ -186,7 +157,7 @@ export function createWhiteboard(host, {animation}) {
       const weights=plan.lines.reduce((total,item)=>total+(item.plot ? 2 : 1),0);
       const slot = Math.min(128,(size.height-100)/Math.max(1,weights));
       let nextTop=94;
-      plan.lines.forEach((item,position)=>{
+      plan.lines.forEach(item=>{
         const group = new Konva.Group({listening:false});
         sceneRoot.add(group);
         const top = nextTop;
@@ -231,33 +202,10 @@ export function createWhiteboard(host, {animation}) {
         }
         actors.push(()=>group.visible((lastFrame?.cueIndex ?? -1)>=item.cue));
       });
-    } else if (plan.kind === 'proportion') {
-      const gap = 24;
-      const panelWidth = (size.width-64-gap*(plan.groups.length-1))/plan.groups.length;
-      for (const [groupIndex,[selected,total]] of plan.groups.entries()) {
-        const startX = 32+groupIndex*(panelWidth+gap);
-        const columns = plan.groups.length===1 ? (portrait ? 10 : 15) : (portrait ? 8 : 15);
-        const rows = Math.ceil(total/columns);
-        const cell = Math.min((panelWidth-20)/columns,(size.height-250)/rows,34);
-        const offsetX = startX+(panelWidth-columns*cell)/2;
-        for (let pointIndex=0;pointIndex<total;pointIndex++) {
-          const point = new Konva.Circle({x:offsetX+(pointIndex%columns+0.5)*cell,y:125+(Math.floor(pointIndex/columns)+0.5)*cell,radius:cell*0.3,fill:pointIndex<selected ? palette.teal : '#d8e4de',listening:false});
-          sceneRoot.add(point);
-          actors.push(()=>{point.opacity(0.25+0.75*Math.min(1,Math.max(0,state.reveal*total-pointIndex))); point.scaleX(0.65+state.focus*0.35); point.scaleY(point.scaleX());});
-        }
-        const count = text('',startX,size.height-192,{width:panelWidth,align:'center',fontSize:36,fontStyle:'bold',fill:palette.teal});
-        actors.push(()=>count.text(`${Math.round(selected*state.focus)} / ${total}`));
-      }
-      formula(plan.equation);
-    } else if (['bars','normalize'].includes(plan.kind)) {
+    } else if (plan.kind === 'bars') {
       const values = plan.values;
-      const sum = values.reduce((total,value)=>total+value,0);
       const maximum = Math.max(...values)*1.12 || 1;
       const chart = axes(values.length,maximum,plan.yTitle || 'Peso','');
-      if(plan.kind==='normalize') {
-        const total=text('',size.width-240,78,{width:200,align:'right',fontSize:28,fill:palette.teal});
-        actors.push(()=>{chart.axisLabel.text(state.resolve>0 ? 'Probabilidad' : 'Peso');total.text(`Σ = ${decimal(sum*(1-state.resolve)+state.resolve)}`);});
-      }
       const unit = (chart.right-90)/values.length;
       values.forEach((value,position)=>{
         const bar = new Konva.Rect({x:90+unit*(position+0.2),y:chart.bottom,width:unit*0.6,height:0,fill:[palette.teal,palette.rose,palette.gold][position%3],cornerRadius:3,listening:false});
@@ -267,54 +215,14 @@ export function createWhiteboard(host, {animation}) {
         actors.push(()=>{
           const barHeight=(chart.bottom-chart.mapY(value))*state.reveal;
           bar.height(barHeight); bar.y(chart.bottom-barHeight); label.y(Math.max(100,bar.y()-38));
-          label.text(decimal(plan.kind==='normalize' ? value*(1-state.resolve+state.resolve/sum) : value));
+          label.text(decimal(value));
           label.opacity(state.reveal);
         });
       });
       if (plan.horizontal !== undefined) reveal(line([90,chart.mapY(plan.horizontal),chart.right,chart.mapY(plan.horizontal)],{stroke:palette.rose,dash:[8,8]}),0.45,0.65);
       formula(plan.equation);
-    } else if (plan.kind === 'units' || plan.kind === 'rate') {
-      const isUnits = plan.kind === 'units';
-      const centers = portrait ? [190,450] : [250,710];
-      centers.forEach((center,position)=>{
-        const vessel = new Konva.Group({x:center-65,y:150,listening:false});
-        vessel.add(new Konva.Rect({width:130,height:180,stroke:palette.ink,strokeWidth:3,cornerRadius:[0,0,20,20]}));
-        const liquid = new Konva.Rect({x:4,y:65,width:122,height:110,fill:position ? '#f4dce4' : '#cce9df',cornerRadius:[0,0,16,16]});
-        vessel.add(liquid); sceneRoot.add(vessel); reveal(vessel,position*0.2,0.3+position*0.2);
-        text(isUnits ? (position ? '1000 μg' : '1 mg') : (position ? '2 colonias' : '1 mL'),center-105,354,{width:210,align:'center',fontSize:32,fontStyle:'bold'});
-        if (!isUnits && position) for (const offset of [35,87]) vessel.add(new Konva.Circle({x:offset,y:115,radius:12,fill:palette.rose}));
-      });
-      reveal(text(isUnits ? '=' : '→',size.width/2-35,220,{width:70,align:'center',fontSize:50,fill:palette.teal}),0.35,0.55);
-      formula(plan.equation);
-    } else if (plan.kind === 'discrete') {
-      const chart = axes(6,1,'p(x)','x');
-      for (const [position,value] of plan.values.entries()) {
-        const probability = plan.masses[position];
-        const selected = plan.mean || value<plan.threshold;
-        const stem = line([chart.mapX(value),chart.bottom,chart.mapX(value),chart.bottom],{stroke:selected ? palette.teal : '#b4c3bb',strokeWidth:5});
-        const point = new Konva.Circle({x:chart.mapX(value),y:chart.bottom,radius:9,fill:selected ? palette.teal : '#b4c3bb',listening:false});
-        sceneRoot.add(point);
-        text(String(value),chart.mapX(value)-20,chart.bottom+15,{width:40,align:'center'});
-        const label = text(decimal(probability),chart.mapX(value)-40,chart.mapY(probability)-42,{width:80,align:'center',fontSize:27,fill:selected ? palette.teal : palette.muted});
-        actors.push(()=>{const vertical=chart.mapY(probability*state.reveal); stem.points([chart.mapX(value),chart.bottom,chart.mapX(value),vertical]); point.y(vertical);label.opacity(state.reveal);});
-      }
-      if(!plan.mean) {
-        reveal(line([chart.mapX(plan.threshold),chart.top,chart.mapX(plan.threshold),chart.bottom],{stroke:palette.rose,dash:[8,8]}),0.35,0.5);
-        reveal(text('x < 3',chart.mapX(plan.threshold)-58,78,{width:116,align:'center',fill:palette.rose}),0.35,0.5);
-      }
-      formula(plan.equation);
-    } else if(plan.kind==='interval') {
-      const stepWidth=(size.width-180)/3;
-      reveal(line([75,300,size.width-65,300],{stroke:palette.ink}),0,0.15);
-      for(let value=0;value<=3;value++) {
-        const selected=value<plan.threshold;
-        const point=new Konva.Circle({x:90+value*stepWidth,y:300,radius:14,fill:selected ? palette.teal : palette.paper,stroke:selected ? palette.teal : palette.rose,strokeWidth:4,listening:false});
-        sceneRoot.add(point);reveal(point,value*0.1,0.25+value*0.1);
-        text(String(value),point.x()-25,330,{width:50,align:'center',fontSize:36});
-      }
-      formula(plan.equation);
-    } else if (plan.kind === 'integral' || plan.kind === 'support') {
-      const graph = integralGeometry(plan.kind==='support' ? {family:'uniform',interval:[0,2]} : plan);
+    } else if (plan.kind === 'integral') {
+      const graph = integralGeometry(plan);
       const maximum = plan.family==='linear-cdf' ? 1.15 : Math.max(1.15,plan.height || plan.density || 0);
       const chart = axes(graph.upper,maximum,plan.family==='linear-cdf' ? 'F(t)' : plan.knownX!==undefined ? 'f(y | x)' : plan.descending ? 'fₓ(x)' : 'f(t)',plan.knownX!==undefined ? 'y' : plan.descending ? 'x' : 't');
       const isCdf = plan.family==='linear-cdf';
@@ -350,7 +258,6 @@ export function createWhiteboard(host, {animation}) {
         reveal(line([chart.mapX(marker-0.45),chart.mapY(valueAt(marker)-slope*0.45),chart.mapX(marker+0.45),chart.mapY(valueAt(marker)+slope*0.45)],{stroke:palette.rose,strokeWidth:4}),0.5,0.7);
         reveal(text(`Pendiente = ${decimal(slope)}`,chart.right-280,82,{width:280,align:'right',fontSize:28,fill:palette.rose}),0.6,0.8);
       }
-      if (plan.kind==='support') reveal(text('0 fuera del intervalo',140,95,{width:size.width-200,align:'center',fontSize:27,fill:palette.muted}),0.4,0.6);
       formula(plan.equation);
     } else if (plan.kind === 'region') {
       const bound = plan.bound;
@@ -370,27 +277,6 @@ export function createWhiteboard(host, {animation}) {
       } else if(plan.probability!==undefined) reveal(text(`P = ${decimal(plan.probability)}`,160,90,{width:size.width-220,align:'center',fontSize:30,fill:palette.teal}),0.6,0.8);
       text(decimal(bound),chart.mapX(bound)-20,chart.bottom+15,{width:40,align:'center'});
       text(decimal(bound),40,chart.mapY(bound)-12,{width:40});
-      formula(plan.equation);
-    } else if (plan.kind === 'matrix') {
-      const cell = portrait ? 125 : 145;
-      const left = (size.width-cell*2)/2;
-      const symbols = [['σ₁²','c'],['c','σ₂²']];
-      symbols.forEach((row,rowIndex)=>row.forEach((value,columnIndex)=>{
-        const diagonal=rowIndex===columnIndex;
-        const cellNode=new Konva.Rect({x:left+columnIndex*cell,y:150+rowIndex*cell,width:cell-5,height:cell-5,fill:diagonal ? '#d0e9df' : '#f3dfe6',cornerRadius:4,listening:false});sceneRoot.add(cellNode);reveal(cellNode,(rowIndex+columnIndex)*0.1,0.3+(rowIndex+columnIndex)*0.1);
-        reveal(text(value,left+columnIndex*cell,184+rowIndex*cell,{width:cell-5,align:'center',fontSize:42,fill:diagonal ? palette.teal : palette.rose}),0.2,0.45);
-      }));
-      text('Varianzas',32,145,{width:left-45,fontSize:25,fill:palette.teal});
-      text('Covarianza',left+cell*2+12,145,{width:size.width-left-cell*2-30,fontSize:25,fill:palette.rose});
-      formula(plan.equation);
-    } else if (plan.kind === 'exponential') {
-      const chart=axes(6,1.1,'S(t)','h');
-      const curve=line([],{stroke:palette.teal,strokeWidth:5});
-      actors.push(()=>{const points=[];for(let sample=0;sample<=80;sample++){const position=6*sample/80*state.reveal;points.push(chart.mapX(position),chart.mapY(Math.exp(-position/plan.scale)));}curve.points(points);});
-      const target=plan.scale*Math.log(2);
-      reveal(line([90,chart.mapY(0.5),chart.mapX(target),chart.mapY(0.5),chart.mapX(target),chart.bottom],{stroke:palette.rose,dash:[8,8],strokeWidth:3}),0.4,0.6);
-      text('½',42,chart.mapY(0.5)-14,{width:36,fontSize:28});
-      reveal(text(`${decimal(target)} h`,chart.mapX(target)-65,chart.bottom+12,{width:130,align:'center',fontSize:27,fill:palette.rose}),0.6,0.8);
       formula(plan.equation);
     } else {
       let givenY=110;
