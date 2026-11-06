@@ -10,6 +10,7 @@
     "start": "npm run generate && docusaurus start",
     "build": "npm run generate && docusaurus build",
     "serve": "docusaurus serve",
+    "pretest": "npm run generate",
     "test": "node --test tests/*.test.mjs && npm --prefix data-src/inferencia-estadistica test"
   },
   "dependencies": {

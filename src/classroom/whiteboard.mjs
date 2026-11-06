@@ -151,8 +151,8 @@ export function createWhiteboard(host, {animation}) {
     for (let gridY=72;gridY<size.height;gridY+=40) line([24,gridY,size.width-24,gridY],{stroke:'#eef3f0',strokeWidth:1});
     const label = text(plan.label,32,22,{fontSize:26,fontStyle:'bold',width:size.width-64});
     if (label.height()>64) label.fontSize(22);
-    const state = {reveal:0,focus:0,resolve:0};
-    timeline.to(state,{reveal:1,duration:0.3,ease:'power1.inOut'},0.05).to(state,{focus:1,duration:0.28,ease:'power2.inOut'},0.28).to(state,{resolve:1,duration:0.22,ease:'power2.inOut'},0.65);
+    const state = {reveal:0,focus:0};
+    timeline.to(state,{reveal:1,duration:0.3,ease:'power1.inOut'},0.05).to(state,{focus:1,duration:0.28,ease:'power2.inOut'},0.28);
     if (plan.kind === 'story') {
       const weights=plan.lines.reduce((total,item)=>total+(item.plot ? 2 : 1),0);
       const slot = Math.min(128,(size.height-100)/Math.max(1,weights));

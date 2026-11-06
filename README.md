@@ -25,8 +25,10 @@ https://webs.raular.com/inferencia/ from the `main` branch.
 The original explanations, formulas, source references and exercise engines live
 under `pages/inferencia/`. `scripts/generate-docs.mjs` produces the MDX lessons
 from that single content source; do not edit the ignored `docs/` output.
-Update `pages/inferencia/course.js` to edit the curriculum. Animation and theory
-continue to share the same content instead of drifting into separate copies.
+Update `pages/inferencia/course.js` to edit the curriculum. The conversational
+lecture walkthroughs live in `pages/inferencia/lecture-story.js`; they explain
+the same concepts with spoken examples rather than reading the web text aloud.
+Worked practice in both formats uses the shared exercise generators.
 
 ## Reading Without A Mathematics Background
 
@@ -67,6 +69,10 @@ Build generates the MDX, activity styles, font files and search index. Tests cov
 the existing numerical engines, all lesson views, the player, seeded exercises,
 progress, complete MDX content and the scoped interactive integration.
 DOM tests are not browser layout verification.
+
+`npm test` generates the ignored lesson pages, activity shell and static resources
+before running the suites, so it also works immediately after installing the
+dependencies in a clean checkout. A prior production build is not required.
 
 After changing legacy activity modules, refresh the fixture's asset fingerprints:
 
@@ -127,12 +133,13 @@ is regenerated. This does not restart or modify the external TTS service.
 The five mathematical bridge lessons use a client-only Konva canvas with a paused
 GSAP timeline driven by the existing player's audio clock. Other lessons retain
 their current renderer and do not load these dependencies. Captions, speed controls
-and fullscreen behavior are preserved; narration follows the current basic lesson
-and its relevant questions, with pronunciation and definitions for notation.
+and fullscreen behavior are preserved; narration follows the conversational
+storyboards and the questions appropriate to each lesson.
 
-Scenes illustrate seed proportions, unit conversions, normalization, discrete
-support, integrals, conditional densities, triangular regions and covariance
-matrices. Worked exercises display their actual generated inputs and equations.
+Scenes use explicit quantities, equations and plot data for seed proportions,
+normalization, function values, areas and resource regions; examples are not
+inferred from words in the narration. Worked exercises display their actual
+generated inputs and equations.
 MathJax turns formulas into vector paths within the same canvas, without image
 downloads or HTML formula overlays. Narrow boards use a square composition;
 fullscreen fits the scene into the available drawing space.
