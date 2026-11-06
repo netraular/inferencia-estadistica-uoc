@@ -1,6 +1,6 @@
 import {COURSE} from './course.js?v=34212586c1fb';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer} from './exercises.js?v=bc4ede56ecec';
-import {createLessonAnimation, mountAnimation} from './animations.js?v=54691526f37e';
+import {createLessonAnimation, mountAnimation} from './animations.js?v=170dda6a1623';
 import {mountLab} from './labs.js?v=49b11cab1519';
 import {STORAGE_KEY, freshProgress, parseProgress, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=56f36d8c8e05';
 
@@ -20,6 +20,12 @@ export const LESSON_LAB_PRESETS = {
 };
 export const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[character]));
 const normalize = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+export function readParagraphs(document, html) {
+  const content = document.createElement('div');
+  content.innerHTML = html;
+  return Array.from(content.querySelectorAll('p'), paragraph => paragraph.textContent);
+}
 
 export function parseRoute(hash, fallback = LESSONS[0].id) {
   const [lessonId, view] = String(hash || '').replace(/^#\/?/, '').split('/');
@@ -160,7 +166,7 @@ export function mountAula(document, environment = {}) {
   }
 
   function renderAnimation() {
-    const paragraphs = html => { const content=document.createElement('div'); content.innerHTML=html; return [...content.querySelectorAll('p')].map(paragraph=>paragraph.textContent); };
+    const paragraphs = html => readParagraphs(document, html);
     activeCleanup = mountAnimation(element('panel-animation'), createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math});
   }
 

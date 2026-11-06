@@ -911,6 +911,8 @@ test('las clases sincronizan frases y diapositivas, también con movimiento redu
     assert.equal(caption.textContent,lecture.steps[0].cues[0].text);
     assert.equal(board.hidden,false);
     assert.equal(dom.byTag('canvas').style.display,'none');
+    assert.equal(dom.container.children[0].className,'animation-player');
+    assert.equal(dom.byLabel('Ampliar clase').attributes['aria-pressed'],'false');
     dom.byLabel('Reproducir').click();
     dom.advance(lecture.steps[0].cues[0].end*1000+10);
     assert.equal(caption.textContent,lecture.steps[0].cues[1].text);
@@ -919,6 +921,7 @@ test('las clases sincronizan frases y diapositivas, también con movimiento redu
     const paused=caption.textContent;
     dom.advance(60000);
     assert.equal(caption.textContent,paused);
+    dom.byLabel('Ampliar clase').click();
     assert.ok(dom.container.children[0].className.includes('is-focused'));
     for (const handler of dom.view.listeners.get('keydown')) handler({key:'Escape'});
     assert.equal(dom.container.children[0].className,'animation-player');

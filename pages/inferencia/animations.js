@@ -1044,7 +1044,6 @@ export function mountAnimation(container, animationId, {formatMath} = {}) {
   syncScene();
   syncControls();
   resize();
-  if (animation.kind === 'lecture' && view.innerWidth && view.innerWidth<=1100) expand.click();
 
   const cleanup = () => {
     if (disposed) return;

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync, readdirSync} from 'node:fs';
 import {createRequire} from 'node:module';
+import {runInNewContext} from 'node:vm';
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
 import {mountEmbeddedClassroom} from '../src/classroom/embed.mjs';
@@ -11,6 +12,42 @@ const require = createRequire(import.meta.url);
 globalThis.jStat = require('jstat').jStat;
 const shell = readFileSync(new URL('../pages/inferencia-estadistica.html', import.meta.url), 'utf8');
 const lessons = COURSE.units.flatMap(unit => unit.lessons);
+
+test('production Babel compilation preserves every HTML paragraph instead of a NodeList with undefined text', () => {
+  const babel = require('@babel/core');
+  const source = readFileSync(new URL('../pages/inferencia/app.js', import.meta.url), 'utf8');
+  const ast = babel.parseSync(source, {sourceType:'module', babelrc:false, configFile:false});
+  const declaration = ast.program.body.find(node => node.type === 'ExportNamedDeclaration' && node.declaration?.id?.name === 'readParagraphs');
+  assert.ok(declaration);
+  ast.program.body = [declaration.declaration];
+  const compiled = babel.transformFromAstSync(ast, source, {
+    filename:'app.js',
+    babelrc:false,
+    configFile:false,
+    presets:[require.resolve('@docusaurus/core/lib/babel/preset')]
+  }).code;
+  const {document} = parseHTML('<html><body></body></html>');
+  const browserDocument = {createElement(tag) {
+    const node = document.createElement(tag);
+    return {
+      set innerHTML(html) {node.innerHTML = html;},
+      querySelectorAll(selector) {
+        const nodes = node.querySelectorAll(selector);
+        const list = {length:nodes.length, [Symbol.iterator]:() => nodes[Symbol.iterator]()};
+        for (let index = 0; index < nodes.length; index++) list[index] = nodes[index];
+        return list;
+      }
+    };
+  }};
+  for (const lesson of lessons) for (const section of [...lesson.sections, lesson.example]) {
+    const content = document.createElement('div');
+    content.innerHTML = section.body;
+    const expected = Array.from(content.querySelectorAll('p'), paragraph => paragraph.textContent);
+    const actual = runInNewContext(`${compiled}; readParagraphs(document, html)`, {document:browserDocument, html:section.body});
+    assert.deepEqual(Array.from(actual), expected, lesson.id);
+    assert.ok(actual.every(text => typeof text === 'string' && text.length > 0), lesson.id);
+  }
+});
 
 test('36 MDX pages preserve theory, formulas, method, solved examples and interactive lesson IDs', () => {
   for (const unit of COURSE.units) for (const lesson of unit.lessons) {
