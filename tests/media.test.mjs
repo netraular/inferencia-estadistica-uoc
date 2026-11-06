@@ -161,6 +161,11 @@ test('versioned audio references only canonical complete timelines, valid proven
   const manifest = JSON.parse(readFileSync(join(directory, 'manifest.json')));
   const provenance = JSON.parse(readFileSync(join(directory, 'provenance.json')));
   assert.equal(manifest.version, 1);
+  assert.deepEqual(
+    readdirSync(directory).filter(name => name.toLowerCase().endsWith('.mp3')).sort(),
+    Object.keys(manifest.lessons).map(id => `${id}.mp3`).sort(),
+    'Published MP3 files must belong to the current playback manifest'
+  );
   for (const [id, lesson] of Object.entries(manifest.lessons)) {
     const current = lectures.find(item => item.id === id);
     assert.ok(current);
