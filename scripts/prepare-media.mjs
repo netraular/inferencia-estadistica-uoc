@@ -260,7 +260,7 @@ function validateSourceFiles(audioRoot, snapshot, report) {
   return wav;
 }
 
-function publicProvenance(data) {
+export function publicProvenance(data) {
   for (const key of ['sourceSignature', 'wavSha256', 'canonicalSha256', 'mp3Sha256']) assert.ok(signature(data[key]), 'Procedencia incompleta');
   assert.ok(Number.isInteger(data.mp3Bytes) && data.mp3Bytes > 0 && data.mp3Bytes < MAX_AUDIO_BYTES, 'Tamano de procedencia invalido');
   assert.ok(Number.isFinite(data.sourceDuration) && data.sourceDuration > 0, 'Duracion de procedencia invalida');
@@ -342,6 +342,28 @@ export async function prepareAudio(audioRoot, destination = join(projectRoot, 's
       if (reason.includes(audioRoot) || /(?:\/home\/|\/mnt\/|[A-Za-z]:\\)/.test(reason)) reason = 'Fuente o conversion no verificable';
     }
     report.skipped.push({id: canonical.id, reason});
+  }
+  if (Object.keys(previous.lessons || {}).some(id => id.includes('--')) || Object.keys(previousProvenance.lessons || {}).some(id => id.includes('--'))) {
+    const {canonicalSections, retainedSection} = await import('./tts/prepare-sections.mjs');
+    for (const canonical of await canonicalSections(destination)) {
+      const old = previous.lessons?.[canonical.id];
+      const oldOrigin = previousProvenance.lessons?.[canonical.id];
+      if (!Object.hasOwn(previous.lessons || {}, canonical.id) && !Object.hasOwn(previousProvenance.lessons || {}, canonical.id)) continue;
+      try {
+        assert.equal(previous.version, 1, 'Unknown public manifest version');
+        assert.equal(previousProvenance.version, 1, 'Unknown provenance version');
+        assert.equal(previousProvenance.sectionExporter, 'scripts/tts/export-narration.mjs', 'Unknown section exporter');
+        const {entry, origin} = retainedSection(destination, canonical, old, oldOrigin);
+        manifest.lessons[canonical.id] = entry;
+        provenance.lessons[canonical.id] = origin;
+        provenance.sectionExporter = previousProvenance.sectionExporter;
+        report.retained.push(canonical.id);
+      } catch (error) {
+        rmSync(outputFile(destination, `${canonical.id}.mp3`), {force: true});
+        const reason = error.code === 'ERR_ASSERTION' ? error.message.split('\n')[0] : 'Published section audio is unavailable or invalid';
+        report.skipped.push({id: canonical.id, reason});
+      }
+    }
   }
   writeJson(destination, 'manifest.json', manifest);
   writeJson(destination, 'provenance.json', provenance);

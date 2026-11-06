@@ -33,7 +33,7 @@ export function formulaVector(tex) {
 }
 
 export function planWhiteboardScene(lessonId, step) {
-  if (!WHITEBOARD_LESSONS.includes(lessonId)) return null;
+  if (!WHITEBOARD_LESSONS.includes(lessonId.split('--')[0])) return null;
   const common = {label:step.title.replace(/^Demostración · /, ''), equation:step.tex || ''};
   if (step.story) return {...common,kind:'story',lines:step.visual.lines};
   if (step.kind === 'bars') return {...common, kind:'bars', ...step.data};
@@ -88,7 +88,7 @@ export function formulaGraphic(tex, {x,y,width,height,color = palette.ink}) {
 }
 
 export function createWhiteboard(host, {animation}) {
-  if (!WHITEBOARD_LESSONS.includes(animation.id)) return null;
+  if (!WHITEBOARD_LESSONS.includes(animation.id.split('--')[0])) return null;
   const owner = host.ownerDocument;
   const view = owner.defaultView;
   const stage = new Konva.Stage({container:host,width:960,height:576});

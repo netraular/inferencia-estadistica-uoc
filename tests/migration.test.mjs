@@ -1,17 +1,90 @@
+import {mountEmbeddedClassroom, mountSectionExample, renderScopedIcons} from '../src/classroom/embed.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync, readdirSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import {runInNewContext} from 'node:vm';
+
+test('lesson entry uses a progressive journey and keeps full notes optional', () => {
+  const source=readFileSync(new URL('../src/components/LessonContent.jsx',import.meta.url),'utf8');
+  assert.match(source,/<LessonJourney lessonId=\{lessonId\}/);
+  assert.match(source,/lesson-reference-notes/);
+  assert.doesNotMatch(source,/value:'lab'/);
+  assert.match(source,/query\.get\('actividad'\).*lab/);
+  const journey=readFileSync(new URL('../src/components/LessonJourney.jsx',import.meta.url),'utf8');
+  assert.match(journey,/createLessonSections/);
+  assert.match(journey,/data-lesson-section/);
+  assert.doesNotMatch(journey,/<InteractiveLesson lessonId=\{lessonId\} view="animation"/);
+});
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
-import {mountEmbeddedClassroom, renderScopedIcons} from '../src/classroom/embed.mjs';
 import {STORAGE_KEY, PROGRESS_EVENT, freshProgress, loadProgress, saveProgress, progressSummary} from '../pages/inferencia/progress.js';
+import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 
 const require = createRequire(import.meta.url);
 globalThis.jStat = require('jstat').jStat;
 const shell = readFileSync(new URL('../pages/inferencia-estadistica.html', import.meta.url), 'utf8');
 const lessons = COURSE.units.flatMap(unit => unit.lessons);
+
+test('section examples contain only their selected questions and reveal no answer on mount', () => {
+  const {document, window} = parseHTML('<html><body><div id="host"></div></body></html>');
+  window.HTMLCanvasElement.prototype.getContext = () => null;
+  window.HTMLElement.prototype.getBoundingClientRect = () => ({width:640, height:360});
+  window.katex = require('katex');
+  const descriptor = createLessonSections(lessons.find(lesson => lesson.id === 'proporciones'))[0].exercise;
+  const mounted = mountSectionExample(document.getElementById('host'), {descriptor, baseUrl:'/inferencia/'});
+  try {
+    assert.deepEqual(mounted.exercise.questions.map(question => question.id), descriptor.questionIds);
+    assert.ok(mounted.root.querySelector('[data-exercise-tutor]'));
+    assert.equal(mounted.root.querySelector('[data-tutor-practice]'), null);
+    assert.equal(mounted.root.querySelector('[data-grade-form]'), null);
+    assert.equal(mounted.root.querySelectorAll('link[rel="stylesheet"]').length, 2);
+    assert.equal(mounted.root.querySelector('details').hasAttribute('open'), false);
+    assert.doesNotThrow(() => {
+      for (let position = 0; position < 8; position++) mounted.root.querySelector('[data-tutor-next]').click();
+      mounted.root.querySelector('details').dispatchEvent(new window.Event('toggle'));
+    });
+  } finally {mounted.dispose();}
+  assert.equal(document.getElementById('host').shadowRoot.childNodes.length, 0);
+});
+
+test('embedded section playback mounts only the selected whiteboard and leaves subsequent symbols hidden', () => {
+  const {document, window} = parseHTML('<html><body><div id="host"></div></body></html>');
+  window.HTMLCanvasElement.prototype.getContext = () => null;
+  window.HTMLElement.prototype.getBoundingClientRect = () => ({width:640, height:360});
+  Object.defineProperty(window.HTMLSelectElement.prototype, 'value', {
+    configurable:true,
+    get() {return this.querySelector('option[selected]')?.value || this.querySelector('option')?.value || '';},
+    set(value) {for (const option of this.querySelectorAll('option')) {if (option.value === String(value)) option.setAttribute('selected', ''); else option.removeAttribute('selected');}}
+  });
+  window.matchMedia = () => ({matches:false});
+  window.katex = require('katex');
+  const lesson = lessons.find(item => item.id === 'proporciones');
+  for (const section of createLessonSections(lesson)) {
+    let received;
+    const mounted = mountEmbeddedClassroom(document.getElementById('host'), {
+      shell, baseUrl:'/inferencia/', lessonId:lesson.id, view:'animation', showNavigation:false,
+      storage:{getItem:()=>null,setItem() {}}, animation:section.animation,
+      createWhiteboard(_host, {animation}) {
+        received = animation;
+        return {render() {}, resize() {}, dispose() {}};
+      }
+    });
+    try {
+      assert.equal(received, section.animation);
+      assert.equal(received.steps.length, 1);
+    } finally {mounted.dispose();}
+    const fallback = mountEmbeddedClassroom(document.getElementById('host'), {
+      shell, baseUrl:'/inferencia/', lessonId:lesson.id, view:'animation', showNavigation:false,
+      storage:{getItem:()=>null,setItem() {}}, animation:section.animation
+    });
+    try {
+      const rows = fallback.root.querySelectorAll('.board-line');
+      assert.ok(rows.length > 0);
+      assert.ok(Array.from(rows).every(row => row.hidden));
+    } finally {fallback.dispose();}
+  }
+});
 
 test('Lucide renders controls inside the shadow root without touching document icons', () => {
   const {document} = parseHTML('<html><body><i data-lucide="play" id="outside"></i><div id="host"></div></body></html>');
@@ -124,6 +197,8 @@ test('embedded classroom keeps routing and titles isolated and retains progress 
       assert.equal(mounted.root.getElementById(`panel-${view}`).hidden, false);
     }
     mounted.aula.setView('practice');
+    mounted.root.getElementById('practiceMode').value = 'practice';
+    mounted.root.getElementById('practiceMode').dispatchEvent(new window.Event('change', {bubbles:true}));
     const question = mounted.aula.exercise.questions[0];
     mounted.root.getElementById(`answer-${question.id}`).value = String(question.answer);
     mounted.root.querySelector(`[data-grade-form="${question.id}"]`).dispatchEvent(new window.Event('submit', {bubbles:true, cancelable:true}));

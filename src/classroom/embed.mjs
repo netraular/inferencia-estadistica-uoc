@@ -1,4 +1,35 @@
 import {mountAula} from '../../pages/inferencia/app.js';
+import {generateExercise} from '../../pages/inferencia/exercises.js';
+import {mountExerciseTutor} from '../../pages/inferencia/exercise-tutor.js';
+
+export function mountSectionExample(host, {descriptor, baseUrl}) {
+  const owner = host.ownerDocument;
+  const root = host.shadowRoot || host.attachShadow({mode:'open'});
+  const exercise = generateExercise(descriptor.type, descriptor.seed);
+  exercise.questions = exercise.questions.filter(question => descriptor.questionIds.includes(question.id));
+  if (!exercise.questions.length) throw new Error('El apartado no tiene preguntas de ejemplo');
+  const fragment = owner.createDocumentFragment();
+  for (const href of [`${baseUrl}aula.css`, `${baseUrl}katex/katex.min.css`]) {
+    const link = owner.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    fragment.append(link);
+  }
+  const style = owner.createElement('style');
+  style.textContent = ':host{display:block;font:17px/1.55 Atkinson,sans-serif;color:#253330;--paper:#fff;--ink:#253330;--muted:#63716c;--line:#dae3df;--teal:#117568;--teal-soft:#e8f3ef;--rose:#a93458;--rose-soft:#fbecf0;--gold:#d7a534;--gold-soft:#fff7dd}';
+  const content = owner.createElement('div');
+  content.setAttribute('data-exercise-tutor', '');
+  fragment.append(style, content);
+  root.replaceChildren(fragment);
+  const dispose = mountExerciseTutor(content, exercise, {
+    formatMath:tex => owner.defaultView.katex.renderToString(tex, {displayMode:true, throwOnError:false}),
+    onHelp() {},
+    onPractice() {}
+  });
+  content.querySelector('[data-tutor-practice]').remove();
+  renderScopedIcons(root, owner.defaultView.lucide);
+  return {exercise, root, dispose() {dispose(); root.replaceChildren();}};
+}
 
 export function renderScopedIcons(root, library) {
   if (!library?.createElement || !library.icons) return;
@@ -29,7 +60,7 @@ export function scopedDocument(owner, root) {
   });
 }
 
-export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage, view = 'lab', showNavigation = true, audio, createWhiteboard}) {
+export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage, view = 'lab', showNavigation = true, audio, animation, createWhiteboard}) {
   const owner = host.ownerDocument;
   const root = host.shadowRoot || host.attachShadow({mode: 'open'});
   const parsed = new owner.defaultView.DOMParser().parseFromString(shell, 'text/html');
@@ -48,8 +79,9 @@ export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage,
   const location = {hash: `#${lessonId}/${view}`};
   const history = {replaceState(state, title, hash) {location.hash = hash;}};
   const options = {location, history, manageHistory: false, createWhiteboard, renderIcons:() => renderScopedIcons(root, owner.defaultView.lucide)};
+  if (animation) options.getAnimation = () => animation;
   options.getAudio = id => {
-    const track = audio?.lessons?.[id];
+    const track = audio?.lessons?.[animation?.id || id];
     return track ? {...track, src:`${baseUrl}${track.src}`} : undefined;
   };
   if (storage !== undefined) options.storage = storage;

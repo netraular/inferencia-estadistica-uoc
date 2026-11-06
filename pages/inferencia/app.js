@@ -3,7 +3,8 @@ import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './ex
 import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=37d29d83c0c4';
 import {mountLab} from './labs.js?v=2f4aa757b74f';
-import {mountExerciseTutor} from './exercise-tutor.js?v=2885c6ad3de0';
+import {mountExerciseTutor} from './exercise-tutor.js?v=0c31bb97ad7f';
+import {getPdfExercises} from './pdf-exercises.js?v=d9dc58600912';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));
@@ -54,6 +55,8 @@ export function mountAula(document, environment = {}) {
   let activeCleanup = null;
   let activeExercise = null;
   let practiceType = null;
+  let practiceSource = null;
+  let pdfExerciseId = null;
   let seed = FIRST_PRACTICE_SEED;
   let mode = 'observe';
   let entireBank = false;
@@ -163,8 +166,13 @@ export function mountAula(document, environment = {}) {
     const current = lesson();
     const available = entireBank ? EXERCISE_TYPES : current.exerciseTypes.map(id => EXERCISE_TYPES.find(type => type.id === id));
     if (!available.some(type => type.id === practiceType)) practiceType = available[0].id;
-    activeExercise = entireBank ? generateExercise(practiceType, seed) : scopeExercise(current, generateExercise(practiceType, seed));
-    if (!entireBank || excludedContent) {
+    const pdfExercises = entireBank ? [] : getPdfExercises(current.id);
+    const usingPdf = mode === 'observe' && practiceSource !== 'synthetic' && pdfExercises.length > 0;
+    if (usingPdf) {
+      activeExercise = pdfExercises.find(exercise => exercise.id === pdfExerciseId) || pdfExercises[0];
+      pdfExerciseId = activeExercise.id;
+    } else activeExercise = entireBank ? generateExercise(practiceType, seed) : scopeExercise(current, generateExercise(practiceType, seed));
+    if (!usingPdf && (!entireBank || excludedContent)) {
       const content = exercise=>JSON.stringify([exercise.prompt,exercise.given,exercise.questions.map(question=>question.prompt)]);
       const worked = entireBank ? null : content(scopeExercise(current,generateExercise(practiceType,1)));
       for (let attempt=0;content(activeExercise)===worked || content(activeExercise)===excludedContent;attempt++) {
@@ -181,6 +189,12 @@ export function mountAula(document, environment = {}) {
       const solved = progress.attempts[key]?.solved;
       return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}. ${solved ? 'Ya resolviste esta respuesta.' : ''}</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><div class="worked-controls"><button type="button" class="icon-button" data-solution-step="-1" aria-label="Paso anterior" title="Paso anterior" disabled><i data-lucide="arrow-left" aria-hidden="true"></i></button><span data-step-position role="status">Paso 1 de ${question.steps.length}</span><button type="button" class="icon-button" data-solution-step="1" aria-label="Paso siguiente" title="Paso siguiente"${question.steps.length <= 1 ? ' disabled' : ''}><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ol>${question.steps.map((step, stepIndex) => `<li data-worked-step="${stepIndex}"${stepIndex ? ' hidden' : ' aria-current="step"'}><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math worked-calculation">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"${question.steps.length > 1 ? ' hidden' : ''}><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
     }).join('')}`;
+    element('panel-practice').querySelector('.practice-toolbar').insertAdjacentHTML('afterbegin', `<label class="control-field">Origen<select id="exerciseSource">${pdfExercises.length ? `<option value="pdf"${usingPdf ? ' selected' : ''}>Problemas del PDF</option>` : ''}<option value="synthetic"${usingPdf ? '' : ' selected'}>Variantes de practica</option></select></label>${usingPdf ? `<label class="control-field">Problema<select id="pdfExercise">${pdfExercises.map(exercise => `<option value="${escapeHtml(exercise.id)}"${exercise.id === pdfExerciseId ? ' selected' : ''}>${escapeHtml(exercise.source.number)}. ${escapeHtml(exercise.title)}</option>`).join('')}</select></label>` : ''}`);
+    element('exerciseType').closest('label').hidden = usingPdf;
+    if (usingPdf) {
+      element('newExercise').innerHTML = '<i data-lucide="shuffle" aria-hidden="true"></i>Otro problema PDF';
+      element('newExercise').disabled = pdfExercises.length < 2;
+    }
     const selector = element('practiceMode');
     selector.insertAdjacentHTML('afterbegin',`<option value="observe"${mode === 'observe' ? ' selected' : ''}>Observar la resolucion</option>`);
     selector.value = mode;
@@ -194,12 +208,12 @@ export function mountAula(document, environment = {}) {
       const tutor = document.createElement('section');
       tutor.setAttribute('data-exercise-tutor','');
       attempt.before(tutor);
-      activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onHelp:assistance,onPractice:()=>{const excluded=JSON.stringify([activeExercise.prompt,activeExercise.given,activeExercise.questions.map(question=>question.prompt)]);mode='practice';seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice(excluded);icons();}});
+      activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onHelp:assistance,onPractice:()=>{const excluded=JSON.stringify([activeExercise.prompt,activeExercise.given,activeExercise.questions.map(question=>question.prompt)]);mode='practice';practiceSource='synthetic';entireBank=false;seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice(excluded);icons();}});
     }
     const notation = document.createElement('section');
     notation.className = 'exercise-notation';
-    notation.innerHTML = `<h3>Cómo leer los símbolos de este ejercicio</h3>${notationHtml(activeExercise.type)}`;
-    element('panel-practice').querySelector('.exercise-prompt').append(notation);
+    notation.innerHTML = `<h3>Cómo leer los símbolos de este ejercicio</h3>${notationHtml(activeExercise.type === 'pdf' ? current.id : activeExercise.type)}`;
+    element('panel-practice').querySelector(usingPdf ? '[data-exercise-tutor]' : '.exercise-prompt').append(notation);
     element('panel-practice').querySelectorAll('[data-solution]').forEach(details => {
       details.addEventListener('toggle', () => {
         if (details.open && details.isConnected && activeExercise?.id === exerciseId) assistance(details.dataset.solution);
@@ -209,7 +223,7 @@ export function mountAula(document, environment = {}) {
   }
 
   function assistance(questionId) {
-    if (!activeExercise) return;
+    if (!activeExercise || activeExercise.type === 'pdf') return;
     const key = `${activeExercise.id}/${questionId}`;
     if (!progress.attempts[key]?.solved) recordAssistance(progress, key);
     persist();
@@ -217,7 +231,7 @@ export function mountAula(document, environment = {}) {
 
   function renderAnimation() {
     const paragraphs = html => readParagraphs(document, html);
-    activeCleanup = mountAnimation(element('panel-animation'), createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math, audio:environment.getAudio?.(lesson().id), createWhiteboard:environment.createWhiteboard});
+    activeCleanup = mountAnimation(element('panel-animation'), environment.getAnimation?.(lesson().id) ?? createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math, audio:environment.getAudio?.(lesson().id), createWhiteboard:environment.createWhiteboard});
   }
 
   function renderView() {
@@ -248,7 +262,7 @@ export function mountAula(document, environment = {}) {
     const changed = lessonId !== route.lessonId;
     route = {lessonId, view};
     progress.lastLesson = lessonId;
-    if (changed) { practiceType = null; seed = FIRST_PRACTICE_SEED; mode = 'observe'; }
+    if (changed) { practiceType = null; practiceSource = null; pdfExerciseId = null; seed = FIRST_PRACTICE_SEED; mode = 'observe'; }
     const current = lesson();
     element('unitLabel').textContent = `${current.unit.number === 0 ? 'Puente' : `Tema ${current.unit.number}`} · ${current.unit.title}`;
     element('lessonTitle').textContent = current.title;
@@ -351,6 +365,8 @@ export function mountAula(document, environment = {}) {
   listen(element('glossaryToggle'), 'click', () => openDialog('Diccionario de símbolos', `<table class="symbol-table"><thead><tr><th>Símbolo</th><th>Nombre</th><th>Significado</th></tr></thead><tbody>${COURSE.glossary.map(item => `<tr><td>${escapeHtml(item.symbol)}</td><td>${escapeHtml(item.term)}</td><td>${escapeHtml(item.definition)}</td></tr>`).join('')}</tbody></table>`));
   listen(element('sourcesToggle'), 'click', () => openDialog('Materiales y cobertura', `<p>36 lecciones originales organizadas a partir de los cuatro temas aportados. El puente matemático es material adicional. La numeración de los ejercicios de multivariantes no coincide con la del Tema 4.</p>${COURSE.coverage.map(item => `<section><h3>${escapeHtml(item.document)}</h3><ul class="coverage-list">${item.topics.map(topic => `<li>${escapeHtml(topic)}</li>`).join('')}</ul></section>`).join('')}<section><h3>Práctica y límites</h3><p>Los ejercicios son nuevos ejemplos didácticos con variantes, no reproducciones de la PEC vigente. Las estimaciones, contrastes y el teorema central del límite que aparezcan como contexto adicional se distinguen del temario aportado. Los originales docentes no se publican en esta aula.</p><p>Las cifras biológicas son ficticias y las visualizaciones no son evidencia experimental. Las probabilidades se calculan con jStat 1.9.6; las fórmulas se representan con KaTeX 0.16.25.</p></section>`));
   listen(element('panel-practice'), 'change', event => {
+    if (event.target.id === 'exerciseSource') { practiceSource = event.target.value; if (practiceSource === 'pdf') { mode = 'observe'; entireBank = false; } renderPractice(); icons(); }
+    if (event.target.id === 'pdfExercise') { pdfExerciseId = event.target.value; renderPractice(); icons(); }
     if (event.target.id === 'exerciseType') { practiceType = event.target.value; seed = FIRST_PRACTICE_SEED; renderPractice(); icons(); }
     if (event.target.id === 'practiceMode') { mode = event.target.value; renderPractice(); icons(); }
     if (event.target.id === 'entireBank') { entireBank = event.target.checked; renderPractice(); icons(); }
@@ -358,7 +374,13 @@ export function mountAula(document, environment = {}) {
   listen(element('panel-practice'), 'click', event => {
     const button = event.target.closest('button');
     if (!button) return;
-    if (button.id === 'newExercise') { seed = seed === 4294967295 ? FIRST_PRACTICE_SEED : seed + 1; renderPractice(); icons(); }
+    if (button.id === 'newExercise') {
+      if (activeExercise?.type === 'pdf') {
+        const exercises = getPdfExercises(lesson().id);
+        pdfExerciseId = exercises[(exercises.findIndex(exercise => exercise.id === pdfExerciseId)+1)%exercises.length].id;
+      } else seed = seed === 4294967295 ? FIRST_PRACTICE_SEED : seed + 1;
+      renderPractice(); icons();
+    }
     if (button.dataset.solutionStep) {
       const solution = button.closest('[data-solution]');
       const steps = Array.from(solution.querySelectorAll('[data-worked-step]'));
@@ -381,6 +403,7 @@ export function mountAula(document, environment = {}) {
     const form = event.target.closest('[data-grade-form]');
     if (!form || !activeExercise) return;
     event.preventDefault();
+    if (mode === 'observe' || activeExercise.type === 'pdf') return;
     const question = activeExercise.questions.find(item => item.id === form.dataset.gradeForm);
     const result = gradeAnswer(question, element(`answer-${question.id}`).value);
     const feedback = element(`feedback-${question.id}`);

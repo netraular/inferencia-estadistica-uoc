@@ -2,6 +2,43 @@ const number = value => Number(value.toPrecision(7)).toString();
 const escape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 const frame = (title, tex, comment = '') => ({title, tex, comment});
 
+function stageEquations(step) {
+  if (!step.tex) return [{...step, tex:''}];
+  const equalities = [];
+  let depth = 0;
+  const environments = [];
+  for (let index = 0; index < step.tex.length; index++) {
+    const character = step.tex[index];
+    if (character === '\\') {
+      const environment = /^\\(begin|end)\s*\{([^{}]+)\}/.exec(step.tex.slice(index));
+      if (environment) {
+        if (environment[1] === 'begin') environments.push(environment[2]);
+        else if (environments.at(-1) === environment[2]) environments.pop();
+        index += environment[0].length-1;
+      } else if (/[\\{}=]/.test(step.tex[index+1] || '')) index++;
+      continue;
+    }
+    if (character === '{') depth++;
+    if (character === '}') depth--;
+    if (character === '=' && depth === 0 && environments.length === 0) equalities.push(index);
+  }
+  if (equalities.length < 2) return [{...step}];
+  return equalities.slice(1).concat(step.tex.length).map((end,index,ends) => ({
+    ...step, tex:step.tex.slice(0,end), ...(index < ends.length-1 ? {diagram:undefined} : {})
+  }));
+}
+
+function initialDiagram(exercise, question) {
+  const diagram = exercise.visual.params.diagram;
+  if (!diagram) return undefined;
+  if (diagram.kind === 'matrix' && question.tutorSteps?.some(step => step.diagram?.kind === 'matrix' && JSON.stringify(step.diagram.values) !== JSON.stringify(diagram.values))) {
+    return {...diagram, values:diagram.rows.map(() => diagram.columns.map(() => null)), highlight:[]};
+  }
+  if (diagram.kind === 'normal') return {...diagram, lower:undefined, upper:undefined};
+  if (diagram.kind === 'region') return {...diagram, cut:undefined};
+  return {...diagram, highlight:[]};
+}
+
 function exerciseData(exercise, question) {
   const params=exercise.visual.params;
   if(exercise.type==='normal')return String.raw`\mu=${params.mean},\quad\sigma=${params.sd},\quad${question.id==='interval'?`a=${params.lower},\\ b=${params.upper}`:`p=${params.quantileProbability}`}`;
@@ -89,25 +126,104 @@ function operations(exercise, question) {
     }
     return parts;
   }
-  return question.steps.slice(1,-1).flatMap(step => {
-    if (!step.tex) return [frame(step.title,'',step.explanation.split(/[.!?]\s/)[0])];
-    const parts = [];
-    let depth = 0;
-    let start = 0;
-    for (let index=0;index<step.tex.length;index++) {
-      const character = step.tex[index];
-      if (character === '{' && step.tex[index-1] !== '\\') depth++;
-      if (character === '}' && step.tex[index-1] !== '\\') depth--;
-      if (character === '=' && depth === 0) {parts.push(step.tex.slice(start,index));start=index+1;}
-    }
-    parts.push(step.tex.slice(start));
-    if (parts.length === 1) return [frame(step.title,step.tex,step.explanation.split(/[.!?]\s/)[0])];
-    return parts.map((part,index)=>frame(step.title,index ? `${parts[0]}=${part}` : part,index ? '' : step.explanation.split(/[.!?]\s/)[0]));
-  });
+  return question.steps.slice(1,-1).map(step => frame(step.title,step.tex || '',step.explanation.split(/[.!?]\s/)[0]));
 }
 
 export function createTutorFrames(exercise, question) {
-  return [frame('Identificar lo que buscamos','',question.prompt),...operations(exercise,question),{...frame('Comprobar el resultado',String.raw`\boxed{${number(question.answer)}}`,question.interpretation),result:true}];
+  const steps = question.tutorSteps ? question.tutorSteps.flatMap(stageEquations) : operations(exercise,question).flatMap(stageEquations);
+  let diagram = initialDiagram(exercise,question);
+  return [frame('Identificar lo que buscamos','',question.prompt),...steps,{...frame('Comprobar el resultado',String.raw`\boxed{${number(question.answer)}}`,question.interpretation),result:true}].map(step => {
+    diagram = step.diagram ?? diagram;
+    return diagram ? {...step, diagram} : step;
+  });
+}
+
+function drawDiagram(context, diagram, left, right, top, bottom) {
+  const text = (value,x,y,space) => context.fillText(String(value),x,y,Math.max(1,space));
+  if (diagram.kind === 'matrix') {
+    const cellWidth = (right-left)/diagram.columns.length;
+    const cellHeight = (bottom-top)/diagram.rows.length;
+    diagram.values.forEach((row,rowIndex) => row.forEach((value,columnIndex) => {
+      const selected = diagram.highlight?.some(([selectedRow,selectedColumn]) => selectedRow === rowIndex && selectedColumn === columnIndex);
+      const startX = left+columnIndex*cellWidth;
+      const startY = top+rowIndex*cellHeight;
+      context.fillStyle = selected ? '#bbdfd0' : '#edf1ef';
+      context.fillRect(startX+2,startY+2,cellWidth-4,cellHeight-4);
+      context.fillStyle = selected ? '#075b4d' : '#63716c';
+      context.textAlign = 'center';
+      if (value !== null && value !== undefined) text(number(value),startX+cellWidth/2,startY+cellHeight/2+5,cellWidth-8);
+    }));
+    context.fillStyle = '#334155';
+    context.textAlign = 'center';
+    diagram.columns.forEach((label,index) => text(label,left+cellWidth*(index+0.5),bottom+23,cellWidth-6));
+    diagram.rows.forEach((label,index) => {
+      context.save();context.translate(left-10,top+cellHeight*(index+0.5));context.rotate(-Math.PI/2);
+      text(label,0,0,cellHeight-4);context.restore();
+    });
+    context.textAlign = 'start';
+  } else if (diagram.kind === 'bars') {
+    const minimum = Math.min(0,...diagram.values);
+    const maximum = Math.max(0,...diagram.values);
+    const vertical = value => bottom-(value-minimum)/(maximum-minimum || 1)*(bottom-top-15);
+    const baseline = vertical(0);
+    const barWidth = (right-left)/diagram.values.length;
+    diagram.values.forEach((value,index) => {
+      const selected = diagram.highlight?.includes(index);
+      const center = left+barWidth*(index+0.5);
+      context.fillStyle = selected ? '#bd4864' : '#147d68';
+      context.fillRect(left+index*barWidth+2,Math.min(baseline,vertical(value)),Math.max(1,barWidth-4),Math.abs(baseline-vertical(value)));
+      context.fillStyle = '#334155';context.textAlign = 'center';
+      text(number(value),center,value < 0 ? vertical(value)-3 : vertical(value)-5,barWidth-4);
+      text(diagram.labels[index],center,bottom+23,barWidth-4);
+    });
+    context.textAlign = 'start';
+    if (minimum < 0) {context.beginPath();context.moveTo(left,baseline);context.lineTo(right,baseline);context.stroke();}
+  } else if (diagram.kind === 'region') {
+    const minimumX = Math.min(0,...diagram.points.map(point => point[0]));
+    const maximumX = Math.max(0,...diagram.points.map(point => point[0]));
+    const minimumY = Math.min(0,...diagram.points.map(point => point[1]));
+    const maximumY = Math.max(0,...diagram.points.map(point => point[1]));
+    const horizontal = value => left+(value-minimumX)/(maximumX-minimumX || 1)*(right-left);
+    const vertical = value => bottom-(value-minimumY)/(maximumY-minimumY || 1)*(bottom-top);
+    const path = points => {
+      context.beginPath();
+      points.forEach(([horizontalValue,verticalValue],index) => {
+        if (index) context.lineTo(horizontal(horizontalValue),vertical(verticalValue));
+        else context.moveTo(horizontal(horizontalValue),vertical(verticalValue));
+      });
+    };
+    path(diagram.points);context.closePath();context.fillStyle = '#d7e9e2';context.fill();context.strokeStyle = '#147d68';context.stroke();
+    if (diagram.cut?.length) {path(diagram.cut);context.strokeStyle = '#bd4864';context.lineWidth = 3;context.stroke();}
+    context.fillStyle = '#334155';
+    text(number(minimumX),left,bottom+23,35);text(number(maximumX),right-30,bottom+23,35);
+    text(number(maximumY),4,top+8,left-8);text('X',right-5,bottom+35,15);text('Y',left-25,top-8,15);
+  } else if (diagram.kind === 'normal') {
+    const minimum = Math.min(diagram.mean-4*diagram.sd,diagram.lower ?? diagram.mean);
+    const maximum = Math.max(diagram.mean+4*diagram.sd,diagram.upper ?? diagram.mean);
+    const density = value => globalThis.jStat.normal.pdf(value,diagram.mean,diagram.sd);
+    const peak = density(diagram.mean);
+    const horizontal = value => left+(value-minimum)/(maximum-minimum)*(right-left);
+    const vertical = value => bottom-density(value)/peak*(bottom-top-15);
+    if (diagram.lower !== undefined || diagram.upper !== undefined) {
+      const from = diagram.lower ?? minimum;
+      const to = diagram.upper ?? maximum;
+      context.beginPath();context.moveTo(horizontal(from),bottom);
+      for (let index = 0; index <= 120; index++) {const value = from+(to-from)*index/120;context.lineTo(horizontal(value),vertical(value));}
+      context.lineTo(horizontal(to),bottom);context.closePath();context.fillStyle = '#bbdfd0';context.fill();
+    }
+    context.beginPath();context.strokeStyle = '#147d68';
+    for (let index = 0; index <= 160; index++) {
+      const value = minimum+(maximum-minimum)*index/160;
+      if (index) context.lineTo(horizontal(value),vertical(value));else context.moveTo(horizontal(value),vertical(value));
+    }
+    context.stroke();context.fillStyle = '#334155';
+    context.textAlign = 'center';text(number(diagram.mean),horizontal(diagram.mean),bottom+23,55);
+    for (const bound of [diagram.lower,diagram.upper]) if (bound !== undefined) {
+      context.beginPath();context.strokeStyle = '#bd4864';context.moveTo(horizontal(bound),bottom);context.lineTo(horizontal(bound),vertical(bound));context.stroke();
+      text(number(bound),horizontal(bound),bottom+38,65);
+    }
+    context.textAlign = 'start';
+  }
 }
 
 export function drawTutorFigure(context, exercise, question, position, width, height) {
@@ -124,6 +240,8 @@ export function drawTutorFigure(context, exercise, question, position, width, he
   context.strokeStyle = '#334155';
   context.fillStyle = '#334155';
   context.beginPath();context.moveTo(left,top);context.lineTo(left,bottom);context.lineTo(right,bottom);context.stroke();
+  const current = createTutorFrames(exercise,question)[position];
+  if (current.diagram) {drawDiagram(context,current.diagram,left,right,top,bottom);return;}
   if (exercise.type === 'normal' || exercise.type === 'continuous') {
     const normal = exercise.type === 'normal';
     const minimum = normal ? params.mean-4*params.sd : 0;
@@ -219,7 +337,7 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   let disposed = false;
   const listeners = [];
   const listen = (target,event,handler)=>{target.addEventListener(event,handler);listeners.push(()=>target.removeEventListener(event,handler));};
-  root.innerHTML = `<div class="tutor-heading"><label>Apartado<select data-tutor-question>${exercise.questions.map((question,index)=>`<option value="${index}">${index+1}. ${escape(question.prompt)}</option>`).join('')}</select></label><button type="button" class="text-button" data-tutor-practice><i data-lucide="pencil" aria-hidden="true"></i>Intentar otra variante</button></div><div class="tutor-surface"><div class="tutor-figure"><canvas width="720" height="300" role="img"></canvas></div><div class="tutor-writing" aria-live="polite"><h3 data-tutor-title></h3><p data-tutor-comment></p><div data-tutor-lines></div></div></div><div class="tutor-controls"><button type="button" class="icon-button" data-tutor-previous title="Paso anterior" aria-label="Paso anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-play title="Reproducir" aria-label="Reproducir"><i data-lucide="play" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-next title="Paso siguiente" aria-label="Paso siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button><span data-tutor-position role="status"></span><label>Ritmo<select data-tutor-speed><option value="4000">Pausado</option><option value="2500" selected>Normal</option><option value="1500">Rapido</option></select></label></div><details data-tutor-notes class="tutor-notes"><summary>Apuntes del ejercicio</summary><div data-tutor-note-content></div></details>`;
+  root.innerHTML = `${exercise.source ? `<h2>${escape(exercise.title)}</h2><p class="source-note" data-tutor-source>${escape(exercise.source.file)} · Problema ${escape(exercise.source.number)} · Pagina ${escape(exercise.source.page)}</p>` : ''}<div class="tutor-heading"><label>Apartado<select data-tutor-question>${exercise.questions.map((question,index)=>`<option value="${index}">${index+1}. ${escape(question.prompt)}</option>`).join('')}</select></label><button type="button" class="text-button" data-tutor-practice><i data-lucide="pencil" aria-hidden="true"></i>Intentar otra variante</button></div><div class="tutor-surface"><div class="tutor-figure"><canvas width="720" height="300" role="img"></canvas></div><div class="tutor-writing" aria-live="polite"><h3 data-tutor-title></h3><p data-tutor-comment></p><div data-tutor-lines></div></div></div><div class="tutor-controls"><button type="button" class="icon-button" data-tutor-previous title="Paso anterior" aria-label="Paso anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-play title="Reproducir" aria-label="Reproducir"><i data-lucide="play" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-next title="Paso siguiente" aria-label="Paso siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button><span data-tutor-position role="status"></span><label>Ritmo<select data-tutor-speed><option value="6000" selected>Pausado</option><option value="4000">Normal</option><option value="2500">Rapido</option></select></label></div><details data-tutor-notes class="tutor-notes"><summary>Apuntes del ejercicio</summary><div data-tutor-note-content></div></details>`;
   const element = selector=>root.querySelector(selector);
   const data=document.createElement('div');
   data.className='tutor-data';

@@ -29,6 +29,7 @@ test('El tutor dibuja todos los tipos sin lienzos vacios y cambia el grafico al 
 });
 import {COURSE} from '../pages/inferencia/course.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
+import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 import {EXERCISE_TYPES,generateExercise} from '../pages/inferencia/exercises.js';
 import {WHITEBOARD_LESSONS, planWhiteboardScene, integralGeometry, formulaVector, formulaGraphic, createWhiteboard} from '../src/classroom/whiteboard.mjs';
 
@@ -37,6 +38,16 @@ globalThis.jStat=require('jstat').jStat;
 const {document}=parseHTML('<html><body></body></html>');
 const paragraphs=html=>{const node=document.createElement('div');node.innerHTML=html;return Array.from(node.querySelectorAll('p'),paragraph=>paragraph.textContent);};
 const lectures=COURSE.units[0].lessons.map(lesson=>createLessonAnimation(lesson,generateExercise,paragraphs));
+const sectionAnimations=COURSE.units[0].lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>section.animation));
+
+test('section IDs retain their audio identity and use the parent topic whiteboard',()=>{
+  for(const animation of sectionAnimations){
+    assert.ok(animation.id.includes('--'));
+    const plan=planWhiteboardScene(animation.id,animation.steps[0]);
+    assert.equal(plan.kind,'story',animation.id);
+    assert.deepEqual(plan.lines,animation.steps[0].visual.lines);
+  }
+});
 
 test('storyboards use explicit scene items instead of inferring unrelated examples from words',()=>{
   const step={title:'Miramos las semillas',story:true,visual:{lines:[{cue:1,label:'Sembradas',value:'60'},{cue:2,tex:'12/60'}]}};
@@ -194,7 +205,7 @@ test('real Konva canvas draws every scene, fits text at desktop and mobile sizes
   const stageCount=Konva.stages.length;
   Konva.Util.createCanvasElement=()=>{const canvas=createCanvas(1,1);canvas.style={};return canvas;};
   try {
-    for(const lecture of lectures) for(const [width,height] of [[960,576],[360,360]]) {
+    for(const lecture of [...lectures,...sectionAnimations]) for(const [width,height] of [[960,576],[360,360]]) {
       const host={ownerDocument:{defaultView:{}},getBoundingClientRect:()=>({width,height})};
       const board=createWhiteboard(host,{animation:lecture});
       try {

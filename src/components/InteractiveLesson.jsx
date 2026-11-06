@@ -4,7 +4,7 @@ import shell from '../generated/aula-shell.json';
 import audio from '../../static/audio/manifest.json';
 import {COURSE} from '../../pages/inferencia/course.js';
 
-export default function InteractiveLesson({lessonId, view = 'lab'}) {
+export default function InteractiveLesson({lessonId, view = 'lab', animation, example}) {
   const illustration = view === 'figure' ? COURSE.units.flatMap(unit=>unit.lessons).find(lesson=>lesson.id===lessonId)?.illustration : null;
   const host = useRef(null);
   const [error, setError] = useState('');
@@ -27,20 +27,22 @@ export default function InteractiveLesson({lessonId, view = 'lab'}) {
       globalThis.jStat = stats.default?.jStat || stats.jStat || stats.default;
       window.katex = math.default || math;
       window.lucide = icons.default || icons;
-      if (view === 'figure') {
+      if (view === 'example') {
+        mounted = engine.mountSectionExample(host.current, {descriptor:example, baseUrl});
+      } else if (view === 'figure') {
         const lesson = COURSE.units.flatMap(unit=>unit.lessons).find(item=>item.id===lessonId);
         if (!lesson?.illustration) throw new Error('Esta leccion no tiene una ilustracion definida');
         mounted = {dispose:engine.mountLab(host.current, lesson.visual, {params:lesson.illustration.params, compact:true})};
       } else {
-        mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false, audio, createWhiteboard:whiteboard?.createWhiteboard});
+        mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false, audio, animation, createWhiteboard:whiteboard?.createWhiteboard});
       }
       setReady(true);
     }).catch(failure => {if (active) setError(failure.message);});
     return () => {active = false; mounted?.dispose();};
-  }, [lessonId, baseUrl, view]);
+  }, [lessonId, baseUrl, view, animation?.id, example?.type, example?.seed, example?.questionIds.join('|')]);
   return <section className="course-activities" aria-label={illustration?.title || 'Actividades de la leccion'}>
     {illustration && <p>{illustration.question}</p>}
-    {view === 'animation' && audio.lessons[lessonId]?.cueTiming === 'scene-measured-cues-estimated' && <p className="audio-timing">Audio sincronizado por diapositiva; resaltado de frases aproximado.</p>}
+    {view === 'animation' && audio.lessons[animation?.id || lessonId]?.cueTiming === 'scene-measured-cues-estimated' && <p className="audio-timing">Audio sincronizado por diapositiva; resaltado de frases aproximado.</p>}
     {!ready && !error && <p role="status">Cargando actividades...</p>}
     {error && <p role="alert">No se pudieron cargar las actividades: {error}. Recarga la pagina para reintentarlo.</p>}
     <div ref={host} />

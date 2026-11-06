@@ -39,14 +39,20 @@ Worked practice in both formats uses the shared exercise generators.
 
 ## Reading Without A Mathematics Background
 
-Every lesson begins with a concrete question and two short explanatory sections
-using biology examples before presenting the formulas. Each formula has a verbal
-reading; the shared vocabulary in `pages/inferencia/teaching.js` explains the
-symbols, their meaning and an example both locally and in the searchable glossary.
-Definitions and conditions from the source topics remain in the main reading,
-after the intuitive introduction and notation. Only explicitly additional
-material is labelled as an optional extension, rather than hiding required
-theory under a generic depth disclosure.
+The three primary views are Lesson, Exercises and Animated Reading. Lesson uses
+118 separate sections across the 36 lessons, with conversational narration,
+delayed whiteboard reveals and scoped worked examples. Symbols and conditions
+are introduced before their calculations. Complete notes remain available in
+an optional disclosure; every required source section is covered by the journey.
+Only additional curriculum material is labelled as an optional section.
+Animated Reading retains the complete global recap and its existing audio.
+Laboratories remain available internally, but are no longer a primary tab.
+
+Section scripts live in `pages/inferencia/lesson-sections.js`; the shared
+vocabulary in `pages/inferencia/teaching.js` explains symbols locally and in the
+searchable glossary. Section audio has its own stable IDs and measured phrase
+timings, and can be generated and published incrementally without changing the
+global recap or an earlier frozen TTS batch.
 
 Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
 density, marginals, continuous conditioning and the bivariate normal. Each starts
@@ -66,6 +72,12 @@ Exercises open in observation mode before an independent attempt. A visual
 board keeps earlier operations visible, with manual forward/backward controls
 or paced playback. Data and diagrams stay alongside the current operation;
 full written solutions remain in optional notes during observation.
+When available, observation starts with one of 22 original numbered PDF problems,
+covering 87 numerical questions. The source file, problem and page are retained.
+Tables, polygons and distribution areas use the actual problem data, while
+construction tables reveal only their current partial values. Numerical answers
+are independently checked, including corrections to errors in the PDF solutions.
+The assessment statement is not part of this solved exercise bank.
 Normal, density, discrete-moment, event and Bayes calculations have dedicated
 small operations. Other generators reuse their existing mathematical steps.
 Switching to an independent attempt selects different data from the observed

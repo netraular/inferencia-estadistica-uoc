@@ -16,6 +16,7 @@ from num2words import num2words
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SOURCE = ROOT
 DEFAULT_OUTPUT = ROOT / "data-src/inferencia-estadistica/_work/audio"
+DEFAULT_SECTION_OUTPUT = DEFAULT_OUTPUT.with_name("audio-secciones")
 NORMALIZER_VERSION = 1
 REFERENCE_TEXT = "Hola. Esta es una prueba de voz en castellano."
 
@@ -95,13 +96,61 @@ def vtt_timestamp(seconds):
     return f"{hours:02d}:{minutes:02d}:{whole_seconds:02d}.{milliseconds:03d}"
 
 
+def generate_section_scene(model, scene, output, seed, reference, reference_hash, on_cue=None):
+    import numpy as np
+    import soundfile as sf
+
+    parts = []
+    generated = False
+    for index, cue in enumerate(scene["cues"], 1):
+        path = output.parent / output.stem / f"{index:03d}.wav"
+        signature = audio_signature(cue["spoken_text"], seed, reference_hash)
+        report = cached_audio(path, signature)
+        reused = report is not None
+        if not reused:
+            report = synthesize_audio(model, cue["spoken_text"], path, signature, seed, reference)
+            generated = True
+        parts.append((path, report))
+        if on_cue:
+            on_cue(index, len(scene["cues"]), reused)
+    signature = hashlib.sha256(("section-cues-v1:" + "".join(report["signature"] for _, report in parts)).encode()).hexdigest()
+    existing = cached_audio(output, signature)
+    if existing is not None and existing.get("cue_timing") == "measured" and [cue["text"] for cue in existing.get("cues", [])] == [cue["text"] for cue in scene["cues"]]:
+        return existing, generated
+    output.parent.mkdir(parents=True, exist_ok=True)
+    rate = 44100
+    position = 0
+    timings = []
+    temporary = output.with_suffix(".wav.tmp")
+    with sf.SoundFile(temporary, mode="w", samplerate=rate, channels=1, format="WAV", subtype="PCM_16") as destination:
+        for index, (path, report) in enumerate(parts):
+            start = position / rate
+            for block in sf.blocks(path, blocksize=65536, dtype="int16"):
+                destination.write(block)
+                position += len(block)
+            timings.append({"text": scene["cues"][index]["text"], "start": start, "end": position / rate,
+                            "audio": str(path.relative_to(output.parent))})
+            if index < len(parts) - 1:
+                silence = np.zeros(round(rate * 0.3), dtype=np.int16)
+                destination.write(silence)
+                position += len(silence)
+    temporary.replace(output)
+    report = {"signature": signature, "sha256": file_hash(output), "text": scene["spoken_text"],
+              "sample_rate": rate, "frames": position, "duration_seconds": position / rate,
+              "generation_seconds": sum(part["generation_seconds"] for _, part in parts),
+              "cue_timing": "measured", "cues": timings}
+    write_json(output.with_suffix(".json"), report)
+    return report, generated
+
+
 def assemble_lesson(directory, lesson, parts):
     import numpy as np
     import soundfile as sf
 
     signature = hashlib.sha256("".join(report["signature"] for _, report in parts).encode()).hexdigest()
     existing = cached_audio(directory / "audio.wav", signature)
-    if existing is not None and (directory / "audio.vtt").is_file():
+    sections = "sectionId" in lesson
+    if existing is not None and (directory / "audio.vtt").is_file() and (not sections or existing.get("cue_timing") == "measured"):
         return existing
     rate = 44100
     position = 0
@@ -119,6 +168,11 @@ def assemble_lesson(directory, lesson, parts):
             timings.append({"title": scene["title"], "chapter": scene["chapter"],
                             "start": start, "end": end, "text": scene["spoken_text"],
                             "audio": str(path.relative_to(directory))})
+            if sections:
+                if report.get("cue_timing") != "measured" or len(report.get("cues", [])) != len(scene["cues"]):
+                    raise ValueError("Section audio must have measured cue boundaries")
+                timings[-1]["cues"] = [{"text": cue["text"], "start": start + cue["start"], "end": start + cue["end"]}
+                                       for cue in report["cues"]]
             cues.extend([str(index + 1), f"{vtt_timestamp(start)} --> {vtt_timestamp(end)}", scene["spoken_text"], ""])
             if index < len(parts) - 1:
                 silence = np.zeros(round(rate * 0.3), dtype=np.int16)
@@ -134,6 +188,9 @@ def assemble_lesson(directory, lesson, parts):
               "scene_count": len(parts), "scenes": timings,
               "subtitles": "Scene boundaries measured from audio; no word-level alignment.",
               "quality": "Signal validated; pronunciation has not been audited by listening."}
+    if sections:
+        report.update({key: lesson[key] for key in ("parentLesson", "parentTitle", "sectionId", "sourceSections", "optional")})
+        report.update(cue_timing="measured", subtitles="Scene and cue boundaries measured from synthesized audio fragments; no word-level alignment.")
     write_json(directory / "audio.json", report)
     return report
 
@@ -166,11 +223,20 @@ def generate_course(manifest, output, seed, ming_code, model_path, lesson_ids=No
                 "completed_lessons": 0, "completed_scenes": 0, "generated_scenes": 0,
                 "reused_scenes": 0, "audio_seconds": 0, "generation_seconds": 0,
                 "gpu": torch.cuda.get_device_name(), "output_directory": str(output)}
+    sections = manifest.get("mode") == "sections"
+    if sections:
+        progress.update(mode="sections", total_cues=manifest["cue_count"], completed_cues=0, generated_cues=0, reused_cues=0)
 
     def save_progress(status):
         progress["status"] = status
         progress["updated_at"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
         write_json(output / "progreso.json", progress)
+
+    def save_cue_progress(number, total, reused):
+        progress["current_cue"] = {"number": number, "total": total}
+        progress["completed_cues"] += 1
+        progress["reused_cues" if reused else "generated_cues"] += 1
+        save_progress("running")
 
     save_progress("loading")
     try:
@@ -192,18 +258,22 @@ def generate_course(manifest, output, seed, ming_code, model_path, lesson_ids=No
             progress["current_lesson"] = lesson["title"]
             for index, scene in enumerate(lesson["scenes"], 1):
                 path = directory / "fragmentos" / f"{index:03d}.wav"
-                signature = audio_signature(scene["spoken_text"], seed, reference_hash)
-                report = cached_audio(path, signature)
-                if report is None:
-                    report = synthesize_audio(model, scene["spoken_text"], path, signature, seed, reference)
-                    progress["generated_scenes"] += 1
+                progress["current_scene"] = {"number": index, "title": scene["title"], "total": len(lesson["scenes"])}
+                if sections:
+                    report, generated = generate_section_scene(model, scene, path, seed, reference, reference_hash, save_cue_progress)
+                    progress["generated_scenes" if generated else "reused_scenes"] += 1
                 else:
-                    progress["reused_scenes"] += 1
+                    signature = audio_signature(scene["spoken_text"], seed, reference_hash)
+                    report = cached_audio(path, signature)
+                    if report is None:
+                        report = synthesize_audio(model, scene["spoken_text"], path, signature, seed, reference)
+                        progress["generated_scenes"] += 1
+                    else:
+                        progress["reused_scenes"] += 1
                 parts.append((path, report))
                 progress["completed_scenes"] += 1
                 progress["audio_seconds"] += report["duration_seconds"]
                 progress["generation_seconds"] += report["generation_seconds"]
-                progress["current_scene"] = {"number": index, "title": scene["title"], "total": len(lesson["scenes"])}
                 save_progress("running")
                 print(f"[{progress['completed_scenes']}/{progress['total_scenes']}] {lesson['id']} {index}/{len(lesson['scenes'])}: {report['duration_seconds']:.1f}s audio", flush=True)
                 if max_scenes and progress["completed_scenes"] >= max_scenes and index < len(lesson["scenes"]):
@@ -288,27 +358,31 @@ def write_json(path, value):
     temporary.replace(path)
 
 
-def prepare_course(source, output):
+def prepare_course(source, output, sections=False):
     source = source.resolve()
     output = output.resolve()
+    snapshot = output / "curso.json"
+    if snapshot.is_file():
+        saved = json.loads(snapshot.read_text(encoding="utf-8"))
+        if saved.get("mode", "global") != ("sections" if sections else "global"):
+            raise ValueError("The saved course uses another narration mode; use a new output directory")
     export_directory = output / "fuente"
     export_directory.mkdir(parents=True, exist_ok=True)
     node_script = """
 import {pathToFileURL} from 'node:url';
-const root = process.argv[1];
-const {COURSE} = await import(pathToFileURL(root + '/pages/inferencia/course.js'));
-const {exportLectures} = await import(pathToFileURL(root + '/data-src/inferencia-estadistica/export-lecturas.mjs'));
-exportLectures(process.argv[2]);
-console.log(JSON.stringify({title:COURSE.title,units:COURSE.units.map(unit=>({id:unit.id,number:unit.number,title:unit.title,lessons:unit.lessons.map(lesson=>({id:lesson.id,title:lesson.title}))}))}));
+const {exportNarration} = await import(pathToFileURL(process.argv[3]));
+console.log(JSON.stringify(await exportNarration(process.argv[2], {source:process.argv[1], sections:process.argv[4] === 'sections'})));
 """
     try:
         result = subprocess.run(
-            ["node", "--input-type=module", "--eval", node_script, str(source), str(export_directory)],
+            ["node", "--input-type=module", "--eval", node_script, str(source), str(export_directory),
+             str(Path(__file__).with_name("export-narration.mjs")), "sections" if sections else "global"],
             check=True, capture_output=True, text=True,
         )
     except subprocess.CalledProcessError as error:
         raise RuntimeError(f"Lecture export failed:\n{error.stderr}") from error
-    course = json.loads(result.stdout)
+    exported = json.loads(result.stdout)
+    course = exported["course"]
     lectures = json.loads((export_directory / "lecturas.json").read_text(encoding="utf-8"))
     by_id = {lecture["id"]: lecture for lecture in lectures}
     planned = []
@@ -321,8 +395,13 @@ console.log(JSON.stringify({title:COURSE.title,units:COURSE.units.map(unit=>({id
             transcript = "\n\n".join(scene["caption"] for scene in lecture["scenes"]) + "\n"
             (directory / "guion-original.txt").write_text(transcript, encoding="utf-8")
             for scene_index, scene in enumerate(lecture["scenes"]):
-                caption = (lesson["title"] + ". " if scene_index == 0 else "") + scene["caption"]
-                scene["spoken_text"] = spoken_text(caption)
+                if sections:
+                    scene["spoken_text"] = scene["caption"]
+                    for cue in scene["cues"]:
+                        cue["spoken_text"] = cue["text"]
+                else:
+                    caption = (lesson["title"] + ". " if scene_index == 0 else "") + scene["caption"]
+                    scene["spoken_text"] = spoken_text(caption)
             narration = "\n\n".join(scene["spoken_text"] for scene in lecture["scenes"]) + "\n"
             (directory / "guion.txt").write_text(narration, encoding="utf-8")
             planned.append({
@@ -332,8 +411,9 @@ console.log(JSON.stringify({title:COURSE.title,units:COURSE.units.map(unit=>({id
                 "source": lecture["source"], "scenes": lecture["scenes"],
                 "words": len(transcript.split()),
                 "estimated_seconds": lecture["duration"],
+                **({key: lesson[key] for key in ("parentLesson", "parentTitle", "sectionId", "sourceSections", "optional")} if sections else {}),
             })
-    if len(planned) != len(lectures) or len({lesson["id"] for lesson in planned}) != len(lectures):
+    if len(planned) != len(lectures) or {lesson["id"] for lesson in planned} != set(by_id) or len(by_id) != len(lectures):
         raise ValueError("The course and exported lectures do not match")
     manifest = {
         "title": course["title"], "source_directory": str(source),
@@ -344,39 +424,61 @@ console.log(JSON.stringify({title:COURSE.title,units:COURSE.units.map(unit=>({id
         "estimated_audio_seconds": sum(lesson["estimated_seconds"] for lesson in planned),
         "lessons": planned,
     }
+    if sections:
+        manifest.update(mode="sections", parent_lesson_count=exported["parent_lesson_count"],
+                        cue_count=sum(len(scene["cues"]) for lesson in planned for scene in lesson["scenes"]))
     write_json(output / "curso.json", manifest)
     return manifest
 
 
-def load_course(source, output, refresh=False):
+def load_course(source, output, refresh=False, sections=False):
     snapshot = output / "curso.json"
-    if refresh or not snapshot.is_file():
-        return prepare_course(source, output)
+    if not snapshot.is_file():
+        return prepare_course(source, output, sections=sections)
     manifest = json.loads(snapshot.read_text(encoding="utf-8"))
+    if manifest.get("mode", "global") != ("sections" if sections else "global"):
+        raise ValueError("The saved course uses another narration mode; use a new output directory")
     if manifest.get("normalizer_version") != NORMALIZER_VERSION:
         raise ValueError("The saved course uses another normalizer; prepare a new output directory")
     lessons = manifest["lessons"]
     if len(lessons) != manifest["lesson_count"] or sum(len(lesson["scenes"]) for lesson in lessons) != manifest["scene_count"]:
         raise ValueError("The saved course is incomplete")
+    if sections:
+        if len({lesson["id"] for lesson in lessons}) != len(lessons) or any(
+            lesson["id"] != f"{lesson['parentLesson']}--{lesson['sectionId']}" or len(lesson["scenes"]) != 1
+            or any(not cue.get("spoken_text") or cue["spoken_text"] != cue["text"] for cue in lesson["scenes"][0]["cues"])
+            for lesson in lessons
+        ) or sum(len(scene["cues"]) for lesson in lessons for scene in lesson["scenes"]) != manifest["cue_count"]:
+            raise ValueError("The saved section course is incomplete")
+        if len({lesson["parentLesson"] for lesson in lessons}) != manifest["parent_lesson_count"]:
+            raise ValueError("The saved section parents are incomplete")
+    if refresh:
+        return prepare_course(source, output, sections=sections)
     return manifest
 
 
 def main():
     parser = argparse.ArgumentParser(description="Generate all statistics lessons with Ming on CUDA; resume completed fragments.")
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--output", type=Path, help="Batch directory; section mode defaults to a separate audio-secciones batch.")
     parser.add_argument("--ming-code", type=Path, default=os.environ.get("MING_CODE_DIR"))
     parser.add_argument("--model", type=Path, default=os.environ.get("MING_MODEL_DIR"))
     parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--sections", action="store_true", help="Prepare or resume natural section narration, keyed by section animation ID.")
+    parser.add_argument("--refresh", action="store_true", help="Explicitly rebuild a same-mode snapshot with --prepare-only.")
     parser.add_argument("--status", action="store_true")
-    parser.add_argument("--lesson", action="append", help="Generate only this lesson ID; repeat to select several.")
+    parser.add_argument("--lesson", action="append", help="Generate only this lesson or section animation ID; repeat to select several.")
     parser.add_argument("--max-scenes", type=int, help="Stop after this many scenes, including reused scenes.")
     parser.add_argument("--seed", type=int, default=1895)
     args = parser.parse_args()
     if args.max_scenes is not None and args.max_scenes < 1:
         parser.error("--max-scenes must be positive")
-    output = args.output.resolve()
+    if args.refresh and (not args.prepare_only or args.status):
+        parser.error("--refresh requires --prepare-only and cannot be used with --status")
+    output = (args.output or (DEFAULT_SECTION_OUTPUT if args.sections else DEFAULT_OUTPUT)).resolve()
     if args.status:
+        if (output / "curso.json").is_file():
+            load_course(args.source, output, sections=args.sections)
         print((output / "progreso.json").read_text(encoding="utf-8"))
         return
     if not args.prepare_only:
@@ -391,7 +493,10 @@ def main():
         except BlockingIOError:
             parser.error("Another generation is already using this output directory")
         os.environ.setdefault("TQDM_DISABLE", "1")
-        manifest = load_course(args.source, output, refresh=args.prepare_only)
+        try:
+            manifest = load_course(args.source, output, refresh=args.refresh, sections=args.sections)
+        except ValueError as error:
+            parser.error(str(error))
         if args.prepare_only:
             result = {key: value for key, value in manifest.items() if key != "lessons"}
         else:

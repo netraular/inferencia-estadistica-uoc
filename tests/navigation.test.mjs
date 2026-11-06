@@ -33,17 +33,18 @@ function elements(element) {
   return [element, ...React.Children.toArray(element.props.children).flatMap(elements)];
 }
 
-test('four Docusaurus tabs keep theory, studied state and progress inside lesson, and preserve old queries', () => {
+test('three Docusaurus tabs keep the journey, optional notes and progress inside lesson, and preserve old queries', () => {
   const effects = [];
   const studied = [];
   const replacements = [];
   const location = {pathname:'/inferencia/lecciones/sucesos/', search:'?actividad=theory&origen=temario', hash:'#ejemplo', state:{kept:true}};
   const {default:LessonContent} = loadCompiled('../src/components/LessonContent.jsx', {
-    react:{...React, useEffect:effect => effects.push(effect)},
+    react:{...React, useEffect:effect => effects.push(effect), useRef:() => ({current:null})},
     '@docusaurus/router':{useHistory:() => ({replace:value => replacements.push(value)}), useLocation:() => location},
     '@theme/Tabs':({values, children}) => React.createElement('div', {'data-tabs':values.map(value => value.value).join(',')}, children),
     '@theme/TabItem':({value, children}) => React.createElement('section', {'data-view':value}, children),
     './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive':view}),
+    './LessonJourney':({lessonId}) => React.createElement('div', {'data-journey':lessonId}),
     '../classroom/useCourseProgress':lessonId => {
       assert.equal(lessonId, 'sucesos');
       return {progress:{studied:['sucesos']}, warning:'Aviso de guardado', setStudied:value => studied.push(value)};
@@ -51,9 +52,11 @@ test('four Docusaurus tabs keep theory, studied state and progress inside lesson
   });
   const element = LessonContent({lessonId:'sucesos', children:React.createElement('p', null, 'Contenido conservado')});
   const {document} = parseHTML(renderToStaticMarkup(element));
-  assert.equal(document.querySelector('[data-tabs]').getAttribute('data-tabs'), 'lesson,lab,practice,animation');
+  assert.equal(document.querySelector('[data-tabs]').getAttribute('data-tabs'), 'lesson,practice,animation');
   const lesson = document.querySelector('[data-view="lesson"]');
   assert.match(lesson.textContent, /Contenido conservado/);
+  assert.ok(lesson.querySelector('[data-journey="sucesos"]'));
+  assert.equal(lesson.querySelector('.lesson-reference-notes').hasAttribute('open'), false);
   assert.ok(lesson.querySelector('[data-interactive="theory"]'));
   assert.ok(lesson.querySelector('input[type="checkbox"][checked]'));
   assert.ok(lesson.querySelector('[role="status"]'));
@@ -72,6 +75,9 @@ test('four Docusaurus tabs keep theory, studied state and progress inside lesson
   location.search = '?actividad=practice';
   effects[0]();
   assert.equal(replacements.length, 1);
+  location.search = '?actividad=lab&origen=temario';
+  effects[0]();
+  assert.equal(replacements[1].search, '?actividad=lesson&origen=temario');
 });
 
 test('legacy lesson links preserve every activity and normalize theory to lesson under baseUrl', () => {

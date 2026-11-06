@@ -1,7 +1,10 @@
 test('La resolución revela cada operación sin perder la interpretación ni el registro de ayuda', () => {
-  const {document, aula, click} = harness();
+  const {document, aula, click, change} = harness();
   try {
     aula.setView('practice');
+    document.getElementById('exerciseSource').value = 'synthetic';
+    change(document.getElementById('exerciseSource'));
+    assert.equal(document.getElementById('practiceMode').value, 'observe');
     const solution = document.querySelector('[data-solution]');
     solution.open = true;
     const steps = Array.from(solution.querySelectorAll('[data-worked-step]'));
@@ -33,6 +36,7 @@ import {COURSE} from '../../pages/inferencia/course.js';
 import {ANIMATIONS} from '../../pages/inferencia/animations.js';
 import {LAB_IDS} from '../../pages/inferencia/labs.js';
 import {EXERCISE_TYPES, generateExercise, scopeExercise} from '../../pages/inferencia/exercises.js';
+import {getPdfExercises} from '../../pages/inferencia/pdf-exercises.js';
 import {createTutorFrames} from '../../pages/inferencia/exercise-tutor.js';
 import {LESSONS, VIEWS, LESSON_LAB_PRESETS, parseRoute, escapeHtml, mountAula} from '../../pages/inferencia/app.js';
 import {STORAGE_KEY, freshProgress, progressSummary} from '../../pages/inferencia/progress.js';
@@ -183,7 +187,7 @@ test('Las 36 lecciones explican su notación y gradúan la práctica sin elimina
       assert.ok(ids.length>0,lesson.id);
     }
   }
-  const {document,aula} = harness();
+  const {document,aula,change} = harness();
   try {
     assert.ok(document.querySelector('.lesson-notation'));
     assert.equal(document.querySelector('.lesson-depth'),null);
@@ -199,6 +203,8 @@ test('Las 36 lecciones explican su notación y gradúan la práctica sin elimina
     aula.navigate('momentos-transformaciones','theory');
     assert.match(document.querySelector('.lesson-depth').textContent,/Ampliación opcional/);
     aula.navigate('masa','practice');
+    document.getElementById('exerciseSource').value = 'synthetic';
+    change(document.getElementById('exerciseSource'));
     assert.deepEqual(aula.exercise.questions.map(question=>question.id),['normalizer']);
     assert.match(document.querySelector('.exercise-notation').textContent,/Se lee:/);
   } finally {aula.dispose();}
@@ -210,6 +216,8 @@ test('La práctica inicial no repite el ejemplo resuelto y conserva variantes al
   try {
     for (const lesson of LESSONS) {
       aula.navigate(lesson.id,'practice');
+      document.getElementById('exerciseSource').value = 'synthetic';
+      change(document.getElementById('exerciseSource'));
       const type = lesson.exerciseTypes[0];
       const worked = scopeExercise(lesson,generateExercise(type,1));
       const initial = aula.exercise;
@@ -304,7 +312,7 @@ test('La lectura usa una columna y frases inline sin tarjetas ni filas separadas
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','progress.js','teaching.js']);
+  assert.deepEqual(files, ['animations.js','app.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','pdf-exercises.js','progress.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
@@ -407,9 +415,11 @@ test('Búsqueda sin acentos y comprobación conceptual', () => {
 });
 
 test('Práctica acepta fracciones, registra ayuda y no puntúa entradas inválidas', () => {
-  const {document, aula, click, submit} = harness();
+  const {document, aula, click, change, submit} = harness();
   try {
     aula.navigate('sucesos', 'practice');
+    document.getElementById('practiceMode').value = 'practice';
+    change(document.getElementById('practiceMode'));
     const question = aula.exercise.questions[0];
     const input = document.getElementById(`answer-${question.id}`);
     const form = document.querySelector(`[data-grade-form="${question.id}"]`);
@@ -478,9 +488,11 @@ test('Los modelos iniciales corresponden al tema y no al laboratorio genérico',
 });
 
 test('Consultar la solución justo antes de responder cuenta como ayuda', () => {
-  const {document, aula, submit} = harness();
+  const {document, aula, change, submit} = harness();
   try {
     aula.navigate('sucesos', 'practice');
+    document.getElementById('practiceMode').value = 'practice';
+    change(document.getElementById('practiceMode'));
     const question = aula.exercise.questions[0];
     document.querySelector(`[data-solution="${question.id}"]`).open = true;
     document.getElementById(`answer-${question.id}`).value = String(question.answer);
@@ -491,10 +503,17 @@ test('Consultar la solución justo antes de responder cuenta como ayuda', () => 
 });
 
 test('Cada lección abre primero su ejercicio principal y conserva el orden pedagógico', () => {
-  const {document, aula} = harness();
+  const {document, aula, change} = harness();
   try {
     for (const lesson of LESSONS) {
       aula.navigate(lesson.id, 'practice');
+      const pdfExercises = getPdfExercises(lesson.id);
+      assert.equal(document.getElementById('practiceMode').value, 'observe', lesson.id);
+      assert.equal(aula.exercise.type, pdfExercises.length ? 'pdf' : lesson.exerciseTypes[0], lesson.id);
+      assert.equal(document.getElementById('exerciseSource').value, pdfExercises.length ? 'pdf' : 'synthetic', lesson.id);
+      if (pdfExercises.length) assert.equal(aula.exercise.id, pdfExercises[0].id, lesson.id);
+      document.getElementById('exerciseSource').value = 'synthetic';
+      change(document.getElementById('exerciseSource'));
       assert.equal(aula.exercise.type, lesson.exerciseTypes[0], lesson.id);
       assert.deepEqual([...document.querySelectorAll('#exerciseType option')].map(option => option.value), lesson.exerciseTypes);
     }
@@ -512,7 +531,7 @@ test('El versionado de recursos es determinista e idempotente', () => {
   const root = versionFixture();
   try {
     const first = versionAssets(root);
-    assert.equal(Object.keys(first.versions).length, 14);
+    assert.equal(Object.keys(first.versions).length, 15);
     assert.deepEqual(versionAssets(root).changed, []);
     const generated = readFileSync(join(root, 'pages', 'inferencia-estadistica.html'), 'utf8');
     for (const match of generated.matchAll(/(?:src|href)="(inferencia\/[^"?]+\.(?:js|css))\?v=([a-f0-9]+)"/g)) {
@@ -546,7 +565,7 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
   }
   const appUrl = new URL('../../pages/inferencia/app.js', import.meta.url);
   const imports = [...readFileSync(appUrl, 'utf8').matchAll(/from ['"]([^'"]+\.js\?v=[a-f0-9]+)['"]/g)];
-  assert.equal(imports.length, 7);
+  assert.equal(imports.length, 8);
   for (const match of imports) {
     const url = new URL(match[1], appUrl);
     assert.equal(url.searchParams.get('v'), assetVersion(readFileSync(url)), `${url.pathname}: ejecuta node version-assets.mjs`);

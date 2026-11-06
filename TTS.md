@@ -69,7 +69,8 @@ Revisa `guion-original.txt` y `guion.txt` en las carpetas de las lecciones.
 El segundo adapta cifras y simbolos para leerlos en castellano. El generador
 utiliza el contenido preparado en `curso.json`: editar solo los TXT exportados
 no cambia el audio. Para corregir contenido, modifica la fuente del aula y vuelve
-a preparar el lote antes de generar.
+a preparar en otra salida antes de generar. `--prepare-only` reutiliza una copia
+existente; sustituirla exige `--prepare-only --refresh` de forma explicita.
 
 ## Probar y generar
 
@@ -111,8 +112,9 @@ completo de generacion con la misma salida para continuar. No borres
 `fragmentos/`, `curso.json` ni `voz-referencia.wav`.
 
 `--max-scenes` cuenta tambien los fragmentos reutilizados, no solo los nuevos.
-No uses `--prepare-only` al reanudar el mismo lote salvo que quieras actualizar
-su copia del curso. Con textos nuevos, es preferible otra carpeta de salida.
+`--prepare-only` no actualiza una copia existente. No uses `--prepare-only --refresh`
+para reanudar: sustituye la copia del curso y solo admite el mismo modo.
+`--refresh` no se puede combinar con `--status`. Con textos nuevos, usa otra salida.
 
 ## Ejecucion independiente del terminal
 
@@ -149,3 +151,77 @@ palabra por palabra. `progreso.json` resume el estado del lote.
 Los WAV y fragmentos son archivos locales, no deben subirse a Git. La preparacion
 de MP3 y su publicacion son pasos separados: consulta
 [Published materials and audio](README.md#published-materials-and-audio).
+
+## Audio por seccion: lote independiente
+
+`--sections` prepara las 118 narraciones naturales de apartados de las 36
+lecciones, con ID `parentLesson--sectionId`. Cada apartado tiene una escena y
+se sintetiza frase a frase para medir sus cues. No convierte ni modifica el
+lote global antiguo: conserva su salida, snapshot y fragmentos tal como estan.
+
+Define otra salida y prepara sin GPU:
+
+```bash
+export SECTION_AUDIO_OUTPUT="/home/aquiluer/Scripts/TTS/outputs/inferencia-secciones-$(date +%Y%m%d-%H%M%S)"
+"$TTS_PYTHON" scripts/tts/generate-course.py --sections --prepare-only \
+  --output "$SECTION_AUDIO_OUTPUT"
+```
+
+Genera y consulta ese lote indicando siempre `--sections` y la misma salida:
+
+```bash
+env HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+  "$TTS_PYTHON" -u scripts/tts/generate-course.py --sections \
+  --output "$SECTION_AUDIO_OUTPUT"
+"$TTS_PYTHON" scripts/tts/generate-course.py --sections --status \
+  --output "$SECTION_AUDIO_OUTPUT"
+```
+
+Repite el comando de generacion para reanudar. Se lee `curso.json`, no la fuente
+viva, y se verifican firmas y checksums de los fragmentos reutilizados. Tambien
+`--prepare-only` conserva el snapshot existente. No borres `fuente/`,
+`fragmentos/` ni `voz-referencia.wav`. Cambiar de modo sobre la misma salida se
+rechaza. Si necesitas reemplazar intencionadamente un snapshot del mismo modo,
+solo sobre una salida que no quieras conservar congelada:
+
+```bash
+"$TTS_PYTHON" scripts/tts/generate-course.py --sections --prepare-only --refresh \
+  --output "$SECTION_AUDIO_OUTPUT"
+```
+
+Publica las secciones completas con su preparador especifico:
+
+```bash
+node scripts/tts/prepare-sections.mjs --audio-root "$SECTION_AUDIO_OUTPUT" \
+  --out static/audio
+```
+
+`--audio-root` es obligatorio; `--out` es opcional y por defecto es `static/audio`.
+El publicador no modifica ni refresca `curso.json` o `fuente/`. Verifica el modo,
+los 118 IDs y los recuentos del lote frente al canon actual. Solo publica
+apartados `status: "complete"` con narracion canonica, metadatos coincidentes,
+WAV/JSON completos, firmas y checksums de cada cue y escena, y VTT medido.
+`audio.json` debe declarar `cue_timing: "measured"`, frames a 44100 Hz coherentes
+con la duracion y todas las cues con tiempos globales ordenados dentro de la
+escena. No estima cues ni publica MP3 que terminen antes de la escena medida.
+
+En `manifest.json` version 1, cada clave `parentLesson--sectionId` conserva
+`title`, `parentLesson`, `parentTitle`, `sectionId`, `sourceSections`, `optional`,
+`src: "audio/parentLesson--sectionId.mp3"`, `duration`, `cueTiming: "measured"`
+y `scenes`/`cues` completas. En `provenance.json` version 1 se declara
+`sectionExporter: "scripts/tts/export-narration.mjs"`; cada apartado lleva
+`sourceSignature`, `wavSha256`, `canonicalSha256` (incluida la procedencia
+canonica), `mp3Sha256`, `mp3Bytes`, `sourceDuration`, `timing: "measured"` y
+`encoding: {codec: "mp3", channels: 1, bitrate: 48000}`. El resumen queda en
+`prepare-sections-report.json`, sin rutas privadas.
+
+Una nueva ejecucion puede conservar secciones publicadas validas sin el lote
+original ni recodificacion. Publicar despues un lote global con
+`scripts/prepare-media.mjs --audio-root /ruta/lote-global` tambien conserva sus
+entradas, procedencia y bytes, incluso sin entrada global disponible. Comprueba
+ID, metadatos, exportador, firmas, checksum, tamano y timeline medido contra el
+canon; una seccion invalida se elimina del manifiesto, de la procedencia y del
+disco. Los IDs desconocidos no se conservan. El gate versionado permite solo
+los 36 IDs globales y 118 de seccion, y el build no necesita los lotes locales.
+El contrato del audio global antiguo con cues estimadas permanece independiente;
+las secciones siempre exigen cues medidas.
