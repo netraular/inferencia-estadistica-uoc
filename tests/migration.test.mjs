@@ -6,7 +6,7 @@ import {runInNewContext} from 'node:vm';
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
 import {mountEmbeddedClassroom, renderScopedIcons} from '../src/classroom/embed.mjs';
-import {STORAGE_KEY, freshProgress} from '../pages/inferencia/progress.js';
+import {STORAGE_KEY, PROGRESS_EVENT, freshProgress, loadProgress, saveProgress, progressSummary} from '../pages/inferencia/progress.js';
 
 const require = createRequire(import.meta.url);
 globalThis.jStat = require('jstat').jStat;
@@ -116,6 +116,13 @@ test('embedded classroom keeps routing and titles isolated and retains progress 
     mounted.root.getElementById(`answer-${question.id}`).value = String(question.answer);
     mounted.root.querySelector(`[data-grade-form="${question.id}"]`).dispatchEvent(new window.Event('submit', {bubbles:true, cancelable:true}));
     assert.ok(mounted.root.getElementById(`feedback-${question.id}`).classList.contains('correct'));
+    const updated = JSON.parse(values.get(STORAGE_KEY));
+    updated.studied.push('bayes-diagnostico');
+    saveProgress(storage, updated);
+    window.dispatchEvent(new window.Event(PROGRESS_EVENT));
+    assert.ok(mounted.aula.progress.studied.includes('bayes-diagnostico'));
+    mounted.root.querySelector(`[data-grade-form="${question.id}"]`).dispatchEvent(new window.Event('submit', {bubbles:true, cancelable:true}));
+    assert.ok(JSON.parse(values.get(STORAGE_KEY)).studied.includes('bayes-diagnostico'));
     assert.equal(document.title, 'Docusaurus lesson');
     assert.equal(JSON.parse(values.get(STORAGE_KEY)).lastLesson, 'bayes-diagnostico');
   } finally {mounted.dispose();}
@@ -132,4 +139,86 @@ test('embedded classroom keeps routing and titles isolated and retains progress 
 
 test('public assets exclude original PDFs and executable vendor copies', () => {
   assert.deepEqual(readdirSync(new URL('../static/vendor/', import.meta.url)).sort(), ['atkinson-latin-400.woff2', 'atkinson-latin-700.woff2']);
+});
+
+test('the curriculum has its own route and numbers every topic and lesson from zero', () => {
+  const map = readFileSync(new URL('../docs/index.mdx', import.meta.url), 'utf8');
+  assert.ok(map.includes('slug: /temario\n'));
+  assert.ok(!map.includes('slug: /\n'));
+  for (const [index, unit] of COURSE.units.entries()) {
+    assert.equal(unit.number, index);
+    const category = JSON.parse(readFileSync(new URL(`../docs/${unit.id}/_category_.json`, import.meta.url), 'utf8'));
+    assert.ok(category.label.startsWith(`Tema ${index}: `));
+    for (const [lessonIndex, lesson] of unit.lessons.entries()) {
+      const number = `${index}.${lessonIndex + 1}`;
+      assert.ok(map.includes(`[${number} ${lesson.title}]`));
+      const text = readFileSync(new URL(`../docs/${unit.id}/${lesson.id}.mdx`, import.meta.url), 'utf8');
+      assert.ok(text.includes(`sidebar_label: ${JSON.stringify(`${number} ${lesson.title}`)}`));
+    }
+  }
+});
+
+test('lesson and home progress preserve activity results and follow saves across views', () => {
+  const babel = require('@babel/core');
+  const source = readFileSync(new URL('../src/classroom/useCourseProgress.js', import.meta.url), 'utf8');
+  const ast = babel.parseSync(source, {sourceType:'module', babelrc:false, configFile:false});
+  ast.program.body = ast.program.body.flatMap(node => node.type === 'ImportDeclaration' ? [] : node.type === 'ExportDefaultDeclaration' ? [node.declaration] : [node]);
+  const compiled = babel.transformFromAstSync(ast, source, {babelrc:false, configFile:false}).code;
+  const values = new Map();
+  let writes = 0;
+  const storage = {getItem:key => values.get(key), setItem:(key, value) => {writes++; values.set(key, value);}};
+  const window = new EventTarget();
+  window.Event = Event;
+  window.localStorage = storage;
+  const previous = globalThis.window;
+  globalThis.window = window;
+  let states = [];
+  let cursor = 0;
+  let cleanup;
+  const useCourseProgress = runInNewContext(`${compiled}; useCourseProgress`, {
+    window, COURSE, STORAGE_KEY, PROGRESS_EVENT, freshProgress, loadProgress, saveProgress,
+    useState(initial) {const index = cursor++; states[index] = initial; return [initial, value => {states[index] = value;}];},
+    useEffect(effect) {cleanup = effect();}
+  });
+  try {
+    const saved = freshProgress(COURSE);
+    saved.studied = ['sucesos'];
+    saved.attempts = {'events-1/union':{count:1, solved:true, assisted:false}};
+    saveProgress(storage, saved);
+    const lesson = useCourseProgress('bayes-diagnostico');
+    assert.equal(loadProgress(storage, COURSE).progress.lastLesson, 'bayes-diagnostico');
+    lesson.setStudied(true);
+    assert.deepEqual(Array.from(states[0].studied), ['sucesos', 'bayes-diagnostico']);
+    const activity = loadProgress(storage, COURSE).progress;
+    activity.checks['bayes-diagnostico'] = true;
+    saveProgress(storage, activity);
+    assert.equal(states[0].checks['bayes-diagnostico'], true);
+    lesson.setStudied(false);
+    assert.deepEqual(Array.from(states[0].studied), ['sucesos']);
+    assert.equal(states[0].checks['bayes-diagnostico'], true);
+    assert.equal(progressSummary(states[0]).independent, 1);
+    const otherTab = loadProgress(storage, COURSE).progress;
+    otherTab.studied.push('proporciones');
+    storage.setItem(STORAGE_KEY, JSON.stringify(otherTab));
+    window.dispatchEvent(Object.assign(new Event('storage'), {key:STORAGE_KEY}));
+    assert.ok(states[0].studied.includes('proporciones'));
+    cleanup();
+    cursor = 0;
+    states = [];
+    const beforeHome = writes;
+    useCourseProgress();
+    assert.equal(writes, beforeHome);
+    assert.ok(states[0].studied.includes('proporciones'));
+    assert.equal(states[0].lastLesson, 'bayes-diagnostico');
+    cleanup();
+    Object.defineProperty(window, 'localStorage', {get() {throw new Error('Blocked');}});
+    cursor = 0;
+    states = [];
+    assert.doesNotThrow(() => useCourseProgress('proporciones'));
+    assert.match(states[1], /no permite guardar/);
+  } finally {
+    cleanup?.();
+    if (previous === undefined) delete globalThis.window;
+    else globalThis.window = previous;
+  }
 });

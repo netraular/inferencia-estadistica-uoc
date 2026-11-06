@@ -256,12 +256,11 @@ test('Banco completo, modo guiado y preferencias funcionan', () => {
     assert.equal(document.querySelectorAll('.solution[open]').length, aula.exercise.questions.length);
     click(document.getElementById('settingsToggle'));
     assert.match(document.getElementById('dialogContent').textContent, /este navegador/);
-    click(document.querySelector('[data-action="reset"]'));
-    assert.equal(document.getElementById('resetConfirm').hidden, false);
-    click(document.querySelector('[data-action="confirm-reset"]'));
-    assert.equal(progressSummary(aula.progress).attempts, 0);
-    assert.equal(aula.route.lessonId, 'proporciones');
-    assert.equal(aula.route.view, 'theory');
+    assert.equal(document.querySelector('[data-action="export"]'), null);
+    assert.equal(document.querySelector('[data-action="import"]'), null);
+    assert.equal(document.querySelector('[data-action="reset"]'), null);
+    assert.equal(document.getElementById('progressFile'), null);
+    assert.equal(aula.route.view, 'practice');
     click(document.getElementById('dialogClose'));
     assert.equal(document.getElementById('utilityDialog').hasAttribute('open'), false);
   } finally { aula.dispose(); }

@@ -13,8 +13,13 @@ It is not an official UOC website.
 - Each lesson starts with tabs for theory, concept checks, laboratory, exercises
   and animated reading. The selected activity is linkable with `?actividad=...`;
   only the selected activity is mounted, with no duplicate internal navigation.
-- Browser-local progress with compatible JSON import/export. The public origin
-  remains `webs.raular.com`, preserving progress from the former classroom.
+- The short `/inferencia/` URL opens personal progress and a brief course overview;
+  `/temario/` holds the reference map, with topics 0 to 4 and numbered lessons.
+- Browser-local progress is shared between lesson marks, concept checks and
+  exercise results. Views refresh after saves and changes from another tab.
+  There are no import, export or reset controls. No account or cross-device
+  synchronization is provided. Existing progress stays compatible on the same
+  `webs.raular.com` origin. The former `/progreso/` route redirects home.
 
 The original explanations, formulas, source references and exercise engines live
 under `pages/inferencia/`. `scripts/generate-docs.mjs` produces the MDX lessons

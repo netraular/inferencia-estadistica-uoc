@@ -1,5 +1,6 @@
 export const STORAGE_KEY = 'aula-inferencia:v1';
 export const PROGRESS_VERSION = 1;
+export const PROGRESS_EVENT = 'aula-inferencia:progress';
 
 function lessonIds(course) {
   return course.units.flatMap(unit => unit.lessons.map(lesson => lesson.id));
@@ -35,7 +36,7 @@ export function loadProgress(storage, course) {
     const raw = storage?.getItem(STORAGE_KEY);
     return {progress:raw ? parseProgress(raw, course) : freshProgress(course), warning:''};
   } catch {
-    return {progress:freshProgress(course), warning:'No se pudo recuperar el progreso guardado. El aula funciona, pero exporta una copia si este navegador bloquea el almacenamiento.'};
+    return {progress:freshProgress(course), warning:'No se pudo recuperar el progreso guardado. El aula funciona, pero este navegador puede estar bloqueando el almacenamiento.'};
   }
 }
 
@@ -43,6 +44,7 @@ export function saveProgress(storage, progress) {
   try {
     if (!storage) throw new Error('Almacenamiento no disponible');
     storage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    if (globalThis.window?.dispatchEvent) globalThis.window.dispatchEvent(new globalThis.window.Event(PROGRESS_EVENT));
     return true;
   } catch {
     return false;

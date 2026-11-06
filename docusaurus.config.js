@@ -17,9 +17,10 @@ export default {
   themeConfig: {
     colorMode: {defaultMode: 'light', disableSwitch: true},
     navbar: {
-      title: 'Inferencia',
+      title: 'Inferencia estadística',
       items: [
-        {to: '/progreso/', label: 'Mi progreso', position: 'right'},
+        {to: '/', label: 'Mi progreso', position: 'left', activeBaseRegex: '^/inferencia/?$'},
+        {to: '/temario/', label: 'Temario', position: 'left', activeBaseRegex: '^/inferencia/(temario|lecciones)(/|$)'},
         {href: 'https://github.com/netraular/inferencia-estadistica-uoc', label: 'GitHub', position: 'right'}
       ]
     },

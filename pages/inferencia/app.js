@@ -2,7 +2,7 @@ import {COURSE} from './course.js?v=34212586c1fb';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer} from './exercises.js?v=bc4ede56ecec';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=170dda6a1623';
 import {mountLab} from './labs.js?v=49b11cab1519';
-import {STORAGE_KEY, freshProgress, parseProgress, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=56f36d8c8e05';
+import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));
 export const VIEWS = ['theory', 'lab', 'practice', 'animation'];
@@ -53,8 +53,6 @@ export function mountAula(document, environment = {}) {
   let entireBank = false;
   let disposed = false;
   const listeners = [];
-  const downloads = new Set();
-  const timers = new Set();
   const element = id => document.getElementById(id);
   const lesson = () => LESSONS.find(item => item.id === route.lessonId);
   const listen = (target, type, handler) => {
@@ -74,7 +72,7 @@ export function mountAula(document, environment = {}) {
   };
   const status = text => { element('appStatus').textContent = [text, storageWarning].filter(Boolean).join(' '); };
   const persist = () => {
-    if (!saveProgress(storage, progress)) storageWarning = 'El navegador no permite guardar el progreso. Puedes exportarlo desde preferencias.';
+    if (!saveProgress(storage, progress)) storageWarning = 'El navegador no permite guardar el progreso. Los cambios no se conservarán al salir.';
     updateProgress();
   };
 
@@ -259,21 +257,7 @@ export function mountAula(document, environment = {}) {
 
   function settings() {
     const summary = progressSummary(progress);
-    openDialog('Tu progreso', `<p>Guardado únicamente en este navegador. Las lecciones se marcan como estudiadas de forma explícita; acertar una respuesta no certifica dominar el tema.</p><div class="lab-metrics"><div class="metric"><span>Lecciones estudiadas</span><strong>${summary.studied} / ${LESSONS.length}</strong></div><div class="metric"><span>Ideas comprobadas</span><strong>${summary.checks}</strong></div><div class="metric"><span>Respuestas sin ayuda</span><strong>${summary.independent}</strong></div><div class="metric"><span>Respuestas con ayuda</span><strong>${summary.assisted}</strong></div></div><p>${summary.attempts} intentos registrados. Consultar una pista o una solución antes de acertar cuenta como ayuda.</p><section><h3>Copia de seguridad</h3><div class="settings-actions"><button type="button" class="text-button" data-action="export"><i data-lucide="download" aria-hidden="true"></i>Exportar progreso</button><button type="button" class="text-button" data-action="import"><i data-lucide="upload" aria-hidden="true"></i>Importar copia</button><input id="progressFile" type="file" accept="application/json,.json" hidden></div><p id="importStatus" role="status"></p></section><section><h3>Reiniciar</h3><button type="button" class="text-button danger-button" data-action="reset"><i data-lucide="trash-2" aria-hidden="true"></i>Borrar progreso</button><div id="resetConfirm" hidden><p>Se borrarán las marcas y el historial de esta aula en este navegador.</p><div class="settings-actions"><button type="button" class="text-button danger-button" data-action="confirm-reset">Confirmar borrado</button><button type="button" class="text-button" data-action="cancel-reset">Cancelar</button></div></div></section>`);
-  }
-
-  function download(text, filename, mime) {
-    if (!window.URL?.createObjectURL || !window.Blob) { status('Este navegador no permite descargar la copia.'); return; }
-    const url = window.URL.createObjectURL(new window.Blob([text], {type:mime}));
-    downloads.add(url);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    document.body.append(link);
-    link.click();
-    link.remove();
-    const timer = window.setTimeout(() => { window.URL.revokeObjectURL(url); downloads.delete(url); timers.delete(timer); }, 0);
-    timers.add(timer);
+    openDialog('Tu progreso', `<p>Guardado únicamente en este navegador. Las lecciones se marcan como estudiadas de forma explícita; acertar una respuesta no certifica dominar el tema.</p><div class="lab-metrics"><div class="metric"><span>Lecciones estudiadas</span><strong>${summary.studied} / ${LESSONS.length}</strong></div><div class="metric"><span>Ideas comprobadas</span><strong>${summary.checks}</strong></div><div class="metric"><span>Respuestas sin ayuda</span><strong>${summary.independent}</strong></div><div class="metric"><span>Respuestas con ayuda</span><strong>${summary.assisted}</strong></div></div><p>${summary.attempts} intentos registrados. Consultar una pista o una solución antes de acertar cuenta como ayuda.</p>`);
   }
 
   listen(element('courseSearch'), 'input', renderNav);
@@ -340,29 +324,14 @@ export function mountAula(document, environment = {}) {
     if (result.value !== null) recordAnswer(progress, `${activeExercise.id}/${question.id}`, result.correct, visibleHelp);
     persist();
   });
-  listen(element('dialogContent'), 'click', event => {
-    const action = event.target.closest('[data-action]')?.dataset.action;
-    if (action === 'export') download(JSON.stringify(progress, null, 2), 'inferencia-progreso.json', 'application/json');
-    if (action === 'import') element('progressFile').click();
-    if (action === 'reset') element('resetConfirm').hidden = false;
-    if (action === 'cancel-reset') element('resetConfirm').hidden = true;
-    if (action === 'confirm-reset') { progress = freshProgress(COURSE); persist(); navigate(progress.lastLesson, 'theory'); settings(); status('Progreso reiniciado.'); }
-  });
-  listen(element('dialogContent'), 'change', async event => {
-    if (event.target.id !== 'progressFile') return;
-    const file = event.target.files?.[0];
-    if (!file) return;
-    try {
-      if (file.size > 2000000) throw new Error('La copia supera el límite de 2 MB.');
-      const imported = parseProgress(await file.text(), COURSE);
-      if (disposed) return;
-      progress = imported;
-      persist();
-      navigate(progress.lastLesson, route.view);
-      settings();
-      element('importStatus').textContent = 'Copia importada correctamente.';
-    } catch (error) { if (element('importStatus')) element('importStatus').textContent = `No se importó la copia: ${error.message}`; }
-  });
+  const refreshProgress = () => {
+    const loaded = loadProgress(storage, COURSE);
+    progress = loaded.progress;
+    storageWarning = loaded.warning;
+    updateProgress();
+  };
+  listen(window, PROGRESS_EVENT, refreshProgress);
+  listen(window, 'storage', event => {if (!event.key || event.key === STORAGE_KEY) refreshProgress();});
   if (environment.manageHistory !== false) listen(window, 'hashchange', () => {
     if (!location.hash || location.hash === '#inicio') { showOverview(); return; }
     const next = parseRoute(location.hash, progress.lastLesson);
@@ -375,8 +344,6 @@ export function mountAula(document, environment = {}) {
     disposed = true;
     activeCleanup?.();
     listeners.forEach(remove => remove());
-    timers.forEach(timer => window.clearTimeout(timer));
-    downloads.forEach(url => window.URL.revokeObjectURL(url));
     closeDialog();
   }};
 }

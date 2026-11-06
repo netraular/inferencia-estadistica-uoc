@@ -1,7 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {COURSE} from '../../pages/inferencia/course.js';
-import {STORAGE_KEY, freshProgress, parseProgress, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from '../../pages/inferencia/progress.js';
+import {STORAGE_KEY, PROGRESS_EVENT, freshProgress, parseProgress, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from '../../pages/inferencia/progress.js';
+
+test('Un guardado avisa a las otras vistas solo cuando se conserva el progreso', () => {
+  const previous = globalThis.window;
+  const channel = new EventTarget();
+  channel.Event = Event;
+  globalThis.window = channel;
+  let notifications = 0;
+  channel.addEventListener(PROGRESS_EVENT, () => notifications++);
+  try {
+    const values = new Map();
+    const storage = {setItem:(key, value) => values.set(key, value)};
+    assert.equal(saveProgress(storage, freshProgress(COURSE)), true);
+    assert.equal(notifications, 1);
+    assert.equal(saveProgress(null, freshProgress(COURSE)), false);
+    assert.equal(notifications, 1);
+  } finally {
+    if (previous === undefined) delete globalThis.window;
+    else globalThis.window = previous;
+  }
+});
 
 test('Progreso inicial y copia con las lecciones reales', () => {
   const progress = freshProgress(COURSE);

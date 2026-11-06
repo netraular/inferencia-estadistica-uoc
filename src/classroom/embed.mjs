@@ -50,7 +50,10 @@ export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage,
   const options = {location, history, manageHistory: false, renderIcons:() => renderScopedIcons(root, owner.defaultView.lucide)};
   if (storage !== undefined) options.storage = storage;
   const aula = mountAula(scopedDocument(owner, root), options);
-  if (!showNavigation) root.getElementById('lessonTabs').style.setProperty('display', 'none', 'important');
+  if (!showNavigation) {
+    root.getElementById('lessonTabs').style.setProperty('display', 'none', 'important');
+    root.querySelector('.lesson-heading').style.setProperty('display', 'none', 'important');
+  }
   root.getElementById('tab-theory').lastChild.textContent = 'Comprueba la idea';
   const utilities = owner.createElement('div');
   utilities.className = 'embedded-utilities';
