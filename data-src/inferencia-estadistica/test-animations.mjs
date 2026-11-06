@@ -66,11 +66,20 @@ test('La descarga VTT usa los tiempos del audio cuando se aporta su línea tempo
   assert.match(buildVtt(animation), /00:00:02.000 --> 00:00:05.000/);
 });
 
-test('La narración de varianza distingue desviaciones con signo de distancias', () => {
+test('La lección y la narración distinguen desviaciones con signo de distancias', () => {
   const lecture = fullLectures().find(item=>item.id==='varianza');
   assert.match(lecture.steps[0].caption,/desviaciones son menos uno, cero y uno/);
   assert.match(lecture.steps[0].caption,/promediáramos con sus probabilidades/);
   assert.doesNotMatch(lecture.steps[0].caption,/distancias son menos uno/);
+  const lessons = COURSE.units.flatMap(unit=>unit.lessons);
+  const variance = lessons.find(lesson=>lesson.id==='varianza');
+  const introduction = variance.sections.filter(section=>section.introductory).map(section=>section.body).join(' ');
+  assert.match(introduction,/desviaciones respecto a dos son menos dos y dos/);
+  assert.doesNotMatch(introduction,/distancias a dos son menos dos|distancia negativa/);
+  const moments = lessons.find(lesson=>lesson.id==='momentos-transformaciones');
+  assert.match(moments.formulas[0].reading,/desviación respecto a la media elevada a ka/);
+  const covariance = lessons.find(lesson=>lesson.id==='covarianza-matrices');
+  assert.match(covariance.sections[0].body,/desviaciones de cada medida respecto a su propia media/);
 });
 
 test('36 clases tienen un relato propio, ejemplos conectados y soluciones completas de su nivel', () => {

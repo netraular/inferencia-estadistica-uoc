@@ -94,6 +94,7 @@ test('Las 36 lecciones explican su notación y gradúan la práctica sin elimina
     assert.equal(lesson.sections.filter(section=>section.introductory).length,2,lesson.id);
     assert.ok(basic.length>2,lesson.id);
     assert.equal(lesson.sections.some(section=>section.optional),lesson.id==='momentos-transformaciones',lesson.id);
+    for (const section of lesson.sections.filter(section=>section.introductory)) assert.doesNotMatch(section.body,/en la profundización/,lesson.id);
     assert.ok(lesson.notation.length>=3,lesson.id);
     for (const item of lesson.notation) for (const key of ['symbol','term','reading','definition','example']) assert.ok(item[key]?.length>0,`${lesson.id}: ${key}`);
     for (const formula of lesson.formulas) assert.ok(formula.reading.length>20,lesson.id);

@@ -727,7 +727,7 @@ const GUIDES = {
       'Una variable aleatoria es una regla para convertir un resultado en un número. X puede ser el número de larvas en un campo. Antes de mirar no sabemos qué número saldrá; después observamos un valor x, por ejemplo dos. La mayúscula nombra la regla y la minúscula un valor o umbral.',
       'Supón valores cero, uno y dos con probabilidades 0,2, 0,5 y 0,3. La acumulada F(1) pregunta por como máximo una larva: incluye cero y uno. Sumamos 0,2 + 0,5 = 0,7. No pregunta por exactamente una; esa probabilidad sería 0,5.',
       'F(1,5) también vale 0,7: no hay una nueva fila entre uno y dos. Un umbral no necesita ser un valor que la variable pueda tomar. Al pasar por dos, la acumulada llega a uno. Antes de cero vale cero; no puede bajar porque solo añade posibilidades.',
-      'Para un intervalo mayor que a y menor o igual que b, calculamos F(b) − F(a). Quitamos lo acumulado hasta a de lo acumulado hasta b. Si la variable tiene masas en puntos, importa qué extremos incluimos. La definición formal de variable y los límites laterales se conservan en la profundización.'
+      'Para un intervalo mayor que a y menor o igual que b, calculamos F(b) − F(a). Quitamos lo acumulado hasta a de lo acumulado hasta b. Si la variable tiene masas en puntos, importa qué extremos incluimos. La definición formal de variable y los límites laterales se desarrollan en las definiciones que siguen.'
     ],
     readings:['Equis lleva cada resultado omega a un número real. La condición formal exige que preguntar si equis no supera un umbral sea un suceso al que podamos asignar probabilidad.','Efe sub equis de x es probabilidad de equis menor o igual que x. Entre a excluido y be incluido restamos efe de a de efe de be. Un salto de la acumulada da la probabilidad de ese punto; x menos indica acercarse desde la izquierda.']
   },
@@ -764,22 +764,22 @@ const GUIDES = {
   varianza: {
     question:'¿Dos grupos con la misma media pueden ser distintos?',
     paragraphs:[
-      'Los valores uno y tres tienen media dos. Los valores cero y cuatro también, pero están más separados del centro. La varianza mide esa dispersión: calculamos la distancia de cada valor a la media, la elevamos al cuadrado y promediamos con las probabilidades.',
-      'Para cero y cuatro con igual probabilidad, las distancias a dos son menos dos y dos. Sus cuadrados son cuatro y cuatro. La varianza vale cuatro; la desviación típica es su raíz, dos. Cuadrar evita que una distancia negativa cancele una positiva.',
+      'Los valores uno y tres tienen media dos cuando son equiprobables. Los valores cero y cuatro también, pero están más separados del centro. La varianza mide esa dispersión: restamos la media a cada valor, elevamos esas desviaciones al cuadrado y promediamos con las probabilidades.',
+      'Para cero y cuatro con igual probabilidad, las desviaciones respecto a dos son menos dos y dos. Sus cuadrados son cuatro y cuatro. La varianza vale cuatro; la desviación típica es su raíz, dos. Las desviaciones tienen signo, a diferencia de las distancias; promediar sus cuadrados evita que se cancelen.',
       'Si los valores se miden en milímetros, la varianza se expresa en milímetros cuadrados y la desviación en milímetros. Sumar cinco a todos los valores mueve el centro, pero no cambia las distancias. Multiplicar todos por tres triplica las distancias y multiplica la varianza por nueve.',
       'Una forma abreviada calcula primero la media de los cuadrados y después resta el cuadrado de la media. Hay que respetar ese orden: E[X²] no es E[X]². Para sumar medidas que varían juntas hará falta una corrección llamada covarianza, que se desarrolla en el tema de dos variables.'
     ],
-    readings:['Varianza de equis: esperanza de las distancias a su media elevadas al cuadrado. Equivale a esperanza de equis al cuadrado menos el cuadrado de su esperanza. Sigma es la raíz de esa varianza.','La media de a por equis más be se transforma igual. Su varianza es a al cuadrado por la varianza original; sumar be no añade dispersión.']
+    readings:['Varianza de equis: esperanza de las desviaciones respecto a su media elevadas al cuadrado. Equivale a esperanza de equis al cuadrado menos el cuadrado de su esperanza. Sigma es la raíz de esa varianza.','La media de a por equis más be se transforma igual. Su varianza es a al cuadrado por la varianza original; sumar be no añade dispersión.']
   },
   'momentos-transformaciones': {
     question:'¿Qué cambia si convertimos una longitud en un área?',
     paragraphs:[
       'Una transformación aplica una regla a cada valor: si X es una longitud normalizada, Y = X² puede representar un área. Para saber cómo se reparte Y no basta con cambiar la letra de una fórmula: tenemos que traducir qué longitudes producen cada área.',
       'Si X es uniforme entre cero y uno, Y no supera 0,25 cuando X no supera 0,5. Esa probabilidad es 0,5, no 0,25. En general, para un umbral y entre cero y uno, la acumulada de Y vale raíz de y. La raíz deshace el cuadrado en este intervalo no negativo.',
-      'Un momento ordinario de orden k promedia los valores elevados a k. Un momento central promedia las distancias a la media elevadas a k. El primero ordinario es la media y el segundo central es la varianza. Un subíndice k indica qué potencia usamos.',
+      'Un momento ordinario de orden k promedia los valores elevados a k. Un momento central promedia las desviaciones respecto a la media elevadas a k, conservando su signo antes de aplicar la potencia. El primero ordinario es la media y el segundo central es la varianza. Un subíndice k indica qué potencia usamos.',
       'Si la regla crece, traducir un umbral conserva el sentido de la desigualdad; si decrece, lo invierte. Si hay varias entradas para la misma salida, hay que reunirlas todas. Al transformar densidades también cambia la anchura de los intervalos: la derivada de la inversa corrige ese cambio para conservar probabilidades.'
     ],
-    readings:['Eme sub ka es esperanza de equis elevado a ka. Mu sub ka es esperanza de la distancia a la media elevada a ka: momento ordinario y central, respectivamente.','Para una regla creciente, la acumulada de i griega en y es la acumulada de equis en la entrada inversa. La densidad añade el valor absoluto de la derivada de esa inversa para conservar el área.']
+    readings:['Eme sub ka es esperanza de equis elevado a ka. Mu sub ka es esperanza de la desviación respecto a la media elevada a ka: momento ordinario y central, respectivamente.','Para una regla creciente, la acumulada de i griega en y es la acumulada de equis en la entrada inversa. La densidad añade el valor absoluto de la derivada de esa inversa para conservar el área.']
   },
   'bernoulli-binomial': {
     question:'¿Cómo modelamos cuántas semillas germinan?',
@@ -887,7 +887,7 @@ const GUIDES = {
       'Familia exponencial no significa la distribución exponencial de tiempos. Es una manera común de escribir modelos como Poisson, binomial y ciertas normales. Separamos una parte que depende de los datos, una que los resume y otras que dependen del parámetro que queremos comparar.',
       'En Poisson, x es el recuento, T(x) = x lo resume, eta = log lambda reescribe la media y A(eta) = lambda ajusta el total. El factor h(x) = 1/x! depende solo del dato. Estas letras organizan la misma probabilidad Poisson ya estudiada; no añaden cuatro nuevas observaciones.',
       'Con recuentos fijos 0, 1 y 2, la media observada es uno. La verosimilitud compara medias candidatas del modelo viendo qué probabilidad asignan a esos datos. En el modelo Poisson común, el máximo está en uno. Tomar logaritmos convierte productos en sumas y facilita localizar ese máximo mediante derivadas.',
-      'Un modelo lineal generalizado o GLM añade predictores, como una dosis. Un enlace logarítmico relaciona su combinación con el logaritmo de una media; aplicar exp devuelve una media positiva. Una estimación o un enlace no prueba que el modelo ni una interpretación causal sean correctos. Los detalles de cada representación están en la profundización.'
+      'Un modelo lineal generalizado o GLM añade predictores, como una dosis. Un enlace logarítmico relaciona su combinación con el logaritmo de una media; aplicar exp devuelve una media positiva. Una estimación o un enlace no prueba que el modelo ni una interpretación causal sean correctos. Los detalles de cada representación se desarrollan a continuación.'
     ],
     readings:['Efe de x con parámetro eta es hache de x por la exponencial de eta por te de x menos a de eta. Hache usa datos, te los resume y a normaliza el modelo.','En Poisson, eta es logaritmo de lambda y a de eta es exponencial de eta. En un GLM, ge transforma la media mu sub i; los predictores x sub i se combinan con coeficientes beta.','Verosimilitud de theta con los datos observados: multiplicamos la probabilidad o densidad de cada observación bajo ese mismo theta. El productorio recorre observaciones independientes.']
   },
@@ -954,7 +954,7 @@ const GUIDES = {
   'covarianza-matrices': {
     question:'¿Las dos medidas suelen subir y bajar juntas?',
     paragraphs:[
-      'La covarianza compara las distancias de cada medida a su propia media. Si suelen tener el mismo signo, el producto es positivo; si suelen oponerse, es negativo. Promediamos esos productos. El resultado describe variación compartida y depende de las unidades.',
+      'La covarianza compara las desviaciones de cada medida respecto a su propia media: restamos la media a cada valor y conservamos el signo. Si las dos desviaciones suelen tener el mismo signo, el producto es positivo; si suelen oponerse, es negativo. Promediamos esos productos. El resultado describe variación compartida y depende de las unidades.',
       'Si las varianzas son nueve y dieciséis, las desviaciones son tres y cuatro. Con covarianza seis, la correlación es 6/(3 × 4) = 0,5. Dividir por las desviaciones elimina las unidades. La correlación resume asociación lineal, no cualquier relación ni una causa.',
       'Una matriz de covarianzas es una tabla ordenada: nueve y dieciséis en la diagonal, seis en las otras dos posiciones. El orden de filas y columnas debe corresponder al de las variables. Si duplicamos Y, su varianza pasa a sesenta y cuatro y la covarianza a doce, pero la correlación sigue en 0,5.',
       'La matriz de correlaciones hace esa división entrada por entrada y tiene unos en la diagonal si todas las desviaciones son positivas. Si una variable es constante, no podemos definir su correlación mediante una división por cero. No toda tabla simétrica de números es una matriz de covarianzas válida: ninguna combinación de medidas puede tener varianza negativa.'

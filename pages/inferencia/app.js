@@ -1,4 +1,4 @@
-import {COURSE} from './course.js?v=3a03b9951fb9';
+import {COURSE} from './course.js?v=8a44f84e48f6';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=5612f67797c5';
 import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=37d29d83c0c4';
