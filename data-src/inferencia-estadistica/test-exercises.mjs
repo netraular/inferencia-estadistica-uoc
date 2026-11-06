@@ -4,6 +4,7 @@ import {existsSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, parseAnswer} from '../../pages/inferencia/exercises.js';
+import {notationFor} from '../../pages/inferencia/teaching.js';
 
 const vendor = new URL('../../pages/inferencia/vendor/jstat.min.js', import.meta.url);
 const vendorAvailable = existsSync(vendor);
@@ -14,7 +15,7 @@ if (vendorAvailable) {
   console.warn(`BLOQUEO: falta ${fileURLToPath(vendor)}; se omiten pruebas que necesitan el vendor real, sin sustituir sus CDF.`);
 }
 const numericOptions = {skip:vendorAvailable ? false : 'Falta jStat vendorizado por el agente principal.'};
-const arithmeticTypes = new Set(['events', 'conditional', 'bayes', 'discrete', 'joint', 'covariance', 'independence', 'transform']);
+const arithmeticTypes = new Set(['events', 'conditional', 'bayes', 'discrete', 'joint', 'covariance', 'independence', 'transform', 'proportions', 'normalization', 'function-values', 'plane-regions', 'event-independence', 'cdf-table', 'joint-basic']);
 const close = (actual, expected, tolerance = 1e-9) => assert.ok(Math.abs(actual - expected) <= tolerance, `${actual} ≠ ${expected}`);
 const answer = (result, id) => {
   const item = result.questions.find(item => item.id === id);
@@ -48,11 +49,25 @@ test('Corrección: límites de tolerancia, entrada inválida y cero', () => {
 });
 
 test('Catálogo y validación de argumentos', () => {
-  const expected = ['events','conditional','bayes','discrete','continuous','binomial','poisson','normal','uniform','exponential','geometric','hypergeometric','gamma','chi-square','student','fisher','joint','covariance','independence','transform','sample','combinatorics','negative-binomial','cauchy','weibull','multinomial','bivariate-normal','continuous-joint','exponential-family'];
+  const expected = ['events','conditional','bayes','discrete','continuous','binomial','poisson','normal','uniform','exponential','geometric','hypergeometric','gamma','chi-square','student','fisher','joint','covariance','independence','transform','sample','combinatorics','negative-binomial','cauchy','weibull','multinomial','bivariate-normal','continuous-joint','exponential-family','proportions','normalization','function-values','plane-regions','event-independence','cdf-table','joint-basic'];
   assert.deepEqual(EXERCISE_TYPES.map(item => item.id), expected);
   for (const item of EXERCISE_TYPES) assert.ok(item.title && item.description);
   for (const type of ['unknown', 'toString', null, 1]) assert.throws(() => generateExercise(type), RangeError);
   for (const seed of [-1, 0.5, 4294967296, NaN, Infinity, '1', null]) assert.throws(() => generateExercise('events', seed), RangeError);
+});
+
+test('Cada tipo de ejercicio explica su notación con lectura, significado y ejemplo', () => {
+  for (const {id} of EXERCISE_TYPES) {
+    const entries = notationFor(id);
+    assert.ok(entries.length > 0, id);
+    assert.equal(new Set(entries.map(item => item.term)).size, entries.length, id);
+    for (const item of entries) {
+      assert.ok(item.symbol?.length > 0, id);
+      for (const field of ['term','reading','definition','example']) assert.ok(item[field]?.length > 2, `${id}: ${field}`);
+    }
+  }
+  assert.throws(() => notationFor('unknown'), RangeError);
+  assert.match(notationFor('gamma').find(item => item.term === 'Escala temporal').reading, /alfa/);
 });
 
 test('Sucesos: referencia numérica, complemento y reproducibilidad', () => {

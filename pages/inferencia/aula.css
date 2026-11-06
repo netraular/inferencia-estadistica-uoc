@@ -2,6 +2,7 @@
 @font-face{font-family:Atkinson;src:url('vendor/atkinson-latin-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:Atkinson;src:url('vendor/atkinson-latin-700.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
 :root{color-scheme:light;--paper:#fff;--bg:#f6f9f8;--ink:#253330;--muted:#63716c;--line:#dae3df;--teal:#117568;--teal-soft:#e8f3ef;--rose:#a93458;--rose-soft:#fbecf0;--gold:#d7a534;--gold-soft:#fff7dd;--header:78px;--sidebar:270px}
+.lesson-notation{min-width:0;overflow-wrap:anywhere}.lesson-notation>div{padding:16px 0;border-top:1px solid var(--line)}.lesson-notation dt{line-height:1.6}.lesson-notation dd{margin:8px 0 0}.lesson-notation p{margin:0 0 8px}.lesson-depth{margin:24px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.lesson-depth>summary{cursor:pointer;line-height:1.6;overflow-wrap:anywhere}.lesson-depth[open]>summary{margin-bottom:20px}
 *{box-sizing:border-box;letter-spacing:0}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:100px}

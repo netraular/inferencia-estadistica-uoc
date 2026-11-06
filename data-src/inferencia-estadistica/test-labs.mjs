@@ -66,6 +66,25 @@ test('Integral: constante, lineal, cuadrática, intervalo nulo y altura cero', (
   assert.equal(metricValue(zero, 'Fracción de área'), null);
 });
 
+test('El puente matemático ofrece proporciones, pesos, funciones y regiones sin contenidos posteriores', () => {
+  const proportion = calculateLab('math',{mode:'proportions',part:12,total:60});
+  close(metricValue(proportion,'Proporción'),0.2);
+  close(metricValue(proportion,'Porcentaje'),20);
+  assert.doesNotMatch(proportion.explanation,/integral|varianza/);
+  assert.throws(()=>calculateLab('math',{mode:'proportions',part:61,total:60}),RangeError);
+  const weights = calculateLab('math',{mode:'weights',weights:[2,3,5]});
+  assert.deepEqual(weights.visual.heights,[0.2,0.3,0.5]);
+  close(metricValue(weights,'Constante c'),0.1);
+  assert.deepEqual(calculateLab('math',{mode:'weights',weights:[4,6,10]}).visual.heights,weights.visual.heights);
+  const rule = calculateLab('math',{mode:'function',input:3,factor:2,base:1});
+  close(metricValue(rule,'Salida g(x)'),7);
+  close(metricValue(rule,'g(0) + g(1) + g(2)'),9);
+  const region = calculateLab('math',{mode:'region',capacity:1,knownX:0.3});
+  close(metricValue(region,'Máximo de y'),0.7);
+  close(metricValue(region,'Área del triángulo'),0.5);
+  assert.throws(()=>calculateLab('math',{mode:'region',capacity:1,knownX:1.1}),RangeError);
+});
+
 test('Sucesos: regiones normalizadas, operaciones y denominador condicionado', () => {
   const weights = [30, 20, 10, 40];
   for (const [operation, expected] of [['A', 0.4], ['B', 0.3], ['union', 0.6], ['intersection', 0.1], ['complement', 0.6]]) close(calculateLab('events', {weights, operation}).visual.probability, expected);

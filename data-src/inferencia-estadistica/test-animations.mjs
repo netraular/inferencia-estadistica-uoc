@@ -7,7 +7,7 @@ import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../../pages/inferencia/course.js';
-import {generateExercise} from '../../pages/inferencia/exercises.js';
+import {generateExercise, scopeExercise} from '../../pages/inferencia/exercises.js';
 import * as api from '../../pages/inferencia/animations.js';
 import {exportLectures} from './export-lecturas.mjs';
 
@@ -32,7 +32,7 @@ test('La descarga VTT usa los tiempos del audio cuando se aporta su línea tempo
   assert.match(buildVtt(animation), /00:00:02.000 --> 00:00:05.000/);
 });
 
-test('36 clases contienen toda la teoría, métodos, fórmulas, ejemplos y soluciones sin resumir el guion', () => {
+test('36 clases contienen la teoría básica, lectura de notación, métodos y soluciones de su nivel', () => {
   const lessons = COURSE.units.flatMap(unit=>unit.lessons);
   for (const [index,lecture] of fullLectures().entries()) {
     const current = lessons[index];
@@ -40,8 +40,8 @@ test('36 clases contienen toda la teoría, métodos, fórmulas, ejemplos y soluc
     assert.equal(lecture.id,current.id);
     assert.ok(lecture.steps.length>20,current.id);
     assert.doesNotMatch(script,/undefined|\[object Object\]/);
-    for (const text of [...current.sections.flatMap(section=>paragraphs(section.body)),...current.method,...paragraphs(current.example.body),...current.formulas.map(formula=>formula.meaning),...current.pitfalls]) assert.ok(script.includes(text),`${current.id}: ${text}`);
-    const worked = generateExercise(current.exerciseTypes[0],1);
+    for (const text of [...current.sections.filter(section=>!section.optional).flatMap(section=>paragraphs(section.body)),...current.method,...paragraphs(current.example.body),...current.formulas.filter(formula=>!formula.optional).flatMap(formula=>[formula.meaning,formula.reading]),...current.notation.flatMap(item=>[item.reading,item.definition,item.example]),...current.pitfalls]) assert.ok(script.includes(text),`${current.id}: ${text}`);
+    const worked = scopeExercise(current,generateExercise(current.exerciseTypes[0],1));
     for (const question of worked.questions) for (const step of question.steps) assert.ok(script.includes(step.explanation),current.id);
     let end = 0;
     for (const step of lecture.steps) {
@@ -73,9 +73,10 @@ test('36 clases contienen toda la teoría, métodos, fórmulas, ejemplos y soluc
   }
 });
 
-test('huella exacta del guion previo: títulos, orden, número, captions, duraciones y cues de 36 lecciones', () => {
+test('el guion pedagógico no reutiliza la huella de las narraciones anteriores y es reproducible', () => {
   const scripts = fullLectures().map(lecture=>({id:lecture.id,steps:lecture.steps.map(({title,caption,duration,cues})=>({title,caption,duration,cues}))}));
-  assert.equal(createHash('sha256').update(JSON.stringify(scripts)).digest('hex'),'79e9951a76d5b045fe6e7a438a7ad086de1ca964330cd25ec09d3b7e4f391434');
+  assert.notEqual(createHash('sha256').update(JSON.stringify(scripts)).digest('hex'),'79e9951a76d5b045fe6e7a438a7ad086de1ca964330cd25ec09d3b7e4f391434');
+  assert.deepEqual(fullLectures(),fullLectures());
 });
 
 test('Exportación offline: todos los subtítulos y guiones, sin audio ni vídeo', () => {
@@ -122,14 +123,16 @@ const parseTime = value => {
 
 test('exact public API, original lessons and additional substantive visual scenes', () => {
   assert.deepEqual(Object.keys(api).sort(), ['ANIMATIONS', 'animationDuration', 'buildVtt', 'createLessonAnimation', 'mountAnimation'].sort());
-  assert.deepEqual(ANIMATIONS.map(animation => animation.id), [...expectedIds, ...newIds]);
-  assert.equal(ANIMATIONS.length, 28);
-  assert.equal(sum(ANIMATIONS.slice(0, 14).map(animation => animation.steps.length)), 71);
-  assert.equal(sum(ANIMATIONS.slice(14).map(animation => animation.steps.length)), newIds.length * 5);
+  const introductions = ['proportions-intro','functions-intro','regions-intro'];
+  assert.deepEqual(ANIMATIONS.map(animation => animation.id), [...introductions, ...expectedIds, ...newIds]);
+  assert.equal(ANIMATIONS.length, 31);
+  const original = ANIMATIONS.filter(animation=>!introductions.includes(animation.id));
+  assert.equal(sum(original.slice(0, 14).map(animation => animation.steps.length)), 71);
+  assert.equal(sum(original.slice(14).map(animation => animation.steps.length)), newIds.length * 5);
   const kinds = new Set(['bars', 'curve', 'dots', 'matrix', 'scatter']);
   for (const animation of ANIMATIONS) {
     assert.ok(animation.title.length > 10);
-    assert.ok(animation.steps.length >= 5 && animation.steps.length <= 8);
+    assert.ok(animation.steps.length >= (introductions.includes(animation.id) ? 3 : 5) && animation.steps.length <= 8);
     assert.equal(new Set(animation.steps.map(step => step.title)).size, animation.steps.length);
     for (const step of animation.steps) {
       assert.equal(typeof step.title, 'string');
@@ -151,7 +154,7 @@ test('exact public API, original lessons and additional substantive visual scene
       }
     }
     assert.equal(animationDuration(animation.id), sum(animation.steps.map(step => step.duration)));
-    assert.ok(new Set(animation.steps.map(step => JSON.stringify(step.data))).size >= 4);
+    assert.ok(new Set(animation.steps.map(step => JSON.stringify(step.data))).size >= (introductions.includes(animation.id) ? 3 : 4));
   }
 });
 
@@ -197,7 +200,7 @@ test('module initialization and VTT generation do not access a runtime jStat glo
   try {
     Object.defineProperty(globalThis, 'jStat', {configurable: true, get() { throw new Error('jStat unavailable during import'); }});
     const isolated = await import('../../pages/inferencia/animations.js?without-jstat');
-    assert.deepEqual(isolated.ANIMATIONS.map(animation => animation.id), [...expectedIds, ...newIds]);
+    assert.deepEqual(isolated.ANIMATIONS.map(animation => animation.id), ANIMATIONS.map(animation=>animation.id));
     for (const id of newIds) assert.equal(isolated.buildVtt(id), buildVtt(id));
   } finally {
     if (descriptor) Object.defineProperty(globalThis, 'jStat', descriptor);

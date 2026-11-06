@@ -1,3 +1,5 @@
+import {NOTATION, notationFor} from './teaching.js';
+
 export const COURSE = {
   id: 'inferencia',
   title: 'Inferencia estadística',
@@ -26,7 +28,7 @@ export const COURSE = {
             { title: 'Una igualdad es un equilibrio', body: '<p>Despejar no consiste en trasladar símbolos de un lado a otro con reglas misteriosas. Consiste en aplicar la misma operación a ambos miembros. Si una suma de probabilidades es una constante multiplicada por tres pesos, puedes sumar primero los pesos y dividir después ambos miembros por ese total. La constante ajusta la escala; no cambia las proporciones entre pesos.</p><p>Los paréntesis indican qué parte actúa como un bloque. El inverso de una suma no es la suma de los inversos. Escribir el denominador completo antes de sustituir números ayuda especialmente en Bayes, donde el denominador reúne varias rutas posibles hacia una observación.</p>' },
             { title: 'Potencias, raíces y logaritmos', body: '<p>Una potencia repite una multiplicación; una raíz deshace una potencia en el dominio correspondiente. Por eso la desviación típica es la raíz no negativa de la varianza. El logaritmo natural deshace la exponencial y convierte productos positivos en sumas. Esto facilita trabajar con muchas probabilidades pequeñas y despejar un tiempo en un modelo exponencial.</p><p>No todas las operaciones están permitidas en cualquier dominio. En los números reales no tomamos el logaritmo de un valor negativo ni dividimos por cero. Al obtener un parámetro, vuelve al modelo: una probabilidad debe ser admisible y una escala de tiempo debe ser positiva. Un despeje algebraicamente correcto puede revelar que el planteamiento inicial era imposible.</p>' }
           ],
-          formulas: [{ tex: String.raw`c\sum_i w_i=1\quad\Longrightarrow\quad c=\frac{1}{\sum_i w_i}`, meaning: 'Los pesos no negativos se convierten en probabilidades al dividir por su suma positiva.' }, { tex: String.raw`e^{-t/\alpha}=s\quad\Longrightarrow\quad t=-\alpha\log(s),\qquad 0<s\leq1`, meaning: 'La escala alfa es positiva y s representa una probabilidad de supervivencia.' }],
+          formulas: [{ tex: String.raw`c(2+3+5)=1\quad\Longrightarrow\quad c=\frac{1}{10}`, meaning: 'La misma constante multiplica los tres pesos. Dividimos ambos lados por su suma, diez.' }, { tex: String.raw`e^{-t/\alpha}=s\quad\Longrightarrow\quad t=-\alpha\log(s),\qquad 0<s\leq1`, meaning: 'La escala alfa es positiva y s representa la proporción que todavía espera el evento.' }],
           example: { title: 'Tres estados de un cultivo', body: '<p>Un modelo asigna pesos 2, 3 y 5 a tres estados. La suma es 10, así que la constante es 0,1 y las masas son 0,2, 0,3 y 0,5. Comprueba que suman uno. Si una supervivencia exponencial vale 0,5 y la escala es 6 horas, el tiempo correspondiente es 6 por el logaritmo natural de 2, aproximadamente 4,16 horas.</p>' },
           pitfalls: ['Distribuir una división sobre una suma como si fueran operaciones intercambiables.', 'Usar un logaritmo sin comprobar el dominio.', 'Aceptar una escala negativa porque salió del despeje.'],
           check: { question: 'Los pesos son 1, 2 y 7. ¿Qué constante los normaliza?', options: ['10', '1/7', '1/10'], answer: 2, explanation: 'La masa total es la constante multiplicada por 10; para que sea uno, la constante debe ser 1/10.' },
@@ -557,7 +559,7 @@ export const COURSE = {
 };
 
 const METHODS = {
-  proporciones: ['Escribe qué cuenta la parte y qué conjunto representa el total. Deben referirse a la misma población y periodo; si el denominador es exposición temporal, la cantidad es una tasa.', 'Divide parte entre total para obtener la proporción. Multiplica por cien solo al escribir un porcentaje; no cambies la cantidad original al usarla en otra fórmula.', 'Conserva unidades en cada conversión y redondea al final. Comprueba que una proporción esté entre cero y uno y que una varianza cambie con el cuadrado del factor de escala.'],
+  proporciones: ['Escribe qué cuenta la parte y qué conjunto representa el total. Doce positivas de sesenta analizadas compara doce con sesenta, no con otro grupo.', 'Divide parte entre total para obtener la proporción. Multiplica por cien solo al escribir un porcentaje: 0,20 y 20 % expresan la misma comparación.', 'Escribe las unidades antes y después de convertir. Pasar de miligramos a microgramos multiplica el número por mil, pero conserva la cantidad física.'],
   algebra: ['Agrupa primero todos los términos que multiplican a la constante. Para normalizar pesos no negativos, su suma debe ser positiva y el total de probabilidad debe valer uno.', 'Divide ambos miembros por la suma completa. Si hay una exponencial, aplica el logaritmo a ambos miembros antes de despejar; no distribuyas una división sobre una suma.', 'Sustituye el parámetro encontrado en la igualdad inicial. Comprueba el dominio: escala positiva, logaritmo de un valor positivo y denominadores distintos de cero.'],
   funciones: ['Identifica dominio, soporte y cada tramo antes de sustituir un valor. Un umbral puede ser real aunque las realizaciones posibles sean solo enteros.', 'Traduce la frase a una desigualdad: menos de excluye el extremo, como máximo lo incluye y al menos empieza en él. Enumera los valores permitidos antes de sumar.', 'Comprueba que cada término del sumatorio corresponda a un valor real de la variable y no a la posición de una fila. Fuera del soporte usa el tramo cero cuando corresponda.'],
   calculo: ['Interseca el intervalo solicitado con el soporte y separa la integral si cambia la regla de la función. La altura tiene unidades inversas a la variable cuando es una densidad.', 'Busca una primitiva y verifica derivándola. Evaluarla en el extremo superior y restar el valor del inferior acumula el área entre ambos, no la altura en el extremo.', 'Normaliza primero el área total a uno. Luego compara la integral del intervalo con la diferencia de acumuladas; ambas deben dar la misma probabilidad sin unidades.'],
@@ -571,7 +573,7 @@ const METHODS = {
   'variable-cdf': ['Define qué número asigna X a cada resultado. La realización x no es la regla X; distintos resultados pueden producir el mismo valor y reunir sus probabilidades.', 'Para F(x), suma o integra todos los valores menores o iguales al umbral. La acumulada no decrece, es continua por la derecha y sus límites son cero y uno.', 'Un salto de F es una masa puntual. Para un intervalo abierto por la izquierda y cerrado por la derecha, resta F(a) de F(b); no sumes alturas de la acumulada.'],
   masa: ['Escribe todo el soporte y suma las probabilidades de los resultados elementales que producen cada valor. Valores no consecutivos siguen teniendo masas bien definidas.', 'Impon la suma uno y no negatividad antes de resolver preguntas. Un indicador vale uno si ocurre su suceso y cero si no; su esperanza es la probabilidad del suceso.', 'Selecciona exactamente los valores admitidos por la desigualdad. Una unión de indicadores requiere restar el producto para no contar dos veces la intersección.'],
   densidad: ['Comprueba signo y soporte, y resuelve la constante imponiendo área total uno. Una altura superior a uno no invalida una densidad.', 'Construye F por tramos: cero antes del soporte, integral acumulada dentro y uno después. Una probabilidad de intervalo resta los valores acumulados de sus extremos.', 'Recuerda que un punto tiene probabilidad cero. El redondeo del instrumento representa un intervalo de resolución finita y es otra pregunta, con área positiva.'],
-  esperanza: ['Comprueba primero si la esperanza existe: para una media finita se necesita integrar el valor absoluto. Una simetría aparente no autoriza cancelar colas divergentes.', 'Multiplica cada valor por su masa o integra valor por densidad. Para una función g, transforma cada valor antes de ponderar: no sustituyas automáticamente g de la media.', 'Usa linealidad para sumas con esperanzas finitas, incluso dependientes. Separar una esperanza de producto requiere independencia u otra justificación, no solo linealidad.'],
+  esperanza: ['Empieza por una tabla pequeña: escribe los valores posibles y sus probabilidades. Multiplica cada valor por su probabilidad y suma los productos.', 'Si buscas la media de una transformación, aplica primero la regla a cada valor. Elevar la media al cuadrado no sustituye promediar los cuadrados.', 'Interpreta el resultado como centro del modelo, no como una observación obligatoria. Con valores sin límite hay que comprobar además que las colas permitan definir una media.'],
   varianza: ['Calcula la media y el segundo momento cuando sean finitos. La varianza resta el cuadrado de la media al segundo momento; también puede calcularse con distancias centradas.', 'La desviación típica es la raíz no negativa de la varianza. Añadir una constante no cambia dispersión; multiplicar por a multiplica la varianza por a al cuadrado.', 'Revisa las unidades y la no negatividad. Para sumas dependientes, añade el término de covarianza; una diferencia puede ser menos variable que cada lectura por compartir cambios.'],
   'momentos-transformaciones': ['Distingue potencias del valor original y potencias de la desviación respecto a la media. El segundo momento central es varianza; no lo confundas con el segundo momento ordinario.', 'Determina el soporte de la variable transformada. Si la transformación es decreciente invierte la desigualdad; si tiene varias ramas, reúne todos los valores originales que cumplen el umbral.', 'Una densidad transformada necesita la derivada absoluta de la inversa para conservar áreas. Esta transformación y los momentos estandarizados son ampliaciones señaladas; su existencia debe comprobarse.'],
   'bernoulli-binomial': ['Define éxito y verifica número fijo de ensayos, independencia y p común. Un indicador Bernoulli cuenta un ensayo; la binomial suma esos indicadores.', 'Para exactamente k éxitos, multiplica la probabilidad de una secuencia por el número de posiciones de sus éxitos, el coeficiente binomial.', 'Para al menos k usa uno menos F(k menos uno). Las medias np y varianzas np por uno menos p pertenecen al modelo, no garantizan el resultado de una muestra concreta.'],
@@ -608,9 +610,413 @@ const SUPPLEMENTS = {
   multinomial: [{title:'Por qué aparecen las covarianzas negativas',body:'<p>Escribe cada recuento como una suma de indicadores de su categoría. En ensayos distintos hay independencia; dentro de un mismo ensayo, los indicadores de dos categorías distintas no pueden valer uno a la vez. La esperanza de su producto es cero y su covarianza es menos p de la primera por p de la segunda. Al sumar los n ensayos, resulta menos n por ese producto. La varianza de cada recuento es n por p por uno menos p. Toda fila de la matriz de covarianzas suma cero, porque la suma de recuentos n es constante; la matriz puede ser singular sin ser inválida.</p>'}]
 };
 
+const GUIDES = {
+  proporciones: {
+    question:'¿Cómo comparamos dos ensayos de germinación?',
+    paragraphs:[
+      'En un ensayo germinan 12 de 60 semillas. El dato 12 cuenta las que germinaron; el dato 60 cuenta todas las que podían hacerlo. Una proporción compara esa parte con su propio total. No necesitamos conocer ninguna distribución estadística para hacer esta comparación.',
+      'Dividimos 12 entre 60 y obtenemos 0,20. Esto significa dos de cada diez, o veinte de cada cien: 20 %. Numerador es el nombre del número de arriba, la parte; denominador es el del número de abajo, el total. El porcentaje no añade semillas: expresa lo mismo en otra escala.',
+      'Si otro ensayo tiene 30 germinaciones entre 200 semillas, calculamos 30/200 = 0,15 = 15 %. Aunque 30 sea mayor que 12, la proporción es menor. Para convertir masa, 2 miligramos son 2 × 1.000 = 2.000 microgramos: cambia la unidad, no la cantidad.',
+      'Una proporción parte/total está entre cero y uno. Una tasa usa exposición: por ejemplo, seis apariciones en tres horas son dos por hora. Una concentración, como miligramos por litro, usa cantidad por volumen. Ni una tasa ni una concentración son automáticamente una probabilidad.'
+    ],
+    readings:['La proporción es la parte dividida entre el total. El porcentaje es cien por esa proporción.','Un miligramo equivale a diez elevado a tres microgramos, es decir, mil microgramos.']
+  },
+  algebra: {
+    question:'¿Cómo repartimos un total sin cambiar las proporciones?',
+    paragraphs:[
+      'Tres estados de un cultivo tienen pesos 2, 3 y 5. Peso significa importancia relativa: el tercer estado pesa más que el primero, pero esos números todavía no son probabilidades. Buscamos un mismo factor c que transforme los tres pesos en proporciones con total uno.',
+      'Primero sumamos: 2 + 3 + 5 = 10. La igualdad que queremos cumplir es 10 × c = 1. Para dejar sola c, dividimos los dos lados entre diez: c = 1/10 = 0,1. Eso es despejar. No trasladamos símbolos por magia: hacemos lo mismo a ambos lados.',
+      'Multiplicamos cada peso por 0,1: salen 0,2, 0,3 y 0,5. Su suma es uno. Una potencia repite multiplicaciones: 3² = 3 × 3. La raíz cuadrada deshace esa operación: la raíz de 9 es 3. Estas reglas sirven para interpretar fórmulas antes de usarlas.',
+      'La función exp usa la base e, aproximadamente 2,71828. El logaritmo natural la deshace: log(1) = 0 porque e⁰ = 1. En un modelo de espera, si la proporción restante s es exp(−t/α), tomar logaritmos permite despejar t. Esa segunda fórmula es una aplicación; el ejercicio básico practica primero la igualdad con pesos.'
+    ],
+    readings:['Ce por la suma de dos, tres y cinco es uno. Como esa suma vale diez, ce es uno dividido entre diez.','E elevado a menos te dividido entre alfa es ese. Aplicando logaritmo natural, te es menos alfa por logaritmo de ese. Alfa es la escala de tiempo y ese la proporción restante, positiva y como máximo uno.']
+  },
+  funciones: {
+    question:'¿Qué hace una función con el dato que le damos?',
+    paragraphs:[
+      'Una función es una regla de entrada y salida. Si g(x) = 2x + 1, la letra x representa la entrada. Para la entrada tres hacemos 2 × 3 + 1 = 7. Escribimos g(3) = 7 y leemos ge de tres es siete. Los paréntesis indican dónde se introduce el dato.',
+      'El dominio dice qué entradas aceptamos. Una función por tramos tiene reglas distintas según la entrada: por ejemplo, una señal puede ser cero antes de una dosis mínima y crecer después. Primero elegimos el tramo y después calculamos. El soporte de un modelo indica qué valores puede presentar la variable.',
+      'El signo menor que excluye el límite: un recuento menor que tres permite cero, uno y dos. Menor o igual que tres añade el tres. Un sumatorio es una suma abreviada: sumar a sub uno, a sub dos y a sub tres significa sumar esos tres términos, no los índices uno, dos y tres.',
+      'Si los brotes posibles son 0, 2 y 5 con probabilidades 0,1, 0,6 y 0,3, menos de tres brotes incluye las dos primeras filas. Sumamos 0,1 + 0,6 = 0,7. No inventamos una fila para uno ni para tres: distinguimos los valores permitidos de los umbrales de una pregunta.'
+    ],
+    readings:['Suma de a sub i desde i igual a uno hasta tres: a sub uno más a sub dos más a sub tres. El subíndice etiqueta cada término.','Probabilidad de que equis sea menor que tres: sumamos las probabilidades de equis igual a cero, uno y dos. Esta expresión supone que equis cuenta enteros no negativos.']
+  },
+  calculo: {
+    question:'¿Cómo puede una curva describir la probabilidad de un tiempo?',
+    paragraphs:[
+      'Imagina un tiempo de reacción entre cero y dos minutos. Una densidad constante de 0,5 por minuto reparte la probabilidad uniformemente en ese intervalo. Densidad significa probabilidad por unidad de tiempo; la probabilidad de un intervalo se obtiene con su área, altura por anchura.',
+      'Entre 0,4 y 1,2 minutos hay una anchura de 1,2 − 0,4 = 0,8 minutos. Multiplicamos 0,5 × 0,8 = 0,4: el 40 % de los tiempos cae ahí según el modelo. En todo el intervalo, 0,5 × 2 = 1. La altura no es la probabilidad de un instante.',
+      'Cuando la altura cambia, dividimos el intervalo en franjas, calculamos altura por anchura y sumamos. Una integral hace esa acumulación con franjas cada vez más finas. Para calcular a mano buscamos una primitiva: una función G cuya derivada devuelve la función que estamos acumulando.',
+      'Por ejemplo, una primitiva de x es x²/2. Entre cero y dos, su integral vale 2²/2 − 0²/2 = 2. La derivada es la pendiente o cambio local. Si F acumula probabilidad, su pendiente describe la densidad donde exista esa derivada. No hace falta confundir esas dos funciones: una acumula áreas y la otra describe alturas.'
+    ],
+    readings:['Integral de efe de x entre a y be respecto de x: ge de be menos ge de a. Ge prima es efe: derivar la primitiva recupera la función inicial.','Efe mayúscula de x acumula la densidad desde menos infinito hasta x. Te es solo la variable que recorre la integral. La derivada de la acumulada es la densidad donde exista.']
+  },
+  'regiones-matrices': {
+    question:'¿Qué repartos de un recurso son posibles?',
+    paragraphs:[
+      'Tenemos una unidad de nutriente para dos cultivos. Llamamos x a la parte del primero e y a la del segundo. Ambas cantidades son no negativas y juntas no pueden superar uno. Un punto (x,y) representa un reparto completo: por ejemplo, (0,3; 0,4) es posible y deja 0,3 sin repartir.',
+      'Si fijamos x en 0,3, a y le queda como máximo 1 − 0,3 = 0,7. En el dibujo, los repartos permitidos forman un triángulo. No es todo el cuadrado entre cero y uno: el punto (0,8; 0,8) pediría más recurso del disponible.',
+      'Para recorrer el triángulo fijamos x, dejamos que y vaya desde cero hasta uno menos x y repetimos para los x entre cero y uno. Es el orden de la integral doble: primero recorremos el corte de y y luego movemos x. El área es base por altura dividido entre dos: 1 × 1/2 = 0,5.',
+      'Un vector es una lista ordenada de medidas. Una matriz es una tabla con filas y columnas. Por ejemplo, una tabla de dos biomarcadores debe conservar siempre su orden. Más adelante, la matriz de covarianzas usará la diagonal para la dispersión de cada medida y las otras entradas para su variación compartida; aquí no hace falta calcular esas cantidades.'
+    ],
+    readings:['Para cada equis entre cero y uno, integramos ge de equis e i griega desde i griega igual a cero hasta uno menos equis. Después recorremos equis entre cero y uno.','Vector mu: lista de dos medias. Sigma mayúscula: tabla con las dos varianzas en la diagonal y la covarianza ce en las otras dos posiciones. Es una organización de medidas, no una tabla de probabilidades.']
+  },
+  sucesos: {
+    question:'¿Qué resultados puede tener nuestro experimento?',
+    paragraphs:[
+      'Observamos dos semillas identificadas como primera y segunda. Hay cuatro resultados posibles: ninguna germina, solo la primera, solo la segunda o ambas. El espacio muestral es la lista de posibilidades que decidimos distinguir. No hemos dicho que las cuatro tengan la misma probabilidad.',
+      'Un suceso es una condición que reúne resultados. Si A significa germina la primera, A incluye solo la primera y ambas. Si B significa germina la segunda, B incluye solo la segunda y ambas. Una letra es una etiqueta para esa frase, no una cantidad que haya que multiplicar.',
+      'A unión B se lee ocurre A o B, incluidos ambos: germina al menos una. A intersección B pide las dos: germinan ambas. El complemento de A significa no ocurre A: no germina la primera. Solo A excluye los resultados que también cumplen B.',
+      'Para ni A ni B elegimos ninguna germina. Podemos describirlo como no pertenece a la unión o como no A y no B. Son dos formas de seleccionar los mismos resultados. Antes de calcular probabilidades, comprobar qué resultados incluye cada frase evita errores de interpretación.'
+    ],
+    readings:['A menos be equivale a a intersección con el complemento de be: ocurre a pero no be. El complemento de la unión equivale a ninguno de los dos.','Omega, a caligráfica y pe: resultados posibles, colección de sucesos a los que asignamos probabilidad y regla de probabilidad. Esta es la notación formal del mismo experimento.']
+  },
+  axiomas: {
+    question:'¿Por qué no podemos sumar sin revisar los solapamientos?',
+    paragraphs:[
+      'Una probabilidad va de cero a uno. Cero representa una condición que el modelo no espera que ocurra y uno una condición segura. Si una célula se elige con la misma probabilidad que las demás, contar cuántas cumplen una condición y dividir por todas permite calcular su probabilidad.',
+      'Supón que el 45 % tiene marcador A, el 30 % marcador B y el 15 % ambos. Sumar 45 % y 30 % cuenta dos veces a las células con ambos. Restamos una de esas copias: 0,45 + 0,30 − 0,15 = 0,60. La probabilidad de al menos un marcador es el 60 %.',
+      'El resto no tiene ninguno: 1 − 0,60 = 0,40. Complemento significa completar hasta el total, no cambiar arbitrariamente el signo. Cuando dos grupos no se solapan, sus probabilidades sí se pueden sumar sin restar una intersección.',
+      'En cien observaciones no tienen que aparecer exactamente sesenta con marcador. La frecuencia relativa es la proporción que observamos en una muestra concreta. El modelo describe probabilidades; los datos fluctúan. Una racha de resultados no obliga al siguiente ensayo independiente a compensarla.'
+    ],
+    readings:['Probabilidad de a unión be: probabilidad de a más probabilidad de be menos probabilidad de ambos. Probabilidad de no a: uno menos probabilidad de a.','Pe con sombrero y subíndice ene es la frecuencia observada en ene ensayos. Sumamos indicadores, uno si ocurre a y cero si no, y dividimos por el número de ensayos.']
+  },
+  combinatoria: {
+    question:'¿Elegir dos tubos es lo mismo que asignar dos posiciones?',
+    paragraphs:[
+      'Tenemos cinco tubos distintos. Elegir dos para analizarlos juntos no distingue el par A,B del par B,A. Asignar un tubo a la izquierda y otro a la derecha sí distingue esos dos órdenes. Antes de elegir una fórmula, necesitamos saber qué resultados considera distintos el experimento.',
+      'Con posiciones etiquetadas y sin repetir tubo hay cinco opciones para la primera y cuatro para la segunda: 5 × 4 = 20 asignaciones. Si solo importa el par, cada pareja se ha contado dos veces. Dividimos 20 entre 2 y obtenemos diez parejas.',
+      'Factorial significa multiplicar enteros descendiendo hasta uno: 4! = 4 × 3 × 2 × 1 = 24. Ordenar r elementos sin repetir entre n usa opciones cada vez menores. Si se pueden repetir etiquetas, cada posición conserva n opciones y el total es n elevado a r.',
+      'Una combinación cuenta grupos sin orden. Se obtiene quitando del recuento ordenado las r! maneras de reordenar cada grupo. Estos resultados son números de posibilidades, no probabilidades todavía. Para dividir casos favorables entre todos, las posibilidades deben ser igualmente probables.'
+    ],
+    readings:['Ene factorial multiplica desde ene hasta uno. Variaciones de ene tomados de erre: ene factorial dividido entre ene menos erre factorial. Con repetición, ene elevado a erre.','Ene sobre erre es el número de grupos sin orden: ene factorial entre erre factorial por ene menos erre factorial. Con multiplicidades, dividimos por los factoriales de los grupos indistinguibles.']
+  },
+  condicionada: {
+    question:'¿Entre qué plantas estamos calculando la proporción?',
+    paragraphs:[
+      'Hay doscientas plantas; ochenta superan un filtro de calidad y veinticuatro de esas ochenta presentan un marcador. Si preguntamos por el marcador entre las que superaron el filtro, el grupo relevante son las ochenta seleccionadas. No usamos doscientas como denominador.',
+      'Calculamos 24/80 = 0,30. En cambio, la probabilidad de superar el filtro y tener el marcador en todo el grupo es 24/200 = 0,12. Los dos cálculos usan las mismas veinticuatro plantas, pero contestan preguntas diferentes.',
+      'P(A dado B) se escribe con una barra entre A y B. A es lo que preguntamos y B lo que ya sabemos. La probabilidad de ambas condiciones va arriba; la de B, abajo. Si B tiene probabilidad cero, este cociente no se puede usar: no sustituimos la división por cero por una respuesta cero.',
+      'En un árbol de varias etapas multiplicamos la probabilidad del primer paso por la del segundo dentro del grupo que dejó el primero. No usamos automáticamente las probabilidades de los grupos completos: conocer lo anterior puede cambiar lo que ocurre después.'
+    ],
+    readings:['Probabilidad de a dado be: probabilidad de a y be dividida entre probabilidad de be, que debe ser positiva.','Probabilidad de a, be y ce: probabilidad de a por probabilidad de be dado a por probabilidad de ce dados a y be. Cada paso usa la información anterior.']
+  },
+  'independencia-sucesos': {
+    question:'¿Conocer un marcador cambia la probabilidad del otro?',
+    paragraphs:[
+      'A y B son fallos de dos controles. Si P(A) = 0,2 y P(B) = 0,3, independencia significa que saber si falló uno no cambia la probabilidad del otro. No significa que sea imposible que fallen ambos: bajo independencia, la probabilidad conjunta es 0,2 × 0,3 = 0,06.',
+      'Para comprobarlo necesitamos conocer también la probabilidad real de ambos en el modelo. Si coincide con 0,06, los dos sucesos son independientes. Si no coincide, no lo son. El parecido del nombre de dos muestras o que estén en tubos distintos no demuestra esa igualdad.',
+      'Incompatibles significa que no pueden ocurrir juntos. Si dos fallos tienen probabilidades positivas pero el protocolo impide que coincidan, su intersección vale cero. Conocer que ocurrió uno descarta el otro: eso cambia su probabilidad y no es independencia.',
+      'En biología, las células del mismo cultivo pueden compartir medio, tratamiento y variaciones comunes. La independencia es una hipótesis sobre el experimento. Con más de dos sucesos hay una condición adicional: verificar solo parejas puede no detectar una restricción que afecte al grupo completo.'
+    ],
+    readings:['A es independiente de be si y solo si la probabilidad de ambos es el producto de sus probabilidades individuales.','Para independencia mutua, la probabilidad de la intersección de cada grupo de sucesos debe ser el producto de las probabilidades de ese mismo grupo. J etiqueta qué sucesos elegimos.']
+  },
+  'bayes-diagnostico': {
+    question:'¿Un resultado positivo significa tener la condición?',
+    paragraphs:[
+      'Imaginemos mil plantas: cien infectadas y novecientas no infectadas. Una prueba detecta al 80 % de las infectadas: esperamos ochenta positivos verdaderos. Si da negativo al 90 % de las no infectadas, el 10 % restante produce noventa falsos positivos.',
+      'En total hay 80 + 90 = 170 positivos esperados. Entre los positivos, la proporción infectada es 80/170, aproximadamente 0,471. Esto no es la sensibilidad del 80 %: aquella empezaba entre las infectadas; ahora empezamos entre los positivos.',
+      'Sensibilidad pregunta por positivos dentro del grupo con la condición. Especificidad pregunta por negativos dentro del grupo sin ella. Prevalencia es la proporción con la condición antes de la prueba. El valor predictivo positivo pregunta por la condición dentro de todos los positivos.',
+      'Bayes organiza este cambio de pregunta: divide la probabilidad de infección y positivo entre la de todos los positivos. La probabilidad total suma las rutas de ambos grupos. Para el valor predictivo negativo repetimos el razonamiento entre negativos, con su propio denominador. Son cifras didácticas, no recomendaciones diagnósticas.'
+    ],
+    readings:['Probabilidad de be: sumamos las rutas de cada grupo a sub i. Probabilidad de a sub jota dado be: la ruta de ese grupo hacia be dividida entre todas las rutas hacia be.','Valor predictivo positivo: sensibilidad por prevalencia entre todos los positivos. Valor predictivo negativo: especificidad por proporción sin condición entre todos los negativos. Ese, ce y pi nombran sensibilidad, especificidad y prevalencia.']
+  },
+  'variable-cdf': {
+    question:'¿Cómo pasamos de una observación a un número?',
+    paragraphs:[
+      'Una variable aleatoria es una regla para convertir un resultado en un número. X puede ser el número de larvas en un campo. Antes de mirar no sabemos qué número saldrá; después observamos un valor x, por ejemplo dos. La mayúscula nombra la regla y la minúscula un valor o umbral.',
+      'Supón valores cero, uno y dos con probabilidades 0,2, 0,5 y 0,3. La acumulada F(1) pregunta por como máximo una larva: incluye cero y uno. Sumamos 0,2 + 0,5 = 0,7. No pregunta por exactamente una; esa probabilidad sería 0,5.',
+      'F(1,5) también vale 0,7: no hay una nueva fila entre uno y dos. Un umbral no necesita ser un valor que la variable pueda tomar. Al pasar por dos, la acumulada llega a uno. Antes de cero vale cero; no puede bajar porque solo añade posibilidades.',
+      'Para un intervalo mayor que a y menor o igual que b, calculamos F(b) − F(a). Quitamos lo acumulado hasta a de lo acumulado hasta b. Si la variable tiene masas en puntos, importa qué extremos incluimos. La definición formal de variable y los límites laterales se conservan en la profundización.'
+    ],
+    readings:['Equis lleva cada resultado omega a un número real. La condición formal exige que preguntar si equis no supera un umbral sea un suceso al que podamos asignar probabilidad.','Efe sub equis de x es probabilidad de equis menor o igual que x. Entre a excluido y be incluido restamos efe de a de efe de be. Un salto de la acumulada da la probabilidad de ese punto; x menos indica acercarse desde la izquierda.']
+  },
+  masa: {
+    question:'¿Qué probabilidad corresponde a cada valor de una tabla?',
+    paragraphs:[
+      'Una variable discreta toma valores separados: por ejemplo, cero, dos o cuatro brotes. Su masa es la probabilidad de un valor exacto. Si varias observaciones distintas producen dos brotes, todas contribuyen a la misma fila. No hace falta que los valores sean consecutivos.',
+      'Si los pesos de las tres filas son uno, tres y uno, el total de pesos es cinco. Dividimos cada peso por cinco: las probabilidades son 0,2, 0,6 y 0,2. Normalizar significa ajustar el total a uno. Las probabilidades negativas no son admisibles.',
+      'Al menos dos brotes incluye dos y cuatro: 0,6 + 0,2 = 0,8. Más de dos incluye solo cuatro: 0,2. La diferencia no es una regla de calculadora: cambia qué filas estamos eligiendo. Fuera de los valores permitidos no hay masa.',
+      'Un indicador convierte una condición en cero o uno: uno si se cumple y cero si no. Multiplicar dos indicadores vale uno solo cuando se cumplen ambos. Para indicar al menos uno, sumamos los indicadores y restamos su producto; así el caso de ambos no termina valiendo dos.'
+    ],
+    readings:['Pe sub equis de x sub i es probabilidad de equis igual a ese valor. Cada masa es no negativa y la suma de todas las masas es uno.','El indicador de ambos sucesos es el producto de sus indicadores. El de al menos uno es la suma de los indicadores menos su producto, para no contar ambos dos veces.']
+  },
+  densidad: {
+    question:'¿Por qué la altura de una curva no es una probabilidad?',
+    paragraphs:[
+      'Para una longitud que puede variar de forma continua usamos una densidad. La altura indica cómo se reparte la probabilidad por unidad de longitud. Para preguntar por un intervalo necesitamos su área. Como en un rectángulo, una altura grande puede dar un área pequeña si la anchura es pequeña.',
+      'Una densidad constante dos entre cero y 0,5 tiene área total 2 × 0,5 = 1. Es válida aunque la altura supere uno. Un punto aislado tiene anchura cero y área cero: en un modelo continuo P(X = x) vale cero, no la altura de la curva.',
+      'Para la densidad 2x entre cero y uno, una primitiva es x². El área total es 1² − 0² = 1. Hasta 0,5 acumulamos 0,5² = 0,25. Por encima queda 1 − 0,25 = 0,75. La acumulada F guarda áreas hasta un umbral; f minúscula guarda alturas.',
+      'Antes de integrar comprobamos dónde existe el modelo y que la densidad no sea negativa. La acumulada vale cero antes del soporte y uno después. Si un aparato redondea, registrar 0,8 representa un pequeño intervalo de lecturas, no una medida ideal con infinitos decimales.'
+    ],
+    readings:['La densidad efe sub equis es no negativa y su integral total es uno. La probabilidad entre a y be es la integral de esa densidad entre los dos extremos.','La probabilidad de un punto exacto es cero en este modelo. La acumulada efe mayúscula integra la densidad hasta x; te es la variable que recorre esa integral.']
+  },
+  esperanza: {
+    question:'¿Cómo resumimos resultados que no son igual de probables?',
+    paragraphs:[
+      'Un campo tiene cero células activadas con probabilidad 0,5 o cuatro con probabilidad 0,5. Para hallar la media del modelo multiplicamos cada valor por su probabilidad y sumamos: 0 × 0,5 + 4 × 0,5 = 2. Esta media también se llama esperanza.',
+      'Nunca aparecen exactamente dos células en este modelo, pero dos describe su centro. No es una promesa para el siguiente campo ni el valor más frecuente. Ponderar significa dar a cada resultado el peso de su probabilidad, en lugar de tratar todas las filas por igual.',
+      'Si interesa el cuadrado del número, primero elevamos cada valor al cuadrado: cero y dieciséis. Después promediamos: 0 × 0,5 + 16 × 0,5 = 8. Elevar la media al cuadrado daría 2² = 4. Son dos órdenes de operaciones y no tienen por qué coincidir.',
+      'En una tabla sumamos valor por probabilidad; en un modelo continuo integramos valor por densidad. Sumar cantidades permite sumar sus medias cuando son finitas, incluso si dependen. Si los valores posibles no tienen límite, hay que comprobar que las colas no impidan definir una media finita.'
+    ],
+    readings:['Esperanza de ge de equis: transformamos cada valor con ge y ponderamos por su probabilidad. Sumamos en el caso discreto e integramos con densidad en el continuo.','La esperanza de a por equis más be por i griega más ce es a por la esperanza de equis más be por la de i griega más ce. Los coeficientes son constantes.']
+  },
+  varianza: {
+    question:'¿Dos grupos con la misma media pueden ser distintos?',
+    paragraphs:[
+      'Los valores uno y tres tienen media dos. Los valores cero y cuatro también, pero están más separados del centro. La varianza mide esa dispersión: calculamos la distancia de cada valor a la media, la elevamos al cuadrado y promediamos con las probabilidades.',
+      'Para cero y cuatro con igual probabilidad, las distancias a dos son menos dos y dos. Sus cuadrados son cuatro y cuatro. La varianza vale cuatro; la desviación típica es su raíz, dos. Cuadrar evita que una distancia negativa cancele una positiva.',
+      'Si los valores se miden en milímetros, la varianza se expresa en milímetros cuadrados y la desviación en milímetros. Sumar cinco a todos los valores mueve el centro, pero no cambia las distancias. Multiplicar todos por tres triplica las distancias y multiplica la varianza por nueve.',
+      'Una forma abreviada calcula primero la media de los cuadrados y después resta el cuadrado de la media. Hay que respetar ese orden: E[X²] no es E[X]². Para sumar medidas que varían juntas hará falta una corrección llamada covarianza, que se desarrolla en el tema de dos variables.'
+    ],
+    readings:['Varianza de equis: esperanza de las distancias a su media elevadas al cuadrado. Equivale a esperanza de equis al cuadrado menos el cuadrado de su esperanza. Sigma es la raíz de esa varianza.','La media de a por equis más be se transforma igual. Su varianza es a al cuadrado por la varianza original; sumar be no añade dispersión.']
+  },
+  'momentos-transformaciones': {
+    question:'¿Qué cambia si convertimos una longitud en un área?',
+    paragraphs:[
+      'Una transformación aplica una regla a cada valor: si X es una longitud normalizada, Y = X² puede representar un área. Para saber cómo se reparte Y no basta con cambiar la letra de una fórmula: tenemos que traducir qué longitudes producen cada área.',
+      'Si X es uniforme entre cero y uno, Y no supera 0,25 cuando X no supera 0,5. Esa probabilidad es 0,5, no 0,25. En general, para un umbral y entre cero y uno, la acumulada de Y vale raíz de y. La raíz deshace el cuadrado en este intervalo no negativo.',
+      'Un momento ordinario de orden k promedia los valores elevados a k. Un momento central promedia las distancias a la media elevadas a k. El primero ordinario es la media y el segundo central es la varianza. Un subíndice k indica qué potencia usamos.',
+      'Si la regla crece, traducir un umbral conserva el sentido de la desigualdad; si decrece, lo invierte. Si hay varias entradas para la misma salida, hay que reunirlas todas. Al transformar densidades también cambia la anchura de los intervalos: la derivada de la inversa corrige ese cambio para conservar probabilidades.'
+    ],
+    readings:['Eme sub ka es esperanza de equis elevado a ka. Mu sub ka es esperanza de la distancia a la media elevada a ka: momento ordinario y central, respectivamente.','Para una regla creciente, la acumulada de i griega en y es la acumulada de equis en la entrada inversa. La densidad añade el valor absoluto de la derivada de esa inversa para conservar el área.']
+  },
+  'bernoulli-binomial': {
+    question:'¿Cómo modelamos cuántas semillas germinan?',
+    paragraphs:[
+      'En un ensayo con una semilla llamamos éxito a germinar y fracaso a no germinar. Son etiquetas, no juicios de valor. Una Bernoulli registra uno o cero para ese ensayo. Una binomial suma los éxitos de un número fijo de ensayos.',
+      'Para usar una binomial necesitamos ensayos independientes y la misma probabilidad p en todos. n cuenta las semillas y k las germinaciones que preguntamos. Compartir maceta o mezclar condiciones puede romper esas hipótesis: la fórmula no las garantiza.',
+      'Con ocho semillas y p = 0,25, un patrón concreto con dos éxitos y seis fracasos tiene probabilidad 0,25² × 0,75⁶. Hay veintiocho maneras de colocar esos dos éxitos. Multiplicamos por veintiocho: la probabilidad de exactamente dos es aproximadamente 0,311.',
+      'Para al menos una germinación es más corto excluir ninguna: 1 − 0,75⁸. La media del recuento es 8 × 0,25 = 2; no obliga a obtener dos en cada lote. Para al menos k, el complemento termina en k menos uno, porque el resultado k sí debe quedarse.'
+    ],
+    readings:['Probabilidad de equis igual a ka: combinaciones de ene tomados de ka por pe elevado a ka por uno menos pe elevado a ene menos ka. La media es ene por pe; la varianza añade uno menos pe.','Probabilidad de al menos un éxito: uno menos la probabilidad de que fallen los ene ensayos, uno menos pe elevado a ene.']
+  },
+  poisson: {
+    question:'¿Cómo pasamos de una tasa a un recuento esperado?',
+    paragraphs:[
+      'Un sensor registra apariciones. Si la tasa es 1,5 por hora y observamos dos horas, el número esperado es 1,5 × 2 = 3. Ese promedio para la exposición elegida se llama lambda. No es una probabilidad: puede ser mayor que uno.',
+      'La distribución Poisson describe recuentos cero, uno, dos y así sucesivamente. Su mecanismo supone tasa estable y apariciones en intervalos separados que no se informan entre sí. Si una aparición desencadena otras, el agrupamiento puede invalidar ese mecanismo.',
+      'Para ninguna aparición, la fórmula se reduce a exp(−3), aproximadamente 0,0498. Para exactamente dos, calculamos exp(−3) × 3²/2!; 2! vale dos. Obtenemos aproximadamente 0,2240. La potencia y el factorial corresponden al recuento preguntado, no a las horas.',
+      'Poisson impone que media y varianza sean lambda. No todos los recuentos biológicos cumplen eso. Una binomial con muchos ensayos y éxito raro puede aproximarse por Poisson usando lambda = n × p, pero hay que declarar que es una aproximación y revisar la pregunta concreta.'
+    ],
+    readings:['Probabilidad de ka eventos: e elevado a menos lambda por lambda elevado a ka dividido entre ka factorial. La media y la varianza son lambda.','Lambda es tasa erre por exposición te. Una binomial de ene ensayos y probabilidad pe puede aproximarse por Poisson de media ene por pe para eventos raros.']
+  },
+  hipergeometrica: {
+    question:'¿Qué cambia cuando no devolvemos lo que extraemos?',
+    paragraphs:[
+      'Un lote tiene doce semillas y cuatro son de una variedad. Elegimos tres sin devolverlas. Tras cada extracción cambia lo disponible: las selecciones no son ensayos independientes con una probabilidad fija. La hipergeométrica describe este muestreo sin reemplazo.',
+      'Usamos N para el tamaño del lote, K para las semillas de interés y n para el tamaño de muestra. k es cuántas de interés queremos obtener. Cada grupo de n semillas debe tener la misma probabilidad de ser elegido; una selección con preferencias requeriría otro modelo.',
+      'Para exactamente una de interés elegimos una entre cuatro y dos entre las ocho restantes: 4 × 28 = 112 grupos favorables. En total hay 220 grupos de tres entre doce. La probabilidad es 112/220, aproximadamente 0,509. Las combinaciones cuentan grupos, no posiciones.',
+      'Antes de calcular revisamos los límites: no podemos sacar más semillas de interés que K ni más que n. A veces tampoco podemos sacar cero, si no quedan suficientes de la otra categoría. La corrección por población finita reduce la varianza frente a una binomial comparable.'
+    ],
+    readings:['Probabilidad de ka: elegir ka de los ka mayúscula elementos de interés y ene menos ka del resto, dividido entre todas las muestras. Máximo y mínimo fijan los recuentos posibles.','La media es tamaño de muestra por proporción de interés. La varianza binomial se multiplica por ene mayúscula menos ene, dividido entre ene mayúscula menos uno.']
+  },
+  'geometrica-negativa': {
+    question:'¿Fijamos el número de intentos o esperamos hasta detectar?',
+    paragraphs:[
+      'Cada prueba detecta una señal con probabilidad 0,4, de forma independiente y sin alterar el sistema. Si repetimos hasta la primera detección, el número de intentos no está fijado. Lo que fijamos es cuándo paramos. Esto diferencia la geométrica de una binomial.',
+      'Hay dos maneras de contar: fracasos antes del éxito o ensayos incluidos el éxito. Si acertamos a la primera, los fracasos son cero y los ensayos uno. La teoría usa X para fracasos; un ejercicio que use T para ensayos debe indicar T = X + 1.',
+      'Dos fracasos y después éxito tienen probabilidad 0,6 × 0,6 × 0,4 = 0,144. La media es 1,5 fracasos o 2,5 ensayos, según qué contemos. No son dos respuestas contradictorias: son variables diferentes. Cada resultado observado sigue siendo un entero.',
+      'La binomial negativa espera hasta un número r de éxitos y cuenta los fracasos previos. El último intento debe ser el éxito que completa la meta. Con probabilidad estable, esperar sin éxito no cambia las posibilidades del siguiente intento; si el sistema aprende o se agota, ese supuesto deja de ser adecuado.'
+    ],
+    readings:['Probabilidad de ka fracasos antes del primer éxito: uno menos pe elevado a ka por pe. La media y la varianza cuentan fracasos, desde cero.','Para esperar erre éxitos, contamos las posiciones anteriores al éxito final y multiplicamos por pe elevado a erre y uno menos pe elevado a ka. La media de fracasos es erre por uno menos pe entre pe.']
+  },
+  'uniforme-montecarlo': {
+    question:'¿Qué significa elegir un instante uniformemente?',
+    paragraphs:[
+      'Elegimos un instante entre dos y seis minutos. Uniforme significa que intervalos de igual longitud tienen igual probabilidad. Entre tres y cinco hay dos minutos de los cuatro disponibles: la probabilidad es 2/4 = 0,5. La densidad es 1/4 por minuto.',
+      'En una lista discreta uniforme, cada valor tiene la misma probabilidad positiva. En un intervalo continuo, un punto aislado tiene probabilidad cero. Lo que permanece constante es la densidad. No podemos repartir una probabilidad positiva idéntica entre infinitos puntos y después sumarla como una lista finita.',
+      'Un cuantil contesta la pregunta inversa: qué umbral deja una proporción dada por debajo o en él. Si una tabla asigna 0,2 a cero, 0,5 a uno y 0,3 a dos, un número uniforme 0,10 se asigna a cero; 0,55 a uno; 0,91 a dos. Los tramos tienen las longitudes de sus probabilidades.',
+      'Repetir esa generación es simulación Montecarlo: aproxima respuestas del modelo mediante muchos resultados simulados. Una semilla permite repetir los mismos resultados. Más repeticiones reducen la fluctuación de la simulación, pero no convierten un modelo equivocado en una descripción correcta del experimento.'
+    ],
+    readings:['Densidad uniforme: uno dividido entre be menos a dentro del intervalo. La media es su punto medio y la varianza su anchura al cuadrado dividida entre doce.','Cuantil de u: el primer umbral cuya acumulada alcanza u. Generar una uniforme U y aplicar ese cuantil produce la distribución buscada. Ínfimo significa el menor límite en esta definición.','Para enteros consecutivos entre a y be, la media es el punto medio y la varianza usa el número de valores, be menos a más uno. No se aplica a una lista arbitraria.']
+  },
+  exponencial: {
+    question:'¿Cuánto esperamos hasta la próxima aparición?',
+    paragraphs:[
+      'Una exponencial modela tiempos no negativos con un mecanismo de riesgo constante. Usamos alfa para la escala, que aquí es el tiempo medio. Si alfa vale cinco minutos, la tasa es su inversa: 1/5 = 0,2 por minuto. Una escala mayor alarga las esperas.',
+      'Supervivencia no significa necesariamente seguir vivo: es la probabilidad de que el tiempo del evento supere un umbral. Con escala cinco, esperar más de diez minutos tiene probabilidad exp(−10/5) = exp(−2), aproximadamente 0,1353.',
+      'La acumulada pregunta por un evento ocurrido como máximo en ese tiempo y es uno menos la supervivencia. Para un intervalo, restamos acumuladas o supervivencias en sus extremos. La densidad es otra cosa: probabilidad por minuto, no la probabilidad de una espera exacta.',
+      'Si ya esperamos diez minutos sin evento, la espera adicional mantiene la distribución original bajo este modelo. Esperar otros cinco tiene probabilidad exp(−1). No restamos diez a una fecha de llegada prevista: la media no es una cita fija. El supuesto puede fallar en sistemas que envejecen o se adaptan.'
+    ],
+    readings:['Densidad: uno entre alfa por e elevado a menos te entre alfa. Supervivencia: la misma exponencial sin el factor inicial. La media es alfa y la varianza alfa al cuadrado.','Probabilidad de esperar más de ese más te, sabiendo que ya esperamos ese, es la probabilidad original de esperar más de te. Ese y te son tiempos no negativos.']
+  },
+  normal: {
+    question:'¿Cómo comparamos una longitud con el centro de su grupo?',
+    paragraphs:[
+      'Un modelo normal describe una campana simétrica mediante una media mu y una desviación típica sigma positiva. En una longitud con media cuarenta milímetros y desviación cuatro, cuarenta es el centro y cuatro fija la escala de dispersión. No toda medida biológica tiene por qué seguir esa campana.',
+      'Para comparar cuarenta y ocho con el centro restamos 40 y dividimos entre 4: (48 − 40)/4 = 2. Está dos desviaciones por encima. Esta operación se llama tipificar y su resultado z ya no tiene unidades. Se divide por la desviación, no por la varianza dieciséis.',
+      'La función Φ, fi mayúscula, devuelve el área a la izquierda en la normal estándar. Φ(2) es aproximadamente 0,9772. Por encima de cuarenta y ocho queda 1 − 0,9772 = 0,0228. Un intervalo resta las áreas acumuladas de sus dos límites tipificados.',
+      'El percentil noventa pregunta qué longitud deja el 90 % por debajo. Consultamos el cuantil estándar 1,2816 y volvemos a milímetros: 40 + 4 × 1,2816 ≈ 45,13. En N(mu, sigma al cuadrado), el segundo parámetro es la varianza; una calculadora puede pedir sigma directamente.'
+    ],
+    readings:['Equis sigue una normal con media mu y varianza sigma al cuadrado. La densidad dibuja la campana. Para tipificar, zeta es equis menos mu dividido entre sigma y sigue una normal de media cero y varianza uno.','Probabilidad entre a y be: fi del límite superior tipificado menos fi del inferior. El cuantil u en unidades originales es mu más sigma por el cuantil estándar correspondiente.']
+  },
+  gamma: {
+    question:'¿Qué modelo describe la suma de varias esperas?',
+    paragraphs:[
+      'Una reacción ficticia necesita tres etapas. Cada etapa espera de forma exponencial con media dos minutos y las esperas son independientes. El tiempo total sigue una gamma con forma k = 3 y escala alfa = 2 minutos. Conservamos esas letras también en los ejercicios.',
+      'La media total es tres por dos, seis minutos. La varianza es forma por escala al cuadrado: 3 × 2² = 12 minutos cuadrados. La forma cuenta etapas en este ejemplo entero; la escala estira los tiempos. Ninguno de esos parámetros es una probabilidad.',
+      'La función Γ, gamma mayúscula, no es la distribución gamma: es una función matemática que ajusta su fórmula. Para enteros positivos, Γ(3) = 2! = 2. Con formas no enteras se evalúa mediante una calculadora o biblioteca. No hace falta inventar un número fraccionario literal de etapas.',
+      'Para una probabilidad hasta un tiempo consultamos o integramos la acumulada gamma, no la altura de su densidad. La interpretación como suma requiere independencia y la misma escala. Si las escalas cambian, no podemos sumar formas y afirmar sin más que obtenemos esa misma gamma.'
+    ],
+    readings:['Densidad gamma: te elevado a ka menos uno por e elevado a menos te entre alfa, dividido entre gamma de ka por alfa elevado a ka. Ka es forma y alfa escala. La media es ka alfa y la varianza ka alfa al cuadrado.','Gamma de ka es la integral indicada. Para un entero positivo eme, gamma de eme vale eme menos uno factorial. La variable u solo recorre la integral.']
+  },
+  'cauchy-weibull': {
+    question:'¿Un centro simétrico garantiza que exista una media?',
+    paragraphs:[
+      'No siempre. La Cauchy estándar tiene centro, mediana y moda cero, pero sus colas son tan importantes que la media del modelo no está definida. La mediana deja la mitad a cada lado; la moda señala la mayor densidad. Ninguna de esas definiciones exige que exista esperanza.',
+      'Podemos promediar cualquier muestra finita de Cauchy, pero ese cálculo no crea una media poblacional. Tampoco restamos dos contribuciones infinitas y las llamamos cero. Para intervalos usamos su acumulada, que incorpora la función arco tangente, explicada en la notación de esta lección.',
+      'La Weibull sirve para tiempos positivos. Alfa es escala temporal y beta forma. Con beta igual a uno recupera la exponencial; con beta mayor que uno el riesgo instantáneo crece, y con beta menor que uno decrece. Riesgo es ritmo del evento entre quienes todavía no lo presentaron, no una probabilidad sin unidades.',
+      'Con escala diez horas y forma dos, superar diez horas tiene probabilidad exp(−(10/10)²) = exp(−1) ≈ 0,3679. Esa es una probabilidad de intervalo. La forma puede sugerir hipótesis sobre envejecimiento o heterogeneidad, pero no demuestra por sí sola una causa biológica.'
+    ],
+    readings:['La densidad de la Cauchy estándar es uno entre pi por uno más x al cuadrado. Equis puede ser cualquier real. La esperanza de ce no existe.','Supervivencia Weibull: e elevado a menos la razón te entre alfa elevada a beta. La densidad añade el factor beta entre alfa y una potencia. Alfa es escala y beta forma.','La media y varianza Weibull se calculan con gamma mayúscula. Primero introducimos la forma beta en esas funciones y después aplicamos la escala alfa; no son las fórmulas de la Cauchy.']
+  },
+  'calculo-modelos': {
+    question:'¿Qué pregunta estamos haciendo a la calculadora?',
+    paragraphs:[
+      'Una calculadora puede dar una masa, una densidad, una acumulada, un cuantil o resultados simulados. No son nombres distintos de la misma operación. Antes de escribir una función, expresa la pregunta con palabras: exactamente cuánto, hasta cuánto, por encima de cuánto o qué umbral deja cierta proporción.',
+      'Para una normal de media veinte y desviación tres, superar veintiséis equivale a superar dos desviaciones. Se calcula la cola derecha, 1 − Φ(2) ≈ 0,0228. Evaluar la densidad en veintiséis da una altura por unidad, no esa probabilidad.',
+      'En una variable discreta, exactamente k usa su masa; como máximo k usa su acumulada F(k); al menos k usa 1 − F(k−1). Un cuantil invierte la acumulada y devuelve un valor de la variable. Una simulación genera valores, no una probabilidad exacta.',
+      'R suele identificar esas operaciones con d, p, q y r. Python usa nombres como pmf o pdf, cdf, ppf y rvs. No necesitas memorizar todas las llamadas para razonar: comprueba qué recibe y qué devuelve cada función, sus unidades y la convención de los parámetros. Un resultado sin error de software aún puede responder a la pregunta equivocada.'
+    ],
+    readings:['Probabilidad de superar ce: uno menos la acumulada en ce. Para un recuento entero, al menos ka complementa la acumulada en ka menos uno.','Cuantil de u tiene las unidades de equis. La densidad de equis tiene las unidades inversas. Las probabilidades no tienen unidades.']
+  },
+  'familia-exponencial': {
+    question:'¿Por qué varios modelos comparten una misma estructura?',
+    paragraphs:[
+      'Familia exponencial no significa la distribución exponencial de tiempos. Es una manera común de escribir modelos como Poisson, binomial y ciertas normales. Separamos una parte que depende de los datos, una que los resume y otras que dependen del parámetro que queremos comparar.',
+      'En Poisson, x es el recuento, T(x) = x lo resume, eta = log lambda reescribe la media y A(eta) = lambda ajusta el total. El factor h(x) = 1/x! depende solo del dato. Estas letras organizan la misma probabilidad Poisson ya estudiada; no añaden cuatro nuevas observaciones.',
+      'Con recuentos fijos 0, 1 y 2, la media observada es uno. La verosimilitud compara medias candidatas del modelo viendo qué probabilidad asignan a esos datos. En el modelo Poisson común, el máximo está en uno. Tomar logaritmos convierte productos en sumas y facilita localizar ese máximo mediante derivadas.',
+      'Un modelo lineal generalizado o GLM añade predictores, como una dosis. Un enlace logarítmico relaciona su combinación con el logaritmo de una media; aplicar exp devuelve una media positiva. Una estimación o un enlace no prueba que el modelo ni una interpretación causal sean correctos. Los detalles de cada representación están en la profundización.'
+    ],
+    readings:['Efe de x con parámetro eta es hache de x por la exponencial de eta por te de x menos a de eta. Hache usa datos, te los resume y a normaliza el modelo.','En Poisson, eta es logaritmo de lambda y a de eta es exponencial de eta. En un GLM, ge transforma la media mu sub i; los predictores x sub i se combinan con coeficientes beta.','Verosimilitud de theta con los datos observados: multiplicamos la probabilidad o densidad de cada observación bajo ese mismo theta. El productorio recorre observaciones independientes.']
+  },
+  'conjunta-discreta': {
+    question:'¿Cómo leemos dos marcadores de la misma célula?',
+    paragraphs:[
+      'X puede indicar marcador verde e Y marcador rojo: cero para ausencia y uno para presencia. Cada célula aporta un par, como (1,0). Una tabla conjunta asigna una probabilidad a cada par. Las filas nombran X y las columnas Y; las etiquetas forman parte de los datos.',
+      'Supón probabilidades 0,35 para (0,0), 0,15 para (0,1), 0,25 para (1,0) y 0,25 para (1,1). Suman uno. La celda (1,0) describe verde presente y rojo ausente a la vez. No significa uno dado el otro ni la alternativa entre ambos.',
+      'La acumulada F(0,1) reúne los pares con X menor o igual que cero e Y menor o igual que uno. Son las dos celdas de la primera fila: 0,35 + 0,15 = 0,50. No es la celda (0,1), que por sí sola vale 0,15.',
+      'Para otras preguntas marcamos primero las celdas compatibles y solo después sumamos. Una condición con y exige ambas restricciones; una con o puede incluir solapamientos. Las probabilidades individuales de cada marcador no bastan para saber cómo aparecen juntos.'
+    ],
+    readings:['Pe conjunta de equis e i griega en x e y: probabilidad de que ocurran esos dos valores simultáneamente. La suma de todas las celdas es uno.','Acumulada conjunta en a y be: probabilidad de equis como máximo a e i griega como máximo be. Sumamos todas las celdas de esa región.']
+  },
+  multinomial: {
+    question:'¿Cómo contamos varias categorías con un total fijo?',
+    paragraphs:[
+      'Clasificamos cuatro células en reposo, activadas o dañadas. Cada célula pertenece a una sola categoría y las tres cubren todas las opciones. Si los ensayos son independientes y las probabilidades se mantienen, los tres recuentos siguen una multinomial.',
+      'Con probabilidades 0,5, 0,3 y 0,2, preguntamos por dos en reposo, una activada y una dañada. Un orden concreto tiene probabilidad 0,5² × 0,3 × 0,2. Hay 4!/(2!1!1!) = 12 órdenes compatibles. Multiplicamos y obtenemos 0,18.',
+      'El vector de recuentos siempre suma cuatro. Si aumenta una categoría, queda menos para las otras. Independencia entre células no significa independencia entre los recuentos. Al mirar solo las activadas, agrupamos las otras dos como no activadas y recuperamos una binomial.',
+      'La covarianza negativa entre categorías cuantifica esa competencia por el total y se desarrolla después. No hace falta calcularla para usar la masa multinomial. Antes de elegir este modelo revisamos que no haya categorías superpuestas ni cambios de probabilidad entre las células.'
+    ],
+    readings:['Probabilidad del vector de recuentos: ene factorial dividido entre el producto de los factoriales de los recuentos, por el producto de probabilidades elevadas a esos recuentos. Los recuentos suman ene y las probabilidades uno.','Cada categoría por separado sigue una binomial de ene y pe sub i. La covarianza de dos categorías distintas es menos ene por sus dos probabilidades: comparten un total fijo.']
+  },
+  marginales: {
+    question:'¿Cómo miramos una medida sin fijar la otra?',
+    paragraphs:[
+      'Una tabla conjunta registra dos marcadores. Si solo preguntamos por el verde, reunimos todas las posibilidades del rojo: presente y ausente. Sumamos las celdas correspondientes. El resultado se llama distribución marginal porque conserva una medida e ignora cuál fue la otra.',
+      'No dividimos por una fila ni seleccionamos solo las células rojas. Eso sería condicionar, una pregunta diferente. La marginal sigue describiendo todas las células del modelo y sus probabilidades deben sumar uno. Varias tablas conjuntas distintas pueden tener las mismas marginales.',
+      'En el caso continuo sumamos mediante una integral. Para densidad dos en el triángulo x ≥ 0, y ≥ 0, x + y ≤ 1, fijamos x y recorremos todos los y permitidos. El corte mide uno menos x; su altura es dos. La marginal vale 2(1−x) entre cero y uno.',
+      'Esta marginal no es uniforme: al aumentar x queda menos espacio para y. Una superficie de altura constante no produce necesariamente la misma densidad en cada coordenada. Obtener una marginal pierde información sobre cómo se coordinan ambas medidas; no permite reconstruir la conjunta sin más supuestos.'
+    ],
+    readings:['Masa marginal de equis: sumamos la masa conjunta sobre todos los valores de i griega. Para la de i griega sumamos sobre equis.','Densidad marginal de equis: integramos la conjunta respecto de i griega. Para la de i griega integramos respecto de equis, siempre dentro del soporte.']
+  },
+  'conjunta-condicional': {
+    question:'¿Qué cambia cuando ya conocemos una de las medidas?',
+    paragraphs:[
+      'Dos cultivos comparten una unidad de recurso. Los repartos posibles forman el triángulo x ≥ 0, y ≥ 0, x + y ≤ 1. Su área es medio; una densidad conjunta constante dos hace que el volumen, densidad por área, sea uno. Una región dentro del triángulo recibe probabilidad según su área.',
+      'Si sabemos que X vale 0,2, Y solo puede estar entre cero y 0,8. Hemos pasado de toda la región a un corte. Para que la distribución de Y en ese corte tenga área uno, su densidad debe ser 1/0,8 = 1,25. No hemos calculado una probabilidad mayor que uno: es una altura por unidad.',
+      'La probabilidad de Y mayor que 0,4 en ese corte es longitud favorable dividida entre longitud total: (0,8−0,4)/0,8 = 0,5. En una tabla discreta dividimos una masa conjunta por la masa de la condición; en un modelo continuo dividimos densidades.',
+      'La probabilidad de X exactamente 0,2 es cero en el modelo continuo. Por eso no dividimos por esa probabilidad puntual. El cociente de densidades define un corte normalizado donde la marginal es positiva. Saber que un instrumento registró un intervalo alrededor de 0,2 sería otra condición.'
+    ],
+    readings:['Probabilidad de que el par equis e i griega esté en la región erre: integral doble de la densidad conjunta sobre esa región. El volumen total bajo la densidad es uno.','Masa de i griega dado equis: masa conjunta entre marginal de equis. En el continuo usamos densidad conjunta entre densidad marginal, no probabilidad de un punto.']
+  },
+  'normal-bivariante': {
+    question:'¿Una medida conocida ayuda a describir la otra?',
+    paragraphs:[
+      'Medimos dos señales X e Y en la misma célula. Un modelo normal bivariante describe sus dos centros, sus dos dispersiones y la asociación lineal entre ellas, llamada correlación rho. Necesitamos suponer normalidad conjunta: dos histogramas normales por separado no la garantizan.',
+      'Supón medias treinta y setenta, desviaciones cinco y ocho y correlación 0,25. Observamos X = 40, diez por encima de su media. La media condicional de Y se desplaza: 70 + 0,25 × (8/5) × (40−30) = 74. Es el centro del grupo descrito por esa condición, no una predicción exacta.',
+      'La varianza condicional es 8² × (1−0,25²) = 60. Para tipificar necesitamos su raíz, aproximadamente 7,746, no sesenta. Si preguntamos por Y mayor que 82, calculamos (82−74)/7,746 ≈ 1,033 y consultamos la cola normal, aproximadamente 0,151.',
+      'La reducción de varianza depende del cuadrado de la correlación. Si rho es cero, este modelo conserva la distribución de Y al conocer X. Si rho es uno o menos uno, los pares quedan sobre una línea y no usamos la densidad bidimensional ordinaria. Condicionar no demuestra causalidad.'
+    ],
+    readings:['La densidad normal de dos variables usa las dos desviaciones y la correlación ro. Zeta equis y zeta i griega son las dos medidas tipificadas: valor menos media entre desviación.', 'I griega dado equis igual a x sigue una normal. Su media es mu de i griega más ro por la razón de desviaciones por el alejamiento de x. Su varianza es sigma de i griega al cuadrado por uno menos ro al cuadrado.']
+  },
+  'independencia-variables': {
+    question:'¿La tabla conjunta añade información sobre la relación?',
+    paragraphs:[
+      'Si conocer X no cambia cómo se reparte Y, las variables son independientes. En una tabla, cada celda debe coincidir con la probabilidad marginal de su fila por la de su columna. No basta con que una celda coincida por casualidad.',
+      'Por ejemplo, si P(X = 1) = 0,3 y P(Y = 1) = 0,4, la celda (1,1) debería valer 0,12. Una celda diferente basta para descartar independencia. Para confirmarla en una tabla finita comprobamos todas, incluidos los ceros.',
+      'Con densidades hacemos la misma comparación entre la conjunta completa y el producto de marginales. Hay que incluir dónde la función vale cero. Una fórmula que parece separable dentro de un triángulo no basta: el producto de marginales podría asignar densidad a pares que el triángulo prohíbe.',
+      'La expresión casi en todas partes permite diferencias en conjuntos sin área que no cambian probabilidades; no autoriza ignorar una región entera. La independencia se conserva si transformamos cada variable por separado, pero seleccionar un grupo por una condición sobre ambas puede crear dependencia.'
+    ],
+    readings:['Para todos los umbrales equis e i griega, la acumulada conjunta es el producto de las acumuladas marginales. Una igualdad aislada no demuestra independencia.', 'En el caso discreto, masa conjunta es producto de masas marginales. En el continuo, densidad conjunta es producto de densidades marginales salvo diferencias que no cambien áreas.', 'Si equis e i griega son independientes, la esperanza del producto de una función de cada una se separa en producto de esperanzas, cuando esas esperanzas están bien definidas.']
+  },
+  'covarianza-matrices': {
+    question:'¿Las dos medidas suelen subir y bajar juntas?',
+    paragraphs:[
+      'La covarianza compara las distancias de cada medida a su propia media. Si suelen tener el mismo signo, el producto es positivo; si suelen oponerse, es negativo. Promediamos esos productos. El resultado describe variación compartida y depende de las unidades.',
+      'Si las varianzas son nueve y dieciséis, las desviaciones son tres y cuatro. Con covarianza seis, la correlación es 6/(3 × 4) = 0,5. Dividir por las desviaciones elimina las unidades. La correlación resume asociación lineal, no cualquier relación ni una causa.',
+      'Una matriz de covarianzas es una tabla ordenada: nueve y dieciséis en la diagonal, seis en las otras dos posiciones. El orden de filas y columnas debe corresponder al de las variables. Si duplicamos Y, su varianza pasa a sesenta y cuatro y la covarianza a doce, pero la correlación sigue en 0,5.',
+      'La matriz de correlaciones hace esa división entrada por entrada y tiene unos en la diagonal si todas las desviaciones son positivas. Si una variable es constante, no podemos definir su correlación mediante una división por cero. No toda tabla simétrica de números es una matriz de covarianzas válida: ninguna combinación de medidas puede tener varianza negativa.'
+    ],
+    readings:['Covarianza de equis e i griega: esperanza del producto menos producto de las esperanzas. Ro es esa covarianza dividida entre las dos desviaciones típicas.', 'La entrada i jota de sigma mayúscula es la covarianza de las componentes i y jota. De coloca las desviaciones en una diagonal. Multiplicar por su inversa a ambos lados divide cada entrada por las dos desviaciones correspondientes.']
+  },
+  'combinaciones-incorrelacion': {
+    question:'¿Por qué la diferencia entre dos lecturas puede variar menos?',
+    paragraphs:[
+      'Dos medidas de la misma muestra pueden subir y bajar juntas. Al restarlas, parte de ese cambio compartido se cancela. Para describir la variación de X menos Y necesitamos las dos varianzas y su covarianza, no solo las dispersiones por separado.',
+      'Si Var(X) = 4, Var(Y) = 9 y Cov(X,Y) = 3, la varianza de X−Y es 4 + 9 − 2 × 3 = 7. Suponer independencia sin motivo daría trece. En una suma el término compartido se añade; en una diferencia se resta por el signo de su coeficiente.',
+      'Una combinación lineal multiplica medidas por coeficientes y las suma. La media se combina de la misma manera, incluso si hay dependencia. Para la varianza, los coeficientes de cada variable se elevan al cuadrado y las parejas aportan dos veces el producto de coeficientes por su covarianza.',
+      'Covarianza cero solo descarta asociación lineal. Si X es uniforme entre menos uno y uno e Y = X², conocer X determina Y, aunque la simetría haga cero la covarianza. Hay dependencia. La equivalencia entre covarianza cero e independencia requiere normalidad conjunta; no se extiende a cualquier modelo.'
+    ],
+    readings:['Varianza de a equis más be i griega: a al cuadrado por la varianza de equis más be al cuadrado por la varianza de i griega más dos a be por su covarianza.', 'A transpuesta por equis es la suma de medidas con sus coeficientes. Su media combina las medias; a transpuesta sigma a reúne varianzas y covarianzas de esa misma cuenta.', 'La independencia implica covarianza cero si existen los momentos. La flecha inversa tachada recuerda que covarianza cero no implica independencia en general.']
+  }
+};
+
+const PRACTICE = {
+  proporciones:['proportions'], algebra:['normalization'], funciones:['function-values','cdf-table'],
+  calculo:['continuous','uniform'], 'regiones-matrices':['plane-regions'],
+  sucesos:['events'], axiomas:['events'], combinatoria:['combinatorics'], condicionada:['conditional'],
+  'independencia-sucesos':['event-independence'], 'bayes-diagnostico':['bayes','conditional'],
+  'variable-cdf':['cdf-table'], masa:['discrete','cdf-table'], densidad:['continuous'],
+  esperanza:['discrete','transform'], varianza:['discrete'], 'momentos-transformaciones':['transform','continuous'],
+  'bernoulli-binomial':['binomial'], poisson:['poisson','binomial'], hipergeometrica:['hypergeometric','binomial'],
+  'geometrica-negativa':['negative-binomial','geometric'], 'uniforme-montecarlo':['uniform','cdf-table'],
+  exponencial:['exponential','poisson'], normal:['normal'], gamma:['gamma','exponential'],
+  'cauchy-weibull':['cauchy','weibull'], 'calculo-modelos':['normal','binomial','poisson'],
+  'conjunta-discreta':['joint-basic'], multinomial:['multinomial','joint-basic','binomial'],
+  marginales:['joint','continuous-joint'], 'conjunta-condicional':['continuous-joint','joint','conditional'],
+  'normal-bivariante':['bivariate-normal','normal'], 'independencia-variables':['independence','joint'],
+  'covarianza-matrices':['covariance','joint','independence']
+};
+
+const SCOPED_QUESTIONS = {
+  masa:{discrete:['normalizer']},
+  esperanza:{discrete:['normalizer','mean'], transform:['transformed-mean']},
+  multinomial:{multinomial:['exact','marginal-a']},
+  marginales:{joint:['marginal-y'], 'continuous-joint':['normalizer','marginal-density']},
+  'independencia-variables':{independence:['factorization-gap']}
+};
+
+const FORMAL_FORMULAS = {sucesos:[1], axiomas:[1], 'independencia-sucesos':[1], 'variable-cdf':[0], 'regiones-matrices':[1], multinomial:[1]};
+
 for (const unit of COURSE.units) {
   for (const lesson of unit.lessons) {
     lesson.method = METHODS[lesson.id];
     if (SUPPLEMENTS[lesson.id]) lesson.sections.push(...SUPPLEMENTS[lesson.id]);
+    const guide = GUIDES[lesson.id];
+    if (!guide || guide.readings.length !== lesson.formulas.length) throw new Error(`Guía incompleta: ${lesson.id}.`);
+    lesson.notation = notationFor(lesson.id);
+    lesson.sections = [
+      {title:guide.question, body:guide.paragraphs.slice(0,2).map(text => `<p>${text}</p>`).join('')},
+      {title:'Hacer la cuenta y entender el resultado', body:guide.paragraphs.slice(2).map(text => `<p>${text}</p>`).join('')},
+      ...lesson.sections.map(section => ({...section, optional:true}))
+    ];
+    lesson.formulas = lesson.formulas.map((formula,index) => ({...formula, reading:guide.readings[index], optional:FORMAL_FORMULAS[lesson.id]?.includes(index) || false}));
+    if (PRACTICE[lesson.id]) lesson.exerciseTypes = PRACTICE[lesson.id];
+    if (SCOPED_QUESTIONS[lesson.id]) lesson.exerciseQuestions = SCOPED_QUESTIONS[lesson.id];
+    if (['proporciones','algebra','funciones','regiones-matrices'].includes(lesson.id)) lesson.visual = 'math';
   }
 }
+
+COURSE.glossary = Object.values(NOTATION);

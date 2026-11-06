@@ -23,7 +23,7 @@ export function versionAssets(root = fileURLToPath(new URL('../../', import.meta
     versions[`inferencia/${file}`] = version;
     return `from ${quote}./${file}?v=${version}${quote}`;
   });
-  if (imports !== 5) throw new Error('Se esperan las cinco dependencias locales del aula; revisa el grafo de módulos.');
+  if (imports !== 6) throw new Error('Se esperan las seis dependencias locales del aula; revisa el grafo de módulos.');
   const htmlFile = 'pages/inferencia-estadistica.html';
   const htmlBefore = readFileSync(join(root, htmlFile), 'utf8');
   let assets = 0;

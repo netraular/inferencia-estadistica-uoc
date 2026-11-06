@@ -1,13 +1,17 @@
-import {COURSE} from './course.js?v=34212586c1fb';
-import {EXERCISE_TYPES, generateExercise, gradeAnswer} from './exercises.js?v=bc4ede56ecec';
-import {createLessonAnimation, mountAnimation} from './animations.js?v=447a56c7362e';
-import {mountLab} from './labs.js?v=49b11cab1519';
+import {COURSE} from './course.js?v=334606496f0b';
+import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=096e74f99636';
+import {notationHtml} from './teaching.js?v=516a869f31b1';
+import {createLessonAnimation, mountAnimation} from './animations.js?v=559714905ce1';
+import {mountLab} from './labs.js?v=03403da19f18';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));
 export const VIEWS = ['theory', 'lab', 'practice', 'animation'];
 export const LESSON_LAB_PRESETS = {
-  proporciones:{function:'constant', height:1, lower:0, upper:1},
+  proporciones:{mode:'proportions'},
+  algebra:{mode:'weights'},
+  funciones:{mode:'function'},
+  'regiones-matrices':{mode:'region'},
   'variable-cdf':{display:'cdf'},
   hipergeometrica:{family:'hypergeometric'},
   'geometrica-negativa':{family:'negative-binomial', r:1},
@@ -106,7 +110,11 @@ export function mountAula(document, environment = {}) {
   }
 
   function renderTheory() {
-    const current = lesson();
+    const original = lesson();
+    const current = {...original,
+      sections:[...original.sections.filter(section => !section.optional), {title:'Palabras y símbolos de esta lección', body:notationHtml(original.id)}],
+      formulas:original.formulas.filter(formula => !formula.optional).map(formula => ({...formula, meaning:`Se lee: ${formula.reading} ${formula.meaning}`}))
+    };
     const check = current.check;
     element('panel-theory').innerHTML = `<div class="theory-layout"><article class="theory-article"><div class="objectives"><h3>Al terminar esta lección</h3><ul>${current.objectives.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></div>${current.sections.map(section => `<section><h2>${escapeHtml(section.title)}</h2>${section.body}</section>`).join('')}<section><h2>La idea en símbolos</h2>${current.formulas.map(formula => `<div class="formula"><div class="math">${math(formula.tex)}</div><p>${escapeHtml(formula.meaning)}</p></div>`).join('')}</section><section class="example"><h3>${escapeHtml(current.example.title)}</h3>${current.example.body}</section><section class="pitfalls"><h3>Errores que conviene evitar</h3><ul>${current.pitfalls.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section><section class="knowledge-check"><h3>Comprueba la idea</h3><p>${escapeHtml(check.question)}</p><form id="knowledgeForm"><div class="check-options">${check.options.map((option, index) => `<label class="check-option"><input type="radio" name="knowledge" value="${index}" required><span>${escapeHtml(option)}</span></label>`).join('')}</div><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><p id="knowledgeFeedback" class="feedback" role="status" hidden></p></form></section><p class="source-note">Referencia: ${escapeHtml(current.source.document)} · ${escapeHtml(current.source.section)}. Explicación original de apoyo; los ejemplos son didácticos.</p></article><aside class="theory-visual"><h3>Una idea que puedes ver</h3><p>Ejemplo visual complementario</p><div id="theoryLab"></div><button type="button" class="text-button" data-open-view="lab"><i data-lucide="flask-conical" aria-hidden="true"></i>Abrir laboratorio</button></aside></div>`;
     activeCleanup = mountLab(element('theoryLab'), current.visual, {formatMath:math, params:LESSON_LAB_PRESETS[current.id] || {}});
@@ -114,11 +122,15 @@ export function mountAula(document, environment = {}) {
     method.className = 'lesson-method';
     method.innerHTML = `<h2>Cómo razonar y calcular</h2><ol>${current.method.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ol>`;
     element('panel-theory').querySelector('.example').before(method);
-    const worked = generateExercise(current.exerciseTypes[0], 1);
+    const worked = scopeExercise(current, generateExercise(current.exerciseTypes[0], 1));
     const example = document.createElement('section');
     example.className = 'worked-example';
     example.innerHTML = `<h2>Ejemplo resuelto con el método</h2><p>${escapeHtml(worked.prompt)}</p><h3>Datos y supuestos</h3><ul>${[...worked.given,...worked.assumptions].map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>${worked.questions.map(question => `<details class="solution" open><summary>${escapeHtml(question.prompt)}</summary><ol>${question.steps.map(step => `<li><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol></details>`).join('')}<button type="button" class="text-button" data-open-view="practice"><i data-lucide="shuffle" aria-hidden="true"></i>Practicar una variante</button>`;
     element('panel-theory').querySelector('.example').after(example);
+    const depth = document.createElement('details');
+    depth.className = 'lesson-depth';
+    depth.innerHTML = `<summary>Profundización: definición formal y condiciones</summary>${original.sections.filter(section => section.optional).map(section => `<section><h3>${escapeHtml(section.title)}</h3>${section.body}</section>`).join('')}${original.formulas.filter(formula => formula.optional).map(formula => `<p>Se lee: ${escapeHtml(formula.reading)}</p><div class="math">${math(formula.tex)}</div><p>${escapeHtml(formula.meaning)}</p>`).join('')}`;
+    element('panel-theory').querySelector('.pitfalls').before(depth);
     const form = element('knowledgeForm');
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -136,13 +148,16 @@ export function mountAula(document, environment = {}) {
   function renderLab() {
     element('panel-lab').innerHTML = `<p class="section-intro">Pregunta de esta lección: ${escapeHtml(lesson().objectives.join(' '))} El laboratorio aísla un mecanismo con parámetros didácticos; no modifica el enunciado ni las soluciones de los ejercicios.</p><div id="lessonLab"></div>`;
     activeCleanup = mountLab(element('lessonLab'), lesson().visual, {formatMath:math, params:LESSON_LAB_PRESETS[lesson().id] || {}});
+    const notation = document.createElement('section');
+    notation.innerHTML = `<h3>Palabras y símbolos de esta lección</h3>${notationHtml(lesson().id)}`;
+    element('lessonLab').before(notation);
   }
 
   function renderPractice() {
     const current = lesson();
     const available = entireBank ? EXERCISE_TYPES : current.exerciseTypes.map(id => EXERCISE_TYPES.find(type => type.id === id));
     if (!available.some(type => type.id === practiceType)) practiceType = available[0].id;
-    activeExercise = generateExercise(practiceType, seed);
+    activeExercise = entireBank ? generateExercise(practiceType, seed) : scopeExercise(current, generateExercise(practiceType, seed));
     const exerciseId = activeExercise.id;
     const summary = progressSummary(progress);
     element('panel-practice').innerHTML = `<div class="practice-toolbar"><label class="control-field">Tipo de ejercicio<select id="exerciseType">${available.map(type => `<option value="${type.id}"${type.id === practiceType ? ' selected' : ''}>${escapeHtml(type.title)}</option>`).join('')}</select></label><label class="control-field">Modalidad<select id="practiceMode"><option value="practice"${mode === 'practice' ? ' selected' : ''}>Práctica</option><option value="guided"${mode === 'guided' ? ' selected' : ''}>Resolución guiada</option></select></label><button id="newExercise" type="button" class="text-button"><i data-lucide="shuffle" aria-hidden="true"></i>Nuevo ejemplo</button><label class="studied-toggle" style="margin:0"><input id="entireBank" type="checkbox"${entireBank ? ' checked' : ''}>Banco completo</label><span id="practiceScore" class="practice-score">${summary.independent} respuestas sin ayuda · ${summary.assisted} con ayuda</span></div><div class="exercise-prompt"><p class="eyebrow">EJEMPLO ${seed} · ${escapeHtml(activeExercise.title)}</p><h2>${escapeHtml(activeExercise.title)}</h2><p>${escapeHtml(activeExercise.prompt)}</p><div class="exercise-context"><section><h3>Datos del problema</h3><ul>${activeExercise.given.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section><section><h3>Supuestos</h3><ul>${activeExercise.assumptions.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section></div></div>${activeExercise.questions.map((question, index) => {
@@ -151,6 +166,10 @@ export function mountAula(document, environment = {}) {
       const solved = progress.attempts[key]?.solved;
       return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}. ${solved ? 'Ya resolviste esta respuesta.' : ''}</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><div class="worked-controls"><button type="button" class="icon-button" data-solution-step="-1" aria-label="Paso anterior" title="Paso anterior" disabled><i data-lucide="arrow-left" aria-hidden="true"></i></button><span data-step-position role="status">Paso 1 de ${question.steps.length}</span><button type="button" class="icon-button" data-solution-step="1" aria-label="Paso siguiente" title="Paso siguiente"${question.steps.length <= 1 ? ' disabled' : ''}><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ol>${question.steps.map((step, stepIndex) => `<li data-worked-step="${stepIndex}"${stepIndex ? ' hidden' : ' aria-current="step"'}><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math worked-calculation">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"${question.steps.length > 1 ? ' hidden' : ''}><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
     }).join('')}`;
+    const notation = document.createElement('section');
+    notation.className = 'exercise-notation';
+    notation.innerHTML = `<h3>Cómo leer los símbolos de este ejercicio</h3>${notationHtml(activeExercise.type)}`;
+    element('panel-practice').querySelector('.exercise-prompt').append(notation);
     element('panel-practice').querySelectorAll('[data-solution]').forEach(details => {
       details.addEventListener('toggle', () => {
         if (details.open && details.isConnected && activeExercise?.id === exerciseId) assistance(details.dataset.solution);

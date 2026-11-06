@@ -7,7 +7,7 @@ const searchable = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '
 export function SymbolsDialog({id, onClose}) {
   const dialog = useRef(null);
   const [query, setQuery] = useState('');
-  const results = COURSE.glossary.filter(entry => searchable(`${entry.symbol} ${entry.term} ${entry.definition}`).includes(searchable(query.trim())));
+  const results = COURSE.glossary.filter(entry => searchable(`${entry.symbol} ${entry.term} ${entry.reading} ${entry.definition} ${entry.example}`).includes(searchable(query.trim())));
   useEffect(() => {
     const element = dialog.current;
     const previousFocus = element.ownerDocument.activeElement;
@@ -38,7 +38,7 @@ export function SymbolsDialog({id, onClose}) {
       <div className="symbols-results">
         {results.length ? <dl>{results.map(entry => <div key={`${entry.symbol}-${entry.term}`}>
           <dt><span className="glossary-symbol">{entry.symbol}</span><span>{entry.term}</span></dt>
-          <dd>{entry.definition}</dd>
+          <dd><p><strong>Se lee:</strong> {entry.reading}.</p><p>{entry.definition}</p><p><strong>Ejemplo:</strong> {entry.example}</p></dd>
         </div>)}</dl> : <p>No hay coincidencias.</p>}
       </div>
     </div>

@@ -108,7 +108,7 @@ const plot = (kind, domain, xTitle, yTitle, legend, data) => ({kind, domain, xTi
 const bars = (values, probabilities, extra = {}) => plot('bars', [Math.min(...values) - 0.5, Math.max(...values) + 0.5], 'Valor de X', 'Probabilidad', 'Masa de probabilidad', {values, heights: probabilities, probabilities, ...extra});
 
 const DEFAULTS = {
-  math: {function: 'linear', height: 1, lower: 2, upper: 5},
+  math: {mode:'integral', function:'linear', height:1, lower:2, upper:5, total:60, part:12, weights:[2,3,5], input:2, factor:2, base:1, capacity:1, knownX:0.3},
   events: {weights: [30, 20, 10, 40], operation: 'union', condition: 'all'},
   bayes: {prevalence: 0.1, sensitivity: 0.9, specificity: 0.95, cohort: 1000},
   variable: {weights: [1, 3, 3, 1], display: 'pmf', threshold: 1},
@@ -393,6 +393,32 @@ export function calculateLab(labId, raw = {}) {
   const params = parameters(raw, DEFAULTS[labId]);
   switch (labId) {
     case 'math': {
+      choice(params.mode, 'Actividad matemática', ['integral','proportions','weights','function','region']);
+      if (params.mode === 'proportions') {
+        numeric(params.total, 'Total de semillas', 1, 200, true);
+        numeric(params.part, 'Semillas germinadas', 0, params.total, true);
+        const proportion = params.part / params.total;
+        return result('Una parte comparada con su total', `La parte son ${params.part} semillas germinadas y el total ${params.total} sembradas. Dividimos ${params.part} entre ${params.total}: ${numberText(proportion)}. Para escribir el porcentaje multiplicamos por cien, sin cambiar la comparación. La parte no puede superar su total.`, [metric('Proporción',proportion),metric('Porcentaje',100*proportion,'%'),metric('No germinadas',params.total-params.part,'semillas')],plot('bars',[-0.5,1.5],'0: germinadas; 1: total','Semillas','Parte y total del mismo ensayo',{values:[0,1],heights:[params.part,params.total],proportion}));
+      }
+      if (params.mode === 'weights') {
+        const weights = vector(params.weights,'Pesos',3);
+        const total = sum(weights);
+        const probabilities = normalize(weights);
+        return result('Conservar las proporciones, ajustar el total', `Los pesos ${weights.map(numberText).join(', ')} suman ${numberText(total)}. Dividimos cada peso por ese total. La constante común es 1/${numberText(total)}. Las barras muestran proporciones que suman uno; todavía no necesitamos calcular medias ni varianzas.`, [metric('Total de pesos',total),metric('Constante c',1/total),metric('Suma de proporciones',sum(probabilities))],bars([1,2,3],probabilities,{xTitle:'Estado del cultivo',proportion:true}));
+      }
+      if (params.mode === 'function') {
+        numeric(params.input,'Entrada x',0,3);
+        numeric(params.factor,'Factor',1,5);
+        numeric(params.base,'Valor inicial',0,5);
+        const rule = value => params.factor*value+params.base;
+        return result('Entrada, regla y salida', `La regla g(x) = ${numberText(params.factor)} × x + ${numberText(params.base)} permite entradas entre cero y tres. Para x = ${numberText(params.input)}, primero multiplicamos y después sumamos: la salida es ${numberText(rule(params.input))}. No es una probabilidad ni un modelo ajustado a datos.`, [metric('Entrada x',params.input),metric('Salida g(x)',rule(params.input)),metric('g(0) + g(1) + g(2)',rule(0)+rule(1)+rule(2))],plot('curve',[0,3],'Entrada x','Salida g(x)','La línea une las salidas de la regla',{points:curvePoints([0,3],rule)}));
+      }
+      if (params.mode === 'region') {
+        numeric(params.capacity,'Capacidad L',0.5,5);
+        numeric(params.knownX,'Cantidad x',0,params.capacity);
+        const remaining = params.capacity-params.knownX;
+        return result('Un recurso compartido forma un triángulo', `La frontera x + y = ${numberText(params.capacity)} marca los repartos que usan todo el recurso. Los puntos entre los ejes y esa línea usan como máximo la capacidad. Con x = ${numberText(params.knownX)}, y puede llegar a ${numberText(remaining)}. La sombra muestra un área geométrica: aún no es una probabilidad.`, [metric('Máximo de y',remaining,'unidades'),metric('Área del triángulo',params.capacity**2/2,'unidades²'),metric('Capacidad total',params.capacity,'unidades')],plot('curve',[0,params.capacity],'Cantidad x','Cantidad y','La región sombreada contiene los repartos permitidos',{points:curvePoints([0,params.capacity],value=>params.capacity-value),selectedInterval:[0,params.capacity],yDomain:[0,params.capacity]}));
+      }
       const power = ['constant', 'linear', 'quadratic'].indexOf(choice(params.function, 'Función', ['constant', 'linear', 'quadratic']));
       numeric(params.height, 'Altura en x=10', 0, 5);
       interval(params.lower, params.upper, 0, 10);
@@ -579,6 +605,12 @@ const select = (key, label, options) => ({key, label, options});
 const weightControls = labels => labels.map((label, index) => slider('weights', `Peso: ${label}`, 0, 100, 1, index));
 
 function controlsFor(labId, params) {
+  if (labId === 'math') {
+    if (params.mode === 'proportions') return [slider('total','Semillas sembradas: total',1,200,1),slider('part','Semillas germinadas: parte',0,params.total,1)];
+    if (params.mode === 'weights') return weightControls(['estado 1','estado 2','estado 3']);
+    if (params.mode === 'function') return [slider('input','Entrada x',0,3,0.1),slider('factor','Factor que multiplica x',1,5,0.1),slider('base','Valor que se suma',0,5,0.1)];
+    if (params.mode === 'region') return [slider('capacity','Capacidad total L',0.5,5,0.1),slider('knownX','Cantidad para el primer cultivo x',0,params.capacity,0.05)];
+  }
   switch (labId) {
     case 'math': return [select('function', 'Función', [['constant', 'Constante'], ['linear', 'Lineal creciente'], ['quadratic', 'Cuadrática creciente']]), slider('height', 'Altura en x=10', 0, 5), slider('lower', 'Inicio', 0, 10, 0.1), slider('upper', 'Fin', 0, 10, 0.1)];
     case 'events': return [...weightControls(['solo A', 'solo B', 'A y B', 'ninguno']), select('operation', 'Suceso seleccionado', [['A', 'A'], ['B', 'B'], ['union', 'A unión B'], ['intersection', 'A intersección B'], ['complement', 'Complemento de A']]), select('condition', 'Grupo de referencia', [['all', 'Todo el espacio'], ['A', 'Dado A'], ['B', 'Dado B'], ['notA', 'Dado no A'], ['notB', 'Dado no B']])];
@@ -801,7 +833,13 @@ export function mountLab(container, labId, {formatMath, params: initialParams = 
   heading.id = `${instance}-title`;
   root.setAttribute('aria-labelledby', heading.id);
   const guide = element('section', 'lab-guide');
-  const [purpose, experiment, prediction, reading, limits] = LAB_GUIDES[labId];
+  const basicGuides = {
+    proportions:['Comparar semillas germinadas con todas las sembradas.', 'Conserva el total y aumenta la parte; después conserva la parte y aumenta el total.', 'Con el mismo total, una parte mayor aumenta la proporción. Con la misma parte, un total mayor la reduce.', 'La barra cero es la parte germinada y la barra uno el total. La proporción se obtiene dividiendo, no restando.', 'Son números de un ejemplo. No explican por sí solos por qué germinan las semillas.'],
+    weights:['Convertir pesos relativos en proporciones con total uno.', 'Duplica los tres pesos y compara las proporciones con las anteriores.', 'El total se duplica y la constante se reduce a la mitad, pero las tres proporciones se conservan.', 'Cada barra corresponde a un estado del cultivo; su altura es el peso dividido entre la suma de pesos.', 'Los pesos deben sumar una cantidad positiva. Ajustar el total no demuestra que describan un cultivo real.'],
+    function:['Interpretar una función como una regla de entrada y salida.', 'Cambia la entrada x sin cambiar el factor ni el valor inicial.', 'Cada unidad adicional de entrada añade a la salida el valor del factor multiplicador.', 'El eje horizontal muestra entradas y el vertical sus salidas. g(x) se lee ge de x; no es g multiplicado por x.', 'La regla es un ejemplo de cálculo. La línea no representa probabilidades ni datos experimentales.'],
+    region:['Leer dos coordenadas que comparten una capacidad total.', 'Mantén la capacidad y aumenta lo que recibe el primer cultivo.', 'El máximo permitido para el segundo cultivo disminuye en la misma cantidad que aumenta el primero.', 'La línea es la frontera x + y = L. El área bajo ella contiene los repartos no negativos permitidos.', 'La sombra es área geométrica, no probabilidad. Todavía no hemos elegido cómo se distribuyen los repartos.']
+  };
+  const [purpose, experiment, prediction, reading, limits] = (labId === 'math' && basicGuides[initial.mode]) || LAB_GUIDES[labId];
   guide.append(element('p', '', purpose));
   const explanations = element('dl');
   for (const [title,text] of [['Explora',experiment],['Predicción razonada',prediction],['Cómo leer el resultado',reading],['Qué no demuestra',limits]]) explanations.append(element('dt','',title),element('dd','',text));

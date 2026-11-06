@@ -8,7 +8,7 @@ import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
-import {generateExercise} from '../pages/inferencia/exercises.js';
+import {generateExercise, scopeExercise} from '../pages/inferencia/exercises.js';
 import {mountAula} from '../pages/inferencia/app.js';
 
 const require = createRequire(import.meta.url);
@@ -250,7 +250,7 @@ test('curriculum generation retains all lesson content and 0..4 links in native 
   const {code} = babel.transformFromAstSync(ast, source, {babelrc:false, configFile:false});
   const writes = new Map();
   await runInNewContext(`(async () => {${code}})()`, {
-    root:'/fixture', path, COURSE, generateExercise, require,
+    root:'/fixture', path, COURSE, generateExercise, scopeExercise, require,
     mkdir:async () => {}, rm:async () => {}, cp:async () => {},
     readFile:async () => '<html></html>', writeFile:async (filename, content) => writes.set(filename, content),
     console:{log() {}}
@@ -272,8 +272,14 @@ test('curriculum generation retains all lesson content and 0..4 links in native 
       const mdx = writes.get(`/fixture/docs/${unit.id}/${lesson.id}.mdx`);
       assert.ok(mdx.includes(`slug: /lecciones/${lesson.id}`));
       assert.ok(mdx.includes(`<LessonContent lessonId="${lesson.id}">`));
+      assert.ok(mdx.includes(`<Notation topic="${lesson.id}" />`),lesson.id);
+      assert.ok(mdx.includes('<details className="lesson-depth">'),lesson.id);
+      assert.ok(mdx.includes('Profundización: definición formal y condiciones'),lesson.id);
       for (const section of lesson.sections) assert.ok(mdx.includes(section.body), lesson.id);
-      for (const formula of lesson.formulas) assert.ok(mdx.includes(JSON.stringify(formula.tex)), lesson.id);
+      for (const formula of lesson.formulas) {
+        assert.ok(mdx.includes(JSON.stringify(formula.tex)), lesson.id);
+        assert.ok(mdx.includes(`reading={${JSON.stringify(formula.reading)}}`),lesson.id);
+      }
       for (const step of lesson.method) assert.ok(mdx.includes(step), lesson.id);
       assert.ok(mdx.includes(lesson.example.body), lesson.id);
       for (const pitfall of lesson.pitfalls) assert.ok(mdx.includes(pitfall), lesson.id);

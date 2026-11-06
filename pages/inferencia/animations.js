@@ -61,6 +61,21 @@ const rateCandidates = [1, 2, 3, 4, 5];
 const rateLikelihoods = rateCandidates.map(rate => Math.exp(-3 * rate) * rate ** 9 / 288);
 
 export const ANIMATIONS = [
+  {id:'proportions-intro',title:'Comparar parte y total',steps:[
+    scene('Un ensayo de germinación','De 60 semillas germinan doce. La parte es doce y el total sesenta. Dividir doce entre sesenta da cero coma veinte, que equivale al veinte por ciento. El denominador cuenta todas las semillas del mismo ensayo.','bars',bars(['Germinan','Total'],[12,60],{yTitle:'Semillas',legend:'Parte y total del mismo ensayo'}),String.raw`12/60=0{,}20=20\%`),
+    scene('La misma parte en un grupo mayor','Si germinan doce entre 120, el número germinado no cambia, pero la proporción se reduce a la mitad: doce entre ciento veinte es cero coma diez, el diez por ciento. Comparar solo doce sin el total ocultaría la diferencia.','bars',bars(['Germinan','Total'],[12,120],{yTitle:'Semillas',legend:'El total cambia la comparación'}),String.raw`12/120=0{,}10=10\%`),
+    scene('Una parte puede valer cero','Si no germina ninguna de las 60 semillas, la parte vale cero. Cero dividido entre sesenta sigue siendo cero: el cero por ciento. El total sigue siendo positivo; no confundimos una parte nula con dividir por un total nulo.','bars',bars(['Germinan','Total'],[0,60],{yTitle:'Semillas',legend:'Parte nula, total positivo'}),String.raw`0/60=0=0\%`)
+  ]},
+  {id:'functions-intro',title:'Una regla con entradas y salidas',steps:[
+    scene('Sustituir la entrada','La regla g(x)=2x+1 se lee ge de equis es dos por equis más uno. Para entradas cero, uno, dos y tres obtenemos uno, tres, cinco y siete. Cada barra muestra una salida. No son probabilidades y no tienen que sumar uno.','bars',bars(['0','1','2','3'],[1,3,5,7],{xTitle:'Entrada x',yTitle:'Salida g(x)',legend:'Multiplicar por dos y sumar uno'}),String.raw`g(x)=2x+1`),
+    scene('Sumar las salidas, no los índices','Para sumar las primeras tres salidas calculamos ge de cero más ge de uno más ge de dos: 1+3+5=9. Un sumatorio solo abrevia esa suma. Los índices nos dicen qué entradas usar.','bars',bars(['g(0)','g(1)','g(2)'],[1,3,5],{xTitle:'Término',yTitle:'Salida',legend:'Los términos suman nueve'}),String.raw`\sum_{i=0}^2 g(i)=1+3+5=9`),
+    scene('Un extremo excluido no aporta una salida','Si pedimos entradas enteras entre cero incluido y dos excluido, solo entran cero y uno. Sumamos g(0)+g(1)=1+3=4. La salida de dos no entra porque el extremo está excluido. Primero elegimos las entradas y después calculamos sus salidas.','bars',bars(['g(0)','g(1)'],[1,3],{xTitle:'Entrada permitida',yTitle:'Salida',legend:'El extremo dos está excluido'}),String.raw`\sum_{i=0}^1g(i)=1+3=4`)
+  ]},
+  {id:'regions-intro',title:'Repartos de un recurso compartido',steps:[
+    scene('Dibujar los repartos permitidos','Una unidad se reparte entre dos cultivos. Equis e i griega son no negativas y juntas no superan 1. La región permitida es un triángulo, no todo el cuadrado. Sus vértices describen la frontera; no son tres observaciones.','scatter',{points:[[0,0],[1,0],[0,1]],region:true,area:0.5,xTitle:'Recurso X',yTitle:'Recurso Y',legend:'Región geométrica, no probabilidad'},String.raw`x\geq0,\quad y\geq0,\quad x+y\leq1`),
+    scene('Lo que queda para el segundo cultivo','Si el primero recibe 0,3 unidades, al segundo le quedan como máximo cero coma siete. Restamos lo ya asignado a la capacidad. Si el primero recibe más, el máximo del segundo disminuye. Aún no necesitamos una densidad.','scatter',{points:[[0,0],[1,0],[0,1]],region:true,area:0.5,slice:0.3,xTitle:'Recurso X',yTitle:'Recurso Y',legend:'Con x = 0,3, y llega hasta 0,7'},String.raw`0\leq y\leq1-0{,}3=0{,}7`),
+    scene('Reducir la capacidad reduce el área','Si la capacidad baja a 0,5 unidades, ambos lados del triángulo se reducen a la mitad. El área pasa de uno por uno dividido entre dos a cero coma cinco por cero coma cinco dividido entre dos: cero coma ciento veinticinco. Es un cuarto del área original, no la mitad.','scatter',{points:[[0,0],[1,0],[0,1]],subset:[[0,0],[0.5,0],[0,0.5]],region:true,area:0.5,xTitle:'Recurso X',yTitle:'Recurso Y',legend:'El triángulo verde usa una capacidad de 0,5'},String.raw`A=\frac{0{,}5\cdot0{,}5}{2}=0{,}125`)
+  ]},
   {id: 'math', title: 'Herramientas matemáticas en un cultivo', steps: [
     scene('Contar y sumar', 'En este ejemplo didáctico contamos 10, 20 y 30 colonias en tres placas. La suma es 60: el índice identifica la placa y el símbolo de sumatorio reúne sus recuentos.', 'bars', bars(['Placa 1', 'Placa 2', 'Placa 3'], [10, 20, 30], {xTitle: 'Placa', yTitle: 'Colonias', legend: 'Recuento observado', total: 60}), '\\sum_{i=1}^{3} n_i=10+20+30=60'),
     scene('Pasar a proporciones', 'Dividimos cada recuento entre 60. Las proporciones son 1/6, 1/3 y 1/2, y suman uno. Una proporción no tiene unidades y permite comparar placas de distinto tamaño.', 'bars', bars(['Placa 1', 'Placa 2', 'Placa 3'], [1 / 6, 1 / 3, 1 / 2], {xTitle: 'Placa', total: 1}), 'p_i=\\frac{n_i}{60},\\qquad \\sum_i p_i=1'),
@@ -263,18 +278,23 @@ export const ANIMATIONS = [
 export function createLessonAnimation(lesson, createExercise, paragraphs) {
   if (!lesson?.id || typeof createExercise !== 'function' || typeof paragraphs !== 'function') throw new TypeError('La clase necesita lección, generador de ejercicios y lector de párrafos HTML.');
   const types = {'cauchy-weibull':['cauchy','weibull'],marginales:['joint','continuous-joint'],'uniforme-montecarlo':['uniform','discrete'],'calculo-modelos':['normal','binomial','poisson']}[lesson.id] || [lesson.exerciseTypes[0]];
-  const exercises = types.map(type=>createExercise(type,1));
+  const exercises = types.map(type=>{
+    const generated = createExercise(type,1);
+    const allowed = lesson.exerciseQuestions?.[type];
+    return allowed ? {...generated,questions:generated.questions.filter(question=>allowed.includes(question.id))} : generated;
+  });
   const narrate = (title, caption, chapter, tex) => ({title,caption,kind:'lesson',data:{chapter},...(tex ? {tex} : {})});
   const steps = [narrate(lesson.title, `Vamos a estudiar esta lección desde su significado hasta el cálculo. ${lesson.objectives.join(' ')} Empezaremos por las ideas, leeremos las fórmulas y resolveremos ejemplos explicando por qué hacemos cada operación.`, 'Objetivos')];
-  for (const section of lesson.sections) {
+  for (const section of lesson.sections.filter(section=>!section.optional)) {
     paragraphs(section.body).forEach((text,index) => steps.push(narrate(`${section.title} · ${index+1}`,text,'Teoría')));
   }
-  lesson.formulas.forEach((formula,index) => steps.push(narrate(`Fórmula ${index+1}: significado y condiciones`, `Leamos esta expresión con cuidado. ${formula.meaning} ${lesson.method[Math.min(index,lesson.method.length-1)]}`, 'Fórmulas', formula.tex)));
+  for (const item of lesson.notation || []) steps.push(narrate(`${item.term}: lectura y significado`, `Se lee ${item.reading}. ${item.definition} Por ejemplo: ${item.example}`, 'Notación'));
+  lesson.formulas.filter(formula=>!formula.optional).forEach((formula,index) => steps.push(narrate(`Fórmula ${index+1}: significado y condiciones`, `Se lee así: ${formula.reading} ${formula.meaning}`, 'Fórmulas', formula.tex)));
   lesson.method.forEach((text,index) => steps.push(narrate(`Método · Paso ${index+1}`,text,'Método')));
   paragraphs(lesson.example.body).forEach((text,index) => steps.push(narrate(`${lesson.example.title} · ${index+1}`,text,'Ejemplo de la lección')));
-  const demoId = {axiomas:'events','uniforme-montecarlo':'cdf','calculo-modelos':'normal','combinaciones-incorrelacion':'covariance'}[lesson.id] || lesson.animation;
+  const demoId = {proporciones:'proportions-intro',funciones:'functions-intro','regiones-matrices':'regions-intro',axiomas:'events','uniforme-montecarlo':'cdf','calculo-modelos':'normal','combinaciones-incorrelacion':'covariance'}[lesson.id] || lesson.animation;
   const demo = ANIMATIONS.find(item => item.id === demoId);
-  if (demo) steps.push(...demo.steps.map(step => ({...step,title:`Demostración · ${step.title}`,data:{...step.data,chapter:'Demostración visual'}})));
+  if (demo) steps.push(...demo.steps.filter(step=>!(['sucesos','axiomas'].includes(lesson.id) && /Condicionar/.test(step.title))).map(step => ({...step,title:`Demostración · ${step.title}`,data:{...step.data,chapter:'Demostración visual'}})));
   exercises.forEach((exercise,index) => {
     const given = exercise.given.map(value => ({value}));
     steps.push({...narrate(`Ejercicio ${index+1}: planteamiento`, `Resolvamos ahora un problema nuevo. ${exercise.prompt} Los datos son los siguientes. ${exercise.given.join(' ')} Antes de calcular, fijamos los supuestos. ${exercise.assumptions.join(' ')}`, 'Ejercicios resueltos'), visual:{label:exercise.title, lines:given}});
@@ -307,7 +327,7 @@ export function createLessonAnimation(lesson, createExercise, paragraphs) {
     const cues = chunks.map(text => { const start=time; time+=Math.max(2,text.split(/\s+/).length/2.5+0.6); return {text,start,end:time}; });
     const visual = step.visual || (step.kind === 'lesson' ? {
       label:step.data.chapter,
-      lines:step.tex ? [{tex:step.tex}] : lesson.formulas.map(formula => ({tex:formula.tex})),
+      lines:step.tex ? [{tex:step.tex}] : [],
       process:lesson.method.map((text,index) => ({label:`${index+1}`,value:text.split(/\s+/).slice(0,7).join(' ')}))
     } : undefined);
     return {...step,...(visual ? {visual} : {}),cues,duration:time};
@@ -676,9 +696,17 @@ function drawScatter(context, width, height, data, progress) {
     };
     polygon(data.points, '#e0f2fe', COLORS[0]);
     if (data.subset) polygon(data.subset, '#d1fae5', COLORS[1]);
+    const bound = Math.max(...xValues);
+    if (Number.isFinite(data.slice)) {
+      context.beginPath();
+      context.moveTo(plot.xPosition(data.slice),plot.yPosition(0));
+      context.lineTo(plot.xPosition(data.slice),plot.yPosition(bound-data.slice));
+      context.strokeStyle = COLORS[1];
+      context.stroke();
+    }
     context.fillStyle = COLORS[3];
     context.beginPath();
-    context.arc(plot.xPosition(2 * progress), plot.yPosition(2 * (1 - progress)), 4, 0, 2 * Math.PI);
+    context.arc(plot.xPosition(bound * progress), plot.yPosition(bound * (1 - progress)), 4, 0, 2 * Math.PI);
     context.fill();
     return;
   }

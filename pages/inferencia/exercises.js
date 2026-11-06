@@ -27,7 +27,14 @@ export const EXERCISE_TYPES = [
   {id:'multinomial', title:'Multinomial', description:'Relacionar tres recuentos con total fijo, marginales y covarianza.'},
   {id:'bivariate-normal', title:'Normal bivariante', description:'Obtener media, desviación y cola de una normal condicional.'},
   {id:'continuous-joint', title:'Conjunta continua', description:'Normalizar un triángulo y calcular marginales, áreas y cortes condicionales.'},
-  {id:'exponential-family', title:'Familia exponencial', description:'Factorizar una muestra Poisson y estimar su media por verosimilitud.'}
+  {id:'exponential-family', title:'Familia exponencial', description:'Factorizar una muestra Poisson y estimar su media por verosimilitud.'},
+  {id:'proportions', title:'Proporciones y unidades', description:'Dividir una parte entre su total y convertir miligramos a microgramos.'},
+  {id:'normalization', title:'Despejar una constante', description:'Aplicar la misma operación a ambos lados de una igualdad.'},
+  {id:'function-values', title:'Leer una función', description:'Sustituir una entrada, sumar salidas y respetar los extremos.'},
+  {id:'plane-regions', title:'Coordenadas y regiones', description:'Encontrar el límite de una coordenada y el área de un triángulo.'},
+  {id:'event-independence', title:'Independencia de sucesos', description:'Comparar la probabilidad de ambos sucesos con el producto de sus probabilidades.'},
+  {id:'cdf-table', title:'Tabla y probabilidad acumulada', description:'Sumar las probabilidades de los valores que no superan un umbral.'},
+  {id:'joint-basic', title:'Leer una tabla conjunta', description:'Distinguir una celda de una región de una tabla de dos medidas.'}
 ];
 
 const DECIMAL = /^[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:e[+-]?\d+)?$/i;
@@ -91,7 +98,7 @@ const METHODS = {
   events: 'El experimento elige una célula equiprobablemente. Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez.',
   conditional: 'La información dada selecciona un subgrupo. La intersección indica los casos que cumplen las dos condiciones y el denominador reúne todos los casos de la condición conocida, no toda la población.',
   bayes: 'Infección y ausencia de infección son grupos disjuntos y exhaustivos. Primero ponderamos las probabilidades de la prueba por el tamaño de cada grupo. Para invertir la pregunta, dividimos la ruta de interés entre todas las rutas compatibles con lo observado.',
-  discrete: 'Los pesos describen razones, no probabilidades normalizadas. Su suma determina la constante; después cada valor se pondera por su masa. Para la varianza hay que promediar cuadrados antes de restar el cuadrado de la media.',
+  discrete: 'Un peso expresa importancia relativa, no una probabilidad todavía. Sumamos los pesos y dividimos cada uno por ese total para obtener probabilidades que suman uno. Una masa es la probabilidad de un valor exacto.',
   continuous: 'La probabilidad continua es un área. Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites. Normalizamos sobre todo el soporte antes de integrar la región solicitada.',
   binomial: 'Hay un número fijo de ensayos independientes con la misma probabilidad. Una secuencia con k éxitos tiene un producto de k factores p y n menos k factores de fracaso; el coeficiente binomial cuenta las posiciones equivalentes.',
   poisson: 'El parámetro lambda cuenta eventos esperados en la exposición especificada. La masa combina la exponencial negativa, la potencia de lambda y el factorial del recuento. Para una cola sumamos masas o usamos el complemento de la acumulada.',
@@ -116,14 +123,21 @@ const METHODS = {
   multinomial: 'Las categorías son excluyentes y cubren cada ensayo. El factorial multinomial cuenta secuencias con esos recuentos y el producto de potencias pondera cada secuencia. Los ensayos son independientes, pero los recuentos comparten un total fijo.',
   'bivariate-normal': 'La normalidad conjunta permite obtener una normal condicional. Su media incorpora el desplazamiento de la medida conocida y su varianza se reduce por uno menos rho al cuadrado. Para tipificar usamos la raíz de esa varianza, no la varianza misma.',
   'continuous-joint': 'El soporte es un triángulo, no su rectángulo exterior. Un corte fija una coordenada y determina los límites de la otra; la integral doble normaliza todo el soporte. Una condicional divide el corte por su marginal positiva.',
-  'exponential-family': 'Las observaciones Poisson independientes producen un producto de masas. El logaritmo lo convierte en una suma y concentra los datos en el recuento total. Derivamos respecto al parámetro con los datos fijos y comprobamos que el punto crítico sea un máximo.'
+  'exponential-family': 'Las observaciones Poisson independientes producen un producto de probabilidades. Su logaritmo convierte el producto en suma. Dejamos fijos los recuentos y buscamos qué media candidata da el mayor valor; derivar es una herramienta para localizar ese máximo.',
+  proportions: 'Una proporción compara una parte con su propio total. Dividir conserva la comparación; multiplicar por cien solo cambia su escritura a porcentaje. En una conversión de unidades conservamos la cantidad física.',
+  normalization: 'La igualdad funciona como una balanza: hacemos la misma operación en ambos lados. Primero sumamos los pesos y después dividimos ambos lados por esa suma para dejar sola la constante.',
+  'function-values': 'Una función es una regla de entrada y salida. Primero localizamos la entrada permitida; después la sustituimos en la regla. Un sumatorio solo abrevia sumar varias de esas salidas.',
+  'plane-regions': 'Las coordenadas describen un punto mediante dos números. Fijar la primera cantidad deja un máximo para la segunda. La frontera del triángulo expresa la capacidad total disponible.',
+  'event-independence': 'A y B son dos condiciones que pueden cumplirse en el mismo resultado. Si fueran independientes, la probabilidad de ambas sería P(A) por P(B). Comparamos ese producto con la probabilidad de ambas que da el enunciado.',
+  'cdf-table': 'La tabla da la probabilidad de cada valor exacto. La acumulada F(t) pregunta por todos los valores menores o iguales que t. Elegimos esas filas y sumamos sus probabilidades, sin sumar las etiquetas de las filas.',
+  'joint-basic': 'Cada celda describe dos valores simultáneos. Antes de sumar, identificamos la fila de X, la columna de Y y las celdas que cumplen la condición. La coma dentro de P significa y, no o.'
 };
 
 function exercise(type, seed, prompt, given, assumptions, questions, visualType, params) {
   const developed = questions.map(item => ({...item, steps:[
     step('Identificar la pregunta y justificar el método', `${item.prompt} ${METHODS[type]} Para este apartado: ${item.hint}`),
     ...item.steps,
-    step('Comprobar e interpretar', `El resultado es ${format(item.answer)} ${item.unit}. ${item.unit === 'probabilidad entre 0 y 1' ? 'Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso. ' : 'Las unidades corresponden a la cantidad pedida; no se deben intercambiar una media, una varianza y una desviación. '}${item.interpretation}`)
+    step('Comprobar e interpretar', `El resultado es ${format(item.answer)} ${item.unit}. ${item.unit === 'probabilidad entre 0 y 1' ? 'Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso. ' : 'Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto. '}${item.interpretation}`)
   ]}));
   return {id:`${type}-${seed}`, type, title:EXERCISE_TYPES.find(item => item.id === type).title, prompt, given, assumptions, questions:developed, visual:{type:visualType, params}};
 }
@@ -134,6 +148,128 @@ function statistics() {
 }
 
 const generators = {
+  proportions(seed, choose) {
+    const total = choose([40, 60, 80]);
+    const part = total * choose([0.1, 0.25, 0.5]);
+    const milligrams = choose([2, 3, 5]);
+    return exercise('proportions', seed, 'Un ensayo de germinación registra cuántas semillas germinan. Por separado, se prepara una cantidad de nutriente.',
+      [`Se siembran ${total} semillas y germinan ${part}.`, `Se pesan ${milligrams} miligramos de nutriente; un miligramo contiene 1.000 microgramos.`],
+      ['Las semillas germinadas forman parte de las sembradas.', 'Cambiar la unidad de masa no cambia la cantidad de nutriente.'], [
+        probability('proportion', '¿Qué proporción de las semillas germinó?', part / total, 'El total son todas las semillas sembradas.', [
+          step('Nombrar parte y total', `La parte son ${part} semillas germinadas y el total son ${total} sembradas.`),
+          step('Dividir', `${part}/${total} = ${format(part / total)}. De cada cien semillas, la misma proporción equivale a ${100 * part / total}: ${100 * part / total} %.`)
+        ], 'La proporción permite comparar ensayos con distinto número de semillas.'),
+        question('micrograms', '¿Cuántos microgramos son la cantidad de nutriente indicada?', milligrams * 1000, 'microgramos', 'Cada miligramo equivale a mil microgramos.', [
+          step('Elegir el factor', 'Pasamos a una unidad mil veces más pequeña: necesitamos mil veces más unidades.'),
+          step('Multiplicar conservando la cantidad', `${milligrams} × 1.000 = ${milligrams * 1000} microgramos.`)
+        ], 'El número aumenta, pero no hemos añadido nutriente.', 0)
+      ], 'math', {total, part, milligrams});
+  },
+
+  normalization(seed, choose) {
+    const weights = [2, 3, choose([4, 5, 7])];
+    const total = weights.reduce((sum, value) => sum + value, 0);
+    return exercise('normalization', seed, 'Tres estados de una muestra tienen pesos relativos. Multiplicamos cada peso por la misma constante c para que el total sea uno.',
+      [`Pesos: ${weights.join(', ')}.`, `La igualdad es (${weights.join(' + ')}) × c = 1.`],
+      ['Los pesos son positivos y no son aún proporciones.', 'La misma constante multiplica todos los pesos.'], [
+        question('constant', '¿Cuánto debe valer c?', 1 / total, 'constante', 'Suma los pesos y divide ambos lados por ese total.', [
+          step('Sumar primero', `${weights.join(' + ')} = ${total}, por lo que ${total} × c = 1.`),
+          step('Hacer lo mismo en ambos lados', `Dividimos ambos lados entre ${total}: c = 1/${total} = ${format(1 / total)}. Si multiplicas por ${total}, recuperas uno.`)
+        ], 'Despejar significa dejar sola la cantidad buscada sin alterar la igualdad.', 0.0005),
+        probability('last-share', '¿Qué proporción corresponde al último estado?', weights[2] / total, 'Multiplica el último peso por c.', [
+          step('Escalar el peso', `${weights[2]} × (1/${total}) = ${format(weights[2] / total)}.`),
+          step('Revisar el total', `Las tres proporciones son ${weights.map(value => format(value / total)).join(', ')}. Sin redondear, suman ${total}/${total} = 1.`)
+        ], 'Dividir todos los pesos por el mismo total conserva su importancia relativa.')
+      ], 'math', {weights, total});
+  },
+
+  'function-values'(seed, choose) {
+    const factor = choose([2, 3, 4]);
+    const base = choose([1, 2, 5]);
+    const input = choose([1, 2, 3]);
+    return exercise('function-values', seed, 'Una regla didáctica transforma una dosis x en una señal g(x). No es una probabilidad ni un ajuste a datos reales.',
+      [`g(x) = ${factor} × x + ${base}.`, `Se permiten entradas x entre 0 y 3, incluidos ambos extremos; entrada pedida: x = ${input}.`],
+      ['Los paréntesis indican la entrada de la función.', 'Sumar salidas no significa sumar únicamente sus entradas.'], [
+        question('value', '¿Qué salida produce la entrada indicada?', factor * input + base, 'unidades de señal', 'Sustituye x por la entrada y multiplica antes de sumar.', [
+          step('Sustituir', `g(${input}) = ${factor} × ${input} + ${base}.`),
+          step('Respetar el orden de operaciones', `Primero ${factor} × ${input} = ${factor * input}; después sumamos ${base}: ${factor * input + base}.`)
+        ], 'La salida g(x) no es x: es el resultado de aplicar la regla.', 0),
+        question('sum', '¿Cuánto vale g(0) + g(1) + g(2)?', 3 * factor + 3 * base, 'unidades de señal', 'Calcula las tres salidas por separado.', [
+          step('Abrir la suma', `g(0) = ${base}; g(1) = ${factor + base}; g(2) = ${2 * factor + base}.`),
+          step('Sumar los resultados', `${base} + ${factor + base} + ${2 * factor + base} = ${3 * factor + 3 * base}. Un sumatorio con índices 0, 1 y 2 abreviaría esta misma cuenta.`)
+        ], 'El índice indica qué entrada usar en cada término.', 0)
+      ], 'math', {factor, base, input});
+  },
+
+  'plane-regions'(seed, choose) {
+    const capacity = choose([4, 6, 8]);
+    const first = choose([1, 2, 3]);
+    return exercise('plane-regions', seed, 'Se reparten miligramos de nutriente entre dos cultivos. x es la cantidad del primero e y la del segundo. Se permite dejar nutriente sin repartir.',
+      [`Capacidad total: ${capacity} mg; x ≥ 0, y ≥ 0 y x + y ≤ ${capacity}.`, `Se fija x = ${first} mg. Los ejes del dibujo representan miligramos.`],
+      ['No se pueden asignar cantidades negativas.', 'El límite es compartido: no se dispone de una capacidad completa para cada cultivo.'], [
+        question('remaining', 'Con x fijado, ¿cuál es el máximo permitido de y?', capacity - first, 'miligramos', 'Resta lo que recibe el primer cultivo a la capacidad total.', [
+          step('Usar la capacidad compartida', `${first} + y ≤ ${capacity}.`),
+          step('Restar en ambos lados', `y ≤ ${capacity} − ${first} = ${capacity - first}. El segundo cultivo puede recibir entre cero y ${capacity - first} mg.`)
+        ], 'El máximo de y cambia al cambiar x.', 0),
+        question('area', '¿Qué área tiene la región triangular de todos los repartos permitidos?', capacity ** 2 / 2, 'miligramos al cuadrado', 'Un triángulo rectángulo tiene la mitad del área de su rectángulo.', [
+          step('Identificar base y altura', `Sobre cada eje se puede llegar a ${capacity} mg. El rectángulo exterior tiene área ${capacity} × ${capacity} = ${capacity ** 2}.`),
+          step('Tomar la mitad', `Área del triángulo: ${capacity ** 2}/2 = ${capacity ** 2 / 2}. Aún no hemos asignado probabilidades a esa región.`)
+        ], 'Una región y su área se pueden entender antes de introducir una densidad.', 0)
+      ], 'math', {capacity, first});
+  },
+
+  'event-independence'(seed, choose) {
+    const probabilityA = choose([0.4, 0.5, 0.6]);
+    const probabilityB = 0.5;
+    const both = probabilityA * probabilityB + choose([0, 0.05, -0.05]);
+    return exercise('event-independence', seed, 'A significa que una célula tiene marcador verde y B que tiene marcador rojo. Se conocen las probabilidades del modelo.',
+      [`P(A) = ${format(probabilityA)}; P(B) = ${format(probabilityB)}.`, `P(A ∩ B), la probabilidad de ambos, vale ${format(both)}.`],
+      ['Ambos marcadores pueden aparecer en la misma célula.', 'No se supone independencia: hay que comprobarla.'], [
+        probability('product', 'Si A y B fueran independientes, ¿qué probabilidad tendrían ambos?', probabilityA * probabilityB, 'Multiplica las dos probabilidades individuales.', [
+          step('Aplicar la condición de independencia', `El producto sería ${format(probabilityA)} × ${format(probabilityB)} = ${format(probabilityA * probabilityB)}.`),
+          step('Comparar con el dato real', `El enunciado da ${format(both)} para ambos. ${Math.abs(both - probabilityA * probabilityB) < 1e-12 ? 'Coincide con el producto: estos dos sucesos son independientes en el modelo.' : 'No coincide con el producto: estos dos sucesos no son independientes.'}`)
+        ], 'Independencia no significa que la probabilidad de ambos sea cero.'),
+        probability('given', 'Entre las células con B, ¿qué probabilidad tiene A?', both / probabilityB, 'El grupo conocido es B: divide la probabilidad de ambos entre P(B).', [
+          step('Cambiar el grupo de referencia', `P(A dado B) = ${format(both)}/${format(probabilityB)} = ${format(both / probabilityB)}.`),
+          step('Relacionar las dos comprobaciones', `Sin conocer B, P(A) vale ${format(probabilityA)}. Si conocer B no cambia esa probabilidad, hay independencia.`)
+        ], 'Esta comprobación usa solo sucesos y probabilidades, sin covarianzas.')
+      ], 'events', {probabilityA, probabilityB, both});
+  },
+
+  'cdf-table'(seed, choose) {
+    const first = choose([0.1, 0.2, 0.3]);
+    const second = 0.4;
+    const last = 1 - first - second;
+    return exercise('cdf-table', seed, 'X cuenta brotes de una planta y solo puede valer 0, 2 o 5. Una tabla describe sus probabilidades.',
+      [`P(X = 0) = ${format(first)}; P(X = 2) = 0,4; P(X = 5) = ${format(last)}.`, 'F(t) significa probabilidad de que X sea menor o igual que el umbral t.'],
+      ['Las tres probabilidades son no negativas y suman uno.', 'Un umbral puede estar entre dos valores posibles sin ser una observación posible.'], [
+        probability('cdf', '¿Cuánto vale F(3), la probabilidad de como máximo tres brotes?', first + second, 'Incluye las filas de cero y dos; excluye la de cinco.', [
+          step('Elegir las filas', 'Cero y dos son menores o iguales que tres. Cinco no lo es.'),
+          step('Sumar sus probabilidades', `${format(first)} + 0,4 = ${format(first + second)}. No añadimos una fila para tres: no es un resultado posible en este modelo.`)
+        ], 'F(3) está definida aunque nunca se observen exactamente tres brotes.'),
+        probability('strict', '¿Qué probabilidad hay de menos de dos brotes, sin incluir dos?', first, 'La condición estricta X < 2 solo admite cero en esta tabla.', [
+          step('Leer el extremo', 'Menos de dos no incluye dos. El único valor permitido inferior a dos es cero.'),
+          step('Tomar la masa correspondiente', `P(X < 2) = P(X = 0) = ${format(first)}.`)
+        ], 'Incluir dos daría otra pregunta y otra probabilidad.')
+      ], 'variable', {values:[0, 2, 5], probabilities:[first, second, last]});
+  },
+
+  'joint-basic'(seed, choose) {
+    const cell = choose([0.1, 0.2, 0.3]);
+    return exercise('joint-basic', seed, 'Se observan dos marcadores en la misma célula. X indica marcador verde e Y marcador rojo: uno significa presencia y cero ausencia.',
+      [`Filas X = 0, 1; columnas Y = 0, 1. Tabla: [0,2; 0,3] y [${format(cell)}; ${format(0.5 - cell)}].`, 'Cada entrada es una probabilidad de dos valores simultáneos; las cuatro entradas suman uno.'],
+      ['Las filas y las columnas tienen etiquetas distintas.', 'No se supone independencia entre los marcadores.'], [
+        probability('cell', '¿Cuál es P(X = 1, Y = 0), verde presente y rojo ausente?', cell, 'Busca la fila X = 1 y la columna Y = 0.', [
+          step('Localizar la celda', `La segunda fila es X = 1 y la primera columna es Y = 0: su entrada es ${format(cell)}.`),
+          step('Leer la condición simultánea', 'La coma pide que se cumplan ambas condiciones en la misma célula. No sumamos una fila ni cambiamos el denominador.')
+        ], 'Una celda conjunta no es una probabilidad condicionada.'),
+        probability('region', '¿Cuál es P(X ≤ 0, Y ≤ 1), la acumulada en (0,1)?', 0.5, 'Marca las dos celdas de la primera fila.', [
+          step('Traducir los umbrales', 'X ≤ 0 admite solo X = 0. Y ≤ 1 admite Y = 0 e Y = 1.'),
+          step('Sumar las celdas elegidas', 'La primera fila suma 0,2 + 0,3 = 0,5.')
+        ], 'Una acumulada conjunta reúne una región de celdas, no una única celda.')
+      ], 'joint', {valuesX:[0, 1], valuesY:[0, 1], probabilities:[[0.2, 0.3], [cell, 0.5 - cell]]});
+  },
+
   events(seed, choose) {
     const total = choose([100, 120, 160]);
     const countA = total * choose([0.4, 0.5, 0.6]);
@@ -231,7 +367,7 @@ const generators = {
         ], 'La altura de una densidad puede superar uno; el área total no.'),
         probability('below', 'Calcula P(X ≤ t).', chance, 'La probabilidad es el área desde cero hasta t.', [
           step('Integrar en el intervalo pedido', `c t²/2 = ${format(constant)} × ${format(threshold)}²/2 = ${format(chance)}.`, String.raw`P(X\le t)=\int_0^t cx\,dx`),
-          step('Relacionar con una distribución estándar', `X/b sigue Beta(2,1); jStat evalúa su CDF en t/b = ${format(threshold / upper)}.`)
+          step('Comprobar el área', `La primitiva de c por x es c por x al cuadrado dividido entre dos: su derivada vuelve a ser c por x. En cero vale cero; en ${format(threshold)} vale ${format(chance)}. Restamos el valor inicial y obtenemos ${format(chance)}, una probabilidad entre cero y uno.`)
         ], 'Al ser continua, P(X < t) es la misma; P(X=t)=0.'),
         probability('point', 'Calcula P(X = t), exactamente en el umbral.', 0, 'Un único punto tiene longitud cero.', [
           step('Distinguir altura y área', `Aunque f(t) = ${format(constant * threshold)}, el intervalo [t,t] tiene área cero.`)
@@ -272,7 +408,7 @@ const generators = {
       ['Proceso de Poisson homogéneo: tasa constante e incrementos independientes.', 'La probabilidad de dos llegadas en un intervalo muy breve es despreciable frente a su duración.'], [
         probability('exact', 'Calcula P(X = k).', exact, 'La media de la ventana es tasa por duración.', [
           step('Ajustar la ventana', `λ = ${rate} × ${duration} = ${lambda} llegadas esperadas.`),
-          step('Evaluar la masa', `jStat.poisson.pdf(${count}, ${lambda}) = ${format(exact)}.`, String.raw`P(X=k)=e^{-\lambda}\frac{\lambda^k}{k!}`)
+          step('Sustituir y calcular', `Lambda vale ${lambda} y k vale ${count}. El factorial ${count}! significa multiplicar los enteros desde 1 hasta ${count}: vale ${core.factorial(count)}. La potencia ${lambda} elevada a ${count} vale ${lambda ** count}. La exponencial de menos ${lambda} vale aproximadamente ${format(Math.exp(-lambda))}. Multiplicamos esa exponencial por ${lambda ** count} y dividimos entre ${core.factorial(count)}: obtenemos ${format(exact)}.`, String.raw`P(X=k)=e^{-\lambda}\frac{\lambda^k}{k!}`)
         ], 'λ es un número esperado de llegadas, no una probabilidad.'),
         probability('strict-tail', 'Calcula P(X > k), sin incluir k.', tail, 'El complemento de X > k es X ≤ k.', [
           step('Restar la acumulada inclusiva', `1 - jStat.poisson.cdf(${count}, ${lambda}) = ${format(tail)}.`, String.raw`P(X>k)=1-P(X\le k)`)
@@ -394,15 +530,15 @@ const generators = {
     const core = statistics();
     const chance = core.gamma.cdf(time, shape, scale);
     const mean = core.gamma.mean(shape, scale);
-    return exercise('gamma', seed, 'T es el tiempo hasta la llegada número α a un detector Poisson; suma α esperas exponenciales independientes.',
-      [`Forma α = ${shape}; tasa β = ${format(rate)} por minuto; escala θ = 1/β = ${format(scale)} minutos.`, `Umbral t = ${format(time)} minutos; soporte T ≥ 0.`],
-      ['Proceso de Poisson homogéneo y esperas independientes con la misma tasa.', 'Se declara Gamma(forma α, tasa β); jStat recibe forma y escala θ, no tasa.'], [
+    return exercise('gamma', seed, 'T es el tiempo hasta la llegada número k a un detector Poisson; suma k esperas exponenciales independientes.',
+      [`Forma k = ${shape}; escala α = ${format(scale)} minutos; tasa r = 1/α = ${format(rate)} por minuto.`, `Umbral t = ${format(time)} minutos; soporte T ≥ 0.`],
+      ['Proceso de Poisson homogéneo y esperas independientes con la misma tasa.', 'Como en la teoría, k es forma y α escala. La biblioteca recibe forma y escala, no tasa.'], [
         question('mean', 'Calcula E[T].', mean, 'minutos', 'La media es forma dividida por tasa, o forma por escala.', [
-          step('Sumar las medias de las esperas', `Cada espera tiene media 1/${format(rate)}; ${shape}/${format(rate)} = ${format(mean)}.`, String.raw`E[T]=\frac{\alpha}{\beta}=\alpha\theta`)
+          step('Sumar las medias de las esperas', `Cada espera tiene media ${format(scale)} minutos; ${shape} × ${format(scale)} = ${format(mean)}.`, String.raw`E[T]=k\alpha=k/r`)
         ], 'La tasa tiene unidades inversas al tiempo; la escala tiene unidades de tiempo.'),
-        probability('before', 'Calcula P(T ≤ t).', chance, 'Convierte la tasa β en escala 1/β antes de llamar a jStat.', [
-          step('Convertir el parámetro', `θ = 1/${format(rate)} = ${format(scale)}.`),
-          step('Evaluar la acumulada Gamma', `jStat.gamma.cdf(${format(time)}, ${shape}, ${format(scale)}) = ${format(chance)}.`, String.raw`P(T\le t)=F_{\Gamma(\alpha,\theta)}(t)`)
+        probability('before', 'Calcula P(T ≤ t).', chance, 'Acumula el área de la densidad gamma desde cero hasta t; conserva k como forma y α como escala.', [
+          step('Identificar el área', `Queremos el tiempo total de ${shape} esperas menor o igual que ${format(time)} minutos. Usamos forma ${shape} y escala ${format(scale)}, como en la teoría.`),
+          step('Consultar la acumulada', `La acumulada gamma integra la densidad desde cero hasta ${format(time)}. Se consulta con una calculadora estadística o con jStat.gamma.cdf(${format(time)}, ${shape}, ${format(scale)}), y vale ${format(chance)}. La llamada calcula esa área, no la altura de la curva.`, String.raw`P(T\le t)=F_{\Gamma(k,\alpha)}(t)`)
         ], `Es la probabilidad de observar al menos ${shape} llegadas antes del umbral.`)
       ], 'density', {distribution:'gamma', shape, rate, scale, time});
   },
@@ -834,4 +970,12 @@ export function generateExercise(typeId, seed = 1) {
   const random = randomSource(seed, typeId);
   const choose = values => values[Math.floor(random() * values.length)];
   return generators[typeId](seed, choose);
+}
+
+export function scopeExercise(lesson, generated) {
+  const allowed = lesson.exerciseQuestions?.[generated.type];
+  if (!allowed) return generated;
+  const questions = generated.questions.filter(item => allowed.includes(item.id));
+  if (questions.length !== allowed.length) throw new RangeError(`Preguntas incompatibles con ${lesson.id}.`);
+  return {...generated, questions};
 }

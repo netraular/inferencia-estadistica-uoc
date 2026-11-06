@@ -7,7 +7,7 @@ https://webs.raular.com/inferencia/ from the `main` branch.
 
 - 36 lessons: an optional mathematics bridge and the four supplied topics.
 - Prerendered theory, heading links, a table of contents and local full-text search.
-- 17 visual laboratories, 29 seeded exercise generators and 36 animated classes.
+- 17 visual laboratories, 36 seeded exercise generators and 36 animated classes.
 - Concept checks, hints, worked solutions, subtitles, transcripts and downloads.
 - Each lesson starts with four tabs: lesson, laboratory, exercises and animated
   reading. Concept checks and the studied mark sit at the end of the lesson.
@@ -27,6 +27,21 @@ under `pages/inferencia/`. `scripts/generate-docs.mjs` produces the MDX lessons
 from that single content source; do not edit the ignored `docs/` output.
 Update `pages/inferencia/course.js` to edit the curriculum. Animation and theory
 continue to share the same content instead of drifting into separate copies.
+
+## Reading Without A Mathematics Background
+
+Every lesson begins with a concrete question and two short explanatory sections
+using biology examples before presenting the formulas. Each formula has a verbal
+reading; the shared vocabulary in `pages/inferencia/teaching.js` explains the
+symbols, their meaning and an example both locally and in the searchable glossary.
+The original formal material remains available in a separate depth disclosure.
+
+Guided practice selects only questions appropriate to the lesson. The complete
+exercise bank keeps the full generators. Seven additional generators cover
+proportions, normalization, function values, plane regions, event independence,
+discrete cumulative tables and basic joint tables. The bridge laboratories offer
+matching elementary controls instead of starting every lesson with integration.
+Gamma consistently uses k for shape and alpha for scale, with rate = 1/scale.
 
 React embeds the existing classroom engine in an isolated Shadow DOM. Its
 navigation and CSS cannot overwrite Docusaurus routes, headings or styles.
@@ -99,12 +114,17 @@ from measured audio; where phrase alignment is unavailable, cue highlighting is
 proportional within each scene and explicitly marked as approximate. It is not
 word-level forced alignment. The downloaded VTT uses the player's timeline.
 
+The accessibility revision changes the canonical scripts. Previous MP3 files
+remain on disk but are excluded from the playback manifest until compatible audio
+is regenerated. This does not restart or modify the external TTS service.
+
 ## Topic 0 Animated Whiteboard
 
 The five mathematical bridge lessons use a client-only Konva canvas with a paused
 GSAP timeline driven by the existing player's audio clock. Other lessons retain
-their current renderer and do not load these dependencies. Narration scripts,
-scene boundaries, captions, speed controls and fullscreen behavior are preserved.
+their current renderer and do not load these dependencies. Captions, speed controls
+and fullscreen behavior are preserved; narration follows the current basic lesson
+and its relevant questions, with pronunciation and definitions for notation.
 
 Scenes illustrate seed proportions, unit conversions, normalization, discrete
 support, integrals, conditional densities, triangular regions and covariance

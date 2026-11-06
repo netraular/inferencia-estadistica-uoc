@@ -32,7 +32,7 @@ import {assetVersion, versionAssets} from './version-assets.mjs';
 import {COURSE} from '../../pages/inferencia/course.js';
 import {ANIMATIONS} from '../../pages/inferencia/animations.js';
 import {LAB_IDS} from '../../pages/inferencia/labs.js';
-import {EXERCISE_TYPES} from '../../pages/inferencia/exercises.js';
+import {EXERCISE_TYPES, generateExercise, scopeExercise} from '../../pages/inferencia/exercises.js';
 import {LESSONS, VIEWS, LESSON_LAB_PRESETS, parseRoute, escapeHtml, mountAula} from '../../pages/inferencia/app.js';
 import {STORAGE_KEY, freshProgress, progressSummary} from '../../pages/inferencia/progress.js';
 
@@ -88,6 +88,32 @@ test('Currículo completo, IDs y asociaciones de cada lección', () => {
   }
 });
 
+test('Las 36 lecciones explican su notación y gradúan la práctica sin eliminar la profundización', () => {
+  for (const lesson of LESSONS) {
+    const basic = lesson.sections.filter(section=>!section.optional);
+    assert.equal(basic.length,2,lesson.id);
+    assert.ok(lesson.sections.some(section=>section.optional),lesson.id);
+    assert.ok(lesson.notation.length>=3,lesson.id);
+    for (const item of lesson.notation) for (const key of ['symbol','term','reading','definition','example']) assert.ok(item[key]?.length>0,`${lesson.id}: ${key}`);
+    for (const formula of lesson.formulas) assert.ok(formula.reading.length>20,lesson.id);
+    for (const type of lesson.exerciseTypes) for (const seed of [1,17,68]) {
+      const generated = generateExercise(type,seed);
+      const scoped = scopeExercise(lesson,generated);
+      const ids = scoped.questions.map(question=>question.id);
+      assert.deepEqual(ids,lesson.exerciseQuestions?.[type] || generated.questions.map(question=>question.id),lesson.id);
+      assert.ok(ids.length>0,lesson.id);
+    }
+  }
+  const {document,aula} = harness();
+  try {
+    assert.ok(document.querySelector('.lesson-notation'));
+    assert.ok(document.querySelector('.lesson-depth'));
+    aula.navigate('masa','practice');
+    assert.deepEqual(aula.exercise.questions.map(question=>question.id),['normalizer']);
+    assert.match(document.querySelector('.exercise-notation').textContent,/Se lee:/);
+  } finally {aula.dispose();}
+});
+
 test('El inicio distingue cuatro PDF y apoyo opcional sin registrar estudio ni dejar gráficos activos', () => {
   const {document, aula, click} = harness(undefined, '');
   try {
@@ -137,7 +163,7 @@ test('CSS válido y recursos locales existentes, sin PDF ni dependencias remotas
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','course.js','exercises.js','labs.js','progress.js']);
+  assert.deepEqual(files, ['animations.js','app.js','course.js','exercises.js','labs.js','progress.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
@@ -186,7 +212,8 @@ test('Cada lección monta sus cuatro vistas y limpia los gráficos anteriores', 
         assert.equal(document.getElementById(`tab-${view}`).getAttribute('aria-selected'), 'true');
         if (view === 'theory') {
           assert.equal(document.querySelectorAll('.lesson-method li').length, 3);
-          assert.ok(document.querySelectorAll('.worked-example .solution[open]').length >= 2);
+          const worked = scopeExercise(lesson,generateExercise(lesson.exerciseTypes[0],1));
+          assert.equal(document.querySelectorAll('.worked-example .solution[open]').length,worked.questions.length);
         }
         const ids = [...document.querySelectorAll('[id]')].map(node => node.id);
         assert.equal(new Set(ids).size, ids.length, `${lesson.id}/${view}`);
@@ -343,7 +370,7 @@ test('El versionado de recursos es determinista e idempotente', () => {
   const root = versionFixture();
   try {
     const first = versionAssets(root);
-    assert.equal(Object.keys(first.versions).length, 11);
+    assert.equal(Object.keys(first.versions).length, 12);
     assert.deepEqual(versionAssets(root).changed, []);
     const generated = readFileSync(join(root, 'pages', 'inferencia-estadistica.html'), 'utf8');
     for (const match of generated.matchAll(/(?:src|href)="(inferencia\/[^"?]+\.(?:js|css))\?v=([a-f0-9]+)"/g)) {
@@ -377,7 +404,7 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
   }
   const appUrl = new URL('../../pages/inferencia/app.js', import.meta.url);
   const imports = [...readFileSync(appUrl, 'utf8').matchAll(/from ['"]([^'"]+\.js\?v=[a-f0-9]+)['"]/g)];
-  assert.equal(imports.length, 5);
+  assert.equal(imports.length, 6);
   for (const match of imports) {
     const url = new URL(match[1], appUrl);
     assert.equal(url.searchParams.get('v'), assetVersion(readFileSync(url)), `${url.pathname}: ejecuta node version-assets.mjs`);
