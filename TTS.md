@@ -52,6 +52,14 @@ tiempos de los fragmentos del audio compatible cuando existan; esto no supone
 alineacion palabra por palabra. El movimiento reducido mantiene la aparicion
 progresiva de los datos: elimina movimiento, no adelanta las respuestas.
 
+Los botones anterior y siguiente y el texto resaltado siguen frases completas,
+no bloques de 26 palabras. Cambiar esos limites no cambia las palabras del guion
+ni el texto que se adapta para TTS, pero si las marcas de subtitulos y sus tiempos
+estimados. Los metadatos de un lote con los cortes antiguos no son intercambiables
+con los actuales: el preparador de medios rechaza esa mezcla. No edites la copia
+congelada de un lote ni reinicies su generacion por este ajuste; revisa y realinea
+sus marcas antes de publicar, o prepara un lote nuevo con el exportador actual.
+
 Este paso utiliza los textos actuales del repositorio y no usa la GPU:
 
 ```bash

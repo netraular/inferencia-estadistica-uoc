@@ -59,7 +59,7 @@ Por defecto genera en `_work/lecturas/`, excluido de Git:
 - Un `.vtt` y un `.txt` por cada una de las 36 lecciones: 72 archivos.
 - Un manifiesto `lecturas.json` con procedencia, capítulos, títulos, fórmulas, tiempos de escena y tiempos absolutos de cada fragmento de subtítulo.
 
-El texto de los `.txt` coincide con la narración completa del reproductor; el `.vtt` reparte ese mismo texto en fragmentos de hasta 26 palabras. Aula y exportador comparten el constructor de clases y los ejemplos con semilla 1, sin mantener un segundo temario. Los tiempos estiman 2,5 palabras por segundo con pausas; no sincronizan audio inexistente. Para TTS, genera la voz a partir del guion y reajusta escenas y fragmentos con la duración real. Conserva las fórmulas del manifiesto para las diapositivas; revisa la pronunciación de símbolos y comandos en la herramienta de voz antes de generar el audio final.
+El texto de los `.txt` coincide con la narración completa del reproductor; el `.vtt` reparte ese mismo texto en frases completas, sin cortarlas cada 26 palabras. Aula y exportador comparten el constructor de clases y los ejemplos con semilla 1, sin mantener un segundo temario. Los tiempos estiman 2,5 palabras por segundo con pausas; no sincronizan audio inexistente. Para TTS, genera la voz a partir del guion y reajusta escenas y frases con la duración real. Cambiar solo los limites de frase no cambia las palabras narradas, pero requiere revisar sus marcas de tiempo antes de publicar audio anterior. Conserva las fórmulas del manifiesto para las diapositivas; revisa la pronunciación de símbolos y comandos en la herramienta de voz antes de generar el audio final.
 
 ## Publicación
 

@@ -14,6 +14,9 @@ https://webs.raular.com/inferencia/ from the `main` branch.
   Symbols and downloadable materials are global navigation items.
   The selected activity is linkable with `?actividad=...`;
   only the selected activity is mounted, with no duplicate internal navigation.
+- Animated-reading transport moves to the previous or next complete sentence,
+  crossing scene boundaries as needed. The scene selector and chapter outline
+  remain available under playback options.
 - The short `/inferencia/` URL opens personal progress and a brief course overview;
   `/temario/` holds the reference map, with topics 0 to 4 and numbered lessons.
 - Browser-local progress is shared between lesson marks, concept checks and
