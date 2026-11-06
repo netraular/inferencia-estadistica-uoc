@@ -5,13 +5,34 @@ import {createRequire} from 'node:module';
 import {runInNewContext} from 'node:vm';
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
-import {mountEmbeddedClassroom} from '../src/classroom/embed.mjs';
+import {mountEmbeddedClassroom, renderScopedIcons} from '../src/classroom/embed.mjs';
 import {STORAGE_KEY, freshProgress} from '../pages/inferencia/progress.js';
 
 const require = createRequire(import.meta.url);
 globalThis.jStat = require('jstat').jStat;
 const shell = readFileSync(new URL('../pages/inferencia-estadistica.html', import.meta.url), 'utf8');
 const lessons = COURSE.units.flatMap(unit => unit.lessons);
+
+test('Lucide renders controls inside the shadow root without touching document icons', () => {
+  const {document} = parseHTML('<html><body><i data-lucide="play" id="outside"></i><div id="host"></div></body></html>');
+  const root = document.getElementById('host').attachShadow({mode:'open'});
+  root.innerHTML = '<button aria-label="Reproducir"><i data-lucide="play" aria-hidden="true"></i></button><button aria-label="Reiniciar"><i data-lucide="rotate-ccw" aria-hidden="true"></i></button>';
+  const previous = globalThis.document;
+  globalThis.document = document;
+  try {
+    renderScopedIcons(root, require('../pages/inferencia/vendor/lucide.min.js'));
+    assert.equal(root.querySelectorAll('i[data-lucide]').length, 0);
+    assert.equal(root.querySelectorAll('svg.lucide').length, 2);
+    assert.equal(root.querySelector('svg').getAttribute('aria-hidden'), 'true');
+    assert.ok(root.querySelector('svg').childNodes.length > 0);
+    assert.equal(document.getElementById('outside').tagName, 'I');
+    renderScopedIcons(root, require('../pages/inferencia/vendor/lucide.min.js'));
+    assert.equal(root.querySelectorAll('svg.lucide').length, 2);
+  } finally {
+    if (previous === undefined) delete globalThis.document;
+    else globalThis.document = previous;
+  }
+});
 
 test('production Babel compilation preserves every HTML paragraph instead of a NodeList with undefined text', () => {
   const babel = require('@babel/core');

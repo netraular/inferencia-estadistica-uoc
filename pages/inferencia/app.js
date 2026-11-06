@@ -62,7 +62,10 @@ export function mountAula(document, environment = {}) {
     listeners.push(() => target.removeEventListener(type, handler));
   };
   const icons = () => {
-    try { window.lucide?.createIcons({root:document}); } catch { }
+    try {
+      if (environment.renderIcons) environment.renderIcons();
+      else window.lucide?.createIcons({root:document});
+    } catch { }
   };
   const math = tex => {
     try {

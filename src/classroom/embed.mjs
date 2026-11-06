@@ -1,5 +1,19 @@
 import {mountAula} from '../../pages/inferencia/app.js';
 
+export function renderScopedIcons(root, library) {
+  if (!library?.createElement || !library.icons) return;
+  const normalize = name => name.replace(/-/g, '').toLowerCase();
+  const icons = new Map(Object.entries(library.icons).map(([name, node]) => [normalize(name), node]));
+  for (const placeholder of Array.from(root.querySelectorAll('i[data-lucide]'))) {
+    const node = icons.get(normalize(placeholder.getAttribute('data-lucide')));
+    if (!node) continue;
+    const icon = library.createElement(node);
+    for (const attribute of Array.from(placeholder.attributes)) icon.setAttribute(attribute.name, attribute.value);
+    icon.classList.add('lucide');
+    placeholder.replaceWith(icon);
+  }
+}
+
 export function scopedDocument(owner, root) {
   return new Proxy(owner, {
     get(target, property) {
@@ -33,7 +47,7 @@ export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage,
   root.replaceChildren(fragment);
   const location = {hash: `#${lessonId}/${view}`};
   const history = {replaceState(state, title, hash) {location.hash = hash;}};
-  const options = {location, history, manageHistory: false};
+  const options = {location, history, manageHistory: false, renderIcons:() => renderScopedIcons(root, owner.defaultView.lucide)};
   if (storage !== undefined) options.storage = storage;
   const aula = mountAula(scopedDocument(owner, root), options);
   root.getElementById('tab-theory').lastChild.textContent = 'Comprueba la idea';
