@@ -56,6 +56,18 @@ The legacy source/test documentation remains under
 `node data-src/inferencia-estadistica/export-lecturas.mjs` still exports narration
 and WebVTT into the ignored `_work/lecturas/` directory.
 
+## Offline lesson audio
+
+The optional [Ming audio tools](scripts/tts/README.md) prepare Spanish narration,
+generate and resume scene checkpoints, and assemble one WAV per lesson with
+measured scene subtitles. The source defaults to this repository; external Ming
+code, model paths and output directories are configurable.
+
+Python preparation and tests run without PyTorch or a GPU. Synthesis requires
+an external CUDA/Ming installation. Weights, environments and generated audio
+stay outside Git; neither the site build nor its runtime needs Python or CUDA.
+The existing local audio-generation service is not migrated or restarted.
+
 ## Deployment
 
 `Dockerfile` builds and tests the site, then copies only static output into an
