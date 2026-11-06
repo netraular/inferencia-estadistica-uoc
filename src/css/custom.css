@@ -1,0 +1,11 @@
+@font-face{font-family:Atkinson;src:url('../../pages/inferencia/vendor/atkinson-latin-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Atkinson;src:url('../../pages/inferencia/vendor/atkinson-latin-700.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--ifm-color-primary:#117568;--ifm-color-primary-dark:#0f695d;--ifm-color-primary-darker:#0e6358;--ifm-color-primary-darkest:#0b5249;--ifm-color-primary-light:#138172;--ifm-color-primary-lighter:#148778;--ifm-color-primary-lightest:#16998a;--ifm-font-family-base:Atkinson,'Trebuchet MS',sans-serif;--ifm-heading-font-family:Georgia,serif;--ifm-background-color:#f6f9f8;--ifm-font-size-base:17px;--ifm-global-radius:4px;--ifm-code-border-radius:4px;--ifm-navbar-height:4rem}
+*{letter-spacing:0}
+h1{font-size:2rem}h2{font-size:1.55rem}h3{font-size:1.25rem}
+.markdown{line-height:1.75}.markdown h1,.markdown h2{font-weight:400}
+.navbar{border-bottom:1px solid #dae3df;box-shadow:none}.navbar__title{font-family:Atkinson,sans-serif}
+.course-formula{padding:1rem 0;border-top:1px solid #dae3df;min-width:0}.course-formula>div{overflow-x:auto;overflow-y:hidden}.course-formula p{font-size:.9rem;color:#63716c}.course-formula .katex-display{text-align:left}.course-formula .katex-display>.katex{text-align:left}
+.course-reference{font-size:.8rem;color:#63716c;border-top:1px solid #dae3df;padding-top:1rem}
+.course-warning{border-left:3px solid #a93458;padding-left:1rem}
+@media print{.navbar,.theme-doc-sidebar-container,.theme-doc-toc-desktop,.pagination-nav,.footer,.course-activities{display:none!important}.main-wrapper{display:block}}
