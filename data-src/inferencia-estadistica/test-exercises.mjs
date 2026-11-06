@@ -82,6 +82,23 @@ test('Sucesos: referencia numérica, complemento y reproducibilidad', () => {
   assert.deepEqual(generateExercise('events'), generateExercise('events', 1));
 });
 
+test('Las soluciones desarrollan conteos, sumas y áreas sin sustituir el razonamiento por una API', numericOptions, () => {
+  for (const type of ['binomial','poisson','normal','uniform','exponential','geometric','hypergeometric','negative-binomial','chi-square','student','fisher','multinomial','bivariate-normal']) {
+    for (const seed of [1,17,68]) {
+      const generated = generateExercise(type,seed);
+      for (const item of generated.questions) {
+        const explanation = item.steps.map(step=>step.explanation).join(' ');
+        assert.doesNotMatch(explanation,/jStat\./,`${type}/${item.id}`);
+        assert.ok(item.steps.length>=3,`${type}/${item.id}`);
+      }
+    }
+  }
+  const normal = generateExercise('normal',1).questions.find(item=>item.id==='interval');
+  const explanation = normal.steps.map(step=>step.explanation).join(' ');
+  assert.ok(explanation.includes('0,9772499'));
+  assert.ok(explanation.includes('0,1586553'));
+});
+
 function checkStructure(typeId) {
   const variants = new Set();
   for (const seed of [...Array.from({length:128}, (_, index) => index), 2147483648, 4294967295]) {

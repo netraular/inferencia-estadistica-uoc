@@ -386,11 +386,14 @@ const generators = {
       [`n = ${trials} semillas, probabilidad de germinación p = ${format(successProbability)}, k = ${count}.`, 'X toma valores enteros de 0 a n.'],
       ['Número de ensayos fijo, dos resultados por ensayo.', 'Ensayos independientes con la misma probabilidad p.'], [
         probability('exact', 'Calcula P(X = k).', exact, 'Además de la probabilidad de un patrón, cuenta las posiciones posibles de los éxitos.', [
-          step('Elegir el modelo', `X sigue Binomial(${trials}, ${format(successProbability)}) porque se cuentan éxitos en n ensayos iid.`),
-          step('Contar patrones y ponderarlos', `jStat evalúa C(${trials},${count}) × ${format(successProbability)}^${count} × ${format(1 - successProbability)}^${trials - count} = ${format(exact)}.`, String.raw`P(X=k)=\binom nk p^k(1-p)^{n-k}`)
+          step('Elegir el modelo', `X sigue una binomial con ${trials} ensayos: cada semilla germina con probabilidad ${format(successProbability)}, independientemente de las demás.`),
+          step('Contar posiciones', `Elegimos qué ${count} de las ${trials} semillas germinan. La combinación C(${trials},${count}) cuenta ${core.combination(trials,count)} grupos distintos, sin distinguir el orden dentro de cada grupo.`),
+          step('Ponderar un patrón', `Un patrón concreto tiene ${count} germinaciones y ${trials-count} fallos. Su probabilidad es ${format(successProbability)}^${count} × ${format(1-successProbability)}^${trials-count} = ${format(successProbability**count*(1-successProbability)**(trials-count))}.`),
+          step('Reunir los patrones', `Los ${core.combination(trials,count)} patrones no pueden ocurrir a la vez. Sumamos sus probabilidades multiplicando el número de patrones por la de uno: obtenemos ${format(exact)}.`, String.raw`P(X=k)=\binom nk p^k(1-p)^{n-k}`)
         ], `Es la probabilidad de exactamente ${count} germinaciones.`),
         probability('at-most', 'Calcula P(X ≤ k), incluyendo k.', cumulative, 'Incluye todos los enteros desde cero hasta k.', [
-          step('Usar la acumulada inclusiva', `jStat.binomial.cdf(${count}, ${trials}, ${format(successProbability)}) suma las masas desde 0 hasta ${count}: ${format(cumulative)}.`, String.raw`P(X\le k)=\sum_{r=0}^k P(X=r)`)
+          step('Elegir los recuentos incluidos', `Como se permite k, incluimos ${Array.from({length:count+1},(_,value)=>value).join(', ')} germinaciones. Son resultados distintos, por lo que sumamos sus probabilidades.`),
+          step('Sumar las masas', `Las probabilidades son, aproximadamente, ${Array.from({length:count+1},(_,value)=>format(core.binomial.pdf(value,trials,successProbability))).join(' + ')}. Su suma es ${format(cumulative)}. Una calculadora de acumuladas binomiales realiza esta misma suma.`, String.raw`P(X\le k)=\sum_{r=0}^k P(X=r)`)
         ], 'Para P(X < k) habría que evaluar la CDF en k−1.')
       ], 'binomial', {n:trials, p:successProbability, k:count});
   },
@@ -411,7 +414,8 @@ const generators = {
           step('Sustituir y calcular', `Lambda vale ${lambda} y k vale ${count}. El factorial ${count}! significa multiplicar los enteros desde 1 hasta ${count}: vale ${core.factorial(count)}. La potencia ${lambda} elevada a ${count} vale ${lambda ** count}. La exponencial de menos ${lambda} vale aproximadamente ${format(Math.exp(-lambda))}. Multiplicamos esa exponencial por ${lambda ** count} y dividimos entre ${core.factorial(count)}: obtenemos ${format(exact)}.`, String.raw`P(X=k)=e^{-\lambda}\frac{\lambda^k}{k!}`)
         ], 'λ es un número esperado de llegadas, no una probabilidad.'),
         probability('strict-tail', 'Calcula P(X > k), sin incluir k.', tail, 'El complemento de X > k es X ≤ k.', [
-          step('Restar la acumulada inclusiva', `1 - jStat.poisson.cdf(${count}, ${lambda}) = ${format(tail)}.`, String.raw`P(X>k)=1-P(X\le k)`)
+          step('Identificar lo que queda fuera', `Más de ${count} excluye los recuentos desde cero hasta ${count}. Es más corto sumar esos recuentos y restar su probabilidad de uno.`),
+          step('Sumar y complementar', `Las masas excluidas son, aproximadamente, ${Array.from({length:count+1},(_,value)=>format(core.poisson.pdf(value,lambda))).join(' + ')}. Suman ${format(1-tail)}; al restarlas de uno queda ${format(tail)}.`, String.raw`P(X>k)=1-P(X\le k)`)
         ], `La cola empieza en ${count + 1}, no en ${count}.`)
       ], 'poisson', {rate, duration, lambda, k:count});
   },
@@ -429,11 +433,12 @@ const generators = {
       ['El modelo normal es una aproximación adecuada en el rango de interés.', 'No se está afirmando que todas las longitudes biológicas sigan una normal.'], [
         probability('interval', 'Calcula P(μ−σ ≤ X ≤ μ+2σ).', chance, 'Tipifica los extremos y resta las acumuladas.', [
           step('Tipificar', `(${lower} - ${mean})/${sd} = -1; (${upper} - ${mean})/${sd} = 2.`, String.raw`Z=\frac{X-\mu}{\sigma}`),
-          step('Restar áreas acumuladas', `Φ(2) - Φ(-1) = ${format(chance)}, calculado con jStat.normal.cdf.`)
+          step('Consultar las dos áreas', `Φ se lee fi y da el área a la izquierda. Una tabla o calculadora normal da Φ(2) = ${format(core.normal.cdf(2,0,1))} y Φ(−1) = ${format(core.normal.cdf(-1,0,1))}.`),
+          step('Restar las áreas', `La primera área incluye también todo lo que queda a la izquierda de −1. Lo quitamos: ${format(core.normal.cdf(2,0,1))} − ${format(core.normal.cdf(-1,0,1))} = ${format(chance)}. Queda solo el intervalo entre ambos umbrales.`)
         ], 'Los límites abiertos o cerrados no cambian la probabilidad continua.'),
         question('quantile', 'Calcula el percentil 95 de X.', quantile, 'micrómetros', 'Busca primero z con Φ(z)=0,95 y deshaz la tipificación.', [
-          step('Invertir la acumulada', 'El percentil normal estándar es aproximadamente 1,644854.'),
-          step('Volver a la escala original', `${mean} + ${sd} × 1,644854 = ${format(quantile)}; jStat.normal.inv(0.95, μ, σ).`, String.raw`x_{0.95}=\mu+\sigma\Phi^{-1}(0.95)`)
+          step('Buscar un área, no una altura', 'Buscamos en una tabla o calculadora el z que deja el 95 % del área a su izquierda: Φ(z)=0,95. Ese z es aproximadamente 1,644854; Φ inversa deshace la acumulación.'),
+          step('Volver a la escala original', `${mean} + ${sd} × 1,644854 = ${format(quantile)} micrómetros. Multiplicamos por la desviación para recuperar unidades y sumamos la media para recuperar el centro.`, String.raw`x_{0.95}=\mu+\sigma\Phi^{-1}(0.95)`)
         ], 'Bajo el modelo, el 95% de las longitudes no supera ese valor.')
       ], 'normal', {mean, sd, lower, upper, quantileProbability:0.95});
   },
@@ -451,7 +456,7 @@ const generators = {
       ['Todos los intervalos de igual longitud dentro de la ventana tienen igual probabilidad.', 'X es continua; los extremos individuales tienen probabilidad cero.'], [
         probability('interval', 'Calcula la probabilidad de caer en el intervalo solicitado.', chance, 'Divide la longitud del intervalo por la longitud total.', [
           step('Comparar longitudes', `(${format(to)} - ${format(from)})/(${upper} - ${lower}) = ${format(chance)}.`, String.raw`P(c\le X\le d)=\frac{d-c}{b-a}`),
-          step('Evaluar con la CDF estándar', 'La diferencia de jStat.uniform.cdf en los dos extremos produce la misma área.')
+          step('Comprobar el área', `La altura es 1/${upper-lower} y la anchura es ${format(to-from)}. Altura por anchura vuelve a dar ${format(chance)}. La acumulada en el extremo superior menos la del inferior calcula ese mismo rectángulo.`)
         ], 'Uniforme significa densidad constante, no probabilidad positiva de cada instante exacto.'),
         question('mean', 'Calcula E[X].', mean, 'minutos', 'Por simetría, la esperanza está en el punto medio.', [
           step('Usar la simetría del soporte', `(${lower} + ${upper})/2 = ${format(mean)}.`, String.raw`E[X]=\frac{a+b}{2}`)
@@ -468,13 +473,14 @@ const generators = {
     const conditional = 1 - core.exponential.cdf(extra, rate);
     return exercise('exponential', seed, 'T es el tiempo hasta la siguiente llegada a un detector en un proceso de Poisson homogéneo.',
       [`Tasa λ = ${format(rate)} por minuto; espera media = ${format(1 / rate)} minutos.`, `Tiempo ya transcurrido t = ${elapsed}; espera adicional s = ${extra} minutos; soporte T ≥ 0.`],
-      ['Tasa constante e incrementos independientes.', 'La distribución exponencial usa tasa λ, no escala, en la API de jStat.'], [
+      ['Tasa constante e incrementos independientes.', 'λ es la tasa por minuto; su inversa es la escala o espera media en minutos.'], [
         probability('survival', 'Calcula P(T > t).', survival, 'La supervivencia es uno menos la CDF.', [
-          step('Evaluar la cola', `1 - jStat.exponential.cdf(${elapsed}, ${format(rate)}) = exp(-${format(rate)} × ${elapsed}) = ${format(survival)}.`, String.raw`P(T>t)=e^{-\lambda t}`)
+          step('Formar un exponente sin unidades', `Multiplicamos la tasa ${format(rate)} por minuto por ${elapsed} minutos: obtenemos ${format(rate*elapsed)}. Los minutos se cancelan. El exponente de la supervivencia es el negativo de ese producto.`),
+          step('Evaluar la exponencial', `La tecla exp de una calculadora evalúa e elevado a un número. exp(−${format(rate*elapsed)}) = ${format(survival)}. Es el área a la derecha del tiempo indicado, no la altura de la densidad.`, String.raw`P(T>t)=e^{-\lambda t}`)
         ], 'Es la probabilidad de que no haya llegado ningún evento durante t minutos.'),
         probability('memoryless', 'Calcula P(T > t+s | T > t).', conditional, 'La condición indica que la espera ya ha superado t.', [
           step('Escribir el cociente condicionado', `P(T>${elapsed + extra})/P(T>${elapsed}) = exp(-λ(${elapsed}+${extra}))/exp(-λ${elapsed}).`),
-          step('Cancelar el tiempo transcurrido', `Queda exp(-${format(rate)} × ${extra}) = ${format(conditional)}; jStat evalúa la cola en s.`, String.raw`P(T>t+s\mid T>t)=P(T>s)`)
+          step('Cancelar el tiempo transcurrido', `Al dividir exponenciales de la misma base restamos exponentes. El término del tiempo ya transcurrido se cancela: queda exp(−${format(rate)} × ${extra}) = ${format(conditional)}. Solo interviene la espera adicional.`, String.raw`P(T>t+s\mid T>t)=P(T>s)`)
         ], 'La falta de memoria es una propiedad de este modelo, no de cualquier tiempo biológico.')
       ], 'density', {distribution:'exponential', rate, elapsed, extra});
   },
@@ -487,14 +493,14 @@ const generators = {
     const survival = 1 - core.negbin.cdf(trials - 1, 1, successProbability);
     return exercise('geometric', seed, 'Se prueban colonias independientes hasta encontrar la primera que expresa un marcador. T cuenta ensayos, incluido el primer éxito.',
       [`Probabilidad de éxito p = ${format(successProbability)}; k = ${trials} ensayos.`, 'Soporte T = 1,2,3,...; F = T−1 cuenta fallos y tiene soporte 0,1,2,...'],
-      ['Ensayos Bernoulli independientes con p constante.', 'jStat.negbin cuenta fallos antes de r éxitos; aquí r=1.'], [
+      ['Ensayos Bernoulli independientes con p constante.', 'F cuenta los fallos anteriores al primer éxito; T añade el ensayo del éxito final.'], [
         probability('first-success', 'Calcula P(T = k).', exact, 'Se necesitan k−1 fallos y después un éxito.', [
-          step('Traducir ensayos a fallos', `T=${trials} equivale a F=${trials - 1}; jStat.negbin.pdf(${trials - 1},1,${format(successProbability)}).`),
+          step('Traducir ensayos a fallos', `T=${trials} significa ${trials-1} fallos seguidos de un éxito. Solo hay una posición posible para el éxito: la última, porque antes debemos seguir buscando.`),
           step('Ponderar la secuencia', `(${format(1 - successProbability)})^${trials - 1} × ${format(successProbability)} = ${format(exact)}.`, String.raw`P(T=k)=(1-p)^{k-1}p`)
         ], 'El éxito final sí se incluye en el número de ensayos.'),
         probability('more-trials', 'Calcula P(T > k).', survival, 'T > k significa que los primeros k ensayos han fallado.', [
           step('Usar el límite correcto en fallos', `T>${trials} equivale a F≥${trials}; por eso se resta la CDF de F en ${trials - 1}.`),
-          step('Evaluar la cola', `1 - jStat.negbin.cdf(${trials - 1},1,${format(successProbability)}) = (${format(1 - successProbability)})^${trials} = ${format(survival)}.`)
+          step('Multiplicar los fallos', `Cada ensayo falla con probabilidad ${format(1-successProbability)}. Para seguir esperando tras ${trials} ensayos deben fallar todos: (${format(1-successProbability)})^${trials} = ${format(survival)}. La potencia abrevia multiplicar esa probabilidad ${trials} veces.`)
         ], 'Usar la CDF en k en vez de k−1 introduciría un ensayo adicional.')
       ], 'variable', {distribution:'geometric', p:successProbability, trials, counts:'trials', failures:trials - 1});
   },
@@ -513,11 +519,13 @@ const generators = {
       [`N=${population} organismos, K=${successes} portadores, n=${draws} extracciones, k=${count}.`, `Soporte entero: ${minimum} ≤ X ≤ ${maximum}.`],
       ['Todas las muestras de n organismos son equiprobables.', 'Sin reemplazo: las extracciones no son ensayos Bernoulli independientes.'], [
         probability('exact', 'Calcula P(X = k).', exact, 'Cuenta las formas de elegir portadores y no portadores, y divide por todas las muestras.', [
-          step('Contar muestras favorables', `Se eligen ${count} de ${successes} portadores y ${draws - count} de ${population - successes} no portadores.`),
-          step('Dividir por el total', `jStat.hypgeom.pdf(${count},${population},${successes},${draws}) = ${format(exact)}.`, String.raw`P(X=k)=\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}`)
+          step('Contar muestras favorables', `Elegir ${count} de ${successes} portadores da ${core.combination(successes,count)} grupos. Elegir ${draws-count} de los ${population-successes} restantes da ${core.combination(population-successes,draws-count)}. Multiplicamos porque cada elección del primer grupo puede combinarse con cada elección del segundo.`),
+          step('Contar todas las muestras', `Elegimos ${draws} organismos de ${population} sin atender al marcador: C(${population},${draws}) = ${core.combination(population,draws)} muestras posibles, todas con la misma probabilidad.`),
+          step('Dividir favorables entre posibles', `${core.combination(successes,count)} × ${core.combination(population-successes,draws-count)} / ${core.combination(population,draws)} = ${format(exact)}. Hemos contado grupos, no secuencias de extracción.`, String.raw`P(X=k)=\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}`)
         ], 'La dependencia por agotamiento de la colección impide sustituir automáticamente este modelo por una binomial.'),
         probability('at-least', 'Calcula P(X ≥ k), incluyendo k.', atLeast, 'El complemento termina en k−1.', [
-          step('Complementar los valores menores', `1 - jStat.hypgeom.cdf(${count - 1},${population},${successes},${draws}) = ${format(atLeast)}.`, String.raw`P(X\ge k)=1-P(X\le k-1)`)
+          step('Elegir el complemento', `Al menos ${count} incluye ${count}. Lo contrario es observar menos de ${count}, es decir, los recuentos del soporte hasta ${count-1}.`),
+          step('Sumar lo excluido y restarlo', `La acumulada hipergeométrica suma esas masas y da ${format(1-atLeast)}. Una tabla o calculadora permite obtener esa suma. Restamos de uno: 1 − ${format(1-atLeast)} = ${format(atLeast)}.`, String.raw`P(X\ge k)=1-P(X\le k-1)`)
         ], 'Esta cola incluye exactamente k portadores y todos los valores superiores del soporte.')
       ], 'variable', {distribution:'hypergeometric', population, successes, draws, k:count, minimum, maximum});
   },
@@ -556,11 +564,13 @@ const generators = {
       [`n=${sampleSize}; varianza poblacional σ²=${populationVariance}; umbral v=${format(thresholdVariance)}, en unidades al cuadrado.`, 'S² = Σ(Xᵢ−X̄)²/(n−1); Q=(n−1)S²/σ² tiene soporte Q≥0.'],
       ['Observaciones iid normales.', 'Se usa la varianza muestral con corrección de Bessel, no el divisor n.'], [
         probability('variance-tail', 'Calcula P(S² > v).', chance, 'Transforma el umbral de varianza en un umbral chi-cuadrado.', [
-          step('Identificar grados de libertad', `Estimar la media deja ν=n−1=${df} grados de libertad.`),
-          step('Transformar y evaluar la cola', `q=${df} × ${format(thresholdVariance)}/${populationVariance}=${format(cutoff)}; 1-jStat.chisquare.cdf(q,${df})=${format(chance)}.`, String.raw`\frac{(n-1)S^2}{\sigma^2}\sim\chi^2_{n-1}`)
+          step('Identificar grados de libertad', `Tras estimar la media, las desviaciones respecto a ella suman cero: fijadas ${df}, la última queda determinada. Por eso ν=n−1=${df} grados de libertad.`),
+          step('Transformar el umbral', `q=${df} × ${format(thresholdVariance)}/${populationVariance}=${format(cutoff)}. Dividir dos varianzas cancela sus unidades. Q sigue una chi-cuadrado, que se lee ji al cuadrado, con ${df} grados de libertad.`, String.raw`\frac{(n-1)S^2}{\sigma^2}\sim\chi^2_{n-1}`),
+          step('Calcular el área derecha', `Una calculadora chi-cuadrado con ${df} grados de libertad da ${format(1-chance)} de área hasta ${format(cutoff)}. La pregunta pide superar ese umbral: 1 − ${format(1-chance)} = ${format(chance)}.`)
         ], 'La distribución exacta depende de la normalidad, no solo de que la muestra sea iid.'),
         question('critical', 'Calcula el percentil 95 de Q.', critical, 'valor chi-cuadrado sin unidades', 'Invierte la acumulada con n−1 grados de libertad.', [
-          step('Invertir la CDF', `jStat.chisquare.inv(0.95,${df})=${format(critical)}; el área a su derecha es 0,05.`)
+          step('Elegir el área acumulada', 'El percentil 95 deja 0,95 del área a su izquierda y 0,05 a su derecha. Buscamos un umbral de la variable Q sin unidades, no una varianza.'),
+          step('Consultar el cuantil', `En una calculadora chi-cuadrado indicamos área izquierda 0,95 y ${df} grados de libertad: el umbral es ${format(critical)}. Usar otro número de grados de libertad cambiaría la curva y el resultado.`)
         ], 'Este es un umbral de Q, no directamente de S².')
       ], 'sampling', {distribution:'chi-square', n:sampleSize, df, populationVariance, thresholdVariance, cutoff});
   },
@@ -580,11 +590,12 @@ const generators = {
       [`n=${sampleSize}, media muestral=${sampleMean}, desviación muestral s=${sampleSd} mg/L (divisor n−1 en s²).`, `H₀: μ=μ₀=${format(nullMean)} mg/L; μ₀ se define exactamente como ${sampleMean}−${sampleSd}/√${sampleSize}.`, 'Alternativa bilateral; confianza del intervalo: 95%.'],
       ['Muestra iid de una población normal.', 'σ es desconocida y se estima con s; T tiene soporte en toda la recta real.'], [
         probability('two-sided', 'Calcula el p-valor bilateral para H₀.', pValue, 'Divide la diferencia de medias por s/√n y suma las dos colas.', [
-          step('Usar el error estándar', `s/√n=${format(sampleSd / Math.sqrt(sampleSize))}; t=(${sampleMean}−μ₀)/(s/√n)=${format(statistic)}.`),
-          step('Evaluar dos colas Student', `ν=${df}; 2[1-jStat.studentt.cdf(|t|,${df})]=${format(pValue)}.`, String.raw`T=\frac{\bar X-\mu_0}{S/\sqrt n}\sim t_{n-1}`)
+          step('Usar el error estándar', `s/√n=${format(sampleSd / Math.sqrt(sampleSize))} mg/L estima cuánto varía la media entre muestras, no cuánto varían las observaciones individuales. t=(${sampleMean}−μ₀)/(s/√n)=${format(statistic)} indica cuántos errores estándar separan la media de H₀.`),
+          step('Obtener una cola Student', `Con ${df} grados de libertad, una tabla o calculadora Student da ${format(pValue/2)} de área por encima de |t|=${format(Math.abs(statistic))}. Las barras aquí significan valor absoluto: la distancia a cero, sin signo.`, String.raw`T=\frac{\bar X-\mu_0}{S/\sqrt n}\sim t_{n-1}`),
+          step('Incluir ambos sentidos', `La alternativa admite desviaciones positivas y negativas. Por simetría, la cola izquierda aporta la misma área: 2 × ${format(pValue/2)} = ${format(pValue)}. No multiplicaríamos por dos en cualquier contraste unilateral.`)
         ], 'Es una probabilidad bajo H₀ de un estadístico al menos tan extremo; no la probabilidad de que H₀ sea cierta.'),
         question('margin', 'Calcula el margen de error del intervalo bilateral del 95% para μ.', margin, 'mg/L', 'Usa el percentil 97,5, porque hay dos colas de 2,5%.', [
-          step('Elegir el cuantil bilateral', `t₀,₉₇₅=${format(critical)} con ${df} grados de libertad.`),
+          step('Elegir el cuantil bilateral', `El 5 % exterior se divide en dos colas del 2,5 %. El límite positivo deja 97,5 % a su izquierda: una calculadora Student con ${df} grados de libertad devuelve t₀,₉₇₅=${format(critical)}.`),
           step('Multiplicar por el error estándar', `${format(critical)} × ${sampleSd}/√${sampleSize} = ${format(margin)}.`, String.raw`\bar x\pm t_{0.975,n-1}\frac{s}{\sqrt n}`)
         ], 'El 95% describe la cobertura del procedimiento en muestras repetidas, no una probabilidad posterior de μ.')
       ], 'sampling', {distribution:'student', n:sampleSize, df, sampleMean, sampleSd, nullMean, statistic, confidence:0.95});
@@ -606,10 +617,12 @@ const generators = {
       ['Ambas muestras son iid normales y son independientes entre sí.', 'Bajo H₀ la razón de varianzas poblacionales es uno.', 'El orden de los grados de libertad corresponde al numerador y al denominador.'], [
         probability('upper-tail', 'Bajo H₀, calcula P(F ≥ s₁²/s₂²).', chance, 'No intercambies los grados de libertad ni ordenes las varianzas por tamaño.', [
           step('Construir la razón', `f=${variance1}/${variance2}=${format(ratio)}, ν₁=${df1}, ν₂=${df2}.`, String.raw`\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}\sim F_{n_1-1,n_2-1}`),
-          step('Evaluar la cola superior', `1-jStat.centralF.cdf(${format(ratio)},${df1},${df2})=${format(chance)}.`)
+          step('Consultar el área izquierda', `La calculadora F recibe ${df1} grados de libertad del numerador y ${df2} del denominador, en ese orden. Acumula ${format(1-chance)} hasta la razón ${format(ratio)}.`),
+          step('Restar para obtener la cola superior', `El área total es uno. Por tanto, el área a la derecha de la razón observada es 1 − ${format(1-chance)} = ${format(chance)}. Incluir el punto límite no cambia el área de esta distribución continua.`)
         ], 'La F no es simétrica; una cola superior no equivale automáticamente a una prueba bilateral.'),
         question('critical', 'Calcula el umbral con un 5% de área a la derecha.', critical, 'razón de varianzas sin unidades', 'El cuantil buscado acumula 0,95 a la izquierda.', [
-          step('Invertir con el orden correcto', `jStat.centralF.inv(0.95,${df1},${df2})=${format(critical)}.`)
+          step('Cambiar la pregunta a un área izquierda', 'Dejar un 5 % a la derecha equivale a acumular 95 % a la izquierda. Buscamos qué razón de varianzas marca ese punto.'),
+          step('Invertir con el orden correcto', `Una calculadora de cuantiles F con área izquierda 0,95 y grados de libertad (${df1}, ${df2}) devuelve ${format(critical)}. Conservamos el orden de las muestras, sin colocar automáticamente la varianza mayor arriba.`)
         ], 'Cambiar numerador y denominador cambia la distribución y el umbral.')
       ], 'sampling', {distribution:'fisher', n1, n2, df1, df2, variance1, variance2, ratio});
   },
@@ -774,7 +787,7 @@ const generators = {
         ], 'No es una binomial con un número de ensayos fijado de antemano.'),
         probability('at-most', 'Calcula P(F≤k), incluyendo cero y k.', cumulative, 'Suma las masas desde cero hasta k, sin desplazar el soporte.', [
           step('Delimitar los fallos', `Los valores incluidos son los enteros de 0 a ${failures}; no se suman r ensayos al argumento de la CDF.`),
-          step('Evaluar la acumulada', `jStat.negbin.cdf(${failures},${successes},${format(successProbability)}) = ${format(cumulative)}.`, String.raw`P(F\le k)=\sum_{j=0}^k\binom{j+r-1}{j}p^r(1-p)^j`)
+          step('Sumar las masas', `Aplicamos la fórmula anterior a cada número de fallos. Las probabilidades son, aproximadamente, ${Array.from({length:failures+1},(_,value)=>format(core.negbin.pdf(value,successes,successProbability))).join(' + ')}. Suman ${format(cumulative)}; la función de acumulada calcula esa misma suma.`, String.raw`P(F\le k)=\sum_{j=0}^k\binom{j+r-1}{j}p^r(1-p)^j`)
         ], 'Con k=0, la acumulada coincide con la masa p^r de no observar ningún fallo.'),
         question('mean-failures', 'Calcula E[F], el número esperado de fallos.', mean, 'fallos esperados', 'Suma las esperanzas de las r esperas geométricas que cuentan fallos.', [
           step('Separar las esperas', `Cada tramo hasta un éxito aporta (1-p)/p = ${format((1 - successProbability) / successProbability)} fallos esperados.`),
@@ -860,7 +873,7 @@ const generators = {
         ], 'La masa corresponde a una terna de recuentos, no a una secuencia particular de células.'),
         probability('marginal-a', 'Calcula P(X_A=x_A), sin fijar X_B ni X_C.', marginal, 'Agrupa B y C como no A y usa una binomial.', [
           step('Reducir a dos resultados', `A tiene probabilidad ${format(probabilities[0])}; no A tiene ${format(probabilities[1])}+${format(probabilities[2])}=${format(1 - probabilities[0])}.`),
-          step('Evaluar la masa marginal', `jStat.binomial.pdf(${first},${total},${format(probabilities[0])}) = ${format(marginal)}.`, String.raw`X_A\sim\operatorname{Bin}(n,p_A)`)
+          step('Evaluar la masa marginal', `Para contar la categoría A reunimos las otras dos como no A. Elegimos ${first} posiciones entre ${total} y ponderamos: C(${total},${first}) × ${format(probabilities[0])}^${first} × ${format(1-probabilities[0])}^${total-first} = ${format(marginal)}. Es la binomial ya estudiada.`, String.raw`X_A\sim\operatorname{Bin}(n,p_A)`)
         ], 'La marginal suma todas las maneras compatibles de repartir las otras células entre B y C.'),
         question('covariance-ab', 'Calcula Cov(X_A,X_B).', covariance, 'células al cuadrado', 'Una misma célula no puede pertenecer a A y B; células distintas son independientes.', [
           step('Usar indicadores por célula', 'En una célula I_A I_B=0, así que Cov(I_A,I_B)=0-p_A p_B; los términos entre células distintas son cero.'),
@@ -894,7 +907,8 @@ const generators = {
         probability('conditional-tail', 'Calcula P(Y>c | X=x).', tail, 'Usa la media y la desviación condicionales, no las marginales.', [
           step('Identificar la normal del corte', `Y | X=${observedX} sigue N(${format(conditionalMean)}, ${format(conditionalSd ** 2)}), con el segundo parámetro como varianza.`),
           step('Tipificar el umbral', `z=(${format(threshold)}-${format(conditionalMean)})/${format(conditionalSd)}=${format((threshold - conditionalMean) / conditionalSd)}.`, String.raw`P(Y>c\mid X=x)=1-\Phi\!\left(\frac{c-\mu_{Y\mid x}}{\sigma_{Y\mid x}}\right)`),
-          step('Evaluar la cola correcta', `1-jStat.normal.cdf(${format(threshold)},${format(conditionalMean)},${format(conditionalSd)}) = ${format(tail)}.`)
+          step('Tipificar el umbral condicionado', `Restamos la nueva media y dividimos por la nueva desviación: (${format(threshold)} − ${format(conditionalMean)})/${format(conditionalSd)} = ${format((threshold-conditionalMean)/conditionalSd)}.`),
+          step('Evaluar la cola correcta', `La acumulada normal da el área a la izquierda: ${format(1-tail)}. La pregunta pide valores mayores, así que restamos de uno: 1 − ${format(1-tail)} = ${format(tail)}.`)
         ], 'La probabilidad es condicional en este modelo conjunto; dos marginales normales solas no justifican esta fórmula.')
       ], 'math', {distribution:'bivariate-normal', meanX, meanY, sdX, sdY, rho, x:observedX, threshold, conditionalMean, conditionalSd});
   },

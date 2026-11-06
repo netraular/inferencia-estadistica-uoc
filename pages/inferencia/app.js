@@ -1,6 +1,6 @@
 import {COURSE} from './course.js?v=334606496f0b';
-import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=096e74f99636';
-import {notationHtml} from './teaching.js?v=516a869f31b1';
+import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=5612f67797c5';
+import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=559714905ce1';
 import {mountLab} from './labs.js?v=03403da19f18';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
