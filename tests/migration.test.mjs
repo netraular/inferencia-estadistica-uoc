@@ -303,10 +303,14 @@ test('lesson and home progress preserve activity results and follow saves across
     states = [];
     useCourseProgress();
     assert.equal(progressSummary(states[0]).studied,36,'El inicio debe conservar las marcas de sesión');
+    const beforeNavigation = states[0];
+    const previousLesson = beforeNavigation.lastLesson;
     cleanup();
     cursor = 0;
     states = [];
     const blockedLesson = useCourseProgress('sucesos');
+    assert.notEqual(states[0],beforeNavigation,'Abrir una lección debe crear un estado nuevo');
+    assert.equal(beforeNavigation.lastLesson,previousLesson,'La navegación no debe mutar el estado de otra vista');
     blockedLesson.setStudied(false);
     assert.equal(progressSummary(states[0]).studied,35);
     cleanup();

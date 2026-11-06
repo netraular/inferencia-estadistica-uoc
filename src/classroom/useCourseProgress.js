@@ -54,7 +54,7 @@ export default function useCourseProgress(lessonId) {
     window.addEventListener('focus', refresh);
     const loaded = readProgress();
     if (lessonId) {
-      loaded.progress.lastLesson = lessonId;
+      loaded.progress = {...loaded.progress, lastLesson:lessonId};
       if (!storeProgress(loaded.progress)) loaded.warning = unavailable;
     }
     setProgress(loaded.progress);

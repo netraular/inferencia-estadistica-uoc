@@ -11,9 +11,8 @@ lee esa copia, no los textos actuales del repositorio. Por eso repetir el comand
 anterior no incorpora los cambios del curso.
 
 La opcion recomendada tras cambiar los textos es usar otra carpeta de salida.
-El lote antiguo permanece en `/home/aquiluer/Scripts/TTS/outputs/inferencia-estadistica/`;
-su servicio `tts-inferencia-20261106.service` se ha detenido sin borrar resultados.
-No lo reinicies para generar los textos nuevos: usa el script de este repositorio.
+Conserva el lote anterior para reanudar su guion original; no sobrescribas su copia
+del curso con textos nuevos.
 
 ## Preparar el entorno local
 

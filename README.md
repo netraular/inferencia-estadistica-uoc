@@ -128,7 +128,6 @@ use a new output directory to narrate a new revision without mixing old scripts.
 Python preparation and tests run without PyTorch or a GPU. Synthesis requires
 an external CUDA/Ming installation. Weights, environments and generated audio
 stay outside Git; neither the site build nor its runtime needs Python or CUDA.
-The existing local audio-generation service is not migrated or restarted.
 
 ## Published materials and audio
 
@@ -157,8 +156,8 @@ The accessibility revision changes the canonical scripts. Previous incompatible
 MP3 files are preserved in the [audio archive](data-src/inferencia-estadistica/audio-archive/README.md),
 outside `static/`, so they are not published or played. Tests reject MP3 files in
 `static/audio/` that are absent from the playback manifest. If media preparation
-retains excluded older files, archive them before publishing. Compatible audio
-must be regenerated; this does not restart or modify the external TTS service.
+retains excluded older files, archive them before publishing. Regenerate audio
+from the current scripts before publishing.
 
 ## Topic 0 Animated Whiteboard
 
