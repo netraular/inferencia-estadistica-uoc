@@ -5,6 +5,7 @@
 h1{font-size:2rem}h2{font-size:1.55rem}h3{font-size:1.25rem}
 .markdown{line-height:1.75}.markdown h1,.markdown h2{font-weight:400}
 .navbar{border-bottom:1px solid #dae3df;box-shadow:none}.navbar__title{font-family:Atkinson,sans-serif}
+@media(min-width:997px){.theme-doc-sidebar-container button[class*="collapseSidebarButton"]{order:-1;top:var(--ifm-navbar-height);bottom:auto;flex-shrink:0;border-top:0}}
 .course-formula{padding:1rem 0;border-top:1px solid #dae3df;min-width:0}.course-formula>div{overflow-x:auto;overflow-y:hidden}.course-formula p{font-size:.9rem;color:#63716c}.course-formula .katex-display{text-align:left}.course-formula .katex-display>.katex{text-align:left}
 .course-reference{font-size:.8rem;color:#63716c;border-top:1px solid #dae3df;padding-top:1rem}
 .course-warning{border-left:3px solid #a93458;padding-left:1rem}
