@@ -12,6 +12,7 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --ignore-scripts
+      - run: npm run audit:security
       - run: npm run build
       - run: npm test
   validate-tts:

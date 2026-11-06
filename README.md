@@ -60,6 +60,7 @@ Requires Node.js 20+ (CI and container builds use Node.js 24).
 
 ```sh
 npm ci --ignore-scripts
+npm run audit:security
 npm run build
 npm test
 npm start
@@ -73,6 +74,17 @@ DOM tests are not browser layout verification.
 `npm test` generates the ignored lesson pages, activity shell and static resources
 before running the suites, so it also works immediately after installing the
 dependencies in a clean checkout. A prior production build is not required.
+
+`npm run audit:security` rejects moderate, high and critical dependency advisories;
+CI runs the same check. Temporary npm overrides pin patched `tinypool` and
+`serialize-javascript`, plus `uuid` only within SockJS, until the upstream tools
+adopt them. Both the normal build and Docusaurus rendering with two worker threads
+were checked with these versions.
+
+As of 2026-11-06, the remaining low-severity advisory is
+[deepmerge prototype poisoning](https://github.com/advisories/GHSA-gcqx-w48m-w2h4),
+in the SVG build tooling. Its latest release, 4.3.1, has no published patch.
+Track the upstream fix rather than forcing npm's suggested Docusaurus downgrade.
 
 After changing legacy activity modules, refresh the fixture's asset fingerprints:
 
