@@ -1,9 +1,9 @@
 import {COURSE} from './course.js?v=8a44f84e48f6';
-import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=5612f67797c5';
+import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=6eeb76ea27e1';
 import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=37d29d83c0c4';
 import {mountLab} from './labs.js?v=2f4aa757b74f';
-import {mountExerciseTutor} from './exercise-tutor.js?v=f3863a6ef3a8';
+import {mountExerciseTutor} from './exercise-tutor.js?v=2885c6ad3de0';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));
@@ -157,20 +157,20 @@ export function mountAula(document, environment = {}) {
     element('lessonLab').before(notation);
   }
 
-  function renderPractice() {
+  function renderPractice(excludedContent = null) {
     activeCleanup?.();
     activeCleanup = null;
     const current = lesson();
     const available = entireBank ? EXERCISE_TYPES : current.exerciseTypes.map(id => EXERCISE_TYPES.find(type => type.id === id));
     if (!available.some(type => type.id === practiceType)) practiceType = available[0].id;
     activeExercise = entireBank ? generateExercise(practiceType, seed) : scopeExercise(current, generateExercise(practiceType, seed));
-    if (!entireBank) {
+    if (!entireBank || excludedContent) {
       const content = exercise=>JSON.stringify([exercise.prompt,exercise.given,exercise.questions.map(question=>question.prompt)]);
-      const worked = content(scopeExercise(current,generateExercise(practiceType,1)));
-      for (let attempt=0;content(activeExercise)===worked;attempt++) {
+      const worked = entireBank ? null : content(scopeExercise(current,generateExercise(practiceType,1)));
+      for (let attempt=0;content(activeExercise)===worked || content(activeExercise)===excludedContent;attempt++) {
         if (attempt===32) throw new Error('No se pudo generar una variante distinta del ejemplo resuelto.');
         seed = seed === 4294967295 ? FIRST_PRACTICE_SEED : seed+1;
-        activeExercise = scopeExercise(current,generateExercise(practiceType,seed));
+        activeExercise = entireBank ? generateExercise(practiceType,seed) : scopeExercise(current,generateExercise(practiceType,seed));
       }
     }
     const exerciseId = activeExercise.id;
@@ -194,7 +194,7 @@ export function mountAula(document, environment = {}) {
       const tutor = document.createElement('section');
       tutor.setAttribute('data-exercise-tutor','');
       attempt.before(tutor);
-      activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onHelp:assistance,onPractice:()=>{mode='practice';seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice();icons();}});
+      activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onHelp:assistance,onPractice:()=>{const excluded=JSON.stringify([activeExercise.prompt,activeExercise.given,activeExercise.questions.map(question=>question.prompt)]);mode='practice';seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice(excluded);icons();}});
     }
     const notation = document.createElement('section');
     notation.className = 'exercise-notation';
@@ -248,7 +248,7 @@ export function mountAula(document, environment = {}) {
     const changed = lessonId !== route.lessonId;
     route = {lessonId, view};
     progress.lastLesson = lessonId;
-    if (changed) { practiceType = null; seed = FIRST_PRACTICE_SEED; }
+    if (changed) { practiceType = null; seed = FIRST_PRACTICE_SEED; mode = 'observe'; }
     const current = lesson();
     element('unitLabel').textContent = `${current.unit.number === 0 ? 'Puente' : `Tema ${current.unit.number}`} · ${current.unit.title}`;
     element('lessonTitle').textContent = current.title;

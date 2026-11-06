@@ -75,6 +75,7 @@ test('El tutor visual se abre antes del intento y mantiene los apuntes opcionale
     const tutor = document.querySelector('[data-exercise-tutor]');
     assert.ok(tutor);
     assert.ok(tutor.querySelector('canvas'));
+    assert.ok(tutor.querySelector('.tutor-data').textContent.length>0);
     assert.equal(document.getElementById('practiceAttempt').hidden,true);
     assert.equal(tutor.querySelector('[data-tutor-notes]').hasAttribute('open'),false);
     const initial = tutor.querySelector('[data-tutor-position]').textContent;
@@ -84,6 +85,8 @@ test('El tutor visual se abre antes del intento y mantiene los apuntes opcionale
     change(document.getElementById('practiceMode'));
     assert.equal(document.getElementById('practiceAttempt').hidden,false);
     assert.equal(document.querySelector('[data-exercise-tutor]'),null);
+    aula.navigate('densidad','practice');
+    assert.equal(document.getElementById('practiceMode').value,'observe');
   } finally {aula.dispose();}
 });
 
@@ -131,8 +134,10 @@ test('El tutor retrocede, cambia de apartado y libera la reproduccion al salir',
     assert.equal(tutor.innerHTML,'');
     aula.setView('practice');
     const old=aula.exercise.id;
+    const oldData=JSON.stringify(aula.exercise.given);
     click(document.querySelector('[data-tutor-practice]'));
     assert.notEqual(aula.exercise.id,old);
+    assert.notEqual(JSON.stringify(aula.exercise.given),oldData);
     assert.equal(document.getElementById('practiceMode').value,'practice');
     assert.equal(document.getElementById('practiceAttempt').hidden,false);
   } finally {aula.dispose();window.setInterval=originalInterval;window.clearInterval=originalClear;}

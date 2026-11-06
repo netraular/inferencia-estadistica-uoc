@@ -423,24 +423,30 @@ const generators = {
   normal(seed, choose) {
     const mean = choose([12, 18, 24]);
     const sd = choose([2, 3, 4]);
-    const lower = mean - sd;
-    const upper = mean + 2 * sd;
+    const left = seed === 1 ? -1 : choose([-2,-1.5,-1,-0.5,0]);
+    const right = seed === 1 ? 2 : choose([0.5,1,1.5,2,2.5]);
+    const quantileProbability = seed === 1 ? 0.95 : choose([0.1,0.25,0.5,0.75,0.9,0.95]);
+    const lower = mean + left * sd;
+    const upper = mean + right * sd;
     const core = statistics();
     const chance = core.normal.cdf(upper, mean, sd) - core.normal.cdf(lower, mean, sd);
-    const quantile = core.normal.inv(0.95, mean, sd);
+    const quantile = core.normal.inv(quantileProbability, mean, sd);
+    const standardQuantile = core.normal.inv(quantileProbability,0,1);
+    const percent = quantileProbability * 100;
+    const leftText = format(left).replace('-','−');
     return exercise('normal', seed, 'La longitud X de un tipo de célula se modeliza con una distribución normal.',
       [`Media μ = ${mean} micrómetros; desviación típica σ = ${sd} micrómetros (no varianza).`, `Intervalo: [${lower}, ${upper}]; soporte teórico: toda la recta real.`],
       ['El modelo normal es una aproximación adecuada en el rango de interés.', 'No se está afirmando que todas las longitudes biológicas sigan una normal.'], [
-        probability('interval', 'Calcula P(μ−σ ≤ X ≤ μ+2σ).', chance, 'Tipifica los extremos y resta las acumuladas.', [
-          step('Tipificar', `(${lower} - ${mean})/${sd} = -1; (${upper} - ${mean})/${sd} = 2.`, String.raw`Z=\frac{X-\mu}{\sigma}`),
-          step('Consultar las dos áreas', `Φ se lee fi y da el área a la izquierda. Una tabla o calculadora normal da Φ(2) = ${format(core.normal.cdf(2,0,1))} y Φ(−1) = ${format(core.normal.cdf(-1,0,1))}.`),
-          step('Restar las áreas', `La primera área incluye también todo lo que queda a la izquierda de −1. Lo quitamos: ${format(core.normal.cdf(2,0,1))} − ${format(core.normal.cdf(-1,0,1))} = ${format(chance)}. Queda solo el intervalo entre ambos umbrales.`)
+        probability('interval', seed === 1 ? 'Calcula P(μ−σ ≤ X ≤ μ+2σ).' : 'Calcula la probabilidad del intervalo indicado.', chance, 'Tipifica los extremos y resta las acumuladas.', [
+          step('Tipificar', `(${lower} - ${mean})/${sd} = ${format(left)}; (${upper} - ${mean})/${sd} = ${format(right)}.`, String.raw`Z=\frac{X-\mu}{\sigma}`),
+          step('Consultar las dos áreas', `Φ se lee fi y da el área a la izquierda. Una tabla o calculadora normal da Φ(${format(right)}) = ${format(core.normal.cdf(right,0,1))} y Φ(${leftText}) = ${format(core.normal.cdf(left,0,1))}.`),
+          step('Restar las áreas', `La primera área incluye también todo lo que queda a la izquierda de ${leftText}. Lo quitamos: ${format(core.normal.cdf(right,0,1))} − ${format(core.normal.cdf(left,0,1))} = ${format(chance)}. Queda solo el intervalo entre ambos umbrales.`)
         ], 'Los límites abiertos o cerrados no cambian la probabilidad continua.'),
-        question('quantile', 'Calcula el percentil 95 de X.', quantile, 'micrómetros', 'Busca primero z con Φ(z)=0,95 y deshaz la tipificación.', [
-          step('Buscar un área, no una altura', 'Buscamos en una tabla o calculadora el z que deja el 95 % del área a su izquierda: Φ(z)=0,95. Ese z es aproximadamente 1,644854; Φ inversa deshace la acumulación.'),
-          step('Volver a la escala original', `${mean} + ${sd} × 1,644854 = ${format(quantile)} micrómetros. Multiplicamos por la desviación para recuperar unidades y sumamos la media para recuperar el centro.`, String.raw`x_{0.95}=\mu+\sigma\Phi^{-1}(0.95)`)
-        ], 'Bajo el modelo, el 95% de las longitudes no supera ese valor.')
-      ], 'normal', {mean, sd, lower, upper, quantileProbability:0.95});
+        question('quantile', `Calcula el percentil ${percent} de X.`, quantile, 'micrómetros', `Busca primero z con Φ(z)=${format(quantileProbability)} y deshaz la tipificación.`, [
+          step('Buscar un área, no una altura', `Buscamos en una tabla o calculadora el z que deja el ${percent} % del área a su izquierda: Φ(z)=${format(quantileProbability)}. Ese z es aproximadamente ${format(standardQuantile)}; Φ inversa deshace la acumulación.`),
+          step('Volver a la escala original', `${mean} + ${sd} × ${format(standardQuantile)} = ${format(quantile)} micrómetros. Multiplicamos por la desviación para recuperar unidades y sumamos la media para recuperar el centro.`, String.raw`x_{${quantileProbability}}=\mu+\sigma\Phi^{-1}(${quantileProbability})`)
+        ], `Bajo el modelo, el ${percent}% de las longitudes no supera ese valor.`)
+      ], 'normal', {mean, sd, lower, upper, quantileProbability});
   },
 
   uniform(seed, choose) {

@@ -62,6 +62,17 @@ discrete cumulative tables and basic joint tables. The bridge laboratories offer
 matching elementary controls instead of starting every lesson with integration.
 Gamma consistently uses k for shape and alpha for scale, with rate = 1/scale.
 
+Exercises open in observation mode before an independent attempt. A visual
+board keeps earlier operations visible, with manual forward/backward controls
+or paced playback. Data and diagrams stay alongside the current operation;
+full written solutions remain in optional notes during observation.
+Normal, density, discrete-moment, event and Bayes calculations have dedicated
+small operations. Other generators reuse their existing mathematical steps.
+Switching to an independent attempt selects different data from the observed
+example. Watching a calculation records help, not a correct answer or study mark.
+Normal practice varies interval bounds and percentile targets; seed 1 remains
+unchanged for existing lecture scripts and frozen TTS batches.
+
 React embeds the existing classroom engine in an isolated Shadow DOM. Its
 navigation and CSS cannot overwrite Docusaurus routes, headings or styles.
 The old HTML is a tested, nonpublished activity-shell fixture, not a second site.

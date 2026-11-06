@@ -99,6 +99,15 @@ test('Las soluciones desarrollan conteos, sumas y áreas sin sustituir el razona
   assert.ok(explanation.includes('0,1586553'));
 });
 
+test('Las variantes normales cambian el area y el percentil manteniendo el ejemplo narrado', numericOptions, () => {
+  const examples=Array.from({length:24},(_,index)=>generateExercise('normal',index+2));
+  assert.ok(new Set(examples.map(exercise=>answer(exercise,'interval'))).size>3);
+  assert.ok(new Set(examples.map(exercise=>exercise.visual.params.quantileProbability)).size>2);
+  const narrated=generateExercise('normal',1);
+  close(answer(narrated,'interval'),globalThis.jStat.normal.cdf(2,0,1)-globalThis.jStat.normal.cdf(-1,0,1));
+  assert.equal(narrated.visual.params.quantileProbability,0.95);
+});
+
 function checkStructure(typeId) {
   const variants = new Set();
   for (const seed of [...Array.from({length:128}, (_, index) => index), 2147483648, 4294967295]) {
@@ -279,6 +288,8 @@ test('Generadores: PMF conocidas, soporte y límites discretos inclusivos/estric
 
 test('Generadores: normalización continua, Gamma tasa/escala, normal y falta de memoria', numericOptions, () => {
   const erlangAtMean = {2:0.5939941502901619, 3:0.5768099188731565, 4:0.566529879633291};
+  const normalAreas = {'-2':0.0227501319481792,'-1.5':0.0668072012688581,'-1':0.1586552539314571,'-0.5':0.3085375387259869,0:0.5,0.5:0.6914624612740131,1:0.8413447460685429,1.5:0.9331927987311419,2:0.9772498680518208,2.5:0.9937903346742238};
+  const normalQuantiles = {0.1:-1.2815515655446004,0.25:-0.6744897501960817,0.5:0,0.75:0.6744897501960817,0.9:1.2815515655446004,0.95:1.6448536269514722};
   for (let seed = 0; seed < 32; seed++) {
     const continuous = generateExercise('continuous', seed);
     const density = continuous.visual.params;
@@ -298,8 +309,9 @@ test('Generadores: normalización continua, Gamma tasa/escala, normal y falta de
     close(answer(gamma, 'mean'), gam.shape / gam.rate);
     close(answer(gamma, 'before'), erlangAtMean[gam.shape]);
     const normal = generateExercise('normal', seed);
-    close(answer(normal, 'interval'), 0.8185946141203637);
-    close(answer(normal, 'quantile'), normal.visual.params.mean + 1.6448536269514722 * normal.visual.params.sd, 1e-6);
+    const params = normal.visual.params;
+    close(answer(normal, 'interval'), normalAreas[(params.upper-params.mean)/params.sd]-normalAreas[(params.lower-params.mean)/params.sd]);
+    close(answer(normal, 'quantile'), params.mean + normalQuantiles[params.quantileProbability] * params.sd, 1e-6);
   }
 });
 
