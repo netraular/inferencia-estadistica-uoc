@@ -156,7 +156,12 @@ test('production Babel compilation preserves every HTML paragraph instead of a N
 test('36 MDX pages preserve theory, formulas, method, solved examples and interactive lesson IDs', () => {
   for (const unit of COURSE.units) for (const lesson of unit.lessons) {
     const text = readFileSync(new URL(`../docs/${unit.id}/${lesson.id}.mdx`, import.meta.url), 'utf8');
-    for (const section of lesson.sections) assert.ok(text.includes(section.body), lesson.id);
+    for (const section of lesson.sections) {
+      const mdxBody = section.body.replace(/[{}]/g, character => character === '{' ? '&#123;' : '&#125;');
+      assert.ok(text.includes(mdxBody), lesson.id);
+      assert.equal(parseHTML(`<main>${mdxBody}</main>`).document.querySelector('main').textContent,
+        parseHTML(`<main>${section.body}</main>`).document.querySelector('main').textContent, lesson.id);
+    }
     for (const step of lesson.method) assert.ok(text.includes(step), lesson.id);
     for (const formula of lesson.formulas) assert.ok(text.includes(JSON.stringify(formula.tex)), lesson.id);
     assert.ok(text.includes(`<LessonContent lessonId="${lesson.id}">`), lesson.id);
