@@ -431,7 +431,9 @@ const SECTIONS = {
       beat('Un tercio y un cuarto son distintos. Con momentos finitos, su diferencia es la varianza. No hemos usado independencia ni supuesto que el área sea uniforme.')
     ]),
     block('estandarizacion-y-existencia', 'La forma y las colas necesitan condiciones', ['Qué resumen conserva cada momento'], null, [
-      beat('¿Podemos comparar formas medidas en unidades diferentes? Mu sub ka nombra el momento central de orden ka. Si existe y la desviación sigma es positiva y finita, lo dividimos por la potencia correspondiente de sigma.', math`\frac{\mu_k}{\sigma^k}`),
+      beat('¿Podemos comparar formas medidas en unidades diferentes?'),
+      beat('Mu sub ka nombra el momento central de orden ka.'),
+      beat('Si existe y la desviación sigma es positiva y finita, lo dividimos por la potencia correspondiente de sigma.', math`\frac{\mu_k}{\sigma^k}`),
       beat('Estiremos el ejemplo anterior: cero y cuatro son equiprobables. La media es dos; las desviaciones son menos dos y dos. Su varianza es cuatro y la desviación sigma es dos.', note('Ejemplo equiprobable','X: 0 o 4; media: 2; desviaciones: -2 y 2; sigma: 2')),
       beat('Para el tercer momento central promediamos los cubos de esas desviaciones. Menos ocho y ocho se cancelan, dando cero.', math`\frac{(-2)^3+2^3}{2}=0`),
       beat('Dividimos ese tercer momento cero entre sigma al cubo, dos al cubo. El tercero estandarizado vale cero y describe la asimetría; este ejemplo es simétrico.', math`\frac{\mu_3}{\sigma^3}=\frac0{2^3}`),
@@ -998,16 +1000,8 @@ const SECTIONS = {
 
 function slowScene(title, beats) {
   const scene = storyScene(title, title, beats);
-  const reveals = new Map();
-  let cueOffset = 0;
-  for (const entry of beats) {
-    const cueCount = storyScene(title, title, [entry]).cues.length;
-    reveals.set(cueOffset, Math.min(cueOffset + cueCount, scene.cues.length - 1));
-    cueOffset += cueCount;
-  }
   scene.visual.lines = scene.visual.lines.map(line => ({
     ...line,
-    cue:reveals.get(line.cue),
     ...(line.bar ? {bar:{...line.bar}} : {}),
     ...(line.plot ? {plot:{
       ...line.plot,

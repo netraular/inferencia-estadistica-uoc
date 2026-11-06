@@ -154,7 +154,7 @@ test('sections are deterministic, do not require a statistics global and do not 
   }
 });
 
-test('each whiteboard reveals meaningful visual content sequentially after spoken introductions', () => {
+test('each whiteboard reveals meaningful visual content sequentially with its narration', () => {
   for (const lesson of lessons) for (const section of createLessonSections(lesson)) for (const scene of section.animation.steps) {
     const context = `${lesson.id}: ${section.id}`;
     assert.equal(scene.kind, 'lesson', context);
@@ -162,7 +162,7 @@ test('each whiteboard reveals meaningful visual content sequentially after spoke
     assert.ok(scene.caption.trim(), context);
     assert.ok(scene.cues.length >= 4, context);
     assert.ok(scene.visual.lines.length >= 2, context);
-    assert.deepEqual(storyLines(scene, 0), [], context);
+    assert.deepEqual(storyLines(scene, -1), [], context);
     const revealCues = new Set(scene.visual.lines.map(line => line.cue));
     assert.ok(revealCues.size >= 2, context);
     let previousEnd = 0;
@@ -180,7 +180,7 @@ test('each whiteboard reveals meaningful visual content sequentially after spoke
     assert.equal(scene.duration, previousEnd, context);
     assert.deepEqual(previousLines, scene.visual.lines, context);
     for (const line of scene.visual.lines) {
-      assert.ok(Number.isInteger(line.cue) && line.cue > 0 && line.cue < scene.cues.length, context);
+      assert.ok(Number.isInteger(line.cue) && line.cue >= 0 && line.cue < scene.cues.length, context);
       assert.ok(line.tex?.trim() || line.value?.trim() || line.plot, context);
     }
   }
@@ -199,12 +199,12 @@ test('standardized moments reveal concrete calculations after their spoken intro
     [String.raw`\frac{\mu_4}{\sigma^4}=\frac{16}{2^4}`, /cuarto momento dieciséis entre sigma a la cuarta/],
     [String.raw`16/16=1`, /Dieciséis dividido entre dieciséis da uno/]
   ];
-  let previousCue = 0;
+  let previousCue = -1;
   for (const [tex, spoken] of calculations) {
     const line = scene.visual.lines.find(entry => entry.tex === tex);
     assert.ok(line, tex);
     assert.ok(line.cue > previousCue, tex);
-    assert.match(scene.cues.slice(previousCue, line.cue).map(cue => cue.text).join(' '), spoken, tex);
+    assert.match(scene.cues.slice(Math.max(0, previousCue), line.cue + 1).map(cue => cue.text).join(' '), spoken, tex);
     assert.ok(!storyLines(scene, line.cue - 1).some(entry => entry.tex === tex), tex);
     assert.ok(storyLines(scene, line.cue).some(entry => entry.tex === tex), tex);
     previousCue = line.cue;
@@ -215,6 +215,17 @@ test('standardized moments reveal concrete calculations after their spoken intro
   const zeroDeviation = scene.visual.lines.find(line => line.label === 'Desviación nula');
   assert.ok(zeroDeviation.cue > previousCue);
   assert.match(zeroDeviation.value, /sigma: 0; estandarización no definida/);
+});
+
+test('area operations and shading appear during their own spoken explanations, not the next operation', () => {
+  const lesson = lessons.find(entry => entry.id === 'calculo');
+  const scene = createLessonSections(lesson).find(section => section.id === 'franjas').animation.steps[0];
+  const subtraction = scene.visual.lines.find(line => line.tex === String.raw`1{,}2-0{,}4=0{,}8`);
+  const multiplication = scene.visual.lines.find(line => line.tex === String.raw`0{,}5\cdot0{,}8=0{,}4`);
+  const shaded = scene.visual.lines.find(line => line.plot?.shade);
+  assert.match(scene.cues[subtraction.cue].text, /Primero restamos/);
+  assert.match(scene.cues[multiplication.cue].text, /Ahora multiplicamos/);
+  assert.match(scene.cues[shaded.cue].text, /La franja sombreada/);
 });
 
 test('equality counting ignores braced indices and escaped signs but rejects actual chains', () => {
