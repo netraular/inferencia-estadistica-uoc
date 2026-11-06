@@ -24,6 +24,7 @@ export const LESSON_LAB_PRESETS = {
 };
 export const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[character]));
 const normalize = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const FIRST_PRACTICE_SEED = 2;
 
 export function readParagraphs(document, html) {
   const content = document.createElement('div');
@@ -52,7 +53,7 @@ export function mountAula(document, environment = {}) {
   let activeCleanup = null;
   let activeExercise = null;
   let practiceType = null;
-  let seed = 1;
+  let seed = FIRST_PRACTICE_SEED;
   let mode = 'practice';
   let entireBank = false;
   let disposed = false;
@@ -158,6 +159,15 @@ export function mountAula(document, environment = {}) {
     const available = entireBank ? EXERCISE_TYPES : current.exerciseTypes.map(id => EXERCISE_TYPES.find(type => type.id === id));
     if (!available.some(type => type.id === practiceType)) practiceType = available[0].id;
     activeExercise = entireBank ? generateExercise(practiceType, seed) : scopeExercise(current, generateExercise(practiceType, seed));
+    if (!entireBank) {
+      const content = exercise=>JSON.stringify([exercise.prompt,exercise.given,exercise.questions.map(question=>question.prompt)]);
+      const worked = content(scopeExercise(current,generateExercise(practiceType,1)));
+      for (let attempt=0;content(activeExercise)===worked;attempt++) {
+        if (attempt===32) throw new Error('No se pudo generar una variante distinta del ejemplo resuelto.');
+        seed = seed === 4294967295 ? FIRST_PRACTICE_SEED : seed+1;
+        activeExercise = scopeExercise(current,generateExercise(practiceType,seed));
+      }
+    }
     const exerciseId = activeExercise.id;
     const summary = progressSummary(progress);
     element('panel-practice').innerHTML = `<div class="practice-toolbar"><label class="control-field">Tipo de ejercicio<select id="exerciseType">${available.map(type => `<option value="${type.id}"${type.id === practiceType ? ' selected' : ''}>${escapeHtml(type.title)}</option>`).join('')}</select></label><label class="control-field">Modalidad<select id="practiceMode"><option value="practice"${mode === 'practice' ? ' selected' : ''}>Práctica</option><option value="guided"${mode === 'guided' ? ' selected' : ''}>Resolución guiada</option></select></label><button id="newExercise" type="button" class="text-button"><i data-lucide="shuffle" aria-hidden="true"></i>Nuevo ejemplo</button><label class="studied-toggle" style="margin:0"><input id="entireBank" type="checkbox"${entireBank ? ' checked' : ''}>Banco completo</label><span id="practiceScore" class="practice-score">${summary.independent} respuestas sin ayuda · ${summary.assisted} con ayuda</span></div><div class="exercise-prompt"><p class="eyebrow">EJEMPLO ${seed} · ${escapeHtml(activeExercise.title)}</p><h2>${escapeHtml(activeExercise.title)}</h2><p>${escapeHtml(activeExercise.prompt)}</p><div class="exercise-context"><section><h3>Datos del problema</h3><ul>${activeExercise.given.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section><section><h3>Supuestos</h3><ul>${activeExercise.assumptions.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section></div></div>${activeExercise.questions.map((question, index) => {
@@ -218,7 +228,7 @@ export function mountAula(document, environment = {}) {
     const changed = lessonId !== route.lessonId;
     route = {lessonId, view};
     progress.lastLesson = lessonId;
-    if (changed) { practiceType = null; seed = 1; }
+    if (changed) { practiceType = null; seed = FIRST_PRACTICE_SEED; }
     const current = lesson();
     element('unitLabel').textContent = `${current.unit.number === 0 ? 'Puente' : `Tema ${current.unit.number}`} · ${current.unit.title}`;
     element('lessonTitle').textContent = current.title;
@@ -321,14 +331,14 @@ export function mountAula(document, environment = {}) {
   listen(element('glossaryToggle'), 'click', () => openDialog('Diccionario de símbolos', `<table class="symbol-table"><thead><tr><th>Símbolo</th><th>Nombre</th><th>Significado</th></tr></thead><tbody>${COURSE.glossary.map(item => `<tr><td>${escapeHtml(item.symbol)}</td><td>${escapeHtml(item.term)}</td><td>${escapeHtml(item.definition)}</td></tr>`).join('')}</tbody></table>`));
   listen(element('sourcesToggle'), 'click', () => openDialog('Materiales y cobertura', `<p>36 lecciones originales organizadas a partir de los cuatro temas aportados. El puente matemático es material adicional. La numeración de los ejercicios de multivariantes no coincide con la del Tema 4.</p>${COURSE.coverage.map(item => `<section><h3>${escapeHtml(item.document)}</h3><ul class="coverage-list">${item.topics.map(topic => `<li>${escapeHtml(topic)}</li>`).join('')}</ul></section>`).join('')}<section><h3>Práctica y límites</h3><p>Los ejercicios son nuevos ejemplos didácticos con variantes, no reproducciones de la PEC vigente. Las estimaciones, contrastes y el teorema central del límite que aparezcan como contexto adicional se distinguen del temario aportado. Los originales docentes no se publican en esta aula.</p><p>Las cifras biológicas son ficticias y las visualizaciones no son evidencia experimental. Las probabilidades se calculan con jStat 1.9.6; las fórmulas se representan con KaTeX 0.16.25.</p></section>`));
   listen(element('panel-practice'), 'change', event => {
-    if (event.target.id === 'exerciseType') { practiceType = event.target.value; seed = 1; renderPractice(); icons(); }
+    if (event.target.id === 'exerciseType') { practiceType = event.target.value; seed = FIRST_PRACTICE_SEED; renderPractice(); icons(); }
     if (event.target.id === 'practiceMode') { mode = event.target.value; renderPractice(); icons(); }
     if (event.target.id === 'entireBank') { entireBank = event.target.checked; renderPractice(); icons(); }
   });
   listen(element('panel-practice'), 'click', event => {
     const button = event.target.closest('button');
     if (!button) return;
-    if (button.id === 'newExercise') { seed = seed === 4294967295 ? 1 : seed + 1; renderPractice(); icons(); }
+    if (button.id === 'newExercise') { seed = seed === 4294967295 ? FIRST_PRACTICE_SEED : seed + 1; renderPractice(); icons(); }
     if (button.dataset.solutionStep) {
       const solution = button.closest('[data-solution]');
       const steps = Array.from(solution.querySelectorAll('[data-worked-step]'));

@@ -114,6 +114,32 @@ test('Las 36 lecciones explican su notación y gradúan la práctica sin elimina
   } finally {aula.dispose();}
 });
 
+test('La práctica inicial no repite el ejemplo resuelto y conserva variantes al cambiar de vista', () => {
+  const {document,aula,click,change} = harness();
+  const content = exercise=>({prompt:exercise.prompt,given:exercise.given,questions:exercise.questions.map(question=>question.prompt)});
+  try {
+    for (const lesson of LESSONS) {
+      aula.navigate(lesson.id,'practice');
+      const type = lesson.exerciseTypes[0];
+      const worked = scopeExercise(lesson,generateExercise(type,1));
+      const initial = aula.exercise;
+      assert.notDeepEqual(content(initial),content(worked),lesson.id);
+      click(document.getElementById('newExercise'));
+      const variant = aula.exercise;
+      aula.setView('theory');
+      aula.setView('practice');
+      assert.deepEqual(aula.exercise,variant,lesson.id);
+      if (lesson.exerciseTypes.length>1) {
+        const select = document.getElementById('exerciseType');
+        select.value = lesson.exerciseTypes[1];
+        change(select);
+        assert.equal(aula.exercise.type,lesson.exerciseTypes[1],lesson.id);
+        assert.notDeepEqual(content(aula.exercise),content(scopeExercise(lesson,generateExercise(lesson.exerciseTypes[1],1))),lesson.id);
+      }
+    }
+  } finally {aula.dispose();}
+});
+
 test('El inicio distingue cuatro PDF y apoyo opcional sin registrar estudio ni dejar gráficos activos', () => {
   const {document, aula, click} = harness(undefined, '');
   try {
