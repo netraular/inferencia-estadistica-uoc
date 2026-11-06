@@ -33,6 +33,7 @@ import {COURSE} from '../../pages/inferencia/course.js';
 import {ANIMATIONS} from '../../pages/inferencia/animations.js';
 import {LAB_IDS} from '../../pages/inferencia/labs.js';
 import {EXERCISE_TYPES, generateExercise, scopeExercise} from '../../pages/inferencia/exercises.js';
+import {createTutorFrames} from '../../pages/inferencia/exercise-tutor.js';
 import {LESSONS, VIEWS, LESSON_LAB_PRESETS, parseRoute, escapeHtml, mountAula} from '../../pages/inferencia/app.js';
 import {STORAGE_KEY, freshProgress, progressSummary} from '../../pages/inferencia/progress.js';
 
@@ -65,6 +66,77 @@ function harness(raw, hash = '#proporciones/theory') {
   const submit = target => target.dispatchEvent(new window.Event('submit', {bubbles:true,cancelable:true}));
   return {document, window, aula, saved, click, change, submit};
 }
+
+test('El tutor visual se abre antes del intento y mantiene los apuntes opcionales', () => {
+  const {document,aula,click,change} = harness();
+  try {
+    aula.navigate('normal','practice');
+    assert.equal(document.getElementById('practiceMode').value,'observe');
+    const tutor = document.querySelector('[data-exercise-tutor]');
+    assert.ok(tutor);
+    assert.ok(tutor.querySelector('canvas'));
+    assert.equal(document.getElementById('practiceAttempt').hidden,true);
+    assert.equal(tutor.querySelector('[data-tutor-notes]').hasAttribute('open'),false);
+    const initial = tutor.querySelector('[data-tutor-position]').textContent;
+    click(tutor.querySelector('[data-tutor-next]'));
+    assert.notEqual(tutor.querySelector('[data-tutor-position]').textContent,initial);
+    document.getElementById('practiceMode').value = 'practice';
+    change(document.getElementById('practiceMode'));
+    assert.equal(document.getElementById('practiceAttempt').hidden,false);
+    assert.equal(document.querySelector('[data-exercise-tutor]'),null);
+  } finally {aula.dispose();}
+});
+
+test('El tutor conserva operaciones validas y deja el resultado para el ultimo paso', () => {
+  for (const type of EXERCISE_TYPES) for (const seed of [1,2,17]) {
+    const exercise = generateExercise(type.id,seed);
+    for (const question of exercise.questions) {
+      const frames = createTutorFrames(exercise,question);
+      assert.ok(frames.length>=3,`${type.id}/${question.id}`);
+      assert.equal(frames[0].tex,'');
+      assert.equal(frames.at(-1).result,true);
+      assert.equal(frames.filter(frame=>frame.result).length,1);
+      for (const frame of frames) if (frame.tex) assert.doesNotThrow(()=>katex.renderToString(frame.tex,{throwOnError:true,trust:false,strict:'ignore'}),`${type.id}/${question.id}: ${frame.tex}`);
+    }
+  }
+});
+
+test('El tutor retrocede, cambia de apartado y libera la reproduccion al salir', () => {
+  const {document,window,aula,click,change} = harness();
+  const originalInterval=window.setInterval;
+  const originalClear=window.clearInterval;
+  const timers=new Map();
+  let nextTimer=0;
+  window.setInterval=callback=>{const id=++nextTimer;timers.set(id,callback);return id;};
+  window.clearInterval=id=>timers.delete(id);
+  try {
+    aula.navigate('normal','practice');
+    const tutor=document.querySelector('[data-exercise-tutor]');
+    click(tutor.querySelector('[data-tutor-next]'));
+    click(tutor.querySelector('[data-tutor-next]'));
+    assert.equal(tutor.querySelectorAll('.tutor-equation').length,2);
+    click(tutor.querySelector('[data-tutor-previous]'));
+    assert.equal(tutor.querySelectorAll('.tutor-equation').length,1);
+    click(tutor.querySelector('[data-tutor-play]'));
+    assert.equal(timers.size,1);
+    timers.values().next().value();
+    assert.equal(tutor.querySelectorAll('.tutor-equation').length,2);
+    const question=tutor.querySelector('[data-tutor-question]');
+    question.value='1';change(question);
+    assert.equal(timers.size,0);
+    assert.equal(tutor.querySelectorAll('.tutor-equation').length,0);
+    click(tutor.querySelector('[data-tutor-play]'));
+    aula.setView('theory');
+    assert.equal(timers.size,0);
+    assert.equal(tutor.innerHTML,'');
+    aula.setView('practice');
+    const old=aula.exercise.id;
+    click(document.querySelector('[data-tutor-practice]'));
+    assert.notEqual(aula.exercise.id,old);
+    assert.equal(document.getElementById('practiceMode').value,'practice');
+    assert.equal(document.getElementById('practiceAttempt').hidden,false);
+  } finally {aula.dispose();window.setInterval=originalInterval;window.clearInterval=originalClear;}
+});
 
 test('Currículo completo, IDs y asociaciones de cada lección', () => {
   assert.equal(COURSE.units.length, 5);
@@ -227,7 +299,7 @@ test('La lectura usa una columna y frases inline sin tarjetas ni filas separadas
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','course.js','exercises.js','labs.js','lecture-story.js','progress.js','teaching.js']);
+  assert.deepEqual(files, ['animations.js','app.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','progress.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
@@ -257,7 +329,7 @@ test('Las rutas y el texto externo se validan', () => {
 test('La portada registra el curso y todos los controles tienen iconos disponibles', () => {
   const config = readFileSync(new URL('../../docusaurus.config.js', import.meta.url), 'utf8');
   assert.match(config, /title: 'Inferencia/);
-  const modules = ['app.js','animations.js','labs.js'].map(file => readFileSync(new URL(`../../pages/inferencia/${file}`, import.meta.url), 'utf8')).join('\n');
+  const modules = ['app.js','animations.js','labs.js','exercise-tutor.js'].map(file => readFileSync(new URL(`../../pages/inferencia/${file}`, import.meta.url), 'utf8')).join('\n');
   const names = new Set([...`${html}\n${modules}`.matchAll(/data-lucide=["']([^"']+)["']|button\('([^']+)'/g)].map(match => match[1] || match[2]));
   const iconNames = new Set(Object.keys(lucide.icons).map(name => name.replace(/-/g, '').toLowerCase()));
   for (const name of names) assert.ok(iconNames.has(name.replace(/-/g, '').toLowerCase()), name);
@@ -272,7 +344,7 @@ test('Cada lección monta sus cuatro vistas y limpia los gráficos anteriores', 
         assert.equal(document.getElementById('lessonTitle').textContent, lesson.title);
         assert.ok(document.getElementById('lessonReference').textContent.includes(lesson.source.section));
         assert.equal(document.querySelectorAll('.lesson-panel:not([hidden])').length, 1);
-        assert.equal(document.querySelectorAll('canvas:not(.story-plot)').length, view === 'practice' ? 0 : 1);
+        assert.equal(document.querySelectorAll('canvas:not(.story-plot)').length, 1);
         for(const plot of document.querySelectorAll('.story-plot')) assert.ok(plot.closest('.slide-board'));
         assert.equal(document.getElementById(`tab-${view}`).getAttribute('aria-selected'), 'true');
         if (view === 'theory') {
@@ -435,7 +507,7 @@ test('El versionado de recursos es determinista e idempotente', () => {
   const root = versionFixture();
   try {
     const first = versionAssets(root);
-    assert.equal(Object.keys(first.versions).length, 13);
+    assert.equal(Object.keys(first.versions).length, 14);
     assert.deepEqual(versionAssets(root).changed, []);
     const generated = readFileSync(join(root, 'pages', 'inferencia-estadistica.html'), 'utf8');
     for (const match of generated.matchAll(/(?:src|href)="(inferencia\/[^"?]+\.(?:js|css))\?v=([a-f0-9]+)"/g)) {
@@ -469,7 +541,7 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
   }
   const appUrl = new URL('../../pages/inferencia/app.js', import.meta.url);
   const imports = [...readFileSync(appUrl, 'utf8').matchAll(/from ['"]([^'"]+\.js\?v=[a-f0-9]+)['"]/g)];
-  assert.equal(imports.length, 6);
+  assert.equal(imports.length, 7);
   for (const match of imports) {
     const url = new URL(match[1], appUrl);
     assert.equal(url.searchParams.get('v'), assetVersion(readFileSync(url)), `${url.pathname}: ejecuta node version-assets.mjs`);

@@ -3,6 +3,7 @@ import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './ex
 import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=37d29d83c0c4';
 import {mountLab} from './labs.js?v=2f4aa757b74f';
+import {mountExerciseTutor} from './exercise-tutor.js?v=f3863a6ef3a8';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));
@@ -54,7 +55,7 @@ export function mountAula(document, environment = {}) {
   let activeExercise = null;
   let practiceType = null;
   let seed = FIRST_PRACTICE_SEED;
-  let mode = 'practice';
+  let mode = 'observe';
   let entireBank = false;
   let disposed = false;
   const listeners = [];
@@ -157,6 +158,8 @@ export function mountAula(document, environment = {}) {
   }
 
   function renderPractice() {
+    activeCleanup?.();
+    activeCleanup = null;
     const current = lesson();
     const available = entireBank ? EXERCISE_TYPES : current.exerciseTypes.map(id => EXERCISE_TYPES.find(type => type.id === id));
     if (!available.some(type => type.id === practiceType)) practiceType = available[0].id;
@@ -178,6 +181,21 @@ export function mountAula(document, environment = {}) {
       const solved = progress.attempts[key]?.solved;
       return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}. ${solved ? 'Ya resolviste esta respuesta.' : ''}</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><div class="worked-controls"><button type="button" class="icon-button" data-solution-step="-1" aria-label="Paso anterior" title="Paso anterior" disabled><i data-lucide="arrow-left" aria-hidden="true"></i></button><span data-step-position role="status">Paso 1 de ${question.steps.length}</span><button type="button" class="icon-button" data-solution-step="1" aria-label="Paso siguiente" title="Paso siguiente"${question.steps.length <= 1 ? ' disabled' : ''}><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ol>${question.steps.map((step, stepIndex) => `<li data-worked-step="${stepIndex}"${stepIndex ? ' hidden' : ' aria-current="step"'}><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math worked-calculation">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"${question.steps.length > 1 ? ' hidden' : ''}><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
     }).join('')}`;
+    const selector = element('practiceMode');
+    selector.insertAdjacentHTML('afterbegin',`<option value="observe"${mode === 'observe' ? ' selected' : ''}>Observar la resolucion</option>`);
+    selector.value = mode;
+    const attempt = document.createElement('div');
+    attempt.id = 'practiceAttempt';
+    attempt.hidden = mode === 'observe';
+    element('panel-practice').querySelectorAll('.exercise-question').forEach(question=>attempt.append(question));
+    element('panel-practice').append(attempt);
+    element('panel-practice').querySelector('.exercise-prompt').hidden = mode === 'observe';
+    if (mode === 'observe') {
+      const tutor = document.createElement('section');
+      tutor.setAttribute('data-exercise-tutor','');
+      attempt.before(tutor);
+      activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onHelp:assistance,onPractice:()=>{mode='practice';seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice();icons();}});
+    }
     const notation = document.createElement('section');
     notation.className = 'exercise-notation';
     notation.innerHTML = `<h3>Cómo leer los símbolos de este ejercicio</h3>${notationHtml(activeExercise.type)}`;

@@ -8,9 +8,28 @@ import {join} from 'node:path';
 import {runInNewContext} from 'node:vm';
 import Konva from 'konva';
 import {createCanvas} from '@napi-rs/canvas';
+import {drawTutorFigure,createTutorFrames} from '../pages/inferencia/exercise-tutor.js';
+
+test('El tutor dibuja todos los tipos sin lienzos vacios y cambia el grafico al avanzar', () => {
+  for (const width of [320,960]) for (const type of EXERCISE_TYPES) {
+    const exercise=generateExercise(type.id,2);
+    const height=Math.round(width*5/12);
+    const canvas=createCanvas(width,height);
+    const context=canvas.getContext('2d');
+    const question=exercise.questions[0];
+    const frames=createTutorFrames(exercise,question);
+    drawTutorFigure(context,exercise,question,0,width,height);
+    const initial=Buffer.from(context.getImageData(0,0,width,height).data);
+    assert.ok(initial.some((value,index)=>index%4!==3&&value<100),type.id);
+    drawTutorFigure(context,exercise,question,frames.length-1,width,height);
+    const final=Buffer.from(context.getImageData(0,0,width,height).data);
+    assert.notDeepEqual(final,initial,type.id);
+    for (const frame of frames) if (frame.tex) assert.ok(!frame.tex.includes('NaN'),type.id);
+  }
+});
 import {COURSE} from '../pages/inferencia/course.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
-import {generateExercise} from '../pages/inferencia/exercises.js';
+import {EXERCISE_TYPES,generateExercise} from '../pages/inferencia/exercises.js';
 import {WHITEBOARD_LESSONS, planWhiteboardScene, integralGeometry, formulaVector, formulaGraphic, createWhiteboard} from '../src/classroom/whiteboard.mjs';
 
 const require=createRequire(import.meta.url);
