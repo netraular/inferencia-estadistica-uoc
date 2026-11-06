@@ -144,6 +144,40 @@ test('embedded classroom keeps routing and titles isolated and retains progress 
   }
 });
 
+test('embedded whiteboard follows seeking and resizing and is disposed with its player', () => {
+  const {document, window} = parseHTML('<html><body><div id="host"></div></body></html>');
+  window.HTMLCanvasElement.prototype.getContext = () => null;
+  window.HTMLElement.prototype.getBoundingClientRect = () => ({width:640, height:360});
+  window.matchMedia = () => ({matches:false});
+  window.katex = require('katex');
+  const frames = [];
+  const sizes = [];
+  let destroyed = 0;
+  const mounted = mountEmbeddedClassroom(document.getElementById('host'), {
+    shell, baseUrl:'/inferencia/', lessonId:'proporciones', view:'animation', showNavigation:false,
+    storage:{getItem:()=>null,setItem() {}},
+    createWhiteboard(host, {animation}) {
+      assert.equal(animation.id, 'proporciones');
+      assert.equal(host.getAttribute('role'), 'img');
+      return {render:frame=>frames.push(frame), resize:(...size)=>sizes.push(size), dispose:()=>destroyed++};
+    }
+  });
+  try {
+    assert.ok(mounted.root.querySelector('.has-whiteboard .animated-whiteboard'));
+    assert.equal(mounted.root.querySelector('.slide-board').hidden, true);
+    assert.ok(sizes.some(([width])=>width===640));
+    const seek = mounted.root.querySelector('[aria-label="Tiempo de reproducción"]');
+    for (const seconds of [10, 0, 60]) {
+      seek.value = String(seconds);
+      seek.dispatchEvent(new window.Event('input', {bubbles:true}));
+      assert.equal(frames.at(-1).time, seconds);
+      assert.ok(frames.at(-1).progress >= 0 && frames.at(-1).progress <= 1);
+    }
+    assert.ok(mounted.root.querySelector('.animated-whiteboard').getAttribute('aria-label').length > 20);
+  } finally {mounted.dispose();}
+  assert.equal(destroyed, 1);
+});
+
 test('public assets exclude original PDFs and executable vendor copies', () => {
   assert.deepEqual(readdirSync(new URL('../static/vendor/', import.meta.url)).sort(), ['atkinson-latin-400.woff2', 'atkinson-latin-700.woff2']);
 });

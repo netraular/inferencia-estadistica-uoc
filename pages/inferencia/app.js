@@ -1,6 +1,6 @@
 import {COURSE} from './course.js?v=34212586c1fb';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer} from './exercises.js?v=bc4ede56ecec';
-import {createLessonAnimation, mountAnimation} from './animations.js?v=ad9efe668113';
+import {createLessonAnimation, mountAnimation} from './animations.js?v=447a56c7362e';
 import {mountLab} from './labs.js?v=49b11cab1519';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
@@ -168,7 +168,7 @@ export function mountAula(document, environment = {}) {
 
   function renderAnimation() {
     const paragraphs = html => readParagraphs(document, html);
-    activeCleanup = mountAnimation(element('panel-animation'), createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math, audio:environment.getAudio?.(lesson().id)});
+    activeCleanup = mountAnimation(element('panel-animation'), createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math, audio:environment.getAudio?.(lesson().id), createWhiteboard:environment.createWhiteboard});
   }
 
   function renderView() {

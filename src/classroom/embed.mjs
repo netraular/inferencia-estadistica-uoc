@@ -29,7 +29,7 @@ export function scopedDocument(owner, root) {
   });
 }
 
-export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage, view = 'lab', showNavigation = true, audio}) {
+export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage, view = 'lab', showNavigation = true, audio, createWhiteboard}) {
   const owner = host.ownerDocument;
   const root = host.shadowRoot || host.attachShadow({mode: 'open'});
   const parsed = new owner.defaultView.DOMParser().parseFromString(shell, 'text/html');
@@ -47,7 +47,7 @@ export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage,
   root.replaceChildren(fragment);
   const location = {hash: `#${lessonId}/${view}`};
   const history = {replaceState(state, title, hash) {location.hash = hash;}};
-  const options = {location, history, manageHistory: false, renderIcons:() => renderScopedIcons(root, owner.defaultView.lucide)};
+  const options = {location, history, manageHistory: false, createWhiteboard, renderIcons:() => renderScopedIcons(root, owner.defaultView.lucide)};
   options.getAudio = id => {
     const track = audio?.lessons?.[id];
     return track ? {...track, src:`${baseUrl}${track.src}`} : undefined;

@@ -732,7 +732,7 @@ function audioTimeline(audio, animation) {
   return audio.scenes;
 }
 
-export function mountAnimation(container, animationId, {formatMath, audio} = {}) {
+export function mountAnimation(container, animationId, {formatMath, audio, createWhiteboard} = {}) {
   const animation = findAnimation(animationId);
   const document = container?.ownerDocument;
   if (!document?.createElement || typeof container.replaceChildren !== 'function') throw new TypeError('Se necesita un contenedor DOM');
@@ -830,6 +830,13 @@ export function mountAnimation(container, animationId, {formatMath, audio} = {})
   const math = element('div', 'animation-math');
   math.style.overflowX = 'auto';
   stage.append(math);
+  const whiteboardHost = element('div', 'animated-whiteboard');
+  whiteboardHost.setAttribute('role', 'img');
+  const whiteboard = createWhiteboard?.(whiteboardHost, {animation}) || null;
+  if (whiteboard) {
+    stage.append(whiteboardHost);
+    root.classList.add('has-whiteboard');
+  }
   const caption = element('p', 'animation-caption');
   caption.setAttribute('aria-live', 'polite');
   caption.setAttribute('aria-atomic', 'true');
@@ -1088,13 +1095,13 @@ export function mountAnimation(container, animationId, {formatMath, audio} = {})
   function syncScene() {
     const step = animation.steps[index];
     heading.textContent = step.title;
-    board.hidden = step.kind !== 'lesson';
-    canvas.style.display = step.kind === 'lesson' ? 'none' : 'block';
+    board.hidden = Boolean(whiteboard) || step.kind !== 'lesson';
+    canvas.style.display = whiteboard || step.kind === 'lesson' ? 'none' : 'block';
     board.replaceChildren();
     boardNodes = [];
     lastBoardReveal = -1;
     board.scrollTop = 0;
-    if (step.kind === 'lesson') {
+    if (step.kind === 'lesson' && !whiteboard) {
       const visual = step.visual || {label:step.title,lines:step.tex ? [{tex:step.tex}] : []};
       board.append(element('p','eyebrow',visual.label));
       const derivation = element('ol','board-derivation');
@@ -1127,13 +1134,19 @@ export function mountAnimation(container, animationId, {formatMath, audio} = {})
     syncSubtitle();
     canvas.textContent = step.caption;
     canvas.setAttribute('aria-label', `${step.title}. ${step.caption}`);
-    math.hidden = !step.tex || step.kind === 'lesson';
+    whiteboardHost.setAttribute('aria-label', `${step.title}. ${step.caption}`);
+    math.hidden = Boolean(whiteboard) || !step.tex || step.kind === 'lesson';
     mathContent(math,step.tex);
   }
 
   function draw() {
     syncSubtitle();
-    if (disposed || !context) return;
+    if (disposed) return;
+    if (whiteboard) {
+      whiteboard.render({step:animation.steps[index], index, progress:reducedMotion ? 1 : Math.max(0, Math.min(1, elapsed / (scenes()[index].end - scenes()[index].start))), time:currentTime, reducedMotion});
+      return;
+    }
+    if (!context) return;
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     context.clearRect(0, 0, logicalWidth, logicalHeight);
     context.fillStyle = '#ffffff';
@@ -1169,6 +1182,7 @@ export function mountAnimation(container, animationId, {formatMath, audio} = {})
     logicalWidth = width;
     logicalHeight = height;
     pixelRatio = ratio;
+    whiteboard?.resize(width, ratio);
     draw();
   }
 
@@ -1338,6 +1352,7 @@ export function mountAnimation(container, animationId, {formatMath, audio} = {})
     for (const url of urls) view.URL.revokeObjectURL(url);
     urls.clear();
     observer?.disconnect();
+    whiteboard?.dispose();
     for (const removeListener of listeners) removeListener();
     for (const row of cueNodes) row.children[0].onclick = null;
     root.remove();
