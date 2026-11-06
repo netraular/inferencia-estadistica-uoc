@@ -219,8 +219,8 @@ const STORIES = {
   ],
   varianza:[
     ['Dos promedios iguales pueden esconder cosas distintas',[
-      beat('Saber que la media de un recuento es uno no nos dice cuánto se dispersan sus resultados. Para medir esa dispersión miramos a qué distancia cae cada valor respecto a la media.',note('Punto de referencia','Media μ = 1')),
-      beat('Con los valores cero, uno y dos, las distancias son menos uno, cero y uno. Si las sumáramos se cancelarían. Por eso las elevamos al cuadrado antes de promediarlas.',equation(String.raw`(0-1)^2=1,\quad(1-1)^2=0,\quad(2-1)^2=1`)),
+      beat('Saber que la media de un recuento es uno no nos dice cuánto se dispersan sus resultados. Restamos la media a cada valor para obtener sus desviaciones respecto al centro.',note('Punto de referencia','Media μ = 1')),
+      beat('Con los valores cero, uno y dos, las desviaciones son menos uno, cero y uno. El signo indica a qué lado de la media cae cada valor. Si las promediáramos con sus probabilidades se cancelarían. Por eso las elevamos al cuadrado antes de promediarlas.',equation(String.raw`(0-1)^2=1,\quad(1-1)^2=0,\quad(2-1)^2=1`)),
       beat('Con probabilidades un cuarto, una mitad y un cuarto, el promedio de esas distancias cuadradas es una mitad. Esa es la varianza, en unidades al cuadrado.',equation(String.raw`\operatorname{Var}(X)=\tfrac14+0+\tfrac14=0{,}5`))
     ]],
     ['Volver a las unidades originales',[

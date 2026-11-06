@@ -49,12 +49,20 @@ class CourseTests(unittest.TestCase):
         manifest = COURSE.prepare_course(COURSE.DEFAULT_SOURCE, self.directory)
         self.assertEqual(COURSE.DEFAULT_SOURCE, SCRIPT.resolve().parents[2])
         self.assertEqual(manifest["lesson_count"], 36)
-        self.assertEqual(manifest["scene_count"], 1224)
+        exported = json.loads((self.directory / "fuente" / "lecturas.json").read_text(encoding="utf-8"))
+        by_id = {lesson["id"]: lesson for lesson in exported}
+        self.assertEqual(manifest["scene_count"], sum(len(lesson["scenes"]) for lesson in exported))
+        self.assertEqual({lesson["id"] for lesson in manifest["lessons"]}, set(by_id))
         self.assertEqual(len({lesson["id"] for lesson in manifest["lessons"]}), 36)
         for lesson in manifest["lessons"]:
             directory = self.directory / lesson["directory"]
-            self.assertTrue((directory / "guion-original.txt").is_file())
+            captions = [scene["caption"] for scene in by_id[lesson["id"]]["scenes"]]
+            self.assertGreaterEqual(len(captions), 3)
+            self.assertTrue(all(caption.strip() for caption in captions))
+            self.assertEqual([scene["caption"] for scene in lesson["scenes"]], captions)
+            self.assertEqual((directory / "guion-original.txt").read_text(encoding="utf-8"), "\n\n".join(captions) + "\n")
             text = (directory / "guion.txt").read_text(encoding="utf-8")
+            self.assertEqual(text, "\n\n".join(scene["spoken_text"] for scene in lesson["scenes"]) + "\n")
             self.assertTrue(text.strip())
             self.assertIsNone(re.search(r"[0-9\u03b1-\u03c9\u0391-\u03a9\u00d7\u2264\u2265\u2212\u207b\u222a\u222b\u221a%/=<>^|_]", text))
 

@@ -1,4 +1,4 @@
-import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=7b3e18dde5c6';
+import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=c30f66f5fea8';
 
 const COLORS = ['#0369a1', '#15803d', '#be123c', '#b45309'];
 const scene = (title, caption, kind, data, tex, duration = 10) => ({title, caption, duration: Math.max(duration, Math.ceil(caption.split(/\s+/).length / 2.5)), kind, data, ...(tex ? {tex} : {})});

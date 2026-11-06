@@ -66,6 +66,13 @@ test('La descarga VTT usa los tiempos del audio cuando se aporta su línea tempo
   assert.match(buildVtt(animation), /00:00:02.000 --> 00:00:05.000/);
 });
 
+test('La narración de varianza distingue desviaciones con signo de distancias', () => {
+  const lecture = fullLectures().find(item=>item.id==='varianza');
+  assert.match(lecture.steps[0].caption,/desviaciones son menos uno, cero y uno/);
+  assert.match(lecture.steps[0].caption,/promediáramos con sus probabilidades/);
+  assert.doesNotMatch(lecture.steps[0].caption,/distancias son menos uno/);
+});
+
 test('36 clases tienen un relato propio, ejemplos conectados y soluciones completas de su nivel', () => {
   const lessons = COURSE.units.flatMap(unit=>unit.lessons);
   for (const [index,lecture] of fullLectures().entries()) {
@@ -73,7 +80,7 @@ test('36 clases tienen un relato propio, ejemplos conectados y soluciones comple
     const script = lecture.steps.map(step=>step.caption).join('\n');
     assert.equal(lecture.id,current.id);
     assert.ok(lecture.steps.length>4,current.id);
-    assert.doesNotMatch(script,/undefined|\[object Object\]/);
+    assert.doesNotMatch(script,/undefined|\[object Object\]|\b(?:NaN|TODO|FIXME|jStat)\b|\\(?:frac|begin|operatorname|text)\b|<\/?(?:p|div|span|script)\b/);
     assert.ok(lecture.steps.slice(0,2).every(step=>step.story && step.caption.split(/\s+/).length>65),current.id);
     assert.ok(!script.startsWith(current.objectives.join(' ')));
     assert.ok(script.includes(current.check.explanation));
