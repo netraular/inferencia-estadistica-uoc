@@ -35,6 +35,23 @@ test('Los elementos se revelan con la frase que los presenta y desaparecen al re
   assert.ok(step.cues.every(cue=>cue.end>cue.start));
 });
 
+test('las frases completas conservan decimales, preguntas y el texto hablado aunque superen 26 palabras', () => {
+  const long = 'Cuando comparamos dos grupos de semillas necesitamos conocer tanto las que han germinado como todas las que habíamos sembrado, porque contar solo los éxitos no permite comparar ensayos de distinto tamaño.';
+  const decimal = 'La proporción es 0,25 y contamos 1.000 semillas.';
+  const step = storyScene('Frases completas','Ejemplo',[
+    {say:`${long} ${decimal}`,show:[{label:'Total',value:'1.000'}]},
+    {say:'¿Podemos compararlas? Sí, porque usamos el mismo total.',show:[{label:'Comparación',value:'Mismo total'}]}
+  ]);
+  assert.ok(long.split(/\s+/).length>26);
+  assert.deepEqual(step.cues.map(cue=>cue.text),[long,decimal,'¿Podemos compararlas?','Sí, porque usamos el mismo total.']);
+  assert.equal(step.cues.map(cue=>cue.text).join(' '),step.caption);
+  assert.deepEqual(step.visual.lines.map(line=>line.cue),[0,2]);
+  const factorial = 'El recuento es n!/(n-r)! = 7!/4! = 210.';
+  const coefficient = 'Coeficiente n!/(x_A!x_B!x_C!); Γ(m+1)=m!, incluido 0!=1.';
+  const calculation = storyScene('Factoriales','Ejemplo',[{say:`${factorial} ${coefficient} ¿Está claro?`}]);
+  assert.deepEqual(calculation.cues.map(cue=>cue.text),[factorial,coefficient,'¿Está claro?']);
+});
+
 test('La descarga VTT usa los tiempos del audio cuando se aporta su línea temporal', () => {
   const animation = {kind:'lecture', steps:[
     {caption:'Uno.', duration:2, cues:[{text:'Uno.', start:0, end:2}]},
@@ -73,7 +90,7 @@ test('36 clases tienen un relato propio, ejemplos conectados y soluciones comple
       close(step.cues[0].start,0);
       close(step.cues.at(-1).end,step.duration);
       for (const [cueIndex,cue] of step.cues.entries()) {
-        assert.ok(cue.text.split(/\s+/).length<=26);
+        assert.equal(cue.text,cue.text.trim());
         assert.ok(cue.end>cue.start);
         if (cueIndex) close(cue.start,step.cues[cueIndex-1].end);
       }
@@ -866,7 +883,7 @@ test('manual play, pause, speed, seek, boundaries, reset and completion', () => 
   const position = dom.byLabel('Escena actual y total');
   assert.equal(dom.frames.size, 0);
   assert.equal(pause.disabled, true);
-  assert.equal(dom.byLabel('Escena anterior').disabled, true);
+  assert.equal(dom.byLabel('Frase anterior').disabled, true);
   assert.equal(seek.max, '4');
   play.click();
   play.click();
@@ -891,9 +908,9 @@ test('manual play, pause, speed, seek, boundaries, reset and completion', () => 
   dom.advance(2500);
   pause.click();
   assert.equal(dom.byLabel('Tiempo de la lección').textContent, `${clockText(sum(durations.slice(0, 3)) + 5)} / ${clockText(total)}`);
-  dom.byLabel('Escena anterior').click();
+  dom.byLabel('Frase anterior').click();
   assert.equal(seek.value, '2');
-  dom.byLabel('Escena siguiente').click();
+  dom.byLabel('Frase siguiente').click();
   assert.equal(seek.value, '3');
   dom.byLabel('Reiniciar').click();
   assert.equal(seek.value, '0');
@@ -904,7 +921,7 @@ test('manual play, pause, speed, seek, boundaries, reset and completion', () => 
   assert.equal(dom.byLabel('Tiempo de la lección').textContent, `${clockText(total)} / ${clockText(total)}`);
   assert.equal(dom.frames.size, 0);
   assert.equal(pause.disabled, true);
-  assert.equal(dom.byLabel('Escena siguiente').disabled, true);
+  assert.equal(dom.byLabel('Frase siguiente').disabled, true);
   play.click();
   assert.equal(seek.value, '0');
   assert.equal(dom.frames.size, 1);
@@ -1189,6 +1206,48 @@ const measuredAudio = animation => {
   return {src:'/curso/audio/leccion.mp3',duration:offset+0.4,scenes};
 };
 
+test('anterior y siguiente recorren frases completas entre escenas, con y sin audio', () => {
+  const lecture = fullLectures()[0];
+  for (const measured of [false,true]) {
+    const audio = measured ? measuredAudio(lecture) : undefined;
+    const dom = fakeDom();
+    const cleanup = mountAnimation(dom.container,lecture,{audio});
+    const seek = dom.byLabel('Tiempo de reproducción');
+    const next = dom.byLabel('Frase siguiente');
+    const back = dom.byLabel('Frase anterior');
+    const cues = dom.created.find(node=>node.className==='animation-cues');
+    let offset = 0;
+    const targets = lecture.steps.flatMap((step,sceneIndex)=>{
+      const start = offset;
+      offset += step.duration;
+      return step.cues.map((cue,cueIndex)=>({sceneIndex,cueIndex,text:cue.text,start:audio ? audio.scenes[sceneIndex].cues[cueIndex].start : start+cue.start}));
+    });
+    assert.equal(back.disabled,true);
+    assert.equal(next.disabled,false);
+    const check = target=>{
+      close(Number(seek.value),target.start);
+      assert.equal(dom.byLabel('Seleccionar escena').value,String(target.sceneIndex));
+      assert.equal(cues.children[target.cueIndex].attributes['aria-current'],'true');
+      assert.equal(cues.children[target.cueIndex].children[0].textContent,target.text);
+    };
+    for (const target of targets.slice(1)) { next.click(); check(target); }
+    assert.equal(next.disabled,true);
+    assert.equal(back.disabled,false);
+    for (const target of targets.slice(0,-1).reverse()) { back.click(); check(target); }
+    assert.equal(back.disabled,true);
+    assert.equal(next.disabled,false);
+    assert.equal(dom.frames.size,0);
+    dom.byLabel('Reproducir').click();
+    if (audio) dom.byTag('audio').currentTime = targets[2].start+0.1;
+    else dom.advance(1000);
+    next.click();
+    check(targets[audio ? 3 : 1]);
+    assert.equal(dom.frames.size,1);
+    cleanup();
+    dom.cleanupCheck();
+  }
+});
+
 test('36 pizarras conservan datos pertinentes y todos los cues fuera del escenario', () => {
   const lectures = fullLectures();
   assert.equal(lectures.length,36);
@@ -1376,10 +1435,10 @@ test('audio medido: reloj maestro global, cues, seek, velocidad, pausa, fin y re
   const speed = dom.byLabel('Velocidad de reproducción');
   speed.value='1.5'; speed.dispatch('change');
   close(media.playbackRate,1.5);
-  dom.byLabel('Escena siguiente').click();
+  dom.byLabel('Frase siguiente').click();
   close(media.currentTime,audio.scenes[2].start);
-  dom.byLabel('Escena anterior').click();
-  close(media.currentTime,audio.scenes[1].start);
+  dom.byLabel('Frase anterior').click();
+  close(media.currentTime,audio.scenes[1].cues.at(-1).start);
   dom.byLabel('Pausar').click();
   assert.equal(media.paused,true);
   assert.equal(dom.frames.size,0);

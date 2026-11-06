@@ -1,7 +1,7 @@
 import {COURSE} from './course.js?v=334606496f0b';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=5612f67797c5';
 import {notationHtml} from './teaching.js?v=251983817529';
-import {createLessonAnimation, mountAnimation} from './animations.js?v=9d5d2debce13';
+import {createLessonAnimation, mountAnimation} from './animations.js?v=3ee24ce6937f';
 import {mountLab} from './labs.js?v=03403da19f18';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 

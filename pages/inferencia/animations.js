@@ -1,4 +1,4 @@
-import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=d8e63f82b934';
+import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=7b3e18dde5c6';
 
 const COLORS = ['#0369a1', '#15803d', '#be123c', '#b45309'];
 const scene = (title, caption, kind, data, tex, duration = 10) => ({title, caption, duration: Math.max(duration, Math.ceil(caption.split(/\s+/).length / 2.5)), kind, data, ...(tex ? {tex} : {})});
@@ -893,7 +893,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const media = element('div','lecture-media');
   const narration = element('div','lecture-narration');
   const cueList = element('p','animation-cues');
-  cueList.setAttribute('aria-label','Fragmentos de la escena');
+  cueList.setAttribute('aria-label','Frases de la escena');
   listen(cueList,'keydown',event=>{
     const cueIndex=cueNodes.findIndex(row=>row.children[0]===event.target);
     if (cueIndex>=0 && (event.key==='Enter' || event.key===' ')) {
@@ -910,12 +910,12 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const controls = element('div', 'animation-controls');
   controls.setAttribute('role', 'group');
   controls.setAttribute('aria-label', 'Reproducción de la lección');
-  const back = button('step-back', 'Escena anterior', () => goTo(index - 1));
+  const back = button('step-back', 'Frase anterior', () => movePhrase(-1));
   const play = button('play', 'Reproducir', start);
   const pause = button('pause', 'Pausar', stop);
   play.className += ' animation-primary';
   pause.className += ' animation-primary';
-  const next = button('step-forward', 'Escena siguiente', () => goTo(index + 1));
+  const next = button('step-forward', 'Frase siguiente', () => movePhrase(1));
   const reset = button('rotate-ccw', 'Reiniciar', () => { stop(); goTo(0); });
   const expand = button('maximize','Ampliar clase', toggleFullscreen);
   const minimizeIcon = icon('minimize');
@@ -1128,8 +1128,8 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
 
   function syncControls() {
     const active = focusedElement();
-    back.disabled = index === 0;
-    next.disabled = index === animation.steps.length - 1;
+    back.disabled = !phraseTarget(-1);
+    next.disabled = !phraseTarget(1);
     play.disabled = running;
     pause.disabled = !running;
     play.hidden = running;
@@ -1209,7 +1209,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
       const jump = element('span','cue-jump',cue.text);
       jump.tabIndex = 0;
       jump.setAttribute('role','button');
-      jump.title = `Ir al fragmento ${cueIndex+1}`;
+      jump.title = `Ir a la frase ${cueIndex+1}`;
       jump.setAttribute('aria-label',`${jump.title}: ${cue.text}`);
       jump.onclick = () => { if (!disposed) seekTo(scenes()[index].cues[cueIndex].start); };
       row.append(jump,element('span','',' '));
@@ -1274,6 +1274,20 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   function goTo(requestedIndex) {
     if (disposed || !Number.isInteger(requestedIndex) || requestedIndex < 0 || requestedIndex >= animation.steps.length) return;
     seekTo(scenes()[requestedIndex].start);
+  }
+
+  function phraseTarget(direction) {
+    const cue = scenes()[index].cues[lastCue+direction];
+    if (cue) return cue;
+    const adjacent = scenes()[index+direction]?.cues;
+    return direction > 0 ? adjacent?.[0] : adjacent?.at(-1);
+  }
+
+  function movePhrase(direction) {
+    if (disposed) return;
+    if (running) advance(now());
+    const target = phraseTarget(direction);
+    if (target) seekTo(target.start);
   }
 
   function setPosition(seconds) {

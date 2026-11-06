@@ -1,3 +1,5 @@
+const sentenceSegmenter = new Intl.Segmenter('es', {granularity:'sentence'});
+
 export function storyScene(title, chapter, beats) {
   if (!beats?.length) throw new TypeError('Una escena necesita una explicación.');
   const cues = [];
@@ -6,9 +8,16 @@ export function storyScene(title, chapter, beats) {
   for (const beat of beats) {
     if (!beat.say?.trim()) throw new TypeError('Cada paso necesita una frase hablada.');
     const cue = cues.length;
-    const words = beat.say.trim().split(/\s+/);
-    for (let offset=0;offset<words.length;offset+=26) {
-      const text = words.slice(offset,offset+26).join(' ');
+    const speech = beat.say.trim();
+    const sentenceInput = speech.replace(/!(?=\s*[/=+*-])/g, ',');
+    const phrases = [];
+    for (const item of Array.from(sentenceSegmenter.segment(sentenceInput))) {
+      const part = speech.slice(item.index,item.index+item.segment.length);
+      if (phrases.length && !/\s$/.test(phrases.at(-1))) phrases[phrases.length-1] += part;
+      else phrases.push(part);
+    }
+    for (const phrase of phrases) {
+      const text = phrase.trim();
       const duration = Math.max(2,text.split(/\s+/).length/2.5+0.6);
       cues.push({text,start:time,end:time+duration});
       time += duration;
