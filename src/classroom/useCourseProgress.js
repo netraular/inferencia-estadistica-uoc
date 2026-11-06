@@ -3,15 +3,40 @@ import {COURSE} from '../../pages/inferencia/course.js';
 import {STORAGE_KEY, PROGRESS_EVENT, freshProgress, loadProgress, saveProgress} from '../../pages/inferencia/progress.js';
 
 const unavailable = 'Este navegador no permite guardar el progreso. Los cambios no se conservaran al salir.';
+let sessionProgress = null;
+let pendingSave = false;
+const pendingStudied = new Map();
 
 function readProgress() {
-  try {return loadProgress(window.localStorage, COURSE);}
-  catch {return {progress:freshProgress(COURSE), warning:unavailable};}
+  let loaded;
+  try {loaded = loadProgress(window.localStorage, COURSE);}
+  catch {loaded = {progress:freshProgress(COURSE), warning:unavailable};}
+  if (pendingSave && sessionProgress && !loaded.warning) {
+    const studied = new Set(loaded.progress.studied);
+    pendingStudied.forEach((marked, lessonId) => {
+      if (marked) studied.add(lessonId);
+      else studied.delete(lessonId);
+    });
+    sessionProgress = {...loaded.progress, studied:Array.from(studied), lastLesson:sessionProgress.lastLesson};
+    return {progress:sessionProgress, warning:unavailable};
+  }
+  if ((loaded.warning || pendingSave) && sessionProgress) return {progress:sessionProgress, warning:unavailable};
+  sessionProgress = loaded.progress;
+  return loaded;
 }
 
 function storeProgress(progress) {
-  try {return saveProgress(window.localStorage, progress);}
-  catch {return false;}
+  sessionProgress = progress;
+  pendingSave = false;
+  try {
+    const saved = saveProgress(window.localStorage, progress);
+    pendingSave = !saved;
+    if (saved) pendingStudied.clear();
+    return saved;
+  } catch {
+    pendingSave = true;
+    return false;
+  }
 }
 
 export default function useCourseProgress(lessonId) {
@@ -42,9 +67,9 @@ export default function useCourseProgress(lessonId) {
   }, [lessonId]);
   const setStudied = studied => {
     if (!lessonId) return;
-    const next = readProgress().progress;
-    next.lastLesson = lessonId;
-    next.studied = studied ? Array.from(new Set([...next.studied, lessonId])) : next.studied.filter(id => id !== lessonId);
+    const current = readProgress().progress;
+    const next = {...current, lastLesson:lessonId, studied:studied ? Array.from(new Set([...current.studied, lessonId])) : current.studied.filter(id => id !== lessonId)};
+    pendingStudied.set(lessonId, Boolean(studied));
     const saved = storeProgress(next);
     setProgress(next);
     setWarning(saved ? '' : unavailable);

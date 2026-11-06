@@ -209,7 +209,12 @@ test('lesson and home progress preserve activity results and follow saves across
   const source = readFileSync(new URL('../src/classroom/useCourseProgress.js', import.meta.url), 'utf8');
   const ast = babel.parseSync(source, {sourceType:'module', babelrc:false, configFile:false});
   ast.program.body = ast.program.body.flatMap(node => node.type === 'ImportDeclaration' ? [] : node.type === 'ExportDefaultDeclaration' ? [node.declaration] : [node]);
-  const compiled = babel.transformFromAstSync(ast, source, {babelrc:false, configFile:false}).code;
+  const compiled = babel.transformFromAstSync(ast, source, {
+    filename:'useCourseProgress.js',
+    babelrc:false,
+    configFile:false,
+    presets:[require.resolve('@docusaurus/core/lib/babel/preset')]
+  }).code;
   const values = new Map();
   let writes = 0;
   const storage = {getItem:key => values.get(key), setItem:(key, value) => {writes++; values.set(key, value);}};
@@ -257,11 +262,83 @@ test('lesson and home progress preserve activity results and follow saves across
     assert.ok(states[0].studied.includes('proporciones'));
     assert.equal(states[0].lastLesson, 'bayes-diagnostico');
     cleanup();
-    Object.defineProperty(window, 'localStorage', {get() {throw new Error('Blocked');}});
+    for (const current of lessons) {
+      cursor = 0;
+      states = [];
+      const selected = useCourseProgress(current.id);
+      selected.setStudied(true);
+      selected.setStudied(true);
+      assert.equal(states[0].studied.filter(id=>id===current.id).length,1,current.id);
+      assert.equal(progressSummary(states[0]).checks,1,current.id);
+      assert.equal(progressSummary(states[0]).independent,1,current.id);
+      assert.equal(loadProgress(storage,COURSE).progress.lastLesson,current.id);
+      cleanup();
+    }
+    assert.equal(loadProgress(storage,COURSE).progress.studied.length,36);
     cursor = 0;
     states = [];
-    assert.doesNotThrow(() => useCourseProgress('proporciones'));
+    useCourseProgress();
+    assert.equal(progressSummary(states[0]).studied,36);
+    cleanup();
+    Object.defineProperty(window, 'localStorage', {configurable:true,get() {throw new Error('Blocked');}});
+    cursor = 0;
+    states = [];
+    let blocked;
+    assert.doesNotThrow(() => {blocked = useCourseProgress('proporciones');});
     assert.match(states[1], /no permite guardar/);
+    const beforeMark = states[0];
+    blocked.setStudied(false);
+    assert.notEqual(states[0],beforeMark,'React necesita un estado nuevo para actualizar la marca');
+    assert.ok(beforeMark.studied.includes('proporciones'),'El estado anterior no debe mutarse');
+    window.dispatchEvent(new Event('focus'));
+    assert.equal(states[0].studied.includes('proporciones'),false);
+    assert.equal(progressSummary(states[0]).studied,35);
+    blocked.setStudied(true);
+    assert.ok(states[0].studied.includes('proporciones'));
+    window.dispatchEvent(new Event('focus'));
+    assert.ok(states[0].studied.includes('proporciones'), 'El foco no debe borrar una marca que sigue en la sesión');
+    assert.match(states[1], /no permite guardar/);
+    cleanup();
+    cursor = 0;
+    states = [];
+    useCourseProgress();
+    assert.equal(progressSummary(states[0]).studied,36,'El inicio debe conservar las marcas de sesión');
+    cleanup();
+    cursor = 0;
+    states = [];
+    const blockedLesson = useCourseProgress('sucesos');
+    blockedLesson.setStudied(false);
+    assert.equal(progressSummary(states[0]).studied,35);
+    cleanup();
+    const quotaStorage = {getItem:key=>values.get(key),setItem(){throw new Error('QuotaExceededError');}};
+    Object.defineProperty(window,'localStorage',{configurable:true,value:quotaStorage});
+    cursor = 0;
+    states = [];
+    const quotaLesson = useCourseProgress('normal');
+    assert.equal(states[0].studied.includes('sucesos'),false,'Una escritura fallida no debe recuperar datos antiguos');
+    quotaLesson.setStudied(false);
+    window.dispatchEvent(new Event('focus'));
+    assert.equal(progressSummary(states[0]).studied,34);
+    assert.match(states[1],/no permite guardar/);
+    const newerActivity = loadProgress(storage,COURSE).progress;
+    newerActivity.checks.normal = true;
+    newerActivity.attempts['events-1/union'].count = 2;
+    newerActivity.studied = newerActivity.studied.filter(id=>id!=='algebra');
+    saveProgress(storage,newerActivity);
+    assert.equal(progressSummary(states[0]).checks,2,'Las marcas pendientes no deben ocultar comprobaciones nuevas');
+    assert.equal(progressSummary(states[0]).attempts,2);
+    assert.equal(states[0].studied.includes('sucesos'),false,'Se conserva la marca pendiente');
+    assert.equal(states[0].studied.includes('algebra'),false,'Se conserva la modificación de la otra vista');
+    Object.defineProperty(window,'localStorage',{configurable:true,value:storage});
+    quotaLesson.setStudied(true);
+    const recovered = loadProgress(storage,COURSE).progress;
+    assert.equal(recovered.studied.length,34);
+    assert.equal(recovered.studied.includes('sucesos'),false);
+    assert.equal(recovered.studied.includes('algebra'),false);
+    assert.equal(progressSummary(recovered).checks,2);
+    assert.equal(progressSummary(recovered).attempts,2);
+    assert.equal(progressSummary(recovered).independent,1);
+    assert.equal(states[1],'');
   } finally {
     cleanup?.();
     if (previous === undefined) delete globalThis.window;

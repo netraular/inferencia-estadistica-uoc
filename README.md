@@ -24,6 +24,10 @@ https://webs.raular.com/inferencia/ from the `main` branch.
   There are no import, export or reset controls. No account or cross-device
   synchronization is provided. Existing progress stays compatible on the same
   `webs.raular.com` origin. The former `/progreso/` route redirects home.
+- When browser storage is blocked or full, study marks stay in memory during
+  the current page session, including navigation between lessons and home.
+  A warning explains that they will not survive reloading or closing the page.
+  A later successful save preserves pending marks and existing activity results.
 
 The original explanations, formulas, source references and exercise engines live
 under `pages/inferencia/`. `scripts/generate-docs.mjs` produces the MDX lessons
