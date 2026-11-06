@@ -76,7 +76,10 @@ test('36 MDX pages preserve theory, formulas, method, solved examples and intera
     for (const section of lesson.sections) assert.ok(text.includes(section.body), lesson.id);
     for (const step of lesson.method) assert.ok(text.includes(step), lesson.id);
     for (const formula of lesson.formulas) assert.ok(text.includes(JSON.stringify(formula.tex)), lesson.id);
-    assert.ok(text.includes(`<InteractiveLesson lessonId="${lesson.id}" />`), lesson.id);
+    assert.ok(text.includes(`<LessonContent lessonId="${lesson.id}">`), lesson.id);
+    assert.ok(text.indexOf('<LessonContent ') < text.indexOf('## Al terminar esta leccion'), lesson.id);
+    assert.ok(text.trimEnd().endsWith('</LessonContent>'), lesson.id);
+    assert.ok(!text.includes('<InteractiveLesson '), lesson.id);
     assert.ok(text.includes('Ejemplo resuelto con el metodo'), lesson.id);
   }
   assert.equal(lessons.length, 36);
@@ -117,6 +120,14 @@ test('embedded classroom keeps routing and titles isolated and retains progress 
     assert.equal(JSON.parse(values.get(STORAGE_KEY)).lastLesson, 'bayes-diagnostico');
   } finally {mounted.dispose();}
   assert.equal(document.getElementById('host').shadowRoot.childNodes.length, 0);
+  for (const view of ['theory', 'lab', 'practice', 'animation']) {
+    const selected = mountEmbeddedClassroom(document.getElementById('host'), {shell, baseUrl:'/inferencia/', lessonId:'bayes-diagnostico', storage, view, showNavigation:false});
+    try {
+      assert.equal(selected.root.getElementById(`panel-${view}`).hidden, false, view);
+      assert.equal(selected.root.getElementById('lessonTabs').style.display, 'none');
+      assert.equal(document.title, 'Docusaurus lesson');
+    } finally {selected.dispose();}
+  }
 });
 
 test('public assets exclude original PDFs and executable vendor copies', () => {

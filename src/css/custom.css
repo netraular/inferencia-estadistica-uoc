@@ -8,5 +8,9 @@ h1{font-size:2rem}h2{font-size:1.55rem}h3{font-size:1.25rem}
 .course-formula{padding:1rem 0;border-top:1px solid #dae3df;min-width:0}.course-formula>div{overflow-x:auto;overflow-y:hidden}.course-formula p{font-size:.9rem;color:#63716c}.course-formula .katex-display{text-align:left}.course-formula .katex-display>.katex{text-align:left}
 .course-reference{font-size:.8rem;color:#63716c;border-top:1px solid #dae3df;padding-top:1rem}
 .course-warning{border-left:3px solid #a93458;padding-left:1rem}
+.lesson-navigation{flex-wrap:wrap;gap:0;overflow:visible;margin-bottom:1.5rem;border-bottom:1px solid #dae3df}
+.lesson-navigation .tabs__item{display:flex;align-items:center;gap:8px;white-space:normal;min-width:0;padding:12px 14px;font-size:.95rem}
+.lesson-navigation .tabs__item svg{flex-shrink:0}
+.row:has(.lesson-navigation [aria-selected="true"]:not([data-lesson-view="lesson"])) :is(.theme-doc-toc-desktop,.theme-doc-toc-mobile){display:none}
 .progress-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;padding:20px 0;border-block:1px solid #dae3df}.progress-metrics dt{font-size:.85rem;color:#63716c}.progress-metrics dd{margin:0;font-size:1.6rem;color:#117568}.progress-actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.progress-actions button{display:inline-flex;align-items:center;gap:8px}
 @media print{.navbar,.theme-doc-sidebar-container,.theme-doc-toc-desktop,.pagination-nav,.footer,.course-activities{display:none!important}.main-wrapper{display:block}}

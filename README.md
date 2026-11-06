@@ -10,6 +10,9 @@ It is not an official UOC website.
 - Prerendered theory, heading links, a table of contents and local full-text search.
 - 17 visual laboratories, 29 seeded exercise generators and 36 animated classes.
 - Concept checks, hints, worked solutions, subtitles, transcripts and downloads.
+- Each lesson starts with tabs for theory, concept checks, laboratory, exercises
+  and animated reading. The selected activity is linkable with `?actividad=...`;
+  only the selected activity is mounted, with no duplicate internal navigation.
 - Browser-local progress with compatible JSON import/export. The public origin
   remains `webs.raular.com`, preserving progress from the former classroom.
 

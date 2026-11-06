@@ -29,7 +29,7 @@ export function scopedDocument(owner, root) {
   });
 }
 
-export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage, view = 'lab'}) {
+export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage, view = 'lab', showNavigation = true}) {
   const owner = host.ownerDocument;
   const root = host.shadowRoot || host.attachShadow({mode: 'open'});
   const parsed = new owner.defaultView.DOMParser().parseFromString(shell, 'text/html');
@@ -50,6 +50,7 @@ export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage,
   const options = {location, history, manageHistory: false, renderIcons:() => renderScopedIcons(root, owner.defaultView.lucide)};
   if (storage !== undefined) options.storage = storage;
   const aula = mountAula(scopedDocument(owner, root), options);
+  if (!showNavigation) root.getElementById('lessonTabs').style.setProperty('display', 'none', 'important');
   root.getElementById('tab-theory').lastChild.textContent = 'Comprueba la idea';
   const utilities = owner.createElement('div');
   utilities.className = 'embedded-utilities';

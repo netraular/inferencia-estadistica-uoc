@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import shell from '../generated/aula-shell.json';
 
-export default function InteractiveLesson({lessonId}) {
+export default function InteractiveLesson({lessonId, view = 'lab'}) {
   const host = useRef(null);
   const [error, setError] = useState('');
   const [ready, setReady] = useState(false);
@@ -22,13 +22,11 @@ export default function InteractiveLesson({lessonId}) {
       globalThis.jStat = stats.default?.jStat || stats.jStat || stats.default;
       window.katex = math.default || math;
       window.lucide = icons.default || icons;
-      const requested = new URLSearchParams(window.location.search).get('actividad');
-      const view = ['theory', 'lab', 'practice', 'animation'].includes(requested) ? requested : 'lab';
-      mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view});
+      mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false});
       setReady(true);
     }).catch(failure => {if (active) setError(failure.message);});
     return () => {active = false; mounted?.dispose();};
-  }, [lessonId, baseUrl]);
+  }, [lessonId, baseUrl, view]);
   return <section className="course-activities" aria-label="Actividades de la leccion">
     {!ready && !error && <p role="status">Cargando actividades...</p>}
     {error && <p role="alert">No se pudieron cargar las actividades: {error}. Recarga la pagina para reintentarlo.</p>}
