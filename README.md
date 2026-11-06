@@ -39,9 +39,13 @@ Every lesson begins with a concrete question and two short explanatory sections
 using biology examples before presenting the formulas. Each formula has a verbal
 reading; the shared vocabulary in `pages/inferencia/teaching.js` explains the
 symbols, their meaning and an example both locally and in the searchable glossary.
-The original formal material remains available in a separate depth disclosure.
+Definitions and conditions from the source topics remain in the main reading,
+after the intuitive introduction and notation. Only explicitly additional
+material is labelled as an optional extension, rather than hiding required
+theory under a generic depth disclosure.
 
-Guided practice selects only questions appropriate to the lesson. The complete
+Guided practice selects only questions appropriate to the lesson and starts with
+different data from the solved example, skipping duplicate seeded variants. The complete
 exercise bank keeps the full generators. Seven additional generators cover
 proportions, normalization, function values, plane regions, event independence,
 discrete cumulative tables and basic joint tables. The bridge laboratories offer

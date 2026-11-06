@@ -233,7 +233,7 @@ export const COURSE = {
           objectives: ['Distinguir momentos ordinarios, centrales y estandarizados.', 'Transformar una acumulada con atención a desigualdades y soporte.'],
           sections: [
             { title: 'Qué resumen conserva cada momento', body: '<p>El momento ordinario de orden uno es la esperanza; el de orden dos promedia cuadrados. Los momentos centrales usan desviaciones respecto a la media: el primero es cero y el segundo es la varianza. Para comparar formas sin unidades se pueden estandarizar momentos dividiendo por potencias de la desviación típica positiva.</p><p>Como ampliación de la definición general de momentos, el tercer momento estandarizado ayuda a describir asimetría y el cuarto, la importancia de las colas. No son sustitutos de una distribución completa ni existen necesariamente. Simetría no garantiza una media finita; valores extremos poco frecuentes pueden hacer divergir integrales que parecen razonables en una muestra pequeña.</p>' },
-            { title: 'Cambiar la variable cambia su distribución', body: '<p>La transformación de distribuciones se introduce aquí como apoyo adicional para los ejercicios. Para una transformación creciente, se traduce el umbral mediante la función inversa. Si la transformación decrece, la desigualdad se invierte. Si no es monótona, un mismo valor transformado puede proceder de varias regiones, como sucede al elevar al cuadrado.</p><p>Para obtener una densidad transformada, el cambio de anchura requiere un factor jacobiano. No basta con sustituir el nombre de la variable en la densidad original. Aun sin derivar la densidad, la esperanza de la transformación puede calcularse con la regla de la lección anterior. Empieza siempre por determinar el nuevo soporte.</p>' }
+            { title: 'Cambiar la variable cambia su distribución', optional: true, body: '<p>La transformación de distribuciones se introduce aquí como apoyo adicional para los ejercicios. Para una transformación creciente, se traduce el umbral mediante la función inversa. Si la transformación decrece, la desigualdad se invierte. Si no es monótona, un mismo valor transformado puede proceder de varias regiones, como sucede al elevar al cuadrado.</p><p>Para obtener una densidad transformada, el cambio de anchura requiere un factor jacobiano. No basta con sustituir el nombre de la variable en la densidad original. Aun sin derivar la densidad, la esperanza de la transformación puede calcularse con la regla de la lección anterior. Empieza siempre por determinar el nuevo soporte.</p>' }
           ],
           formulas: [{ tex: String.raw`m_k=E[X^k],\qquad \mu_k=E[(X-E[X])^k]`, meaning: 'Los momentos ordinarios y centrales ponderan potencias distintas; se comprueba su existencia.' }, { tex: String.raw`F_Y(y)=F_X(g^{-1}(y)),\qquad f_Y(y)=f_X(g^{-1}(y))\left|\frac{d}{dy}g^{-1}(y)\right|`, meaning: 'La primera igualdad supone g creciente; la segunda vale para un cambio diferenciable e invertible en el soporte.' }],
           example: { title: 'Área a partir de una longitud normalizada', body: '<p>Sea X uniforme entre cero y uno y sea Y el cuadrado de X. Para un umbral y entre cero y uno, Y no supera y cuando X no supera su raíz. La acumulada de Y es la raíz de y, no y. Su esperanza es la integral de x al cuadrado entre cero y uno, que vale un tercio; el cuadrado de la media de X vale un cuarto.</p>' },
@@ -998,7 +998,7 @@ const SCOPED_QUESTIONS = {
   'independencia-variables':{independence:['factorization-gap']}
 };
 
-const FORMAL_FORMULAS = {sucesos:[1], axiomas:[1], 'independencia-sucesos':[1], 'variable-cdf':[0], 'regiones-matrices':[1], multinomial:[1]};
+const FORMAL_FORMULAS = {'momentos-transformaciones':[1]};
 
 for (const unit of COURSE.units) {
   for (const lesson of unit.lessons) {
@@ -1008,9 +1008,9 @@ for (const unit of COURSE.units) {
     if (!guide || guide.readings.length !== lesson.formulas.length) throw new Error(`Guía incompleta: ${lesson.id}.`);
     lesson.notation = notationFor(lesson.id);
     lesson.sections = [
-      {title:guide.question, body:guide.paragraphs.slice(0,2).map(text => `<p>${text}</p>`).join('')},
-      {title:'Hacer la cuenta y entender el resultado', body:guide.paragraphs.slice(2).map(text => `<p>${text}</p>`).join('')},
-      ...lesson.sections.map(section => ({...section, optional:true}))
+      {title:guide.question, introductory:true, body:guide.paragraphs.slice(0,2).map(text => `<p>${text}</p>`).join('')},
+      {title:'Hacer la cuenta y entender el resultado', introductory:true, body:guide.paragraphs.slice(2).map(text => `<p>${text}</p>`).join('')},
+      ...lesson.sections.map(section => ({...section, optional:section.optional || false}))
     ];
     lesson.formulas = lesson.formulas.map((formula,index) => ({...formula, reading:guide.readings[index], optional:FORMAL_FORMULAS[lesson.id]?.includes(index) || false}));
     if (PRACTICE[lesson.id]) lesson.exerciseTypes = PRACTICE[lesson.id];

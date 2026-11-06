@@ -1,4 +1,4 @@
-import {COURSE} from './course.js?v=334606496f0b';
+import {COURSE} from './course.js?v=7ff36b4e8038';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=5612f67797c5';
 import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=3ee24ce6937f';
@@ -113,7 +113,7 @@ export function mountAula(document, environment = {}) {
   function renderTheory() {
     const original = lesson();
     const current = {...original,
-      sections:[...original.sections.filter(section => !section.optional), {title:'Palabras y símbolos de esta lección', body:notationHtml(original.id)}],
+      sections:[...original.sections.filter(section => section.introductory), {title:'Palabras y símbolos de esta lección', body:notationHtml(original.id)}, ...original.sections.filter(section => !section.introductory && !section.optional)],
       formulas:original.formulas.filter(formula => !formula.optional).map(formula => ({...formula, meaning:`Se lee: ${formula.reading} ${formula.meaning}`}))
     };
     const check = current.check;
@@ -128,10 +128,12 @@ export function mountAula(document, environment = {}) {
     example.className = 'worked-example';
     example.innerHTML = `<h2>Ejemplo resuelto con el método</h2><p>${escapeHtml(worked.prompt)}</p><h3>Datos y supuestos</h3><ul>${[...worked.given,...worked.assumptions].map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>${worked.questions.map(question => `<details class="solution" open><summary>${escapeHtml(question.prompt)}</summary><ol>${question.steps.map(step => `<li><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol></details>`).join('')}<button type="button" class="text-button" data-open-view="practice"><i data-lucide="shuffle" aria-hidden="true"></i>Practicar una variante</button>`;
     element('panel-theory').querySelector('.example').after(example);
-    const depth = document.createElement('details');
-    depth.className = 'lesson-depth';
-    depth.innerHTML = `<summary>Profundización: definición formal y condiciones</summary>${original.sections.filter(section => section.optional).map(section => `<section><h3>${escapeHtml(section.title)}</h3>${section.body}</section>`).join('')}${original.formulas.filter(formula => formula.optional).map(formula => `<p>Se lee: ${escapeHtml(formula.reading)}</p><div class="math">${math(formula.tex)}</div><p>${escapeHtml(formula.meaning)}</p>`).join('')}`;
-    element('panel-theory').querySelector('.pitfalls').before(depth);
+    if (original.sections.some(section => section.optional) || original.formulas.some(formula => formula.optional)) {
+      const depth = document.createElement('details');
+      depth.className = 'lesson-depth';
+      depth.innerHTML = `<summary>Ampliación opcional</summary>${original.sections.filter(section => section.optional).map(section => `<section><h3>${escapeHtml(section.title)}</h3>${section.body}</section>`).join('')}${original.formulas.filter(formula => formula.optional).map(formula => `<p>Se lee: ${escapeHtml(formula.reading)}</p><div class="math">${math(formula.tex)}</div><p>${escapeHtml(formula.meaning)}</p>`).join('')}`;
+      element('panel-theory').querySelector('.pitfalls').before(depth);
+    }
     const form = element('knowledgeForm');
     form.addEventListener('submit', event => {
       event.preventDefault();

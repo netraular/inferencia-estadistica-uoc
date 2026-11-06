@@ -91,8 +91,9 @@ test('Currículo completo, IDs y asociaciones de cada lección', () => {
 test('Las 36 lecciones explican su notación y gradúan la práctica sin eliminar la profundización', () => {
   for (const lesson of LESSONS) {
     const basic = lesson.sections.filter(section=>!section.optional);
-    assert.equal(basic.length,2,lesson.id);
-    assert.ok(lesson.sections.some(section=>section.optional),lesson.id);
+    assert.equal(lesson.sections.filter(section=>section.introductory).length,2,lesson.id);
+    assert.ok(basic.length>2,lesson.id);
+    assert.equal(lesson.sections.some(section=>section.optional),lesson.id==='momentos-transformaciones',lesson.id);
     assert.ok(lesson.notation.length>=3,lesson.id);
     for (const item of lesson.notation) for (const key of ['symbol','term','reading','definition','example']) assert.ok(item[key]?.length>0,`${lesson.id}: ${key}`);
     for (const formula of lesson.formulas) assert.ok(formula.reading.length>20,lesson.id);
@@ -107,7 +108,18 @@ test('Las 36 lecciones explican su notación y gradúan la práctica sin elimina
   const {document,aula} = harness();
   try {
     assert.ok(document.querySelector('.lesson-notation'));
-    assert.ok(document.querySelector('.lesson-depth'));
+    assert.equal(document.querySelector('.lesson-depth'),null);
+    for (const lesson of LESSONS) {
+      aula.navigate(lesson.id,'theory');
+      const headings = Array.from(document.querySelectorAll('.theory-article h2'));
+      for (const section of lesson.sections.filter(section=>!section.optional)) {
+        const heading = headings.find(node=>node.textContent===section.title);
+        assert.ok(heading,`${lesson.id}: ${section.title}`);
+        assert.equal(heading.closest('details'),null,lesson.id);
+      }
+    }
+    aula.navigate('momentos-transformaciones','theory');
+    assert.match(document.querySelector('.lesson-depth').textContent,/Ampliación opcional/);
     aula.navigate('masa','practice');
     assert.deepEqual(aula.exercise.questions.map(question=>question.id),['normalizer']);
     assert.match(document.querySelector('.exercise-notation').textContent,/Se lee:/);

@@ -273,8 +273,12 @@ test('curriculum generation retains all lesson content and 0..4 links in native 
       assert.ok(mdx.includes(`slug: /lecciones/${lesson.id}`));
       assert.ok(mdx.includes(`<LessonContent lessonId="${lesson.id}">`));
       assert.ok(mdx.includes(`<Notation topic="${lesson.id}" />`),lesson.id);
-      assert.ok(mdx.includes('<details className="lesson-depth">'),lesson.id);
-      assert.ok(mdx.includes('Profundización: definición formal y condiciones'),lesson.id);
+      const hasOptional = lesson.sections.some(section=>section.optional) || lesson.formulas.some(formula=>formula.optional);
+      assert.equal(mdx.includes('<details className="lesson-depth">'),hasOptional,lesson.id);
+      assert.equal(mdx.includes('Ampliación opcional'),hasOptional,lesson.id);
+      const required = mdx.split('<details className="lesson-depth">')[0];
+      for (const section of lesson.sections.filter(section=>!section.optional)) assert.ok(required.includes(section.body),`${lesson.id}: ${section.title}`);
+      for (const formula of lesson.formulas.filter(formula=>!formula.optional)) assert.ok(required.includes(JSON.stringify(formula.tex)),`${lesson.id}: ${formula.tex}`);
       for (const section of lesson.sections) assert.ok(mdx.includes(section.body), lesson.id);
       for (const formula of lesson.formulas) {
         assert.ok(mdx.includes(JSON.stringify(formula.tex)), lesson.id);

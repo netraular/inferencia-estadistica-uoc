@@ -36,13 +36,14 @@ for (const [unitIndex, unit] of COURSE.units.entries()) {
     const workedText = `## Ejemplo resuelto con el metodo\n\n${plainText(worked.prompt)}\n\n### Datos y supuestos\n\n${bullets([...worked.given, ...worked.assumptions].map(plainText))}\n\n${worked.questions.map(question => `### ${plainText(question.prompt)}\n\n${question.steps.map(step => `**${plainText(step.title)}**\n\n${plainText(step.explanation)}${step.tex ? `\n\n${formula(step)}` : ''}`).join('\n\n')}\n\n${plainText(question.interpretation)}`).join('\n\n')}`;
     const complete = text.replace('sidebar_position:', `sidebar_label: ${JSON.stringify(`${unit.number}.${lessonIndex + 1} ${lesson.title}`)}\nsidebar_position:`).replace("import Formula from '@site/src/components/Formula';", `import Formula from '@site/src/components/Formula';\nimport LessonContent from '@site/src/components/LessonContent';\n\n<LessonContent lessonId=${JSON.stringify(lesson.id)}>\n`).replace('## Errores que conviene evitar', `${workedText}\n\n## Errores que conviene evitar`);
     const notation = `## Palabras y símbolos de esta lección\n\n<Notation topic=${JSON.stringify(lesson.id)} />\n\n`;
-    const basicSections = lesson.sections.filter(section => !section.optional).map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
+    const basicSections = lesson.sections.filter(section => section.introductory).map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
+    const development = lesson.sections.filter(section => !section.introductory && !section.optional).map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
     const allSections = lesson.sections.map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
-    const depth = `<details className="lesson-depth">\n<summary>Profundización: definición formal y condiciones</summary>\n\n${lesson.sections.filter(section => section.optional).map(section => `### ${section.title}\n\n${section.body}`).join('\n\n')}\n\n${lesson.formulas.filter(item => item.optional).map(formula).join('\n\n')}\n\n</details>\n\n`;
+    const depth = lesson.sections.some(section => section.optional) || lesson.formulas.some(item => item.optional) ? `<details className="lesson-depth">\n<summary>Ampliación opcional</summary>\n\n${lesson.sections.filter(section => section.optional).map(section => `### ${section.title}\n\n${section.body}`).join('\n\n')}\n\n${lesson.formulas.filter(item => item.optional).map(formula).join('\n\n')}\n\n</details>\n\n` : '';
     const guided = complete
       .replace("import Formula from '@site/src/components/Formula';", "import Formula, {Notation} from '@site/src/components/Formula';")
       .replace(allSections, basicSections)
-      .replace('## La idea en simbolos', `${notation}## La idea en simbolos`)
+      .replace('## La idea en simbolos', `${notation}${development}\n\n## La idea en simbolos`)
       .replace(lesson.formulas.map(formula).join('\n\n'), lesson.formulas.filter(item => !item.optional).map(formula).join('\n\n'))
       .replace('### Datos y supuestos', `<Notation topic=${JSON.stringify(worked.type)} />\n\n### Datos y supuestos`)
       .replace('## Errores que conviene evitar', `${depth}## Errores que conviene evitar`);
