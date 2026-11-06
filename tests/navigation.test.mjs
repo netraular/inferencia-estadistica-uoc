@@ -188,11 +188,7 @@ test('materials group the manifest inventory and encode original download filena
 });
 
 test('navbar registers global symbols and materials and has no general disclaimer footer', () => {
-  const source = readFileSync(new URL('../docusaurus.config.js', import.meta.url), 'utf8');
-  const {code} = babel.transformSync(source, {plugins:['@babel/plugin-transform-modules-commonjs'], babelrc:false, configFile:false});
-  const module = {exports:{}};
-  runInNewContext(code, {module, exports:module.exports});
-  const config = module.exports.default;
+  const config = loadCompiled('../docusaurus.config.js').default;
   assert.equal(config.themeConfig.footer, undefined);
   assert.equal(config.themeConfig.navbar.items.filter(item => item.type === 'custom-symbols').length, 1);
   assert.equal(config.themeConfig.navbar.items.filter(item => item.to === '/materiales/').length, 1);

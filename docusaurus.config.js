@@ -1,3 +1,6 @@
+import webpack from 'webpack';
+import mathjaxPackage from 'mathjax-full/package.json';
+
 export default {
   title: 'Inferencia estadistica',
   tagline: 'Aula de estadistica con ejemplos de biologia',
@@ -14,6 +17,14 @@ export default {
     theme: {customCss: './src/css/custom.css'}
   }]],
   themes: [['@easyops-cn/docusaurus-search-local', {hashed: true, language: ['es'], docsRouteBasePath: '/', indexBlog: false, highlightSearchTermsOnTargetPage: true}]],
+  plugins: [function mathjaxBrowserVersion() {
+    return {
+      name: 'mathjax-browser-version',
+      configureWebpack() {
+        return {plugins: [new webpack.DefinePlugin({PACKAGE_VERSION: JSON.stringify(mathjaxPackage.version)})]};
+      }
+    };
+  }],
   themeConfig: {
     colorMode: {defaultMode: 'light', disableSwitch: true},
     navbar: {

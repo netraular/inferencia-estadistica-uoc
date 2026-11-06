@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseHTML} from 'linkedom';
 import {createRequire} from 'node:module';
-import {readFileSync} from 'node:fs';
+import {readFileSync, mkdtempSync, rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import {runInNewContext} from 'node:vm';
 import Konva from 'konva';
 import {createCanvas} from '@napi-rs/canvas';
@@ -118,6 +120,34 @@ test('production Babel preserves SVG translations and scales from MathJax',()=>{
   assert.equal(result.y,20);
   assert.equal(result.scaleX,2);
   assert.equal(result.scaleY,-2);
+});
+
+test('real webpack configuration loads MathJax version in a browser without require',async()=>{
+  const babel=require('@babel/core');
+  const source=readFileSync(new URL('../docusaurus.config.js',import.meta.url),'utf8');
+  const compiled=babel.transformSync(source,{babelrc:false,configFile:false,plugins:[require.resolve('@babel/plugin-transform-modules-commonjs')]}).code;
+  const configuration={};
+  runInNewContext(compiled,{require,exports:configuration});
+  const plugin=configuration.default.plugins.find(factory=>factory().name==='mathjax-browser-version')();
+  const directory=mkdtempSync(join(tmpdir(),'inferencia-mathjax-browser-'));
+  const webpack=require('webpack');
+  const bundle=async plugins=>{
+    const compiler=webpack({mode:'production',target:'web',entry:require.resolve('mathjax-full/js/components/version.js'),output:{path:directory,filename:'version.js',library:{name:'MathJaxVersion',type:'var'}},plugins});
+    await new Promise((resolve,reject)=>compiler.run((error,stats)=>compiler.close(closeError=>{
+      if(error || closeError || stats?.hasErrors()) reject(error || closeError || new Error(stats.toString({all:false,errors:true})));
+      else resolve();
+    })));
+    return readFileSync(join(directory,'version.js'),'utf8');
+  };
+  try {
+    const broken=await bundle([]);
+    assert.throws(()=>runInNewContext(broken,{}),/require is not defined/);
+    const fixed=await bundle(plugin.configureWebpack().plugins);
+    const browser={};
+    runInNewContext(fixed,browser);
+    assert.equal(browser.MathJaxVersion.VERSION,require('mathjax-full/package.json').version);
+    assert.ok(!fixed.includes('eval("require")'));
+  } finally {rmSync(directory,{recursive:true,force:true});}
 });
 
 test('real Konva canvas draws every scene, fits text at desktop and mobile sizes, seeks reversibly and cleans up',()=>{
