@@ -1,5 +1,28 @@
 # Aula de inferencia estadística
 
+## Estado actual
+
+Repositorio independiente publicado en https://webs.raular.com/inferencia/.
+La documentación operativa está en el [README principal](../../README.md).
+Las instrucciones históricas de alojamiento de este documento ya no se aplican.
+
+Hay 36 lecciones, 118 apartados con audio medido y 521 escenas de lectura global
+sin audio publicado. Todos disponen de una figura contextual desde el inicio y
+revelaciones ligadas a la frase actual. El banco resuelve 22 problemas de los tres
+solucionarios; el tema 5 añade los tres ejercicios completos de la PEC 1,
+con 16 preguntas y visualizaciones adicionales. Los ocho PDF son públicos.
+La [matriz de revisión](coverage-review.md) detalla cobertura, ejemplos y erratas.
+
+Desde la raíz, ejecuta `npm test`, `npm run build` y `npm run audit:security`.
+Tras modificar módulos del aula, ejecuta `node data-src/inferencia-estadistica/version-assets.mjs`.
+El versionador propaga las huellas a los imports del reproductor y del tutor,
+después al aula y al HTML de la fixture; es idempotente.
+
+## Archivo histórico
+
+Lo que sigue describe la versión anterior integrada en simple-webs y sus
+verificaciones de aquella fecha, no el estado ni las comprobaciones actuales.
+
 Página: [aula de inferencia](../../pages/inferencia-estadistica.html).
 Contenido y módulos: [pages/inferencia/](../../pages/inferencia/).
 Fuentes y correspondencia con los apuntes: [inferencia.SOURCES.md](inferencia.SOURCES.md).
@@ -9,11 +32,14 @@ Fuentes y correspondencia con los apuntes: [inferencia.SOURCES.md](inferencia.SO
 - 36 lecciones: puente matemático y los cuatro temas suministrados, incluidos familia exponencial/GLM, multinomial y normal bivariante.
 - Portada de orientación y mapa de las 36 lecciones con sus secciones de procedencia: cuatro temas y un puente opcional, sin inventar un quinto PDF. El orden es pedagógico, no una transcripción del índice.
 - 17 laboratorios y un explorador de 16 familias de distribuciones. Cada uno explica propósito, exploración, predicción, interpretación y límites. Multinomial, soporte triangular y normal bivariante tienen cálculos y gráficos propios; los controles conservan el último estado válido ante entradas incompatibles.
-- 29 generadores de ejercicios con semillas reproducibles, datos, supuestos, pistas, corrección y resolución desarrollada. El banco completo incluye apoyos adicionales de muestreo, chi-cuadrado, Student y Fisher: no se presentan como temas incluidos en los PDF.
+- 22 problemas de los tres PDF de ejercicios, con 87 respuestas y soluciones desarrolladas en las lecciones correspondientes. La pestaña Ejercicios muestra los enunciados, datos, supuestos, pasos, resultados e interpretaciones, junto con el tutor animado y la procedencia por archivo, número y página. Las erratas de los solucionarios se explican sin reproducir sus resultados incorrectos.
+- Práctica extra con 29 generadores de ejercicios con semillas reproducibles, datos, supuestos, pistas, corrección y resolución desarrollada. El banco completo incluye apoyos adicionales de muestreo, chi-cuadrado, Student y Fisher: no se presentan como temas incluidos en los PDF.
 - 36 clases animadas propias: toda la teoría, significados de fórmulas, métodos, ejemplos de la lección, demostraciones y ejercicios resueltos. 1.224 escenas y 4.050 fragmentos de subtítulos; unas 8 a 17 min por clase a velocidad normal estimada, sin reproducción automática ni audio. Pausa, navegación por partes, velocidad, transcripción, descargas y vista ampliada; diapositivas y narración se muestran juntas. La clase se abre integrada en la página, también en móvil. La vista ampliada se activa solo con su botón y se puede cerrar con el mismo control o Escape.
 - Glosario de 40 símbolos, búsqueda sin acentos, enlaces directos por fragmento de URL y progreso local compartido entre las vistas. No hay controles de importar, exportar ni borrar progreso.
 
 La corrección admite coma decimal, fracciones simples, notación científica y porcentajes explícitos, sin evaluar código. Una pista o solución consultada antes de acertar distingue la respuesta como asistida. Abrir una lección no la marca como estudiada.
+
+Consultar los problemas resueltos de los PDF no registra intentos ni respuestas asistidas. Los ejercicios multivariantes de U3 corresponden al Tema 4 de teoría. El ejercicio 2.3 incluye curvas continuas de las dos acumuladas, no barras de masas discretas.
 
 Los ejemplos son ficticios, no resultados experimentales ni recomendaciones clínicas. Las gráficas y sus textos señalan colas truncadas, probabilidades indefinidas, frecuencias esperadas y las hipótesis necesarias.
 

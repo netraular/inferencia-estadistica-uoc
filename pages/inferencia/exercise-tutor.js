@@ -1,3 +1,5 @@
+import {drawContextDiagram} from './context-diagram.js?v=f67ba7a5a7b4';
+
 const number = value => Number(value.toPrecision(7)).toString();
 const escape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 const frame = (title, tex, comment = '') => ({title, tex, comment});
@@ -132,13 +134,29 @@ function operations(exercise, question) {
 export function createTutorFrames(exercise, question) {
   const steps = question.tutorSteps ? question.tutorSteps.flatMap(stageEquations) : operations(exercise,question).flatMap(stageEquations);
   let diagram = initialDiagram(exercise,question);
-  return [frame('Identificar lo que buscamos','',question.prompt),...steps,{...frame('Comprobar el resultado',String.raw`\boxed{${number(question.answer)}}`,question.interpretation),result:true}].map(step => {
+  const qualitative = question.grading?.kind === 'qualitative' || !Number.isFinite(question.answer);
+  const answerTex = qualitative ? question.answerTex : number(question.answer);
+  const result = {...frame('Comprobar el resultado',answerTex ? String.raw`\boxed{${answerTex}}` : '',question.interpretation),result:true};
+  if (qualitative) result.answerText = question.answerText || question.interpretation || 'Respuesta razonada';
+  return [frame('Identificar lo que buscamos','',question.prompt),...steps,result].map(step => {
+    if (step.evidence?.kind === 'selection-weights') {
+      const evidence = step.evidence;
+      step = {...step, diagram:{kind:'bars', capstoneEvidence:true,
+        label:'E: aviso existencial; F: selección previa', xLabel:'Número m de portadores del lunes: aviso E o F', yLabel:'P(aviso | pareja)',
+        labels:evidence.qualifyingOffspring.flatMap(count => [`${count}: E`,`${count}: F`]),
+        values:evidence.qualifyingOffspring.flatMap((_,index) => [evidence.existentialWeights[index],evidence.selectedWeights[index]]),
+        highlight:[1,3,5]}};
+    }
     diagram = step.diagram ?? diagram;
     return diagram ? {...step, diagram} : step;
   });
 }
 
 function drawDiagram(context, diagram, left, right, top, bottom) {
+  if (diagram.capstoneEvidence || !['matrix','bars','region','curve','normal'].includes(diagram.kind)) {
+    drawContextDiagram(context,diagram,right+25,bottom+40);
+    return;
+  }
   const text = (value,x,y,space) => context.fillText(String(value),x,y,Math.max(1,space));
   if (diagram.kind === 'matrix') {
     const cellWidth = (right-left)/diagram.columns.length;
@@ -197,6 +215,21 @@ function drawDiagram(context, diagram, left, right, top, bottom) {
     context.fillStyle = '#334155';
     text(number(minimumX),left,bottom+23,35);text(number(maximumX),right-30,bottom+23,35);
     text(number(maximumY),4,top+8,left-8);text('X',right-5,bottom+35,15);text('Y',left-25,top-8,15);
+  } else if (diagram.kind === 'curve') {
+    const horizontal = value => left+(value-diagram.domain[0])/(diagram.domain[1]-diagram.domain[0])*(right-left);
+    const vertical = value => bottom-(value-diagram.range[0])/(diagram.range[1]-diagram.range[0])*(bottom-top);
+    context.save();context.setLineDash([4,4]);context.strokeStyle = '#63716c';
+    context.beginPath();context.moveTo(left,vertical(1));context.lineTo(right,vertical(1));context.stroke();context.restore();
+    context.beginPath();context.strokeStyle = '#147d68';
+    diagram.points.forEach(([value,probability],index) => {
+      if (index) context.lineTo(horizontal(value),vertical(probability));
+      else context.moveTo(horizontal(value),vertical(probability));
+    });
+    context.stroke();context.fillStyle = '#334155';context.textAlign = 'center';
+    for (const tick of diagram.ticks) text(number(tick),horizontal(tick),bottom+23,30);
+    context.textAlign = 'start';
+    text('0',left-18,bottom+4,15);text('1',left-18,top+4,15);
+    text(diagram.label,left,top-8,55);text('x',right-5,bottom+36,15);
   } else if (diagram.kind === 'normal') {
     const minimum = Math.min(diagram.mean-4*diagram.sd,diagram.lower ?? diagram.mean);
     const maximum = Math.max(diagram.mean+4*diagram.sd,diagram.upper ?? diagram.mean);
@@ -241,7 +274,17 @@ export function drawTutorFigure(context, exercise, question, position, width, he
   context.fillStyle = '#334155';
   context.beginPath();context.moveTo(left,top);context.lineTo(left,bottom);context.lineTo(right,bottom);context.stroke();
   const current = createTutorFrames(exercise,question)[position];
-  if (current.diagram) {drawDiagram(context,current.diagram,left,right,top,bottom);return;}
+  if (current.diagram) {
+    let diagram = current.diagram;
+    if (exercise.sampleSpaces && diagram.kind === 'matrix') {
+      const rows = [0,5,9];
+      const columns = [0,5,9];
+      diagram = {...diagram, rows:rows.map(index => diagram.rows[index]), columns:columns.map(index => diagram.columns[index]),
+        values:rows.map(row => columns.map(column => diagram.values[row][column])),
+        highlight:(diagram.highlight || []).filter(([row,column]) => rows.includes(row) && columns.includes(column)).map(([row,column]) => [rows.indexOf(row),columns.indexOf(column)])};
+    }
+    drawDiagram(context,diagram,left,right,top,bottom);return;
+  }
   if (exercise.type === 'normal' || exercise.type === 'continuous') {
     const normal = exercise.type === 'normal';
     const minimum = normal ? params.mean-4*params.sd : 0;
@@ -342,6 +385,10 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   const data=document.createElement('div');
   data.className='tutor-data';
   element('.tutor-surface').before(data);
+  const figureNote=document.createElement('p');
+  figureNote.className='capstone-matrix-note';
+  figureNote.hidden=true;
+  element('.tutor-figure').append(figureNote);
   element('[data-tutor-play]').innerHTML='<span data-tutor-play-symbol><i data-lucide="play" aria-hidden="true"></i></span><span data-tutor-pause-symbol hidden><i data-lucide="pause" aria-hidden="true"></i></span>';
   const canvas = element('canvas');
   const context = canvas.getContext('2d');
@@ -351,7 +398,7 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
     const question=exercise.questions[questionIndex];
     if(context){
       const width=Math.max(260,Math.round(canvas.getBoundingClientRect().width||720));
-      const height=Math.round(width*5/12);
+      const height=exercise.chapterId === 'culminacion-pec1' ? Math.max(280,Math.round(width*5/12)) : Math.round(width*5/12);
       const ratio=window.devicePixelRatio||1;
       canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);
       context.setTransform(ratio,0,0,ratio,0,0);
@@ -366,12 +413,16 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
     data.innerHTML=dataTex?formatMath(dataTex):exercise.given.map(value=>`<p>${escape(value)}</p>`).join('');
     element('[data-tutor-title]').textContent=current.title;
     element('[data-tutor-comment]').textContent=current.comment;
-    element('[data-tutor-lines]').innerHTML=frames.slice(0,position+1).filter(item=>item.tex).map(item=>`<div class="tutor-equation${item===current?' is-current':''}${item.result?' is-result':''}">${formatMath(item.tex)}${item.result?`<span>${escape(question.unit)}</span>`:''}</div>`).join('');
+    element('[data-tutor-lines]').innerHTML=frames.slice(0,position+1).filter(item=>item.tex || item.answerText).map(item=>`<div class="tutor-equation${item===current?' is-current':''}${item.result?' is-result':''}">${item.tex ? formatMath(item.tex) : ''}${item.answerText ? `<p>${escape(item.answerText)}</p>` : ''}${item.result?`<span>${escape(question.unit)}</span>`:''}</div>`).join('');
     element('[data-tutor-position]').textContent=`Paso ${position+1} de ${frames.length}`;
     element('[data-tutor-previous]').disabled=position===0;
     element('[data-tutor-next]').disabled=position===frames.length-1;
     canvas.setAttribute('aria-label',`${exercise.title}. ${current.title}. ${current.comment}`);
-    element('[data-tutor-note-content]').innerHTML=`<p>${escape(exercise.prompt)}</p><h4>Datos y supuestos</h4><ul>${[...exercise.given,...exercise.assumptions].map(value=>`<li>${escape(value)}</li>`).join('')}</ul><h4>${escape(question.prompt)}</h4><ol>${question.steps.map(step=>`<li><strong>${escape(step.title)}</strong><p>${escape(step.explanation)}</p>${step.tex?formatMath(step.tex):''}</li>`).join('')}</ol>`;
+    figureNote.hidden=!(exercise.sampleSpaces && current.diagram?.kind === 'matrix');
+    if (!figureNote.hidden) figureNote.textContent=`Extracto de 3 filas y 3 columnas: N-L, C-L y C-V; N = no portador, C = portador, L = lunes, V = viernes. ${current.diagram.columns.length === 20 ? 'Solo se representa S=1 (selección del primer descendiente). ' : ''}Cada celda conserva su peso 1/${current.diagram.rows.length*current.diagram.columns.length}; no se renormaliza este extracto. La tabla completa está en la solución escrita del apartado.`;
+    const renderNotes = () => {element('[data-tutor-note-content]').innerHTML=`<p>${escape(exercise.prompt)}</p><h4>Datos y supuestos</h4><ul>${[...exercise.given,...exercise.assumptions].map(value=>`<li>${escape(value)}</li>`).join('')}</ul><h4>${escape(question.prompt)}</h4><ol>${question.steps.map(step=>`<li><strong>${escape(step.title)}</strong><p>${escape(step.explanation)}</p>${step.tex?formatMath(step.tex):''}</li>`).join('')}</ol>${question.grading?.kind === 'qualitative' ? `<p>${escape(question.answerText || question.interpretation)}</p>` : ''}`;};
+    if (exercise.chapterId !== 'culminacion-pec1' || element('[data-tutor-notes]').open) renderNotes();
+    else element('[data-tutor-note-content]').replaceChildren();
     if(position>0)onHelp(question.id);
     if(current.result)stop();
     draw();
@@ -389,8 +440,9 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   });
   listen(element('[data-tutor-speed]'),'change',stop);
   listen(element('[data-tutor-question]'),'change',()=>{stop();questionIndex=Number(element('[data-tutor-question]').value);position=0;element('[data-tutor-notes]').open=false;render();});
-  listen(element('[data-tutor-notes]'),'toggle',()=>{if(element('[data-tutor-notes]').open)onHelp(exercise.questions[questionIndex].id);});
-  listen(element('[data-tutor-practice]'),'click',onPractice);
+  listen(element('[data-tutor-notes]'),'toggle',()=>{if(element('[data-tutor-notes]').open){if(exercise.chapterId === 'culminacion-pec1')render();onHelp(exercise.questions[questionIndex].id);}});
+  if (onPractice) listen(element('[data-tutor-practice]'),'click',onPractice);
+  else element('[data-tutor-practice]').remove();
   listen(window,'resize',draw);
   listen(document,'visibilitychange',()=>{if(document.hidden)stop();});
   render();

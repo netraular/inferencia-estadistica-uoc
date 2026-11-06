@@ -20,6 +20,7 @@ import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
 import {STORAGE_KEY, PROGRESS_EVENT, freshProgress, loadProgress, saveProgress, progressSummary} from '../pages/inferencia/progress.js';
 import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
+import {enrichLessonAnimation} from '../pages/inferencia/lesson-visuals.js';
 
 const require = createRequire(import.meta.url);
 globalThis.jStat = require('jstat').jStat;
@@ -71,7 +72,12 @@ test('embedded section playback mounts only the selected whiteboard and leaves s
       }
     });
     try {
-      assert.equal(received, section.animation);
+      assert.deepEqual(received, enrichLessonAnimation(section.animation));
+      assert.equal(received.id, section.animation.id);
+      assert.deepEqual(received.steps[0].cues, section.animation.steps[0].cues);
+      assert.deepEqual(received.steps[0].visual.lines, section.animation.steps[0].visual.lines);
+      assert.ok(received.steps[0].visual.context);
+      assert.equal(received.steps[0].visual.phases.length, received.steps[0].cues.length);
       assert.equal(received.steps.length, 1);
     } finally {mounted.dispose();}
     const fallback = mountEmbeddedClassroom(document.getElementById('host'), {
@@ -82,6 +88,10 @@ test('embedded section playback mounts only the selected whiteboard and leaves s
       const rows = fallback.root.querySelectorAll('.board-line');
       assert.ok(rows.length > 0);
       assert.ok(Array.from(rows).every(row => row.hidden));
+      const graph = fallback.root.querySelector('.context-diagram');
+      assert.equal(graph.hidden, false);
+      assert.equal(graph.getAttribute('aria-label'), enrichLessonAnimation(section.animation).steps[0].visual.context.caption);
+      assert.equal(fallback.root.querySelectorAll('.story-plot').length, 0);
     } finally {fallback.dispose();}
   }
 });

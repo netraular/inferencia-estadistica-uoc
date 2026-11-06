@@ -320,12 +320,15 @@ const definitions = [
     const cdfQuestion = alternative => {
       const cdf = alternative ? exponentialCdf : triangularCdf;
       const name = alternative ? 'G' : 'F';
+      const graph = {kind:'curve', label:`${name}(x)`, domain:[-1,4], range:[0,1], ticks:[-1,0,1,2,3,4],
+        points:Array.from({length:201},(_,index) => {const value = -1+index/40;return [value,cdf(value)];})};
       return question(alternative ? 'f-cdf':'b-cdf',`Obtén la acumulada ${name} por tramos y representa sus valores. Introduce ${name}(1).`,cdf(1),[
         beat('Antes del soporte','El tiempo no puede ser negativo, así que antes de cero no hay probabilidad acumulada.',String.raw`${name}(x)=0\quad(x<0)`),
         beat('Integrar en el soporte','La acumulada integra la densidad desde cero hasta x. Uso t como variable de integración para no confundirla con el límite x.',alternative ? String.raw`\int_0^x e^{-t}\,dt=[-e^{-t}]_0^x=1-e^{-x}` : String.raw`\int_0^x(1-t/2)\,dt=[t-t^2/4]_0^x=x-x^2/4`),
-        beat('Completar la definición',alternative ? 'El soporte no tiene extremo superior finito; la acumulada tiende a uno sin alcanzarlo a tiempo finito.' : 'Después de dos años, ya se acumuló toda la probabilidad.',alternative ? String.raw`G(x)=\begin{cases}0&x<0\\1-e^{-x}&x\geq0\end{cases}` : String.raw`F(x)=\begin{cases}0&x<0\\x-x^2/4&0\leq x\leq2\\1&x>2\end{cases}`,bars([-1,0,0.5,1,1.5,2,3],[-1,0,0.5,1,1.5,2,3].map(cdf))),
+        beat('Completar la definición',alternative ? 'El soporte no tiene extremo superior finito; la acumulada tiende a uno sin alcanzarlo a tiempo finito.' : 'Después de dos años, ya se acumuló toda la probabilidad.',alternative ? String.raw`G(x)=\begin{cases}0&x<0\\1-e^{-x}&x\geq0\end{cases}` : String.raw`F(x)=\begin{cases}0&x<0\\x-x^2/4&0\leq x\leq2\\1&x>2\end{cases}`,graph),
+        beat('Trazar la acumulada',alternative ? 'La curva continua vale cero hasta el origen. Después crece con pendiente positiva cada vez menor y se aproxima a uno sin alcanzarlo. La altura representa probabilidad acumulada, no masas ni densidad.' : 'La curva continua vale cero antes del origen. Entre cero y dos es una parábola creciente y cóncava hacia abajo, con pendiente uno menos x entre dos. Llega a uno en dos y permanece horizontal después. Sus alturas son probabilidades acumuladas, no masas.',undefined,graph),
         beat('Evaluar en un año','Sustituyo el umbral por un año en el tramo que le corresponde.',alternative ? String.raw`G(1)=1-e^{-1}` : String.raw`F(1)=1-1/4=3/4`)
-      ],'La fórmula por tramos describe la gráfica completa; las barras muestran valores de esa acumulada.');
+      ],'La curva representa la acumulada por tramos. La coordenada horizontal mide años y la vertical, probabilidad acumulada.');
     };
     const pointQuestions = alternative => [
       question(alternative ? 'f-point':'c-point','¿Qué probabilidad tiene exactamente un año?',0,[beat('Un punto no tiene anchura','La probabilidad es una integral sobre un intervalo de longitud cero, no la altura de la densidad.',String.raw`P(X=1)=\int_1^1 f(x)\,dx=0`)],'Esto vale en los dos modelos continuos.'),
@@ -532,9 +535,12 @@ const definitions = [
           beat('Traducir el suceso','Divido la desigualdad entre tres para delimitar y dos a cada y uno.',String.raw`y_2\leq y_1/3`,{...diagram,cut:[[0,0],[2,2/3]]}),
           beat('Comparar las fronteras','Y uno entre tres es menor que y uno entre dos en este soporte positivo; la región pedida queda dentro del soporte.',String.raw`0\leq y_1/3\leq y_1/2`),
           beat('Integrar el corte pedido','Con k igual a uno, la probabilidad por corte es su longitud.',String.raw`\int_0^{y_1/3}1\,dy_2=y_1/3`),
-          beat('Sumar los cortes','Integro desde cero hasta dos sin añadir puntos imposibles.',String.raw`P(Y_1\geq3Y_2)=\int_0^2y_1/3\,dy_1=[y_1^2/6]_0^2=2/3`,region([[0,0],[2,0],[2,2/3]]))
+          beat('Sumar los cortes','Integro desde cero hasta dos sin añadir puntos imposibles.',String.raw`P(Y_1\geq3Y_2)=\int_0^2y_1/3\,dy_1=[y_1^2/6]_0^2=2/3`,region([[0,0],[2,0],[2,2/3]])),
+          beat('Separar la frase del PDF','Reducir al menos un tercio significaría que la cantidad final no supera dos tercios de la inicial. No es la desigualdad escrita en el problema.',String.raw`Y_1-Y_2\geq Y_1/3\quad\Longleftrightarrow\quad Y_2\leq2Y_1/3`),
+          beat('Resolver la lectura verbal','En todo el soporte, Y dos no supera la mitad de Y uno, que tampoco supera sus dos tercios. Por eso la frase verbal tendría probabilidad uno. El comprobador mantiene dos tercios para la desigualdad explícita Y uno mayor o igual que tres Y dos.',String.raw`Y_2\leq Y_1/2\leq2Y_1/3\quad\Longrightarrow\quad P(Y_2\leq2Y_1/3)=1`,diagram),
+          beat('Responder a la desigualdad escrita','Vuelvo a la región Y dos menor o igual que un tercio de Y uno. Esta es la pregunta numérica del comprobador, distinta de la frase verbal.',String.raw`P(Y_1\geq3Y_2)=2/3`,region([[0,0],[2,0],[2,2/3]]))
         ],'El suceso escrito deja como máximo un tercio del contaminante inicial: representa reducción de al menos dos tercios, no de un tercio.')
-      ],diagram,['Se interpreta el objetivo matemático explícito Y1≥3Y2.','La descripción verbal del PDF de reducción de un tercio no equivale a esa desigualdad.']);
+      ],diagram,['Se interpreta el objetivo matemático explícito Y1≥3Y2.','La descripción verbal del PDF de reducción de un tercio no equivale a esa desigualdad: su probabilidad sería uno en este soporte.']);
   }),
   define(3, 5, 9, 'Probabilidad marginal y un corte condicional del triángulo', ['conjunta-condicional','marginales','regiones-matrices'], () => {
     const diagram = region([[0,0],[2,0],[2,1]]);

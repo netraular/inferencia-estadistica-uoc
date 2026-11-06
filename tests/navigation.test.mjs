@@ -10,6 +10,7 @@ import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
 import {generateExercise, scopeExercise} from '../pages/inferencia/exercises.js';
 import {mountAula} from '../pages/inferencia/app.js';
+import {CAPSTONE} from '../pages/inferencia/capstone.js';
 
 const require = createRequire(import.meta.url);
 const babel = require('@babel/core');
@@ -249,14 +250,14 @@ test('production-compiled embed hides utilities without navigation and retains t
   } finally {window.DOMParser = Parser;}
 });
 
-test('curriculum generation retains all lesson content and 0..4 links in native disclosures without the disclaimer', async () => {
+test('curriculum generation retains all lessons and adds the solved PEC as chapter five with valid prerequisites', async () => {
   const source = readFileSync(new URL('../scripts/generate-docs.mjs', import.meta.url), 'utf8');
   const ast = babel.parseSync(source, {sourceType:'module', babelrc:false, configFile:false});
   ast.program.body = ast.program.body.filter(node => node.type !== 'ImportDeclaration' && !(node.type === 'VariableDeclaration' && node.declarations.some(declaration => ['root','require'].includes(declaration.id.name))));
   const {code} = babel.transformFromAstSync(ast, source, {babelrc:false, configFile:false});
   const writes = new Map();
   await runInNewContext(`(async () => {${code}})()`, {
-    root:'/fixture', path, COURSE, generateExercise, scopeExercise, require,
+    root:'/fixture', path, COURSE, CAPSTONE, generateExercise, scopeExercise, require,
     mkdir:async () => {}, rm:async () => {}, cp:async () => {},
     readFile:async () => '<html></html>', writeFile:async (filename, content) => writes.set(filename, content),
     console:{log() {}}
@@ -265,8 +266,22 @@ test('curriculum generation retains all lesson content and 0..4 links in native 
   const {compile} = await import('@mdx-js/mdx');
   await compile(curriculum);
   assert.match(curriculum, /slug: \/temario\n/);
-  assert.equal(Array.from(curriculum.matchAll(/<details className="curriculum-topic"/g)).length, 5);
-  assert.equal(Array.from(curriculum.matchAll(/<\/details>/g)).length, 5);
+  assert.equal(Array.from(curriculum.matchAll(/<details className="curriculum-topic"/g)).length, 6);
+  assert.equal(Array.from(curriculum.matchAll(/<\/details>/g)).length, 6);
+  assert.doesNotMatch(curriculum, /No se incluyen las respuestas/);
+  assert.match(curriculum, /tema 5 desarrolla todos los apartados de la PEC 1/);
+  const category = JSON.parse(writes.get(`/fixture/docs/${CAPSTONE.id}/_category_.json`));
+  assert.equal(category.position, 6);
+  assert.equal(category.label, `Tema 5: ${CAPSTONE.title}`);
+  for (const [index, section] of CAPSTONE.sections.entries()) {
+    assert.ok(curriculum.includes(`](./${CAPSTONE.id}/${section.id}.mdx)`));
+    const mdx = writes.get(`/fixture/docs/${CAPSTONE.id}/${section.id}.mdx`);
+    await compile(mdx);
+    assert.ok(mdx.includes(`slug: /lecciones/${section.id}`));
+    assert.ok(mdx.includes(`sidebar_position: ${index + 1}`));
+    assert.ok(mdx.includes(`<CapstoneExercises exerciseId="${section.exerciseId}" />`));
+    for (const id of section.lessonIds) assert.ok(mdx.includes(`](/lecciones/${id})`));
+  }
   assert.ok(!/independiente|afiliada|no oficial|No se publican los PDF/.test(curriculum));
   assert.match(curriculum, /Los ejemplos no son resultados experimentales ni recomendaciones clinicas/);
   let count = 0;
@@ -276,6 +291,7 @@ test('curriculum generation retains all lesson content and 0..4 links in native 
     for (const [index, lesson] of unit.lessons.entries()) {
       assert.ok(curriculum.includes(`[${unit.number}.${index + 1} ${lesson.title}](./${unit.id}/${lesson.id}.mdx)`));
       const mdx = writes.get(`/fixture/docs/${unit.id}/${lesson.id}.mdx`);
+      await compile(mdx);
       assert.ok(mdx.includes(`slug: /lecciones/${lesson.id}`));
       assert.ok(mdx.includes(`<LessonContent lessonId="${lesson.id}">`));
       assert.ok(mdx.includes(`<Notation topic="${lesson.id}" />`),lesson.id);
@@ -283,15 +299,16 @@ test('curriculum generation retains all lesson content and 0..4 links in native 
       assert.equal(mdx.includes('<details className="lesson-depth">'),hasOptional,lesson.id);
       assert.equal(mdx.includes('Ampliación opcional'),hasOptional,lesson.id);
       const required = mdx.split('<details className="lesson-depth">')[0];
-      for (const section of lesson.sections.filter(section=>!section.optional)) assert.ok(required.includes(section.body),`${lesson.id}: ${section.title}`);
+      const escapedBody = value => value.replace(/[{}]/g, character => character === '{' ? '&#123;' : '&#125;');
+      for (const section of lesson.sections.filter(section=>!section.optional)) assert.ok(required.includes(escapedBody(section.body)),`${lesson.id}: ${section.title}`);
       for (const formula of lesson.formulas.filter(formula=>!formula.optional)) assert.ok(required.includes(JSON.stringify(formula.tex)),`${lesson.id}: ${formula.tex}`);
-      for (const section of lesson.sections) assert.ok(mdx.includes(section.body), lesson.id);
+      for (const section of lesson.sections) assert.ok(mdx.includes(escapedBody(section.body)), lesson.id);
       for (const formula of lesson.formulas) {
         assert.ok(mdx.includes(JSON.stringify(formula.tex)), lesson.id);
         assert.ok(mdx.includes(`reading={${JSON.stringify(formula.reading)}}`),lesson.id);
       }
       for (const step of lesson.method) assert.ok(mdx.includes(step), lesson.id);
-      assert.ok(mdx.includes(lesson.example.body), lesson.id);
+      assert.ok(mdx.includes(escapedBody(lesson.example.body)), lesson.id);
       for (const pitfall of lesson.pitfalls) assert.ok(mdx.includes(pitfall), lesson.id);
       assert.ok(mdx.includes('Ejemplo resuelto con el metodo'), lesson.id);
       count++;

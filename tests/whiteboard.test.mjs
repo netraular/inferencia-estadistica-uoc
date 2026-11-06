@@ -30,6 +30,8 @@ test('El tutor dibuja todos los tipos sin lienzos vacios y cambia el grafico al 
 import {COURSE} from '../pages/inferencia/course.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
 import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
+import {enrichLessonAnimation,enrichGlobalAnimation} from '../pages/inferencia/lesson-visuals.js';
+import {drawContextDiagram,selectContextDiagram} from '../pages/inferencia/context-diagram.js';
 import {EXERCISE_TYPES,generateExercise} from '../pages/inferencia/exercises.js';
 import {WHITEBOARD_LESSONS, planWhiteboardScene, integralGeometry, formulaVector, formulaGraphic, createWhiteboard} from '../src/classroom/whiteboard.mjs';
 
@@ -39,6 +41,143 @@ const {document}=parseHTML('<html><body></body></html>');
 const paragraphs=html=>{const node=document.createElement('div');node.innerHTML=html;return Array.from(node.querySelectorAll('p'),paragraph=>paragraph.textContent);};
 const lectures=COURSE.units[0].lessons.map(lesson=>createLessonAnimation(lesson,generateExercise,paragraphs));
 const sectionAnimations=COURSE.units[0].lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>section.animation));
+
+test('all 118 sections and 521 recap scenes render every context phase as finite, bounded real Canvas pixels at 320 and 960',()=>{
+  const lessons=COURSE.units.flatMap(unit=>unit.lessons);
+  const sections=lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>enrichLessonAnimation(section.animation)));
+  const recaps=lessons.map(lesson=>enrichGlobalAnimation(createLessonAnimation(lesson,generateExercise,paragraphs)));
+  assert.equal(sections.length,118);
+  assert.equal(recaps.reduce((sum,animation)=>sum+animation.steps.length,0),521);
+  const kinds=new Set();
+  for (const width of [320,960]) {
+    const height=Math.max(360,Math.round(width*5/12));
+    const canvas=createCanvas(width,height);
+    const drawing=canvas.getContext('2d');
+    const context=new Proxy(drawing,{
+      get(target,key) {
+        const value=Reflect.get(target,key,target);
+        if (typeof value!=='function') return value;
+        return (...args)=>{
+          for (const argument of args.flat()) if (typeof argument==='number') assert.ok(Number.isFinite(argument),`${String(key)}: finite coordinates`);
+          return value.apply(target,args);
+        };
+      },
+      set(target,key,value) {return Reflect.set(target,key,value,target);}
+    });
+    const pixels=()=>Buffer.from(drawing.getImageData(0,0,width,height).data);
+    const render=(diagram,phase,label)=>{
+      const geometry=drawContextDiagram(context,diagram,width,height,{phase});
+      kinds.add(geometry.kind);
+      assert.ok(geometry.marks>0,label);
+      for (const box of geometry.labels) {
+        assert.ok([box.x,box.y,box.width,box.height].every(Number.isFinite),label);
+        assert.ok(box.x>=0 && box.y>=0 && box.x+box.width<=width+0.01 && box.y+box.height<=height+0.01,`${label}: ${JSON.stringify(box)}`);
+        drawing.font=box.font;
+        for (const row of box.rows) assert.ok(drawing.measureText(row).width<=box.width+0.01,`${label}: text exceeds its box: ${row}`);
+      }
+      for (const [index,box] of geometry.labels.entries()) for (const other of geometry.labels.slice(index+1)) {
+        const overlapX=Math.min(box.x+box.width,other.x+other.width)-Math.max(box.x,other.x);
+        const overlapY=Math.min(box.y+box.height,other.y+other.height)-Math.max(box.y,other.y);
+        assert.ok(overlapX<=0.01 || overlapY<=0.01,`${label}: overlapping labels ${box.text} / ${other.text}`);
+      }
+      const ink=drawing.getImageData(16,74,width-32,height-130).data;
+      assert.ok(ink.some((value,index)=>index%4!==3 && value<160),`${label}: graph ink below the title`);
+      return geometry;
+    };
+    for (const animation of [...sections,...recaps]) for (const scene of animation.steps) {
+      const label=`${width}/${animation.id}/${scene.title}`;
+      const before=JSON.stringify(scene.visual);
+      const initial=selectContextDiagram(scene.visual,-1);
+      assert.equal(initial.diagram,scene.visual.context,label);
+      assert.equal(initial.phase,undefined,label);
+      render(initial.diagram,initial.phase,label);
+      const first=pixels();
+      for (const [cueIndex,phase] of scene.visual.phases.entries()) {
+        const selected=selectContextDiagram(scene.visual,cueIndex);
+        assert.equal(selected.diagram,phase.context,label);
+        assert.equal(selected.phase,phase,label);
+        assert.equal(render(selected.diagram,selected.phase,`${label}/${cueIndex}`).cue,cueIndex,label);
+      }
+      render(initial.diagram,initial.phase,label);
+      assert.deepEqual(pixels(),first,`${label}: exact reverse seek before cue zero`);
+      assert.equal(JSON.stringify(scene.visual),before,`${label}: no mutation`);
+    }
+  }
+  assert.deepEqual([...kinds].sort(),['bars','matrix','trials','tree','number-line','scatter','region','normal','joint-normal','curve'].sort());
+});
+
+test('shared renderer retains selected cells, signed bars, open endpoints and supplied PDF curve ticks',()=>{
+  const width=320;
+  const height=360;
+  const canvas=createCanvas(width,height);
+  const context=canvas.getContext('2d');
+  const visual={context:{kind:'bars',label:'Desviaciones',labels:['Izquierda','Derecha'],values:[-2,2],highlight:[]},phases:[
+    {cue:0,context:{kind:'bars',label:'Desviaciones',labels:['Izquierda','Derecha'],values:[-2,2],highlight:[1]}},
+    {cue:1,context:{kind:'bars',label:'Cuadrados',labels:['Izquierda','Derecha'],values:[4,4],highlight:[0,1]}}
+  ]};
+  const paint=cue=>{
+    const {diagram,phase}=selectContextDiagram(visual,cue);
+    drawContextDiagram(context,diagram,width,height,{phase});
+    return Buffer.from(context.getImageData(0,0,width,height).data);
+  };
+  const initial=paint(-1);
+  const first=paint(0);
+  assert.notDeepEqual(first,initial);
+  assert.notDeepEqual(paint(1),first);
+  assert.deepEqual(paint(0),first);
+  assert.deepEqual(paint(-1),initial);
+  drawContextDiagram(context,{kind:'matrix',label:'Celdas',rows:['A','B'],columns:['X','Y'],values:[[0.1,0.2],[0.3,0.4]],highlight:[[1,0]]},width,height);
+  const pixel=(positionX,positionY)=>Array.from(context.getImageData(positionX,positionY,1,1).data);
+  assert.deepEqual(pixel(120,130),[213,235,226,255],'unselected table cell');
+  assert.deepEqual(pixel(120,225),[173,52,89,255],'only the specified cell is selected');
+  drawContextDiagram(context,{kind:'number-line',label:'Extremos',min:0,max:1,intervals:[{from:0,to:1,label:'Intervalo',closed:[false,true]}],points:[]},width,height);
+  assert.deepEqual(pixel(28,111),[252,254,253,255],'open endpoint stays hollow');
+  assert.deepEqual(pixel(292,111),[17,117,104,255],'closed endpoint stays filled');
+  const normal=drawContextDiagram(context,{kind:'normal',label:'Cuantil por determinar',mean:0,sd:1,level:0.9},width,height);
+  assert.ok(normal.labels.some(box=>box.text.includes('umbral por determinar')));
+  assert.ok(!normal.labels.some(box=>box.text.includes('1,282')),'no computed quantile answer');
+  const graph={kind:'curve',label:'F(x)',domain:[-1,4],range:[0,1],ticks:[-1,0,1,2,3,4],points:[[-1,0],[0,0],[1,0.75],[2,1],[4,1]]};
+  const geometry=drawContextDiagram(context,graph,width,height);
+  for (const tick of graph.ticks) assert.ok(geometry.labels.some(box=>box.text===String(tick)),`PDF tick ${tick}`);
+  assert.ok(!geometry.labels.some(box=>box.text.includes('undefined')));
+  assert.throws(()=>drawContextDiagram(context,graph,NaN,height),RangeError);
+});
+
+test('Konva uses the same context pixels and phase when seeking backward, resizing or reducing motion',()=>{
+  const createElement=Konva.Util.createCanvasElement;
+  const stageCount=Konva.stages.length;
+  Konva.Util.createCanvasElement=()=>{const canvas=createCanvas(1,1);canvas.style={};return canvas;};
+  try {
+    for (const lecture of [...lectures,...sectionAnimations].map(animation=>enrichLessonAnimation(animation))) {
+      let width=320;
+      let height=360;
+      const host={ownerDocument:{defaultView:{}},getBoundingClientRect:()=>({width,height})};
+      const board=createWhiteboard(host,{animation:lecture});
+      try {
+        const stage=Konva.stages.at(-1);
+        for (const dimensions of [[320,360],[960,400],[720,400],[320,360]]) {
+          [width,height]=dimensions;
+          board.resize(width);
+          const frame={index:0,step:lecture.steps[0],time:0,progress:0,cueIndex:-1,reducedMotion:false};
+          board.render(frame);
+          const pixels=()=>Buffer.from(stage.getLayers()[0].getCanvas().getContext().getImageData(0,0,width,height).data);
+          const first=pixels();
+          const expected=createCanvas(width,height);
+          drawContextDiagram(expected.getContext('2d'),frame.step.visual.context,width,height);
+          assert.deepEqual(first,Buffer.from(expected.getContext('2d').getImageData(0,0,width,height).data),`${lecture.id}: common renderer`);
+          for (const cueIndex of [0,frame.step.cues.length-1,0,-1]) {
+            board.render({...frame,cueIndex,progress:1,reducedMotion:true});
+            const {diagram,phase}=selectContextDiagram(frame.step.visual,cueIndex);
+            drawContextDiagram(expected.getContext('2d'),diagram,width,height,{phase});
+            assert.deepEqual(pixels(),Buffer.from(expected.getContext('2d').getImageData(0,0,width,height).data),`${lecture.id}/${width}/${cueIndex}: same phase, no future reveal`);
+          }
+          assert.deepEqual(pixels(),first,`${lecture.id}: reversible`);
+        }
+      } finally {board.dispose();}
+    }
+    assert.equal(Konva.stages.length,stageCount);
+  } finally {Konva.Util.createCanvasElement=createElement;}
+});
 
 test('section IDs retain their audio identity and use the parent topic whiteboard',()=>{
   for(const animation of sectionAnimations){

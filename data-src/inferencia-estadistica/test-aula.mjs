@@ -312,7 +312,7 @@ test('La lectura usa una columna y frases inline sin tarjetas ni filas separadas
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','pdf-exercises.js','progress.js','teaching.js']);
+  assert.deepEqual(files, ['animations.js','app.js','capstone.js','context-diagram.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','lesson-visuals.js','pdf-exercises.js','progress.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
@@ -357,7 +357,8 @@ test('Cada lección monta sus cuatro vistas y limpia los gráficos anteriores', 
         assert.equal(document.getElementById('lessonTitle').textContent, lesson.title);
         assert.ok(document.getElementById('lessonReference').textContent.includes(lesson.source.section));
         assert.equal(document.querySelectorAll('.lesson-panel:not([hidden])').length, 1);
-        assert.equal(document.querySelectorAll('canvas:not(.story-plot)').length, 1);
+        assert.equal(document.querySelectorAll('canvas:not(.story-plot):not(.context-diagram)').length, 1);
+        assert.equal(document.querySelectorAll('canvas.context-diagram').length, view === 'animation' ? 1 : 0);
         for(const plot of document.querySelectorAll('.story-plot')) assert.ok(plot.closest('.slide-board'));
         assert.equal(document.getElementById(`tab-${view}`).getAttribute('aria-selected'), 'true');
         if (view === 'theory') {
@@ -531,7 +532,7 @@ test('El versionado de recursos es determinista e idempotente', () => {
   const root = versionFixture();
   try {
     const first = versionAssets(root);
-    assert.equal(Object.keys(first.versions).length, 15);
+    assert.equal(Object.keys(first.versions).length, 17);
     assert.deepEqual(versionAssets(root).changed, []);
     const generated = readFileSync(join(root, 'pages', 'inferencia-estadistica.html'), 'utf8');
     for (const match of generated.matchAll(/(?:src|href)="(inferencia\/[^"?]+\.(?:js|css))\?v=([a-f0-9]+)"/g)) {
@@ -565,26 +566,35 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
   }
   const appUrl = new URL('../../pages/inferencia/app.js', import.meta.url);
   const imports = [...readFileSync(appUrl, 'utf8').matchAll(/from ['"]([^'"]+\.js\?v=[a-f0-9]+)['"]/g)];
-  assert.equal(imports.length, 8);
+  assert.equal(imports.length, 9);
   for (const match of imports) {
     const url = new URL(match[1], appUrl);
     assert.equal(url.searchParams.get('v'), assetVersion(readFileSync(url)), `${url.pathname}: ejecuta node version-assets.mjs`);
   }
-  const animationUrl = new URL('../../pages/inferencia/animations.js', import.meta.url);
-  const storyPath = readFileSync(animationUrl,'utf8').match(/from ['"]([^'"]*lecture-story\.js\?v=[a-f0-9]+)['"]/)[1];
-  const storyUrl = new URL(storyPath,animationUrl);
-  assert.equal(storyUrl.searchParams.get('v'),assetVersion(readFileSync(storyUrl)));
+  for (const [file, count] of [['animations.js', 2], ['exercise-tutor.js', 1]]) {
+    const moduleUrl = new URL(`../../pages/inferencia/${file}`, import.meta.url);
+    const imports = [...readFileSync(moduleUrl,'utf8').matchAll(/from ['"]([^'"]+\.js\?v=[a-f0-9]+)['"]/g)];
+    assert.equal(imports.length,count);
+    for (const match of imports) {
+      const url = new URL(match[1],moduleUrl);
+      assert.equal(url.searchParams.get('v'),assetVersion(readFileSync(url)));
+    }
+  }
 });
 
-test('Cambiar el guion hablado renueva su URL, el reproductor y el HTML',()=>{
+test('Cambiar el guion o los diagramas renueva sus URLs y el HTML',()=>{
   const root=versionFixture();
   try{
-    const before=versionAssets(root);
-    const file=join(root,'pages','inferencia','lecture-story.js');
-    writeFileSync(file,readFileSync(file,'utf8')+'\n');
-    const after=versionAssets(root);
-    for(const asset of ['lecture-story.js','animations.js','app.js']) assert.notEqual(after.versions[`inferencia/${asset}`],before.versions[`inferencia/${asset}`]);
-    assert.deepEqual(after.changed,['pages/inferencia/animations.js','pages/inferencia/app.js','pages/inferencia-estadistica.html']);
-    assert.deepEqual(versionAssets(root).changed,[]);
+    for (const dependency of ['lecture-story.js','context-diagram.js','lesson-visuals.js']) {
+      const before=versionAssets(root);
+      const file=join(root,'pages','inferencia',dependency);
+      writeFileSync(file,readFileSync(file,'utf8')+'\n');
+      const after=versionAssets(root);
+      const owners=dependency === 'lesson-visuals.js' ? [] : ['animations.js', ...(dependency === 'context-diagram.js' ? ['exercise-tutor.js'] : [])];
+      const assets=[dependency,...owners,'app.js'];
+      for(const asset of assets) assert.notEqual(after.versions[`inferencia/${asset}`],before.versions[`inferencia/${asset}`]);
+      assert.deepEqual(after.changed,[...owners.map(file=>`pages/inferencia/${file}`),'pages/inferencia/app.js','pages/inferencia-estadistica.html']);
+      assert.deepEqual(versionAssets(root).changed,[]);
+    }
   }finally{rmSync(root,{recursive:true,force:true});}
 });

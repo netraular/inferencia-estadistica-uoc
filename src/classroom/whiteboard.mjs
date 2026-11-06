@@ -6,6 +6,7 @@ import {SVG} from 'mathjax-full/js/output/svg.js';
 import {liteAdaptor} from 'mathjax-full/js/adaptors/liteAdaptor.js';
 import {RegisterHTMLHandler} from 'mathjax-full/js/handlers/html.js';
 import {AllPackages} from 'mathjax-full/js/input/tex/AllPackages.js';
+import {drawContextDiagram,selectContextDiagram} from '../../pages/inferencia/context-diagram.js';
 
 export const WHITEBOARD_LESSONS = ['proporciones', 'algebra', 'funciones', 'calculo', 'regiones-matrices'];
 const palette = {ink:'#253330', muted:'#64736e', teal:'#117568', rose:'#ad3459', gold:'#b47c16', line:'#dce7e1', paper:'#fcfefd'};
@@ -35,7 +36,7 @@ export function formulaVector(tex) {
 export function planWhiteboardScene(lessonId, step) {
   if (!WHITEBOARD_LESSONS.includes(lessonId.split('--')[0])) return null;
   const common = {label:step.title.replace(/^Demostración · /, ''), equation:step.tex || ''};
-  if (step.story) return {...common,kind:'story',lines:step.visual.lines};
+  if (step.story) return {...common,kind:'story',lines:step.visual.lines,...(step.visual.context ? {context:step.visual.context,phases:step.visual.phases} : {})};
   if (step.kind === 'bars') return {...common, kind:'bars', ...step.data};
   if (step.kind === 'curve' && ['linear', 'linear-cdf', 'uniform'].includes(step.data?.family)) return {...common, kind:'integral', ...step.data};
   if (step.kind === 'scatter' && step.data?.region) return {...common, kind:'region', bound:Math.max(...step.data.points.flat()), ...step.data};
@@ -103,7 +104,7 @@ export function createWhiteboard(host, {animation}) {
   let disposed = false;
   let width = 960;
   let height = 576;
-  const logical = () => portrait ? {width:640,height:640} : {width:960,height:576};
+  const logical = () => lastFrame?.step.visual?.context ? {width,height} : portrait ? {width:640,height:640} : {width:960,height:576};
   const text = (value,x,y,options={}) => {
     const node = new Konva.Text({text:value,x,y,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:28,fill:palette.ink,width:logical().width-x-24,wrap:'word',lineHeight:1.2,listening:false,...options});
     sceneRoot.add(node);
@@ -147,6 +148,14 @@ export function createWhiteboard(host, {animation}) {
     layer.add(sceneRoot);
     timeline = gsap.timeline({paused:true});
     const size = logical();
+    if (plan.context) {
+      sceneRoot.add(new Konva.Shape({listening:false,sceneFunc(drawing) {
+        const {diagram,phase}=selectContextDiagram(plan,lastFrame?.cueIndex ?? -1);
+        drawContextDiagram(drawing._context,diagram,size.width,size.height,{phase});
+      }}));
+      fit();
+      return;
+    }
     sceneRoot.add(new Konva.Rect({width:size.width,height:size.height,fill:palette.paper,listening:false}));
     for (let gridY=72;gridY<size.height;gridY+=40) line([24,gridY,size.width-24,gridY],{stroke:'#eef3f0',strokeWidth:1});
     const label = text(plan.label,32,22,{fontSize:26,fontStyle:'bold',width:size.width-64});
@@ -306,11 +315,14 @@ export function createWhiteboard(host, {animation}) {
   function resize(requestedWidth) {
     if (disposed) return;
     const rect=host.getBoundingClientRect();
-    width=Math.max(1,rect.width || requestedWidth || 960);
-    height=Math.max(1,rect.height || width*(width<600 ? 1 : 0.6));
+    const nextWidth=Math.max(1,rect.width || requestedWidth || 960);
+    const nextHeight=Math.max(1,rect.height || nextWidth*(nextWidth<600 ? 1 : 0.6));
+    const changed=width!==nextWidth || height!==nextHeight;
+    width=nextWidth;
+    height=nextHeight;
     const nextPortrait=width<600;
     stage.size({width,height});
-    if(nextPortrait!==portrait){portrait=nextPortrait;lastIndex=-1;}
+    if(nextPortrait!==portrait || changed && lastFrame?.step.visual?.context){portrait=nextPortrait;lastIndex=-1;}
     fit();
     if(lastFrame) render(lastFrame);
   }
