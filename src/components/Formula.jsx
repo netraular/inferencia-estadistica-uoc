@@ -16,3 +16,7 @@ export default function Formula({tex, meaning, reading}) {
   const html = katex.renderToString(tex, {displayMode: true, throwOnError: true, trust: false, strict: 'ignore'});
   return <div className="course-formula">{reading && <p><strong>Se lee:</strong> {reading}</p>}<div dangerouslySetInnerHTML={{__html: html}} />{meaning && <p>{meaning}</p>}</div>;
 }
+export function InlineFormula({tex}) {
+  const html = katex.renderToString(tex, {displayMode: false, throwOnError: true, trust: false, strict: 'ignore'});
+  return <span className="course-inline-formula" dangerouslySetInnerHTML={{__html: html}} />;
+}

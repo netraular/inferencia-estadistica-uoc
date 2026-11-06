@@ -430,7 +430,7 @@ test('PDF observation is the lesson default, offers source and problem selectors
     const source = document.querySelector('[data-tutor-source]').textContent;
     assert.ok(source.includes(app.exercise.source.file));
     assert.ok(source.includes(`Problema ${app.exercise.source.number}`));
-    assert.ok(source.includes(`Pagina ${app.exercise.source.page}`));
+    assert.ok(source.includes(`Página ${app.exercise.source.page}`));
     const expected = document.createElement('div');expected.innerHTML = notationHtml('sucesos');
     assert.ok(document.querySelector('[data-exercise-tutor] .exercise-notation').textContent.includes(expected.textContent));
     assert.equal(document.querySelector('[data-tutor-speed]').value,'6000');

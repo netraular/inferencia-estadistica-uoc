@@ -3,7 +3,7 @@ import mathjaxPackage from 'mathjax-full/package.json';
 
 export default {
   title: 'Inferencia estadistica',
-  tagline: 'Aula de estadistica con ejemplos de biologia',
+  tagline: 'Aula de estadística con ejemplos de biología',
   url: 'https://webs.raular.com',
   baseUrl: '/inferencia/',
   trailingSlash: true,

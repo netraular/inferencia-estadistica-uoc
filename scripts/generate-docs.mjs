@@ -4,6 +4,7 @@ import {createRequire} from 'node:module';
 import path from 'node:path';
 import {COURSE} from '../pages/inferencia/course.js';
 import {generateExercise, scopeExercise} from '../pages/inferencia/exercises.js';
+import {inlineMathToMdx} from '../src/lib/inline-math.js';
 
 const require = createRequire(import.meta.url);
 globalThis.jStat = require('jstat').jStat;
@@ -13,6 +14,48 @@ const docs = path.join(root, 'docs');
 const formula = item => `<Formula tex={${JSON.stringify(item.tex)}}${item.meaning ? ` meaning={${JSON.stringify(item.meaning)}}` : ''}${item.reading ? ` reading={${JSON.stringify(item.reading)}}` : ''} />`;
 const bullets = values => values.map(value => `- ${value}`).join('\n');
 const plainText = value => String(value).replace(/[&<>{}]/g, character => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '{':'&#123;', '}':'&#125;'}[character]));
+const section = (item, level = '##') => `${level} ${item.title}\n\n${inlineMathToMdx(item.body)}`;
+
+function workedExample(lesson) {
+  const worked = scopeExercise(lesson, generateExercise(lesson.exerciseTypes[0], 1));
+  const questions = worked.questions.map(question => `### ${plainText(question.prompt)}\n\n${question.steps.map(step => `**${plainText(step.title)}**\n\n${plainText(step.explanation)}${step.tex ? `\n\n${formula(step)}` : ''}`).join('\n\n')}\n\n${plainText(question.interpretation)}`);
+  return `## Ejemplo resuelto con el método\n\n${plainText(worked.prompt)}\n\n${worked.type === lesson.id ? '' : `<Notation topic=${JSON.stringify(worked.type)} />\n\n`}### Datos y supuestos\n\n${bullets([...worked.given, ...worked.assumptions].map(plainText))}\n\n${questions.join('\n\n')}`;
+}
+
+// A lesson page holds two blocks below the narrated journey: a short visible
+// summary to review (goals, key formulas, method, pitfalls) and the complete
+// written notes, collapsed, in reading order. The PDF reference is shown by
+// LessonContent above the tabs.
+function lessonPage(unit, lesson, lessonIndex) {
+  const required = lesson.sections.filter(item => !item.optional);
+  const introduction = required.filter(item => item.introductory).map(item => section(item));
+  const development = required.filter(item => !item.introductory).map(item => section(item));
+  const optionalSections = lesson.sections.filter(item => item.optional);
+  const optionalFormulas = lesson.formulas.filter(item => item.optional);
+  const illustration = lesson.illustration ? `## ${lesson.illustration.title}\n\n<InteractiveLesson lessonId=${JSON.stringify(lesson.id)} view="figure" />` : '';
+  const depth = optionalSections.length || optionalFormulas.length ? `<details className="lesson-depth">\n<summary>Ampliación opcional</summary>\n\n${[...optionalSections.map(item => section(item, '###')), ...optionalFormulas.map(formula)].join('\n\n')}\n\n</details>` : '';
+  const imports = [
+    "import Formula, {InlineFormula, Notation} from '@site/src/components/Formula';",
+    "import LessonContent from '@site/src/components/LessonContent';",
+    "import {LessonNotes, LessonSummary} from '@site/src/components/LessonNotes';",
+    lesson.illustration ? "import InteractiveLesson from '@site/src/components/InteractiveLesson';" : ''
+  ].filter(Boolean).join('\n');
+  const summary = [
+    '## Al terminar esta lección', bullets(lesson.objectives),
+    '### Fórmulas clave', lesson.formulas.filter(item => !item.optional).map(formula).join('\n\n'),
+    '### Cómo resolverlo', lesson.method.map((step, index) => `${index + 1}. ${step}`).join('\n'),
+    '### Errores que conviene evitar', bullets(lesson.pitfalls),
+    `<p className="lesson-duration">Tiempo orientativo de estudio y práctica: ${lesson.duration} min.</p>`
+  ].join('\n\n');
+  const notes = [
+    ...introduction, illustration,
+    `## Palabras y símbolos de esta lección\n\n<Notation topic=${JSON.stringify(lesson.id)} />`,
+    ...development,
+    section(lesson.example), workedExample(lesson), depth
+  ].filter(Boolean).join('\n\n');
+  return `---\ntitle: ${JSON.stringify(lesson.title)}\nsidebar_label: ${JSON.stringify(`${unit.number}.${lessonIndex + 1} ${lesson.title}`)}\nsidebar_position: ${lessonIndex + 1}\nslug: /lecciones/${lesson.id}\ncustom_edit_url: https://github.com/netraular/inferencia-estadistica-uoc/edit/main/pages/inferencia/course.js\n---\n\n${imports}\n\n<LessonContent lessonId=${JSON.stringify(lesson.id)}>\n\n<LessonSummary>\n\n${summary}\n\n</LessonSummary>\n\n<LessonNotes>\n\n${notes}\n\n</LessonNotes>\n\n</LessonContent>\n`;
+}
+
 await rm(docs, {recursive: true, force: true});
 await mkdir(docs, {recursive: true});
 await mkdir(path.join(root, 'src/generated'), {recursive: true});
@@ -31,26 +74,9 @@ for (const [unitIndex, unit] of COURSE.units.entries()) {
   await writeFile(path.join(folder, '_category_.json'), JSON.stringify({label: `Tema ${unit.number}: ${unit.title}${unit.number === 0 ? ' (opcional)' : ''}`, position: unitIndex + 1}, null, 2));
   map.push(`<details className="curriculum-topic"${unit.number === 1 ? ' open' : ''}>\n<summary>Tema ${unit.number}: ${unit.title}${unit.number === 0 ? ' (opcional)' : ''}</summary>\n\n${unit.description}\n\n${unit.lessons.map((lesson, index) => `- [${unit.number}.${index + 1} ${lesson.title}](./${unit.id}/${lesson.id}.mdx)`).join('\n')}\n\n</details>`);
   for (const [lessonIndex, lesson] of unit.lessons.entries()) {
-    const text = `---\ntitle: ${JSON.stringify(lesson.title)}\nsidebar_position: ${lessonIndex + 1}\nslug: /lecciones/${lesson.id}\ncustom_edit_url: https://github.com/netraular/inferencia-estadistica-uoc/edit/main/pages/inferencia/course.js\n---\n\nimport Formula from '@site/src/components/Formula';\n\n${lesson.objectives[0]} Tiempo orientativo de lectura y practica: ${lesson.duration} min.\n\n## Al terminar esta leccion\n\n${bullets(lesson.objectives)}\n\n${lesson.sections.map(section => `## ${section.title}\n\n${section.body}`).join('\n\n')}\n\n## La idea en simbolos\n\n${lesson.formulas.map(formula).join('\n\n')}\n\n## Como razonar y calcular\n\n${lesson.method.map((step, index) => `${index + 1}. ${step}`).join('\n')}\n\n## ${lesson.example.title}\n\n${lesson.example.body}\n\n## Errores que conviene evitar\n\n${bullets(lesson.pitfalls)}\n\n<p className="course-reference">Referencia: ${lesson.source.document} · ${lesson.source.section}. Ejemplos ficticios y explicaciones originales de apoyo.</p>\n`;
-    const worked = scopeExercise(lesson, generateExercise(lesson.exerciseTypes[0], 1));
-    const workedText = `## Ejemplo resuelto con el metodo\n\n${plainText(worked.prompt)}\n\n### Datos y supuestos\n\n${bullets([...worked.given, ...worked.assumptions].map(plainText))}\n\n${worked.questions.map(question => `### ${plainText(question.prompt)}\n\n${question.steps.map(step => `**${plainText(step.title)}**\n\n${plainText(step.explanation)}${step.tex ? `\n\n${formula(step)}` : ''}`).join('\n\n')}\n\n${plainText(question.interpretation)}`).join('\n\n')}`;
-    const complete = text.replace('sidebar_position:', `sidebar_label: ${JSON.stringify(`${unit.number}.${lessonIndex + 1} ${lesson.title}`)}\nsidebar_position:`).replace("import Formula from '@site/src/components/Formula';", `import Formula from '@site/src/components/Formula';\nimport LessonContent from '@site/src/components/LessonContent';\n\n<LessonContent lessonId=${JSON.stringify(lesson.id)}>\n`).replace('## Errores que conviene evitar', `${workedText}\n\n## Errores que conviene evitar`);
-    const notation = `## Palabras y símbolos de esta lección\n\n<Notation topic=${JSON.stringify(lesson.id)} />\n\n`;
-    const basicSections = lesson.sections.filter(section => section.introductory).map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
-    const illustration = lesson.illustration ? `\n\n## ${lesson.illustration.title}\n\n<InteractiveLesson lessonId=${JSON.stringify(lesson.id)} view="figure" />` : '';
-    const development = lesson.sections.filter(section => !section.introductory && !section.optional).map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
-    const allSections = lesson.sections.map(section => `## ${section.title}\n\n${section.body}`).join('\n\n');
-    const depth = lesson.sections.some(section => section.optional) || lesson.formulas.some(item => item.optional) ? `<details className="lesson-depth">\n<summary>Ampliación opcional</summary>\n\n${lesson.sections.filter(section => section.optional).map(section => `### ${section.title}\n\n${section.body}`).join('\n\n')}\n\n${lesson.formulas.filter(item => item.optional).map(formula).join('\n\n')}\n\n</details>\n\n` : '';
-    const guided = complete
-      .replace("import Formula from '@site/src/components/Formula';", `import Formula, {Notation} from '@site/src/components/Formula';${lesson.illustration ? "\nimport InteractiveLesson from '@site/src/components/InteractiveLesson';" : ''}`)
-      .replace(allSections, `${basicSections}${illustration}`)
-      .replace('## La idea en simbolos', `${notation}${development}\n\n## La idea en simbolos`)
-      .replace(lesson.formulas.map(formula).join('\n\n'), lesson.formulas.filter(item => !item.optional).map(formula).join('\n\n'))
-      .replace('### Datos y supuestos', `<Notation topic=${JSON.stringify(worked.type)} />\n\n### Datos y supuestos`)
-      .replace('## Errores que conviene evitar', `${depth}## Errores que conviene evitar`);
-    await writeFile(path.join(folder, `${lesson.id}.mdx`), `${guided}\n</LessonContent>\n`);
+    await writeFile(path.join(folder, `${lesson.id}.mdx`), lessonPage(unit, lesson, lessonIndex));
     count++;
   }
 }
-await writeFile(path.join(docs, 'index.mdx'), `---\ntitle: Temario\nslug: /temario\nsidebar_position: 0\ncustom_edit_url: null\n---\n\nDe los sucesos a las distribuciones de varias variables, con ejemplos de biologia y las matematicas explicadas desde su significado.\n\nEl tema 0 es un puente matematico opcional. Los temas 1 a 4 desarrollan los cuatro documentos de los apuntes. Las referencias senalan secciones, no paginas de los PDF.\n\n${map.join('\n\n')}\n\n## Referencias y ejemplos\n\nLas explicaciones y los ejercicios son originales. No se incluyen las respuestas de la evaluacion vigente. Los ejemplos no son resultados experimentales ni recomendaciones clinicas.\n`);
+await writeFile(path.join(docs, 'index.mdx'), `---\ntitle: Temario\nslug: /temario\nsidebar_position: 0\ncustom_edit_url: null\n---\n\nDe los sucesos a las distribuciones de varias variables, con ejemplos de biología y las matemáticas explicadas desde su significado.\n\nEl tema 0 es un puente matemático opcional. Los temas 1 a 4 desarrollan los cuatro documentos de los apuntes; cada lección indica su apartado y enlaza a la página correspondiente del PDF.\n\n${map.join('\n\n')}\n\n## Referencias y ejemplos\n\nLas explicaciones y los ejercicios son originales. No se incluyen las respuestas de la evaluación vigente. Los ejemplos no son resultados experimentales ni recomendaciones clínicas.\n`);
 console.log(`Generated ${count} lessons and the course map.`);

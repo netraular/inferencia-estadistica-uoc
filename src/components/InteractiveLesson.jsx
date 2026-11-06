@@ -31,7 +31,7 @@ export default function InteractiveLesson({lessonId, view = 'lab', animation, ex
         mounted = engine.mountSectionExample(host.current, {descriptor:example, baseUrl});
       } else if (view === 'figure') {
         const lesson = COURSE.units.flatMap(unit=>unit.lessons).find(item=>item.id===lessonId);
-        if (!lesson?.illustration) throw new Error('Esta leccion no tiene una ilustracion definida');
+        if (!lesson?.illustration) throw new Error('Esta lección no tiene una ilustración definida');
         mounted = {dispose:engine.mountLab(host.current, lesson.visual, {params:lesson.illustration.params, compact:true})};
       } else {
         mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false, audio, animation, createWhiteboard:whiteboard?.createWhiteboard});
@@ -40,11 +40,11 @@ export default function InteractiveLesson({lessonId, view = 'lab', animation, ex
     }).catch(failure => {if (active) setError(failure.message);});
     return () => {active = false; mounted?.dispose();};
   }, [lessonId, baseUrl, view, animation?.id, example?.type, example?.seed, example?.questionIds.join('|')]);
-  return <section className="course-activities" aria-label={illustration?.title || 'Actividades de la leccion'}>
+  return <section className="course-activities" aria-label={illustration?.title || 'Actividades de la lección'}>
     {illustration && <p>{illustration.question}</p>}
     {view === 'animation' && audio.lessons[animation?.id || lessonId]?.cueTiming === 'scene-measured-cues-estimated' && <p className="audio-timing">Audio sincronizado por diapositiva; resaltado de frases aproximado.</p>}
     {!ready && !error && <p role="status">Cargando actividades...</p>}
-    {error && <p role="alert">No se pudieron cargar las actividades: {error}. Recarga la pagina para reintentarlo.</p>}
+    {error && <p role="alert">No se pudieron cargar las actividades: {error}. Recarga la página para reintentarlo.</p>}
     <div ref={host} />
     {illustration && <p>{illustration.explanation}</p>}
   </section>;

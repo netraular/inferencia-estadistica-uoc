@@ -4,11 +4,15 @@ import assert from 'node:assert/strict';
 import {readFileSync, readdirSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import {runInNewContext} from 'node:vm';
+import {inlineMathToMdx} from '../src/lib/inline-math.js';
 
 test('lesson entry uses a progressive journey and keeps full notes optional', () => {
   const source=readFileSync(new URL('../src/components/LessonContent.jsx',import.meta.url),'utf8');
   assert.match(source,/<LessonJourney lessonId=\{lessonId\}/);
-  assert.match(source,/lesson-reference-notes/);
+  assert.match(source,/<LessonSource lesson=\{lesson\}/);
+  assert.match(source,/\{children\}/);
+  const notes=readFileSync(new URL('../src/components/LessonNotes.jsx',import.meta.url),'utf8');
+  assert.match(notes,/<details ref=\{notes\} className="lesson-reference-notes">/);
   assert.doesNotMatch(source,/value:'lab'/);
   assert.match(source,/query\.get\('actividad'\).*lab/);
   const journey=readFileSync(new URL('../src/components/LessonJourney.jsx',import.meta.url),'utf8');
@@ -146,11 +150,11 @@ test('production Babel compilation preserves every HTML paragraph instead of a N
 test('36 MDX pages preserve theory, formulas, method, solved examples and interactive lesson IDs', () => {
   for (const unit of COURSE.units) for (const lesson of unit.lessons) {
     const text = readFileSync(new URL(`../docs/${unit.id}/${lesson.id}.mdx`, import.meta.url), 'utf8');
-    for (const section of lesson.sections) assert.ok(text.includes(section.body), lesson.id);
+    for (const section of lesson.sections) assert.ok(text.includes(inlineMathToMdx(section.body)), lesson.id);
     for (const step of lesson.method) assert.ok(text.includes(step), lesson.id);
     for (const formula of lesson.formulas) assert.ok(text.includes(JSON.stringify(formula.tex)), lesson.id);
     assert.ok(text.includes(`<LessonContent lessonId="${lesson.id}">`), lesson.id);
-    assert.ok(text.indexOf('<LessonContent ') < text.indexOf('## Al terminar esta leccion'), lesson.id);
+    assert.ok(text.indexOf('<LessonContent ') < text.indexOf('## Al terminar esta lección'), lesson.id);
     assert.ok(text.trimEnd().endsWith('</LessonContent>'), lesson.id);
     assert.equal(text.includes('<InteractiveLesson '),Boolean(lesson.illustration),lesson.id);
     if (lesson.illustration) {
@@ -158,7 +162,10 @@ test('36 MDX pages preserve theory, formulas, method, solved examples and intera
       assert.ok(text.includes(`## ${lesson.illustration.title}`),lesson.id);
       assert.ok(text.indexOf('view="figure"')<text.indexOf('## Palabras y símbolos'),lesson.id);
     }
-    assert.ok(text.includes('Ejemplo resuelto con el metodo'), lesson.id);
+    assert.ok(text.includes('Ejemplo resuelto con el método'), lesson.id);
+    assert.ok(text.indexOf('<LessonSummary>') < text.indexOf('### Fórmulas clave'), lesson.id);
+    assert.ok(text.indexOf('</LessonSummary>') < text.indexOf('<LessonNotes>'), lesson.id);
+    assert.ok(!/\bleccion\b|\bmetodo\b|\bsimbolos\b|Como razonar/.test(text), lesson.id);
   }
   assert.equal(lessons.length, 36);
 });

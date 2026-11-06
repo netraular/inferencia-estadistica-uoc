@@ -9,8 +9,13 @@ https://webs.raular.com/inferencia/ from the `main` branch.
 - Prerendered theory, heading links, a table of contents and local full-text search.
 - 17 visual laboratories, 36 seeded exercise generators and 36 animated classes.
 - Concept checks, hints, worked solutions, subtitles, transcripts and downloads.
-- Each lesson starts with four tabs: lesson, laboratory, exercises and animated
-  reading. Concept checks and the studied mark sit at the end of the lesson.
+- Each lesson opens with a line naming the topic and section of the supplied
+  notes, linked to the matching PDF page (`src/lib/pdf-pages.js`; bridge
+  lessons say they are prior review). Below it are three tabs: Lesson,
+  Exercises and Animated Recap ("Repaso animado").
+- The Lesson tab shows, in order: the narrated section journey, a visible
+  summary (goals, key formulas, method, pitfalls), the complete written notes
+  collapsed in reading order, the concept check and the studied mark.
   Symbols and downloadable materials are global navigation items.
   The selected activity is linkable with `?actividad=...`;
   only the selected activity is mounted, with no duplicate internal navigation.
@@ -32,21 +37,27 @@ https://webs.raular.com/inferencia/ from the `main` branch.
 The original explanations, formulas, source references and exercise engines live
 under `pages/inferencia/`. `scripts/generate-docs.mjs` produces the MDX lessons
 from that single content source; do not edit the ignored `docs/` output.
-Update `pages/inferencia/course.js` to edit the curriculum. The conversational
+Update `pages/inferencia/course.js` to edit the curriculum. Written note bodies
+(section and example `body`) may contain inline TeX between dollar signs, for
+example `$f_X(x)=2(1-x)$`; the generator turns it into KaTeX. Keep spoken fields
+(`method`, `pitfalls`, `formulas[].reading`) as plain words, and do not change
+`lesson.source` without regenerating audio, because it belongs to the frozen
+narration signature. Section titles are referenced by `lesson-sections.js`. The conversational
 lecture walkthroughs live in `pages/inferencia/lecture-story.js`; they explain
 the same concepts with spoken examples rather than reading the web text aloud.
 Worked practice in both formats uses the shared exercise generators.
 
 ## Reading Without A Mathematics Background
 
-The three primary views are Lesson, Exercises and Animated Reading. Lesson uses
+The three tabs are Lesson, Exercises and Animated Recap. Lesson uses
 118 separate sections across the 36 lessons, with conversational narration,
 delayed whiteboard reveals and scoped worked examples. Symbols and conditions
 are introduced before their calculations. Complete notes remain available in
 an optional disclosure; every required source section is covered by the journey.
 Only additional curriculum material is labelled as an optional section.
-Animated Reading retains the complete global recap and its existing audio.
-Laboratories remain available internally, but are no longer a primary tab.
+Animated Recap retains the complete global walkthrough of the lesson; it has
+no published audio and runs on the estimated clock. Laboratories appear only as
+the six reading figures and inside the legacy fixture, not as a tab.
 
 Section scripts live in `pages/inferencia/lesson-sections.js`; the shared
 vocabulary in `pages/inferencia/teaching.js` explains symbols locally and in the
