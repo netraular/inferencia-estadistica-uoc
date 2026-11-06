@@ -17,13 +17,15 @@ export default function InteractiveLesson({lessonId, view = 'lab'}) {
       import('../classroom/embed.mjs'),
       import('jstat'),
       import('katex'),
-      import('../../pages/inferencia/vendor/lucide.min.js')
-    ]).then(([engine, stats, math, icons]) => {
+      import('../../pages/inferencia/vendor/lucide.min.js'),
+      view === 'animation' && ['proporciones', 'algebra', 'funciones', 'calculo', 'regiones-matrices'].includes(lessonId)
+        ? import('../classroom/whiteboard.mjs') : Promise.resolve(null)
+    ]).then(([engine, stats, math, icons, whiteboard]) => {
       if (!active) return;
       globalThis.jStat = stats.default?.jStat || stats.jStat || stats.default;
       window.katex = math.default || math;
       window.lucide = icons.default || icons;
-      mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false, audio});
+      mounted = engine.mountEmbeddedClassroom(host.current, {shell, baseUrl, lessonId, view, showNavigation:false, audio, createWhiteboard:whiteboard?.createWhiteboard});
       setReady(true);
     }).catch(failure => {if (active) setError(failure.message);});
     return () => {active = false; mounted?.dispose();};

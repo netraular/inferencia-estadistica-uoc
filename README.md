@@ -99,6 +99,24 @@ from measured audio; where phrase alignment is unavailable, cue highlighting is
 proportional within each scene and explicitly marked as approximate. It is not
 word-level forced alignment. The downloaded VTT uses the player's timeline.
 
+## Topic 0 Animated Whiteboard
+
+The five mathematical bridge lessons use a client-only Konva canvas with a paused
+GSAP timeline driven by the existing player's audio clock. Other lessons retain
+their current renderer and do not load these dependencies. Narration scripts,
+scene boundaries, captions, speed controls and fullscreen behavior are preserved.
+
+Scenes illustrate seed proportions, unit conversions, normalization, discrete
+support, integrals, conditional densities, triangular regions and covariance
+matrices. Worked exercises display their actual generated inputs and equations.
+MathJax turns formulas into vector paths within the same canvas, without image
+downloads or HTML formula overlays. Narrow boards use a square composition;
+fullscreen fits the scene into the available drawing space.
+
+`tests/whiteboard.test.mjs` renders every scene with a CPU canvas at desktop and
+mobile sizes, checks text bounds, exact areas, reversible seeking, reduced motion
+and resource cleanup. This is not a browser or physical-device visual check.
+
 ## Deployment
 
 `Dockerfile` builds and tests the site, then copies only static output into an
