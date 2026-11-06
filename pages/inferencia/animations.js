@@ -1318,10 +1318,12 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
       node.style.opacity = String(reveal);
       node.style.transform = reducedMotion ? 'none' : `translateY(${(1-reveal)*10}px)`;
     });
-    if (!reducedMotion && visible !== lastBoardReveal && boardNodes.length && board.clientHeight > 0) {
-      const current = boardNodes[Math.min(visible - 1, boardNodes.length - 1)];
-      const bottom = current.offsetTop + current.offsetHeight + 16;
-      if (bottom > board.scrollTop + board.clientHeight) board.scrollTop = bottom - board.clientHeight;
+    if (visible !== lastBoardReveal && board.clientHeight > 0) {
+      if (visible) {
+        const current = boardNodes[visible-1];
+        const bottom = current.offsetTop + current.offsetHeight + 16;
+        if (bottom > board.scrollTop + board.clientHeight) board.scrollTop = bottom - board.clientHeight;
+      } else board.scrollTop = 0;
       lastBoardReveal = visible;
     }
     const formulaProgress = reducedMotion ? 1 : Math.max(0,Math.min(1,(progress-0.2)/0.6));
@@ -1333,9 +1335,10 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     if (disposed || !running) return;
     if (document.hidden || document.visibilityState === 'hidden' || root.closest?.('[hidden]')) { stop(); return; }
     const oldIndex = index;
+    const oldCue = lastCue;
     advance(time);
     syncControls();
-    if (!reducedMotion || index !== oldIndex || !running) draw();
+    if (!reducedMotion || index !== oldIndex || lastCue !== oldCue || !running) draw();
     if (running) frame = requestFrame(tick);
   }
 

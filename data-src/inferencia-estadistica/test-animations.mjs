@@ -612,6 +612,7 @@ class FakeElement extends FakeTarget {
     this.children = [];
     this.attributes = {};
     this.style = {};
+    this.classList = {add:name=>{this.className=`${this.className || ''} ${name}`.trim();}};
     this.textContent = '';
     this.innerHTML = '';
     this.value = '';
@@ -641,7 +642,7 @@ class FakeElement extends FakeTarget {
   }
 }
 
-function fakeDom({reducedMotion = false, raf = true, resizeObserver = true, canvas = true, width = 640, fullscreen = false, rejectPlay = false} = {}) {
+function fakeDom({reducedMotion = false, raf = true, resizeObserver = true, canvas = true, width = 640, fullscreen = false, rejectPlay = false, boardHeight = 0} = {}) {
   const document = new FakeTarget();
   const view = new FakeTarget();
   let time = 0;
@@ -673,6 +674,10 @@ function fakeDom({reducedMotion = false, raf = true, resizeObserver = true, canv
   document.downloads = [];
   document.createElement = tag => {
     const node = new FakeElement(tag, document);
+    node.clientHeight=boardHeight;
+    node.offsetTop=0;
+    node.offsetHeight=80;
+    node.scrollTop=0;
     if (tag === 'audio') {
       node.currentTime = 0;
       node.duration = NaN;
@@ -1422,6 +1427,39 @@ test('las referencias visuales siguen los cues medidos del audio, no un porcenta
     }
     cleanup();dom.cleanupCheck();
   }
+});
+
+test('una pizarra con altura real puede empezar vacía y volver al principio sin errores',()=>{
+  for(const reducedMotion of [false,true]){
+    const lecture=fullLectures()[0];
+    const dom=fakeDom({boardHeight:120,reducedMotion});
+    const cleanup=mountAnimation(dom.container,lecture);
+    const board=dom.created.find(node=>node.className==='slide-board');
+    const rows=board.children[1].children;
+    rows.forEach((row,index)=>{row.offsetTop=index*100;});
+    assert.ok(rows.every(row=>row.hidden));
+    const seek=dom.byLabel('Tiempo de reproducción');
+    seek.value=String(lecture.steps[0].cues.at(-1).start);seek.dispatch('input');
+    assert.ok(board.scrollTop>0);
+    seek.value='0';seek.dispatch('input');
+    assert.equal(board.scrollTop,0);
+    assert.ok(rows.every(row=>row.hidden));
+    cleanup();dom.cleanupCheck();
+  }
+});
+
+test('Konva sin movimiento se redibuja al cambiar de frase, sin animar entre frases',()=>{
+  const lecture=fullLectures()[0];
+  const dom=fakeDom({reducedMotion:true});
+  const frames=[];
+  const cleanup=mountAnimation(dom.container,lecture,{createWhiteboard:()=>({render:frame=>frames.push(frame),resize(){},dispose(){}})});
+  dom.byLabel('Reproducir').click();
+  dom.advance(lecture.steps[0].cues[2].start*1000+1);
+  assert.equal(frames.at(-1).cueIndex,2);
+  const count=frames.length;
+  dom.advance(10);
+  assert.equal(frames.length,count);
+  cleanup();dom.cleanupCheck();
 });
 
 test('audio pausado o descartado no puede revivir por un play tardío', async () => {
