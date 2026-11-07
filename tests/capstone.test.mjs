@@ -393,7 +393,7 @@ test('qualitative solutions are explicit ungraded reasoning, not fabricated nume
   assert.match(selection.answerText,/multiplicidad dos/);
   const distribution = selectedQuestion(exercises,3,'a-distribution');
   assert.match(distribution.answerTex,/120\+0\.8\(x-100\),256/);
-  assert.match(distribution.answerText,/desviacion tipica es 16/);
+  assert.match(distribution.answerText,/desviación típica es 16/);
   const independence = selectedQuestion(exercises,3,'c-reason');
   assert.match(independence.tutorSteps.map(step => step.comment).join(' '),/conjuntamente normal/);
   assert.match(independence.answerTex,/40,256/);

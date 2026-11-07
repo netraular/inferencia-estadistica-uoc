@@ -67,7 +67,7 @@ function operations(exercise, question) {
     const trueRoute=prevalence*sensitivity;
     const falseRoute=(1-prevalence)*falsePositive;
     const positive=trueRoute+falseRoute;
-    const parts=[frame('Recorrer la ruta del verdadero positivo',String.raw`${number(prevalence)}\cdot${number(sensitivity)}=${number(trueRoute)}`,'La probabilidad del grupo pondera la de obtener un positivo dentro de el.'),frame('Recorrer la ruta del falso positivo',String.raw`(1-${number(prevalence)})\cdot${number(falsePositive)}=${number(falseRoute)}`,'Un positivo tambien puede venir del otro grupo.'),frame('Reunir todos los positivos',String.raw`P(+ )=${number(trueRoute)}+${number(falseRoute)}`,'Las dos rutas son excluyentes: sumamos sus probabilidades.')];
+    const parts=[frame('Recorrer la ruta del verdadero positivo',String.raw`${number(prevalence)}\cdot${number(sensitivity)}=${number(trueRoute)}`,'La probabilidad del grupo pondera la de obtener un positivo dentro de él.'),frame('Recorrer la ruta del falso positivo',String.raw`(1-${number(prevalence)})\cdot${number(falsePositive)}=${number(falseRoute)}`,'Un positivo también puede venir del otro grupo.'),frame('Reunir todos los positivos',String.raw`P(+ )=${number(trueRoute)}+${number(falseRoute)}`,'Las dos rutas son excluyentes: sumamos sus probabilidades.')];
     if(question.id==='posterior')parts.push(frame('Cambiar el grupo de referencia',String.raw`P(D\mid +)=\frac{${number(trueRoute)}}{${number(positive)}}`,'Entre todos los positivos, conservamos la ruta de los verdaderos positivos.'));
     return parts;
   }
@@ -77,39 +77,39 @@ function operations(exercise, question) {
       const left = (lower-mean)/sd;
       const right = (upper-mean)/sd;
       return [
-        frame('Marcar el intervalo',String.raw`${lower}\le X\le ${upper}`,'El area buscada esta entre los dos limites.'),
-        frame('Centrar el limite izquierdo',String.raw`${lower}-${mean}=${number(lower-mean)}`,'Restamos la media para medir la distancia al centro.'),
-        frame('Medir esa distancia en desviaciones',String.raw`z_a=\frac{${number(lower-mean)}}{${sd}}=${number(left)}`,'Dividimos por la desviacion, no por la varianza.'),
-        frame('Centrar el limite derecho',String.raw`${upper}-${mean}=${number(upper-mean)}`),
-        frame('Tipificar el segundo limite',String.raw`z_b=\frac{${number(upper-mean)}}{${sd}}=${number(right)}`),
-        frame('Acumular hasta el limite derecho',String.raw`\Phi(${number(right)})=${number(core.normal.cdf(right,0,1))}`,'Esta area incluye tambien lo que queda antes del limite izquierdo.'),
-        frame('Identificar el area que sobra',String.raw`\Phi(${number(left)})=${number(core.normal.cdf(left,0,1))}`),
-        frame('Quitar el area que sobra',String.raw`P=${number(core.normal.cdf(right,0,1))}-${number(core.normal.cdf(left,0,1))}`)
+        frame('Marcar el intervalo',String.raw`${lower}\le X\le ${upper}`,'El área buscada está entre los dos límites.'),
+        frame('Centrar el límite izquierdo',String.raw`${lower}-${mean}=${number(lower-mean)}`,'Restamos la media para medir la distancia al centro.'),
+        frame('Medir esa distancia en desviaciones',String.raw`z_a=\frac{${number(lower-mean)}}{${sd}}=${number(left)}`,'Dividimos por la desviación, no por la varianza.'),
+        frame('Centrar el límite derecho',String.raw`${upper}-${mean}=${number(upper-mean)}`),
+        frame('Tipificar el segundo límite',String.raw`z_b=\frac{${number(upper-mean)}}{${sd}}=${number(right)}`),
+        frame('Acumular hasta el límite derecho',String.raw`\Phi(${number(right)})=${number(core.normal.cdf(right,0,1))}`,'Esta área incluye también lo que queda antes del límite izquierdo.'),
+        frame('Identificar el área que sobra',String.raw`\Phi(${number(left)})=${number(core.normal.cdf(left,0,1))}`),
+        frame('Quitar el área que sobra',String.raw`P=${number(core.normal.cdf(right,0,1))}-${number(core.normal.cdf(left,0,1))}`)
       ];
     }
     const quantile = core.normal.inv(quantileProbability,0,1);
     return [
-      frame('Fijar el area acumulada',String.raw`\Phi(z)=${number(quantileProbability)}`,'Buscamos un limite que deje esta proporcion a su izquierda.'),
+      frame('Fijar el área acumulada',String.raw`\Phi(z)=${number(quantileProbability)}`,'Buscamos un límite que deje esta proporción a su izquierda.'),
       frame('Invertir la acumulada',String.raw`z=\Phi^{-1}(${number(quantileProbability)})`),
-      frame('Consultar el cuantil estandar',String.raw`z=${number(quantile)}`),
-      frame('Recuperar la escala',String.raw`\sigma z=${sd}\cdot${number(quantile)}=${number(sd*quantile)}`,'La desviacion devuelve las unidades originales.'),
+      frame('Consultar el cuantil estándar',String.raw`z=${number(quantile)}`),
+      frame('Recuperar la escala',String.raw`\sigma z=${sd}\cdot${number(quantile)}=${number(sd*quantile)}`,'La desviación devuelve las unidades originales.'),
       frame('Recuperar el centro',String.raw`x=${mean}+${number(sd*quantile)}`)
     ];
   }
   if (exercise.type === 'continuous') {
     const {upper,threshold,constant} = params;
     if (question.id === 'normalizer') return [
-      frame('Usar todo el soporte',String.raw`\int_0^{${upper}}cx\,dx=1`,'La densidad debe reunir un area total de uno.'),
+      frame('Usar todo el soporte',String.raw`\int_0^{${upper}}cx\,dx=1`,'La densidad debe reunir un área total de uno.'),
       frame('Encontrar una primitiva',String.raw`\int x\,dx=\frac{x^2}{2}`,'Derivar x al cuadrado entre dos devuelve x.'),
       frame('Evaluar los extremos',String.raw`c\left(\frac{${upper}^2}{2}-\frac{0^2}{2}\right)=1`),
-      frame('Calcular el area sin la constante',String.raw`${number(upper**2/2)}c=1`),
+      frame('Calcular el área sin la constante',String.raw`${number(upper**2/2)}c=1`),
       frame('Dejar sola la constante',String.raw`c=\frac{1}{${number(upper**2/2)}}`)
     ];
     if (question.id === 'below') return [
       frame('Recortar el intervalo',String.raw`0\le X\le ${number(threshold)}`,'No integramos el soporte completo, solo el evento pedido.'),
       frame('Usar la densidad normalizada',String.raw`P=\int_0^{${number(threshold)}}${number(constant)}x\,dx`),
       frame('Evaluar la primitiva',String.raw`P=${number(constant)}\left(\frac{${number(threshold)}^2}{2}-0\right)`),
-      frame('Calcular el area del intervalo',String.raw`P=${number(constant)}\cdot${number(threshold**2/2)}`)
+      frame('Calcular el área del intervalo',String.raw`P=${number(constant)}\cdot${number(threshold**2/2)}`)
     ];
     return [frame('Distinguir un punto de un intervalo',String.raw`[${number(threshold)},${number(threshold)}]`,'El intervalo tiene anchura cero, aunque la curva tenga altura.'),frame('Medir su anchura',String.raw`${number(threshold)}-${number(threshold)}=0`)];
   }
@@ -297,12 +297,12 @@ export function drawTutorFigure(context, exercise, question, position, width, he
     const to = normal ? question.id === 'interval' ? params.upper : globalThis.jStat.normal.inv(params.quantileProbability,params.mean,params.sd) : question.id === 'normalizer' ? maximum : params.threshold;
     let shadedTo=to;
     const currentTitle=createTutorFrames(exercise,question)[position].title;
-    if(normal&&question.id==='interval'&&currentTitle==='Acumular hasta el limite derecho')from=minimum;
-    if(normal&&question.id==='interval'&&currentTitle==='Identificar el area que sobra'){from=minimum;shadedTo=params.lower;}
+    if(normal&&question.id==='interval'&&currentTitle==='Acumular hasta el límite derecho')from=minimum;
+    if(normal&&question.id==='interval'&&currentTitle==='Identificar el área que sobra'){from=minimum;shadedTo=params.lower;}
     if (position>0 && question.id !== 'point') {
       context.beginPath();context.moveTo(horizontal(from),bottom);
       for(let index=0;index<=80;index++){const input=from+(shadedTo-from)*index/80;context.lineTo(horizontal(input),vertical(input));}
-      context.lineTo(horizontal(shadedTo),bottom);context.closePath();context.fillStyle=currentTitle==='Identificar el area que sobra'?'#f4cbd4':'#bbdfd0';context.fill();
+      context.lineTo(horizontal(shadedTo),bottom);context.closePath();context.fillStyle=currentTitle==='Identificar el área que sobra'?'#f4cbd4':'#bbdfd0';context.fill();
     }
     context.strokeStyle='#147d68';context.beginPath();
     for(let index=0;index<=120;index++){const input=minimum+(maximum-minimum)*index/120;if(index)context.lineTo(horizontal(input),vertical(input));else context.moveTo(horizontal(input),vertical(input));}
@@ -380,7 +380,7 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   let disposed = false;
   const listeners = [];
   const listen = (target,event,handler)=>{target.addEventListener(event,handler);listeners.push(()=>target.removeEventListener(event,handler));};
-  root.innerHTML = `${exercise.source ? `<h2>${escape(exercise.title)}</h2><p class="source-note" data-tutor-source>${escape(exercise.source.file)} · Problema ${escape(exercise.source.number)} · Pagina ${escape(exercise.source.page)}</p>` : ''}<div class="tutor-heading"><label>Apartado<select data-tutor-question>${exercise.questions.map((question,index)=>`<option value="${index}">${index+1}. ${escape(question.prompt)}</option>`).join('')}</select></label><button type="button" class="text-button" data-tutor-practice><i data-lucide="pencil" aria-hidden="true"></i>Intentar otra variante</button></div><div class="tutor-surface"><div class="tutor-figure"><canvas width="720" height="300" role="img"></canvas></div><div class="tutor-writing" aria-live="polite"><h3 data-tutor-title></h3><p data-tutor-comment></p><div data-tutor-lines></div></div></div><div class="tutor-controls"><button type="button" class="icon-button" data-tutor-previous title="Paso anterior" aria-label="Paso anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-play title="Reproducir" aria-label="Reproducir"><i data-lucide="play" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-next title="Paso siguiente" aria-label="Paso siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button><span data-tutor-position role="status"></span><label>Ritmo<select data-tutor-speed><option value="6000" selected>Pausado</option><option value="4000">Normal</option><option value="2500">Rapido</option></select></label></div><details data-tutor-notes class="tutor-notes"><summary>Apuntes del ejercicio</summary><div data-tutor-note-content></div></details>`;
+  root.innerHTML = `${exercise.source ? `<h2>${escape(exercise.title)}</h2><p class="source-note" data-tutor-source>${escape(exercise.source.file)} · Problema ${escape(exercise.source.number)} · Página ${escape(exercise.source.page)}</p>` : ''}<div class="tutor-heading"><label>Apartado<select data-tutor-question>${exercise.questions.map((question,index)=>`<option value="${index}">${index+1}. ${escape(question.prompt)}</option>`).join('')}</select></label><button type="button" class="text-button" data-tutor-practice><i data-lucide="pencil" aria-hidden="true"></i>Intentar otra variante</button></div><div class="tutor-surface"><div class="tutor-figure"><canvas width="720" height="300" role="img"></canvas></div><div class="tutor-writing" aria-live="polite"><h3 data-tutor-title></h3><p data-tutor-comment></p><div data-tutor-lines></div></div></div><div class="tutor-controls"><button type="button" class="icon-button" data-tutor-previous title="Paso anterior" aria-label="Paso anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-play title="Reproducir" aria-label="Reproducir"><i data-lucide="play" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-next title="Paso siguiente" aria-label="Paso siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button><span data-tutor-position role="status"></span><label>Ritmo<select data-tutor-speed><option value="6000" selected>Pausado</option><option value="4000">Normal</option><option value="2500">Rapido</option></select></label></div><details data-tutor-notes class="tutor-notes"><summary>Apuntes del ejercicio</summary><div data-tutor-note-content></div></details>`;
   const element = selector=>root.querySelector(selector);
   const data=document.createElement('div');
   data.className='tutor-data';

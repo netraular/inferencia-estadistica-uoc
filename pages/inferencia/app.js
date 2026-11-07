@@ -1,10 +1,10 @@
-import {COURSE} from './course.js?v=06e857c521d0';
+import {COURSE} from './course.js?v=2eb74cdf8fab';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=6eeb76ea27e1';
 import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=6f265331127f';
 import {enrichLessonAnimation, enrichGlobalAnimation} from './lesson-visuals.js?v=d63fba41c35b';
 import {mountLab} from './labs.js?v=2f4aa757b74f';
-import {mountExerciseTutor} from './exercise-tutor.js?v=3c42a7a9ba14';
+import {mountExerciseTutor} from './exercise-tutor.js?v=1513c3f74d3a';
 import {getPdfExercises} from './pdf-exercises.js?v=c7879552421f';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 

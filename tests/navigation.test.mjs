@@ -10,6 +10,7 @@ import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
 import {generateExercise, scopeExercise} from '../pages/inferencia/exercises.js';
 import {mountAula} from '../pages/inferencia/app.js';
+import {inlineMathToMdx} from '../src/lib/inline-math.js';
 import {CAPSTONE} from '../pages/inferencia/capstone.js';
 
 const require = createRequire(import.meta.url);
@@ -46,6 +47,8 @@ test('three Docusaurus tabs keep the journey, optional notes and progress inside
     '@theme/TabItem':({value, children}) => React.createElement('section', {'data-view':value}, children),
     './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive':view}),
     './LessonJourney':({lessonId}) => React.createElement('div', {'data-journey':lessonId}),
+    './LessonSource':({lesson}) => React.createElement('p', {'data-source':lesson.id}),
+    '../../pages/inferencia/course.js':{COURSE},
     '../classroom/useCourseProgress':lessonId => {
       assert.equal(lessonId, 'sucesos');
       return {progress:{studied:['sucesos']}, warning:'Aviso de guardado', setStudied:value => studied.push(value)};
@@ -57,7 +60,8 @@ test('three Docusaurus tabs keep the journey, optional notes and progress inside
   const lesson = document.querySelector('[data-view="lesson"]');
   assert.match(lesson.textContent, /Contenido conservado/);
   assert.ok(lesson.querySelector('[data-journey="sucesos"]'));
-  assert.equal(lesson.querySelector('.lesson-reference-notes').hasAttribute('open'), false);
+  assert.ok(document.querySelector('[data-source="sucesos"]'));
+  assert.equal(document.querySelector('[data-source]').closest('[data-view]'), null);
   assert.ok(lesson.querySelector('[data-interactive="theory"]'));
   assert.ok(lesson.querySelector('input[type="checkbox"][checked]'));
   assert.ok(lesson.querySelector('[role="status"]'));
@@ -257,7 +261,7 @@ test('curriculum generation retains all lessons and adds the solved PEC as chapt
   const {code} = babel.transformFromAstSync(ast, source, {babelrc:false, configFile:false});
   const writes = new Map();
   await runInNewContext(`(async () => {${code}})()`, {
-    root:'/fixture', path, COURSE, CAPSTONE, generateExercise, scopeExercise, require,
+    root:'/fixture', path, COURSE, CAPSTONE, generateExercise, scopeExercise, inlineMathToMdx, require,
     mkdir:async () => {}, rm:async () => {}, cp:async () => {},
     readFile:async () => '<html></html>', writeFile:async (filename, content) => writes.set(filename, content),
     console:{log() {}}
@@ -283,7 +287,7 @@ test('curriculum generation retains all lessons and adds the solved PEC as chapt
     for (const id of section.lessonIds) assert.ok(mdx.includes(`](/lecciones/${id})`));
   }
   assert.ok(!/independiente|afiliada|no oficial|No se publican los PDF/.test(curriculum));
-  assert.match(curriculum, /Los ejemplos no son resultados experimentales ni recomendaciones clinicas/);
+  assert.match(curriculum, /Los ejemplos no son resultados experimentales ni recomendaciones clínicas/);
   let count = 0;
   for (const unit of COURSE.units) {
     assert.ok(curriculum.includes(`<summary>Tema ${unit.number}: ${unit.title}`));
@@ -299,18 +303,18 @@ test('curriculum generation retains all lessons and adds the solved PEC as chapt
       assert.equal(mdx.includes('<details className="lesson-depth">'),hasOptional,lesson.id);
       assert.equal(mdx.includes('Ampliación opcional'),hasOptional,lesson.id);
       const required = mdx.split('<details className="lesson-depth">')[0];
-      const escapedBody = value => value.replace(/[{}]/g, character => character === '{' ? '&#123;' : '&#125;');
-      for (const section of lesson.sections.filter(section=>!section.optional)) assert.ok(required.includes(escapedBody(section.body)),`${lesson.id}: ${section.title}`);
+      for (const section of lesson.sections.filter(section=>!section.optional)) assert.ok(required.includes(inlineMathToMdx(section.body)),`${lesson.id}: ${section.title}`);
       for (const formula of lesson.formulas.filter(formula=>!formula.optional)) assert.ok(required.includes(JSON.stringify(formula.tex)),`${lesson.id}: ${formula.tex}`);
-      for (const section of lesson.sections) assert.ok(mdx.includes(escapedBody(section.body)), lesson.id);
+      for (const section of lesson.sections) assert.ok(mdx.includes(inlineMathToMdx(section.body)), lesson.id);
       for (const formula of lesson.formulas) {
         assert.ok(mdx.includes(JSON.stringify(formula.tex)), lesson.id);
         assert.ok(mdx.includes(`reading={${JSON.stringify(formula.reading)}}`),lesson.id);
       }
       for (const step of lesson.method) assert.ok(mdx.includes(step), lesson.id);
-      assert.ok(mdx.includes(escapedBody(lesson.example.body)), lesson.id);
+      assert.ok(mdx.includes(inlineMathToMdx(lesson.example.body)), lesson.id);
       for (const pitfall of lesson.pitfalls) assert.ok(mdx.includes(pitfall), lesson.id);
-      assert.ok(mdx.includes('Ejemplo resuelto con el metodo'), lesson.id);
+      assert.ok(mdx.includes('Ejemplo resuelto con el método'), lesson.id);
+      await compile(mdx);
       count++;
     }
   }
