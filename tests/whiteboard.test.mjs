@@ -6,6 +6,7 @@ import {readFileSync, mkdtempSync, rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {runInNewContext} from 'node:vm';
+import {setImmediate as yieldToEventLoop} from 'node:timers/promises';
 import Konva from 'konva';
 import {createCanvas,GlobalFonts} from '@napi-rs/canvas';
 import {drawTutorFigure,createTutorFrames} from '../pages/inferencia/exercise-tutor.js';
@@ -46,7 +47,7 @@ const paragraphs=html=>{const node=document.createElement('div');node.innerHTML=
 const lectures=COURSE.units[0].lessons.map(lesson=>createLessonAnimation(lesson,generateExercise,paragraphs));
 const sectionAnimations=COURSE.units[0].lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>section.animation));
 
-test('all 118 sections and 521 recap scenes render every context phase as finite, bounded real Canvas pixels at 320 and 960',()=>{
+test('all 118 sections and 521 recap scenes render every context phase as finite, bounded real Canvas pixels at 320 and 960',async()=>{
   const lessons=COURSE.units.flatMap(unit=>unit.lessons);
   const sections=lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>enrichLessonAnimation(section.animation)));
   const recaps=lessons.map(lesson=>enrichGlobalAnimation(createLessonAnimation(lesson,generateExercise,paragraphs)));
@@ -105,6 +106,7 @@ test('all 118 sections and 521 recap scenes render every context phase as finite
       render(initial.diagram,initial.phase,label);
       assert.deepEqual(pixels(),first,`${label}: exact reverse seek before cue zero`);
       assert.equal(JSON.stringify(scene.visual),before,`${label}: no mutation`);
+      await yieldToEventLoop();
     }
   }
   assert.deepEqual([...kinds].sort(),['bars','matrix','trials','tree','number-line','scatter','region','normal','joint-normal','curve'].sort());
