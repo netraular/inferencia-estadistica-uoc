@@ -7,8 +7,12 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {runInNewContext} from 'node:vm';
 import Konva from 'konva';
-import {createCanvas} from '@napi-rs/canvas';
+import {createCanvas,GlobalFonts} from '@napi-rs/canvas';
 import {drawTutorFigure,createTutorFrames} from '../pages/inferencia/exercise-tutor.js';
+
+for (const weight of [400,700]) {
+  assert.ok(GlobalFonts.registerFromPath(new URL(`../pages/inferencia/vendor/atkinson-latin-${weight}.woff2`,import.meta.url).pathname,'Atkinson'));
+}
 
 test('El tutor dibuja todos los tipos sin lienzos vacios y cambia el grafico al avanzar', () => {
   for (const width of [320,960]) for (const type of EXERCISE_TYPES) {
