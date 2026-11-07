@@ -5,6 +5,7 @@ import {existsSync, readFileSync} from 'node:fs';
 import {parseHTML} from 'linkedom';
 import {createCanvas} from '@napi-rs/canvas';
 import {COURSE} from '../pages/inferencia/course.js';
+import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 import {generateExercise, gradeAnswer, scopeExercise} from '../pages/inferencia/exercises.js';
 import {getPdfExercises, PDF_EXERCISE_CATALOGUE} from '../pages/inferencia/pdf-exercises.js';
 import {createTutorFrames, drawTutorFigure} from '../pages/inferencia/exercise-tutor.js';
@@ -84,7 +85,7 @@ function standardNormalQuantile(probability) {
 
 function checkDiagram(diagram) {
   assert.ok(diagram && typeof diagram === 'object');
-  assert.ok(['bars','matrix','region','normal'].includes(diagram.kind));
+  assert.ok(['bars','matrix','region','normal','curve'].includes(diagram.kind));
   if (diagram.kind === 'bars') {
     assert.ok(diagram.labels.length > 0);
     assert.equal(diagram.labels.length,diagram.values.length);
@@ -107,6 +108,19 @@ function checkDiagram(diagram) {
       assert.equal(point.length,2);
       assert.ok(point.every(Number.isFinite));
     }
+  } else if (diagram.kind === 'curve') {
+    assert.ok(diagram.label);
+    assert.ok(diagram.domain.every(Number.isFinite) && diagram.domain[0] < diagram.domain[1]);
+    assert.ok(diagram.range.every(Number.isFinite) && diagram.range[0] < diagram.range[1]);
+    assert.ok(diagram.points.length > 100);
+    for (const [index,point] of diagram.points.entries()) {
+      assert.equal(point.length,2);
+      assert.ok(point.every(Number.isFinite));
+      assert.ok(point[0] >= diagram.domain[0] && point[0] <= diagram.domain[1]);
+      assert.ok(point[1] >= diagram.range[0] && point[1] <= diagram.range[1]);
+      if (index) assert.ok(point[0] > diagram.points[index-1][0]);
+    }
+    for (const tick of diagram.ticks) assert.ok(Number.isFinite(tick) && tick >= diagram.domain[0] && tick <= diagram.domain[1]);
   } else {
     assert.ok(Number.isFinite(diagram.mean) && Number.isFinite(diagram.sd) && diagram.sd > 0);
     if (diagram.lower !== undefined) assert.ok(Number.isFinite(diagram.lower));
@@ -274,6 +288,220 @@ test('the corrected PDF errors are not accepted by the answer contract', () => w
   assert.equal(gradeAnswer(selected('pdf-u2-2.8','posterior'),'0.1038555').correct,false);
   assert.equal(gradeAnswer(selected('pdf-u3-2','joint'),'1/8').correct,false);
 }));
+
+test('PDF explanations retain graphical reasoning and both readings of the contradictory reduction', () => withStatistics(() => {
+  const exercises = getPdfExercises();
+  const survival = exercises.find(exercise => exercise.id === 'pdf-u2-2.3');
+  for (const id of ['b-cdf','f-cdf']) {
+    const graph = survival.questions.find(question => question.id === id).tutorSteps.find(step => step.title === 'Trazar la acumulada');
+    assert.ok(graph,id);
+    assert.match(graph.comment,/curva continua/);
+    assert.match(graph.comment,/no masas/);
+    assert.equal(graph.diagram.kind,'curve');
+  }
+  const reduction = exercises.find(exercise => exercise.id === 'pdf-u3-4').questions.find(question => question.id === 'reduction');
+  close(reduction.answer,2/3,'explicit inequality');
+  assert.equal(gradeAnswer(reduction,'1').correct,false);
+  const verbal = reduction.tutorSteps.find(step => step.title === 'Resolver la lectura verbal');
+  assert.match(verbal.tex,/P\(Y_2\\leq2Y_1\/3\)=1/);
+  assert.deepEqual(verbal.diagram.points,[[0,0],[2,0],[2,1]]);
+  assert.ok(verbal.diagram.points.every(([initial,final]) => final <= initial/2 && final <= 2*initial/3));
+  assert.deepEqual(reduction.tutorSteps.at(-1).diagram.points,[[0,0],[2,0],[2,2/3]]);
+}));
+
+test('survival CDFs draw continuous curves at their piecewise coordinates and preserve reverse seek', () => withStatistics(() => {
+  const exercise = getPdfExercises().find(item => item.id === 'pdf-u2-2.3');
+  for (const id of ['b-cdf','f-cdf']) {
+    const question = exercise.questions.find(item => item.id === id);
+    const frames = createTutorFrames(exercise,question);
+    const position = frames.findIndex(step => step.title === 'Trazar la acumulada');
+    const graph = frames[position].diagram;
+    const cdf = value => value < 0 ? 0 : id === 'b-cdf' ? value <= 2 ? value-value**2/4 : 1 : 1-Math.exp(-value);
+    for (const [value,probability] of graph.points) close(probability,cdf(value),`${id} at ${value}`);
+    for (const width of [320,640]) {
+      const height = 180;
+      const canvas = createCanvas(width,height);
+      const context = canvas.getContext('2d');
+      drawTutorFigure(context,exercise,question,position,width,height);
+      const original = Buffer.from(context.getImageData(0,0,width,height).data);
+      for (const value of [-0.5,0.5,1,1.5,2,3.5]) {
+        const horizontal = Math.round(45+(value+1)/5*(width-70));
+        const vertical = Math.round(height-40-cdf(value)*(height-65));
+        const pixels = context.getImageData(horizontal-2,vertical-2,5,5).data;
+        assert.ok(Array.from({length:25},(_,index) => index*4).some(index => pixels[index] === 20 && pixels[index+1] === 125 && pixels[index+2] === 104),`${id}: curve at ${value}, width ${width}`);
+      }
+      drawTutorFigure(context,exercise,question,0,width,height);
+      assert.notDeepEqual(Buffer.from(context.getImageData(0,0,width,height).data),original);
+      drawTutorFigure(context,exercise,question,position,width,height);
+      assert.deepEqual(Buffer.from(context.getImageData(0,0,width,height).data),original);
+    }
+  }
+}));
+
+test('required PDF concepts stay in existing nonoptional course sections', () => {
+  const lessons = COURSE.units.flatMap(unit => unit.lessons);
+  assert.equal(lessons.length,36);
+  for (const [lessonId,title,phrases] of [
+    ['axiomas','Reglas que cualquier modelo debe respetar',[/inclusión-exclusión continúa alternando/,/cota de Bonferroni/,/sin suponer independencia/]],
+    ['independencia-sucesos','No coexistir y no informar son ideas distintas',[/La independencia se conserva/,/por sus complementos/]],
+    ['variable-cdf','La acumulada como lenguaje común',[/variable mixta/,/0,3/,/0,7/,/No basta una densidad ordinaria/]],
+    ['masa','Indicadores y frases de recuento',[/indicador del complemento/,/indicador del espacio completo/,/del vacío/]],
+    ['esperanza','Un centro de equilibrio, no una promesa',[/Sin especificar una familia/,/no determina la distribución/]],
+    ['geometrica-negativa','La condición de parada define la variable',[/mayor que cero y como máximo uno/,/r real positivo/]],
+    ['cauchy-weibull','Cauchy: un centro sin media',[/arco tangente de x dividida entre pi/,/probabilidad es un medio/]],
+    ['multinomial','Independencia entre ensayos, no entre categorías',[/condición tiene probabilidad positiva/,/n menos m/,/5\/8/,/125\/512/]]
+  ]) {
+    const section = lessons.find(lesson => lesson.id === lessonId).sections.find(item => item.title === title);
+    assert.ok(section,`${lessonId}: ${title}`);
+    assert.equal(section.optional,false);
+    for (const phrase of phrases) assert.match(section.body,phrase);
+  }
+  close(1-3*(1-0.9),7/10,'Bonferroni example');
+  close(0.3+0.7*(1-Math.exp(0)),3/10,'mixed CDF jump');
+  close(0.3+0.7,1,'mixed total probability');
+  close((0.5/(1-0.2))**3,125/512,'conditional trinomial example');
+  close((Math.atan(1)-Math.atan(-1))/Math.PI,1/2,'Cauchy interval example');
+});
+
+function requiredCourseSection(lessonId,title) {
+  const lesson = COURSE.units.flatMap(unit => unit.lessons).find(lesson => lesson.id === lessonId);
+  const section = lesson.sections.find(section => section.title === title);
+  assert.ok(section,`${lessonId}: ${title}`);
+  assert.equal(section.optional,false);
+  return parseHTML(`<main>${section.body}</main>`).document.querySelector('main');
+}
+
+test('dice examples retain the full pair space, both distributions and strict interval endpoints', () => {
+  const pairs = Array.from({length:6},(_,first) => Array.from({length:6},(_,second) => [first+1,second+1])).flat();
+  assert.equal(pairs.length,36);
+  const sumCounts = Array.from({length:11},(_,index) => pairs.filter(([first,second]) => first+second === index+2).length);
+  const minimumCounts = Array.from({length:6},(_,index) => pairs.filter(([first,second]) => Math.min(first,second) === index+1).length);
+  assert.deepEqual(sumCounts,[1,2,3,4,5,6,5,4,3,2,1]);
+  assert.deepEqual(minimumCounts,[11,9,7,5,3,1]);
+  const space = requiredCourseSection('variable-cdf','Una regla antes de observar, un valor después').textContent;
+  for (const phrase of [/36 pares/,/regulares e independientes/,/\(1,2\) y \(2,1\)/,/1\/6/,/1\/12/,/M = min\(a,b\)/,/recorrido infinito/]) assert.match(space,phrase);
+  close(pairs.filter(([first,second]) => first === second).length/36,1/6,'doubles');
+  close(pairs.filter(([first,second]) => first+second === 10).length/36,1/12,'sum ten');
+  const mass = requiredCourseSection('masa','La probabilidad que vive en puntos').textContent;
+  for (const phrase of [/\(s−1\)\/36/,/\(13−s\)\/36/,/no enteros/,/\(1,2,3,4,5,6,5,4,3,2,1\)\/36/,/\(13−2k\)\/36/,/\(11,9,7,5,3,1\)\/36/]) assert.match(mass,phrase);
+  for (let index = 0; index < sumCounts.length; index++) assert.equal(sumCounts[index],index <= 5 ? index+1 : 11-index);
+  for (let index = 0; index < minimumCounts.length; index++) assert.equal(minimumCounts[index],(6-index)**2-(5-index)**2);
+  const cdf = requiredCourseSection('variable-cdf','La acumulada como lenguaje común');
+  const rows = Array.from(cdf.querySelectorAll('tbody tr'),row => Array.from(row.querySelectorAll('td'),cell => cell.textContent));
+  assert.deepEqual(rows,[['t < 2','0'],...sumCounts.slice(0,-1).map((count,index) => [`${index+2} ≤ t < ${index+3}`,`${sumCounts.slice(0,index+1).reduce((total,value) => total+value,0)}/36`]),['t ≥ 12','1']]);
+  const probability = predicate => pairs.filter(([first,second]) => predicate(first+second)).length/36;
+  for (const [threshold,numerator] of [[1,0],[2,1],[3.5,3],[6,15],[8.2,26],[12,36],[20,36]]) close(probability(sum => sum <= threshold),numerator/36,`CDF at ${threshold}`);
+  close(probability(sum => sum > 2.2 && sum <= 7),20/36,'noninteger lower endpoint');
+  close(probability(sum => sum < 6),10/36,'strict upper endpoint');
+  close(probability(sum => sum > 2 && sum < 7),14/36,'both strict endpoints');
+  for (const phrase of [/P\(X≤8,2\)=26\/36/,/20\/36/,/10\/36/,/14\/36/,/11\/36, 20\/36, 27\/36, 32\/36 y 35\/36/]) assert.match(cdf.textContent,phrase);
+  for (let threshold = 0; threshold <= 7; threshold += 0.25) {
+    const integer = Math.floor(threshold);
+    const expected = threshold < 1 ? 0 : threshold >= 6 ? 1 : 1-(6-integer)**2/36;
+    close(pairs.filter(([first,second]) => Math.min(first,second) <= threshold).length/36,expected,`minimum CDF at ${threshold}`);
+  }
+});
+
+test('dice moments and the source game derive their results independently of the exercise bank', () => {
+  const pairs = Array.from({length:6},(_,first) => Array.from({length:6},(_,second) => [first+1,second+1])).flat();
+  const average = transform => pairs.reduce((total,[first,second]) => total+transform(first,second),0)/36;
+  close(average((first,second) => first+second),7,'sum mean');
+  close(average((first,second) => (first+second)**2),329/6,'sum second moment');
+  close(average((first,second) => (first+second-7)**2),35/6,'centered sum variance');
+  close(average(first => first**2),91/6,'one die second moment');
+  close(average(first => (first-3.5)**2),35/12,'one die variance');
+  close(average((first,second) => Math.min(first,second)),91/36,'minimum mean');
+  close(average((first,second) => Math.min(first,second)**2),301/36,'minimum second moment');
+  close(average((first,second) => (Math.min(first,second)-91/36)**2),2555/1296,'minimum variance');
+  close(average((first,second) => first+second <= 6 ? 100 : -100),-100/6,'source game expectation');
+  close(average((first,second) => first+second <= 6 ? 140 : -100),0,'fair adjusted prize');
+  const expectation = requiredCourseSection('esperanza','Transformar antes de promediar').textContent;
+  for (const phrase of [/252\/36=7/,/91\/36/,/\+100 €/,/−100 €/,/15\/36/,/21\/36/,/−100\/6/,/140/,/entrada adicional/,/sum\(\(1:6\) \* probabilidades\)/,/strict=True/]) assert.match(expectation,phrase);
+  const variance = requiredCourseSection('varianza','Distancias al centro').textContent;
+  for (const phrase of [/1974\/36=329\/6/,/35\/6/,/35\/12/,/301\/36/,/2555\/1296/,/puntos cuadrados/,/suficiente, no necesaria/]) assert.match(variance,phrase);
+});
+
+test('infinite support separates finite mean, positive infinite mean and undefined Cauchy expectation', () => {
+  const body = requiredCourseSection('esperanza','Un centro de equilibrio, no una promesa').textContent;
+  for (const phrase of [/2\.15\.10/,/2\.15\.11/,/p=1\/36/,/q=35\/36/,/P\(T=k\)=qk−1p/,/Σk≥1qk=q\/\(1−q\)/,/derivar término a término/,/Σk≥1kqk−1=1\/\(1−q\)2/,/E\[T\]=p\/\(1−q\)2=1\/p=36/,/P\(G=2n\)=2−n/,/E\[G\]=Σn≥12n2−n=Σn≥11=\+∞/,/E\[min\(G,2m\)\]=m\+1/,/X\+=max\(X,0\)/,/X−=max\(−X,0\)/,/ni como \+∞ ni como −∞/,/valor principal simétrico cero/,/log\(1\+A2\)\/\(2π\)/]) assert.match(body,phrase);
+  const probability = 1/36;
+  let mass = probability;
+  let totalMass = 0;
+  let mean = 0;
+  for (let trial = 1; trial <= 2000; trial++) {
+    totalMass += mass;
+    mean += trial*mass;
+    mass *= 1-probability;
+  }
+  close(totalMass,1,'waiting distribution normalizes');
+  close(mean,36,'waiting mean from direct summation');
+  for (const limit of [1,2,4,8,16]) {
+    const partialMass = Array.from({length:limit},(_,index) => 2**(-index-1)).reduce((total,value) => total+value,0);
+    const partialMean = Array.from({length:limit},(_,index) => 2**(index+1)*2**(-index-1)).reduce((total,value) => total+value,0);
+    close(partialMass,1-2**(-limit),'prize probabilities');
+    close(partialMean,limit,'unbounded partial expectation');
+    close(partialMean+2**limit*(1-partialMass),limit+1,'capped prize including tail');
+  }
+  const positiveCauchyIntegral = bound => Math.log1p(bound**2)/(2*Math.PI);
+  for (const bound of [1,10,100]) {
+    assert.ok(positiveCauchyIntegral(bound*10) > positiveCauchyIntegral(bound));
+    close(2*positiveCauchyIntegral(bound),Math.log1p(bound**2)/Math.PI,'absolute truncated Cauchy mean');
+  }
+});
+
+test('Gaussian square completion, marginals and the PDF conditional example keep scales and units', () => {
+  const marginal = requiredCourseSection('normal-bivariante','Una campana sobre dos ejes').textContent;
+  const conditionalBody = requiredCourseSection('normal-bivariante','Conocer una medida cambia la otra').textContent;
+  for (const phrase of [/Completar el cuadrado/,/\(zy−ρzx\)2\+\(1−ρ2\)zx2/,/dy=σY√\(1−ρ2\) du/,/I2=∫02π∫0∞/,/I=√\(2π\)/,/dx=σX√\(1−ρ2\) dv/,/X∼N\(100,225\)/,/Y∼N\(50,100\)/,/0,2419707/,/todavía no es independencia/]) assert.match(marginal,phrase);
+  for (const phrase of [/fY\|X\(y\|x\)=f\(x,y\)\/fX\(x\)/,/4\.6\.4/,/Y=60/,/E\[X\|Y=60\]=100\+0,5·\(15\/10\)·\(60−50\)=107,5/,/168,75/,/12,99038/,/unidades de X por unidad de Y/,/unidades de X al cuadrado/,/pnorm\(120/,/norm\.sf\(120/,/0,16796/]) assert.match(conditionalBody,phrase);
+  const integrate = (integrand,lower,upper) => {
+    const subdivisions = 4096;
+    const width = (upper-lower)/subdivisions;
+    let total = integrand(lower)+integrand(upper);
+    for (let index = 1; index < subdivisions; index++) total += (index % 2 ? 4:2)*integrand(lower+index*width);
+    return total*width/3;
+  };
+  close(integrate(value => Math.exp(-(value**2)/2),-10,10),Math.sqrt(2*Math.PI),'Gaussian integral');
+  const joint = (first,second,rho) => Math.exp(-(first**2-2*rho*first*second+second**2)/(2*(1-rho**2)))/(2*Math.PI*Math.sqrt(1-rho**2));
+  for (const rho of [-0.5,0,0.5]) for (const first of [-1,0,1]) for (const second of [-2,0,2]) {
+    close(first**2-2*rho*first*second+second**2,(second-rho*first)**2+(1-rho**2)*first**2,'square completion');
+  }
+  for (const rho of [-0.5,0,0.5]) for (const coordinate of [-1,0,1,2]) {
+    const density = Math.exp(-(coordinate**2)/2)/Math.sqrt(2*Math.PI);
+    close(integrate(value => joint(coordinate,value,rho),-12,12),density,'integrated X marginal');
+    close(integrate(value => joint(value,coordinate,rho),-12,12),density,'integrated Y marginal');
+  }
+  close(integrate(value => joint(1,value,0.5),-12,12),0.2419707,'PDF standard density',5e-8);
+  const mean = 100+0.5*(15/10)*(60-50);
+  const variance = (1-0.5**2)*15**2;
+  close(mean,107.5,'conditional mean');
+  close(variance,168.75,'conditional variance');
+  close(Math.sqrt(variance),12.99038,'conditional standard deviation',5e-6);
+  close(1-standardNormalCdf((120-mean)/Math.sqrt(variance)),0.16796,'conditional upper tail',5e-6);
+  const rawJoint = (first,second) => joint((first-100)/15,(second-50)/10,0.5)/(15*10);
+  const marginalY = Math.exp(-0.5)/(10*Math.sqrt(2*Math.PI));
+  const conditional = value => rawJoint(value,60)/marginalY;
+  close(integrate(conditional,-100,300),1,'conditional normalization');
+  close(integrate(value => value*conditional(value),-100,300),mean,'conditional first moment');
+  close(integrate(value => (value-mean)**2*conditional(value),-100,300),variance,'conditional centered second moment');
+});
+
+test('model selection keeps all seven discrete and six continuous families in a required existing body', () => {
+  const main = requiredCourseSection('calculo-modelos','Un itinerario para elegir');
+  const rows = Array.from(main.querySelectorAll('tbody tr'));
+  assert.equal(rows.length,13);
+  assert.deepEqual(rows.map(row => row.querySelector('td').textContent.split(':')[0]),['Bernoulli','Binomial','Poisson','Uniforme discreta','Hipergeométrica','Geométrica','Binomial negativa','Uniforme continua','Exponencial','Normal','Gamma','Cauchy estándar','Weibull']);
+  for (const phrase of [/sin reemplazo/,/ensayos independientes/,/0<p≤1/,/N=1/,/varianza/,/no una decimocuarta distribución/,/normalidad conjunta/,/categorías excluyentes/,/No existe; no definida/]) assert.match(main.textContent,phrase);
+  assert.ok(rows.every(row => row.querySelectorAll('td').length === 3));
+});
+
+test('content expansions preserve the 36 lesson IDs and the 118 existing spoken sections', () => {
+  const lessons = COURSE.units.flatMap(unit => unit.lessons);
+  assert.deepEqual(lessons.map(lesson => lesson.id),['proporciones','algebra','funciones','calculo','regiones-matrices','sucesos','axiomas','combinatoria','condicionada','independencia-sucesos','bayes-diagnostico','variable-cdf','masa','densidad','esperanza','varianza','momentos-transformaciones','bernoulli-binomial','poisson','hipergeometrica','geometrica-negativa','uniforme-montecarlo','exponencial','normal','gamma','cauchy-weibull','calculo-modelos','familia-exponencial','conjunta-discreta','multinomial','marginales','conjunta-condicional','normal-bivariante','independencia-variables','covarianza-matrices','combinaciones-incorrelacion']);
+  const sections = lessons.flatMap(lesson => createLessonSections(lesson).map(section => `${lesson.id}--${section.id}`));
+  assert.equal(sections.length,118);
+  assert.equal(new Set(sections).size,118);
+});
 
 test('fresh construction does not accumulate probabilities or reuse mutable question diagrams', () => withStatistics(() => {
   const first = getPdfExercises('conjunta-discreta');
@@ -449,6 +677,42 @@ test('PDF observation is the lesson default, offers source and problem selectors
     assert.equal(app.exercise.id,'pdf-u3-1');
     assert.deepEqual(app.progress,before);
   } finally {app.dispose();}
+}));
+
+test('every mapped lesson displays all its PDF problems with complete written solutions and no scored attempts', () => withStatistics(() => {
+  for (const lesson of COURSE.units.flatMap(unit => unit.lessons)) {
+    const exercises = getPdfExercises(lesson.id);
+    if (!exercises.length) continue;
+    const {document,app,change} = classroom(lesson.id);
+    try {
+      const before = structuredClone(app.progress);
+      const section = document.querySelector('[data-pdf-solutions]');
+      assert.ok(section,lesson.id);
+      assert.deepEqual(Array.from(section.querySelectorAll('[data-pdf-exercise]'),node => node.dataset.pdfExercise),exercises.map(exercise => exercise.id));
+      for (const exercise of exercises) {
+        const solved = section.querySelector(`[data-pdf-exercise="${exercise.id}"]`);
+        assert.ok(solved.textContent.includes(exercise.source.file));
+        assert.ok(solved.textContent.includes(exercise.prompt));
+        for (const question of exercise.questions) {
+          const answer = solved.querySelector(`[data-pdf-question="${question.id}"]`);
+          assert.ok(answer.textContent.includes(question.prompt));
+          assert.ok(answer.textContent.includes(question.interpretation));
+          assert.equal(answer.querySelectorAll('li').length,question.steps.length);
+          assert.equal(answer.querySelectorAll('[hidden]').length,0);
+          assert.ok(answer.textContent.includes(Number(question.answer.toPrecision(9)).toString()));
+          for (const step of question.steps) assert.ok(answer.textContent.includes(step.explanation));
+        }
+      }
+      assert.deepEqual(app.progress,before);
+      change('exerciseSource','synthetic');
+      assert.equal(document.querySelector('[data-pdf-solutions]'),null);
+      assert.notEqual(app.exercise.type,'pdf');
+      assert.equal(document.querySelector('#exerciseSource option[value="synthetic"]').textContent,'Práctica extra');
+      change('exerciseSource','pdf');
+      assert.ok(document.querySelector('[data-pdf-solutions]'));
+      assert.deepEqual(app.progress,before);
+    } finally {app.dispose();}
+  }
 }));
 
 test('another variant switches PDF observation to a distinct scoped synthetic task with independent grading', () => withStatistics(() => {

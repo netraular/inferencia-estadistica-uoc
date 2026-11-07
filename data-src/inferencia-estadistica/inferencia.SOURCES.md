@@ -1,16 +1,16 @@
 # Inferencia estadística: fuentes y alcance
 
-Fecha de revisión: 2026-11-05.
+Fecha de revisión: 2026-11-07.
 
 El módulo `pages/inferencia/course.js` contiene material didáctico original en español para una persona graduada en biología: **36 lecciones, cinco unidades y 40 entradas de glosario**. Las explicaciones, ejemplos y comprobaciones se han redactado para este curso; no son transcripciones de los documentos.
 
 ## Privacidad y método
 
-Los ocho PDF originales se encuentran únicamente en la carpeta local privada `Inferencia estadística`. Son archivos no rastreados. No se añaden, copian, enlazan para descarga ni publican. Los nombres siguientes identifican procedencia, no archivos distribuidos con el curso. No se reproducen fragmentos extensos ni figuras originales.
+Los PDF aportados están en `static/materiales`. Los tres solucionarios de ejercicios son la fuente del banco `pages/inferencia/pdf-exercises.js`: se mantienen los datos, números de problema y páginas de procedencia, con explicaciones desarrolladas para el curso y correcciones explícitas de las erratas detectadas. Las figuras se dibujan a partir de los modelos, sin copiar imágenes de los documentos.
 
 Se utilizó `pypdf` con Python 3 para recorrer todas las páginas de los cuatro documentos teóricos y extraer sus encabezados; se contrastaron además definiciones, convenciones y secciones avanzadas. Se revisaron los tres juegos de ejercicios para asociar métodos y el enunciado de la PEC para identificar competencias, no para resolver la evaluación. No se generaron extracciones ni cachés en el repositorio. Las páginas que se mencionan son posiciones dentro del PDF, no la numeración impresa del manual.
 
-La fuente de cada lección queda registrada en su objeto `source`. El bloque `coverage` permite consultar el alcance por documento. Las claves de visualización y animación se limitan al contrato del aula: no implican que este módulo implemente motores gráficos nuevos. Del mismo modo, `exerciseTypes` asocia competencias a los tipos admitidos, no transcribe los enunciados privados ni garantiza un generador específico para cada familia avanzada.
+La fuente de cada lección queda registrada en su objeto `source`. El bloque `coverage` permite consultar el alcance por documento. Las claves de visualización y animación se limitan al contrato del aula: no implican que este módulo implemente motores gráficos nuevos. `lessonIds` asocia cada problema PDF a las lecciones correspondientes. `exerciseTypes` conserva los generadores originales como práctica extra; no garantiza un generador específico para cada familia avanzada.
 
 ## Teoría revisada
 
@@ -66,11 +66,13 @@ Los identificadores son ASCII y únicos. La numeración de unidades empieza en c
 | Tema 4 | `covarianza-matrices` | 4.8 a 4.8.5.1. |
 | Tema 4 | `combinaciones-incorrelacion` | 4.8.6 a 4.8.9. |
 
-## Asociaciones de práctica
+## Ejercicios resueltos por lección
+
+Los 22 problemas (5 de U1, 9 de U2 y 8 de U3) desarrollan 87 respuestas, además de tablas, gráficas, fórmulas generales y justificaciones. En Ejercicios se muestran las soluciones escritas completas y el tutor animado; la consulta no modifica la puntuación. Los ejemplos generados se conservan en Práctica extra.
 
 ### Unidad 1: probabilidad
 
-`Ejercicios_Unidad_1-Soluciones.pdf`, 7 páginas: sus problemas permiten practicar operaciones con sucesos, solapamientos, condicionamiento y valores predictivos con distintas prevalencias. Las lecciones `sucesos`, `axiomas`, `condicionada` y `bayes-diagnostico` preparan esas competencias. Las cifras y situaciones del curso son nuevas. Las soluciones originales no se exportan.
+`Ejercicios_Unidad_1-Soluciones.pdf`, 7 páginas: los problemas 1 y 2 se resuelven en `sucesos` y `axiomas`; el 3, en `condicionada` y `bayes-diagnostico`; el 4, en `bayes-diagnostico` y `condicionada`; y el 5, en `bayes-diagnostico` y el apoyo `proporciones`. Se conservan las cifras y situaciones de los enunciados.
 
 ### Unidad 2: variables y distribuciones
 

@@ -11,6 +11,8 @@ import {generateExercise, scopeExercise} from '../../pages/inferencia/exercises.
 import * as api from '../../pages/inferencia/animations.js';
 import {exportLectures} from './export-lecturas.mjs';
 import {storyScene,storyLines} from '../../pages/inferencia/lecture-story.js';
+import {enrichLessonAnimation,enrichGlobalAnimation} from '../../pages/inferencia/lesson-visuals.js';
+import {createLessonSections} from '../../pages/inferencia/lesson-sections.js';
 
 const {ANIMATIONS, animationDuration, buildVtt, createLessonAnimation, mountAnimation} = api;
 const require = createRequire(import.meta.url);
@@ -1246,6 +1248,7 @@ test('anterior y siguiente recorren frases completas entre escenas, con y sin au
       assert.equal(cues.children[target.cueIndex].attributes['aria-current'],'true');
       assert.equal(cues.children[target.cueIndex].children[0].textContent,target.text);
     };
+    if (audio) {next.click();check(targets[0]);}
     for (const target of targets.slice(1)) { next.click(); check(target); }
     assert.equal(next.disabled,true);
     assert.equal(back.disabled,false);
@@ -1628,6 +1631,50 @@ test('Konva sin movimiento se redibuja al cambiar de frase, sin animar entre fra
   dom.advance(10);
   assert.equal(frames.length,count);
   cleanup();dom.cleanupCheck();
+});
+
+test('context graphs mount before measured cue zero and seek phases without duplicating plots or exposing future operations',()=>{
+  const lesson=COURSE.units[0].lessons[0];
+  const animations=[enrichGlobalAnimation(fullLectures()[0]),...createLessonSections(lesson).map(section=>enrichLessonAnimation(section.animation))];
+  for (const animation of animations) for (const reducedMotion of [false,true]) for (const konva of [false,true]) {
+    const dom=fakeDom({reducedMotion,width:320});
+    const audio=measuredAudio(animation);
+    const frames=[];
+    const cleanup=mountAnimation(dom.container,animation,{audio,createWhiteboard:konva ? ()=>({render:frame=>frames.push(frame),resize(){},dispose(){}}) : undefined});
+    try {
+      const graph=dom.created.find(node=>node.className==='context-diagram');
+      assert.equal(graph.hidden,konva);
+      assert.equal(graph.style.aspectRatio,'auto');
+      assert.equal(graph.width,640);
+      assert.equal(graph.height,720);
+      assert.ok(!dom.created.some(node=>node.className==='story-plot'));
+      assert.equal(graph.attributes['aria-label'],animation.steps[0].visual.context.caption);
+      assert.ok(dom.calls.some(call=>call[0]==='fillRect') || konva,'initial diagram has actual geometry');
+      const media=dom.byTag('audio');
+      const board=dom.created.find(node=>node.className==='slide-board');
+      const rows=board.children[0].children;
+      const leadIn=audio.scenes[0].cues[0].start;
+      assert.ok(leadIn>0);
+      for (const cueIndex of [-1,0,animation.steps[0].cues.length-1,0,-1]) {
+        media.currentTime=cueIndex<0 ? leadIn/2 : audio.scenes[0].cues[cueIndex].start+0.001;
+        media.dispatch('timeupdate');
+        const phase=animation.steps[0].visual.phases[cueIndex];
+        const diagram=phase?.context || animation.steps[0].visual.context;
+        assert.equal(graph.attributes['data-context-cue'],String(cueIndex));
+        assert.equal(graph.attributes['data-context-kind'],diagram.kind);
+        assert.equal(graph.attributes['aria-label'],diagram.caption);
+        rows.forEach((row,index)=>assert.equal(row.hidden,animation.steps[0].visual.lines[index].cue>cueIndex));
+        if (konva) assert.equal(frames.at(-1).cueIndex,cueIndex);
+      }
+      assert.equal(board.hidden,true,'only the operations are blank before cue zero');
+      const first=animation.steps[0].visual.context;
+      assert.equal(graph.attributes['aria-label'],first.caption);
+      dom.observers[0].emit(960);
+      assert.equal(graph.width,1920);
+      assert.equal(graph.height,800);
+      assert.equal(graph.attributes['data-context-cue'],'-1');
+    } finally {cleanup();dom.cleanupCheck();}
+  }
 });
 
 test('audio pausado o descartado no puede revivir por un play tardío', async () => {

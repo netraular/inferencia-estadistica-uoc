@@ -23,7 +23,9 @@ https://webs.raular.com/inferencia/ from the `main` branch.
   crossing scene boundaries as needed. The scene selector and chapter outline
   remain available under playback options.
 - The short `/inferencia/` URL opens personal progress and a brief course overview;
-  `/temario/` holds the reference map, with topics 0 to 4 and numbered lessons.
+  `/temario/` holds the reference map, with topics 0 to 5 and numbered lessons.
+  Topic 5 solves all three PEC 1 problems, including 13 numerical questions,
+  three qualitative arguments, full sample spaces and additional diagrams.
 - Browser-local progress is shared between lesson marks, concept checks and
   exercise results. Views refresh after saves and changes from another tab.
   There are no import, export or reset controls. No account or cross-device
@@ -51,13 +53,19 @@ Worked practice in both formats uses the shared exercise generators.
 
 The three tabs are Lesson, Exercises and Animated Recap. Lesson uses
 118 separate sections across the 36 lessons, with conversational narration,
-delayed whiteboard reveals and scoped worked examples. Symbols and conditions
+cue-aligned whiteboard reveals and scoped worked examples. Symbols and conditions
 are introduced before their calculations. Complete notes remain available in
-an optional disclosure; every required source section is covered by the journey.
+an optional disclosure, including the source concepts and additional worked
+derivations. The spoken introduction does not recite every formal derivation.
 Only additional curriculum material is labelled as an optional section.
 Animated Recap retains the complete global walkthrough of the lesson; it has
 no published audio and runs on the estimated clock. Laboratories appear only as
 the six reading figures and inside the legacy fixture, not as a tab.
+
+All 118 sections and 521 global recap scenes start with a contextual figure.
+The shared renderer binds geometry and highlights to the current spoken cue,
+including inverse sampling, event regions, trial sequences, nonlinear dependence
+and bivariate normal contours. Future calculations remain hidden until introduced.
 
 Section scripts live in `pages/inferencia/lesson-sections.js`; the shared
 vocabulary in `pages/inferencia/teaching.js` explains symbols locally and in the
@@ -88,7 +96,9 @@ covering 87 numerical questions. The source file, problem and page are retained.
 Tables, polygons and distribution areas use the actual problem data, while
 construction tables reveal only their current partial values. Numerical answers
 are independently checked, including corrections to errors in the PDF solutions.
-The assessment statement is not part of this solved exercise bank.
+The assessment statement has its own three-page topic 5, separate from the
+22-problem bank. Both sources retain their original problem and part numbering.
+Consulting either set of PDF solutions never writes a scored attempt.
 Normal, density, discrete-moment, event and Bayes calculations have dedicated
 small operations. Other generators reuse their existing mathematical steps.
 Switching to an independent attempt selects different data from the observed
@@ -166,7 +176,7 @@ stay outside Git; neither the site build nor its runtime needs Python or CUDA.
 ## Published materials and audio
 
 Prepared MP3 files and their timing manifest live under `static/audio/`. Only
-complete lesson aggregates whose frozen scripts match the current course are
+complete section or lesson aggregates whose frozen scripts match the current course are
 included. The player uses audio time for playback, seeking and speed changes;
 lessons without audio use the estimated clock without autoplay. The visual
 whiteboard, progressive calculations and full scene captions share one player.

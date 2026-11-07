@@ -14,13 +14,19 @@ export function versionAssets(root = fileURLToPath(new URL('../../', import.meta
     writeFileSync(join(root, file), after, 'utf8');
     changed.push(file);
   };
-  const narrationFile = 'pages/inferencia/animations.js';
-  const narrationBefore = readFileSync(join(root, narrationFile), 'utf8');
-  const storyVersion = assetVersion(readFileSync(join(directory, 'lecture-story.js')));
-  versions['inferencia/lecture-story.js'] = storyVersion;
-  const narrationAfter = narrationBefore.replace(/from (['"])\.\/lecture-story\.js(?:\?v=[a-f0-9]+)?\1/, (match, quote) => `from ${quote}./lecture-story.js?v=${storyVersion}${quote}`);
-  if (narrationAfter === narrationBefore && !narrationBefore.includes(`lecture-story.js?v=${storyVersion}`)) throw new Error('Falta la dependencia del guion hablado en animations.js.');
-  save(narrationFile, narrationBefore, narrationAfter);
+  for (const [module, expected] of [['animations.js', 2], ['exercise-tutor.js', 1]]) {
+    const moduleFile = `pages/inferencia/${module}`;
+    const before = readFileSync(join(root, moduleFile), 'utf8');
+    let dependencies = 0;
+    const after = before.replace(/from (['"])\.\/([a-z-]+\.js)(?:\?v=[a-f0-9]+)?\1/g, (match, quote, file) => {
+      dependencies++;
+      const version = assetVersion(readFileSync(join(directory, file)));
+      versions[`inferencia/${file}`] = version;
+      return `from ${quote}./${file}?v=${version}${quote}`;
+    });
+    if (dependencies !== expected) throw new Error(`Dependencias locales inesperadas en ${module}; revisa el grafo de módulos.`);
+    save(moduleFile, before, after);
+  }
   const appFile = 'pages/inferencia/app.js';
   const appBefore = readFileSync(join(root, appFile), 'utf8');
   let imports = 0;
@@ -30,7 +36,7 @@ export function versionAssets(root = fileURLToPath(new URL('../../', import.meta
     versions[`inferencia/${file}`] = version;
     return `from ${quote}./${file}?v=${version}${quote}`;
   });
-  if (imports !== 8) throw new Error('Se esperan las ocho dependencias locales del aula; revisa el grafo de módulos.');
+  if (imports !== 9) throw new Error('Se esperan las nueve dependencias locales del aula; revisa el grafo de módulos.');
   const htmlFile = 'pages/inferencia-estadistica.html';
   const htmlBefore = readFileSync(join(root, htmlFile), 'utf8');
   let assets = 0;

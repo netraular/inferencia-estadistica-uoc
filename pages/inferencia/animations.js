@@ -1,4 +1,5 @@
 import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=c30f66f5fea8';
+import {drawContextDiagram,selectContextDiagram} from './context-diagram.js?v=f67ba7a5a7b4';
 
 const COLORS = ['#0369a1', '#15803d', '#be123c', '#b45309'];
 const scene = (title, caption, kind, data, tex, duration = 10) => ({title, caption, duration: Math.max(duration, Math.ceil(caption.split(/\s+/).length / 2.5)), kind, data, ...(tex ? {tex} : {})});
@@ -819,6 +820,8 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   let boardNodes = [];
   let lastCue = -1;
   let lastBoardReveal = -1;
+  let lastDiagram = null;
+  let lastDiagramPhase = null;
   let currentTime = 0;
   const estimatedTimeline = () => {
     let offset = 0;
@@ -873,12 +876,19 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   let context = null;
   try { context = canvas.getContext('2d'); } catch { context = null; }
   stage.append(canvas);
+  const contextCanvas = element('canvas','context-diagram');
+  contextCanvas.setAttribute('role','img');
+  contextCanvas.hidden = true;
+  contextCanvas.style.width = '100%';
+  contextCanvas.style.height = 'auto';
+  contextCanvas.style.aspectRatio = 'auto';
+  let contextDrawing = null;
+  try { contextDrawing = contextCanvas.getContext('2d'); } catch { contextDrawing = null; }
+  stage.append(contextCanvas);
   const board = element('div','slide-board');
   board.hidden = true;
-  stage.append(board);
   const math = element('div', 'animation-math');
   math.style.overflowX = 'auto';
-  stage.append(math);
   const whiteboardHost = element('div', 'animated-whiteboard');
   whiteboardHost.setAttribute('role', 'img');
   const whiteboard = createWhiteboard?.(whiteboardHost, {animation}) || null;
@@ -886,6 +896,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     stage.append(whiteboardHost);
     root.classList.add('has-whiteboard');
   }
+  stage.append(board,math);
   const caption = element('p', 'animation-caption');
   caption.setAttribute('aria-live', 'polite');
   caption.setAttribute('aria-atomic', 'true');
@@ -1160,18 +1171,27 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
 
   function syncScene() {
     const step = animation.steps[index];
+    const hasContext = Boolean(step.visual?.context);
     heading.textContent = step.title;
-    board.hidden = Boolean(whiteboard) || step.kind !== 'lesson';
+    board.hidden = Boolean(whiteboard && !hasContext) || step.kind !== 'lesson';
     canvas.style.display = whiteboard || step.kind === 'lesson' ? 'none' : 'block';
+    contextCanvas.hidden = !hasContext || Boolean(whiteboard);
+    board.style.height = hasContext ? 'auto' : '';
+    board.style.maxHeight = hasContext ? '280px' : '';
+    board.style.flex = hasContext ? '0 1 auto' : '';
+    whiteboardHost.style.aspectRatio = hasContext ? 'auto' : '';
+    whiteboardHost.style.height = hasContext ? `${Math.max(360,Math.round(logicalWidth*5/12))}px` : '';
+    lastDiagram = null;
+    lastDiagramPhase = null;
     board.replaceChildren();
     boardNodes = [];
     lastBoardReveal = -1;
     board.scrollTop = 0;
-    if (step.kind === 'lesson' && !whiteboard) {
+    if (step.kind === 'lesson' && (!whiteboard || hasContext)) {
       const visual = step.visual || {label:step.title,lines:step.tex ? [{tex:step.tex}] : []};
-      board.append(element('p','eyebrow',visual.label));
+      if (!hasContext) board.append(element('p','eyebrow',visual.label));
       const derivation = element('ol','board-derivation');
-      for (const line of [...visual.lines,...(visual.process || [])]) {
+      for (const line of [...visual.lines,...(hasContext ? [] : visual.process || [])]) {
         const row = element('li','board-line');
         if (Number.isInteger(line.cue)) row.setAttribute('data-story-cue',String(line.cue));
         if (line.label) row.append(element('span','board-label',line.label));
@@ -1186,7 +1206,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
           quantity.setAttribute('aria-label',`${line.label}: ${line.bar.part} de ${line.bar.total}`);
           row.append(quantity);
         }
-        if (line.plot) {
+        if (line.plot && !hasContext) {
           const diagram=element('canvas','story-plot');
           diagram.width=Math.max(280,Math.min(900,logicalWidth-80));
           diagram.height=220;
@@ -1227,6 +1247,22 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   function draw() {
     syncSubtitle();
     if (disposed) return;
+    const step = animation.steps[index];
+    const {diagram,phase} = selectContextDiagram(step.visual,lastCue);
+    if (diagram) {
+      const description = diagram.caption || diagram.label;
+      contextCanvas.setAttribute('aria-label',description);
+      contextCanvas.textContent = description;
+      contextCanvas.setAttribute('data-context-kind',diagram.kind);
+      contextCanvas.setAttribute('data-context-cue',String(phase?.cue ?? -1));
+      whiteboardHost.setAttribute('aria-label',description);
+      if (!whiteboard && contextDrawing && (lastDiagram!==diagram || lastDiagramPhase!==phase)) {
+        contextDrawing.setTransform(pixelRatio,0,0,pixelRatio,0,0);
+        drawContextDiagram(contextDrawing,diagram,logicalWidth,Math.max(360,Math.round(logicalWidth*5/12)),{phase});
+        lastDiagram = diagram;
+        lastDiagramPhase = phase;
+      }
+    }
     if (whiteboard) {
       whiteboard.render({step:animation.steps[index], index, cueIndex:lastCue, progress:reducedMotion ? 1 : Math.max(0, Math.min(1, elapsed / (scenes()[index].end - scenes()[index].start))), time:currentTime, reducedMotion});
       return;
@@ -1238,7 +1274,6 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     context.fillRect(0, 0, logicalWidth, logicalHeight);
     context.textBaseline = 'alphabetic';
     context.textAlign = 'left';
-    const step = animation.steps[index];
     if (step.kind === 'lesson') return;
     const progress = reducedMotion ? 1 : Math.max(0,Math.min(1,elapsed/(scenes()[index].end-scenes()[index].start)));
     stage.setAttribute('data-progress',String(progress));
@@ -1267,6 +1302,14 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     logicalWidth = width;
     logicalHeight = height;
     pixelRatio = ratio;
+    const diagramHeight = Math.max(360,Math.round(width*5/12));
+    if (animation.steps[index].visual?.context) whiteboardHost.style.height=`${diagramHeight}px`;
+    if (contextCanvas.width!==Math.round(width*ratio) || contextCanvas.height!==Math.round(diagramHeight*ratio)) {
+      contextCanvas.width=Math.round(width*ratio);
+      contextCanvas.height=Math.round(diagramHeight*ratio);
+      lastDiagram=null;
+      lastDiagramPhase=null;
+    }
     whiteboard?.resize(width, ratio);
     draw();
   }
@@ -1329,9 +1372,10 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
 
   function syncSubtitle() {
     const cues = scenes()[index].cues;
-    let cueIndex = 0;
+    let cueIndex = -1;
     for (const [candidate,cue] of cues.entries()) if (currentTime >= cue.start) cueIndex = candidate;
-    if (caption.textContent !== cues[cueIndex].text) caption.textContent = cues[cueIndex].text;
+    const captionText = cues[Math.max(0,cueIndex)].text;
+    if (caption.textContent !== captionText) caption.textContent = captionText;
     if (lastCue !== cueIndex) {
       cueNodes.forEach((node,position)=>{
         if (position === cueIndex) node.setAttribute('aria-current','true');
@@ -1343,6 +1387,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     stage.setAttribute('data-progress',String(progress));
     const story = animation.steps[index].story;
     const visible = story ? storyLines(animation.steps[index],cueIndex).length : reducedMotion ? boardNodes.length : Math.max(1,Math.ceil(progress*boardNodes.length));
+    if (story && animation.steps[index].visual?.context) board.hidden=visible===0;
     boardNodes.forEach((node,position)=>{
       const reveal = story ? Number(position<visible) : reducedMotion ? 1 : Math.max(0,Math.min(1,progress*boardNodes.length-position+1));
       node.hidden = Boolean(story) && position>=visible;

@@ -1,10 +1,11 @@
-import {COURSE} from './course.js?v=07d42d357a38';
+import {COURSE} from './course.js?v=2eb74cdf8fab';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=6eeb76ea27e1';
 import {notationHtml} from './teaching.js?v=251983817529';
-import {createLessonAnimation, mountAnimation} from './animations.js?v=37d29d83c0c4';
+import {createLessonAnimation, mountAnimation} from './animations.js?v=6f265331127f';
+import {enrichLessonAnimation, enrichGlobalAnimation} from './lesson-visuals.js?v=d63fba41c35b';
 import {mountLab} from './labs.js?v=2f4aa757b74f';
-import {mountExerciseTutor} from './exercise-tutor.js?v=8cd07ae90186';
-import {getPdfExercises} from './pdf-exercises.js?v=d9dc58600912';
+import {mountExerciseTutor} from './exercise-tutor.js?v=1513c3f74d3a';
+import {getPdfExercises} from './pdf-exercises.js?v=c7879552421f';
 import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));
@@ -189,7 +190,7 @@ export function mountAula(document, environment = {}) {
       const solved = progress.attempts[key]?.solved;
       return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}. ${solved ? 'Ya resolviste esta respuesta.' : ''}</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><div class="worked-controls"><button type="button" class="icon-button" data-solution-step="-1" aria-label="Paso anterior" title="Paso anterior" disabled><i data-lucide="arrow-left" aria-hidden="true"></i></button><span data-step-position role="status">Paso 1 de ${question.steps.length}</span><button type="button" class="icon-button" data-solution-step="1" aria-label="Paso siguiente" title="Paso siguiente"${question.steps.length <= 1 ? ' disabled' : ''}><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ol>${question.steps.map((step, stepIndex) => `<li data-worked-step="${stepIndex}"${stepIndex ? ' hidden' : ' aria-current="step"'}><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math worked-calculation">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"${question.steps.length > 1 ? ' hidden' : ''}><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
     }).join('')}`;
-    element('panel-practice').querySelector('.practice-toolbar').insertAdjacentHTML('afterbegin', `<label class="control-field">Origen<select id="exerciseSource">${pdfExercises.length ? `<option value="pdf"${usingPdf ? ' selected' : ''}>Problemas del PDF</option>` : ''}<option value="synthetic"${usingPdf ? '' : ' selected'}>Variantes de práctica</option></select></label>${usingPdf ? `<label class="control-field">Problema<select id="pdfExercise">${pdfExercises.map(exercise => `<option value="${escapeHtml(exercise.id)}"${exercise.id === pdfExerciseId ? ' selected' : ''}>${escapeHtml(exercise.source.number)}. ${escapeHtml(exercise.title)}</option>`).join('')}</select></label>` : ''}`);
+    element('panel-practice').querySelector('.practice-toolbar').insertAdjacentHTML('afterbegin', `<label class="control-field">Origen<select id="exerciseSource">${pdfExercises.length ? `<option value="pdf"${usingPdf ? ' selected' : ''}>Ejercicios resueltos del PDF</option>` : ''}<option value="synthetic"${usingPdf ? '' : ' selected'}>Práctica extra</option></select></label>${usingPdf ? `<label class="control-field">Problema<select id="pdfExercise">${pdfExercises.map(exercise => `<option value="${escapeHtml(exercise.id)}"${exercise.id === pdfExerciseId ? ' selected' : ''}>${escapeHtml(exercise.source.number)}. ${escapeHtml(exercise.title)}</option>`).join('')}</select></label>` : ''}`);
     element('exerciseType').closest('label').hidden = usingPdf;
     if (usingPdf) {
       element('newExercise').innerHTML = '<i data-lucide="shuffle" aria-hidden="true"></i>Otro problema PDF';
@@ -209,6 +210,12 @@ export function mountAula(document, environment = {}) {
       tutor.setAttribute('data-exercise-tutor','');
       attempt.before(tutor);
       activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onHelp:assistance,onPractice:()=>{const excluded=JSON.stringify([activeExercise.prompt,activeExercise.given,activeExercise.questions.map(question=>question.prompt)]);mode='practice';practiceSource='synthetic';entireBank=false;seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice(excluded);icons();}});
+    }
+    if (usingPdf) {
+      const solutions = document.createElement('section');
+      solutions.setAttribute('data-pdf-solutions','');
+      solutions.innerHTML = `<h2>Ejercicios resueltos del PDF</h2>${pdfExercises.map(exercise => `<details class="worked-example" data-pdf-exercise="${escapeHtml(exercise.id)}"${exercise.id === pdfExerciseId ? ' open' : ''}><summary>Problema ${escapeHtml(exercise.source.number)} · ${escapeHtml(exercise.title)}</summary><p class="source-note">${escapeHtml(exercise.source.file)} · Página ${exercise.source.page}</p><p>${escapeHtml(exercise.prompt)}</p><h3>Datos del problema</h3><ul>${exercise.given.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>${exercise.assumptions.length ? `<h3>Supuestos</h3><ul>${exercise.assumptions.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul>` : ''}${exercise.questions.map((question,index) => `<section data-pdf-question="${escapeHtml(question.id)}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><ol>${question.steps.map(step => `<li><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><div class="math">${math(String.raw`\boxed{${Number(question.answer.toPrecision(9)).toString()}}`)}</div><p>${escapeHtml(question.unit)}</p><p class="interpretation">${escapeHtml(question.interpretation)}</p></section>`).join('')}</details>`).join('')}`;
+      element('panel-practice').querySelector('[data-exercise-tutor]').before(solutions);
     }
     const notation = document.createElement('section');
     notation.className = 'exercise-notation';
@@ -231,7 +238,9 @@ export function mountAula(document, environment = {}) {
 
   function renderAnimation() {
     const paragraphs = html => readParagraphs(document, html);
-    activeCleanup = mountAnimation(element('panel-animation'), environment.getAnimation?.(lesson().id) ?? createLessonAnimation(lesson(),generateExercise,paragraphs), {formatMath:math, audio:environment.getAudio?.(lesson().id), createWhiteboard:environment.createWhiteboard});
+    const injected = environment.getAnimation?.(lesson().id);
+    const animation = injected ? enrichLessonAnimation(injected) : enrichGlobalAnimation(createLessonAnimation(lesson(),generateExercise,paragraphs));
+    activeCleanup = mountAnimation(element('panel-animation'), animation, {formatMath:math, audio:environment.getAudio?.(lesson().id), createWhiteboard:environment.createWhiteboard});
   }
 
   function renderView() {
@@ -363,7 +372,7 @@ export function mountAula(document, environment = {}) {
     if (event.target === element('utilityDialog')) closeDialog();
   });
   listen(element('glossaryToggle'), 'click', () => openDialog('Diccionario de símbolos', `<table class="symbol-table"><thead><tr><th>Símbolo</th><th>Nombre</th><th>Significado</th></tr></thead><tbody>${COURSE.glossary.map(item => `<tr><td>${escapeHtml(item.symbol)}</td><td>${escapeHtml(item.term)}</td><td>${escapeHtml(item.definition)}</td></tr>`).join('')}</tbody></table>`));
-  listen(element('sourcesToggle'), 'click', () => openDialog('Materiales y cobertura', `<p>36 lecciones originales organizadas a partir de los cuatro temas aportados. El puente matemático es material adicional. La numeración de los ejercicios de multivariantes no coincide con la del Tema 4.</p>${COURSE.coverage.map(item => `<section><h3>${escapeHtml(item.document)}</h3><ul class="coverage-list">${item.topics.map(topic => `<li>${escapeHtml(topic)}</li>`).join('')}</ul></section>`).join('')}<section><h3>Práctica y límites</h3><p>Los ejercicios son nuevos ejemplos didácticos con variantes, no reproducciones de la PEC vigente. Las estimaciones, contrastes y el teorema central del límite que aparezcan como contexto adicional se distinguen del temario aportado. Los originales docentes no se publican en esta aula.</p><p>Las cifras biológicas son ficticias y las visualizaciones no son evidencia experimental. Las probabilidades se calculan con jStat 1.9.6; las fórmulas se representan con KaTeX 0.16.25.</p></section>`));
+  listen(element('sourcesToggle'), 'click', () => openDialog('Materiales y cobertura', `<p>36 lecciones originales organizadas a partir de los cuatro temas aportados. El puente matemático es material adicional. La numeración de los ejercicios de multivariantes no coincide con la del Tema 4.</p>${COURSE.coverage.map(item => `<section><h3>${escapeHtml(item.document)}</h3><ul class="coverage-list">${item.topics.map(topic => `<li>${escapeHtml(topic)}</li>`).join('')}</ul></section>`).join('')}<section><h3>Práctica y fuentes</h3><p>El banco resuelve los 22 problemas de los tres solucionarios. El tema 5 desarrolla los tres ejercicios de la PEC 1, con todos sus apartados y visualizaciones adicionales. La práctica extra ofrece variantes didácticas. Los documentos originales están disponibles en Materiales.</p><p>Las ampliaciones se distinguen del temario aportado. Las cifras de los ejemplos propios son ficticias y las visualizaciones no son evidencia experimental. Las probabilidades se calculan con jStat 1.9.6; las fórmulas se representan con KaTeX.</p></section>`));
   listen(element('panel-practice'), 'change', event => {
     if (event.target.id === 'exerciseSource') { practiceSource = event.target.value; if (practiceSource === 'pdf') { mode = 'observe'; entireBank = false; } renderPractice(); icons(); }
     if (event.target.id === 'pdfExercise') { pdfExerciseId = event.target.value; renderPractice(); icons(); }

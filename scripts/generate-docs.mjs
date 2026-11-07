@@ -5,6 +5,7 @@ import path from 'node:path';
 import {COURSE} from '../pages/inferencia/course.js';
 import {generateExercise, scopeExercise} from '../pages/inferencia/exercises.js';
 import {inlineMathToMdx} from '../src/lib/inline-math.js';
+import {CAPSTONE} from '../pages/inferencia/capstone.js';
 
 const require = createRequire(import.meta.url);
 globalThis.jStat = require('jstat').jStat;
@@ -78,5 +79,14 @@ for (const [unitIndex, unit] of COURSE.units.entries()) {
     count++;
   }
 }
-await writeFile(path.join(docs, 'index.mdx'), `---\ntitle: Temario\nslug: /temario\nsidebar_position: 0\ncustom_edit_url: null\n---\n\nDe los sucesos a las distribuciones de varias variables, con ejemplos de biología y las matemáticas explicadas desde su significado.\n\nEl tema 0 es un puente matemático opcional. Los temas 1 a 4 desarrollan los cuatro documentos de los apuntes; cada lección indica su apartado y enlaza a la página correspondiente del PDF.\n\n${map.join('\n\n')}\n\n## Referencias y ejemplos\n\nLas explicaciones y los ejercicios son originales. No se incluyen las respuestas de la evaluación vigente. Los ejemplos no son resultados experimentales ni recomendaciones clínicas.\n`);
-console.log(`Generated ${count} lessons and the course map.`);
+const capstoneFolder = path.join(docs, CAPSTONE.id);
+await mkdir(capstoneFolder, {recursive: true});
+await writeFile(path.join(capstoneFolder, '_category_.json'), JSON.stringify({label: `Tema ${CAPSTONE.number}: ${CAPSTONE.title}`, position: COURSE.units.length + 1}, null, 2));
+const lessons = new Map(COURSE.units.flatMap(unit => unit.lessons.map(lesson => [lesson.id, lesson])));
+map.push(`<details className="curriculum-topic">\n<summary>Tema ${CAPSTONE.number}: ${CAPSTONE.title}</summary>\n\n${CAPSTONE.description}\n\n${CAPSTONE.sections.map((section, index) => `- [${CAPSTONE.number}.${index + 1} ${section.title}](./${CAPSTONE.id}/${section.id}.mdx)`).join('\n')}\n\n</details>`);
+for (const [index, section] of CAPSTONE.sections.entries()) {
+  const prerequisites = section.lessonIds.map(id => `- [${lessons.get(id).title}](/lecciones/${id})`).join('\n');
+  await writeFile(path.join(capstoneFolder, `${section.id}.mdx`), `---\ntitle: ${JSON.stringify(section.title)}\nsidebar_label: ${JSON.stringify(`${CAPSTONE.number}.${index + 1} ${section.title}`)}\nsidebar_position: ${index + 1}\nslug: /lecciones/${section.id}\ncustom_edit_url: https://github.com/netraular/inferencia-estadistica-uoc/edit/main/pages/inferencia/capstone.js\n---\n\nimport CapstoneExercises from '@site/src/components/CapstoneExercises';\n\n${CAPSTONE.description}\n\n## Conocimientos que se ponen en juego\n\n${prerequisites}\n\n<CapstoneExercises exerciseId=${JSON.stringify(section.exerciseId)} />\n`);
+}
+await writeFile(path.join(docs, 'index.mdx'), `---\ntitle: Temario\nslug: /temario\nsidebar_position: 0\ncustom_edit_url: null\n---\n\nDe los sucesos a las distribuciones de varias variables, con ejemplos de biología y las matemáticas explicadas desde su significado.\n\nEl tema 0 es un puente matemático opcional. Los temas 1 a 4 desarrollan los cuatro documentos de los apuntes. El tema 5 resuelve los tres ejercicios de la PEC 1 como culminación del recorrido. Cada lección indica su apartado y enlaza a la página correspondiente del PDF; cada problema enlaza su fuente.\n\n${map.join('\n\n')}\n\n## Referencias y ejemplos\n\nLas explicaciones son originales. El banco resuelve los ejercicios de los tres solucionarios y el tema 5 desarrolla todos los apartados de la PEC 1, con sus supuestos, razonamientos y figuras. Los ejemplos no son resultados experimentales ni recomendaciones clínicas.\n`);
+console.log(`Generated ${count} lessons, ${CAPSTONE.sections.length} capstone pages and the course map.`);
