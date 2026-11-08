@@ -35,9 +35,8 @@ function elements(element) {
   return [element, ...React.Children.toArray(element.props.children).flatMap(elements)];
 }
 
-test('three Docusaurus tabs keep the journey, optional notes and progress inside lesson, and preserve old queries', () => {
+test('three Docusaurus tabs keep the journey and optional notes without progress, and preserve old queries', () => {
   const effects = [];
-  const studied = [];
   const replacements = [];
   const location = {pathname:'/inferencia/lecciones/sucesos/', search:'?actividad=theory&origen=temario', hash:'#ejemplo', state:{kept:true}};
   const {default:LessonContent} = loadCompiled('../src/components/LessonContent.jsx', {
@@ -48,11 +47,7 @@ test('three Docusaurus tabs keep the journey, optional notes and progress inside
     './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive':view}),
     './LessonJourney':({lessonId}) => React.createElement('div', {'data-journey':lessonId}),
     './LessonSource':({lesson}) => React.createElement('p', {'data-source':lesson.id}),
-    '../../pages/inferencia/course.js':{COURSE},
-    '../classroom/useCourseProgress':lessonId => {
-      assert.equal(lessonId, 'sucesos');
-      return {progress:{studied:['sucesos']}, warning:'Aviso de guardado', setStudied:value => studied.push(value)};
-    }
+    '../../pages/inferencia/course.js':{COURSE}
   });
   const element = LessonContent({lessonId:'sucesos', children:React.createElement('p', null, 'Contenido conservado')});
   const {document} = parseHTML(renderToStaticMarkup(element));
@@ -63,15 +58,13 @@ test('three Docusaurus tabs keep the journey, optional notes and progress inside
   assert.ok(document.querySelector('[data-source="sucesos"]'));
   assert.equal(document.querySelector('[data-source]').closest('[data-view]'), null);
   assert.ok(lesson.querySelector('[data-interactive="theory"]'));
-  assert.ok(lesson.querySelector('input[type="checkbox"][checked]'));
-  assert.ok(lesson.querySelector('[role="status"]'));
-  assert.equal(document.querySelectorAll('input[type="checkbox"]').length, 1);
+  assert.equal(lesson.querySelector('input[type="checkbox"]'), null);
+  assert.equal(lesson.querySelector('[role="status"]'), null);
+  assert.equal(document.querySelectorAll('input[type="checkbox"]').length, 0);
   assert.equal(document.querySelectorAll('[data-view]:not([data-view="lesson"]) input').length, 0);
   const tabs = elements(element).find(node => node.props.queryString === 'actividad');
   assert.equal(tabs.props.lazy, true);
   assert.equal(tabs.props.defaultValue, 'lesson');
-  elements(element).find(node => node.type === 'input').props.onChange({target:{checked:false}});
-  assert.deepEqual(studied, [false]);
   effects[0]();
   assert.equal(replacements[0].search, '?actividad=lesson&origen=temario');
   assert.equal(replacements[0].pathname, location.pathname);
@@ -177,16 +170,21 @@ test('symbols modal closes only on a real click outside, never on content or dia
 
 test('materials group the manifest inventory and encode original download filenames under baseUrl', () => {
   const documents = [
-    {title:'Documento de prueba', filename:'Tema con espacios + \u03a9 #?.pdf', size:2048, category:'Apuntes'},
-    {title:'Segundo documento', filename:'otra prueba.pdf', size:2097152, category:'Ejercicios'}
+    {title:'Documento de prueba', filename:'Tema con espacios + \u03a9 #?.pdf', size:2048, category:'temario'},
+    {title:'Segundo documento', filename:'otra prueba.pdf', size:2097152, category:'ejercicios'}
   ];
   const {default:MaterialsPage} = loadCompiled('../src/pages/materiales.jsx', {
     '@theme/Layout':({children}) => React.createElement('div', null, children),
     '@docusaurus/useBaseUrl':value => {assert.equal(value, '/materiales/'); return '/curso/pruebas/materiales/';},
-    '@site/static/materiales/manifest.json':{documents}
+    '@site/static/materiales/manifest.json':{documents},
+    '../components/SymbolsNavbarItem':loadCompiled('../src/components/SymbolsNavbarItem.jsx', {'../../pages/inferencia/course.js':{COURSE}}).default
   });
   const {document} = parseHTML(renderToStaticMarkup(React.createElement(MaterialsPage)));
   assert.equal(document.querySelectorAll('main section').length, 2);
+  const symbols = document.querySelector('[aria-haspopup="dialog"]');
+  assert.equal(symbols.closest('section').querySelector('h2').textContent, 'Apuntes');
+  assert.match(symbols.textContent, /Símbolos y notación/);
+  assert.equal(document.querySelectorAll('[aria-haspopup="dialog"]').length, 1);
   const links = Array.from(document.querySelectorAll('a[download]'));
   assert.equal(links.length, documents.length);
   for (const [index, item] of documents.entries()) {
@@ -198,19 +196,28 @@ test('materials group the manifest inventory and encode original download filena
   assert.match(document.toString(), /2 MiB/);
 });
 
-test('navbar registers global symbols and materials and has no general disclaimer footer', () => {
+test('navbar keeps only curriculum and materials, with home accessible through the brand', () => {
   const config = loadCompiled('../docusaurus.config.js').default;
   assert.equal(config.themeConfig.footer, undefined);
-  assert.equal(config.themeConfig.navbar.items.filter(item => item.type === 'custom-symbols').length, 1);
+  assert.equal(config.themeConfig.navbar.items.filter(item => item.type === 'custom-symbols').length, 0);
+  assert.equal(config.themeConfig.navbar.items.filter(item => item.to === '/').length, 0);
   assert.equal(config.themeConfig.navbar.items.filter(item => item.to === '/materiales/').length, 1);
-  const original = () => null;
-  const symbols = () => null;
-  const registry = loadCompiled('../src/theme/NavbarItem/ComponentTypes.js', {
-    '@theme-original/NavbarItem/ComponentTypes':{default:original},
-    '@site/src/components/SymbolsNavbarItem':symbols
-  }).default;
-  assert.equal(registry.default, original);
-  assert.equal(registry['custom-symbols'], symbols);
+});
+
+test('home offers large curriculum and materials access and all six topics without progress', () => {
+  const {default:HomePage} = loadCompiled('../src/pages/index.jsx', {
+    '@theme/Layout':({children}) => React.createElement('div', null, children),
+    '@docusaurus/Link':({to, children, ...props}) => React.createElement('a', {...props, href:to}, children),
+    '../../pages/inferencia/course.js':{COURSE},
+    '../../pages/inferencia/capstone.js':{CAPSTONE},
+    '../components/LegacyRoute':() => null
+  });
+  const {document} = parseHTML(renderToStaticMarkup(React.createElement(HomePage)));
+  assert.equal(document.querySelector('h1').textContent, 'Inferencia estadística');
+  assert.deepEqual(Array.from(document.querySelectorAll('.course-home-access'), link => link.getAttribute('href')), ['/temario/', '/materiales/']);
+  assert.equal(document.querySelectorAll('.course-topic').length, 6);
+  assert.equal(document.querySelector('.progress-page,input,progress,[role="status"]'), null);
+  assert.doesNotMatch(document.toString(), /Mi progreso|Guardado|Estudiada|Pendiente/);
 });
 
 test('production-compiled embed hides utilities without navigation and retains them for standalone use', () => {
@@ -241,13 +248,13 @@ test('production-compiled embed hides utilities without navigation and retains t
       const mounted = mountEmbeddedClassroom(document.getElementById('host'), {shell, baseUrl:'/inferencia/', lessonId:'sucesos', view:'theory', storage, showNavigation});
       try {
         assert.ok(mounted.root.querySelector('.knowledge-check'));
-        assert.equal(mounted.root.querySelectorAll('.embedded-utilities button').length, showNavigation ? 3 : 0);
+        assert.equal(mounted.root.querySelectorAll('.embedded-utilities button').length, showNavigation ? 2 : 0);
         if (!showNavigation) {
           assert.equal(mounted.root.getElementById('lessonTabs').style.display, 'none');
           assert.equal(mounted.root.querySelector('.lesson-heading').style.display, 'none');
           assert.ok(mounted.root.getElementById('glossaryToggle').closest('.sidebar'));
           assert.ok(mounted.root.getElementById('sourcesToggle').closest('.sidebar'));
-          assert.ok(mounted.root.getElementById('settingsToggle').closest('.topbar'));
+          assert.equal(mounted.root.getElementById('settingsToggle'), null);
         }
       } finally {mounted.dispose();}
     }

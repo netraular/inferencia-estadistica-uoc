@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {Download, ExternalLink, FileText} from 'lucide-react';
 import manifest from '@site/static/materiales/manifest.json';
+import SymbolsButton from '../components/SymbolsNavbarItem';
 
 function fileSize(size) {
   const megabytes = size >= 1024 * 1024;
@@ -24,6 +25,7 @@ export default function MaterialsPage() {
       <h1>Materiales</h1>
       {categories.map((category, index) => <section key={category} className="materials-section" aria-labelledby={`materials-${index}`}>
         <h2 id={`materials-${index}`}>{CATEGORY_LABELS[category] || category}</h2>
+        {category === 'temario' && <div className="materials-symbols"><SymbolsButton label="Símbolos y notación" /></div>}
         <ul className="materials-list">
           {manifest.documents.filter(document => document.category === category).sort((a, b) => a.title.localeCompare(b.title, 'es', {numeric:true})).map(document => <li key={document.filename}>
             <FileText size={22} aria-hidden="true" />

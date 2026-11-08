@@ -2,12 +2,11 @@ import React, {useEffect} from 'react';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {useHistory, useLocation} from '@docusaurus/router';
-import {BookOpen, CircleCheck, Pencil, Play} from 'lucide-react';
+import {BookOpen, Pencil, Play} from 'lucide-react';
 import {COURSE} from '../../pages/inferencia/course.js';
 import InteractiveLesson from './InteractiveLesson';
 import LessonJourney from './LessonJourney';
 import LessonSource from './LessonSource';
-import useCourseProgress from '../classroom/useCourseProgress';
 
 const sections = [
   {value:'lesson', title:'Lección', Icon:BookOpen},
@@ -16,7 +15,6 @@ const sections = [
 ];
 
 export default function LessonContent({lessonId, children}) {
-  const {progress, warning, setStudied} = useCourseProgress(lessonId);
   const history = useHistory();
   const location = useLocation();
   const lesson = COURSE.units.flatMap(unit => unit.lessons).find(item => item.id === lessonId);
@@ -41,10 +39,6 @@ export default function LessonContent({lessonId, children}) {
         <h2>Comprueba la idea</h2>
         <InteractiveLesson lessonId={lessonId} view="theory" />
       </section>
-      <div className="lesson-progress">
-        <label><input type="checkbox" checked={progress?.studied.includes(lessonId) || false} disabled={!progress} onChange={event => setStudied(event.target.checked)} /><CircleCheck size={18} aria-hidden="true" /> Estudiada</label>
-      </div>
-      {warning && <p role="status" className="course-warning">{warning}</p>}
     </TabItem>
     {sections.filter(section => section.value !== 'lesson').map(section =>
       <TabItem key={section.value} value={section.value}>

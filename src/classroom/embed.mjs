@@ -60,7 +60,7 @@ export function scopedDocument(owner, root) {
   });
 }
 
-export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage, view = 'lab', showNavigation = true, audio, animation, createWhiteboard}) {
+export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, view = 'lab', showNavigation = true, audio, animation, createWhiteboard}) {
   const owner = host.ownerDocument;
   const root = host.shadowRoot || host.attachShadow({mode: 'open'});
   const parsed = new owner.defaultView.DOMParser().parseFromString(shell, 'text/html');
@@ -84,7 +84,6 @@ export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage,
     const track = audio?.lessons?.[animation?.id || id];
     return track ? {...track, src:`${baseUrl}${track.src}`} : undefined;
   };
-  if (storage !== undefined) options.storage = storage;
   const aula = mountAula(scopedDocument(owner, root), options);
   if (!showNavigation) {
     root.getElementById('lessonTabs').style.setProperty('display', 'none', 'important');
@@ -94,7 +93,7 @@ export function mountEmbeddedClassroom(host, {shell, baseUrl, lessonId, storage,
   if (showNavigation) {
     const utilities = owner.createElement('div');
     utilities.className = 'embedded-utilities';
-    utilities.append(root.getElementById('glossaryToggle'), root.getElementById('sourcesToggle'), root.getElementById('settingsToggle'));
+    utilities.append(root.getElementById('glossaryToggle'), root.getElementById('sourcesToggle'));
     root.getElementById('lessonTabs').after(utilities);
   }
   return {aula, root, dispose() {aula.dispose(); root.replaceChildren();}};

@@ -15,26 +15,22 @@ https://webs.raular.com/inferencia/ from the `main` branch.
   Exercises and Animated Recap ("Repaso animado").
 - The Lesson tab shows, in order: the narrated section journey, a visible
   summary (goals, key formulas, method, pitfalls), the complete written notes
-  collapsed in reading order, the concept check and the studied mark.
-  Symbols and downloadable materials are global navigation items.
+  collapsed in reading order and the concept check.
+  Symbols are available under Materials, in the Notes section.
   The selected activity is linkable with `?actividad=...`;
   only the selected activity is mounted, with no duplicate internal navigation.
 - Animated-reading transport moves to the previous or next complete sentence,
   crossing scene boundaries as needed. The scene selector and chapter outline
   remain available under playback options.
-- The short `/inferencia/` URL opens personal progress and a brief course overview;
+- The short `/inferencia/` URL opens a course overview with direct access to the
+  curriculum, materials and each topic;
   `/temario/` holds the reference map, with topics 0 to 5 and numbered lessons.
   Topic 5 solves all three PEC 1 problems, including 13 numerical questions,
   three qualitative arguments, full sample spaces and additional diagrams.
-- Browser-local progress is shared between lesson marks, concept checks and
-  exercise results. Views refresh after saves and changes from another tab.
-  There are no import, export or reset controls. No account or cross-device
-  synchronization is provided. Existing progress stays compatible on the same
-  `webs.raular.com` origin. The former `/progreso/` route redirects home.
-- When browser storage is blocked or full, study marks stay in memory during
-  the current page session, including navigation between lessons and home.
-  A warning explains that they will not survive reloading or closing the page.
-  A later successful save preserves pending marks and existing activity results.
+- There is no study tracking or saved exercise history. Concept checks and
+  answers receive immediate feedback without reading or writing browser storage.
+  Previous progress data is left untouched and is no longer used. The former
+  `/progreso/` route redirects home; the brand in the navbar links home.
 
 The original explanations, formulas, source references and exercise engines live
 under `pages/inferencia/`. `scripts/generate-docs.mjs` produces the MDX lessons
@@ -77,7 +73,7 @@ Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
 density, marginals, continuous conditioning and the bivariate normal. Each starts
 with a concrete question and ends with an interpretation. Figures reuse the
 laboratory calculations and canvas renderer without mounting the classroom,
-changing progress or duplicating the laboratory controls.
+duplicating the laboratory controls.
 
 Guided practice selects only questions appropriate to the lesson and starts with
 different data from the solved example, skipping duplicate seeded variants. The complete
@@ -98,7 +94,7 @@ construction tables reveal only their current partial values. Numerical answers
 are independently checked, including corrections to errors in the PDF solutions.
 The assessment statement has its own three-page topic 5, separate from the
 22-problem bank. Both sources retain their original problem and part numbering.
-Consulting either set of PDF solutions never writes a scored attempt.
+Consulting either set of PDF solutions never records an attempt.
 Normal, density, discrete-moment, event and Bayes calculations have dedicated
 small operations. Other generators reuse their existing mathematical steps.
 Switching to an independent attempt selects different data from the observed
@@ -129,7 +125,7 @@ npm start
 
 Build generates the MDX, activity styles, font files and search index. Tests cover
 the existing numerical engines, all lesson views, the player, seeded exercises,
-progress, complete MDX content and the scoped interactive integration.
+complete MDX content and the scoped interactive integration.
 DOM tests are not browser layout verification.
 
 `npm test` generates the ignored lesson pages, activity shell and static resources

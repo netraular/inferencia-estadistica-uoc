@@ -423,7 +423,6 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
     const renderNotes = () => {element('[data-tutor-note-content]').innerHTML=`<p>${escape(exercise.prompt)}</p><h4>Datos y supuestos</h4><ul>${[...exercise.given,...exercise.assumptions].map(value=>`<li>${escape(value)}</li>`).join('')}</ul><h4>${escape(question.prompt)}</h4><ol>${question.steps.map(step=>`<li><strong>${escape(step.title)}</strong><p>${escape(step.explanation)}</p>${step.tex?formatMath(step.tex):''}</li>`).join('')}</ol>${question.grading?.kind === 'qualitative' ? `<p>${escape(question.answerText || question.interpretation)}</p>` : ''}`;};
     if (exercise.chapterId !== 'culminacion-pec1' || element('[data-tutor-notes]').open) renderNotes();
     else element('[data-tutor-note-content]').replaceChildren();
-    if(position>0)onHelp(question.id);
     if(current.result)stop();
     draw();
   };
@@ -440,7 +439,7 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   });
   listen(element('[data-tutor-speed]'),'change',stop);
   listen(element('[data-tutor-question]'),'change',()=>{stop();questionIndex=Number(element('[data-tutor-question]').value);position=0;element('[data-tutor-notes]').open=false;render();});
-  listen(element('[data-tutor-notes]'),'toggle',()=>{if(element('[data-tutor-notes]').open){if(exercise.chapterId === 'culminacion-pec1')render();onHelp(exercise.questions[questionIndex].id);}});
+  listen(element('[data-tutor-notes]'),'toggle',()=>{if(element('[data-tutor-notes]').open && exercise.chapterId === 'culminacion-pec1')render();});
   if (onPractice) listen(element('[data-tutor-practice]'),'click',onPractice);
   else element('[data-tutor-practice]').remove();
   listen(window,'resize',draw);

@@ -4,9 +4,8 @@ import {notationHtml} from './teaching.js?v=251983817529';
 import {createLessonAnimation, mountAnimation} from './animations.js?v=6f265331127f';
 import {enrichLessonAnimation, enrichGlobalAnimation} from './lesson-visuals.js?v=d63fba41c35b';
 import {mountLab} from './labs.js?v=2f4aa757b74f';
-import {mountExerciseTutor} from './exercise-tutor.js?v=1513c3f74d3a';
+import {mountExerciseTutor} from './exercise-tutor.js?v=cff23a9f9c32';
 import {getPdfExercises} from './pdf-exercises.js?v=c7879552421f';
-import {STORAGE_KEY, PROGRESS_EVENT, loadProgress, saveProgress, recordAnswer, recordAssistance, progressSummary} from './progress.js?v=728e14ac585b';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));
 export const VIEWS = ['theory', 'lab', 'practice', 'animation'];
@@ -42,16 +41,9 @@ export function parseRoute(hash, fallback = LESSONS[0].id) {
 
 export function mountAula(document, environment = {}) {
   const window = document.defaultView || globalThis;
-  let storage = environment.storage;
-  if (!Object.hasOwn(environment, 'storage')) {
-    try { storage = window.localStorage; } catch { storage = null; }
-  }
   const location = environment.location || window.location || {hash:''};
   const history = environment.history || window.history;
-  const loaded = loadProgress(storage, COURSE);
-  let progress = loaded.progress;
-  let storageWarning = loaded.warning;
-  let route = parseRoute(location.hash, progress.lastLesson);
+  let route = parseRoute(location.hash);
   let overview = !location.hash || location.hash === '#inicio';
   let activeCleanup = null;
   let activeExercise = null;
@@ -80,39 +72,15 @@ export function mountAula(document, environment = {}) {
       return window.katex ? window.katex.renderToString(tex, {displayMode:true, throwOnError:false, trust:false, strict:'ignore'}) : `<span>${escapeHtml(tex)}</span>`;
     } catch { return `<span>${escapeHtml(tex)}</span>`; }
   };
-  const status = text => { element('appStatus').textContent = [text, storageWarning].filter(Boolean).join(' '); };
-  const persist = () => {
-    if (!saveProgress(storage, progress)) storageWarning = 'El navegador no permite guardar el progreso. Los cambios no se conservarán al salir.';
-    updateProgress();
-  };
-
-  function updateProgress() {
-    const summary = progressSummary(progress);
-    element('courseProgress').max = LESSONS.length;
-    element('courseProgress').value = summary.studied;
-    element('courseProgressText').textContent = `${summary.studied} de ${LESSONS.length} lecciones estudiadas`;
-    element('lessonStudied').checked = progress.studied.includes(route.lessonId);
-    document.querySelectorAll('.lesson-link').forEach(button => {
-      const studied = progress.studied.includes(button.dataset.lesson);
-      button.classList.toggle('is-studied', studied);
-      button.querySelector('.lesson-indicator').textContent = studied ? '✓' : '';
-      button.setAttribute('aria-label', `${LESSONS.find(item => item.id === button.dataset.lesson).title}${studied ? ', estudiada' : ''}`);
-    });
-    const score = element('practiceScore');
-    if (score) score.textContent = `${summary.independent} respuestas sin ayuda · ${summary.assisted} con ayuda`;
-    status('');
-  }
-
   function renderNav() {
     const query = normalize(element('courseSearch').value);
     const groups = COURSE.units.map(unit => {
       const matching = unit.lessons.filter(item => normalize([unit.title, item.title, ...item.objectives, ...item.formulas.map(formula => formula.meaning)].join(' ')).includes(query));
       if (!matching.length) return '';
       const open = query || matching.some(item => item.id === route.lessonId);
-      return `<details class="unit-group"${open ? ' open' : ''}><summary><span class="unit-number">${unit.number || '+'}</span><span>${unit.number === 0 ? 'Apoyo opcional: ' : ''}${escapeHtml(unit.title)}</span></summary><p class="unit-description">${matching.length} lecciones${unit.number === 0 ? ' · No es un quinto tema' : ` · PDF Tema ${unit.number}`}</p>${matching.map(item => `<button type="button" class="lesson-link${progress.studied.includes(item.id) ? ' is-studied' : ''}" data-lesson="${item.id}"${!overview && item.id === route.lessonId ? ' aria-current="page"' : ''}><span class="lesson-indicator" aria-hidden="true">${progress.studied.includes(item.id) ? '✓' : ''}</span><span>${escapeHtml(item.title)}</span></button>`).join('')}</details>`;
+      return `<details class="unit-group"${open ? ' open' : ''}><summary><span class="unit-number">${unit.number || '+'}</span><span>${unit.number === 0 ? 'Apoyo opcional: ' : ''}${escapeHtml(unit.title)}</span></summary><p class="unit-description">${matching.length} lecciones${unit.number === 0 ? ' · No es un quinto tema' : ` · PDF Tema ${unit.number}`}</p>${matching.map(item => `<button type="button" class="lesson-link" data-lesson="${item.id}"${!overview && item.id === route.lessonId ? ' aria-current="page"' : ''}><span>${escapeHtml(item.title)}</span></button>`).join('')}</details>`;
     }).join('');
     element('courseNav').innerHTML = groups || '<p class="empty-state">No hay lecciones con ese concepto.</p>';
-    updateProgress();
   }
 
   function renderTheory() {
@@ -148,8 +116,6 @@ export function mountAula(document, environment = {}) {
       feedback.hidden = false;
       feedback.className = `feedback ${correct ? 'correct' : 'incorrect'}`;
       feedback.textContent = selected ? `${correct ? 'Correcto.' : 'Repasa esta idea.'} ${check.explanation}` : 'Selecciona una respuesta antes de comprobar.';
-      if (correct) progress.checks[current.id] = true;
-      persist();
     });
   }
 
@@ -182,13 +148,8 @@ export function mountAula(document, environment = {}) {
         activeExercise = entireBank ? generateExercise(practiceType,seed) : scopeExercise(current,generateExercise(practiceType,seed));
       }
     }
-    const exerciseId = activeExercise.id;
-    const summary = progressSummary(progress);
-    element('panel-practice').innerHTML = `<div class="practice-toolbar"><label class="control-field">Tipo de ejercicio<select id="exerciseType">${available.map(type => `<option value="${type.id}"${type.id === practiceType ? ' selected' : ''}>${escapeHtml(type.title)}</option>`).join('')}</select></label><label class="control-field">Modalidad<select id="practiceMode"><option value="practice"${mode === 'practice' ? ' selected' : ''}>Práctica</option><option value="guided"${mode === 'guided' ? ' selected' : ''}>Resolución guiada</option></select></label><button id="newExercise" type="button" class="text-button"><i data-lucide="shuffle" aria-hidden="true"></i>Nuevo ejemplo</button><label class="studied-toggle" style="margin:0"><input id="entireBank" type="checkbox"${entireBank ? ' checked' : ''}>Banco completo</label><span id="practiceScore" class="practice-score">${summary.independent} respuestas sin ayuda · ${summary.assisted} con ayuda</span></div><div class="exercise-prompt"><p class="eyebrow">EJEMPLO ${seed} · ${escapeHtml(activeExercise.title)}</p><h2>${escapeHtml(activeExercise.title)}</h2><p>${escapeHtml(activeExercise.prompt)}</p><div class="exercise-context"><section><h3>Datos del problema</h3><ul>${activeExercise.given.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section><section><h3>Supuestos</h3><ul>${activeExercise.assumptions.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section></div></div>${activeExercise.questions.map((question, index) => {
-      const key = `${activeExercise.id}/${question.id}`;
-      if (mode === 'guided' && !progress.attempts[key]?.solved) recordAssistance(progress, key);
-      const solved = progress.attempts[key]?.solved;
-      return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}. ${solved ? 'Ya resolviste esta respuesta.' : ''}</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><div class="worked-controls"><button type="button" class="icon-button" data-solution-step="-1" aria-label="Paso anterior" title="Paso anterior" disabled><i data-lucide="arrow-left" aria-hidden="true"></i></button><span data-step-position role="status">Paso 1 de ${question.steps.length}</span><button type="button" class="icon-button" data-solution-step="1" aria-label="Paso siguiente" title="Paso siguiente"${question.steps.length <= 1 ? ' disabled' : ''}><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ol>${question.steps.map((step, stepIndex) => `<li data-worked-step="${stepIndex}"${stepIndex ? ' hidden' : ' aria-current="step"'}><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math worked-calculation">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"${question.steps.length > 1 ? ' hidden' : ''}><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
+    element('panel-practice').innerHTML = `<div class="practice-toolbar"><label class="control-field">Tipo de ejercicio<select id="exerciseType">${available.map(type => `<option value="${type.id}"${type.id === practiceType ? ' selected' : ''}>${escapeHtml(type.title)}</option>`).join('')}</select></label><label class="control-field">Modalidad<select id="practiceMode"><option value="practice"${mode === 'practice' ? ' selected' : ''}>Práctica</option><option value="guided"${mode === 'guided' ? ' selected' : ''}>Resolución guiada</option></select></label><button id="newExercise" type="button" class="text-button"><i data-lucide="shuffle" aria-hidden="true"></i>Nuevo ejemplo</button><label class="bank-toggle"><input id="entireBank" type="checkbox"${entireBank ? ' checked' : ''}>Banco completo</label></div><div class="exercise-prompt"><p class="eyebrow">EJEMPLO ${seed} · ${escapeHtml(activeExercise.title)}</p><h2>${escapeHtml(activeExercise.title)}</h2><p>${escapeHtml(activeExercise.prompt)}</p><div class="exercise-context"><section><h3>Datos del problema</h3><ul>${activeExercise.given.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section><section><h3>Supuestos</h3><ul>${activeExercise.assumptions.map(text => `<li>${escapeHtml(text)}</li>`).join('')}</ul></section></div></div>${activeExercise.questions.map((question, index) => {
+      return `<section class="exercise-question" data-question="${question.id}"><h3>${index + 1}. ${escapeHtml(question.prompt)}</h3><form data-grade-form="${question.id}"><div class="answer-row"><label for="answer-${question.id}">Tu respuesta · ${escapeHtml(question.unit)}<input id="answer-${question.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="0,25 / 1/4 / 25%" aria-describedby="answer-help-${question.id}"></label><button type="submit" class="primary-button"><i data-lucide="check" aria-hidden="true"></i>Comprobar</button><button type="button" class="text-button" data-hint="${question.id}"><i data-lucide="lightbulb" aria-hidden="true"></i>Pista</button></div><p id="answer-help-${question.id}" class="answer-help">Tolerancia absoluta: ${question.tolerance.toString().replace('.', ',')}.</p><p id="feedback-${question.id}" class="feedback" role="status" hidden></p></form><p id="hint-${question.id}" class="hint"${mode === 'guided' ? '' : ' hidden'}>${escapeHtml(question.hint)}</p><details class="solution" data-solution="${question.id}"${mode === 'guided' ? ' open' : ''}><summary>Resolución paso a paso</summary><div class="worked-controls"><button type="button" class="icon-button" data-solution-step="-1" aria-label="Paso anterior" title="Paso anterior" disabled><i data-lucide="arrow-left" aria-hidden="true"></i></button><span data-step-position role="status">Paso 1 de ${question.steps.length}</span><button type="button" class="icon-button" data-solution-step="1" aria-label="Paso siguiente" title="Paso siguiente"${question.steps.length <= 1 ? ' disabled' : ''}><i data-lucide="arrow-right" aria-hidden="true"></i></button></div><ol>${question.steps.map((step, stepIndex) => `<li data-worked-step="${stepIndex}"${stepIndex ? ' hidden' : ' aria-current="step"'}><h4>${escapeHtml(step.title)}</h4><p>${escapeHtml(step.explanation)}</p>${step.tex ? `<div class="math worked-calculation">${math(step.tex)}</div>` : ''}</li>`).join('')}</ol><p class="interpretation"${question.steps.length > 1 ? ' hidden' : ''}><strong>Resultado: ${Number(question.answer.toPrecision(7)).toString().replace('.', ',')}.</strong> ${escapeHtml(question.interpretation)}</p></details></section>`;
     }).join('')}`;
     element('panel-practice').querySelector('.practice-toolbar').insertAdjacentHTML('afterbegin', `<label class="control-field">Origen<select id="exerciseSource">${pdfExercises.length ? `<option value="pdf"${usingPdf ? ' selected' : ''}>Ejercicios resueltos del PDF</option>` : ''}<option value="synthetic"${usingPdf ? '' : ' selected'}>Práctica extra</option></select></label>${usingPdf ? `<label class="control-field">Problema<select id="pdfExercise">${pdfExercises.map(exercise => `<option value="${escapeHtml(exercise.id)}"${exercise.id === pdfExerciseId ? ' selected' : ''}>${escapeHtml(exercise.source.number)}. ${escapeHtml(exercise.title)}</option>`).join('')}</select></label>` : ''}`);
     element('exerciseType').closest('label').hidden = usingPdf;
@@ -209,7 +170,7 @@ export function mountAula(document, environment = {}) {
       const tutor = document.createElement('section');
       tutor.setAttribute('data-exercise-tutor','');
       attempt.before(tutor);
-      activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onHelp:assistance,onPractice:()=>{const excluded=JSON.stringify([activeExercise.prompt,activeExercise.given,activeExercise.questions.map(question=>question.prompt)]);mode='practice';practiceSource='synthetic';entireBank=false;seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice(excluded);icons();}});
+      activeCleanup = mountExerciseTutor(tutor,activeExercise,{formatMath:math,onPractice:()=>{const excluded=JSON.stringify([activeExercise.prompt,activeExercise.given,activeExercise.questions.map(question=>question.prompt)]);mode='practice';practiceSource='synthetic';entireBank=false;seed=seed===4294967295?FIRST_PRACTICE_SEED:seed+1;renderPractice(excluded);icons();}});
     }
     if (usingPdf) {
       const solutions = document.createElement('section');
@@ -221,19 +182,6 @@ export function mountAula(document, environment = {}) {
     notation.className = 'exercise-notation';
     notation.innerHTML = `<h3>Cómo leer los símbolos de este ejercicio</h3>${notationHtml(activeExercise.type === 'pdf' ? current.id : activeExercise.type)}`;
     element('panel-practice').querySelector(usingPdf ? '[data-exercise-tutor]' : '.exercise-prompt').append(notation);
-    element('panel-practice').querySelectorAll('[data-solution]').forEach(details => {
-      details.addEventListener('toggle', () => {
-        if (details.open && details.isConnected && activeExercise?.id === exerciseId) assistance(details.dataset.solution);
-      });
-    });
-    persist();
-  }
-
-  function assistance(questionId) {
-    if (!activeExercise || activeExercise.type === 'pdf') return;
-    const key = `${activeExercise.id}/${questionId}`;
-    if (!progress.attempts[key]?.solved) recordAssistance(progress, key);
-    persist();
   }
 
   function renderAnimation() {
@@ -270,7 +218,6 @@ export function mountAula(document, environment = {}) {
     element('lessonContent').hidden = false;
     const changed = lessonId !== route.lessonId;
     route = {lessonId, view};
-    progress.lastLesson = lessonId;
     if (changed) { practiceType = null; practiceSource = null; pdfExerciseId = null; seed = FIRST_PRACTICE_SEED; mode = 'observe'; }
     const current = lesson();
     element('unitLabel').textContent = `${current.unit.number === 0 ? 'Puente' : `Tema ${current.unit.number}`} · ${current.unit.title}`;
@@ -284,7 +231,6 @@ export function mountAula(document, environment = {}) {
     element('lessonPosition').textContent = `Lección ${index + 1} de ${LESSONS.length}`;
     renderNav();
     renderView();
-    persist();
     updateRoute();
     if (focus) element('workspace').focus?.({preventScroll:true});
     element('sidebar').classList.remove('is-open');
@@ -301,7 +247,7 @@ export function mountAula(document, environment = {}) {
     element('lessonContent').hidden = true;
     const home = element('courseOverview');
     home.hidden = false;
-    home.innerHTML = `<header class="course-introduction"><p class="eyebrow">CUATRO TEMAS · UN RECORRIDO DE APRENDIZAJE</p><h1>Inferencia estadística</h1><p>De los sucesos a las distribuciones de varias variables, con ejemplos de biología y las matemáticas explicadas desde su significado.</p><p>El curso desarrolla los cuatro temarios aportados. El <strong>puente matemático es un apoyo opcional</strong>, no un quinto PDF: puedes usarlo si necesitas repasar unidades, álgebra, cálculo o matrices.</p><div class="settings-actions"><button type="button" class="primary-button" data-lesson="${progress.lastLesson}"><i data-lucide="book-open" aria-hidden="true"></i>${progressSummary(progress).studied ? 'Retomar el recorrido' : 'Comenzar con las bases'}</button><button type="button" class="text-button" data-lesson="sucesos"><i data-lucide="arrow-right" aria-hidden="true"></i>Empezar el Tema 1</button></div></header><section class="course-orientation"><h2>Una lección, cuatro formas de trabajar</h2><dl class="view-guide"><div><dt><i data-lucide="book-open" aria-hidden="true"></i>Teoría</dt><dd>Desarrolla las ideas, el significado de los símbolos, el método de resolución y ejemplos. Incluye supuestos, errores frecuentes y una comprobación conceptual; es el texto base del estudio.</dd></div><div><dt><i data-lucide="flask-conical" aria-hidden="true"></i>Laboratorio</dt><dd>Un experimento matemático interactivo: cambia una condición y compara la predicción con el gráfico y sus métricas. Cada laboratorio explica qué representa y qué conclusiones permite; no son datos reales ni sustituye la justificación de un cálculo.</dd></div><div><dt><i data-lucide="pencil-line" aria-hidden="true"></i>Ejercicios</dt><dd>Problemas originales con variantes y resolución detallada. En Práctica puedes intentarlos antes de abrir la solución; en Resolución guiada se muestran todos los pasos, con sus razones y la interpretación del resultado.</dd></div><div><dt><i data-lucide="clapperboard" aria-hidden="true"></i>Lectura animada</dt><dd>Una clase en diapositivas con narración escrita, teoría y ejemplos resueltos. Los subtítulos son la explicación completa, no un resumen. Por ahora no hay audio: el mismo guion servirá para la voz futura.</dd></div></dl></section><section class="course-orientation"><h2>Recorrido y correspondencia con los PDF</h2><p>El orden sigue las dependencias de aprendizaje, no página por página. Se agrupan secciones relacionadas y se adelantan herramientas: combinatoria antes de condicionamiento; definición formal junto a la variable; las dos uniformes juntas; momentos multinomiales junto al modelo.</p><p>La referencia <strong>«En tu PDF»</strong> de cada lección indica el nombre y las <strong>secciones del documento</strong>, no páginas. El PDF es un apoyo opcional: no se necesita para abrir una fórmula, entender un método o consultar una resolución. Los ejemplos son nuevos y las ampliaciones se señalan.</p>${COURSE.units.map(unit => `<details class="curriculum-unit"${unit.number === 1 ? ' open' : ''}><summary>${unit.number ? `Tema ${unit.number}` : 'Apoyo opcional'} · ${escapeHtml(unit.title)}</summary><p>${escapeHtml(unit.description)}</p><ol>${unit.lessons.map(item => `<li><button type="button" class="curriculum-link" data-lesson="${item.id}">${escapeHtml(item.title)}</button><span class="curriculum-reference">${escapeHtml(item.source.section)}</span></li>`).join('')}</ol></details>`).join('')}</section><section class="course-orientation"><h2>Estudiar con criterio</h2><p>Lee o sigue la clase animada, reproduce el razonamiento del ejemplo y después resuelve una variante sin ayuda. En el laboratorio, anticipa el cambio antes de mirar el resultado. Comprueba siempre soporte, unidades y supuestos: acertar una cifra no demuestra por sí solo que se domine una idea.</p><p>El progreso se guarda solo en este navegador. Abrir una lección no la marca como estudiada; esa marca la decides tú. Las respuestas con ayuda se distinguen de las autónomas. Las cifras biológicas son ficticias, no evidencia experimental ni recomendaciones clínicas.</p><p>Los ejercicios adicionales del banco completo, como Student, Fisher o muestreo, no son temas nuevos de los cuatro PDF. La carpeta docente original y la evaluación vigente no se publican.</p></section>`;
+    home.innerHTML = `<header class="course-introduction"><h1>Inferencia estadística</h1><p>De los sucesos a las distribuciones de varias variables, con ejemplos de biología.</p><p>El puente matemático es un apoyo opcional.</p><button type="button" class="primary-button" data-lesson="proporciones"><i data-lucide="book-open" aria-hidden="true"></i>Comenzar con las bases</button><button type="button" class="text-button" data-lesson="sucesos"><i data-lucide="arrow-right" aria-hidden="true"></i>Empezar el Tema 1</button></header><section class="course-orientation"><h2>Recorrido y correspondencia con los PDF</h2><p>El orden sigue las dependencias de aprendizaje, no página por página.</p>${COURSE.units.map(unit => `<details class="curriculum-unit"${unit.number === 1 ? ' open' : ''}><summary>${unit.number ? `Tema ${unit.number}` : 'Apoyo opcional'} · ${escapeHtml(unit.title)}</summary><p>${escapeHtml(unit.description)}</p><ol>${unit.lessons.map(item => `<li><button type="button" class="curriculum-link" data-lesson="${item.id}">${escapeHtml(item.title)}</button><span class="curriculum-reference">${escapeHtml(item.source.section)}</span></li>`).join('')}</ol></details>`).join('')}</section>`;
     document.title = 'Inferencia estadística · Inicio y mapa del curso';
     renderNav();
     icons();
@@ -325,11 +271,6 @@ export function mountAula(document, environment = {}) {
     const dialog = element('utilityDialog');
     if (dialog.close) dialog.close();
     else dialog.removeAttribute('open');
-  }
-
-  function settings() {
-    const summary = progressSummary(progress);
-    openDialog('Tu progreso', `<p>Guardado únicamente en este navegador. Las lecciones se marcan como estudiadas de forma explícita; acertar una respuesta no certifica dominar el tema.</p><div class="lab-metrics"><div class="metric"><span>Lecciones estudiadas</span><strong>${summary.studied} / ${LESSONS.length}</strong></div><div class="metric"><span>Ideas comprobadas</span><strong>${summary.checks}</strong></div><div class="metric"><span>Respuestas sin ayuda</span><strong>${summary.independent}</strong></div><div class="metric"><span>Respuestas con ayuda</span><strong>${summary.assisted}</strong></div></div><p>${summary.attempts} intentos registrados. Consultar una pista o una solución antes de acertar cuenta como ayuda.</p>`);
   }
 
   listen(element('courseSearch'), 'input', renderNav);
@@ -358,15 +299,10 @@ export function mountAula(document, environment = {}) {
   });
   listen(element('previousLesson'), 'click', () => { const index = LESSONS.indexOf(lesson()); if (index > 0) navigate(LESSONS[index - 1].id); });
   listen(element('nextLesson'), 'click', () => { const index = LESSONS.indexOf(lesson()); if (index < LESSONS.length - 1) navigate(LESSONS[index + 1].id); });
-  listen(element('lessonStudied'), 'change', event => {
-    progress.studied = event.target.checked ? [...new Set([...progress.studied, route.lessonId])] : progress.studied.filter(id => id !== route.lessonId);
-    persist();
-  });
   listen(element('menuToggle'), 'click', () => {
     const open = element('sidebar').classList.toggle('is-open');
     element('menuToggle').setAttribute('aria-expanded', String(open));
   });
-  listen(element('settingsToggle'), 'click', settings);
   listen(element('dialogClose'), 'click', closeDialog);
   listen(element('utilityDialog'), 'click', event => {
     if (event.target === element('utilityDialog')) closeDialog();
@@ -404,9 +340,8 @@ export function mountAula(document, environment = {}) {
       solution.querySelector('[data-solution-step="-1"]').disabled = next === 0;
       solution.querySelector('[data-solution-step="1"]').disabled = next === steps.length - 1;
       solution.querySelector('.interpretation').hidden = next < steps.length - 1;
-      assistance(solution.dataset.solution);
     }
-    if (button.dataset.hint) { element(`hint-${button.dataset.hint}`).hidden = false; assistance(button.dataset.hint); }
+    if (button.dataset.hint) element(`hint-${button.dataset.hint}`).hidden = false;
   });
   listen(element('panel-practice'), 'submit', event => {
     const form = event.target.closest('[data-grade-form]');
@@ -419,27 +354,15 @@ export function mountAula(document, environment = {}) {
     feedback.hidden = false;
     feedback.className = `feedback ${result.correct ? 'correct' : 'incorrect'}`;
     feedback.textContent = `${result.feedback}${result.correct ? ` ${question.interpretation}` : ''}`;
-    const visibleHelp = mode === 'guided' || !element(`hint-${question.id}`).hidden || element('panel-practice').querySelector(`[data-solution="${question.id}"]`).open;
-    if (visibleHelp) assistance(question.id);
-    if (result.value !== null) recordAnswer(progress, `${activeExercise.id}/${question.id}`, result.correct, visibleHelp);
-    persist();
   });
-  const refreshProgress = () => {
-    const loaded = loadProgress(storage, COURSE);
-    progress = loaded.progress;
-    storageWarning = loaded.warning;
-    updateProgress();
-  };
-  listen(window, PROGRESS_EVENT, refreshProgress);
-  listen(window, 'storage', event => {if (!event.key || event.key === STORAGE_KEY) refreshProgress();});
   if (environment.manageHistory !== false) listen(window, 'hashchange', () => {
     if (!location.hash || location.hash === '#inicio') { showOverview(); return; }
-    const next = parseRoute(location.hash, progress.lastLesson);
+    const next = parseRoute(location.hash);
     navigate(next.lessonId, next.view);
   });
   if (overview) showOverview();
   else navigate(route.lessonId, route.view, false);
-  return {navigate, setView:view => navigate(route.lessonId, view, false), get progress(){return progress;}, get route(){return {...route};}, get exercise(){return activeExercise;}, dispose(){
+  return {navigate, setView:view => navigate(route.lessonId, view, false), get route(){return {...route};}, get exercise(){return activeExercise;}, dispose(){
     if (disposed) return;
     disposed = true;
     activeCleanup?.();

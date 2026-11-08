@@ -11,7 +11,6 @@ import {getPdfExercises, PDF_EXERCISE_CATALOGUE} from '../pages/inferencia/pdf-e
 import {createTutorFrames, drawTutorFigure} from '../pages/inferencia/exercise-tutor.js';
 import {mountAula, readParagraphs} from '../pages/inferencia/app.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
-import {freshProgress, loadProgress, progressSummary, STORAGE_KEY} from '../pages/inferencia/progress.js';
 import {notationHtml} from '../pages/inferencia/teaching.js';
 
 const require = createRequire(import.meta.url);
@@ -630,11 +629,6 @@ function classroom(lessonId = 'sucesos', environment = {}) {
   });
   const stored = new Map();
   const storage = {getItem:key => stored.get(key) ?? null,setItem:(key,value) => stored.set(key,String(value))};
-  const initial = freshProgress(COURSE);
-  initial.studied = ['sucesos'];
-  initial.checks.sucesos = true;
-  initial.attempts['events-99/union'] = {count:1,solved:true,assisted:false};
-  storage.setItem(STORAGE_KEY,JSON.stringify(initial));
   const app = mountAula(document,{storage,location:{hash:`#${lessonId}/practice`},history:{replaceState() {}},manageHistory:false,...environment});
   const change = (id,value) => {const target = document.getElementById(id);if (target.type === 'checkbox') target.checked = value;else target.value = value;target.dispatchEvent(new window.Event('change',{bubbles:true}));};
   const submit = question => {
@@ -642,10 +636,10 @@ function classroom(lessonId = 'sucesos', environment = {}) {
     document.getElementById(`answer-${question.id}`).value = String(question.answer);
     form.dispatchEvent(new window.Event('submit',{bubbles:true,cancelable:true}));
   };
-  return {document,window,storage,app,change,submit};
+  return {document,window,storage,stored,app,change,submit};
 }
 
-test('PDF observation is the lesson default, offers source and problem selectors, uses lesson notation and preserves saved progress', () => withStatistics(() => {
+test('PDF observation is the lesson default, offers source and problem selectors and uses lesson notation without progress', () => withStatistics(() => {
   const fixture = classroom();
   const {document,app,change,submit,storage} = fixture;
   try {
@@ -662,20 +656,19 @@ test('PDF observation is the lesson default, offers source and problem selectors
     const expected = document.createElement('div');expected.innerHTML = notationHtml('sucesos');
     assert.ok(document.querySelector('[data-exercise-tutor] .exercise-notation').textContent.includes(expected.textContent));
     assert.equal(document.querySelector('[data-tutor-speed]').value,'6000');
-    const before = structuredClone(app.progress);
     const question = app.exercise.questions[0];
     document.querySelector('[data-tutor-next]').click();
     submit(question);
     const solution = document.querySelector(`[data-solution="${question.id}"]`);
     solution.open = true;solution.dispatchEvent(new fixture.window.Event('toggle'));
-    assert.deepEqual(app.progress,before);
-    assert.deepEqual(loadProgress(storage,COURSE).progress,app.progress);
+    assert.equal(app.progress,undefined);
+    assert.equal(fixture.stored.size,0);
     change('pdfExercise','pdf-u1-2');
     assert.equal(app.exercise.id,'pdf-u1-2');
     assert.equal(document.querySelector('[data-tutor-position]').textContent.startsWith('Paso 1 '),true);
     document.getElementById('newExercise').click();
     assert.equal(app.exercise.id,'pdf-u3-1');
-    assert.deepEqual(app.progress,before);
+    assert.equal(fixture.stored.size,0);
   } finally {app.dispose();}
 }));
 
@@ -685,7 +678,6 @@ test('every mapped lesson displays all its PDF problems with complete written so
     if (!exercises.length) continue;
     const {document,app,change} = classroom(lesson.id);
     try {
-      const before = structuredClone(app.progress);
       const section = document.querySelector('[data-pdf-solutions]');
       assert.ok(section,lesson.id);
       assert.deepEqual(Array.from(section.querySelectorAll('[data-pdf-exercise]'),node => node.dataset.pdfExercise),exercises.map(exercise => exercise.id));
@@ -703,14 +695,14 @@ test('every mapped lesson displays all its PDF problems with complete written so
           for (const step of question.steps) assert.ok(answer.textContent.includes(step.explanation));
         }
       }
-      assert.deepEqual(app.progress,before);
+      assert.equal(app.progress,undefined);
       change('exerciseSource','synthetic');
       assert.equal(document.querySelector('[data-pdf-solutions]'),null);
       assert.notEqual(app.exercise.type,'pdf');
       assert.equal(document.querySelector('#exerciseSource option[value="synthetic"]').textContent,'Práctica extra');
       change('exerciseSource','pdf');
       assert.ok(document.querySelector('[data-pdf-solutions]'));
-      assert.deepEqual(app.progress,before);
+      assert.equal(app.progress,undefined);
     } finally {app.dispose();}
   }
 }));
@@ -718,7 +710,6 @@ test('every mapped lesson displays all its PDF problems with complete written so
 test('another variant switches PDF observation to a distinct scoped synthetic task with independent grading', () => withStatistics(() => {
   const {document,app,submit} = classroom();
   try {
-    const before = progressSummary(app.progress);
     const observed = JSON.stringify([app.exercise.prompt,app.exercise.given,app.exercise.questions.map(question => question.prompt)]);
     document.querySelector('[data-tutor-practice]').click();
     const exercise = app.exercise;
@@ -732,49 +723,43 @@ test('another variant switches PDF observation to a distinct scoped synthetic ta
     assert.equal(document.getElementById('exerciseSource').value,'synthetic');
     assert.equal(document.querySelector('[data-exercise-tutor]'),null);
     assert.equal(document.getElementById('practiceAttempt').hidden,false);
-    assert.deepEqual(progressSummary(app.progress),before);
+    assert.equal(app.progress,undefined);
     submit(exercise.questions[0]);
-    const entry = app.progress.attempts[`${exercise.id}/${exercise.questions[0].id}`];
-    assert.deepEqual(entry,{count:1,solved:true,assisted:false});
-    assert.equal(progressSummary(app.progress).independent,before.independent+1);
-    assert.ok(!Object.keys(app.progress.attempts).some(key => key.startsWith('pdf-')));
+    assert.ok(document.getElementById(`feedback-${exercise.questions[0].id}`).classList.contains('correct'));
+    assert.equal(app.progress,undefined);
   } finally {app.dispose();}
 }));
 
-test('synthetic observation keeps its existing assistance marker when the same task is later answered', () => withStatistics(() => {
-  const {document,app,change,submit,storage} = classroom();
+test('synthetic observation can be followed by an answer without storing assistance', () => withStatistics(() => {
+  const {document,app,change,submit,stored} = classroom();
   try {
     change('exerciseSource','synthetic');
     const exercise = app.exercise;
     const question = exercise.questions[0];
-    const key = `${exercise.id}/${question.id}`;
     document.querySelector('[data-tutor-next]').click();
-    assert.deepEqual(app.progress.attempts[key],{count:0,solved:false,assisted:true});
+    assert.equal(stored.size,0);
     change('practiceMode','practice');
     assert.equal(app.exercise.id,exercise.id);
     submit(question);
-    assert.deepEqual(app.progress.attempts[key],{count:1,solved:true,assisted:true});
-    assert.deepEqual(loadProgress(storage,COURSE).progress,app.progress);
+    assert.ok(document.getElementById(`feedback-${question.id}`).classList.contains('correct'));
+    assert.equal(stored.size,0);
   } finally {app.dispose();}
 }));
 
-test('PDF source returns to observation, guided synthetic answers retain assistance and lessons without PDFs retain scoped observation', () => withStatistics(() => {
-  const {document,app,change,submit,storage} = classroom('normal');
+test('PDF source returns to observation and guided synthetic answers are corrected without progress', () => withStatistics(() => {
+  const {document,app,change,submit,stored} = classroom('normal');
   try {
     change('practiceMode','guided');
     assert.notEqual(app.exercise.type,'pdf');
     const exercise = app.exercise;
     submit(exercise.questions[0]);
-    assert.equal(app.progress.attempts[`${exercise.id}/${exercise.questions[0].id}`].assisted,true);
-    assert.equal(app.progress.attempts[`${exercise.id}/${exercise.questions[0].id}`].solved,true);
+    assert.ok(document.getElementById(`feedback-${exercise.questions[0].id}`).classList.contains('correct'));
     change('exerciseSource','pdf');
     assert.equal(app.exercise.type,'pdf');
     assert.equal(document.getElementById('practiceMode').value,'observe');
-    const before = structuredClone(app.progress);
     document.querySelector('[data-tutor-next]').click();
     submit(app.exercise.questions[0]);
-    assert.deepEqual(app.progress,before);
-    assert.deepEqual(loadProgress(storage,COURSE).progress,app.progress);
+    assert.equal(stored.size,0);
     app.navigate('funciones','practice',false);
     assert.deepEqual(getPdfExercises('funciones'),[]);
     assert.notEqual(app.exercise.type,'pdf');
@@ -785,7 +770,7 @@ test('PDF source returns to observation, guided synthetic answers retain assista
     const solution = document.querySelector(`[data-solution="${app.exercise.questions[0].id}"]`);
     assert.equal(solution.localName,'details');
     assert.equal(solution.hasAttribute('open'),false);
-    assert.deepEqual(app.progress.attempts,before.attempts);
+    assert.equal(stored.size,0);
     app.navigate('sucesos','practice',false);
     assert.equal(app.exercise.type,'pdf');
     change('entireBank',true);

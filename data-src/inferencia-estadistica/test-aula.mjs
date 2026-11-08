@@ -1,4 +1,4 @@
-test('La resolución revela cada operación sin perder la interpretación ni el registro de ayuda', () => {
+test('La resolución revela cada operación sin perder la interpretación ni registrar ayuda', () => {
   const {document, aula, click, change} = harness();
   try {
     aula.setView('practice');
@@ -20,7 +20,7 @@ test('La resolución revela cada operación sin perder la interpretación ni el 
     assert.equal(forward.disabled, true);
     click(solution.querySelector('[data-solution-step="-1"]'));
     assert.equal(solution.querySelector('.interpretation').hidden, true);
-    assert.ok(Object.values(aula.progress.attempts).some(attempt => attempt.assisted));
+    assert.equal(aula.progress, undefined);
   } finally {aula.dispose();}
 });
 import test from 'node:test';
@@ -39,7 +39,6 @@ import {EXERCISE_TYPES, generateExercise, scopeExercise} from '../../pages/infer
 import {getPdfExercises} from '../../pages/inferencia/pdf-exercises.js';
 import {createTutorFrames} from '../../pages/inferencia/exercise-tutor.js';
 import {LESSONS, VIEWS, LESSON_LAB_PRESETS, parseRoute, escapeHtml, mountAula} from '../../pages/inferencia/app.js';
-import {STORAGE_KEY, freshProgress, progressSummary} from '../../pages/inferencia/progress.js';
 
 const require = createRequire(import.meta.url);
 const katex = require('../../pages/inferencia/vendor/katex/katex.min.js');
@@ -60,7 +59,7 @@ function harness(raw, hash = '#proporciones/theory') {
   window.katex = katex;
   window.lucide = {createIcons(){}};
   window.matchMedia = () => ({matches:false});
-  const saved = new Map(raw ? [[STORAGE_KEY, raw]] : []);
+  const saved = new Map(raw ? [['aula-inferencia:v1', raw]] : []);
   const storage = {getItem:key => saved.get(key), setItem:(key, value) => saved.set(key, value)};
   const location = {hash};
   const history = {replaceState(state, title, hash){location.hash = hash;}};
@@ -247,7 +246,7 @@ test('El inicio distingue cuatro PDF y apoyo opcional sin registrar estudio ni d
     assert.equal(document.querySelectorAll('.curriculum-unit').length, 5);
     assert.match(document.getElementById('courseOverview').textContent, /apoyo opcional/);
     assert.match(document.getElementById('courseOverview').textContent, /no página por página/);
-    assert.deepEqual(aula.progress.studied, []);
+    assert.equal(aula.progress, undefined);
     click(document.querySelector('#courseOverview [data-lesson="sucesos"]'));
     assert.equal(aula.route.lessonId, 'sucesos');
     assert.equal(document.getElementById('courseOverview').hidden, true);
@@ -255,7 +254,7 @@ test('El inicio distingue cuatro PDF y apoyo opcional sin registrar estudio ni d
     aula.setView('animation');
     click(document.getElementById('overviewToggle'));
     assert.equal(document.querySelectorAll('canvas').length, 0);
-    assert.deepEqual(aula.progress.studied, []);
+    assert.equal(aula.progress, undefined);
   } finally { aula.dispose(); }
 });
 
@@ -312,7 +311,7 @@ test('La lectura usa una columna y frases inline sin tarjetas ni filas separadas
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','capstone.js','context-diagram.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','lesson-visuals.js','pdf-exercises.js','progress.js','teaching.js']);
+  assert.deepEqual(files, ['animations.js','app.js','capstone.js','context-diagram.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','lesson-visuals.js','pdf-exercises.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
@@ -374,24 +373,17 @@ test('Cada lección monta sus cuatro vistas y limpia los gráficos anteriores', 
   assert.equal(document.querySelectorAll('canvas').length, 0);
 });
 
-test('Navegación siguiente/anterior y progreso explícito restaurable', () => {
-  const {document, aula, saved, click, change} = harness();
+test('Navegación siguiente/anterior sin marcas ni escrituras de progreso', () => {
+  const {document, aula, saved, click} = harness();
   try {
     assert.equal(document.getElementById('previousLesson').disabled, true);
-    assert.equal(aula.progress.studied.length, 0);
-    const studied = document.getElementById('lessonStudied');
-    studied.checked = true;
-    change(studied);
-    assert.deepEqual(aula.progress.studied, ['proporciones']);
+    assert.equal(document.getElementById('lessonStudied'), null);
     click(document.getElementById('nextLesson'));
     assert.equal(aula.route.lessonId, 'algebra');
-    assert.equal(document.getElementById('lessonStudied').checked, false);
     click(document.getElementById('previousLesson'));
     assert.equal(aula.route.lessonId, 'proporciones');
-    assert.equal(document.getElementById('lessonStudied').checked, true);
-    const restored = harness(saved.get(STORAGE_KEY));
-    assert.equal(restored.aula.progress.studied.length, 1);
-    restored.aula.dispose();
+    assert.equal(aula.progress, undefined);
+    assert.equal(saved.size, 0);
   } finally { aula.dispose(); }
 });
 
@@ -409,14 +401,13 @@ test('Búsqueda sin acentos y comprobación conceptual', () => {
     correct.checked = true;
     correct.setAttribute('checked', '');
     submit(document.getElementById('knowledgeForm'));
-    assert.equal(aula.progress.checks.proporciones, true);
     assert.match(document.getElementById('knowledgeFeedback').textContent, /Correcto/);
-    assert.equal(aula.progress.studied.length, 0);
+    assert.equal(aula.progress, undefined);
   } finally { aula.dispose(); }
 });
 
-test('Práctica acepta fracciones, registra ayuda y no puntúa entradas inválidas', () => {
-  const {document, aula, click, change, submit} = harness();
+test('Práctica corrige respuestas y entradas inválidas sin guardar resultados', () => {
+  const {document, aula, saved, click, change, submit} = harness();
   try {
     aula.navigate('sucesos', 'practice');
     document.getElementById('practiceMode').value = 'practice';
@@ -426,24 +417,25 @@ test('Práctica acepta fracciones, registra ayuda y no puntúa entradas inválid
     const form = document.querySelector(`[data-grade-form="${question.id}"]`);
     input.value = 'not-a-number';
     submit(form);
-    assert.equal(progressSummary(aula.progress).attempts, 0);
+    assert.ok(document.getElementById(`feedback-${question.id}`).classList.contains('incorrect'));
     click(document.querySelector(`[data-hint="${question.id}"]`));
     assert.equal(document.getElementById(`hint-${question.id}`).hidden, false);
     input.value = `${question.answer * 100}%`;
     submit(form);
-    assert.equal(progressSummary(aula.progress).assisted, 1);
     assert.match(document.getElementById(`feedback-${question.id}`).textContent, /Correcto/);
     const second = aula.exercise.questions[1];
     document.getElementById(`answer-${second.id}`).value = String(second.answer);
     submit(document.querySelector(`[data-grade-form="${second.id}"]`));
-    assert.equal(progressSummary(aula.progress).independent, 1);
+    assert.match(document.getElementById(`feedback-${second.id}`).textContent, /Correcto/);
+    assert.equal(saved.size, 0);
+    assert.equal(document.getElementById('practiceScore'), null);
     const oldId = aula.exercise.id;
     click(document.getElementById('newExercise'));
     assert.notEqual(aula.exercise.id, oldId);
   } finally { aula.dispose(); }
 });
 
-test('Banco completo, modo guiado y preferencias funcionan', () => {
+test('Banco completo y modo guiado funcionan sin preferencias de progreso', () => {
   const {document, aula, click, change} = harness();
   try {
     aula.setView('practice');
@@ -456,8 +448,7 @@ test('Banco completo, modo guiado y preferencias funcionan', () => {
     document.getElementById('practiceMode').value = 'guided';
     change(document.getElementById('practiceMode'));
     assert.equal(document.querySelectorAll('.solution[open]').length, aula.exercise.questions.length);
-    click(document.getElementById('settingsToggle'));
-    assert.match(document.getElementById('dialogContent').textContent, /este navegador/);
+    assert.equal(document.getElementById('settingsToggle'), null);
     assert.equal(document.querySelector('[data-action="export"]'), null);
     assert.equal(document.querySelector('[data-action="import"]'), null);
     assert.equal(document.querySelector('[data-action="reset"]'), null);
@@ -468,13 +459,14 @@ test('Banco completo, modo guiado y preferencias funcionan', () => {
   } finally { aula.dispose(); }
 });
 
-test('Copias ajenas y almacenamiento bloqueado no rompen el aula', () => {
-  const data = {...freshProgress(COURSE), courseId:'otro'};
-  const {document, aula} = harness(JSON.stringify(data));
+test('El aula ignora el progreso antiguo sin intentar recuperarlo', () => {
+  const raw = JSON.stringify({courseId:'otro', studied:['normal']});
+  const {document, aula, saved} = harness(raw);
   try {
     assert.ok(document.querySelector('canvas'));
-    assert.match(document.getElementById('appStatus').textContent, /recuperar/);
-    assert.deepEqual(aula.progress.studied, []);
+    assert.equal(document.getElementById('appStatus').textContent, '');
+    assert.equal(aula.progress, undefined);
+    assert.deepEqual(Array.from(saved.values()), [raw]);
   } finally { aula.dispose(); }
 });
 
@@ -488,8 +480,8 @@ test('Los modelos iniciales corresponden al tema y no al laboratorio genérico',
   } finally { aula.dispose(); }
 });
 
-test('Consultar la solución justo antes de responder cuenta como ayuda', () => {
-  const {document, aula, change, submit} = harness();
+test('Consultar la solución permite responder sin registrar ayuda ni puntuación', () => {
+  const {document, aula, saved, change, submit} = harness();
   try {
     aula.navigate('sucesos', 'practice');
     document.getElementById('practiceMode').value = 'practice';
@@ -498,8 +490,8 @@ test('Consultar la solución justo antes de responder cuenta como ayuda', () => 
     document.querySelector(`[data-solution="${question.id}"]`).open = true;
     document.getElementById(`answer-${question.id}`).value = String(question.answer);
     submit(document.querySelector(`[data-grade-form="${question.id}"]`));
-    assert.equal(progressSummary(aula.progress).assisted, 1);
-    assert.equal(progressSummary(aula.progress).independent, 0);
+    assert.match(document.getElementById(`feedback-${question.id}`).textContent, /Correcto/);
+    assert.equal(saved.size, 0);
   } finally { aula.dispose(); }
 });
 
@@ -532,7 +524,7 @@ test('El versionado de recursos es determinista e idempotente', () => {
   const root = versionFixture();
   try {
     const first = versionAssets(root);
-    assert.equal(Object.keys(first.versions).length, 17);
+    assert.equal(Object.keys(first.versions).length, 16);
     assert.deepEqual(versionAssets(root).changed, []);
     const generated = readFileSync(join(root, 'pages', 'inferencia-estadistica.html'), 'utf8');
     for (const match of generated.matchAll(/(?:src|href)="(inferencia\/[^"?]+\.(?:js|css))\?v=([a-f0-9]+)"/g)) {
@@ -566,7 +558,7 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
   }
   const appUrl = new URL('../../pages/inferencia/app.js', import.meta.url);
   const imports = [...readFileSync(appUrl, 'utf8').matchAll(/from ['"]([^'"]+\.js\?v=[a-f0-9]+)['"]/g)];
-  assert.equal(imports.length, 9);
+  assert.equal(imports.length, 8);
   for (const match of imports) {
     const url = new URL(match[1], appUrl);
     assert.equal(url.searchParams.get('v'), assetVersion(readFileSync(url)), `${url.pathname}: ejecuta node version-assets.mjs`);

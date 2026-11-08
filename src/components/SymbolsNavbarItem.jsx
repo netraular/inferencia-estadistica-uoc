@@ -49,7 +49,7 @@ export default function SymbolsNavbarItem({mobile = false, label = 'S\u00edmbolo
   const [opened, setOpened] = useState(false);
   const id = useId();
   const content = <>
-    <button type="button" className={`${mobile ? 'menu__link' : 'navbar__item navbar__link'} symbols-trigger`} aria-haspopup="dialog" aria-expanded={opened} aria-controls={opened ? id : undefined} onClick={() => setOpened(true)}>
+    <button type="button" className={`${mobile ? 'menu__link ' : ''}symbols-trigger`} aria-haspopup="dialog" aria-expanded={opened} aria-controls={opened ? id : undefined} onClick={() => setOpened(true)}>
       <BookA size={18} aria-hidden="true" /><span>{label}</span>
     </button>
     {opened && <SymbolsDialog id={id} onClose={() => setOpened(false)} />}
