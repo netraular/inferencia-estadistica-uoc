@@ -73,7 +73,7 @@ for (const [unitIndex, unit] of COURSE.units.entries()) {
   const folder = path.join(docs, unit.id);
   await mkdir(folder, {recursive: true});
   await writeFile(path.join(folder, '_category_.json'), JSON.stringify({label: `Tema ${unit.number}: ${unit.title}${unit.number === 0 ? ' (opcional)' : ''}`, position: unitIndex + 1}, null, 2));
-  map.push(`<details className="curriculum-topic"${unit.number === 1 ? ' open' : ''}>\n<summary>Tema ${unit.number}: ${unit.title}${unit.number === 0 ? ' (opcional)' : ''}</summary>\n\n${unit.description}\n\n${unit.lessons.map((lesson, index) => `- [${unit.number}.${index + 1} ${lesson.title}](./${unit.id}/${lesson.id}.mdx)`).join('\n')}\n\n</details>`);
+  map.push(`<details className="curriculum-topic">\n<summary>Tema ${unit.number}: ${unit.title}${unit.number === 0 ? ' (opcional)' : ''}</summary>\n\n${unit.description}\n\n${unit.lessons.map((lesson, index) => `- [${unit.number}.${index + 1} ${lesson.title}](./${unit.id}/${lesson.id}.mdx)`).join('\n')}\n\n</details>`);
   for (const [lessonIndex, lesson] of unit.lessons.entries()) {
     await writeFile(path.join(folder, `${lesson.id}.mdx`), lessonPage(unit, lesson, lessonIndex));
     count++;

@@ -276,6 +276,7 @@ test('the curriculum has its own route and numbers every topic and lesson from z
   const map = readFileSync(new URL('../docs/index.mdx', import.meta.url), 'utf8');
   assert.ok(map.includes('slug: /temario\n'));
   assert.ok(!map.includes('slug: /\n'));
+  assert.doesNotMatch(map, /<details\b[^>]*\bopen\b/);
   for (const [index, unit] of COURSE.units.entries()) {
     assert.equal(unit.number, index);
     const category = JSON.parse(readFileSync(new URL(`../docs/${unit.id}/_category_.json`, import.meta.url), 'utf8'));
