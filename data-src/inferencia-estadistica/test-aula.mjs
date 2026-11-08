@@ -291,21 +291,22 @@ test('La lectura usa una columna, subtítulo visible y controles compactos',()=>
     return new Map(node.block.children.toArray().filter(item=>item.type==='Declaration').map(item=>[item.property,cssTree.generate(item.value)]));
   };
   assert.equal(rule('.lecture-layout').get('grid-template-columns'),'minmax(0,1fr)');
-  assert.equal(rule('.animation-player .animation-caption').get('position'),'static');
-  assert.equal(rule('.animation-player .animation-caption').get('clip-path'),'none');
-  assert.equal(rule('.animation-player .animation-caption').get('white-space'),'normal');
-  assert.equal(rule('.animation-player .animation-caption').get('width'),'100%');
+  const caption=rule('.animation-player .animation-stage .animation-caption');
+  assert.equal(caption.get('position'),'absolute');
+  assert.equal(caption.get('clip-path'),'none');
+  assert.equal(caption.get('white-space'),'pre-line');
+  assert.equal(caption.get('width'),'calc(100% - 24px)');
   assert.equal(rule('.animation-position.sr-only').get('position'),'absolute');
   assert.equal(rule('.animation-position.sr-only').get('clip-path'),'inset(50%)');
-  assert.equal(rule('.animation-controls .animation-primary').get('width'),'48px');
+  assert.equal(rule('.animation-player .animation-controls .icon-button,.animation-player .animation-controls .animation-primary').get('width'),'36px');
   assert.equal(rule('.animation-player.is-focused .lecture-media').get('display'),'block');
   const {document,aula}=harness();
   try{
     aula.navigate('proporciones','animation');
     const media=document.querySelector('.lecture-media');
     assert.ok(media.children[0].classList.contains('animation-stage'));
-    assert.equal(media.children[1].className,'animation-controls');
-    assert.equal(media.children[2].className,'animation-caption');
+    assert.equal(media.children[0].querySelector('.animation-controls').hidden,true);
+    assert.ok(media.children[0].querySelector('.animation-caption'));
     assert.equal(media.nextElementSibling,null);
     assert.equal(document.querySelectorAll('.animation-cues,.animation-options').length,0);
   }finally{aula.dispose();}
@@ -321,8 +322,10 @@ test('La pizarra fija conserva 16:9 y contiene fórmulas y diagramas sin ampliar
   assert.equal(rule('.animation-stage').get('aspect-ratio'), '16/9');
   assert.equal(rule('.animation-stage').get('contain'), 'layout');
   assert.equal(rule('.animation-stage>canvas,.animation-stage>.animated-whiteboard,.animation-stage>.slide-board,.animation-stage>.animation-math').get('position'), 'absolute');
-  assert.equal(rule('.animation-stage.has-context>.slide-board').get('height'), '38%');
-  assert.equal(rule('.animation-stage.has-context>.context-diagram,.animation-stage.has-context>.animated-whiteboard').get('height'), '62%');
+  assert.equal(rule('.animation-stage.has-context>.slide-board').get('height'), '100%');
+  assert.equal(rule('.animation-stage.has-context>.context-diagram,.animation-stage.has-context>.animated-whiteboard').get('height'), '100%');
+  assert.equal(rule('.animation-stage>.slide-board').get('overflow'),'hidden');
+  assert.equal(rule('.animation-stage>.animation-math').get('overflow'),'hidden');
   const {document, aula} = harness();
   try {
     aula.navigate('normal', 'animation');

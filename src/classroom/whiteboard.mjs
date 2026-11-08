@@ -7,6 +7,7 @@ import {liteAdaptor} from 'mathjax-full/js/adaptors/liteAdaptor.js';
 import {RegisterHTMLHandler} from 'mathjax-full/js/handlers/html.js';
 import {AllPackages} from 'mathjax-full/js/input/tex/AllPackages.js';
 import {drawContextDiagram,selectContextDiagram} from '../../pages/inferencia/context-diagram.js';
+import {stageEquations} from '../../pages/inferencia/exercise-tutor.js';
 
 export const WHITEBOARD_LESSONS = ['proporciones', 'algebra', 'funciones', 'calculo', 'regiones-matrices'];
 const palette = {ink:'#253330', muted:'#64736e', teal:'#117568', rose:'#ad3459', gold:'#b47c16', line:'#dce7e1', paper:'#fcfefd'};
@@ -34,14 +35,33 @@ export function formulaVector(tex) {
 }
 
 export function planWhiteboardScene(lessonId, step) {
-  if (!WHITEBOARD_LESSONS.includes(lessonId.split('--')[0])) return null;
   const common = {label:step.title.replace(/^Demostración · /, ''), equation:step.tex || ''};
-  if (step.story) return {...common,kind:'story',lines:step.visual.lines,...(step.visual.context ? {context:step.visual.context,phases:step.visual.phases} : {})};
+  if (step.story || step.visual?.context) return {...common,kind:'story',lines:step.visual.lines || [],...(step.visual.context ? {context:step.visual.context,phases:step.visual.phases} : {})};
   if (step.kind === 'bars') return {...common, kind:'bars', ...step.data};
   if (step.kind === 'curve' && ['linear', 'linear-cdf', 'uniform'].includes(step.data?.family)) return {...common, kind:'integral', ...step.data};
   if (step.kind === 'scatter' && step.data?.region) return {...common, kind:'region', bound:Math.max(...step.data.points.flat()), ...step.data};
   const lines = step.visual?.lines || [];
   return {...common,kind:'working',equations:[...lines.filter(line=>line.tex).map(line=>line.tex),...(step.tex ? [step.tex] : [])].slice(-2),givens:lines.filter(line=>line.value).map(line=>line.value).slice(0,3)};
+}
+
+export function whiteboardFrameLines(plan,cueIndex) {
+  const visible=plan.lines.filter(item=>!Number.isInteger(item.cue) || item.cue<=cueIndex);
+  const newest=visible.at(-1)?.cue;
+  const weight=item=>item.plot ? 2 : 1;
+  const capacity=Math.max(plan.context ? 3 : 5,visible.filter(item=>item.cue===newest).reduce((total,item)=>total+weight(item),0));
+  const page=[];
+  let used=0;
+  for(const item of visible.slice().reverse()){
+    if(page.length && used+weight(item)>capacity)break;
+    page.unshift(item);used+=weight(item);
+  }
+  return page;
+}
+
+export function whiteboardFormula(tex) {
+  const parts=stageEquations({tex});
+  if(parts.length>1)return `\\begin{gathered}${parts.map((part,index)=>index ? part.tex.slice(parts[index-1].tex.length) : part.tex).join('\\\\')}\\end{gathered}`;
+  return tex.includes('\\qquad') ? `\\begin{gathered}${tex.replace(/\\qquad/g,'\\\\')}\\end{gathered}` : tex;
 }
 
 export function integralGeometry(plan) {
@@ -89,7 +109,6 @@ export function formulaGraphic(tex, {x,y,width,height,color = palette.ink}) {
 }
 
 export function createWhiteboard(host, {animation}) {
-  if (!WHITEBOARD_LESSONS.includes(animation.id.split('--')[0])) return null;
   const owner = host.ownerDocument;
   const view = owner.defaultView;
   const stage = new Konva.Stage({container:host,width:960,height:576});
@@ -100,10 +119,12 @@ export function createWhiteboard(host, {animation}) {
   let actors = [];
   let lastFrame;
   let lastIndex = -1;
+  let lastCue = -2;
   let disposed = false;
   let width = 960;
   let height = 576;
-  const logical = () => lastFrame?.step.visual?.context ? {width,height} : {width:960,height:576};
+  let bottomInset=0;
+  const logical = () => ({width:960,height:Math.max(300,(height-bottomInset)*960/width)});
   const text = (value,x,y,options={}) => {
     const node = new Konva.Text({text:value,x,y,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:28,fill:palette.ink,width:logical().width-x-24,wrap:'word',lineHeight:1.2,listening:false,...options});
     sceneRoot.add(node);
@@ -122,7 +143,7 @@ export function createWhiteboard(host, {animation}) {
   };
   const formula = (tex,y=logical().height-94,start=0.58,options={}) => {
     if (!tex) return;
-    const expression=tex.includes('\\qquad') ? `\\begin{gathered}${tex.replace(/\\qquad/g,'\\\\')}\\end{gathered}` : tex;
+    const expression=whiteboardFormula(tex);
     try {const node=formulaGraphic(expression,{x:32,y,width:logical().width-64,height:70,...options});sceneRoot.add(node);reveal(node,start,start+0.2);}
     catch {reveal(text(tex,32,y,{fontSize:25}),start,start+0.2);}
   };
@@ -147,41 +168,49 @@ export function createWhiteboard(host, {animation}) {
     layer.add(sceneRoot);
     timeline = gsap.timeline({paused:true});
     const size = logical();
+    sceneRoot.add(new Konva.Rect({width:size.width,height:size.height,fill:palette.paper,listening:false}));
+    for (let gridY=72;gridY<size.height;gridY+=40) line([24,gridY,size.width-24,gridY],{stroke:'#eef3f0',strokeWidth:1});
+    const selected=selectContextDiagram(plan,lastFrame?.cueIndex ?? -1).diagram;
+    const label = text(selected?.label || selected?.caption || plan.label,32,22,{fontSize:26,fontStyle:'bold',width:size.width-64});
+    while(label.height()>64 && label.fontSize()>14)label.fontSize(label.fontSize()-1);
+    const contentTop=label.y()+label.height()+12;
     if (plan.context) {
       sceneRoot.add(new Konva.Shape({listening:false,sceneFunc(drawing) {
         const {diagram,phase}=selectContextDiagram(plan,lastFrame?.cueIndex ?? -1);
-        drawContextDiagram(drawing._context,diagram,size.width,size.height,{phase});
+        drawing.save();drawing.translate(0,contentTop);
+        drawContextDiagram(drawing._context,diagram,520,size.height-contentTop-24,{phase,compact:true});
+        drawing.restore();
       }}));
-      fit();
-      return;
     }
-    sceneRoot.add(new Konva.Rect({width:size.width,height:size.height,fill:palette.paper,listening:false}));
-    for (let gridY=72;gridY<size.height;gridY+=40) line([24,gridY,size.width-24,gridY],{stroke:'#eef3f0',strokeWidth:1});
-    const label = text(plan.label,32,22,{fontSize:26,fontStyle:'bold',width:size.width-64});
-    if (label.height()>64) label.fontSize(22);
     const state = {reveal:0,focus:0};
     timeline.to(state,{reveal:1,duration:0.3,ease:'power1.inOut'},0.05).to(state,{focus:1,duration:0.28,ease:'power2.inOut'},0.28);
     if (plan.kind === 'story') {
-      const weights=plan.lines.reduce((total,item)=>total+(item.plot ? 2 : 1),0);
-      const slot = Math.min(128,(size.height-100)/Math.max(1,weights));
-      let nextTop=94;
-      plan.lines.forEach(item=>{
+      const lines=whiteboardFrameLines(plan,lastFrame?.cueIndex ?? -1);
+      const weights=lines.reduce((total,item)=>total+(item.plot ? 2 : 1),0);
+      const slot = (size.height-contentTop-24)/Math.max(1,weights);
+      const left=plan.context ? 548 : 40;
+      const lineWidth=size.width-left-40;
+      let nextTop=contentTop;
+      lines.forEach(item=>{
         const group = new Konva.Group({listening:false});
         sceneRoot.add(group);
         const top = nextTop;
         const itemHeight=slot*(item.plot ? 2 : 1);
         nextTop+=itemHeight;
-        if (item.label) group.add(new Konva.Text({text:item.label,x:40,y:top,width:size.width-80,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:21,fill:palette.muted,lineHeight:1.2,listening:false}));
-        if (item.tex) group.add(formulaGraphic(item.tex,{x:40,y:top+22,width:size.width-80,height:Math.min(62,slot-26),color:palette.teal}));
+        const itemLabel=new Konva.Text({text:item.label || '',x:left,y:top,width:lineWidth,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:20,fill:palette.muted,lineHeight:1.2,listening:false});
+        while(itemLabel.height()>slot*0.3 && itemLabel.fontSize()>12)itemLabel.fontSize(itemLabel.fontSize()-1);
+        if(item.label)group.add(itemLabel);
+        const contentTop=top+(item.label ? itemLabel.height()+6 : 0);
+        if (item.tex) group.add(formulaGraphic(whiteboardFormula(item.tex),{x:left,y:contentTop,width:lineWidth,height:Math.max(10,itemHeight-(contentTop-top)-12),color:palette.teal}));
         else {
-          const value = new Konva.Text({text:item.value || '',x:40,y:top+26,width:size.width-80,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:28,fill:palette.ink,lineHeight:1.2,listening:false});
-          while(value.height()>slot-30 && value.fontSize()>16)value.fontSize(value.fontSize()-1);
+          const value = new Konva.Text({text:item.value || '',x:left,y:contentTop,width:lineWidth,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:28,fill:palette.ink,lineHeight:1.2,listening:false});
+          while(value.height()>itemHeight-(contentTop-top)-(item.bar ? 24 : 12) && value.fontSize()>12)value.fontSize(value.fontSize()-1);
           group.add(value);
         }
         if (item.bar) {
-          const barWidth=size.width-80;
-          group.add(new Konva.Rect({x:40,y:top+slot-14,width:barWidth,height:8,fill:palette.line,listening:false}));
-          group.add(new Konva.Rect({x:40,y:top+slot-14,width:barWidth*item.bar.part/item.bar.total,height:8,fill:palette.teal,listening:false}));
+          const barWidth=lineWidth;
+          group.add(new Konva.Rect({x:left,y:top+slot-14,width:barWidth,height:8,fill:palette.line,listening:false}));
+          group.add(new Konva.Rect({x:left,y:top+slot-14,width:barWidth*item.bar.part/item.bar.total,height:8,fill:palette.teal,listening:false}));
         }
         if(item.plot){
           const plot=item.plot;
@@ -189,9 +218,11 @@ export function createWhiteboard(host, {animation}) {
           const maxX=plot.points.at(-1)[0];
           const maxY=Math.max(...plot.points.map(point=>point[1]))*1.15;
           const bottom=top+itemHeight-25;
-          const mapX=value=>65+(value-minX)/(maxX-minX)*(size.width-110);
+          const plotLeft=left+25;
+          const plotRight=size.width-40;
+          const mapX=value=>plotLeft+(value-minX)/(maxX-minX)*(lineWidth-25);
           const mapY=value=>bottom-value/maxY*(itemHeight-108);
-          group.add(new Konva.Line({points:[65,top+80,65,bottom,size.width-45,bottom],stroke:palette.muted,strokeWidth:2,listening:false}));
+          group.add(new Konva.Line({points:[plotLeft,top+80,plotLeft,bottom,plotRight,bottom],stroke:palette.muted,strokeWidth:2,listening:false}));
           if(plot.shade){
             const [from,to]=plot.shade;
             const interpolate=value=>{
@@ -205,10 +236,17 @@ export function createWhiteboard(host, {animation}) {
           }
           group.add(new Konva.Line({points:plot.points.flatMap(point=>[mapX(point[0]),mapY(point[1])]),stroke:palette.teal,strokeWidth:3,listening:false}));
           if(Number.isFinite(plot.cut))group.add(new Konva.Line({points:[mapX(plot.cut),bottom,mapX(plot.cut),mapY(plot.points[0][1]-plot.cut)],stroke:palette.rose,strokeWidth:3,listening:false}));
-          group.add(new Konva.Text({text:plot.yLabel,x:65,y:top+59,width:size.width-110,fontSize:17,fill:palette.muted,listening:false}));
-          group.add(new Konva.Text({text:plot.xLabel,x:65,y:bottom+6,width:size.width-110,align:'center',fontSize:17,fill:palette.muted,listening:false}));
+          group.add(new Konva.Text({text:plot.yLabel,x:plotLeft,y:top+59,width:lineWidth-25,fontSize:17,fill:palette.muted,listening:false}));
+          group.add(new Konva.Text({text:plot.xLabel,x:plotLeft,y:bottom+6,width:lineWidth-25,align:'center',fontSize:17,fill:palette.muted,listening:false}));
         }
-        actors.push(()=>group.visible((lastFrame?.cueIndex ?? -1)>=item.cue));
+        const bounds=group.getClientRect({relativeTo:sceneRoot});
+        const scale=Math.min(1,lineWidth/Math.max(1,bounds.width),itemHeight/Math.max(1,bounds.height));
+        if(scale<1){
+          group.offset({x:bounds.x,y:bounds.y});
+          group.scale({x:scale,y:scale});
+          group.position({x:left+(lineWidth-bounds.width*scale)/2,y:top});
+        }
+        actors.push(()=>group.visible(!Number.isInteger(item.cue) || (lastFrame?.cueIndex ?? -1)>=item.cue));
       });
     } else if (plan.kind === 'bars') {
       const values = plan.values;
@@ -288,10 +326,12 @@ export function createWhiteboard(host, {animation}) {
       formula(plan.equation);
     } else {
       let givenY=110;
-      plan.givens.slice(0,2).forEach((given,position)=>{const node=text(given,48,givenY,{width:size.width-96,fontSize:27,fill:palette.muted});while(node.height()>80 && node.fontSize()>19)node.fontSize(node.fontSize()-1);givenY+=node.height()+14;reveal(node,position*0.06,0.2+position*0.06);});
+      plan.givens.slice(0,2).forEach((given,position)=>{const node=text(given,48,givenY,{width:size.width-96,fontSize:27,fill:palette.muted});while(node.height()>72 && node.fontSize()>12)node.fontSize(node.fontSize()-1);givenY+=node.height()+14;reveal(node,position*0.06,0.2+position*0.06);});
       const equations=plan.equations.length ? plan.equations : (plan.equation ? [plan.equation] : []);
-      equations.forEach((equation,position)=>formula(equation,320+position*100,0.3+position*0.3,{height:80,color:position===equations.length-1 ? palette.teal : palette.muted}));
-      if (equations.length>1) reveal(line([size.width/2,407,size.width/2,422],{stroke:palette.teal,strokeWidth:4}),0.5,0.65);
+      const start=Math.max(230,givenY+12);
+      const slot=(size.height-24-start)/Math.max(1,equations.length);
+      equations.forEach((equation,position)=>formula(equation,start+position*slot,0.3+position*0.3,{height:slot-12,color:position===equations.length-1 ? palette.teal : palette.muted}));
+      if (equations.length>1) reveal(line([size.width/2,start+slot-10,size.width/2,start+slot-2],{stroke:palette.teal,strokeWidth:4}),0.5,0.65);
     }
     timeline.to({}, {duration:0.01},0.99);
     fit();
@@ -299,14 +339,14 @@ export function createWhiteboard(host, {animation}) {
 
   function fit() {
     const size=logical();
-    const scale=Math.min(width/size.width,height/size.height);
+    const scale=Math.min(width/size.width,Math.max(1,height-bottomInset)/size.height);
     sceneRoot?.scale({x:scale,y:scale});
-    sceneRoot?.position({x:(width-size.width*scale)/2,y:(height-size.height*scale)/2});
+    sceneRoot?.position({x:(width-size.width*scale)/2,y:0});
   }
   function render(frame) {
     if (disposed) return;
     lastFrame=frame;
-    if (lastIndex!==frame.index) {build(planWhiteboardScene(animation.id,frame.step));lastIndex=frame.index;}
+    if (lastIndex!==frame.index || lastCue!==frame.cueIndex) {build(planWhiteboardScene(animation.id,frame.step));lastIndex=frame.index;lastCue=frame.cueIndex;}
     timeline.seek(frame.reducedMotion ? 1 : Math.max(0,Math.min(1,frame.progress)),false);
     for (const apply of actors) apply();
     layer.draw();
@@ -316,11 +356,13 @@ export function createWhiteboard(host, {animation}) {
     const rect=host.getBoundingClientRect();
     const nextWidth=Math.max(1,rect.width || requestedWidth || 960);
     const nextHeight=Math.max(1,rect.height || nextWidth*9/16);
-    const changed=width!==nextWidth || height!==nextHeight;
+    const nextInset=Math.min(nextHeight-1,Number.parseFloat(host.parentElement?.style.getPropertyValue('--video-inset-bottom')) || 0);
+    const changed=width!==nextWidth || height!==nextHeight || bottomInset!==nextInset;
     width=nextWidth;
     height=nextHeight;
+    bottomInset=nextInset;
     stage.size({width,height});
-    if(changed && lastFrame?.step.visual?.context)lastIndex=-1;
+    if(changed && lastFrame)lastIndex=-1;
     fit();
     if(lastFrame) render(lastFrame);
   }

@@ -20,6 +20,23 @@ globalThis.jStat = require('../../pages/inferencia/vendor/jstat.min.js').jStat;
 const katex = require('../../pages/inferencia/vendor/katex/katex.min.js');
 const paragraphs = html => [...parseHTML(`<div>${html}</div>`).document.querySelectorAll('p')].map(node=>node.textContent);
 const fullLectures = () => COURSE.units.flatMap(unit=>unit.lessons).map(current=>createLessonAnimation(current,generateExercise,paragraphs));
+const assertCaption=(caption,text)=>{
+  assert.ok(caption.textContent.trim());
+  assert.ok(caption.textContent.split('\n').length<=2);
+  assert.ok(text.replace(/\s/g,'').includes(caption.textContent.replace(/\s/g,'')),`Subtitle must belong to its current cue: ${caption.textContent}`);
+};
+
+test('subtitle pages contain at most two measured lines and preserve every narration character',()=>{
+  for(const animation of [...ANIMATIONS,...fullLectures()])for(const step of animation.steps)for(const cue of step.cues || [{text:step.caption}])for(const width of [216,296,820]){
+    const pages=api.subtitlePages(cue.text,width,text=>Array.from(text).length*8);
+    assert.ok(pages.length>0);
+    for(const page of pages){
+      assert.ok(page.split('\n').length<=2);
+      assert.ok(page.split('\n').every(line=>Array.from(line).length*8<=width));
+    }
+    assert.equal(pages.join('').replace(/\s/g,''),cue.text.replace(/\s/g,''));
+  }
+});
 
 test('Los elementos se revelan con la frase que los presenta y desaparecen al retroceder', () => {
   const step = storyScene('Un cultivo','Ejemplo',[
@@ -188,7 +205,7 @@ const parseTime = value => {
 };
 
 test('exact public API, original lessons and additional substantive visual scenes', () => {
-  assert.deepEqual(Object.keys(api).sort(), ['ANIMATIONS', 'animationDuration', 'buildVtt', 'createLessonAnimation', 'mountAnimation'].sort());
+  assert.deepEqual(Object.keys(api).sort(), ['ANIMATIONS', 'animationDuration', 'buildVtt', 'createLessonAnimation', 'mountAnimation', 'subtitlePages'].sort());
   const introductions = ['proportions-intro','functions-intro','regions-intro'];
   assert.deepEqual(ANIMATIONS.map(animation => animation.id), [...introductions, ...expectedIds, ...newIds]);
   assert.equal(ANIMATIONS.length, 31);
@@ -852,7 +869,7 @@ test('new curve families keep analytic peaks and boundary densities inside the p
   } finally { lesson('density').steps[0].data = original; }
 });
 
-test('el subtítulo actual queda debajo del vídeo y la transcripción completa es independiente de los controles', () => {
+test('el subtítulo actual queda dentro del vídeo y la transcripción completa es independiente de los controles', () => {
   const lecture = fullLectures()[0];
   const dom = fakeDom();
   const cleanup = mountAnimation(dom.container, lecture);
@@ -862,9 +879,9 @@ test('el subtítulo actual queda debajo del vídeo y la transcripción completa 
     const caption = find('animation-caption');
     const transcript = find('animation-transcript');
     assert.equal(media.children[0].className.startsWith('animation-stage'), true);
-    assert.equal(media.children[1], find('animation-controls'));
-    assert.equal(media.children[2], caption);
-    assert.equal(caption.textContent, lecture.steps[0].cues[0].text);
+    assert.equal(find('animation-controls').parent,media.children[0]);
+    assert.equal(caption.parent,media.children[0]);
+    assertCaption(caption, lecture.steps[0].cues[0].text);
     assert.equal(transcript.parent, dom.container.children[0]);
     assert.deepEqual(transcript.children[1].children.map(item => item.children[1].textContent), lecture.steps.map(step => step.caption));
     assert.equal(find('animation-options'), undefined);
@@ -875,10 +892,10 @@ test('el subtítulo actual queda debajo del vídeo y la transcripción completa 
     const seek = dom.byLabel('Tiempo de reproducción');
     seek.value = String(lecture.steps[0].cues[1].start);
     seek.dispatch('input');
-    assert.equal(caption.textContent, lecture.steps[0].cues[1].text);
+    assertCaption(caption, lecture.steps[0].cues[1].text);
     seek.value = '0';
     seek.dispatch('input');
-    assert.equal(caption.textContent, lecture.steps[0].cues[0].text);
+    assertCaption(caption, lecture.steps[0].cues[0].text);
   } finally {cleanup(); dom.cleanupCheck();}
 });
 
@@ -1094,7 +1111,7 @@ test('DPR sizing is stable, resize fallback and timer fallback clean up', () => 
   const fallbackCleanup = mountAnimation(fallback.container, 'density');
   assert.equal(fallback.view.listenerCount(), 2);
   fallback.byLabel('Reproducir').click();
-  assert.equal(fallback.timers.size, 1);
+  assert.equal(Array.from(fallback.timers.values()).filter(timer=>timer.delay===33).length,1);
   fallback.advance(lesson('density').steps[0].duration * 1000);
   assert.equal(sceneNavigation(fallback, 'density').value, '1');
   fallback.document.stageWidth = 400;
@@ -1112,14 +1129,14 @@ test('las clases sincronizan frases y diapositivas, también con movimiento redu
     const cleanup = mountAnimation(dom.container,lecture);
     const caption = dom.created.find(node=>node.className==='animation-caption');
     const board = dom.created.find(node=>node.className==='slide-board');
-    assert.equal(caption.textContent,lecture.steps[0].cues[0].text);
+    assertCaption(caption,lecture.steps[0].cues[0].text);
     assert.equal(board.hidden,false);
     assert.equal(dom.byTag('canvas').style.display,'none');
     assert.equal(dom.container.children[0].className,'animation-player');
     assert.equal(dom.byLabel('Ampliar clase').attributes['aria-pressed'],'false');
     dom.byLabel('Reproducir').click();
     dom.advance(lecture.steps[0].cues[0].end*1000+10);
-    assert.equal(caption.textContent,lecture.steps[0].cues[1].text);
+    assertCaption(caption,lecture.steps[0].cues[1].text);
     dom.byLabel('Pausar').click();
     const paused=caption.textContent;
     dom.advance(60000);
@@ -1130,18 +1147,18 @@ test('las clases sincronizan frases y diapositivas, también con movimiento redu
     assert.equal(dom.container.children[0].className,'animation-player');
     const timeline = dom.byLabel('Tiempo de reproducción');
     timeline.value='0';timeline.dispatch('input');
-    assert.equal(caption.textContent,lecture.steps[0].cues[0].text);
+    assertCaption(caption,lecture.steps[0].cues[0].text);
     const outline = sceneNavigation(dom, lecture);
     outline.value='2';
     outline.dispatch('change');
     assert.equal(outline.value,'2');
-    assert.equal(caption.textContent,lecture.steps[2].cues[0].text);
+    assertCaption(caption,lecture.steps[2].cues[0].text);
     cleanup();
     dom.cleanupCheck();
   }
 });
 
-test('la lectura ordena pizarra, controles, frase actual y transcripción',()=>{
+test('la lectura integra controles y subtítulos en el vídeo y coloca la transcripción después',()=>{
   const lecture=fullLectures()[0];
   for(const width of [320,1280]){
     const dom=fakeDom({width});
@@ -1152,14 +1169,69 @@ test('la lectura ordena pizarra, controles, frase actual y transcripción',()=>{
     const controls=find('animation-controls');
     assert.deepEqual(layout.children,[media]);
     assert.ok(media.children[0].className.startsWith('animation-stage'));
-    assert.equal(media.children[1],controls);
-    assert.equal(media.children[2],find('animation-caption'));
+    assert.equal(controls.parent,media.children[0]);
+    assert.equal(find('animation-caption').parent,media.children[0]);
     assert.equal(find('animation-transport').children.filter(node=>!node.hidden).length,3);
     assert.equal(dom.byLabel('Escena actual y total').parent,controls);
     assert.ok(dom.byLabel('Escena actual y total').className.includes('sr-only'));
     assert.equal(find('animation-transcript').parent,dom.container.children[0]);
     cleanup();dom.cleanupCheck();
   }
+});
+
+test('los controles empiezan ocultos, se muestran por toque o teclado y no dejan temporizadores',()=>{
+  const dom=fakeDom();
+  const cleanup=mountAnimation(dom.container,fullLectures()[0]);
+  const stage=dom.created.find(node=>node.className?.startsWith('animation-stage'));
+  const controls=dom.created.find(node=>node.className==='animation-controls');
+  assert.equal(controls.hidden,true);
+  stage.dispatch('click');assert.equal(controls.hidden,false);
+  dom.byLabel('Reproducir').click();
+  const [id,timer]=Array.from(dom.timers).find(([,item])=>item.delay===3000);
+  dom.timers.delete(id);timer.callback();assert.equal(controls.hidden,true);
+  stage.dispatch('keydown',{target:stage,key:'Enter',preventDefault(){}});assert.equal(controls.hidden,false);
+  dom.byLabel('Pausar').click();assert.equal(controls.hidden,false);
+  cleanup();dom.cleanupCheck();
+});
+
+test('subtitles are integrated in the video and can be hidden without changing narration or the transcript',()=>{
+  const dom=fakeDom();
+  const animation=fullLectures()[0];
+  const cleanup=mountAnimation(dom.container,animation);
+  const caption=dom.created.find(node=>node.className==='animation-caption');
+  const stage=dom.created.find(node=>node.className?.startsWith('animation-stage'));
+  const original=caption.textContent;
+  assert.equal(caption.parent,stage);
+  dom.byLabel('Ocultar subtítulos').click();assert.equal(caption.hidden,true);
+  assert.equal(dom.byLabel('Mostrar subtítulos').attributes['aria-pressed'],'false');
+  dom.byLabel('Mostrar subtítulos').click();assert.equal(caption.hidden,false);
+  assert.equal(caption.textContent,original);
+  assert.equal(dom.byLabel('Ocultar subtítulos').attributes['aria-pressed'],'true');
+  assert.equal(dom.created.find(node=>node.className==='animation-transcript').children[1].children.length,animation.steps.length);
+  cleanup();dom.cleanupCheck();
+});
+
+test('the central play button starts the video while transport remains hidden',()=>{
+  const dom=fakeDom();
+  const cleanup=mountAnimation(dom.container,fullLectures()[0]);
+  const controls=dom.created.find(node=>node.className==='animation-controls');
+  const play=dom.byLabel('Reproducir vídeo');
+  assert.equal(play.hidden,false);
+  play.click();
+  assert.equal(play.hidden,true);
+  assert.equal(controls.hidden,true);
+  assert.ok(dom.frames.size || Array.from(dom.timers.values()).some(timer=>timer.delay===33));
+  cleanup();dom.cleanupCheck();
+});
+
+test('unlabelled diagrams use the scene title as their accessible name',()=>{
+  const dom=fakeDom();
+  const lecture=fullLectures()[0];
+  const step={...lecture.steps[0],visual:{...lecture.steps[0].visual,context:{kind:'normal',mean:0,sd:1},phases:[]}};
+  const cleanup=mountAnimation(dom.container,{...lecture,steps:[step]},{createWhiteboard:()=>({render(){},resize(){},dispose(){}})});
+  const host=dom.created.find(node=>node.className==='animated-whiteboard');
+  assert.equal(host.attributes['aria-label'],step.title);
+  cleanup();dom.cleanupCheck();
 });
 
 test('el cambio de escena no acumula eventos de navegación',()=>{
@@ -1258,7 +1330,7 @@ test('anterior y siguiente recorren frases completas entre escenas, con y sin au
     const check = target=>{
       close(Number(seek.value),target.start);
       assert.equal(dom.byLabel('Escena actual y total').textContent,`Escena ${target.sceneIndex+1} de ${lecture.steps.length}`);
-      assert.equal(caption.textContent,target.text);
+      assertCaption(caption,target.text);
     };
     if (audio) {next.click();check(targets[0]);}
     for (const target of targets.slice(1)) { next.click(); check(target); }
@@ -1279,7 +1351,7 @@ test('anterior y siguiente recorren frases completas entre escenas, con y sin au
   }
 });
 
-test('36 pizarras conservan datos pertinentes y narración fuera del escenario', () => {
+test('36 pizarras conservan datos pertinentes y subtítulos dentro del vídeo', () => {
   const lectures = fullLectures();
   assert.equal(lectures.length,36);
   for (const lecture of lectures) {
@@ -1296,9 +1368,8 @@ test('36 pizarras conservan datos pertinentes y narración fuera del escenario',
       const outline = sceneNavigation(dom,lecture);
       outline.value=String(index);
       outline.dispatch('change');
-      assert.equal(caption.textContent,step.cues?.[0].text || step.caption);
-      assert.equal(caption.parent.className,'lecture-media');
-      assert.notEqual(caption.parent,stage);
+      assertCaption(caption,step.cues?.[0].text || step.caption);
+      assert.equal(caption.parent,stage);
       assert.equal(dom.created.find(node=>node.className==='animation-math').parent,stage);
       if (step.kind === 'lesson') {
         assert.ok(Array.isArray(step.visual?.lines),`${lecture.id}: ${step.title}`);
@@ -1327,7 +1398,7 @@ test('el subtítulo sigue los saltos y el fin de escena sin abrir la transcripci
   assert.ok(count>1);
   const timeline = dom.byLabel('Tiempo de reproducción');
   timeline.value=String(lecture.steps[0].cues.at(-1).start);timeline.dispatch('input');
-  assert.equal(caption.textContent,lecture.steps[0].cues.at(-1).text);
+  assertCaption(caption,lecture.steps[0].cues.at(-1).text);
   close(Number(dom.byLabel('Tiempo de reproducción').value),lecture.steps[0].cues.at(-1).start);
   assert.equal(dom.frames.size,0);
   dom.byLabel('Reproducir').click();
@@ -1337,7 +1408,7 @@ test('el subtítulo sigue los saltos y el fin de escena sin abrir la transcripci
   seek.value=String(lecture.steps[0].duration);
   seek.dispatch('input');
   assert.equal(dom.byLabel('Escena actual y total').textContent,`Escena 2 de ${lecture.steps.length}`);
-  assert.equal(caption.textContent,lecture.steps[1].cues[0].text);
+  assertCaption(caption,lecture.steps[1].cues[0].text);
   assert.ok(!dom.created.find(node=>node.className==='animation-transcript').open);
   cleanup();
   dom.cleanupCheck();
@@ -1452,7 +1523,7 @@ test('audio medido: reloj maestro global, subtítulo, seek, pausa, fin y reinici
   media.currentTime=audio.scenes[0].cues[1].start+0.1;
   dom.advance(100000);
   const caption = dom.created.find(node=>node.className==='animation-caption');
-  assert.equal(caption.textContent,lecture.steps[0].cues[1].text);
+  assertCaption(caption,lecture.steps[0].cues[1].text);
   close(Number(seek.value),media.currentTime);
   media.currentTime=audio.scenes[2].start+0.1;
   media.dispatch('timeupdate');
@@ -1477,7 +1548,7 @@ test('audio medido: reloj maestro global, subtítulo, seek, pausa, fin y reinici
   media.dispatch('ended');
   assert.equal(dom.frames.size,0);
   close(Number(seek.value),audio.duration);
-  assert.equal(caption.textContent,lecture.steps.at(-1).cues.at(-1).text);
+  assertCaption(caption,lecture.steps.at(-1).cues.at(-1).text);
   dom.byLabel('Reproducir').click();
   close(media.currentTime,audio.scenes[0].start);
   assert.equal(media.paused,false);
@@ -1619,7 +1690,7 @@ test('una pizarra con altura real puede empezar vacía y volver al principio sin
     assert.ok(rows.every(row=>row.hidden));
     const seek=dom.byLabel('Tiempo de reproducción');
     seek.value=String(lecture.steps[0].cues.at(-1).start);seek.dispatch('input');
-    assert.ok(board.scrollTop>0);
+    assert.equal(board.scrollTop,0);
     seek.value='0';seek.dispatch('input');
     assert.equal(board.scrollTop,0);
     assert.ok(rows.every(row=>row.hidden));
@@ -1660,7 +1731,8 @@ test('context graphs mount before measured cue zero and seek phases without dupl
       assert.ok(dom.calls.some(call=>call[0]==='fillRect') || konva,'initial diagram has actual geometry');
       const media=dom.byTag('audio');
       const board=dom.created.find(node=>node.className==='slide-board');
-      const rows=board.children[0].children;
+      const rows=konva ? [] : board.children[0].children;
+      if(konva){assert.equal(board.hidden,true);assert.equal(board.children.length,0);}
       const leadIn=audio.scenes[0].cues[0].start;
       assert.ok(leadIn>0);
       for (const cueIndex of [-1,0,animation.steps[0].cues.length-1,0,-1]) {
@@ -1716,7 +1788,7 @@ test('pausa de media, visibilidad y seeks externos conservan el reloj global del
   media.currentTime=audio.scenes[1].start+1;
   media.pause();
   close(Number(seek.value),media.currentTime);
-  assert.equal(dom.timers.size,0);
+  assert.equal(Array.from(dom.timers.values()).filter(timer=>timer.delay===33).length,0);
   dom.byLabel('Reproducir').click();
   media.currentTime=audio.scenes[2].start+0.5;
   dom.document.hidden=true;
@@ -1725,7 +1797,7 @@ test('pausa de media, visibilidad y seeks externos conservan el reloj global del
   close(Number(seek.value),media.currentTime);
   dom.document.hidden=false;
   dom.document.dispatch('visibilitychange');
-  assert.equal(dom.timers.size,0);
+  assert.equal(Array.from(dom.timers.values()).filter(timer=>timer.delay===33).length,0);
   media.currentTime=audio.scenes[3].cues[0].start+0.2;
   media.dispatch('seeking');
   assert.equal(sceneNavigation(dom, 'math').value,'3');

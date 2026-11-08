@@ -1,5 +1,5 @@
 import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=c30f66f5fea8';
-import {drawContextDiagram,selectContextDiagram} from './context-diagram.js?v=f67ba7a5a7b4';
+import {drawContextDiagram,selectContextDiagram} from './context-diagram.js?v=643d4f546e3e';
 
 const COLORS = ['#0369a1', '#15803d', '#be123c', '#b45309'];
 const scene = (title, caption, kind, data, tex, duration = 10) => ({title, caption, duration: Math.max(duration, Math.ceil(caption.split(/\s+/).length / 2.5)), kind, data, ...(tex ? {tex} : {})});
@@ -782,6 +782,28 @@ function audioTimeline(audio, animation) {
   return audio.scenes;
 }
 
+export function subtitlePages(text,width,measure) {
+  const lines=[];
+  let line='';
+  const flush=()=>{if(line){lines.push(line);line='';}};
+  for(const word of text.trim().split(/\s+/)) {
+    if(measure(word)>width){
+      flush();
+      for(const character of Array.from(word)){
+        if(line && measure(line+character)>width)flush();
+        line+=character;
+      }
+    } else {
+      if(line && measure(`${line} ${word}`)>width)flush();
+      line+=(line ? ' ' : '')+word;
+    }
+  }
+  flush();
+  const pages=[];
+  for(let index=0;index<lines.length;index+=2)pages.push(lines.slice(index,index+2).join('\n'));
+  return pages;
+}
+
 export function mountAnimation(container, animationId, {formatMath, audio, createWhiteboard, narrator} = {}) {
   const animation = findAnimation(animationId);
   const document = container?.ownerDocument;
@@ -820,6 +842,11 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   let lastDiagram = null;
   let lastDiagramPhase = null;
   let currentTime = 0;
+  let controlsTimer = null;
+  let subtitleSignature='';
+  let captionPages=[];
+  let subtitlesVisible=true;
+  let overlayInset=-1;
   const estimatedTimeline = () => {
     let offset = 0;
     return animation.steps.map(step => {
@@ -863,6 +890,8 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   root.append(element('h3', '', animation.title));
   const heading = element('h4');
   const stage = element('div', 'animation-stage');
+  stage.tabIndex = 0;
+  stage.setAttribute('aria-label','Vídeo de la lección; mostrar u ocultar controles');
   stage.style.minWidth = '0';
   const canvas = element('canvas');
   canvas.setAttribute('role', 'img');
@@ -883,7 +912,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const board = element('div','slide-board');
   board.hidden = true;
   const math = element('div', 'animation-math');
-  math.style.overflowX = 'auto';
+  math.style.overflow = 'hidden';
   const whiteboardHost = element('div', 'animated-whiteboard');
   whiteboardHost.setAttribute('role', 'img');
   const whiteboard = createWhiteboard?.(whiteboardHost, {animation}) || null;
@@ -893,6 +922,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   }
   stage.append(board,math);
   const caption = element('p', 'animation-caption');
+  stage.append(caption);
   caption.setAttribute('aria-live', 'polite');
   caption.setAttribute('aria-atomic', 'true');
   const layout = element('div','lecture-layout');
@@ -903,6 +933,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   error.setAttribute('role','status');
   error.hidden = true;
   const controls = element('div', 'animation-controls');
+  controls.hidden=true;
   controls.setAttribute('role', 'group');
   controls.setAttribute('aria-label', 'Reproducción de la lección');
   const back = button('step-back', 'Frase anterior', () => movePhrase(-1));
@@ -932,8 +963,46 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const transport = element('div','animation-transport');
   transport.append(back,play,pause,next);
   const settings = element('div','animation-settings');
-  settings.append(expand);
+  const captionsToggle=button('captions','Ocultar subtítulos',toggleSubtitles);
+  captionsToggle.className+=' animation-captions-toggle';
+  captionsToggle.setAttribute('aria-pressed','true');
+  settings.append(captionsToggle,expand);
   controls.append(timelineField,clock,transport,settings,position);
+  stage.append(controls);
+  const overlayPlay=button('play','Reproducir vídeo',start);
+  overlayPlay.className+=' animation-overlay-play';
+  stage.append(overlayPlay);
+  function updateOverlays() {
+    caption.hidden=!subtitlesVisible;
+    const barHeight=controls.hidden ? 0 : controls.getBoundingClientRect?.().height || 50;
+    caption.style.bottom=`${barHeight+8}px`;
+    const inset=barHeight+(subtitlesVisible ? 76 : 0);
+    if(inset!==overlayInset){
+      overlayInset=inset;
+      stage.style.setProperty?.('--video-inset-bottom',`${inset}px`);
+      whiteboard?.resize(logicalWidth,pixelRatio);
+    }
+  }
+  function toggleSubtitles() {
+    subtitlesVisible=!subtitlesVisible;
+    captionsToggle.setAttribute('aria-pressed',String(subtitlesVisible));
+    const label=subtitlesVisible ? 'Ocultar subtítulos' : 'Mostrar subtítulos';
+    captionsToggle.setAttribute('aria-label',label);captionsToggle.title=label;
+    updateOverlays();draw();
+  }
+  function showControls(visible=true) {
+    if(controlsTimer!==null)view.clearTimeout(controlsTimer);
+    controlsTimer=null;
+    if(!visible && controls.contains?.(focusedElement()))stage.focus?.();
+    controls.hidden=!visible;
+    overlayPlay.hidden=running || visible;
+    updateOverlays();
+    if(visible)controlsTimer=view.setTimeout(()=>{controlsTimer=null;if(!disposed)showControls(false);},3000);
+  }
+  listen(stage,'click',event=>{if(!event.target?.closest?.('.animation-controls,.animation-overlay-play'))showControls(controls.hidden);});
+  listen(stage,'keydown',event=>{if(event.target===stage && ['Enter',' '].includes(event.key)){event.preventDefault();showControls();}});
+  listen(controls,'focusin',()=>showControls());
+  listen(controls,'pointermove',()=>showControls());
   const transcript = element('details', 'animation-transcript');
   transcript.append(element('summary', '', 'Transcripción completa'));
   const transcriptList = element('ol');
@@ -943,7 +1012,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     transcriptList.append(item);
   });
   transcript.append(transcriptList);
-  media.append(controls,caption,error);
+  media.append(error);
   root.append(heading, layout, transcript);
   container.replaceChildren(root);
 
@@ -1008,6 +1077,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
       root.setAttribute('role','dialog');
       root.setAttribute('aria-modal','true');
       focusBeforeExpand ||= focusedElement();
+      showControls();
       expand.focus?.();
     } else {
       root.removeAttribute('role');
@@ -1050,6 +1120,8 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     pause.disabled = !running;
     play.hidden = running;
     pause.hidden = !running;
+    overlayPlay.hidden=running || !controls.hidden;
+    if(active===overlayPlay && running)stage.focus?.();
     if (active === play && running) pause.focus?.();
     else if (active === pause && !running) play.focus?.();
     position.textContent = `Escena ${index + 1} de ${animation.steps.length}`;
@@ -1077,7 +1149,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     const hasContext = Boolean(step.visual?.context);
     stage.className = `animation-stage${step.kind === 'lesson' ? ' is-lesson' : ''}${hasContext ? ' has-context' : ''}${step.tex && step.kind !== 'lesson' ? ' has-math' : ''}`;
     heading.textContent = step.title;
-    board.hidden = Boolean(whiteboard && !hasContext) || step.kind !== 'lesson';
+    board.hidden = Boolean(whiteboard) || step.kind !== 'lesson';
     canvas.style.display = whiteboard || step.kind === 'lesson' ? 'none' : 'block';
     contextCanvas.hidden = !hasContext || Boolean(whiteboard);
     lastDiagram = null;
@@ -1086,7 +1158,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     boardNodes = [];
     lastBoardReveal = -1;
     board.scrollTop = 0;
-    if (step.kind === 'lesson' && (!whiteboard || hasContext)) {
+    if (step.kind === 'lesson' && !whiteboard) {
       const visual = step.visual || {label:step.title,lines:step.tex ? [{tex:step.tex}] : []};
       if (!hasContext) board.append(element('p','eyebrow',visual.label));
       const derivation = element('ol','board-derivation');
@@ -1135,7 +1207,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     const step = animation.steps[index];
     const {diagram,phase} = selectContextDiagram(step.visual,lastCue);
     if (diagram) {
-      const description = diagram.caption || diagram.label;
+      const description = diagram.caption || diagram.label || step.title;
       contextCanvas.setAttribute('aria-label',description);
       contextCanvas.textContent = description;
       contextCanvas.setAttribute('data-context-kind',diagram.kind);
@@ -1175,6 +1247,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   }
 
   function resize(entries) {
+    updateOverlays();
     if (disposed) return;
     const observedWidth = entries?.[0]?.contentRect?.width ?? stage.getBoundingClientRect().width;
     const width = Math.max(240, Math.min(1200, Math.round(observedWidth || logicalWidth)));
@@ -1258,14 +1331,27 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     const cues = scenes()[index].cues;
     let cueIndex = -1;
     for (const [candidate,cue] of cues.entries()) if (currentTime >= cue.start) cueIndex = candidate;
-    const captionText = cues[Math.max(0,cueIndex)].text;
-    if (caption.textContent !== captionText) caption.textContent = captionText;
+    const cue=cues[Math.max(0,cueIndex)];
+    const width=Math.max(80,(stage.clientWidth || stage.getBoundingClientRect?.().width || logicalWidth)-50);
+    const font=view.getComputedStyle?.(caption);
+    const signature=`${index}/${cueIndex}/${width}/${font?.font || ''}`;
+    if(signature!==subtitleSignature){
+      if(context)context.font=`${font?.fontWeight || '400'} 16px ${font?.fontFamily || 'Atkinson'}`;
+      captionPages=subtitlePages(cue.text,width,text=>context?.measureText(text).width ?? text.length*8);
+      subtitleSignature=signature;
+    }
+    const fraction=Math.max(0,Math.min(0.999,(currentTime-cue.start)/Math.max(0.01,cue.end-cue.start)));
+    const total=captionPages.reduce((sum,page)=>sum+page.length+1,0);
+    let remaining=fraction*total;
+    let captionText=captionPages.at(-1) || cue.text;
+    for(const page of captionPages){if(remaining<page.length+1){captionText=page;break;}remaining-=page.length+1;}
+    if (caption.textContent !== captionText) {caption.textContent = captionText;updateOverlays();}
     lastCue = cueIndex;
     const progress = reducedMotion ? 1 : Math.max(0,Math.min(1,elapsed/(scenes()[index].end-scenes()[index].start)));
     stage.setAttribute('data-progress',String(progress));
     const story = animation.steps[index].story;
     const visible = story ? storyLines(animation.steps[index],cueIndex).length : reducedMotion ? boardNodes.length : Math.max(1,Math.ceil(progress*boardNodes.length));
-    if (story && animation.steps[index].visual?.context) board.hidden=visible===0;
+    if (!whiteboard && story && animation.steps[index].visual?.context) board.hidden=visible===0;
     boardNodes.forEach((node,position)=>{
       const reveal = story ? Number(position<visible) : reducedMotion ? 1 : Math.max(0,Math.min(1,progress*boardNodes.length-position+1));
       node.hidden = Boolean(story) && position>=visible;
@@ -1273,14 +1359,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
       node.style.opacity = String(reveal);
       node.style.transform = reducedMotion ? 'none' : `translateY(${(1-reveal)*10}px)`;
     });
-    if (visible !== lastBoardReveal && board.clientHeight > 0) {
-      if (visible) {
-        const current = boardNodes[visible-1];
-        const bottom = current.offsetTop + current.offsetHeight + 16;
-        if (bottom > board.scrollTop + board.clientHeight) board.scrollTop = bottom - board.clientHeight;
-      } else board.scrollTop = 0;
-      lastBoardReveal = visible;
-    }
+    if (visible !== lastBoardReveal) {board.scrollTop=0;lastBoardReveal=visible;}
     const formulaProgress = reducedMotion ? 1 : Math.max(0,Math.min(1,(progress-0.2)/0.6));
     math.style.clipPath = `inset(0 ${(1-formulaProgress)*100}% 0 0)`;
   }
@@ -1303,6 +1382,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     activePlayback?.();
     activePlayback = stop;
     running = true;
+    showControls(!controls.hidden);
     previousTime = now();
     syncControls();
     frame = requestFrame(tick);
@@ -1323,6 +1403,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
       else if (!document.hidden && document.visibilityState !== 'hidden') advance(now());
     }
     running = false;
+    showControls();
     playAttempt++;
     mediaClock?.pause();
     if (activePlayback === stop) activePlayback = null;
@@ -1337,7 +1418,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   listen(view,'keydown',event => {
     if (event.key === 'Escape' && expanded()) exitFullscreen();
     if (event.key === 'Tab' && expanded() && root.querySelectorAll) {
-      const nodes = Array.from(root.querySelectorAll('button:not([disabled]), input, select, summary')).filter(node=>!node.hidden && (!node.closest('details:not([open])') || (node.tagName.toLowerCase() === 'summary' && !node.parentElement.parentElement.closest('details:not([open])'))));
+      const nodes = Array.from(root.querySelectorAll('button:not([disabled]), input, select, summary, .animation-stage')).filter(node=>!node.hidden && !node.closest('[hidden]') && (!node.closest('details:not([open])') || (node.tagName.toLowerCase() === 'summary' && !node.parentElement.parentElement.closest('details:not([open])'))));
       const first = nodes[0], last = nodes.at(-1);
       if (event.shiftKey && focusedElement() === first) { event.preventDefault(); last?.focus(); }
       else if (!event.shiftKey && focusedElement() === last) { event.preventDefault(); first?.focus(); }
@@ -1350,8 +1431,10 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   if (typeof view.ResizeObserver === 'function') {
     observer = new view.ResizeObserver(resize);
     observer.observe(stage);
+    observer.observe(caption);
   }
   listen(view, 'resize', resize);
+  document.fonts?.ready.then(()=>{if(!disposed){subtitleSignature='';resize();}});
   syncScene();
   syncControls();
   resize();
@@ -1359,6 +1442,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const cleanup = () => {
     if (disposed) return;
     disposed = true;
+    if(controlsTimer!==null)view.clearTimeout(controlsTimer);
     playAttempt++;
     fullscreenAttempt++;
     running = false;

@@ -20,7 +20,7 @@ export default function InteractiveLesson({lessonId, view = 'lab', animation, ex
       import('jstat'),
       import('katex'),
       import('../../pages/inferencia/vendor/lucide.min.js'),
-      view === 'animation' && ['proporciones', 'algebra', 'funciones', 'calculo', 'regiones-matrices'].includes(lessonId)
+      view === 'animation'
         ? import('../classroom/whiteboard.mjs') : Promise.resolve(null)
     ]).then(([engine, stats, math, icons, whiteboard]) => {
       if (!active) return;

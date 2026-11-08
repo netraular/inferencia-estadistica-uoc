@@ -23,9 +23,24 @@ https://webs.raular.com/inferencia/ from the `main` branch.
 - Animated-reading transport moves to the previous or next complete sentence,
   crossing scene boundaries as needed. Playback controls are play/pause,
   previous/next phrase, time seeking and fullscreen.
+- All lessons and exercise solutions share one Konva whiteboard: diagrams,
+  text and vector formulas stay inside the video, with no internal scrolling
+  or separate formula panel. Accumulated operations appear in cue-aligned
+  blocks; seeking backward restores the matching block. Controls overlay the
+  video, start hidden and hide again three seconds after being shown. Touching
+  the video or using Enter/Space shows them again. A central play button starts
+  paused videos.
+  Optional subtitles appear inside the video in one or two lines; the captions
+  button shows or hides them. The board reserves their area so operations are
+  not covered by subtitles or visible controls.
+  Long cues are displayed as consecutive complete fragments without changing
+  their recorded audio or transcript. Normal video keeps 16:9; expanded landscape
+  mode fills the entire viewport, reflowing the whiteboard instead of
+  letterboxing it. The transcript remains outside the video.
 - The short `/inferencia/` URL opens a course overview with direct access to the
   curriculum, materials and each topic;
   `/temario/` holds the reference map, with topics 0 to 5 and numbered lessons.
+  All topics start collapsed; none is forced open by the generator.
   Topic 5 solves all three PEC 1 problems, including 13 numerical questions,
   three qualitative arguments, full sample spaces and additional diagrams.
 - There is no study tracking or saved exercise history. Concept checks and
@@ -209,25 +224,26 @@ outside `static/`, so they are not published or played. Tests reject MP3 files i
 retains excluded older files, archive them before publishing. Regenerate audio
 from the current scripts before publishing.
 
-## Topic 0 Animated Whiteboard
+## Animated Whiteboard
 
-The five mathematical bridge lessons use a client-only Konva canvas with a paused
-GSAP timeline driven by the existing player's audio clock. Other lessons retain
-their current renderer and do not load these dependencies. Captions, speed controls
-and fullscreen behavior are preserved; narration follows the conversational
-storyboards and the questions appropriate to each lesson.
+All animated lessons and exercise solutions use a client-only Konva canvas with
+a paused GSAP timeline driven by the existing player's audio clock. Theory and
+figure-only lesson views do not load these dependencies. Narration follows the
+conversational storyboards and the questions appropriate to each lesson.
 
 Scenes use explicit quantities, equations and plot data for seed proportions,
 normalization, function values, areas and resource regions; examples are not
 inferred from words in the narration. Worked exercises display their actual
 generated inputs and equations.
 MathJax turns formulas into vector paths within the same canvas, without image
-downloads or HTML formula overlays. Narrow boards use a square composition;
-fullscreen fits the scene into the available drawing space.
+downloads or HTML formula overlays. The board reflows above the optional in-video
+subtitles and visible controls, without internal scrolling. Ordinary videos keep
+16:9; landscape fullscreen uses the entire viewport.
 
 `tests/whiteboard.test.mjs` renders every scene with a CPU canvas at desktop and
-mobile sizes, checks text bounds, exact areas, reversible seeking, reduced motion
-and resource cleanup. This is not a browser or physical-device visual check.
+mobile sizes with reserved overlay space, checks text bounds, exact areas,
+reversible seeking, reduced motion and resource cleanup. This is not a browser
+or physical-device visual check.
 
 ## Deployment
 

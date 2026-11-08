@@ -128,7 +128,7 @@ export function exerciseAnimation(exercise, question) {
   };
 }
 
-export function mountExercises(root, {exercises, lessonId, formatMath, audio, baseUrl='/', renderExtra:extraMarkup=()=>'', renderIcons=()=>{}}) {
+export function mountExercises(root, {exercises, lessonId, formatMath, audio, createWhiteboard, baseUrl='/', renderExtra:extraMarkup=()=>'', renderIcons=()=>{}}) {
   const owner=root.ownerDocument;
   const renderExtra=(exercise,question)=>extraMarkup(exercise,question,formatMath);
   const lesson=COURSE.units.flatMap(unit=>unit.lessons).find(item=>item.id===lessonId);
@@ -157,7 +157,7 @@ export function mountExercises(root, {exercises, lessonId, formatMath, audio, ba
       const track=audio?.lessons?.[animation.id];
       const narrator=track ? undefined : createExerciseSpeech(owner,animation);
       const host=animated.querySelector('[data-exercise-player]');
-      players.set(animated,mountAnimation(host,animation,{formatMath,audio:track ? {...track,src:baseUrl+track.src} : undefined,narrator}));
+      players.set(animated,mountAnimation(host,animation,{formatMath,audio:track ? {...track,src:baseUrl+track.src} : undefined,narrator,createWhiteboard}));
       if(!track && !narrator){const notice=owner.createElement('p');notice.className='animation-audio-error';notice.setAttribute('role','status');notice.textContent='La síntesis de voz española no está disponible en este navegador.';host.prepend(notice);}
       renderIcons();
     });

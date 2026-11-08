@@ -13,12 +13,12 @@ export function selectContextDiagram(visual, cueIndex = -1) {
   return {diagram:phase?.context || visual?.context,phase};
 }
 
-export function drawContextDiagram(context, diagram, width, height, {phase} = {}) {
+export function drawContextDiagram(context, diagram, width, height, {phase,compact=false} = {}) {
   if (!context || !diagram) return null;
   if (![width,height].every(value=>Number.isFinite(value) && value>0)) throw new RangeError('Dimensiones de diagrama no validas');
   const labels = [];
   let marks = 0;
-  const plot = {x:58,y:100,width:Math.max(1,width-82),height:Math.max(1,height-202)};
+  const plot = {x:58,y:compact ? 34 : 100,width:Math.max(1,width-82),height:Math.max(1,height-(compact ? 136 : 202))};
   const result = {kind:diagram.kind,width,height,plot,labels,marks:0,cue:phase?.cue ?? -1};
   const label = (value,x,y,boxWidth,boxHeight,{align='left',color=colors.ink,size=13,bold=false} = {}) => {
     const text = String(value ?? '');
@@ -89,7 +89,7 @@ export function drawContextDiagram(context, diagram, width, height, {phase} = {}
       path([[mapX(value),bottom],[mapX(value),bottom+4]],{color:colors.ink,lineWidth:1});
       label(number(value),left,bottom+9,tickWidth,28,{align:'center',size:11,color:colors.muted});
     }
-    label(yTitle,plot.x,74,plot.width,23,{size:12,color:colors.muted});
+    label(yTitle,plot.x,compact ? 8 : 74,plot.width,23,{size:12,color:colors.muted});
     label(xTitle,plot.x,height-63,plot.width,19,{align:'center',size:12,color:colors.muted});
     return {mapX,mapY,bottom,domain,range};
   };
@@ -101,7 +101,7 @@ export function drawContextDiagram(context, diagram, width, height, {phase} = {}
   try {
     context.clearRect(0,0,width,height);
     context.fillStyle=colors.paper;context.fillRect(0,0,width,height);
-    label(diagram.label || diagram.caption,16,12,width-32,57,{bold:true,size:15});
+    if(!compact)label(diagram.label || diagram.caption,16,12,width-32,57,{bold:true,size:15});
     if (diagram.kind === 'bars') {
       const values=diagram.values;
       const [minimum,maximum]=span(values,true);
@@ -127,9 +127,9 @@ export function drawContextDiagram(context, diagram, width, height, {phase} = {}
     } else if (diagram.kind === 'matrix') {
       const rowWidth=Math.min(112,(width-32)*0.34);
       const cellWidth=(width-32-rowWidth)/diagram.columns.length;
-      const top=119;
+      const top=compact ? 53 : 119;
       const cellHeight=(height-54-top)/diagram.rows.length;
-      diagram.columns.forEach((column,index)=>label(column,16+rowWidth+index*cellWidth,74,cellWidth-3,42,{align:'center',size:12,bold:true}));
+      diagram.columns.forEach((column,index)=>label(column,16+rowWidth+index*cellWidth,compact ? 8 : 74,cellWidth-3,42,{align:'center',size:12,bold:true}));
       diagram.rows.forEach((row,rowIndex)=>{
         const positionY=top+rowIndex*cellHeight;
         label(row,16,positionY+4,rowWidth-8,cellHeight-6,{size:12});
@@ -145,10 +145,10 @@ export function drawContextDiagram(context, diagram, width, height, {phase} = {}
       const columns=Math.max(1,Math.min(diagram.outcomes.length,Math.floor((width-32)/86)));
       const rows=Math.ceil(diagram.outcomes.length/columns);
       const cellWidth=(width-32)/columns;
-      const cellHeight=(height-142)/rows;
+      const cellHeight=(height-(compact ? 76 : 142))/rows;
       diagram.outcomes.forEach((outcome,index)=>{
         const left=16+(index%columns)*cellWidth;
-        const top=77+Math.floor(index/columns)*cellHeight;
+        const top=(compact ? 11 : 77)+Math.floor(index/columns)*cellHeight;
         const active=selected.includes(index);
         context.fillStyle=active ? colors.wash : '#eef3f0';context.fillRect(left,top,cellWidth-6,cellHeight-5);marks++;
         label(`${index+1}`,left+5,top+3,cellWidth-16,16,{size:10,color:colors.muted});
@@ -164,11 +164,11 @@ export function drawContextDiagram(context, diagram, width, height, {phase} = {}
       const levels=Math.max(...diagram.nodes.map(depth));
       const leafCount=diagram.nodes.reduce((sum,node)=>sum+leaves(node),0);
       const column=(width-32)/levels;
-      const unit=(height-132)/leafCount;
+      const unit=(height-(compact ? 66 : 132))/leafCount;
       const walk = (node,level,offset,parent) => {
         const count=leaves(node);
         const left=16+level*column;
-        const middle=78+(offset+count/2)*unit;
+        const middle=(compact ? 12 : 78)+(offset+count/2)*unit;
         if (parent) path([[parent[0],parent[1]],[left-3,middle]],{color:colors.grid});
         dot(left,middle,{color:colors.base,radius:2});
         const text=node.weight===undefined ? node.label : `${node.label}; p = ${number(node.weight)}`;
@@ -185,9 +185,9 @@ export function drawContextDiagram(context, diagram, width, height, {phase} = {}
       const bottom=height-114;
       path([[28,bottom],[width-28,bottom]],{color:colors.ink});
       const intervals=diagram.intervals || [];
-      const lane=Math.min(46,(bottom-92)/Math.max(1,intervals.length));
+      const lane=Math.min(46,(bottom-(compact ? 26 : 92))/Math.max(1,intervals.length));
       intervals.forEach((item,index)=>{
-        const top=88+(index+0.5)*lane;
+        const top=(compact ? 22 : 88)+(index+0.5)*lane;
         const left=mapX(item.from);
         const right=mapX(item.to);
         path([[left,top],[right,top]],{color:index%2 ? colors.gold : colors.base,lineWidth:4});

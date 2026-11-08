@@ -38,7 +38,8 @@ import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 import {enrichLessonAnimation,enrichGlobalAnimation} from '../pages/inferencia/lesson-visuals.js';
 import {drawContextDiagram,selectContextDiagram} from '../pages/inferencia/context-diagram.js';
 import {EXERCISE_TYPES,generateExercise} from '../pages/inferencia/exercises.js';
-import {WHITEBOARD_LESSONS, planWhiteboardScene, integralGeometry, formulaVector, formulaGraphic, createWhiteboard} from '../src/classroom/whiteboard.mjs';
+import {exerciseCatalogue,exerciseAnimation} from '../pages/inferencia/exercise-solutions.js';
+import {WHITEBOARD_LESSONS, planWhiteboardScene, integralGeometry, formulaVector, formulaGraphic, createWhiteboard,whiteboardFrameLines,whiteboardFormula} from '../src/classroom/whiteboard.mjs';
 
 const require=createRequire(import.meta.url);
 globalThis.jStat=require('jstat').jStat;
@@ -169,15 +170,31 @@ test('Konva uses the same context pixels and phase when seeking backward, resizi
           const pixels=()=>Buffer.from(stage.getLayers()[0].getCanvas().getContext().getImageData(0,0,width,height).data);
           const first=pixels();
           const expected=createCanvas(width,height);
-          drawContextDiagram(expected.getContext('2d'),frame.step.visual.context,width,height);
-          assert.deepEqual(first,Buffer.from(expected.getContext('2d').getImageData(0,0,width,height).data),`${lecture.id}: common renderer`);
+          const logicalHeight=Math.max(300,height*960/width);
+          const scale=Math.min(width/960,height/logicalHeight);
+          const origin={x:(width-960*scale)/2,y:0};
+          const expectedContext=expected.getContext('2d');
+          const actualContext=stage.getLayers()[0].getCanvas().getContext();
+          const checkDiagram=(diagram,phase)=>{
+            const label=stage.getLayers()[0].getChildren()[0].find('Text')[0];
+            const top=label.y()+label.height()+12;
+            const diagramHeight=logicalHeight-top-24;
+            const region={x:Math.ceil(origin.x)+1,y:Math.ceil(origin.y+top*scale)+1,width:Math.floor(520*scale)-2,height:Math.floor(diagramHeight*scale)-2};
+            expectedContext.setTransform(scale,0,0,scale,origin.x,origin.y);
+            expectedContext.translate(0,top);
+            drawContextDiagram(expectedContext,diagram,520,diagramHeight,{phase,compact:true});
+            const diagramPixels=drawing=>Buffer.from(drawing.getImageData(region.x,region.y,region.width,region.height).data);
+            const actual=diagramPixels(actualContext);
+            const reference=diagramPixels(expectedContext);
+            assert.equal(actual.equals(reference),true,`${lecture.id}/${width}/${height}: common renderer within unified board`);
+          };
+          checkDiagram(frame.step.visual.context);
           for (const cueIndex of [0,frame.step.cues.length-1,0,-1]) {
             board.render({...frame,cueIndex,progress:1,reducedMotion:true});
             const {diagram,phase}=selectContextDiagram(frame.step.visual,cueIndex);
-            drawContextDiagram(expected.getContext('2d'),diagram,width,height,{phase});
-            assert.deepEqual(pixels(),Buffer.from(expected.getContext('2d').getImageData(0,0,width,height).data),`${lecture.id}/${width}/${cueIndex}: same phase, no future reveal`);
+            checkDiagram(diagram,phase);
           }
-          assert.deepEqual(pixels(),first,`${lecture.id}: reversible`);
+          assert.equal(pixels().equals(first),true,`${lecture.id}: reversible`);
         }
       } finally {board.dispose();}
     }
@@ -213,7 +230,21 @@ test('all five topic zero lessons have a whiteboard plan for every unchanged nar
     count++;
   }
   assert.equal(count,lectures.reduce((total,lecture)=>total+lecture.steps.length,0));
-  assert.equal(planWhiteboardScene('sucesos',lectures[0].steps[0]),null);
+  assert.equal(planWhiteboardScene('sucesos',lectures[0].steps[0]).kind,'story');
+});
+
+test('a single whiteboard pages accumulated operations by cue without losing simultaneously introduced lines',()=>{
+  const lines=Array.from({length:12},(_,cue)=>({cue,tex:`x=${cue}`}));
+  const plan={context:{kind:'bars'},lines};
+  assert.deepEqual(whiteboardFrameLines(plan,-1),[]);
+  assert.deepEqual(whiteboardFrameLines(plan,11),lines.slice(-3));
+  assert.deepEqual(whiteboardFrameLines(plan,0),lines.slice(0,1));
+  const simultaneous=Array.from({length:4},()=>({cue:12,value:'Datos nuevos'}));
+  assert.deepEqual(whiteboardFrameLines({...plan,lines:[...lines,...simultaneous]},12),simultaneous);
+  for(const line of lines)assert.ok(whiteboardFrameLines(plan,line.cue).includes(line));
+  const tex='p=1/2=0.5';
+  assert.equal(whiteboardFormula(tex),'\\begin{gathered}p=1/2\\\\=0.5\\end{gathered}');
+  assert.ok(formulaVector(whiteboardFormula(tex)).viewBox.every(Number.isFinite));
 });
 
 test('scenes without explicit graphics never invent examples from lesson names or narration',()=>{
@@ -345,13 +376,17 @@ test('real webpack configuration loads MathJax version in a browser without requ
   } finally {rmSync(directory,{recursive:true,force:true});}
 });
 
-test('real Konva canvas draws every scene, fits text at desktop and mobile sizes, seeks reversibly and cleans up',()=>{
+test('real Konva canvas draws every lesson and exercise scene, fits text at desktop and mobile sizes, seeks reversibly and cleans up',async()=>{
   const createElement=Konva.Util.createCanvasElement;
   const stageCount=Konva.stages.length;
   Konva.Util.createCanvasElement=()=>{const canvas=createCanvas(1,1);canvas.style={};return canvas;};
   try {
-    for(const lecture of [...lectures,...sectionAnimations]) for(const [width,height] of [[960,540],[320,180]]) {
-      const host={ownerDocument:{defaultView:{}},getBoundingClientRect:()=>({width,height})};
+    const lessons=COURSE.units.flatMap(unit=>unit.lessons);
+    const recaps=lessons.map(lesson=>enrichGlobalAnimation(createLessonAnimation(lesson,generateExercise,paragraphs)));
+    const sections=lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>enrichLessonAnimation(section.animation)));
+    const solutions=exerciseCatalogue().flatMap(exercise=>exercise.questions.map(question=>exerciseAnimation(exercise,question)));
+    for(const lecture of [...recaps,...sections,...solutions]) for(const [width,height,inset] of [[960,540,126],[320,180,76],[844,390,126]]) {
+      const host={ownerDocument:{defaultView:{}},parentElement:{style:{getPropertyValue:()=>String(inset)}},getBoundingClientRect:()=>({width,height})};
       const board=createWhiteboard(host,{animation:lecture});
       try {
         board.resize(width);
@@ -364,18 +399,21 @@ test('real Konva canvas draws every scene, fits text at desktop and mobile sizes
           for(const node of scene.find('Text')) {
             const rect=node.getClientRect({relativeTo:scene});
             const logicalWidth=960;
-            const logicalHeight=576;
+            const logicalHeight=Math.max(300,(height-inset)*960/width);
             assert.ok(rect.x>=-1 && rect.y>=-1 && rect.x+rect.width<=logicalWidth+1 && rect.y+rect.height<=logicalHeight+1,`${lecture.id}: ${step.title}: ${node.text()}: ${JSON.stringify(rect)}`);
           }
+          const bounds=scene.getClientRect();
+          assert.ok(bounds.x>=-1 && bounds.y>=-1 && bounds.x+bounds.width<=width+1 && bounds.y+bounds.height<=height-inset+1,`${lecture.id}: ${step.title}: scene exceeds area above overlays`);
+          await yieldToEventLoop();
         }
         const frame={index:0,step:lecture.steps[0],time:0,progress:1,reducedMotion:false};
         board.render({...frame,cueIndex:-1}); const before=pixels();
         board.render({...frame,cueIndex:frame.step.cues.length-1}); const after=pixels();
-        assert.notDeepEqual(before,after,lecture.id);
+        assert.equal(before.equals(after),false,`${lecture.id}: initial and final frames must differ`);
         assert.ok(after.some((value,position)=>position%4===0 && value<180),'actual ink pixels');
-        board.render({...frame,cueIndex:-1}); assert.deepEqual(pixels(),before,`${lecture.id}: reverse seek`);
-        board.render({...frame,cueIndex:-1,reducedMotion:true}); assert.deepEqual(pixels(),before,`${lecture.id}: reduced motion must not reveal future phrases`);
-        board.render({...frame,cueIndex:frame.step.cues.length-1,reducedMotion:true}); assert.deepEqual(pixels(),after,`${lecture.id}: reduced motion final state`);
+        board.render({...frame,cueIndex:-1}); assert.equal(pixels().equals(before),true,`${lecture.id}: reverse seek`);
+        board.render({...frame,cueIndex:-1,reducedMotion:true}); assert.equal(pixels().equals(before),true,`${lecture.id}: reduced motion must not reveal future phrases`);
+        board.render({...frame,cueIndex:frame.step.cues.length-1,reducedMotion:true}); assert.equal(pixels().equals(after),true,`${lecture.id}: reduced motion final state`);
       } finally {board.dispose();board.dispose();}
     }
     assert.equal(Konva.stages.length,stageCount);

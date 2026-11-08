@@ -18,8 +18,9 @@ export default function ExerciseCollection({lessonId, mode='pdf', descriptor, ex
       import('../../pages/inferencia/capstone.js'),
       import('../../pages/inferencia/exercises.js'),
       import('../classroom/embed.mjs'),
+      import('../classroom/whiteboard.mjs'),
       import('jstat'),import('katex'),import('../../pages/inferencia/vendor/lucide.min.js')
-    ]).then(([engine,pdf,capstone,generators,embed,stats,math,icons])=>{
+    ]).then(([engine,pdf,capstone,generators,embed,whiteboard,stats,math,icons])=>{
       if(!active)return;
       globalThis.jStat=stats.default?.jStat || stats.jStat || stats.default;
       const library=math.default || math;
@@ -40,7 +41,7 @@ export default function ExerciseCollection({lessonId, mode='pdf', descriptor, ex
       const links=['aula.css','katex/katex.min.css'].map(path=>{const link=owner.createElement('link');link.rel='stylesheet';link.href=baseUrl+path;return link;});
       root.replaceChildren(...links,style,content);
       dispose=()=>root.replaceChildren();
-      const cleanup=engine.mountExercises(content,{exercises,lessonId,baseUrl,audio,formatMath:tex=>library.renderToString(tex,{displayMode:true,throwOnError:false,trust:false}),renderExtra,renderIcons:()=>embed.renderScopedIcons(root,icons.default || icons)});
+      const cleanup=engine.mountExercises(content,{exercises,lessonId,baseUrl,audio,createWhiteboard:whiteboard.createWhiteboard,formatMath:tex=>library.renderToString(tex,{displayMode:true,throwOnError:false,trust:false}),renderExtra,renderIcons:()=>embed.renderScopedIcons(root,icons.default || icons)});
       dispose=()=>{cleanup();root.replaceChildren();};
       embed.renderScopedIcons(root,icons.default || icons);
       setReady(true);

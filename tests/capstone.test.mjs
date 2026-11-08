@@ -505,6 +505,7 @@ function compiledCollection(fixture,effects,updates) {
     '../../pages/inferencia/pdf-exercises.js':{getPdfExercises},
     '../../pages/inferencia/capstone.js':{getCapstoneExercises},
     '../classroom/embed.mjs':{renderScopedIcons() {}},
+    '../classroom/whiteboard.mjs':{createWhiteboard() {return null;}},
     jstat:{jStat},katex,'../../pages/inferencia/vendor/lucide.min.js':{}
   };
   runInNewContext(compileComponent(new URL('../src/components/ExerciseCollection.jsx',import.meta.url)),{module,exports:module.exports,globalThis,require:specifier=>replacements[specifier] || require(specifier)});

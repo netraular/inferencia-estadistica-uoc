@@ -254,7 +254,7 @@ test('closing a narrated solution cancels speech and late utterance callbacks ca
     assert.equal(utterances.length,1);
     utterances.at(-1).onend();
     assert.equal(utterances.length,2);
-    assert.equal(solution.querySelector('.animation-caption').textContent,utterances.at(-1).text);
+    assert.ok(utterances.at(-1).text.replace(/\s/g,'').includes(solution.querySelector('.animation-caption').textContent.replace(/\s/g,'')));
     const old=utterances.at(-1);const before=canceled;
     solution.removeAttribute('open');solution.dispatchEvent(new window.Event('toggle'));
     assert.ok(canceled>before);old.onend();assert.equal(utterances.length,2);
