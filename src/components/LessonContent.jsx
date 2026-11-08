@@ -33,12 +33,13 @@ export default function LessonContent({lessonId, children}) {
     <LessonSource lesson={lesson} />
     <Tabs defaultValue="lesson" queryString="actividad" lazy values={values} className="lesson-navigation">
     <TabItem value="lesson">
-      <LessonJourney lessonId={lessonId} />
-      {children}
-      <section className="lesson-knowledge-check" aria-label="Comprueba la idea">
-        <h2>Comprueba la idea</h2>
-        <InteractiveLesson lessonId={lessonId} view="theory" />
-      </section>
+      <LessonJourney lessonId={lessonId}>
+        {children}
+        <section className="lesson-knowledge-check" aria-label="Comprueba la idea">
+          <h2>Comprueba la idea</h2>
+          <InteractiveLesson lessonId={lessonId} view="theory" />
+        </section>
+      </LessonJourney>
     </TabItem>
     {sections.filter(section => section.value !== 'lesson').map(section =>
       <TabItem key={section.value} value={section.value}>

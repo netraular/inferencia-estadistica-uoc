@@ -4,7 +4,7 @@ import {COURSE} from '../../pages/inferencia/course.js';
 import {createLessonSections} from '../../pages/inferencia/lesson-sections.js';
 import LessonSectionPlayer from './LessonSectionPlayer';
 
-export default function LessonJourney({lessonId}) {
+export default function LessonJourney({lessonId, children}) {
   const lesson=COURSE.units.flatMap(unit=>unit.lessons).find(item=>item.id===lessonId);
   const sections=lesson ? createLessonSections(lesson) : [];
   const [selected,setSelected]=useState('');
@@ -20,6 +20,7 @@ export default function LessonJourney({lessonId}) {
       <h2 id="lesson-section-title">{section.title}</h2>
       <LessonSectionPlayer key={`${lessonId}/${section.id}`} lessonId={lessonId} section={section} />
     </section>
+    {children}
     <div className="lesson-section-transport">
       <button type="button" disabled={index===0} onClick={()=>setSelected(sections[index-1].id)}><ChevronLeft size={18} aria-hidden="true" />Apartado anterior</button>
       <button type="button" disabled={index===sections.length-1} onClick={()=>setSelected(sections[index+1].id)}>Siguiente apartado<ChevronRight size={18} aria-hidden="true" /></button>

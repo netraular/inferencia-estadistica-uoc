@@ -18,6 +18,8 @@ test('lesson entry uses a progressive journey and keeps full notes optional', ()
   const journey=readFileSync(new URL('../src/components/LessonJourney.jsx',import.meta.url),'utf8');
   assert.match(journey,/createLessonSections/);
   assert.match(journey,/data-lesson-section/);
+  assert.ok(journey.indexOf('{children}') < journey.indexOf('className="lesson-section-transport"'));
+  assert.ok(source.indexOf('className="lesson-knowledge-check"') < source.indexOf('</LessonJourney>'));
   assert.doesNotMatch(journey,/<InteractiveLesson lessonId=\{lessonId\} view="animation"/);
 });
 import {parseHTML} from 'linkedom';

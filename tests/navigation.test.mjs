@@ -45,7 +45,7 @@ test('three Docusaurus tabs keep the journey and optional notes without progress
     '@theme/Tabs':({values, children}) => React.createElement('div', {'data-tabs':values.map(value => value.value).join(',')}, children),
     '@theme/TabItem':({value, children}) => React.createElement('section', {'data-view':value}, children),
     './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive':view}),
-    './LessonJourney':({lessonId}) => React.createElement('div', {'data-journey':lessonId}),
+    './LessonJourney':({lessonId,children}) => React.createElement('div', {'data-journey':lessonId},children),
     './LessonSource':({lesson}) => React.createElement('p', {'data-source':lesson.id}),
     '../../pages/inferencia/course.js':{COURSE}
   });
