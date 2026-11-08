@@ -4,7 +4,7 @@ const number = value => Number(value.toPrecision(7)).toString();
 const escape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 const frame = (title, tex, comment = '') => ({title, tex, comment});
 
-function stageEquations(step) {
+export function stageEquations(step) {
   if (!step.tex) return [{...step, tex:''}];
   const equalities = [];
   let depth = 0;

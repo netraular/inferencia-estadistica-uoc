@@ -11,6 +11,9 @@ import {COURSE} from '../pages/inferencia/course.js';
 import {gradeAnswer} from '../pages/inferencia/exercises.js';
 import {createTutorFrames, drawTutorFigure, mountExerciseTutor} from '../pages/inferencia/exercise-tutor.js';
 import {drawContextDiagram} from '../pages/inferencia/context-diagram.js';
+import * as solutions from '../pages/inferencia/exercise-solutions.js';
+import * as generators from '../pages/inferencia/exercises.js';
+import {getPdfExercises} from '../pages/inferencia/pdf-exercises.js';
 
 const require = createRequire(import.meta.url);
 const jStat = require('jstat').jStat;
@@ -477,8 +480,9 @@ test('metadata is deeply immutable and fresh construction isolates every nested 
 const babel = require('@babel/core');
 const componentUrl = new URL('../src/components/CapstoneExercises.jsx',import.meta.url);
 const componentSource = readFileSync(componentUrl,'utf8');
-const componentCode = babel.transformSync(componentSource,{
-  filename:componentUrl.pathname,babelrc:false,configFile:false,
+function compileComponent(url) {
+  return babel.transformSync(readFileSync(url,'utf8'),{
+  filename:url.pathname,babelrc:false,configFile:false,
   presets:[require.resolve('@docusaurus/core/lib/babel/preset')],
   plugins:[require.resolve('@babel/plugin-transform-modules-commonjs'),({types}) => ({visitor:{CallExpression(path) {
     if (path.node.callee.type !== 'Import') return;
@@ -486,6 +490,26 @@ const componentCode = babel.transformSync(componentSource,{
     path.replaceWith(types.callExpression(types.memberExpression(types.callExpression(types.memberExpression(types.identifier('Promise'),types.identifier('resolve')),[]),types.identifier('then')),[load]));
   }}})]
 }).code;
+}
+const componentCode=compileComponent(componentUrl);
+
+function compiledCollection(fixture,effects,updates) {
+  const module={exports:{}};
+  const replacements={
+    react:{...React,useRef:()=>({current:fixture.host}),useEffect:effect=>effects.push(effect),useState:initial=>[initial,value=>updates.push(value)]},
+    '@docusaurus/useBaseUrl':()=>'/inferencia/',
+    '../../pages/inferencia/course.js':{COURSE},
+    '../../static/audio/exercises-manifest.json':{lessons:{}},
+    '../../pages/inferencia/exercise-solutions.js':solutions,
+    '../../pages/inferencia/exercises.js':generators,
+    '../../pages/inferencia/pdf-exercises.js':{getPdfExercises},
+    '../../pages/inferencia/capstone.js':{getCapstoneExercises},
+    '../classroom/embed.mjs':{renderScopedIcons() {}},
+    jstat:{jStat},katex,'../../pages/inferencia/vendor/lucide.min.js':{}
+  };
+  runInNewContext(compileComponent(new URL('../src/components/ExerciseCollection.jsx',import.meta.url)),{module,exports:module.exports,globalThis,require:specifier=>replacements[specifier] || require(specifier)});
+  return module.exports.default;
+}
 
 function compiledCapstone(imports = {}) {
   const module = {exports:{}};
@@ -493,6 +517,7 @@ function compiledCapstone(imports = {}) {
     react:React,
     '@docusaurus/useBaseUrl':() => '/inferencia/',
     '../../pages/inferencia/capstone.js':{CAPSTONE,getCapstoneExercises},
+    './ExerciseCollection':() => React.createElement('p',{role:'status'},'Cargando ejercicios...'),
     '../../pages/inferencia/exercise-tutor.js':{mountExerciseTutor},
     '../../pages/inferencia/context-diagram.js':{drawContextDiagram},
     jstat:{jStat},katex,
@@ -749,7 +774,7 @@ test('the mounted same-incubator predictive tree draws on disclosure and resize 
   } finally {prototype.getContext = original;mounted.dispose();}
 }));
 
-test('the compiled React component has SSR-safe source links and its real effect mounts and cleans up the tutor', async () => {
+test('the compiled React component has SSR-safe sources and the real collection mounts closed solutions and cleans up', async () => {
   const previous = globalThis.jStat;
   delete globalThis.jStat;
   try {
@@ -765,33 +790,32 @@ test('the compiled React component has SSR-safe source links and its real effect
     const effects = [];
     const updates = [];
     const fixture = tutorDocument();
-    let mounts = 0;
-    let disposals = 0;
-    const {default:ClientCapstone} = compiledCapstone({
-      react:{...React,useRef:() => ({current:fixture.host}),useEffect:effect => effects.push(effect),useState:initial => [initial,value => updates.push(value)]},
-      '../../pages/inferencia/exercise-tutor.js':{mountExerciseTutor(root,exercise,options) {
-        mounts++;
-        assert.equal(options.onPractice,undefined);
-        assert.equal(typeof options.onHelp,'function');
-        const dispose = mountExerciseTutor(root,exercise,options);
-        return () => {disposals++;dispose();};
-      }}
-    });
-    ClientCapstone({exerciseId:'capstone-pec1-1'});
-    const cleanup = effects[0]();
-    try {
-      await new Promise(resolve => setImmediate(resolve));
-      assert.equal(mounts,1);
-      assert.ok(fixture.host.shadowRoot.querySelector('[data-exercise-tutor]'));
-      assert.equal(fixture.host.shadowRoot.querySelector('[data-tutor-practice]'),null);
-      assert.ok(updates.includes(true));
-    } finally {cleanup();}
-    assert.equal(disposals,1);
-    assert.equal(fixture.host.shadowRoot.childNodes.length,0);
-    ClientCapstone({exerciseId:'capstone-pec1-2'});
-    effects[1]()();
-    await new Promise(resolve => setImmediate(resolve));
-    assert.equal(mounts,1,'an unmounted effect must ignore pending runtime imports');
+    const Collection=compiledCollection(fixture,effects,updates);
+    for(const section of CAPSTONE.sections){
+      const props=ServerCapstone({exerciseId:section.exerciseId}).props.children[1].props;
+      Collection(props);
+      const cleanup=effects.at(-1)();
+      try {
+        await new Promise(resolve=>setImmediate(resolve));
+        const root=fixture.host.shadowRoot;
+        const exercise=getCapstoneExercises().find(item=>item.id===section.exerciseId);
+        assert.equal(root.querySelectorAll('[data-exercise-question]').length,exercise.questions.length);
+        assert.equal(root.querySelectorAll('details[open],select,[data-tutor-practice]').length,0);
+        assert.equal(root.querySelectorAll('[data-exercise-answer]').length,exercise.questions.filter(question=>Number.isFinite(question.answer)).length);
+        for(const question of Array.from(root.querySelectorAll('[data-exercise-question]'))) {
+          assert.ok(question.querySelector('[data-animated-solution]'));
+          assert.ok(question.querySelector('[data-written-solution]'));
+        }
+        if(exercise.sampleSpaces)assert.equal(root.querySelectorAll('.capstone-table tbody td').length,300);
+        if(exercise.questions.some(question=>question.reference))assert.ok(root.querySelector('.capstone-reference .katex'));
+        assert.ok(updates.includes(true));
+      } finally {cleanup();}
+      assert.equal(fixture.host.shadowRoot.childNodes.length,0);
+    }
+    Collection({exerciseId:'capstone-pec1-2',lessonId:'sucesos'});
+    effects.at(-1)()();
+    await new Promise(resolve=>setImmediate(resolve));
+    assert.equal(fixture.host.shadowRoot.childNodes.length,0,'an unmounted effect must ignore pending runtime imports');
     const unknown = renderToStaticMarkup(React.createElement(ServerCapstone,{exerciseId:'missing'}));
     assert.match(unknown,/role="alert"/);
   } finally {if (previous === undefined) delete globalThis.jStat;else globalThis.jStat = previous;}

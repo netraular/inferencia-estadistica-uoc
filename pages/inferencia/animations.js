@@ -782,7 +782,7 @@ function audioTimeline(audio, animation) {
   return audio.scenes;
 }
 
-export function mountAnimation(container, animationId, {formatMath, audio, createWhiteboard} = {}) {
+export function mountAnimation(container, animationId, {formatMath, audio, createWhiteboard, narrator} = {}) {
   const animation = findAnimation(animationId);
   const document = container?.ownerDocument;
   if (!document?.createElement || typeof container.replaceChildren !== 'function') throw new TypeError('Se necesita un contenedor DOM');
@@ -947,16 +947,16 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   root.append(heading, layout, transcript);
   container.replaceChildren(root);
 
-  if (timeline) {
+  if (timeline || narrator) {
     try {
-      mediaClock = element('audio');
+      mediaClock = timeline ? element('audio') : narrator;
       mediaClock.preload = 'metadata';
-      mediaClock.src = audio.src;
+      if(timeline)mediaClock.src = audio.src;
       mediaClock.hidden = true;
       root.append(mediaClock);
       listen(mediaClock,'error',failAudio);
       listen(mediaClock,'loadedmetadata',()=>{
-        if (mediaClock && (!Number.isFinite(mediaClock.duration) || Math.abs(mediaClock.duration-audio.duration)>Math.max(0.5,audio.duration*0.01))) failAudio();
+        if (timeline && mediaClock && (!Number.isFinite(mediaClock.duration) || Math.abs(mediaClock.duration-audio.duration)>Math.max(0.5,audio.duration*0.01))) failAudio();
       });
       listen(mediaClock,'timeupdate',()=>{ if (mediaClock) { seekFromClock(); syncControls(); draw(); } });
       listen(mediaClock,'seeking',()=>{ if (mediaClock) { seekFromClock(); syncControls(); draw(); } });
@@ -972,7 +972,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   }
 
   function failAudio() {
-    if (disposed || !timeline) return;
+    if (disposed || !timeline && !mediaClock) return;
     const measured = scenes()[index];
     const fraction = Math.max(0,Math.min(1,elapsed/(measured.end-measured.start)));
     const failed = mediaClock;
@@ -1333,7 +1333,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     draw();
   }
 
-  listen(document, 'visibilitychange', () => { if (document.hidden || document.visibilityState === 'hidden') stop(); });
+  listen(document, 'visibilitychange', () => { if (document.hidden || document.visibilityState === 'hidden') {stop();mediaClock?.halt?.();} });
   listen(view,'keydown',event => {
     if (event.key === 'Escape' && expanded()) exitFullscreen();
     if (event.key === 'Tab' && expanded() && root.querySelectorAll) {
@@ -1369,6 +1369,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     focusBeforeExpand?.focus?.();
     const detachedMedia = mediaClock;
     mediaClock = null;
+    detachedMedia?.halt?.();
     detachedMedia?.pause();
     detachedMedia?.removeAttribute('src');
     detachedMedia?.load?.();

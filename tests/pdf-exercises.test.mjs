@@ -12,6 +12,7 @@ import {createTutorFrames, drawTutorFigure} from '../pages/inferencia/exercise-t
 import {mountAula, readParagraphs} from '../pages/inferencia/app.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
 import {notationHtml} from '../pages/inferencia/teaching.js';
+import {exerciseAnimation, exerciseCatalogue, lessonPractice, mountExercises, createExerciseSpeech} from '../pages/inferencia/exercise-solutions.js';
 
 const require = createRequire(import.meta.url);
 const jStat = require('jstat').jStat;
@@ -141,6 +142,149 @@ test('catalogue imports without jStat and distribution construction is lazy', as
     if (previous === undefined) delete globalThis.jStat;
     else globalThis.jStat = previous;
   }
+});
+
+test('narrated exercise catalogue preserves every written explanation and keeps fixed lesson-scoped practice', () => withStatistics(() => {
+  const catalogue=exerciseCatalogue();
+  const ids=new Set();
+  for(const exercise of catalogue) for(const question of exercise.questions) {
+    const animation=exerciseAnimation(exercise,question);
+    assert.equal(ids.has(animation.id),false,animation.id);ids.add(animation.id);
+    const narration=animation.steps.map(step=>step.caption).join(' ');
+    for(const step of question.steps) assert.ok(narration.includes(step.explanation),`${exercise.id}/${question.id}/${step.title}`);
+    for(const step of animation.steps) for(const line of step.visual.lines) if(line.tex) assert.doesNotThrow(()=>katex.renderToString(line.tex,{throwOnError:true}));
+    assert.ok(animation.steps[0].caption.startsWith('Vamos a resolver'));
+    assert.ok(animation.steps.at(-1).caption.includes(question.interpretation || question.answerText));
+  }
+  for(const lesson of COURSE.units.flatMap(unit=>unit.lessons)) {
+    assert.deepEqual(lessonPractice(lesson),lessonPractice(lesson));
+    for(const exercise of lessonPractice(lesson)) assert.deepEqual(exercise.questions.map(question=>question.id),scopeExercise(lesson,generateExercise(exercise.type,exercise.seed)).questions.map(question=>question.id));
+    for(const section of createLessonSections(lesson))if(section.exercise){
+      const {type,seed,questionIds}=section.exercise;
+      const exercise=catalogue.find(item=>item.id===`ejemplo-${lesson.id}-${type}-${seed}`);
+      assert.ok(exercise,`${lesson.id}/${section.id}`);
+      for(const id of questionIds)assert.ok(exercise.questions.some(question=>question.id===id),`${lesson.id}/${section.id}/${id}`);
+    }
+  }
+}));
+
+test('written solutions copy explained steps and report clipboard failure without opening solutions', async () => {
+  const {document,window}=parseHTML('<div id="exercises"></div>');
+  const navigator=window.navigator;
+  Object.defineProperty(document,'defaultView',{value:{navigator},configurable:true});
+  const original=Object.getOwnPropertyDescriptor(navigator,'clipboard');
+  const root=document.getElementById('exercises');
+  let copied='';
+  Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{copied=text;}}});
+  const exercise=withStatistics(()=>getPdfExercises('sucesos')[0]);
+  const dispose=mountExercises(root,{exercises:[exercise],lessonId:'sucesos',formatMath:tex=>katex.renderToString(tex)});
+  try {
+    const solution=root.querySelector('[data-written-solution]');solution.setAttribute('open','');
+    solution.querySelector('[data-copy-solution]').click();
+    await new Promise(resolve=>setImmediate(resolve));
+    for(const step of exercise.questions[0].steps)assert.ok(copied.includes(step.explanation));
+    assert.ok(copied.includes(exercise.questions[0].interpretation));
+    assert.match(solution.querySelector('[data-copy-status]').textContent,/copiada/);
+    assert.equal(solution.querySelectorAll('[data-written-step][open]').length,0);
+    navigator.clipboard.writeText=async()=>{throw new Error('Blocked');};
+    solution.querySelector('[data-copy-solution]').click();
+    await new Promise(resolve=>setImmediate(resolve));
+    assert.match(solution.querySelector('[data-copy-status]').textContent,/No se pudo/);
+  } finally {
+    dispose();
+    if(original)Object.defineProperty(navigator,'clipboard',original);else delete navigator.clipboard;
+  }
+});
+
+test('exercise list exposes all PDF statements with no selectors and closed independent solutions', () => withStatistics(() => {
+  const {document,window}=parseHTML('<div id="exercises"></div>');
+  window.HTMLCanvasElement.prototype.getContext=()=>null;
+  window.HTMLElement.prototype.getBoundingClientRect=()=>({width:640,height:360});
+  window.matchMedia=()=>({matches:false});
+  const root=document.getElementById('exercises');
+  const exercises=getPdfExercises('sucesos');
+  const dispose=mountExercises(root,{exercises,lessonId:'sucesos',formatMath:tex=>katex.renderToString(tex,{displayMode:true,throwOnError:true})});
+  try {
+    assert.equal(root.querySelectorAll('[data-exercise]').length,exercises.length);
+    assert.equal(root.querySelectorAll('select,[data-tutor-practice],#newExercise').length,0);
+    assert.equal(root.querySelectorAll('details[open]').length,0);
+    assert.equal(root.querySelectorAll('.animation-player').length,0);
+    const written=root.querySelector('[data-written-solution]');
+    written.setAttribute('open','');
+    const first=written.querySelector('[data-written-step]');first.setAttribute('open','');
+    assert.equal(written.querySelectorAll('[data-written-step][open]').length,1);
+    assert.ok(first.textContent.includes(exercises[0].questions[0].steps[0].explanation));
+    written.querySelector('[data-open-steps]').click();
+    assert.equal(written.querySelectorAll('[data-written-step][open]').length,exercises[0].questions[0].steps.length);
+    written.querySelector('[data-open-steps]').click();
+    assert.equal(written.querySelectorAll('[data-written-step][open]').length,0);
+    const form=root.querySelector('[data-exercise-answer]');
+    for(const [answer,pattern] of [[String(exercises[0].questions[0].answer),/Correcto/],['-123',/Revisa el cálculo/],['no es un número',/Introduce un número/]]) {
+      form.querySelector('input').value=answer;
+      form.dispatchEvent(new window.Event('submit',{cancelable:true}));
+      assert.match(form.querySelector('[data-answer-feedback]').textContent,pattern);
+    }
+    assert.ok(root.querySelector('.source-note a').getAttribute('href').endsWith(`#page=${exercises[0].source.page}`));
+    const animated=root.querySelector('[data-animated-solution]');
+    animated.setAttribute('open','');animated.dispatchEvent(new window.Event('toggle'));
+    assert.equal(animated.querySelectorAll('.animation-player').length,1);
+    animated.removeAttribute('open');animated.dispatchEvent(new window.Event('toggle'));
+    assert.equal(animated.querySelectorAll('.animation-player').length,0);
+  } finally {dispose();}
+  assert.equal(root.childNodes.length,0);
+}));
+
+test('closing a narrated solution cancels speech and late utterance callbacks cannot restart it', () => withStatistics(() => {
+  const {document,window}=parseHTML('<div id="exercises"></div>');
+  window.HTMLCanvasElement.prototype.getContext=()=>null;
+  window.HTMLElement.prototype.getBoundingClientRect=()=>({width:640,height:360});
+  window.matchMedia=()=>({matches:false});
+  const originalSpeech=window.speechSynthesis;
+  const originalUtterance=window.SpeechSynthesisUtterance;
+  const utterances=[];
+  let canceled=0;
+  window.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};
+  window.speechSynthesis={getVoices:()=>[{lang:'es-ES',name:'Spanish teacher'}],speak:utterance=>utterances.push(utterance),cancel:()=>canceled++,pause(){},resume(){}};
+  const root=document.getElementById('exercises');
+  const dispose=mountExercises(root,{exercises:getPdfExercises('sucesos'),lessonId:'sucesos',formatMath:tex=>katex.renderToString(tex)});
+  try {
+    const solution=root.querySelector('[data-animated-solution]');
+    solution.setAttribute('open','');solution.dispatchEvent(new window.Event('toggle'));
+    solution.querySelector('[aria-label="Reproducir"]').click();
+    assert.equal(utterances.length,1);
+    utterances.at(-1).onend();
+    assert.equal(utterances.length,2);
+    assert.equal(solution.querySelector('.animation-caption').textContent,utterances.at(-1).text);
+    const old=utterances.at(-1);const before=canceled;
+    solution.removeAttribute('open');solution.dispatchEvent(new window.Event('toggle'));
+    assert.ok(canceled>before);old.onend();assert.equal(utterances.length,2);
+  } finally {dispose();window.speechSynthesis=originalSpeech;window.SpeechSynthesisUtterance=originalUtterance;}
+}));
+
+test('Spanish teacher speech follows actual spoken cues, supports pause/seek and cancels on disposal', async () => {
+  const {document,window}=parseHTML('<div></div>');
+  const originalSpeech=window.speechSynthesis;
+  const originalUtterance=window.SpeechSynthesisUtterance;
+  const utterances=[];
+  let canceled=0;
+  let resumed=0;
+  window.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};
+  window.speechSynthesis={getVoices:()=>[{lang:'es-ES',name:'Spanish teacher'}],speak:utterance=>utterances.push(utterance),cancel:()=>canceled++,pause(){},resume:()=>resumed++};
+  const animation={steps:[{duration:10,cues:[{text:'Primera frase.',start:0,end:4},{text:'Segunda frase.',start:4,end:10}]}]};
+  const clock=createExerciseSpeech(document,animation);
+  try {
+    await clock.play();
+    assert.equal(utterances.at(-1).lang,'es-ES');
+    assert.equal(utterances.at(-1).text,'Primera frase.');
+    utterances.at(-1).onend();
+    assert.equal(clock.currentTime,4);assert.equal(utterances.at(-1).text,'Segunda frase.');
+    clock.pause();assert.equal(clock.paused,true);
+    const old=utterances.at(-1);old.onend();assert.equal(clock.currentTime,4);
+    await clock.play();assert.ok(resumed>0);
+    clock.currentTime=0;assert.equal(utterances.at(-1).text,'Primera frase.');
+    const final=utterances.at(-1);clock.remove();
+    assert.ok(canceled>0);final.onend();assert.equal(clock.currentTime,0);
+  } finally {clock.remove();window.speechSynthesis=originalSpeech;window.SpeechSynthesisUtterance=originalUtterance;}
 });
 
 test('all 22 numbered problems retain provenance and map only to existing lessons', () => withStatistics(() => {

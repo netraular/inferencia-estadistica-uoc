@@ -1,6 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {CAPSTONE, getCapstoneExercises} from '../../pages/inferencia/capstone.js';
+import ExerciseCollection from './ExerciseCollection';
 
 const escape = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 const sourcePages = [[1],[1,2],[2]];
@@ -38,12 +39,12 @@ function posteriorMarkup(branches) {
   return `<figure class="capstone-posterior"><figcaption>Antes y después de observar cuatro colonias</figcaption>${branches.map(branch => `<div><strong>${escape(branch.incubator)}</strong><label>Previa ${probability(branch.prior)}<meter min="0" max="1" value="${branch.prior}" aria-label="Previa ${escape(branch.incubator)}">${probability(branch.prior)}</meter></label><label>Posterior ${probability(branch.joint/total)}<meter min="0" max="1" value="${branch.joint/total}" aria-label="Posterior ${escape(branch.incubator)}">${probability(branch.joint/total)}</meter></label></div>`).join('')}</figure>`;
 }
 
-function predictiveEvidence(branches) {
+function predictiveEvidence(branches, includeCanvas=true) {
   const total = branches.reduce((sum,branch) => sum+branch.joint,0);
   const routes = branches.map(branch => ({...branch,weight:branch.joint/total,zero:Math.exp(-branch.rate)}));
   return {
     diagram:{kind:'tree',label:'Una misma incubadora oculta para las dos placas',nodes:routes.map(route => ({label:route.incubator,weight:route.weight,children:[{label:`N₂=0; aporte ${probability(route.weight*route.zero)}`,weight:route.zero}]}))},
-    markup:`<figure class="capstone-predictive"><figcaption>Predicción tras observar N₁=4: se conserva la incubadora</figcaption><canvas width="720" height="360" role="img" aria-label="Árbol predictivo: posterior de cada incubadora por probabilidad de cero colonias dentro de ella"></canvas><ul class="capstone-tree">${routes.map(route => `<li><strong>${escape(route.incubator)}</strong>: posterior ${probability(route.weight)} → cero colonias ${probability(route.zero)} → aporte conjunto ${probability(route.weight*route.zero)}.</li>`).join('')}</ul><p>Las rutas se suman: ${probability(routes.reduce((sum,route) => sum+route.weight*route.zero,0))}. No se vuelve a sortear la incubadora ni se recuperan las probabilidades previas.</p></figure>`
+    markup:`<figure class="capstone-predictive"><figcaption>Predicción tras observar N₁=4: se conserva la incubadora</figcaption>${includeCanvas ? '<canvas width="720" height="360" role="img" aria-label="Árbol predictivo: posterior de cada incubadora por probabilidad de cero colonias dentro de ella"></canvas>' : ''}<ul class="capstone-tree">${routes.map(route => `<li><strong>${escape(route.incubator)}</strong>: posterior ${probability(route.weight)} → cero colonias ${probability(route.zero)} → aporte conjunto ${probability(route.weight*route.zero)}.</li>`).join('')}</ul><p>Las rutas se suman: ${probability(routes.reduce((sum,route) => sum+route.weight*route.zero,0))}. No se vuelve a sortear la incubadora ni se recuperan las probabilidades previas.</p></figure>`
   };
 }
 
@@ -132,38 +133,18 @@ export function mountCapstoneExercise(host, {exerciseId, baseUrl = '/', mountTut
   return {exercise,root,dispose};
 }
 
+export function capstoneExtraMarkup(exercise,question,formatMath) {
+  const sample=exercise.sampleSpaces?.[question.id === 'a' ? 'existential' : question.id === 'b' ? 'selected' : ''];
+  const branches=exercise.questions.flatMap(item=>item.tutorSteps).find(step=>step.evidence?.kind === 'bayes-tree')?.evidence.branches;
+  return `${sample ? sampleSpaceMarkup(sample,question.id === 'b') : ''}${branches && question.id === 'c.i' ? posteriorMarkup(branches) : ''}${branches && question.id === 'c.ii' ? predictiveEvidence(branches,false).markup : ''}${question.reference ? `<aside class="capstone-reference"><p>${escape(question.reference.interpretation)}</p>${formatMath(question.reference.tex)}<p>Valor exacto: ${probability(question.reference.answer)}. La respuesta solicitada usa aproximación normal y frontera 74,5.</p></aside>` : ''}`;
+}
+
 export default function CapstoneExercises({exerciseId}) {
-  const host = useRef(null);
-  const [ready,setReady] = useState(false);
-  const [error,setError] = useState('');
-  const baseUrl = useBaseUrl('/');
-  const sectionIndex = CAPSTONE.sections.findIndex(section => section.exerciseId === exerciseId);
-  useEffect(() => {
-    let active = true;
-    let mounted;
-    setReady(false);
-    setError('');
-    if (sectionIndex < 0) return () => {active = false;};
-    Promise.all([
-      import('../../pages/inferencia/exercise-tutor.js'),
-      import('../../pages/inferencia/context-diagram.js'),
-      import('jstat'),import('katex'),import('../../pages/inferencia/vendor/lucide.min.js')
-    ]).then(([tutor,diagrams,stats,math,icons]) => {
-      if (!active) return;
-      globalThis.jStat = stats.default?.jStat || stats.jStat || stats.default;
-      const library = math.default || math;
-      const iconLibrary = icons.default || icons;
-      host.current.ownerDocument.defaultView.katex = library;
-      mounted = mountCapstoneExercise(host.current,{exerciseId,baseUrl,mountTutor:tutor.mountExerciseTutor,drawDiagram:diagrams.drawContextDiagram,math:library,icons:iconLibrary});
-      setReady(true);
-    }).catch(failure => {if (active) setError(failure.message);});
-    return () => {active = false;mounted?.dispose();};
-  },[exerciseId,baseUrl,sectionIndex]);
-  if (sectionIndex < 0) return <p className="capstone-error" role="alert">Ejercicio de culminación desconocido: {exerciseId}.</p>;
-  return <section className="capstone" aria-label={CAPSTONE.sections[sectionIndex].title}>
-    <p className="capstone-source">Enunciado: {CAPSTONE.source.file}, ejercicio {sectionIndex+1},{' '}{sourcePages[sectionIndex].map((page,index) => <React.Fragment key={page}>{index > 0 && ' y '}<a href={`${asset(baseUrl,CAPSTONE.source.url)}#page=${page}`}>página {page}</a></React.Fragment>)}.</p>
-    {!ready && !error && <p role="status">Cargando ejercicio resuelto…</p>}
-    {error && <p role="alert">No se pudo cargar el ejercicio: {error}. Recarga la página para reintentarlo.</p>}
-    <div className="capstone-host" ref={host} />
+  const baseUrl=useBaseUrl('/');
+  const index=CAPSTONE.sections.findIndex(section=>section.exerciseId===exerciseId);
+  if(index<0)return <p role="alert">Ejercicio de culminación desconocido: {exerciseId}.</p>;
+  return <section className="capstone" aria-label={CAPSTONE.sections[index].title}>
+    <p className="capstone-source">Enunciado: {CAPSTONE.source.file},{' '}{sourcePages[index].map((page,position)=><React.Fragment key={page}>{position>0 && ' y '}<a href={`${asset(baseUrl,CAPSTONE.source.url)}#page=${page}`}>página {page}</a></React.Fragment>)}.</p>
+    <ExerciseCollection exerciseId={exerciseId} lessonId={CAPSTONE.sections[index].lessonIds[0]} renderExtra={capstoneExtraMarkup} extraStyles={shadowStyles} />
   </section>;
 }

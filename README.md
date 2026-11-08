@@ -8,20 +8,21 @@ https://webs.raular.com/inferencia/ from the `main` branch.
 - 36 lessons: an optional mathematics bridge and the four supplied topics.
 - Prerendered theory, heading links, a table of contents and local full-text search.
 - 17 visual laboratories, 36 seeded exercise generators and 36 animated classes.
-- Concept checks, hints, worked solutions, subtitles, transcripts and downloads.
+- Concept checks, hints, worked solutions, subtitles and optional transcripts.
 - Each lesson opens with a line naming the topic and section of the supplied
   notes, linked to the matching PDF page (`src/lib/pdf-pages.js`; bridge
   lessons say they are prior review). Below it are three tabs: Lesson,
   Exercises and Animated Recap ("Repaso animado").
 - The Lesson tab shows, in order: the narrated section journey, a visible
   summary (goals, key formulas, method, pitfalls), the complete written notes
-  collapsed in reading order and the concept check.
+  collapsed in reading order, fixed lesson-specific practice and the concept
+  check. Previous/next section buttons come after all this content.
   Symbols are available under Materials, in the Notes section.
   The selected activity is linkable with `?actividad=...`;
   only the selected activity is mounted, with no duplicate internal navigation.
 - Animated-reading transport moves to the previous or next complete sentence,
-  crossing scene boundaries as needed. The scene selector and chapter outline
-  remain available under playback options.
+  crossing scene boundaries as needed. Playback controls are play/pause,
+  previous/next phrase, time seeking and fullscreen.
 - The short `/inferencia/` URL opens a course overview with direct access to the
   curriculum, materials and each topic;
   `/temario/` holds the reference map, with topics 0 to 5 and numbered lessons.
@@ -75,34 +76,39 @@ with a concrete question and ends with an interpretation. Figures reuse the
 laboratory calculations and canvas renderer without mounting the classroom,
 duplicating the laboratory controls.
 
-Guided practice selects only questions appropriate to the lesson and starts with
-different data from the solved example, skipping duplicate seeded variants. The complete
-exercise bank keeps the full generators. Seven additional generators cover
+Fixed practice selects only questions appropriate to the lesson and starts with
+different data from the section example, skipping duplicate seeded variants.
+Seven additional generators cover
 proportions, normalization, function values, plane regions, event independence,
 discrete cumulative tables and basic joint tables. The bridge laboratories offer
 matching elementary controls instead of starting every lesson with integration.
 Gamma consistently uses k for shape and alpha for scale, with rate = 1/scale.
 
-Exercises open in observation mode before an independent attempt. A visual
-board uses a fixed responsive 16:9 frame, with manual forward/backward controls,
-play/pause, a seek bar and fullscreen. Formulas and accumulated operations stay
-inside the board rather than enlarging the player. The current narration phrase
-appears below the lesson video, with the complete transcript in optional notes.
-Exercise commentary also appears below its board, and full written solutions
-remain in optional notes during observation. Playback speed menus, scene selectors
-and subtitle downloads are not part of the player controls.
-When available, observation starts with one of 22 original numbered PDF problems,
-covering 87 numerical questions. The source file, problem and page are retained.
-Tables, polygons and distribution areas use the actual problem data, while
-construction tables reveal only their current partial values. Numerical answers
-are independently checked, including corrections to errors in the PDF solutions.
+The Exercises tab contains only original PDF problems: 22 numbered problems
+covering 87 numerical questions. All statements and their source links are
+listed directly, without exercise selectors or new-example buttons. Additional
+practice belongs to Lesson and stays within that lesson's learning scope.
+Every question starts with hints, animated solutions and written solutions
+closed. Written steps can be opened individually, revealed together or copied
+as explained text with TeX formulas. Qualitative PEC1 parts do not request
+a numerical answer.
+
+Animated solutions use the same fixed responsive 16:9 player as lessons, with
+actual problem diagrams, cue-aligned operations and the current spoken phrase
+underneath. Spanish narration uses the browser's Web Speech engine unless a
+compatible MP3 is listed in `static/audio/exercises-manifest.json`. The current
+exercise manifest contains no generated MP3s; voice availability and quality
+depend on the browser and installed Spanish voices. Unavailable speech is
+reported explicitly. Pause, phrase seeking, visibility changes and disposal
+control the speech clock. Existing lesson recordings are unchanged.
+Numerical answers are independently checked, including corrections to errors
+in the PDF solutions.
 The assessment statement has its own three-page topic 5, separate from the
 22-problem bank. Both sources retain their original problem and part numbering.
 Consulting either set of PDF solutions never records an attempt.
 Normal, density, discrete-moment, event and Bayes calculations have dedicated
 small operations. Other generators reuse their existing mathematical steps.
-Switching to an independent attempt selects different data from the observed
-example. Watching a calculation does not record help, answers or study marks.
+Watching a calculation does not record help, answers or study marks.
 Normal practice varies interval bounds and percentile targets; seed 1 remains
 unchanged for existing lecture scripts and frozen TTS batches.
 

@@ -139,3 +139,20 @@ progress::-webkit-progress-bar{background:var(--line)}progress::-webkit-progress
 .tutor-player .capstone-matrix-note{margin:8px 0;font-size:12px;line-height:1.4}
 .tutor-player .tutor-controls{display:grid;align-items:center;gap:8px 12px;padding:8px 0 16px}
 .animation-position.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.exercise-list{min-width:0;overflow-wrap:anywhere}
+.exercise-list>article{padding:24px 0;border-bottom:1px solid var(--line)}
+.exercise-list>article>h2{font-size:22px}
+.exercise-list .exercise-question{max-width:none}
+.exercise-list .exercise-question>h3{font-size:18px}
+.exercise-list details{margin:12px 0}
+.exercise-list summary{cursor:pointer;line-height:1.6;font-weight:700}
+.exercise-list .math{max-width:100%;overflow-x:auto}
+.exercise-list form{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin:16px 0}
+.exercise-list form label{display:grid;gap:6px;font-size:14px;max-width:100%}
+.exercise-list form input{width:220px;max-width:100%;box-sizing:border-box}
+.exercise-list form [role=status]{flex-basis:100%;margin:0}
+.exercise-list .written-solution-tools{display:flex;align-items:center;gap:8px;margin:16px 0}
+.exercise-list .written-solution-steps{list-style:none;padding:0}
+.exercise-list .written-solution-steps>li{padding:8px 0;border-bottom:1px solid var(--line)}
+.exercise-list .written-solution-steps p{line-height:1.7}
+.exercise-list summary:focus-visible{outline:2px solid var(--teal);outline-offset:4px}

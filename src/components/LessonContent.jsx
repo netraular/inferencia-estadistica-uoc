@@ -7,6 +7,7 @@ import {COURSE} from '../../pages/inferencia/course.js';
 import InteractiveLesson from './InteractiveLesson';
 import LessonJourney from './LessonJourney';
 import LessonSource from './LessonSource';
+import ExerciseCollection from './ExerciseCollection';
 
 const sections = [
   {value:'lesson', title:'Lección', Icon:BookOpen},
@@ -35,6 +36,10 @@ export default function LessonContent({lessonId, children}) {
     <TabItem value="lesson">
       <LessonJourney lessonId={lessonId}>
         {children}
+        <section className="lesson-practice" aria-label="Práctica de la lección">
+          <h2>Práctica de la lección</h2>
+          <ExerciseCollection lessonId={lessonId} mode="practice" />
+        </section>
         <section className="lesson-knowledge-check" aria-label="Comprueba la idea">
           <h2>Comprueba la idea</h2>
           <InteractiveLesson lessonId={lessonId} view="theory" />
@@ -43,7 +48,7 @@ export default function LessonContent({lessonId, children}) {
     </TabItem>
     {sections.filter(section => section.value !== 'lesson').map(section =>
       <TabItem key={section.value} value={section.value}>
-        <InteractiveLesson lessonId={lessonId} view={section.value} />
+        {section.value === 'practice' ? <ExerciseCollection lessonId={lessonId} /> : <InteractiveLesson lessonId={lessonId} view={section.value} />}
       </TabItem>
     )}
     </Tabs>

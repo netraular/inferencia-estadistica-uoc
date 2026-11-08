@@ -45,6 +45,7 @@ test('three Docusaurus tabs keep the journey and optional notes without progress
     '@theme/Tabs':({values, children}) => React.createElement('div', {'data-tabs':values.map(value => value.value).join(',')}, children),
     '@theme/TabItem':({value, children}) => React.createElement('section', {'data-view':value}, children),
     './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive':view}),
+    './ExerciseCollection':({mode='pdf'}) => React.createElement('div', {'data-exercises':mode}),
     './LessonJourney':({lessonId,children}) => React.createElement('div', {'data-journey':lessonId},children),
     './LessonSource':({lesson}) => React.createElement('p', {'data-source':lesson.id}),
     '../../pages/inferencia/course.js':{COURSE}
@@ -58,6 +59,9 @@ test('three Docusaurus tabs keep the journey and optional notes without progress
   assert.ok(document.querySelector('[data-source="sucesos"]'));
   assert.equal(document.querySelector('[data-source]').closest('[data-view]'), null);
   assert.ok(lesson.querySelector('[data-interactive="theory"]'));
+  assert.ok(lesson.querySelector('[data-exercises="practice"]'));
+  assert.ok(document.querySelector('[data-view="practice"] [data-exercises="pdf"]'));
+  assert.equal(document.querySelector('[data-view="practice"] [data-interactive]'),null);
   assert.equal(lesson.querySelector('input[type="checkbox"]'), null);
   assert.equal(lesson.querySelector('[role="status"]'), null);
   assert.equal(document.querySelectorAll('input[type="checkbox"]').length, 0);

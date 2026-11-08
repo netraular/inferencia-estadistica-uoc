@@ -337,7 +337,7 @@ test('La pizarra fija conserva 16:9 y contiene fórmulas y diagramas sin ampliar
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','capstone.js','context-diagram.js','course.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','lesson-visuals.js','pdf-exercises.js','teaching.js']);
+  assert.deepEqual(files, ['animations.js','app.js','capstone.js','context-diagram.js','course.js','exercise-solutions.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','lesson-visuals.js','pdf-exercises.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
