@@ -350,7 +350,7 @@ test('real Konva canvas draws every scene, fits text at desktop and mobile sizes
   const stageCount=Konva.stages.length;
   Konva.Util.createCanvasElement=()=>{const canvas=createCanvas(1,1);canvas.style={};return canvas;};
   try {
-    for(const lecture of [...lectures,...sectionAnimations]) for(const [width,height] of [[960,576],[360,360]]) {
+    for(const lecture of [...lectures,...sectionAnimations]) for(const [width,height] of [[960,540],[320,180]]) {
       const host={ownerDocument:{defaultView:{}},getBoundingClientRect:()=>({width,height})};
       const board=createWhiteboard(host,{animation:lecture});
       try {
@@ -363,8 +363,8 @@ test('real Konva canvas draws every scene, fits text at desktop and mobile sizes
           const scene=stage.getLayers()[0].getChildren()[0];
           for(const node of scene.find('Text')) {
             const rect=node.getClientRect({relativeTo:scene});
-            const logicalWidth=width<600 ? 640 : 960;
-            const logicalHeight=width<600 ? 640 : 576;
+            const logicalWidth=960;
+            const logicalHeight=576;
             assert.ok(rect.x>=-1 && rect.y>=-1 && rect.x+rect.width<=logicalWidth+1 && rect.y+rect.height<=logicalHeight+1,`${lecture.id}: ${step.title}: ${node.text()}: ${JSON.stringify(rect)}`);
           }
         }

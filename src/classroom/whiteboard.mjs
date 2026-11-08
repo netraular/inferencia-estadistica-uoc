@@ -100,11 +100,10 @@ export function createWhiteboard(host, {animation}) {
   let actors = [];
   let lastFrame;
   let lastIndex = -1;
-  let portrait = false;
   let disposed = false;
   let width = 960;
   let height = 576;
-  const logical = () => lastFrame?.step.visual?.context ? {width,height} : portrait ? {width:640,height:640} : {width:960,height:576};
+  const logical = () => lastFrame?.step.visual?.context ? {width,height} : {width:960,height:576};
   const text = (value,x,y,options={}) => {
     const node = new Konva.Text({text:value,x,y,fontFamily:'Atkinson, Trebuchet MS, sans-serif',fontSize:28,fill:palette.ink,width:logical().width-x-24,wrap:'word',lineHeight:1.2,listening:false,...options});
     sceneRoot.add(node);
@@ -316,13 +315,12 @@ export function createWhiteboard(host, {animation}) {
     if (disposed) return;
     const rect=host.getBoundingClientRect();
     const nextWidth=Math.max(1,rect.width || requestedWidth || 960);
-    const nextHeight=Math.max(1,rect.height || nextWidth*(nextWidth<600 ? 1 : 0.6));
+    const nextHeight=Math.max(1,rect.height || nextWidth*9/16);
     const changed=width!==nextWidth || height!==nextHeight;
     width=nextWidth;
     height=nextHeight;
-    const nextPortrait=width<600;
     stage.size({width,height});
-    if(nextPortrait!==portrait || changed && lastFrame?.step.visual?.context){portrait=nextPortrait;lastIndex=-1;}
+    if(changed && lastFrame?.step.visual?.context)lastIndex=-1;
     fit();
     if(lastFrame) render(lastFrame);
   }

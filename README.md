@@ -84,9 +84,13 @@ matching elementary controls instead of starting every lesson with integration.
 Gamma consistently uses k for shape and alpha for scale, with rate = 1/scale.
 
 Exercises open in observation mode before an independent attempt. A visual
-board keeps earlier operations visible, with manual forward/backward controls
-or paced playback. Data and diagrams stay alongside the current operation;
-full written solutions remain in optional notes during observation.
+board uses a fixed responsive 16:9 frame, with manual forward/backward controls,
+play/pause, a seek bar and fullscreen. Formulas and accumulated operations stay
+inside the board rather than enlarging the player. The current narration phrase
+appears below the lesson video, with the complete transcript in optional notes.
+Exercise commentary also appears below its board, and full written solutions
+remain in optional notes during observation. Playback speed menus, scene selectors
+and subtitle downloads are not part of the player controls.
 When available, observation starts with one of 22 original numbered PDF problems,
 covering 87 numerical questions. The source file, problem and page are retained.
 Tables, polygons and distribution areas use the actual problem data, while
@@ -98,7 +102,7 @@ Consulting either set of PDF solutions never records an attempt.
 Normal, density, discrete-moment, event and Bayes calculations have dedicated
 small operations. Other generators reuse their existing mathematical steps.
 Switching to an independent attempt selects different data from the observed
-example. Watching a calculation records help, not a correct answer or study mark.
+example. Watching a calculation does not record help, answers or study marks.
 Normal practice varies interval bounds and percentile targets; seed 1 remains
 unchanged for existing lecture scripts and frozen TTS batches.
 

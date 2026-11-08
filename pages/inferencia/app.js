@@ -1,10 +1,10 @@
 import {COURSE} from './course.js?v=2eb74cdf8fab';
 import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from './exercises.js?v=6eeb76ea27e1';
 import {notationHtml} from './teaching.js?v=251983817529';
-import {createLessonAnimation, mountAnimation} from './animations.js?v=6f265331127f';
+import {createLessonAnimation, mountAnimation} from './animations.js?v=ed2724d1a4c0';
 import {enrichLessonAnimation, enrichGlobalAnimation} from './lesson-visuals.js?v=d63fba41c35b';
 import {mountLab} from './labs.js?v=2f4aa757b74f';
-import {mountExerciseTutor} from './exercise-tutor.js?v=cff23a9f9c32';
+import {mountExerciseTutor} from './exercise-tutor.js?v=2cb55bf44a44';
 import {getPdfExercises} from './pdf-exercises.js?v=c7879552421f';
 
 export const LESSONS = COURSE.units.flatMap(unit => unit.lessons.map(lesson => ({...lesson, unit})));

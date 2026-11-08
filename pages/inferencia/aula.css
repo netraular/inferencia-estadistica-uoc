@@ -106,3 +106,36 @@ progress::-webkit-progress-bar{background:var(--line)}progress::-webkit-progress
 @media(max-width:480px){.topbar{padding:0 12px}.course-status{width:100px;font-size:10px}.brand{font-size:19px}.brand small{font-size:10px}.brand-mark{width:25px;font-size:29px}.workspace{padding:20px 14px}.lesson-heading{flex-direction:column;gap:8px}.studied-toggle{margin:0}.lesson-tabs button{font-size:12px;gap:5px;padding:12px 9px}.lesson-tabs svg{width:16px;height:16px}h1{font-size:27px}h2{font-size:24px}.lab-controls{grid-template-columns:1fr 1fr;gap:12px}.lab-metrics{grid-template-columns:1fr 1fr}.metric strong,.metric output{font-size:20px}.answer-row label,.answer-row input{width:100%;min-width:0}.answer-row{align-items:stretch}.practice-score{width:100%;margin:0}.animation-caption{font-size:16px}.utility-dialog{padding:18px}.symbol-table{font-size:12px}.symbol-table td{padding:10px 5px}.symbol-table td:nth-child(2){min-width:70px}.lesson-footer>span{font-size:11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.lesson-panel{animation:none}}
 @media print{.topbar,.sidebar,.lesson-tabs,.lesson-footer,.studied-toggle,.theory-visual,.knowledge-check,.settings-actions{display:none!important}.aula-layout,.theory-layout{display:block}.workspace{padding:0;background:white;max-width:none}.lesson-panel[hidden]{display:none!important}.theory-article{max-width:none}.solution{break-inside:avoid}.utility-dialog{max-height:none}}
+.animation-stage{aspect-ratio:16/9;height:auto;min-height:0;contain:layout;display:block}
+.animation-stage>canvas,.animation-stage>.animated-whiteboard,.animation-stage>.slide-board,.animation-stage>.animation-math{position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto;box-sizing:border-box}
+.animation-stage>canvas{object-fit:contain}
+.animation-stage>.slide-board{overflow:auto;padding:16px}
+.animation-stage.has-context>.context-diagram,.animation-stage.has-context>.animated-whiteboard{bottom:auto;height:62%}
+.animation-stage.has-context>.slide-board{top:auto;height:38%;border-top:1px solid var(--line)}
+.animation-stage.has-math>canvas{bottom:auto;height:70%}
+.animation-stage>.animation-math{top:auto;height:30%;overflow:auto;border-top:1px solid var(--line)}
+.animation-player.is-focused .animation-stage,.animation-player.has-whiteboard.is-focused .animation-stage{display:block;flex:none;aspect-ratio:16/9;height:auto;width:min(100%,calc((100dvh - 220px)*16/9));margin:0 auto}
+.animation-player.is-focused .slide-board{height:100%;flex:none}
+.animation-player.is-focused .animation-stage.has-context>.slide-board{height:38%}
+.animation-player.is-focused .animation-stage>canvas{height:100%!important;flex:none}
+.animation-player.is-focused .animation-stage.has-context>.context-diagram{height:62%!important}
+.animation-player.is-focused .animation-stage.has-math>canvas{height:70%!important}
+.animation-player.is-focused .animation-math{max-height:none;flex:none}
+.animation-player .animation-caption{position:static;display:block;width:100%;height:6em;min-height:0;max-height:6em;margin:0;padding:12px 16px;overflow-y:auto;overflow-wrap:anywhere;font-size:16px;line-height:1.5;background:var(--paper);border-top:1px solid var(--line);box-sizing:border-box;clip-path:none;white-space:normal}
+.animation-transcript{margin:16px 0;padding:16px 0;border-top:1px solid var(--line)}
+.animation-transcript>summary{cursor:pointer;font-weight:700}
+.animation-transcript ol{margin-top:16px;line-height:1.7}
+.animation-player.is-focused,.animation-player:fullscreen{display:block;overflow:auto}
+.animation-player.is-focused .lecture-layout{display:block;min-height:0;flex:none}
+.animation-player.is-focused .lecture-media{display:block;min-height:0}
+.animation-player.is-focused .animation-transcript{max-height:none;overflow:visible}
+.tutor-player .tutor-surface,.tutor-player.is-focused .tutor-surface{display:grid;grid-template-columns:minmax(0,42%) minmax(0,58%);align-items:stretch;gap:0;aspect-ratio:16/9;min-height:0}
+.tutor-player .tutor-figure{min-width:0;min-height:0;padding:8px;overflow:auto;border-right:1px solid var(--line)}
+.tutor-player .tutor-figure canvas{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.tutor-player .tutor-writing{min-width:0;min-height:0;overflow:auto;padding:12px;font-size:14px}
+.tutor-player .tutor-writing h3{font-size:16px;margin:8px 0}
+.tutor-player .tutor-data{max-width:100%;margin:0;padding:0;border:0;font-size:14px;overflow-x:auto}
+.tutor-player .tutor-equation{margin:8px 0;padding:8px 0;font-size:15px;overflow-x:auto}
+.tutor-player .capstone-matrix-note{margin:8px 0;font-size:12px;line-height:1.4}
+.tutor-player .tutor-controls{display:grid;align-items:center;gap:8px 12px;padding:8px 0 16px}
+.animation-position.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

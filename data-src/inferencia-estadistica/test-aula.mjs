@@ -283,29 +283,55 @@ test('CSS válido y recursos locales existentes, sin PDF ni dependencias remotas
   for (const file of ['jstat.LICENSE','lucide.LICENSE','atkinson.LICENSE','katex/LICENSE']) assert.ok(existsSync(new URL(`../../pages/inferencia/vendor/${file}`, import.meta.url)), file);
 });
 
-test('La lectura usa una columna y frases inline sin tarjetas ni filas separadas',()=>{
+test('La lectura usa una columna, subtítulo visible y controles compactos',()=>{
   const css=cssTree.parse(readFileSync(new URL('../../pages/inferencia/aula.css',import.meta.url),'utf8'));
   const rule=selector=>{
-    const node=css.children.toArray().find(item=>item.type==='Rule' && cssTree.generate(item.prelude)===selector);
+    const node=css.children.toArray().findLast(item=>item.type==='Rule' && cssTree.generate(item.prelude)===selector);
     assert.ok(node,selector);
     return new Map(node.block.children.toArray().filter(item=>item.type==='Declaration').map(item=>[item.property,cssTree.generate(item.value)]));
   };
   assert.equal(rule('.lecture-layout').get('grid-template-columns'),'minmax(0,1fr)');
-  assert.equal(rule('.narration-cue').get('display'),'inline');
-  assert.equal(rule('.animation-cues .cue-jump').get('display'),'inline');
-  assert.equal(rule('.animation-cues .cue-jump').get('box-decoration-break'),'clone');
+  assert.equal(rule('.animation-player .animation-caption').get('position'),'static');
+  assert.equal(rule('.animation-player .animation-caption').get('clip-path'),'none');
+  assert.equal(rule('.animation-player .animation-caption').get('white-space'),'normal');
+  assert.equal(rule('.animation-player .animation-caption').get('width'),'100%');
+  assert.equal(rule('.animation-position.sr-only').get('position'),'absolute');
+  assert.equal(rule('.animation-position.sr-only').get('clip-path'),'inset(50%)');
   assert.equal(rule('.animation-controls .animation-primary').get('width'),'48px');
-  assert.equal(rule('.animation-player.is-focused .lecture-media').get('flex-direction'),'column');
+  assert.equal(rule('.animation-player.is-focused .lecture-media').get('display'),'block');
   const {document,aula}=harness();
   try{
     aula.navigate('proporciones','animation');
     const media=document.querySelector('.lecture-media');
-    assert.equal(media.children[0].className,'animation-stage');
+    assert.ok(media.children[0].classList.contains('animation-stage'));
     assert.equal(media.children[1].className,'animation-controls');
-    assert.equal(media.nextElementSibling.className,'lecture-narration');
-    assert.equal(document.querySelectorAll('p.animation-cues').length,1);
-    assert.equal(document.querySelectorAll('.animation-cues li,.animation-cues button').length,0);
+    assert.equal(media.children[2].className,'animation-caption');
+    assert.equal(media.nextElementSibling,null);
+    assert.equal(document.querySelectorAll('.animation-cues,.animation-options').length,0);
   }finally{aula.dispose();}
+});
+
+test('La pizarra fija conserva 16:9 y contiene fórmulas y diagramas sin ampliar el reproductor', () => {
+  const css = cssTree.parse(readFileSync(new URL('../../pages/inferencia/aula.css', import.meta.url), 'utf8'));
+  const rule = selector => {
+    const node = css.children.toArray().find(item => item.type === 'Rule' && cssTree.generate(item.prelude) === selector);
+    assert.ok(node, selector);
+    return new Map(node.block.children.toArray().filter(item => item.type === 'Declaration').map(item => [item.property, cssTree.generate(item.value)]));
+  };
+  assert.equal(rule('.animation-stage').get('aspect-ratio'), '16/9');
+  assert.equal(rule('.animation-stage').get('contain'), 'layout');
+  assert.equal(rule('.animation-stage>canvas,.animation-stage>.animated-whiteboard,.animation-stage>.slide-board,.animation-stage>.animation-math').get('position'), 'absolute');
+  assert.equal(rule('.animation-stage.has-context>.slide-board').get('height'), '38%');
+  assert.equal(rule('.animation-stage.has-context>.context-diagram,.animation-stage.has-context>.animated-whiteboard').get('height'), '62%');
+  const {document, aula} = harness();
+  try {
+    aula.navigate('normal', 'animation');
+    const stage = document.querySelector('.animation-stage');
+    const board = stage.querySelector('.slide-board');
+    assert.equal(board.style.height || '', '');
+    assert.equal(board.style.maxHeight || '', '');
+    assert.equal(stage.querySelector('.animated-whiteboard'), null);
+  } finally {aula.dispose();}
 });
 
 test('Published modules and imports use existing .js paths', () => {

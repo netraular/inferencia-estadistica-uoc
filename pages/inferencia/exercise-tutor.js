@@ -371,7 +371,7 @@ export function drawTutorFigure(context, exercise, question, position, width, he
   }
 }
 
-export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice}) {
+export function mountExerciseTutor(root, exercise, {formatMath,onPractice}) {
   const document = root.ownerDocument;
   const window = document.defaultView || globalThis;
   let questionIndex = 0;
@@ -380,11 +380,11 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   let disposed = false;
   const listeners = [];
   const listen = (target,event,handler)=>{target.addEventListener(event,handler);listeners.push(()=>target.removeEventListener(event,handler));};
-  root.innerHTML = `${exercise.source ? `<h2>${escape(exercise.title)}</h2><p class="source-note" data-tutor-source>${escape(exercise.source.file)} · Problema ${escape(exercise.source.number)} · Página ${escape(exercise.source.page)}</p>` : ''}<div class="tutor-heading"><label>Apartado<select data-tutor-question>${exercise.questions.map((question,index)=>`<option value="${index}">${index+1}. ${escape(question.prompt)}</option>`).join('')}</select></label><button type="button" class="text-button" data-tutor-practice><i data-lucide="pencil" aria-hidden="true"></i>Intentar otra variante</button></div><div class="tutor-surface"><div class="tutor-figure"><canvas width="720" height="300" role="img"></canvas></div><div class="tutor-writing" aria-live="polite"><h3 data-tutor-title></h3><p data-tutor-comment></p><div data-tutor-lines></div></div></div><div class="tutor-controls"><button type="button" class="icon-button" data-tutor-previous title="Paso anterior" aria-label="Paso anterior"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-play title="Reproducir" aria-label="Reproducir"><i data-lucide="play" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-next title="Paso siguiente" aria-label="Paso siguiente"><i data-lucide="arrow-right" aria-hidden="true"></i></button><span data-tutor-position role="status"></span><label>Ritmo<select data-tutor-speed><option value="6000" selected>Pausado</option><option value="4000">Normal</option><option value="2500">Rapido</option></select></label></div><details data-tutor-notes class="tutor-notes"><summary>Apuntes del ejercicio</summary><div data-tutor-note-content></div></details>`;
+  root.innerHTML = `${exercise.source ? `<h2>${escape(exercise.title)}</h2><p class="source-note" data-tutor-source>${escape(exercise.source.file)} · Problema ${escape(exercise.source.number)} · Página ${escape(exercise.source.page)}</p>` : ''}<div class="tutor-heading"><label>Apartado<select data-tutor-question>${exercise.questions.map((question,index)=>`<option value="${index}">${index+1}. ${escape(question.prompt)}</option>`).join('')}</select></label><button type="button" class="text-button" data-tutor-practice><i data-lucide="pencil" aria-hidden="true"></i>Intentar otra variante</button></div><section class="animation-player tutor-player"><div class="animation-stage tutor-surface"><div class="tutor-figure"><canvas width="720" height="405" role="img"></canvas></div><div class="tutor-writing" aria-live="polite"><h3 data-tutor-title></h3><div data-tutor-lines></div></div></div><div class="animation-controls tutor-controls"><label class="control-field animation-timeline"><input type="range" min="0" step="1" data-tutor-seek aria-label="Recorrido del ejercicio"></label><output class="animation-clock" data-tutor-position></output><div class="animation-transport"><button type="button" class="icon-button" data-tutor-previous title="Paso anterior" aria-label="Paso anterior"><i data-lucide="step-back" aria-hidden="true"></i></button><button type="button" class="icon-button animation-primary" data-tutor-play title="Reproducir" aria-label="Reproducir"><i data-lucide="play" aria-hidden="true"></i></button><button type="button" class="icon-button" data-tutor-next title="Paso siguiente" aria-label="Paso siguiente"><i data-lucide="step-forward" aria-hidden="true"></i></button></div><div class="animation-settings"><button type="button" class="icon-button" data-tutor-expand aria-label="Ampliar ejercicio" title="Ampliar ejercicio" aria-pressed="false"><i data-lucide="maximize" aria-hidden="true"></i></button></div></div><p class="animation-caption" data-tutor-comment></p><details data-tutor-notes class="tutor-notes animation-transcript"><summary>Apuntes del ejercicio</summary><div data-tutor-note-content></div></details></section>`;
   const element = selector=>root.querySelector(selector);
   const data=document.createElement('div');
   data.className='tutor-data';
-  element('.tutor-surface').before(data);
+  element('.tutor-writing').prepend(data);
   const figureNote=document.createElement('p');
   figureNote.className='capstone-matrix-note';
   figureNote.hidden=true;
@@ -392,13 +392,46 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   element('[data-tutor-play]').innerHTML='<span data-tutor-play-symbol><i data-lucide="play" aria-hidden="true"></i></span><span data-tutor-pause-symbol hidden><i data-lucide="pause" aria-hidden="true"></i></span>';
   const canvas = element('canvas');
   const context = canvas.getContext('2d');
+  const player = element('.tutor-player');
+  const tree = root.getRootNode?.() || document;
+  const expand = element('[data-tutor-expand]');
+  let focused = false;
+  let previousFocus;
+  const fullscreenElement = () => tree.fullscreenElement || document.fullscreenElement;
+  const exitFocus = () => {
+    focused = false;
+    player.classList.remove('is-focused');
+    player.removeAttribute('role');player.removeAttribute('aria-modal');
+    expand.setAttribute('aria-label','Ampliar ejercicio');expand.title='Ampliar ejercicio';expand.setAttribute('aria-pressed','false');
+    if(fullscreenElement()===player)document.exitFullscreen?.()?.catch?.(()=>{});
+    previousFocus?.focus?.();previousFocus=null;
+  };
+  listen(expand,'click',()=>{
+    if(focused){exitFocus();draw();return;}
+    previousFocus=tree.activeElement || document.activeElement;
+    focused=true;player.classList.add('is-focused');player.setAttribute('role','dialog');player.setAttribute('aria-modal','true');player.setAttribute('aria-label',exercise.title);
+    expand.setAttribute('aria-label','Salir de la vista ampliada');expand.title='Salir de la vista ampliada';expand.setAttribute('aria-pressed','true');expand.focus();
+    try {Promise.resolve(player.requestFullscreen?.()).then(()=>{if(disposed || !focused){if(fullscreenElement()===player)document.exitFullscreen?.()?.catch?.(()=>{});}},()=>{});} catch {}
+    draw();
+  });
+  listen(document,'fullscreenchange',()=>{if(focused && !fullscreenElement())exitFocus();draw();});
+  listen(window,'keydown',event=>{
+    if(!focused)return;
+    if(event.key==='Escape'){exitFocus();draw();}
+    if(event.key==='Tab'){
+      const controls=Array.from(player.querySelectorAll('button,input,summary')).filter(control=>!control.disabled && !control.hidden);
+      const active=tree.activeElement || document.activeElement;
+      if(event.shiftKey && active===controls[0]){event.preventDefault();controls.at(-1)?.focus();}
+      else if(!event.shiftKey && active===controls.at(-1)){event.preventDefault();controls[0]?.focus();}
+    }
+  });
   const stop = ()=>{if(timer!==null)window.clearInterval(timer);timer=null;element('[data-tutor-play]').setAttribute('aria-label','Reproducir');element('[data-tutor-play]').title='Reproducir';element('[data-tutor-play]').setAttribute('aria-pressed','false');element('[data-tutor-play-symbol]').hidden=false;element('[data-tutor-pause-symbol]').hidden=true;};
   const draw = ()=>{
     if(disposed)return;
     const question=exercise.questions[questionIndex];
     if(context){
       const width=Math.max(260,Math.round(canvas.getBoundingClientRect().width||720));
-      const height=exercise.chapterId === 'culminacion-pec1' ? Math.max(280,Math.round(width*5/12)) : Math.round(width*5/12);
+      const height=Math.round(width*9/16);
       const ratio=window.devicePixelRatio||1;
       canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);
       context.setTransform(ratio,0,0,ratio,0,0);
@@ -415,6 +448,9 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
     element('[data-tutor-comment]').textContent=current.comment;
     element('[data-tutor-lines]').innerHTML=frames.slice(0,position+1).filter(item=>item.tex || item.answerText).map(item=>`<div class="tutor-equation${item===current?' is-current':''}${item.result?' is-result':''}">${item.tex ? formatMath(item.tex) : ''}${item.answerText ? `<p>${escape(item.answerText)}</p>` : ''}${item.result?`<span>${escape(question.unit)}</span>`:''}</div>`).join('');
     element('[data-tutor-position]').textContent=`Paso ${position+1} de ${frames.length}`;
+    element('[data-tutor-seek]').max=String(frames.length-1);
+    element('[data-tutor-seek]').value=String(position);
+    element('[data-tutor-seek]').setAttribute('aria-valuetext',`${position+1} de ${frames.length}: ${current.title}`);
     element('[data-tutor-previous]').disabled=position===0;
     element('[data-tutor-next]').disabled=position===frames.length-1;
     canvas.setAttribute('aria-label',`${exercise.title}. ${current.title}. ${current.comment}`);
@@ -424,6 +460,8 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
     if (exercise.chapterId !== 'culminacion-pec1' || element('[data-tutor-notes]').open) renderNotes();
     else element('[data-tutor-note-content]').replaceChildren();
     if(current.result)stop();
+    const writing=element('.tutor-writing');
+    writing.scrollTop=position===0 ? 0 : writing.scrollHeight;
     draw();
   };
   const advance = offset=>{position=Math.max(0,Math.min(createTutorFrames(exercise,exercise.questions[questionIndex]).length-1,position+offset));render();};
@@ -435,10 +473,10 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
     render();
     element('[data-tutor-play]').setAttribute('aria-label','Pausar');element('[data-tutor-play]').title='Pausar';element('[data-tutor-play]').setAttribute('aria-pressed','true');
     element('[data-tutor-play-symbol]').hidden=true;element('[data-tutor-pause-symbol]').hidden=false;
-    timer=window.setInterval(()=>advance(1),Number(element('[data-tutor-speed]').value));
+    timer=window.setInterval(()=>advance(1),6000);
   });
-  listen(element('[data-tutor-speed]'),'change',stop);
-  listen(element('[data-tutor-question]'),'change',()=>{stop();questionIndex=Number(element('[data-tutor-question]').value);position=0;element('[data-tutor-notes]').open=false;render();});
+  listen(element('[data-tutor-seek]'),'input',()=>{stop();position=Math.max(0,Math.min(createTutorFrames(exercise,exercise.questions[questionIndex]).length-1,Number(element('[data-tutor-seek]').value)||0));render();});
+  listen(element('[data-tutor-question]'),'change',()=>{stop();questionIndex=Math.max(0,Math.min(exercise.questions.length-1,Number(element('[data-tutor-question]').value)||0));position=0;element('[data-tutor-notes]').open=false;render();});
   listen(element('[data-tutor-notes]'),'toggle',()=>{if(element('[data-tutor-notes]').open && exercise.chapterId === 'culminacion-pec1')render();});
   if (onPractice) listen(element('[data-tutor-practice]'),'click',onPractice);
   else element('[data-tutor-practice]').remove();
@@ -446,5 +484,5 @@ export function mountExerciseTutor(root, exercise, {formatMath,onHelp,onPractice
   listen(document,'visibilitychange',()=>{if(document.hidden)stop();});
   render();
   document.fonts?.ready.then(()=>{if(!disposed)draw();});
-  return ()=>{if(disposed)return;stop();disposed=true;listeners.forEach(remove=>remove());root.innerHTML='';};
+  return ()=>{if(disposed)return;stop();if(focused)exitFocus();disposed=true;listeners.forEach(remove=>remove());root.innerHTML='';};
 }

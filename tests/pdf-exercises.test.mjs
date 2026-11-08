@@ -655,7 +655,17 @@ test('PDF observation is the lesson default, offers source and problem selectors
     assert.ok(source.includes(`Página ${app.exercise.source.page}`));
     const expected = document.createElement('div');expected.innerHTML = notationHtml('sucesos');
     assert.ok(document.querySelector('[data-exercise-tutor] .exercise-notation').textContent.includes(expected.textContent));
-    assert.equal(document.querySelector('[data-tutor-speed]').value,'6000');
+    assert.equal(document.querySelector('[data-tutor-speed]'),null);
+    const player=document.querySelector('.tutor-player');
+    const surface=document.querySelector('.tutor-surface');
+    assert.ok(surface.classList.contains('animation-stage'));
+    assert.equal(document.querySelector('[data-tutor-comment]').parentElement,player);
+    assert.equal(surface.contains(document.querySelector('[data-tutor-comment]')),false);
+    const seek=document.querySelector('[data-tutor-seek]');
+    seek.value=seek.max;seek.dispatchEvent(new fixture.window.Event('input'));
+    assert.equal(document.querySelector('[data-tutor-next]').disabled,true);
+    seek.value='0';seek.dispatchEvent(new fixture.window.Event('input'));
+    assert.equal(document.querySelectorAll('.tutor-equation').length,0);
     const question = app.exercise.questions[0];
     document.querySelector('[data-tutor-next]').click();
     submit(question);
@@ -706,6 +716,51 @@ test('every mapped lesson displays all its PDF problems with complete written so
     } finally {app.dispose();}
   }
 }));
+
+test('tutor timeline, playback and accessible fullscreen dispose timers and restore focus', async () => {
+  const fixture=withStatistics(()=>classroom());
+  const {document,window,app}=fixture;
+  const originalInterval=window.setInterval;
+  const originalClear=window.clearInterval;
+  const timers=new Map();
+  window.setInterval=(callback,delay)=>{assert.equal(delay,6000);timers.set(1,callback);return 1;};
+  window.clearInterval=handle=>timers.delete(handle);
+  const player=document.querySelector('.tutor-player');
+  const play=document.querySelector('[data-tutor-play]');
+  const expand=document.querySelector('[data-tutor-expand]');
+  const seek=document.querySelector('[data-tutor-seek]');
+  Object.defineProperty(document,'activeElement',{configurable:true,writable:true,value:play});
+  for(const control of player.querySelectorAll('button,input,summary'))control.focus=()=>{document.activeElement=control;};
+  try {
+    seek.value='1';seek.dispatchEvent(new window.Event('input'));
+    assert.equal(document.querySelectorAll('.tutor-equation').length,1);
+    seek.value='0';seek.dispatchEvent(new window.Event('input'));
+    assert.equal(document.querySelectorAll('.tutor-equation').length,0);
+    play.click();assert.equal(timers.size,1);
+    timers.get(1)();assert.equal(seek.value,'1');
+    play.click();assert.equal(timers.size,0);
+    expand.click();
+    assert.ok(player.classList.contains('is-focused'));
+    assert.equal(player.getAttribute('aria-modal'),'true');
+    assert.equal(document.activeElement,expand);
+    const summary=player.querySelector('summary');summary.focus();
+    window.dispatchEvent(new window.Event('keydown'));
+    const tab=new window.Event('keydown',{cancelable:true});tab.key='Tab';tab.shiftKey=false;
+    window.dispatchEvent(tab);
+    assert.equal(document.activeElement,seek);
+    const escape=new window.Event('keydown');escape.key='Escape';window.dispatchEvent(escape);
+    assert.equal(player.classList.contains('is-focused'),false);
+    assert.equal(document.activeElement,play);
+    assert.equal(player.hasAttribute('aria-modal'),false);
+    let resolveFullscreen;
+    player.requestFullscreen=()=>new Promise(resolve=>{resolveFullscreen=resolve;});
+    document.exitFullscreen=()=>{document.fullscreenElement=null;return Promise.resolve();};
+    expand.click();play.click();assert.equal(timers.size,1);
+    app.dispose();assert.equal(timers.size,0);
+    document.fullscreenElement=player;resolveFullscreen();await Promise.resolve();await Promise.resolve();
+    assert.equal(document.fullscreenElement,null);
+  } finally {app.dispose();window.setInterval=originalInterval;window.clearInterval=originalClear;}
+});
 
 test('another variant switches PDF observation to a distinct scoped synthetic task with independent grading', () => withStatistics(() => {
   const {document,app,submit} = classroom();

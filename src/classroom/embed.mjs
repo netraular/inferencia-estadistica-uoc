@@ -23,7 +23,6 @@ export function mountSectionExample(host, {descriptor, baseUrl}) {
   root.replaceChildren(fragment);
   const dispose = mountExerciseTutor(content, exercise, {
     formatMath:tex => owner.defaultView.katex.renderToString(tex, {displayMode:true, throwOnError:false}),
-    onHelp() {},
     onPractice() {}
   });
   content.querySelector('[data-tutor-practice]').remove();

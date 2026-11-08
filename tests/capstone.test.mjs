@@ -528,7 +528,7 @@ function mountCapstoneFixture(exerciseId) {
   try {
     const mounted = mountCapstoneExercise(fixture.host,{exerciseId,baseUrl:'/inferencia/',mountTutor:mountExerciseTutor,
       drawDiagram:drawContextDiagram,math:{renderToString:tex => katex.renderToString(tex,{displayMode:true,throwOnError:true,strict:'error'})},
-      icons:{icons:{ArrowLeft:[],ArrowRight:[],Play:[],Pause:[]},createElement() {return fixture.document.createElementNS('http://www.w3.org/2000/svg','svg');}}});
+      icons:{icons:{StepBack:[],StepForward:[],Play:[],Pause:[],Maximize:[]},createElement() {return fixture.document.createElementNS('http://www.w3.org/2000/svg','svg');}}});
     return {...fixture,...mounted,storageAccesses:() => storageAccesses,dispose() {
       try {mounted.dispose();}
       finally {if (storage) Object.defineProperty(globalThis,'localStorage',storage);else delete globalThis.localStorage;}
@@ -614,7 +614,7 @@ test('mounted capstones retain every question, reveal no future solution and nev
       assert.equal(root.querySelector('[data-tutor-practice]'),null);
       assert.equal(root.querySelector('[data-grade-form],form,input[type="number"]'),null);
       assert.equal(root.querySelector('i[data-lucide]'),null);
-      assert.equal(root.querySelectorAll('svg.lucide').length,4);
+      assert.equal(root.querySelectorAll('svg.lucide').length,5);
       const statement = root.querySelector('.capstone-statement').textContent;
       for (const text of [exercise.prompt,...exercise.given,...exercise.assumptions]) assert.ok(statement.includes(text));
       for (const [index,question] of exercise.questions.entries()) {
