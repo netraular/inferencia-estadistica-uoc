@@ -1,5 +1,9 @@
 # Comparativa de cuatro tecnologias
 
+Segundo ejemplo de Manim y Remotion: [la normal, de X a Z](normal/README.md),
+con formulas transformadas, curvas y puntos enlazados, codigo completo y una
+tabla temporal compartida. Ruta: `/inferencia/comparativa-videos/normal/`.
+
 Apartado Docusaurus: `/inferencia/comparativa-videos/`, enlazado desde el menu
 Comparativa. Cuatro paginas independientes: actual, manim, remotion y
 canvas-commons, con video HTML5 integrado directamente, sin iframes. Los

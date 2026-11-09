@@ -26,6 +26,7 @@ export default {
     };
   }],
   themeConfig: {
+    prism: {additionalLanguages: ['python']},
     colorMode: {defaultMode: 'light', disableSwitch: true},
     navbar: {
       title: 'Inferencia estadística',

@@ -19,6 +19,9 @@ export default function VideoComparisonPage() {
   return <Layout title={'Comparativa de v\u00eddeos'}>
     <main className={`container margin-vert--lg ${styles.page}`}>
       <h1>Comparativa de v&iacute;deos</h1>
+      <nav className={styles.resources} aria-label="Segundo ejemplo">
+        <Link to="/comparativa-videos/normal/">La normal: de X a Z &middot; Manim y Remotion</Link>
+      </nav>
       <p className={styles.subtitle}>Probabilidad como &aacute;rea</p>
       <ul className={styles.list}>
         {examples.map(([id, title, detail]) => <li key={id}>

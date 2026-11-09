@@ -27,7 +27,7 @@ def label(content, horizontal, vertical, size=26, color=INK):
 
 class NormalStandardization(Scene):
     def construct(self):
-        self.elapsed = 0
+        self.clock_frames = 0
         self.formula = None
         self.caption = None
         self.stage_title = None
@@ -61,7 +61,7 @@ class NormalStandardization(Scene):
         self.show_probability()
         self.show_complement()
         self.until(STORY["duration"])
-        assert abs(self.elapsed - STORY["duration"]) < 1e-8
+        assert self.clock_frames == STORY["frames"]
 
     def make_axes(self, horizontal, domain):
         axes = Axes(x_range=domain, y_range=[0, 0.45, 0.1], x_length=5.1, y_length=2.1,
@@ -76,15 +76,17 @@ class NormalStandardization(Scene):
         return axes.plot(lambda value: norm.pdf(value, mean, sigma), x_range=[*domain, 0.12], color=GREEN, stroke_width=4)
 
     def animate(self, duration, *animations, **options):
-        self.play(*animations, run_time=duration, **options)
-        self.elapsed += duration
+        frames = round(duration * STORY["fps"])
+        self.play(*animations, run_time=frames / STORY["fps"], **options)
+        self.clock_frames += frames
 
     def until(self, time):
-        remaining = time - self.elapsed
-        assert remaining >= -1e-8, f"Storyboard overrun: {self.elapsed} > {time}"
-        if remaining > 1e-8:
-            self.wait(remaining)
-            self.elapsed = time
+        target = round(time * STORY["fps"])
+        remaining = target - self.clock_frames
+        assert remaining >= 0, f"Storyboard overrun: {self.clock_frames} > {target}"
+        if remaining:
+            self.wait(remaining / STORY["fps"])
+            self.clock_frames = target
 
     def stage(self, name):
         phase = next(phase for phase in STORY["phases"] if phase["id"] == name)

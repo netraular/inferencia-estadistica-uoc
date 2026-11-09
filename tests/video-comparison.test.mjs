@@ -135,3 +135,29 @@ test('second Remotion example compiles, validates TeX and uses a real normal dis
     }));
   }
 });
+
+test('second comparison publishes both native players and complete matching source', () => {
+  const results = JSON.parse(readFileSync(new URL('static/comparativa-videos/normal/results.json',root)));
+  const sources = JSON.parse(readFileSync(new URL('static/comparativa-videos/normal/sources.json',root)));
+  assert.deepEqual(results.map(item=>item.id),['manim','remotion']);
+  for (const result of results) {
+    const movie = readFileSync(new URL(`static/comparativa-videos/normal/${result.id}/video.mp4`,root));
+    assert.equal(movie.length,result.bytes);
+    assert.equal(createHash('sha256').update(movie).digest('hex'),result.sha256);
+    assert.equal(result.frames,1440);
+    assert.equal(result.duration,48);
+    assert.equal(result.audio,false);
+  }
+  for (const files of Object.values(sources)) for (const file of files) {
+    assert.equal(file.content,readFileSync(new URL(`data-src/video-comparison/${file.name}`,root),'utf8'));
+  }
+  assert(existsSync(new URL('static/comparativa-videos/normal/source.tar.gz',root)));
+  const source = readFileSync(new URL('src/pages/comparativa-videos/normal.jsx',root),'utf8');
+  assert.doesNotMatch(source,/<iframe|player\.html/);
+  assert.match(source,/<Tabs/);
+  assert.match(source,/<SourceFile file=\{scene\}/);
+  assert.match(readFileSync(new URL('src/pages/comparativa-videos/index.jsx',root),'utf8'),/\/comparativa-videos\/normal\//);
+  assert.doesNotThrow(()=>require('@babel/core').transformSync(source,{
+    filename:'normal.jsx',babelrc:false,configFile:false,presets:[require.resolve('@docusaurus/core/lib/babel/preset')]
+  }));
+});
