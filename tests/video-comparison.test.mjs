@@ -119,3 +119,19 @@ test('second comparison uses a named shared timeline and consistent normal proba
     assert(start>=0 && end>start && end<=storyboard.duration);
   }
 });
+
+test('second Remotion example compiles, validates TeX and uses a real normal distribution', () => {
+  const engine = createRequire(new URL('data-src/video-comparison/remotion/package.json',root));
+  const statistics = engine('jstat');
+  const katex = engine('katex');
+  const storyboard = JSON.parse(readFileSync(new URL('data-src/video-comparison/normal/storyboard.json',root)));
+  assert(Math.abs(statistics.normal.cdf(storyboard.z,0,1)-storyboard.probability)<1e-12);
+  for (const tokens of Object.values(storyboard.formulas)) {
+    assert.doesNotThrow(()=>katex.renderToString(tokens.join(' '),{throwOnError:true}));
+  }
+  for (const file of ['normal.jsx','normal-chart.jsx','normal-formula.jsx']) {
+    assert.doesNotThrow(()=>require('@babel/core').transformSync(readFileSync(new URL(`data-src/video-comparison/remotion/src/${file}`,root),'utf8'),{
+      filename:file,babelrc:false,configFile:false,presets:[require.resolve('@docusaurus/core/lib/babel/preset')]
+    }));
+  }
+});
