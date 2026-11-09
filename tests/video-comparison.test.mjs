@@ -4,6 +4,7 @@ import {readFileSync, existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 import {parseHTML} from 'linkedom';
+import {runInNewContext} from 'node:vm';
 
 const root = new URL('../', import.meta.url);
 const require = createRequire(import.meta.url);
@@ -66,5 +67,36 @@ test('all four finished players have local media and published source, and no re
     assert(result.audioCorrelation>0.99);
   }
   const wrapper = readFileSync(new URL('src/components/VideoComparisonExample.jsx',root),'utf8');
-  assert.match(wrapper,/\$\{technology\}\/player\.html/);
+  assert.doesNotMatch(wrapper,/<iframe|\/player\.html/);
+});
+
+test('comparison renders native video with base-aware media URLs instead of an embedded HTML route', () => {
+  const React = require('react');
+  const {renderToStaticMarkup} = require('react-dom/server');
+  const source = readFileSync(new URL('src/components/VideoComparisonExample.jsx',root),'utf8');
+  const compiled = require('@babel/core').transformSync(source,{
+    filename:'VideoComparisonExample.jsx',babelrc:false,configFile:false,
+    presets:[require.resolve('@docusaurus/core/lib/babel/preset')],
+    plugins:[require.resolve('@babel/plugin-transform-modules-commonjs')]
+  }).code;
+  const module = {exports:{}};
+  const mocks = {
+    '@theme/Layout':({children})=>React.createElement('main',null,children),
+    '@docusaurus/Link':({children,to})=>React.createElement('a',{href:to},children),
+    '@docusaurus/useBaseUrl':value=>`/inferencia${value}`,
+    '@site/static/comparativa-videos/shared/results.json':JSON.parse(readFileSync(new URL('static/comparativa-videos/shared/results.json',root))),
+    './VideoComparison.module.css':{page:'page',player:'player'}
+  };
+  runInNewContext(compiled,{module,exports:module.exports,require:name=>name in mocks ? mocks[name] : require(name)});
+  for (const id of ids) {
+    const html = renderToStaticMarkup(React.createElement(module.exports.default,{technology:id,title:id}));
+    const {document} = parseHTML(html);
+    const video = document.querySelector('video');
+    assert.equal(document.querySelectorAll('iframe').length,0);
+    assert(video.hasAttribute('controls'));
+    assert(video.getAttributeNames().some(name=>name.toLowerCase()==='playsinline'));
+    assert.equal(video.getAttribute('poster'),`/inferencia/comparativa-videos/${id}/poster.jpg`);
+    assert.equal(video.querySelector('source').getAttribute('src'),`/inferencia/comparativa-videos/${id}/video.mp4`);
+    assert(!video.hasAttribute('autoplay'));
+  }
 });

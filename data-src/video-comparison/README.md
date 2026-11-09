@@ -2,8 +2,10 @@
 
 Apartado Docusaurus: `/inferencia/comparativa-videos/`, enlazado desde el menu
 Comparativa. Cuatro paginas independientes: actual, manim, remotion y
-canvas-commons. Los reproductores estaticos `player.html` se pueden abrir tambien
-sin servidor; este nombre evita colisiones con el `index.html` de cada ruta.
+canvas-commons, con video HTML5 integrado directamente, sin iframes. Los
+reproductores estaticos `player.html` siguen disponibles para abrir sin servidor.
+No se usan como rutas embebidas: docusaurus serve puede redirigir esas URLs HTML
+a la portada. Las paginas del curso cargan directamente video.mp4 y poster.jpg.
 
 ## Proceso e independencia
 
@@ -89,18 +91,30 @@ finales intencionados, no capturas temporales de navegador.
 Pasaron la validacion focalizada, las pruebas generales del curso, la compilacion
 Docusaurus y la auditoria del proyecto raiz. La auditoria mantiene cinco avisos
 bajos preexistentes. Se inspecciono el HTML compilado de las cuatro rutas y su
-iframe a player.html, ademas de los fotogramas exportados de los tres modelos.
+reproductor nativo con URLs ajustadas a /inferencia/, ademas de los fotogramas
+exportados de los tres modelos. Una regresion renderiza los cuatro componentes
+React y comprueba que no hay iframe, que los controles estan presentes y que
+los MP4 y posters apuntan a los recursos correctos.
 
 Las correlaciones de audio son mayores que 0.99 para las cuatro versiones; los
 paquetes de audio son exactamente iguales en actual, Manim y Remotion. Canvas
 Commons recodifica a AAC y conserva la senal con correlacion 0.999993. No confundir
 igualdad de la narracion con identidad del contenedor o del codec.
 
-Chromium se uso solo para exportar los videos, conforme al permiso del usuario.
-No se han escuchado los audios, abierto la web en navegador, comprobado controles
-o compatibilidad movil ni desplegado la rama. MP3 dentro de MP4 puede ser menos
-compatible que AAC con algunos reproductores. Todos los subtitulos estan grabados
-en la imagen, no son una pista conmutable. Los procesos de exportacion se cerraron.
+En la entrega inicial Chromium se uso solo para exportar los videos, conforme al
+permiso del usuario. No se habian escuchado los audios, abierto la web en navegador,
+comprobado controles o compatibilidad movil ni desplegado la rama. MP3 dentro de
+MP4 puede ser menos compatible que AAC con algunos reproductores. Todos los
+subtitulos estan grabados en la imagen, no son una pista conmutable. Los procesos
+de exportacion se cerraron.
+
+Verificacion posterior del fallo comunicado por el usuario: docusaurus serve
+redirigia player.html fuera de /inferencia/ y el iframe terminaba en la portada.
+Se sustituyo por video nativo. Un servidor temporal y el navegador integrado
+confirmaron la navegacion a los cuatro apartados, ausencia de iframe, carga de
+1280x720 y avance real de la reproduccion con sonido silenciado. Los MP4 responden
+HTTP 206 a Range. No se escucho el audio ni se valido toda la duracion o el movil.
+La prueba detecto tambien 404 de fuentes del sitio, ajenos a la reproduccion.
 
 Rama de entrega: `feature/comparativa-cuatro-videos`; no se cambio ni fusiono la
 rama activa del trabajo paralelo. Tampoco se editaron los otros ejercicios o CSS
