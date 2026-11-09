@@ -23,7 +23,7 @@ def label(value, position, size=28, color=INK):
 
 
 def formula(tex, position, color=TEAL):
-    result = MathTex(tex, font_size=38, color=color).move_to(position)
+    result = MathTex(*tex, font_size=38, color=color).move_to(position)
     if result.width > 5.6:
         result.scale_to_fit_width(5.6)
     return result
@@ -133,9 +133,9 @@ class Proporciones(Scene):
                 LaggedStart(*[FadeIn(seed) for seed in grid_a], lag_ratio=0.008), run_time=1.2)
         self.remove(*grid_a)
         self.add(grid_a)
-        equation_a = formula(r"p_A=\frac{18}{72}", (-3.5, -0.85, 0))
+        equation_a = formula((r"p_A", "=", r"\frac{18}{72}"), (-3.5, -0.85, 0))
         self.at("divide", FadeIn(equation_a))
-        decimal_a = formula(r"p_A=\frac{18}{72}=0{,}25", (-3.5, -0.85, 0))
+        decimal_a = formula((r"p_A", "=", r"\frac{18}{72}", "=", r"0{,}25"), (-3.5, -0.85, 0))
         self.at("decimal_a", TransformMatchingTex(equation_a, decimal_a))
         quarter = VGroup(*[
             Circle(radius=0.15, stroke_width=0, fill_opacity=1,
@@ -151,8 +151,8 @@ class Proporciones(Scene):
                 LaggedStart(*[FadeIn(seed) for seed in grid_b], lag_ratio=0.003), run_time=1.2)
         self.remove(*grid_b)
         self.add(grid_b)
-        equation_b = formula(r"p_B=\frac{30}{200}", (3.5, -0.85, 0), ROSE)
-        decimal_b = formula(r"p_B=\frac{30}{200}=0{,}15", (3.5, -0.85, 0), ROSE)
+        equation_b = formula((r"p_B", "=", r"\frac{30}{200}"), (3.5, -0.85, 0), ROSE)
+        decimal_b = formula((r"p_B", "=", r"\frac{30}{200}", "=", r"0{,}15"), (3.5, -0.85, 0), ROSE)
         self.add(equation_b)
         self.at("decimal_b", TransformMatchingTex(equation_b, decimal_b))
 
