@@ -161,3 +161,17 @@ test('second comparison publishes both native players and complete matching sour
     filename:'normal.jsx',babelrc:false,configFile:false,presets:[require.resolve('@docusaurus/core/lib/babel/preset')]
   }));
 });
+
+test('five-second timing separates all render attempts from preparation without claiming pure coding time', async () => {
+  const {summarizeTiming} = await import('../data-src/video-comparison/five-seconds/clock.mjs');
+  const measurements = summarizeTiming({startedAtMs: 1000, finishedAtMs: 10000, events: [
+    {type: 'render-start', atMs: 3000}, {type: 'render-end', atMs: 4000},
+    {type: 'render-start', atMs: 5000}, {type: 'render-end', atMs: 7000}
+  ]});
+  assert.deepEqual(measurements,{totalMs: 9000, renderMs: 3000, preparationAndChecksMs: 6000});
+  assert.throws(()=>summarizeTiming({startedAtMs: 0, finishedAtMs: 1000, events: [{type: 'render-start', atMs: 100}]}));
+  const brief = JSON.parse(readFileSync(new URL('data-src/video-comparison/five-seconds/brief.json',root)));
+  assert.equal(brief.frames,brief.fps*brief.duration);
+  assert.equal(brief.probability+brief.complement,1);
+  assert.deepEqual(brief.phases.map(phase=>[phase.start,phase.end]),[[0,1],[1,3],[3,5]]);
+});

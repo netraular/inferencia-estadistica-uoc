@@ -1,0 +1,22 @@
+{
+  "title": "Probabilidad y complemento",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "frames": 150,
+  "duration": 5,
+  "audio": false,
+  "probability": 0.3,
+  "complement": 0.7,
+  "phases": [
+    {"start": 0, "end": 1, "formula": "P(A)=0.30"},
+    {"start": 1, "end": 3, "formula": "P(A^c)=1-P(A)"},
+    {"start": 3, "end": 5, "formula": "P(A^c)=1-0.30=0.70"}
+  ],
+  "footer": "0.30 + 0.70 = 1",
+  "visual": "A horizontal probability bar split into 30% green and 70% coral; emphasize the complement by the final phase.",
+  "background": "#fcfcfd",
+  "ink": "#182d28",
+  "green": "#008b70",
+  "coral": "#bf5547"
+}
