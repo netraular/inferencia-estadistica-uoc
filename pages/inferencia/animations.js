@@ -845,7 +845,6 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   let controlsTimer = null;
   let subtitleSignature='';
   let captionPages=[];
-  let subtitlesVisible=true;
   let overlayInset=-1;
   const estimatedTimeline = () => {
     let offset = 0;
@@ -891,7 +890,7 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const heading = element('h4');
   const stage = element('div', 'animation-stage');
   stage.tabIndex = 0;
-  stage.setAttribute('aria-label','Vídeo de la lección; mostrar u ocultar controles');
+  stage.setAttribute('aria-label','Vídeo de la lección');
   stage.style.minWidth = '0';
   const canvas = element('canvas');
   canvas.setAttribute('role', 'img');
@@ -963,32 +962,19 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
   const transport = element('div','animation-transport');
   transport.append(back,play,pause,next);
   const settings = element('div','animation-settings');
-  const captionsToggle=button('captions','Ocultar subtítulos',toggleSubtitles);
-  captionsToggle.className+=' animation-captions-toggle';
-  captionsToggle.setAttribute('aria-pressed','true');
-  settings.append(captionsToggle,expand);
+  settings.append(expand);
   controls.append(timelineField,clock,transport,settings,position);
   stage.append(controls);
   const overlayPlay=button('play','Reproducir vídeo',start);
   overlayPlay.className+=' animation-overlay-play';
   stage.append(overlayPlay);
   function updateOverlays() {
-    caption.hidden=!subtitlesVisible;
-    const barHeight=controls.hidden ? 0 : controls.getBoundingClientRect?.().height || 50;
-    caption.style.bottom=`${barHeight+8}px`;
-    const inset=barHeight+(subtitlesVisible ? 76 : 0);
+    const inset=caption.getBoundingClientRect?.().height || 76;
     if(inset!==overlayInset){
       overlayInset=inset;
       stage.style.setProperty?.('--video-inset-bottom',`${inset}px`);
       whiteboard?.resize(logicalWidth,pixelRatio);
     }
-  }
-  function toggleSubtitles() {
-    subtitlesVisible=!subtitlesVisible;
-    captionsToggle.setAttribute('aria-pressed',String(subtitlesVisible));
-    const label=subtitlesVisible ? 'Ocultar subtítulos' : 'Mostrar subtítulos';
-    captionsToggle.setAttribute('aria-label',label);captionsToggle.title=label;
-    updateOverlays();draw();
   }
   function showControls(visible=true) {
     if(controlsTimer!==null)view.clearTimeout(controlsTimer);
@@ -997,12 +983,16 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     controls.hidden=!visible;
     overlayPlay.hidden=running || visible;
     updateOverlays();
-    if(visible)controlsTimer=view.setTimeout(()=>{controlsTimer=null;if(!disposed)showControls(false);},3000);
+    if(visible)controlsTimer=view.setTimeout(()=>{controlsTimer=null;if(!disposed && !controls.contains?.(focusedElement()))showControls(false);},3000);
   }
+  const revealOnHover=event=>{if(event.pointerType!=='touch')showControls();};
+  listen(stage,'pointerenter',revealOnHover);
+  listen(stage,'pointermove',revealOnHover);
+  listen(stage,'pointerleave',()=>{if(!controls.contains?.(focusedElement()))showControls(false);});
   listen(stage,'click',event=>{if(!event.target?.closest?.('.animation-controls,.animation-overlay-play'))showControls(controls.hidden);});
   listen(stage,'keydown',event=>{if(event.target===stage && ['Enter',' '].includes(event.key)){event.preventDefault();showControls();}});
   listen(controls,'focusin',()=>showControls());
-  listen(controls,'pointermove',()=>showControls());
+  listen(controls,'focusout',event=>{if(!controls.contains?.(event.relatedTarget))showControls();});
   const transcript = element('details', 'animation-transcript');
   transcript.append(element('summary', '', 'Transcripción completa'));
   const transcriptList = element('ol');
@@ -1332,8 +1322,9 @@ export function mountAnimation(container, animationId, {formatMath, audio, creat
     let cueIndex = -1;
     for (const [candidate,cue] of cues.entries()) if (currentTime >= cue.start) cueIndex = candidate;
     const cue=cues[Math.max(0,cueIndex)];
-    const width=Math.max(80,(stage.clientWidth || stage.getBoundingClientRect?.().width || logicalWidth)-50);
     const font=view.getComputedStyle?.(caption);
+    const padding=(parseFloat(font?.paddingLeft) || 25)+(parseFloat(font?.paddingRight) || 25);
+    const width=Math.max(80,(caption.clientWidth || stage.clientWidth || stage.getBoundingClientRect?.().width || logicalWidth)-padding);
     const signature=`${index}/${cueIndex}/${width}/${font?.font || ''}`;
     if(signature!==subtitleSignature){
       if(context)context.font=`${font?.fontWeight || '400'} 16px ${font?.fontFamily || 'Atkinson'}`;

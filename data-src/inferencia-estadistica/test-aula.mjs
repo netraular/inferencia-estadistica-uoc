@@ -295,7 +295,16 @@ test('La lectura usa una columna, subtítulo visible y controles compactos',()=>
   assert.equal(caption.get('position'),'absolute');
   assert.equal(caption.get('clip-path'),'none');
   assert.equal(caption.get('white-space'),'pre-line');
-  assert.equal(caption.get('width'),'calc(100% - 24px)');
+  assert.equal(caption.get('width'),'100%');
+  assert.equal(caption.get('bottom'),'0');
+  assert.equal(caption.get('height'),'var(--video-caption-height)');
+  assert.equal(caption.get('display'),'flex');
+  assert.match(caption.get('padding'),/safe-area-inset-bottom/);
+  const controls=rule('.animation-player .animation-controls,.animation-player.is-focused .animation-controls');
+  assert.equal(controls.get('position'),'absolute');
+  assert.equal(controls.get('inset'),'auto 0 var(--video-caption-height)');
+  assert.equal(rule('.animation-player.is-focused,.animation-player:fullscreen').get('overflow'),'hidden');
+  assert.equal(rule('.animation-player.is-focused .animation-transcript,.animation-player.is-focused .animation-audio-error').get('display'),'none');
   assert.equal(rule('.animation-position.sr-only').get('position'),'absolute');
   assert.equal(rule('.animation-position.sr-only').get('clip-path'),'inset(50%)');
   assert.equal(rule('.animation-player .animation-controls .icon-button,.animation-player .animation-controls .animation-primary').get('width'),'36px');

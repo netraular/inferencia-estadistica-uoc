@@ -680,7 +680,8 @@ class FakeElement extends FakeTarget {
   setAttribute(name, value) { this.attributes[name] = String(value); }
   removeAttribute(name) { delete this.attributes[name]; }
   focus() { this.ownerDocument.activeElement = this; }
-  getBoundingClientRect() { return {width: this.ownerDocument.stageWidth, height: this.ownerDocument.stageWidth * 9 / 16}; }
+  contains(node) { return node === this || this.children.some(child => child.contains(node)); }
+  getBoundingClientRect() { return {width: this.ownerDocument.stageWidth, height: this.className === 'animation-caption' ? 76 : this.ownerDocument.stageWidth * 9 / 16}; }
   getContext() { return this.ownerDocument.context; }
   click() {
     if (this.disabled) return;
@@ -1023,6 +1024,8 @@ test('play and pause preserve keyboard focus without moving focus from unrelated
     const tree=embedded ? {activeElement:null} : dom.document;
     if(embedded)dom.container.getRootNode=()=>tree;
     const cleanup=mountAnimation(dom.container,'math');
+    const stage=dom.created.find(node=>node.className?.startsWith('animation-stage'));
+    stage.dispatch('keydown',{target:stage,key:'Enter',preventDefault(){}});
     const play=dom.byLabel('Reproducir');
     const pause=dom.byLabel('Pausar');
     if(embedded){
@@ -1030,17 +1033,17 @@ test('play and pause preserve keyboard focus without moving focus from unrelated
       pause.focus=()=>{tree.activeElement=pause;};
     }
     play.focus();play.click();
-    assert.equal(tree.activeElement,pause);
+    assert.ok(tree.activeElement===pause);
     assert.equal(pause.hidden,false);
     pause.click();
-    assert.equal(tree.activeElement,play);
+    assert.ok(tree.activeElement===play);
     assert.equal(play.hidden,false);
     const unrelated=dom.byLabel('Tiempo de reproducción');
     tree.activeElement=unrelated;
     play.click();
-    assert.equal(tree.activeElement,unrelated);
+    assert.ok(tree.activeElement===unrelated);
     pause.click();
-    assert.equal(tree.activeElement,unrelated);
+    assert.ok(tree.activeElement===unrelated);
     cleanup();dom.cleanupCheck();
   }
 });
@@ -1194,20 +1197,50 @@ test('los controles empiezan ocultos, se muestran por toque o teclado y no dejan
   cleanup();dom.cleanupCheck();
 });
 
-test('subtitles are integrated in the video and can be hidden without changing narration or the transcript',()=>{
+test('hover reveals navigation without moving the fixed subtitles or resizing the whiteboard',()=>{
+  for(const width of [320,844,1280]){
+    const dom=fakeDom({width});
+    const animation=fullLectures()[0];
+    let resizes=0;
+    const cleanup=mountAnimation(dom.container,animation,{createWhiteboard:()=>({render(){},resize(){resizes++;},dispose(){}})});
+    const caption=dom.created.find(node=>node.className==='animation-caption');
+    const stage=dom.created.find(node=>node.className?.startsWith('animation-stage'));
+    const controls=dom.created.find(node=>node.className==='animation-controls');
+    const original=caption.textContent;
+    const initialResizes=resizes;
+    assert.equal(caption.parent,stage);
+    assert.notEqual(caption.hidden,true);
+    assert.equal(dom.byLabel('Ocultar subtítulos'),undefined);
+    assert.equal(dom.byLabel('Mostrar subtítulos'),undefined);
+    stage.dispatch('pointerenter',{pointerType:'touch'});assert.equal(controls.hidden,true);
+    stage.dispatch('pointerenter',{pointerType:'mouse'});assert.equal(controls.hidden,false);
+    stage.dispatch('pointerleave',{pointerType:'mouse'});assert.equal(controls.hidden,true);
+    stage.dispatch('pointermove',{pointerType:'mouse'});assert.equal(controls.hidden,false);
+    const [id,timer]=Array.from(dom.timers).find(([,item])=>item.delay===3000);
+    dom.timers.delete(id);timer.callback();assert.equal(controls.hidden,true);
+    assert.notEqual(caption.hidden,true);
+    assert.equal(caption.textContent,original);
+    assert.equal(caption.style.bottom,undefined);
+    assert.equal(resizes,initialResizes);
+    assert.equal(dom.created.find(node=>node.className==='animation-transcript').children[1].children.length,animation.steps.length);
+    cleanup();dom.cleanupCheck();
+  }
+});
+
+test('navigation stays visible while a keyboard control has focus',()=>{
   const dom=fakeDom();
-  const animation=fullLectures()[0];
-  const cleanup=mountAnimation(dom.container,animation);
-  const caption=dom.created.find(node=>node.className==='animation-caption');
+  const cleanup=mountAnimation(dom.container,fullLectures()[0]);
   const stage=dom.created.find(node=>node.className?.startsWith('animation-stage'));
-  const original=caption.textContent;
-  assert.equal(caption.parent,stage);
-  dom.byLabel('Ocultar subtítulos').click();assert.equal(caption.hidden,true);
-  assert.equal(dom.byLabel('Mostrar subtítulos').attributes['aria-pressed'],'false');
-  dom.byLabel('Mostrar subtítulos').click();assert.equal(caption.hidden,false);
-  assert.equal(caption.textContent,original);
-  assert.equal(dom.byLabel('Ocultar subtítulos').attributes['aria-pressed'],'true');
-  assert.equal(dom.created.find(node=>node.className==='animation-transcript').children[1].children.length,animation.steps.length);
+  const controls=dom.created.find(node=>node.className==='animation-controls');
+  stage.dispatch('keydown',{target:stage,key:'Enter',preventDefault(){}});
+  const seek=dom.byLabel('Tiempo de reproducción');
+  seek.focus();controls.dispatch('focusin',{target:seek});
+  const [id,timer]=Array.from(dom.timers).find(([,item])=>item.delay===3000);
+  dom.timers.delete(id);timer.callback();assert.equal(controls.hidden,false);
+  stage.dispatch('pointerleave',{pointerType:'mouse'});assert.equal(controls.hidden,false);
+  stage.focus();controls.dispatch('focusout',{relatedTarget:stage});
+  const [nextId,nextTimer]=Array.from(dom.timers).find(([,item])=>item.delay===3000);
+  dom.timers.delete(nextId);nextTimer.callback();assert.equal(controls.hidden,true);
   cleanup();dom.cleanupCheck();
 });
 

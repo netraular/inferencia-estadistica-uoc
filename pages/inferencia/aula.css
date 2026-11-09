@@ -116,7 +116,8 @@ progress::-webkit-progress-bar{background:var(--line)}progress::-webkit-progress
 .animation-stage>.animation-math{height:100%;overflow:hidden;border:0;pointer-events:none}
 .animation-player.has-whiteboard .animation-stage>.animated-whiteboard{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
 .animation-player.has-whiteboard .animation-stage .slide-board,.animation-player.has-whiteboard .animation-stage .animation-math{display:none!important}
-.animation-player .animation-controls{position:absolute;inset:auto 0 0;z-index:2;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:8px;padding:6px 10px;margin:0;background:rgba(255,255,255,.95);border-top:1px solid var(--line)}
+.animation-player .animation-stage{--video-caption-height:calc(76px + env(safe-area-inset-bottom,0px))}
+.animation-player .animation-controls,.animation-player.is-focused .animation-controls{position:absolute;inset:auto 0 var(--video-caption-height);z-index:2;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:8px;padding:6px max(10px,env(safe-area-inset-right,0px)) 6px max(10px,env(safe-area-inset-left,0px));margin:0;background:rgba(255,255,255,.95);border-top:1px solid var(--line)}
 .animation-player .animation-transport{grid-column:1;grid-row:1;gap:4px;justify-self:start}
 .animation-player .animation-timeline{grid-column:2;grid-row:1;margin:0;min-width:0}
 .animation-player .animation-timeline input{display:block;width:100%;margin:0;height:36px}
@@ -124,25 +125,24 @@ progress::-webkit-progress-bar{background:var(--line)}progress::-webkit-progress
 .animation-player .animation-settings{grid-column:4;grid-row:1;gap:0}
 .animation-player .animation-controls .icon-button,.animation-player .animation-controls .animation-primary{width:36px;height:36px;min-width:36px;border-radius:4px;box-sizing:border-box;padding:0}
 .animation-player .animation-overlay-play{position:absolute;z-index:3;left:50%;top:45%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:var(--teal);color:#fff;border:1px solid var(--teal)}
-.animation-player .animation-captions-toggle[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:#fff}
-.animation-player.is-focused .animation-stage,.animation-player.has-whiteboard.is-focused .animation-stage{display:block;flex:none;aspect-ratio:16/9;height:auto;width:min(100%,calc((100dvh - var(--caption-height,64px) - 8px)*16/9));margin:0 auto}
+.animation-player.is-focused .animation-stage,.animation-player.has-whiteboard.is-focused .animation-stage{display:block;flex:none;aspect-ratio:16/9;height:auto;width:min(100%,calc(100dvh*16/9));margin:auto}
 .animation-player.is-focused .slide-board{height:100%;flex:none}
 .animation-player.is-focused .animation-stage.has-context>.slide-board{height:100%}
 .animation-player.is-focused .animation-stage>canvas{height:100%!important;flex:none}
 .animation-player.is-focused .animation-stage.has-context>.context-diagram{height:100%!important}
 .animation-player.is-focused .animation-stage.has-math>canvas{height:100%!important}
 .animation-player.is-focused .animation-math{max-height:none;flex:none}
-.animation-player .animation-stage .animation-caption{position:absolute;z-index:2;left:12px;bottom:8px;display:block;width:calc(100% - 24px);height:auto;min-height:0;max-height:calc(2.8em + 14px);margin:0;padding:6px 12px;overflow:visible;overflow-wrap:anywhere;font-size:16px;line-height:1.4;text-align:center;background:rgba(20,28,25,.88);color:#fff;border:0;border-radius:4px;box-sizing:border-box;clip-path:none;white-space:pre-line}
+.animation-player .animation-stage .animation-caption{position:absolute;z-index:2;left:0;bottom:0;display:flex;align-items:center;justify-content:center;width:100%;height:var(--video-caption-height);min-height:0;max-height:none;margin:0;padding:8px max(25px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(25px,env(safe-area-inset-left,0px));overflow:hidden;overflow-wrap:anywhere;font-size:16px;line-height:1.4;text-align:center;background:#141c19;color:#fff;border:0;border-radius:0;box-sizing:border-box;clip-path:none;white-space:pre-line}
 .animation-transcript{margin:16px 0;padding:16px 0;border-top:1px solid var(--line)}
 .animation-transcript>summary{cursor:pointer;font-weight:700}
 .animation-transcript ol{margin-top:16px;line-height:1.7}
-.animation-player.is-focused,.animation-player:fullscreen{display:block;overflow:auto;padding:0;margin:0;max-height:none;background:var(--paper);scrollbar-width:none}
+.animation-player.is-focused,.animation-player:fullscreen{display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0;margin:0;max-height:none;background:var(--paper);scrollbar-width:none}
 .animation-player.is-focused::-webkit-scrollbar{display:none}
 .animation-player.is-focused>h3,.animation-player.is-focused>h4{display:none}
 .animation-player.is-focused .lecture-layout{display:block;min-height:0;flex:none;width:100%;max-width:none}
 .animation-player.is-focused .lecture-media{display:block;min-height:0;max-width:none;width:100%}
-.animation-player.is-focused .animation-transcript{max-height:none;overflow:visible}
-@media(max-width:600px){.animation-player .animation-clock{display:none}.animation-player .animation-controls{gap:4px;padding:6px}.animation-player .animation-settings{gap:4px}}
+.animation-player.is-focused .animation-transcript,.animation-player.is-focused .animation-audio-error{display:none}
+@media(max-width:600px){.animation-player .animation-clock{display:none}.animation-player .animation-controls,.animation-player.is-focused .animation-controls{gap:4px;padding:6px max(6px,env(safe-area-inset-right,0px)) 6px max(6px,env(safe-area-inset-left,0px))}.animation-player .animation-settings{gap:4px}}
 @media(orientation:landscape){.animation-player.is-focused .animation-stage,.animation-player.has-whiteboard.is-focused .animation-stage{width:100%;height:100dvh;aspect-ratio:auto}}
 .tutor-player .tutor-surface,.tutor-player.is-focused .tutor-surface{display:grid;grid-template-columns:minmax(0,42%) minmax(0,58%);align-items:stretch;gap:0;aspect-ratio:16/9;min-height:0}
 .tutor-player .tutor-figure{min-width:0;min-height:0;padding:8px;overflow:auto;border-right:1px solid var(--line)}
