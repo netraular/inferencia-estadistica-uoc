@@ -202,6 +202,40 @@ test('bivariate shared fragment computes the conditional law and preserves measu
   assert.equal(createHash('sha256').update(readFileSync(new URL('static/comparativa-videos/bivariante/shared/audio.m4a',root))).digest('hex'),script.audioSha256);
 });
 
+test('bivariate independent exports preserve audio, complete source and native players', async () => {
+  const results = JSON.parse(readFileSync(new URL('static/comparativa-videos/bivariante/results.json',root)));
+  const sources = JSON.parse(readFileSync(new URL('static/comparativa-videos/bivariante/sources.json',root)));
+  assert.deepEqual(results.map(item=>item.id),['manim','remotion']);
+  assert.equal(results[0].audioPayloadSha256,results[1].audioPayloadSha256);
+  for (const result of results) {
+    assert.equal(result.frames,2253);
+    assert.equal(result.duration,75.1);
+    assert.deepEqual([result.width,result.height,result.fps],[1280,720,30]);
+    assert.equal(result.fullDecodePassed,true);
+    const folder = new URL(`static/comparativa-videos/bivariante/${result.id}/`,root);
+    assert.equal(createHash('sha256').update(readFileSync(new URL('video.mp4',folder))).digest('hex'),result.sha256);
+    for (const name of ['poster.jpg','source.tar.gz','REPORT.md']) assert(existsSync(new URL(name,folder)));
+    for (const file of sources[result.id]) {
+      const actual = readFileSync(new URL(`data-src/video-comparison/${result.id}/bivariate/${file.name}`,root),'utf8');
+      assert.equal(file.content,actual);
+      assert.equal(file.lines,actual.split('\n').length-Number(actual.endsWith('\n')));
+      assert.equal(file.sha256,createHash('sha256').update(actual).digest('hex'));
+    }
+    assert.equal(result.sceneLines,sources[result.id][0].lines);
+    assert.equal(result.allCodeLines,sources[result.id].reduce((sum,file)=>sum+file.lines,0));
+  }
+  const {verifyMath} = await import('../data-src/video-comparison/remotion/bivariate/math.mjs');
+  assert(Math.abs(verifyMath().conditionalArea-1)<1e-10);
+  const source = readFileSync(new URL('src/pages/comparativa-videos/bivariante.jsx',root),'utf8');
+  assert.match(source,/useBaseUrl\('\/comparativa-videos\/bivariante\/'\)/);
+  assert.match(source,/<video[^>]+controls playsInline/);
+  assert.doesNotMatch(source,/<iframe|autoplay|autoPlay/);
+  assert.doesNotThrow(()=>require('@babel/core').transformSync(source,{
+    filename:'bivariante.jsx',babelrc:false,configFile:false,presets:[require.resolve('@docusaurus/core/lib/babel/preset')]
+  }));
+  assert.match(readFileSync(new URL('src/pages/comparativa-videos/index.jsx',root),'utf8'),/to="\/comparativa-videos\/bivariante\/"/);
+});
+
 test('five-second agent delivery preserves original timing records and verified clips', () => {
   const results = JSON.parse(readFileSync(new URL('static/comparativa-videos/cinco-segundos/results.json',root)));
   assert.deepEqual(results.map(result=>result.id),['manim','remotion']);
