@@ -587,3 +587,953 @@ Los identificadores corresponden a los apartados de `lesson-sections.js`.
 2. $\mathrm{VPN}=810/830\approx0{,}9759$, con pregunta explícita.
 3. Nueva población de prevalencia 1 %; cambiar ramas a 8 y 99 sin modificar parámetros de la prueba.
 4. $\mathrm{VPP}=8/107\approx0{,}0748$; comparación de poblaciones. No presentar el ejemplo como recomendación diagnóstica.
+
+## Variables aleatorias y resúmenes
+
+### variable-cdf / regla-observable
+
+**Locución**
+
+1. «Hola. Antes de mirar un campo de larvas, vamos a fijar qué mediremos: su número. La regla de contar ya está decidida. Lo que desconocemos es el valor que saldrá.»
+2. «Llamamos equis mayúscula a esa regla. A cada resultado detallado le asigna un número. Distintos campos pueden contener dos larvas y producir el mismo recuento, aunque las larvas no sean las mismas.»
+3. «Después de observar obtenemos una realización concreta. Equis minúscula también puede servir como umbral en una pregunta: por ejemplo, no superar dos larvas. El contexto nos dice si hablamos de un dato o de un límite.»
+4. «La condición de medibilidad exige que esas preguntas, para cualquier umbral real, sean sucesos a los que podamos asignar probabilidad. No exige resultados equiprobables ni conocer la respuesta. Permite llevar la incertidumbre del experimento a una medida numérica bien definida.»
+
+**Realización**
+
+1. Campos diferentes y regla fija «contar larvas».
+2. Flechas de resultados a recuentos; $X:\Omega\to\mathbb R$.
+3. Separar «regla X», «realización» y «umbral x»; seleccionar campos con recuento $\leq2$.
+4. Mostrar $\{\omega:X(\omega)\leq x\}\in\mathcal A$ por piezas, vinculadas al dibujo.
+
+### variable-cdf / escalones
+
+**Locución**
+
+1. «Hola. Nuestro modelo permite cero, una o dos larvas, con probabilidades dos décimas, cinco décimas y tres décimas. Vamos a preguntar cuánto llevamos reunido hasta un umbral.»
+2. «Hasta una larva entran cero y una. Sus probabilidades suman siete décimas. Esa es la acumulada en uno. No es la probabilidad de exactamente una: también incluye el cero.»
+3. «Si movemos el umbral a uno coma cinco, no aparece ningún resultado nuevo. La acumulada sigue en siete décimas. Al llegar a dos añadimos las tres décimas restantes y alcanzamos uno.»
+4. «Por eso el dibujo tiene escalones. En cada salto, el valor de la acumulada ya incluye el punto y coincide con el tramo de su derecha. Nunca baja. Menos de uno excluye el uno; como máximo uno lo incluye. Leer esa diferencia viene antes que la suma.»
+
+**Realización**
+
+1. Masas en 0,1,2; eje con huecos sin masa.
+2. Selección hasta 1: $0{,}2+0{,}5=0{,}7$.
+3. Mover umbral 1→1,5→2; construir los escalones y mantener $F(1{,}5)=0{,}7$.
+4. Círculos abiertos/cerrados correctos en los saltos; contrastar $P(X<1)=0{,}2$ y $P(X\leq1)=0{,}7$.
+
+### variable-cdf / intervalos-y-saltos
+
+**Locución**
+
+1. «Hola. Vamos a obtener un intervalo a partir de lo acumulado. Queremos más de cero y como máximo dos larvas. Hasta dos llevamos todo; debemos quitar lo que ya estaba incluido hasta cero.»
+2. «Restamos dos décimas de uno y quedan ocho décimas. La regla general resta la acumulada en el extremo inferior de la del superior, para un intervalo abierto abajo y cerrado arriba.»
+3. «Para una probabilidad puntual miramos el salto. En uno, la acumulada sube de dos a siete décimas: la diferencia, cinco décimas, es la masa en uno. La altura total arrastra también lo anterior.»
+4. «La acumulada sirve para cualquier variable real y tiende a cero y uno en los extremos de la recta. Una variable con densidad acumula sin saltos. Pero no toda acumulada continua tiene densidad: existen modelos continuos singulares. Aquí basta con no confundir esas afirmaciones.»
+
+**Realización**
+
+1. Seleccionar las masas 1 y 2 y marcar cero como excluido.
+2. $1-0{,}2=0{,}8$; después $P(a<X\leq b)=F(b)-F(a)$.
+3. Ampliar el salto en 1: $p_X(1)=F(1)-F(1^-)=0{,}5$.
+4. Flechas hacia límites 0 y 1; distinguir «con densidad» de «acumulada continua» sin introducir una falsa equivalencia.
+
+### masa / agrupar-y-normalizar
+
+**Locución**
+
+1. «Hola. Tenemos cero, dos o cuatro brotes, con pesos uno, tres y uno. Vamos a convertir esos pesos relativos en probabilidades. No tienen que ser valores consecutivos.»
+2. «Los pesos suman cinco. Dividir cada uno por cinco conserva sus relaciones y hace que el total sea uno. Obtenemos dos décimas, seis décimas y dos décimas.»
+3. «Cada fila asigna probabilidad a un valor exacto. Si varios resultados detallados producen dos brotes, sus probabilidades se reúnen en esa misma fila. Eso es una función de masa.»
+4. «Comprueba que ninguna masa sea negativa y que todas sumen uno. El soporte recoge los valores con masa positiva; puede ser finito o numerable y tener huecos. Si añadimos un estado con un peso nuevo, debemos volver a normalizar todo el conjunto, no pegar una probabilidad extra al reparto anterior.»
+
+**Realización**
+
+1. Tabla valor/peso con filas 0/1,2/3,4/1.
+2. $1+3+1=5$, $c=1/5$ y columna de masas revelada fila a fila.
+3. Agrupar varios resultados que llegan a la fila 2; identificar $p_X(2)=0{,}6$.
+4. Barra total 1 y soporte {0,2,4}; dejar 1 y 3 sin barras.
+
+### masa / intervalos-discretos
+
+**Locución**
+
+1. «Hola. Vamos a usar la tabla de cero, dos y cuatro brotes para distinguir al menos dos de más de dos. Las palabras deciden qué filas sumaremos.»
+2. «Al menos dos incluye dos y cuatro. Sus masas, seis décimas y dos décimas, suman ocho décimas. Más de dos excluye el dos y solo deja cuatro: dos décimas.»
+3. «Uno y tres no tienen masa. Aunque el umbral pueda ser cualquier número real, eso no crea resultados nuevos entre las filas de la tabla.»
+4. «Para al menos una aparición suele ser más fácil quitar el caso ninguna del total. La acumulada también ayuda a reunir filas, pero siempre comprueba dónde acaba el grupo que estás excluyendo. En una variable discreta, desplazar un extremo puede cambiar la respuesta.»
+
+**Realización**
+
+1. Tabla con masas 0,2;0,6;0,2.
+2. Selecciones $X\geq2$ y $X>2$ en pasadas separadas; revelar 0,8 y 0,2.
+3. Umbral móvil entre filas, sin interpolar barras.
+4. Resaltar $P(X\geq1)=1-P(X=0)$ en este soporte; mostrar qué fila se excluye.
+
+### masa / interruptores
+
+**Locución**
+
+1. «Hola. Podemos convertir una condición en una variable muy simple: un indicador. Vale uno cuando la condición se cumple y cero cuando no. Pensemos en tener un marcador.»
+2. «Para registrar ambos marcadores multiplicamos sus indicadores. Solo cuando los dos valen uno el producto vale uno. Si alguno vale cero, el producto se apaga.»
+3. «Para al menos uno, sumar sin más falla: con ambos presentes obtendríamos dos. Restamos una copia del producto y ese caso vuelve a valer uno. Los demás casos siguen siendo correctos.»
+4. «El indicador responde sí o no a una condición. No cuenta cuántos marcadores hay. Por eso su esperanza es la probabilidad de que ocurra esa condición: ponderar el valor uno deja exactamente su probabilidad. Entender el interruptor ayuda a construir después recuentos y fórmulas de unión.»
+
+**Realización**
+
+1. Tabla de cuatro casos con $I_A,I_B$ en 0/1.
+2. Añadir columna $I_AI_B$ y asociarla a $A\cap B$.
+3. Columna de suma 0,1,1,2; corregir con $I_{A\cup B}=I_A+I_B-I_AI_B$.
+4. Dejar la tabla final binaria y $E[I_A]=P(A)$. No dibujar un indicador de unión con valor 2.
+
+### densidad / altura-y-area
+
+**Locución**
+
+1. «Hola. Una reacción dura entre cero y medio minuto. Su densidad constante tiene altura dos por minuto. ¿Eso es inválido porque dos supera uno? Vamos a mirar el área.»
+2. «La base mide medio minuto. Altura por base da uno: toda la probabilidad queda en el intervalo permitido. Entre una y tres décimas de minuto la anchura es dos décimas; el área vale cuatro décimas.»
+3. «Un instante exacto tiene anchura cero y no aporta área. Su probabilidad es cero aunque la densidad sea positiva. Cada observación concreta sigue produciendo un tiempo; no hay contradicción.»
+4. «La densidad tiene unidades inversas de tiempo y la probabilidad no tiene unidades. Si un aparato redondea, su lectura representa un pequeño intervalo de resolución, no un punto de precisión infinita. Ese intervalo sí puede tener probabilidad positiva.»
+
+**Realización**
+
+1. Rectángulo [0,0,5] de altura 2/min.
+2. $2\times0{,}5=1$; sombrear [0,1;0,3] y calcular $2\times0{,}2=0{,}4$.
+3. Contraer una franja hasta una línea; $P(T=t)=0$ separado de $f(t)=2$.
+4. Mostrar una lectura redondeada como intervalo estrecho; etiquetar sus límites y resolución.
+
+### densidad / densidad-creciente
+
+**Locución**
+
+1. «Hola. La densidad de una fracción es una constante por el valor de esa fracción, entre cero y uno. Antes de preguntar por una zona, tenemos que conseguir área total uno.»
+2. «El dibujo es un triángulo de base uno y altura final ce. Su área es ce dividido entre dos. Para que valga uno, ce debe ser dos.»
+3. «La densidad queda dos por equis. A medida que avanzamos a la derecha hay más altura y, por la misma anchura, más área. Una primitiva es equis al cuadrado: hasta medio acumulamos un cuarto.»
+4. «Por tanto, a la derecha de medio queda tres cuartos, no una mitad. La altura en ocho décimas sería uno coma seis, pero no es la probabilidad de ese punto. Como siempre en una densidad, interpretamos áreas de intervalos.»
+
+**Realización**
+
+1. Triángulo con altura desconocida c y base 1.
+2. $c/2=1$; despejar $c=2$ antes de mostrar probabilidades parciales.
+3. Recta $f(x)=2x$ y sombreado [0,0,5]; $F(0{,}5)=0{,}25$.
+4. Cambiar sombreado a [0,5;1] y revelar 0,75; distinguir altura $f(0{,}8)=1{,}6$ de área.
+
+### densidad / acumulada-por-tramos
+
+**Locución**
+
+1. «Hola. Ya sabemos que, dentro de cero a uno, la acumulada de nuestra densidad es equis al cuadrado. Vamos a completar el dibujo fuera de ese soporte.»
+2. «Antes de cero no hemos reunido probabilidad: la acumulada vale cero. Dentro del soporte crece como el cuadrado. Después de uno ya hemos reunido todo y permanece en uno.»
+3. «No podemos seguir usando el cuadrado fuera del tramo: acabaría dando probabilidades mayores que uno. Donde corresponde derivar la acumulada, su pendiente devuelve la densidad. En general esta relación se exige casi en todas partes, no necesariamente en cada punto aislado.»
+4. «Cambiar la altura de una densidad en un solo punto no modifica ninguna área. Tampoco incluir o excluir los extremos cambia la probabilidad de este modelo con densidad. Comprueba soporte, signo y total; después contrasta un intervalo integrando o restando acumuladas.»
+
+**Realización**
+
+1. Eje que se extiende antes de 0 y después de 1.
+2. Revelar $F(x)=\begin{cases}0&x<0\\x^2&0\leq x\leq1\\1&x>1\end{cases}$ junto a sus tres tramos.
+3. Tangente dentro del soporte; fuera, horizontales. No prolongar la parábola.
+4. Comparar área [a,b] con $F(b)-F(a)$; dejar visible la cota [0,1].
+
+### esperanza / promedio-ponderado
+
+**Locución**
+
+1. «Hola. Un campo puede tener cero o cuatro células activadas, cada caso con probabilidad una mitad. ¿Qué número resume el promedio del modelo? No buscamos adivinar el próximo campo.»
+2. «Multiplicamos cada resultado por su probabilidad. Cero aporta cero; cuatro por una mitad aporta dos. Sumamos las aportaciones y obtenemos una esperanza de dos.»
+3. «Ningún campo de este modelo contiene dos. La esperanza puede quedar entre resultados posibles y no tiene por qué ser el más frecuente. Resume el promedio bajo el mecanismo, no promete una observación concreta.»
+4. «Con una densidad seguimos ponderando valores, pero acumulamos con una integral. Y si las colas son infinitas, debemos comprobar que la esperanza finita existe: integrar el valor absoluto ponderado debe dar un total finito. No todas las distribuciones permiten ese resumen.»
+
+**Realización**
+
+1. Barras en 0 y 4, ambas de altura 1/2.
+2. Tabla valor, probabilidad, aportación; $0\times0{,}5=0$ y $4\times0{,}5=2$.
+3. Marcar el centro $E[X]=2$ sin dibujar masa en 2.
+4. Presentar $E[X]=\int x f_X(x)\,dx$ y condición $E[|X|]<\infty$ para esperanza finita.
+
+### esperanza / transformar-valores
+
+**Locución**
+
+1. «Hola. La señal ahora depende del cuadrado del recuento. ¿Podemos cuadrar directamente la media? Vamos a seguir cada resultado antes de promediar.»
+2. «Los valores cero y cuatro se transforman en cero y dieciséis. Conservan sus probabilidades, una mitad cada uno. El promedio de los cuadrados es ocho.»
+3. «En cambio, la media original era dos y su cuadrado es cuatro. Ocho y cuatro responden a operaciones distintas: transformar cada resultado y después promediar no es transformar el promedio.»
+4. «Si llamamos ge a una transformación, ponderamos ge de cada valor con las probabilidades originales. En continuo usamos la densidad original y una integral. Para calcular esta esperanza no necesitamos reconstruir antes toda la distribución de la señal: nos basta con saber qué salida produce cada entrada y comprobar que el promedio exista.»
+
+**Realización**
+
+1. Dos ramas de transformación $X\to X^2$.
+2. Tabla 0→0 y 4→16 con pesos 1/2; revelar $E[X^2]=8$.
+3. Columna separada $(E[X])^2=4$; contraste sin signo de igualdad.
+4. $E[g(X)]=\sum_i g(x_i)p_X(x_i)$; para continuo, $\int g(x)f_X(x)\,dx$.
+
+### esperanza / linealidad-y-colas
+
+**Locución**
+
+1. «Hola. Cada célula aporta tres unidades de señal y el aparato añade una fija. Si el recuento medio es dos, vamos a averiguar la señal media sin recalcular todos los resultados.»
+2. «Triplicar el recuento triplica su promedio: pasa a seis. Añadir una unidad a cada lectura añade una al promedio: queda siete. Esta es la linealidad de la esperanza.»
+3. «La regla se extiende a sumas de variables y no necesita independencia, siempre que las esperanzas utilizadas existan. Pero no funciona igual con productos. Separar el promedio de un producto exige condiciones adicionales, como independencia e integrabilidad.»
+4. «Las colas importan. Una variable no negativa puede tener esperanza infinita. Y si las contribuciones positiva y negativa divergen, no podemos cancelarlas para fabricar una media finita. Antes de aplicar una propiedad, comprobamos que los resúmenes que usa estén definidos.»
+
+**Realización**
+
+1. Flujo de señal $X\to3X\to3X+1$.
+2. Recorrido de medias 2→6→7.
+3. $E[aX+bY+c]=aE[X]+bE[Y]+c$; separar de $E[XY]=E[X]E[Y]$ bajo independencia e integrabilidad.
+4. Dos colas con aportaciones separadas; no animar «infinito menos infinito» como cero.
+
+### varianza / distancias
+
+**Locución**
+
+1. «Hola. Dos modelos pueden tener la misma media y resultados muy distintos. Vamos a medir cuánto se alejan del centro, sin dejar que las distancias positivas y negativas se cancelen.»
+2. «Con cero, uno y dos, de probabilidades un cuarto, una mitad y un cuarto, la media es uno. Las desviaciones son menos uno, cero y uno. Al cuadrarlas quedan uno, cero y uno.»
+3. «Ponderamos esos cuadrados con las probabilidades originales. Los extremos aportan un cuarto cada uno y el centro aporta cero. La varianza es una mitad: el promedio de las desviaciones cuadradas.»
+4. «La varianza usa unidades al cuadrado. Para volver a las unidades originales tomamos su raíz no negativa: aproximadamente cero coma setenta y uno. Esa es la desviación típica. No es otra media ni una garantía sobre cuánto se alejará cada observación.»
+
+**Realización**
+
+1. Distribuciones con igual centro y anchuras distintas.
+2. Tabla valor/desviación/cuadrado, columnas reveladas sucesivamente.
+3. Añadir pesos; $1\times1/4+0\times1/2+1\times1/4=1/2$.
+4. $\sigma=\sqrt{1/2}\approx0{,}707$; distinguir unidades originales y cuadradas.
+
+### varianza / segundo-momento
+
+**Locución**
+
+1. «Hola. Vamos a calcular la misma varianza por otro camino. Esta identidad necesita momentos finitos y nos permite usar el promedio de los cuadrados originales.»
+2. «Los valores cero, uno y dos al cuadrado son cero, uno y cuatro. Con sus pesos anteriores, el promedio da uno coma cinco. Ese es el segundo momento, no todavía la varianza.»
+3. «La media vale uno y su cuadrado también uno. Lo restamos del segundo momento: uno coma cinco menos uno da una mitad. Coincide con el cálculo de las desviaciones respecto al centro.»
+4. «Una varianza negativa no tiene interpretación: señala un error. Además, restar números grandes y casi iguales puede perder precisión en una calculadora. Si ocurre, conviene volver al cálculo centrado. Las dos fórmulas son equivalentes matemáticamente, pero no siempre se comportan igual al redondear.»
+
+**Realización**
+
+1. Recuperar la tabla anterior sin anticipar su resultado.
+2. $E[X^2]=1{,}5$ con aportaciones visibles.
+3. $(E[X])^2=1$; luego $1{,}5-1=0{,}5$ y $\operatorname{Var}(X)=E[X^2]-(E[X])^2$.
+4. Comparación conceptual «resta de números cercanos» frente a «desviaciones pequeñas»; no aceptar un valor negativo como redondeo inocuo.
+
+### varianza / estirar-y-desplazar
+
+**Locución**
+
+1. «Hola. Una longitud tiene media dos milímetros y desviación tres décimas. Vamos a expresarla en micrómetros sin cambiar físicamente la medida.»
+2. «Cada milímetro son mil micrómetros. La media pasa a dos mil y la desviación a trescientos. Las distancias se multiplican por mil, igual que las medidas.»
+3. «La varianza original es nueve centésimas de milímetro cuadrado. Como usa distancias cuadradas, su factor es un millón: pasa a noventa mil micrómetros cuadrados. Añadir una constante, en cambio, solo mueve el centro; no cambia la dispersión.»
+4. «Un factor negativo invierte la dirección del eje, pero su cuadrado mantiene la varianza no negativa. Y al sumar dos lecturas hay que contar su variación compartida. Solo con condiciones como independencia y varianzas finitas podemos omitir la covarianza; en medidas emparejadas no la damos por supuesta.»
+
+**Realización**
+
+1. Eje en mm con centro 2 y desviación 0,3.
+2. Reetiquetar el mismo eje en µm: centro 2000 y desviación 300.
+3. $0{,}09\times1000^2=90000$; desplazamiento del eje sin estirar distancias.
+4. $\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)$ y mención separada del término de covarianza en sumas.
+
+### momentos-transformaciones / ordinarios-y-centrales
+
+**Locución**
+
+1. «Hola. La palabra momento puede sonar abstracta. Aquí significa promediar una potencia de la variable. Vamos a distinguir usar los valores originales de usar sus distancias al centro.»
+2. «El momento ordinario de orden ka promedia los valores elevados a ka. El primero es la esperanza. Para un momento central restamos antes la media y después elevamos esa desviación a la potencia.»
+3. «Con cero y dos equiprobables, la media es uno. El promedio de los cuadrados originales es dos. Pero las desviaciones son menos uno y uno: el promedio de sus cuadrados es uno. Son dos resúmenes diferentes.»
+4. «El primer momento central vale cero, porque las desviaciones se equilibran. El segundo central es la varianza. Siempre precisamos qué potencia y qué referencia usamos, y comprobamos que el momento exista; no todos los órdenes están disponibles en todos los modelos.»
+
+**Realización**
+
+1. Valores 0,2 con pesos 1/2 y centro 1.
+2. $m_k=E[X^k]$ frente a $\mu_k=E[(X-E[X])^k]$.
+3. Dos tablas paralelas: cuadrados 0,4 y cuadrados centrados 1,1; resultados 2 y 1.
+4. Relacionar $m_1$, $\mu_1$ y $\mu_2$ con esperanza, cero y varianza; evitar leer una lista de símbolos sin referencia.
+
+### momentos-transformaciones / ejemplo-area
+
+**Locución**
+
+1. «Hola. Una longitud es uniforme entre cero y uno y queremos el promedio de su cuadrado, como medida de área. Que la longitud sea uniforme no significa que el área también lo sea.»
+2. «La densidad original vale uno. Ponderamos el cuadrado de cada longitud con esa densidad e integramos entre cero y uno. Una primitiva es el cubo dividido entre tres.»
+3. «Evaluar en uno y restar el valor en cero deja un tercio. En cambio, la longitud media es una mitad y cuadrarla da un cuarto. El promedio del área no coincide con el área calculada a partir de la longitud media.»
+4. «La diferencia, un doceavo, es la varianza de la longitud. No hemos supuesto independencia ni construido una nueva densidad uniforme. Hemos seguido la transformación de cada valor antes de promediar: ese orden es la idea que conviene conservar.»
+
+**Realización**
+
+1. Segmentos de distintas longitudes y sus cuadrados; pesos desde la uniforme original.
+2. $E[X^2]=\int_0^1x^2\,dx$ y primitiva $x^3/3$.
+3. Revelar $E[X^2]=1/3$ y, aparte, $(E[X])^2=1/4$.
+4. $1/3-1/4=1/12$; identificar unidades de longitud al cuadrado.
+
+### momentos-transformaciones / estandarizacion-y-existencia
+
+**Locución**
+
+1. «Hola. Vamos a comparar formas sin que las unidades cambien el resumen. Para ello dividimos cada momento central por la potencia correspondiente de la desviación. Necesitamos que el momento exista y que la desviación sea positiva y finita.»
+2. «Con cero y cuatro equiprobables, la media es dos y las desviaciones son menos dos y dos. Sus cubos se cancelan: el tercer momento central es cero. Dividirlo por dos al cubo sigue dando cero, coherente con la simetría del ejemplo.»
+3. «Las cuartas potencias valen dieciséis en ambos casos. Su promedio es dieciséis; dividir por dos a la cuarta da uno. Es el cuarto momento estandarizado. El exceso de curtosis sería ese valor menos tres, no el mismo número.»
+4. «Estos resúmenes no describen toda la distribución. Si todas las lecturas fueran dos, la desviación sería cero y no podríamos estandarizar. Y una curva simétrica puede carecer de media: cancelar colas divergentes no define una esperanza. La existencia se comprueba en el modelo, no solo mirando una muestra finita.»
+
+**Realización**
+
+1. $\mu_k/\sigma^k$ con explicación de numerador, denominador y condiciones.
+2. Tabla X:0,4; desviaciones:-2,2; cubos:-8,8. Revelar promedio 0 y cociente $0/2^3$ en pasos separados.
+3. Cuartas potencias 16,16; promedio 16; después $16/2^4=1$. Separar «curtosis 1» de «exceso -2».
+4. Distribución constante con $\sigma=0$ y división no definida; advertencia de colas. Dejar pausas adicionales entre las dos cuentas de momentos.
+
+### momentos-transformaciones / cambio-de-distribucion
+
+**Locución**
+
+1. «Hola. Esta es una ampliación opcional. Vamos a obtener la distribución del cuadrado de una longitud uniforme entre cero y uno. Primero mira qué valores puede alcanzar la nueva variable: también de cero a uno.»
+2. «En ese tramo el cuadrado crece. Para que el cuadrado no supere un umbral, la longitud no debe superar su raíz. La acumulada original devuelve esa raíz, así que la nueva acumulada es la raíz del umbral.»
+3. «Para obtener una densidad debemos conservar las probabilidades al cambiar las anchuras. La derivada absoluta de la inversa, el jacobiano, ajusta ese cambio. No basta sustituir una letra.»
+4. «Si la transformación decrece, cambia el sentido de la desigualdad. Si varias entradas producen una salida, hay que reunir todas las ramas. Cuadrar valores negativos y positivos crea dos caminos. Comprobar soporte y monotonicidad antes de aplicar la fórmula evita perder probabilidad.»
+
+**Realización**
+
+1. Marca «ampliación opcional» y mapa $Y=X^2$ sobre [0,1].
+2. $F_Y(y)=P(X\leq\sqrt y)=\sqrt y$ dentro del soporte; completar con 0 y 1 fuera.
+3. $f_Y(y)=f_X(g^{-1}(y))|(g^{-1})'(y)|$; para el ejemplo, $1/(2\sqrt y)$ en $0<y<1$.
+4. Mostrar una transformación decreciente y las dos ramas de un cuadrado con entradas de ambos signos. No aplicar la fórmula de una sola rama a ese caso.
+
+## Modelos de distribución
+
+### bernoulli-binomial / ensayos
+
+**Locución**
+
+1. «Hola. Vamos a pasar de observar una semilla a contar germinaciones de un lote. Para una semilla basta un indicador: uno si germina, cero si no. Esta variable sigue una Bernoulli.»
+2. «La probabilidad de germinar se llama pe. Éxito solo significa el resultado que decidimos contar; no implica que sea bueno. Para tres semillas, sumamos los tres indicadores y obtenemos el número de germinaciones.»
+3. «Supongamos independencia y la misma probabilidad, una mitad, para cada semilla. Exactamente dos germinaciones permiten tres patrones: falla la primera, la segunda o la tercera. Cada patrón pesa un octavo; juntos pesan tres octavos.»
+4. «La binomial describe este recuento cuando el número de ensayos está fijado, comparten probabilidad y son independientes. Los supuestos explican por qué podemos hacer la cuenta: no vienen garantizados por escribir tres indicadores.»
+
+**Realización**
+
+1. Una semilla con estados 0/1 y etiqueta Bernoulli.
+2. Tres semillas; $X=I_1+I_2+I_3$.
+3. Patrones 110,101,011, cada uno con 1/8; revelar $3\times1/8=3/8$.
+4. Condiciones separadas «n fijo», «p común», «independencia»; no adelantar la fórmula general.
+
+### bernoulli-binomial / masa-y-cola
+
+**Locución**
+
+1. «Hola. Vamos a generalizar la cuenta de germinaciones. Para exactamente ka éxitos entre ene semillas, primero contamos dónde pueden colocarse esos éxitos. De eso se encarga la combinación.»
+2. «Cada patrón tiene ka éxitos y ene menos ka fracasos. Sus potencias ponderan lo ocurrido en cada posición. Multiplicar la probabilidad de un patrón por el número de patrones da la masa binomial.»
+3. «Como máximo ka suma desde cero hasta ka incluido. Al menos ka empieza en ka. Si usamos el complemento para esta segunda pregunta, quitamos solo hasta ka menos uno.»
+4. «Con tres semillas y probabilidad una mitad, al menos una germinación es todo menos ninguna. Ninguna pesa un octavo; el resto, siete octavos. Elegir bien el grupo puede ahorrarnos muchas cuentas sin cambiar el razonamiento.»
+
+**Realización**
+
+1. Elegir k posiciones entre n: $\binom nk$.
+2. Revelar $p^k(1-p)^{n-k}$ y después $p_X(k)=\binom nk p^k(1-p)^{n-k}$.
+3. Barras de 0 a n con selección $X\leq k$ y $X\geq k$; $P(X\geq k)=1-F(k-1)$.
+4. Seleccionar la barra cero y su complemento; $1-1/8=7/8$.
+
+### bernoulli-binomial / momentos-y-diseno
+
+**Locución**
+
+1. «Hola. ¿Cuántas germinaciones esperamos, en promedio, en un lote? Cada semilla aporta una esperanza pe. Sumar ene semillas da ene por pe.»
+2. «Con tres semillas y probabilidad una mitad, la media es una coma cinco. No significa que una bandeja tenga media semilla germinada: es un promedio entre repeticiones del mismo modelo.»
+3. «La independencia permite sumar las varianzas de los indicadores. Resulta ene por pe por uno menos pe; en este ejemplo, tres cuartos.»
+4. «Antes de aplicarlo a un cultivo real, revisa el diseño. Compartir entorno puede crear dependencia y mezclar semillas distintas puede romper la probabilidad común. Una muestra importante sin reemplazo de un lote finito necesita hipergeométrica. Un resultado numérico correcto dentro de la binomial no arregla un mecanismo que no es binomial.»
+
+**Realización**
+
+1. Esperanzas de los indicadores que se suman: $E[X]=np$.
+2. Centro 1,5 sobre las barras 0–3, sin masa ficticia en 1,5.
+3. $\operatorname{Var}(X)=np(1-p)=3/4$ para el ejemplo.
+4. Tres contrastes de diseño: entorno compartido, p distintas, extracción sin devolución.
+
+### poisson / exposicion
+
+**Locución**
+
+1. «Hola. Un sensor registra, por término medio, una coma cinco apariciones por hora. Vamos a observar durante dos horas. ¿La media de esa ventana sigue siendo una coma cinco?»
+2. «No: tenemos el doble de tiempo para que aparezcan eventos. Multiplicamos tasa por duración y obtenemos tres apariciones esperadas. A esa media de la ventana la llamamos lambda. No es una probabilidad y puede superar uno.»
+3. «Un proceso Poisson homogéneo supone tasa estable e incrementos independientes. En intervalos muy pequeños, la posibilidad de varios eventos debe ser despreciable frente a la de uno.»
+4. «Duplicar el tiempo duplica lambda solo mientras la tasa se mantenga estable. Si aparecen eventos en grupos o cambia el entorno, el recuento puede variar mucho más de lo que permite este modelo. Primero identificamos la exposición; luego decidimos si Poisson es razonable.»
+
+**Realización**
+
+1. Línea temporal y tasa 1,5/h.
+2. Ventana de 2 h; $\lambda=1{,}5\times2=3$, cancelando horas.
+3. Ventanas disjuntas y eventos individuales; etiquetar «supuestos del proceso».
+4. Contraste entre tasa estable y ráfagas, sin presentar la simulación como datos reales.
+
+### poisson / masa-y-complemento
+
+**Locución**
+
+1. «Hola. Con una media de tres apariciones, ¿es posible no observar ninguna? Sí. La media no obliga a cada ventana a tener tres eventos.»
+2. «Para cero, la masa Poisson se reduce a la exponencial de menos tres: aproximadamente cinco por ciento. Las otras piezas valen uno; recuerda que cero factorial es uno.»
+3. «Para un recuento ka, la fórmula combina la exponencial, lambda a la ka y ka factorial. Solo admite enteros no negativos. Más de dos comienza en tres: podemos calcularlo quitando las masas de cero, uno y dos del total.»
+4. «Poisson tiene media y varianza iguales a lambda. Esa igualdad es una restricción, no una ley de todos los recuentos biológicos. Si los datos presentan agrupamiento o heterogeneidad, conviene revisar el modelo antes de confiar en sus colas.»
+
+**Realización**
+
+1. Barras Poisson de parámetro 3; marcar la cola fuera del marco si se trunca.
+2. $p_X(0)=e^{-3}\approx0{,}0498$ y $0!=1$.
+3. $p_X(k)=e^{-\lambda}\lambda^k/k!$; selección complementaria $P(X>2)=1-P(X\leq2)$.
+4. Resúmenes «media 3», «varianza 3», con unidades de recuento y recuento al cuadrado diferenciadas.
+
+### poisson / aproximar-y-sumar
+
+**Locución**
+
+1. «Hola. Cien ensayos independientes tienen probabilidad una centésima de evento. Su recuento es binomial, pero podemos explorar una aproximación Poisson de media uno.»
+2. «La probabilidad exacta de cero es noventa y nueve centésimas elevado a cien: aproximadamente cero coma trescientos sesenta y seis. La aproximación usa exponencial de menos uno: aproximadamente cero coma trescientos sesenta y ocho.»
+3. «Son cercanas, no iguales. La aproximación se apoya en muchos ensayos de probabilidad pequeña, conservando su producto. Debemos mirar el error de la pregunta concreta; una buena coincidencia en cero no garantiza todas las colas.»
+4. «Hay otra propiedad, esta vez exacta: sumar dos Poisson independientes da una Poisson con las medias sumadas. Aquí la palabra independiente autoriza la regla. Distinguir propiedad exacta y aproximación evita atribuir a un modelo lo que pertenece a otro.»
+
+**Realización**
+
+1. Binomial $n=100,p=0{,}01$ y Poisson $\lambda=np=1$.
+2. Cuentas en columnas: $0{,}99^{100}\approx0{,}36603$ y $e^{-1}\approx0{,}36788$.
+3. Comparación con signo aproximado, no igualdad entre modelos; marcar error absoluto en cero.
+4. Dos ventanas independientes y $\lambda_{X+Y}=\lambda_X+\lambda_Y$.
+
+### hipergeometrica / sin-reemplazo
+
+**Locución**
+
+1. «Hola. Un lote tiene doce semillas, cuatro de una variedad y ocho restantes. Elegimos tres sin devolverlas. Vamos a contar muestras, porque después de cada extracción cambia lo disponible.»
+2. «La hipergeométrica supone que todos los grupos de tres son equiprobables. Para obtener exactamente una de la variedad, elegimos una entre las cuatro: hay cuatro opciones.»
+3. «Necesitamos completar las otras dos plazas con semillas de las ocho restantes. Hay veintiocho parejas posibles. Cada elección del primer grupo puede acompañarse de cualquiera de esas parejas: multiplicamos y obtenemos ciento doce muestras favorables.»
+4. «Mezclar bien el lote puede justificar una selección uniforme, pero no independencia entre extracciones. Retirar una semilla cambia la composición. Las letras de la fórmula solo resumirán población total, existencias de la categoría y tamaño de muestra.»
+
+**Realización**
+
+1. Doce semillas, cuatro marcadas; extracción sin devolución.
+2. Etiquetas $N=12,K=4,n=3$; $\binom41=4$.
+3. Elegir dos de ocho: $\binom82=28$; después $4\times28=112$.
+4. Actualizar existencias tras una extracción y mantener «muestras equiprobables» separado de «extracciones independientes».
+
+### hipergeometrica / masa-finita
+
+**Locución**
+
+1. «Hola. Ya contamos ciento doce muestras con exactamente una semilla de la variedad. Ahora necesitamos el total con el que compararlas: todos los grupos de tres entre doce.»
+2. «La combinación da doscientas veinte muestras posibles. Como el diseño les asigna el mismo peso, dividimos ciento doce entre doscientas veinte. La probabilidad es aproximadamente cincuenta coma nueve por ciento.»
+3. «La fórmula general conserva tres pasos: elegir las semillas de interés, completar con las restantes y dividir por todas las muestras. No crea posibilidades donde faltan existencias.»
+4. «Antes de calcular comprueba el soporte: no podemos seleccionar más semillas de interés de las que tiene el lote ni más de las plazas de la muestra. Al menos ka incluye ka; si usamos el complemento de una acumulada, este termina en ka menos uno. También aquí los extremos importan.»
+
+**Realización**
+
+1. $\binom{12}3=220$ como total, no como nuevas favorables.
+2. $p_X(1)=112/220\approx0{,}5091$.
+3. $p_X(k)=\binom Kk\binom{N-K}{n-k}/\binom Nn$, revelando numerador y denominador por separado.
+4. Barras únicamente en valores posibles; selección de cola con extremo k incluido.
+
+### hipergeometrica / soporte-y-correccion
+
+**Locución**
+
+1. «Hola. Un lote contiene siete elementos de interés y solo dos restantes. Si elegimos cinco, ¿podemos evitar todos los de interés? No: los dos restantes solo llenan dos plazas.»
+2. «Estamos obligados a incluir al menos tres de interés. El mínimo se obtiene por lo que falta para completar la muestra; el máximo, por las plazas y las existencias. El soporte contiene información del diseño.»
+3. «La media es tamaño de muestra por proporción de interés. La varianza añade al factor binomial una corrección por población finita. Retirar elementos reduce la variación del total frente a ensayos independientes con la misma proporción.»
+4. «Si la muestra es una fracción muy pequeña del lote, podemos valorar una aproximación binomial, declarándola. La fórmula de corrección requiere población mayor que uno. Con una población de un elemento tratamos el caso determinista directamente, no una división indeterminada.»
+
+**Realización**
+
+1. Nueve elementos, siete de interés; cinco plazas y dos restantes.
+2. $5-2=3$; después $\max(0,n-N+K)\leq k\leq\min(n,K)$.
+3. $E[X]=nK/N$; construir $\operatorname{Var}(X)=n(K/N)(1-K/N)(N-n)/(N-1)$, destacando la corrección.
+4. Mostrar que el factor se acerca a 1 con fracción de muestreo pequeña; excluir N=1 de esa fórmula.
+
+### geometrica-negativa / primera-deteccion
+
+**Locución**
+
+1. «Hola. Probamos colonias hasta detectar una señal. Aquí no fijamos el número de ensayos: paramos en el primer éxito. Antes de contar, decidamos si queremos fallos previos o ensayos totales.»
+2. «Si detectamos a la primera, hay cero fallos y un ensayo. Las dos convenciones difieren en uno. Suponemos intentos independientes y probabilidad de éxito cuatro décimas, constante.»
+3. «Dos fallos antes de detectar requieren fallo, fallo y éxito, exactamente en ese orden. Multiplicar seis décimas, seis décimas y cuatro décimas da ciento cuarenta y cuatro milésimas. El éxito no se coloca libremente: termina la observación.»
+4. «La geométrica generaliza esta cuenta. La media de fallos es uno menos pe dividido entre pe: una coma cinco en este ejemplo. Para la media de ensayos añadimos uno. Un soporte que empieza en cero o en uno puede indicar una convención distinta, no un error.»
+
+**Realización**
+
+1. Intentos que se detienen al primer éxito.
+2. Contadores X de fallos y T de ensayos; $T=X+1$.
+3. Secuencia FFE y $p_X(2)=0{,}6^2\times0{,}4=0{,}144$.
+4. $p_X(k)=(1-p)^kp$, $k\geq0$; $E[X]=(1-p)/p=1{,}5$ y $E[T]=2{,}5$.
+
+### geometrica-negativa / varios-exitos
+
+**Locución**
+
+1. «Hola. Ahora seguimos hasta el segundo éxito, con probabilidad una mitad por intento. Queremos exactamente un fallo antes de completar la meta. El último ensayo debe ser éxito.»
+2. «Los patrones posibles son fallo, éxito, éxito y éxito, fallo, éxito. Cada uno pesa un octavo. Como son dos, la probabilidad total es un cuarto.»
+3. «En general, fijamos el éxito final y contamos cómo se colocan los fallos y los éxitos anteriores. Esa combinación, multiplicada por las potencias de éxito y fracaso, produce la masa binomial negativa.»
+4. «Erre es la meta de éxitos; ka, los fallos antes de alcanzarla. Para una acumulada de fallos empezamos en cero y sumamos hasta el límite incluido. No cambiamos el soporte por confundir esta variable con el número total de ensayos.»
+
+**Realización**
+
+1. Meta r=2 y último éxito fijo.
+2. FEE y EFE con 1/8 cada una; $2\times1/8=1/4$.
+3. $\binom{k+r-1}{k}$ sobre las posiciones libres; luego $p_F(k)=\binom{k+r-1}{k}p^r(1-p)^k$.
+4. Eje de fallos desde 0 y eje de ensayos desplazado r; no superponerlos sin etiquetas.
+
+### geometrica-negativa / memoria-y-momentos
+
+**Locución**
+
+1. «Hola. ¿Varios fallos hacen más probable acertar a continuación? No si los intentos son independientes y la probabilidad se mantiene. La geométrica no guarda memoria de los fallos anteriores.»
+2. «Eso es un supuesto del mecanismo. Si los intentos alteran la colonia, o hay aprendizaje o deterioro, no podemos aplicarlo por costumbre.»
+3. «Para esperar hasta erre éxitos podemos sumar erre esperas geométricas. Con dos éxitos y probabilidad una mitad, la media es dos fallos. Los ensayos totales añaden los dos éxitos y tienen media cuatro.»
+4. «La varianza de fallos divide por pe al cuadrado y aquí vale cuatro. Añadir los éxitos fijados no cambia la varianza. Guarda juntas la definición de la variable y la fórmula: así sabrás si un resultado habla de fallos o de ensayos.»
+
+**Realización**
+
+1. Secuencia de fallos y siguiente intento con p sin cambiar.
+2. Contraste con un mecanismo que sí cambia tras intentar.
+3. $E[F]=r(1-p)/p=2$; $E[T]=E[F]+r=4$.
+4. $\operatorname{Var}(F)=r(1-p)/p^2=4$; unidades de fallos al cuadrado, no probabilidades.
+
+### geometrica-negativa / forma-real
+
+**Locución**
+
+1. «Hola. La binomial negativa también admite una forma real positiva, como dos coma cinco. En ese caso ya no significa esperar literalmente dos coma cinco éxitos; es una extensión matemática del modelo de recuentos.»
+2. «La función gamma extiende el coeficiente que antes escribíamos con factoriales. El recuento sigue siendo entero no negativo y la probabilidad de éxito debe permitir alcanzar un éxito.»
+3. «Con forma dos coma cinco y probabilidad una mitad, la media de fallos es dos coma cinco. La varianza vale cinco, mayor que la media. A esa mayor variación la llamamos sobredispersión frente a Poisson.»
+4. «La extensión resulta útil para describir recuentos, pero no demuestra un mecanismo biológico concreto ni una meta fraccionaria de éxitos. Separar la interpretación literal de la familia matemática evita inventar una historia a partir de un parámetro.»
+
+**Realización**
+
+1. Etiquetas «r real positivo» y «no es una meta literal».
+2. Coeficiente $\Gamma(k+r)/[\Gamma(r)\Gamma(k+1)]$, con $k\geq0$, $0<p\leq1$.
+3. Construir media $2{,}5(1-0{,}5)/0{,}5=2{,}5$ y varianza $2{,}5(1-0{,}5)/0{,}5^2=5$ en dos pasos.
+4. Comparación «varianza 5 > media 2,5»; no dibujar una parada en medio éxito.
+
+### uniforme-montecarlo / dos-uniformes
+
+**Locución**
+
+1. «Hola. Elegimos un instante entre dos y seis minutos sin preferencia por zonas. Para estar entre tres y cinco comparamos longitudes: dos minutos favorables dentro de cuatro posibles. La probabilidad es una mitad.»
+2. «La densidad constante vale un cuarto por minuto. Cada punto aislado tiene probabilidad cero: uniforme significa misma altura y misma probabilidad para intervalos de igual longitud.»
+3. «En una lista discreta de uno, dos, tres y cuatro, en cambio, cada valor tiene masa un cuarto. El promedio es dos coma cinco y la varianza uno coma veinticinco.»
+4. «No mezcles esas dos formas de ser uniforme. La fórmula discreta habitual de varianza supone enteros consecutivos. Para una lista arbitraria con pesos iguales, promediamos sus valores reales y sus desviaciones cuadradas. Igual probabilidad no significa que las etiquetas estén igualmente espaciadas.»
+
+**Realización**
+
+1. Intervalo [2,6] y sombreado [3,5]; $2/4=1/2$.
+2. Densidad 1/4 por minuto y punto sin área.
+3. Cuatro barras en 1,2,3,4 con altura 1/4; centro 2,5.
+4. $\operatorname{Var}(D)=[(b-a+1)^2-1]/12$ únicamente para enteros consecutivos a,…,b.
+
+### uniforme-montecarlo / cuantiles
+
+**Locución**
+
+1. «Hola. ¿Qué tiempo deja el setenta y cinco por ciento de la uniforme de dos a seis por debajo? Vamos a recorrer tres cuartos del intervalo desde su comienzo.»
+2. «La anchura es cuatro. Tres cuartos de cuatro son tres minutos. Sumarlos al comienzo, dos, da cinco. Ese es el cuantil, y su unidad sigue siendo minutos.»
+3. «La media está en el punto medio, cuatro; la varianza continua es la anchura al cuadrado dividida entre doce. Son resúmenes distintos de la misma distribución.»
+4. «Con una acumulada de escalones no siempre existe una inversa ordinaria. Buscamos el primer umbral donde se alcanza la proporción pedida. Puede superarla de golpe al incorporar una masa. No interpolamos resultados que la variable no puede tomar para forzar una igualdad.»
+
+**Realización**
+
+1. Barra [2,6] y nivel u=0,75.
+2. $0{,}75\times4=3$; después $2+3=5$.
+3. Centro 4 y $\operatorname{Var}(X)=(b-a)^2/12$.
+4. CDF discreta y $Q(u)=\inf\{x:F(x)\geq u\}$, para $0<u<1$; marcar el primer alcance, no un punto interpolado.
+
+### uniforme-montecarlo / inversion-y-montecarlo
+
+**Locución**
+
+1. «Hola. Queremos simular cero, uno y dos con probabilidades dos décimas, cinco décimas y tres décimas. Vamos a repartir un intervalo uniforme según esos pesos.»
+2. «Hasta dos décimas asignamos cero; desde ahí hasta siete décimas, uno; el resto, dos. Un valor uniforme de una décima produce cero, de cincuenta y cinco centésimas produce uno y de noventa y una centésimas produce dos.»
+3. «Las longitudes de los tramos coinciden con las masas. Aplicar el cuantil a una uniforme reproduce esa distribución. Montecarlo repite esta generación para aproximar probabilidades o promedios.»
+4. «La frecuencia de doses fluctuará alrededor de tres décimas; no tiene que igualarla en cada lote. Más simulaciones reducen fluctuación bajo el modelo, no corrigen un modelo falso. Guardar una semilla permite reproducir el cálculo, no valida el mecanismo ni convierte la variable individual en normal.»
+
+**Realización**
+
+1. Intervalo [0,1] dividido en tramos de longitudes 0,2;0,5;0,3.
+2. Marcadores 0,10→0, 0,55→1, 0,91→2.
+3. $X=Q(U)$ y sucesivas realizaciones; histograma de frecuencias con escala correcta.
+4. Línea de referencia 0,3 y varias tandas fluctuantes; etiqueta «simulación», semilla visible en la documentación técnica, no como garantía de validez.
+
+### exponencial / escala-y-supervivencia
+
+**Locución**
+
+1. «Hola. Un mecanismo tiene espera media de cinco minutos. Queremos saber la probabilidad de seguir esperando después de diez. Una media de cinco no significa que el evento llegue exactamente a los cinco.»
+2. «Usamos escala cinco minutos; la tasa correspondiente es su inversa, dos décimas por minuto. Para la supervivencia comparamos tiempo con escala: diez entre cinco da dos.»
+3. «La exponencial de menos dos da aproximadamente trece coma cinco por ciento. Esa es la probabilidad de que todavía no haya ocurrido el evento a los diez minutos. La supervivencia disminuye al avanzar el tiempo.»
+4. «En un proceso Poisson homogéneo, el tiempo hasta el siguiente evento tiene esta distribución con la tasa del proceso. La relación necesita tasa estable e incrementos independientes. No cualquier tiempo positivo es exponencial.»
+
+**Realización**
+
+1. Línea de espera y pregunta $P(T>10)$.
+2. Escala $\alpha=5$ min; tasa $r=1/5$ por minuto; $10/5=2$.
+3. $S(10)=e^{-2}\approx0{,}1353$ y curva de supervivencia con marcador en 10.
+4. Eventos de un proceso homogéneo y tiempo al siguiente; identificar las condiciones.
+
+### exponencial / densidad-y-acumulada
+
+**Locución**
+
+1. «Hola. Vamos a distinguir tres curvas de una espera exponencial: densidad, acumulada y supervivencia. No responden a la misma pregunta.»
+2. «La densidad describe alturas y lleva el factor inverso de la escala. Sus unidades son por minuto. Para una probabilidad debemos integrar una franja bajo ella.»
+3. «La supervivencia dice que seguimos esperando; la acumulada, que el evento ya ocurrió. Por eso suman uno. La media es la escala y la varianza su cuadrado: aquí cinco minutos y veinticinco minutos cuadrados.»
+4. «Al usar una biblioteca, mira si pide escala o tasa. Cinco minutos de escala corresponde a una tasa de una quinta parte por minuto, no a una tasa cinco. Los tiempos negativos están fuera del soporte; allí la densidad y la acumulada valen cero.»
+
+**Realización**
+
+1. Tres gráficos separados con preguntas y ejes correctos.
+2. $f(t)=\alpha^{-1}e^{-t/\alpha}$ para $t\geq0$, cero fuera; sombreado de un intervalo.
+3. $F(t)=1-S(t)$, $E[T]=\alpha$, $\operatorname{Var}(T)=\alpha^2$.
+4. Ficha «escala 5 min / tasa 0,2 por min»; no reutilizar una curva de supervivencia con eje «densidad».
+
+### exponencial / espera-adicional
+
+**Locución**
+
+1. «Hola. Ya llevamos diez minutos esperando sin señal. ¿La espera pendiente es más corta por haber esperado tanto? Bajo el modelo exponencial, no: el riesgo se mantiene constante.»
+2. «La probabilidad de esperar otros cinco se obtiene comparando supervivencia hasta quince con supervivencia hasta diez. La parte ya transcurrida se cancela en el cociente.»
+3. «Queda exponencial de menos uno: aproximadamente treinta y seis coma ocho por ciento. Es la misma probabilidad de superar cinco minutos al iniciar una espera nueva. Esto es carencia de memoria, no un plazo individual fijo.»
+4. «Envejecimiento, adaptación o fases pueden romper esa hipótesis. Y si acaba la observación sin ver el evento, sabemos que la espera supera lo observado; no que terminó justo ahí. Ese dato está censurado. Aquí señalamos la diferencia sin desarrollar técnicas de supervivencia.»
+
+**Realización**
+
+1. Línea de tiempo con 10 minutos transcurridos y tramo adicional de 5.
+2. $P(T>15\mid T>10)=S(15)/S(10)$.
+3. Cancelar factores y revelar $e^{-1}\approx0{,}3679$; comparar con $S(5)$.
+4. Marca de fin de observación con flecha «evento aún no observado»; no dibujar un evento ficticio al censurar.
+
+### normal / centro-y-escala
+
+**Locución**
+
+1. «Hola. Una longitud se modela con media cuarenta milímetros y desviación cuatro. Vamos a interpretar cuarenta y ocho comparándolo con el centro y con la escala de variación.»
+2. «La distancia al centro es ocho milímetros. Dividirla entre la desviación, cuatro, da dos. El valor está dos desviaciones por encima de la media. Tipificar hace esa comparación y elimina las unidades.»
+3. «En la notación de este curso, el segundo parámetro de la normal es la varianza: dieciséis, no la desviación cuatro. La curva es simétrica y su media, mediana y moda coinciden.»
+4. «La normal se extiende por toda la recta. Para una medida necesariamente positiva debemos comprobar que la probabilidad de valores negativos sea despreciable. Una campana bonita no basta para justificar el modelo: primero declaramos el supuesto y luego interpretamos sus consecuencias.»
+
+**Realización**
+
+1. Campana con centro 40 mm y marcas separadas 4 mm.
+2. $48-40=8$ y $8/4=2$; cambiar eje a $Z=(X-\mu)/\sigma$ conservando las áreas.
+3. $X\sim N(40,16)$ con «media / varianza»; no enviar 16 a una biblioteca que pide desviación.
+4. Flechas en ambas colas y advertencia de soporte real, aunque el marco visible sea finito.
+
+### normal / densidad-normal
+
+**Locución**
+
+1. «Hola. Vamos a entender cómo se construye la campana estándar. Su altura es densidad; para una probabilidad seguiremos necesitando un área.»
+2. «El cuadrado de la distancia al centro hace que izquierda y derecha se traten igual. La exponencial de menos ese cuadrado entre dos da la forma de la campana.»
+3. «Dividir por la raíz de dos pi ajusta el área completa a uno. Pi aquí es la constante circular. Para otra desviación, el factor inverso de sigma compensa el cambio de anchura: una campana más ancha tiene menos altura.»
+4. «El dibujo puede mostrar solo cuatro desviaciones a cada lado, pero las colas continúan. La altura en un valor no responde a la probabilidad de superarlo. La densidad y la acumulada tienen nombres parecidos; distinguir su pregunta evita usar la curva equivocada.»
+
+**Realización**
+
+1. Campana estándar con ejes z y densidad.
+2. Revelar $e^{-z^2/2}$ y señalar su simetría.
+3. $\phi(z)=e^{-z^2/2}/\sqrt{2\pi}$; después $f_X(x)=\phi((x-\mu)/\sigma)/\sigma$, con áreas iguales al cambiar anchura.
+4. Marco [-4,4] con colas indicadas; altura puntual frente a área de cola, sin superponer sus etiquetas.
+
+### normal / colas-e-intervalos
+
+**Locución**
+
+1. «Hola. Queremos la probabilidad entre treinta y seis y cuarenta y ocho milímetros para una normal de media cuarenta y desviación cuatro. Primero llevamos ambos extremos a la escala estándar.»
+2. «El inferior está una desviación por debajo; el superior, dos por encima. La acumulada estándar da todo lo que hay a la izquierda de cada límite.»
+3. «Hasta dos llevamos aproximadamente noventa y siete coma siete por ciento. Quitamos lo acumulado hasta menos uno, aproximadamente quince coma nueve por ciento. Queda alrededor de ochenta y uno coma nueve por ciento entre ambos.»
+4. «Para la cola derecha de dos tomamos lo que falta hasta uno: cerca de dos coma veintiocho por ciento. Estos valores se consultan en tablas o una biblioteca: la acumulada no tiene una primitiva elemental sencilla. La cuenta debe corresponder al área que hemos seleccionado, no a su altura.»
+
+**Realización**
+
+1. Límites originales 36 y 48 con media 40 y desviación 4.
+2. Transformar extremos a -1 y 2.
+3. Sombreado entre ambos; $P(-1<Z<2)=\Phi(2)-\Phi(-1)\approx0{,}8186$.
+4. Cambiar a cola derecha: $P(Z>2)=1-\Phi(2)\approx0{,}02275$. Indicar colas fuera del marco.
+
+### normal / cuantiles-y-combinaciones
+
+**Locución**
+
+1. «Hola. Ahora conocemos una proporción y queremos una longitud: la que deja el noventa por ciento por debajo. Es la pregunta inversa de calcular una probabilidad.»
+2. «Buscamos el umbral estándar: aproximadamente uno coma veintiocho desviaciones por encima del centro. Multiplicamos por cuatro milímetros y obtenemos un desplazamiento de unos cinco coma trece.»
+3. «Añadimos la media cuarenta. El percentil es aproximadamente cuarenta y cinco coma trece milímetros. Si pidieran cinco por ciento por encima, buscaríamos noventa y cinco por debajo; no cinco.»
+4. «Una transformación lineal de una normal sigue siendo normal, salvo el caso constante. También una combinación de normales independientes, usando medias y varianzas apropiadas. Pero observar muchos datos no vuelve normal a cualquier variable individual. Aquí estamos trabajando con un modelo normal supuesto, no justificándolo por el tamaño de la muestra.»
+
+**Realización**
+
+1. Área objetivo 0,90 con umbral aún desconocido.
+2. $\Phi^{-1}(0{,}90)\approx1{,}28155$; $4\times1{,}28155\approx5{,}1262$.
+3. $40+5{,}1262=45{,}1262$; después $q_u=\mu+\sigma\Phi^{-1}(u)$.
+4. Para suma independiente, medias sumadas y varianzas sumadas, no desviaciones; mantener explícitos los supuestos.
+
+### gamma / etapas-y-parametros
+
+**Locución**
+
+1. «Hola. Una reacción necesita completar tres etapas. Supongamos que cada espera es exponencial, independiente, con escala de dos minutos. Queremos describir el tiempo total.»
+2. «La suma sigue una gamma de forma tres y escala dos. En esta interpretación, la forma cuenta etapas. La escala expresa tiempo; no es una probabilidad ni debe sumarse como si fuera otra etapa.»
+3. «La media suma tres esperas de dos minutos: seis. Cada espera tiene varianza cuatro; la independencia permite sumarlas y obtenemos doce minutos cuadrados. Media y varianza no usan las mismas unidades.»
+4. «Comprueba la convención del programa: escala dos minutos corresponde a tasa una mitad por minuto. La historia de etapas necesita independencia y escala común. Una gamma también puede servir como modelo flexible, pero no demuestra por sí sola que la reacción siga estas tres fases.»
+
+**Realización**
+
+1. Tres etapas consecutivas con esperas independientes y escala común.
+2. $T\sim\operatorname{Gamma}(3,2)$ con parámetros etiquetados.
+3. $E[T]=3\times2=6$ min; $\operatorname{Var}(T)=3\times4=12$ min².
+4. Ficha «forma 3 / escala 2 / tasa 0,5» sin intercambiar argumentos.
+
+### gamma / funcion-gamma
+
+**Locución**
+
+1. «Hola. La forma de una distribución gamma también puede ser un número real positivo. ¿Qué hacemos con un factorial cuando no hay un entero? Necesitamos una función que lo extienda.»
+2. «La función gamma, con letra mayúscula, se define mediante una integral. Es distinta de la distribución gamma: aquí nos da una constante para normalizar su densidad.»
+3. «Para un entero positivo, gamma de ese entero devuelve el factorial del entero anterior. Gamma de tres vale dos factorial: dos. No está contando una etapa nueva; está ajustando el total de probabilidad.»
+4. «La variable dentro de la integral solo sirve para recorrer el cálculo. Si la forma es real, la función sigue estando definida, pero ya no interpretamos literalmente el parámetro como un número fraccionario de etapas observadas. Una extensión matemática no obliga a extender la historia biológica de la misma manera.»
+
+**Realización**
+
+1. Contrastar forma entera 3 y forma real positiva.
+2. $\Gamma(k)=\int_0^\infty u^{k-1}e^{-u}\,du$, identificando u como variable auxiliar.
+3. $\Gamma(m)=(m-1)!$; caso $\Gamma(3)=2$.
+4. Conectar Γ con el denominador normalizador de la densidad, sin dibujar fracciones de etapa.
+
+### gamma / densidad-y-area
+
+**Locución**
+
+1. «Hola. Para las tres etapas de escala dos, queremos acabar antes de cuatro minutos. Primero debemos elegir el área bajo la densidad, no la altura en cuatro.»
+2. «La densidad combina una potencia del tiempo y una exponencial decreciente. La forma controla la potencia; la escala, la velocidad de decaimiento. El denominador, con la función gamma y la escala elevada a la forma, normaliza el total.»
+3. «En nuestro ejemplo el denominador vale dieciséis. El área desde cero hasta cuatro da aproximadamente treinta y dos coma tres por ciento. Podemos evaluarla con la acumulada gamma de una biblioteca.»
+4. «Enviamos forma tres y escala dos, o tasa una mitad si utiliza esa convención. Los parámetros son positivos y fuera de tiempos positivos la densidad es cero. La cola continúa más allá del marco del dibujo: el borde de la pantalla no es un máximo de duración.»
+
+**Realización**
+
+1. Curva gamma k=3, α=2; marcar 4 sin responder aún.
+2. Revelar $t^{k-1}e^{-t/\alpha}$ y después $f(t)=t^{k-1}e^{-t/\alpha}/[\Gamma(k)\alpha^k]$.
+3. $f(t)=t^2e^{-t/2}/16$; sombrear [0,4] y mostrar $F(4)\approx0{,}3233$.
+4. Ejes min y 1/min, parámetros de consulta y cola no dibujada indicada.
+
+### gamma / sumas-y-variacion
+
+**Locución**
+
+1. «Hola. Sumamos dos tiempos gamma independientes, de formas dos y tres y escala común dos. ¿Qué parámetro se suma? Las formas. La escala se conserva.»
+2. «El tiempo total tiene forma cinco y escala dos. Con escalas distintas, esta regla simple no vale en general. Las condiciones forman parte del resultado.»
+3. «La media general es forma por escala; la varianza, forma por escala al cuadrado. Al aumentar etapas independientes, la variación absoluta crece, pero la desviación comparada con la media disminuye como uno entre la raíz de la forma.»
+4. «Forma uno recupera la exponencial. Con formas reales tenemos una familia flexible de cantidades positivas. No confundas ajustar una gamma con demostrar una cadena literal de etapas. Primero declaramos el mecanismo supuesto y después comprobamos si sus consecuencias son compatibles con los datos.»
+
+**Realización**
+
+1. Dos grupos de etapas independientes y α=2 compartida.
+2. $2+3=5$; salida Gamma(5,2), no Gamma(5,4).
+3. $E[T]=k\alpha$, $\operatorname{Var}(T)=k\alpha^2$ y $\sigma_T/E[T]=1/\sqrt k$.
+4. Curvas de distintas formas etiquetadas; mantener separados «interpretación de etapas» y «modelo flexible».
+
+### cauchy-weibull / centro-sin-media
+
+**Locución**
+
+1. «Hola. Una curva es simétrica alrededor de cero. ¿Su esperanza tiene que ser cero? La distribución Cauchy nos muestra por qué no podemos afirmarlo.»
+2. «Su densidad estándar tiene una campana central y colas muy persistentes. El dibujo de la zona central puede parecer familiar, pero fuera de él queda una parte importante de la historia.»
+3. «La mediana y la moda son cero. Sin embargo, las aportaciones positiva y negativa al promedio divergen. No podemos cancelarlas para fabricar una esperanza: la media no existe y la varianza no está definida.»
+4. «Una muestra finita sí tiene promedio numérico. Eso no crea una esperanza poblacional. Integrar simétricamente y obtener un valor principal es otra operación. Los cocientes con denominadores cerca de cero pueden motivar cautela sobre colas, pero no demuestran automáticamente que el modelo correcto sea Cauchy.»
+
+**Realización**
+
+1. Curva simétrica con centro 0, sin etiqueta «media».
+2. $f_C(x)=1/[\pi(1+x^2)]$ y ampliación de colas al ensanchar el marco.
+3. Separar aportaciones de ambos lados; etiquetas «mediana 0», «esperanza no existe», «varianza no definida».
+4. Promedios de muestras finitas frente al resumen poblacional; no mostrar cancelación de infinitos como una esperanza.
+
+### cauchy-weibull / intervalos-cauchy
+
+**Locución**
+
+1. «Hola. Aunque Cauchy no tenga esperanza, podemos calcular probabilidades de intervalos. La acumulada sigue siendo una función perfectamente definida.»
+2. «Utiliza arco tangente, la inversa de la tangente en su tramo principal. La localización indica el centro y gamma minúscula una escala positiva. No es la función gamma mayúscula que extiende factoriales.»
+3. «En la Cauchy estándar, la acumulada en uno vale tres cuartos y en menos uno, un cuarto. Restarlas da una mitad de probabilidad entre menos uno y uno.»
+4. «La mediana es la localización porque allí la acumulada alcanza una mitad. Esa escala no es una desviación típica: no podemos tipificar usando una desviación inexistente. La falta de un resumen no impide usar otros que sí están definidos.»
+
+**Realización**
+
+1. Curva Cauchy y límites -1,1.
+2. $F(x)=1/2+\arctan((x-x_0)/\gamma)/\pi$, con $\gamma>0$.
+3. $F(1)=3/4$, $F(-1)=1/4$ y $3/4-1/4=1/2$ sobre el sombreado.
+4. $F(x_0)=1/2$; etiquetar localización y escala, nunca media y desviación típica.
+
+### cauchy-weibull / weibull-supervivencia
+
+**Locución**
+
+1. «Hola. Si un sensor cambia con el tiempo, una espera de riesgo constante puede no servir. Weibull permite variar ese comportamiento mediante una forma y una escala positivas.»
+2. «Con escala diez horas y forma dos, preguntamos por superar diez horas. Primero dividimos tiempo por escala: da uno. Después elevamos a la forma dos; sigue siendo uno.»
+3. «La exponencial de menos uno da aproximadamente treinta y seis coma ocho por ciento. Esa es la supervivencia. La densidad es otra curva: multiplica la supervivencia por un factor que depende del tiempo y la forma.»
+4. «No interpretes la escala como una media automática: en Weibull la media depende también de la forma. El modelo permite describir riesgos crecientes o decrecientes, pero la explicación física de ese patrón necesita evidencia adicional.»
+
+**Realización**
+
+1. Parámetros α=10 h, β=2 y eje temporal positivo.
+2. $10/10=1$; elevar a 2 antes de aplicar la exponencial.
+3. $S(t)=e^{-(t/\alpha)^\beta}$ y $S(10)=e^{-1}$; después $f(t)=(\beta/\alpha)(t/\alpha)^{\beta-1}S(t)$.
+4. Curvas de supervivencia etiquetadas; no marcar α como media sin calcularla.
+
+### cauchy-weibull / riesgo-y-momentos
+
+**Locución**
+
+1. «Hola. Vamos a interpretar la forma de Weibull a través del riesgo instantáneo. Este se obtiene dividiendo densidad por supervivencia: habla de la intensidad del evento entre quienes siguen esperando.»
+2. «Al dividir se cancela la exponencial. Si la forma vale uno, el riesgo es constante y recuperamos exponencial. Por debajo de uno disminuye; por encima aumenta.»
+3. «Eso describe un patrón, no demuestra envejecimiento, selección ni otra causa. La media de Weibull utiliza la escala y la función gamma. El segundo momento tiene otra potencia de escala; al restar el cuadrado de la media obtenemos la varianza.»
+4. «Estos momentos son finitos para los parámetros positivos de Weibull. Cauchy, aunque también tenga un centro y una escala, no comparte esa propiedad. Una familia no hereda los resúmenes de otra porque sus curvas se parezcan.»
+
+**Realización**
+
+1. $h(t)=f(t)/S(t)$ con unidades 1/tiempo, no etiqueta de probabilidad.
+2. $h(t)=(\beta/\alpha)(t/\alpha)^{\beta-1}$; tres curvas β<1, β=1, β>1.
+3. Revelar $E[W]=\alpha\Gamma(1+1/\beta)$, después $E[W^2]=\alpha^2\Gamma(1+2/\beta)$ y su resta centrada.
+4. Tabla comparativa Weibull/Cauchy de existencia de momentos; no atribuir causa biológica al parámetro β.
+
+### calculo-modelos / operacion-correcta
+
+**Locución**
+
+1. «Hola. Una calculadora responde a la operación que le pedimos, no a la que teníamos en mente. Vamos a elegir bien antes de introducir números.»
+2. «Masa o densidad evalúan un punto. La acumulada reúne hasta un umbral. El cuantil busca un umbral a partir de una proporción. Generar produce realizaciones. Son cuatro preguntas diferentes.»
+3. «En R suelen identificarse con las letras de, pe, cu y erre. En Python se distinguen masa o densidad, acumulada, inversa y generación. Las unidades nos ayudan: un cuantil devuelve unidades de la variable; una probabilidad no tiene unidades; una densidad usa unidades inversas.»
+4. «También revisa parámetros. La notación de la normal puede mostrar varianza y la función pedir desviación. Una espera puede parametrizarse con escala o tasa. Que el programa acepte un argumento no demuestra que hayamos planteado la pregunta correctamente.»
+
+**Realización**
+
+1. Pregunta de cola «superar 26» frente a un marcador de altura puntual.
+2. Cuatro esquemas separados: punto, área acumulada, umbral inverso, muestra.
+3. Tabla R d/p/q/r y Python pmf/pdf, cdf, ppf, rvs, con unidades de salida.
+4. Ficha normal media20/desviación3/varianza9 y ficha escala/tasa; no anticipar llamadas incompatibles.
+
+### calculo-modelos / consulta-con-unidades
+
+**Locución**
+
+1. «Hola. Queremos superar veintiséis en una normal de media veinte y desviación tres. Primero dejamos clara la pregunta: una cola derecha, no una altura.»
+2. «Restar la media da seis; dividir por la desviación da dos. Consultamos la probabilidad estándar a la derecha de dos: aproximadamente dos coma veintiocho por ciento.»
+3. «Una función de supervivencia o una acumulada con cola superior responde directamente a esa pregunta. Si en cambio pedimos el percentil noventa, la salida es aproximadamente veintitrés coma ochenta y cuatro, en unidades de la medida.»
+4. «Guarda pregunta, parámetros, unidades y operación para reproducir la consulta. En recuentos, al menos ka complementa hasta ka menos uno. En continuo un punto no añade masa, pero en discreto puede hacerlo: la misma desigualdad no autoriza siempre la misma llamada.»
+
+**Realización**
+
+1. Campana N(20,9), umbral26 y cola derecha.
+2. $26-20=6$, $6/3=2$ y $1-\Phi(2)\approx0{,}02275$.
+3. Mostrar `pnorm(26, mean=20, sd=3, lower.tail=FALSE)` y `norm.sf(26, loc=20, scale=3)`; después, en otro plano, `qnorm(0.9, mean=20, sd=3)` y `norm.ppf(0.9, loc=20, scale=3)`.
+4. Anotar resultado y unidades; para discreta marcar el desplazamiento del límite del complemento.
+
+### calculo-modelos / elegir-mecanismo
+
+**Locución**
+
+1. «Hola. Vamos a elegir una distribución empezando por el experimento. ¿Qué contamos? ¿Cómo se obtiene? ¿Qué valores son posibles? Esas preguntas van antes que la fórmula.»
+2. «Un ensayo binario lleva a Bernoulli. Un número fijo de ensayos independientes con probabilidad común, a binomial. Una extracción finita sin reemplazo, a hipergeométrica.»
+3. «Parar en el primer éxito lleva a geométrica; en una meta de éxitos, a binomial negativa. Recuentos por exposición estable pueden llevar a Poisson. Las duraciones necesitan soporte positivo y un patrón de riesgo coherente.»
+4. «Después comprobamos independencia, homogeneidad, resolución y parámetros, y contrastamos resúmenes y colas con lo observado. Una muestra pequeña puede fluctuar; tampoco cualquier coincidencia valida el modelo. Simular ayuda a detectar errores de implementación y una semilla permite reproducirlos. Al terminar, vuelve a la pregunta biológica y a sus unidades.»
+
+**Realización**
+
+1. Itinerario «medida → soporte → diseño → modelo → comprobación».
+2. Dibujos de los tres mecanismos discretos, con condiciones junto a cada nombre.
+3. Parada, exposición y duración en recorridos separados; no mostrar una fórmula única para todos.
+4. Contraste modelo/datos con resúmenes y colas, más un ejemplo de interpretación verbal del resultado.
+
+## Familia exponencial y modelos lineales generalizados
+
+### familia-exponencial / piezas-poisson
+
+**Locución**
+
+1. «Hola. Familia exponencial no significa que todos sus modelos sean tiempos de espera exponenciales. Es una manera de organizar masas y densidades separando datos y parámetros. Vamos a reconocerla en Poisson.»
+2. «El dato es un recuento y lambda su media positiva. El factorial del dato no depende de lambda: lo dejamos en una pieza que llamamos hache. El recuento que se combina con el parámetro será nuestro estadístico te.»
+3. «Reescribimos la potencia de lambda usando su logaritmo. Ese logaritmo es el parámetro natural, eta; no tiene por qué ser una probabilidad. La pieza que normaliza el total se llama a de eta y, aquí, es la exponencial de eta.»
+4. «Ahora reunimos las cuatro piezas en una sola expresión. No hemos cambiado Poisson: hemos reordenado su fórmula para ver qué depende del dato y qué del parámetro. El soporte y el dominio siguen siendo parte del modelo; esta forma compartida no hace iguales todas las distribuciones.»
+
+**Realización**
+
+1. Masa Poisson original y etiqueta «misma distribución, otra organización».
+2. Extraer $h(x)=1/x!$ y $T(x)=x$ en posiciones separadas.
+3. Revelar $\eta=\log\lambda$ y $A(\eta)=e^\eta$, con $\lambda>0$ y $\eta\in\mathbb R$.
+4. Construir $f(x;\eta)=h(x)\exp\{\eta T(x)-A(\eta)\}$, señalando cada pieza al incorporarla. Mantener $x\in\{0,1,\ldots\}$.
+
+### familia-exponencial / binomial-natural
+
+**Locución**
+
+1. «Hola. Vamos a reconocer la misma estructura en una binomial con tamaño fijado. La probabilidad de éxito debe estar estrictamente entre cero y uno para usar un parámetro natural finito.»
+2. «La combinación depende del dato y del tamaño fijo: será hache. El estadístico te vuelve a ser el recuento. Para el parámetro usamos las odds: probabilidad de éxito dividida entre la de fracaso.»
+3. «Tomar el logaritmo de esas odds da el logit, eta. Si la probabilidad es tres cuartos, las odds son tres y eta es logaritmo de tres. Eta no es una probabilidad: puede ser negativo o superar uno.»
+4. «El normalizador completa la expresión con tamaño por logaritmo de uno más exponencial de eta. Probabilidades cero o uno producen casos degenerados como límites; no un logit finito. Antes de reorganizar una fórmula, dejamos claros qué parámetros varían y qué soporte estamos manteniendo.»
+
+**Realización**
+
+1. Binomial con n fijo, soporte 0,…,n y $0<p<1$.
+2. $h(x)=\binom nx$, $T(x)=x$; odds $p/(1-p)$.
+3. $\eta=\log[p/(1-p)]$; ejemplo p=3/4→odds3→η=log3.
+4. $A(\eta)=n\log(1+e^\eta)$ y composición final; extremos p=0,1 como límites, no valores de logit finito.
+
+### familia-exponencial / normales-uniparametricas
+
+**Locución**
+
+1. «Hola. Una normal también puede escribirse como familia exponencial, pero primero decidamos qué dejamos variar. Fijar la varianza y variar la media no es lo mismo que fijar la media y variar la varianza.»
+2. «Con varianza conocida ve, el estadístico es el valor observado. El parámetro natural es la media dividida entre ve. Al expandir el cuadrado de la densidad, la parte restante que depende del parámetro forma el normalizador.»
+3. «Con media conocida y varianza variable, el estadístico cambia: ahora es la distancia cuadrada a esa media. El parámetro natural es negativo, menos uno entre dos varianzas. Su dominio garantiza que la varianza sea positiva.»
+4. «Las dos representaciones describen familias distintas porque fijan cosas distintas. Si queremos variar media y varianza simultáneamente, necesitamos más de un parámetro natural. No intercambiamos los estadísticos de estos dos casos ni declaramos que la media era conocida después de estimarla.»
+
+**Realización**
+
+1. Dos paneles alternativos, con el parámetro fijo destacado en cada uno.
+2. Caso v fija: $T(x)=x$, $\eta=\mu/v$, $A(\eta)=v\eta^2/2$; h es la densidad N(0,v).
+3. Caso media $\mu_0$ fija: $T(x)=(x-\mu_0)^2$, $\eta=-1/(2\sigma^2)<0$, $A(\eta)=-\tfrac12\log(-2\eta)$ y $h(x)=1/\sqrt{2\pi}$.
+4. Mostrar los dos recorridos completos por separado. No mezclar sus piezas en una única fórmula.
+
+### familia-exponencial / datos-fijos-y-maximo
+
+**Locución**
+
+1. «Hola. Observamos cero, uno y dos eventos en tres ventanas independientes de igual exposición. Vamos a comparar medias Poisson candidatas. Durante esta comparación los datos no cambian: cambia lambda.»
+2. «La independencia permite multiplicar las masas de los tres datos. La suma de recuentos es tres y los factoriales forman un factor fijo. El producto se llama verosimilitud: valora candidatos para estos datos, no es una posterior de lambda.»
+3. «Tomar logaritmos convierte el producto en suma. Derivamos respecto al parámetro, igualamos a cero y obtenemos lambda uno, la media de los datos. La segunda derivada negativa confirma que es un máximo.»
+4. «Con una muestra general y suma positiva, el estimador es suma entre número de ventanas. Si todos los datos son cero, el máximo está en el límite cero, no en el interior positivo. La factorización concentra la información sobre el parámetro, pero no demuestra que el proceso sea Poisson ni que las ventanas sean independientes.»
+
+**Realización**
+
+1. Fijar muestra 0,1,2 y deslizador de lambda; no mover los datos.
+2. $T=0+1+2=3$; luego $L(\lambda)=e^{-3\lambda}\lambda^3/2$.
+3. $\ell'(\lambda)=3/\lambda-3$; raíz λ=1 y $\ell''(\lambda)=-3/\lambda^2<0$.
+4. Curva de verosimilitud con máximo 1; ejemplo de todos ceros con máximo de frontera. Etiquetar «comparación de parámetros», no «probabilidad de λ».
+
+### familia-exponencial / log-verosimilitud
+
+**Locución**
+
+1. «Hola. Ya encontramos lambda uno para los datos cero, uno y dos. Vamos a calcular el valor de la log verosimilitud. Para evaluarla no debemos olvidar los términos constantes que antes no afectaban al máximo.»
+2. «La suma de datos, tres, multiplica el logaritmo de uno, que vale cero. Después restamos tres ventanas por lambda uno: queda menos tres.»
+3. «Todavía falta el factorial del dato dos. Restamos logaritmo de dos y obtenemos aproximadamente menos tres coma sesenta y nueve. Ese término no movía el máximo, pero sí cambia el valor que estamos informando.»
+4. «Una log verosimilitud negativa no es una probabilidad negativa: es un logaritmo usado para comparar candidatos dentro del modelo. Maximizarla tampoco garantiza precisión, ausencia de sesgo ni adecuación biológica. Guarda el modelo, los datos y la expresión evaluada para que la cifra pueda interpretarse y reproducirse.»
+
+**Realización**
+
+1. Muestra fija y λ=1; recuperar la verosimilitud anterior.
+2. Revelar $3\log1=0$ y después $0-3=-3$.
+3. Añadir $-\log2$; $\ell(1)=-3-\log2\approx-3{,}6931$.
+4. $\ell(\lambda)=T\log\lambda-n\lambda-\sum_i\log(x_i!)$; señalar términos constantes sin eliminarlos al informar el valor.
+
+### familia-exponencial / enlaces-glm
+
+**Locución**
+
+1. «Hola. Queremos relacionar dosis con una media de recuentos, pero una recta sin restricciones podría producir medias negativas. Un modelo lineal generalizado separa la distribución de respuesta y el enlace de su media.»
+2. «Con Poisson y enlace logarítmico, hacemos lineal el logaritmo de la media. Volver mediante la exponencial garantiza una media positiva. Un ejemplo de coeficientes produce medias dos, tres y cuatro coma cinco para dosis cero, uno y dos.»
+3. «Para una respuesta binaria, el logit cumple otra función: al invertirlo obtenemos una probabilidad entre cero y uno. Eta cero da una mitad; eta logaritmo de tres da tres cuartos.»
+4. «Los coeficientes del ejemplo son propuestos, no ajustados a las ventanas anteriores. Un enlace no demuestra causalidad ni sustituye revisar el modelo. Aquí presentamos la estructura de GLM; no estamos desarrollando un curso completo de ajuste, intervalos o contrastes.»
+
+**Realización**
+
+1. Esquema respuesta/distribución/enlace/predictores.
+2. $g(\mu_i)=\boldsymbol x_i^{\mathsf T}\boldsymbol\beta$; caso $\log\mu=\log2+d\log1{,}5$ y puntos de medias propuestas 2,3,4,5.
+3. $p=e^\eta/(1+e^\eta)$; mostrar η=0→1/2 y η=log3→3/4.
+4. Etiquetar «coeficientes ilustrativos, no ajustados». No dibujar una banda de confianza que no se ha estimado.
