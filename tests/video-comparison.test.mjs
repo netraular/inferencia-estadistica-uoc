@@ -176,6 +176,32 @@ test('five-second timing separates all render attempts from preparation without 
   assert.deepEqual(brief.phases.map(phase=>[phase.start,phase.end]),[[0,1],[1,3],[3,5]]);
 });
 
+test('bivariate shared fragment computes the conditional law and preserves measured cues', () => {
+  const script = JSON.parse(readFileSync(new URL('static/comparativa-videos/bivariante/shared/script.json',root)));
+  const {meanX,meanY,sigmaX,sigmaY,rho,observedX,thresholdY} = script.parameters;
+  assert.equal(script.frames,Math.round(script.duration*script.fps));
+  assert.equal(meanY+rho*sigmaY/sigmaX*(observedX-meanX),script.expected.mean);
+  assert.equal(sigmaY**2*(1-rho**2),script.expected.variance);
+  assert.equal(script.expected.mean,74);
+  assert.equal(script.expected.variance,60);
+  const runtime = createRequire(new URL('data-src/video-comparison/remotion/package.json',root));
+  assert(Math.abs(script.expected.tail-(1-runtime('jstat').normal.cdf((thresholdY-74)/Math.sqrt(60),0,1)))<1e-12);
+  const manifest = JSON.parse(readFileSync(new URL('static/audio/manifest.json',root)));
+  let offset = 0;
+  let expectedCues = [];
+  for (const source of script.sources) {
+    const original = manifest.lessons[source.id];
+    const audio = readFileSync(new URL(`static/${original.src}`,root));
+    assert.equal(createHash('sha256').update(audio).digest('hex'),source.originalSha256);
+    expectedCues.push(...original.scenes[0].cues.filter(cue=>cue.end<=source.selectedDuration+0.001)
+      .map(cue=>({...cue,start:cue.start+offset,end:cue.end+offset,sectionId:source.id})));
+    offset += source.selectedDuration;
+  }
+  assert.deepEqual(script.cues,expectedCues);
+  assert.equal(offset,script.duration);
+  assert.equal(createHash('sha256').update(readFileSync(new URL('static/comparativa-videos/bivariante/shared/audio.m4a',root))).digest('hex'),script.audioSha256);
+});
+
 test('five-second agent delivery preserves original timing records and verified clips', () => {
   const results = JSON.parse(readFileSync(new URL('static/comparativa-videos/cinco-segundos/results.json',root)));
   assert.deepEqual(results.map(result=>result.id),['manim','remotion']);
