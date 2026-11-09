@@ -40,10 +40,6 @@ export default function LessonContent({lessonId, children}) {
           <h2>Práctica de la lección</h2>
           <ExerciseCollection lessonId={lessonId} mode="practice" />
         </section>
-        <section className="lesson-knowledge-check" aria-label="Comprueba la idea">
-          <h2>Comprueba la idea</h2>
-          <InteractiveLesson lessonId={lessonId} view="theory" />
-        </section>
       </LessonJourney>
     </TabItem>
     {sections.filter(section => section.value !== 'lesson').map(section =>

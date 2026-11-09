@@ -77,6 +77,33 @@ test('full notes stay collapsed and the summary is a labelled section', () => {
   assert.match(notes.querySelector('summary').textContent, /Apuntes completos/);
 });
 
+test('every lesson omits knowledge checks and preserves its other content and views', () => {
+  const wrapper = ({children}) => React.createElement('div', null, children);
+  const {default:LessonContent} = loadCompiled('../src/components/LessonContent.jsx', {
+    react:{...React, useEffect:() => {}},
+    '@theme/Tabs':wrapper,
+    '@theme/TabItem':wrapper,
+    '@docusaurus/router':{useHistory:() => ({}), useLocation:() => ({search:''})},
+    '../../pages/inferencia/course.js':{COURSE},
+    './LessonSource':({lesson}) => React.createElement('div', {'data-source':lesson.id}),
+    './LessonJourney':wrapper,
+    './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive-view':view}),
+    './ExerciseCollection':({mode = 'collection'}) => React.createElement('div', {'data-exercises':mode})
+  });
+  for (const lesson of lessons) {
+    const {document} = parseHTML(renderToStaticMarkup(React.createElement(LessonContent,
+      {lessonId:lesson.id}, React.createElement('p', {'data-notes':true}, 'Lesson notes'))));
+    assert.equal(document.querySelector('.lesson-knowledge-check'), null, lesson.id);
+    assert.ok(!document.toString().includes('Comprueba la idea'), lesson.id);
+    assert.equal(document.querySelector('[data-interactive-view="theory"]'), null, lesson.id);
+    assert.equal(document.querySelector('[data-source]').getAttribute('data-source'), lesson.id);
+    assert.ok(document.querySelector('[data-notes]'), lesson.id);
+    assert.ok(document.querySelector('.lesson-practice [data-exercises="practice"]'), lesson.id);
+    assert.ok(document.querySelector('[data-exercises="collection"]'), lesson.id);
+    assert.ok(document.querySelector('[data-interactive-view="animation"]'), lesson.id);
+  }
+});
+
 test('inline formulas in the notes are valid TeX and become safe MDX components', () => {
   let count = 0;
   for (const lesson of lessons) {
