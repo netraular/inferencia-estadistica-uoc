@@ -15,6 +15,46 @@ const require = createRequire(import.meta.url);
 const katex = require('katex');
 const lessons = COURSE.units.flatMap(unit => unit.lessons);
 
+test('editorial scripts cover every section with paired narration and visual directions', () => {
+  const text = readFileSync(new URL('../data-src/inferencia-estadistica/guiones-docentes.md', import.meta.url), 'utf8');
+  const expected = lessons.flatMap(lesson => createLessonSections(lesson).map(section => `${lesson.id} / ${section.id}`));
+  const blocks = text.split(/^### /m).slice(1);
+  const headings = blocks.map(block => block.split('\n')[0]);
+  assert.equal(headings.length, 118);
+  assert.equal(new Set(headings).size, headings.length);
+  assert.deepEqual([...headings].sort(), [...expected].sort());
+  for (const block of blocks) {
+    const heading = block.split('\n')[0];
+    const parts = block.split('**Locución**');
+    assert.equal(parts.length, 2, heading);
+    const content = parts[1].split('**Realización**');
+    assert.equal(content.length, 2, heading);
+    const narration = Array.from(content[0].matchAll(/^([1-4])\. «([\s\S]*?)»(?=\n|$)/gm));
+    const directions = Array.from(content[1].matchAll(/^([1-4])\. /gm));
+    assert.deepEqual(narration.map(match => match[1]), ['1', '2', '3', '4'], heading);
+    assert.deepEqual(directions.map(match => match[1]), ['1', '2', '3', '4'], heading);
+    assert.ok(narration.every(match => match[2].trim().length > 40), heading);
+    assert.match(narration[0][2], /^Hola\./, heading);
+    assert.ok(!/[\\${}=^_]/.test(narration.map(match => match[2]).join(' ')), heading);
+  }
+  let formulaCount = 0;
+  for (const match of text.matchAll(/\$([^$\n]+)\$/g)) {
+    katex.renderToString(match[1], {throwOnError: true});
+    formulaCount++;
+  }
+  assert.ok(formulaCount > 400);
+});
+
+test('editorial production index links all 36 lessons to their first section', () => {
+  const text = readFileSync(new URL('../data-src/inferencia-estadistica/guiones-docentes.md', import.meta.url), 'utf8');
+  const links = Array.from(text.matchAll(/\]\(#([a-z0-9-]+)\)/g), match => match[1]);
+  const expected = lessons.map(lesson => `${lesson.id}--${createLessonSections(lesson)[0].id}`);
+  assert.equal(links.length, 36);
+  assert.deepEqual(links, expected);
+  const headings = new Set(Array.from(text.matchAll(/^### (.+)$/gm), match => match[1].replace(' / ', '--')));
+  assert.ok(links.every(link => headings.has(link)));
+});
+
 test('opt-in TTS export uses all 118 stable section animation IDs and exact natural cues', async context => {
   const root = mkdtempSync(join(tmpdir(), 'section-narration-'));
   context.after(() => rmSync(root, {recursive: true, force: true}));

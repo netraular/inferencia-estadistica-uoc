@@ -2,7 +2,60 @@
 
 Propuesta editorial para sustituir las locuciones de los vídeos del curso.
 No modifica el texto de estudio, el reproductor ni los audios publicados.
-Los identificadores corresponden a los apartados de `lesson-sections.js`.
+Contiene los 118 apartados de las 36 lecciones del temario: 472 intervenciones
+con sus correspondientes indicaciones visuales. Los identificadores corresponden
+a los apartados de [lesson-sections.js](../../pages/inferencia/lesson-sections.js).
+Las dos listas numeradas de cada apartado se corresponden: realización 2 acompaña
+a locución 2, por ejemplo. Si una intervención contiene varias cuentas, se revelan
+en el orden de las frases, no todas al comenzar la intervención.
+
+## Índice de producción
+
+Cada fila identifica una lección y su primer apartado. Los demás apartados de
+esa lección aparecen inmediatamente después, en orden de montaje. El repaso
+global de la teoría se compone encadenándolos, con el tratamiento de bienvenida
+y transiciones indicado a continuación; no se intercala una segunda versión
+del mismo concepto tomada de los apuntes. Este documento no sustituye los
+enunciados ni las soluciones dependientes de datos del banco de ejercicios.
+
+| Lección | Apartados | Comienzo del guion |
+| --- | ---: | --- |
+| Proporciones, unidades y órdenes de magnitud | 3 | [Parte y total](#proporciones--parte-y-total) |
+| Despejar parámetros sin cambiar el problema | 3 | [Balanza](#algebra--balanza) |
+| Funciones, intervalos y sumatorios | 3 | [Entrada y salida](#funciones--entrada-y-salida) |
+| Derivadas, integrales y área acumulada | 3 | [Franjas](#calculo--franjas) |
+| Regiones del plano y matrices | 3 | [Frontera](#regiones-matrices--frontera) |
+| Experimentos, sucesos y conjuntos observables | 3 | [Resultados y sucesos](#sucesos--resultados-y-sucesos) |
+| Axiomas, solapamientos y frecuencia relativa | 4 | [Probabilidades coherentes](#axiomas--probabilidades-coherentes) |
+| Contar resultados: orden y repetición | 3 | [Posiciones](#combinatoria--posiciones) |
+| Condicionar es cambiar el universo relevante | 3 | [Grupo conocido](#condicionada--grupo-conocido) |
+| Independencia no significa incompatibilidad | 3 | [Producto](#independencia-sucesos--producto) |
+| Probabilidad total, Bayes y pruebas diagnósticas | 3 | [Rutas positivas](#bayes-diagnostico--rutas-positivas) |
+| De resultados a variables y acumuladas | 3 | [Regla observable](#variable-cdf--regla-observable) |
+| Masas discretas, indicadores y normalización | 3 | [Agrupar y normalizar](#masa--agrupar-y-normalizar) |
+| Densidad continua y probabilidad por áreas | 3 | [Altura y área](#densidad--altura-y-area) |
+| Esperanza y funciones de una variable | 3 | [Promedio ponderado](#esperanza--promedio-ponderado) |
+| Varianza, desviación y cambios de escala | 3 | [Distancias](#varianza--distancias) |
+| Momentos, colas y transformaciones | 4 | [Ordinarios y centrales](#momentos-transformaciones--ordinarios-y-centrales) |
+| Bernoulli y binomial: ensayos con dos resultados | 3 | [Ensayos](#bernoulli-binomial--ensayos) |
+| Poisson: recuentos por exposición y eventos raros | 3 | [Exposición](#poisson--exposicion) |
+| Hipergeométrica: muestrear sin reemplazo | 3 | [Sin reemplazo](#hipergeometrica--sin-reemplazo) |
+| Geométrica y binomial negativa: esperar éxitos | 4 | [Primera detección](#geometrica-negativa--primera-deteccion) |
+| Uniformes y simulación por cuantiles | 3 | [Dos uniformes](#uniforme-montecarlo--dos-uniformes) |
+| Exponencial: tiempos y carencia de memoria | 3 | [Escala y supervivencia](#exponencial--escala-y-supervivencia) |
+| Normal: tipificación, colas y cuantiles | 4 | [Centro y escala](#normal--centro-y-escala) |
+| Gamma: sumar esperas y separar forma de escala | 4 | [Etapas y parámetros](#gamma--etapas-y-parametros) |
+| Cauchy y Weibull: colas y riesgo cambiante | 4 | [Centro sin media](#cauchy-weibull--centro-sin-media) |
+| Calcular con distribuciones y comprobar supuestos | 3 | [Operación correcta](#calculo-modelos--operacion-correcta) |
+| Familia exponencial, GLM e introducción a estimación | 6 | [Piezas Poisson](#familia-exponencial--piezas-poisson) |
+| Vectores y tablas de probabilidad conjunta | 3 | [Parejas](#conjunta-discreta--parejas) |
+| Multinomial: varias categorías con total fijo | 3 | [Categorías y secuencias](#multinomial--categorias-y-secuencias) |
+| Marginales: conservar una medida y olvidar otra | 3 | [Sumar la otra](#marginales--sumar-la-otra) |
+| Densidades conjuntas y distribuciones condicionales | 3 | [Normalizar región](#conjunta-condicional--normalizar-region) |
+| Normal bivariante: marginales y predicción condicionada | 4 | [Modelo conjunto](#normal-bivariante--modelo-conjunto) |
+| Independencia de variables y factorización | 3 | [Factorizar tabla](#independencia-variables--factorizar-tabla) |
+| Covarianza, correlación y matrices | 3 | [Desviaciones compartidas](#covarianza-matrices--desviaciones-compartidas) |
+| Combinaciones lineales e incorrelación | 3 | [Suma y diferencia](#combinaciones-incorrelacion--suma-y-diferencia) |
 
 ## Criterio de producción
 
@@ -24,8 +77,26 @@ Los identificadores corresponden a los apartados de `lesson-sections.js`.
   probabilidades exactas, aproximaciones y recuentos esperados.
 - Cada apartado funciona de forma independiente. Para el repaso global de
   una lección, encadenar sus apartados en el orden indicado, conservar solo la
-  primera bienvenida y sustituir las restantes por una transición breve.
+   primera bienvenida y omitir el «Hola» de los siguientes. El resto del primer
+   párrafo ya introduce el nuevo paso o ejemplo y actúa como transición.
   No acelerar la explicación para recuperar el tiempo de esas transiciones.
+- En el repaso global, colocar la ampliación opcional como capítulo separado
+   e identificado. No hacerla un requisito para entender el cierre de la teoría.
+- Como presupuesto inicial de duración, dividir las palabras por el ritmo
+   elegido y añadir las pausas de pregunta, lectura y cambio de figura. Medir
+   después la locución real: no repartir el audio uniformemente entre pantallas.
+- Mantener una figura de contexto durante la presentación. La pregunta puede
+   estar visible, pero no su respuesta. Un cambio de escena debe preservar los
+   datos y la selección que siguen siendo necesarios para el siguiente paso.
+- Las fórmulas largas pueden ocupar planos sucesivos: recuperar los términos
+   ya definidos antes de reunirlos. Nunca reducirlos hasta volverlos ilegibles
+   ni obligar a leer una pantalla densa mientras la voz introduce otra idea.
+- Antes de producir un lote completo, revisar una locución breve, una cuenta
+   con varios pasos y una explicación de gráfico. Escuchar dicción, silencios y
+   ritmo de comprensión; una prueba de texto no valida esas cualidades.
+- Entregar por apartado locución, subtítulos del texto realmente grabado,
+   correspondencia entre intervenciones y planos y marcas medidas en el nuevo
+   audio. No reutilizar las marcas, los fragmentos ni la firma de un lote anterior.
 
 ## Puente matemático
 
@@ -981,7 +1052,7 @@ Los identificadores corresponden a los apartados de `lesson-sections.js`.
 **Locución**
 
 1. «Hola. Cien ensayos independientes tienen probabilidad una centésima de evento. Su recuento es binomial, pero podemos explorar una aproximación Poisson de media uno.»
-2. «La probabilidad exacta de cero es noventa y nueve centésimas elevado a cien: aproximadamente cero coma trescientos sesenta y seis. La aproximación usa exponencial de menos uno: aproximadamente cero coma trescientos sesenta y ocho.»
+2. «La probabilidad exacta de cero es noventa y nueve centésimas elevado a cien: aproximadamente treinta y seis coma seis por ciento. La aproximación usa exponencial de menos uno: aproximadamente treinta y seis coma ocho por ciento.»
 3. «Son cercanas, no iguales. La aproximación se apoya en muchos ensayos de probabilidad pequeña, conservando su producto. Debemos mirar el error de la pregunta concreta; una buena coincidencia en cero no garantiza todas las colas.»
 4. «Hay otra propiedad, esta vez exacta: sumar dos Poisson independientes da una Poisson con las medias sumadas. Aquí la palabra independiente autoriza la regla. Distinguir propiedad exacta y aproximación evita atribuir a un modelo lo que pertenece a otro.»
 
@@ -1534,6 +1605,408 @@ Los identificadores corresponden a los apartados de `lesson-sections.js`.
 **Realización**
 
 1. Esquema respuesta/distribución/enlace/predictores.
-2. $g(\mu_i)=\boldsymbol x_i^{\mathsf T}\boldsymbol\beta$; caso $\log\mu=\log2+d\log1{,}5$ y puntos de medias propuestas 2,3,4,5.
+2. $g(\mu_i)=\boldsymbol x_i^{\mathsf T}\boldsymbol\beta$; caso $\log\mu=\log2+d\log1{,}5$ y puntos (dosis; media): (0; 2), (1; 3), (2; 4,5).
 3. $p=e^\eta/(1+e^\eta)$; mostrar η=0→1/2 y η=log3→3/4.
 4. Etiquetar «coeficientes ilustrativos, no ajustados». No dibujar una banda de confianza que no se ha estimado.
+
+## Distribuciones multivariantes
+
+### conjunta-discreta / parejas
+
+**Locución**
+
+1. «Hola. Medimos dos marcadores en cada célula. Si guardamos solo cuántas tienen cada uno, perdemos qué combinaciones aparecen juntas. Vamos a conservar esas parejas en una tabla.»
+2. «Equis identifica filas; i griega, columnas. Las cuatro masas son treinta y cinco, quince, veinticinco y veinticinco centésimas. Cada celda habla de las dos medidas simultáneamente.»
+3. «La celda equis uno, i griega cero tiene probabilidad un cuarto. No es una probabilidad dentro de la fila: está referida a toda la población del modelo. Las cuatro celdas, no cada fila, completan uno.»
+4. «Un vector aleatorio reúne medidas del mismo resultado. Sus marginales describen cada componente, pero no reconstruyen cómo aparecen juntas. Si transponemos la tabla, debemos intercambiar también las etiquetas: cambiar la orientación no debe cambiar la pregunta sin avisar.»
+
+**Realización**
+
+1. Células con dos marcadores y paso a parejas (X,Y).
+2. Tabla: X=0→0,35;0,15 y X=1→0,25;0,25, columnas Y=0,1.
+3. Resaltar $p_{X,Y}(1,0)=0{,}25$ y total de las cuatro celdas 1.
+4. Proyectar a marginales mostrando la información que se pierde; transponer solo si se cambian ambos ejes.
+
+### conjunta-discreta / region-de-celdas
+
+**Locución**
+
+1. «Hola. Queremos que equis sea como máximo cero e i griega como máximo uno. Antes de sumar, seleccionemos las celdas que cumplen las dos condiciones.»
+2. «En nuestra tabla entran las dos celdas de la primera fila. Treinta y cinco más quince centésimas da una mitad. La acumulada bivariante hace esta selección usando dos umbrales.»
+3. «La región queda abajo y a la izquierda de ambos límites, incluidos. Para otro suceso revisamos sus desigualdades en cada pareja: y exige las dos; o puede reunir zonas que se solapan.»
+4. «No toda tabla rectangular representa un soporte rectangular. Si dos recuentos comparten un total fijo, algunas combinaciones son imposibles. Que haya un hueco donde dibujar una celda no le asigna probabilidad. El soporte decide qué parejas podemos reunir.»
+
+**Realización**
+
+1. Recuperar la tabla anterior; marcadores de umbral en ambos ejes.
+2. Seleccionar primera fila y $0{,}35+0{,}15=0{,}50$.
+3. $F_{X,Y}(a,b)=P(X\leq a,Y\leq b)$ sobre una región inferior izquierda.
+4. Ejemplo de recuentos con total fijo: celdas imposibles en blanco o con 0, nunca rellenadas por interpolación.
+
+### conjunta-discreta / rectangulo-acumulado
+
+**Locución**
+
+1. «Hola. Vamos a aislar un rectángulo usando acumuladas. Empezamos con toda la región hasta sus dos límites superiores. Incluye más de lo que queremos.»
+2. «Quitamos la franja que queda a la izquierda del límite inferior horizontal. Después quitamos la franja que queda por debajo del límite inferior vertical. Ahora la esquina común se ha quitado dos veces.»
+3. «La devolvemos una vez. Así queda el rectángulo abierto en los límites inferiores y cerrado en los superiores. La fórmula registra esos cuatro movimientos, no un truco de signos.»
+4. «En la tabla de indicadores, para quedarnos con ambos unos partimos de uno, restamos una mitad y seis décimas y añadimos treinta y cinco centésimas: queda un cuarto. Incluir los extremos inferiores sería otra pregunta si allí hay masa. Decide los límites antes de empezar.»
+
+**Realización**
+
+1. Región $F(b,d)$ con rectángulo objetivo marcado.
+2. Restar $F(a,d)$ y $F(b,c)$, manteniendo un contador de copias en la esquina.
+3. Añadir $F(a,c)$; revelar $P(a<X\leq b,c<Y\leq d)=F(b,d)-F(a,d)-F(b,c)+F(a,c)$ al final, no toda al inicio.
+4. Aplicación $1-0{,}50-0{,}60+0{,}35=0{,}25$, resaltando la celda (1,1).
+
+### multinomial / categorias-y-secuencias
+
+**Locución**
+
+1. «Hola. Clasificamos cuatro células en reposo, activadas o dañadas. Cada célula entra en una sola categoría, con probabilidades una mitad, tres décimas y dos décimas. Queremos dos, una y una.»
+2. «Suponemos células independientes y las mismas probabilidades para todas. Un orden concreto tiene probabilidad una mitad al cuadrado por tres décimas por dos décimas: quince milésimas.»
+3. «Pero no queremos un orden concreto. Hay doce maneras de colocar esas categorías. El coeficiente multinomial las cuenta, corrigiendo las dos células indistinguibles de reposo. Multiplicar doce por quince milésimas da dieciocho centésimas.»
+4. «La fórmula general combina el número de secuencias con el peso de cada una. Los recuentos siempre suman cuatro; no podemos elegir cualquier terna. Las categorías deben ser excluyentes y cubrir todos los resultados de cada ensayo.»
+
+**Realización**
+
+1. Cuatro posiciones y categorías A/B/C con probabilidades 0,5/0,3/0,2.
+2. Secuencia AABC y $0{,}5^2\times0{,}3\times0{,}2=0{,}015$.
+3. Reordenaciones únicas; $4!/(2!1!1!)=12$ y $12\times0{,}015=0{,}18$.
+4. $p_{\boldsymbol X}(\boldsymbol x)=n!\prod_i p_i^{x_i}/\prod_i x_i!$; condición $\sum_i x_i=n$.
+
+### multinomial / marginales-y-total
+
+**Locución**
+
+1. «Hola. Las células se clasifican independientemente, pero ¿los recuentos de categorías también son independientes? No: compiten por las mismas cuatro plazas.»
+2. «Si las cuatro están en reposo, no queda ninguna para las otras categorías. La suma de recuentos es fija. Conocer uno limita las posibilidades de los demás.»
+3. «Si solo nos interesa reposo, reunimos activada y dañada como no reposo. Cada ensayo vuelve a tener dos resultados y el recuento marginal sigue una binomial. En una trinomial bastan dos coordenadas: la tercera se obtiene restándolas al total.»
+4. «Guardar menos coordenadas no elimina la dependencia. Y que las frecuencias sumen uno no demuestra multinomial: necesitamos categorías excluyentes, probabilidades constantes e independencia entre ensayos. Clasificación incierta o dependencia entre células pueden invalidar el modelo.»
+
+**Realización**
+
+1. Cuatro plazas compartidas por tres categorías.
+2. $X_A+X_B+X_C=4$; ocupar plazas y reducir las restantes.
+3. Agrupar B y C; $X_A\sim\operatorname{Bin}(4,0{,}5)$ y $X_C=4-X_A-X_B$.
+4. Separar visualmente «independencia entre ensayos» de «dependencia entre recuentos».
+
+### multinomial / momentos-con-indicadores
+
+**Locución**
+
+1. «Hola. Vamos a entender de dónde sale la covarianza negativa entre categorías. Para una misma célula, los indicadores de reposo y activación nunca pueden valer uno a la vez.»
+2. «Su producto es cero. Al restar el producto de sus medias, queda menos la probabilidad de una categoría por la de la otra. Entre células distintas, la independencia hace cero las covarianzas cruzadas.»
+3. «Sumamos las cuatro contribuciones de la misma célula: menos cuatro por una mitad por tres décimas da menos seis décimas. Cada recuento conserva su media y varianza binomiales.»
+4. «La matriz de covarianzas tiene filas que suman cero porque el total de recuentos es constante. Puede ser singular sin ser inválida. Esta relación negativa refleja una restricción de las plazas disponibles; no demuestra que un estado cause biológicamente la desaparición de otro.»
+
+**Realización**
+
+1. Indicadores de una célula con $I_AI_B=0$.
+2. $\operatorname{Cov}(I_A,I_B)=-p_Ap_B$; términos entre células distintas marcados como 0 bajo independencia.
+3. $\operatorname{Cov}(X_A,X_B)=-4\times0{,}5\times0{,}3=-0{,}6$; $E[X_i]=np_i$, $\operatorname{Var}(X_i)=np_i(1-p_i)$.
+4. Matriz con sumas de filas 0 y total fijo; no etiquetar singularidad como error.
+
+### marginales / sumar-la-otra
+
+**Locución**
+
+1. «Hola. Queremos la probabilidad de i griega uno sin conocer equis. Vamos a reunir todas las maneras en que puede ocurrir, no a elegir una fila.»
+2. «En la columna i griega uno hay quince centésimas en la primera fila y veinticinco en la segunda. Sumarlas da cuatro décimas. Esa es la marginal de i griega en uno.»
+3. «Para conservar i griega sumamos sobre todos los valores de equis. Si quisiéramos conservar equis, sumaríamos las columnas de cada fila. No dividimos por el grupo de una condición, porque no estamos diciendo que equis sea conocido.»
+4. «La marginal vuelve a ser una distribución que suma uno. Describe perfectamente las preguntas sobre ese componente, pero olvida cómo se coordina con el otro. Dos tablas distintas pueden tener los mismos totales y asociaciones muy diferentes.»
+
+**Realización**
+
+1. Tabla 0,35/0,15 y 0,25/0,25, con ejes explícitos.
+2. Resaltar la columna Y=1; $0{,}15+0{,}25=0{,}40$.
+3. $p_Y(y)=\sum_xp_{X,Y}(x,y)$ con flechas desde todas las filas; mostrar operación inversa para X.
+4. Dos tablas de iguales marginales y celdas distintas, sin sugerir reconstrucción única.
+
+### marginales / integrar-cortes
+
+**Locución**
+
+1. «Hola. Una densidad conjunta constante dos ocupa el triángulo de capacidad uno. ¿La marginal de equis será uniforme? Vamos a mirar cuánto espacio queda para la otra coordenada.»
+2. «Con equis un cuarto, el corte vertical mide tres cuartos. Integrar la altura dos sobre ese recorrido da uno coma cinco. Es una densidad marginal, no una probabilidad puntual.»
+3. «Cuando equis aumenta, el corte se acorta. Por eso la marginal es dos por uno menos equis: disminuye aunque la superficie conjunta tenga altura constante.»
+4. «Su área entre cero y uno debe ser uno. Para la marginal de i griega repetimos el proceso intercambiando coordenadas. La forma de la región influye tanto como la fórmula de altura; no podemos ignorarla al integrar la otra variable.»
+
+**Realización**
+
+1. Triángulo con densidad 2 y corte móvil.
+2. $x=0{,}25$, longitud0,75 y $2\times0{,}75=1{,}5$.
+3. $f_X(x)=\int_0^{1-x}2\,dy=2(1-x)$ para $0<x<1$; gráfico marginal en ejes propios.
+4. Sombrear toda la marginal para verificar área1; no dibujar la altura1,5 como masa en x=0,25.
+
+### marginales / proyeccion-y-corte
+
+**Locución**
+
+1. «Hola. Vamos a separar olvidar una variable de conocer su valor. Para la marginal de i griega uno, sumamos todas las filas y obtenemos cuatro décimas.»
+2. «Ahora sabemos equis uno. Su fila pesa una mitad y la celda i griega uno un cuarto. Dividir dentro de esa fila da una mitad. La información conocida ha cambiado el grupo.»
+3. «La marginal suma sin fijar equis; la condicional normaliza con equis conocido. En continuo, proyectar por integración reúne todos los cortes. Un corte concreto todavía necesita normalizarse para convertirse en densidad condicional.»
+4. «No reconstruyas una conjunta multiplicando marginales salvo que haya independencia justificada. Al marginalizar se pierde la coordinación, aunque cada distribución individual quede bien descrita. Antes de operar, di con palabras qué sabes y qué estás ignorando.»
+
+**Realización**
+
+1. Columna completa Y=1: 0,4.
+2. Cambiar a fila X=1; $p_{Y\mid X}(1\mid1)=0{,}25/0{,}50=0{,}5$.
+3. Animación de proyección de todos los cortes frente a un corte seleccionado y normalizado.
+4. Dos preguntas visibles «sin fijar X» / «dado X=1», con operaciones suma / división separadas.
+
+### conjunta-condicional / normalizar-region
+
+**Locución**
+
+1. «Hola. Dos cultivos comparten capacidad uno. Queremos una densidad constante sobre su triángulo de repartos. Primero elegimos la altura que da probabilidad total uno.»
+2. «El triángulo tiene área una mitad, así que la altura debe ser dos. El volumen bajo la superficie es uno. La densidad tiene unidades inversas del producto de las dos medidas; la probabilidad no tiene unidades.»
+3. «Ahora pedimos que la suma de recursos no supere una mitad. La región favorable es otro triángulo, de lados una mitad. Su área es un octavo. Multiplicar por la altura dos da un cuarto de probabilidad.»
+4. «La probabilidad regional integra la conjunta sobre la zona solicitada dentro del soporte. Un rectángulo exterior incluiría repartos imposibles. Primero dibujamos la intersección de las condiciones; después escribimos los límites.»
+
+**Realización**
+
+1. Soporte $x,y\geq0$, $x+y\leq1$ y altura c desconocida.
+2. $c/2=1$ y c=2; separar área de soporte y volumen de probabilidad.
+3. Triángulo $x+y\leq1/2$; área $\frac12(1/2)^2=1/8$ y $2\times1/8=1/4$.
+4. $P((X,Y)\in R)=\iint_Rf_{X,Y}(x,y)\,dx\,dy$, con R siempre recortada al soporte.
+
+### conjunta-condicional / normalizar-corte
+
+**Locución**
+
+1. «Hola. Ahora conocemos equis dos décimas y queremos la distribución de i griega. En el triángulo de capacidad uno, su recorrido termina en ocho décimas.»
+2. «El corte de la densidad conjunta tiene altura dos. Para normalizarlo calculamos la marginal de equis: dos por ocho décimas da uno coma seis. Dividir dos entre uno coma seis deja altura uno coma veinticinco.»
+3. «Esa altura por la anchura ocho décimas da uno. Ya tenemos una densidad condicional válida. No dividimos por la probabilidad de equis exactamente dos décimas, que es cero en este modelo continuo: usamos su densidad marginal positiva.»
+4. «En discreto sí dividimos masa conjunta por masa marginal positiva. La idea de normalizar es la misma, pero la medida utilizada cambia. Comprueba qué tipo de variable tienes antes de escribir el denominador.»
+
+**Realización**
+
+1. Corte x=0,2 y rango y∈[0,0,8].
+2. $f_X(0{,}2)=2\times0{,}8=1{,}6$; $f_{Y\mid X}(y\mid0{,}2)=2/1{,}6=1{,}25$ dentro del corte.
+3. $1{,}25\times0{,}8=1$ y distinción entre $f_X(0{,}2)$ y $P(X=0{,}2)=0$.
+4. Contraste con $p_{Y\mid X}(y\mid x)=p_{X,Y}(x,y)/p_X(x)$ en una tabla discreta.
+
+### conjunta-condicional / interpretar-condicion
+
+**Locución**
+
+1. «Hola. Con equis dos décimas, i griega queda entre cero y ocho décimas con densidad uno coma veinticinco. Vamos a preguntar por superar cuatro décimas.»
+2. «El tramo favorable mide cuatro décimas. Multiplicarlo por la densidad da una mitad. No respondemos uno coma veinticinco: eso era altura, no área.»
+3. «La condición define una distribución completa. Podríamos repetir con otros intervalos, pero siempre dentro del corte y con la misma normalización.»
+4. «Ahora imagina que el instrumento solo informa equis entre quince y veinticinco centésimas. Eso selecciona una franja, no una línea exacta. La probabilidad se calcularía reuniendo y normalizando esa región de área positiva. No sustituyas automáticamente un rango de medición por su punto medio: cambia la pregunta y, en general, la respuesta.»
+
+**Realización**
+
+1. Gráfico condicional de altura1,25 sobre [0,0,8].
+2. Sombreado [0,4;0,8]; $0{,}4\times1{,}25=0{,}5$.
+3. Mostrar que el área completa del corte vale1.
+4. Volver al plano y engrosar la condición hasta $0{,}15\leq X\leq0{,}25$; etiquetar «otra condición», sin reutilizar el resultado anterior.
+
+### normal-bivariante / modelo-conjunto
+
+**Locución**
+
+1. «Hola. Dos señales tienen medias treinta y setenta, desviaciones cinco y ocho y correlación un cuarto. Vamos a describirlas mediante una normal conjunta. Tener dos marginales normales, por sí solo, no garantiza esta hipótesis.»
+2. «La superficie tiene curvas de nivel elípticas. La correlación orienta y alarga las elipses sin cambiar por sí sola las medias y desviaciones marginales. Cada eje conserva sus propias unidades.»
+3. «Para tipificar restamos a cada coordenada su centro y dividimos por su desviación. No usamos la desviación de una señal para transformar la otra.»
+4. «El modelo con densidad bidimensional requiere desviaciones positivas y correlación estrictamente entre menos uno y uno. En los extremos la distribución se concentra en una línea: son casos degenerados que no admiten esta misma densidad sobre un área. Declarar el modelo conjunto es parte esencial del cálculo.»
+
+**Realización**
+
+1. Parámetros μX=30,μY=70,σX=5,σY=8,ρ=0,25 y etiqueta «normalidad conjunta supuesta».
+2. Elipses sobre ejes X/Y con marginales en gráficos separados.
+3. $z_x=(x-\mu_X)/\sigma_X$ y $z_y=(y-\mu_Y)/\sigma_Y$ en pasos sucesivos.
+4. Contrastar elipses no degeneradas con una línea cuando |ρ|=1; no renderizar la fórmula singular.
+
+### normal-bivariante / densidad-bivariante
+
+**Locución**
+
+1. «Hola. Vamos a construir la densidad normal de dos señales sin presentar toda la fórmula de golpe. Empezamos con sus coordenadas tipificadas.»
+2. «Sumamos sus cuadrados y añadimos un término cruzado que depende de la correlación. Ese término orienta las elipses. Dividimos por un factor positivo, uno menos correlación al cuadrado, y aplicamos la exponencial negativa.»
+3. «Falta normalizar. El denominador combina dos pi, las dos desviaciones y la raíz de ese mismo factor. Dividir la forma por el normalizador da la densidad conjunta, no la probabilidad de una pareja exacta.»
+4. «Si la correlación es cero, desaparece el término cruzado y la expresión se separa en dos densidades normales. Bajo normalidad conjunta, eso demuestra independencia. Sin ese supuesto no podemos convertir covarianza cero en independencia solo porque la cuenta resulte cómoda.»
+
+**Realización**
+
+1. Mantener $z_x,z_y$ visibles con su significado.
+2. $Q=z_x^2-2\rho z_xz_y+z_y^2$; después $K=\exp[-Q/(2(1-\rho^2))]$.
+3. $D=2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}$; finalmente $f(x,y)=K/D$.
+4. Mover ρ a0 y separar los dos factores marginales; etiqueta «conjuntamente normal». Dar pausa antes de cada nueva pieza.
+
+### normal-bivariante / media-y-varianza-condicional
+
+**Locución**
+
+1. «Hola. Con las medias treinta y setenta, desviaciones cinco y ocho y correlación un cuarto, observamos equis cuarenta. Vamos a actualizar la curva de la otra señal, no a predecirla exactamente.»
+2. «Equis quedó diez por encima de su media. La pendiente condicional es correlación por la razón de desviaciones: da cuatro décimas. Multiplicar por diez desplaza cuatro unidades la media de i griega.»
+3. «Su media condicional pasa de setenta a setenta y cuatro. La varianza también cambia: multiplicamos la marginal sesenta y cuatro por uno menos correlación al cuadrado y obtenemos sesenta.»
+4. «Para la desviación tomamos raíz de sesenta, aproximadamente siete coma setenta y cinco. No confundas multiplicar una varianza con multiplicar directamente una desviación. Todo esto depende del modelo conjuntamente normal y de sus parámetros, no solo de conocer un dato.»
+
+**Realización**
+
+1. Elipse y corte X=40; mantener tabla de parámetros originales.
+2. $40-30=10$; $0{,}25\times8/5=0{,}4$; $0{,}4\times10=4$.
+3. $\mu_{Y\mid40}=70+4=74$; $\sigma^2_{Y\mid40}=64(1-0{,}25^2)=60$.
+4. $\sigma_{Y\mid40}=\sqrt{60}\approx7{,}746$; fórmula general $\sigma_{Y\mid x}=\sigma_Y\sqrt{1-\rho^2}$ y media $\mu_Y+\rho(\sigma_Y/\sigma_X)(x-\mu_X)$.
+
+### normal-bivariante / cola-condicional
+
+**Locución**
+
+1. «Hola. Queremos que i griega supere ochenta y dos sabiendo que equis vale cuarenta. La curva que necesitamos es la condicional: media setenta y cuatro, varianza sesenta.»
+2. «Restamos la nueva media al umbral y queda ocho. Dividir por raíz de sesenta da aproximadamente uno coma cero tres desviaciones. No usamos la media y desviación marginales.»
+3. «La cola derecha estándar es alrededor de quince coma uno por ciento. El sombreado representa esa probabilidad sobre la curva del corte; las colas siguen fuera del marco visible.»
+4. «Si conocemos otro valor de equis, la media condicional cambia pero su varianza permanece igual en este modelo. Con correlación cero, la condicional coincide con la marginal. Condicionar usa información; no prueba que una señal cause la otra ni elimina la incertidumbre de la observación individual.»
+
+**Realización**
+
+1. Distribución $Y\mid X=40\sim N(74,60)$ y umbral82.
+2. $82-74=8$; $z=8/\sqrt{60}\approx1{,}033$.
+3. $P(Y>82\mid X=40)=1-\Phi(8/\sqrt{60})\approx0{,}1508$, cola sombreada y colas exteriores indicadas.
+4. Mover X para desplazar el centro sin variar la anchura; contraste con ρ=0, manteniendo visibles las condiciones del modelo.
+
+### independencia-variables / factorizar-tabla
+
+**Locución**
+
+1. «Hola. Vamos a comprobar si dos variables son independientes usando toda su tabla, no una celda escogida. Las masas son cuarenta y dos, veintiocho, dieciocho y doce centésimas.»
+2. «Sumando obtenemos marginales de equis siete y tres décimas; de i griega, seis y cuatro décimas. La primera celda debería pesar siete por seis décimas: cuarenta y dos centésimas. Coincide.»
+3. «Hacemos lo mismo con las otras tres celdas y también coinciden sus productos. Aquí sí hay independencia. Una discrepancia bastaría para refutarla, pero una coincidencia aislada no la habría demostrado.»
+4. «La idea general exige que las preguntas sobre ambas variables se separen en productos. También puede expresarse con acumuladas para todos los umbrales, no solo para un par favorable. Independencia es una propiedad de toda la distribución conjunta.»
+
+**Realización**
+
+1. Tabla X=0→0,42;0,28 y X=1→0,18;0,12, columnas Y=0,1.
+2. Añadir marginales y comprobar $0{,}7\times0{,}6=0{,}42$.
+3. Verificar las otras tres celdas en orden; no mostrar el veredicto antes de terminar.
+4. $p_{X,Y}(x,y)=p_X(x)p_Y(y)$; después $F_{X,Y}(x,y)=F_X(x)F_Y(y)$ para todos los umbrales.
+
+### independencia-variables / soporte-completo
+
+**Locución**
+
+1. «Hola. Una densidad constante dos ocupa un triángulo. ¿Podemos declarar independencia porque la altura parece fácil de separar? Tenemos que mirar también dónde la densidad es cero.»
+2. «Si ambas coordenadas están entre tres cuartos y uno, su suma supera la capacidad uno. Toda esa región está prohibida: la conjunta vale cero.»
+3. «Sin embargo, cada marginal es positiva en ese rango. Multiplicarlas daría densidad positiva a combinaciones imposibles. Esa discrepancia ocurre en una región con área, así que las variables no son independientes.»
+4. «Para densidades la factorización se exige casi en todas partes: cambiar valores en conjuntos de área nula no cambia probabilidades. Por eso no basta encontrar un punto aislado distinto. Soporte, ceros y fórmula interior forman juntos la distribución que debemos comprobar.»
+
+**Realización**
+
+1. Triángulo x+y≤1 y altura2.
+2. Cuadrado abierto $(3/4,1)\times(3/4,1)$ completamente fuera del soporte.
+3. Marginales $2(1-x)$ y $2(1-y)$ positivas allí; contraste conjunta0/producto positivo sobre todo el cuadrado.
+4. $f_{X,Y}(x,y)=f_X(x)f_Y(y)$ «casi en todas partes»; distinguir región de área positiva y punto aislado.
+
+### independencia-variables / transformar-y-seleccionar
+
+**Locución**
+
+1. «Hola. Si dos variables son independientes, transformar cada una por separado mediante funciones medibles conserva esa independencia. Pero seleccionar un grupo con una condición sobre ambas puede cambiarla.»
+2. «Por ejemplo, conservar solo parejas cuya suma es pequeña hace que un valor grande de una deje menos margen para la otra. Después de seleccionar, hay que revisar las hipótesis.»
+3. «La independencia permite separar esperanzas de productos cuando las condiciones de integrabilidad lo autorizan. Con varianzas finitas elimina las covarianzas al sumar. El camino inverso no vale: covarianza cero no demuestra independencia.»
+4. «Como contraste, equis toma menos uno, cero y uno equiprobables e i griega es su cuadrado. La pareja cero, cero pesa un tercio, pero el producto de sus marginales es un noveno. No son independientes: conocer equis determina i griega. Una comprobación concreta nos permite ver el fallo sin adivinarlo por la forma del gráfico.»
+
+**Realización**
+
+1. Transformaciones separadas g(X),h(Y); no usar una misma variable para ambas.
+2. Seleccionar una región $X+Y\leq1$ y mostrar las combinaciones descartadas.
+3. $E[g(X)h(Y)]=E[g(X)]E[h(Y)]$ con independencia e integrabilidad explícitas.
+4. Tabla de (-1,1),(0,0),(1,1); $P(X=0,Y=0)=1/3$ frente a $P(X=0)P(Y=0)=1/9$.
+
+### covarianza-matrices / desviaciones-compartidas
+
+**Locución**
+
+1. «Hola. Queremos resumir si dos lecturas se alejan de sus centros en la misma dirección. Vamos a restar sus medias y multiplicar las desviaciones, conservando el signo.»
+2. «Las parejas cero, uno y uno, tres tienen probabilidad una mitad cada una. La media de equis es una mitad y la de i griega, dos. En la primera pareja ambas desviaciones son negativas; en la segunda, positivas.»
+3. «Los dos productos valen una mitad. Promediarlos da covarianza una mitad. También podemos calcularla como esperanza del producto menos producto de esperanzas, si disponemos de los momentos necesarios.»
+4. «El signo positivo indica movimiento compartido en promedio; el negativo, oposición. Su magnitud depende de las unidades: tiene producto de unidades de ambas variables. No es una probabilidad ni una medida causal. Primero interpretamos qué se está multiplicando, después usamos el resumen.»
+
+**Realización**
+
+1. Pares conectados a sus centros respectivos.
+2. Tabla (0,1),(1,3), medias (0,5;2), desviaciones (-0,5;-1) y (0,5;1).
+3. Productos 0,5 y 0,5 con pesos1/2; $\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]=0{,}5$.
+4. Cuadrantes respecto a las medias y signos de productos; unidades visibles en cada eje.
+
+### covarianza-matrices / normalizar-covarianza
+
+**Locución**
+
+1. «Hola. Tenemos varianzas nueve y dieciséis y covarianza seis. Vamos a comparar la asociación sin que cambiar las unidades cambie el número.»
+2. «Las desviaciones son tres y cuatro. Su producto es doce. Dividir la covarianza seis entre doce da una correlación de una mitad. La normalización elimina las unidades.»
+3. «Si duplicamos una variable, se duplican su desviación y la covarianza; el cociente se conserva. La correlación queda entre menos uno y uno cuando las desviaciones son positivas. Para una variable constante el denominador es cero y la correlación no está definida.»
+4. «Este resumen mide asociación lineal. Puede pasar por alto una relación curva y no demuestra causalidad. La independencia implica covarianza cero con los momentos adecuados, pero la ausencia de correlación no devuelve automáticamente independencia. Esa distinción importa más que memorizar la escala del coeficiente.»
+
+**Realización**
+
+1. Ficha varianzas9,16/covarianza6.
+2. Raíces3,4; $3\times4=12$; $\rho=6/12=1/2$.
+3. Escalar Y por2; covarianza12, desviaciones3 y8 y mismo cociente. Caso constante con «no definida», no ρ=0.
+4. Fórmula $\rho=\operatorname{Cov}(X,Y)/(\sigma_X\sigma_Y)$ y gráfico de dependencia curva como contraste.
+
+### covarianza-matrices / matrices-admisibles
+
+**Locución**
+
+1. «Hola. Vamos a organizar las varianzas y covarianzas sin perder el orden de las medidas. Sigma mayúscula guarda nueve y dieciséis en la diagonal y seis en las dos posiciones cruzadas.»
+2. «Para obtener correlaciones dividimos cada entrada por las desviaciones de su fila y columna. La nueva diagonal vale uno; fuera de ella aparece una mitad. Una matriz diagonal con tres y cuatro organiza esa conversión.»
+3. «Una matriz de covarianzas debe dar varianza no negativa para cualquier combinación lineal. Esa condición se llama semidefinida positiva. Ser simétrica y tener diagonal positiva no basta.»
+4. «En nuestro ejemplo el determinante es ciento ocho, positivo. Pero una matriz con varianzas uno y covarianza dos daría varianza negativa para la diferencia: es imposible. Revisar la coherencia matemática viene antes de interpretar una supuesta relación biológica.»
+
+**Realización**
+
+1. $\Sigma=\begin{pmatrix}9&6\\6&16\end{pmatrix}$ con etiquetas de variables persistentes.
+2. $D=\operatorname{diag}(3,4)$; $R=D^{-1}\Sigma D^{-1}=\begin{pmatrix}1&1/2\\1/2&1\end{pmatrix}$, dividiendo entradas progresivamente.
+3. $\boldsymbol a^{\mathsf T}\Sigma\boldsymbol a\geq0$ para toda combinación, sin exigir invertibilidad.
+4. Determinante $9\times16-6^2=108$; contraejemplo $\begin{pmatrix}1&2\\2&1\end{pmatrix}$ y $\operatorname{Var}(X-Y)=1+1-4=-2$, etiquetado «matriz imposible».
+
+### combinaciones-incorrelacion / suma-y-diferencia
+
+**Locución**
+
+1. «Hola. Dos lecturas emparejadas tienen varianzas cuatro y nueve y covarianza tres. Queremos saber cuánto varía su diferencia. Parte del movimiento compartido se cancela al restarlas.»
+2. «Sumamos primero las varianzas: trece. El término cruzado de la diferencia resta dos veces la covarianza: seis. Quedan siete unidades cuadradas.»
+3. «Si hubiéramos supuesto independencia sin motivo, habríamos obtenido trece. En una suma, esa misma covarianza positiva aumentaría la varianza, porque los movimientos compartidos se refuerzan.»
+4. «La fórmula general pone los coeficientes al cuadrado en las varianzas y conserva el signo de su producto en el término cruzado. No sumamos desviaciones directamente. El efecto de relacionar las medidas depende de la operación que queremos hacer con ellas.»
+
+**Realización**
+
+1. Lecturas emparejadas y diferencia, con unidades compatibles.
+2. $4+9=13$, $2\times3=6$, $13-6=7$ en pasos sucesivos.
+3. Comparación con suma, varianza19, y caso hipotético independiente, varianza13; etiquetar cada supuesto.
+4. $\operatorname{Var}(aX+bY)=a^2\sigma_X^2+b^2\sigma_Y^2+2ab\operatorname{Cov}(X,Y)$, revelando el término cruzado al final.
+
+### combinaciones-incorrelacion / forma-matricial
+
+**Locución**
+
+1. «Hola. Con varias medidas, la notación matricial organiza la misma cuenta de una combinación lineal. No añade una hipótesis nueva de independencia.»
+2. «El vector de coeficientes indica cuánto pesa cada medida. Multiplicarlo por el vector de medias da la media de la combinación, siempre que las esperanzas existan. Es la misma linealidad que ya conocemos.»
+3. «Para la varianza ponemos la matriz de covarianzas entre los coeficientes. Al desarrollar el producto aparecen las varianzas de la diagonal y todos los términos cruzados. La covarianza de una variable consigo misma es precisamente su varianza.»
+4. «El resultado debe ser no negativo para cualquier elección de coeficientes. Puedes comprobarlo desarrollando primero un caso de dos variables y reconociendo cada término. La matriz hace más compacta la escritura; no sustituye comprender qué medidas estamos sumando y con qué unidades.»
+
+**Realización**
+
+1. Vector de medidas y fila de coeficientes; expandir $\boldsymbol a^{\mathsf T}\boldsymbol X=\sum_i a_iX_i$.
+2. $E[\boldsymbol a^{\mathsf T}\boldsymbol X]=\boldsymbol a^{\mathsf T}\boldsymbol\mu$ con correspondencia de colores.
+3. $\operatorname{Var}(\boldsymbol a^{\mathsf T}\boldsymbol X)=\boldsymbol a^{\mathsf T}\Sigma\boldsymbol a$; desarrollar un ejemplo de dos componentes.
+4. Destacar diagonal y dos copias simétricas del término cruzado; verificar el resultado no negativo.
+
+### combinaciones-incorrelacion / incorrelacion
+
+**Locución**
+
+1. «Hola. Vamos a cerrar con un contraejemplo que conviene recordar. Equis es uniforme entre menos uno y uno e i griega es su cuadrado. Conocer equis determina por completo i griega.»
+2. «La simetría da media de equis cero y promedio de su cubo cero. El producto de equis por i griega es justamente ese cubo. Al calcular la covarianza queda cero.»
+3. «Las dos varianzas son positivas y finitas, así que la correlación también es cero. Sin embargo, la relación exacta sigue ahí: tiene forma de curva, no de recta. Incorrelación no significa independencia.»
+4. «Bajo normalidad conjunta sí existe la excepción: covarianza cero implica independencia. Dos marginales normales, sin más, no bastan. Al interpretar relaciones, separa siempre restricción de diseño, asociación estadística y causalidad. Los números ayudan a describir; no cuentan por sí solos toda la historia.»
+
+**Realización**
+
+1. Parábola $Y=X^2$ para X∈[-1,1], sin dispersión aleatoria alrededor.
+2. $E[X]=0$, $E[X^3]=0$, $E[X^2]=1/3$; después $\operatorname{Cov}(X,Y)=E[X^3]-E[X]E[X^2]=0$.
+3. Etiquetas «correlación 0», «dependencia exacta» junto a la curva; mantener ambas simultáneamente.
+4. Contraste con normal conjunta de covarianza0 y dos componentes independientes; cierre «incorrelación no basta en general».

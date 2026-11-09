@@ -85,6 +85,13 @@ searchable glossary. Section audio has its own stable IDs and measured phrase
 timings, and can be generated and published incrementally without changing the
 global recap or an earlier frozen TTS batch.
 
+A complete [Spanish teacher-style script and visual storyboard](data-src/inferencia-estadistica/guiones-docentes.md)
+is available for editorial review and production: all 118 theory sections across
+36 lessons, with paired narration and visual directions, pacing guidance and
+global-recap assembly instructions. It is not yet wired into the player or audio
+exporters and does not replace the published recordings or data-dependent
+exercise solutions. New recordings must use newly measured timings.
+
 Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
 density, marginals, continuous conditioning and the bivariate normal. Each starts
 with a concrete question and ends with an interpretation. Figures reuse the
