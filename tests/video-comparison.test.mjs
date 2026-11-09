@@ -100,3 +100,22 @@ test('comparison renders native video with base-aware media URLs instead of an e
     assert(!video.hasAttribute('autoplay'));
   }
 });
+
+test('second comparison uses a named shared timeline and consistent normal probabilities', () => {
+  const storyboard = JSON.parse(readFileSync(new URL('data-src/video-comparison/normal/storyboard.json',root)));
+  assert.equal(storyboard.frames,storyboard.duration*storyboard.fps);
+  assert.equal((storyboard.threshold-storyboard.mean)/storyboard.sigma,storyboard.z);
+  assert(Math.abs(storyboard.probability-0.8413447460685429)<1e-12);
+  assert.equal(storyboard.audio,false);
+  assert.deepEqual(storyboard.phases.map(phase=>phase.id),['density','width','substitution','mapping','probability','complement']);
+  let end = 0;
+  for (const phase of storyboard.phases) {
+    assert.equal(phase.start,end);
+    assert(phase.end>phase.start);
+    end = phase.end;
+  }
+  assert.equal(end,storyboard.duration);
+  for (const [start,end] of Object.values(storyboard.events)) {
+    assert(start>=0 && end>start && end<=storyboard.duration);
+  }
+});

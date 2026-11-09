@@ -1,0 +1,35 @@
+{
+  "id": "normal-standardization",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 48,
+  "frames": 1440,
+  "mean": 10,
+  "sigma": 2,
+  "threshold": 12,
+  "z": 1,
+  "probability": 0.8413447460685429,
+  "audio": false,
+  "phases": [
+    {"id": "density", "start": 0, "end": 7, "title": "Una curva, dos parametros", "caption": "La media situa el centro. La desviacion tipica determina la anchura de la normal."},
+    {"id": "width", "start": 7, "end": 14, "title": "Cambiar la desviacion tipica", "caption": "Una curva mas estrecha es mas alta; una mas ancha es mas baja. El area total sigue siendo uno."},
+    {"id": "substitution", "start": 14, "end": 22, "title": "De X a Z", "caption": "Restamos la media y dividimos por la desviacion tipica: doce se convierte en uno."},
+    {"id": "mapping", "start": 22, "end": 30, "title": "Dos escalas, el mismo punto", "caption": "X = 12 y Z = 1 representan el mismo valor en dos escalas. La probabilidad no cambia."},
+    {"id": "probability", "start": 30, "end": 40, "title": "La probabilidad es un area", "caption": "El area a la izquierda de uno en la normal estandar es aproximadamente 0.8413."},
+    {"id": "complement", "start": 40, "end": 48, "title": "El complemento", "caption": "El area restante es aproximadamente 0.1587: las dos partes suman uno."}
+  ],
+  "events": {
+    "draw": [0.5, 3],
+    "narrow": [7, 9.2],
+    "widen": [9.2, 11.6],
+    "restore": [11.6, 14],
+    "parameters": [16, 18],
+    "threshold": [18, 20],
+    "simplify": [20, 22],
+    "scan": [22, 25],
+    "settle": [25, 28],
+    "shade": [30, 35],
+    "tail": [40, 42]
+  }
+}
