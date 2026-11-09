@@ -4,10 +4,11 @@ import {Pencil} from 'lucide-react';
 import InteractiveLesson from './InteractiveLesson';
 import ExerciseCollection from './ExerciseCollection';
 
-export default function LessonSectionPlayer({lessonId, section}) {
+export default function LessonSectionPlayer({lessonId, section, children}) {
   const location = useLocation();
   return <>
     <InteractiveLesson lessonId={lessonId} view="animation" animation={section.animation} />
+    {children}
     {section.exercise && <section className="lesson-worked-example" aria-label="Ejemplo resuelto">
       <h3>Ejemplo resuelto</h3>
       <ExerciseCollection lessonId={lessonId} mode="example" descriptor={section.exercise} />

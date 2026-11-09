@@ -5,7 +5,11 @@ export function LessonSummary({children}) {
   return <section className="lesson-summary" aria-label="Resumen de la lección">{children}</section>;
 }
 
-export function LessonNotes({children}) {
+export function LessonSectionNotes({sectionId, children}) {
+  return <section className="lesson-section-notes" data-section-notes={sectionId}>{children}</section>;
+}
+
+export function LessonNotes({children, title = 'Apuntes del apartado'}) {
   const location = useLocation();
   const notes = useRef(null);
   useEffect(() => {
@@ -19,7 +23,7 @@ export function LessonNotes({children}) {
     }
   }, [location.hash]);
   return <details ref={notes} className="lesson-reference-notes">
-    <summary>Apuntes completos: explicación, ejemplos y ampliación</summary>
+    <summary>{title}</summary>
     {children}
   </details>;
 }

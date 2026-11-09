@@ -4,6 +4,7 @@ import {createRequire} from 'node:module';
 import path from 'node:path';
 import {COURSE} from '../pages/inferencia/course.js';
 import {generateExercise, scopeExercise} from '../pages/inferencia/exercises.js';
+import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 import {inlineMathToMdx} from '../src/lib/inline-math.js';
 import {CAPSTONE} from '../pages/inferencia/capstone.js';
 
@@ -17,44 +18,102 @@ const bullets = values => values.map(value => `- ${value}`).join('\n');
 const plainText = value => String(value).replace(/[&<>{}]/g, character => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '{':'&#123;', '}':'&#125;'}[character]));
 const section = (item, level = '##') => `${level} ${item.title}\n\n${inlineMathToMdx(item.body)}`;
 
-function workedExample(lesson) {
+const formulaSections = {
+  proporciones:['porcentaje-y-exposicion', 'unidades-y-cotas'],
+  algebra:['balanza', 'deshacer-exponencial'],
+  funciones:['sumar-salidas', 'seleccionar-valores'],
+  calculo:['primitiva', 'pendiente-acumulada'],
+  'regiones-matrices':['recorrer-triangulo', 'orden-de-matriz'],
+  sucesos:['traducir-conjuntos', 'observabilidad'],
+  axiomas:['solapamiento', 'frecuencia'],
+  combinatoria:['posiciones', 'multiplicidades'],
+  condicionada:['grupo-conocido', 'ruta-condicionada'],
+  'independencia-sucesos':['producto', 'independencia-mutua'],
+  'bayes-diagnostico':['posterior', 'negativos-y-prevalencia'],
+  'variable-cdf':['regla-observable', 'intervalos-y-saltos'],
+  masa:['agrupar-y-normalizar', 'interruptores'],
+  densidad:['densidad-creciente', 'acumulada-por-tramos'],
+  esperanza:['transformar-valores', 'linealidad-y-colas'],
+  varianza:['segundo-momento', 'estirar-y-desplazar'],
+  'momentos-transformaciones':['ordinarios-y-centrales', 'cambio-de-distribucion'],
+  'bernoulli-binomial':['masa-y-cola', 'masa-y-cola'],
+  poisson:['masa-y-complemento', 'aproximar-y-sumar'],
+  hipergeometrica:['masa-finita', 'soporte-y-correccion'],
+  'geometrica-negativa':['primera-deteccion', 'varios-exitos'],
+  'uniforme-montecarlo':['dos-uniformes', 'cuantiles', 'dos-uniformes'],
+  exponencial:['escala-y-supervivencia', 'espera-adicional'],
+  normal:['densidad-normal', 'colas-e-intervalos'],
+  gamma:['densidad-y-area', 'funcion-gamma'],
+  'cauchy-weibull':['centro-sin-media', 'weibull-supervivencia', 'riesgo-y-momentos'],
+  'calculo-modelos':['operacion-correcta', 'consulta-con-unidades'],
+  'familia-exponencial':['piezas-poisson', 'enlaces-glm', 'datos-fijos-y-maximo'],
+  'conjunta-discreta':['parejas', 'rectangulo-acumulado'],
+  multinomial:['categorias-y-secuencias', 'momentos-con-indicadores'],
+  marginales:['sumar-la-otra', 'integrar-cortes'],
+  'conjunta-condicional':['normalizar-region', 'normalizar-corte'],
+  'normal-bivariante':['densidad-bivariante', 'media-y-varianza-condicional'],
+  'independencia-variables':['factorizar-tabla', 'soporte-completo', 'transformar-y-seleccionar'],
+  'covarianza-matrices':['normalizar-covarianza', 'matrices-admisibles'],
+  'combinaciones-incorrelacion':['suma-y-diferencia', 'forma-matricial', 'incorrelacion']
+};
+
+const exampleSections = {
+  funciones:'seleccionar-valores',
+  calculo:'franjas',
+  'regiones-matrices':'recorrer-triangulo',
+  sucesos:'resultados-y-sucesos',
+  densidad:'densidad-creciente',
+  varianza:'estirar-y-desplazar',
+  'momentos-transformaciones':'cambio-de-distribucion',
+  'geometrica-negativa':'primera-deteccion',
+  'uniforme-montecarlo':'inversion-y-montecarlo',
+  'cauchy-weibull':'weibull-supervivencia',
+  'familia-exponencial':'enlaces-glm',
+  marginales:'integrar-cortes',
+  'conjunta-condicional':'normalizar-corte',
+  'covarianza-matrices':'normalizar-covarianza'
+};
+
+function workedExample(lesson, questionIds) {
   const worked = scopeExercise(lesson, generateExercise(lesson.exerciseTypes[0], 1));
-  const questions = worked.questions.map(question => `### ${plainText(question.prompt)}\n\n${question.steps.map(step => `**${plainText(step.title)}**\n\n${plainText(step.explanation)}${step.tex ? `\n\n${formula(step)}` : ''}`).join('\n\n')}\n\n${plainText(question.interpretation)}`);
-  return `## Ejemplo resuelto con el método\n\n${plainText(worked.prompt)}\n\n${worked.type === lesson.id ? '' : `<Notation topic=${JSON.stringify(worked.type)} />\n\n`}### Datos y supuestos\n\n${bullets([...worked.given, ...worked.assumptions].map(plainText))}\n\n${questions.join('\n\n')}`;
+  const questions = worked.questions.filter(question => questionIds.includes(question.id)).map(question => `### ${plainText(question.prompt)}\n\n${question.steps.map(step => `**${plainText(step.title)}**\n\n${plainText(step.explanation)}${step.tex ? `\n\n${formula(step)}` : ''}`).join('\n\n')}\n\n${plainText(question.interpretation)}`);
+  return `${plainText(worked.prompt)}\n\n${worked.type === lesson.id ? '' : `<Notation topic=${JSON.stringify(worked.type)} />\n\n`}### Datos y supuestos\n\n${bullets([...worked.given, ...worked.assumptions].map(plainText))}\n\n${questions.join('\n\n')}`;
 }
 
-// A lesson page holds two blocks below the narrated journey: a short visible
-// summary to review (goals, key formulas, method, pitfalls) and the complete
-// written notes, collapsed, in reading order. The PDF reference is shown by
-// LessonContent above the tabs.
 function lessonPage(unit, lesson, lessonIndex) {
-  const required = lesson.sections.filter(item => !item.optional);
-  const introduction = required.filter(item => item.introductory).map(item => section(item));
-  const development = required.filter(item => !item.introductory).map(item => section(item));
-  const optionalSections = lesson.sections.filter(item => item.optional);
-  const optionalFormulas = lesson.formulas.filter(item => item.optional);
-  const illustration = lesson.illustration ? `## ${lesson.illustration.title}\n\n<InteractiveLesson lessonId=${JSON.stringify(lesson.id)} view="figure" />` : '';
-  const depth = optionalSections.length || optionalFormulas.length ? `<details className="lesson-depth">\n<summary>Ampliación opcional</summary>\n\n${[...optionalSections.map(item => section(item, '###')), ...optionalFormulas.map(formula)].join('\n\n')}\n\n</details>` : '';
+  const sections = createLessonSections(lesson);
+  const exampleSection = exampleSections[lesson.id] || sections.find(item => item.exercise)?.id || sections[0].id;
+  if (!sections.some(item => item.id === exampleSection)) throw new RangeError(`Ejemplo sin apartado en ${lesson.id}.`);
+  const formulaSectionIds = formulaSections[lesson.id];
+  if (formulaSectionIds?.length !== lesson.formulas.length || formulaSectionIds.some((id, index) => {
+    const destination = sections.find(item => item.id === id);
+    return !destination || destination.optional !== Boolean(lesson.formulas[index].optional);
+  })) throw new RangeError(`Fórmulas sin apartado compatible en ${lesson.id}.`);
+  const illustration = lesson.illustration ? `### ${lesson.illustration.title}\n\n<InteractiveLesson lessonId=${JSON.stringify(lesson.id)} view="figure" />` : '';
   const imports = [
     "import Formula, {InlineFormula, Notation} from '@site/src/components/Formula';",
     "import LessonContent from '@site/src/components/LessonContent';",
-    "import {LessonNotes, LessonSummary} from '@site/src/components/LessonNotes';",
+    "import {LessonNotes, LessonSummary, LessonSectionNotes} from '@site/src/components/LessonNotes';",
     lesson.illustration ? "import InteractiveLesson from '@site/src/components/InteractiveLesson';" : ''
   ].filter(Boolean).join('\n');
   const summary = [
-    '## Al terminar esta lección', bullets(lesson.objectives),
-    '### Fórmulas clave', lesson.formulas.filter(item => !item.optional).map(formula).join('\n\n'),
-    '### Cómo resolverlo', lesson.method.map((step, index) => `${index + 1}. ${step}`).join('\n'),
-    '### Errores que conviene evitar', bullets(lesson.pitfalls),
+    '<h2 id="ideas-clave">Ideas clave</h2>', bullets(lesson.sections.filter(item => !item.optional && !item.introductory).map(item => item.title)),
+    '<h3 id="fórmulas-clave">Fórmulas clave</h3>', lesson.formulas.filter(item => !item.optional).map(formula).join('\n\n'),
+    '<h3 id="cómo-resolverlo">Cómo resolverlo</h3>', lesson.method.map((step, index) => `${index + 1}. ${step}`).join('\n'),
+    '<h3 id="errores-que-conviene-evitar">Errores que conviene evitar</h3>', bullets(lesson.pitfalls),
     `<p className="lesson-duration">Tiempo orientativo de estudio y práctica: ${lesson.duration} min.</p>`
   ].join('\n\n');
-  const notes = [
-    ...introduction, illustration,
-    `## Palabras y símbolos de esta lección\n\n<Notation topic=${JSON.stringify(lesson.id)} />`,
-    ...development,
-    section(lesson.example), workedExample(lesson), depth
-  ].filter(Boolean).join('\n\n');
-  return `---\ntitle: ${JSON.stringify(lesson.title)}\nsidebar_label: ${JSON.stringify(`${unit.number}.${lessonIndex + 1} ${lesson.title}`)}\nsidebar_position: ${lessonIndex + 1}\nslug: /lecciones/${lesson.id}\ncustom_edit_url: https://github.com/netraular/inferencia-estadistica-uoc/edit/main/pages/inferencia/course.js\n---\n\n${imports}\n\n<LessonContent lessonId=${JSON.stringify(lesson.id)}>\n\n<LessonSummary>\n\n${summary}\n\n</LessonSummary>\n\n<LessonNotes>\n\n${notes}\n\n</LessonNotes>\n\n</LessonContent>\n`;
+  const notes = sections.map((item, index) => {
+    const body = item.sourceSections.map(title => section(lesson.sections.find(source => source.title === title), '###'));
+    if (index === 0) body.unshift(illustration, `### Palabras y símbolos de esta lección\n\n<Notation topic=${JSON.stringify(lesson.id)} />`);
+    const formulas = lesson.formulas.filter((entry, formulaIndex) => formulaSectionIds[formulaIndex] === item.id);
+    if (formulas.length) body.push('### Fórmulas del apartado', ...formulas.map(formula));
+    if (item.id === exampleSection) body.push(section(lesson.example, '###'));
+    if (item.exercise) body.push(`<LessonNotes title="Desarrollo escrito del ejemplo">\n\n${workedExample(lesson, item.exercise.questionIds)}\n\n</LessonNotes>`);
+    const content = body.filter(Boolean).join('\n\n');
+    return `<LessonSectionNotes sectionId=${JSON.stringify(item.id)}>\n\n${item.optional ? `<LessonNotes title="Ampliación opcional">\n\n${content}\n\n</LessonNotes>` : content}\n\n</LessonSectionNotes>`;
+  }).join('\n\n');
+  return `---\ntitle: ${JSON.stringify(lesson.title)}\nsidebar_label: ${JSON.stringify(`${unit.number}.${lessonIndex + 1} ${lesson.title}`)}\nsidebar_position: ${lessonIndex + 1}\nslug: /lecciones/${lesson.id}\ncustom_edit_url: https://github.com/netraular/inferencia-estadistica-uoc/edit/main/pages/inferencia/course.js\n---\n\n${imports}\n\n<LessonContent lessonId=${JSON.stringify(lesson.id)}>\n\n<LessonSummary>\n\n${summary}\n\n</LessonSummary>\n\n${notes}\n\n</LessonContent>\n`;
 }
 
 await rm(docs, {recursive: true, force: true});

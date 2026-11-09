@@ -6,20 +6,22 @@ import {createRequire} from 'node:module';
 import {runInNewContext} from 'node:vm';
 import {inlineMathToMdx} from '../src/lib/inline-math.js';
 
-test('lesson entry uses a progressive journey and keeps full notes optional', () => {
+test('lesson entry uses scoped notes and keeps summaries and practice out of the journey', () => {
   const source=readFileSync(new URL('../src/components/LessonContent.jsx',import.meta.url),'utf8');
   assert.match(source,/<LessonJourney lessonId=\{lessonId\}/);
   assert.match(source,/<LessonSource lesson=\{lesson\}/);
-  assert.match(source,/\{children\}/);
+  assert.match(source,/\{notes\}/);
   const notes=readFileSync(new URL('../src/components/LessonNotes.jsx',import.meta.url),'utf8');
   assert.match(notes,/<details ref=\{notes\} className="lesson-reference-notes">/);
   assert.doesNotMatch(source,/value:'lab'/);
-  assert.match(source,/query\.get\('actividad'\).*lab/);
+  assert.match(source,/\['theory', 'lab', 'animation'\]/);
   const journey=readFileSync(new URL('../src/components/LessonJourney.jsx',import.meta.url),'utf8');
   assert.match(journey,/createLessonSections/);
   assert.match(journey,/data-lesson-section/);
-  assert.ok(journey.indexOf('{children}') < journey.indexOf('className="lesson-section-transport"'));
-  assert.ok(source.indexOf('className="lesson-knowledge-check"') < source.indexOf('</LessonJourney>'));
+  assert.ok(journey.indexOf('React.Children.toArray(children)') < journey.indexOf('className="lesson-section-transport"'));
+  assert.doesNotMatch(source,/lesson-knowledge-check/);
+  assert.ok(source.indexOf('className="lesson-practice"') > source.indexOf('</LessonJourney>'));
+  assert.ok(source.indexOf('{summary}') > source.indexOf('<TabItem value="summary">'));
   assert.doesNotMatch(journey,/<InteractiveLesson lessonId=\{lessonId\} view="animation"/);
 });
 import {parseHTML} from 'linkedom';
@@ -165,17 +167,34 @@ test('36 MDX pages preserve theory, formulas, method, solved examples and intera
     for (const step of lesson.method) assert.ok(text.includes(step), lesson.id);
     for (const formula of lesson.formulas) assert.ok(text.includes(JSON.stringify(formula.tex)), lesson.id);
     assert.ok(text.includes(`<LessonContent lessonId="${lesson.id}">`), lesson.id);
-    assert.ok(text.indexOf('<LessonContent ') < text.indexOf('## Al terminar esta lección'), lesson.id);
+    assert.ok(!text.includes('Al terminar esta lección'), lesson.id);
     assert.ok(text.trimEnd().endsWith('</LessonContent>'), lesson.id);
     assert.equal(text.includes('<InteractiveLesson '),Boolean(lesson.illustration),lesson.id);
     if (lesson.illustration) {
       assert.ok(text.includes(`<InteractiveLesson lessonId="${lesson.id}" view="figure" />`),lesson.id);
-      assert.ok(text.includes(`## ${lesson.illustration.title}`),lesson.id);
-      assert.ok(text.indexOf('view="figure"')<text.indexOf('## Palabras y símbolos'),lesson.id);
+      assert.ok(text.includes(`### ${lesson.illustration.title}`),lesson.id);
+      assert.ok(text.indexOf('view="figure"')<text.indexOf('### Palabras y símbolos'),lesson.id);
     }
-    assert.ok(text.includes('Ejemplo resuelto con el método'), lesson.id);
-    assert.ok(text.indexOf('<LessonSummary>') < text.indexOf('### Fórmulas clave'), lesson.id);
-    assert.ok(text.indexOf('</LessonSummary>') < text.indexOf('<LessonNotes>'), lesson.id);
+    assert.ok(text.includes('Desarrollo escrito del ejemplo'), lesson.id);
+    assert.ok(text.indexOf('<LessonSummary>') < text.indexOf('<h3 id="fórmulas-clave">'), lesson.id);
+    assert.ok(text.indexOf('</LessonSummary>') < text.indexOf('<LessonSectionNotes '), lesson.id);
+    const blocks = [...text.matchAll(/<LessonSectionNotes sectionId="([^"]+)">([\s\S]*?)<\/LessonSectionNotes>/g)];
+    const sections = createLessonSections(lesson);
+    assert.deepEqual(blocks.map(match => match[1]), sections.map(item => item.id), lesson.id);
+    for (const [index, item] of sections.entries()) {
+      for (const title of item.sourceSections) {
+        const source = lesson.sections.find(entry => entry.title === title);
+        assert.ok(blocks[index][2].includes(inlineMathToMdx(source.body)), `${lesson.id}/${item.id}: ${title}`);
+      }
+      assert.equal(blocks[index][2].includes('title="Ampliación opcional"'), item.optional, `${lesson.id}/${item.id}`);
+      assert.equal(blocks[index][2].includes('Desarrollo escrito del ejemplo'), Boolean(item.exercise), `${lesson.id}/${item.id}`);
+    }
+    assert.equal(blocks.filter(match => match[2].includes(inlineMathToMdx(lesson.example.body))).length, 1, lesson.id);
+    for (const formula of lesson.formulas) {
+      const destinations = blocks.filter(match => match[2].includes(JSON.stringify(formula.tex)));
+      assert.ok(destinations.length > 0, `${lesson.id}: ${formula.tex} belongs inside a section`);
+      if (formula.optional) assert.ok(destinations.every(match => match[2].includes('title="Ampliación opcional"')), lesson.id);
+    }
     assert.ok(!/\bleccion\b|\bmetodo\b|\bsimbolos\b|Como razonar/.test(text), lesson.id);
   }
   assert.equal(lessons.length, 36);

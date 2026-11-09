@@ -9,6 +9,7 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
 import {generateExercise, scopeExercise} from '../pages/inferencia/exercises.js';
+import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 import {mountAula} from '../pages/inferencia/app.js';
 import {inlineMathToMdx} from '../src/lib/inline-math.js';
 import {CAPSTONE} from '../pages/inferencia/capstone.js';
@@ -35,10 +36,12 @@ function elements(element) {
   return [element, ...React.Children.toArray(element.props.children).flatMap(elements)];
 }
 
-test('three Docusaurus tabs keep the journey and optional notes without progress, and preserve old queries', () => {
+test('three Docusaurus tabs separate lesson, exercises and summary, and preserve old queries', () => {
   const effects = [];
   const replacements = [];
   const location = {pathname:'/inferencia/lecciones/sucesos/', search:'?actividad=theory&origen=temario', hash:'#ejemplo', state:{kept:true}};
+  const LessonSummary = ({children}) => React.createElement('section', {'data-summary':true}, children);
+  const LessonSectionNotes = ({sectionId, children}) => React.createElement('section', {'data-section-notes':sectionId}, children);
   const {default:LessonContent} = loadCompiled('../src/components/LessonContent.jsx', {
     react:{...React, useEffect:effect => effects.push(effect), useRef:() => ({current:null})},
     '@docusaurus/router':{useHistory:() => ({replace:value => replacements.push(value)}), useLocation:() => location},
@@ -47,21 +50,29 @@ test('three Docusaurus tabs keep the journey and optional notes without progress
     './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive':view}),
     './ExerciseCollection':({mode='pdf'}) => React.createElement('div', {'data-exercises':mode}),
     './LessonJourney':({lessonId,children}) => React.createElement('div', {'data-journey':lessonId},children),
+    './LessonNotes':{LessonSummary, LessonSectionNotes},
     './LessonSource':({lesson}) => React.createElement('p', {'data-source':lesson.id}),
     '../../pages/inferencia/course.js':{COURSE}
   });
-  const element = LessonContent({lessonId:'sucesos', children:React.createElement('p', null, 'Contenido conservado')});
+  const element = LessonContent({lessonId:'sucesos', children:[
+    React.createElement(LessonSectionNotes, {key:'notes', sectionId:'resultados-y-sucesos'}, 'Contenido conservado'),
+    React.createElement(LessonSummary, {key:'summary'}, React.createElement('h3', {id:'fórmulas-clave'}, 'Resumen escrito'))
+  ]});
   const {document} = parseHTML(renderToStaticMarkup(element));
-  assert.equal(document.querySelector('[data-tabs]').getAttribute('data-tabs'), 'lesson,practice,animation');
+  assert.equal(document.querySelector('[data-tabs]').getAttribute('data-tabs'), 'lesson,practice,summary');
   const lesson = document.querySelector('[data-view="lesson"]');
   assert.match(lesson.textContent, /Contenido conservado/);
   assert.ok(lesson.querySelector('[data-journey="sucesos"]'));
   assert.ok(document.querySelector('[data-source="sucesos"]'));
   assert.equal(document.querySelector('[data-source]').closest('[data-view]'), null);
-  assert.ok(lesson.querySelector('[data-interactive="theory"]'));
-  assert.ok(lesson.querySelector('[data-exercises="practice"]'));
+  assert.equal(lesson.querySelector('[data-interactive="theory"]'), null);
+  assert.equal(lesson.querySelector('[data-exercises]'), null);
+  assert.ok(document.querySelector('[data-view="practice"] [data-exercises="practice"]'));
   assert.ok(document.querySelector('[data-view="practice"] [data-exercises="pdf"]'));
   assert.equal(document.querySelector('[data-view="practice"] [data-interactive]'),null);
+  assert.equal(lesson.querySelector('[data-summary]'), null);
+  assert.match(document.querySelector('[data-view="summary"] [data-summary]').textContent, /Resumen escrito/);
+  assert.ok(document.querySelector('[data-view="summary"] [data-interactive="animation"]'));
   assert.equal(lesson.querySelector('input[type="checkbox"]'), null);
   assert.equal(lesson.querySelector('[role="status"]'), null);
   assert.equal(document.querySelectorAll('input[type="checkbox"]').length, 0);
@@ -80,6 +91,85 @@ test('three Docusaurus tabs keep the journey and optional notes without progress
   location.search = '?actividad=lab&origen=temario';
   effects[0]();
   assert.equal(replacements[1].search, '?actividad=lesson&origen=temario');
+  location.search = '?actividad=animation&origen=temario';
+  effects[0]();
+  assert.equal(replacements[2].search, '?actividad=summary&origen=temario');
+  assert.equal(replacements[2].hash, location.hash);
+  location.search = '?actividad=lesson&origen=temario';
+  location.hash = '#f%C3%B3rmulas-clave';
+  effects[1]();
+  assert.equal(replacements[3].search, '?actividad=summary&origen=temario');
+  assert.equal(replacements[3].hash, location.hash);
+  location.search = '?actividad=practice';
+  location.hash = '#ejemplo';
+  effects[1]();
+  assert.equal(replacements.length, 4);
+});
+
+test('every journey section shows only its notes, video and scoped example, and follows note anchors', () => {
+  let selected = '';
+  let location = {hash:''};
+  let document;
+  let scrolled = 0;
+  const effects = [];
+  const react = {...React, useState:() => [selected, value => {selected = value;}], useEffect:effect => effects.push(effect)};
+  const {LessonSectionNotes} = loadCompiled('../src/components/LessonNotes.jsx', {
+    '@docusaurus/router':{useLocation:() => location}
+  });
+  const {default:LessonSectionPlayer} = loadCompiled('../src/components/LessonSectionPlayer.jsx', {
+    '@docusaurus/router':{useLocation:() => ({pathname:'/inferencia/lecciones/proporciones/'})},
+    './InteractiveLesson':({animation}) => React.createElement('div', {'data-video':animation.id}),
+    './ExerciseCollection':({descriptor}) => React.createElement('div', {'data-example':descriptor.questionIds.join(',')})
+  });
+  const {default:LessonJourney} = loadCompiled('../src/components/LessonJourney.jsx', {
+    react,
+    '@docusaurus/router':{useLocation:() => location},
+    '../../pages/inferencia/course.js':{COURSE},
+    '../../pages/inferencia/lesson-sections.js':{createLessonSections},
+    './LessonSectionPlayer':LessonSectionPlayer
+  }, {document:{getElementById:id => document?.getElementById(id)}});
+  for (const lesson of COURSE.units.flatMap(unit => unit.lessons)) {
+    const sections = createLessonSections(lesson);
+    const children = sections.map(section => React.createElement(LessonSectionNotes, {key:section.id, sectionId:section.id},
+      React.createElement('h3', {id:`note-${section.id}`}, section.title)));
+    selected = '';
+    location = {hash:''};
+    const render = () => {
+      effects.length = 0;
+      const element = LessonJourney({lessonId:lesson.id, children});
+      document = parseHTML(renderToStaticMarkup(element)).document;
+      return element;
+    };
+    let element = render();
+    for (const [index, section] of sections.entries()) {
+      elements(element).filter(node => node.type === 'button' && 'aria-current' in node.props)[index].props.onClick();
+      element = render();
+      assert.equal(document.querySelector('[data-lesson-section]').getAttribute('data-lesson-section'), section.id);
+      assert.equal(document.querySelector('[data-video]').getAttribute('data-video'), section.animation.id);
+      const visible = Array.from(document.querySelectorAll('[data-section-notes]')).filter(notes => !notes.parentElement.hasAttribute('hidden'));
+      assert.equal(visible.length, 1, `${lesson.id}/${section.id}`);
+      assert.equal(visible[0].getAttribute('data-section-notes'), section.id);
+      const example = document.querySelector('[data-example]');
+      assert.equal(Boolean(example), Boolean(section.exercise), `${lesson.id}/${section.id}`);
+      if (example) assert.equal(example.getAttribute('data-example'), section.exercise.questionIds.join(','));
+      const transport = elements(element).filter(node => node.type === 'button' && 'disabled' in node.props);
+      assert.equal(transport[0].props.disabled, index === 0);
+      assert.equal(transport[1].props.disabled, index === sections.length - 1);
+      if (index < sections.length - 1) {
+        transport[1].props.onClick();
+        assert.equal(selected, sections[index + 1].id);
+      }
+    }
+    selected = sections[0].id;
+    location = {hash:`#note-${sections.at(-1).id}`};
+    render();
+    effects[0]();
+    assert.equal(selected, sections.at(-1).id);
+    render();
+    document.getElementById(`note-${selected}`).scrollIntoView = () => {scrolled++;};
+    effects[1]();
+  }
+  assert.equal(scrolled, 36);
 });
 
 test('legacy lesson links preserve every activity and normalize theory to lesson under baseUrl', () => {
@@ -272,7 +362,7 @@ test('curriculum generation retains all lessons and adds the solved PEC as chapt
   const {code} = babel.transformFromAstSync(ast, source, {babelrc:false, configFile:false});
   const writes = new Map();
   await runInNewContext(`(async () => {${code}})()`, {
-    root:'/fixture', path, COURSE, CAPSTONE, generateExercise, scopeExercise, inlineMathToMdx, require,
+    root:'/fixture', path, COURSE, CAPSTONE, generateExercise, scopeExercise, createLessonSections, inlineMathToMdx, require,
     mkdir:async () => {}, rm:async () => {}, cp:async () => {},
     readFile:async () => '<html></html>', writeFile:async (filename, content) => writes.set(filename, content),
     console:{log() {}}
@@ -307,13 +397,15 @@ test('curriculum generation retains all lessons and adds the solved PEC as chapt
       assert.ok(curriculum.includes(`[${unit.number}.${index + 1} ${lesson.title}](./${unit.id}/${lesson.id}.mdx)`));
       const mdx = writes.get(`/fixture/docs/${unit.id}/${lesson.id}.mdx`);
       await compile(mdx);
+      const summary = mdx.split('<LessonSummary>')[1].split('</LessonSummary>')[0];
+      assert.doesNotMatch(summary, /^#{1,6} /m, lesson.id);
       assert.ok(mdx.includes(`slug: /lecciones/${lesson.id}`));
       assert.ok(mdx.includes(`<LessonContent lessonId="${lesson.id}">`));
       assert.ok(mdx.includes(`<Notation topic="${lesson.id}" />`),lesson.id);
       const hasOptional = lesson.sections.some(section=>section.optional) || lesson.formulas.some(formula=>formula.optional);
-      assert.equal(mdx.includes('<details className="lesson-depth">'),hasOptional,lesson.id);
+      assert.equal(mdx.includes('<LessonNotes title="Ampliación opcional">'),hasOptional,lesson.id);
       assert.equal(mdx.includes('Ampliación opcional'),hasOptional,lesson.id);
-      const required = mdx.split('<details className="lesson-depth">')[0];
+      const required = mdx.split('<LessonNotes title="Ampliación opcional">')[0];
       for (const section of lesson.sections.filter(section=>!section.optional)) assert.ok(required.includes(inlineMathToMdx(section.body)),`${lesson.id}: ${section.title}`);
       for (const formula of lesson.formulas.filter(formula=>!formula.optional)) assert.ok(required.includes(JSON.stringify(formula.tex)),`${lesson.id}: ${formula.tex}`);
       for (const section of lesson.sections) assert.ok(mdx.includes(inlineMathToMdx(section.body)), lesson.id);
@@ -324,7 +416,7 @@ test('curriculum generation retains all lessons and adds the solved PEC as chapt
       for (const step of lesson.method) assert.ok(mdx.includes(step), lesson.id);
       assert.ok(mdx.includes(inlineMathToMdx(lesson.example.body)), lesson.id);
       for (const pitfall of lesson.pitfalls) assert.ok(mdx.includes(pitfall), lesson.id);
-      assert.ok(mdx.includes('Ejemplo resuelto con el método'), lesson.id);
+      assert.ok(mdx.includes('Desarrollo escrito del ejemplo'), lesson.id);
       await compile(mdx);
       count++;
     }

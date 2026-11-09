@@ -62,45 +62,58 @@ test('the lesson source line links to the PDF page under baseUrl', () => {
   assert.match(bridge.toString(), /Repaso previo/);
 });
 
-test('full notes stay collapsed and the summary is a labelled section', () => {
-  const {LessonNotes, LessonSummary} = loadCompiled('../src/components/LessonNotes.jsx', {
+test('section notes stay scoped and optional notes stay collapsed', () => {
+  const {LessonNotes, LessonSummary, LessonSectionNotes} = loadCompiled('../src/components/LessonNotes.jsx', {
     react:{...React, useEffect:() => {}, useRef:() => ({current:null})},
     '@docusaurus/router':{useLocation:() => ({hash:''})}
   });
   const html = renderToStaticMarkup(React.createElement(React.Fragment, null,
     React.createElement(LessonSummary, null, React.createElement('p', null, 'Resumen')),
-    React.createElement(LessonNotes, null, React.createElement('p', null, 'Notas'))));
+    React.createElement(LessonSectionNotes, {sectionId:'parte-y-total'}, React.createElement('p', null, 'Notas')),
+    React.createElement(LessonNotes, {title:'Ampliación opcional'}, React.createElement('p', null, 'Opcional'))));
   const {document} = parseHTML(`<div>${html}</div>`);
   assert.equal(document.querySelector('.lesson-summary').getAttribute('aria-label'), 'Resumen de la lección');
+  assert.equal(document.querySelector('[data-section-notes]').getAttribute('data-section-notes'), 'parte-y-total');
+  assert.equal(document.querySelector('[data-section-notes]').textContent, 'Notas');
   const notes = document.querySelector('details.lesson-reference-notes');
   assert.equal(notes.hasAttribute('open'), false);
-  assert.match(notes.querySelector('summary').textContent, /Apuntes completos/);
+  assert.equal(notes.querySelector('summary').textContent, 'Ampliación opcional');
 });
 
 test('every lesson omits knowledge checks and preserves its other content and views', () => {
   const wrapper = ({children}) => React.createElement('div', null, children);
+  const LessonSummary = ({children}) => React.createElement('section', {'data-summary':true}, children);
+  const LessonSectionNotes = ({sectionId, children}) => React.createElement('section', {'data-section-notes':sectionId}, children);
   const {default:LessonContent} = loadCompiled('../src/components/LessonContent.jsx', {
     react:{...React, useEffect:() => {}},
     '@theme/Tabs':wrapper,
-    '@theme/TabItem':wrapper,
+    '@theme/TabItem':({value, children}) => React.createElement('div', {'data-view':value}, children),
     '@docusaurus/router':{useHistory:() => ({}), useLocation:() => ({search:''})},
     '../../pages/inferencia/course.js':{COURSE},
     './LessonSource':({lesson}) => React.createElement('div', {'data-source':lesson.id}),
     './LessonJourney':wrapper,
+    './LessonNotes':{LessonSummary, LessonSectionNotes},
     './InteractiveLesson':({view}) => React.createElement('div', {'data-interactive-view':view}),
     './ExerciseCollection':({mode = 'collection'}) => React.createElement('div', {'data-exercises':mode})
   });
   for (const lesson of lessons) {
     const {document} = parseHTML(renderToStaticMarkup(React.createElement(LessonContent,
-      {lessonId:lesson.id}, React.createElement('p', {'data-notes':true}, 'Lesson notes'))));
+      {lessonId:lesson.id},
+      React.createElement(LessonSectionNotes, {sectionId:'first'}, React.createElement('p', {'data-notes':true}, 'Lesson notes')),
+      React.createElement(LessonSummary, null, 'Lesson summary'))));
     assert.equal(document.querySelector('.lesson-knowledge-check'), null, lesson.id);
     assert.ok(!document.toString().includes('Comprueba la idea'), lesson.id);
     assert.equal(document.querySelector('[data-interactive-view="theory"]'), null, lesson.id);
     assert.equal(document.querySelector('[data-source]').getAttribute('data-source'), lesson.id);
     assert.ok(document.querySelector('[data-notes]'), lesson.id);
-    assert.ok(document.querySelector('.lesson-practice [data-exercises="practice"]'), lesson.id);
+    assert.ok(document.querySelector('[data-view="lesson"] [data-notes]'), lesson.id);
+    assert.equal(document.querySelector('[data-view="lesson"] [data-summary]'), null, lesson.id);
+    assert.equal(document.querySelector('[data-view="lesson"] [data-exercises]'), null, lesson.id);
+    assert.equal(document.querySelectorAll('.lesson-objectives').length, 1, lesson.id);
+    assert.ok(document.querySelector('[data-view="practice"] [data-exercises="practice"]'), lesson.id);
     assert.ok(document.querySelector('[data-exercises="collection"]'), lesson.id);
-    assert.ok(document.querySelector('[data-interactive-view="animation"]'), lesson.id);
+    assert.ok(document.querySelector('[data-view="summary"] [data-summary]'), lesson.id);
+    assert.ok(document.querySelector('[data-view="summary"] [data-interactive-view="animation"]'), lesson.id);
   }
 });
 
