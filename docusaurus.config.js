@@ -32,6 +32,7 @@ export default {
       items: [
         {to: '/temario/', label: 'Temario', position: 'left', activeBaseRegex: '^/inferencia/(temario|lecciones)(/|$)'},
         {to: '/materiales/', label: 'Materiales', position: 'left'},
+        {to: '/comparativa-videos/', label: 'Comparativa', position: 'left'},
         {href: 'https://github.com/netraular/inferencia-estadistica-uoc', label: 'GitHub', position: 'right'}
       ]
     },

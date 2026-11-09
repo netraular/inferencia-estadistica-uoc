@@ -1,0 +1,113 @@
+{
+  "id": "calculo--franjas",
+  "title": "Probabilidad como area",
+  "language": "es",
+  "duration": 39.5,
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "frames": 1185,
+  "cueTiming": "measured",
+  "audio": "audio.mp3",
+  "audioSha256": "7dd0ce2c126d42cabc42f260c205b448e7cfd4ac0039b550176cb9e5d5cb32f5",
+  "cues": [
+    {
+      "start": 0,
+      "end": 4.4,
+      "text": "Un tiempo está entre cero y dos minutos con densidad constante de medio por minuto."
+    },
+    {
+      "start": 4.7,
+      "end": 8.5,
+      "text": "¿Qué probabilidad queda entre cero coma cuatro y uno coma dos?"
+    },
+    {
+      "start": 8.8,
+      "end": 11.6,
+      "text": "Primero restamos los límites para obtener la anchura."
+    },
+    {
+      "start": 11.9,
+      "end": 15.6,
+      "text": "Ahora multiplicamos la altura medio por la anchura cero coma ocho."
+    },
+    {
+      "start": 15.9,
+      "end": 19.1,
+      "text": "La franja sombreada tiene probabilidad cuatro décimas."
+    },
+    {
+      "start": 19.4,
+      "end": 22.5,
+      "text": "Las unidades de tiempo y de tiempo inverso se cancelan."
+    },
+    {
+      "start": 22.8,
+      "end": 26,
+      "text": "Si la altura cambia, usamos franjas más estrechas."
+    },
+    {
+      "start": 26.3,
+      "end": 31.7,
+      "text": "La integral acumula sus aportaciones; el diferencial de te identifica la variable que recorre el tiempo."
+    },
+    {
+      "start": 32,
+      "end": 36.4,
+      "text": "Si la regla cambia dentro del intervalo, separamos las integrales en esa frontera."
+    },
+    {
+      "start": 36.7,
+      "end": 39.5,
+      "text": "No usamos una sola fórmula fuera de su tramo."
+    }
+  ],
+  "models": [
+    {
+      "id": "uniform",
+      "start": 0,
+      "support": [
+        0,
+        2
+      ],
+      "interval": [
+        0.4,
+        1.2
+      ],
+      "height": 0.5,
+      "probability": 0.4
+    },
+    {
+      "id": "increasing",
+      "start": 22.8,
+      "support": [
+        0,
+        2
+      ],
+      "interval": [
+        0.4,
+        1.2
+      ],
+      "slope": 0.5,
+      "probability": 0.32
+    },
+    {
+      "id": "piecewise",
+      "start": 32,
+      "support": [
+        0,
+        2
+      ],
+      "interval": [
+        0.4,
+        1.2
+      ],
+      "boundary": 1,
+      "heights": [
+        0.25,
+        0.75
+      ],
+      "probability": 0.3
+    }
+  ]
+}
