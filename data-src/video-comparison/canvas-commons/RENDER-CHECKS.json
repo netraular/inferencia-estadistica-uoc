@@ -1,0 +1,278 @@
+{
+  "result": 0,
+  "count": 1185,
+  "logs": [
+    {
+      "message": "blank path data at MJX-1-TEX-N-A0",
+      "level": "warn"
+    },
+    {
+      "message": "blank path data at MJX-1-TEX-N-20",
+      "level": "warn"
+    },
+    {
+      "message": "blank path data at MJX-1-TEX-N-A0",
+      "level": "warn"
+    },
+    {
+      "message": "blank path data at MJX-1-TEX-N-20",
+      "level": "warn"
+    }
+  ],
+  "checks": {
+    "captions": [
+      {
+        "start": 0,
+        "end": 4.4,
+        "text": "Un tiempo está entre cero y dos minutos con densidad constante de medio por minuto.",
+        "lines": [
+          "Un tiempo está entre cero y dos minutos con",
+          "densidad constante de medio por minuto."
+        ],
+        "widths": [
+          600,
+          558
+        ]
+      },
+      {
+        "start": 4.7,
+        "end": 8.5,
+        "text": "¿Qué probabilidad queda entre cero coma cuatro y uno coma dos?",
+        "lines": [
+          "¿Qué probabilidad queda entre cero coma cuatro y uno coma dos?"
+        ],
+        "widths": [
+          883
+        ]
+      },
+      {
+        "start": 8.8,
+        "end": 11.6,
+        "text": "Primero restamos los límites para obtener la anchura.",
+        "lines": [
+          "Primero restamos los límites para obtener la anchura."
+        ],
+        "widths": [
+          721
+        ]
+      },
+      {
+        "start": 11.9,
+        "end": 15.6,
+        "text": "Ahora multiplicamos la altura medio por la anchura cero coma ocho.",
+        "lines": [
+          "Ahora multiplicamos la altura medio por la anchura cero coma ocho."
+        ],
+        "widths": [
+          913
+        ]
+      },
+      {
+        "start": 15.9,
+        "end": 19.1,
+        "text": "La franja sombreada tiene probabilidad cuatro décimas.",
+        "lines": [
+          "La franja sombreada tiene probabilidad cuatro décimas."
+        ],
+        "widths": [
+          747
+        ]
+      },
+      {
+        "start": 19.4,
+        "end": 22.5,
+        "text": "Las unidades de tiempo y de tiempo inverso se cancelan.",
+        "lines": [
+          "Las unidades de tiempo y de tiempo inverso se cancelan."
+        ],
+        "widths": [
+          761
+        ]
+      },
+      {
+        "start": 22.8,
+        "end": 26,
+        "text": "Si la altura cambia, usamos franjas más estrechas.",
+        "lines": [
+          "Si la altura cambia, usamos franjas más estrechas."
+        ],
+        "widths": [
+          679
+        ]
+      },
+      {
+        "start": 26.3,
+        "end": 31.7,
+        "text": "La integral acumula sus aportaciones; el diferencial de te identifica la variable que recorre el tiempo.",
+        "lines": [
+          "La integral acumula sus aportaciones; el diferencial",
+          "de te identifica la variable que recorre el tiempo."
+        ],
+        "widths": [
+          689,
+          645
+        ]
+      },
+      {
+        "start": 32,
+        "end": 36.4,
+        "text": "Si la regla cambia dentro del intervalo, separamos las integrales en esa frontera.",
+        "lines": [
+          "Si la regla cambia dentro del intervalo, separamos las integrales en esa frontera."
+        ],
+        "widths": [
+          1073
+        ]
+      },
+      {
+        "start": 36.7,
+        "end": 39.5,
+        "text": "No usamos una sola fórmula fuera de su tramo.",
+        "lines": [
+          "No usamos una sola fórmula fuera de su tramo."
+        ],
+        "widths": [
+          634
+        ]
+      }
+    ],
+    "formulas": [
+      {
+        "tex": "f(t)=0\\;\\text{ fuera de }[0,2],\\qquad \\text{area total}=1",
+        "width": 436,
+        "height": 24
+      },
+      {
+        "tex": "f(t)=0.5\\;\\mathrm{min}^{-1}",
+        "width": 253,
+        "height": 40
+      },
+      {
+        "tex": "(2\\;\\mathrm{min})(0.5\\;\\mathrm{min}^{-1})",
+        "width": 246,
+        "height": 34
+      },
+      {
+        "tex": "\\text{Area}=1",
+        "width": 188,
+        "height": 38
+      },
+      {
+        "tex": "0.4\\le T\\le 1.2",
+        "width": 243,
+        "height": 33
+      },
+      {
+        "tex": "P(0.4\\le T\\le1.2)=?",
+        "width": 305,
+        "height": 34
+      },
+      {
+        "tex": "1.2-0.4=0.8",
+        "width": 268,
+        "height": 32
+      },
+      {
+        "tex": "\\text{Anchura}=0.8\\;\\mathrm{min}",
+        "width": 266,
+        "height": 26
+      },
+      {
+        "tex": "0.5\\times0.8",
+        "width": 204,
+        "height": 37
+      },
+      {
+        "tex": "=0.4",
+        "width": 131,
+        "height": 42
+      },
+      {
+        "tex": "P(0.4\\le T\\le1.2)",
+        "width": 276,
+        "height": 37
+      },
+      {
+        "tex": "=0.4",
+        "width": 140,
+        "height": 46
+      },
+      {
+        "tex": "\\underbrace{0.5\\;\\mathrm{min}^{-1}}_{\\text{altura}}\\;\\times\\;\\underbrace{0.8\\;\\mathrm{min}}_{\\text{anchura}}",
+        "width": 295,
+        "height": 73
+      },
+      {
+        "tex": "\\mathrm{min}^{-1}\\,\\mathrm{min}=1",
+        "width": 221,
+        "height": 34
+      },
+      {
+        "tex": "f(t)=\\frac{t}{2}",
+        "width": 182,
+        "height": 91
+      },
+      {
+        "tex": "\\Delta P\\approx f(t)\\,\\Delta t",
+        "width": 185,
+        "height": 31
+      },
+      {
+        "tex": "\\int_{0.4}^{1.2}\\frac{t}{2}\\,dt",
+        "width": 199,
+        "height": 119
+      },
+      {
+        "tex": "=\\left[\\frac{t^2}{4}\\right]_{0.4}^{1.2}=0.32",
+        "width": 268,
+        "height": 97
+      },
+      {
+        "tex": "dt",
+        "width": 26,
+        "height": 20
+      },
+      {
+        "tex": "0.6",
+        "width": 32,
+        "height": 17
+      },
+      {
+        "tex": "0.2",
+        "width": 32,
+        "height": 17
+      },
+      {
+        "tex": "f(t)=\\begin{cases}0.25,&0\\le t<1\\\\0.75,&1\\le t\\le2\\end{cases}",
+        "width": 337,
+        "height": 74
+      },
+      {
+        "tex": "\\int_{0.4}^{1}0.25\\,dt",
+        "width": 163,
+        "height": 89
+      },
+      {
+        "tex": "+\\int_{1}^{1.2}0.75\\,dt",
+        "width": 214,
+        "height": 88
+      },
+      {
+        "tex": "0.25(1-0.4)=0.15",
+        "width": 277,
+        "height": 32
+      },
+      {
+        "tex": "0.75(1.2-1)=0.15",
+        "width": 277,
+        "height": 32
+      },
+      {
+        "tex": "P=0.15+0.15=0.30",
+        "width": 389,
+        "height": 30
+      }
+    ]
+  },
+  "audioSha256": "7dd0ce2c126d42cabc42f260c205b448e7cfd4ac0039b550176cb9e5d5cb32f5"
+}

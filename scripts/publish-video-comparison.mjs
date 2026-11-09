@@ -21,6 +21,14 @@ for (const id of ids) {
   assert(results.find(item=>item.id===id)?.checked,`Unverified video: ${id}`);
   const source = new URL(`data-src/video-comparison/${id}/`,root);
   const media = new URL(`static/comparativa-videos/${id}/`,root);
+  if (id === 'canvas-commons') {
+    try {
+      await copyFile(new URL('work/render-checks.json',source),new URL('RENDER-CHECKS.json',source));
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+      assert(JSON.parse(await readFile(new URL('RENDER-CHECKS.json',source))).result === 0);
+    }
+  }
   const files = await sourceFiles(source);
   assert(files.includes('REPORT.md'));
   await copyFile(new URL('REPORT.md',source),new URL(`static/comparativa-videos/shared/${id}-report.md`,root));

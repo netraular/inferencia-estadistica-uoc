@@ -104,7 +104,10 @@ for technology, title, version in TECHNOLOGIES:
         "checked":True, "websiteBrowserChecked":False, "listened":False,
     }
     if technology == "canvas-commons":
-        checks = json.loads((SOURCE / technology / "work/render-checks.json").read_text())
+        evidence = SOURCE / technology / "work/render-checks.json"
+        if not evidence.exists():
+            evidence = SOURCE / technology / "RENDER-CHECKS.json"
+        checks = json.loads(evidence.read_text())
         assert checks["count"] == STORY["frames"]
         assert checks["result"] == 0
         assert [{key:cue[key] for key in ["start", "end", "text"]}

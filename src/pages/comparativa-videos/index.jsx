@@ -6,9 +6,9 @@ import results from '@site/static/comparativa-videos/shared/results.json';
 import styles from '../../components/VideoComparison.module.css';
 
 const examples = [
-  ['actual', 'Tecnologia actual', 'Konva + GSAP + MathJax'],
-  ['manim', 'Manim Community', 'Python y animacion matematica'],
-  ['remotion', 'Remotion', 'React y composicion por fotogramas'],
+  ['actual', 'Tecnolog\u00eda actual', 'Konva + GSAP + MathJax'],
+  ['manim', 'Manim Community', 'Python y animaci\u00f3n matem\u00e1tica'],
+  ['remotion', 'Remotion', 'React y composici\u00f3n por fotogramas'],
   ['canvas-commons', 'Canvas Commons', 'TypeScript y escenas con generadores']
 ];
 
@@ -16,10 +16,10 @@ export default function VideoComparisonPage() {
   const brief = useBaseUrl('/comparativa-videos/shared/BRIEF.md');
   const captions = useBaseUrl('/comparativa-videos/shared/subtitles.vtt');
   const media = useBaseUrl('/comparativa-videos/');
-  return <Layout title="Comparativa de videos">
+  return <Layout title={'Comparativa de v\u00eddeos'}>
     <main className={`container margin-vert--lg ${styles.page}`}>
-      <h1>Comparativa de videos</h1>
-      <p className={styles.subtitle}>Probabilidad como area</p>
+      <h1>Comparativa de v&iacute;deos</h1>
+      <p className={styles.subtitle}>Probabilidad como &aacute;rea</p>
       <ul className={styles.list}>
         {examples.map(([id, title, detail]) => <li key={id}>
           <Link to={`/comparativa-videos/${id}/`} tabIndex={-1} aria-hidden="true"><img className={styles.preview} src={`${media}${id}/poster.jpg`} alt="" loading="lazy" width="1280" height="720" /></Link>
@@ -29,7 +29,7 @@ export default function VideoComparisonPage() {
         </li>)}
       </ul>
       <nav className={styles.resources} aria-label="Material comun">
-        <a href={brief}>Guion comun</a><a href={captions}>Subtitulos</a>
+        <a href={brief}>Guion com&uacute;n</a><a href={captions}>Subt&iacute;tulos</a>
       </nav>
     </main>
   </Layout>;

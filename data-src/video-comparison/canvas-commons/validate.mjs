@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {createRequire} from 'node:module';
-import {readFileSync} from 'node:fs';
+import {readFileSync, existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 
 const root = new URL('../../../', import.meta.url);
@@ -15,7 +15,8 @@ assert.equal(stream.height,720);
 assert.equal(Number(stream.nb_read_frames),1185);
 assert.equal(stream.avg_frame_rate,'30/1');
 assert(Math.abs(Number(metadata.format.duration)-39.5)<0.15);
-const checks = JSON.parse(readFileSync(new URL('work/render-checks.json',import.meta.url)));
+const latest = new URL('work/render-checks.json',import.meta.url);
+const checks = JSON.parse(readFileSync(existsSync(latest) ? latest : new URL('RENDER-CHECKS.json',import.meta.url)));
 const story = JSON.parse(readFileSync(new URL('static/comparativa-videos/shared/script.json',root)));
 assert.equal(checks.result,0);
 assert.equal(checks.count,1185);
