@@ -21,6 +21,7 @@ export default function VideoComparisonPage() {
       <h1>Comparativa de v&iacute;deos</h1>
       <nav className={styles.resources} aria-label="Segundo ejemplo">
         <Link to="/comparativa-videos/normal/">La normal: de X a Z &middot; Manim y Remotion</Link>
+        <Link to="/comparativa-videos/cinco-segundos/">Probabilidad y complemento &middot; 5 segundos</Link>
       </nav>
       <p className={styles.subtitle}>Probabilidad como &aacute;rea</p>
       <ul className={styles.list}>

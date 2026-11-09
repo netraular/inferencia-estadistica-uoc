@@ -175,3 +175,27 @@ test('five-second timing separates all render attempts from preparation without 
   assert.equal(brief.probability+brief.complement,1);
   assert.deepEqual(brief.phases.map(phase=>[phase.start,phase.end]),[[0,1],[1,3],[3,5]]);
 });
+
+test('five-second agent delivery preserves original timing records and verified clips', () => {
+  const results = JSON.parse(readFileSync(new URL('static/comparativa-videos/cinco-segundos/results.json',root)));
+  assert.deepEqual(results.map(result=>result.id),['manim','remotion']);
+  for (const result of results) {
+    const original = readFileSync(new URL(`data-src/video-comparison/${result.id}/five-seconds/timing.json`,root),'utf8');
+    assert.equal(readFileSync(new URL(`static/comparativa-videos/cinco-segundos/${result.id}/timing.json`,root),'utf8'),original);
+    const timing = JSON.parse(original);
+    assert.equal(result.totalMs,timing.finishedAtMs-timing.startedAtMs);
+    assert.equal(result.totalMs,result.renderMs+result.preparationAndChecksMs);
+    assert.equal(result.validation.frames,150);
+    assert.equal(result.validation.duration,5);
+    assert.equal(result.validation.audio,false);
+    const movie = readFileSync(new URL(`static/comparativa-videos/cinco-segundos/${result.id}/video.mp4`,root));
+    assert.equal(createHash('sha256').update(movie).digest('hex'),result.sha256);
+  }
+  const page = readFileSync(new URL('src/pages/comparativa-videos/cinco-segundos.jsx',root),'utf8');
+  assert.doesNotMatch(page,/<iframe|player\.html/);
+  assert.match(page,/preparationAndChecksMs/);
+  assert.match(page,/interrupci/);
+  assert.doesNotThrow(()=>require('@babel/core').transformSync(page,{
+    filename:'cinco-segundos.jsx',babelrc:false,configFile:false,presets:[require.resolve('@docusaurus/core/lib/babel/preset')]
+  }));
+});
