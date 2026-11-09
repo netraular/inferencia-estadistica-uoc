@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'BivariateSans';
+  src: url('../node_modules/katex/dist/fonts/KaTeX_SansSerif-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'BivariateSans';
+  src: url('../node_modules/katex/dist/fonts/KaTeX_SansSerif-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+.scene {
+  --ink: #223932;
+  --coral: #c83e50;
+  --green: #147f66;
+  --muted: #687670;
+  background: #fafcf9;
+  background-image: linear-gradient(90deg, transparent 95%, #eaf0eb 95%);
+  background-size: 32px 100%;
+  color: var(--ink);
+  font-family: 'BivariateSans';
+  letter-spacing: 0;
+}
+* { box-sizing: border-box; }
+.header { position: absolute; left: 48px; right: 48px; top: 20px; height: 43px; display: flex; align-items: center; justify-content: space-between; }
+h1 { font-family: 'KaTeX_Main'; font-weight: 400; font-size: 36px; line-height: 1; margin: 0; }
+.phase { font-size: 17px; font-weight: 700; color: var(--green); }
+.parameters { position: absolute; left: 48px; right: 48px; top: 77px; height: 36px; display: flex; justify-content: space-between; align-items: center; font-size: 23px; border-bottom: 1px solid #cbd9d0; padding-bottom: 8px; }
+.left-title, .right-title { position: absolute; top: 135px; height: 33px; display: flex; align-items: center; gap: 18px; font-size: 24px; }
+.left-title { left: 48px; }
+.right-title { left: 630px; right: 48px; }
+.left-title > span:first-child, .right-title > span:first-child { font-weight: 700; font-size: 23px; }
+.joint-note, .curve-note { position: absolute; top: 177px; height: 33px; font-size: 20px; }
+.joint-note { left: 84px; width: 458px; color: var(--green); }
+.curve-note { left: 630px; width: 600px; font-size: 19px; }
+.math .katex { font-size: 1em; }
+.geometry { position: absolute; inset: 0; width: 1280px; height: 720px; pointer-events: none; }
+.geometry text { font-family: 'BivariateSans'; font-size: 19px; fill: var(--ink); }
+.geometry .small-tick { font-size: 16px; }
+.geometry .axis-letter { font-family: 'KaTeX_Math'; font-size: 23px; }
+.geometry .svg-coral { fill: var(--coral); font-weight: 700; }
+.geometry .svg-muted { fill: var(--muted); }
+.geometry .svg-green { fill: var(--green); font-size: 18px; font-weight: 700; }
+.geometry .svg-gold { fill: #9b6500; font-weight: 700; }
+.cut-area { position: absolute; left: 48px; top: 533px; width: 530px; height: 49px; font-size: 20px; display: flex; flex-direction: column; gap: 6px; }
+.cut-area > span:first-child { color: var(--muted); font-size: 16px; }
+.curve-area { position: absolute; left: 680px; right: 66px; top: 533px; height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 18px; font-size: 21px; }
+.curve-area > span:last-child { font-size: 18px; color: var(--coral); }
+.equation-label { position: absolute; left: 48px; top: 597px; font-size: 13px; font-weight: 700; color: var(--green); }
+.equation { position: absolute; left: 48px; right: 48px; top: 616px; height: 42px; font-size: 29px; display: flex; align-items: center; }
+.equation.compact { font-size: 26px; }
+.coral { color: var(--coral); }
+.subtitle { position: absolute; left: 48px; right: 48px; top: 671px; height: 33px; font-size: 20px; line-height: 1.35; text-align: center; }
+.timeline { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: #e1eae4; }
+.timeline > div { height: 4px; background: var(--coral); }
