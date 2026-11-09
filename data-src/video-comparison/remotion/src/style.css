@@ -1,0 +1,31 @@
+@font-face { font-family: VideoSans; src: url('../node_modules/katex/dist/fonts/KaTeX_SansSerif-Regular.woff2') format('woff2'); font-display: block; }
+@font-face { font-family: VideoSerif; src: url('../node_modules/katex/dist/fonts/KaTeX_Main-Regular.woff2') format('woff2'); font-display: block; }
+* { box-sizing: border-box; }
+.video-stage { background: #f8faf9; color: #173c33; font-family: VideoSans, sans-serif; }
+.masthead { position: absolute; inset: 0 0 auto; height: 88px; padding: 31px 62px 0; border-bottom: 1px solid #d8e2dc; display: flex; align-items: baseline; justify-content: space-between; }
+.masthead h1 { font: 36px VideoSerif, serif; margin: 0; letter-spacing: 0; }
+.masthead > span { font-size: 16px; color: #587167; }
+.model-heading { position: absolute; left: 62px; top: 107px; display: flex; align-items: center; gap: 23px; font-size: 17px; color: #4a6f60; }
+.model-number { color: #008b70; font-size: 20px; }
+.model-title { position: absolute; left: 62px; top: 139px; font: 29px VideoSerif, serif; margin: 0; }
+.chart { position: absolute; left: 26px; top: 170px; width: 790px; height: 446px; }
+.tick { font: 19px VideoSans, sans-serif; fill: #476158; }
+.axis-title { font: 20px VideoSans, sans-serif; fill: #173c33; }
+.interval-tick, .width-label { font: 20px VideoSans, sans-serif; fill: #008b70; }
+.plot-label { font: 23px VideoSans, sans-serif; fill: #173c33; }
+.area-label { font: 28px VideoSerif, serif; fill: #173c33; }
+.boundary-label { font: 19px VideoSans, sans-serif; fill: #97630e; }
+.support-note { font: 16px VideoSans, sans-serif; fill: #5a6f65; }
+.work-panel { position: absolute; left: 846px; top: 202px; width: 371px; padding-left: 20px; border-left: 2px solid #d6e3db; }
+.panel-label { margin: 0 0 21px; font-size: 19px; color: #4a6f60; }
+.panel-note { margin: 22px 0 0; font-size: 23px; line-height: 1.4; color: #476158; }
+.formula { color: #173c33; margin: 0 0 19px; }
+.formula .katex { font-size: 1em; }
+.formula .katex-display { margin: 0; text-align: left; }
+.formula .katex-display > .katex { text-align: left; }
+.area-product { height: 10px; background: #dcebe4; width: 275px; margin-top: 30px; }
+.area-product span { display: block; height: 100%; background: #008b70; }
+.piecewise-panel { top: 202px; }
+.piecewise-panel .panel-label { margin-top: 24px; margin-bottom: 15px; }
+.caption-band { position: absolute; left: 0; right: 0; top: 620px; height: 100px; background: #163e34; border-top: 3px solid #83c0a5; }
+.caption { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 30px; line-height: 1.32; color: #fff; padding: 6px 66px; text-align: center; }

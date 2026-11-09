@@ -1,0 +1,19 @@
+{
+  "name": "comparison-actual-render",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "probe": "node probe.mjs",
+    "render": "node render.mjs",
+    "validate": "node validate.mjs"
+  },
+  "dependencies": {
+    "esbuild": "0.25.0",
+    "ffmpeg-static": "5.2.0",
+    "ffprobe-static": "3.1.0",
+    "gsap": "3.15.1",
+    "konva": "10.9.1",
+    "mathjax-full": "3.2.1",
+    "playwright": "1.56.1"
+  }
+}

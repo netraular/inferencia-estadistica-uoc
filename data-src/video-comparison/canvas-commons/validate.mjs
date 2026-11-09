@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+import {createRequire} from 'node:module';
+import {readFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+
+const root = new URL('../../../', import.meta.url);
+const require = createRequire(import.meta.url);
+const probe = fileURLToPath(new URL('node_modules/@ffprobe-installer/linux-x64/ffprobe',import.meta.url));
+const video = fileURLToPath(new URL('static/comparativa-videos/canvas-commons/video.mp4',root));
+const metadata = JSON.parse(execFileSync(probe,['-v','error','-count_frames','-show_streams','-show_format','-of','json',video],{encoding:'utf8'}));
+const stream = metadata.streams.find(item=>item.codec_type==='video');
+assert.equal(stream.width,1280);
+assert.equal(stream.height,720);
+assert.equal(Number(stream.nb_read_frames),1185);
+assert.equal(stream.avg_frame_rate,'30/1');
+assert(Math.abs(Number(metadata.format.duration)-39.5)<0.15);
+const checks = JSON.parse(readFileSync(new URL('work/render-checks.json',import.meta.url)));
+const story = JSON.parse(readFileSync(new URL('static/comparativa-videos/shared/script.json',root)));
+assert.equal(checks.result,0);
+assert.equal(checks.count,1185);
+assert.deepEqual(checks.checks.captions.map(({start,end,text})=>({start,end,text})),story.cues);
+assert(checks.checks.captions.every(cue=>cue.lines.length<=2 && Math.max(...cue.widths)<=1120));
+assert.equal(require('@canvas-commons/core/package.json').version,'0.4.0');
+console.log('Canvas Commons: actual engine, 1185 frames, measured captions and MP4 metadata passed.');

@@ -1,0 +1,18 @@
+export const formulas={
+  uniform:'f(t)=0{,}5\\,\\mathrm{min}^{-1}',
+  increasing:'f(t)=\\frac{t}{2}',
+  piecewise:'f(t)=\\begin{cases}0{,}25&0\\le t<1\\\\0{,}75&1\\le t\\le2\\end{cases}',
+  total:'0{,}5\\times2=1',
+  interval:'P(0{,}4\\le T\\le1{,}2)',
+  width:'1{,}2-0{,}4=0{,}8\\;\\mathrm{min}',
+  product:'0{,}5\\times0{,}8',
+  result:'\\begin{gathered}P(0{,}4\\le T\\le1{,}2)\\\\=0{,}40\\end{gathered}',
+  units:'\\frac{1}{\\mathrm{min}}\\times\\mathrm{min}=1',
+  unitProduct:'\\frac{0{,}5}{\\mathrm{min}}\\times0{,}8\\,\\mathrm{min}=0{,}4',
+  strips:'\\sum_i f(t_i)\\,\\Delta t',
+  integral:'\\int_{0{,}4}^{1{,}2}\\frac{t}{2}\\,dt',
+  integralResult:'\\left[\\frac{t^2}{4}\\right]_{0{,}4}^{1{,}2}=0{,}32',
+  split:'\\begin{gathered}\\int_{0{,}4}^{1}0{,}25\\,dt\\\\+\\int_{1}^{1{,}2}0{,}75\\,dt\\end{gathered}',
+  splitResult:'\\begin{gathered}0{,}25(1-0{,}4)\\\\+0{,}75(1{,}2-1)=0{,}30\\end{gathered}',
+  dt:'dt',
+};
