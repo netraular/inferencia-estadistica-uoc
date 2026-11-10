@@ -22,7 +22,8 @@ El 10 de noviembre de 2026 se aprovecharon los seis proyectos: quedaron
 64 frases guardadas y tres audios completos, con sus tres videos Remotion
 completos y verificados. Los seis proyectos indican esperar aproximadamente
 hasta el 11 de noviembre a las 08:00 UTC (09:00 peninsular). Quedan 538 piezas
-pendientes. No hay un proceso esperando ni una reanudacion programada.
+pendientes en Gemini. No hay una reanudacion Gemini programada; los trabajos
+locales de respaldo descritos abajo si estan activos.
 
 ```bash
 SCRIPT=/home/aquiluer/Scripts/inferencia-estadistica-uoc/scripts/tts/gemini-course.mjs
@@ -59,7 +60,73 @@ con audio sintetico de tono tampoco producen material publicable.
 Consulta [el flujo Gemini](scripts/tts/README.md) y
 [el renderizador Remotion](data-src/course-videos/README.md).
 
-## Alternativa local: Ming
+## Produccion Temporal En Paralelo
+
+Desde el 10 de noviembre de 2026 hay dos trabajos locales independientes para
+las 538 explicaciones que no tienen un conjunto Puck completo. Ambos usan una
+copia inmutable de las transcripciones actuales: 116 apartados, 36 repasos y
+386 preguntas de ejercicios. No reescriben los textos ni modifican el lote
+Gemini, sus 64 fragmentos o los tres conjuntos completos.
+
+- `inferencia-remotion-transcripts-v1.service` exporta los videos sin audio,
+  con tiempos estimados y metadatos `transcript`, `estimated`, `temporary` y
+  `silent`. Cada pieza conserva el plan por frase para su futura sincronizacion.
+- `inferencia-ming-temporary-v1.service` sintetiza con la instalacion local de
+  Ming en CUDA. Conserva cada frase y sus tiempos medidos, usando una identidad
+  de voz temporal distinta de Puck. No mezcla voces dentro de una explicacion.
+
+Los lotes estan fuera del repositorio:
+
+```bash
+VIDEOS=/home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1
+MING=/home/aquiluer/Scripts/TTS/outputs/ming-temporary-course-2026-11-10-v1
+PYTHON=/home/aquiluer/Scripts/TTS/.venv/bin/python
+```
+
+Consultar el progreso y los procesos, desde la raiz del repositorio:
+
+```bash
+node data-src/course-videos/render-course.mjs --batch "$VIDEOS" --transcript --status
+"$PYTHON" scripts/tts/generate-ming-course.py --batch "$MING" --status
+systemctl --user show inferencia-remotion-transcripts-v1.service inferencia-ming-temporary-v1.service \
+  --property=Id --property=ActiveState --property=SubState --property=MainPID --property=ExecMainStatus
+```
+
+Cada video completo queda en `videos/<id>/` con MP4, poster, metadatos y
+`transcript.json`. Cada audio completo queda en `items/<id>/` con WAV, MP3 y
+metadatos medidos. Los primeros siete audios Ming se incorporaron a la web
+como temporales, conservando las tres grabaciones Puck. Los nuevos resultados
+se guardan automaticamente en el lote; su publicacion en la web es explicita:
+
+```bash
+node scripts/tts/prepare-ming-course.mjs --batch "$MING"
+```
+
+Este publicador valida solo piezas completas, comprueba los guiones actuales
+y nunca sustituye un audio Puck existente. Los videos silenciosos no se
+publican como videos finales ni se combinan con los MP3 sin sincronizar. Cuando
+exista el audio elegido, hay que renderizar de nuevo con sus tiempos medidos;
+anadirle una pista al MP4 no ajustaria los revelados de formulas y figuras.
+
+Los pilotos apuntan a varios dias de trabajo, no a una finalizacion inmediata.
+El equipo y WSL deben permanecer encendidos. Los servicios sobreviven al cierre
+del terminal, pero son transitorios: tras reiniciar WSL hay que volver a
+lanzarlos. Un fallo detiene el trabajo sin borrar fragmentos completos. Mientras
+la unidad exista, reanudar despues de resolver la causa reutiliza lo valido:
+
+```bash
+systemctl --user restart inferencia-ming-temporary-v1.service
+systemctl --user restart inferencia-remotion-transcripts-v1.service
+```
+
+No reinicies una unidad activa ni borres un lock con propietario vivo. Los
+registros estan en `generation.log` y `production.log` de sus respectivos
+lotes. Consulta [el respaldo Ming](scripts/tts/README.md) y
+[la produccion Remotion](data-src/course-videos/README.md) para los comandos de
+arranque tras un reinicio y las comprobaciones tecnicas. No se ha auditado la
+pronunciacion mediante escucha.
+
+## Generador Ming Anterior
 
 El generador usa Ming-3.0-tts-0.5B en CUDA para narrar las lecturas del aula.
 El codigo esta en `scripts/tts/`; los pesos, el entorno Python y los resultados

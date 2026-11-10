@@ -63,6 +63,37 @@ export function prepareCourseItem(item, audio, mp3) {
   return {...VIDEO, frames:Math.ceil(audio.duration * VIDEO.fps), duration:audio.duration, item, animation:withCourseVisuals(item).animation, audio};
 }
 
+export const TRANSCRIPT_TIMING = Object.freeze({wordsPerMinute:140, pauseSeconds:0.3, minimumCueSeconds:1.2});
+
+export function prepareTranscriptItem(item, timing = TRANSCRIPT_TIMING) {
+  assert.ok(['section', 'recap', 'exercise'].includes(item.kind), 'Unsupported item kind');
+  assert.ok(item.title && item.animation?.steps?.length, 'Missing frozen animation');
+  assert.ok(digest(item.canonicalSha256), 'Missing canonical hash');
+  assert.deepEqual(timing, TRANSCRIPT_TIMING, 'Unsupported transcript timing policy');
+  let cursor = 0;
+  const pauseFrames = Math.round(timing.pauseSeconds * VIDEO.fps);
+  const scenes = item.animation.steps.map((step, sceneIndex) => {
+    assert.ok(step.cues?.length, `Missing original cues ${sceneIndex}`);
+    const sceneStart = cursor;
+    const cues = step.cues.map((original, cueIndex) => {
+      const text = original.text ?? original;
+      assert.ok(typeof text === 'string' && text.trim(), 'Missing original cue text');
+      const words = text.trim().split(/\s+/u).length;
+      const startFrame = cursor;
+      const speechFrames = Math.ceil(Math.max(timing.minimumCueSeconds, words * 60 / timing.wordsPerMinute) * VIDEO.fps);
+      cursor += speechFrames + pauseFrames;
+      return {text, start:startFrame / VIDEO.fps, end:(startFrame + speechFrames) / VIDEO.fps,
+        startFrame, endFrame:startFrame + speechFrames, words, sceneIndex, cueIndex,
+        sourceCueSha256:sha256(JSON.stringify(original))};
+    });
+    return {start:sceneStart / VIDEO.fps, end:cursor / VIDEO.fps, cues};
+  });
+  const transcript = {id:item.id, narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true,
+    canonicalSha256:item.canonicalSha256, timing:{...timing}, duration:cursor / VIDEO.fps, scenes};
+  return {...VIDEO, frames:cursor, duration:transcript.duration, item, animation:withCourseVisuals(item).animation,
+    narrationMode:'transcript', transcript};
+}
+
 export function withCourseVisuals(item) {
   if (item.kind === 'exercise' || item.animation.steps.every(step => step.visual?.context)) return item;
   const animation = item.kind === 'section' ? enrichLessonAnimation(item.animation) : enrichGlobalAnimation(item.animation);

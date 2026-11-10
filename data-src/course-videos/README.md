@@ -190,6 +190,144 @@ math and media guards. `--worker` keeps this run's outputs inside the preview
 batch rather than creating a launcher log in the source checkout. `--publish`
 rejects previews marked in either catalogue or audio, or resumed video metadata.
 
+## Silent Transcript Production
+
+This is a separate, explicit draft mode, not Puck narration. It never needs,
+reads, generates or fabricates audio. The existing measured-audio `--ready` and
+`--publish` paths remain strict. `--transcript --publish` and
+`--transcript --ready` fail before opening a batch. Publication also rejects
+transcript/estimated/temporary/silent markers in catalogue, audio or resumed
+video metadata. Nothing from this production is copied to `static/`.
+
+The immutable source is
+`/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json`.
+Preparation copies all 541 items byte for byte to the separate external batch
+`/home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1`.
+`selection.json` fixes 538 target IDs (116 sections, 36 recaps, 386 exercises),
+explicitly excluding the already published real Puck videos:
+
+- `proporciones--parte-y-total`
+- `proporciones--porcentaje-y-exposicion`
+- `ejercicio-pdf-u1-1--a`
+
+The original catalogue's `model` and `voice` remain untouched as source identity,
+not as claims about these silent videos. `selection.sha256.json` guards the
+selection. Original and copied catalogue bytes, frozen `sourceFiles` dictionary,
+`inputSha256`, every canonical animation and item hash, the timing policy and
+renderer dependencies must match when resuming. No live narration is rebuilt.
+Authored diagrams are overlaid only through `withCourseVisuals`, with its existing
+unchanged-content assertion. Dotted PEC/question IDs remain supported; traversal
+and excluded Puck IDs are rejected.
+
+```sh
+node /home/aquiluer/Scripts/inferencia-estadistica-uoc/data-src/course-videos/render-course.mjs --transcript --prepare --source /home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json --batch /home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1
+```
+
+Preparation refuses an existing batch. To resume, omit `--prepare` and `--source`.
+The deterministic timing policy is 140 whitespace-delimited words per minute,
+at least 1.2 seconds per cue, rounded up to whole 30 fps frames, followed by a
+9-frame (300 ms) pause after every cue, including the final one. These are
+**estimates**, not measurements. Original text, cue objects, reveal indices,
+mathematics and diagrams are never rewritten. The shared `courseFrame` and
+`sampleFrames` use this explicit transcript timeline for forward/reverse seek.
+
+Each completed target writes `videos/<id>/video.mp4`, `poster.jpg`,
+`metadata.json` and `transcript.json` beneath the external batch. MP4 is
+H.264/yuv420p, 1280 x 720, 30 fps with **zero audio tracks**, not silent AAC or
+a silent WAV. The composition renders only the original board/captions; the
+transcript branch skips the measured-audio mux. All existing per-cue layout,
+MathJax equation paths, authored diagram geometry, canvas/pixel evolution,
+source/font hashes, FFprobe frame/codec checks and full FFmpeg decode remain
+mandatory. The transcript verifier rejects any audio track; the real-audio
+verifier still requires AAC.
+
+Metadata explicitly includes `narrationMode:'transcript'`,
+`cueTiming:'estimated'`, `temporary:true`, `silent:true`, the timing policy,
+canonical/source snapshot and hashes. It has no `voice`, `model`, `audioSource`
+or `audioSha256`. `transcript.json` preserves each exact cue text, source-cue
+hash, scene/cue index, word count, estimated seconds and integer frame bounds.
+It is the auditable handoff for future measured narration. Replacing estimates
+with measured cues requires **rerendering** the original animation with the
+measured-audio contract: reveal times and captions change, so remux alone is not
+sufficient. Keep this batch as a draft snapshot; use a different measured batch.
+
+`progress.json` is atomically updated per item, with real `pending`, `rendering`,
+`complete` and `failed` counts totalling 538, current ID, PID and errors.
+Successful output reuse checks the complete source snapshot, input/renderer
+hashes, exact transcript plan, MP4/poster hashes and full media verification.
+Stale outputs fail without deleting or rerendering them automatically. Source
+changes do not delete or rerender any of the three older Puck outputs. Their
+older renderer fingerprints may require a deliberate new batch for future
+rerendering; do not erase those working outputs merely to satisfy new hashes.
+
+Production uses one frame worker and serial items. It does not use GPU or touch
+the independent Ming job. The initial two-item pilot is a separate unit; start
+the full production unit **only after the pilot has exited successfully**, so
+the exclusive batch lock is not shared:
+
+```sh
+systemd-run --user --unit=inferencia-remotion-transcripts-v1 --property=WorkingDirectory=/home/aquiluer/Scripts/inferencia-estadistica-uoc --property=Nice=10 --property=CPUQuota=200% --property=MemoryHigh=2G --property=MemoryMax=3G --property=TasksMax=256 --property=StandardOutput=append:/home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1/production.log --property=StandardError=append:/home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1/production.log /usr/bin/env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 "$(node -p 'process.execPath')" /home/aquiluer/Scripts/inferencia-estadistica-uoc/data-src/course-videos/render-course.mjs --batch /home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1 --transcript --worker
+```
+
+The shell resolves the absolute Node executable before submitting the unit;
+the user manager's PATH need not contain Volta or another Node version manager.
+No `--collect` is used: systemd retains failures. Log output is per item, not per
+frame. These commands do not start a website server or browser verification;
+Chromium is internal to Remotion encoding only.
+
+```sh
+node /home/aquiluer/Scripts/inferencia-estadistica-uoc/data-src/course-videos/render-course.mjs --batch /home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1 --transcript --status
+systemctl --user show inferencia-remotion-transcripts-v1.service --property=ActiveState --property=SubState --property=MainPID --property=ExecMainStatus
+tail -n 25 /home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1/production.log
+systemctl --user restart inferencia-remotion-transcripts-v1.service
+```
+
+Restart revalidates/reuses matching completed items, then continues pending ones.
+Never remove `videos/.remotion.lock` while its recorded PID is alive. After an
+unclean kill, inspect that PID and its command line first, then remove only a
+confirmed abandoned lock before restarting. A successful process exception
+cleans its own lock. After user-manager reboot, reissue the full `systemd-run`
+command above (transient units survive terminal disconnect, not reboot).
+
+Offline checks, including the real frozen catalogue (no audio generation):
+
+```sh
+env REMOTION_FROZEN_CATALOGUE=/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json node --test /home/aquiluer/Scripts/inferencia-estadistica-uoc/tests/remotion-transcript.test.mjs /home/aquiluer/Scripts/inferencia-estadistica-uoc/tests/remotion-course.test.mjs
+env REMOTION_TRANSCRIPT_PILOT=/home/aquiluer/Scripts/TTS/outputs/remotion-transcripts-course-2026-11-10-v1 node --test --test-name-pattern='opt-in completed transcript pilot' /home/aquiluer/Scripts/inferencia-estadistica-uoc/tests/remotion-transcript.test.mjs
+```
+
+Temporary fixture catalogues in offline tests never count as production. The
+production pilot uses full original items, not shortened or synthetic fixtures.
+The opt-in resume check requires that completed pilot. It copies its original
+section MP4/poster/metadata and frozen inputs into a temporary batch, verifies
+full reuse without recoding or audio, then rejects changed output hashes,
+canonical snapshot, phantom Puck voice, cue text and catalogue bytes. It removes
+the temporary copy and never edits the production pilot.
+
+### Verified Initial Pilot
+
+The 2026-11-10 production pilot encoded two complete original items:
+
+| ID | Timeline | Frames | Audited frames | Render/verification elapsed |
+| --- | ---: | ---: | ---: | ---: |
+| `proporciones--unidades-y-cotas` | 79.2 s | 2376 | 17 | 163.270 s |
+| `ejercicio-practica-calculo-continuous--point` | 134.5 s | 4035 | 26 | 279.408 s |
+
+Both passed zero-audio FFprobe checks, full FFmpeg decode (also repeated by an
+independent post-render check), layout, nonblank/changing canvas and exact source
+hash checks. The section includes authored tree/number-line diagrams; the exercise
+is diagram-free and uses its original problem/equations. No website browser or
+listening verification was performed. The completed section also passed the real
+copy-only resume/stale-output regression test. The full queue then reused it and
+started the original `proporciones` recap. This is not a claim of 538 completions.
+
+At one frame worker, two-CPU quota and 3 GiB cap, the pilot took 442.678 s for
+6411 frames. A simple same-rate extrapolation for the 3,441,763-frame target is
+about 66 hours, not a guaranteed ETA: other diagrams, recaps and CPU contention
+can change throughput. The 31.87-hour estimated *video timeline* is not a render
+duration or measured speech length. Do not extrapolate production completion
+from test fixtures.
+
 ## Checks And Resources
 
 ```sh

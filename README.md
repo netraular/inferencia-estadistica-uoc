@@ -109,9 +109,19 @@ and videos can be published. All six keys belong to distinct Free Tier projects
 and are used with independent quota/pacing records. The production batch has
 64 generated phrases and three complete audio/video items; the remaining
 538 are paused until the projects' quota windows reopen around 2026-11-11
-08:00 UTC. No generator is running or scheduled. A local
+08:00 UTC. No Gemini generator is running or scheduled. A local
 six-phrase Remotion preview is explicitly partial and is not published.
 See [the production and resumption guide](TTS.md).
+
+Two independent local jobs now process those 538 pending explanations in
+parallel using the exact current transcripts. Remotion exports silent drafts
+with explicitly estimated timings and per-cue plans for later rerendering with
+measured audio. Ming synthesizes complete temporary Spanish recordings with
+measured cue timings; seven completed recordings were initially published,
+preserving all three Puck recordings. Draft videos are kept outside the public
+final-video manifest and never represented as synchronized narration. Both
+jobs checkpoint their progress outside Git and continue after terminal closure;
+the initial pilots suggest several days of processing, with WSL kept running.
 
 Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
 density, marginals, continuous conditioning and the bivariate normal. Each starts

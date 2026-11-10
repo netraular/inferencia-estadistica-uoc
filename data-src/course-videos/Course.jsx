@@ -88,13 +88,14 @@ async function auditBoard(host, state, frame, animation) {
 }
 
 export function Course({storyboard, audit = false}) {
+  if (storyboard.narrationMode === 'transcript' && !(storyboard.transcript?.silent && storyboard.transcript?.cueTiming === 'estimated')) throw new Error('Invalid silent transcript composition');
   const frame = useCurrentFrame();
   const host = useRef(null);
   const board = useRef(null);
   const state = courseFrame(storyboard, frame);
   const animation = storyboard.animation ?? storyboard.item.animation;
   useLayoutEffect(() => {
-    const gate = delayRender('Measured whiteboard frame and bundled fonts');
+    const gate = delayRender('Cue-timed whiteboard frame and bundled fonts');
     let active = true;
     Promise.all([document.fonts.load('28px Atkinson'), document.fonts.load('bold 26px Atkinson')]).then(() => document.fonts.ready).then(async () => {
       if (!active) return;

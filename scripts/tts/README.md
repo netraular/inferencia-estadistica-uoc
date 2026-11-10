@@ -5,6 +5,91 @@ Optional offline tooling for all 36 global classroom lectures and, with
 the existing curriculum and lecture exporters; it is not part of the website build or runtime.
 Requires Linux/WSL, Python 3.12+ and Node.js 20+. Synthesis requires NVIDIA CUDA.
 
+## Current Whole-Course Temporary Ming Production
+
+`generate-ming-course.py` is the current fallback for all 538 explanations
+without complete Gemini audio, not just the sections supported by the older
+generator below. It uses the installed runtime at
+`/home/aquiluer/Scripts/TTS/Ming-3.0-tts`, model
+`/home/aquiluer/Scripts/TTS/models/Ming-3.0-tts-0.5B` and Python environment
+`/home/aquiluer/Scripts/TTS/.venv`. Preparation verifies the complete immutable
+Gemini catalogue against the current source, copies its exact bytes and
+excludes only the three completed Puck items. The separate selection covers
+116 sections, 36 recaps and 386 exercise questions: 17,822 cues. It never writes
+to the Gemini batch or reads credentials.
+
+```sh
+PYTHON=/home/aquiluer/Scripts/TTS/.venv/bin/python
+SCRIPT=/home/aquiluer/Scripts/inferencia-estadistica-uoc/scripts/tts/generate-ming-course.py
+BATCH=/home/aquiluer/Scripts/TTS/outputs/ming-temporary-course-2026-11-10-v1
+"$PYTHON" "$SCRIPT" --batch "$BATCH" --status
+```
+
+This batch is already prepared and actively generating under
+`inferencia-ming-temporary-v1.service`. Do not launch a second model or acquire
+its output while that service is active. The generator verifies runtime,
+weights, reference and exact text signatures, reuses valid fragments and
+requires one exclusive GPU lock. It loads the model once, uses CUDA with two
+CPU threads, and stores atomic progress after every cue. A failure stops rather
+than silently regenerating corrupt fragments. Keep the external snapshot,
+voice reference and checkpoints for resumption.
+
+Items use `items/<id>/cues/` plus complete `audio.wav`, `audio.mp3` and
+`audio.json`. Every cue is actual Ming speech, with measured PCM frames at
+44,100 Hz and 300 ms pauses; MP3 is mono 48 kbps. Metadata identifies
+`Ming-3.0-tts-0.5B`, `Ming-Spanish-temporary`, `ming-local`, `temporary:true`
+and `listened:false`, never Puck. Signal checks and decoding are not an audit
+of pronunciation. The first pilot took 231.5 seconds of synthesis for 112
+seconds of speech; full-course completion is not claimed.
+
+Read-only export validates only fully completed items and can run while other
+items are being synthesized. It needs no model load or GPU lock:
+
+```sh
+"$PYTHON" "$SCRIPT" --batch "$BATCH" --export-complete
+node scripts/tts/prepare-ming-course.mjs --batch "$BATCH"
+```
+
+The publisher checks live canonical content, exact measured cues, assembled
+PCM/checksums and decoded MP3s before copying complete recordings. It preserves
+Puck and other unowned recordings. Sections/recaps use the existing manifest
+and provenance; exercises use their separate files. Both carry the temporary
+Ming identity. No private model/reference paths are copied into public JSON.
+The first publication contained seven temporary recordings. Rerunning the
+publisher explicitly adds later complete items; generation does not
+automatically publish them. Silent transcript-video drafts remain separate
+and cannot be published as final audio-aligned videos.
+
+Inspect or resume an existing failed transient unit:
+
+```sh
+systemctl --user show inferencia-ming-temporary-v1.service --property=ActiveState --property=SubState --property=MainPID --property=ExecMainStatus
+systemctl --user restart inferencia-ming-temporary-v1.service
+```
+
+Keep WSL running. Terminal closure does not stop the job; reboot removes the
+transient unit. After reboot, or when no unit exists, start the same frozen
+batch again rather than preparing another one:
+
+```sh
+systemd-run --user --unit=inferencia-ming-temporary-v1 \
+  --property=WorkingDirectory=/home/aquiluer/Scripts/inferencia-estadistica-uoc \
+  --property=StandardOutput=append:"$BATCH/generation.log" \
+  --property=StandardError=append:"$BATCH/generation.log" \
+  "$PYTHON" "$SCRIPT" --batch "$BATCH" --threads 2
+```
+
+The file lock is an OS lock with its owner recorded in the batch; do not remove
+a live owner's files. A restart validates all cached PCM before synthesis.
+The stricter `--verify` mode also compares all original Gemini artifacts with
+their initial hashes; use it for the original preservation audit, not for
+publishing while a new fragment is being written or Gemini is being resumed.
+
+```sh
+"$PYTHON" -m unittest discover -s scripts/tts -p 'test_*.py'
+node --test tests/ming-course.test.mjs
+```
+
 ## Prepare And Test Without GPU
 
 From the repository root, install the Node development dependencies and create

@@ -1,10 +1,15 @@
 export const VIDEO = Object.freeze({fps:30, width:1280, height:720});
 
+export function courseTimeline(storyboard) {
+  return storyboard.narrationMode === 'transcript' ? storyboard.transcript : storyboard.audio;
+}
+
 export function courseFrame(storyboard, frame) {
   const seconds = Math.max(0, Math.min(storyboard.frames - 1, frame)) / storyboard.fps;
+  const timeline = courseTimeline(storyboard);
   let index = 0;
-  for (const [position, scene] of storyboard.audio.scenes.entries()) if (seconds >= scene.start) index = position;
-  const scene = storyboard.audio.scenes[index];
+  for (const [position, scene] of timeline.scenes.entries()) if (seconds >= scene.start) index = position;
+  const scene = timeline.scenes[index];
   let cueIndex = -1;
   for (const [position, cue] of scene.cues.entries()) if (seconds >= cue.start) cueIndex = position;
   const cue = scene.cues[cueIndex];
@@ -16,7 +21,7 @@ export function courseFrame(storyboard, frame) {
 }
 
 export function sampleFrames(storyboard) {
-  return [...new Set([0, ...storyboard.audio.scenes.flatMap(scene => scene.cues.map(cue => Math.min(storyboard.frames - 1, Math.floor((cue.start + Math.min(cue.end, cue.start + 1.4)) / 2 * storyboard.fps)))), storyboard.frames - 1])];
+  return [...new Set([0, ...courseTimeline(storyboard).scenes.flatMap(scene => scene.cues.map(cue => Math.min(storyboard.frames - 1, Math.floor((cue.start + Math.min(cue.end, cue.start + 1.4)) / 2 * storyboard.fps)))), storyboard.frames - 1])];
 }
 
 export function authoredSceneContent(state, lines = state.step.visual?.lines || []) {

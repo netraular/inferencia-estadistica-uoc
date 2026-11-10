@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';
 import {sha256, VIDEO} from './course-contract.mjs';
+import {courseTimeline} from './course-frame.mjs';
 
 export const probeMedia = (ffprobe, filename) => JSON.parse(execFileSync(ffprobe, ['-v', 'error', '-count_frames', '-show_streams', '-of', 'json', filename], {encoding:'utf8'}));
 
@@ -15,8 +16,13 @@ export function verifyMedia({ffmpeg, ffprobe, video, poster, storyboard, frames}
   assert.equal(picture.avg_frame_rate, '30/1');
   assert.equal(Number(picture.nb_read_frames), storyboard.frames);
   assert.ok(Math.abs(Number(picture.duration) - storyboard.duration) <= 1 / VIDEO.fps + 0.001, 'Video duration mismatch');
-  assert.equal(sound?.codec_name, 'aac');
-  assert.ok(Math.abs(Number(sound.duration) - storyboard.frames / VIDEO.fps) < 0.08, 'AAC duration mismatch');
+  if (storyboard.narrationMode === 'transcript') {
+    assert.equal(storyboard.transcript?.silent, true, 'Transcript must be explicitly silent');
+    assert.equal(streams.filter(stream => stream.codec_type === 'audio').length, 0, 'Transcript draft must not contain audio tracks');
+  } else {
+    assert.equal(sound?.codec_name, 'aac');
+    assert.ok(Math.abs(Number(sound.duration) - storyboard.frames / VIDEO.fps) < 0.08, 'AAC duration mismatch');
+  }
   execFileSync(ffmpeg, ['-v', 'error', '-xerror', '-i', video, '-f', 'null', '-'], {stdio:['ignore', 'pipe', 'pipe']});
   const selectedFrames = [...new Set(frames)].sort((left, right) => left - right);
   const frameBytes = 320 * 135 * 3;
@@ -31,7 +37,7 @@ export function verifyMedia({ffmpeg, ffprobe, video, poster, storyboard, frames}
     assert.ok(ink > 60, `Frame ${frame}: blank whiteboard`);
     pixels.push({frame, ink, sha256:sha256(raw)});
   }
-  if (storyboard.audio.scenes.reduce((count, scene) => count + scene.cues.length, 0) > 1) {
+  if (courseTimeline(storyboard).scenes.reduce((count, scene) => count + scene.cues.length, 0) > 1) {
     assert.ok(new Set(pixels.map(sample => sample.sha256)).size > 1, 'Whiteboard never evolves');
   }
   const posterStreams = probeMedia(ffprobe, poster).streams;
