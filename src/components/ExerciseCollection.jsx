@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {COURSE} from '../../pages/inferencia/course.js';
 import audio from '../../static/audio/exercises-manifest.json';
+import videos from '../../static/videos/manifest.json';
 
 export default function ExerciseCollection({lessonId, mode='pdf', descriptor, exerciseId, renderExtra, extraStyles=''}) {
   const host=useRef(null);
@@ -41,7 +42,7 @@ export default function ExerciseCollection({lessonId, mode='pdf', descriptor, ex
       const links=['aula.css','katex/katex.min.css'].map(path=>{const link=owner.createElement('link');link.rel='stylesheet';link.href=baseUrl+path;return link;});
       root.replaceChildren(...links,style,content);
       dispose=()=>root.replaceChildren();
-      const cleanup=engine.mountExercises(content,{exercises,lessonId,baseUrl,audio,createWhiteboard:whiteboard.createWhiteboard,formatMath:tex=>library.renderToString(tex,{displayMode:true,throwOnError:false,trust:false}),renderExtra,renderIcons:()=>embed.renderScopedIcons(root,icons.default || icons)});
+      const cleanup=engine.mountExercises(content,{exercises,lessonId,baseUrl,audio,videos,createWhiteboard:whiteboard.createWhiteboard,formatMath:tex=>library.renderToString(tex,{displayMode:true,throwOnError:false,trust:false}),renderExtra,renderIcons:()=>embed.renderScopedIcons(root,icons.default || icons)});
       dispose=()=>{cleanup();root.replaceChildren();};
       embed.renderScopedIcons(root,icons.default || icons);
       setReady(true);

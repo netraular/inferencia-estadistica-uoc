@@ -500,6 +500,7 @@ function compiledCollection(fixture,effects,updates) {
     '@docusaurus/useBaseUrl':()=>'/inferencia/',
     '../../pages/inferencia/course.js':{COURSE},
     '../../static/audio/exercises-manifest.json':{lessons:{}},
+    '../../static/videos/manifest.json':{version:1,lessons:{}},
     '../../pages/inferencia/exercise-solutions.js':solutions,
     '../../pages/inferencia/exercises.js':generators,
     '../../pages/inferencia/pdf-exercises.js':{getPdfExercises},

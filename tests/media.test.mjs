@@ -9,6 +9,7 @@ import {fileURLToPath} from 'node:url';
 import {canonicalContent, canonicalLectures, documentMetadata, encodeMp3, estimateSceneCues, inside, prepareAudio, prepareDocuments, probeAudio, publicProvenance, safeName, sceneSubtitles, validateLesson, validateTimeline} from '../scripts/prepare-media.mjs';
 import {exportNarration} from '../scripts/tts/export-narration.mjs';
 import {canonicalSections, prepareSections, retainedSection} from '../scripts/tts/prepare-sections.mjs';
+import {buildCatalogue} from '../scripts/tts/gemini-course.mjs';
 
 const pdf = Buffer.from('%PDF-1.7\n1 0 obj <<>> endobj\n%%EOF\n');
 
@@ -153,30 +154,39 @@ test('all eight versioned PDFs have exact original names, valid headers and mani
   }
 });
 
-function validateVersionedAudio(directory, lectures, sections) {
+function validateVersionedAudio(directory, lectures, sections, exercises = []) {
   assert.equal(lectures.length, 36);
   assert.equal(sections.length, 118);
   const globals = new Map(lectures.map(lesson => [lesson.id, lesson]));
   const sectionMap = new Map(sections.map(lesson => [lesson.id, lesson]));
-  const canonicalById = new Map([...globals, ...sectionMap]);
-  assert.equal(canonicalById.size, 154, 'Canonical audio IDs must be unique');
+  const exerciseMap = new Map(exercises.map(exercise => [exercise.id, exercise]));
+  const canonicalById = new Map([...globals, ...sectionMap, ...exerciseMap]);
+  assert.equal(canonicalById.size, 154 + exercises.length, 'Canonical audio IDs must be unique');
   for (const section of sections) {
     assert.ok(globals.has(section.parentLesson), 'Unknown parent lesson');
     assert.equal(section.id, `${section.parentLesson}--${section.sectionId}`);
   }
   const manifest = JSON.parse(readFileSync(join(directory, 'manifest.json')));
   const provenance = JSON.parse(readFileSync(join(directory, 'provenance.json')));
+  const exerciseManifest = existsSync(join(directory, 'exercises-manifest.json')) ? JSON.parse(readFileSync(join(directory, 'exercises-manifest.json'))) : {version: 1, lessons: {}};
+  const exerciseProvenance = existsSync(join(directory, 'exercises-provenance.json')) ? JSON.parse(readFileSync(join(directory, 'exercises-provenance.json'))) : {version: 1, lessons: {}};
   assert.equal(manifest.version, 1);
   assert.equal(provenance.version, 1);
+  assert.equal(exerciseManifest.version, 1);
+  assert.equal(exerciseProvenance.version, 1);
   assert.equal(provenance.exporter, 'data-src/inferencia-estadistica/export-lecturas.mjs');
   assert.deepEqual(Object.keys(provenance.lessons).sort(), Object.keys(manifest.lessons).sort(), 'Manifest and provenance IDs differ');
-  for (const id of Object.keys(manifest.lessons)) assert.ok(canonicalById.has(id), `Unknown audio ID: ${id}`);
+  assert.deepEqual(Object.keys(exerciseProvenance.lessons).sort(), Object.keys(exerciseManifest.lessons).sort(), 'Exercise manifest and provenance IDs differ');
+  for (const id of Object.keys(manifest.lessons)) assert.ok(globals.has(id) || sectionMap.has(id), `Unknown audio ID: ${id}`);
+  for (const id of Object.keys(exerciseManifest.lessons)) assert.ok(exerciseMap.has(id), `Unknown exercise audio ID: ${id}`);
+  const recordings = {...manifest.lessons, ...exerciseManifest.lessons};
+  assert.equal(Object.keys(recordings).length, Object.keys(manifest.lessons).length + Object.keys(exerciseManifest.lessons).length, 'Duplicate audio IDs across manifests');
   assert.deepEqual(
     readdirSync(directory).filter(name => name.toLowerCase().endsWith('.mp3')).sort(),
-    Object.keys(manifest.lessons).map(id => `${id}.mp3`).sort(),
+    Object.keys(recordings).map(id => `${id}.mp3`).sort(),
     'Published MP3 files must belong to the current playback manifest'
   );
-  for (const [id, lesson] of Object.entries(manifest.lessons)) {
+  for (const [id, lesson] of Object.entries(recordings)) {
     const current = canonicalById.get(id);
     assert.equal(lesson.src, `audio/${id}.mp3`);
     if (sectionMap.has(id)) {
@@ -196,7 +206,7 @@ function validateVersionedAudio(directory, lectures, sections) {
       }
       continue;
     }
-    const origin = publicProvenance(provenance.lessons[id]);
+    const origin = publicProvenance((exerciseMap.has(id) ? exerciseProvenance : provenance).lessons[id]);
     assert.equal(lesson.cueTiming, origin.timing);
     assert.equal(origin.canonicalSha256, createHash('sha256').update(JSON.stringify(canonicalContent(current))).digest('hex'));
     const bytes = readFileSync(inside(directory, `${id}.mp3`));
@@ -205,7 +215,7 @@ function validateVersionedAudio(directory, lectures, sections) {
     validateTimeline(lesson.scenes, current, origin.sourceDuration);
     assert.ok(Number.isFinite(lesson.duration) && lesson.duration > 0 && Math.abs(lesson.duration - origin.sourceDuration) < 0.15);
   }
-  for (const name of ['manifest.json', 'provenance.json', 'prepare-report.json', 'prepare-sections-report.json'].filter(name => existsSync(join(directory, name)))) {
+  for (const name of ['manifest.json', 'provenance.json', 'exercises-manifest.json', 'exercises-provenance.json', 'prepare-report.json', 'prepare-sections-report.json'].filter(name => existsSync(join(directory, name)))) {
     const text = readFileSync(join(directory, name), 'utf8');
     assert.ok(!/(?:\/home\/|\/mnt\/|file:\/\/|[A-Za-z]:\\|spoken_text|reference_text|prompt_wav|model_path)/.test(text), `${name} leaks private inputs`);
   }
@@ -216,8 +226,10 @@ test('published audio validates signed recordings and permits an empty catalogue
   context.after(() => rmSync(temporary, {recursive: true, force: true}));
   const lectures = await canonicalLectures(temporary);
   const sections = await canonicalSections(temporary);
+  const catalogue = await buildCatalogue();
+  const exercises = catalogue.items.filter(item => item.kind === 'exercise').map(item => ({...item.animation, scenes: item.animation.steps.map(step => ({...step, chapter: step.data.chapter}))}));
   assert.deepEqual(readdirSync(temporary), []);
-  validateVersionedAudio(join(root, 'static/audio'), lectures, sections);
+  validateVersionedAudio(join(root, 'static/audio'), lectures, sections, exercises);
   const empty = join(temporary, 'empty');
   mkdirSync(empty);
   writeFileSync(join(empty, 'manifest.json'), JSON.stringify({version: 1, lessons: {}}));
@@ -225,6 +237,22 @@ test('published audio validates signed recordings and permits an empty catalogue
   validateVersionedAudio(empty, lectures, sections);
   writeFileSync(join(empty, 'orphan.mp3'), 'retired recording');
   assert.throws(() => validateVersionedAudio(empty, lectures, sections), /Published MP3 files must belong to the current playback manifest/);
+  rmSync(join(empty, 'orphan.mp3'));
+  const exercise = exercises[0];
+  let seconds = 0;
+  const scenes = exercise.scenes.map(scene => {
+    const start = seconds;
+    const cues = scene.cues.map(cue => ({text: cue.text, start: seconds++, end: seconds}));
+    return {start, end: seconds, cues};
+  });
+  const bytes = Buffer.from('Temporary exercise MP3 checksum fixture');
+  const origin = {sourceSignature: 'a'.repeat(64), wavSha256: 'b'.repeat(64), canonicalSha256: createHash('sha256').update(JSON.stringify(canonicalContent(exercise))).digest('hex'), mp3Sha256: createHash('sha256').update(bytes).digest('hex'), mp3Bytes: bytes.length, sourceDuration: seconds, timing: 'measured', encoding: {codec: 'mp3', channels: 1, bitrate: 48000}};
+  writeFileSync(join(empty, `${exercise.id}.mp3`), bytes);
+  writeFileSync(join(empty, 'exercises-manifest.json'), JSON.stringify({version: 1, lessons: {[exercise.id]: {src: `audio/${exercise.id}.mp3`, duration: seconds, cueTiming: 'measured', scenes}}}));
+  writeFileSync(join(empty, 'exercises-provenance.json'), JSON.stringify({version: 1, lessons: {[exercise.id]: origin}}));
+  validateVersionedAudio(empty, lectures, sections, exercises);
+  writeFileSync(join(empty, `${exercise.id}.mp3`), 'corrupt exercise audio');
+  assert.throws(() => validateVersionedAudio(empty, lectures, sections, exercises), {code: 'ERR_ASSERTION'});
 });
 
 test('audio preparation needs no external source to run and publishes no partial scenes', async context => {

@@ -475,6 +475,122 @@ test('closing a narrated solution cancels speech and late utterance callbacks ca
   } finally {dispose();window.speechSynthesis=originalSpeech;window.SpeechSynthesisUtterance=originalUtterance;}
 }));
 
+function generatedExerciseMedia(animation) {
+  let offset=0;
+  const scenes=animation.steps.map(step=>{
+    const start=offset;offset+=step.duration;
+    return {start,end:offset,cues:step.cues.map(cue=>({...cue,start:start+cue.start,end:start+cue.end}))};
+  });
+  const track={src:`audio/${animation.id}.mp3`,duration:offset,cueTiming:'measured',scenes,voice:'Puck',model:'gemini-3.8-flash-tts',audioSha256:'a'.repeat(64),canonicalSha256:'b'.repeat(64)};
+  const video={engine:'remotion',title:animation.title,src:`videos/${animation.id}/video.mp4`,poster:`videos/${animation.id}/poster.jpg`,audioSource:track.src,audioSha256:track.audioSha256,canonicalSha256:track.canonicalSha256,voice:track.voice,model:track.model,duration:offset,frames:Math.ceil(offset*30),fps:30,width:1280,height:720};
+  return {track,video};
+}
+
+test('native exercise media is opt-in, base-aware, transcribed and disposed before animated fallback', () => withStatistics(() => {
+  const exercise=getPdfExercises('sucesos')[0];
+  const animation=exerciseAnimation(exercise,exercise.questions[0]);
+  const {track,video}=generatedExerciseMedia(animation);
+  const {scenes}=track;
+  for(const baseUrl of ['/','/inferencia/','/aula']) {
+    const {document,window}=parseHTML('<div id="exercises"></div>');
+    const createElement=document.createElement.bind(document);
+    document.createElement=(tag,...options)=>{
+      const element=createElement(tag,...options);
+      if(tag==='audio'){element.pause=()=>{};element.load=()=>{};element.play=()=>Promise.resolve();}
+      return element;
+    };
+    window.HTMLCanvasElement.prototype.getContext=()=>null;
+    window.HTMLElement.prototype.getBoundingClientRect=()=>({width:640,height:360});
+    window.matchMedia=()=>({matches:false});
+    const root=document.getElementById('exercises');
+    const dispose=mountExercises(root,{exercises:[exercise],lessonId:'sucesos',formatMath:tex=>tex,baseUrl,audio:{lessons:{[animation.id]:track}},videos:{lessons:{[animation.id]:video}}});
+    try {
+      assert.equal(root.querySelectorAll('details[open],video,.animation-player').length,0);
+      const solution=root.querySelector('[data-animated-solution]');
+      const toggle=open=>{if(open)solution.setAttribute('open','');else solution.removeAttribute('open');solution.dispatchEvent(new window.Event('toggle'));};
+      toggle(true);
+      const player=solution.querySelector('video');
+      assert.ok(player);
+      assert.ok(player.hasAttribute('controls') && player.hasAttribute('playsinline'));
+      assert.equal(player.getAttribute('preload'),'metadata');
+      assert.equal(player.hasAttribute('autoplay'),false);
+      assert.equal(player.querySelector('source').getAttribute('src'),`${baseUrl.replace(/\/?$/,'/')}videos/${animation.id}/video.mp4`);
+      assert.equal(player.getAttribute('poster'),`${baseUrl.replace(/\/?$/,'/')}videos/${animation.id}/poster.jpg`);
+      const transcript=solution.querySelector('.animation-transcript');
+      assert.equal(transcript.hasAttribute('open'),false);
+      assert.equal(transcript.querySelector('summary').textContent,'Transcripci\u00f3n');
+      assert.deepEqual(Array.from(transcript.querySelectorAll('p'),paragraph=>paragraph.textContent),scenes.flatMap(scene=>scene.cues.map(cue=>cue.text)));
+      let pauses=0,loads=0;
+      player.pause=()=>pauses++;player.load=()=>loads++;
+      toggle(false);
+      assert.equal(pauses,1);assert.equal(loads,1);
+      assert.equal(solution.querySelector('[data-exercise-player]').childNodes.length,0);
+      player.dispatchEvent(new window.Event('error'));
+      assert.equal(solution.querySelector('.animation-player'),null,'late errors cannot reopen a closed solution');
+      toggle(true);
+      const reopened=solution.querySelector('video');
+      assert.ok(reopened && reopened!==player);
+      reopened.pause=()=>pauses++;reopened.load=()=>loads++;
+      reopened.querySelector('source').dispatchEvent(new window.Event('error'));
+      assert.equal(pauses,2);assert.equal(loads,2);
+      assert.equal(solution.querySelector('video'),null);
+      assert.equal(solution.querySelectorAll('.animation-player').length,1);
+      assert.equal(solution.querySelector('audio').src,`${baseUrl.replace(/\/?$/,'/')}${track.src}`);
+      player.dispatchEvent(new window.Event('error'));
+      assert.equal(solution.querySelectorAll('.animation-player').length,1);
+      toggle(false);assert.equal(solution.querySelector('[data-exercise-player]').childNodes.length,0);
+      toggle(true);assert.equal(solution.querySelector('video'),null);
+      assert.equal(solution.querySelectorAll('.animation-player').length,1);
+      assert.equal(root.querySelector('[data-written-solution]').hasAttribute('open'),false);
+      assert.equal(root.querySelector('.exercise-help').hasAttribute('open'),false);
+    } finally {dispose();}
+    assert.equal(root.childNodes.length,0);
+  }
+}));
+
+test('missing or stale exercise recordings use speech without loading obsolete audio or video', () => withStatistics(() => {
+  const exercise=getPdfExercises('sucesos')[0];
+  const animation=exerciseAnimation(exercise,exercise.questions[0]);
+  const cases=[
+    ['empty audio',audio=>{audio.lessons={};}],
+    ['missing lessons',audio=>{delete audio.lessons;}],
+    ['wrong ID',audio=>{audio.lessons={[animation.parentLesson]:audio.lessons[animation.id]};}],
+    ['empty scenes',audio=>{audio.lessons[animation.id].scenes=[];}],
+    ['changed cues',audio=>{audio.lessons[animation.id].scenes[0].cues[0].text='Obsolete narration.';}],
+    ['estimated timing',audio=>{audio.lessons[animation.id].cueTiming='estimated';}],
+  ];
+  for(const [label,change] of cases) {
+    const {document,window}=parseHTML('<div id="exercises"></div>');
+    window.HTMLCanvasElement.prototype.getContext=()=>null;
+    window.HTMLElement.prototype.getBoundingClientRect=()=>({width:640,height:360});
+    window.matchMedia=()=>({matches:false});
+    const originalSpeech=window.speechSynthesis;
+    const originalUtterance=window.SpeechSynthesisUtterance;
+    const utterances=[];
+    let canceled=0;
+    window.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};
+    window.speechSynthesis={getVoices:()=>[],speak:utterance=>utterances.push(utterance),cancel:()=>canceled++,pause(){},resume(){}};
+    const {track,video}=generatedExerciseMedia(animation);
+    const audio={lessons:{[animation.id]:track}};
+    change(audio);
+    const root=document.getElementById('exercises');
+    const dispose=mountExercises(root,{exercises:[exercise],lessonId:'sucesos',formatMath:tex=>tex,audio,videos:{lessons:{[animation.id]:video}}});
+    try {
+      const solution=root.querySelector('[data-animated-solution]');
+      solution.setAttribute('open','');solution.dispatchEvent(new window.Event('toggle'));
+      assert.equal(solution.querySelector('video,audio'),null,label);
+      assert.equal(solution.querySelectorAll('.animation-player').length,1,label);
+      solution.querySelector('[aria-label="Reproducir"]').click();
+      assert.equal(utterances.length,1,label);
+      assert.equal(utterances[0].text,animation.steps[0].cues[0].text,label);
+      const before=canceled;
+      solution.removeAttribute('open');solution.dispatchEvent(new window.Event('toggle'));
+      assert.ok(canceled>before,label);
+      utterances[0].onend();assert.equal(utterances.length,1,label);
+    } finally {dispose();window.speechSynthesis=originalSpeech;window.SpeechSynthesisUtterance=originalUtterance;}
+  }
+}));
+
 test('Spanish teacher speech follows actual spoken cues, supports pause/seek and cancels on disposal', async () => {
   const {document,window}=parseHTML('<div></div>');
   const originalSpeech=window.speechSynthesis;

@@ -139,6 +139,47 @@ function writtenResult(question) {
   return question.answerText || (Number.isFinite(question.answer) ? `${Number(question.answer.toPrecision(7)).toString().replace('.', ',')} ${question.unit}` : question.interpretation);
 }
 
+export function compatibleCourseRecording(animation, recording) {
+  if (!animation?.steps?.length || !recording || recording.cueTiming !== 'measured'
+    || recording.src !== `audio/${animation.id}.mp3` || !Number.isFinite(recording.duration) || recording.duration <= 0
+    || !Array.isArray(recording.scenes) || recording.scenes.length !== animation.steps.length) return false;
+  let previous = 0;
+  return recording.scenes.every((scene, index) => {
+    const step = animation.steps[index];
+    const expected = step?.cues || [{text:step?.caption}];
+    if (!Array.isArray(expected) || !expected.length || !scene || !Number.isFinite(scene.start) || !Number.isFinite(scene.end)
+      || scene.start < previous || scene.end <= scene.start || scene.end > recording.duration
+      || !Array.isArray(scene.cues) || scene.cues.length !== expected.length) return false;
+    if (typeof step?.caption === 'string' && step.caption !== scene.cues.map(cue => cue?.text).join(' ')) return false;
+    previous = scene.end;
+    let cueEnd = scene.start;
+    return scene.cues.every((cue, cueIndex) => {
+      if (!cue || typeof cue.text !== 'string' || !cue.text.trim() || cue.text !== expected[cueIndex]?.text
+        || !Number.isFinite(cue.start) || !Number.isFinite(cue.end) || cue.start < cueEnd
+        || cue.end <= cue.start || cue.end > scene.end) return false;
+      cueEnd = cue.end;
+      return true;
+    });
+  });
+}
+
+export function compatibleCourseVideo(animation, recording, video) {
+  if (!compatibleCourseRecording(animation, recording) || !video || video.engine !== 'remotion'
+    || video.voice !== 'Puck' || video.model !== 'gemini-3.8-flash-tts'
+    || video.audioSource !== recording.src || video.src !== `videos/${animation.id}/video.mp4`
+    || video.poster !== `videos/${animation.id}/poster.jpg` || video.fps !== 30
+    || video.width !== 1280 || video.height !== 720 || !Number.isInteger(video.frames) || video.frames <= 0
+    || !Number.isFinite(video.duration) || video.duration <= 0 || Math.abs(video.duration - recording.duration) > 1 / video.fps + 1e-6
+    || Math.abs(video.frames / video.fps - video.duration) > 1 / video.fps + 1e-6
+    || !/^[a-f0-9]{64}$/.test(video.audioSha256)) return false;
+  return ['audioSha256', 'canonicalSha256', 'voice', 'model'].every(key => recording[key] == null || recording[key] === video[key])
+    && (recording.sha256 == null || recording.sha256 === video.audioSha256);
+}
+
+export function courseMediaUrl(baseUrl, path) {
+  return `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
+}
+
 export function createExerciseSpeech(owner,animation) {
   const view=owner.defaultView;
   const synthesis=view.speechSynthesis;
@@ -242,12 +283,13 @@ export function exerciseAnimation(exercise, question) {
   };
 }
 
-export function mountExercises(root, {exercises, lessonId, formatMath, audio, createWhiteboard, baseUrl='/', renderExtra:extraMarkup=()=>'', renderIcons=()=>{}}) {
+export function mountExercises(root, {exercises, lessonId, formatMath, audio, videos, createWhiteboard, baseUrl='/', renderExtra:extraMarkup=()=>'', renderIcons=()=>{}}) {
   const owner=root.ownerDocument;
   const renderExtra=(exercise,question)=>extraMarkup(exercise,question,formatMath);
   const lesson=COURSE.units.flatMap(unit=>unit.lessons).find(item=>item.id===lessonId);
   const listeners=[];
   const players=new Map();
+  const failedVideos=new Set();
   let disposed=false;
   const listen=(target,event,handler)=>{target.addEventListener(event,handler);listeners.push(()=>target.removeEventListener(event,handler));};
   const source=exercise=>{
@@ -268,11 +310,49 @@ export function mountExercises(root, {exercises, lessonId, formatMath, audio, cr
       if(!animated.hasAttribute('open')){players.get(animated)?.();players.delete(animated);return;}
       if(players.has(animated))return;
       const animation=exerciseAnimation(exercise,question);
-      const track=audio?.lessons?.[animation.id];
-      const narrator=track ? undefined : createExerciseSpeech(owner,animation);
+      const recording=audio?.lessons?.[animation.id];
+      const track=compatibleCourseRecording(animation,recording) ? recording : undefined;
+      const video=videos?.lessons?.[animation.id];
       const host=animated.querySelector('[data-exercise-player]');
-      players.set(animated,mountAnimation(host,animation,{formatMath,audio:track ? {...track,src:baseUrl+track.src} : undefined,narrator,createWhiteboard}));
-      if(!track && !narrator){const notice=owner.createElement('p');notice.className='animation-audio-error';notice.setAttribute('role','status');notice.textContent='La síntesis de voz española no está disponible en este navegador.';host.prepend(notice);}
+      const mountFallback=()=>{
+        const narrator=track ? undefined : createExerciseSpeech(owner,animation);
+        const cleanup=mountAnimation(host,animation,{formatMath,audio:track ? {...track,src:courseMediaUrl(baseUrl,track.src)} : undefined,narrator,createWhiteboard});
+        if(!track && !narrator){const notice=owner.createElement('p');notice.className='animation-audio-error';notice.setAttribute('role','status');notice.textContent='La síntesis de voz española no está disponible en este navegador.';host.prepend(notice);}
+        return cleanup;
+      };
+      let cleanup;
+      let active=true;
+      const identity=JSON.stringify([animation.id,video,track]);
+      if(compatibleCourseVideo(animation,track,video) && !failedVideos.has(identity)) {
+        const player=owner.createElement('video');
+        player.setAttribute('controls','');player.setAttribute('playsinline','');player.setAttribute('preload','metadata');
+        player.setAttribute('poster',courseMediaUrl(baseUrl,video.poster));player.setAttribute('aria-label',video.title || animation.title);
+        player.setAttribute('width',String(video.width));player.setAttribute('height',String(video.height));
+        player.style.cssText='display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000';
+        const source=owner.createElement('source');
+        source.setAttribute('src',courseMediaUrl(baseUrl,video.src));source.setAttribute('type','video/mp4');
+        player.append(source);
+        const transcript=owner.createElement('details');
+        transcript.className='animation-transcript';
+        const summary=owner.createElement('summary');summary.textContent='Transcripci\u00f3n';transcript.append(summary);
+        for(const cue of track.scenes.flatMap(scene=>scene.cues)) {
+          const paragraph=owner.createElement('p');paragraph.textContent=cue.text;transcript.append(paragraph);
+        }
+        let native=true;
+        const pause=()=>player.pause?.();
+        const onHidden=()=>{if(owner.hidden)pause();};
+        const fail=()=>{
+          if(!active || !native)return;
+          native=false;failedVideos.add(identity);cleanup();cleanup=mountFallback();renderIcons();
+        };
+        cleanup=()=>{
+          player.removeEventListener('error',fail);source.removeEventListener('error',fail);owner.removeEventListener('visibilitychange',onHidden);
+          pause();source.removeAttribute('src');player.removeAttribute('src');player.load?.();host.replaceChildren();
+        };
+        player.addEventListener('error',fail);source.addEventListener('error',fail);owner.addEventListener('visibilitychange',onHidden);
+        host.replaceChildren(player,transcript);
+      } else cleanup=mountFallback();
+      players.set(animated,()=>{active=false;cleanup();});
       renderIcons();
     });
     const form=section.querySelector('[data-exercise-answer]');

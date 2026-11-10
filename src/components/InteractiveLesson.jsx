@@ -3,8 +3,37 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import shell from '../generated/aula-shell.json';
 import audio from '../../static/audio/manifest.json';
 import {COURSE} from '../../pages/inferencia/course.js';
+import LessonVideo from './LessonVideo';
 
-export default function InteractiveLesson({lessonId, view = 'lab', animation, example}) {
+export default function InteractiveLesson(props) {
+  return props.view === 'animation' && !props.animation ? <LessonRecap {...props} /> : <EmbeddedLesson {...props} />;
+}
+
+function LessonRecap({lessonId, ...props}) {
+  const [recap, setRecap] = useState(null);
+  useEffect(() => {
+    let active = true;
+    Promise.all([
+      import('../../pages/inferencia/animations.js'),
+      import('../../pages/inferencia/exercises.js'),
+      import('../../pages/inferencia/lesson-visuals.js'),
+      import('jstat'),
+      import('../../pages/inferencia/app.js')
+    ]).then(([animations, exercises, visuals, stats, app]) => {
+      if (!active) return;
+      globalThis.jStat = stats.default?.jStat || stats.jStat || stats.default;
+      const lesson = COURSE.units.flatMap(unit => unit.lessons).find(item => item.id === lessonId);
+      const animation = visuals.enrichGlobalAnimation(animations.createLessonAnimation(lesson, exercises.generateExercise, html => app.readParagraphs(document, html)));
+      setRecap({lessonId, animation});
+    }).catch(() => {if (active) setRecap({lessonId, animation:null});});
+    return () => {active = false;};
+  }, [lessonId]);
+  if (recap?.lessonId !== lessonId) return <p role="status">Cargando actividades...</p>;
+  const fallback = <EmbeddedLesson key={lessonId} lessonId={lessonId} {...props} />;
+  return recap.animation ? <LessonVideo animation={recap.animation} fallback={fallback} /> : fallback;
+}
+
+function EmbeddedLesson({lessonId, view = 'lab', animation, example}) {
   const illustration = view === 'figure' ? COURSE.units.flatMap(unit=>unit.lessons).find(lesson=>lesson.id===lessonId)?.illustration : null;
   const host = useRef(null);
   const [error, setError] = useState('');
@@ -39,7 +68,7 @@ export default function InteractiveLesson({lessonId, view = 'lab', animation, ex
       setReady(true);
     }).catch(failure => {if (active) setError(failure.message);});
     return () => {active = false; mounted?.dispose();};
-  }, [lessonId, baseUrl, view, animation?.id, example?.type, example?.seed, example?.questionIds.join('|')]);
+  }, [lessonId, baseUrl, view, animation, example?.type, example?.seed, example?.questionIds.join('|')]);
   return <section className="course-activities" aria-label={illustration?.title || 'Actividades de la lección'}>
     {illustration && <p>{illustration.question}</p>}
     {view === 'animation' && audio.lessons[animation?.id || lessonId]?.cueTiming === 'scene-measured-cues-estimated' && <p className="audio-timing">Audio sincronizado por diapositiva; resaltado de frases aproximado.</p>}
