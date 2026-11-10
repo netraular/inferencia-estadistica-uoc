@@ -9,16 +9,20 @@ guiones y sus visuales; cada frase se genera por separado y se mide antes de
 ensamblar el audio. No se asignan tiempos estimados a grabaciones reales.
 
 Las claves se leen localmente desde `~/.config/inferencia-tts/gemini.env`;
-no se incluyen en el repositorio ni en los registros. Se usa solo
-`GEMINI_API_KEY_1`, sin rotacion de claves ni reintentos automaticos. La
-generacion exige confirmacion de Free Tier, un numero maximo de solicitudes y
-un intervalo minimo de quince segundos entre sus inicios.
+no se incluyen en el repositorio ni en los registros. El usuario ha confirmado
+seis proyectos distintos, todos Free Tier: `GEMINI_API_KEY_1` a
+`GEMINI_API_KEY_6`. El modo `--independent-projects` reparte solicitudes entre
+ellos, con un intervalo minimo de quince segundos por proyecto. Conserva las
+esperas y los intentos de cada uno; nunca repite resultados inciertos. Sin ese
+modo se mantiene la seleccion exclusiva de la primera clave.
 
 El lote de produccion es
 `/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1`.
-El 10 de noviembre de 2026 quedo detenido con siete frases completas y ninguna
-pieza completa. El ultimo HTTP 429 indico esperar hasta el 11 de noviembre a
-las 08:00 UTC. No hay un proceso esperando ni una reanudacion programada.
+El 10 de noviembre de 2026 se aprovecharon los seis proyectos: quedaron
+64 frases guardadas y tres audios completos, con sus tres videos Remotion
+completos y verificados. Los seis proyectos indican esperar aproximadamente
+hasta el 11 de noviembre a las 08:00 UTC (09:00 peninsular). Quedan 538 piezas
+pendientes. No hay un proceso esperando ni una reanudacion programada.
 
 ```bash
 SCRIPT=/home/aquiluer/Scripts/inferencia-estadistica-uoc/scripts/tts/gemini-course.mjs
@@ -29,12 +33,15 @@ node "$SCRIPT" --status "$BATCH"
 Despues del reinicio de cuota, reanudar explicitamente la solicitud rechazada:
 
 ```bash
-node "$SCRIPT" --generate "$BATCH" --resume-quota --max-requests 50 \
+node "$SCRIPT" --generate "$BATCH" --independent-projects --max-requests 120 \
   --min-interval-ms 15000 --free-tier-confirmed
 ```
 
-Un nuevo 429 vuelve a detener el lote y conserva lo recibido. Los errores de
-resultado incierto no se reintentan automaticamente. No cambies la copia
+Un 429 aparta ese proyecto durante la tanda y conserva lo recibido; los demas
+pueden continuar. El lote se pausa cuando ninguno esta disponible. Solo las
+solicitudes rechazadas con HTTP 429 admiten reanudacion con otro proyecto
+independiente. Los errores de resultado incierto detienen todos los proyectos
+y no se reintentan automaticamente. No cambies la copia
 congelada ni empieces otro lote para recuperar fragmentos ya generados.
 
 Cuando existan piezas completas, publicar sus audios compatibles y renderizar
@@ -71,7 +78,8 @@ del curso con textos nuevos.
 La revision de guiones de 2026-11-10 cambia los 118 apartados, los 36 repasos y
 las soluciones narradas. Se han eliminado los 118 MP3 publicados y los seis
 audios historicos archivados para regenerarlos todos. Los manifiestos de audio
-y su procedencia quedan vacios, sin los informes de preparacion anteriores.
+y su procedencia se vaciaron, sin los informes de preparacion anteriores;
+la produccion Puck publica incrementalmente solo las piezas completas nuevas.
 Los lotes locales fuera del repositorio no se han borrado ni modificado.
 El video pregrabado conserva la locucion anterior y no se usa sin una grabacion
 compatible. Para producir esta revision hay que preparar otro lote y medir de

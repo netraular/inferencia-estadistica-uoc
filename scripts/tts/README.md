@@ -213,29 +213,36 @@ node --test /home/aquiluer/Scripts/inferencia-estadistica-uoc/tests/gemini-cours
 ```
 
 Only generation reads `~/.config/inferencia-tts/gemini.env` through `parseEnv`,
-selecting **only** `GEMINI_API_KEY_1`. No key rotation, automatic retries, raw response
-storage or credential logging. Both network flags are mandatory; confirmation
+selecting `GEMINI_API_KEY_1` by default. The user confirmed that all six numbered
+keys belong to **distinct Free Tier projects**. Explicit generation flag
+`--independent-projects` uses their independent quotas, rejects repeated
+credentials, and records only variable names, never secret values. Do not use
+this mode for multiple keys from one project. No raw response storage or
+credential logging. Both network flags are mandatory; confirmation
 does not verify billing/free-tier quotas or zero cost. The request bound counts
 all new attempts across selected items per invocation, including any explicitly
 resumed quota rejection. It does not reset per item. No billing switches are
 changed; Free Tier may block completion of the full production batch. Each cue calls `POST
 https://generativelanguage.googleapis.com/v1beta/interactions` with
 `gemini-3.8-flash-tts`, `Puck`, `store: false` and PCM16/24 kHz mono WAV.
-`STYLE`, `speechRequest(text)`, `prepareBatch`, `batchStatus`, `generateBatch`
+`STYLE`, `speechRequest(text)`, `prepareBatch`, `batchStatus`, `generateBatch`, `generateProjects`
 and `publishBatch` are exported; generation accepts injected `fetchImpl`,
 `readKey`, `run`, `now` (epoch milliseconds) and `scheduler` (async milliseconds)
 for offline tests. Fake schedulers advance the injected clock without actual
 waiting; they do not lower the production interval. Other modes never read keys
 or use network.
 
-Generation defaults to **15,000 ms between network request starts (4 RPM)**,
+Generation defaults to **15,000 ms between network request starts per project (4 RPM)**,
 not an extra 15 seconds after each response. Generation-only `--min-interval-ms`
 (API: `minIntervalMs`) accepts integers from 15,000 to 2,147,483,647; shorter,
 zero, fractional and unsafe values fail before credentials or requests.
 Pacing covers all selected items and later invocations against the same batch,
 including historical `startedAt` values in version-1 ledgers without pacing
 metadata. `progress.json` records `pacing.minIntervalMs`, `lastRequestStartedAt`
-and `nextRequestAt`; the next eligible call is saved before waiting. Waiting
+and `nextRequestAt`; `projectPacing` preserves those fields separately for every
+project and each new attempt records `keyVariable`. Historic unlabelled attempts
+and their pacing belong to key 1; their counts and completed WAVs are preserved.
+The next eligible call is saved before waiting. Waiting
 does not increment attempts or requests. Slow responses consume the interval,
 and completed WAVs are checked and reused without scheduling network calls.
 Independent batches/processes sharing a key are not coordinated: run only one
@@ -257,7 +264,7 @@ immutable full-animation checksum; no refresh. Resume needs no live course
 modules. Atomic/fsync `progress.json` checkpoints store states and numeric
 usage, including `total_tokens`, `total_input_tokens`, `total_output_tokens`.
 Completed fragments survive local encoding failures without new calls.
-Every HTTP 429 immediately stops the current invocation, even with quota
+In default single-project mode, every HTTP 429 immediately stops the current invocation, even with quota
 resumption enabled. An ordinary rerun remains blocked. Only a deliberate later
 `--generate ... --resume-quota` (API: `resumeQuota: true`) may resume a selected
 cue recorded as `quota-limit` with `httpStatus: 429` and no WAV. This represents
@@ -282,22 +289,25 @@ signatures are appended to that cue's `attemptHistory`; `attempts` and batch
 `requests` include all historical calls. Existing one-attempt ledgers remain
 valid without migration. No ledger is cleared or requests subtracted.
 
-For the existing `gemini-puck-course-2026-11-10-v1` batch, the first section has
-7 completed cues and 9 remaining, including the rejected eighth cue. The latest
-HTTP 429 recorded eligibility at 2026-11-11 08:00 UTC. No process is waiting or
-scheduled. The first exercise has 18 cues. Run these commands after that time,
-in order; run the exercise only after the section finishes successfully and
-quota permits:
+In independent-project mode a known HTTP 429 rejection can move to another
+available project, preserving the rejected attempt in history. A rejected
+project is not used again in that invocation. Provider cooldowns persist per
+project across invocations; other projects are not delayed by that cooldown.
+The generator pauses with `projects-quota-limit` when none is available, rather
+than waiting overnight. Ambiguous failures still stop the entire pool.
+The request bound is shared by all projects, including rejected attempts.
+
+On 2026-11-10 the existing `gemini-puck-course-2026-11-10-v1` batch reached
+71 requests, 64 completed cues and three complete audio/video items:
+`proporciones--parte-y-total`, `proporciones--porcentaje-y-exposicion` and
+`ejercicio-pdf-u1-1--a`. Project cue counts are 7, 11, 9, 12, 13 and 12;
+all six now report cooldowns ending approximately 2026-11-11 08:00 UTC.
+No process is waiting or scheduled. Resume the same batch after that time:
 
 ```sh
 node /home/aquiluer/Scripts/inferencia-estadistica-uoc/scripts/tts/gemini-course.mjs \
   --generate /home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1 \
-  --ids proporciones--parte-y-total --resume-quota --max-requests 9 \
-  --min-interval-ms 15000 --free-tier-confirmed
-
-node /home/aquiluer/Scripts/inferencia-estadistica-uoc/scripts/tts/gemini-course.mjs \
-  --generate /home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1 \
-  --ids ejercicio-pdf-u1-1--a --max-requests 18 \
+  --independent-projects --max-requests 120 \
   --min-interval-ms 15000 --free-tier-confirmed
 ```
 

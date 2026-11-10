@@ -95,8 +95,9 @@ The [editorial storyboard](data-src/inferencia-estadistica/guiones-docentes.md)
 remains a production reference, not the runtime transcript source.
 
 All 118 published MP3s and six historical archived recordings were removed on
-2026-11-10 for complete regeneration. The audio manifests and provenance are
-empty, and obsolete preparation reports were removed. The existing prerecorded
+2026-11-10 for complete regeneration. The audio manifests and provenance were
+emptied, and obsolete preparation reports were removed. New complete Puck items
+are published incrementally. The existing prerecorded
 MP4 is retained but falls back to the current animation without a compatible
 recording. New audio and video require separate production with newly measured
 timings. Local TTS batches outside this repository were not deleted or changed.
@@ -104,8 +105,11 @@ timings. Local TTS batches outside this repository were not deleted or changed.
 New production uses the selected Gemini Puck voice and the general Remotion
 renderer for all 541 section, recap and exercise explanations. Narration is
 frozen, generated and measured per phrase; only complete, compatible recordings
-and videos can be published. The initial production batch is paused by a Free
-Tier HTTP 429 with seven generated phrases and no complete item. A local
+and videos can be published. All six keys belong to distinct Free Tier projects
+and are used with independent quota/pacing records. The production batch has
+64 generated phrases and three complete audio/video items; the remaining
+538 are paused until the projects' quota windows reopen around 2026-11-11
+08:00 UTC. No generator is running or scheduled. A local
 six-phrase Remotion preview is explicitly partial and is not published.
 See [the production and resumption guide](TTS.md).
 

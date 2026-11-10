@@ -14,6 +14,7 @@ export const MODEL = 'gemini-3.8-flash-tts';
 export const VOICE = 'Puck';
 export const STYLE = 'A calm, engaging statistics teacher speaking clear Spanish from Spain. Natural phrasing, a measured classroom pace, and brief pauses between sentences.';
 export const ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions';
+export const PROJECT_KEYS = Object.freeze(Array.from({length: 6}, (_, index) => `GEMINI_API_KEY_${index + 1}`));
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const RATE = 24000;
 const MIN_INTERVAL_MS = 15000;
@@ -197,6 +198,9 @@ export function loadBatch(batch) {
         assert.equal(previous.signature, record.signature, 'Attempt history signature changed');
         assert.equal(previous.attemptHistory, undefined, 'Nested attempt history is forbidden');
       }
+      for (const attempt of [...history, record]) {
+        if (attempt.keyVariable !== undefined) assert.ok(PROJECT_KEYS.includes(attempt.keyVariable), 'Unknown recorded project');
+      }
       assert.ok(['started', 'received', 'complete', 'network-error', 'quota-limit', 'api-error', 'response-error'].includes(record.status), 'Unknown cue status');
       if (record.status === 'quota-limit') assert.ok(quotaRejected(record), 'Quota rejection must record HTTP 429');
     }
@@ -226,12 +230,13 @@ export function speechRequest(text) {
   generation_config: {speech_config: [{voice: VOICE}]}, store: false};
 }
 
-function selectedKey() {
+function selectedKey(keyVariable = 'GEMINI_API_KEY_1') {
+  assert.match(keyVariable, /^GEMINI_API_KEY_[1-6]$/, 'Unknown project credential variable');
   try {
-    const key = parseEnv(readFileSync(join(homedir(), '.config/inferencia-tts/gemini.env'), 'utf8')).GEMINI_API_KEY_1;
+    const key = parseEnv(readFileSync(join(homedir(), '.config/inferencia-tts/gemini.env'), 'utf8'))[keyVariable];
     if (typeof key === 'string' && key.trim()) return key.trim();
   } catch {}
-  throw new Error('Selected GEMINI_API_KEY_1 is unavailable; no request sent');
+  throw new Error(`Selected ${keyVariable} is unavailable; no request sent`);
 }
 
 export function validateWav(bytes) {
@@ -492,11 +497,13 @@ export function assembleItem(batch, item, state, {run = execFileSync} = {}) {
 }
 
 export async function generateBatch(output, {maxRequests, ids, resumeQuota = false, freeTierConfirmed = false,
+  keyVariable = 'GEMINI_API_KEY_1',
   minIntervalMs = MIN_INTERVAL_MS, now = Date.now, scheduler = delay,
   fetchImpl = globalThis.fetch, readKey = selectedKey, run = execFileSync} = {}) {
   assert.ok(Number.isSafeInteger(maxRequests) && maxRequests > 0, '--max-requests must be a positive integer');
   assert.equal(freeTierConfirmed, true, '--free-tier-confirmed is required; API quotas and billing are not verified');
   assert.equal(typeof resumeQuota, 'boolean', '--resume-quota must be an explicit boolean');
+  assert.match(keyVariable, /^GEMINI_API_KEY_[1-6]$/, 'Unknown project credential variable');
   assert.ok(Number.isSafeInteger(minIntervalMs) && minIntervalMs >= MIN_INTERVAL_MS && minIntervalMs <= MAX_INTERVAL_MS,
     '--min-interval-ms must be an integer from 15000 to 2147483647');
   assert.ok(typeof now === 'function' && typeof scheduler === 'function', 'Clock and scheduler must be functions');
@@ -530,6 +537,7 @@ export async function generateBatch(output, {maxRequests, ids, resumeQuota = fal
     let lastRequestStartedAt = 0;
     for (const itemState of Object.values(state.items)) for (const record of Object.values(itemState.cues)) {
       for (const attempt of [...(record.attemptHistory ?? []), record]) {
+        if ((attempt.keyVariable ?? 'GEMINI_API_KEY_1') !== keyVariable) continue;
         if (attempt.startedAt !== undefined) {
           const startedAt = Date.parse(attempt.startedAt);
           assert.ok(Number.isFinite(startedAt), 'Invalid request start timestamp');
@@ -538,8 +546,14 @@ export async function generateBatch(output, {maxRequests, ids, resumeQuota = fal
       }
     }
     let nextRequestAt = 0;
-    if (state.pacing !== undefined) {
-      nextRequestAt = Date.parse(state.pacing.nextRequestAt);
+    state.projectPacing ??= {};
+    if (state.pacing !== undefined && !state.projectPacing[state.keyVariable ?? 'GEMINI_API_KEY_1']) {
+      state.projectPacing[state.keyVariable ?? 'GEMINI_API_KEY_1'] = {...state.pacing};
+    }
+    state.keyVariable = keyVariable;
+    const projectPacing = state.projectPacing[keyVariable];
+    if (projectPacing !== undefined) {
+      nextRequestAt = Date.parse(projectPacing.nextRequestAt);
       assert.ok(Number.isFinite(nextRequestAt), 'Invalid planned request timestamp');
     }
     for (const item of selected) {
@@ -561,17 +575,18 @@ export async function generateBatch(output, {maxRequests, ids, resumeQuota = fal
           return batchStatus(batch);
         }
         if (key === undefined) {
-          try { key = readKey(); } catch { throw new Error('Selected GEMINI_API_KEY_1 is unavailable; no request sent'); }
+          try { key = readKey(keyVariable); } catch { throw new Error(`Selected ${keyVariable} is unavailable; no request sent`); }
           assert.ok(typeof key === 'string' && key.trim(), 'Selected credential is empty');
         }
         const plannedAt = Math.max(now(), nextRequestAt, lastRequestStartedAt ? lastRequestStartedAt + minIntervalMs : 0);
         state.pacing = {minIntervalMs, nextRequestAt: new Date(plannedAt).toISOString()};
+        state.projectPacing[keyVariable] = state.pacing;
         if (lastRequestStartedAt) state.pacing.lastRequestStartedAt = new Date(lastRequestStartedAt).toISOString();
         persist();
         while (now() < plannedAt) await scheduler(Math.min(plannedAt - now(), MAX_INTERVAL_MS));
         const previous = record;
         record = itemState.cues[cue.index] = {status: 'started', attempts: (previous?.attempts ?? 0) + 1,
-          signature: cueSignature(state.catalogueSha256, item, cue), startedAt: new Date(now()).toISOString()};
+          signature: cueSignature(state.catalogueSha256, item, cue), startedAt: new Date(now()).toISOString(), keyVariable};
         if (previous) {
           const {attemptHistory = [], ...attempt} = previous;
           record.attemptHistory = [...attemptHistory, attempt];
@@ -686,9 +701,78 @@ export function batchStatus(output) {
   return {...catalogueSummary(catalogue), status: state.status, requests: state.requests,
     completedItems: completed.length,
     completedCues: Object.values(state.items).reduce((total, item) => total + Object.values(item.cues).filter(cue => cue.status === 'complete').length, 0),
-    measuredMinutes: duration / 60, keyVariable: 'GEMINI_API_KEY_1', keyRotation: false,
-    automaticRetries: 0, billingTierVerified: false, minIntervalMs: state.pacing?.minIntervalMs ?? MIN_INTERVAL_MS,
+    measuredMinutes: duration / 60, keyVariable: state.keyVariable ?? 'GEMINI_API_KEY_1', keyRotation: Boolean(state.independentProjects),
+    independentProjects: state.independentProjects ?? null,
+    projects: PROJECT_KEYS.map(keyVariable => {
+      const attempts = Object.values(state.items).flatMap(item => Object.values(item.cues))
+        .flatMap(record => [...(record.attemptHistory ?? []), record])
+        .filter(attempt => (attempt.keyVariable ?? 'GEMINI_API_KEY_1') === keyVariable);
+      const pacing = state.projectPacing?.[keyVariable] ?? (keyVariable === (state.keyVariable ?? 'GEMINI_API_KEY_1') ? state.pacing : undefined);
+      return {keyVariable, requests: attempts.length, completedCues: attempts.filter(attempt => attempt.status === 'complete').length,
+        quotaRejections: attempts.filter(quotaRejected).length, nextRequestAt: pacing?.nextRequestAt ?? null};
+    }),
+    automaticRetries: state.independentProjects ? 'known-http-429-only' : 0, uncertainRequestRetries: 0,
+    billingTierVerified: false, minIntervalMs: state.pacing?.minIntervalMs ?? MIN_INTERVAL_MS,
     nextRequestAt: state.pacing?.nextRequestAt ?? null};
+}
+
+export async function generateProjects(output, {independentProjectsConfirmed = false,
+  keyVariables = PROJECT_KEYS, readKey = selectedKey, now = Date.now, ...options} = {}) {
+  assert.equal(independentProjectsConfirmed, true, 'Distinct projects must be explicitly confirmed');
+  assert.equal(options.freeTierConfirmed, true, '--free-tier-confirmed is required');
+  assert.ok(Number.isSafeInteger(options.maxRequests) && options.maxRequests > 0, '--max-requests must be a positive integer');
+  const minIntervalMs = options.minIntervalMs ?? MIN_INTERVAL_MS;
+  assert.ok(Number.isSafeInteger(minIntervalMs) && minIntervalMs >= MIN_INTERVAL_MS && minIntervalMs <= MAX_INTERVAL_MS,
+    '--min-interval-ms must be an integer from 15000 to 2147483647');
+  assert.ok(Array.isArray(keyVariables) && keyVariables.length > 1 && keyVariables.every(name => PROJECT_KEYS.includes(name)), 'Invalid independent project selection');
+  assert.equal(new Set(keyVariables).size, keyVariables.length, 'Duplicate independent project');
+  const {batch, catalogue, state: initial} = loadBatch(output);
+  if (options.ids !== undefined) {
+    assert.ok(Array.isArray(options.ids) && options.ids.length && options.ids.every(safeId), '--ids must contain known unique IDs');
+    assert.equal(new Set(options.ids).size, options.ids.length, '--ids must contain known unique IDs');
+    assert.ok(options.ids.every(id => catalogue.items.some(item => item.id === id)), '--ids must contain known unique IDs');
+  }
+  const selected = catalogue.items.filter(item => options.ids === undefined || options.ids.includes(item.id));
+  const keys = new Map(keyVariables.map(name => [name, readKey(name)]));
+  assert.ok([...keys.values()].every(value => typeof value === 'string' && value.trim()), 'A configured project credential is missing');
+  assert.equal(new Set(keys.values()).size, keys.size, 'Repeated credential values cannot represent independent projects');
+  const blocked = new Set();
+  const initialRequests = initial.requests;
+  await locked(batch, () => {
+    const {state} = loadBatch(batch);
+    state.independentProjects = [...keyVariables];
+    save(join(batch, 'progress.json'), state);
+  });
+  while (true) {
+    const {state} = loadBatch(batch);
+    if (selected.every(item => state.items[item.id]?.status === 'complete')) return batchStatus(batch);
+    if (state.requests - initialRequests >= options.maxRequests) return batchStatus(batch);
+    const available = keyVariables.filter(name => !blocked.has(name)).map(name => {
+      const pacing = state.projectPacing?.[name] ?? (name === (state.keyVariable ?? 'GEMINI_API_KEY_1') ? state.pacing : undefined);
+      const next = pacing ? Date.parse(pacing.nextRequestAt) : 0;
+      assert.ok(Number.isFinite(next), 'Invalid project pacing');
+      return {name, next};
+    }).filter(project => project.next <= now() || project.next - now() <= minIntervalMs);
+    available.sort((first, second) => first.next - second.next || keyVariables.indexOf(first.name) - keyVariables.indexOf(second.name));
+    if (!available.length) {
+      await locked(batch, () => {
+        const {state: latest} = loadBatch(batch);
+        latest.status = 'projects-quota-limit';
+        save(join(batch, 'progress.json'), latest);
+      });
+      return batchStatus(batch);
+    }
+    const keyVariable = available[0].name;
+    const before = state.requests;
+    try {
+      await generateBatch(batch, {...options, now, maxRequests: 1, resumeQuota: true,
+        keyVariable, readKey: () => keys.get(keyVariable)});
+    } catch (error) {
+      const {state: after} = loadBatch(batch);
+      if (after.status !== 'quota-limit' || after.requests !== before + 1) throw error;
+      blocked.add(keyVariable);
+    }
+  }
 }
 
 export async function publishBatch(output, destination = join(ROOT, 'static/audio'), {source = ROOT} = {}) {
@@ -750,7 +834,7 @@ export async function publishBatch(output, destination = join(ROOT, 'static/audi
 }
 
 export async function main(args = process.argv.slice(2)) {
-  const usage = 'Usage: gemini-course.mjs --prepare|--status|--generate|--publish /absolute/batch [--source directory] [--out public-audio-directory] [--max-requests N --free-tier-confirmed [--ids id1,id2] [--resume-quota] [--min-interval-ms 15000..2147483647]]';
+  const usage = 'Usage: gemini-course.mjs --prepare|--status|--generate|--publish /absolute/batch [--source directory] [--out public-audio-directory] [--max-requests N --free-tier-confirmed [--independent-projects] [--ids id1,id2] [--resume-quota] [--min-interval-ms 15000..2147483647]]';
   const [mode, batch, ...flags] = args;
   assert.ok(['--prepare', '--status', '--generate', '--publish'].includes(mode) && batch && isAbsolute(batch), usage);
   const options = {};
@@ -761,6 +845,7 @@ export async function main(args = process.argv.slice(2)) {
     assert.ok(!seen.has(flag), 'Duplicate option');
     seen.add(flag);
     if (flag === '--free-tier-confirmed' && mode === '--generate') options.freeTierConfirmed = true;
+    else if (flag === '--independent-projects' && mode === '--generate') options.independentProjectsConfirmed = true;
     else if (flag === '--resume-quota' && mode === '--generate') options.resumeQuota = true;
     else {
       const value = flags[++index];
@@ -779,7 +864,7 @@ export async function main(args = process.argv.slice(2)) {
   }
   if (mode === '--prepare') return prepareBatch(batch, options);
   if (mode === '--status') return batchStatus(batch);
-  if (mode === '--generate') return generateBatch(batch, options);
+  if (mode === '--generate') return options.independentProjectsConfirmed ? generateProjects(batch, options) : generateBatch(batch, options);
   return publishBatch(batch, destination, options);
 }
 

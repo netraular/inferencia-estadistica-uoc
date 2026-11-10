@@ -6,7 +6,8 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {test} from 'node:test';
 import {MODEL, VOICE, STYLE, ENDPOINT, buildCatalogue, canonicalAnimation, catalogueSummary, loadBatch,
-  prepareBatch, speechRequest, validateWav, generateBatch, batchStatus, publishBatch, main, assembleItem} from '../scripts/tts/gemini-course.mjs';
+  prepareBatch, speechRequest, validateWav, generateBatch, generateProjects, PROJECT_KEYS,
+  batchStatus, publishBatch, main, assembleItem} from '../scripts/tts/gemini-course.mjs';
 import {retainedSection} from '../scripts/tts/prepare-sections.mjs';
 import {publicProvenance} from '../scripts/prepare-media.mjs';
 
@@ -90,6 +91,79 @@ function fakeClock(start = Date.parse('2026-11-10T12:10:00.000Z')) {
 }
 
 const options = {maxRequests: 1, freeTierConfirmed: true, readKey: () => 'test-only-key', ...fakeClock()};
+
+test('independent projects preserve exhausted legacy quota and distribute requests without repeating audio', async context => {
+  const batch = fixtureBatch(context, {scenes: 2});
+  const clock = fakeClock();
+  await assert.rejects(generateBatch(batch, {...options, ...clock,
+    fetchImpl: async () => ({ok: false, status: 429, headers: new Headers({'retry-after': '86400'}), json: async () => ({})})}), /HTTP 429/);
+  const used = [];
+  const result = await generateProjects(batch, {...options, ...clock, maxRequests: 4, independentProjectsConfirmed: true,
+    readKey: name => `offline-${name}`, fetchImpl: async (url, request) => {
+      used.push(request.headers['x-goog-api-key']);
+      return audioResponse();
+    }});
+  assert.equal(result.completedItems, 1);
+  assert.equal(result.requests, 5);
+  assert.deepEqual(used, PROJECT_KEYS.slice(1, 5).map(name => `offline-${name}`));
+  assert.deepEqual(clock.waits, []);
+  const {state} = loadBatch(batch);
+  assert.equal(state.items['lesson--section'].cues[0].attemptHistory[0].httpStatus, 429);
+  assert.equal(state.projectPacing.GEMINI_API_KEY_1.nextRequestAt, '2026-11-11T12:10:00.000Z');
+});
+
+test('independent projects stop each exhausted project and retain every rejected attempt', async context => {
+  const batch = fixtureBatch(context);
+  const clock = fakeClock();
+  let calls = 0;
+  const result = await generateProjects(batch, {...options, ...clock, maxRequests: 20,
+    independentProjectsConfirmed: true, readKey: name => `offline-${name}`,
+    fetchImpl: async () => { calls++; return {ok: false, status: 429, json: async () => ({})}; }});
+  assert.equal(calls, 6);
+  assert.equal(result.status, 'projects-quota-limit');
+  assert.equal(result.requests, 6);
+  assert.ok(result.projects.every(project => project.quotaRejections === 1));
+  assert.equal(loadBatch(batch).state.items['lesson--section'].cues[0].attemptHistory.length, 5);
+});
+
+test('independent projects require confirmation and unique credentials, and never retry ambiguous failures elsewhere', async context => {
+  const batch = fixtureBatch(context);
+  await assert.rejects(generateProjects(batch, {...options}), /Distinct projects/);
+  await assert.rejects(generateProjects(batch, {...options, independentProjectsConfirmed: true}), /Repeated credential/);
+  let calls = 0;
+  await assert.rejects(generateProjects(batch, {...options, independentProjectsConfirmed: true,
+    readKey: name => `offline-${name}`, fetchImpl: async () => {calls++; throw Error('offline');}}), /Network request/);
+  assert.equal(calls, 1);
+  assert.equal(loadBatch(batch).state.requests, 1);
+});
+
+test('independent projects retain per-project pacing across invocations and validate before reading credentials', async context => {
+  const batch = fixtureBatch(context, {scenes: 7});
+  const clock = fakeClock();
+  const starts = new Map();
+  const pool = {...options, ...clock, independentProjectsConfirmed: true, readKey: name => `offline-${name}`,
+    fetchImpl: async (url, request) => {
+      const key = request.headers['x-goog-api-key'];
+      const times = starts.get(key) ?? [];
+      times.push(clock.now());
+      starts.set(key, times);
+      return audioResponse();
+    }};
+  for (const minIntervalMs of [0, 14999, 15000.5, 2147483648]) {
+    await assert.rejects(generateProjects(batch, {...pool, minIntervalMs,
+      readKey: () => {throw Error('must not read credentials');}}), /min-interval-ms/);
+  }
+  await generateProjects(batch, {...pool, maxRequests: 7});
+  const result = await generateProjects(batch, {...pool, maxRequests: 7});
+  assert.equal(result.requests, 14);
+  assert.equal(result.completedItems, 1);
+  assert.equal(starts.size, 6);
+  for (const times of starts.values()) {
+    for (let index = 1; index < times.length; index++) assert.ok(times[index] - times[index - 1] >= 15000);
+  }
+  assert.deepEqual(clock.waits, [15000, 15000]);
+  assert.equal(readFileSync(join(batch, 'progress.json'), 'utf8').includes('offline-'), false);
+});
 
 test('paces network starts at 4 RPM across calls and items, excluding completed WAVs', async context => {
   const batch = fixtureBatch(context, {items: [
