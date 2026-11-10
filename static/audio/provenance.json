@@ -2,5 +2,43 @@
   "version": 1,
   "exporter": "data-src/inferencia-estadistica/export-lecturas.mjs",
   "sectionExporter": "scripts/tts/export-narration.mjs",
-  "lessons": {}
+  "lessons": {
+    "proporciones--parte-y-total": {
+      "sourceSignature": "950e99dfe47f444c11286720dfe1104198e0915f59e10b1b0dbb12db0cdd050f",
+      "wavSha256": "7ce204a8590786875f86ebdee710b44bd0e71175b911ab1a4c9cce70fc1c93b5",
+      "canonicalSha256": "0423d718ce854c222fa22c75aceaae326e166cd4cb11b4f27429f26078b54b3d",
+      "mp3Sha256": "17dfb1386634515ebfaf222ae1ebfc32f118f76316d334aa6484c9bd9b20aa0e",
+      "mp3Bytes": 552477,
+      "sourceDuration": 91.98,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "provider": "gemini",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Puck",
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "proporciones--porcentaje-y-exposicion": {
+      "sourceSignature": "a40082fb017f88f81f13b7d0079cd0403b106b694c2bb449ed3c1b642550a182",
+      "wavSha256": "1871e03bbded7c2fcabf9e46f43891e23c856d8621fe108751fbf5cf79a422f1",
+      "canonicalSha256": "57b01fd871a625bc975e8fe5327a722468aaba96b4325c331109bac4143bf3cb",
+      "mp3Sha256": "57344bcb8d7a997c32bc080bd480097038a03e636e3ea32bdb0809147ea67512",
+      "mp3Bytes": 527997,
+      "sourceDuration": 87.9,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "provider": "gemini",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Puck",
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    }
+  },
+  "geminiExporter": "scripts/tts/gemini-course.mjs"
 }

@@ -1,4 +1,176 @@
 {
   "version": 1,
-  "lessons": {}
+  "lessons": {
+    "ejercicio-pdf-u1-1--a": {
+      "parentLesson": "ejercicio-pdf-u1-1",
+      "parentTitle": "Dos sucesos y sus complementos",
+      "sectionId": "a",
+      "sourceSections": [
+        "¿Cuánto vale P(A∪B)?"
+      ],
+      "optional": false,
+      "exerciseId": "pdf-u1-1",
+      "questionId": "a",
+      "lessonIds": [
+        "sucesos",
+        "axiomas"
+      ],
+      "id": "ejercicio-pdf-u1-1--a",
+      "kind": "exercise",
+      "title": "¿Cuánto vale P(A∪B)?",
+      "source": {
+        "file": "Ejercicios_Unidad_1-Soluciones.pdf",
+        "number": "1",
+        "page": 1
+      },
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Puck",
+      "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
+      "mp3Sha256": "ed6a0ddab94700508894bdf264eea97aeca761076bba548f2993455ee138a540",
+      "src": "audio/ejercicio-pdf-u1-1--a.mp3",
+      "duration": 110.088,
+      "sourceDuration": 110.02,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 12.8,
+          "cues": [
+            {
+              "text": "Vamos a resolver este apartado juntos.",
+              "start": 0,
+              "end": 2.68
+            },
+            {
+              "text": "¿Cuánto vale probabilidad de A unión be?",
+              "start": 2.98,
+              "end": 6.46
+            },
+            {
+              "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos.",
+              "start": 6.76,
+              "end": 12.8
+            }
+          ]
+        },
+        {
+          "start": 12.8,
+          "end": 32.06,
+          "cues": [
+            {
+              "text": "A y be nombran sucesos, es decir, conjuntos de resultados.",
+              "start": 13.1,
+              "end": 18.5
+            },
+            {
+              "text": "La unión admite cualquiera de ellos; la intersección exige ambos.",
+              "start": 18.8,
+              "end": 23.92
+            },
+            {
+              "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be.",
+              "start": 24.22,
+              "end": 32.06
+            }
+          ]
+        },
+        {
+          "start": 32.06,
+          "end": 44.84,
+          "cues": [
+            {
+              "text": "probabilidad de A igual a 0 coma 3; probabilidad de be igual a 0 coma 6; probabilidad de A intersección be igual a 0 coma 1.",
+              "start": 32.36,
+              "end": 44.84
+            }
+          ]
+        },
+        {
+          "start": 44.84,
+          "end": 61.78,
+          "cues": [
+            {
+              "text": "pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
+              "start": 45.14,
+              "end": 51.06
+            },
+            {
+              "text": "Empiezo sumándolas.",
+              "start": 51.36,
+              "end": 53.16
+            },
+            {
+              "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez.",
+              "start": 53.46,
+              "end": 61.78
+            }
+          ]
+        },
+        {
+          "start": 61.78,
+          "end": 77.94,
+          "cues": [
+            {
+              "text": "Sumar los dos sucesos. pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
+              "start": 62.08,
+              "end": 69.88
+            },
+            {
+              "text": "Empiezo sumándolas. 0 coma 3 más 0 coma 6 igual a 0 coma 9.",
+              "start": 70.18,
+              "end": 77.94
+            }
+          ]
+        },
+        {
+          "start": 77.94,
+          "end": 95,
+          "cues": [
+            {
+              "text": "Quitar el duplicado.",
+              "start": 78.24,
+              "end": 79.8
+            },
+            {
+              "text": "La intersección, los resultados que cumplen ambos, se contó dos veces.",
+              "start": 80.1,
+              "end": 85.34
+            },
+            {
+              "text": "Resto una copia. probabilidad de A unión be igual a 0 coma 9 menos 0 coma 1.",
+              "start": 85.64,
+              "end": 95
+            }
+          ]
+        },
+        {
+          "start": 95,
+          "end": 100.1,
+          "cues": [
+            {
+              "text": "probabilidad de A unión be queda igual a 0 coma 8.",
+              "start": 95.3,
+              "end": 100.1
+            }
+          ]
+        },
+        {
+          "start": 100.1,
+          "end": 110.02,
+          "cues": [
+            {
+              "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
+              "start": 100.4,
+              "end": 106.16
+            },
+            {
+              "text": "La unión incluye el caso en que ocurren ambos.",
+              "start": 106.46,
+              "end": 110.02
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

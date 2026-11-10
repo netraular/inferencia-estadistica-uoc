@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "lessons": {
+    "ejercicio-pdf-u1-1--a": {
+      "sourceSignature": "5b21c5c4f0b3a3a88e03605c21de1fefb6a5839bdd7265b6828268237ae9b642",
+      "wavSha256": "c917dc75124543ddaab25019ac0f129ee591af51ef34b83d76fe5ba2ac96ecab",
+      "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
+      "mp3Sha256": "ed6a0ddab94700508894bdf264eea97aeca761076bba548f2993455ee138a540",
+      "mp3Bytes": 660765,
+      "sourceDuration": 110.02,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "provider": "gemini",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Puck",
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    }
+  },
+  "geminiExporter": "scripts/tts/gemini-course.mjs"
+}
