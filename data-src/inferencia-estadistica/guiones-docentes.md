@@ -1,7 +1,13 @@
 # Guiones docentes y realización visual
 
-Propuesta editorial para sustituir las locuciones de los vídeos del curso.
-No modifica el texto de estudio, el reproductor ni los audios publicados.
+Documento editorial de base para las locuciones y su realización visual.
+La revisión integrada de 2026-11-10 ya está en los guiones activos de
+[apartados](../../pages/inferencia/lesson-sections.js),
+[repasos](../../pages/inferencia/lecture-story.js) y
+[ejercicios](../../pages/inferencia/exercise-narration.js), contrastados con los
+PDF de materiales. Esas fuentes, no este documento, generan las transcripciones
+del reproductor y los exportadores. Incluyen desarrollos y ejemplos dependientes
+de datos que no están en esta propuesta. Los audios publicados no se han regrabado.
 Contiene los 118 apartados de las 36 lecciones del temario: 472 intervenciones
 con sus correspondientes indicaciones visuales. Los identificadores corresponden
 a los apartados de [lesson-sections.js](../../pages/inferencia/lesson-sections.js).
@@ -12,8 +18,8 @@ en el orden de las frases, no todas al comenzar la intervención.
 ## Índice de producción
 
 Cada fila identifica una lección y su primer apartado. Los demás apartados de
-esa lección aparecen inmediatamente después, en orden de montaje. El repaso
-global de la teoría se compone encadenándolos, con el tratamiento de bienvenida
+esa lección aparecen inmediatamente después, en orden de montaje. Como propuesta
+de producción, el repaso de la teoría puede montarse encadenándolos, con el tratamiento de bienvenida
 y transiciones indicado a continuación; no se intercala una segunda versión
 del mismo concepto tomada de los apuntes. Este documento no sustituye los
 enunciados ni las soluciones dependientes de datos del banco de ejercicios.

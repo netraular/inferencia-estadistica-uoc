@@ -179,5 +179,50 @@ Fuente: [enunciado de PEC 1](../../static/materiales/UOC-MU-IE-2026-27-S1-PEC1-e
 - KaTeX, DOM, tutor, graficas y contratos numericos se ejecutaron con resultado correcto. Las respuestas cualitativas no se convierten en ceros ni registran aciertos ficticios.
 - Todas las escenas y apartados tienen una figura inicial, y las operaciones aparecen en su frase, no en la siguiente. La geometria y las fases se prueban con canvas real, sin afirmar una inspeccion visual en navegador.
 - Los ejemplos y demostraciones tienen redaccion propia. Se cubren conceptos, familias y apartados de ejercicios, no una copia literal de cada parrafo, figura, programa R o enlace externo. La tabla comparativa, los dados, las series y las deducciones gaussianas se ampliaron despues de la primera revision.
-- Los 118 guiones hablados conservan su texto para mantener compatibles sus audios medidos. Las nuevas derivaciones formales estan en los apuntes completos, no se afirma que todas se hayan grabado. La lectura global tiene 521 escenas y usa reloj estimado: no hay audio global publicado.
+- En la revision de 2026-11-06 los 118 guiones hablados conservaban su texto para mantener compatibles sus audios medidos. Las nuevas derivaciones formales estaban en los apuntes completos. La lectura global tenia 521 escenas y usaba reloj estimado. Esta situacion cambia con la revision de guiones siguiente; no se han generado nuevas grabaciones.
 - El versionador comprueba las dependencias del reproductor y del tutor y propaga las huellas al aula y al HTML. Las tres paginas del tema 5 se generan desde su fuente; las 36 lecciones conservan IDs y progreso.
+
+## Revision integrada de guiones: 2026-11-10
+
+La fuente principal siguen siendo los ocho PDF de materiales. Se ha vuelto a
+extraer su texto por pagina fisica y se ha contrastado la narracion con los cuatro
+temas, los solucionarios y las dos paginas de PEC 1. La extraccion no verifica
+por si sola las figuras ni la correcta lectura de toda la notacion matematica.
+Las erratas documentadas arriba siguen corregidas; no se han cambiado respuestas,
+tolerancias, identificadores ni el alcance opcional para acomodar la narracion.
+
+| Superficie activa | Alcance revisado | Fuente del guion |
+| --- | --- | --- |
+| Lecciones | 118 apartados de 36 lecciones; bienvenida, objetivo, simbolos, razonamiento e interpretacion | [lesson-sections.js](../../pages/inferencia/lesson-sections.js) |
+| Resumen | 36 repasos; teoria, ejemplos resueltos y comprobacion final razonada | [lecture-story.js](../../pages/inferencia/lecture-story.js) y [animations.js](../../pages/inferencia/animations.js) |
+| Ejercicios | 157 ejercicios / 387 preguntas del catalogo, incluidos 22 problemas PDF y 3 de PEC; tambien las variantes de 36 generadores | [exercise-narration.js](../../pages/inferencia/exercise-narration.js) |
+| Figuras | 538 checkpoints de los apartados y repasos, vinculados a las nuevas frases | [lesson-visuals.js](../../pages/inferencia/lesson-visuals.js) |
+
+La revision independiente detecto que el percentil 95 normal conservaba el
+sombreado de otro intervalo. Se corrigieron tanto ese caso como los anclajes
+obsoletos: el cuantil 46,58 se corresponde con z = 1,64485 y area izquierda 0,95.
+Los controles rechazan citas inexistentes, ambiguas o superpuestas y comprueban
+la evolucion de las figuras al avanzar y retroceder.
+
+Las soluciones individuales y los ejemplos de resumen comparten el mismo guion.
+Se explican la eleccion del modelo, los datos, los supuestos aplicables, las
+operaciones y el resultado. La lectura verbal conserva las formulas originales
+en la pizarra, distingue parametros y evita llamadas de biblioteca en la locucion.
+Tambien se ampliaron pasos escritos de gamma, varianzas muestrales, binomial
+negativa, Cauchy, Weibull y normal bivariante cuando necesitaban aclaracion.
+
+Los controles focales abarcan las 387 preguntas del catalogo y 32 semillas por
+generador, las 87 respuestas numericas PDF, las respuestas cualitativas PEC,
+KaTeX, exportaciones y fases de canvas real a 320 y 960 pixeles. Esto no sustituye
+una escucha ni una comprobacion en navegador, que no se han realizado.
+
+Los lotes TTS congelados, los MP3, el video pregrabado y sus firmas se conservan.
+Las grabaciones se comprueban contra sus propias frases congeladas y se rechazan
+para guiones activos diferentes. El video nativo tambien exige coincidencia
+exacta de frases. Producir medios para esta revision exige otro lote y nuevos
+tiempos medidos; no se han generado ni desplegado medios nuevos.
+
+Cierre de verificacion: `npm test` pasa 164 pruebas de integracion y 200 del
+motor (364 en total); `npm run build` compila cliente, servidor y paginas;
+`npm run audit:security` pasa su umbral, con cinco avisos leves existentes.
+No se han fusionado estos cambios en main ni desplegado el sitio.

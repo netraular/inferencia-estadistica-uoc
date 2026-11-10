@@ -74,7 +74,7 @@ Animated Recap retains the complete global walkthrough of the lesson; it has
 no published audio and runs on the estimated clock. Laboratories appear only as
 the six reading figures and inside the legacy fixture, not as a tab.
 
-All 118 sections and 521 global recap scenes start with a contextual figure.
+All 118 sections and 36 global recaps start with a contextual figure.
 The shared renderer binds geometry and highlights to the current spoken cue,
 including inverse sampling, event regions, trial sequences, nonlinear dependence
 and bivariate normal contours. Future calculations remain hidden until introduced.
@@ -85,12 +85,20 @@ searchable glossary. Section audio has its own stable IDs and measured phrase
 timings, and can be generated and published incrementally without changing the
 global recap or an earlier frozen TTS batch.
 
-A complete [Spanish teacher-style script and visual storyboard](data-src/inferencia-estadistica/guiones-docentes.md)
-is available for editorial review and production: all 118 theory sections across
-36 lessons, with paired narration and visual directions, pacing guidance and
-global-recap assembly instructions. It is not yet wired into the player or audio
-exporters and does not replace the published recordings or data-dependent
-exercise solutions. New recordings must use newly measured timings.
+The active scripts for all 118 sections and 36 recaps have been rewritten against
+the PDFs in `static/materiales/`. They introduce the question, explain why each
+operation applies and interpret its result. The shared `exercise-narration.js`
+supplies the same reasoning to exercise videos and worked recap examples,
+including PDF, PEC and seeded practice questions. Formula and figure reveals
+follow the revised phrases; numeric answers and source errata remain checked.
+The [editorial storyboard](data-src/inferencia-estadistica/guiones-docentes.md)
+remains a production reference, not the runtime transcript source.
+
+Existing recordings retain their original scripts, hashes and measured timings.
+Incompatible audio is not played; a prerecorded video is also used only when
+its recorded cues exactly match the active script. New audio and video require
+separate production with newly measured timings. No recordings were regenerated
+as part of this script review.
 
 Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
 density, marginals, continuous conditioning and the bivariate normal. Each starts

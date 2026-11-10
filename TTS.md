@@ -14,6 +14,13 @@ La opcion recomendada tras cambiar los textos es usar otra carpeta de salida.
 Conserva el lote anterior para reanudar su guion original; no sobrescribas su copia
 del curso con textos nuevos.
 
+La revision de guiones de 2026-11-10 cambia los 118 apartados, los 36 repasos y
+las soluciones narradas. Los MP3 y el video pregrabado conservan la locucion
+anterior: no se han regenerado ni se deben reasignar a las nuevas frases.
+El reproductor descarta las grabaciones incompatibles. Para producir esta revision
+hay que preparar otro lote y medir de nuevo sus fragmentos; no reutilices las
+marcas temporales antiguas.
+
 ## Preparar el entorno local
 
 En esta maquina Ming y sus dependencias ya estan instalados. Ejecuta los bloques
@@ -42,8 +49,10 @@ Las lecturas usan un guion hablado propio para las 36 lecciones en
 `pages/inferencia/lecture-story.js`, no una lectura literal de los apartados
 de la web. Cada ejemplo avanza en intervenciones conectadas; cada dato, formula
 o grafico se asocia a la intervencion que lo introduce. La practica resuelta se
-incorpora desde `pages/inferencia/animations.js`, conservando los datos del
-generador. Para cambiar lo que se dice y cuando aparece, modifica esas fuentes,
+incorpora desde `pages/inferencia/animations.js`, usando el mismo guion de
+`pages/inferencia/exercise-narration.js` que las soluciones individuales y
+conservando los datos del generador. Los 118 apartados usan
+`pages/inferencia/lesson-sections.js`. Para cambiar lo que se dice y cuando aparece, modifica esas fuentes,
 no los TXT del lote.
 
 Sin audio, los tiempos de frase son estimados. El reproductor puede usar los
