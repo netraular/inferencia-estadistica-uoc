@@ -6,13 +6,15 @@ import {parseHTML} from 'linkedom';
 import {createCanvas} from '@napi-rs/canvas';
 import {COURSE} from '../pages/inferencia/course.js';
 import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
-import {generateExercise, gradeAnswer, scopeExercise} from '../pages/inferencia/exercises.js';
+import {EXERCISE_TYPES, generateExercise, gradeAnswer, scopeExercise} from '../pages/inferencia/exercises.js';
+import {getCapstoneExercises} from '../pages/inferencia/capstone.js';
 import {getPdfExercises, PDF_EXERCISE_CATALOGUE} from '../pages/inferencia/pdf-exercises.js';
-import {createTutorFrames, drawTutorFigure} from '../pages/inferencia/exercise-tutor.js';
+import {createTutorFrames, drawTutorFigure, stageEquations} from '../pages/inferencia/exercise-tutor.js';
 import {mountAula, readParagraphs} from '../pages/inferencia/app.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
 import {notationHtml} from '../pages/inferencia/teaching.js';
 import {exerciseAnimation, exerciseCatalogue, lessonPractice, mountExercises, createExerciseSpeech} from '../pages/inferencia/exercise-solutions.js';
+import {exerciseNarration} from '../pages/inferencia/exercise-narration.js';
 
 const require = createRequire(import.meta.url);
 const jStat = require('jstat').jStat;
@@ -38,6 +40,17 @@ function withStatistics(action) {
 function close(actual, expected, context, tolerance = 1e-9) {
   assert.ok(Number.isFinite(actual),context);
   assert.ok(Math.abs(actual-expected) <= tolerance,`${context}: ${actual} != ${expected}`);
+}
+
+function assertNarrated(beats,text,context) {
+  assert.ok(beats.some(beat=>beat.say.includes(text) || beat.show.some(line=>line.value===text)),context || text);
+}
+
+function assertSpokenNotation(beats,context) {
+  const spoken=beats.map(beat=>beat.say).join(' ');
+  assert.doesNotMatch(spoken,/[=<>^_α-ωΑ-Ω²³⁻ᶜᵃᵢⱼ∪∩∑∫√{}]|(?<!\p{L})-(?=\d)/gu,context);
+  const assumptions=beats.filter(beat=>beat.title==='Condiciones del razonamiento').map(beat=>beat.say).join(' ');
+  assert.doesNotMatch(assumptions,/consultar Phi|origen conocido|pesos actualizados|La independencia permite multiplicar/,context);
 }
 
 function binomialMass(total, probability, selected) {
@@ -150,11 +163,10 @@ test('narrated exercise catalogue preserves every written explanation and keeps 
   for(const exercise of catalogue) for(const question of exercise.questions) {
     const animation=exerciseAnimation(exercise,question);
     assert.equal(ids.has(animation.id),false,animation.id);ids.add(animation.id);
-    const narration=animation.steps.map(step=>step.caption).join(' ');
-    for(const step of question.steps) assert.ok(narration.includes(step.explanation),`${exercise.id}/${question.id}/${step.title}`);
+    for(const step of question.steps) assertNarrated(exerciseNarration(exercise,question),step.explanation,`${exercise.id}/${question.id}/${step.title}`);
     for(const step of animation.steps) for(const line of step.visual.lines) if(line.tex) assert.doesNotThrow(()=>katex.renderToString(line.tex,{throwOnError:true}));
     assert.ok(animation.steps[0].caption.startsWith('Vamos a resolver'));
-    assert.ok(animation.steps.at(-1).caption.includes(question.interpretation || question.answerText));
+    assertNarrated(exerciseNarration(exercise,question),question.interpretation || question.answerText);
   }
   for(const lesson of COURSE.units.flatMap(unit=>unit.lessons)) {
     assert.deepEqual(lessonPractice(lesson),lessonPractice(lesson));
@@ -164,6 +176,202 @@ test('narrated exercise catalogue preserves every written explanation and keeps 
       const exercise=catalogue.find(item=>item.id===`ejemplo-${lesson.id}-${type}-${seed}`);
       assert.ok(exercise,`${lesson.id}/${section.id}`);
       for(const id of questionIds)assert.ok(exercise.questions.some(question=>question.id===id),`${lesson.id}/${section.id}/${id}`);
+    }
+  }
+}));
+
+test('shared narration preserves the reasoning and formulae of every catalogue question', () => withStatistics(() => {
+  for(const exercise of exerciseCatalogue())for(const question of exercise.questions) {
+    const snapshot=JSON.stringify(exercise);
+    const beats=exerciseNarration(exercise,question);
+    const spoken=beats.map(beat=>beat.say).join(' ');
+    assertSpokenNotation(beats,`${exercise.id}/${question.id}`);
+    for(const value of [...exercise.given,...exercise.assumptions])assertNarrated(beats,value);
+    for(const step of question.steps) {
+      assertNarrated(beats,step.explanation,`${exercise.id}/${question.id}/${step.title}`);
+      for(const part of stageEquations(step))if(part.tex)assert.ok(beats.some(beat=>beat.show.some(line=>line.tex===part.tex)));
+    }
+    assert.ok(beats.every(beat=>beat.say.trim() && beat.show.length));
+    assert.ok(beats.some(beat=>beat.title==='Por qué sirve este método' && beat.say.length>100));
+    assertNarrated(beats,question.hint);
+    assert.doesNotMatch(spoken,/Continuamos el cálculo|sin cambiar los datos|undefined|NaN/);
+    assert.equal(JSON.stringify(exercise),snapshot,'La narración no modifica preguntas, respuestas ni diagramas.');
+    for(const beat of beats)for(const line of beat.show)if(line.tex)assert.doesNotThrow(()=>katex.renderToString(line.tex,{throwOnError:true}));
+  }
+}));
+
+test('all 36 generator families narrate every question across 32 seeds and retain boundary conventions', () => withStatistics(() => {
+  const variants=new Map(EXERCISE_TYPES.map(({id})=>[id,new Set()]));
+  const covarianceSigns=new Set();
+  const independenceCases=new Set();
+  const eventIndependenceCases=new Set();
+  const failureCounts=new Set();
+  for(const {id:type} of EXERCISE_TYPES)for(let seed=1;seed<=32;seed++) {
+    const exercise=generateExercise(type,seed);
+    variants.get(type).add(JSON.stringify(exercise.visual.params));
+    if(type==='bivariate-normal')covarianceSigns.add(Math.sign(exercise.visual.params.rho));
+    if(type==='independence')independenceCases.add(exercise.visual.params.independent);
+    if(type==='event-independence') {
+      const {probabilityA,probabilityB,both}=exercise.visual.params;
+      eventIndependenceCases.add(Math.abs(both-probabilityA*probabilityB)<1e-12);
+    }
+    if(type==='negative-binomial')failureCounts.add(exercise.visual.params.k);
+    for(const question of exercise.questions) {
+      const beats=exerciseNarration(exercise,question);
+      const context=`${type}/${seed}/${question.id}`;
+      assertSpokenNotation(beats,context);
+      for(const value of [...exercise.given,...exercise.assumptions])assertNarrated(beats,value,context);
+      assertNarrated(beats,question.prompt,context);
+      assert.equal(beats[0].show[0].value,question.prompt,context);
+      assertNarrated(beats,question.interpretation,context);
+      for(const step of question.steps)assertNarrated(beats,step.explanation,context);
+      assert.doesNotMatch(beats.map(beat=>beat.say).join(' '),/Continuamos el cálculo|undefined|NaN/,context);
+    }
+  }
+  assert.equal(variants.size,36);
+  for(const [type,values] of variants)assert.ok(values.size>1,type);
+  assert.deepEqual([...covarianceSigns].sort(),[-1,0,1]);
+  assert.deepEqual([...independenceCases],[false]);
+  assert.deepEqual([...eventIndependenceCases].sort(),[false,true]);
+  assert.ok(failureCounts.has(0) && failureCounts.has(6));
+}));
+
+test('narration explains integral limits and reads new equality results without truncating event conditions', () => withStatistics(() => {
+  const pdf=getPdfExercises();
+  const exercise=pdf.find(item=>item.id==='pdf-u2-2.3');
+  const question=exercise.questions.find(item=>item.id==='b-cdf');
+  const beats=exerciseNarration(exercise,question);
+  const integration=beats.filter(beat=>beat.title==='Integrar en el soporte');
+  assert.equal(integration.length,2);
+  assert.match(integration[0].say,/integral desde 0 hasta equis minúscula de/);
+  assert.match(integration[0].say,/evaluado desde 0 hasta equis minúscula/);
+  assert.doesNotMatch(integration[0].say,/integral subíndice|integral.*elevado a x/);
+  assert.notEqual(integration[0].say,integration[1].say);
+  const count=pdf.find(item=>item.id==='pdf-u2-2.5');
+  const mass=exerciseNarration(count,count.questions[0]).filter(beat=>beat.title==='Combinar los factores');
+  assert.match(mass.at(-1).say,/probabilidad de equis igual a 10 queda igual a/);
+  const sample=generateExercise('sample',1);
+  const assumptions=exerciseNarration(sample,sample.questions[0]).filter(beat=>beat.title==='Condiciones del razonamiento');
+  assert.ok(assumptions.some(beat=>/no hace falta normalidad/i.test(beat.say) && /varianza finita bastan/.test(beat.say)));
+}));
+
+test('a multinomial count and construction of a full joint distribution have distinct narrated objectives', () => withStatistics(() => {
+  const pdf=getPdfExercises();
+  const labyrinth=pdf.find(item=>item.id==='pdf-u3-8');
+  const laboratory=pdf.find(item=>item.id==='pdf-u3-1');
+  const synthetic=generateExercise('multinomial',1);
+  for(const exercise of [labyrinth,synthetic]) {
+    const narration=exerciseNarration(exercise,exercise.questions[0]);
+    assert.match(narration[0].say,/tres recuentos.*simultáneamente/);
+    assert.doesNotMatch(narration[0].say,/construir la distribución completa/);
+  }
+  assert.match(exerciseNarration(laboratory,laboratory.questions[0])[0].say,/construir la distribución completa/);
+}));
+
+test('assumption reasons never infer a Gaussian law, hidden origins or independence from unrelated words', () => withStatistics(() => {
+  for(const type of ['normalization','continuous-joint','conditional','multinomial','combinatorics']) {
+    const exercise=generateExercise(type,1);
+    const conditions=exerciseNarration(exercise,exercise.questions[0]).filter(beat=>beat.title==='Condiciones del razonamiento');
+    const spoken=conditions.map(beat=>beat.say).join(' ');
+    assert.doesNotMatch(spoken,/consultar Phi|origen conocido|pesos actualizados|La independencia permite multiplicar|muestras equiprobables/);
+    if(type==='continuous-joint')assert.match(spoken,/no exige independencia/);
+  }
+  const hypergeometric=generateExercise('hypergeometric',1);
+  assert.ok(exerciseNarration(hypergeometric,hypergeometric.questions[0]).some(beat=>/Cada extracción modifica/.test(beat.say)));
+}));
+
+test('spoken mathematics preserves factorial equalities, intervals, powers, coordinates and indexed indicators', () => withStatistics(() => {
+  const base=generateExercise('gamma',1);
+  const narrate=(prompt,tex)=>exerciseNarration(base,{...base.questions[0],prompt,hint:prompt,interpretation:prompt,steps:[{title:'Lectura',explanation:prompt,...(tex ? {tex} : {})}]});
+  const source='Calcula E[T]. Forma k=2; escala α=4; tasa r=1/α=0,25. El intervalo [-0,5,1,5] contiene x₀. C_i indica el origen; L_i indica el lunes. Γ(m+1)=m!, incluido 0!=1. La integración usa un límite.';
+  const beats=narrate(source);
+  const spoken=beats[0].say;
+  assert.match(spoken,/Calcula esperanza de te/);
+  assert.match(spoken,/Forma ka igual a 2; escala alfa igual a 4; tasa erre igual a 1 dividido entre alfa igual a 0 coma 2 5/);
+  assert.match(spoken,/intervalo cerrado desde menos 0 coma 5 hasta 1 coma 5/);
+  assert.match(spoken,/ce subíndice i indica el origen; ele subíndice i indica el lunes/);
+  assert.match(spoken,/0 factorial igual a 1/);
+  assert.match(spoken,/La integración usa un límite/);
+  assert.doesNotMatch(spoken,/distinto de|verosimilitud/);
+  const formula=String.raw`P(X=10)=\frac{\binom{12}{10}0.00000123^{10}}{(1-0.2)^2}`;
+  const calculation=narrate('Evaluamos la probabilidad.',formula).filter(beat=>beat.title==='Lectura');
+  const reading=calculation.map(beat=>beat.say).join(' ');
+  assert.match(reading,/combinaciones de.*12.*tomados de.*10.*en.*10/);
+  assert.match(reading,/0 coma 0 0 0 0 0 1 2 3 elevado a.*10/);
+  assert.match(reading,/dividido entre.*1 menos 0 coma 2.*al cuadrado/);
+  assert.ok(calculation.some(beat=>beat.show.some(line=>line.tex===formula)));
+  const product=narrate('Un producto indexado.',String.raw`\prod_i x_i!\prod_i p_i^{x_i}`).find(beat=>beat.title==='Lectura').say;
+  assert.match(product,/producto para el índice.*factorial.*producto para el índice.*elevado a/);
+  assert.doesNotMatch(product,/hasta/);
+  const poisson=generateExercise('exponential-family',1);
+  const parameter=exerciseNarration(poisson,poisson.questions[0]).find(beat=>beat.title==='Significado: lambda');
+  assert.match(parameter.say,/recuento esperado/);
+  assert.doesNotMatch(parameter.show[0].tex,/escala/);
+  const scientific=narrate('La probabilidad es 1.23000001e-10 y la densidad tiene unidades mg⁻².')[0].say;
+  assert.match(scientific,/1 coma 2 3 0 0 0 0 0 1 por diez elevado a menos 10/);
+  assert.match(scientific,/mg elevado a.*menos 2/);
+  assert.doesNotMatch(scientific,/-/);
+  const square=narrate('No es uniforme sobre [0,a]².')[0].say;
+  assert.match(square,/producto cartesiano de dos copias del intervalo cerrado desde 0 hasta a/);
+  assert.doesNotMatch(square,/hasta a al cuadrado/);
+  const condition=narrate('Usa f_{Y|X}(d | X=x), donde |ρ|<1.')[0].say;
+  assert.match(condition,/sabiendo que equis/);
+  assert.match(condition,/valor absoluto de.*rho/);
+  assert.doesNotMatch(condition,/valor absoluto de.*equis/);
+  const sample=narrate('S²=Σ(Xᵢ-X̄)²/(n-1).')[0].say;
+  assert.match(sample,/suma de.*equis subíndice.*i.*menos media muestral de equis/);
+  assert.doesNotMatch(sample,/Σ|ᵢ/);
+  const support=narrate('F=0,1,2,...; T=F+r.')[0].say;
+  assert.match(support,/efe igual a 0, 1, 2/);
+  assert.doesNotMatch(support,/coma/);
+  const diagnostic=narrate('Calcula P(A|+), P(+|A), P(-).')[0].say;
+  assert.match(diagnostic,/sabiendo que resultado positivo/);
+  assert.match(diagnostic,/resultado positivo sabiendo que A/);
+  assert.match(diagnostic,/resultado negativo/);
+  assert.doesNotMatch(diagnostic,/más|menos/);
+  const complement=narrate('Calculamos un complemento.',String.raw`P(A^c)=1-P(A)`).filter(beat=>beat.title==='Lectura').map(beat=>beat.say).join(' ');
+  assert.match(complement,/probabilidad de complemento de A/);
+  assert.doesNotMatch(complement,/elevado a/);
+  const coordinates=narrate('Identifica la pareja.',String.raw`(Y_1,Y_2)=(2,0)`).filter(beat=>beat.title==='Lectura').map(beat=>beat.say).join(' ');
+  assert.match(coordinates,/2 y 0/);
+  assert.doesNotMatch(coordinates,/2 coma 0/);
+  const normal=narrate('La notación N(0,1) usa media y varianza.')[0].say;
+  assert.match(normal,/normal de media.*0.*y varianza.*1/);
+  assert.doesNotMatch(normal,/0 coma 1/);
+  const open=narrate('El intervalo (-0,5,1,5) excluye sus extremos.')[0].say;
+  assert.match(open,/intervalo abierto desde menos 0 coma 5 hasta 1 coma 5/);
+  const halfOpen=narrate('Usa [0,5;1,5) y (0,5;1,5].')[0].say;
+  assert.match(halfOpen,/desde 0 coma 5 incluido hasta 1 coma 5 excluido/);
+  assert.match(halfOpen,/desde 0 coma 5 excluido hasta 1 coma 5 incluido/);
+}));
+
+test('every narrated input field gets the same spoken reading while its original remains visible', () => withStatistics(() => {
+  const original='Calcula E[T] con α=4.';
+  const reading='Calcula esperanza de te con alfa igual a 4.';
+  const base=generateExercise('gamma',1);
+  const exercise={...base,given:[original],assumptions:[original]};
+  const question={...base.questions[0],prompt:original,hint:original,interpretation:original,steps:[{title:'Leer el dato',explanation:original}]};
+  const beats=exerciseNarration(exercise,question);
+  for(const title of ['Qué vamos a resolver','Datos del enunciado','Condiciones del razonamiento','Elegir el camino','Leer el dato','Resultado e interpretación']) {
+    const beat=beats.find(beat=>beat.title===title);
+    assert.ok(beat.say.includes(reading),title);
+    assert.ok(beat.show.some(line=>line.value===original),title);
+  }
+}));
+
+test('PDF and PEC narration keep the current diagram at every authored stage and qualitative answers stay qualitative', () => withStatistics(() => {
+  const source=readFileSync(new URL('../pages/inferencia/exercise-narration.js',import.meta.url),'utf8');
+  assert.doesNotMatch(source,/import\s+.*(?:animations|lecture-story|exercise-solutions)\.js/);
+  for(const exercise of [...getPdfExercises(),...getCapstoneExercises()])for(const question of exercise.questions) {
+    const beats=exerciseNarration(exercise,question);
+    const stages=beats.filter(beat=>question.steps.some(step=>step.title===beat.title));
+    const frames=createTutorFrames(exercise,question).slice(1,-1);
+    assert.equal(stages.length,frames.length,`${exercise.id}/${question.id}`);
+    for(const [index,frame] of frames.entries())assert.deepEqual(stages[index].context,frame.diagram);
+    if(question.grading?.kind==='qualitative') {
+      assert.equal(question.answer,null);
+      assertNarrated(beats,question.answerText);
+      assert.doesNotMatch(beats.at(-1).say,/El resultado es 0 /);
     }
   }
 }));

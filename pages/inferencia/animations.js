@@ -1,5 +1,6 @@
-import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=c30f66f5fea8';
+import {lessonStory,storyScene,storyLines} from './lecture-story.js?v=7df21981ee5e';
 import {drawContextDiagram,selectContextDiagram} from './context-diagram.js?v=643d4f546e3e';
+import {exerciseNarration} from './exercise-narration.js?v=edc2aec824a7';
 
 const COLORS = ['#0369a1', '#15803d', '#be123c', '#b45309'];
 const scene = (title, caption, kind, data, tex, duration = 10) => ({title, caption, duration: Math.max(duration, Math.ceil(caption.split(/\s+/).length / 2.5)), kind, data, ...(tex ? {tex} : {})});
@@ -287,36 +288,69 @@ export function createLessonAnimation(lesson, createExercise, paragraphs) {
     return allowed ? {...generated,questions:generated.questions.filter(question=>allowed.includes(question.id))} : generated;
   });
   const steps = lessonStory(lesson);
-  const spoken = text => text.replace(/;?\s*jStat\.[\w.]+(?:\([^)]*\))?[^.;]*(?:[.;]|$)/g,'').trim();
   exercises.forEach((exercise,index) => {
-    steps.push(storyScene(`Ejercicio ${index+1}: cambiamos los datos`,'Ejercicios resueltos',[
-      {say:`Vamos a probar la misma idea con otros datos. ${exercise.prompt}`},
-      ...exercise.given.map(value=>({say:spoken(value),show:[{label:'Dato del problema',value}]})),
-      {say:`Antes de hacer la cuenta, necesitamos que se cumpla esto: ${exercise.assumptions.map(spoken).join(' ')}`}
+    steps.push(storyScene(`Ejercicio ${index+1}: el experimento`,'Ejercicios resueltos',[
+      {say:exercise.prompt,show:[{label:'Experimento',value:exercise.title}]}
     ]));
     exercise.questions.forEach((question,questionIndex) => {
-      steps.push(storyScene(`Ejercicio ${index+1} · Qué queremos saber`,'Ejercicios resueltos',[
-        {say:`Ahora la pregunta es esta: ${question.prompt}`},
-        {say:`Pensemos qué necesitamos antes de sustituir números. ${question.hint}`,show:[{label:'Qué buscamos',value:question.prompt}]}
-      ]));
-      question.steps.slice(1,-1).forEach((step,stepIndex) => {
-        const calculations = Array.from(step.explanation.matchAll(/(?<![\p{L}\d])[\d][\d\s.,()+−\-×·*/^²³√!<>≤≥]*=[\d\s.,()+−\-×·*/^²³√!=<>≤≥]+/gu),match=>match[0].trim().replace(/\.$/,''));
-        const show = [...(step.tex ? [{label:step.title,tex:step.tex}] : []),...calculations.slice(-1).map(value=>({label:step.title,value}))];
-        steps.push(storyScene(`E${index+1}.${questionIndex+1} · ${step.title}`,'Ejercicios resueltos',[
-          {say:stepIndex ? ['Ahora podemos hacer la cuenta.','Con eso ya podemos dar el siguiente paso.','Veamos qué cambia al usar estos datos.'][stepIndex%3] : 'Vamos a hacerlo despacio, manteniendo la pregunta a la vista.'},
-          {say:spoken(step.explanation),show}
-        ]));
-      });
-      steps.push(storyScene(`Ejercicio ${index+1} · Qué significa la respuesta`,'Ejercicios resueltos',[
-        {say:`Nos sale ${number(question.answer)} ${question.unit}. Vamos a devolver ese número a la pregunta que habíamos hecho.`,show:[{label:'Resultado',value:`${number(question.answer)} ${question.unit}`} ]},
-        {say:`${question.interpretation} Esa interpretación es la que debemos conservar, no solo el número de la calculadora.`}
-      ]));
+      let context;
+      for (const beat of exerciseNarration(exercise,question)) {
+        const step = storyScene(`E${index+1}.${questionIndex+1} · ${beat.title || 'Razonamiento'}`,'Ejercicios resueltos',[
+          {say:beat.say,show:beat.show || []}
+        ]);
+        if (beat.title === 'Qué vamos a resolver') {
+          const cue = Math.min(1,step.cues.length-1);
+          for (const line of step.visual.lines) line.cue = cue;
+        }
+        context = beat.context || context;
+        if (context) step.visual.context = context;
+        steps.push(step);
+      }
     });
   });
+  const review = {
+    proporciones:'Al reunir grupos, sumamos primero éxitos y totales. Así cada observación pesa lo mismo; promediar porcentajes sin ponderar daría el mismo peso a grupos de tamaños distintos.',
+    algebra:'El denominador completo forma un bloque. Uno dividido entre una suma no es la suma de los inversos; sustituir el resultado en la igualdad original detecta esa transformación incorrecta.',
+    funciones:'El índice indica qué fila recorremos, pero la etiqueta indica qué valor puede observarse. En una esperanza multiplicamos cada valor observado por su masa, no por el número de fila.',
+    calculo:'Una altura debe multiplicarse por anchura o integrarse para dar área. Si la anchura se reduce a cero, la probabilidad puntual es cero aunque la altura siga siendo positiva.',
+    'regiones-matrices':'En cada corte la frontera impone un máximo que depende de la otra coordenada. Límites constantes recorrerían también parejas que exceden la capacidad y cambiarían la región integrada.',
+    sucesos:'La unión permite que ocurran ambos sucesos. Para pedir solo uno hay que excluir expresamente la intersección; por eso conviene marcar los resultados admitidos antes de sumar.',
+    axiomas:'Los axiomas permiten sumar probabilidades de sucesos disjuntos, pero no asignan pesos iguales a resultados. Dividir casos favorables entre posibles exige además justificar la equiprobabilidad.',
+    combinatoria:'Intercambiar dos posiciones etiquetadas cambia la asignación. Dividir por un factorial solo es correcto cuando esas permutaciones representan el mismo resultado del experimento.',
+    condicionada:'La condición cambia el universo de referencia. El denominador reúne únicamente los casos compatibles y positivos; conservar el total anterior calcularía una probabilidad conjunta, no la condicional.',
+    'independencia-sucesos':'Si dos sucesos incompatibles tienen probabilidades positivas, la intersección es cero y su producto es positivo. Esos valores no pueden satisfacer la definición de independencia.',
+    'bayes-diagnostico':'La sensibilidad se refiere a quienes tienen la condición; el valor predictivo se refiere a quienes dieron positivo. Este segundo grupo incluye falsos positivos y depende de la prevalencia.',
+    'variable-cdf':'La acumulada responde también en umbrales imposibles de observar. Entre dos átomos permanece constante porque aún no ha entrado ninguna masa nueva, no porque deje de estar definida.',
+    masa:'Una fórmula de masa incluye su soporte. Fuera de él la masa es cero; dentro sumamos una sola vez cada valor que satisface la desigualdad solicitada.',
+    densidad:'La densidad tiene unidades inversas a las de la variable. Solo al integrarla sobre una longitud obtenemos probabilidad; evaluar una altura no asigna masa a un punto.',
+    esperanza:'La esperanza pondera todos los valores posibles y describe un centro teórico. Puede quedar entre valores que nunca se observan; no obliga a que una observación coincida con ese centro.',
+    varianza:'Al elevar las desviaciones al cuadrado cambian también las unidades. La raíz recupera la unidad original; por eso tipificamos con la desviación, no con la varianza.',
+    'momentos-transformaciones':'Antes de promediar una potencia comprobamos que su valor absoluto sea integrable. La cancelación de colas divergentes no define un momento, aunque una expresión formal parezca dar cero.',
+    'bernoulli-binomial':'En una binomial fijamos el número de ensayos antes de observarlos. Si paramos al alcanzar un éxito, el total es aleatorio y necesitamos una ley de espera, no la misma masa binomial.',
+    poisson:'Lambda es tasa por exposición: si ampliamos el intervalo debe cambiar el recuento esperado. Mantener el número de una tasa sin su unidad introduciría el parámetro de otro intervalo.',
+    hipergeometrica:'Sin reemplazo cambia la composición después de cada extracción. La hipergeométrica conserva esa dependencia y la corrección finita; una binomial puede aproximarla, pero no es el modelo exacto general.',
+    'geometrica-negativa':'Hay que nombrar lo contado antes de calcular: los fracasos empiezan en cero; los ensayos incluyen los éxitos de parada. Se desplaza el soporte, pero no cambia la varianza al añadir una constante.',
+    'uniforme-montecarlo':'Las fórmulas de la uniforme discreta consecutiva usan esa separación regular. Para valores no consecutivos calculamos momentos con los valores reales y sus pesos; no basta con contar cuántas etiquetas hay.',
+    exponencial:'La escala mide tiempo y la tasa su inversa. En la supervivencia se multiplica tasa por tiempo para obtener un exponente sin unidades; esa comprobación permite detectar una parametrización invertida.',
+    normal:'Restar la media conserva unidades de medida. Dividir por la desviación las elimina; dividir por la varianza no produciría la normal estándar y desplazaría todas las probabilidades calculadas.',
+    gamma:'La forma controla la familia de perfiles y solo necesita ser positiva; puede superar uno. En la interpretación de etapas enteras cuenta cuántas esperas sumamos, no la probabilidad de cada etapa.',
+    'cauchy-weibull':'La esperanza requiere convergencia admisible de sus partes positiva y negativa. Un límite simétrico que cancela ambas colas es un valor principal, no una media probabilística de Cauchy.',
+    'calculo-modelos':'Una calculadora puede evaluar correctamente otra pregunta. Escribimos primero el suceso, distinguimos masa, acumulada y cuantil y revisamos soporte, parámetros y unidades de la salida.',
+    'familia-exponencial':'La familia exponencial es una estructura de factorización que incluye recuentos Poisson y modelos binomiales. La distribución exponencial, en cambio, es una ley concreta de espera con riesgo constante.',
+    'conjunta-discreta':'La conjunta suma uno en toda la tabla. Una tabla que suma uno en cada fila describe distribuciones condicionadas y necesita además los pesos marginales de las filas para reconstruir la conjunta.',
+    multinomial:'Cada ensayo debe aportar exactamente una categoría. Si las categorías se superponen, un mismo individuo puede contarse dos veces y los recuentos ya no cumplen el total fijo de la multinomial.',
+    marginales:'Sumar una columna reúne todos los valores de la otra coordenada. Condicionar selecciona un grupo conocido y divide por su peso; esa normalización no aparece al marginalizar.',
+    'conjunta-condicional':'Con densidad, la probabilidad de un punto de la variable condicionante es cero. El cociente usa una densidad marginal positiva y normaliza la integral del corte; no divide por esa probabilidad puntual.',
+    'normal-bivariante':'Las marginales no especifican cómo se emparejan los valores. La normalidad conjunta es el supuesto que garantiza tanto la ley normal condicional como la equivalencia entre incorrelación e independencia.',
+    'independencia-variables':'La independencia exige factorizar toda la distribución. Una igualdad aislada puede ser accidental; una discrepancia válida basta para mostrar que conocer una variable altera alguna probabilidad de la otra.',
+    'covarianza-matrices':'La correlación describe asociación lineal sin unidades, pero no identifica el mecanismo causal. Un factor compartido u otro diseño de observación puede producir la misma asociación.',
+    'combinaciones-incorrelacion':'Las desviaciones de medidas emparejadas pueden reforzarse o compensarse. Su covarianza entra con el producto de coeficientes; eliminarla exige incorrelación justificada, no solo comodidad de cálculo.'
+  }[lesson.id];
   steps.push(storyScene('Qué nos llevamos de esta lección','Repaso',[
-    {say:`Antes de terminar, volvamos a una pregunta corta. ${lesson.check.question} Piensa qué responderías y, sobre todo, por qué.`},
-    {say:`La respuesta que encaja es esta: ${lesson.check.options[lesson.check.answer]}. ${lesson.check.explanation}`,show:[{label:'La idea que importa',value:lesson.check.options[lesson.check.answer]}]},
-    {say:`Y quédate con esta precaución para el próximo problema: ${lesson.pitfalls[0]}`}
+    {say:lesson.formulas.map(formula=>formula.meaning).join(' '),show:[{label:'Síntesis',value:lesson.objectives.join(' ')}]},
+    {say:`Comprobemos si podemos aplicar esa idea a otra situación. ${lesson.check.question} ¿Qué relación permite decidirlo antes de mirar el resultado?`,show:[{label:'Comprobación',value:lesson.check.question}]},
+    {say:lesson.check.explanation,show:[{label:'Conclusión razonada',value:lesson.check.options[lesson.check.answer]}]},
+    {say:`Para revisar el próximo problema, evita este error: ${lesson.pitfalls[0]} ${review}`,show:[{label:'Precaución',value:lesson.pitfalls[0]}]}
   ]));
   return {id:lesson.id,title:lesson.title,kind:'lecture',source:lesson.source,steps};
 }

@@ -6,6 +6,8 @@ import {createRequire} from 'node:module';
 import {runInNewContext} from 'node:vm';
 import {parseHTML} from 'linkedom';
 import {createStoryboard, VIDEO_ID, trays} from '../data-src/course-videos/storyboard.mjs';
+import {COURSE} from '../pages/inferencia/course.js';
+import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 
 const root = new URL('../', import.meta.url);
 const audio = JSON.parse(readFileSync(new URL('static/audio/manifest.json', root)));
@@ -64,7 +66,7 @@ test('lesson videos use base-aware native playback and preserve fallback for oth
   };
   runInNewContext(compiled, {module, exports: module.exports, require: name => name in mocks ? mocks[name] : require(name)});
   const fallback = React.createElement('div', {'data-fallback': true}, 'Original animation');
-  const render = id => renderToStaticMarkup(React.createElement(module.exports.default, {animation: {id}, fallback}));
+  const render = (id, steps = audio.lessons[id]?.scenes.map(scene => ({cues:scene.cues}))) => renderToStaticMarkup(React.createElement(module.exports.default, {animation: {id, steps}, fallback}));
   const {document} = parseHTML(render(VIDEO_ID));
   const video = document.querySelector('video');
   assert.ok(video.hasAttribute('controls'));
@@ -77,6 +79,13 @@ test('lesson videos use base-aware native playback and preserve fallback for oth
   assert.equal(document.querySelectorAll('details p').length, 14);
   assert.equal(document.querySelector('[data-fallback]'), null);
   assert.match(render('proporciones--porcentaje-y-exposicion'), /data-fallback/);
+  assert.match(render('sin-grabacion'), /data-fallback/);
+  assert.match(render(VIDEO_ID, []), /data-fallback/);
+  const revised = createLessonSections(COURSE.units[0].lessons[0])[0].animation;
+  assert.match(render(VIDEO_ID, revised.steps), /data-fallback/);
+  const changed = structuredClone(audio.lessons[VIDEO_ID].scenes);
+  changed[0].cues[0].text = 'Esta frase se ha revisado sin cambiar el identificador.';
+  assert.match(render(VIDEO_ID, changed), /data-fallback/);
   const player = readFileSync(new URL('src/components/LessonSectionPlayer.jsx', root), 'utf8');
   assert.match(player, /<LessonVideo animation=\{section.animation\} fallback=\{<InteractiveLesson/);
 });

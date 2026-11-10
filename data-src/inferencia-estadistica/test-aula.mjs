@@ -349,7 +349,7 @@ test('La pizarra fija conserva 16:9 y contiene fórmulas y diagramas sin ampliar
 test('Published modules and imports use existing .js paths', () => {
   const directory = new URL('../../pages/inferencia/', import.meta.url);
   const files = readdirSync(directory).filter(file => /\.(?:mjs|js)$/.test(file)).sort();
-  assert.deepEqual(files, ['animations.js','app.js','capstone.js','context-diagram.js','course.js','exercise-solutions.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','lesson-visuals.js','pdf-exercises.js','teaching.js']);
+  assert.deepEqual(files, ['animations.js','app.js','capstone.js','context-diagram.js','course.js','exercise-narration.js','exercise-solutions.js','exercise-tutor.js','exercises.js','labs.js','lecture-story.js','lesson-sections.js','lesson-visuals.js','pdf-exercises.js','teaching.js']);
   const {document} = parseHTML(html);
   const scripts = [...document.querySelectorAll('script[type="module"]')];
   assert.ok(scripts.length > 0);
@@ -562,7 +562,7 @@ test('El versionado de recursos es determinista e idempotente', () => {
   const root = versionFixture();
   try {
     const first = versionAssets(root);
-    assert.equal(Object.keys(first.versions).length, 16);
+    assert.equal(Object.keys(first.versions).length, 17);
     assert.deepEqual(versionAssets(root).changed, []);
     const generated = readFileSync(join(root, 'pages', 'inferencia-estadistica.html'), 'utf8');
     for (const match of generated.matchAll(/(?:src|href)="(inferencia\/[^"?]+\.(?:js|css))\?v=([a-f0-9]+)"/g)) {
@@ -601,7 +601,7 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
     const url = new URL(match[1], appUrl);
     assert.equal(url.searchParams.get('v'), assetVersion(readFileSync(url)), `${url.pathname}: ejecuta node version-assets.mjs`);
   }
-  for (const [file, count] of [['animations.js', 2], ['exercise-tutor.js', 1]]) {
+  for (const [file, count] of [['exercise-tutor.js', 1], ['exercise-narration.js', 1], ['animations.js', 3]]) {
     const moduleUrl = new URL(`../../pages/inferencia/${file}`, import.meta.url);
     const imports = [...readFileSync(moduleUrl,'utf8').matchAll(/from ['"]([^'"]+\.js\?v=[a-f0-9]+)['"]/g)];
     assert.equal(imports.length,count);
@@ -615,12 +615,18 @@ test('Las URLs publicadas llevan la huella actual de todos sus recursos', () => 
 test('Cambiar el guion o los diagramas renueva sus URLs y el HTML',()=>{
   const root=versionFixture();
   try{
-    for (const dependency of ['lecture-story.js','context-diagram.js','lesson-visuals.js']) {
+    for (const dependency of ['lecture-story.js','context-diagram.js','exercise-tutor.js','exercise-narration.js','lesson-visuals.js']) {
       const before=versionAssets(root);
       const file=join(root,'pages','inferencia',dependency);
       writeFileSync(file,readFileSync(file,'utf8')+'\n');
       const after=versionAssets(root);
-      const owners=dependency === 'lesson-visuals.js' ? [] : ['animations.js', ...(dependency === 'context-diagram.js' ? ['exercise-tutor.js'] : [])];
+      const owners={
+        'lecture-story.js':['animations.js'],
+        'context-diagram.js':['exercise-tutor.js','exercise-narration.js','animations.js'],
+        'exercise-tutor.js':['exercise-narration.js','animations.js'],
+        'exercise-narration.js':['animations.js'],
+        'lesson-visuals.js':[]
+      }[dependency];
       const assets=[dependency,...owners,'app.js'];
       for(const asset of assets) assert.notEqual(after.versions[`inferencia/${asset}`],before.versions[`inferencia/${asset}`]);
       assert.deepEqual(after.changed,[...owners.map(file=>`pages/inferencia/${file}`),'pages/inferencia/app.js','pages/inferencia-estadistica.html']);

@@ -13,6 +13,7 @@ import {exportLectures} from './export-lecturas.mjs';
 import {storyScene,storyLines} from '../../pages/inferencia/lecture-story.js';
 import {enrichLessonAnimation,enrichGlobalAnimation} from '../../pages/inferencia/lesson-visuals.js';
 import {createLessonSections} from '../../pages/inferencia/lesson-sections.js';
+import {exerciseNarration} from '../../pages/inferencia/exercise-narration.js';
 
 const {ANIMATIONS, animationDuration, buildVtt, createLessonAnimation, mountAnimation} = api;
 const require = createRequire(import.meta.url);
@@ -113,12 +114,11 @@ test('36 clases tienen un relato propio, ejemplos conectados y soluciones comple
     assert.ok(!script.startsWith(current.objectives.join(' ')));
     assert.ok(script.includes(current.check.explanation));
     assert.ok(script.includes(current.pitfalls[0]));
-    const worked = scopeExercise(current,generateExercise(current.exerciseTypes[0],1));
-    for (const question of worked.questions) {
-      assert.ok(script.includes(question.prompt),current.id);
-      assert.ok(script.includes(question.interpretation),current.id);
-      for (const step of question.steps.slice(1,-1)) if(!step.explanation.includes('jStat.')) assert.ok(script.includes(step.explanation),`${current.id}: ${step.title}`);
-    }
+    assert.match(lecture.steps[0].caption,/^Hola\./);
+    const closing = lecture.steps.at(-1);
+    assert.ok(closing.caption.includes(current.formulas[0].meaning),current.id);
+    assert.ok(closing.caption.split(/\s+/).length>65,current.id);
+    assert.notEqual(closing.caption,current.check.options[current.check.answer],current.id);
     let end = 0;
     for (const step of lecture.steps) {
       assert.equal(step.cues.map(cue=>cue.text).join(' ').replace(/\s+/g,' '),step.caption.replace(/\s+/g,' '));
@@ -154,6 +154,73 @@ test('36 clases tienen un relato propio, ejemplos conectados y soluciones comple
     });
     close(previous,end,0.001);
   }
+});
+
+test('los resúmenes consumen todos los beats compartidos y conservan selección, datos, supuestos, diagramas y revelado', () => {
+  const normalize = value => value.replace(/\s+/g,' ').trim();
+  for (const current of COURSE.units.flatMap(unit=>unit.lessons)) {
+    const calls = [];
+    const lecture = createLessonAnimation(current,(type,seed)=>{
+      calls.push({type,seed});
+      return generateExercise(type,seed);
+    },paragraphs);
+    const types = {'cauchy-weibull':['cauchy','weibull'],marginales:['joint','continuous-joint'],'uniforme-montecarlo':['uniform','discrete'],'calculo-modelos':['normal','binomial','poisson']}[current.id] || [current.exerciseTypes[0]];
+    assert.deepEqual(calls,types.map(type=>({type,seed:1})),current.id);
+    let scene = 2;
+    for (const [exerciseIndex,type] of types.entries()) {
+      const exercise = generateExercise(type,1);
+      assert.equal(lecture.steps[scene++].caption,normalize(exercise.prompt),current.id);
+      const allowed = current.exerciseQuestions?.[type];
+      const questions = exercise.questions.filter(question=>!allowed || allowed.includes(question.id));
+      for (const [questionIndex,question] of questions.entries()) {
+        let context;
+        const beats = exerciseNarration(exercise,question);
+        for (const beat of beats) {
+          const actual = lecture.steps[scene++];
+          const label = `${current.id}/${type}/${question.id}/${beat.title}`;
+          assert.ok(actual,label);
+          assert.equal(actual.title,`E${exerciseIndex+1}.${questionIndex+1} · ${beat.title || 'Razonamiento'}`,label);
+          assert.equal(actual.caption,normalize(beat.say),label);
+          assert.deepEqual(actual.visual.lines.map(({cue,...line})=>line),beat.show || [],label);
+          context = beat.context || context;
+          assert.deepEqual(actual.visual.context,context,label);
+          assert.deepEqual(storyLines(actual,-1),[],label);
+          assert.deepEqual(storyLines(actual,actual.cues.length-1),actual.visual.lines,label);
+        }
+        const script = lecture.steps.slice(scene-beats.length,scene).map(step=>step.caption).join(' ');
+        const shown=beats.flatMap(beat=>beat.show).map(line=>line.value);
+        assert.ok(script.includes(question.prompt) || shown.includes(question.prompt),`${current.id}/${question.id}`);
+        for (const value of [...exercise.given,...exercise.assumptions]) assert.ok(script.includes(value) || shown.includes(value),`${current.id}: ${value}`);
+        if (question.grading?.kind==='qualitative' || !Number.isFinite(question.answer)) {
+          assert.doesNotMatch(lecture.steps[scene-1].caption,/\bNaN\b/);
+          assert.ok(lecture.steps[scene-1].caption.includes(question.answerText || question.interpretation));
+        }
+      }
+    }
+    assert.equal(scene,lecture.steps.length-1,current.id);
+  }
+});
+
+test('el resumen conserva una respuesta cualitativa sin convertir null en cero o NaN', () => {
+  const cauchy = COURSE.units.flatMap(unit=>unit.lessons).find(current=>current.id==='cauchy-weibull');
+  const conclusion = 'La esperanza de Cauchy no existe; su centro de simetría es una mediana, no una media.';
+  const lesson = {...cauchy,exerciseQuestions:{cauchy:['mean'],weibull:[]}};
+  const lecture = createLessonAnimation(lesson,(type,seed)=>{
+    const exercise = generateExercise(type,seed);
+    if (type!=='cauchy') return exercise;
+    return {...exercise,questions:[{
+      id:'mean',prompt:'¿Existe la esperanza de esta distribución de Cauchy?',
+      hint:'Comprueba la convergencia de las colas antes de promediar.',
+      answer:null,answerText:conclusion,unit:'',grading:{kind:'qualitative'},
+      interpretation:conclusion,
+      steps:[{title:'Examinar las colas',explanation:'Las partes positiva y negativa no convergen de forma admisible; cancelarlas simétricamente no define una esperanza.'}]
+    }]};
+  },paragraphs);
+  const result = lecture.steps.find(step=>step.title==='E1.1 · Resultado e interpretación');
+  assert.ok(result);
+  assert.ok(result.caption.includes(conclusion));
+  assert.doesNotMatch(result.caption,/\bNaN\b|(?:resultado|respuesta) es 0\b/);
+  assert.equal(result.visual.lines.find(line=>line.label==='Resultado').value,conclusion);
 });
 
 test('el guion pedagógico no reutiliza la huella de las narraciones anteriores y es reproducible', () => {
@@ -1408,8 +1475,10 @@ test('36 pizarras conservan datos pertinentes y subtítulos dentro del vídeo', 
         assert.ok(Array.isArray(step.visual?.lines),`${lecture.id}: ${step.title}`);
         assert.equal(board.children[1].children.length,step.visual.lines.length);
         for (const item of step.visual.lines) assert.ok(Number.isInteger(item.cue) && item.cue<step.cues.length,`${lecture.id}: ${step.title}`);
-        const values = board.children[1].children.map(row=>row.children.at(-1).textContent);
-        assert.ok(!values.includes(step.caption),'la pizarra no es un subtítulo');
+        for (const line of step.visual.lines) if (line.value===step.caption) {
+          assert.ok(['Dato original','Condición original'].includes(line.label),`${lecture.id}/${step.title}: la pizarra no copia la locución`);
+          assert.ok(line.value.split(/\s+/).length<=35,'solo datos o condiciones breves pueden coincidir con una frase completa');
+        }
         for (const value of step.visual.lines) if (value.tex) assert.doesNotThrow(()=>katex.renderToString(value.tex,{throwOnError:true}));
       } else {
         const demo = ANIMATIONS.flatMap(item=>item.steps).find(item=>step.title===`Demostración · ${item.title}`);
@@ -1671,23 +1740,34 @@ function estimatesFor(animation,index,fraction) {
 
 test('la derivación conserva sustituciones reales y no anticipa las respuestas de cada apartado', () => {
   const lectures = fullLectures();
+  const numbers = text => (text.replace(/\{,\}/g,'.').replace(/(\d+)\s+coma\s+((?:\d\s+)*\d+)/g,(_,integer,fraction)=>`${integer}.${fraction.replace(/\s+/g,'')}`).replace(/\\frac(\d)(\d)/g,'$1/$2').replace(/\\[a-zA-Z]+/g,' ').match(/\d+(?:[.,]\d+)?(?:e[+-]?\d+)?/g) || []).map(value=>Number(value.replace(',','.')));
   let numeric = 0;
   for (const lecture of lectures) {
     const exercises = lecture.steps.filter(step=>step.data.chapter==='Ejercicios resueltos');
     const source = exercises.map(step=>step.caption).join('\n');
+    const spoken = numbers(source);
     for (const step of exercises) {
       for (const line of step.visual.lines) {
         if (line.value?.includes('=') && /^[\d\s.,()+−\-×·*/^²³√!=<>≤≥]+$/u.test(line.value)) {
-          assert.ok(source.includes(line.value),line.value);
+          for (const value of numbers(line.value)) assert.ok(spoken.includes(value),`${lecture.id}/${step.title}: ${value} se muestra y se narra`);
           numeric++;
+        } else if (line.tex?.includes('=') && !/· (?:Por qué sirve este método|Significado:)/.test(step.title)) {
+          const literals = numbers(line.tex);
+          if (literals.length>1 && literals.some(value=>value>2)) {
+            for (const value of literals) assert.ok(spoken.includes(value),`${lecture.id}/${step.title}: ${value} se muestra y se narra`);
+            numeric++;
+          }
         }
       }
     }
-    const start = exercises.find(step=>step.title==='Ejercicio 1 · Qué queremos saber');
+    const start = exercises.find(step=>step.title==='E1.1 · Qué vamos a resolver');
     assert.ok(start);
+    assert.ok(start.visual.lines.length>0);
     assert.ok(start.visual.lines.every(line=>line.value && !line.tex));
     assert.ok(start.visual.lines.every(line=>line.cue>0));
-    const result = exercises.find(step=>step.title==='Ejercicio 1 · Qué significa la respuesta');
+    assert.deepEqual(storyLines(start,0),[],'la pregunta no aparece durante el saludo');
+    const result = exercises.find(step=>step.title==='E1.1 · Resultado e interpretación');
+    assert.ok(result);
     assert.ok(result.visual.lines.at(-1).label);
     assert.ok(result.visual.lines.at(-1).value);
   }
@@ -1755,7 +1835,7 @@ test('context graphs mount before measured cue zero and seek phases without dupl
     const cleanup=mountAnimation(dom.container,animation,{audio,createWhiteboard:konva ? ()=>({render:frame=>frames.push(frame),resize(){},dispose(){}}) : undefined});
     try {
       const graph=dom.created.find(node=>node.className==='context-diagram');
-      assert.equal(graph.hidden,konva);
+      assert.equal(graph.hidden,konva,`${animation.id}: reducedMotion=${reducedMotion}, konva=${konva}`);
       assert.equal(graph.style.aspectRatio,'auto');
       assert.equal(graph.width,640);
       assert.equal(graph.height,Math.round(320*9/16*0.62*2));

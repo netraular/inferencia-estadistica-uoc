@@ -14,7 +14,7 @@ export function versionAssets(root = fileURLToPath(new URL('../../', import.meta
     writeFileSync(join(root, file), after, 'utf8');
     changed.push(file);
   };
-  for (const [module, expected] of [['animations.js', 2], ['exercise-tutor.js', 1]]) {
+  for (const [module, expected] of [['exercise-tutor.js', 1], ['exercise-narration.js', 1], ['animations.js', 3]]) {
     const moduleFile = `pages/inferencia/${module}`;
     const before = readFileSync(join(root, moduleFile), 'utf8');
     let dependencies = 0;

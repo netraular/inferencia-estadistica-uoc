@@ -2,7 +2,7 @@ import {COURSE} from './course.js';
 import {generateExercise, scopeExercise} from './exercises.js';
 import {getPdfExercises} from './pdf-exercises.js';
 import {getCapstoneExercises} from './capstone.js';
-import {stageEquations,createTutorFrames} from './exercise-tutor.js';
+import {exerciseNarration} from './exercise-narration.js';
 import {storyScene} from './lecture-story.js';
 import {mountAnimation} from './animations.js';
 import {gradeAnswer} from './exercises.js';
@@ -229,28 +229,13 @@ export function exerciseCatalogue() {
 export function exerciseAnimation(exercise, question) {
   const slug = question.id.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const parentLesson = `ejercicio-${exercise.id}`;
-  const frames=createTutorFrames(exercise,question);
-  const initial=frames[0].diagram;
-  let context=initial;
-  const beats = [
-    {context:initial,say:`Vamos a resolver este apartado juntos. ${question.prompt} Antes de calcular, vamos a distinguir los datos de lo que nos están pidiendo.`, show:[{label:'Objetivo',value:question.prompt}]},
-    ...exercise.given.map(value => ({context:initial,say:`El enunciado nos da este dato: ${value}`, show:[{label:'Dato',value}]})),
-    ...exercise.assumptions.map(value => ({context:initial,say:`Para razonar correctamente, tenemos en cuenta este supuesto: ${value}`, show:[{label:'Supuesto',value}]})),
-    ...question.steps.flatMap(step => stageEquations(step).map((part,index) => {
-      context=(part.tex ? frames.find(frame=>frame.tex===part.tex)?.diagram : null) || context;
-      return {context,
-        say:index === 0 ? `${step.title}. ${step.explanation}` : `Continuamos el cálculo de este mismo paso sin cambiar los datos ni el significado de la expresión.`,
-        show:[part.tex ? {label:part.title,tex:part.tex} : {label:part.title,value:part.explanation}]
-      };
-    })),
-    {context:frames.at(-1).diagram,say:`Volvemos ahora a la pregunta inicial para interpretar lo que hemos obtenido. ${question.interpretation || question.answerText}`, show:[{label:'Interpretación',value:question.interpretation || question.answerText}]}
-  ];
+  const beats=exerciseNarration(exercise,question);
   return {
     id:`${parentLesson}--${slug}`, kind:'lecture', title:question.prompt,
     parentLesson, parentTitle:exercise.title, sectionId:slug, sourceSections:[question.prompt], optional:false,
     source:exercise.source || {document:'Práctica didáctica de la lección',section:exercise.title},
     steps:beats.map((beat,index) => {
-      const scene=storyScene(index === 0 ? 'Planteamiento' : index === beats.length-1 ? 'Interpretación' : `Paso ${index}`, 'Resolución razonada', [beat]);
+      const scene=storyScene(beat.title || (index === 0 ? 'Planteamiento' : index === beats.length-1 ? 'Interpretación' : `Paso ${index}`), 'Resolución razonada', [beat]);
       if(beat.context)scene.visual.context=beat.context;
       return scene;
     })

@@ -1,14 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
+import {readFileSync} from 'node:fs';
 import {parseHTML} from 'linkedom';
 import {COURSE} from '../pages/inferencia/course.js';
 import {createLessonSections} from '../pages/inferencia/lesson-sections.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
 import {generateExercise} from '../pages/inferencia/exercises.js';
 import {enrichLessonAnimation,enrichGlobalAnimation} from '../pages/inferencia/lesson-visuals.js';
+import {selectContextDiagram} from '../pages/inferencia/context-diagram.js';
 
 const require = createRequire(import.meta.url);
+const visualSource = readFileSync(new URL('../pages/inferencia/lesson-visuals.js',import.meta.url),'utf8');
+const {SECTION_VISUALS,GLOBAL_STAGES,CONCEPTS} = await import(`data:text/javascript;base64,${Buffer.from(`${visualSource}\nexport {SECTION_VISUALS,GLOBAL_STAGES,CONCEPTS};`).toString('base64')}`);
 const statistics = require('jstat').jStat;
 const lessons = COURSE.units.flatMap(unit=>unit.lessons);
 const {document} = parseHTML('<html><body></body></html>');
@@ -149,15 +153,21 @@ function validScene(scene, label) {
   const {context,phases} = scene.visual;
   validDiagram(context,label);
   assert.equal(phases.length,scene.cues.length,label);
-  assert.deepEqual(phases[0].context,context,label);
   for (const [index,phase] of phases.entries()) {
     const cue = scene.cues[index];
     assert.deepEqual([phase.cue,phase.text,phase.start,phase.end],[index,cue.text,cue.start,cue.end],label);
     assert.equal(phase.focus.source,'cue',label);
     assert.equal(phase.focus.cue,index,label);
     assert.equal(phase.focus.text,cue.text,label);
-    assert.ok(phase.focus.anchorCue>=0 && phase.focus.anchorCue<=index,label);
-    assert.ok(scene.cues[phase.focus.anchorCue].text.includes(phase.focus.quote),label);
+    assert.ok(phase.focus.anchorCue>=-1 && phase.focus.anchorCue<=index,label);
+    if (phase.focus.anchorCue===-1) {
+      assert.equal(phase.focus.conceptual,true,label);
+      assert.equal(phase.focus.quote,'',label);
+      assert.deepEqual(phase.context,CONCEPTS[label.split('--')[0]],`${label}: only a qualitative concept may precede its anchor`);
+    } else {
+      assert.ok(phase.focus.quote.length>0,label);
+      assert.ok(scene.cues[phase.focus.anchorCue].text.includes(phase.focus.quote),label);
+    }
     assert.deepEqual(phase.focus.lineIndices,scene.visual.lines.flatMap((line,lineIndex)=>line.cue===index ? [lineIndex] : []),label);
     validDiagram(phase.context,label);
     const targets = phase.focus.targets;
@@ -201,6 +211,19 @@ function sectionAt(lessonId, sectionId, quote) {
   return atSpeech({id:`${lessonId}/${sectionId}`,steps:[sectionScene(lessonId,sectionId)]},quote).context;
 }
 
+function sectionInitial(lessonId, sectionId) {
+  return sectionScene(lessonId,sectionId).visual.phases.find(phase=>phase.focus.anchorCue>=0).context;
+}
+
+function questionDataPhase(animation, prompt) {
+  const objective = animation.steps.find(scene=>scene.visual.lines.some(line=>line.label==='Objetivo' && line.value===prompt));
+  assert.ok(objective,`${animation.id}: missing objective ${prompt}`);
+  const prefix = `${objective.title.split(' · ')[0]} · `;
+  const data = animation.steps.filter(scene=>scene.title.startsWith(prefix) && scene.visual.lines.some(line=>line.label==='Dato original')).at(-1);
+  assert.ok(data,`${animation.id}: missing question data ${prompt}`);
+  return data.visual.phases.at(-1);
+}
+
 test('all 36 lessons and 118 real sections have a diagram before the first cue and source-bound phases',()=>{
   assert.equal(lessons.length,36);
   assert.equal(sections.length,118);
@@ -211,16 +234,21 @@ test('all 36 lessons and 118 real sections have a diagram before the first cue a
     assert.equal(animation.steps.length,1,animation.id);
     validScene(animation.steps[0],animation.id);
     const phases = animation.steps[0].visual.phases;
-    assert.equal(phases[0].focus.anchorCue,0,animation.id);
+    const first = phases.find(phase=>phase.focus.anchorCue>=0);
+    assert.ok(first,animation.id);
+    if (animation.steps[0].cues[0].text==='Hola.') {
+      assert.equal(phases[0].focus.anchorCue,-1,animation.id);
+      assert.deepEqual(phases[0].context,CONCEPTS[animation.id.split('--')[0]],animation.id);
+    }
     assert.ok(new Set(phases.map(phase=>diagramSignature(phase.context))).size>1,`${animation.id}: diagram must evolve, not just its caption`);
     for (const phase of phases) kinds.add(phase.context.kind);
   }
   assert.ok(kinds.size>=9);
 });
 
-test('all 521 real global scenes have initial figures, cue-linked focus and separate exercise/recap modes',()=>{
+test('all real global scenes have initial figures, cue-linked focus and separate exercise/recap modes',()=>{
   assert.equal(enrichedLectures.length,36);
-  assert.equal(enrichedLectures.reduce((sum,animation)=>sum+animation.steps.length,0),521);
+  assert.equal(enrichedLectures.reduce((sum,animation)=>sum+animation.steps.length,0),lectures.reduce((sum,animation)=>sum+animation.steps.length,0));
   for (const animation of enrichedLectures) {
     const signatures = new Set();
     for (const [sceneIndex,scene] of animation.steps.entries()) {
@@ -274,9 +302,9 @@ test('unknown, mismatched and prototype-name IDs stay unchanged without guessed 
 });
 
 test('authored section focus changes the actual selected set, and strict inequalities exclude atoms',()=>{
-  const selected = sectionAt('funciones','seleccionar-valores','¿Qué entra en menos de tres?');
-  const strict = sectionAt('funciones','seleccionar-valores','Menos de dos excluye el dos.');
-  const inclusive = sectionAt('funciones','seleccionar-valores','Como máximo dos sí incluye el dos.');
+  const selected = sectionAt('funciones','seleccionar-valores',"Si piden menos de tres");
+  const strict = sectionAt('funciones','seleccionar-valores',"Menos de dos deja solo cero, cuya masa es una décima.");
+  const inclusive = sectionAt('funciones','seleccionar-valores',"Como máximo dos sí acepta el propio dos");
   assert.deepEqual(selected.highlight,[0,1]);
   assert.deepEqual(strict.highlight,[0]);
   assert.deepEqual(inclusive.highlight,[0,1]);
@@ -288,49 +316,52 @@ test('authored section focus changes the actual selected set, and strict inequal
 });
 
 test('section examples keep their own support, table masses, capacities and covariance parameters',()=>{
-  assert.deepEqual(sectionScene('regiones-matrices','frontera').visual.context.points,[[0,0],[1,0],[0,1]]);
-  assert.deepEqual(sectionAt('regiones-matrices','frontera','Fijemos equis en tres décimas.').cut,[[0.3,0],[0.3,0.7]]);
-  assert.deepEqual(sectionAt('conjunta-discreta','parejas','Equis nombra filas e i griega columnas.').values,[[0.35,0.15],[0.25,0.25]]);
-  const covariance = sectionScene('covarianza-matrices','normalizar-covarianza').visual.context.values;
+  assert.deepEqual(sectionInitial('regiones-matrices','frontera').points,[[0,0],[1,0],[0,1]]);
+  assert.deepEqual(sectionAt('regiones-matrices','frontera',"Si el primer cultivo recibe tres décimas, uno menos tres décimas deja siete décimas disponibles.").cut,[[0.3,0],[0.3,0.7]]);
+  assert.deepEqual(sectionAt('conjunta-discreta','parejas',"En la tabla equis identifica filas e i griega columnas.").values,[[0.35,0.15],[0.25,0.25]]);
+  const covariance = sectionInitial('covarianza-matrices','normalizar-covarianza').values;
   assert.deepEqual(covariance,[[9,6],[6,16]]);
   assert.ok(covariance[0][0]*covariance[1][1]-covariance[0][1]**2>0);
-  const joint = sectionScene('normal-bivariante','modelo-conjunto').visual.context;
+  const joint = sectionInitial('normal-bivariante','modelo-conjunto');
   assert.deepEqual([joint.meanX,joint.meanY,joint.sdX,joint.sdY,joint.rho],[30,70,5,8,0.25]);
-  const tail = sectionAt('normal-bivariante','cola-condicional','La curva del corte es normal');
+  const tail = sectionAt('normal-bivariante','cola-condicional',"El total de referencia es la distribución condicional del corte");
   assert.deepEqual([tail.mean,tail.sd,tail.lower],[74,Math.sqrt(60),82]);
-  assert.deepEqual(sectionScene('combinaciones-incorrelacion','suma-y-diferencia').visual.context.values,[[4,3],[3,9]]);
-  const continuous = sectionScene('combinaciones-incorrelacion','incorrelacion').visual.context;
+  assert.deepEqual(sectionInitial('combinaciones-incorrelacion','suma-y-diferencia').values,[[4,3],[3,9]]);
+  const continuous = sectionInitial('combinaciones-incorrelacion','incorrelacion');
   assert.equal(continuous.connected,true);
   assert.equal(continuous.points.length,81);
 });
 
 test('global stories use their own numbers rather than section demonstrations',()=>{
-  assert.deepEqual(atSpeech(lecture('bayes-diagnostico'),'Los positivos forman ahora nuestro grupo de referencia:').context.values,[90,45]);
-  assert.deepEqual(atSpeech(lecture('condicionada'),'Cuarenta llevan el marcador a y diez llevan a y be.').context.values,[10,30]);
-  assert.deepEqual(atSpeech(lecture('conjunta-discreta'),'Tomemos las masas cero coma dos y cero coma tres').context.values,[[0.2,0.3],[0.1,0.4]]);
-  const global = atSpeech(lecture('normal-bivariante'),'Dos señales tienen medias doce y treinta,').context;
+  assert.deepEqual(atSpeech(lecture('bayes-diagnostico'),"En total esperamos ciento treinta y cinco positivos.").context.values,[90,45]);
+  assert.deepEqual(atSpeech(lecture('condicionada'),"Eliminamos las sesenta incompatibles con esa información.").context.values,[10,30]);
+  assert.deepEqual(atSpeech(lecture('conjunta-discreta'),"Usamos cero coma dos y cero coma tres en la fila equis cero, y cero coma uno y cero coma cuatro en la fila equis uno.").context.values,[[0.2,0.3],[0.1,0.4]]);
+  const global = atSpeech(lecture('normal-bivariante'),"Sus medias son doce y treinta, sus desviaciones dos y cuatro, y su correlación cero coma seis.").context;
   assert.deepEqual([global.meanX,global.meanY,global.sdX,global.sdY,global.rho],[12,30,2,4,0.6]);
-  const tail = atSpeech(lecture('normal-bivariante'),'Queremos que i griega supere treinta y cinco coma seis').context;
+  const tail = atSpeech(lecture('normal-bivariante'),"Queremos superar treinta y cinco coma seis una vez conocido equis catorce.").context;
   assert.deepEqual([tail.mean,tail.sd,tail.lower],[32.4,3.2,35.6]);
-  assert.deepEqual(atSpeech(lecture('familia-exponencial'),'Hemos observado dos, cuatro y tres colonias').context.values,[2,4,3]);
-  const discrete = atSpeech(lecture('combinaciones-incorrelacion'),'toma equis con valores menos uno, cero y uno, equiprobables,').context;
+  assert.deepEqual(atSpeech(lecture('familia-exponencial'),"Observamos dos, cuatro y tres colonias en placas de igual exposición.").context.values,[2,4,3]);
+  const discrete = atSpeech(lecture('combinaciones-incorrelacion'),"Toma equis menos uno, cero y uno con igual probabilidad y define i griega como su cuadrado.").context;
   assert.deepEqual(discrete.points,[[-1,1],[0,0],[1,1]]);
   assert.equal(discrete.connected,undefined);
 });
 
 test('figures do not reveal later normalization or log-likelihood terms before their authored cue',()=>{
   const percentages = sectionScene('proporciones','porcentaje-y-exposicion');
-  assert.deepEqual(percentages.visual.context.values,[18,54]);
-  assert.deepEqual(sectionAt('proporciones','porcentaje-y-exposicion','Decimos veinticinco por ciento.').values,[25,75]);
+  assert.deepEqual(percentages.visual.context,CONCEPTS.proporciones);
+  assert.deepEqual(sectionInitial('proporciones','porcentaje-y-exposicion').values,[18,54]);
+  assert.deepEqual(sectionAt('proporciones','porcentaje-y-exposicion',"Veinticinco por ciento sigue representando las dieciocho de setenta y dos.").values,[25,75]);
   const logs = sectionScene('familia-exponencial','log-verosimilitud');
-  assert.deepEqual(logs.visual.context.values,[0,1,2]);
-  assert.deepEqual(sectionAt('familia-exponencial','log-verosimilitud','El total tres multiplica logaritmo natural de uno').values,[0]);
-  assert.deepEqual(sectionAt('familia-exponencial','log-verosimilitud','Restamos tres ventanas por lambda uno.').values,[0,-3]);
-  assert.equal(sectionAt('normal-bivariante','media-y-varianza-condicional','La media condicional es setenta y cuatro.').kind,'tree');
-  const spread = sectionAt('normal-bivariante','media-y-varianza-condicional','Tomamos su raíz para tipificar:');
+  assert.deepEqual(logs.visual.context,CONCEPTS['familia-exponencial']);
+  assert.deepEqual(sectionInitial('familia-exponencial','log-verosimilitud').values,[0,1,2]);
+  assert.deepEqual(sectionAt('familia-exponencial','log-verosimilitud',"La suma de los recuentos es tres y multiplica logaritmo natural de lambda.").values,[0]);
+  assert.deepEqual(sectionAt('familia-exponencial','log-verosimilitud',"Cada una de las tres ventanas aporta menos lambda al logaritmo de la masa.").values,[0,-3]);
+  assert.equal(sectionAt('normal-bivariante','media-y-varianza-condicional',"El desplazamiento se aplica a la media marginal de i griega, setenta.").kind,'tree');
+  const spread = sectionAt('normal-bivariante','media-y-varianza-condicional',"Para medir distancias necesitamos la desviación, raíz de sesenta, aproximadamente siete coma setecientos cuarenta y seis.");
   assert.deepEqual([spread.mean,spread.sd],[74,Math.sqrt(60)]);
   const animation = lecture('algebra');
-  const intro = animation.steps.find(scene=>scene.title==='Ejercicio 1: cambiamos los datos');
+  const intro = animation.steps.find(scene=>scene.title.startsWith('E1.1 · ') && scene.visual.lines.some(line=>line.value?.startsWith('Pesos:')));
+  assert.ok(intro);
   const weightsLine = intro.visual.lines.find(line=>line.value?.startsWith('Pesos:'));
   const weights = weightsLine.value.match(/\d+/g).map(Number);
   assert.deepEqual(intro.visual.phases[weightsLine.cue].context.values,weights);
@@ -342,7 +373,9 @@ test('figures do not reveal later normalization or log-likelihood terms before t
 test('global exercise and final-recap boundaries discard the preceding example',()=>{
   for (const animation of enrichedLectures) {
     const final = animation.steps.at(-1);
-    for (const scene of animation.steps.filter(item=>/^Ejercicio \d+: cambiamos los datos$/.test(item.title))) {
+    const intros = animation.steps.filter(item=>/^Ejercicio \d+:/.test(item.title));
+    assert.ok(intros.length>0,animation.id);
+    for (const scene of intros) {
       assert.deepEqual(scene.visual.context,final.visual.context,`${animation.id}/${scene.title}: stale example at reset`);
       assert.equal(scene.visual.phases[0].focus.mode,'exercise');
     }
@@ -356,7 +389,9 @@ test('changing actual exercise seeds retains givens and binds diagrams to their 
     const source = createLessonAnimation(lesson,type=>generateExercise(type,seed),paragraphs);
     const enriched = enrichGlobalAnimation(freeze(source));
     assert.deepEqual(withoutDiagrams(enriched),source,`${lessonId}/${seed}`);
-    for (const intro of enriched.steps.filter(scene=>/^Ejercicio \d+: cambiamos los datos$/.test(scene.title))) {
+    const dataScenes = enriched.steps.filter(scene=>scene.data.chapter==='Ejercicios resueltos' && scene.visual.lines.some(line=>line.label==='Dato original'));
+    assert.ok(dataScenes.length>0,`${lessonId}/${seed}`);
+    for (const intro of dataScenes) {
       for (const line of intro.visual.lines) {
         const context = intro.visual.phases[line.cue].context;
         if (line.value?.startsWith('Se siembran ')) {
@@ -385,8 +420,8 @@ test('a later marginal question does not inherit the previous conditional-row di
     return type==='joint' ? {...exercise,questions:[...exercise.questions].reverse()} : exercise;
   },paragraphs);
   const enriched = enrichGlobalAnimation(freeze(source));
-  const conditional = atSpeech(enriched,'Ahora la pregunta es esta: Calcula P(Y=1 | X=1).');
-  const marginal = atSpeech(enriched,'Ahora la pregunta es esta: Calcula P(Y=1).');
+  const conditional = questionDataPhase(enriched,'Calcula P(Y=1 | X=1).');
+  const marginal = questionDataPhase(enriched,'Calcula P(Y=1).');
   assert.deepEqual(conditional.context.highlight,[[1,0],[1,1]]);
   assert.equal(marginal.context.kind,'matrix');
   assert.deepEqual(marginal.context.highlight,[[0,1],[1,1]]);
@@ -398,10 +433,10 @@ test('a later marginal question does not inherit the previous conditional-row di
 }));
 
 test('conditional areas and singular multinomial covariances preserve their mathematical constraints',()=>{
-  const density = sectionAt('conjunta-condicional','normalizar-corte','La densidad condicional es uno coma veinticinco');
+  const density = sectionAt('conjunta-condicional','normalizar-corte',"Comprobemos la normalización: altura uno coma veinticinco por anchura cero coma ocho da uno.");
   assert.deepEqual(density.support,[0,0.8]);
   assert.equal((density.support[1]-density.support[0])*density.points[0][1],1);
-  const covariance = sectionAt('multinomial','momentos-con-indicadores','Sumar las cuatro contribuciones').values;
+  const covariance = sectionAt('multinomial','momentos-con-indicadores',"Al pasar a los recuentos sumamos una contribución por cada una de las cuatro células.").values;
   assert.deepEqual(covariance,[[1,-0.6,-0.4],[-0.6,0.84,-0.24],[-0.4,-0.24,0.64]]);
   for (const [rowIndex,row] of covariance.entries()) {
     assert.ok(Math.abs(row.reduce((sum,value)=>sum+value,0))<1e-12);
@@ -410,7 +445,7 @@ test('conditional areas and singular multinomial covariances preserve their math
       assert.ok(covariance[rowIndex][rowIndex]*covariance[columnIndex][columnIndex]-value**2>=-1e-12);
     }
   }
-  const poisson = sectionScene('poisson','masa-y-complemento').visual.context;
+  const poisson = sectionInitial('poisson','masa-y-complemento');
   assert.equal(poisson.labels[0],'0');
   assert.ok(Math.abs(poisson.values[0]-Math.exp(-3))<1e-12);
   assert.ok(Math.abs(poisson.values.reduce((sum,value)=>sum+value,0)+poisson.tail-1)<1e-12);
@@ -419,12 +454,10 @@ test('conditional areas and singular multinomial covariances preserve their math
 test('literal authored cue binding does not guess replacements from nearby topic keywords',()=>{
   const original = sections.find(item=>item.animation.id==='funciones--seleccionar-valores').animation;
   const changed = structuredClone(original);
-  const index = changed.steps[0].cues.findIndex(cue=>cue.text==='Menos de dos excluye el dos.');
+  const index = changed.steps[0].cues.findIndex(cue=>cue.text==="Menos de dos deja solo cero, cuya masa es una décima.");
   assert.ok(index>=0);
   changed.steps[0].cues[index].text='Funciones, brotes, menos de, logaritmo y normal.';
-  const enriched = enrichLessonAnimation(freeze(changed));
-  assert.deepEqual(enriched.steps[0].visual.phases[index].context.highlight,[0,1]);
-  assert.deepEqual(withoutDiagrams(enriched),changed);
+  assert.throws(()=>enrichLessonAnimation(freeze(changed)),/visual anchor must match exactly once/);
 });
 
 test('invalid or incomplete numeric givens keep finite qualitative figures instead of fabricated parameters',()=>{
@@ -453,8 +486,8 @@ test('geometric stopping and strict tails select different real trial outcomes',
   const exercise = generateExercise('geometric',17);
   const source = createLessonAnimation(lesson,()=>exercise,paragraphs);
   const enriched = enrichGlobalAnimation(freeze(source));
-  const exact = atSpeech(enriched,'Ahora la pregunta es esta: Calcula P(T = k).').context;
-  const tail = atSpeech(enriched,'Ahora la pregunta es esta: Calcula P(T > k).').context;
+  const exact = questionDataPhase(enriched,'Calcula P(T = k).').context;
+  const tail = questionDataPhase(enriched,'Calcula P(T > k).').context;
   assert.equal(exact.outcomes.length,exercise.visual.params.trials);
   assert.equal(exact.outcomes.at(-1),'Éxito');
   assert.ok(exact.outcomes.slice(0,-1).every(outcome=>outcome==='Fallo'));
@@ -469,7 +502,7 @@ test('the explained memoryless reduction remains on additional time in subsequen
   const exercise = generateExercise('exponential',17);
   const source = createLessonAnimation(lesson,()=>exercise,paragraphs);
   const enriched = enrichGlobalAnimation(freeze(source));
-  const question = atSpeech(enriched,'Ahora la pregunta es esta: Calcula P(T > t+s | T > t).');
+  const question = questionDataPhase(enriched,'Calcula P(T > t+s | T > t).');
   assert.equal(question.context.kind,'number-line');
   assert.equal(question.context.max,exercise.visual.params.elapsed+exercise.visual.params.extra);
   const reductionIndex = enriched.steps.findIndex(scene=>scene.title==='E1.2 · Cancelar el tiempo transcurrido');
@@ -489,10 +522,131 @@ test('a normal percentile asks for an area level, not the previous interval',()=
   const lesson = {...lessons.find(item=>item.id==='normal'),exerciseQuestions:{}};
   const source = createLessonAnimation(lesson,generateExercise,paragraphs);
   const enriched = enrichGlobalAnimation(freeze(source));
-  const quantile = atSpeech(enriched,'Ahora la pregunta es esta: Calcula el percentil 95 de X.').context;
+  const quantile = questionDataPhase(enriched,'Calcula el percentil 95 de X.').context;
   assert.equal(quantile.kind,'normal');
   assert.equal(quantile.level,0.95);
   assert.equal(quantile.lower,undefined);
   assert.equal(quantile.upper,undefined);
   assert.deepEqual(withoutDiagrams(enriched),source);
 }));
+
+test('every one of the 420 section and 118 global checkpoints reaches its exact intended diagram',()=>{
+  assert.equal(Object.keys(SECTION_VISUALS).length,118);
+  assert.equal(Object.keys(GLOBAL_STAGES).length,36);
+  assert.equal(Object.values(SECTION_VISUALS).flat().length,420);
+  assert.equal(Object.values(GLOBAL_STAGES).flat().length,118);
+  const counts = {
+    proporciones:[5,5,3],algebra:[3,4,4],funciones:[4,4,5],calculo:[4,4,4],'regiones-matrices':[4,4,4],sucesos:[3,5,4],axiomas:[4,3,4,4],combinatoria:[3,4,3],condicionada:[3,3,3],
+    'independencia-sucesos':[3,3,3],'bayes-diagnostico':[6,3,4],'variable-cdf':[3,4,3],masa:[3,4,3],densidad:[3,4,3],esperanza:[4,3,3],varianza:[5,3,3],
+    'momentos-transformaciones':[3,3,8,4],'bernoulli-binomial':[4,3,3],poisson:[3,4,4],hipergeometrica:[3,3,3],'geometrica-negativa':[4,4,3,4],'uniforme-montecarlo':[3,4,4],exponencial:[3,3,4],normal:[3,3,5,4],gamma:[3,3,3,3],
+    'cauchy-weibull':[3,3,3,3],'calculo-modelos':[3,4,3],'familia-exponencial':[4,4,3,3,4,3],'conjunta-discreta':[3,3,6],multinomial:[3,3,4],marginales:[3,3,4],'conjunta-condicional':[3,3,3],
+    'normal-bivariante':[3,3,4,4],'independencia-variables':[4,3,3],'covarianza-matrices':[3,3,5],'combinaciones-incorrelacion':[4,3,3]
+  };
+  for (const [lessonId,expected] of Object.entries(counts)) assert.deepEqual(Object.entries(SECTION_VISUALS).filter(([id])=>id.startsWith(`${lessonId}/`)).map(([,stages])=>stages.length),expected,`${lessonId}: preserve every intended phase`);
+  assert.deepEqual(Object.fromEntries(Object.entries(GLOBAL_STAGES).map(([id,stages])=>[id,stages.length])),{
+    proporciones:4,algebra:4,funciones:6,calculo:3,'regiones-matrices':3,sucesos:4,axiomas:2,combinatoria:5,condicionada:2,'independencia-sucesos':4,'bayes-diagnostico':4,'variable-cdf':5,masa:3,densidad:3,esperanza:2,varianza:4,
+    'momentos-transformaciones':2,'bernoulli-binomial':2,poisson:3,hipergeometrica:3,'geometrica-negativa':2,'uniforme-montecarlo':3,exponencial:3,normal:6,gamma:2,'cauchy-weibull':2,'calculo-modelos':3,'familia-exponencial':4,'conjunta-discreta':3,multinomial:3,marginales:3,'conjunta-condicional':4,'normal-bivariante':3,'independencia-variables':3,'covarianza-matrices':3,'combinaciones-incorrelacion':3
+  });
+  for (const [id,stages] of Object.entries(SECTION_VISUALS)) {
+    const [lessonId,sectionId] = id.split('/');
+    const scene = sectionScene(lessonId,sectionId);
+    assert.ok(new Set(stages.map(entry=>diagramSignature(entry.context))).size>1,`${id}: evolution must not rely on the conceptual greeting`);
+    const anchors = stages.map(entry=>{
+      const matches = scene.cues.flatMap((cue,index)=>cue.text.includes(entry.quote) ? [index] : []);
+      assert.equal(matches.length,1,`${id}: ${entry.quote}`);
+      const cue = matches[0];
+      const phase = scene.visual.phases[cue];
+      assert.equal(phase.focus.anchorCue,cue,`${id}: discarded checkpoint`);
+      assert.equal(phase.focus.quote,entry.quote,id);
+      assert.deepEqual(phase.context,entry.context,`${id}: overwritten checkpoint`);
+      return cue;
+    });
+    assert.equal(new Set(anchors).size,stages.length,`${id}: phases must not overwrite each other in one cue`);
+    assert.deepEqual(anchors,[...anchors].sort((left,right)=>left-right),`${id}: authored progression`);
+    for (const phase of scene.visual.phases) {
+      const active = anchors.findLastIndex(cue=>cue<=phase.cue);
+      assert.deepEqual(phase.context,active<0 ? CONCEPTS[lessonId] : stages[active].context,`${id}/${phase.cue}: hold only the last spoken checkpoint`);
+      assert.equal(phase.focus.anchorCue,active<0 ? -1 : anchors[active],id);
+    }
+  }
+  for (const [id,stages] of Object.entries(GLOBAL_STAGES)) {
+    const animation = lecture(id);
+    assert.ok(new Set(stages.map(entry=>diagramSignature(entry.context))).size>1,`${id}: diagrams must change structurally`);
+    const story = animation.steps.flatMap((scene,sceneIndex)=>['Una situación concreta','Vamos a razonarlo'].includes(scene.data.chapter) ? [{scene,sceneIndex}] : []);
+    const anchors = stages.map(entry=>{
+      const matches = story.flatMap(({scene,sceneIndex})=>scene.cues.flatMap((cue,index)=>cue.text.includes(entry.quote) ? [{scene:sceneIndex,cue:index}] : []));
+      assert.equal(matches.length,1,`${id}: ${entry.quote}`);
+      const anchor = matches[0];
+      const phase = animation.steps[anchor.scene].visual.phases[anchor.cue];
+      assert.deepEqual(phase.focus.checkpoint,{...anchor,quote:entry.quote},`${id}: discarded checkpoint`);
+      assert.deepEqual(phase.context,entry.context,`${id}: overwritten checkpoint`);
+      return anchor.scene*10000+anchor.cue;
+    });
+    assert.equal(new Set(anchors).size,stages.length,id);
+    assert.deepEqual(anchors,[...anchors].sort((left,right)=>left-right),`${id}: authored progression`);
+    for (const scene of animation.steps) for (const phase of scene.visual.phases) if (phase.focus.checkpoint) {
+      const checkpoint = phase.focus.checkpoint;
+      assert.ok(animation.steps[checkpoint.scene].cues[checkpoint.cue].text.includes(checkpoint.quote),id);
+      assert.deepEqual(phase.context,stages.find(entry=>entry.quote===checkpoint.quote).context,`${id}: stale provenance`);
+    }
+  }
+});
+
+test('all contexts are reversible at every cue without fabricating time-percentage phases',()=>{
+  for (const animation of [...enrichedSections,...enrichedLectures]) for (const scene of animation.steps) {
+    const initial = structuredClone(scene.visual.context);
+    const expected = scene.visual.phases.map(phase=>structuredClone(phase.context));
+    for (const cue of [...expected.keys(),...Array.from(expected.keys()).reverse()]) {
+      const selected = selectContextDiagram(scene.visual,cue);
+      assert.deepEqual(selected.diagram,expected[cue],`${animation.id}/${scene.title}/${cue}`);
+      assert.equal(selected.phase.cue,cue);
+      assert.deepEqual([selected.phase.start,selected.phase.end],[scene.cues[cue].start,scene.cues[cue].end]);
+    }
+    assert.deepEqual(selectContextDiagram(scene.visual,-1).diagram,initial,animation.id);
+  }
+});
+
+test('missing and ambiguous section/global quotes fail instead of leaving a convincing frozen figure',()=>{
+  for (const {animation} of sections) {
+    const stages = SECTION_VISUALS[animation.id.replace('--','/')];
+    for (const entry of stages) {
+      const changed = structuredClone(animation);
+      const scene = changed.steps[0];
+      const cue = scene.cues.find(cue=>cue.text.includes(entry.quote));
+      assert.ok(cue);
+      cue.text = 'Esta frase ya no contiene el anclaje.';
+      assert.throws(()=>enrichLessonAnimation(changed),/visual anchor must match exactly once/,`${animation.id}: ${entry.quote}`);
+    }
+    const changed = structuredClone(animation);
+    const cue = changed.steps[0].cues.find(cue=>cue.text.includes(stages[0].quote));
+    changed.steps[0].cues.push({...cue});
+    assert.throws(()=>enrichLessonAnimation(changed),/visual anchor must match exactly once/,animation.id);
+  }
+  for (const animation of lectures) for (const entry of GLOBAL_STAGES[animation.id]) {
+    const changed = structuredClone(animation);
+    const scene = changed.steps.find(scene=>['Una situación concreta','Vamos a razonarlo'].includes(scene.data.chapter) && scene.cues.some(cue=>cue.text.includes(entry.quote)));
+    const cue = scene.cues.find(cue=>cue.text.includes(entry.quote));
+    cue.text = 'La cita global ha cambiado.';
+    assert.throws(()=>enrichGlobalAnimation(changed),/visual anchor must match exactly once/,`${animation.id}: ${entry.quote}`);
+    cue.text = entry.quote;
+    scene.cues.push({...cue});
+    assert.throws(()=>enrichGlobalAnimation(changed),/visual anchor must match exactly once/,animation.id);
+  }
+});
+
+test('global normal percentile clears the old interval, shades the left 95 percent and returns to micrometres',()=>{
+  const animation = lecture('normal');
+  const question = atSpeech(animation,'Un percentil invierte la pregunta').context;
+  assert.equal(question.level,0.95);
+  assert.equal(question.lower,undefined);
+  assert.equal(question.upper,undefined);
+  const standard = atSpeech(animation,'El nivel noventa y cinco por ciento').context;
+  assert.deepEqual([standard.mean,standard.sd,standard.upper],[0,1,1.64485]);
+  const result = atSpeech(animation,'Deshacemos la tipificación multiplicando por cuatro').context;
+  assert.deepEqual([result.mean,result.sd,result.lower,result.upper],[40,4,undefined,46.5794]);
+  assert.equal(result.marker,result.upper);
+  assert.ok(Math.abs(statistics.normal.cdf(result.upper,result.mean,result.sd)-0.95)<1e-6);
+  assert.equal(result.upper.toFixed(2),'46.58');
+  const section = sectionAt('normal','cuantiles-y-combinaciones','Deshacemos ahora el centrado añadiendo la media cuarenta.');
+  assert.ok(Math.abs(statistics.normal.cdf(section.upper,section.mean,section.sd)-0.9)<1e-5);
+});

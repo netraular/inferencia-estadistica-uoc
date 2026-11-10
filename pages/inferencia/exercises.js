@@ -526,7 +526,7 @@ const generators = {
       ['Todas las muestras de n organismos son equiprobables.', 'Sin reemplazo: las extracciones no son ensayos Bernoulli independientes.'], [
         probability('exact', 'Calcula P(X = k).', exact, 'Cuenta las formas de elegir portadores y no portadores, y divide por todas las muestras.', [
           step('Contar muestras favorables', `Elegir ${count} de ${successes} portadores da ${core.combination(successes,count)} grupos. Elegir ${draws-count} de los ${population-successes} restantes da ${core.combination(population-successes,draws-count)}. Multiplicamos porque cada elección del primer grupo puede combinarse con cada elección del segundo.`),
-          step('Contar todas las muestras', `Elegimos ${draws} organismos de ${population} sin atender al marcador: C(${population},${draws}) = ${core.combination(population,draws)} muestras posibles, todas con la misma probabilidad.`),
+          step('Contar todas las muestras', `Elegimos ${draws} organismos de ${population} sin atender al marcador: C(${population},${draws}) = ${core.combination(population,draws)} muestras posibles, todas con la misma probabilidad.`, String.raw`\binom{${population}}{${draws}}=${core.combination(population,draws)}`),
           step('Dividir favorables entre posibles', `${core.combination(successes,count)} × ${core.combination(population-successes,draws-count)} / ${core.combination(population,draws)} = ${format(exact)}. Hemos contado grupos, no secuencias de extracción.`, String.raw`P(X=k)=\frac{\binom Kk\binom{N-K}{n-k}}{\binom Nn}`)
         ], 'La dependencia por agotamiento de la colección impide sustituir automáticamente este modelo por una binomial.'),
         probability('at-least', 'Calcula P(X ≥ k), incluyendo k.', atLeast, 'El complemento termina en k−1.', [
@@ -552,7 +552,7 @@ const generators = {
         ], 'La tasa tiene unidades inversas al tiempo; la escala tiene unidades de tiempo.'),
         probability('before', 'Calcula P(T ≤ t).', chance, 'Acumula el área de la densidad gamma desde cero hasta t; conserva k como forma y α como escala.', [
           step('Identificar el área', `Queremos el tiempo total de ${shape} esperas menor o igual que ${format(time)} minutos. Usamos forma ${shape} y escala ${format(scale)}, como en la teoría.`),
-          step('Consultar la acumulada', `La acumulada gamma integra la densidad desde cero hasta ${format(time)}. Se consulta con una calculadora estadística o con jStat.gamma.cdf(${format(time)}, ${shape}, ${format(scale)}), y vale ${format(chance)}. La llamada calcula esa área, no la altura de la curva.`, String.raw`P(T\le t)=F_{\Gamma(k,\alpha)}(t)`)
+          step('Consultar la acumulada', `La acumulada gamma integra la densidad desde cero hasta ${format(time)} minutos. Con forma ${shape} y escala ${format(scale)}, una calculadora estadística da aproximadamente ${format(chance)}. Este valor mide el área acumulada, no la altura de la curva en el umbral.`, String.raw`P(T\le t)=F_{\Gamma(k,\alpha)}(t)`)
         ], `Es la probabilidad de observar al menos ${shape} llegadas antes del umbral.`)
       ], 'density', {distribution:'gamma', shape, rate, scale, time});
   },
@@ -729,10 +729,10 @@ const generators = {
         ], 'La varianza de una observación sigue siendo σ²; la de la media se reduce por n.'),
         question('observed-unbiased', 'Calcula S² en la muestra observada de cinco valores, con divisor m−1.', varianceUnbiased, 'unidades al cuadrado', 'Primero centra en la media de los cinco valores y suma los cuadrados.', [
           step('Calcular la media observada', `x̄=${sampleMean}; desviaciones: −2,−1,0,1,2; suma de cuadrados: 4+1+0+1+4=10.`),
-          step('Aplicar la corrección de Bessel', `10/(5−1)=${format(varianceUnbiased)}; jStat.variance(values,true).`, String.raw`S^2=\frac{1}{m-1}\sum_{i=1}^m(X_i-\bar X)^2`)
+          step('Aplicar la corrección de Bessel', `Las cinco desviaciones suman cero porque hemos estimado la media con ellas: solo cuatro pueden variar libremente. Dividimos la suma de cuadrados, diez, entre cinco menos uno y obtenemos ${format(varianceUnbiased)}. Esta corrección elimina el sesgo en muestras repetidas.`, String.raw`S^2=\frac{1}{m-1}\sum_{i=1}^m(X_i-\bar X)^2`)
         ], 'S² es insesgada: E[S²]=σ², pero esta realización no tiene por qué coincidir con σ².'),
         question('observed-divisor-n', 'Calcula Vₘ para los mismos cinco valores usando divisor m.', varianceDivisorN, 'unidades al cuadrado', 'La suma de cuadrados no cambia; solo cambia el divisor.', [
-          step('Cambiar el divisor', `10/5=${format(varianceDivisorN)}; jStat.variance(values,false).`),
+          step('Cambiar el divisor', `Aquí se pide el promedio de las cinco desviaciones cuadradas: diez dividido entre cinco da ${format(varianceDivisorN)}. Los datos no cambian; cambia la definición del resumen que calculamos.`),
           step('Explicar el sesgo', `En muestras iid de tamaño m=5, E[Vₘ]=(4/5)σ²; no se interpreta este valor observado como la varianza poblacional.`, String.raw`E[V_m]=\frac{m-1}{m}\sigma^2`)
         ], 'Con divisor m la varianza alrededor de la media estimada subestima la varianza poblacional en promedio.')
       ], 'sampling', {n:sampleSize, mean, populationVariance, values, observedSize:values.length});
@@ -786,7 +786,7 @@ const generators = {
     const variance = successes * (1 - successProbability) / successProbability ** 2;
     return exercise('negative-binomial', seed, 'Se examinan colonias independientes hasta encontrar r que expresan un marcador. F cuenta solo los fallos anteriores al éxito número r.',
       [`r=${successes} éxitos, p=${format(successProbability)}, k=${failures} fallos.`, 'Soporte F=0,1,2,...; el total de ensayos es T=F+r. F=0 significa r éxitos iniciales consecutivos.'],
-      ['Ensayos Bernoulli independientes con probabilidad de éxito constante.', 'r es entero positivo; jStat.negbin.pdf/cdf(k,r,p) usa fallos, no el total de ensayos.'], [
+      ['Ensayos Bernoulli independientes con probabilidad de éxito constante.', 'El objetivo r es un número entero positivo de éxitos. La variable F cuenta los fallos anteriores, no el total de ensayos; para contar ensayos añadiríamos r.'], [
         probability('exact', 'Calcula P(F=k).', exact, 'El último ensayo es un éxito; distribuye los otros r−1 éxitos entre los k+r−1 anteriores.', [
           step('Fijar la parada', `Hay ${failures + successes} ensayos, con el último éxito fijado; quedan ${successes - 1} éxitos y ${failures} fallos por ordenar.`),
           step('Ponderar los patrones', `C(${failures + successes - 1},${failures}) × ${format(successProbability)}^${successes} × ${format(1 - successProbability)}^${failures} = ${format(exact)}.`, String.raw`P(F=k)=\binom{k+r-1}{k}p^r(1-p)^k`)
@@ -821,11 +821,11 @@ const generators = {
         probability('interval', 'Calcula la probabilidad de que X caiga en el intervalo indicado.', chance, 'Resta las CDF de los extremos; no uses una media ni una desviación típica inexistentes.', [
           step('Cambiar a la escala estándar', `(l-x₀)/γ=-1 y (u-x₀)/γ=${upperFactor}.`),
           step('Escribir la acumulada', 'F(x)=1/2+arctan((x-x₀)/γ)/π.', String.raw`F(x)=\frac12+\frac1\pi\arctan\!\left(\frac{x-x_0}{\gamma}\right)`),
-          step('Restar las áreas', `[arctan(${upperFactor})-arctan(-1)]/π = ${format(chance)}; jStat.cauchy.cdf recibe localización y escala.`)
+          step('Restar las áreas', `Al restar las acumuladas se cancelan las dos mitades. Queda la diferencia entre arco tangente de ${upperFactor} y arco tangente de menos uno, dividida entre pi: aproximadamente ${format(chance)}. Es el área entre los límites estandarizados.`)
         ], 'Los extremos individuales tienen probabilidad cero; las colas no impiden calcular probabilidades de intervalos.'),
         question('median', 'Calcula la mediana de X, el cuantil 0,5.', median, 'unidades de señal', 'Impón F(m)=1/2, no E[X]=x₀.', [
           step('Resolver la acumulada central', 'F(m)=1/2 implica arctan((m-x₀)/γ)=0, luego m=x₀.', String.raw`Q(u)=x_0+\gamma\tan\!\left(\pi(u-1/2)\right)`),
-          step('Sustituir el cuantil', `${format(location)} + ${format(scale)} × tan(0) = ${format(median)}; jStat.cauchy.inv(0.5,x₀,γ).`)
+          step('Sustituir el cuantil', `Para la probabilidad una mitad, el argumento de la tangente es cero y su valor también. La corrección de escala desaparece: la mediana coincide con la localización, ${format(median)}, aunque no exista una esperanza.`)
         ], 'La mediana existe aunque la esperanza no exista; una media muestral finita no crea una media poblacional.')
       ], 'math', {distribution:'cauchy', location, scale, lower, upper});
   },
@@ -840,16 +840,16 @@ const generators = {
     const quantile = core.weibull.inv(quantileProbability, scale, shape);
     return exercise('weibull', seed, 'T es el tiempo hasta que un biosensor pierde su actividad, bajo un modelo Weibull ficticio.',
       [`Escala α=${scale} horas; forma β=${format(shape)}, sin unidades; soporte T≥0.`, `Umbral t=${format(time)} horas; cuantil solicitado u=${format(quantileProbability)}.`],
-      ['Forma y escala son positivas; el modelo describe el tiempo completo, sin censura en este ejercicio.', 'Se usa S(t)=exp(-(t/α)^β); jStat.weibull recibe (t,escala,forma), en ese orden.'], [
+      ['Forma y escala son positivas; el modelo describe el tiempo completo, sin censura en este ejercicio.', 'La supervivencia es la exponencial de menos el tiempo relativo a la escala elevado a la forma. Dividimos por la escala antes de elevar: el exponente debe ser adimensional.'], [
         probability('survival', 'Calcula P(T>t).', survival, 'Primero divide el tiempo por la escala y después eleva a la forma.', [
           step('Formar una razón sin unidades', `t/α = ${format(time)}/${scale} = ${format(time / scale)}.`),
           step('Aplicar la potencia y la exponencial', `exp(-(${format(time / scale)})^${format(shape)}) = ${format(survival)}.`, String.raw`S(t)=e^{-(t/\alpha)^\beta}`),
-          step('Relacionar supervivencia y CDF', `1-jStat.weibull.cdf(${format(time)},${scale},${format(shape)}) da la misma cola.`)
+          step('Relacionar supervivencia y CDF', `Haber perdido actividad antes del umbral y conservarla después son sucesos complementarios en este modelo continuo. Restar a uno la acumulada en ${format(time)} horas da la misma supervivencia, ${format(survival)}.`)
         ], shape === 1 ? 'Con forma uno se recupera una exponencial de escala α y tasa 1/α.' : 'Con forma distinta de uno no se presupone falta de memoria ni riesgo constante.'),
         question('quantile', 'Calcula q tal que P(T≤q)=u.', quantile, 'horas', 'El cuantil usa 1−u como supervivencia, no u.', [
           step('Pasar a supervivencia', `exp(-(q/α)^β) = 1-u = ${format(1 - quantileProbability)}.`),
           step('Despejar con logaritmos', `(q/α)^β = -log(1-u); q=α[-log(1-u)]^(1/β).`, String.raw`q_u=\alpha[-\log(1-u)]^{1/\beta}`),
-          step('Sustituir forma y escala', `${scale} × [-log(${format(1 - quantileProbability)})]^(1/${format(shape)}) = ${format(quantile)}; jStat.weibull.inv(u,α,β).`)
+          step('Sustituir forma y escala', `La supervivencia buscada es ${format(1 - quantileProbability)}. Tomamos menos su logaritmo, elevamos a uno dividido entre la forma ${format(shape)} y multiplicamos por la escala ${scale} horas. El tiempo resultante es aproximadamente ${format(quantile)} horas.`)
         ], `Bajo el modelo, la proporción ${format(quantileProbability)} pierde su actividad antes de este tiempo; no es una vida útil idéntica para todos.`)
       ], 'math', {distribution:'weibull', shape, scale, time, quantileProbability});
   },
@@ -900,7 +900,7 @@ const generators = {
     const conditionalSd = sdY * Math.sqrt(1 - rho ** 2);
     const tail = 1 - statistics().normal.cdf(threshold, conditionalMean, conditionalSd);
     return exercise('bivariate-normal', seed, 'X e Y son dos intensidades de expresión medidas en la misma célula. Se supone una normal conjunta bivariante no degenerada como modelo ficticio.',
-      [`Medias μ_X=${meanX}, μ_Y=${meanY}; desviaciones σ_X=${sdX}, σ_Y=${sdY}, en unidades de señal; ρ=${format(rho)}.`, `Se fija X=x=${observedX}; umbral de Y: c=${format(threshold)}. La notación N(μ,σ²) usa varianza; jStat.normal usa desviación típica.`],
+      [`Medias μ_X=${meanX}, μ_Y=${meanY}; desviaciones σ_X=${sdX}, σ_Y=${sdY}, en unidades de señal; ρ=${format(rho)}.`, `Se fija X=x=${observedX}; umbral de Y: c=${format(threshold)}. El segundo parámetro de la notación normal es la varianza; al tipificar dividiremos por su raíz, la desviación típica.`],
       ['Se supone normalidad conjunta, no solo dos marginales normales; σ_X,σ_Y>0 y |ρ|<1.', 'El soporte teórico es R²; condicionar en un valor continuo se define mediante densidades y no implica causalidad.'], [
         question('conditional-mean', 'Calcula E[Y | X=x].', conditionalMean, 'unidades de señal', 'Desplaza μ_Y por ρ(σ_Y/σ_X)(x−μ_X).', [
           step('Medir la desviación de X', `x-μ_X=${observedX}-${meanX}=${observedX - meanX}; pendiente ρσ_Y/σ_X=${format(rho * sdY / sdX)}.`),

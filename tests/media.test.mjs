@@ -181,7 +181,19 @@ function validateVersionedAudio(directory, lectures, sections) {
     assert.equal(lesson.src, `audio/${id}.mp3`);
     if (sectionMap.has(id)) {
       assert.equal(provenance.sectionExporter, 'scripts/tts/export-narration.mjs');
-      retainedSection(directory, current, lesson, provenance.lessons[id]);
+      const frozen = {...current, scenes:lesson.scenes.map((scene, index) => ({
+        ...current.scenes[index],
+        caption:scene.cues.map(cue => cue.text).join(' '),
+        cues:scene.cues
+      }))};
+      retainedSection(directory, frozen, lesson, provenance.lessons[id]);
+      const currentHash = createHash('sha256').update(JSON.stringify(canonicalContent(current))).digest('hex');
+      if (currentHash === provenance.lessons[id].canonicalSha256) {
+        retainedSection(directory, current, lesson, provenance.lessons[id]);
+      } else {
+        assert.throws(() => retainedSection(directory, current, lesson, provenance.lessons[id]), {code:'ERR_ASSERTION'});
+        assert.throws(() => validateTimeline(lesson.scenes, current, provenance.lessons[id].sourceDuration), {code:'ERR_ASSERTION'});
+      }
       continue;
     }
     const origin = publicProvenance(provenance.lessons[id]);
@@ -199,7 +211,7 @@ function validateVersionedAudio(directory, lectures, sections) {
   }
 }
 
-test('versioned audio references only canonical complete timelines, valid provenance and public paths', async context => {
+test('versioned audio preserves signed frozen narration and rejects incompatible revised scripts', async context => {
   const temporary = mkdtempSync(join(tmpdir(), 'media-canonical-'));
   context.after(() => rmSync(temporary, {recursive: true, force: true}));
   const lectures = await canonicalLectures(temporary);

@@ -48,12 +48,13 @@ const paragraphs=html=>{const node=document.createElement('div');node.innerHTML=
 const lectures=COURSE.units[0].lessons.map(lesson=>createLessonAnimation(lesson,generateExercise,paragraphs));
 const sectionAnimations=COURSE.units[0].lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>section.animation));
 
-test('all 118 sections and 521 recap scenes render every context phase as finite, bounded real Canvas pixels at 320 and 960',async()=>{
+test('all 118 sections and 36 recaps render every context phase as finite, bounded real Canvas pixels at 320 and 960',async()=>{
   const lessons=COURSE.units.flatMap(unit=>unit.lessons);
   const sections=lessons.flatMap(lesson=>createLessonSections(lesson).map(section=>enrichLessonAnimation(section.animation)));
   const recaps=lessons.map(lesson=>enrichGlobalAnimation(createLessonAnimation(lesson,generateExercise,paragraphs)));
   assert.equal(sections.length,118);
-  assert.equal(recaps.reduce((sum,animation)=>sum+animation.steps.length,0),521);
+  assert.equal(recaps.length,36);
+  assert.equal(recaps.reduce((sum,animation)=>sum+animation.steps.length,0),1370);
   const kinds=new Set();
   for (const width of [320,960]) {
     const height=Math.max(360,Math.round(width*5/12));
@@ -285,7 +286,9 @@ test('the seed comparison preserves counts and demonstrates why more successes n
   const groups=lecture.steps.slice(0,2).flatMap(step=>planWhiteboardScene(lecture.id,step).lines.filter(line=>line.bar).map(line=>[line.bar.part,line.bar.total]));
   assert.deepEqual(groups,[[18,72],[30,200]]);
   assert.ok(18/72>30/200);
-  assert.match(lecture.steps[0].visual.lines.at(-1).tex,/25/);
+  const formulas=lecture.steps[0].visual.lines.map(line=>line.tex).filter(Boolean);
+  assert.ok(formulas.some(tex=>tex===String.raw`18/72=0{,}25=25\%`));
+  assert.ok(formulas.some(tex=>tex===String.raw`30/200=0{,}15=15\%`));
 });
 
 test('spoken integral examples preserve their exact shaded intervals and densities',()=>{
@@ -320,8 +323,11 @@ test('final checks use their own weights and strict integer boundary',()=>{
   for(const lecture of lectures){
     const lesson=COURSE.units[0].lessons.find(item=>item.id===lecture.id);
     const plan=planWhiteboardScene(lecture.id,lecture.steps.at(-1));
-    assert.equal(plan.lines[0].value,lesson.check.options[lesson.check.answer]);
-    assert.ok(plan.lines[0].cue>0,'la pregunta no revela su respuesta');
+    const conclusion=plan.lines.find(line=>line.label==='Conclusión razonada');
+    assert.ok(conclusion);
+    assert.equal(conclusion.value,lesson.check.options[lesson.check.answer]);
+    const question=plan.lines.find(line=>line.label==='Comprobación');
+    assert.ok(conclusion.cue>question.cue,'la pregunta no revela su respuesta');
   }
 });
 

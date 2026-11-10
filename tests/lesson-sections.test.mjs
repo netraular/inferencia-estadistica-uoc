@@ -194,6 +194,17 @@ test('sections are deterministic, do not require a statistics global and do not 
   }
 });
 
+test('proportion narration explains the denominator and interprets the comparison before modelling', () => {
+  const sections = createLessonSections(lessons.find(lesson => lesson.id === 'proporciones'));
+  for (const section of sections) assert.match(section.animation.steps[0].cues[0].text, /^Hola\./);
+  const scene = sections[0].animation.steps[0];
+  const fraction = scene.visual.lines.find(line => line.tex === String.raw`p=\frac{18}{72}`);
+  assert.match(scene.cues[fraction.cue].text, /qué fracción del total/);
+  assert.match(scene.caption, /ya están incluidas/);
+  assert.match(scene.caption, /quince centésimas es menos que un cuarto/);
+  assert.match(scene.caption, /todavía no necesitamos independencia/);
+});
+
 test('each whiteboard reveals meaningful visual content sequentially with its narration', () => {
   for (const lesson of lessons) for (const section of createLessonSections(lesson)) for (const scene of section.animation.steps) {
     const context = `${lesson.id}: ${section.id}`;
@@ -380,7 +391,7 @@ test('new section timing does not change the global story contract or its output
   const beats = [{say:'Nombramos la cantidad antes de calcular.'}, {say:'Ahora multiplicamos dos por tres.', show:[{tex:'2\\cdot3=6'}]}];
   const ordinary = storyScene('Ejemplo', 'Ejemplo', beats);
   assert.equal(ordinary.visual.lines[0].cue, 1);
-  assert.equal(ordinary.cues[0].end, 3);
+  assert.equal(ordinary.cues[0].end, Math.max(3, beats[0].say.split(/\s+/).length / 2 + 1));
 }));
 
 test('changing returned visual data cannot modify a later section or call', () => {
