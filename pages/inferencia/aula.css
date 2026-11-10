@@ -166,8 +166,7 @@ progress::-webkit-progress-bar{background:var(--line)}progress::-webkit-progress
 .exercise-list form label{display:grid;gap:6px;font-size:14px;max-width:100%}
 .exercise-list form input{width:220px;max-width:100%;box-sizing:border-box}
 .exercise-list form [role=status]{flex-basis:100%;margin:0}
-.exercise-list .written-solution-tools{display:flex;align-items:center;gap:8px;margin:16px 0}
 .exercise-list .written-solution-steps{list-style:none;padding:0}
 .exercise-list .written-solution-steps>li{padding:8px 0;border-bottom:1px solid var(--line)}
-.exercise-list .written-solution-steps p{line-height:1.7}
+.exercise-list [data-written-solution] p{line-height:1.7}
 .exercise-list summary:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
