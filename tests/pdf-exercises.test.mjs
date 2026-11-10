@@ -168,33 +168,42 @@ test('narrated exercise catalogue preserves every written explanation and keeps 
   }
 }));
 
-test('written solutions copy explained steps and report clipboard failure without opening solutions', async () => {
-  const {document,window}=parseHTML('<div id="exercises"></div>');
-  const navigator=window.navigator;
-  Object.defineProperty(document,'defaultView',{value:{navigator},configurable:true});
-  const original=Object.getOwnPropertyDescriptor(navigator,'clipboard');
+test('written solutions explain the requested task and expose every step and conclusion without extra controls', () => withStatistics(() => {
+  const {document}=parseHTML('<div id="exercises"></div>');
   const root=document.getElementById('exercises');
-  let copied='';
-  Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{copied=text;}}});
-  const exercise=withStatistics(()=>getPdfExercises('sucesos')[0]);
-  const dispose=mountExercises(root,{exercises:[exercise],lessonId:'sucesos',formatMath:tex=>katex.renderToString(tex)});
-  try {
-    const solution=root.querySelector('[data-written-solution]');solution.setAttribute('open','');
-    solution.querySelector('[data-copy-solution]').click();
-    await new Promise(resolve=>setImmediate(resolve));
-    for(const step of exercise.questions[0].steps)assert.ok(copied.includes(step.explanation));
-    assert.ok(copied.includes(exercise.questions[0].interpretation));
-    assert.match(solution.querySelector('[data-copy-status]').textContent,/copiada/);
-    assert.equal(solution.querySelectorAll('[data-written-step][open]').length,0);
-    navigator.clipboard.writeText=async()=>{throw new Error('Blocked');};
-    solution.querySelector('[data-copy-solution]').click();
-    await new Promise(resolve=>setImmediate(resolve));
-    assert.match(solution.querySelector('[data-copy-status]').textContent,/No se pudo/);
-  } finally {
-    dispose();
-    if(original)Object.defineProperty(navigator,'clipboard',original);else delete navigator.clipboard;
+  for(const exercise of exerciseCatalogue()) {
+    const dispose=mountExercises(root,{exercises:[exercise],lessonId:exercise.lessonIds[0],formatMath:tex=>katex.renderToString(tex,{throwOnError:true})});
+    try {
+      for(const [index,solution] of Array.from(root.querySelectorAll('[data-written-solution]')).entries()) {
+        const question=exercise.questions[index];
+        const context=`${exercise.id}/${question.id}`;
+        assert.equal(solution.hasAttribute('open'),false,context);
+        solution.setAttribute('open','');
+        assert.equal(solution.querySelectorAll('details,button,[data-copy-status]').length,0,context);
+        const introduction=solution.querySelector('[data-written-introduction]');
+        assert.ok(introduction,context);
+        assert.equal(introduction.querySelector('h4').textContent,'Qué pide este apartado',context);
+        const explanation=introduction.querySelector('p').textContent;
+        assert.ok(explanation.length>40,context);
+        assert.notEqual(explanation,question.prompt,context);
+        assert.notEqual(explanation,question.steps[0].explanation,context);
+        const steps=Array.from(solution.querySelectorAll('[data-written-step]'));
+        assert.equal(steps.length,question.steps.length,context);
+        assert.equal(introduction.nextElementSibling.className,'written-solution-steps',context);
+        for(const [stepIndex,step] of steps.entries()) {
+          assert.equal(step.querySelector('h4').textContent,`${stepIndex+1}. ${question.steps[stepIndex].title}`,context);
+          assert.ok(step.textContent.includes(question.steps[stepIndex].explanation),context);
+          if(question.steps[stepIndex].tex)assert.ok(step.querySelector('.katex'),context);
+        }
+        const conclusion=solution.querySelector('[data-written-conclusion]');
+        assert.equal(conclusion.querySelector('h4').textContent,'Resultado e interpretación',context);
+        if(question.answerText)assert.ok(conclusion.textContent.includes(question.answerText),context);
+        else assert.ok(conclusion.textContent.includes(`${Number(question.answer.toPrecision(7)).toString().replace('.', ',')} ${question.unit}`),context);
+        assert.ok(conclusion.textContent.includes(question.interpretation),context);
+      }
+    } finally {dispose();}
   }
-});
+}));
 
 test('exercise list exposes all PDF statements with no selectors and closed independent solutions', () => withStatistics(() => {
   const {document,window}=parseHTML('<div id="exercises"></div>');
@@ -211,13 +220,10 @@ test('exercise list exposes all PDF statements with no selectors and closed inde
     assert.equal(root.querySelectorAll('.animation-player').length,0);
     const written=root.querySelector('[data-written-solution]');
     written.setAttribute('open','');
-    const first=written.querySelector('[data-written-step]');first.setAttribute('open','');
-    assert.equal(written.querySelectorAll('[data-written-step][open]').length,1);
+    const first=written.querySelector('[data-written-step]');
+    assert.equal(written.querySelectorAll('[data-written-step]').length,exercises[0].questions[0].steps.length);
     assert.ok(first.textContent.includes(exercises[0].questions[0].steps[0].explanation));
-    written.querySelector('[data-open-steps]').click();
-    assert.equal(written.querySelectorAll('[data-written-step][open]').length,exercises[0].questions[0].steps.length);
-    written.querySelector('[data-open-steps]').click();
-    assert.equal(written.querySelectorAll('[data-written-step][open]').length,0);
+    assert.equal(written.querySelectorAll('details,[data-open-steps],[data-copy-solution]').length,0);
     const form=root.querySelector('[data-exercise-answer]');
     for(const [answer,pattern] of [[String(exercises[0].questions[0].answer),/Correcto/],['-123',/Revisa el cálculo/],['no es un número',/Introduce un número/]]) {
       form.querySelector('input').value=answer;
