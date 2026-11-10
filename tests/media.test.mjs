@@ -211,13 +211,20 @@ function validateVersionedAudio(directory, lectures, sections) {
   }
 }
 
-test('versioned audio preserves signed frozen narration and rejects incompatible revised scripts', async context => {
+test('published audio validates signed recordings and permits an empty catalogue without orphaned MP3s', async context => {
   const temporary = mkdtempSync(join(tmpdir(), 'media-canonical-'));
   context.after(() => rmSync(temporary, {recursive: true, force: true}));
   const lectures = await canonicalLectures(temporary);
   const sections = await canonicalSections(temporary);
   assert.deepEqual(readdirSync(temporary), []);
   validateVersionedAudio(join(root, 'static/audio'), lectures, sections);
+  const empty = join(temporary, 'empty');
+  mkdirSync(empty);
+  writeFileSync(join(empty, 'manifest.json'), JSON.stringify({version: 1, lessons: {}}));
+  writeFileSync(join(empty, 'provenance.json'), JSON.stringify({version: 1, exporter: 'data-src/inferencia-estadistica/export-lecturas.mjs', lessons: {}}));
+  validateVersionedAudio(empty, lectures, sections);
+  writeFileSync(join(empty, 'orphan.mp3'), 'retired recording');
+  assert.throws(() => validateVersionedAudio(empty, lectures, sections), /Published MP3 files must belong to the current playback manifest/);
 });
 
 test('audio preparation needs no external source to run and publishes no partial scenes', async context => {

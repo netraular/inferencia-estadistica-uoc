@@ -94,11 +94,12 @@ follow the revised phrases; numeric answers and source errata remain checked.
 The [editorial storyboard](data-src/inferencia-estadistica/guiones-docentes.md)
 remains a production reference, not the runtime transcript source.
 
-Existing recordings retain their original scripts, hashes and measured timings.
-Incompatible audio is not played; a prerecorded video is also used only when
-its recorded cues exactly match the active script. New audio and video require
-separate production with newly measured timings. No recordings were regenerated
-as part of this script review.
+All 118 published MP3s and six historical archived recordings were removed on
+2026-11-10 for complete regeneration. The audio manifests and provenance are
+empty, and obsolete preparation reports were removed. The existing prerecorded
+MP4 is retained but falls back to the current animation without a compatible
+recording. New audio and video require separate production with newly measured
+timings. Local TTS batches outside this repository were not deleted or changed.
 
 Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
 density, marginals, continuous conditioning and the bivariate normal. Each starts
@@ -130,7 +131,7 @@ compatible MP3 is listed in `static/audio/exercises-manifest.json`. The current
 exercise manifest contains no generated MP3s; voice availability and quality
 depend on the browser and installed Spanish voices. Unavailable speech is
 reported explicitly. Pause, phrase seeking, visibility changes and disposal
-control the speech clock. Existing lesson recordings are unchanged.
+control the speech clock. Lesson MP3s are pending regeneration.
 Numerical answers are independently checked, including corrections to errors
 in the PDF solutions.
 The assessment statement has its own three-page topic 5, separate from the

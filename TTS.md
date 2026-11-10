@@ -15,11 +15,13 @@ Conserva el lote anterior para reanudar su guion original; no sobrescribas su co
 del curso con textos nuevos.
 
 La revision de guiones de 2026-11-10 cambia los 118 apartados, los 36 repasos y
-las soluciones narradas. Los MP3 y el video pregrabado conservan la locucion
-anterior: no se han regenerado ni se deben reasignar a las nuevas frases.
-El reproductor descarta las grabaciones incompatibles. Para producir esta revision
-hay que preparar otro lote y medir de nuevo sus fragmentos; no reutilices las
-marcas temporales antiguas.
+las soluciones narradas. Se han eliminado los 118 MP3 publicados y los seis
+audios historicos archivados para regenerarlos todos. Los manifiestos de audio
+y su procedencia quedan vacios, sin los informes de preparacion anteriores.
+Los lotes locales fuera del repositorio no se han borrado ni modificado.
+El video pregrabado conserva la locucion anterior y no se usa sin una grabacion
+compatible. Para producir esta revision hay que preparar otro lote y medir de
+nuevo sus fragmentos; no reutilices las marcas temporales antiguas.
 
 ## Preparar el entorno local
 
