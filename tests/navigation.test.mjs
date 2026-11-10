@@ -118,6 +118,7 @@ test('every journey section shows only its notes, video and scoped example, and 
   });
   const {default:LessonSectionPlayer} = loadCompiled('../src/components/LessonSectionPlayer.jsx', {
     '@docusaurus/router':{useLocation:() => ({pathname:'/inferencia/lecciones/proporciones/'})},
+    './LessonVideo':({fallback}) => fallback,
     './InteractiveLesson':({animation}) => React.createElement('div', {'data-video':animation.id}),
     './ExerciseCollection':({descriptor}) => React.createElement('div', {'data-example':descriptor.questionIds.join(',')})
   });

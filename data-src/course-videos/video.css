@@ -1,0 +1,25 @@
+*{box-sizing:border-box}
+.course-video{font-family:Atkinson,sans-serif;color:#21382e;background:linear-gradient(180deg,#f5f9f6,#fff 75%);letter-spacing:0}
+.course-video header{position:absolute;left:64px;right:64px;top:30px;height:96px}
+.course-video header p{margin:0 0 10px;color:#527262;font-size:19px;font-weight:700;letter-spacing:0}
+.course-video h1{margin:0;font-size:44px;line-height:1.15;font-weight:700}
+.question{position:absolute;top:136px;left:64px;right:64px;height:40px;font-size:27px;border-bottom:1px solid #dce5df}
+.trays{position:absolute;top:193px;left:64px;right:64px;height:346px;display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.tray{position:relative;min-width:0}
+.tray h2{margin:0 0 8px;font-size:25px;font-weight:700;color:var(--tray-color)}
+.count{display:flex;align-items:baseline;gap:12px;height:54px}
+.count strong{font-size:52px;line-height:1;color:var(--tray-color)}
+.count span{font-size:24px}
+.total{height:30px;font-size:24px;line-height:30px}
+.seed-grid{display:block;width:100%;height:146px;margin-top:3px}
+.ratio{height:45px;display:flex;align-items:center;justify-content:space-between;font-size:25px}
+.ratio strong{font-size:31px;color:var(--tray-color)}
+.ratio .katex{font-size:1em}
+.bar{height:10px;background:#e7ece9}
+.bar>div{height:100%;background:var(--tray-color)}
+.bar-scale{display:flex;justify-content:space-between;font-size:14px;color:#64736c;margin-top:3px}
+.formula{position:absolute;left:64px;right:64px;top:549px;height:64px;display:flex;align-items:center;justify-content:center;font-size:28px;white-space:nowrap}
+.formula .katex{font-size:1em}
+.caption{position:absolute;left:64px;right:64px;top:623px;height:83px;border-top:1px solid #dce5df;padding-top:10px;display:flex;align-items:flex-start;justify-content:center;text-align:center;font-size:30px;line-height:35px;color:#263e32}
+.progress{position:absolute;bottom:0;left:0;right:0;height:4px;background:#e2ebe5}
+.progress>div{height:100%;background:#16785a}
