@@ -171,6 +171,153 @@
           ]
         }
       ]
+    },
+    "ejercicio-pdf-u1-1--d": {
+      "parentLesson": "ejercicio-pdf-u1-1",
+      "parentTitle": "Dos sucesos y sus complementos",
+      "sectionId": "d",
+      "sourceSections": [
+        "¿Cuánto vale P(A∩Bᶜ)?"
+      ],
+      "optional": false,
+      "exerciseId": "pdf-u1-1",
+      "questionId": "d",
+      "lessonIds": [
+        "sucesos",
+        "axiomas"
+      ],
+      "id": "ejercicio-pdf-u1-1--d",
+      "kind": "exercise",
+      "title": "¿Cuánto vale P(A∩Bᶜ)?",
+      "source": {
+        "file": "Ejercicios_Unidad_1-Soluciones.pdf",
+        "number": "1",
+        "page": 1
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "206f03776b8f17fc11b38fc47154696df182d2a4f45b7834826a29b83bc27e32",
+      "mp3Sha256": "c9e2f965b6ff2126a8822b758760dee36148ea094473dbf4688f706cfe7fe9f8",
+      "src": "audio/ejercicio-pdf-u1-1--d.mp3",
+      "duration": 56.842449,
+      "sourceDuration": 56.8,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 8.7,
+          "cues": [
+            {
+              "start": 0,
+              "end": 2.2,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 2.5,
+              "end": 5.9,
+              "text": "¿Cuánto vale probabilidad de A intersección complemento de be?"
+            },
+            {
+              "start": 6.2,
+              "end": 8.7,
+              "text": "Queremos A sin la parte que comparte con be."
+            }
+          ]
+        },
+        {
+          "start": 9,
+          "end": 22.8,
+          "cues": [
+            {
+              "start": 9,
+              "end": 12.5,
+              "text": "A y be nombran sucesos, es decir, conjuntos de resultados."
+            },
+            {
+              "start": 12.8,
+              "end": 16.6,
+              "text": "La unión admite cualquiera de ellos; la intersección exige ambos."
+            },
+            {
+              "start": 16.9,
+              "end": 22.8,
+              "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be."
+            }
+          ]
+        },
+        {
+          "start": 23.1,
+          "end": 29.5,
+          "cues": [
+            {
+              "start": 23.1,
+              "end": 29.5,
+              "text": "probabilidad de A igual a 0 coma 3; probabilidad de be igual a 0 coma 6; probabilidad de A intersección be igual a 0 coma 1."
+            }
+          ]
+        },
+        {
+          "start": 29.8,
+          "end": 35.4,
+          "cues": [
+            {
+              "start": 29.8,
+              "end": 32.3,
+              "text": "Ahora retiro de A la parte que comparte con be."
+            },
+            {
+              "start": 32.6,
+              "end": 35.4,
+              "text": "Retiramos de A la intersección, no todo be."
+            }
+          ]
+        },
+        {
+          "start": 35.7,
+          "end": 45.1,
+          "cues": [
+            {
+              "start": 35.7,
+              "end": 37.3,
+              "text": "Conservar solo A."
+            },
+            {
+              "start": 37.6,
+              "end": 45.1,
+              "text": "Ahora retiro de A la parte que comparte con be. probabilidad de A intersección complemento de be igual a 0 coma 3 menos 0 coma 1."
+            }
+          ]
+        },
+        {
+          "start": 45.4,
+          "end": 49.2,
+          "cues": [
+            {
+              "start": 45.4,
+              "end": 49.2,
+              "text": "probabilidad de A intersección complemento de be queda igual a 0 coma 2."
+            }
+          ]
+        },
+        {
+          "start": 49.5,
+          "end": 56.8,
+          "cues": [
+            {
+              "start": 49.5,
+              "end": 53,
+              "text": "El resultado es 0 coma 2 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 53.3,
+              "end": 56.8,
+              "text": "La región exclusiva de A no incluye la intersección."
+            }
+          ]
+        }
+      ]
     }
   }
 }

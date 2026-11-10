@@ -18,7 +18,27 @@
       "model": "gemini-3.8-flash-tts",
       "voice": "Puck",
       "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "ejercicio-pdf-u1-1--d": {
+      "sourceSignature": "eda22a8ffe11317d2622ddabd215c39e52f5147fbb357e91f9fd743f37e35191",
+      "wavSha256": "39816a0d0a2fd79828efeebd1b2e35714b2cdf419e8680484381729d8fa0ff31",
+      "canonicalSha256": "206f03776b8f17fc11b38fc47154696df182d2a4f45b7834826a29b83bc27e32",
+      "mp3Sha256": "c9e2f965b6ff2126a8822b758760dee36148ea094473dbf4688f706cfe7fe9f8",
+      "mp3Bytes": 341281,
+      "sourceDuration": 56.8,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
     }
   },
-  "geminiExporter": "scripts/tts/gemini-course.mjs"
+  "geminiExporter": "scripts/tts/gemini-course.mjs",
+  "mingExporter": "scripts/tts/prepare-ming-course.mjs"
 }
