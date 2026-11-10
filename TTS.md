@@ -1,4 +1,58 @@
-# Generar audios del curso con Ming
+# Generar audios del curso con Puck o Ming
+
+## Produccion seleccionada: Gemini Puck y Remotion
+
+La voz elegida para las narraciones es **Puck**, con
+`gemini-3.8-flash-tts`. El lote incluye 118 apartados, 36 repasos y 387
+soluciones de preguntas: 541 piezas y 17.872 frases. El exportador congela los
+guiones y sus visuales; cada frase se genera por separado y se mide antes de
+ensamblar el audio. No se asignan tiempos estimados a grabaciones reales.
+
+Las claves se leen localmente desde `~/.config/inferencia-tts/gemini.env`;
+no se incluyen en el repositorio ni en los registros. Se usa solo
+`GEMINI_API_KEY_1`, sin rotacion de claves ni reintentos automaticos. La
+generacion exige confirmacion de Free Tier, un numero maximo de solicitudes y
+un intervalo minimo de quince segundos entre sus inicios.
+
+El lote de produccion es
+`/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1`.
+El 10 de noviembre de 2026 quedo detenido con siete frases completas y ninguna
+pieza completa. El ultimo HTTP 429 indico esperar hasta el 11 de noviembre a
+las 08:00 UTC. No hay un proceso esperando ni una reanudacion programada.
+
+```bash
+SCRIPT=/home/aquiluer/Scripts/inferencia-estadistica-uoc/scripts/tts/gemini-course.mjs
+BATCH=/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1
+node "$SCRIPT" --status "$BATCH"
+```
+
+Despues del reinicio de cuota, reanudar explicitamente la solicitud rechazada:
+
+```bash
+node "$SCRIPT" --generate "$BATCH" --resume-quota --max-requests 50 \
+  --min-interval-ms 15000 --free-tier-confirmed
+```
+
+Un nuevo 429 vuelve a detener el lote y conserva lo recibido. Los errores de
+resultado incierto no se reintentan automaticamente. No cambies la copia
+congelada ni empieces otro lote para recuperar fragmentos ya generados.
+
+Cuando existan piezas completas, publicar sus audios compatibles y renderizar
+solo los videos disponibles:
+
+```bash
+node "$SCRIPT" --publish "$BATCH"
+node data-src/course-videos/render-course.mjs --batch "$BATCH" --ready --publish
+```
+
+La publicacion rechaza medios incompatibles, guiones cambiados y avances
+parciales. El avance local de seis frases en `previews/` usa Puck real y
+Remotion, pero **no es una leccion completa** ni se ha publicado. Las pruebas
+con audio sintetico de tono tampoco producen material publicable.
+Consulta [el flujo Gemini](scripts/tts/README.md) y
+[el renderizador Remotion](data-src/course-videos/README.md).
+
+## Alternativa local: Ming
 
 El generador usa Ming-3.0-tts-0.5B en CUDA para narrar las lecturas del aula.
 El codigo esta en `scripts/tts/`; los pesos, el entorno Python y los resultados

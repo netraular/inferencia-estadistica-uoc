@@ -101,6 +101,14 @@ MP4 is retained but falls back to the current animation without a compatible
 recording. New audio and video require separate production with newly measured
 timings. Local TTS batches outside this repository were not deleted or changed.
 
+New production uses the selected Gemini Puck voice and the general Remotion
+renderer for all 541 section, recap and exercise explanations. Narration is
+frozen, generated and measured per phrase; only complete, compatible recordings
+and videos can be published. The initial production batch is paused by a Free
+Tier HTTP 429 with seven generated phrases and no complete item. A local
+six-phrase Remotion preview is explicitly partial and is not published.
+See [the production and resumption guide](TTS.md).
+
 Six lessons include a compact figure within the reading: Bayes, discrete CDFs,
 density, marginals, continuous conditioning and the bivariate normal. Each starts
 with a concrete question and ends with an interpretation. Figures reuse the
