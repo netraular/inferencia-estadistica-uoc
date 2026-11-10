@@ -28,13 +28,13 @@ export function transcriptSelection(catalogue, catalogueBytes, sourceCatalogue, 
   validateFrozenCatalogue(catalogue);
   assert.equal(catalogue.items.length, 541, 'Expected complete 541-item source catalogue');
   for (const id of PUBLISHED_PUCK_IDS) assert.ok(catalogue.items.some(item => item.id === id), `Missing published Puck item ${id}`);
-  const targets = catalogue.items.filter(item => !PUBLISHED_PUCK_IDS.includes(item.id));
+  const targets = catalogue.items.filter(item => renderer.native || !PUBLISHED_PUCK_IDS.includes(item.id));
   const counts = Object.fromEntries(['section', 'recap', 'exercise'].map(kind => [kind, targets.filter(item => item.kind === kind).length]));
-  assert.deepEqual(counts, {section:116, recap:36, exercise:386}, 'Unexpected transcript production coverage');
+  assert.deepEqual(counts, renderer.native ? {section:118, recap:36, exercise:387} : {section:116, recap:36, exercise:386}, 'Unexpected transcript production coverage');
   return {version:1, narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true,
     sourceCatalogue, catalogueSha256:sha256(catalogueBytes), sourceFiles:catalogue.sourceFiles,
     sourceInputSha256:catalogue.inputSha256, sourceRevision:catalogue.sourceRevision,
-    timing:TRANSCRIPT_TIMING, excludedIds:[...PUBLISHED_PUCK_IDS], targetIds:targets.map(item => item.id), counts,
+    timing:TRANSCRIPT_TIMING, excludedIds:renderer.native ? [] : [...PUBLISHED_PUCK_IDS], targetIds:targets.map(item => item.id), counts,
     itemHashes:Object.fromEntries(catalogue.items.map(item => [item.id, sha256(JSON.stringify(item))])),
     rendererSha256:renderer.rendererSha256, rendererSources:renderer.sourceHashes};
 }
@@ -72,7 +72,7 @@ export function prepareTranscriptInputs(catalogue, selection, options = {}) {
   const targets = new Set(selection.targetIds);
   if (options.ids) for (const id of options.ids) assert.ok(targets.has(id), `Excluded published Puck item ${id}`);
   const selected = selectItems({...catalogue, items:catalogue.items.filter(item => targets.has(item.id))}, options);
-  return selected.map(item => ({item, storyboard:prepareTranscriptItem(item, selection.timing)}));
+  return selected.map(item => ({item, storyboard:prepareTranscriptItem(item, selection.timing, {native:options.native})}));
 }
 
 export function assertPublishable(metadata) {

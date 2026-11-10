@@ -94,6 +94,25 @@ test('complete source snapshot keeps 541 exact items and explicitly excludes onl
   assert.throws(() => validateFrozenCatalogue({...catalogue, inputSha256:sha256('changed')}), /source hash/);
 }));
 
+test('native transcript batches include every frozen item without enriching or changing original visuals', () => withTranscriptBatch(({catalogue, bytes, source, renderer, batch}) => {
+  const nativeRenderer = {...renderer,native:true};
+  const selection = prepareTranscriptBatch(source,batch,nativeRenderer);
+  assert.equal(selection.targetIds.length,541);
+  assert.deepEqual(selection.excludedIds,[]);
+  assert.deepEqual(selection.counts,{section:118,recap:36,exercise:387});
+  assert.deepEqual(loadTranscriptBatch(batch,bytes,nativeRenderer),selection);
+  assert.throws(() => loadTranscriptBatch(batch,bytes,renderer),/snapshot or renderer changed/);
+  const prepared = prepareTranscriptInputs(catalogue,selection,{native:true});
+  for (const {item,storyboard} of prepared) {
+    assert.equal(storyboard.animation,item.animation);
+    assert.equal(storyboard.transcript.cueTiming,'estimated');
+    assert.equal(storyboard.audio,undefined);
+  }
+  assert.deepEqual(prepareTranscriptInputs(catalogue,selection,{native:true,ids:PUBLISHED_PUCK_IDS}).map(({item})=>item.id),PUBLISHED_PUCK_IDS);
+  assert.deepEqual(fs.readFileSync(source),bytes);
+  assert.throws(() => parseOptions(['--batch',batch,'--native','--transcript','--publish']),/Cannot publish transcript/);
+}));
+
 test('external snapshot preparation and resume reject changed catalogue, source, selection and renderer without audio', () => withTranscriptBatch(({source, batch, bytes, renderer}) => {
   const selection = prepareTranscriptBatch(source, batch, renderer);
   assert.deepEqual(fs.readFileSync(path.join(batch, 'catalogue.json')), bytes);

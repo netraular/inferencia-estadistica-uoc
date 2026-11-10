@@ -9,6 +9,7 @@ import {MODEL, VOICE, prepareCourseItem, validateCourseAudio, sampleFrames, sele
 import {probeMedia, verifyMedia} from './course-media.mjs';
 import {representativeFrame, courseTimeline} from './course-frame.mjs';
 import {prepareTranscriptBatch, loadTranscriptBatch, prepareTranscriptInputs, assertPublishable, assertTranscriptResume, writeProgress} from './transcript-batch.mjs';
+import {createNativePlan} from './native-scenes.mjs';
 
 const owned = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(owned, '../..');
@@ -23,7 +24,7 @@ export function parseOptions(args) {
   const options = {};
   for (let index = 0; index < args.length; index++) {
     const flag = args[index];
-    if (['--ready', '--publish', '--worker', '--help', '--transcript', '--prepare', '--status'].includes(flag)) options[flag.slice(2)] = true;
+    if (['--ready', '--publish', '--worker', '--help', '--transcript', '--prepare', '--status', '--native'].includes(flag)) options[flag.slice(2)] = true;
     else if (['--batch', '--ids', '--limit', '--source'].includes(flag)) {
       assert.ok(args[index + 1] && !args[index + 1].startsWith('--'), `Missing value for ${flag}`);
       const value = args[++index];
@@ -82,7 +83,7 @@ export function prepareBatchInputs(batch, catalogue, options = {}, {probe = prob
           assert.ok(!audio.testFixture, 'Cannot publish fixture narration');
         }
       }
-      const storyboard = audioBytes !== undefined && mp3 !== undefined ? prepareCourseItem(item, audio, mp3) : undefined;
+      const storyboard = audioBytes !== undefined && mp3 !== undefined ? prepareCourseItem(item, audio, mp3, {native:options.native}) : undefined;
       if (mp3 !== undefined) {
         const sound = probe(mp3Path);
         assert.ok(sound && Number.isFinite(Number(sound.duration)) && Number(sound.duration) > 0, 'Invalid MP3 audio stream');
@@ -103,7 +104,18 @@ export function prepareBatchInputs(batch, catalogue, options = {}, {probe = prob
   return {prepared:selected, pending};
 }
 
-export function rendererInputs({source = root} = {}) {
+export function rendererInputs({source = root, native = false} = {}) {
+  if (native) {
+    const names = ['NativeCourse.jsx', 'native-scenes.mjs', 'native-plan.mjs', 'native-primitives.jsx', 'native-layout.mjs',
+      ...['foundations', 'univariate', 'multivariate', 'exercises'].flatMap(name => [`native-${name}.mjs`, `native-${name}.jsx`]),
+      'course-frame.mjs', 'course-contract.mjs', 'course-media.mjs', 'render-course.mjs', 'transcript-batch.mjs', 'package-lock.json'];
+    const hashes = names.map(name => [name, sha256(fs.readFileSync(path.join(owned, name)))]);
+    for (const weight of [400, 700]) {
+      const name = `pages/inferencia/vendor/atkinson-latin-${weight}.woff2`;
+      hashes.push([name, sha256(fs.readFileSync(path.join(source, name)))]);
+    }
+    return {native:true, rendererSha256:sha256(JSON.stringify(hashes)), sourceHashes:Object.fromEntries(hashes)};
+  }
   const require = createRequire(import.meta.url);
   const {parse} = require('acorn');
   const tutor = fs.readFileSync(path.join(source, 'pages/inferencia/exercise-tutor.js'), 'utf8');
@@ -121,7 +133,8 @@ export function rendererInputs({source = root} = {}) {
   return {rendererSha256:sha256(JSON.stringify(hashes)), mathSource, sourceHashes:Object.fromEntries(hashes)};
 }
 
-export function rendererWebpack(configuration, mathModule) {
+export function rendererWebpack(configuration, mathModule, {native = false} = {}) {
+  if (native) return configuration;
   const require = createRequire(import.meta.url);
   return {...configuration, resolve:{...configuration.resolve, alias:{...configuration.resolve?.alias,
     konva:path.join(owned, 'node_modules/konva'), gsap:path.join(owned, 'node_modules/gsap'), 'mathjax-full':path.join(owned, 'node_modules/mathjax-full'),
@@ -135,7 +148,7 @@ async function worker(options) {
   const catalogueBytes = fs.readFileSync(cataloguePath);
   const catalogue = JSON.parse(catalogueBytes);
   const catalogueSha256 = sha256(catalogueBytes);
-  const renderer = rendererInputs();
+  const renderer = rendererInputs({native:options.native});
   const selection = options.transcript ? loadTranscriptBatch(batch, catalogueBytes, renderer) : undefined;
   const {prepared, pending} = options.transcript ? {prepared:prepareTranscriptInputs(catalogue, selection, options), pending:[]} : prepareBatchInputs(batch, catalogue, options);
   if (!prepared.length) return;
@@ -145,7 +158,7 @@ async function worker(options) {
   const ffprobeStatic = require('ffprobe-static').path;
   const ffprobe = fs.existsSync(ffprobeStatic) ? ffprobeStatic : '/usr/bin/ffprobe';
   const {rendererSha256, mathSource, sourceHashes} = renderer;
-  const hashRenderer = () => rendererInputs().rendererSha256;
+  const hashRenderer = () => rendererInputs({native:options.native}).rendererSha256;
   const outputRoot = path.join(batch, 'videos');
   fs.mkdirSync(outputRoot, {recursive:true});
   const lockPath = path.join(outputRoot, '.remotion.lock');
@@ -169,6 +182,7 @@ async function worker(options) {
     }
     for (const {item, storyboard, mp3Path, audioPath} of prepared) {
       current = item.id;
+      if (options.native) storyboard.nativePlan = createNativePlan(item);
       const transcript = storyboard.narrationMode === 'transcript';
       const timeline = courseTimeline(storyboard);
       const inputHash = sha256(JSON.stringify({version:1, rendererSha256, item, ...(transcript ? {transcript:timeline} : {audio:timeline}), style:catalogue.style}));
@@ -182,7 +196,7 @@ async function worker(options) {
       const frames = sampleFrames(storyboard);
       const verifyInputs = () => {
         assert.equal(sha256(fs.readFileSync(cataloguePath)), catalogueSha256, 'Frozen catalogue changed during render');
-        if (transcript) loadTranscriptBatch(batch, fs.readFileSync(cataloguePath), rendererInputs());
+        if (transcript) loadTranscriptBatch(batch, fs.readFileSync(cataloguePath), rendererInputs({native:options.native}));
         else {
           assert.equal(sha256(fs.readFileSync(mp3Path)), storyboard.audio.mp3Sha256, 'Audio changed during render');
           assert.deepEqual(readJson(audioPath), storyboard.audio, 'Measured timing changed during render');
@@ -216,10 +230,10 @@ async function worker(options) {
           const publicDir = path.join(cache, 'public');
           fs.mkdirSync(publicDir, {recursive:true});
           const mathModule = path.join(cache, 'stage-equations.mjs');
-          fs.writeFileSync(mathModule, mathSource);
+          if (!options.native) fs.writeFileSync(mathModule, mathSource);
           for (const weight of [400, 700]) fs.copyFileSync(path.join(root, `pages/inferencia/vendor/atkinson-latin-${weight}.woff2`), path.join(publicDir, `atkinson-latin-${weight}.woff2`));
-          bundleUrl = await bundle({entryPoint:path.join(owned, 'Course.jsx'), outDir:path.join(cache, 'bundle'), rootDir:owned, publicDir, enableCaching:false, gitSource:null,
-            webpackOverride:configuration => rendererWebpack(configuration, mathModule)});
+          bundleUrl = await bundle({entryPoint:path.join(owned, options.native ? 'NativeCourse.jsx' : 'Course.jsx'), outDir:path.join(cache, 'bundle'), rootDir:owned, publicDir, enableCaching:false, gitSource:null,
+            webpackOverride:configuration => rendererWebpack(configuration, mathModule, {native:options.native})});
           assert.equal(hashRenderer(), rendererSha256, 'Renderer changed during bundling');
           const ensured = await runtime.ensureBrowser();
           browser = await runtime.openBrowser('chrome', {browserExecutable:ensured.path, logLevel:'error'});
@@ -233,23 +247,28 @@ async function worker(options) {
         for (const frame of frames) {
           const output = path.join(work, `frame-${frame}.jpg`);
           await runtime.renderStill({serveUrl:bundleUrl, composition:{...composition, props:{...inputProps, audit:true}}, inputProps:{...inputProps, audit:true}, puppeteerInstance:browser, output, frame, imageFormat:'jpeg', logLevel:'error',
-            onBrowserLog:log => {if (log.text?.startsWith('REMOTION_COURSE_LAYOUT ')) layout.push(JSON.parse(log.text.slice('REMOTION_COURSE_LAYOUT '.length)));}});
+            onBrowserLog:log => {
+              const prefix = options.native ? 'REMOTION_NATIVE_LAYOUT ' : 'REMOTION_COURSE_LAYOUT ';
+              if (log.text?.startsWith(prefix)) layout.push(JSON.parse(log.text.slice(prefix.length)));
+            }});
           const evidence = layout.find(entry => entry.frame === frame);
           assert.ok(evidence, `${item.id}/${frame}: no layout evidence`);
           assert.deepEqual(evidence.errors, [], `${item.id}/${frame}: layout errors`);
         }
-        if (timeline.scenes.reduce((count, scene) => count + scene.cues.length, 0) > 1) assert.ok(new Set(layout.map(entry => entry.canvasSha256)).size > 1, `${item.id}: static whiteboard pixels`);
+        if (timeline.scenes.reduce((count, scene) => count + scene.cues.length, 0) > 1) assert.ok(new Set(layout.map(entry => entry.canvasSha256 || entry.geometrySha256)).size > 1, `${item.id}: static scene geometry`);
         const silent = path.join(work, 'silent.mp4');
         await runtime.renderMedia({serveUrl:bundleUrl, composition, inputProps, puppeteerInstance:browser, outputLocation:silent, codec:'h264', pixelFormat:'yuv420p', crf:20, x264Preset:'fast', concurrency:transcript || catalogue.preview || timeline.preview ? 1 : 2, muted:true, overwrite:true, logLevel:'error'});
         const temporaryVideo = path.join(work, 'video.mp4');
         const temporaryPoster = path.join(work, 'poster.jpg');
         if (transcript) execFileSync(ffmpeg, ['-v', 'error', '-y', '-threads', '1', '-i', silent, '-map', '0:v:0', '-c:v', 'copy', '-an', '-movflags', '+faststart', temporaryVideo]);
         else execFileSync(ffmpeg, ['-v', 'error', '-y', '-i', silent, '-i', mp3Path, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-af', 'apad', '-t', String(storyboard.frames / storyboard.fps), '-movflags', '+faststart', temporaryVideo]);
-        const posterFrame = representativeFrame(layout);
+        const posterFrame = options.native ? layout.filter(entry => entry.marks > 0 && !entry.errors.length).at(-1)?.frame : representativeFrame(layout);
+        assert.ok(Number.isInteger(posterFrame), 'Missing representative native scene');
         fs.copyFileSync(path.join(work, `frame-${posterFrame}.jpg`), temporaryPoster);
         const verification = verifyMedia({ffmpeg, ffprobe, video:temporaryVideo, poster:temporaryPoster, storyboard, frames});
         verifyInputs();
         metadata = {version:1, complete:true, engine:'remotion', id:item.id, kind:item.kind, title:item.title,
+          ...(options.native ? {sceneEngine:'native-svg', nativePlanSha256:sha256(JSON.stringify(storyboard.nativePlan))} : {}),
           src:`videos/${item.id}/video.mp4`, poster:`videos/${item.id}/poster.jpg`, duration:storyboard.duration, frames:storyboard.frames,
           fps:storyboard.fps, width:storyboard.width, height:storyboard.height,
           ...(transcript ? {narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true, timing:timeline.timing, transcriptSha256:sha256(JSON.stringify(timeline))} : {audioSource:`audio/${item.id}.mp3`, audioSha256:timeline.mp3Sha256, voice:VOICE, model:MODEL, cueTiming:'measured'}),
@@ -311,12 +330,12 @@ async function worker(options) {
 async function main() {
   const options = parseOptions(process.argv.slice(2));
   if (options.help) {
-    console.log('node /absolute/path/render-course.mjs --batch /absolute/batch [--ready] [--ids id1,id2] [--limit N] [--publish]\n--ready skips pending audio; --ids always requires complete compatible audio. --limit counts ready items.\n--transcript --prepare --source /absolute/catalogue.json freezes the separate silent 538-item batch. --transcript --worker renders/resumes it. --transcript --status reports persistent counts. Transcript drafts cannot --publish or --ready.');
+    console.log('node /absolute/path/render-course.mjs --batch /absolute/batch [--native] [--ready] [--ids id1,id2] [--limit N] [--publish]\n--native selects narration-specific SVG/HTML scenes, never the legacy whiteboard. Use a fresh batch.\n--ready skips pending audio; --ids always requires complete compatible audio. --limit counts ready items.\n--transcript --prepare --source /absolute/catalogue.json freezes a silent draft batch (541 native or 538 legacy items). --transcript --worker renders/resumes it. --transcript --status reports persistent counts. Transcript drafts cannot --publish or --ready.');
     return;
   }
   if (options.prepare) {
     assert.ok(!path.resolve(options.batch).startsWith(`${root}${path.sep}`), 'Transcript batch must be external to source checkout');
-    const selection = prepareTranscriptBatch(options.source, options.batch, rendererInputs());
+    const selection = prepareTranscriptBatch(options.source, options.batch, rendererInputs({native:options.native}));
     console.log(`TRANSCRIPT_PREPARED ${JSON.stringify({total:selection.targetIds.length, counts:selection.counts, catalogueSha256:selection.catalogueSha256})}`);
     return;
   }

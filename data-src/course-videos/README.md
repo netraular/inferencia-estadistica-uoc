@@ -1,5 +1,9 @@
 # Course videos
 
+Use `render-course.mjs --native` for the newly authored narration-specific
+React/SVG scenes. The older `Course.jsx` pipeline records the existing Konva
+whiteboard; it is retained for compatibility, not the native rewrite below.
+
 Remotion is the production renderer for narrated course videos. The retained
 historical first render is topic 0, Proporciones, section `parte-y-total`.
 It uses the original measured narration: 45.4 seconds, 14 cues, 1362 frames
@@ -29,12 +33,117 @@ validation evidence remain under ignored `.cache/`.
 The video component uses the manifest's section animation ID. Sections not
 yet rendered retain their existing animation. A media loading failure also
 falls back to that animation. Comparison projects and public comparison
-routes have been removed; no other course sections have been migrated yet.
+routes have been removed. Native draft coverage is documented below separately
+from published videos.
 
-## General Frozen-Batch Renderer
+## Native Narration Scenes
+
+`NativeCourse.jsx` renders mathematical mechanisms directly with React, SVG and
+KaTeX using `useCurrentFrame()`. It does not import Konva, the existing
+whiteboard, its context renderer or its `stageEquations` helper. Four authored
+scene modules share a strict registry; unsupported content fails rather than
+falling back to the old board. Their plans retain the frozen canonical identity,
+every original cue, cue order and source data. Source animations are not enriched
+through live lesson diagrams in this route.
+
+| Domain | Frozen items | Scenes | Cues |
+| --- | ---: | ---: | ---: |
+| Foundations | 45 | 396 | 1638 |
+| Univariate distributions | 76 | 753 | 3117 |
+| Multivariate distributions | 33 | 339 | 1365 |
+| Exercises | 387 | 5384 | 11752 |
+| Total | 541 | 6872 | 17872 |
+
+The 541 items are 118 sections, 36 recaps and 387 exercise questions. This is
+**implementation and source-contract coverage**, not 541 finished videos or a
+visual review of every scene. Diagrams include seed populations, balances,
+sets, filtering, integrals, probability masses and tails, transformations,
+joint tables, conditional slices and Gaussian contours. Some recap mechanisms
+are schematic rather than numerical simulations. Exercise parameters are bound
+to the frozen problem data; incompatible problem snapshots are rejected.
+
+Install the isolated dependencies, including pinned jStat, after the root
+dependencies. From the repository root:
+
+```sh
+npm ci
+npm ci --ignore-scripts --prefix data-src/course-videos
+COURSE_VIDEO_CATALOGUE=/absolute/frozen-batch/catalogue.json npm --prefix data-src/course-videos test
+```
+
+The real catalogue tests cover all 17872 cues. Without that environment variable,
+catalogue-dependent cases explicitly skip; fixture, compilation and audit tests
+still run. `npm test` includes the native suite. No speech API is called.
+
+Create a **new** silent draft batch; native selection includes all 541 items,
+including the three previously published videos, without overwriting them:
+
+```sh
+CATALOGUE=/absolute/frozen-batch/catalogue.json
+BATCH=/absolute/new-native-batch
+node data-src/course-videos/render-course.mjs --native --transcript --prepare --source "$CATALOGUE" --batch "$BATCH"
+node data-src/course-videos/render-course.mjs --native --transcript --batch "$BATCH" --ids proporciones--parte-y-total,normal--centro-y-escala,normal-bivariante--media-y-varianza-condicional,ejercicio-pdf-u1-1--a --worker
+node data-src/course-videos/render-course.mjs --native --transcript --batch "$BATCH" --status
+```
+
+Omit `--ids` to process the whole selection after validating pilots. Always keep
+`--native` on preparation, status and resume. Renderer sources, fonts and the
+isolated lockfile are fingerprinted independently of the legacy drawing modules;
+changes require a new batch, not rewriting the old selection hashes. Run from
+the repository root to reuse its CWD-relative Remotion Chromium installation.
+Chromium is internal to encoding; no website server is required.
+
+Native metadata includes `sceneEngine:'native-svg'` and `nativePlanSha256`.
+Bounds, ancestor clipping, overlapping SVG labels, text-container overflow and
+nonempty geometry are audited at sampled cue frames. These are sample-based
+checks, not a proof of every possible frame or mathematical explanation.
+FFprobe verifies exact frame counts, codecs and duration; FFmpeg decodes the
+whole MP4 and checks sampled nonblank, changing scene pixels. Regression tests
+also compare continuous geometry within cues and exact narrated reveal anchors.
+
+Silent drafts retain `narrationMode:'transcript'`, `cueTiming:'estimated'`,
+`temporary:true`, `silent:true`, and no audio track. They cannot be published.
+For compatible Puck audio, use a measured frozen batch instead:
+
+```sh
+node data-src/course-videos/render-course.mjs --native --batch /absolute/measured-batch --ready
+```
+
+Measured timing, exact cue text, MP3 hashes and publication guards remain strict.
+Replacing estimates with real narration requires a fresh render, not just muxing
+audio onto the silent draft. No new audio has been generated by this rewrite.
+
+### Native Pilot Evidence
+
+Four full silent pilots in external `remotion-native-scenes-2026-11-10-v3`
+passed encoding, nonblank/motion checks, full decode and source/hash checks:
+
+| Item | Seconds | Frames |
+| --- | ---: | ---: |
+| `proporciones--parte-y-total` | 81.2 | 2436 |
+| `normal--centro-y-escala` | 124.333 | 3730 |
+| `normal-bivariante--media-y-varianza-condicional` | 143.933 | 4318 |
+| `ejercicio-pdf-u1-1--a` | 99 | 2970 |
+
+Image review found overlapping normal labels and a clipped exercise paragraph.
+Both were fixed; the normal observation now remains exactly two standard
+deviations from its center through standardization. The two corrected videos
+were fully rerendered in `remotion-native-scenes-2026-11-10-v4`: 6700 frames,
+40 audited samples, no layout errors, zero audio tracks, complete FFmpeg decode
+and matching output hashes. Twelve additional real stills across all four
+domains passed the stronger clipping/label checks and were visually inspected.
+This verifies these pilots only, not the remaining queue. Dependency fingerprints
+also include the final isolated jStat lockfile; preserve older batches as evidence
+rather than changing their hashes to resume them after a dependency change.
+
+The old whiteboard transcript process was deliberately stopped after six
+completions; its interrupted `algebra` entry is recorded as failed. Its existing
+outputs are preserved. Do not restart the historical unit below for native work.
+
+## Legacy Frozen-Batch Renderer
 
 `render-course.mjs` supports sections, global recaps and individual exercise
-question explanations through one native Remotion composition, `Course.jsx`.
+question explanations through the whiteboard-backed composition, `Course.jsx`.
 It consumes a frozen catalogue and its local audio files. It does not
 generate narration, read credentials, call Gemini, or rebuild lesson content.
 For sections and recaps frozen without context figures, a renderer-only overlay
@@ -190,7 +299,7 @@ math and media guards. `--worker` keeps this run's outputs inside the preview
 batch rather than creating a launcher log in the source checkout. `--publish`
 rejects previews marked in either catalogue or audio, or resumed video metadata.
 
-## Silent Transcript Production
+## Legacy Silent Transcript Production
 
 This is a separate, explicit draft mode, not Puck narration. It never needs,
 reads, generates or fabricates audio. The existing measured-audio `--ready` and

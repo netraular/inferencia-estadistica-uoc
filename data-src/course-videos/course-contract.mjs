@@ -56,16 +56,16 @@ export function validateCourseAudio(item, audio) {
   }
 }
 
-export function prepareCourseItem(item, audio, mp3) {
+export function prepareCourseItem(item, audio, mp3, {native = false} = {}) {
   validateCourseAudio(item, audio);
   assert.equal(audio.mp3Sha256, sha256(mp3), 'Audio MP3 hash mismatch');
   assert.equal(audio.mp3Bytes, mp3.length, 'Audio MP3 size mismatch');
-  return {...VIDEO, frames:Math.ceil(audio.duration * VIDEO.fps), duration:audio.duration, item, animation:withCourseVisuals(item).animation, audio};
+  return {...VIDEO, frames:Math.ceil(audio.duration * VIDEO.fps), duration:audio.duration, item, animation:native ? item.animation : withCourseVisuals(item).animation, audio};
 }
 
 export const TRANSCRIPT_TIMING = Object.freeze({wordsPerMinute:140, pauseSeconds:0.3, minimumCueSeconds:1.2});
 
-export function prepareTranscriptItem(item, timing = TRANSCRIPT_TIMING) {
+export function prepareTranscriptItem(item, timing = TRANSCRIPT_TIMING, {native = false} = {}) {
   assert.ok(['section', 'recap', 'exercise'].includes(item.kind), 'Unsupported item kind');
   assert.ok(item.title && item.animation?.steps?.length, 'Missing frozen animation');
   assert.ok(digest(item.canonicalSha256), 'Missing canonical hash');
@@ -90,7 +90,7 @@ export function prepareTranscriptItem(item, timing = TRANSCRIPT_TIMING) {
   });
   const transcript = {id:item.id, narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true,
     canonicalSha256:item.canonicalSha256, timing:{...timing}, duration:cursor / VIDEO.fps, scenes};
-  return {...VIDEO, frames:cursor, duration:transcript.duration, item, animation:withCourseVisuals(item).animation,
+  return {...VIDEO, frames:cursor, duration:transcript.duration, item, animation:native ? item.animation : withCourseVisuals(item).animation,
     narrationMode:'transcript', transcript};
 }
 

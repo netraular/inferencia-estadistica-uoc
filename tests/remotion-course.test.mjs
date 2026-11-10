@@ -46,6 +46,33 @@ test('rejects missing, stale, unmeasured, incompatible or unordered narration', 
   assert.throws(() => prepareCourseItem(item, stale, mp3), /Invalid cue/);
 });
 
+test('native measured scenes retain raw frozen visuals and all measured-audio guards', () => {
+  const {item,audio,mp3} = fixture();
+  delete item.animation.steps[0].visual.context;
+  const original = JSON.stringify(item);
+  const storyboard = prepareCourseItem(item,audio,mp3,{native:true});
+  assert.equal(storyboard.animation,item.animation);
+  assert.equal(storyboard.audio,audio);
+  assert.equal(storyboard.frames,60);
+  assert.equal(JSON.stringify(item),original);
+  assert.throws(() => prepareCourseItem(item,{...audio,cueTiming:'estimated'},mp3,{native:true}),/must be measured/);
+  assert.throws(() => prepareCourseItem(item,audio,Buffer.from('changed'),{native:true}),/MP3 hash mismatch/);
+});
+
+test('native renderer has a separate guarded dependency graph and no legacy webpack adapter', () => {
+  const renderer = rendererInputs({native:true});
+  assert.equal(renderer.native,true);
+  assert.equal(renderer.mathSource,undefined);
+  for (const name of ['NativeCourse.jsx','native-scenes.mjs','native-layout.mjs','native-plan.mjs','native-primitives.jsx','package-lock.json']) assert.match(renderer.sourceHashes[name],/^[a-f0-9]{64}$/);
+  for (const domain of ['foundations','univariate','multivariate','exercises']) {
+    for (const extension of ['mjs','jsx']) assert.ok(renderer.sourceHashes[`native-${domain}.${extension}`]);
+  }
+  assert.ok(!Object.keys(renderer.sourceHashes).some(name=>/whiteboard|context-diagram|lesson-visuals|stageEquations/.test(name)));
+  const configuration = {resolve:{alias:{}},plugins:[]};
+  assert.equal(rendererWebpack(configuration,'unused',{native:true}),configuration);
+  assert.deepEqual(parseOptions(['--batch','/tmp/native-batch','--native','--transcript']),{batch:'/tmp/native-batch',native:true,transcript:true});
+});
+
 test('catalogue selection is bounded and rejects unknown, duplicate and unsafe ids', () => {
   const {item} = fixture();
   const catalogue = {version:1, model:MODEL, voice:VOICE, items:[item, {...item, id:'second'}]};
