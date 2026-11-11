@@ -241,95 +241,93 @@
         "document": "Puente matemático",
         "section": "Proporciones y análisis dimensional; apoyo para los Temas 1 a 4"
       },
-      "model": "Ming-3.0-tts-0.5B",
-      "voice": "Ming-Spanish-temporary",
-      "provider": "ming-local",
-      "temporary": true,
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Puck",
       "canonicalSha256": "46b3a2efffe078b7c3bfc4118be4d9e3a85e15d6e875fdf491e5051cd4e5f912",
-      "mp3Sha256": "e89567df91e0ff02f86c3eca96782919175bcf5c1eef6f9db53e6c45530d9d0a",
+      "mp3Sha256": "fb1f22cf11cf206341103ac239afb423fe0cd8bd660c65053bb3880be3d4cd8b",
       "src": "audio/proporciones--unidades-y-cotas.mp3",
-      "duration": 63.346939,
-      "sourceDuration": 63.3,
+      "duration": 86.376,
+      "sourceDuration": 86.32,
       "cueTiming": "measured",
       "scenes": [
         {
           "start": 0,
-          "end": 63.3,
+          "end": 86.32,
           "cues": [
             {
+              "text": "Hola.",
               "start": 0,
-              "end": 0.6,
-              "text": "Hola."
+              "end": 1.04
             },
             {
-              "start": 0.9,
-              "end": 5,
-              "text": "Tenemos tres miligramos de una sustancia y el aparato pide microgramos."
+              "text": "Tenemos tres miligramos de una sustancia y el aparato pide microgramos.",
+              "start": 1.34,
+              "end": 7.18
             },
             {
-              "start": 5.3,
-              "end": 6.5,
-              "text": "¿Cambia la cantidad?"
+              "text": "¿Cambia la cantidad?",
+              "start": 7.48,
+              "end": 9.04
             },
             {
-              "start": 6.8,
-              "end": 10,
-              "text": "No: cambia el tamaño de la unidad con la que la contamos."
+              "text": "No: cambia el tamaño de la unidad con la que la contamos.",
+              "start": 9.34,
+              "end": 14.26
             },
             {
-              "start": 10.3,
-              "end": 12.8,
-              "text": "En cada miligramo caben mil microgramos."
+              "text": "En cada miligramo caben mil microgramos.",
+              "start": 14.56,
+              "end": 18.4
             },
             {
-              "start": 13.1,
-              "end": 19.5,
-              "text": "La potencia diez elevado a tres abrevia ese millar: al usar unidades mil veces menores necesitaremos mil veces más unidades."
+              "text": "La potencia diez elevado a tres abrevia ese millar: al usar unidades mil veces menores necesitaremos mil veces más unidades.",
+              "start": 18.7,
+              "end": 27.9
             },
             {
-              "start": 19.8,
-              "end": 23.3,
-              "text": "Hay tres miligramos y cada uno aporta mil microgramos."
+              "text": "Hay tres miligramos y cada uno aporta mil microgramos.",
+              "start": 28.2,
+              "end": 33.12
             },
             {
-              "start": 23.6,
-              "end": 27.4,
-              "text": "Por eso tres por mil da tres mil, no tres miligramos adicionales."
+              "text": "Por eso tres por mil da tres mil, no tres miligramos adicionales.",
+              "start": 33.42,
+              "end": 39.02
             },
             {
-              "start": 27.7,
-              "end": 31.4,
-              "text": "Tres miligramos y tres mil microgramos describen la misma cantidad."
+              "text": "Tres miligramos y tres mil microgramos describen la misma cantidad.",
+              "start": 39.32,
+              "end": 44.44
             },
             {
-              "start": 31.7,
-              "end": 38.1,
-              "text": "Una media sigue ese factor; una varianza usa distancias al cuadrado y, por eso, el factor también se eleva al cuadrado."
+              "text": "Una media sigue ese factor; una varianza usa distancias al cuadrado y, por eso, el factor también se eleva al cuadrado.",
+              "start": 44.74,
+              "end": 52.9
             },
             {
-              "start": 38.4,
-              "end": 44.4,
-              "text": "Podemos detectar errores antes de repetir toda la cuenta: ¿la unidad responde a la pregunta?, ¿el valor cabe en su rango?"
+              "text": "Podemos detectar errores antes de repetir toda la cuenta: ¿la unidad responde a la pregunta?, ¿el valor cabe en su rango?",
+              "start": 53.2,
+              "end": 62.28
             },
             {
-              "start": 44.7,
-              "end": 49.7,
-              "text": "Una probabilidad no puede superar uno; un tiempo esperado debe llevar unidades de tiempo."
+              "text": "Una probabilidad no puede superar uno; un tiempo esperado debe llevar unidades de tiempo.",
+              "start": 62.58,
+              "end": 68.58
             },
             {
-              "start": 50,
-              "end": 52.2,
-              "text": "Conservemos precisión hasta el final."
+              "text": "Conservemos precisión hasta el final.",
+              "start": 68.88,
+              "end": 71.8
             },
             {
-              "start": 52.5,
-              "end": 59.5,
-              "text": "Si redondeamos una probabilidad pequeña a cero antes de multiplicar, borraremos su contribución y confundiremos raro con imposible."
+              "text": "Si redondeamos una probabilidad pequeña a cero antes de multiplicar, borraremos su contribución y confundiremos raro con imposible.",
+              "start": 72.1,
+              "end": 81.46
             },
             {
-              "start": 59.8,
-              "end": 63.3,
-              "text": "Redondear sirve para comunicar, no para cambiar el modelo."
+              "text": "Redondear sirve para comunicar, no para cambiar el modelo.",
+              "start": 81.76,
+              "end": 86.32
             }
           ]
         }
@@ -1918,6 +1916,5465 @@
               "start": 386.9,
               "end": 394.2,
               "text": "Uno dividido entre una suma no es la suma de los inversos; sustituir el resultado en la igualdad original detecta esa transformación incorrecta."
+            }
+          ]
+        }
+      ]
+    },
+    "funciones--entrada-y-salida": {
+      "parentLesson": "funciones",
+      "parentTitle": "Funciones, intervalos y sumatorios",
+      "sectionId": "entrada-y-salida",
+      "title": "Seguir una entrada por la regla",
+      "sourceSections": [
+        "¿Qué hace una función con el dato que le damos?",
+        "Una función no es solo una curva"
+      ],
+      "optional": false,
+      "id": "funciones--entrada-y-salida",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Funciones, soporte, intervalos y sumatorios; preparación para el Tema 2"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "4056b5f5dd8697396e2a6d4a9efd1208adf02ffcbc79bb7cd8e0e45b77e6da71",
+      "mp3Sha256": "a896cb685596337b374bb2d1ac638a40beff61b0542353998cfd49ba2c0fa68a",
+      "src": "audio/funciones--entrada-y-salida.mp3",
+      "duration": 57.129796,
+      "sourceDuration": 57.1,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 57.1,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 5.3,
+              "text": "Una señal sigue esta regla: duplicar la entrada y añadir una unidad de base."
+            },
+            {
+              "start": 5.6,
+              "end": 9.7,
+              "text": "La llamaremos ge; ¿qué salida corresponde a una entrada equis de valor tres?"
+            },
+            {
+              "start": 10,
+              "end": 14.4,
+              "text": "Duplicar tres da seis: sustituimos la entrada en la primera parte de la regla."
+            },
+            {
+              "start": 14.7,
+              "end": 17.2,
+              "text": "Todavía no hemos incorporado la señal de base."
+            },
+            {
+              "start": 17.5,
+              "end": 20.6,
+              "text": "A esos seis añadimos la unidad de base y sale siete."
+            },
+            {
+              "start": 20.9,
+              "end": 25,
+              "text": "El orden permite distinguir lo que depende de la entrada de lo que ya estaba presente."
+            },
+            {
+              "start": 25.3,
+              "end": 30.1,
+              "text": "En la gráfica la entrada tres se empareja con la salida siete, que llamamos ge de tres."
+            },
+            {
+              "start": 30.4,
+              "end": 35.2,
+              "text": "Los paréntesis indican evaluación, no que exista un número ge que multiplicamos por tres."
+            },
+            {
+              "start": 35.5,
+              "end": 40.3,
+              "text": "Antes de sustituir preguntamos si la entrada pertenece al dominio, el conjunto permitido."
+            },
+            {
+              "start": 40.6,
+              "end": 45.4,
+              "text": "Si la regla es por tramos, localizar la entrada decide cuál de las fórmulas corresponde usar."
+            },
+            {
+              "start": 45.7,
+              "end": 50.5,
+              "text": "En probabilidad también necesitaremos el soporte: dónde el modelo coloca masa o densidad."
+            },
+            {
+              "start": 50.8,
+              "end": 57.1,
+              "text": "Una fórmula para tiempos positivos no autoriza a asignar probabilidad a tiempos negativos solo porque podamos escribirlos."
+            }
+          ]
+        }
+      ]
+    },
+    "funciones--sumar-salidas": {
+      "parentLesson": "funciones",
+      "parentTitle": "Funciones, intervalos y sumatorios",
+      "sectionId": "sumar-salidas",
+      "title": "El índice etiqueta términos",
+      "sourceSections": [
+        "Hacer la cuenta y entender el resultado"
+      ],
+      "optional": false,
+      "id": "funciones--sumar-salidas",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Funciones, soporte, intervalos y sumatorios; preparación para el Tema 2"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "1288afaae406e58e2d576d44462c031207d6924009569d2a1f5d91bff9bae613",
+      "mp3Sha256": "15748d808b9fccb75bd4a5300731c88491f69112d8a6ba93ba4643d45a34d4d2",
+      "src": "audio/funciones--sumar-salidas.mp3",
+      "duration": 53.133061,
+      "sourceDuration": 53.1,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 53.1,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6.6,
+              "text": "Apliquemos duplicar y añadir uno a las entradas cero, uno y dos: las salidas son uno, tres y cinco."
+            },
+            {
+              "start": 6.9,
+              "end": 9.4,
+              "text": "Queremos sumarlas, no sumar sus entradas."
+            },
+            {
+              "start": 9.7,
+              "end": 14.1,
+              "text": "Uno más tres más cinco da nueve: cada término es una salida ya calculada."
+            },
+            {
+              "start": 14.4,
+              "end": 18.2,
+              "text": "Separar evaluación y suma evita mezclar entradas con resultados."
+            },
+            {
+              "start": 18.5,
+              "end": 25.7,
+              "text": "La sigma grande abrevia añadir a sub uno, a sub dos y a sub tres; el índice i indica qué término visitamos, desde uno hasta tres."
+            },
+            {
+              "start": 26,
+              "end": 29.1,
+              "text": "No añadimos el índice, sino el valor que etiqueta."
+            },
+            {
+              "start": 29.4,
+              "end": 35.1,
+              "text": "Una tabla con valores cero, dos y cinco puede etiquetarlos como primera, segunda y tercera fila."
+            },
+            {
+              "start": 35.4,
+              "end": 41.8,
+              "text": "La tercera etiqueta corresponde a cinco, no a tres: distinguir posición y valor será esencial al calcular esperanzas."
+            },
+            {
+              "start": 42.1,
+              "end": 45.9,
+              "text": "Para sumar solo algunos términos necesitamos una condición de selección."
+            },
+            {
+              "start": 46.2,
+              "end": 53.1,
+              "text": "Un paréntesis excluye el extremo y un corchete lo incluye; fijaremos esa decisión antes de escoger las filas de una tabla."
+            }
+          ]
+        }
+      ]
+    },
+    "funciones--seleccionar-valores": {
+      "parentLesson": "funciones",
+      "parentTitle": "Funciones, intervalos y sumatorios",
+      "sectionId": "seleccionar-valores",
+      "title": "Menos de no es como máximo",
+      "sourceSections": [
+        "Leer cada símbolo en voz alta"
+      ],
+      "optional": false,
+      "id": "funciones--seleccionar-valores",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Funciones, soporte, intervalos y sumatorios; preparación para el Tema 2"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "43d8e9ecfb80bebdfd81aa55f3db38da42cefb4c58dee0b72f6f0e01f0ac1f59",
+      "mp3Sha256": "c02010a16ad10491da31a017a5ae3e17086b56be6270d12853889e435f5c1c08",
+      "src": "audio/funciones--seleccionar-valores.mp3",
+      "duration": 53.733878,
+      "sourceDuration": 53.7,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 53.7,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 7.3,
+              "text": "Una planta tiene cero, dos o cinco brotes, con probabilidades una décima, seis décimas y tres décimas."
+            },
+            {
+              "start": 7.6,
+              "end": 11.4,
+              "text": "Si piden menos de tres, ¿qué valores de esta tabla cumplen la frase?"
+            },
+            {
+              "start": 11.7,
+              "end": 18.1,
+              "text": "Cero y dos son menores que tres, así que reunimos sus masas: una décima más seis décimas da siete décimas."
+            },
+            {
+              "start": 18.4,
+              "end": 22.5,
+              "text": "Sumamos probabilidades de casos excluyentes, no cantidades de brotes."
+            },
+            {
+              "start": 22.8,
+              "end": 26.3,
+              "text": "Menos de dos deja solo cero, cuya masa es una décima."
+            },
+            {
+              "start": 26.6,
+              "end": 30.7,
+              "text": "El valor dos está en la frontera, y la desigualdad estricta lo deja fuera."
+            },
+            {
+              "start": 31,
+              "end": 35.1,
+              "text": "Como máximo dos sí acepta el propio dos; al menos dos acepta dos y cinco."
+            },
+            {
+              "start": 35.4,
+              "end": 41.1,
+              "text": "Antes de calcular conviene decir en voz alta qué filas entran: una palabra puede cambiar mucho el resultado."
+            },
+            {
+              "start": 41.4,
+              "end": 45.5,
+              "text": "Aquí incluir el extremo dos añade seis décimas porque hay masa puntual."
+            },
+            {
+              "start": 45.8,
+              "end": 53.7,
+              "text": "Cuando trabajemos con densidades, un punto aislado tendrá anchura cero y no añadirá área; no traslademos esa regla a una tabla discreta."
+            }
+          ]
+        }
+      ]
+    },
+    "funciones": {
+      "parentLesson": "funciones",
+      "id": "funciones",
+      "kind": "recap",
+      "title": "Funciones, intervalos y sumatorios",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Funciones, soporte, intervalos y sumatorios; preparación para el Tema 2"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "7699ae7437baf4d553c712ec7c2d549b77de6a8f0d466d4f7ff307901ccaabd0",
+      "mp3Sha256": "3a8cd1cefaa5ccbbc900ede56e56346f960f1fd7a12c056423ce17c40af4abec",
+      "src": "audio/funciones.mp3",
+      "duration": 376.946939,
+      "sourceDuration": 376.9,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 52.2,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 5.6,
+              "text": "Hoy vamos a leer funciones, intervalos y sumatorios como instrucciones concretas."
+            },
+            {
+              "start": 5.9,
+              "end": 9.7,
+              "text": "Una función recibe una entrada permitida y le asigna una salida."
+            },
+            {
+              "start": 10,
+              "end": 14.1,
+              "text": "Nuestra regla ge multiplica la entrada por dos y después suma uno."
+            },
+            {
+              "start": 14.4,
+              "end": 19.8,
+              "text": "Para la entrada tres sustituimos equis por tres en la regla completa: dos por tres más uno da siete."
+            },
+            {
+              "start": 20.1,
+              "end": 22.9,
+              "text": "Ge de tres no significa ge multiplicado por tres."
+            },
+            {
+              "start": 23.2,
+              "end": 26,
+              "text": "En el dibujo cada entrada se empareja con su salida."
+            },
+            {
+              "start": 26.3,
+              "end": 29.1,
+              "text": "El sumatorio indica qué términos recorrer y reunir."
+            },
+            {
+              "start": 29.4,
+              "end": 34.8,
+              "text": "Si el índice va de cero a dos, calculamos ge de cero, ge de uno y ge de dos: uno, tres y cinco."
+            },
+            {
+              "start": 35.1,
+              "end": 38.9,
+              "text": "Sumamos las salidas y obtenemos nueve, no la suma de los índices."
+            },
+            {
+              "start": 39.2,
+              "end": 42,
+              "text": "El dominio decide qué entradas admite la regla."
+            },
+            {
+              "start": 42.3,
+              "end": 47.1,
+              "text": "Una función por tramos exige localizar primero la entrada y elegir después su fórmula."
+            },
+            {
+              "start": 47.4,
+              "end": 52.2,
+              "text": "Una densidad que vale cero fuera de un intervalo no se prolonga usando sin más la fórmula interior."
+            }
+          ]
+        },
+        {
+          "start": 52.5,
+          "end": 103.1,
+          "cues": [
+            {
+              "start": 52.5,
+              "end": 58.5,
+              "text": "Una medida de brotes solo toma cero, dos o cinco, con masas una décima, seis décimas y tres décimas."
+            },
+            {
+              "start": 58.8,
+              "end": 61,
+              "text": "Esos valores forman su soporte."
+            },
+            {
+              "start": 61.3,
+              "end": 66.1,
+              "text": "El segundo renglón corresponde al valor dos; su posición en la tabla no es un resultado nuevo."
+            },
+            {
+              "start": 66.4,
+              "end": 71.1,
+              "text": "Para calcular la probabilidad de un conjunto sumamos las masas de los valores que lo cumplen."
+            },
+            {
+              "start": 71.4,
+              "end": 73.6,
+              "text": "Menos de tres admite cero y dos."
+            },
+            {
+              "start": 73.9,
+              "end": 78.6,
+              "text": "Primero seleccionamos esos valores; después sumamos una décima y seis décimas."
+            },
+            {
+              "start": 78.9,
+              "end": 83,
+              "text": "Menos de dos excluye el dos, de modo que solo queda la masa del cero."
+            },
+            {
+              "start": 83.3,
+              "end": 86.8,
+              "text": "Como máximo dos lo incluye y vuelve a dar siete décimas."
+            },
+            {
+              "start": 87.1,
+              "end": 90.6,
+              "text": "Los extremos abiertos y cerrados sí importan cuando allí hay masa."
+            },
+            {
+              "start": 90.9,
+              "end": 94.3,
+              "text": "Al menos dos significa dos o cinco, no exactamente dos."
+            },
+            {
+              "start": 94.6,
+              "end": 96.8,
+              "text": "Su probabilidad es nueve décimas."
+            },
+            {
+              "start": 97.1,
+              "end": 103.1,
+              "text": "Antes de automatizar un sumatorio, escribe los valores que entran: así compruebas a la vez el soporte y la desigualdad."
+            }
+          ]
+        },
+        {
+          "start": 103.4,
+          "end": 111,
+          "cues": [
+            {
+              "start": 103.4,
+              "end": 107.5,
+              "text": "Una regla didáctica transforma una dosis x en una señal g(x)."
+            },
+            {
+              "start": 107.8,
+              "end": 111,
+              "text": "No es una probabilidad ni un ajuste a datos reales."
+            }
+          ]
+        },
+        {
+          "start": 111.3,
+          "end": 119.1,
+          "cues": [
+            {
+              "start": 111.3,
+              "end": 113.5,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 113.8,
+              "end": 116,
+              "text": "¿Qué salida produce la entrada indicada?"
+            },
+            {
+              "start": 116.3,
+              "end": 119.1,
+              "text": "Queremos la salida de la función en la entrada indicada."
+            }
+          ]
+        },
+        {
+          "start": 119.4,
+          "end": 133,
+          "cues": [
+            {
+              "start": 119.4,
+              "end": 122.6,
+              "text": "La función asigna una salida a cada entrada del dominio."
+            },
+            {
+              "start": 122.9,
+              "end": 125.7,
+              "text": "Los paréntesis indican dónde sustituir la entrada."
+            },
+            {
+              "start": 126,
+              "end": 133,
+              "text": "Multiplicamos antes de sumar y respetamos los extremos del dominio; sumar salidas es distinto de evaluar la suma de entradas."
+            }
+          ]
+        },
+        {
+          "start": 133.3,
+          "end": 138.6,
+          "cues": [
+            {
+              "start": 133.3,
+              "end": 138.6,
+              "text": "ge abre paréntesis, equis minúscula, cierra paréntesis igual a 3 por equis minúscula más 5."
+            }
+          ]
+        },
+        {
+          "start": 138.9,
+          "end": 146.2,
+          "cues": [
+            {
+              "start": 138.9,
+              "end": 146.2,
+              "text": "Se permiten entradas equis minúscula entre 0 y 3, incluidos ambos extremos; entrada pedida: equis minúscula igual a 2."
+            }
+          ]
+        },
+        {
+          "start": 146.5,
+          "end": 149,
+          "cues": [
+            {
+              "start": 146.5,
+              "end": 149,
+              "text": "Los paréntesis indican la entrada de la función."
+            }
+          ]
+        },
+        {
+          "start": 149.3,
+          "end": 152.5,
+          "cues": [
+            {
+              "start": 149.3,
+              "end": 152.5,
+              "text": "Sumar salidas no significa sumar únicamente sus entradas."
+            }
+          ]
+        },
+        {
+          "start": 152.8,
+          "end": 161,
+          "cues": [
+            {
+              "start": 152.8,
+              "end": 156.3,
+              "text": "Sustituye equis minúscula por la entrada y multiplica antes de sumar."
+            },
+            {
+              "start": 156.6,
+              "end": 161,
+              "text": "Sustituimos la entrada en la regla; la salida no tiene por qué coincidir con ella."
+            }
+          ]
+        },
+        {
+          "start": 161.3,
+          "end": 182.7,
+          "cues": [
+            {
+              "start": 161.3,
+              "end": 164.1,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 164.4,
+              "end": 166.6,
+              "text": "¿Qué salida produce la entrada indicada?"
+            },
+            {
+              "start": 166.9,
+              "end": 169.4,
+              "text": "Una función es una regla de entrada y salida."
+            },
+            {
+              "start": 169.7,
+              "end": 174.1,
+              "text": "Primero localizamos la entrada permitida; después la sustituimos en la regla."
+            },
+            {
+              "start": 174.4,
+              "end": 177.6,
+              "text": "Un sumatorio solo abrevia sumar varias de esas salidas."
+            },
+            {
+              "start": 177.9,
+              "end": 182.7,
+              "text": "Para este apartado: Sustituye equis minúscula por la entrada y multiplica antes de sumar."
+            }
+          ]
+        },
+        {
+          "start": 183,
+          "end": 187.8,
+          "cues": [
+            {
+              "start": 183,
+              "end": 187.8,
+              "text": "Sustituir. ge abre paréntesis, 2, cierra paréntesis igual a 3 por 2 más 5."
+            }
+          ]
+        },
+        {
+          "start": 188.1,
+          "end": 194.7,
+          "cues": [
+            {
+              "start": 188.1,
+              "end": 190.3,
+              "text": "Respetar el orden de operaciones."
+            },
+            {
+              "start": 190.6,
+              "end": 194.7,
+              "text": "Primero 3 por 2 igual a 6; después sumamos 5: 11."
+            }
+          ]
+        },
+        {
+          "start": 195,
+          "end": 211.1,
+          "cues": [
+            {
+              "start": 195,
+              "end": 196.6,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 196.9,
+              "end": 199.4,
+              "text": "El resultado es 11 unidades de señal."
+            },
+            {
+              "start": 199.7,
+              "end": 204.1,
+              "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto."
+            },
+            {
+              "start": 204.4,
+              "end": 211.1,
+              "text": "La salida ge abre paréntesis, equis minúscula, cierra paréntesis no es equis minúscula: es el resultado de aplicar la regla."
+            }
+          ]
+        },
+        {
+          "start": 211.4,
+          "end": 220.9,
+          "cues": [
+            {
+              "start": 211.4,
+              "end": 213.9,
+              "text": "El resultado es 11 unidades de señal."
+            },
+            {
+              "start": 214.2,
+              "end": 220.9,
+              "text": "La salida ge abre paréntesis, equis minúscula, cierra paréntesis no es equis minúscula: es el resultado de aplicar la regla."
+            }
+          ]
+        },
+        {
+          "start": 221.2,
+          "end": 233.2,
+          "cues": [
+            {
+              "start": 221.2,
+              "end": 223.4,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 223.7,
+              "end": 230.4,
+              "text": "¿Cuánto vale ge abre paréntesis, 0, cierra paréntesis más ge abre paréntesis, 1, cierra paréntesis más ge abre paréntesis, 2, cierra paréntesis?"
+            },
+            {
+              "start": 230.7,
+              "end": 233.2,
+              "text": "Queremos sumar varias salidas de la función."
+            }
+          ]
+        },
+        {
+          "start": 233.5,
+          "end": 247.1,
+          "cues": [
+            {
+              "start": 233.5,
+              "end": 236.7,
+              "text": "La función asigna una salida a cada entrada del dominio."
+            },
+            {
+              "start": 237,
+              "end": 239.8,
+              "text": "Los paréntesis indican dónde sustituir la entrada."
+            },
+            {
+              "start": 240.1,
+              "end": 247.1,
+              "text": "Multiplicamos antes de sumar y respetamos los extremos del dominio; sumar salidas es distinto de evaluar la suma de entradas."
+            }
+          ]
+        },
+        {
+          "start": 247.4,
+          "end": 252.7,
+          "cues": [
+            {
+              "start": 247.4,
+              "end": 252.7,
+              "text": "ge abre paréntesis, equis minúscula, cierra paréntesis igual a 3 por equis minúscula más 5."
+            }
+          ]
+        },
+        {
+          "start": 253,
+          "end": 260.3,
+          "cues": [
+            {
+              "start": 253,
+              "end": 260.3,
+              "text": "Se permiten entradas equis minúscula entre 0 y 3, incluidos ambos extremos; entrada pedida: equis minúscula igual a 2."
+            }
+          ]
+        },
+        {
+          "start": 260.6,
+          "end": 263.1,
+          "cues": [
+            {
+              "start": 260.6,
+              "end": 263.1,
+              "text": "Los paréntesis indican la entrada de la función."
+            }
+          ]
+        },
+        {
+          "start": 263.4,
+          "end": 266.6,
+          "cues": [
+            {
+              "start": 263.4,
+              "end": 266.6,
+              "text": "Sumar salidas no significa sumar únicamente sus entradas."
+            }
+          ]
+        },
+        {
+          "start": 266.9,
+          "end": 274.5,
+          "cues": [
+            {
+              "start": 266.9,
+              "end": 269.1,
+              "text": "Calcula las tres salidas por separado."
+            },
+            {
+              "start": 269.4,
+              "end": 274.5,
+              "text": "Evaluamos cada entrada antes de sumar; evaluar solo la suma de entradas sería otra operación."
+            }
+          ]
+        },
+        {
+          "start": 274.8,
+          "end": 299.3,
+          "cues": [
+            {
+              "start": 274.8,
+              "end": 277.6,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 277.9,
+              "end": 284.6,
+              "text": "¿Cuánto vale ge abre paréntesis, 0, cierra paréntesis más ge abre paréntesis, 1, cierra paréntesis más ge abre paréntesis, 2, cierra paréntesis?"
+            },
+            {
+              "start": 284.9,
+              "end": 287.4,
+              "text": "Una función es una regla de entrada y salida."
+            },
+            {
+              "start": 287.7,
+              "end": 292.1,
+              "text": "Primero localizamos la entrada permitida; después la sustituimos en la regla."
+            },
+            {
+              "start": 292.4,
+              "end": 295.6,
+              "text": "Un sumatorio solo abrevia sumar varias de esas salidas."
+            },
+            {
+              "start": 295.9,
+              "end": 299.3,
+              "text": "Para este apartado: Calcula las tres salidas por separado."
+            }
+          ]
+        },
+        {
+          "start": 299.6,
+          "end": 308.4,
+          "cues": [
+            {
+              "start": 299.6,
+              "end": 308.4,
+              "text": "Abrir la suma. ge abre paréntesis, 0, cierra paréntesis igual a 5; ge abre paréntesis, 1, cierra paréntesis igual a 8; ge abre paréntesis, 2, cierra paréntesis igual a 11."
+            }
+          ]
+        },
+        {
+          "start": 308.7,
+          "end": 316.6,
+          "cues": [
+            {
+              "start": 308.7,
+              "end": 312.5,
+              "text": "Sumar los resultados. 5 más 8 más 11 igual a 24."
+            },
+            {
+              "start": 312.8,
+              "end": 316.6,
+              "text": "Un sumatorio con índices 0, 1 y 2 abreviaría esta misma cuenta."
+            }
+          ]
+        },
+        {
+          "start": 316.9,
+          "end": 329.1,
+          "cues": [
+            {
+              "start": 316.9,
+              "end": 318.5,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 318.8,
+              "end": 321.3,
+              "text": "El resultado es 24 unidades de señal."
+            },
+            {
+              "start": 321.6,
+              "end": 326,
+              "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto."
+            },
+            {
+              "start": 326.3,
+              "end": 329.1,
+              "text": "El índice indica qué entrada usar en cada término."
+            }
+          ]
+        },
+        {
+          "start": 329.4,
+          "end": 335,
+          "cues": [
+            {
+              "start": 329.4,
+              "end": 331.9,
+              "text": "El resultado es 24 unidades de señal."
+            },
+            {
+              "start": 332.2,
+              "end": 335,
+              "text": "El índice indica qué entrada usar en cada término."
+            }
+          ]
+        },
+        {
+          "start": 335.3,
+          "end": 376.9,
+          "cues": [
+            {
+              "start": 335.3,
+              "end": 338.8,
+              "text": "Se suman los términos indicados por el índice, no el índice mismo."
+            },
+            {
+              "start": 339.1,
+              "end": 343.2,
+              "text": "Menos de tres excluye el valor tres cuando X es un recuento no negativo."
+            },
+            {
+              "start": 343.5,
+              "end": 346.7,
+              "text": "Comprobemos si podemos aplicar esa idea a otra situación."
+            },
+            {
+              "start": 347,
+              "end": 351.1,
+              "text": "Para un recuento no negativo, ¿qué valores incluye X menor que 2?"
+            },
+            {
+              "start": 351.4,
+              "end": 354.6,
+              "text": "¿Qué relación permite decidirlo antes de mirar el resultado?"
+            },
+            {
+              "start": 354.9,
+              "end": 360,
+              "text": "La desigualdad estricta excluye dos; los enteros no negativos inferiores son cero y uno."
+            },
+            {
+              "start": 360.3,
+              "end": 366.2,
+              "text": "Para revisar el próximo problema, evita este error: Confundir el índice de una tabla con el valor de la variable."
+            },
+            {
+              "start": 366.5,
+              "end": 371.5,
+              "text": "El índice indica qué fila recorremos, pero la etiqueta indica qué valor puede observarse."
+            },
+            {
+              "start": 371.8,
+              "end": 376.9,
+              "text": "En una esperanza multiplicamos cada valor observado por su masa, no por el número de fila."
+            }
+          ]
+        }
+      ]
+    },
+    "calculo--franjas": {
+      "parentLesson": "calculo",
+      "parentTitle": "Derivadas, integrales y área acumulada",
+      "sectionId": "franjas",
+      "title": "Acumular áreas de pequeñas franjas",
+      "sourceSections": [
+        "¿Cómo puede una curva describir la probabilidad de un tiempo?",
+        "De pequeñas franjas a un área"
+      ],
+      "optional": false,
+      "id": "calculo--franjas",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Cálculo integral y diferencial elemental; preparación para 2.7 y 4.6"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "1ea68cfd0e1dad7c5777e3e0287f6b4459631a0275b718bd0a6cc27e10e193f3",
+      "mp3Sha256": "52fadcf88e5d20dda96e2aeae3d188c9638bc7ff05cd96d32b6707c732041556",
+      "src": "audio/calculo--franjas.mp3",
+      "duration": 63.843265,
+      "sourceDuration": 63.8,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 63.8,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 5.7,
+              "text": "Esta densidad vale medio por minuto entre cero y dos minutos: su área total es uno."
+            },
+            {
+              "start": 6,
+              "end": 11.4,
+              "text": "Busquemos la probabilidad entre cero coma cuatro y uno coma dos mirando el área, no una altura."
+            },
+            {
+              "start": 11.7,
+              "end": 17.4,
+              "text": "Primero restamos uno coma dos menos cero coma cuatro y obtenemos cero coma ocho minutos de anchura."
+            },
+            {
+              "start": 17.7,
+              "end": 21.8,
+              "text": "Restar límites mide el tramo solicitado, no la probabilidad todavía."
+            },
+            {
+              "start": 22.1,
+              "end": 26.9,
+              "text": "Ahora multiplicamos altura medio por anchura cero coma ocho y sale cero coma cuatro."
+            },
+            {
+              "start": 27.2,
+              "end": 31.3,
+              "text": "Podemos usar un rectángulo porque la densidad es constante en todo el intervalo."
+            },
+            {
+              "start": 31.6,
+              "end": 36.6,
+              "text": "La franja sombreada ocupa cuatro décimas del área total: esa es la probabilidad buscada."
+            },
+            {
+              "start": 36.9,
+              "end": 41.3,
+              "text": "Minutos por inverso de minutos se cancelan, de modo que el resultado no lleva unidades."
+            },
+            {
+              "start": 41.6,
+              "end": 45.4,
+              "text": "Si la curva cambia de altura, un único rectángulo ya no basta."
+            },
+            {
+              "start": 45.7,
+              "end": 52.4,
+              "text": "La integral reúne las áreas de franjas cada vez más estrechas; el diferencial de te señala qué variable recorre esas franjas."
+            },
+            {
+              "start": 52.7,
+              "end": 58.1,
+              "text": "Y si la fórmula cambia de tramo, partimos el intervalo en esa frontera y sumamos las áreas."
+            },
+            {
+              "start": 58.4,
+              "end": 63.8,
+              "text": "Cada integrando solo vale donde lo define el modelo: integrar no elimina las condiciones de soporte."
+            }
+          ]
+        }
+      ]
+    },
+    "calculo--primitiva": {
+      "parentLesson": "calculo",
+      "parentTitle": "Derivadas, integrales y área acumulada",
+      "sectionId": "primitiva",
+      "title": "Evaluar los dos extremos",
+      "sourceSections": [
+        "Hacer la cuenta y entender el resultado"
+      ],
+      "optional": false,
+      "id": "calculo--primitiva",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Cálculo integral y diferencial elemental; preparación para 2.7 y 4.6"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "fd06dfa3443d6d4a28422763afc99f6ec75a0afbc161431857ff259239d0495a",
+      "mp3Sha256": "558218c5f7aa8fe85fd8a4a7fe104b7e14b1fe1bc99f3eee1794d50268c1e8b3",
+      "src": "audio/calculo--primitiva.mp3",
+      "duration": 61.64898,
+      "sourceDuration": 61.6,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 61.6,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 5.6,
+              "text": "Ahora la densidad es te entre dos, de cero a dos, y buscamos el área hasta un minuto."
+            },
+            {
+              "start": 5.9,
+              "end": 10.7,
+              "text": "La altura aumenta: usar la altura final para todo el tramo contaría demasiada área."
+            },
+            {
+              "start": 11,
+              "end": 17.4,
+              "text": "Ge de te igual a te al cuadrado entre cuatro es una primitiva: su derivada es dos te entre cuatro, justamente te entre dos."
+            },
+            {
+              "start": 17.7,
+              "end": 21.5,
+              "text": "Esta relación nos permitirá acumular sin sumar franjas una por una."
+            },
+            {
+              "start": 21.8,
+              "end": 26.6,
+              "text": "En el límite superior uno, la primitiva da uno al cuadrado entre cuatro, un cuarto."
+            },
+            {
+              "start": 26.9,
+              "end": 30.4,
+              "text": "Es lo acumulado según esta primitiva hasta el final de nuestro tramo."
+            },
+            {
+              "start": 30.7,
+              "end": 33.9,
+              "text": "En el límite inferior cero, la primitiva da cero."
+            },
+            {
+              "start": 34.2,
+              "end": 39.2,
+              "text": "Necesitamos también este valor para retirar cualquier acumulación anterior al comienzo del tramo."
+            },
+            {
+              "start": 39.5,
+              "end": 43,
+              "text": "Un cuarto menos cero deja un cuarto de probabilidad entre cero y uno."
+            },
+            {
+              "start": 43.3,
+              "end": 48.4,
+              "text": "Coincide con el triángulo de base uno y altura medio, una comprobación geométrica independiente."
+            },
+            {
+              "start": 48.7,
+              "end": 54.1,
+              "text": "El teorema fundamental justifica restar los valores de una primitiva del integrando, que aquí es continuo."
+            },
+            {
+              "start": 54.4,
+              "end": 61.6,
+              "text": "Además verificamos que la densidad no sea negativa y que hasta dos acumule uno: una integral correcta no salva un modelo mal normalizado."
+            }
+          ]
+        }
+      ]
+    },
+    "calculo--pendiente-acumulada": {
+      "parentLesson": "calculo",
+      "parentTitle": "Derivadas, integrales y área acumulada",
+      "sectionId": "pendiente-acumulada",
+      "title": "Altura y acumulación son funciones distintas",
+      "sourceSections": [
+        "La pendiente de lo acumulado"
+      ],
+      "optional": false,
+      "id": "calculo--pendiente-acumulada",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Cálculo integral y diferencial elemental; preparación para 2.7 y 4.6"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "1fe6aebea7f308664778a7b76d44712d2d7208aff1ac3c74166e4d31959308c4",
+      "mp3Sha256": "b9c84ad817a1c960f845f1752862f48951a561697f1a61c7f9d64fd3716e9399",
+      "src": "audio/calculo--pendiente-acumulada.mp3",
+      "duration": 54.230204,
+      "sourceDuration": 54.2,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 54.2,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6,
+              "text": "Distingamos dos preguntas: ¿cuánta área llevamos hasta te?, y ¿a qué ritmo aumenta esa área aquí?"
+            },
+            {
+              "start": 6.3,
+              "end": 12,
+              "text": "La primera la responde efe mayúscula, la acumulada; la segunda, la densidad efe minúscula."
+            },
+            {
+              "start": 12.3,
+              "end": 17.7,
+              "text": "La curva acumulada te al cuadrado entre cuatro reúne el área de la densidad te entre dos dentro de cero a dos."
+            },
+            {
+              "start": 18,
+              "end": 22.1,
+              "text": "Empieza en cero y termina en uno, porque va incorporando toda la probabilidad."
+            },
+            {
+              "start": 22.4,
+              "end": 29.1,
+              "text": "Derivar la acumulada da te entre dos en el interior del soporte: recuperamos la altura que determina cuánto aporta una franja pequeña."
+            },
+            {
+              "start": 29.4,
+              "end": 31.9,
+              "text": "Es la relación inversa de integrar la densidad."
+            },
+            {
+              "start": 32.2,
+              "end": 37,
+              "text": "En te igual a uno, densidad y acumulada valen respectivamente medio por minuto y un cuarto."
+            },
+            {
+              "start": 37.3,
+              "end": 42.4,
+              "text": "El medio describe rapidez local de acumulación; el cuarto, probabilidad ya reunida."
+            },
+            {
+              "start": 42.7,
+              "end": 47.5,
+              "text": "Un instante solo tiene anchura cero, por lo que su área es cero aunque la altura sea positiva."
+            },
+            {
+              "start": 47.8,
+              "end": 54.2,
+              "text": "Como añadimos áreas no negativas, la acumulada no puede bajar; si supera uno, revisamos normalización o cuenta."
+            }
+          ]
+        }
+      ]
+    },
+    "calculo": {
+      "parentLesson": "calculo",
+      "id": "calculo",
+      "kind": "recap",
+      "title": "Derivadas, integrales y área acumulada",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Cálculo integral y diferencial elemental; preparación para 2.7 y 4.6"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "df50551a3c7ee9f6fd094e19288cbd1403a3e2cb5f5264a1960b3781b2c01fe5",
+      "mp3Sha256": "1a4c30a78c7d27968692277583b8cb64e497c56c7343c857e20ef8db3c7c1cf9",
+      "src": "audio/calculo.mp3",
+      "duration": 526.942041,
+      "sourceDuration": 526.9,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 50.1,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 4.7,
+              "text": "Vamos a entender una integral antes de usarla para calcular probabilidades."
+            },
+            {
+              "start": 5,
+              "end": 10.1,
+              "text": "Imagina una duración entre cero y dos minutos, con densidad constante de medio por minuto."
+            },
+            {
+              "start": 10.4,
+              "end": 14.2,
+              "text": "El rectángulo completo tiene área uno: hemos normalizado el modelo."
+            },
+            {
+              "start": 14.5,
+              "end": 17.3,
+              "text": "La probabilidad de un intervalo es el área sobre él."
+            },
+            {
+              "start": 17.6,
+              "end": 20.8,
+              "text": "Si la altura es constante, usamos altura por anchura."
+            },
+            {
+              "start": 21.1,
+              "end": 26.8,
+              "text": "Entre cero coma cuatro y uno coma dos la anchura es cero coma ocho minutos; las unidades de tiempo se cancelan."
+            },
+            {
+              "start": 27.1,
+              "end": 31.2,
+              "text": "Multiplicamos medio por cero coma ocho y obtenemos cero coma cuatro."
+            },
+            {
+              "start": 31.5,
+              "end": 37.2,
+              "text": "La zona sombreada representa esa probabilidad; la altura medio por minuto no era la respuesta por sí sola."
+            },
+            {
+              "start": 37.5,
+              "end": 42.9,
+              "text": "Cuando cambia la altura, dividimos el intervalo en franjas estrechas y sumamos altura por anchura."
+            },
+            {
+              "start": 43.2,
+              "end": 45.4,
+              "text": "La integral es el límite de esas sumas."
+            },
+            {
+              "start": 45.7,
+              "end": 50.1,
+              "text": "Si el intervalo cruza un cambio de fórmula, separamos los tramos antes de acumular."
+            }
+          ]
+        },
+        {
+          "start": 50.4,
+          "end": 102.1,
+          "cues": [
+            {
+              "start": 50.4,
+              "end": 55.1,
+              "text": "Cambiamos a una densidad que vale te dividido entre dos desde cero hasta dos, y cero fuera."
+            },
+            {
+              "start": 55.4,
+              "end": 57.6,
+              "text": "Las franjas derechas son más altas."
+            },
+            {
+              "start": 57.9,
+              "end": 63,
+              "text": "Su área total sigue siendo uno, pero no podemos multiplicar cualquier altura por toda la anchura."
+            },
+            {
+              "start": 63.3,
+              "end": 66.8,
+              "text": "Una primitiva es una función cuya derivada devuelve la densidad."
+            },
+            {
+              "start": 67.1,
+              "end": 71.2,
+              "text": "La derivada de te al cuadrado dividido entre cuatro es te dividido entre dos."
+            },
+            {
+              "start": 71.5,
+              "end": 76.6,
+              "text": "El teorema fundamental del cálculo permite restar los valores de esa primitiva en los dos extremos."
+            },
+            {
+              "start": 76.9,
+              "end": 80,
+              "text": "Hasta un minuto evaluamos la primitiva en uno y en cero."
+            },
+            {
+              "start": 80.3,
+              "end": 82.5,
+              "text": "Un cuarto menos cero da un cuarto."
+            },
+            {
+              "start": 82.8,
+              "end": 86.6,
+              "text": "Hasta dos minutos obtendríamos uno, que comprueba la normalización."
+            },
+            {
+              "start": 86.9,
+              "end": 91.7,
+              "text": "Dentro del soporte, la acumulada es esa primitiva y su pendiente es la densidad."
+            },
+            {
+              "start": 92,
+              "end": 96.7,
+              "text": "En un minuto la pendiente vale medio por minuto, pero el área acumulada vale un cuarto."
+            },
+            {
+              "start": 97,
+              "end": 102.1,
+              "text": "Una pendiente, un área y la probabilidad cero de un instante son tres cantidades diferentes."
+            }
+          ]
+        },
+        {
+          "start": 102.4,
+          "end": 111,
+          "cues": [
+            {
+              "start": 102.4,
+              "end": 111,
+              "text": "X mide una longitud celular, en unidades calibradas, con densidad creciente f(x)=c x para 0 ≤ x ≤ b y cero fuera."
+            }
+          ]
+        },
+        {
+          "start": 111.3,
+          "end": 119.8,
+          "cues": [
+            {
+              "start": 111.3,
+              "end": 113.5,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 113.8,
+              "end": 116.3,
+              "text": "Calcula ce para que efe sea una densidad."
+            },
+            {
+              "start": 116.6,
+              "end": 119.8,
+              "text": "Queremos encontrar la constante que hace válida la distribución."
+            }
+          ]
+        },
+        {
+          "start": 120.1,
+          "end": 132.9,
+          "cues": [
+            {
+              "start": 120.1,
+              "end": 124.1,
+              "text": "Una densidad es probabilidad por unidad, no probabilidad de un punto."
+            },
+            {
+              "start": 124.4,
+              "end": 127.2,
+              "text": "Su integral suma pequeñas áreas de altura por anchura."
+            },
+            {
+              "start": 127.5,
+              "end": 132.9,
+              "text": "El soporte fija los límites permitidos y la normalización exige área uno y altura no negativa."
+            }
+          ]
+        },
+        {
+          "start": 133.2,
+          "end": 137,
+          "cues": [
+            {
+              "start": 133.2,
+              "end": 137,
+              "text": "be igual a 3; umbral te minúscula igual a 1 coma 5."
+            }
+          ]
+        },
+        {
+          "start": 137.3,
+          "end": 139.8,
+          "cues": [
+            {
+              "start": 137.3,
+              "end": 139.8,
+              "text": "La densidad no es una probabilidad puntual."
+            }
+          ]
+        },
+        {
+          "start": 140.1,
+          "end": 144.2,
+          "cues": [
+            {
+              "start": 140.1,
+              "end": 144.2,
+              "text": "equis es continua y su soporte es intervalo cerrado desde 0 hasta be."
+            }
+          ]
+        },
+        {
+          "start": 144.5,
+          "end": 147.6,
+          "cues": [
+            {
+              "start": 144.5,
+              "end": 147.6,
+              "text": "La integral de la densidad sobre el soporte debe ser uno."
+            }
+          ]
+        },
+        {
+          "start": 147.9,
+          "end": 156.7,
+          "cues": [
+            {
+              "start": 147.9,
+              "end": 150.7,
+              "text": "Integra ce equis minúscula desde cero hasta be."
+            },
+            {
+              "start": 151,
+              "end": 156.7,
+              "text": "Exigimos probabilidad total uno sobre todo el soporte y comprobamos además que no haya valores negativos."
+            }
+          ]
+        },
+        {
+          "start": 157,
+          "end": 179.6,
+          "cues": [
+            {
+              "start": 157,
+              "end": 159.8,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 160.1,
+              "end": 162.6,
+              "text": "Calcula ce para que efe sea una densidad."
+            },
+            {
+              "start": 162.9,
+              "end": 165.1,
+              "text": "La probabilidad continua es un área."
+            },
+            {
+              "start": 165.4,
+              "end": 171.1,
+              "text": "Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites."
+            },
+            {
+              "start": 171.4,
+              "end": 175.5,
+              "text": "Normalizamos sobre todo el soporte antes de integrar la región solicitada."
+            },
+            {
+              "start": 175.8,
+              "end": 179.6,
+              "text": "Para este apartado: Integra ce equis minúscula desde cero hasta be."
+            }
+          ]
+        },
+        {
+          "start": 179.9,
+          "end": 186.2,
+          "cues": [
+            {
+              "start": 179.9,
+              "end": 182.7,
+              "text": "Una fracción divide el numerador entre el denominador."
+            },
+            {
+              "start": 183,
+              "end": 186.2,
+              "text": "Los paréntesis conservan juntos los términos de cada parte."
+            }
+          ]
+        },
+        {
+          "start": 186.5,
+          "end": 206.3,
+          "cues": [
+            {
+              "start": 186.5,
+              "end": 188.1,
+              "text": "Área total igual a uno."
+            },
+            {
+              "start": 188.4,
+              "end": 206.3,
+              "text": "La integral es ce be al cuadrado dividido entre 2; por tanto ce igual a 2 dividido entre 3 elevado a abre paréntesis, 2, cierra paréntesis igual a 0 coma 2 2 2 2 2 2 2. integral desde 0 hasta be de ce por equis minúscula respecto de equis minúscula igual a abre paréntesis, cb al cuadrado , cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis."
+            }
+          ]
+        },
+        {
+          "start": 206.6,
+          "end": 212,
+          "cues": [
+            {
+              "start": 206.6,
+              "end": 212,
+              "text": "integral desde 0 hasta be de ce por equis minúscula respecto de equis minúscula queda igual a 1."
+            }
+          ]
+        },
+        {
+          "start": 212.3,
+          "end": 228.4,
+          "cues": [
+            {
+              "start": 212.3,
+              "end": 213.9,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 214.2,
+              "end": 219.9,
+              "text": "El resultado es 0 coma 2 2 2 2 2 2 2 unidades de longitud a la potencia menos 2."
+            },
+            {
+              "start": 220.2,
+              "end": 224.6,
+              "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto."
+            },
+            {
+              "start": 224.9,
+              "end": 228.4,
+              "text": "La altura de una densidad puede superar uno; el área total no."
+            }
+          ]
+        },
+        {
+          "start": 228.7,
+          "end": 238.2,
+          "cues": [
+            {
+              "start": 228.7,
+              "end": 234.4,
+              "text": "El resultado es 0 coma 2 2 2 2 2 2 2 unidades de longitud a la potencia menos 2."
+            },
+            {
+              "start": 234.7,
+              "end": 238.2,
+              "text": "La altura de una densidad puede superar uno; el área total no."
+            }
+          ]
+        },
+        {
+          "start": 238.5,
+          "end": 247,
+          "cues": [
+            {
+              "start": 238.5,
+              "end": 240.7,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 241,
+              "end": 244.2,
+              "text": "Calcula probabilidad de equis menor o igual que te minúscula."
+            },
+            {
+              "start": 244.5,
+              "end": 247,
+              "text": "Queremos el área que queda por debajo del umbral."
+            }
+          ]
+        },
+        {
+          "start": 247.3,
+          "end": 260.1,
+          "cues": [
+            {
+              "start": 247.3,
+              "end": 251.3,
+              "text": "Una densidad es probabilidad por unidad, no probabilidad de un punto."
+            },
+            {
+              "start": 251.6,
+              "end": 254.4,
+              "text": "Su integral suma pequeñas áreas de altura por anchura."
+            },
+            {
+              "start": 254.7,
+              "end": 260.1,
+              "text": "El soporte fija los límites permitidos y la normalización exige área uno y altura no negativa."
+            }
+          ]
+        },
+        {
+          "start": 260.4,
+          "end": 264.2,
+          "cues": [
+            {
+              "start": 260.4,
+              "end": 264.2,
+              "text": "be igual a 3; umbral te minúscula igual a 1 coma 5."
+            }
+          ]
+        },
+        {
+          "start": 264.5,
+          "end": 267,
+          "cues": [
+            {
+              "start": 264.5,
+              "end": 267,
+              "text": "La densidad no es una probabilidad puntual."
+            }
+          ]
+        },
+        {
+          "start": 267.3,
+          "end": 271.4,
+          "cues": [
+            {
+              "start": 267.3,
+              "end": 271.4,
+              "text": "equis es continua y su soporte es intervalo cerrado desde 0 hasta be."
+            }
+          ]
+        },
+        {
+          "start": 271.7,
+          "end": 274.8,
+          "cues": [
+            {
+              "start": 271.7,
+              "end": 274.8,
+              "text": "La integral de la densidad sobre el soporte debe ser uno."
+            }
+          ]
+        },
+        {
+          "start": 275.1,
+          "end": 283.4,
+          "cues": [
+            {
+              "start": 275.1,
+              "end": 278.3,
+              "text": "La probabilidad es el área desde cero hasta te minúscula."
+            },
+            {
+              "start": 278.6,
+              "end": 283.4,
+              "text": "Acumulamos desde el inicio del soporte y mantenemos las mismas unidades al introducir el límite."
+            }
+          ]
+        },
+        {
+          "start": 283.7,
+          "end": 307.3,
+          "cues": [
+            {
+              "start": 283.7,
+              "end": 286.5,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 286.8,
+              "end": 290,
+              "text": "Calcula probabilidad de equis menor o igual que te minúscula."
+            },
+            {
+              "start": 290.3,
+              "end": 292.5,
+              "text": "La probabilidad continua es un área."
+            },
+            {
+              "start": 292.8,
+              "end": 298.5,
+              "text": "Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites."
+            },
+            {
+              "start": 298.8,
+              "end": 302.9,
+              "text": "Normalizamos sobre todo el soporte antes de integrar la región solicitada."
+            },
+            {
+              "start": 303.2,
+              "end": 307.3,
+              "text": "Para este apartado: La probabilidad es el área desde cero hasta te minúscula."
+            }
+          ]
+        },
+        {
+          "start": 307.6,
+          "end": 325.8,
+          "cues": [
+            {
+              "start": 307.6,
+              "end": 325.8,
+              "text": "Integrar en el intervalo pedido. ce te minúscula al cuadrado dividido entre 2 igual a 0 coma 2 2 2 2 2 2 2 por 1 coma 5 elevado a abre paréntesis, 2, cierra paréntesis dividido entre 2 igual a 0 coma 2 5. probabilidad de equis menor o igual que te minúscula igual a integral desde 0 hasta te minúscula de ce por equis minúscula respecto de equis minúscula."
+            }
+          ]
+        },
+        {
+          "start": 326.1,
+          "end": 344.4,
+          "cues": [
+            {
+              "start": 326.1,
+              "end": 327.3,
+              "text": "Comprobar el área."
+            },
+            {
+              "start": 327.6,
+              "end": 334.6,
+              "text": "La primitiva de ce por equis minúscula es ce por equis minúscula al cuadrado dividido entre dos: su derivada vuelve a ser ce por equis minúscula."
+            },
+            {
+              "start": 334.9,
+              "end": 339,
+              "text": "En cero vale cero; en 1 coma 5 vale 0 coma 2 5."
+            },
+            {
+              "start": 339.3,
+              "end": 344.4,
+              "text": "Restamos el valor inicial y obtenemos 0 coma 2 5, una probabilidad entre cero y uno."
+            }
+          ]
+        },
+        {
+          "start": 344.7,
+          "end": 363.7,
+          "cues": [
+            {
+              "start": 344.7,
+              "end": 346.3,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 346.6,
+              "end": 350.7,
+              "text": "El resultado es 0 coma 2 5 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 351,
+              "end": 356.7,
+              "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso."
+            },
+            {
+              "start": 357,
+              "end": 363.7,
+              "text": "Al ser continua, probabilidad de equis menor que te minúscula es la misma; probabilidad de equis igual a te minúscula igual a 0."
+            }
+          ]
+        },
+        {
+          "start": 364,
+          "end": 375.1,
+          "cues": [
+            {
+              "start": 364,
+              "end": 368.1,
+              "text": "El resultado es 0 coma 2 5 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 368.4,
+              "end": 375.1,
+              "text": "Al ser continua, probabilidad de equis menor que te minúscula es la misma; probabilidad de equis igual a te minúscula igual a 0."
+            }
+          ]
+        },
+        {
+          "start": 375.4,
+          "end": 386.1,
+          "cues": [
+            {
+              "start": 375.4,
+              "end": 377.6,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 377.9,
+              "end": 382,
+              "text": "Calcula probabilidad de equis igual a te minúscula, exactamente en el umbral."
+            },
+            {
+              "start": 382.3,
+              "end": 386.1,
+              "text": "Queremos la probabilidad de un único valor de una variable con densidad."
+            }
+          ]
+        },
+        {
+          "start": 386.4,
+          "end": 399.2,
+          "cues": [
+            {
+              "start": 386.4,
+              "end": 390.4,
+              "text": "Una densidad es probabilidad por unidad, no probabilidad de un punto."
+            },
+            {
+              "start": 390.7,
+              "end": 393.5,
+              "text": "Su integral suma pequeñas áreas de altura por anchura."
+            },
+            {
+              "start": 393.8,
+              "end": 399.2,
+              "text": "El soporte fija los límites permitidos y la normalización exige área uno y altura no negativa."
+            }
+          ]
+        },
+        {
+          "start": 399.5,
+          "end": 403.3,
+          "cues": [
+            {
+              "start": 399.5,
+              "end": 403.3,
+              "text": "be igual a 3; umbral te minúscula igual a 1 coma 5."
+            }
+          ]
+        },
+        {
+          "start": 403.6,
+          "end": 406.1,
+          "cues": [
+            {
+              "start": 403.6,
+              "end": 406.1,
+              "text": "La densidad no es una probabilidad puntual."
+            }
+          ]
+        },
+        {
+          "start": 406.4,
+          "end": 410.5,
+          "cues": [
+            {
+              "start": 406.4,
+              "end": 410.5,
+              "text": "equis es continua y su soporte es intervalo cerrado desde 0 hasta be."
+            }
+          ]
+        },
+        {
+          "start": 410.8,
+          "end": 413.9,
+          "cues": [
+            {
+              "start": 410.8,
+              "end": 413.9,
+              "text": "La integral de la densidad sobre el soporte debe ser uno."
+            }
+          ]
+        },
+        {
+          "start": 414.2,
+          "end": 420.8,
+          "cues": [
+            {
+              "start": 414.2,
+              "end": 416.4,
+              "text": "Un único punto tiene longitud cero."
+            },
+            {
+              "start": 416.7,
+              "end": 420.8,
+              "text": "Un punto tiene anchura cero; una altura positiva no le proporciona área."
+            }
+          ]
+        },
+        {
+          "start": 421.1,
+          "end": 444.9,
+          "cues": [
+            {
+              "start": 421.1,
+              "end": 423.9,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 424.2,
+              "end": 428.3,
+              "text": "Calcula probabilidad de equis igual a te minúscula, exactamente en el umbral."
+            },
+            {
+              "start": 428.6,
+              "end": 430.8,
+              "text": "La probabilidad continua es un área."
+            },
+            {
+              "start": 431.1,
+              "end": 436.8,
+              "text": "Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites."
+            },
+            {
+              "start": 437.1,
+              "end": 441.2,
+              "text": "Normalizamos sobre todo el soporte antes de integrar la región solicitada."
+            },
+            {
+              "start": 441.5,
+              "end": 444.9,
+              "text": "Para este apartado: Un único punto tiene longitud cero."
+            }
+          ]
+        },
+        {
+          "start": 445.2,
+          "end": 458.1,
+          "cues": [
+            {
+              "start": 445.2,
+              "end": 447,
+              "text": "Distinguir altura y área."
+            },
+            {
+              "start": 447.3,
+              "end": 458.1,
+              "text": "Aunque efe minúscula abre paréntesis, te minúscula, cierra paréntesis igual a 0 coma 3 3 3 3 3 3 3, el intervalo intervalo cerrado desde te minúscula hasta te minúscula tiene área cero."
+            }
+          ]
+        },
+        {
+          "start": 458.4,
+          "end": 474.2,
+          "cues": [
+            {
+              "start": 458.4,
+              "end": 460,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 460.3,
+              "end": 463.4,
+              "text": "El resultado es 0 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 463.7,
+              "end": 474.2,
+              "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso. probabilidad de equis igual a te minúscula no se obtiene sustituyendo te minúscula en la densidad."
+            }
+          ]
+        },
+        {
+          "start": 474.5,
+          "end": 481.8,
+          "cues": [
+            {
+              "start": 474.5,
+              "end": 481.8,
+              "text": "El resultado es 0 probabilidad entre 0 y 1. probabilidad de equis igual a te minúscula no se obtiene sustituyendo te minúscula en la densidad."
+            }
+          ]
+        },
+        {
+          "start": 482.1,
+          "end": 526.9,
+          "cues": [
+            {
+              "start": 482.1,
+              "end": 485.9,
+              "text": "La primitiva G permite calcular el área acumulada entre a y b."
+            },
+            {
+              "start": 486.2,
+              "end": 490.3,
+              "text": "La densidad es la pendiente de la acumulada, no la probabilidad de un punto."
+            },
+            {
+              "start": 490.6,
+              "end": 493.8,
+              "text": "Comprobemos si podemos aplicar esa idea a otra situación."
+            },
+            {
+              "start": 494.1,
+              "end": 497.6,
+              "text": "Una densidad vale 2 en un intervalo de anchura 0,1."
+            },
+            {
+              "start": 497.9,
+              "end": 500.1,
+              "text": "¿Qué probabilidad aporta ese intervalo?"
+            },
+            {
+              "start": 500.4,
+              "end": 503.6,
+              "text": "¿Qué relación permite decidirlo antes de mirar el resultado?"
+            },
+            {
+              "start": 503.9,
+              "end": 508,
+              "text": "El área del rectángulo es altura por anchura, 2 por 0,1."
+            },
+            {
+              "start": 508.3,
+              "end": 511.4,
+              "text": "Una densidad puede superar uno sin que su área lo haga."
+            },
+            {
+              "start": 511.7,
+              "end": 517.1,
+              "text": "Para revisar el próximo problema, evita este error: Usar la altura de la curva como probabilidad."
+            },
+            {
+              "start": 517.4,
+              "end": 521.2,
+              "text": "Una altura debe multiplicarse por anchura o integrarse para dar área."
+            },
+            {
+              "start": 521.5,
+              "end": 526.9,
+              "text": "Si la anchura se reduce a cero, la probabilidad puntual es cero aunque la altura siga siendo positiva."
+            }
+          ]
+        }
+      ]
+    },
+    "regiones-matrices--frontera": {
+      "parentLesson": "regiones-matrices",
+      "parentTitle": "Regiones del plano y matrices",
+      "sectionId": "frontera",
+      "title": "Un reparto es un punto del plano",
+      "sourceSections": [
+        "¿Qué repartos de un recurso son posibles?",
+        "Dos medidas necesitan dos coordenadas"
+      ],
+      "optional": false,
+      "id": "regiones-matrices--frontera",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Integrales dobles, vectores y matrices; preparación para el Tema 4"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "5e84d2fa5ba5a69c66231571cf679c997b3280ea10a262393b12ce044424ff6c",
+      "mp3Sha256": "906540ecb7c8f9744db94387a4eb4689449c962634ab80b0b81ade2402b14137",
+      "src": "audio/regiones-matrices--frontera.mp3",
+      "duration": 61.048163,
+      "sourceDuration": 61,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 61,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6.6,
+              "text": "Repartamos una unidad de recurso entre dos cultivos: equis mide lo asignado al primero e i griega al segundo."
+            },
+            {
+              "start": 6.9,
+              "end": 9.7,
+              "text": "¿Sería posible entregar ocho décimas a cada uno?"
+            },
+            {
+              "start": 10,
+              "end": 13.8,
+              "text": "El triángulo reúne cantidades no negativas cuya suma no supera uno."
+            },
+            {
+              "start": 14.1,
+              "end": 19.4,
+              "text": "Su frontera inclinada representa agotar el recurso; por debajo todavía queda parte sin asignar."
+            },
+            {
+              "start": 19.7,
+              "end": 24.1,
+              "text": "Ocho décimas más ocho décimas excede la unidad, así que esa pareja queda fuera."
+            },
+            {
+              "start": 24.4,
+              "end": 29.2,
+              "text": "Que cada coordenada por separado esté entre cero y uno no garantiza que la pareja sea posible."
+            },
+            {
+              "start": 29.5,
+              "end": 34.8,
+              "text": "Si el primer cultivo recibe tres décimas, uno menos tres décimas deja siete décimas disponibles."
+            },
+            {
+              "start": 35.1,
+              "end": 39.5,
+              "text": "Esa resta traduce la restricción de recurso en un límite para la segunda coordenada."
+            },
+            {
+              "start": 39.8,
+              "end": 44.2,
+              "text": "El corte en equis tres décimas permite desde cero hasta siete décimas para i griega."
+            },
+            {
+              "start": 44.5,
+              "end": 49.6,
+              "text": "Recorre todas las asignaciones compatibles con esa primera elección, no todo el lado del cuadrado."
+            },
+            {
+              "start": 49.9,
+              "end": 54,
+              "text": "Al aumentar equis se acorta el corte: el límite de i griega depende de equis."
+            },
+            {
+              "start": 54.3,
+              "end": 61,
+              "text": "Cuando integremos, esa dependencia aparecerá en los límites interiores; usar un rectángulo incluiría repartos imposibles."
+            }
+          ]
+        }
+      ]
+    },
+    "regiones-matrices--recorrer-triangulo": {
+      "parentLesson": "regiones-matrices",
+      "parentTitle": "Regiones del plano y matrices",
+      "sectionId": "recorrer-triangulo",
+      "title": "De los cortes a la integral doble",
+      "sourceSections": [
+        "Hacer la cuenta y entender el resultado"
+      ],
+      "optional": false,
+      "id": "regiones-matrices--recorrer-triangulo",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Integrales dobles, vectores y matrices; preparación para el Tema 4"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "97cda9dd7145622b811a73901c22f60f07b053acaac35c62ffabec96ebde271f",
+      "mp3Sha256": "fdc3f6e00ebe17a7e14e50896ae9bce478b1bd115535f58131eb1687a1aa57e4",
+      "src": "audio/regiones-matrices--recorrer-triangulo.mp3",
+      "duration": 53.028571,
+      "sourceDuration": 53,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 53,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6.3,
+              "text": "El triángulo de capacidad uno tiene base uno y altura uno; la mitad de su producto da área una mitad."
+            },
+            {
+              "start": 6.6,
+              "end": 9.7,
+              "text": "Pensemos ahora cómo recorrerlo sin salir de la región."
+            },
+            {
+              "start": 10,
+              "end": 15.1,
+              "text": "La integral interior recorre i griega desde cero hasta uno menos equis, manteniendo equis fija."
+            },
+            {
+              "start": 15.4,
+              "end": 19.8,
+              "text": "Ge de equis e i griega representa lo que queremos acumular a lo largo de ese corte."
+            },
+            {
+              "start": 20.1,
+              "end": 25.2,
+              "text": "La integral exterior mueve equis de cero a uno y suma las aportaciones de todos los cortes."
+            },
+            {
+              "start": 25.5,
+              "end": 29.6,
+              "text": "El orden de los diferenciales nos recuerda qué coordenada recorre cada integral."
+            },
+            {
+              "start": 29.9,
+              "end": 35.6,
+              "text": "Para una densidad constante ce, altura por área debe ser uno; por eso ce es uno dividido entre una mitad."
+            },
+            {
+              "start": 35.9,
+              "end": 40,
+              "text": "El normalizador compensa que solo disponemos de medio cuadrado de soporte."
+            },
+            {
+              "start": 40.3,
+              "end": 46.7,
+              "text": "Sale una altura dos, perfectamente válida: al multiplicarla por el área una mitad obtenemos probabilidad uno."
+            },
+            {
+              "start": 47,
+              "end": 53,
+              "text": "En dos dimensiones acumularemos volumen bajo una superficie, no interpretaremos su altura como probabilidad puntual."
+            }
+          ]
+        }
+      ]
+    },
+    "regiones-matrices--orden-de-matriz": {
+      "parentLesson": "regiones-matrices",
+      "parentTitle": "Regiones del plano y matrices",
+      "sectionId": "orden-de-matriz",
+      "title": "Etiquetar filas y columnas",
+      "sourceSections": [
+        "Ordenar varias cantidades"
+      ],
+      "optional": false,
+      "id": "regiones-matrices--orden-de-matriz",
+      "kind": "section",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Integrales dobles, vectores y matrices; preparación para el Tema 4"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "eafc689e7e9e2a8bf16a049eec7b67898f8f7896686b2c50fcf4879ece668dc2",
+      "mp3Sha256": "4d2f68c23471bcde7190184010118166c536c9b8ccc0f9ae43d9d1a5df0a2c0d",
+      "src": "audio/regiones-matrices--orden-de-matriz.mp3",
+      "duration": 56.241633,
+      "sourceDuration": 56.2,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 56.2,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6.6,
+              "text": "El vector mu guarda las medias de dos biomarcadores en orden: mu uno para el primero y mu dos para el segundo."
+            },
+            {
+              "start": 6.9,
+              "end": 9.7,
+              "text": "Así sabemos a qué medida pertenece cada número."
+            },
+            {
+              "start": 10,
+              "end": 16.3,
+              "text": "La matriz sigma coloca las varianzas cuatro y nueve en la diagonal, y la covarianza uno en las dos posiciones cruzadas."
+            },
+            {
+              "start": 16.6,
+              "end": 20.4,
+              "text": "Las etiquetas de fila y columna identifican qué par resume cada entrada."
+            },
+            {
+              "start": 20.7,
+              "end": 26.1,
+              "text": "En fila uno, columna dos, el uno resume cómo varían juntas las medidas primera y segunda."
+            },
+            {
+              "start": 26.4,
+              "end": 31.5,
+              "text": "Invertir el orden del par no cambia la covarianza, y por eso la otra entrada cruzada coincide."
+            },
+            {
+              "start": 31.8,
+              "end": 38.2,
+              "text": "La primera fila multiplicada por la columna dos, tres da cuatro por dos más uno por tres: ocho más tres, once."
+            },
+            {
+              "start": 38.5,
+              "end": 42.9,
+              "text": "Emparejamos posiciones antes de sumar; no multiplicamos filas con filas."
+            },
+            {
+              "start": 43.2,
+              "end": 48.3,
+              "text": "Cambiar el orden de biomarcadores exige cambiar también el vector y ambas etiquetas de la matriz."
+            },
+            {
+              "start": 48.6,
+              "end": 56.2,
+              "text": "Además las unidades importan: varianzas y covarianzas usan cuadrados o productos de unidades, no son probabilidades comparables entre cero y uno."
+            }
+          ]
+        }
+      ]
+    },
+    "regiones-matrices": {
+      "parentLesson": "regiones-matrices",
+      "id": "regiones-matrices",
+      "kind": "recap",
+      "title": "Regiones del plano y matrices",
+      "source": {
+        "document": "Puente matemático",
+        "section": "Integrales dobles, vectores y matrices; preparación para el Tema 4"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "8a24e8bb67223d8c0fd3fb51017929144cd2d39c06996263f14da79f855e4288",
+      "mp3Sha256": "0273992f368d169b18543196ac2b9894c6adfaeddcfe88ef991375e123fa6f14",
+      "src": "audio/regiones-matrices.mp3",
+      "duration": 386.35102,
+      "sourceDuration": 386.3,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 50.8,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 5.7,
+              "text": "Hoy vamos a convertir un dibujo en límites de integración y a ordenar medidas en una matriz."
+            },
+            {
+              "start": 6,
+              "end": 8.8,
+              "text": "Dos cultivos comparten una unidad de recurso."
+            },
+            {
+              "start": 9.1,
+              "end": 13.5,
+              "text": "Equis representa lo que recibe el primero; i griega, lo que recibe el segundo."
+            },
+            {
+              "start": 13.8,
+              "end": 17,
+              "text": "Ambas cantidades son no negativas y su suma no supera uno."
+            },
+            {
+              "start": 17.3,
+              "end": 21.1,
+              "text": "La frontera inclinada une los puntos uno, cero y cero, uno."
+            },
+            {
+              "start": 21.4,
+              "end": 25.5,
+              "text": "Los repartos permitidos forman un triángulo, no todo el cuadrado de lado uno."
+            },
+            {
+              "start": 25.8,
+              "end": 32.2,
+              "text": "Fijamos equis en cero coma tres y despejamos la otra coordenada: i griega no puede superar uno menos cero coma tres."
+            },
+            {
+              "start": 32.5,
+              "end": 35.3,
+              "text": "El corte vertical va de cero a cero coma siete."
+            },
+            {
+              "start": 35.6,
+              "end": 37.8,
+              "text": "Ese límite cambia al mover el corte."
+            },
+            {
+              "start": 38.1,
+              "end": 45.1,
+              "text": "Para recorrer todo el triángulo dejamos equis entre cero y uno y, para cada equis, recorremos i griega entre cero y uno menos equis."
+            },
+            {
+              "start": 45.4,
+              "end": 50.8,
+              "text": "Integrar uno da su área, una mitad; integrar una densidad constante dos daría probabilidad uno."
+            }
+          ]
+        },
+        {
+          "start": 51.1,
+          "end": 105.2,
+          "cues": [
+            {
+              "start": 51.1,
+              "end": 53.6,
+              "text": "Un vector reúne medidas en un orden acordado."
+            },
+            {
+              "start": 53.9,
+              "end": 59.9,
+              "text": "Si la primera entrada corresponde al primer cultivo, no puede pasar a significar el segundo sin cambiar también las etiquetas."
+            },
+            {
+              "start": 60.2,
+              "end": 63.3,
+              "text": "Las coordenadas del dibujo siguen esa misma disciplina."
+            },
+            {
+              "start": 63.6,
+              "end": 66.4,
+              "text": "Una matriz organiza entradas por filas y columnas."
+            },
+            {
+              "start": 66.7,
+              "end": 70.5,
+              "text": "En esta matriz, fila primera y columna segunda contienen uno."
+            },
+            {
+              "start": 70.8,
+              "end": 73,
+              "text": "La diagonal contiene cuatro y nueve."
+            },
+            {
+              "start": 73.3,
+              "end": 76.8,
+              "text": "Estos números no son probabilidades ni tienen por qué sumar uno."
+            },
+            {
+              "start": 77.1,
+              "end": 83.1,
+              "text": "El producto de una matriz por un vector usa sumas de productos: cada fila combina sus entradas con las del vector."
+            },
+            {
+              "start": 83.4,
+              "end": 88.2,
+              "text": "Si el vector es uno, dos, la primera fila produce seis y la segunda diecinueve."
+            },
+            {
+              "start": 88.5,
+              "end": 91.3,
+              "text": "No multiplicamos solo las entradas de la diagonal."
+            },
+            {
+              "start": 91.6,
+              "end": 96.4,
+              "text": "Más adelante una matriz de covarianzas pondrá varianzas en la diagonal y covarianzas fuera."
+            },
+            {
+              "start": 96.7,
+              "end": 99.5,
+              "text": "Sus etiquetas y unidades explicarán cada entrada."
+            },
+            {
+              "start": 99.8,
+              "end": 105.2,
+              "text": "Igual que con los límites del triángulo, la organización debe representar el problema antes de empezar a operar."
+            }
+          ]
+        },
+        {
+          "start": 105.5,
+          "end": 113.9,
+          "cues": [
+            {
+              "start": 105.5,
+              "end": 111.2,
+              "text": "Se reparten miligramos de nutriente entre dos cultivos. x es la cantidad del primero e y la del segundo."
+            },
+            {
+              "start": 111.5,
+              "end": 113.9,
+              "text": "Se permite dejar nutriente sin repartir."
+            }
+          ]
+        },
+        {
+          "start": 114.2,
+          "end": 124,
+          "cues": [
+            {
+              "start": 114.2,
+              "end": 116.4,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 116.7,
+              "end": 120.2,
+              "text": "Con equis minúscula fijado, ¿cuál es el máximo permitido de y?"
+            },
+            {
+              "start": 120.5,
+              "end": 124,
+              "text": "Queremos el máximo de la segunda cantidad una vez fijada la primera."
+            }
+          ]
+        },
+        {
+          "start": 124.3,
+          "end": 138.2,
+          "cues": [
+            {
+              "start": 124.3,
+              "end": 128.4,
+              "text": "Las coordenadas son cantidades para dos cultivos y no pueden ser negativas."
+            },
+            {
+              "start": 128.7,
+              "end": 133.1,
+              "text": "La desigualdad de capacidad es compartida, de modo que la frontera es inclinada."
+            },
+            {
+              "start": 133.4,
+              "end": 138.2,
+              "text": "Su área se expresa en unidades al cuadrado; sin densidad todavía no es una probabilidad."
+            }
+          ]
+        },
+        {
+          "start": 138.5,
+          "end": 148.1,
+          "cues": [
+            {
+              "start": 138.5,
+              "end": 148.1,
+              "text": "Capacidad total: 4 mg; equis minúscula mayor o igual que 0, i griega minúscula mayor o igual que 0 y equis minúscula más i griega minúscula menor o igual que 4."
+            }
+          ]
+        },
+        {
+          "start": 148.4,
+          "end": 154,
+          "cues": [
+            {
+              "start": 148.4,
+              "end": 151.2,
+              "text": "Se fija equis minúscula igual a 2 mg."
+            },
+            {
+              "start": 151.5,
+              "end": 154,
+              "text": "Los ejes del dibujo representan miligramos."
+            }
+          ]
+        },
+        {
+          "start": 154.3,
+          "end": 156.8,
+          "cues": [
+            {
+              "start": 154.3,
+              "end": 156.8,
+              "text": "No se pueden asignar cantidades negativas."
+            }
+          ]
+        },
+        {
+          "start": 157.1,
+          "end": 161.5,
+          "cues": [
+            {
+              "start": 157.1,
+              "end": 161.5,
+              "text": "El límite es compartido: no se dispone de una capacidad completa para cada cultivo."
+            }
+          ]
+        },
+        {
+          "start": 161.8,
+          "end": 170.1,
+          "cues": [
+            {
+              "start": 161.8,
+              "end": 165,
+              "text": "Resta lo que recibe el primer cultivo a la capacidad total."
+            },
+            {
+              "start": 165.3,
+              "end": 170.1,
+              "text": "La capacidad es compartida: lo asignado al primer cultivo ya no está disponible para el segundo."
+            }
+          ]
+        },
+        {
+          "start": 170.4,
+          "end": 192.5,
+          "cues": [
+            {
+              "start": 170.4,
+              "end": 173.2,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 173.5,
+              "end": 177,
+              "text": "Con equis minúscula fijado, ¿cuál es el máximo permitido de y?"
+            },
+            {
+              "start": 177.3,
+              "end": 180.5,
+              "text": "Las coordenadas describen un punto mediante dos números."
+            },
+            {
+              "start": 180.8,
+              "end": 184,
+              "text": "Fijar la primera cantidad deja un máximo para la segunda."
+            },
+            {
+              "start": 184.3,
+              "end": 187.8,
+              "text": "La frontera del triángulo expresa la capacidad total disponible."
+            },
+            {
+              "start": 188.1,
+              "end": 192.5,
+              "text": "Para este apartado: Resta lo que recibe el primer cultivo a la capacidad total."
+            }
+          ]
+        },
+        {
+          "start": 192.8,
+          "end": 197.6,
+          "cues": [
+            {
+              "start": 192.8,
+              "end": 197.6,
+              "text": "Usar la capacidad compartida. 2 más i griega minúscula menor o igual que 4."
+            }
+          ]
+        },
+        {
+          "start": 197.9,
+          "end": 206.5,
+          "cues": [
+            {
+              "start": 197.9,
+              "end": 203,
+              "text": "Restar en ambos lados. i griega minúscula menor o igual que 4 menos 2 igual a 2."
+            },
+            {
+              "start": 203.3,
+              "end": 206.5,
+              "text": "El segundo cultivo puede recibir entre cero y 2 mg."
+            }
+          ]
+        },
+        {
+          "start": 206.8,
+          "end": 218.8,
+          "cues": [
+            {
+              "start": 206.8,
+              "end": 208.4,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 208.7,
+              "end": 210.6,
+              "text": "El resultado es 2 miligramos."
+            },
+            {
+              "start": 210.9,
+              "end": 215.3,
+              "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto."
+            },
+            {
+              "start": 215.6,
+              "end": 218.8,
+              "text": "El máximo de y cambia al cambiar equis minúscula."
+            }
+          ]
+        },
+        {
+          "start": 219.1,
+          "end": 224.5,
+          "cues": [
+            {
+              "start": 219.1,
+              "end": 221,
+              "text": "El resultado es 2 miligramos."
+            },
+            {
+              "start": 221.3,
+              "end": 224.5,
+              "text": "El máximo de y cambia al cambiar equis minúscula."
+            }
+          ]
+        },
+        {
+          "start": 224.8,
+          "end": 233.9,
+          "cues": [
+            {
+              "start": 224.8,
+              "end": 227,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 227.3,
+              "end": 230.8,
+              "text": "¿Qué área tiene la región triangular de todos los repartos permitidos?"
+            },
+            {
+              "start": 231.1,
+              "end": 233.9,
+              "text": "Queremos medir toda la región de repartos permitidos."
+            }
+          ]
+        },
+        {
+          "start": 234.2,
+          "end": 248.1,
+          "cues": [
+            {
+              "start": 234.2,
+              "end": 238.3,
+              "text": "Las coordenadas son cantidades para dos cultivos y no pueden ser negativas."
+            },
+            {
+              "start": 238.6,
+              "end": 243,
+              "text": "La desigualdad de capacidad es compartida, de modo que la frontera es inclinada."
+            },
+            {
+              "start": 243.3,
+              "end": 248.1,
+              "text": "Su área se expresa en unidades al cuadrado; sin densidad todavía no es una probabilidad."
+            }
+          ]
+        },
+        {
+          "start": 248.4,
+          "end": 258,
+          "cues": [
+            {
+              "start": 248.4,
+              "end": 258,
+              "text": "Capacidad total: 4 mg; equis minúscula mayor o igual que 0, i griega minúscula mayor o igual que 0 y equis minúscula más i griega minúscula menor o igual que 4."
+            }
+          ]
+        },
+        {
+          "start": 258.3,
+          "end": 263.9,
+          "cues": [
+            {
+              "start": 258.3,
+              "end": 261.1,
+              "text": "Se fija equis minúscula igual a 2 mg."
+            },
+            {
+              "start": 261.4,
+              "end": 263.9,
+              "text": "Los ejes del dibujo representan miligramos."
+            }
+          ]
+        },
+        {
+          "start": 264.2,
+          "end": 266.7,
+          "cues": [
+            {
+              "start": 264.2,
+              "end": 266.7,
+              "text": "No se pueden asignar cantidades negativas."
+            }
+          ]
+        },
+        {
+          "start": 267,
+          "end": 271.4,
+          "cues": [
+            {
+              "start": 267,
+              "end": 271.4,
+              "text": "El límite es compartido: no se dispone de una capacidad completa para cada cultivo."
+            }
+          ]
+        },
+        {
+          "start": 271.7,
+          "end": 280.9,
+          "cues": [
+            {
+              "start": 271.7,
+              "end": 275.2,
+              "text": "Un triángulo rectángulo tiene la mitad del área de su rectángulo."
+            },
+            {
+              "start": 275.5,
+              "end": 280.9,
+              "text": "El triángulo ocupa la mitad del rectángulo de la misma base y altura; todavía no es una probabilidad."
+            }
+          ]
+        },
+        {
+          "start": 281.2,
+          "end": 303.3,
+          "cues": [
+            {
+              "start": 281.2,
+              "end": 284,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 284.3,
+              "end": 287.8,
+              "text": "¿Qué área tiene la región triangular de todos los repartos permitidos?"
+            },
+            {
+              "start": 288.1,
+              "end": 291.3,
+              "text": "Las coordenadas describen un punto mediante dos números."
+            },
+            {
+              "start": 291.6,
+              "end": 294.8,
+              "text": "Fijar la primera cantidad deja un máximo para la segunda."
+            },
+            {
+              "start": 295.1,
+              "end": 298.6,
+              "text": "La frontera del triángulo expresa la capacidad total disponible."
+            },
+            {
+              "start": 298.9,
+              "end": 303.3,
+              "text": "Para este apartado: Un triángulo rectángulo tiene la mitad del área de su rectángulo."
+            }
+          ]
+        },
+        {
+          "start": 303.6,
+          "end": 312.4,
+          "cues": [
+            {
+              "start": 303.6,
+              "end": 305.5,
+              "text": "Identificar base y altura."
+            },
+            {
+              "start": 305.8,
+              "end": 308.6,
+              "text": "Sobre cada eje se puede llegar a 4 mg."
+            },
+            {
+              "start": 308.9,
+              "end": 312.4,
+              "text": "El rectángulo exterior tiene área 4 por 4 igual a 16."
+            }
+          ]
+        },
+        {
+          "start": 312.7,
+          "end": 321,
+          "cues": [
+            {
+              "start": 312.7,
+              "end": 313.9,
+              "text": "Tomar la mitad."
+            },
+            {
+              "start": 314.2,
+              "end": 317.9,
+              "text": "Área del triángulo: 16 dividido entre 2 igual a 8."
+            },
+            {
+              "start": 318.2,
+              "end": 321,
+              "text": "Aún no hemos asignado probabilidades a esa región."
+            }
+          ]
+        },
+        {
+          "start": 321.3,
+          "end": 334.5,
+          "cues": [
+            {
+              "start": 321.3,
+              "end": 322.9,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 323.2,
+              "end": 325.7,
+              "text": "El resultado es 8 miligramos al cuadrado."
+            },
+            {
+              "start": 326,
+              "end": 330.4,
+              "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto."
+            },
+            {
+              "start": 330.7,
+              "end": 334.5,
+              "text": "Una región y su área se pueden entender antes de introducir una densidad."
+            }
+          ]
+        },
+        {
+          "start": 334.8,
+          "end": 341.4,
+          "cues": [
+            {
+              "start": 334.8,
+              "end": 337.3,
+              "text": "El resultado es 8 miligramos al cuadrado."
+            },
+            {
+              "start": 337.6,
+              "end": 341.4,
+              "text": "Una región y su área se pueden entender antes de introducir una densidad."
+            }
+          ]
+        },
+        {
+          "start": 341.7,
+          "end": 386.3,
+          "cues": [
+            {
+              "start": 341.7,
+              "end": 345.8,
+              "text": "Se recorre el triángulo con coordenadas positivas cuya suma es menor que uno."
+            },
+            {
+              "start": 346.1,
+              "end": 350.5,
+              "text": "Un vector ordena medias y una matriz simétrica ordena varianzas y covarianzas."
+            },
+            {
+              "start": 350.8,
+              "end": 354,
+              "text": "Comprobemos si podemos aplicar esa idea a otra situación."
+            },
+            {
+              "start": 354.3,
+              "end": 360.1,
+              "text": "En la región positiva con x más y menor que uno, si x vale 0,4, ¿hasta dónde puede llegar y?"
+            },
+            {
+              "start": 360.4,
+              "end": 363.6,
+              "text": "¿Qué relación permite decidirlo antes de mirar el resultado?"
+            },
+            {
+              "start": 363.9,
+              "end": 369.3,
+              "text": "La frontera impone y menor que uno menos x, por lo que el límite superior del corte es 0,6."
+            },
+            {
+              "start": 369.6,
+              "end": 376,
+              "text": "Para revisar el próximo problema, evita este error: Usar límites constantes en una región con frontera inclinada."
+            },
+            {
+              "start": 376.3,
+              "end": 380.3,
+              "text": "En cada corte la frontera impone un máximo que depende de la otra coordenada."
+            },
+            {
+              "start": 380.6,
+              "end": 386.3,
+              "text": "Límites constantes recorrerían también parejas que exceden la capacidad y cambiarían la región integrada."
+            }
+          ]
+        }
+      ]
+    },
+    "sucesos--resultados-y-sucesos": {
+      "parentLesson": "sucesos",
+      "parentTitle": "Experimentos, sucesos y conjuntos observables",
+      "sectionId": "resultados-y-sucesos",
+      "title": "Conservar la identidad de dos semillas",
+      "sourceSections": [
+        "¿Qué resultados puede tener nuestro experimento?",
+        "Definir qué se observa"
+      ],
+      "optional": false,
+      "id": "sucesos--resultados-y-sucesos",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.1, 1.2 y 1.4: experimentos, sucesos y observabilidad"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "38aa83dc718deaa4f3d1453492a1f8d5de60d2960e95df74aff2b0f83061ecbf",
+      "mp3Sha256": "0bb690d1bc53f42992ec4964d9c2420181445d51ff5b4fe522be362b7d00ed66",
+      "src": "audio/sucesos--resultados-y-sucesos.mp3",
+      "duration": 83.826939,
+      "sourceDuration": 83.8,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 83.8,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 5.3,
+              "text": "Vamos a observar dos semillas, conservando cuál es la primera y cuál la segunda."
+            },
+            {
+              "start": 5.6,
+              "end": 9.1,
+              "text": "Queremos distinguir germina la primera de germina exactamente una."
+            },
+            {
+              "start": 9.4,
+              "end": 16.7,
+              "text": "Antes de calcular nada describiremos qué resultados hacen verdadera cada frase: así evitamos resolver una pregunta distinta de la planteada."
+            },
+            {
+              "start": 17,
+              "end": 19.5,
+              "text": "Llamamos omega al espacio de resultados."
+            },
+            {
+              "start": 19.8,
+              "end": 23.9,
+              "text": "Aquí contiene ninguna germina, solo la primera, solo la segunda y ambas."
+            },
+            {
+              "start": 24.2,
+              "end": 30.6,
+              "text": "Son alternativas excluyentes y agotan el experimento; en la lista, primera y segunda abrevia solo esa semilla."
+            },
+            {
+              "start": 30.9,
+              "end": 35.3,
+              "text": "Tener cuatro posibilidades no autoriza a darles un cuarto de probabilidad a cada una."
+            },
+            {
+              "start": 35.6,
+              "end": 38.1,
+              "text": "Llamemos a al suceso germina la primera."
+            },
+            {
+              "start": 38.4,
+              "end": 43.2,
+              "text": "Incluye solo primera y también ambas, porque en los dos resultados germinó esa semilla."
+            },
+            {
+              "start": 43.5,
+              "end": 50.2,
+              "text": "Un resultado describe lo que ocurrió de forma completa; un suceso puede reunir varios resultados que cumplen una condición común."
+            },
+            {
+              "start": 50.5,
+              "end": 53.7,
+              "text": "Exactamente una selecciona solo primera y solo segunda."
+            },
+            {
+              "start": 54,
+              "end": 58.1,
+              "text": "La palabra exactamente excluye ambas, aunque ahí también germinó la primera."
+            },
+            {
+              "start": 58.4,
+              "end": 65.7,
+              "text": "Este suceso y a comparten un resultado, pero no son iguales: cambiar la frase cambia qué resultados deberemos reunir al asignar probabilidad."
+            },
+            {
+              "start": 66,
+              "end": 74.9,
+              "text": "Si el modelo fija de antemano lo que observamos, hablamos de un resultado determinista; si admite alternativas desconocidas antes de realizarlo, lo tratamos como aleatorio."
+            },
+            {
+              "start": 75.2,
+              "end": 80.8,
+              "text": "Guardar solo el número de germinaciones agrupa los dos resultados de una semilla y pierde su identidad."
+            },
+            {
+              "start": 81.1,
+              "end": 83.8,
+              "text": "Resumir no elimina por sí mismo la incertidumbre."
+            }
+          ]
+        }
+      ]
+    },
+    "sucesos--traducir-conjuntos": {
+      "parentLesson": "sucesos",
+      "parentTitle": "Experimentos, sucesos y conjuntos observables",
+      "sectionId": "traducir-conjuntos",
+      "title": "Ambos, cualquiera, solo uno y ninguno",
+      "sourceSections": [
+        "Hacer la cuenta y entender el resultado",
+        "El lenguaje de los conjuntos"
+      ],
+      "optional": false,
+      "id": "sucesos--traducir-conjuntos",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.1, 1.2 y 1.4: experimentos, sucesos y observabilidad"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "0167104d0d1efaa0c750a0892768646a1efc7502e30938bc49055d1d00ad74da",
+      "mp3Sha256": "9a12a99e4cc0f9ec797e2039d71f5fe628be101d4c6a605dee644ca8ac790e50",
+      "src": "audio/sucesos--traducir-conjuntos.mp3",
+      "duration": 94.328163,
+      "sourceDuration": 94.3,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 94.3,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6.9,
+              "text": "Clasifiquemos cien células: treinta tienen solo el marcador a, veinte solo be, diez ambos y cuarenta ninguno."
+            },
+            {
+              "start": 7.2,
+              "end": 10,
+              "text": "Estos cuatro grupos no se solapan y completan cien."
+            },
+            {
+              "start": 10.3,
+              "end": 16,
+              "text": "Usaremos esa clasificación para traducir ambos, al menos uno y ninguno antes de calcular sus proporciones."
+            },
+            {
+              "start": 16.3,
+              "end": 20.4,
+              "text": "La intersección se lee a y be: exige los dos marcadores en la misma célula."
+            },
+            {
+              "start": 20.7,
+              "end": 25.1,
+              "text": "Por eso selecciona las diez dobles, no la suma de las células con cada marcador."
+            },
+            {
+              "start": 25.4,
+              "end": 29.8,
+              "text": "Son diez de las cien; tener solo a o solo be no basta para cumplir ambas condiciones."
+            },
+            {
+              "start": 30.1,
+              "end": 34.9,
+              "text": "La unión se lee a o be, con una o inclusiva: también acepta ambas condiciones juntas."
+            },
+            {
+              "start": 35.2,
+              "end": 39.6,
+              "text": "Reunimos treinta solo a, veinte solo be y diez dobles, sesenta de cien."
+            },
+            {
+              "start": 39.9,
+              "end": 45,
+              "text": "Sumamos estos grupos porque ya son disjuntos; cada célula aceptada entra una única vez."
+            },
+            {
+              "start": 45.3,
+              "end": 47.5,
+              "text": "Solo a exige estar en a y fuera de be."
+            },
+            {
+              "start": 47.8,
+              "end": 53.2,
+              "text": "La diferencia de conjuntos, a sin be, expresa lo mismo que la intersección de a con el complemento de be."
+            },
+            {
+              "start": 53.5,
+              "end": 59.9,
+              "text": "El superíndice ce significa no be dentro del espacio que definimos; esta selección deja las treinta que tienen únicamente a."
+            },
+            {
+              "start": 60.2,
+              "end": 62.4,
+              "text": "Ninguno exige no a y no be a la vez."
+            },
+            {
+              "start": 62.7,
+              "end": 68.4,
+              "text": "También podemos describirlo como no pertenecer a la unión: si fallan ambos marcadores, no se cumple al menos uno."
+            },
+            {
+              "start": 68.7,
+              "end": 75.4,
+              "text": "La ley de De Morgan iguala esas dos selecciones de las mismas cuarenta células; negar una o inclusiva produce un y entre negaciones."
+            },
+            {
+              "start": 75.7,
+              "end": 81.7,
+              "text": "Omega reúne todas las células y representa el suceso seguro; vacío no contiene ninguna y representa el imposible."
+            },
+            {
+              "start": 82,
+              "end": 87.3,
+              "text": "Para comprobar una traducción, recorre los cuatro grupos y pregunta si cada uno cumple la frase."
+            },
+            {
+              "start": 87.6,
+              "end": 94.3,
+              "text": "Exactamente uno excluye las dobles, mientras al menos uno las conserva: esa diferencia se decide antes de cualquier fórmula."
+            }
+          ]
+        }
+      ]
+    },
+    "sucesos--observabilidad": {
+      "parentLesson": "sucesos",
+      "parentTitle": "Experimentos, sucesos y conjuntos observables",
+      "sectionId": "observabilidad",
+      "title": "Qué preguntas admiten probabilidad",
+      "sourceSections": [
+        "Qué exige la observabilidad"
+      ],
+      "optional": false,
+      "id": "sucesos--observabilidad",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.1, 1.2 y 1.4: experimentos, sucesos y observabilidad"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "ddbd9870000b03e19539b277cc7fba955027b36f6f15213792a58d8be515bb07",
+      "mp3Sha256": "542f21fc32e04bcae3e6c48651f6ca53768e9b840f0741f12dbf39881d2dedd2",
+      "src": "audio/sucesos--observabilidad.mp3",
+      "duration": 99.134694,
+      "sourceDuration": 99.1,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 99.1,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 4.6,
+              "text": "Veamos qué significa que una pregunta sea observable dentro del modelo."
+            },
+            {
+              "start": 4.9,
+              "end": 12.2,
+              "text": "Con dos semillas podemos admitir todos los subconjuntos de resultados, pero si solo observáramos cuántas germinan no distinguiríamos cuál lo hizo."
+            },
+            {
+              "start": 12.5,
+              "end": 16.6,
+              "text": "La información disponible y la colección de sucesos admitidos deben quedar claras."
+            },
+            {
+              "start": 16.9,
+              "end": 22.6,
+              "text": "Llamamos a caligráfica a la sigma álgebra, la colección de sucesos sobre los que definimos probabilidad."
+            },
+            {
+              "start": 22.9,
+              "end": 27.7,
+              "text": "Incluye omega, el resultado seguro, y el complemento de cada suceso que admite."
+            },
+            {
+              "start": 28,
+              "end": 32.1,
+              "text": "Así, si podemos preguntar si ocurrió a, también podemos preguntar si no ocurrió."
+            },
+            {
+              "start": 32.4,
+              "end": 37.8,
+              "text": "Además, reunir una lista numerable de sucesos admitidos debe producir otro suceso admitido."
+            },
+            {
+              "start": 38.1,
+              "end": 41.9,
+              "text": "A sub i nombra cada uno de la lista; la unión pregunta si ocurre alguno."
+            },
+            {
+              "start": 42.2,
+              "end": 47.9,
+              "text": "Numerable permite etiquetar primero, segundo y así sucesivamente, incluso cuando la lista no termina."
+            },
+            {
+              "start": 48.2,
+              "end": 54.9,
+              "text": "También podemos formar intersecciones: negar la unión de los complementos equivale a exigir todos los sucesos, por De Morgan."
+            },
+            {
+              "start": 55.2,
+              "end": 59,
+              "text": "La colección queda cerrada al combinar preguntas con y, o y no."
+            },
+            {
+              "start": 59.3,
+              "end": 64.1,
+              "text": "No estamos asignando aún sus pesos, sino comprobando que esas preguntas sigan dentro del modelo."
+            },
+            {
+              "start": 64.4,
+              "end": 67.2,
+              "text": "El espacio de probabilidad reúne tres piezas."
+            },
+            {
+              "start": 67.5,
+              "end": 75.1,
+              "text": "Omega dice cuáles son los resultados; a caligráfica, qué grupos admitimos como sucesos; pe, qué probabilidad recibe cada uno."
+            },
+            {
+              "start": 75.4,
+              "end": 82.4,
+              "text": "La misma lista de resultados puede sostener repartos de probabilidad distintos, por lo que ninguna de esas piezas sustituye a las otras."
+            },
+            {
+              "start": 82.7,
+              "end": 88.7,
+              "text": "Observable no significa predecible ni equiprobable: podemos formular la pregunta y seguir sin conocer su respuesta."
+            },
+            {
+              "start": 89,
+              "end": 92.8,
+              "text": "Tampoco cualquier suceso de probabilidad cero es necesariamente vacío."
+            },
+            {
+              "start": 93.1,
+              "end": 99.1,
+              "text": "La estructura declara qué preguntas tratamos; el mecanismo y los supuestos justifican cuánto pesa cada una."
+            }
+          ]
+        }
+      ]
+    },
+    "sucesos": {
+      "parentLesson": "sucesos",
+      "id": "sucesos",
+      "kind": "recap",
+      "title": "Experimentos, sucesos y conjuntos observables",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.1, 1.2 y 1.4: experimentos, sucesos y observabilidad"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "771bde3a0aa8e80b60de61e4f055bae81e27d7ec78c22854f1dd69f0b5e7081a",
+      "mp3Sha256": "7826f0f53ca6dea4d22d75acbc406ab047501b80204f14dadf853c61df2399cb",
+      "src": "audio/sucesos.mp3",
+      "duration": 384.731429,
+      "sourceDuration": 384.7,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 55.4,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6,
+              "text": "Vamos a pasar de una frase a un conjunto de resultados, y de ese conjunto a una probabilidad."
+            },
+            {
+              "start": 6.3,
+              "end": 13,
+              "text": "Elegimos una bacteria de una colección de cien: treinta llevan solo a, veinte solo be, diez ambos y cuarenta ninguno."
+            },
+            {
+              "start": 13.3,
+              "end": 16.8,
+              "text": "El espacio muestral contiene las cien bacterias identificadas."
+            },
+            {
+              "start": 17.1,
+              "end": 19.9,
+              "text": "Un resultado elemental es la bacteria elegida."
+            },
+            {
+              "start": 20.2,
+              "end": 24,
+              "text": "El suceso a reúne todas las que llevan a, incluidas las diez dobles."
+            },
+            {
+              "start": 24.3,
+              "end": 27.1,
+              "text": "Por eso contiene cuarenta resultados, no treinta."
+            },
+            {
+              "start": 27.4,
+              "end": 30.2,
+              "text": "Suponemos que las cien bacterias son equiprobables."
+            },
+            {
+              "start": 30.5,
+              "end": 34.5,
+              "text": "Solo con esa condición podemos dividir casos favorables entre posibles."
+            },
+            {
+              "start": 34.8,
+              "end": 40.5,
+              "text": "A tiene probabilidad cuatro décimas y su complemento, no tener a, ocupa las seis décimas restantes."
+            },
+            {
+              "start": 40.8,
+              "end": 47.1,
+              "text": "El detalle observable importa: registrar solo el color de un marcador puede impedir distinguir bacterias individuales."
+            },
+            {
+              "start": 47.4,
+              "end": 55.4,
+              "text": "El espacio, los sucesos observables y la regla de probabilidad son piezas diferentes; conocer los nombres de las categorías no fija sus probabilidades."
+            }
+          ]
+        },
+        {
+          "start": 55.7,
+          "end": 104.9,
+          "cues": [
+            {
+              "start": 55.7,
+              "end": 59.8,
+              "text": "La intersección exige ambos marcadores a la vez: solo las diez dobles."
+            },
+            {
+              "start": 60.1,
+              "end": 62.9,
+              "text": "La unión acepta al menos uno, también ambos."
+            },
+            {
+              "start": 63.2,
+              "end": 68,
+              "text": "En probabilidad, la palabra o no excluye la coincidencia salvo que el enunciado lo diga."
+            },
+            {
+              "start": 68.3,
+              "end": 74.7,
+              "text": "Para sumar a y be sin duplicar resultados usamos inclusión y exclusión: sumamos sus probabilidades y restamos la intersección."
+            },
+            {
+              "start": 75,
+              "end": 79.4,
+              "text": "Las diez dobles estaban una vez en cada grupo; retiramos una de esas dos copias."
+            },
+            {
+              "start": 79.7,
+              "end": 83.2,
+              "text": "Sustituimos cuatro décimas más tres décimas menos una décima."
+            },
+            {
+              "start": 83.5,
+              "end": 87.6,
+              "text": "La unión vale seis décimas, igual que contar treinta, veinte y diez."
+            },
+            {
+              "start": 87.9,
+              "end": 92,
+              "text": "Ningún marcador es su complemento y tiene probabilidad cuatro décimas."
+            },
+            {
+              "start": 92.3,
+              "end": 96.1,
+              "text": "Solo a significa a y no be; ninguno significa no a y no be."
+            },
+            {
+              "start": 96.4,
+              "end": 100.5,
+              "text": "Estas traducciones deciden qué resultados entran antes de asignarles números."
+            },
+            {
+              "start": 100.8,
+              "end": 104.9,
+              "text": "Negar que ocurra alguno obliga a negar ambos: esa es una ley de De Morgan."
+            }
+          ]
+        },
+        {
+          "start": 105.2,
+          "end": 111.5,
+          "cues": [
+            {
+              "start": 105.2,
+              "end": 109.3,
+              "text": "En un cultivo, A indica fluorescencia verde y B fluorescencia roja."
+            },
+            {
+              "start": 109.6,
+              "end": 111.5,
+              "text": "Se elige una célula al azar."
+            }
+          ]
+        },
+        {
+          "start": 111.8,
+          "end": 123.4,
+          "cues": [
+            {
+              "start": 111.8,
+              "end": 114,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 114.3,
+              "end": 118.7,
+              "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?"
+            },
+            {
+              "start": 119,
+              "end": 123.4,
+              "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos."
+            }
+          ]
+        },
+        {
+          "start": 123.7,
+          "end": 137.5,
+          "cues": [
+            {
+              "start": 123.7,
+              "end": 127.2,
+              "text": "A y be nombran sucesos, es decir, conjuntos de resultados."
+            },
+            {
+              "start": 127.5,
+              "end": 131.3,
+              "text": "La unión admite cualquiera de ellos; la intersección exige ambos."
+            },
+            {
+              "start": 131.6,
+              "end": 137.5,
+              "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be."
+            }
+          ]
+        },
+        {
+          "start": 137.8,
+          "end": 139.9,
+          "cues": [
+            {
+              "start": 137.8,
+              "end": 139.9,
+              "text": "160 células en total."
+            }
+          ]
+        },
+        {
+          "start": 140.2,
+          "end": 145.9,
+          "cues": [
+            {
+              "start": 140.2,
+              "end": 145.9,
+              "text": "96 presentan A, 48 presentan be y 32 presentan ambos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 146.2,
+          "end": 149.4,
+          "cues": [
+            {
+              "start": 146.2,
+              "end": 149.4,
+              "text": "Cada célula tiene la misma probabilidad de ser elegida."
+            }
+          ]
+        },
+        {
+          "start": 149.7,
+          "end": 153.8,
+          "cues": [
+            {
+              "start": 149.7,
+              "end": 153.8,
+              "text": "Los grupos A y be pueden solaparse; no se supone independencia."
+            }
+          ]
+        },
+        {
+          "start": 154.1,
+          "end": 163,
+          "cues": [
+            {
+              "start": 154.1,
+              "end": 157.3,
+              "text": "Las células con ambos marcadores se han contado dos veces."
+            },
+            {
+              "start": 157.6,
+              "end": 163,
+              "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez."
+            }
+          ]
+        },
+        {
+          "start": 163.3,
+          "end": 186.2,
+          "cues": [
+            {
+              "start": 163.3,
+              "end": 166.1,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 166.4,
+              "end": 170.8,
+              "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?"
+            },
+            {
+              "start": 171.1,
+              "end": 173.9,
+              "text": "El experimento elige una célula equiprobablemente."
+            },
+            {
+              "start": 174.2,
+              "end": 181.8,
+              "text": "Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez."
+            },
+            {
+              "start": 182.1,
+              "end": 186.2,
+              "text": "Para este apartado: Las células con ambos marcadores se han contado dos veces."
+            }
+          ]
+        },
+        {
+          "start": 186.5,
+          "end": 203.7,
+          "cues": [
+            {
+              "start": 186.5,
+              "end": 188.1,
+              "text": "Contar sin duplicar."
+            },
+            {
+              "start": 188.4,
+              "end": 203.7,
+              "text": "Sumamos los dos grupos y restamos el solapamiento: 96 más 48 menos 32 igual a 112. sabiendo que A unión be sabiendo que igual a valor absoluto de abre paréntesis, A, cierra paréntesis más valor absoluto de abre paréntesis, be, cierra paréntesis - sabiendo que A intersección be sabiendo que."
+            }
+          ]
+        },
+        {
+          "start": 204,
+          "end": 211.3,
+          "cues": [
+            {
+              "start": 204,
+              "end": 205.6,
+              "text": "Convertir en probabilidad."
+            },
+            {
+              "start": 205.9,
+              "end": 211.3,
+              "text": "Dividimos por todas las células: 112 dividido entre 160 igual a 0 coma 7."
+            }
+          ]
+        },
+        {
+          "start": 211.6,
+          "end": 226.5,
+          "cues": [
+            {
+              "start": 211.6,
+              "end": 213.2,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 213.5,
+              "end": 217,
+              "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 217.3,
+              "end": 223,
+              "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso."
+            },
+            {
+              "start": 223.3,
+              "end": 226.5,
+              "text": "Incluye las células con uno o con los dos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 226.8,
+          "end": 233.8,
+          "cues": [
+            {
+              "start": 226.8,
+              "end": 230.3,
+              "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 230.6,
+              "end": 233.8,
+              "text": "Incluye las células con uno o con los dos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 234.1,
+          "end": 243.2,
+          "cues": [
+            {
+              "start": 234.1,
+              "end": 236.3,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 236.6,
+              "end": 240.1,
+              "text": "¿Cuál es la probabilidad de no presentar ninguno de los dos marcadores?"
+            },
+            {
+              "start": 240.4,
+              "end": 243.2,
+              "text": "Queremos que no ocurra ninguno de los dos sucesos."
+            }
+          ]
+        },
+        {
+          "start": 243.5,
+          "end": 257.3,
+          "cues": [
+            {
+              "start": 243.5,
+              "end": 247,
+              "text": "A y be nombran sucesos, es decir, conjuntos de resultados."
+            },
+            {
+              "start": 247.3,
+              "end": 251.1,
+              "text": "La unión admite cualquiera de ellos; la intersección exige ambos."
+            },
+            {
+              "start": 251.4,
+              "end": 257.3,
+              "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be."
+            }
+          ]
+        },
+        {
+          "start": 257.6,
+          "end": 259.7,
+          "cues": [
+            {
+              "start": 257.6,
+              "end": 259.7,
+              "text": "160 células en total."
+            }
+          ]
+        },
+        {
+          "start": 260,
+          "end": 265.7,
+          "cues": [
+            {
+              "start": 260,
+              "end": 265.7,
+              "text": "96 presentan A, 48 presentan be y 32 presentan ambos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 266,
+          "end": 269.2,
+          "cues": [
+            {
+              "start": 266,
+              "end": 269.2,
+              "text": "Cada célula tiene la misma probabilidad de ser elegida."
+            }
+          ]
+        },
+        {
+          "start": 269.5,
+          "end": 273.6,
+          "cues": [
+            {
+              "start": 269.5,
+              "end": 273.6,
+              "text": "Los grupos A y be pueden solaparse; no se supone independencia."
+            }
+          ]
+        },
+        {
+          "start": 273.9,
+          "end": 281.1,
+          "cues": [
+            {
+              "start": 273.9,
+              "end": 276.1,
+              "text": "El complemento de al menos uno es ninguno."
+            },
+            {
+              "start": 276.4,
+              "end": 281.1,
+              "text": "Primero reunimos todo lo que cumple A o be y después conservamos su complemento."
+            }
+          ]
+        },
+        {
+          "start": 281.4,
+          "end": 302.8,
+          "cues": [
+            {
+              "start": 281.4,
+              "end": 284.2,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 284.5,
+              "end": 288,
+              "text": "¿Cuál es la probabilidad de no presentar ninguno de los dos marcadores?"
+            },
+            {
+              "start": 288.3,
+              "end": 291.1,
+              "text": "El experimento elige una célula equiprobablemente."
+            },
+            {
+              "start": 291.4,
+              "end": 299,
+              "text": "Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez."
+            },
+            {
+              "start": 299.3,
+              "end": 302.8,
+              "text": "Para este apartado: El complemento de al menos uno es ninguno."
+            }
+          ]
+        },
+        {
+          "start": 303.1,
+          "end": 318.7,
+          "cues": [
+            {
+              "start": 303.1,
+              "end": 304.7,
+              "text": "Tomar el complemento."
+            },
+            {
+              "start": 305,
+              "end": 318.7,
+              "text": "Los grupos con algún marcador y sin marcadores cubren todo el cultivo: 1 menos 0 coma 7 igual a 0 coma 3. probabilidad de abre paréntesis, abre paréntesis, A unión be, cierra paréntesis elevado a ce, cierra paréntesis igual a 1 menos probabilidad de A unión be."
+            }
+          ]
+        },
+        {
+          "start": 319,
+          "end": 334.2,
+          "cues": [
+            {
+              "start": 319,
+              "end": 320.6,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 320.9,
+              "end": 324.4,
+              "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 324.7,
+              "end": 330.4,
+              "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso."
+            },
+            {
+              "start": 330.7,
+              "end": 334.2,
+              "text": "No tener ninguno no es lo mismo que no tener ambos simultáneamente."
+            }
+          ]
+        },
+        {
+          "start": 334.5,
+          "end": 341.8,
+          "cues": [
+            {
+              "start": 334.5,
+              "end": 338,
+              "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 338.3,
+              "end": 341.8,
+              "text": "No tener ninguno no es lo mismo que no tener ambos simultáneamente."
+            }
+          ]
+        },
+        {
+          "start": 342.1,
+          "end": 384.7,
+          "cues": [
+            {
+              "start": 342.1,
+              "end": 346.5,
+              "text": "Solo A excluye B; ni A ni B exige simultáneamente ambos complementos."
+            },
+            {
+              "start": 346.8,
+              "end": 353.5,
+              "text": "El espacio de probabilidad reúne resultados posibles, sucesos observables y una regla que les asigna probabilidades."
+            },
+            {
+              "start": 353.8,
+              "end": 357,
+              "text": "Comprobemos si podemos aplicar esa idea a otra situación."
+            },
+            {
+              "start": 357.3,
+              "end": 360.1,
+              "text": "¿Cómo se expresa que una muestra tiene A pero no B?"
+            },
+            {
+              "start": 360.4,
+              "end": 363.6,
+              "text": "¿Qué relación permite decidirlo antes de mirar el resultado?"
+            },
+            {
+              "start": 363.9,
+              "end": 367.6,
+              "text": "La muestra debe estar dentro de A y fuera de B simultáneamente."
+            },
+            {
+              "start": 367.9,
+              "end": 374.9,
+              "text": "Para revisar el próximo problema, evita este error: Interpretar o como exclusivamente una alternativa sin que el enunciado lo diga."
+            },
+            {
+              "start": 375.2,
+              "end": 377.7,
+              "text": "La unión permite que ocurran ambos sucesos."
+            },
+            {
+              "start": 378,
+              "end": 384.7,
+              "text": "Para pedir solo uno hay que excluir expresamente la intersección; por eso conviene marcar los resultados admitidos antes de sumar."
+            }
+          ]
+        }
+      ]
+    },
+    "axiomas--probabilidades-coherentes": {
+      "parentLesson": "axiomas",
+      "parentTitle": "Axiomas, solapamientos y frecuencia relativa",
+      "sectionId": "probabilidades-coherentes",
+      "title": "Una escala que debe completar uno",
+      "sourceSections": [
+        "¿Por qué no podemos sumar sin revisar los solapamientos?",
+        "Reglas que cualquier modelo debe respetar"
+      ],
+      "optional": false,
+      "id": "axiomas--probabilidades-coherentes",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.2 a 1.5 y 1.10: cálculo, propiedades, frecuencia y simulación"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "49ffc7a4e6221c5715197f3ac3ca24291c58e47a0499d2bec86d623ac91ad86a",
+      "mp3Sha256": "5e564932ea76d1eafcd932b642f957cc68ff940c11d144f3d72aea23a1a50eca",
+      "src": "audio/axiomas--probabilidades-coherentes.mp3",
+      "duration": 101.146122,
+      "sourceDuration": 101.1,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 101.1,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 4.1,
+              "text": "Un cultivo puede estar en uno de tres estados excluyentes."
+            },
+            {
+              "start": 4.4,
+              "end": 7.8,
+              "text": "Queremos repartir probabilidad entre ellos sin contradicciones."
+            },
+            {
+              "start": 8.1,
+              "end": 15.4,
+              "text": "Los axiomas no eligen por nosotros el reparto que describe al cultivo, pero sí establecen las reglas mínimas que cualquier propuesta debe respetar."
+            },
+            {
+              "start": 15.7,
+              "end": 19.1,
+              "text": "La primera regla es no asignar probabilidades negativas."
+            },
+            {
+              "start": 19.4,
+              "end": 26,
+              "text": "La segunda fija pe de omega igual a uno: el espacio recoge todas las posibilidades, de modo que algo de él ocurrirá."
+            },
+            {
+              "start": 26.3,
+              "end": 32.6,
+              "text": "Uno representa el total del modelo; no obliga a que una frecuencia de una muestra coincida exactamente con cada probabilidad."
+            },
+            {
+              "start": 32.9,
+              "end": 38,
+              "text": "Si dos estados distintos pesan dos décimas y tres décimas, reunirlos da cinco décimas."
+            },
+            {
+              "start": 38.3,
+              "end": 43.1,
+              "text": "Podemos sumar directamente porque son excluyentes: ningún resultado aparece en ambos."
+            },
+            {
+              "start": 43.4,
+              "end": 49.1,
+              "text": "El estado restante completa la probabilidad que falta, sin que debamos repartir por igual entre los tres nombres."
+            },
+            {
+              "start": 49.4,
+              "end": 54.4,
+              "text": "La tercera regla generaliza esa suma a una lista numerable de sucesos disjuntos dos a dos."
+            },
+            {
+              "start": 54.7,
+              "end": 60.7,
+              "text": "La unión acepta cualquiera de ellos y cada resultado entra una sola vez; por eso sumamos sus probabilidades."
+            },
+            {
+              "start": 61,
+              "end": 63.5,
+              "text": "La letra i recorre los sucesos de la lista."
+            },
+            {
+              "start": 63.8,
+              "end": 66.6,
+              "text": "Sin disjunción, esta igualdad no vale en general."
+            },
+            {
+              "start": 66.9,
+              "end": 74.8,
+              "text": "Si tres sucesos se solapan, usamos inclusión y exclusión: sumamos individuales, restamos intersecciones por parejas y añadimos la triple."
+            },
+            {
+              "start": 75.1,
+              "end": 83.4,
+              "text": "Un resultado presente en los tres entró tres veces y fue retirado tres veces; añadir la triple recupera exactamente una copia, que es lo que necesita la unión."
+            },
+            {
+              "start": 83.7,
+              "end": 91.3,
+              "text": "Con más sucesos seguimos alternando: sumamos intersecciones de un número impar de sucesos y restamos las de un número par, hasta incluir todas."
+            },
+            {
+              "start": 91.6,
+              "end": 95.1,
+              "text": "Es una corrección de copias, no una hipótesis de independencia."
+            },
+            {
+              "start": 95.4,
+              "end": 101.1,
+              "text": "El dibujo ayuda a seguirlas, pero el tamaño que demos a una región no establece su probabilidad real."
+            }
+          ]
+        }
+      ]
+    },
+    "axiomas--solapamiento": {
+      "parentLesson": "axiomas",
+      "parentTitle": "Axiomas, solapamientos y frecuencia relativa",
+      "sectionId": "solapamiento",
+      "title": "Corregir una copia de las células dobles",
+      "sourceSections": [
+        "Hacer la cuenta y entender el resultado"
+      ],
+      "optional": false,
+      "id": "axiomas--solapamiento",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.2 a 1.5 y 1.10: cálculo, propiedades, frecuencia y simulación"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "f6baa998ae621c9312d402117dd4df9d4bf9e7e3f291433eb4aeeb95a39534fb",
+      "mp3Sha256": "43a7d1c2d397484b0ff9f44d67f6854d52a467688e03b29c7689b10c63612453",
+      "src": "audio/axiomas--solapamiento.mp3",
+      "duration": 76.329796,
+      "sourceDuration": 76.3,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 76.3,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 7.5,
+              "text": "Un marcador a aparece con probabilidad cuarenta y cinco centésimas, be con treinta centésimas y ambos con quince centésimas."
+            },
+            {
+              "start": 7.8,
+              "end": 9.4,
+              "text": "Buscamos al menos uno."
+            },
+            {
+              "start": 9.7,
+              "end": 15.7,
+              "text": "Como los dos grupos incluyen a las células dobles, seguiremos cuántas veces entra cada una antes de aceptar la suma."
+            },
+            {
+              "start": 16,
+              "end": 20.1,
+              "text": "Sumar cuarenta y cinco centésimas y treinta centésimas da setenta y cinco."
+            },
+            {
+              "start": 20.4,
+              "end": 27.1,
+              "text": "Es un total provisional: cada célula solo a o solo be entra una vez, pero las dobles entran al sumar a y otra vez al sumar be."
+            },
+            {
+              "start": 27.4,
+              "end": 30.2,
+              "text": "Todavía no hemos calculado correctamente la unión."
+            },
+            {
+              "start": 30.5,
+              "end": 34.6,
+              "text": "Restamos las quince centésimas de la intersección para quitar una copia de las dobles."
+            },
+            {
+              "start": 34.9,
+              "end": 38,
+              "text": "Setenta y cinco menos quince deja sesenta centésimas."
+            },
+            {
+              "start": 38.3,
+              "end": 44.3,
+              "text": "Conservamos la otra copia porque tener ambos sí cumple al menos uno; retirar las dos respondería exactamente uno."
+            },
+            {
+              "start": 44.6,
+              "end": 47.1,
+              "text": "Ninguno es el complemento de al menos uno."
+            },
+            {
+              "start": 47.4,
+              "end": 54.4,
+              "text": "Como esos dos grupos completan todo el espacio sin compartir resultados, restamos seis décimas del total uno y quedan cuatro décimas."
+            },
+            {
+              "start": 54.7,
+              "end": 59.8,
+              "text": "El complemento cambia la selección, pero no requiere ningún supuesto nuevo sobre los marcadores."
+            },
+            {
+              "start": 60.1,
+              "end": 65.2,
+              "text": "La fórmula de la unión resume el proceso: pe de a más pe de be menos pe de la intersección."
+            },
+            {
+              "start": 65.5,
+              "end": 68.7,
+              "text": "Esa resta corrige duplicación, no dependencia."
+            },
+            {
+              "start": 69,
+              "end": 76.3,
+              "text": "Vale sean independientes o no; sustituir la intersección por el producto de las marginales sería otro paso y necesitaría justificar independencia."
+            }
+          ]
+        }
+      ]
+    },
+    "axiomas--deducir-propiedades": {
+      "parentLesson": "axiomas",
+      "parentTitle": "Axiomas, solapamientos y frecuencia relativa",
+      "sectionId": "deducir-propiedades",
+      "title": "Vacío, complemento e inclusión",
+      "sourceSections": [
+        "De los axiomas a las propiedades"
+      ],
+      "optional": false,
+      "id": "axiomas--deducir-propiedades",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.2 a 1.5 y 1.10: cálculo, propiedades, frecuencia y simulación"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "1c29a259b89d2f2cf5bf47875319a3f17efe2974708ab5d20eaf8113326ef045",
+      "mp3Sha256": "95b3976bd1f89623ecfb16d1ccd708c2e6b2937a5c7054a1d866ffb3c497b0dd",
+      "src": "audio/axiomas--deducir-propiedades.mp3",
+      "duration": 79.438367,
+      "sourceDuration": 79.4,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 79.4,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 8.2,
+              "text": "Deduciremos vacío, complemento e inclusión con una misma idea: separar un conjunto en piezas disjuntas y sumar sus pesos no negativos."
+            },
+            {
+              "start": 8.5,
+              "end": 14.9,
+              "text": "Así entenderemos de dónde salen las reglas y podremos comprobar si una respuesta es coherente antes de repetir toda la cuenta."
+            },
+            {
+              "start": 15.2,
+              "end": 19.3,
+              "text": "Unir omega con vacío deja exactamente omega, y ambos son disjuntos."
+            },
+            {
+              "start": 19.6,
+              "end": 26.3,
+              "text": "Por aditividad, uno tendría que ser uno más la probabilidad del vacío; para conservar la igualdad esa probabilidad debe ser cero."
+            },
+            {
+              "start": 26.6,
+              "end": 30.4,
+              "text": "El conjunto vacío no aporta resultados y, por tanto, tampoco aporta peso."
+            },
+            {
+              "start": 30.7,
+              "end": 33.9,
+              "text": "A y su complemento son disjuntos y juntos forman omega."
+            },
+            {
+              "start": 34.2,
+              "end": 38.6,
+              "text": "Sus probabilidades suman uno; despejar la del complemento deja uno menos pe de a."
+            },
+            {
+              "start": 38.9,
+              "end": 45.6,
+              "text": "Así obtenemos lo que no ocurre retirando del total lo que sí ocurre, sin necesitar que los resultados elementales tengan pesos iguales."
+            },
+            {
+              "start": 45.9,
+              "end": 51.3,
+              "text": "Si a está contenido en be, podemos reconstruir be con todo a y la parte de be que queda fuera de a."
+            },
+            {
+              "start": 51.6,
+              "end": 54.4,
+              "text": "La barra inclinada se lee diferencia de conjuntos."
+            },
+            {
+              "start": 54.7,
+              "end": 60,
+              "text": "Estas dos piezas no comparten resultados; por eso pe de be es la suma de sus probabilidades."
+            },
+            {
+              "start": 60.3,
+              "end": 65.4,
+              "text": "La pieza adicional no puede tener peso negativo, así que pe de a nunca supera pe de be."
+            },
+            {
+              "start": 65.7,
+              "end": 74.3,
+              "text": "Una aplicación es acotar que ocurran todos varios sucesos: por complementos, su probabilidad es al menos uno menos la suma de las probabilidades de que falle cada uno."
+            },
+            {
+              "start": 74.6,
+              "end": 79.4,
+              "text": "Es Bonferroni; si esa cota sale negativa usamos cero, sin suponer independencia."
+            }
+          ]
+        }
+      ]
+    },
+    "axiomas--frecuencia": {
+      "parentLesson": "axiomas",
+      "parentTitle": "Axiomas, solapamientos y frecuencia relativa",
+      "sectionId": "frecuencia",
+      "title": "El modelo no obliga a compensar una racha",
+      "sourceSections": [
+        "Una frecuencia no es una garantía"
+      ],
+      "optional": false,
+      "id": "axiomas--frecuencia",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.2 a 1.5 y 1.10: cálculo, propiedades, frecuencia y simulación"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "3f5cdce4e24456951de57ef341aa4b1c5344de14c9e2c8dd41ba1fea6d96b288",
+      "mp3Sha256": "91423516d87df1b1ebe9557a1cc9a2b4898d6b520f1df671f7f11a25f9013e13",
+      "src": "audio/axiomas--frecuencia.mp3",
+      "duration": 103.131429,
+      "sourceDuration": 103.1,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 103.1,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 6.3,
+              "text": "Hemos observado seis positivos en diez ensayos: la frecuencia es seis entre diez, seis décimas."
+            },
+            {
+              "start": 6.6,
+              "end": 9.7,
+              "text": "¿Eso fija la probabilidad verdadera en seis décimas?"
+            },
+            {
+              "start": 10,
+              "end": 12.2,
+              "text": "No; describe esta muestra."
+            },
+            {
+              "start": 12.5,
+              "end": 18.2,
+              "text": "Otra tanda bajo el mismo mecanismo puede producir otro recuento, aunque la probabilidad del modelo no cambie."
+            },
+            {
+              "start": 18.5,
+              "end": 22,
+              "text": "Pe con sombrero nombra la frecuencia calculada con ene ensayos."
+            },
+            {
+              "start": 22.3,
+              "end": 27.4,
+              "text": "I sub a en la repetición i vale uno si ocurre a y cero si no; al sumarlos contamos positivos."
+            },
+            {
+              "start": 27.7,
+              "end": 33.4,
+              "text": "Dividir entre ene los compara con todos los ensayos y convierte el recuento en una proporción observada."
+            },
+            {
+              "start": 33.7,
+              "end": 42.6,
+              "text": "Con ensayos independientes y la misma probabilidad en cada uno, la ley de los grandes números explica la estabilización de la frecuencia alrededor de esa probabilidad al crecer ene."
+            },
+            {
+              "start": 42.9,
+              "end": 50.2,
+              "text": "No promete acercamiento en cada paso ni coincidencia exacta en una muestra finita: una nueva observación puede alejar temporalmente la frecuencia."
+            },
+            {
+              "start": 50.5,
+              "end": 53,
+              "text": "Una racha no crea una deuda de resultados."
+            },
+            {
+              "start": 53.3,
+              "end": 58.6,
+              "text": "Si el siguiente ensayo es independiente y mantiene su probabilidad, conocer los anteriores no la cambia."
+            },
+            {
+              "start": 58.9,
+              "end": 65.9,
+              "text": "La estabilización ocurre al crecer el conjunto de ensayos, no porque el próximo esté obligado a compensar los positivos o negativos que llevamos."
+            },
+            {
+              "start": 66.2,
+              "end": 73.1,
+              "text": "Otra vía, dividir casos favorables entre posibles, requiere un espacio finito con resultados elementales equiprobables."
+            },
+            {
+              "start": 73.4,
+              "end": 76.2,
+              "text": "Contar nombres distintos no demuestra que pesen igual."
+            },
+            {
+              "start": 76.5,
+              "end": 83.8,
+              "text": "Podemos calcular la frecuencia de cualquier muestra, pero para usar la regla de Laplace debemos justificar además la uniformidad del mecanismo."
+            },
+            {
+              "start": 84.1,
+              "end": 90.5,
+              "text": "Una simulación elige un mecanismo y repite sus reglas; sus frecuencias ilustran las fluctuaciones que ese modelo permite."
+            },
+            {
+              "start": 90.8,
+              "end": 93.6,
+              "text": "No demuestra que un cultivo real siga esas reglas."
+            },
+            {
+              "start": 93.9,
+              "end": 103.1,
+              "text": "Para valorar el modelo necesitamos contrastar datos y diseño, especialmente estabilidad e independencia, en vez de confundir la simulación con evidencia del mecanismo biológico."
+            }
+          ]
+        }
+      ]
+    },
+    "axiomas": {
+      "parentLesson": "axiomas",
+      "id": "axiomas",
+      "kind": "recap",
+      "title": "Axiomas, solapamientos y frecuencia relativa",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.2 a 1.5 y 1.10: cálculo, propiedades, frecuencia y simulación"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "e3a89bcc2829d69f11a13620a5f98a6d340a5d05d7382734d8bc36e27cc91583",
+      "mp3Sha256": "7d0f0444a271ba98ce590d1e24e426100390367a2904fce48207df298b1fbdcb",
+      "src": "audio/axiomas.mp3",
+      "duration": 387.526531,
+      "sourceDuration": 387.5,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 48.5,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 4.7,
+              "text": "Vamos a deducir reglas de cálculo de tres exigencias de coherencia."
+            },
+            {
+              "start": 5,
+              "end": 12.6,
+              "text": "Una probabilidad no es negativa, el suceso seguro vale uno y la probabilidad de una unión de sucesos disjuntos es la suma de sus probabilidades."
+            },
+            {
+              "start": 12.9,
+              "end": 18,
+              "text": "La suma sirve incluso para una lista numerable de sucesos, siempre que sean disjuntos dos a dos."
+            },
+            {
+              "start": 18.3,
+              "end": 25,
+              "text": "Tres estados excluyentes con probabilidades dos, tres y cinco décimas permiten reunir los dos primeros sumando: una mitad."
+            },
+            {
+              "start": 25.3,
+              "end": 27.2,
+              "text": "Si se solapan, hay que corregir."
+            },
+            {
+              "start": 27.5,
+              "end": 30.6,
+              "text": "Para dos sucesos restamos una copia de la intersección."
+            },
+            {
+              "start": 30.9,
+              "end": 36.8,
+              "text": "Con tres, restamos cada intersección por parejas y añadimos la triple, que habíamos eliminado demasiado."
+            },
+            {
+              "start": 37.1,
+              "end": 41.5,
+              "text": "El complemento completa el espacio, por lo que su probabilidad es uno menos la original."
+            },
+            {
+              "start": 41.8,
+              "end": 48.5,
+              "text": "Además, si un suceso está contenido en otro no puede tener más probabilidad: el grupo mayor incluye todo el menor y quizá algo más."
+            }
+          ]
+        },
+        {
+          "start": 48.8,
+          "end": 104.2,
+          "cues": [
+            {
+              "start": 48.8,
+              "end": 54.1,
+              "text": "Aunque no conozcamos los solapamientos, una unión no supera la suma de probabilidades individuales."
+            },
+            {
+              "start": 54.4,
+              "end": 61.4,
+              "text": "Aplicado a los fallos de tres controles, cada uno con probabilidad una décima, el riesgo de algún fallo no supera tres décimas."
+            },
+            {
+              "start": 61.7,
+              "end": 66.5,
+              "text": "Por complemento, la probabilidad de pasar los tres controles es al menos siete décimas."
+            },
+            {
+              "start": 66.8,
+              "end": 69.6,
+              "text": "Es una cota de Bonferroni, no una igualdad."
+            },
+            {
+              "start": 69.9,
+              "end": 74.7,
+              "text": "Multiplicar nueve décimas tres veces pediría independencia mutua, que no hemos supuesto."
+            },
+            {
+              "start": 75,
+              "end": 79.8,
+              "text": "La frecuencia relativa es otra cosa: éxitos observados divididos por repeticiones."
+            },
+            {
+              "start": 80.1,
+              "end": 89.3,
+              "text": "Bajo ensayos independientes de probabilidad estable se concentra alrededor de esa probabilidad al aumentar el tamaño, pero sigue fluctuando y no necesita acercarse en cada paso."
+            },
+            {
+              "start": 89.6,
+              "end": 92.8,
+              "text": "Una racha no obliga al siguiente ensayo a compensar nada."
+            },
+            {
+              "start": 93.1,
+              "end": 96.9,
+              "text": "Tampoco una simulación demuestra que el mecanismo real cumpla el modelo."
+            },
+            {
+              "start": 97.2,
+              "end": 104.2,
+              "text": "Si una cuenta de probabilidad supera uno, revisa el denominador y los solapamientos: no recortes el resultado para ocultar el error."
+            }
+          ]
+        },
+        {
+          "start": 104.5,
+          "end": 110.8,
+          "cues": [
+            {
+              "start": 104.5,
+              "end": 108.6,
+              "text": "En un cultivo, A indica fluorescencia verde y B fluorescencia roja."
+            },
+            {
+              "start": 108.9,
+              "end": 110.8,
+              "text": "Se elige una célula al azar."
+            }
+          ]
+        },
+        {
+          "start": 111.1,
+          "end": 122.7,
+          "cues": [
+            {
+              "start": 111.1,
+              "end": 113.3,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 113.6,
+              "end": 118,
+              "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?"
+            },
+            {
+              "start": 118.3,
+              "end": 122.7,
+              "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos."
+            }
+          ]
+        },
+        {
+          "start": 123,
+          "end": 136.8,
+          "cues": [
+            {
+              "start": 123,
+              "end": 126.5,
+              "text": "A y be nombran sucesos, es decir, conjuntos de resultados."
+            },
+            {
+              "start": 126.8,
+              "end": 130.6,
+              "text": "La unión admite cualquiera de ellos; la intersección exige ambos."
+            },
+            {
+              "start": 130.9,
+              "end": 136.8,
+              "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be."
+            }
+          ]
+        },
+        {
+          "start": 137.1,
+          "end": 139.2,
+          "cues": [
+            {
+              "start": 137.1,
+              "end": 139.2,
+              "text": "160 células en total."
+            }
+          ]
+        },
+        {
+          "start": 139.5,
+          "end": 145.2,
+          "cues": [
+            {
+              "start": 139.5,
+              "end": 145.2,
+              "text": "96 presentan A, 48 presentan be y 32 presentan ambos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 145.5,
+          "end": 148.7,
+          "cues": [
+            {
+              "start": 145.5,
+              "end": 148.7,
+              "text": "Cada célula tiene la misma probabilidad de ser elegida."
+            }
+          ]
+        },
+        {
+          "start": 149,
+          "end": 153.1,
+          "cues": [
+            {
+              "start": 149,
+              "end": 153.1,
+              "text": "Los grupos A y be pueden solaparse; no se supone independencia."
+            }
+          ]
+        },
+        {
+          "start": 153.4,
+          "end": 162.3,
+          "cues": [
+            {
+              "start": 153.4,
+              "end": 156.6,
+              "text": "Las células con ambos marcadores se han contado dos veces."
+            },
+            {
+              "start": 156.9,
+              "end": 162.3,
+              "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez."
+            }
+          ]
+        },
+        {
+          "start": 162.6,
+          "end": 185.5,
+          "cues": [
+            {
+              "start": 162.6,
+              "end": 165.4,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 165.7,
+              "end": 170.1,
+              "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?"
+            },
+            {
+              "start": 170.4,
+              "end": 173.2,
+              "text": "El experimento elige una célula equiprobablemente."
+            },
+            {
+              "start": 173.5,
+              "end": 181.1,
+              "text": "Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez."
+            },
+            {
+              "start": 181.4,
+              "end": 185.5,
+              "text": "Para este apartado: Las células con ambos marcadores se han contado dos veces."
+            }
+          ]
+        },
+        {
+          "start": 185.8,
+          "end": 203,
+          "cues": [
+            {
+              "start": 185.8,
+              "end": 187.4,
+              "text": "Contar sin duplicar."
+            },
+            {
+              "start": 187.7,
+              "end": 203,
+              "text": "Sumamos los dos grupos y restamos el solapamiento: 96 más 48 menos 32 igual a 112. sabiendo que A unión be sabiendo que igual a valor absoluto de abre paréntesis, A, cierra paréntesis más valor absoluto de abre paréntesis, be, cierra paréntesis - sabiendo que A intersección be sabiendo que."
+            }
+          ]
+        },
+        {
+          "start": 203.3,
+          "end": 210.6,
+          "cues": [
+            {
+              "start": 203.3,
+              "end": 204.9,
+              "text": "Convertir en probabilidad."
+            },
+            {
+              "start": 205.2,
+              "end": 210.6,
+              "text": "Dividimos por todas las células: 112 dividido entre 160 igual a 0 coma 7."
+            }
+          ]
+        },
+        {
+          "start": 210.9,
+          "end": 225.8,
+          "cues": [
+            {
+              "start": 210.9,
+              "end": 212.5,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 212.8,
+              "end": 216.3,
+              "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 216.6,
+              "end": 222.3,
+              "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso."
+            },
+            {
+              "start": 222.6,
+              "end": 225.8,
+              "text": "Incluye las células con uno o con los dos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 226.1,
+          "end": 233.1,
+          "cues": [
+            {
+              "start": 226.1,
+              "end": 229.6,
+              "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 229.9,
+              "end": 233.1,
+              "text": "Incluye las células con uno o con los dos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 233.4,
+          "end": 242.5,
+          "cues": [
+            {
+              "start": 233.4,
+              "end": 235.6,
+              "text": "Vamos a resolver este apartado juntos."
+            },
+            {
+              "start": 235.9,
+              "end": 239.4,
+              "text": "¿Cuál es la probabilidad de no presentar ninguno de los dos marcadores?"
+            },
+            {
+              "start": 239.7,
+              "end": 242.5,
+              "text": "Queremos que no ocurra ninguno de los dos sucesos."
+            }
+          ]
+        },
+        {
+          "start": 242.8,
+          "end": 256.6,
+          "cues": [
+            {
+              "start": 242.8,
+              "end": 246.3,
+              "text": "A y be nombran sucesos, es decir, conjuntos de resultados."
+            },
+            {
+              "start": 246.6,
+              "end": 250.4,
+              "text": "La unión admite cualquiera de ellos; la intersección exige ambos."
+            },
+            {
+              "start": 250.7,
+              "end": 256.6,
+              "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be."
+            }
+          ]
+        },
+        {
+          "start": 256.9,
+          "end": 259,
+          "cues": [
+            {
+              "start": 256.9,
+              "end": 259,
+              "text": "160 células en total."
+            }
+          ]
+        },
+        {
+          "start": 259.3,
+          "end": 265,
+          "cues": [
+            {
+              "start": 259.3,
+              "end": 265,
+              "text": "96 presentan A, 48 presentan be y 32 presentan ambos marcadores."
+            }
+          ]
+        },
+        {
+          "start": 265.3,
+          "end": 268.5,
+          "cues": [
+            {
+              "start": 265.3,
+              "end": 268.5,
+              "text": "Cada célula tiene la misma probabilidad de ser elegida."
+            }
+          ]
+        },
+        {
+          "start": 268.8,
+          "end": 272.9,
+          "cues": [
+            {
+              "start": 268.8,
+              "end": 272.9,
+              "text": "Los grupos A y be pueden solaparse; no se supone independencia."
+            }
+          ]
+        },
+        {
+          "start": 273.2,
+          "end": 280.4,
+          "cues": [
+            {
+              "start": 273.2,
+              "end": 275.4,
+              "text": "El complemento de al menos uno es ninguno."
+            },
+            {
+              "start": 275.7,
+              "end": 280.4,
+              "text": "Primero reunimos todo lo que cumple A o be y después conservamos su complemento."
+            }
+          ]
+        },
+        {
+          "start": 280.7,
+          "end": 302.1,
+          "cues": [
+            {
+              "start": 280.7,
+              "end": 283.5,
+              "text": "Identificar la pregunta y justificar el método."
+            },
+            {
+              "start": 283.8,
+              "end": 287.3,
+              "text": "¿Cuál es la probabilidad de no presentar ninguno de los dos marcadores?"
+            },
+            {
+              "start": 287.6,
+              "end": 290.4,
+              "text": "El experimento elige una célula equiprobablemente."
+            },
+            {
+              "start": 290.7,
+              "end": 298.3,
+              "text": "Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez."
+            },
+            {
+              "start": 298.6,
+              "end": 302.1,
+              "text": "Para este apartado: El complemento de al menos uno es ninguno."
+            }
+          ]
+        },
+        {
+          "start": 302.4,
+          "end": 318,
+          "cues": [
+            {
+              "start": 302.4,
+              "end": 304,
+              "text": "Tomar el complemento."
+            },
+            {
+              "start": 304.3,
+              "end": 318,
+              "text": "Los grupos con algún marcador y sin marcadores cubren todo el cultivo: 1 menos 0 coma 7 igual a 0 coma 3. probabilidad de abre paréntesis, abre paréntesis, A unión be, cierra paréntesis elevado a ce, cierra paréntesis igual a 1 menos probabilidad de A unión be."
+            }
+          ]
+        },
+        {
+          "start": 318.3,
+          "end": 333.5,
+          "cues": [
+            {
+              "start": 318.3,
+              "end": 319.9,
+              "text": "Comprobar e interpretar."
+            },
+            {
+              "start": 320.2,
+              "end": 323.7,
+              "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 324,
+              "end": 329.7,
+              "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso."
+            },
+            {
+              "start": 330,
+              "end": 333.5,
+              "text": "No tener ninguno no es lo mismo que no tener ambos simultáneamente."
+            }
+          ]
+        },
+        {
+          "start": 333.8,
+          "end": 341.1,
+          "cues": [
+            {
+              "start": 333.8,
+              "end": 337.3,
+              "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1."
+            },
+            {
+              "start": 337.6,
+              "end": 341.1,
+              "text": "No tener ninguno no es lo mismo que no tener ambos simultáneamente."
+            }
+          ]
+        },
+        {
+          "start": 341.4,
+          "end": 387.5,
+          "cues": [
+            {
+              "start": 341.4,
+              "end": 345.2,
+              "text": "La intersección corrige el doble recuento y el complemento completa el total."
+            },
+            {
+              "start": 345.5,
+              "end": 351.9,
+              "text": "La frecuencia relativa usa indicadores observados; no es necesariamente igual a la probabilidad teórica en una muestra finita."
+            },
+            {
+              "start": 352.2,
+              "end": 355.4,
+              "text": "Comprobemos si podemos aplicar esa idea a otra situación."
+            },
+            {
+              "start": 355.7,
+              "end": 360.1,
+              "text": "A tiene probabilidad 0,4; B, 0,3; y ambos, 0,1."
+            },
+            {
+              "start": 360.4,
+              "end": 361.9,
+              "text": "¿Cuánto vale la unión?"
+            },
+            {
+              "start": 362.2,
+              "end": 365.4,
+              "text": "¿Qué relación permite decidirlo antes de mirar el resultado?"
+            },
+            {
+              "start": 365.7,
+              "end": 370.8,
+              "text": "Se suman 0,4 y 0,3 y se resta 0,1 para eliminar el doble recuento."
+            },
+            {
+              "start": 371.1,
+              "end": 376.5,
+              "text": "Para revisar el próximo problema, evita este error: Aplicar equiprobabilidad sin justificarla."
+            },
+            {
+              "start": 376.8,
+              "end": 382.8,
+              "text": "Los axiomas permiten sumar probabilidades de sucesos disjuntos, pero no asignan pesos iguales a resultados."
+            },
+            {
+              "start": 383.1,
+              "end": 387.5,
+              "text": "Dividir casos favorables entre posibles exige además justificar la equiprobabilidad."
+            }
+          ]
+        }
+      ]
+    },
+    "combinatoria--posiciones": {
+      "parentLesson": "combinatoria",
+      "parentTitle": "Contar resultados: orden y repetición",
+      "sectionId": "posiciones",
+      "title": "Contar elecciones ordenadas",
+      "sourceSections": [
+        "¿Elegir dos tubos es lo mismo que asignar dos posiciones?",
+        "Dos preguntas antes de contar"
+      ],
+      "optional": false,
+      "id": "combinatoria--posiciones",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.8 y 1.9: experimentos múltiples y las cinco reglas de combinatoria"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "b1c4d9d85e66603e8132264d7ca1afe20c4657856ef79ba67636b6edccfaff20",
+      "mp3Sha256": "b52625145fa543b03fc908ed42c2ff52cd1ded188864cc574bd143bfdb211c14",
+      "src": "audio/combinatoria--posiciones.mp3",
+      "duration": 106.34449,
+      "sourceDuration": 106.3,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 106.3,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 4.7,
+              "text": "Tenemos cinco tubos distintos para ocupar izquierda y derecha en un ensayo."
+            },
+            {
+              "start": 5,
+              "end": 10.4,
+              "text": "Queremos contar asignaciones, así que primero decidimos si intercambiar dos tubos cambia el resultado."
+            },
+            {
+              "start": 10.7,
+              "end": 16.7,
+              "text": "Aquí las posiciones tienen funciones diferentes: izquierda a y derecha be no equivale a izquierda be y derecha a."
+            },
+            {
+              "start": 17,
+              "end": 23,
+              "text": "Sin repetir tubo hay cinco elecciones para la izquierda; fijada cualquiera de ellas, quedan cuatro para la derecha."
+            },
+            {
+              "start": 23.3,
+              "end": 28.4,
+              "text": "Multiplicamos cinco por cuatro porque cada primera elección se combina con cuatro segundas."
+            },
+            {
+              "start": 28.7,
+              "end": 33.8,
+              "text": "Obtenemos veinte asignaciones ordenadas, recorriendo una vez cada pareja de elecciones permitida."
+            },
+            {
+              "start": 34.1,
+              "end": 39.8,
+              "text": "Si el procedimiento permite repetir la identidad del tubo, elegir la primera ya no elimina una opción de la segunda."
+            },
+            {
+              "start": 40.1,
+              "end": 44.5,
+              "text": "Hay cinco opciones en cada posición y cinco por cinco, cinco al cuadrado, da veinticinco."
+            },
+            {
+              "start": 44.8,
+              "end": 50.8,
+              "text": "La diferencia procede de permitir las cinco parejas con la misma identidad, no de cambiar arbitrariamente de fórmula."
+            },
+            {
+              "start": 51.1,
+              "end": 57.8,
+              "text": "Para ordenar todos los elementos distintos sin repetir usamos el factorial: opciones descendentes hasta agotar los disponibles."
+            },
+            {
+              "start": 58.1,
+              "end": 63.5,
+              "text": "Cero factorial vale uno, porque existe una sola ordenación vacía, sin elementos que colocar."
+            },
+            {
+              "start": 63.8,
+              "end": 69.2,
+              "text": "Esta convención permite que las fórmulas sigan contando correctamente cuando no queda ninguna posición pendiente."
+            },
+            {
+              "start": 69.5,
+              "end": 74.9,
+              "text": "Una variación cuenta erre posiciones ordenadas tomadas de ene elementos distintos, sin repetición."
+            },
+            {
+              "start": 75.2,
+              "end": 82.8,
+              "text": "Ene factorial incluiría posiciones de más; dividir por ene menos erre factorial cancela sus factores y deja solo las elecciones necesarias."
+            },
+            {
+              "start": 83.1,
+              "end": 88.4,
+              "text": "Ene y erre son enteros y erre está entre cero y ene; para ordenar todos, erre coincide con ene."
+            },
+            {
+              "start": 88.7,
+              "end": 93.1,
+              "text": "Con repetición, ene opciones en cada una de erre posiciones dan ene elevado a erre."
+            },
+            {
+              "start": 93.4,
+              "end": 97.8,
+              "text": "Estas son reglas para contar, no para demostrar independencia ni uniformidad."
+            },
+            {
+              "start": 98.1,
+              "end": 106.3,
+              "text": "Solo dividiremos asignaciones favorables entre posibles si el mecanismo les da el mismo peso; de lo contrario tendremos que sumar sus probabilidades reales."
+            }
+          ]
+        }
+      ]
+    },
+    "combinatoria--quitar-orden": {
+      "parentLesson": "combinatoria",
+      "parentTitle": "Contar resultados: orden y repetición",
+      "sectionId": "quitar-orden",
+      "title": "Elegir un grupo sin etiquetar posiciones",
+      "sourceSections": [
+        "Hacer la cuenta y entender el resultado",
+        "Quitar las etiquetas que no importan"
+      ],
+      "optional": false,
+      "id": "combinatoria--quitar-orden",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.8 y 1.9: experimentos múltiples y las cinco reglas de combinatoria"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "7be5e2decafabea610e714a1008af170f53ee5c56cee010666981cb124a1f56d",
+      "mp3Sha256": "d08e8981b9ef6f13f323c516d560e114bc1d2caee8ec36dcc1566b51992e6f0f",
+      "src": "audio/combinatoria--quitar-orden.mp3",
+      "duration": 89.443265,
+      "sourceDuration": 89.4,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 89.4,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 5.7,
+              "text": "Elegimos dos de los cinco tubos distintos para analizarlos juntos, sin asignar posiciones."
+            },
+            {
+              "start": 6,
+              "end": 10,
+              "text": "Ahora a be y be a contienen los mismos tubos y representan una sola elección."
+            },
+            {
+              "start": 10.3,
+              "end": 15.7,
+              "text": "Partiremos del recuento ordenado para retirar exactamente las copias que esta nueva pregunta ya no distingue."
+            },
+            {
+              "start": 16,
+              "end": 17.9,
+              "text": "La cuenta ordenada daba veinte."
+            },
+            {
+              "start": 18.2,
+              "end": 24.6,
+              "text": "Cada grupo de dos tubos distintos aparece dos veces, una por cada orden; dividir veinte entre dos deja diez parejas."
+            },
+            {
+              "start": 24.9,
+              "end": 29.7,
+              "text": "Podemos hacer una única división porque todos los grupos tienen la misma cantidad de copias."
+            },
+            {
+              "start": 30,
+              "end": 33.2,
+              "text": "No estamos multiplicando una probabilidad por una mitad."
+            },
+            {
+              "start": 33.5,
+              "end": 43,
+              "text": "La combinación ene sobre erre generaliza esta corrección: empezamos por las variaciones de erre elementos distintos y dividimos además entre erre factorial, sus ordenaciones internas."
+            },
+            {
+              "start": 43.3,
+              "end": 49.7,
+              "text": "En el denominador, ene menos erre factorial retira posiciones no usadas y erre factorial retira órdenes de un mismo grupo."
+            },
+            {
+              "start": 50,
+              "end": 52.5,
+              "text": "Se requiere erre entero entre cero y ene."
+            },
+            {
+              "start": 52.8,
+              "end": 56.9,
+              "text": "Quedan diez grupos de dos entre cinco, sin orden y sin repetir elementos."
+            },
+            {
+              "start": 57.2,
+              "end": 61.6,
+              "text": "El símbolo ene sobre erre se lee elegir erre de ene; no es el cociente ene entre erre."
+            },
+            {
+              "start": 61.9,
+              "end": 70.4,
+              "text": "Antes de usarlo, comprueba que la pregunta habla realmente de grupos, porque para dos posiciones con funciones diferentes las veinte asignaciones sí serían distintas."
+            },
+            {
+              "start": 70.7,
+              "end": 73.2,
+              "text": "Orden y reemplazo son decisiones diferentes."
+            },
+            {
+              "start": 73.5,
+              "end": 79.5,
+              "text": "Sin reemplazo, elegir un tubo cambia lo disponible en la siguiente extracción, aunque después olvidemos el orden."
+            },
+            {
+              "start": 79.8,
+              "end": 89.4,
+              "text": "Devolverlo permite repetir su identidad, pero justificar independencia exige también que la siguiente selección no dependa de la anterior; contar grupos por sí solo no establece esa propiedad."
+            }
+          ]
+        }
+      ]
+    },
+    "combinatoria--multiplicidades": {
+      "parentLesson": "combinatoria",
+      "parentTitle": "Contar resultados: orden y repetición",
+      "sectionId": "multiplicidades",
+      "title": "No distinguir etiquetas iguales",
+      "sourceSections": [
+        "Quitar las etiquetas que no importan"
+      ],
+      "optional": false,
+      "id": "combinatoria--multiplicidades",
+      "kind": "section",
+      "source": {
+        "document": "FundamentosInferencia_Tema1.pdf",
+        "section": "1.8 y 1.9: experimentos múltiples y las cinco reglas de combinatoria"
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "canonicalSha256": "e42ab9c13b17740e1804b1e7b1c66630f07c46188c1f9631e9fa4219865ef185",
+      "mp3Sha256": "5bfa52848a857c1a80c74ab96f624ef2aa7e49c7f99d083597027204ff16971c",
+      "src": "audio/combinatoria--multiplicidades.mp3",
+      "duration": 100.937143,
+      "sourceDuration": 100.9,
+      "cueTiming": "measured",
+      "scenes": [
+        {
+          "start": 0,
+          "end": 100.9,
+          "cues": [
+            {
+              "start": 0,
+              "end": 0.6,
+              "text": "Hola."
+            },
+            {
+              "start": 0.9,
+              "end": 4.4,
+              "text": "Coloquemos tres etiquetas a y dos be en cinco posiciones."
+            },
+            {
+              "start": 4.7,
+              "end": 9.5,
+              "text": "La secuencia sí tiene orden, pero las a son indistinguibles entre sí y también las be."
+            },
+            {
+              "start": 9.8,
+              "end": 15.8,
+              "text": "Queremos contar cambios visibles de secuencia, sin inventar resultados nuevos al intercambiar dos etiquetas iguales."
+            },
+            {
+              "start": 16.1,
+              "end": 20.2,
+              "text": "Imaginemos que numeramos temporalmente las cinco etiquetas para distinguirlas."
+            },
+            {
+              "start": 20.5,
+              "end": 25.6,
+              "text": "Ordenarlas daría cinco factorial: cinco por cuatro por tres por dos por uno, ciento veinte."
+            },
+            {
+              "start": 25.9,
+              "end": 33.2,
+              "text": "Ese recuento incluye diferencias que desaparecerán al borrar los números; lo usamos como punto de partida para identificar las repeticiones."
+            },
+            {
+              "start": 33.5,
+              "end": 40.2,
+              "text": "Dentro de una misma secuencia visible podemos permutar las tres a de seis maneras y las dos be de dos maneras sin cambiar lo que vemos."
+            },
+            {
+              "start": 40.5,
+              "end": 45.5,
+              "text": "Multiplicamos esas posibilidades internas: tres factorial por dos factorial da doce."
+            },
+            {
+              "start": 45.8,
+              "end": 50.5,
+              "text": "Cada secuencia visible estaba contada exactamente doce veces con las etiquetas numeradas."
+            },
+            {
+              "start": 50.8,
+              "end": 54.6,
+              "text": "Dividimos ciento veinte entre doce y quedan diez secuencias visibles."
+            },
+            {
+              "start": 54.9,
+              "end": 60.3,
+              "text": "El numerador cuenta ordenaciones distinguiendo todo y el denominador agrupa las que se vuelven idénticas."
+            },
+            {
+              "start": 60.6,
+              "end": 66.3,
+              "text": "Esta división está justificada por doce copias por secuencia, no simplemente porque haya dos tipos de letra."
+            },
+            {
+              "start": 66.6,
+              "end": 73.9,
+              "text": "En general, ene es el total de posiciones y ene sub uno hasta ene sub ka son las cantidades de cada categoría, cuya suma debe ser ene."
+            },
+            {
+              "start": 74.2,
+              "end": 79.3,
+              "text": "Dividimos ene factorial por el factorial de cada multiplicidad para quitar sus permutaciones internas."
+            },
+            {
+              "start": 79.6,
+              "end": 83.4,
+              "text": "Esta misma cuenta explicará el coeficiente de una distribución multinomial."
+            },
+            {
+              "start": 83.7,
+              "end": 87.2,
+              "text": "Hemos obtenido un número de secuencias, diez, no una probabilidad."
+            },
+            {
+              "start": 87.5,
+              "end": 92.3,
+              "text": "Para preguntar por un conjunto de ellas debemos conocer cómo se generan y ponderar sus pesos."
+            },
+            {
+              "start": 92.6,
+              "end": 100.9,
+              "text": "Si el mecanismo las hace equiprobables podremos usar favorables entre posibles; si no, el mismo recuento seguirá siendo válido, pero ese cociente no lo será."
             }
           ]
         }

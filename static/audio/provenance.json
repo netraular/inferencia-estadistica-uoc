@@ -40,22 +40,21 @@
       "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
     },
     "proporciones--unidades-y-cotas": {
-      "sourceSignature": "10305b7b5cbc0776d4a861797675711d42e50bbef1676151a2f35d63d713681c",
-      "wavSha256": "7e3ef9e4af6b9490fdcf9bb0ab6c2825cd080b63f0950e249b06a8b303271b7a",
+      "sourceSignature": "b342bcdbe5934d12e702b0ecce8c0f09690b426d16506708ceac803f1d5d274f",
+      "wavSha256": "8518d9d2ecbf124604cc5052867a523209ca94f31d616a68ef4cd19dc5ee2b5d",
       "canonicalSha256": "46b3a2efffe078b7c3bfc4118be4d9e3a85e15d6e875fdf491e5051cd4e5f912",
-      "mp3Sha256": "e89567df91e0ff02f86c3eca96782919175bcf5c1eef6f9db53e6c45530d9d0a",
-      "mp3Bytes": 380308,
-      "sourceDuration": 63.3,
+      "mp3Sha256": "fb1f22cf11cf206341103ac239afb423fe0cd8bd660c65053bb3880be3d4cd8b",
+      "mp3Bytes": 518493,
+      "sourceDuration": 86.32,
       "timing": "measured",
       "encoding": {
         "codec": "mp3",
         "channels": 1,
         "bitrate": 48000
       },
-      "model": "Ming-3.0-tts-0.5B",
-      "voice": "Ming-Spanish-temporary",
-      "provider": "ming-local",
-      "temporary": true,
+      "provider": "gemini",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Puck",
       "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
     },
     "proporciones": {
@@ -141,6 +140,462 @@
       "mp3Sha256": "9d7700c6ee196fcecb0d0efbcfa3ebe5bdc51f23fc57c4bdef7368948c165f07",
       "mp3Bytes": 2365667,
       "sourceDuration": 394.2,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "funciones--entrada-y-salida": {
+      "sourceSignature": "518cdfd468eb625c0bff667a8736b551203f1584b8e54332445fd221020d329c",
+      "wavSha256": "bfd3cfd185b86303e4f84d7cf1bd9c2747875d76cb98fbe25c8547cf3bf1f40b",
+      "canonicalSha256": "4056b5f5dd8697396e2a6d4a9efd1208adf02ffcbc79bb7cd8e0e45b77e6da71",
+      "mp3Sha256": "a896cb685596337b374bb2d1ac638a40beff61b0542353998cfd49ba2c0fa68a",
+      "mp3Bytes": 343006,
+      "sourceDuration": 57.1,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "funciones--sumar-salidas": {
+      "sourceSignature": "60d72dd6a9bf1f1e110414f4412f21748ee7d5430a4a1a3c096ce8b11ba48d6b",
+      "wavSha256": "98b3225c5a2d12523a9cad2a66c0ddbb5e644f195eb2446040b4fb5daea101eb",
+      "canonicalSha256": "1288afaae406e58e2d576d44462c031207d6924009569d2a1f5d91bff9bae613",
+      "mp3Sha256": "15748d808b9fccb75bd4a5300731c88491f69112d8a6ba93ba4643d45a34d4d2",
+      "mp3Bytes": 319025,
+      "sourceDuration": 53.1,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "funciones--seleccionar-valores": {
+      "sourceSignature": "d3803511aa0f807dac324c7304e1dd3a368dc9a2ea0787f6b0de4923887d3672",
+      "wavSha256": "3fc2a919f47eb823a5b5beb0bf55907344f2f4156e1c2faf46b6ed411ce94be2",
+      "canonicalSha256": "43d8e9ecfb80bebdfd81aa55f3db38da42cefb4c58dee0b72f6f0e01f0ac1f59",
+      "mp3Sha256": "c02010a16ad10491da31a017a5ae3e17086b56be6270d12853889e435f5c1c08",
+      "mp3Bytes": 322630,
+      "sourceDuration": 53.7,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "funciones": {
+      "sourceSignature": "37bc59dcd1c2440c12e0c2624d1e3cdc407689c6a1b5194ad8da2d1d9bb0ff89",
+      "wavSha256": "24d9b970d87eafda6ca9943985523be1997aeb7ab43862e6de8521213eda7103",
+      "canonicalSha256": "7699ae7437baf4d553c712ec7c2d549b77de6a8f0d466d4f7ff307901ccaabd0",
+      "mp3Sha256": "3a8cd1cefaa5ccbbc900ede56e56346f960f1fd7a12c056423ce17c40af4abec",
+      "mp3Bytes": 2261908,
+      "sourceDuration": 376.9,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "calculo--franjas": {
+      "sourceSignature": "801e48735ff7d913446ae8d649e7a4b5bd6548b8a6e76911338c5a747fba6938",
+      "wavSha256": "00c0c716336011441b208344bd46e9d3ca86ad814b9abc9108bec609369d3a0b",
+      "canonicalSha256": "1ea68cfd0e1dad7c5777e3e0287f6b4459631a0275b718bd0a6cc27e10e193f3",
+      "mp3Sha256": "52fadcf88e5d20dda96e2aeae3d188c9638bc7ff05cd96d32b6707c732041556",
+      "mp3Bytes": 383286,
+      "sourceDuration": 63.8,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "calculo--primitiva": {
+      "sourceSignature": "256598e6f3f33e5024acb381fd422fcfbe11fd9f29b291846a450b6d63e1eb8d",
+      "wavSha256": "f770262dffd3f03359c350ff3a1dd34820fafeb2e22a42d33ce54732643e54b4",
+      "canonicalSha256": "fd06dfa3443d6d4a28422763afc99f6ec75a0afbc161431857ff259239d0495a",
+      "mp3Sha256": "558218c5f7aa8fe85fd8a4a7fe104b7e14b1fe1bc99f3eee1794d50268c1e8b3",
+      "mp3Bytes": 370121,
+      "sourceDuration": 61.6,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "calculo--pendiente-acumulada": {
+      "sourceSignature": "3a3e998d3fd3695522c863387b5e4b43d218b0a01526bf105db5bcae9713d463",
+      "wavSha256": "9171eab42377d0ff8a1e51feb6db7811eb2433b5746c0b7aba32b765e16e9d64",
+      "canonicalSha256": "1fe6aebea7f308664778a7b76d44712d2d7208aff1ac3c74166e4d31959308c4",
+      "mp3Sha256": "b9c84ad817a1c960f845f1752862f48951a561697f1a61c7f9d64fd3716e9399",
+      "mp3Bytes": 325608,
+      "sourceDuration": 54.2,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "calculo": {
+      "sourceSignature": "3a48ba9f19511ba61f9cedfd6d77fd2d49d1d4475885d7da1a463914e511976d",
+      "wavSha256": "185aef7e69b24002d0c2c369f3228243dfa78be8cf15b8dc33db83a5bc230ed8",
+      "canonicalSha256": "df50551a3c7ee9f6fd094e19288cbd1403a3e2cb5f5264a1960b3781b2c01fe5",
+      "mp3Sha256": "1a4c30a78c7d27968692277583b8cb64e497c56c7343c857e20ef8db3c7c1cf9",
+      "mp3Bytes": 3161879,
+      "sourceDuration": 526.9,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "regiones-matrices--frontera": {
+      "sourceSignature": "1de4a055f42f967858dcf9a07de18d6505f07078cbe1a6942b3f4d6e2853a003",
+      "wavSha256": "11a41f59ead54f2edd9e9bb1ab9dc5ce97e1eae1c302e57b033f2a941f1223d9",
+      "canonicalSha256": "5e84d2fa5ba5a69c66231571cf679c997b3280ea10a262393b12ce044424ff6c",
+      "mp3Sha256": "906540ecb7c8f9744db94387a4eb4689449c962634ab80b0b81ade2402b14137",
+      "mp3Bytes": 366516,
+      "sourceDuration": 61,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "regiones-matrices--recorrer-triangulo": {
+      "sourceSignature": "d9ac0afe2b5df4e0952f59daac9c56bca0b12734157d420b81f09b3047b391e7",
+      "wavSha256": "c59b2269fc99fb58f71fa5b9222be284f31e423a9f59fc1ae739dc6a85802d8d",
+      "canonicalSha256": "97cda9dd7145622b811a73901c22f60f07b053acaac35c62ffabec96ebde271f",
+      "mp3Sha256": "fdc3f6e00ebe17a7e14e50896ae9bce478b1bd115535f58131eb1687a1aa57e4",
+      "mp3Bytes": 318398,
+      "sourceDuration": 53,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "regiones-matrices--orden-de-matriz": {
+      "sourceSignature": "2520cc42d9593dcb46dfd513b430257f2d8edca0a53d174032921c3d5f39bda2",
+      "wavSha256": "54ae91469a55970548a8dfe99579787e2a3dd37de07caa3a15b6f09c68a73969",
+      "canonicalSha256": "eafc689e7e9e2a8bf16a049eec7b67898f8f7896686b2c50fcf4879ece668dc2",
+      "mp3Sha256": "4d2f68c23471bcde7190184010118166c536c9b8ccc0f9ae43d9d1a5df0a2c0d",
+      "mp3Bytes": 337677,
+      "sourceDuration": 56.2,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "regiones-matrices": {
+      "sourceSignature": "d91aa4e781b7a3a790919504b41a3b65c266934de1c8e2b60fc42a8006f2113f",
+      "wavSha256": "22030bac6eb2b3b089b356da98dd648d2f577b2685a4b300c13822445979e35b",
+      "canonicalSha256": "8a24e8bb67223d8c0fd3fb51017929144cd2d39c06996263f14da79f855e4288",
+      "mp3Sha256": "0273992f368d169b18543196ac2b9894c6adfaeddcfe88ef991375e123fa6f14",
+      "mp3Bytes": 2318333,
+      "sourceDuration": 386.3,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "sucesos--resultados-y-sucesos": {
+      "sourceSignature": "e4474e4b9759cdd4e86628d01002fd14fe5b32874e84abed78ef752d7970cca6",
+      "wavSha256": "a94e97c627e4c1f50929d26d7864ee03036e084853a710206b9226caa946aa48",
+      "canonicalSha256": "38aa83dc718deaa4f3d1453492a1f8d5de60d2960e95df74aff2b0f83061ecbf",
+      "mp3Sha256": "0bb690d1bc53f42992ec4964d9c2420181445d51ff5b4fe522be362b7d00ed66",
+      "mp3Bytes": 503188,
+      "sourceDuration": 83.8,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "sucesos--traducir-conjuntos": {
+      "sourceSignature": "94bdcef5e34ec4cdb1d774ebfab4c92e8f0d420c84929466e505eb96ccdd3512",
+      "wavSha256": "d3074449cb9fbb864ae3cc32cbb25e9dbed36b2f8050dc0870c46858969932c0",
+      "canonicalSha256": "0167104d0d1efaa0c750a0892768646a1efc7502e30938bc49055d1d00ad74da",
+      "mp3Sha256": "9a12a99e4cc0f9ec797e2039d71f5fe628be101d4c6a605dee644ca8ac790e50",
+      "mp3Bytes": 566196,
+      "sourceDuration": 94.3,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "sucesos--observabilidad": {
+      "sourceSignature": "1fff5360044fa79d60c3906ffe7d8660add26199d70783f5644abc8ed9c7d372",
+      "wavSha256": "00a06d48e209188e8a69888dfaaa3c46e6279b8529984339f54bd3a5d081a29d",
+      "canonicalSha256": "ddbd9870000b03e19539b277cc7fba955027b36f6f15213792a58d8be515bb07",
+      "mp3Sha256": "542f21fc32e04bcae3e6c48651f6ca53768e9b840f0741f12dbf39881d2dedd2",
+      "mp3Bytes": 595035,
+      "sourceDuration": 99.1,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "sucesos": {
+      "sourceSignature": "37c8fa42bc8e235826a38b40103de6444f4c8e585896a5bd42ae006f69d6cad6",
+      "wavSha256": "ca411ec75ff9602e671f92ff030a2a9a7cea4dc687680d64b3324e620fdf715c",
+      "canonicalSha256": "771bde3a0aa8e80b60de61e4f055bae81e27d7ec78c22854f1dd69f0b5e7081a",
+      "mp3Sha256": "7826f0f53ca6dea4d22d75acbc406ab047501b80204f14dadf853c61df2399cb",
+      "mp3Bytes": 2308615,
+      "sourceDuration": 384.7,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "axiomas--probabilidades-coherentes": {
+      "sourceSignature": "09b34d92db12a34f5ff9893a9ff4d43e7d13181f64b1f4c4ea9ee336b37c9a7e",
+      "wavSha256": "843b1958e490cd38140e9db19fe4cec36d5cdb50370a9b6b476623088a51a113",
+      "canonicalSha256": "49ffc7a4e6221c5715197f3ac3ca24291c58e47a0499d2bec86d623ac91ad86a",
+      "mp3Sha256": "5e564932ea76d1eafcd932b642f957cc68ff940c11d144f3d72aea23a1a50eca",
+      "mp3Bytes": 607103,
+      "sourceDuration": 101.1,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "axiomas--solapamiento": {
+      "sourceSignature": "ba74a2e3a6cfb1ecb1cd3ab35d0cea2a32ccec6e3dc40bb9e4421a5f50865206",
+      "wavSha256": "e1bc6e62b9b4c9337063677524ac6266e15bd8ef677c10bf4403cbea8a75fd3f",
+      "canonicalSha256": "f6baa998ae621c9312d402117dd4df9d4bf9e7e3f291433eb4aeeb95a39534fb",
+      "mp3Sha256": "43a7d1c2d397484b0ff9f44d67f6854d52a467688e03b29c7689b10c63612453",
+      "mp3Bytes": 458206,
+      "sourceDuration": 76.3,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "axiomas--deducir-propiedades": {
+      "sourceSignature": "5de792d7a44f5efc81f6c99eac1baf6390bc4c2dc81fef07b8c30591adfaf4ad",
+      "wavSha256": "a6b17b0ac403f2448429bc31adf3e14101f5fca7b07940beea13aef8f98b2ec4",
+      "canonicalSha256": "1c29a259b89d2f2cf5bf47875319a3f17efe2974708ab5d20eaf8113326ef045",
+      "mp3Sha256": "95b3976bd1f89623ecfb16d1ccd708c2e6b2937a5c7054a1d866ffb3c497b0dd",
+      "mp3Bytes": 476857,
+      "sourceDuration": 79.4,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "axiomas--frecuencia": {
+      "sourceSignature": "8424c2984f404a7ac3ae898bde94268f000ccedaf873f81d79bda6710ebaa5c9",
+      "wavSha256": "53ae2673b2d12988f0907b068e7f98b0f7b5c1db0b74c37398986c32cd02721f",
+      "canonicalSha256": "3f5cdce4e24456951de57ef341aa4b1c5344de14c9e2c8dd41ba1fea6d96b288",
+      "mp3Sha256": "91423516d87df1b1ebe9557a1cc9a2b4898d6b520f1df671f7f11a25f9013e13",
+      "mp3Bytes": 619015,
+      "sourceDuration": 103.1,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "axiomas": {
+      "sourceSignature": "2865329abdc6169a3f9a87a4ebaba5c6b8d4346b03259793e0fa9395e82008f4",
+      "wavSha256": "4c1f7ed8971343e572412d120ca1bd341bdd089144d86a16b2dcd652321db632",
+      "canonicalSha256": "e3a89bcc2829d69f11a13620a5f98a6d340a5d05d7382734d8bc36e27cc91583",
+      "mp3Sha256": "7d0f0444a271ba98ce590d1e24e426100390367a2904fce48207df298b1fbdcb",
+      "mp3Bytes": 2325386,
+      "sourceDuration": 387.5,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "combinatoria--posiciones": {
+      "sourceSignature": "2ef97664e0a9b426f84253d3a2c340d2847e3a8a4f99505aba57ba4f8eac8e1c",
+      "wavSha256": "befef4ace869d9035fdf6a06ec1a45017b704cd6c89de5e09ab2770d45c61fb3",
+      "canonicalSha256": "b1c4d9d85e66603e8132264d7ca1afe20c4657856ef79ba67636b6edccfaff20",
+      "mp3Sha256": "b52625145fa543b03fc908ed42c2ff52cd1ded188864cc574bd143bfdb211c14",
+      "mp3Bytes": 638294,
+      "sourceDuration": 106.3,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "combinatoria--quitar-orden": {
+      "sourceSignature": "695e039293f732692f2236ecec680c0e3e8bcfb08ede896992e6ad048dda18cb",
+      "wavSha256": "151ed5b717f0ab42cfe8ab0005badd6bc11afb469330afa8d03a8ff7830b1b71",
+      "canonicalSha256": "7be5e2decafabea610e714a1008af170f53ee5c56cee010666981cb124a1f56d",
+      "mp3Sha256": "d08e8981b9ef6f13f323c516d560e114bc1d2caee8ec36dcc1566b51992e6f0f",
+      "mp3Bytes": 536886,
+      "sourceDuration": 89.4,
+      "timing": "measured",
+      "encoding": {
+        "codec": "mp3",
+        "channels": 1,
+        "bitrate": 48000
+      },
+      "model": "Ming-3.0-tts-0.5B",
+      "voice": "Ming-Spanish-temporary",
+      "provider": "ming-local",
+      "temporary": true,
+      "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274"
+    },
+    "combinatoria--multiplicidades": {
+      "sourceSignature": "2e4b6f7fad631696f610d25770d493a9585c9ecf435ec563b88bf42850e8647d",
+      "wavSha256": "47843cf301ead3c55b6c33516070abd807fc2da3a7c5af68f881c2334e25a12a",
+      "canonicalSha256": "e42ab9c13b17740e1804b1e7b1c66630f07c46188c1f9631e9fa4219865ef185",
+      "mp3Sha256": "5bfa52848a857c1a80c74ab96f624ef2aa7e49c7f99d083597027204ff16971c",
+      "mp3Bytes": 605850,
+      "sourceDuration": 100.9,
       "timing": "measured",
       "encoding": {
         "codec": "mp3",
