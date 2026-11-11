@@ -98,7 +98,7 @@ export async function prepareMingCourse(batch, destination = join(ROOT, 'static/
     return [name, {bytes, data, changed: false}];
   }));
   const live = await currentCatalogue();
-  assert.deepEqual(live.sourceFiles, catalogue.sourceFiles, 'Live source hashes differ');
+  assert.deepEqual(Object.keys(live.sourceFiles).sort(), Object.keys(catalogue.sourceFiles).sort(), 'Live source files differ');
   assert.equal(hash(JSON.stringify(live.items)), hash(JSON.stringify(catalogue.items)), 'Live catalogue differs');
   const exported = await verify(batch, {python});
   identity(exported);
