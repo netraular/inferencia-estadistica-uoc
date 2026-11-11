@@ -41180,6 +41180,1455 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "hipergeometrica": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "hipergeometrica",
+      "kind": "recap",
+      "title": "Hipergeométrica: muestrear sin reemplazo",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "2dba9dc23badacf5b94a78928037d2ee2fb37ffdc13601c86125a82de81014b0",
+      "src": "videos/hipergeometrica/video.mp4",
+      "poster": "videos/hipergeometrica/poster.jpg",
+      "duration": 641.4,
+      "frames": 19242,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "bdda5e171ce262b933a895a1e39d06ba49065e83d9f6c5cd1ffdab27d7dc13a0",
+      "videoSha256": "aafc79c309a7695a61da4a3e4a80d542b97ab61219626f57c8f8e77041383335",
+      "posterSha256": "62638e3d6ac3c2d7be1502ccb0aedf4ef88caa4f0530c4eb93135809b43ec710",
+      "canonicalSha256": "ea1cc955e8a658e3b354cae40ff4445f71ad4ef313240c9b462423e72befee7a",
+      "inputHash": "fce565ebd781b5264c5b125183bf3f615b9facbc86ca844fe33060384729d9c0",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "487b814c44408d6ce883e3094ab3b83f3d9aa68be016ada1eb518f5818747c5a",
+        "canonicalSha256": "ea1cc955e8a658e3b354cae40ff4445f71ad4ef313240c9b462423e72befee7a",
+        "source": {
+          "document": "FundamentosInferencia_Tema3.pdf",
+          "section": "3.1.5: modelo hipergeométrico; asociación con ejercicio 2.9"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "6b52001c89a02a2cc4df786bc6fb74f2568da6f0e5f9d57d9a5e18032ae08a06",
+        "transcriptSha256": "bdda5e171ce262b933a895a1e39d06ba49065e83d9f6c5cd1ffdab27d7dc13a0",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "hipergeometrica",
+      "transcript": {
+        "id": "hipergeometrica",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "ea1cc955e8a658e3b354cae40ff4445f71ad4ef313240c9b462423e72befee7a",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 641.4,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 65.6,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Hoy vamos a contar portadores en una muestra sin reemplazo.",
+                "start": 1.5,
+                "end": 5.8,
+                "startFrame": 45,
+                "endFrame": 174,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "73a472b9cc1c440218c83392e6c6a05ad460b2d975ea7e4dc6fada0ddf7ba4ab"
+              },
+              {
+                "text": "Hay ocho organismos, tres portadores y cinco no portadores.",
+                "start": 6.1,
+                "end": 9.966666666666667,
+                "startFrame": 183,
+                "endFrame": 299,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "1c3915fbc4376659d1f6653a126b571f2ff1241e0dddc733c47766043fa5b0ec"
+              },
+              {
+                "text": "Elegimos cuatro y suponemos que todas las muestras de ese tamaño son equiprobables.",
+                "start": 10.266666666666667,
+                "end": 15.866666666666667,
+                "startFrame": 308,
+                "endFrame": 476,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "c37cae4929d4baccaaf2ca346f9c2119d9c9a8237257ef330a49679756547293"
+              },
+              {
+                "text": "Retirar un organismo cambia lo disponible para la siguiente extracción.",
+                "start": 16.166666666666668,
+                "end": 20.466666666666665,
+                "startFrame": 485,
+                "endFrame": 614,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "66d5cc840d787f7879d1f647f3291d2ef1fdcf226724a33eab01e1e7472abd8e"
+              },
+              {
+                "text": "La hipergeométrica cuenta muestras favorables sobre todas las muestras.",
+                "start": 20.766666666666666,
+                "end": 24.633333333333333,
+                "startFrame": 623,
+                "endFrame": 739,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "04d444183a3955a3294381134ace36e7baf47b5637347f73dd4a32d13de7062f"
+              },
+              {
+                "text": "Para ka portadores elegimos ka entre los portadores y ene menos ka entre los demás.",
+                "start": 24.933333333333334,
+                "end": 31.366666666666667,
+                "startFrame": 748,
+                "endFrame": 941,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "4b396037c86eb418f4f36bc75db18384109beb5ca332cfc7ad04f46513625e79"
+              },
+              {
+                "text": "Multiplicamos esas dos elecciones porque juntas forman una muestra completa.",
+                "start": 31.666666666666668,
+                "end": 35.96666666666667,
+                "startFrame": 950,
+                "endFrame": 1079,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "ce2c947dad1693b9a244b4bee82d89e479cf0b5f8832a24b2bd92224830dfe8b"
+              },
+              {
+                "text": "Para exactamente dos portadores hay tres maneras de elegir dos entre tres.",
+                "start": 36.266666666666666,
+                "end": 41.43333333333333,
+                "startFrame": 1088,
+                "endFrame": 1243,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "2448f69294cc491be693647d43e186f04698f6b54fd97c42c61a008b6372c649"
+              },
+              {
+                "text": "Para completarlos con dos no portadores hay diez maneras de elegir dos entre cinco.",
+                "start": 41.733333333333334,
+                "end": 47.733333333333334,
+                "startFrame": 1252,
+                "endFrame": 1432,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "8514baff0422fe503b74f52363f80b6059ba1a1f7d869df66ceeb600c5ce5afb"
+              },
+              {
+                "text": "El producto da treinta muestras favorables.",
+                "start": 48.03333333333333,
+                "end": 50.63333333333333,
+                "startFrame": 1441,
+                "endFrame": 1519,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "6d4deaac73a90248e3f2424ea2583c5c503dd7df12ae910731288bc102822b9d"
+              },
+              {
+                "text": "En total elegimos cuatro entre ocho de setenta maneras.",
+                "start": 50.93333333333333,
+                "end": 54.8,
+                "startFrame": 1528,
+                "endFrame": 1644,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "a8ff85122ed265cf2570924637ca2464ae2a4b33eebc14c7e8ac54ba7fd221e5"
+              },
+              {
+                "text": "Treinta entre setenta es tres séptimos, aproximadamente cero coma cuatrocientos veintinueve.",
+                "start": 55.1,
+                "end": 59.833333333333336,
+                "startFrame": 1653,
+                "endFrame": 1795,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "0fcc48854c1eb540284167fddbab59094ae342606bc0bdbda6e0210884d2e68b"
+              },
+              {
+                "text": "No hemos multiplicado cuatro ensayos de probabilidad constante: las extracciones son dependientes.",
+                "start": 60.13333333333333,
+                "end": 65.3,
+                "startFrame": 1804,
+                "endFrame": 1959,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "sourceCueSha256": "b1d9f65020eddb75c478ce0eebef2b2fc1998444be65b95440e1fa016f4fe8ac"
+              }
+            ]
+          },
+          {
+            "start": 65.6,
+            "end": 132,
+            "cues": [
+              {
+                "text": "El soporte exige suficientes organismos de cada grupo.",
+                "start": 65.6,
+                "end": 69.03333333333333,
+                "startFrame": 1968,
+                "endFrame": 2071,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "cdd8da473830abfccea4a23d4a27be7b03fe4463140cda0943ec0d489e088527"
+              },
+              {
+                "text": "El mínimo es cero o lo que no podamos cubrir con no portadores; el máximo es el menor entre portadores disponibles y tamaño de muestra.",
+                "start": 69.33333333333333,
+                "end": 80.06666666666666,
+                "startFrame": 2080,
+                "endFrame": 2402,
+                "words": 25,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "40bc45d3917538bfbb327a79ebe67be5808c5d65f05da4633d1b6287232858ae"
+              },
+              {
+                "text": "Aquí podemos obtener cero, uno, dos o tres.",
+                "start": 80.36666666666666,
+                "end": 83.8,
+                "startFrame": 2411,
+                "endFrame": 2514,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "0fd9becc552202be62116171e04874a5068ba29817d95a9db7fa80ef78f1dab7"
+              },
+              {
+                "text": "La media es ene por la fracción portadora de la población: uno coma cinco.",
+                "start": 84.1,
+                "end": 90.1,
+                "startFrame": 2523,
+                "endFrame": 2703,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "059361f33a67c4b86b35fe32c4fd574562fce75f91f8e8f1dcf20a6c96611c76"
+              },
+              {
+                "text": "La varianza incorpora una corrección finita que reduce la binomial.",
+                "start": 90.4,
+                "end": 94.7,
+                "startFrame": 2712,
+                "endFrame": 2841,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "d0206a2bd766b53e24221f2426a2714b15879fc52d433b006e3a9abeb3ab9369"
+              },
+              {
+                "text": "Para estos datos vale quince veintiochoavos, no quince dieciseisavos.",
+                "start": 95,
+                "end": 98.86666666666666,
+                "startFrame": 2850,
+                "endFrame": 2966,
+                "words": 9,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "1090efc69ef145ee114140dc7bd809a209bfe4c40cc5fe0d72a848f1d3d3b18c"
+              },
+              {
+                "text": "Si extraemos los ocho, el número de portadores es exactamente tres y la corrección hace cero la varianza.",
+                "start": 99.16666666666667,
+                "end": 106.9,
+                "startFrame": 2975,
+                "endFrame": 3207,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "d45f4df7bc4f509621f588dbf5fba8b285689cb0d2604ba05bfc2fe070eb2546"
+              },
+              {
+                "text": "Si extraemos seis, las cinco no portadoras no bastan: el mínimo pasa a uno.",
+                "start": 107.2,
+                "end": 113.2,
+                "startFrame": 3216,
+                "endFrame": 3396,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "7b9a881ebb0959cc36654a54fd0edcd6e36a89a8c9bcc609c6072407b87f5905"
+              },
+              {
+                "text": "Son comprobaciones del soporte, no excepciones arbitrarias.",
+                "start": 113.5,
+                "end": 116.5,
+                "startFrame": 3405,
+                "endFrame": 3495,
+                "words": 7,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "c298ca640e6283b396fb6bdf7aefd5dc0d5178e39a83301427012ad16fd01b26"
+              },
+              {
+                "text": "Con reemplazo e independencia sí tendríamos una binomial, aunque la población siguiera siendo finita.",
+                "start": 116.8,
+                "end": 122.8,
+                "startFrame": 3504,
+                "endFrame": 3684,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "42aef8f6aba85d25798eb9cbaaeebdb23e8a25a46f373e0be3837429902f6f76"
+              },
+              {
+                "text": "Sin reemplazo puede aproximarla si la fracción extraída es pequeña; extraer aquí la mitad no permite ignorar alegremente el agotamiento.",
+                "start": 123.1,
+                "end": 131.7,
+                "startFrame": 3693,
+                "endFrame": 3951,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "a0cdf5c0613b58691cf677fe32c1247b9b92fd8195053622c03806df23fa2bc1"
+              }
+            ]
+          },
+          {
+            "start": 132,
+            "end": 139.6,
+            "cues": [
+              {
+                "text": "Se extraen organismos de una colección finita sin reemplazo y X cuenta los portadores de una variante.",
+                "start": 132,
+                "end": 139.3,
+                "startFrame": 3960,
+                "endFrame": 4179,
+                "words": 17,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "c172460c3876b30cd5e54921553bb83954ae864eba2911751550cda95e26ab6b"
+              }
+            ]
+          },
+          {
+            "start": 139.6,
+            "end": 149.1,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 139.6,
+                "end": 142.2,
+                "startFrame": 4188,
+                "endFrame": 4266,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de equis igual a ka.",
+                "start": 142.5,
+                "end": 145.5,
+                "startFrame": 4275,
+                "endFrame": 4365,
+                "words": 7,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "d04a8dbc4799ed13cd3ae17c132aaad8abc4c2fc7f6c4de67c8bf27f36361c81"
+              },
+              {
+                "text": "Queremos un recuento exacto, no una acumulada.",
+                "start": 145.8,
+                "end": 148.8,
+                "startFrame": 4374,
+                "endFrame": 4464,
+                "words": 7,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "a975cce045466b065af73a0d5bd21b43b333fafa659ba80e3072816c1604997c"
+              }
+            ]
+          },
+          {
+            "start": 149.1,
+            "end": 172.33333333333334,
+            "cues": [
+              {
+                "text": "Se extrae sin reemplazo de una población finita. ene mayúscula es el tamaño poblacional, ka mayúscula, también llamado eme, el número de elementos de interés y ene el tamaño de muestra.",
+                "start": 149.1,
+                "end": 162.4,
+                "startFrame": 4473,
+                "endFrame": 4872,
+                "words": 31,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "f72544298551094213a337a3e03dbbf81914b6e3c83386c93884ae3271bbeadc"
+              },
+              {
+                "text": "Las extracciones son dependientes, pero los subconjuntos de tamaño ene son equiprobables.",
+                "start": 162.7,
+                "end": 167.86666666666667,
+                "startFrame": 4881,
+                "endFrame": 5036,
+                "words": 12,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "3fd831851fb61ae8b413da1b97ee33b1825ac516d0c68ccf1355b913407af17a"
+              },
+              {
+                "text": "Las combinaciones cuentan esos subconjuntos sin distinguir su orden.",
+                "start": 168.16666666666666,
+                "end": 172.03333333333333,
+                "startFrame": 5045,
+                "endFrame": 5161,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "b63f28b597d1000f85a9aba42e976778e33296ec6a89a3b4cee6d9de17834b63"
+              }
+            ]
+          },
+          {
+            "start": 172.33333333333334,
+            "end": 181.63333333333333,
+            "cues": [
+              {
+                "text": "ene mayúscula igual a 30 organismos, ka mayúscula igual a 8 portadores, ene igual a 6 extracciones, ka igual a 2.",
+                "start": 172.33333333333334,
+                "end": 181.33333333333334,
+                "startFrame": 5170,
+                "endFrame": 5440,
+                "words": 21,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "487056c1d55f5a5f1ed690eabca6bb3d465335db6e377674a95bf69c715be411"
+              }
+            ]
+          },
+          {
+            "start": 181.63333333333333,
+            "end": 187.53333333333333,
+            "cues": [
+              {
+                "text": "Soporte entero: 0 menor o igual que equis menor o igual que 6.",
+                "start": 181.63333333333333,
+                "end": 187.23333333333332,
+                "startFrame": 5449,
+                "endFrame": 5617,
+                "words": 13,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "a1bdcf92cb5d9557baeaf2d9706620cca6318435006af710ee0915dc45f8faf5"
+              }
+            ]
+          },
+          {
+            "start": 187.53333333333333,
+            "end": 191.26666666666668,
+            "cues": [
+              {
+                "text": "Todas las muestras de ene organismos son equiprobables.",
+                "start": 187.53333333333333,
+                "end": 190.96666666666667,
+                "startFrame": 5626,
+                "endFrame": 5729,
+                "words": 8,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "9116034a9132094be9ec6c4c8403f78f059bb1912b53bb6c3b9b0921725d36d9"
+              }
+            ]
+          },
+          {
+            "start": 191.26666666666668,
+            "end": 201.73333333333332,
+            "cues": [
+              {
+                "text": "Sin reemplazo: las extracciones no son ensayos Bernoulli independientes.",
+                "start": 191.26666666666668,
+                "end": 195.13333333333333,
+                "startFrame": 5738,
+                "endFrame": 5854,
+                "words": 9,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "d7a956e4648d0104e5d9d94a8f6e217fdd85467bfe367246f894fc18caac7c0b"
+              },
+              {
+                "text": "Cada extracción modifica la composición restante: contamos muestras equiprobables, no ensayos con probabilidad fija.",
+                "start": 195.43333333333334,
+                "end": 201.43333333333334,
+                "startFrame": 5863,
+                "endFrame": 6043,
+                "words": 14,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "6e74b8f305cea5eb4ad73dd67f350a05088d5b2c4aca31686c01ebdbea969f31"
+              }
+            ]
+          },
+          {
+            "start": 201.73333333333332,
+            "end": 214.36666666666667,
+            "cues": [
+              {
+                "text": "Cuenta las formas de elegir portadores y no portadores, y divide por todas las muestras.",
+                "start": 201.73333333333332,
+                "end": 208.16666666666666,
+                "startFrame": 6052,
+                "endFrame": 6245,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "3a37cd420b880d4801cc33e0028e84cff95fb64b1f79549b58ad6329811fd1ba"
+              },
+              {
+                "text": "Conservamos solo el entero pedido; las condiciones del modelo determinan qué masa utilizar.",
+                "start": 208.46666666666667,
+                "end": 214.06666666666666,
+                "startFrame": 6254,
+                "endFrame": 6422,
+                "words": 13,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "b126f47b5c5acb637a7f0573b41e66ff32a9c225c54f6107f98828983746500a"
+              }
+            ]
+          },
+          {
+            "start": 214.36666666666667,
+            "end": 242.9,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 214.36666666666667,
+                "end": 217.36666666666667,
+                "startFrame": 6431,
+                "endFrame": 6521,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de equis igual a ka.",
+                "start": 217.66666666666666,
+                "end": 220.66666666666666,
+                "startFrame": 6530,
+                "endFrame": 6620,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "fe3dadddf79849f7b24d3dfcbd6edbb8eb48fbe22451a3ab7ecccb5409e8a42e"
+              },
+              {
+                "text": "La selección es uniforme y sin reemplazo.",
+                "start": 220.96666666666667,
+                "end": 223.96666666666667,
+                "startFrame": 6629,
+                "endFrame": 6719,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "5837b0a5475eea8ef2b17829cdf321c06cd87fb39aed78255cbeaf10135db6d8"
+              },
+              {
+                "text": "Contamos por separado los elementos de interés y los restantes con combinaciones, multiplicamos ambas elecciones y dividimos por todas las selecciones del tamaño solicitado.",
+                "start": 224.26666666666668,
+                "end": 234.56666666666666,
+                "startFrame": 6728,
+                "endFrame": 7037,
+                "words": 24,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "d388ce8ac101ebc512ed0221dd441dc1ae83a9ddf6414ce7de7623b2d9457bad"
+              },
+              {
+                "text": "Para este apartado: Cuenta las formas de elegir portadores y no portadores, y divide por todas las muestras.",
+                "start": 234.86666666666667,
+                "end": 242.6,
+                "startFrame": 7046,
+                "endFrame": 7278,
+                "words": 18,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "f4c7c189b02aa11cbd660db1ec77672085d44a0ae2d13acf0c08f94f503820f4"
+              }
+            ]
+          },
+          {
+            "start": 242.9,
+            "end": 258.26666666666665,
+            "cues": [
+              {
+                "text": "Contar muestras favorables.",
+                "start": 242.9,
+                "end": 244.2,
+                "startFrame": 7287,
+                "endFrame": 7326,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "9f82bd1f3ff08ff8eeb00ba175a6d453a406b5c117855c8677b3f8e23bcdf959"
+              },
+              {
+                "text": "Elegir 2 de 8 portadores da 28 grupos.",
+                "start": 244.5,
+                "end": 247.93333333333334,
+                "startFrame": 7335,
+                "endFrame": 7438,
+                "words": 8,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "37e5bf9e458e6dff0c08e3c7a834c0e2e54d66ed3da829cb3adf254b5f5dc34b"
+              },
+              {
+                "text": "Elegir 4 de los 22 restantes da 7315.",
+                "start": 248.23333333333332,
+                "end": 251.66666666666666,
+                "startFrame": 7447,
+                "endFrame": 7550,
+                "words": 8,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa4ace68c5e4fdeabc50542165cf7cf7363fc2a993a6c41c3b3e4906fb4aa318"
+              },
+              {
+                "text": "Multiplicamos porque cada elección del primer grupo puede combinarse con cada elección del segundo.",
+                "start": 251.96666666666667,
+                "end": 257.96666666666664,
+                "startFrame": 7559,
+                "endFrame": 7739,
+                "words": 14,
+                "sceneIndex": 11,
+                "cueIndex": 3,
+                "sourceCueSha256": "7c91289511706ee776dff93560999bfec67cb0ffb64e3ec23094dcf01f397c2c"
+              }
+            ]
+          },
+          {
+            "start": 258.26666666666665,
+            "end": 268.3333333333333,
+            "cues": [
+              {
+                "text": "El coeficiente binomial cuenta subconjuntos o posiciones sin orden.",
+                "start": 258.26666666666665,
+                "end": 262.1333333333333,
+                "startFrame": 7748,
+                "endFrame": 7864,
+                "words": 9,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "eac76991b7a03bb3cd90333125765554ea0270d8a1ca92d28d21230ca59f2ca3"
+              },
+              {
+                "text": "Se calcula con factoriales, no multiplicando los dos números que aparecen en él.",
+                "start": 262.43333333333334,
+                "end": 268.03333333333336,
+                "startFrame": 7873,
+                "endFrame": 8041,
+                "words": 13,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "c11b524215758a97b7db32ac6d145fc137ee6fe79d4ebd2d5001fbb17c925da0"
+              }
+            ]
+          },
+          {
+            "start": 268.3333333333333,
+            "end": 292.96666666666664,
+            "cues": [
+              {
+                "text": "Contar todas las muestras.",
+                "start": 268.3333333333333,
+                "end": 270.06666666666666,
+                "startFrame": 8050,
+                "endFrame": 8102,
+                "words": 4,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "94da8074a8ee770e76082031e77ba065d730d0fdc227b0b6404343cad78b9c61"
+              },
+              {
+                "text": "Elegimos 6 organismos de 30 sin atender al marcador: combinaciones de 30 elementos tomados de 6 en 6 igual a 593775 muestras posibles, todas con la misma probabilidad. combinaciones de abre paréntesis, 30, cierra paréntesis elementos tomados de abre paréntesis, 6, cierra paréntesis en abre paréntesis, 6, cierra paréntesis igual a 593775.",
+                "start": 270.3666666666667,
+                "end": 292.6666666666667,
+                "startFrame": 8111,
+                "endFrame": 8780,
+                "words": 52,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "14330c844c0620ad7c858d1f738893a23e3d486fc96e6f81027c0cc58a41a3db"
+              }
+            ]
+          },
+          {
+            "start": 292.96666666666664,
+            "end": 300.8666666666667,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 292.96666666666664,
+                "end": 296.4,
+                "startFrame": 8789,
+                "endFrame": 8892,
+                "words": 8,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 296.7,
+                "end": 300.56666666666666,
+                "startFrame": 8901,
+                "endFrame": 9017,
+                "words": 9,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 300.8666666666667,
+            "end": 316.06666666666666,
+            "cues": [
+              {
+                "text": "Dividir favorables entre posibles. 28 por 7315 dividido entre 593775 igual a 0 coma 3 4 4 9 4 5 5.",
+                "start": 300.8666666666667,
+                "end": 309.8666666666667,
+                "startFrame": 9026,
+                "endFrame": 9296,
+                "words": 21,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "56f6a0013e8c77353f719ed7f9d17f517ab7c323f155826986759d9c756d3c4f"
+              },
+              {
+                "text": "Hemos contado grupos, no secuencias de extracción. probabilidad de equis igual a ka.",
+                "start": 310.1666666666667,
+                "end": 315.76666666666665,
+                "startFrame": 9305,
+                "endFrame": 9473,
+                "words": 13,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "a2ac9418be5d13055e5be2c10ceff7b1be9c4d10c0594b86cb4e54240e68ec19"
+              }
+            ]
+          },
+          {
+            "start": 316.06666666666666,
+            "end": 356.6666666666667,
+            "cues": [
+              {
+                "text": "probabilidad de equis igual a ka queda igual a abre paréntesis, combinaciones de abre paréntesis, ka mayúscula, cierra paréntesis elementos tomados de abre paréntesis, ka, cierra paréntesis en abre paréntesis, ka, cierra paréntesis combinaciones de abre paréntesis, ene mayúscula menos ka mayúscula, cierra paréntesis elementos tomados de abre paréntesis, ene menos ka, cierra paréntesis en abre paréntesis, ene menos ka, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, combinaciones de abre paréntesis, ene mayúscula, cierra paréntesis elementos tomados de abre paréntesis, ene, cierra paréntesis en abre paréntesis, ene, cierra paréntesis , cierra paréntesis.",
+                "start": 316.06666666666666,
+                "end": 356.3666666666667,
+                "startFrame": 9482,
+                "endFrame": 10691,
+                "words": 94,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "5633153805b7e83bd94fbcb5045a6a599d0fb6ee196bc83185e064a316e32c97"
+              }
+            ]
+          },
+          {
+            "start": 356.6666666666667,
+            "end": 380.2,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 356.6666666666667,
+                "end": 357.96666666666664,
+                "startFrame": 10700,
+                "endFrame": 10739,
+                "words": 3,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 3 4 4 9 4 5 5 probabilidad entre 0 y 1.",
+                "start": 358.26666666666665,
+                "end": 365.56666666666666,
+                "startFrame": 10748,
+                "endFrame": 10967,
+                "words": 17,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "d7058f38fba82b8697587718443a79210909c2991e2662a3cb0fa4d0cc0c622b"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 365.8666666666667,
+                "end": 373.1666666666667,
+                "startFrame": 10976,
+                "endFrame": 11195,
+                "words": 17,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+              },
+              {
+                "text": "La dependencia por agotamiento de la colección impide sustituir automáticamente este modelo por una binomial.",
+                "start": 373.46666666666664,
+                "end": 379.9,
+                "startFrame": 11204,
+                "endFrame": 11397,
+                "words": 15,
+                "sceneIndex": 17,
+                "cueIndex": 3,
+                "sourceCueSha256": "4008090c073263440619ab2da2b3fbe0912c0c6087119df09087c90cadcbc28d"
+              }
+            ]
+          },
+          {
+            "start": 380.2,
+            "end": 394.53333333333336,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 3 4 4 9 4 5 5 probabilidad entre 0 y 1.",
+                "start": 380.2,
+                "end": 387.5,
+                "startFrame": 11406,
+                "endFrame": 11625,
+                "words": 17,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "944a6e5b98f33633292d96f4d47199550b053d033ad5cc192424cd51eb507ff6"
+              },
+              {
+                "text": "La dependencia por agotamiento de la colección impide sustituir automáticamente este modelo por una binomial.",
+                "start": 387.8,
+                "end": 394.23333333333335,
+                "startFrame": 11634,
+                "endFrame": 11827,
+                "words": 15,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "5b0c0e2422a1f16bfa97dada655ba5ace9c10770c3bc040e370cf3b830177277"
+              }
+            ]
+          },
+          {
+            "start": 394.53333333333336,
+            "end": 405.76666666666665,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 394.53333333333336,
+                "end": 397.1333333333333,
+                "startFrame": 11836,
+                "endFrame": 11914,
+                "words": 6,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de equis mayor o igual que ka, incluyendo ka.",
+                "start": 397.43333333333334,
+                "end": 402.1666666666667,
+                "startFrame": 11923,
+                "endFrame": 12065,
+                "words": 11,
+                "sceneIndex": 19,
+                "cueIndex": 1,
+                "sourceCueSha256": "839e4cdadcdf4b83131579915af9f915648a8ff5ee4cd4714dec382f6b7d6149"
+              },
+              {
+                "text": "Queremos alcanzar o superar el recuento indicado.",
+                "start": 402.46666666666664,
+                "end": 405.46666666666664,
+                "startFrame": 12074,
+                "endFrame": 12164,
+                "words": 7,
+                "sceneIndex": 19,
+                "cueIndex": 2,
+                "sourceCueSha256": "656a9353d6786e57194cd9e994bef7a1cd6bcdb118a74362e3652146a8e30749"
+              }
+            ]
+          },
+          {
+            "start": 405.76666666666665,
+            "end": 429,
+            "cues": [
+              {
+                "text": "Se extrae sin reemplazo de una población finita. ene mayúscula es el tamaño poblacional, ka mayúscula, también llamado eme, el número de elementos de interés y ene el tamaño de muestra.",
+                "start": 405.76666666666665,
+                "end": 419.06666666666666,
+                "startFrame": 12173,
+                "endFrame": 12572,
+                "words": 31,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "f72544298551094213a337a3e03dbbf81914b6e3c83386c93884ae3271bbeadc"
+              },
+              {
+                "text": "Las extracciones son dependientes, pero los subconjuntos de tamaño ene son equiprobables.",
+                "start": 419.3666666666667,
+                "end": 424.53333333333336,
+                "startFrame": 12581,
+                "endFrame": 12736,
+                "words": 12,
+                "sceneIndex": 20,
+                "cueIndex": 1,
+                "sourceCueSha256": "3fd831851fb61ae8b413da1b97ee33b1825ac516d0c68ccf1355b913407af17a"
+              },
+              {
+                "text": "Las combinaciones cuentan esos subconjuntos sin distinguir su orden.",
+                "start": 424.8333333333333,
+                "end": 428.7,
+                "startFrame": 12745,
+                "endFrame": 12861,
+                "words": 9,
+                "sceneIndex": 20,
+                "cueIndex": 2,
+                "sourceCueSha256": "b63f28b597d1000f85a9aba42e976778e33296ec6a89a3b4cee6d9de17834b63"
+              }
+            ]
+          },
+          {
+            "start": 429,
+            "end": 438.3,
+            "cues": [
+              {
+                "text": "ene mayúscula igual a 30 organismos, ka mayúscula igual a 8 portadores, ene igual a 6 extracciones, ka igual a 2.",
+                "start": 429,
+                "end": 438,
+                "startFrame": 12870,
+                "endFrame": 13140,
+                "words": 21,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "487056c1d55f5a5f1ed690eabca6bb3d465335db6e377674a95bf69c715be411"
+              }
+            ]
+          },
+          {
+            "start": 438.3,
+            "end": 444.2,
+            "cues": [
+              {
+                "text": "Soporte entero: 0 menor o igual que equis menor o igual que 6.",
+                "start": 438.3,
+                "end": 443.9,
+                "startFrame": 13149,
+                "endFrame": 13317,
+                "words": 13,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "a1bdcf92cb5d9557baeaf2d9706620cca6318435006af710ee0915dc45f8faf5"
+              }
+            ]
+          },
+          {
+            "start": 444.2,
+            "end": 447.93333333333334,
+            "cues": [
+              {
+                "text": "Todas las muestras de ene organismos son equiprobables.",
+                "start": 444.2,
+                "end": 447.6333333333333,
+                "startFrame": 13326,
+                "endFrame": 13429,
+                "words": 8,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "9116034a9132094be9ec6c4c8403f78f059bb1912b53bb6c3b9b0921725d36d9"
+              }
+            ]
+          },
+          {
+            "start": 447.93333333333334,
+            "end": 458.4,
+            "cues": [
+              {
+                "text": "Sin reemplazo: las extracciones no son ensayos Bernoulli independientes.",
+                "start": 447.93333333333334,
+                "end": 451.8,
+                "startFrame": 13438,
+                "endFrame": 13554,
+                "words": 9,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "d7a956e4648d0104e5d9d94a8f6e217fdd85467bfe367246f894fc18caac7c0b"
+              },
+              {
+                "text": "Cada extracción modifica la composición restante: contamos muestras equiprobables, no ensayos con probabilidad fija.",
+                "start": 452.1,
+                "end": 458.1,
+                "startFrame": 13563,
+                "endFrame": 13743,
+                "words": 14,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "6e74b8f305cea5eb4ad73dd67f350a05088d5b2c4aca31686c01ebdbea969f31"
+              }
+            ]
+          },
+          {
+            "start": 458.4,
+            "end": 468.8666666666667,
+            "cues": [
+              {
+                "text": "El complemento termina en ka menos 1.",
+                "start": 458.4,
+                "end": 461.4,
+                "startFrame": 13752,
+                "endFrame": 13842,
+                "words": 7,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "6fc298c6e5111b54aa67733914b9608121ef37c4e5503b085a6c6c2192497bd6"
+              },
+              {
+                "text": "El complemento acaba un entero antes del límite para no perder la masa del propio límite.",
+                "start": 461.7,
+                "end": 468.56666666666666,
+                "startFrame": 13851,
+                "endFrame": 14057,
+                "words": 16,
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "sourceCueSha256": "8d46cd42bc21e0f6b40537b5ba828c1b9f231ef981aeb14c11203b6dad5e255a"
+              }
+            ]
+          },
+          {
+            "start": 468.8666666666667,
+            "end": 495.7,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 468.8666666666667,
+                "end": 471.8666666666667,
+                "startFrame": 14066,
+                "endFrame": 14156,
+                "words": 7,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de equis mayor o igual que ka, incluyendo ka.",
+                "start": 472.1666666666667,
+                "end": 476.9,
+                "startFrame": 14165,
+                "endFrame": 14307,
+                "words": 11,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "fa513077fc5ef92ce48cfaa8f296d71856e7b0543f6b0c9e4f93f92c4dbee252"
+              },
+              {
+                "text": "La selección es uniforme y sin reemplazo.",
+                "start": 477.2,
+                "end": 480.2,
+                "startFrame": 14316,
+                "endFrame": 14406,
+                "words": 7,
+                "sceneIndex": 26,
+                "cueIndex": 2,
+                "sourceCueSha256": "4c3931e2399ac02da49a3705a71bb203d6f149e3400f0770cd454e977f98c0b0"
+              },
+              {
+                "text": "Contamos por separado los elementos de interés y los restantes con combinaciones, multiplicamos ambas elecciones y dividimos por todas las selecciones del tamaño solicitado.",
+                "start": 480.5,
+                "end": 490.8,
+                "startFrame": 14415,
+                "endFrame": 14724,
+                "words": 24,
+                "sceneIndex": 26,
+                "cueIndex": 3,
+                "sourceCueSha256": "aa4bcbb3bf35cffa76fde21fe6f98fc0c9b1041edd31294b3eee25ea359ca1e5"
+              },
+              {
+                "text": "Para este apartado: El complemento termina en ka menos 1.",
+                "start": 491.1,
+                "end": 495.4,
+                "startFrame": 14733,
+                "endFrame": 14862,
+                "words": 10,
+                "sceneIndex": 26,
+                "cueIndex": 4,
+                "sourceCueSha256": "1c627a50e9f2b813bf9deae1208b1153b8349adea3a80dc9f0dda348e2de0280"
+              }
+            ]
+          },
+          {
+            "start": 495.7,
+            "end": 506.5,
+            "cues": [
+              {
+                "text": "Elegir el complemento.",
+                "start": 495.7,
+                "end": 497,
+                "startFrame": 14871,
+                "endFrame": 14910,
+                "words": 3,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "d9561e31efd60aa4c430a4788399a6fd54f703a4216f1ba28cc4b0b03c359408"
+              },
+              {
+                "text": "Al menos 2 incluye 2.",
+                "start": 497.3,
+                "end": 499.46666666666664,
+                "startFrame": 14919,
+                "endFrame": 14984,
+                "words": 5,
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "sourceCueSha256": "322b8ffc49c7aa18a44add0f8e530c4e98fdc940a0976b96ad8e728abffe1b51"
+              },
+              {
+                "text": "Lo contrario es observar menos de 2, es decir, los recuentos del soporte hasta 1.",
+                "start": 499.76666666666665,
+                "end": 506.2,
+                "startFrame": 14993,
+                "endFrame": 15186,
+                "words": 15,
+                "sceneIndex": 27,
+                "cueIndex": 2,
+                "sourceCueSha256": "82d57856ccbb0c6a258e470ae785ed3b5a2b48943224c0fade7b76f47ab51296"
+              }
+            ]
+          },
+          {
+            "start": 506.5,
+            "end": 540.7666666666667,
+            "cues": [
+              {
+                "text": "Sumar lo excluido y restarlo.",
+                "start": 506.5,
+                "end": 508.6666666666667,
+                "startFrame": 15195,
+                "endFrame": 15260,
+                "words": 5,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "073090accfe07a629f3222ac9c370fd769ab5effa11c01ec7e8fe90f1a6f5f7c"
+              },
+              {
+                "text": "La acumulada hipergeométrica suma esas masas y da 0 coma 4 8 0 4 5 9 8.",
+                "start": 508.96666666666664,
+                "end": 516.2666666666667,
+                "startFrame": 15269,
+                "endFrame": 15488,
+                "words": 17,
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "sourceCueSha256": "7fff3ee98ce11d80687e3dd32d7fc4a8f7dfda083398f61515e8b7c534a0cb41"
+              },
+              {
+                "text": "Una tabla o calculadora permite obtener esa suma.",
+                "start": 516.5666666666667,
+                "end": 520,
+                "startFrame": 15497,
+                "endFrame": 15600,
+                "words": 8,
+                "sceneIndex": 28,
+                "cueIndex": 2,
+                "sourceCueSha256": "2415b8bbb445f17ad6734a1378c7bdd91b26f5a46d4fd14595f4dcd08b290b1a"
+              },
+              {
+                "text": "Restamos de uno: 1 menos 0 coma 4 8 0 4 5 9 8 igual a 0 coma 5 1 9 5 4 0 2. probabilidad de equis mayor o igual que ka igual a 1 menos probabilidad de equis menor o igual que ka menos 1.",
+                "start": 520.3,
+                "end": 540.4666666666667,
+                "startFrame": 15609,
+                "endFrame": 16214,
+                "words": 47,
+                "sceneIndex": 28,
+                "cueIndex": 3,
+                "sourceCueSha256": "6af6f33d96120291e9fb2df1dfe28056253a378b80516c8da44b1ef3e68ab1ca"
+              }
+            ]
+          },
+          {
+            "start": 540.7666666666667,
+            "end": 563.4666666666667,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 540.7666666666667,
+                "end": 542.0666666666667,
+                "startFrame": 16223,
+                "endFrame": 16262,
+                "words": 3,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 5 1 9 5 4 0 2 probabilidad entre 0 y 1.",
+                "start": 542.3666666666667,
+                "end": 549.6666666666666,
+                "startFrame": 16271,
+                "endFrame": 16490,
+                "words": 17,
+                "sceneIndex": 29,
+                "cueIndex": 1,
+                "sourceCueSha256": "7c8877e0140bc1d43cfe57a6463b6ba00645e2cc715b2d2cfa5ee0cc7d07d143"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 549.9666666666667,
+                "end": 557.2666666666667,
+                "startFrame": 16499,
+                "endFrame": 16718,
+                "words": 17,
+                "sceneIndex": 29,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+              },
+              {
+                "text": "Esta cola incluye exactamente ka portadores y todos los valores superiores del soporte.",
+                "start": 557.5666666666667,
+                "end": 563.1666666666666,
+                "startFrame": 16727,
+                "endFrame": 16895,
+                "words": 13,
+                "sceneIndex": 29,
+                "cueIndex": 3,
+                "sourceCueSha256": "5274dbbe159521d2122381366695674829726ac96769873b93e01cf5c2a7f36a"
+              }
+            ]
+          },
+          {
+            "start": 563.4666666666667,
+            "end": 576.9666666666667,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 5 1 9 5 4 0 2 probabilidad entre 0 y 1.",
+                "start": 563.4666666666667,
+                "end": 570.7666666666667,
+                "startFrame": 16904,
+                "endFrame": 17123,
+                "words": 17,
+                "sceneIndex": 30,
+                "cueIndex": 0,
+                "sourceCueSha256": "5cfb6f596258152c9b62904ebdcbaedfeccbc170a172ab2c6e9229a9ee1896b1"
+              },
+              {
+                "text": "Esta cola incluye exactamente ka portadores y todos los valores superiores del soporte.",
+                "start": 571.0666666666667,
+                "end": 576.6666666666666,
+                "startFrame": 17132,
+                "endFrame": 17300,
+                "words": 13,
+                "sceneIndex": 30,
+                "cueIndex": 1,
+                "sourceCueSha256": "80e5563309001acdf55aa5d5c6d84de2c3604ecb54fe26b1070c31cb0e3a3a58"
+              }
+            ]
+          },
+          {
+            "start": 576.9666666666667,
+            "end": 641.4,
+            "cues": [
+              {
+                "text": "N es el total, K los elementos de interés y n el tamaño de una muestra uniforme sin reemplazo.",
+                "start": 576.9666666666667,
+                "end": 585.1333333333333,
+                "startFrame": 17309,
+                "endFrame": 17554,
+                "words": 19,
+                "sceneIndex": 31,
+                "cueIndex": 0,
+                "sourceCueSha256": "af991850b7cb16424d6855e07331f3f31718cbfe6ce178e144c104e554b42d3f"
+              },
+              {
+                "text": "Para N mayor que uno, la corrección finita reduce la varianza frente a una binomial comparable.",
+                "start": 585.4333333333333,
+                "end": 592.3,
+                "startFrame": 17563,
+                "endFrame": 17769,
+                "words": 16,
+                "sceneIndex": 31,
+                "cueIndex": 1,
+                "sourceCueSha256": "341cf1908327e4a86f5e103c4e9bc37106b703b091a9ff82be0807c97ce45bbe"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 592.6,
+                "end": 596.4666666666667,
+                "startFrame": 17778,
+                "endFrame": 17894,
+                "words": 9,
+                "sceneIndex": 31,
+                "cueIndex": 2,
+                "sourceCueSha256": "2f57bedf9c0b6554daee54ae9bb0d08993cc408f0489a4f0b7bfd341f1fa5d11"
+              },
+              {
+                "text": "Se eligen cinco elementos de un lote con siete elementos de interés y solo dos restantes.",
+                "start": 596.7666666666667,
+                "end": 603.6333333333333,
+                "startFrame": 17903,
+                "endFrame": 18109,
+                "words": 16,
+                "sceneIndex": 31,
+                "cueIndex": 3,
+                "sourceCueSha256": "885876453b49137f1ab9ac98c5ce42c41a26bcc4352cd7443e68d9ad8a237f75"
+              },
+              {
+                "text": "¿Cuál es el mínimo de interés en la muestra?",
+                "start": 603.9333333333333,
+                "end": 607.8,
+                "startFrame": 18118,
+                "endFrame": 18234,
+                "words": 9,
+                "sceneIndex": 31,
+                "cueIndex": 4,
+                "sourceCueSha256": "4f470888d6d0d23055355e1c95beffad8f3a8ba33c2644b98ca5513ae008ad60"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 608.1,
+                "end": 611.9666666666667,
+                "startFrame": 18243,
+                "endFrame": 18359,
+                "words": 9,
+                "sceneIndex": 31,
+                "cueIndex": 5,
+                "sourceCueSha256": "9706d99cbb94c0a08f69db8649ddfb53ff277badd119002fe2c5ef00f41bfdaf"
+              },
+              {
+                "text": "Como solo hay dos de la categoría contraria, al menos tres de los cinco seleccionados deben ser de interés.",
+                "start": 612.2666666666667,
+                "end": 620.4333333333333,
+                "startFrame": 18368,
+                "endFrame": 18613,
+                "words": 19,
+                "sceneIndex": 31,
+                "cueIndex": 6,
+                "sourceCueSha256": "ec6a66022b842b64be64069b4dec4ff67968542517ebadb8a7ddf2946f19c3b0"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Usar una binomial exacta en una muestra sin reemplazo.",
+                "start": 620.7333333333333,
+                "end": 628.0333333333333,
+                "startFrame": 18622,
+                "endFrame": 18841,
+                "words": 17,
+                "sceneIndex": 31,
+                "cueIndex": 7,
+                "sourceCueSha256": "6f9254e0198c5fe009d99278abdd3f2dcdbab342aef8074827c3e633aed64cd6"
+              },
+              {
+                "text": "Sin reemplazo cambia la composición después de cada extracción.",
+                "start": 628.3333333333334,
+                "end": 632.2,
+                "startFrame": 18850,
+                "endFrame": 18966,
+                "words": 9,
+                "sceneIndex": 31,
+                "cueIndex": 8,
+                "sourceCueSha256": "ee284f01b95129aea7ca66df457c0b6611ef63b9152f9f2e7a966627fe876d64"
+              },
+              {
+                "text": "La hipergeométrica conserva esa dependencia y la corrección finita; una binomial puede aproximarla, pero no es el modelo exacto general.",
+                "start": 632.5,
+                "end": 641.1,
+                "startFrame": 18975,
+                "endFrame": 19233,
+                "words": 20,
+                "sceneIndex": 31,
+                "cueIndex": 9,
+                "sourceCueSha256": "cecb79206965d7a5865d4695905ea3ee46701eac026d628c3f126a24a0285d4c"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
