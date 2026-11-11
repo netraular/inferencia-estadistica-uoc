@@ -23818,6 +23818,1339 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "bayes-diagnostico": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "bayes-diagnostico",
+      "kind": "recap",
+      "title": "Probabilidad total, Bayes y pruebas diagnósticas",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "273b22f4a9e554b86237b54f71222d1ee6bae436a85504cec28ef47743629c7c",
+      "src": "videos/bayes-diagnostico/video.mp4",
+      "poster": "videos/bayes-diagnostico/poster.jpg",
+      "duration": 578.2333333333333,
+      "frames": 17347,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "f3fac7c3f0d42ab13cb834534fdf9a80124a3e69d9fc1a3262405dea70268ff2",
+      "videoSha256": "a3a348614f4d3373a80b3dfec331514299b9acf6e5d92189169f038000ad3b50",
+      "posterSha256": "b61192dc54fba16eec2afd3983bfc428baf1bfed10e5a1f939b06b1f546d1070",
+      "canonicalSha256": "78ba966d26d7eab32d6e1b0cf8879057eda1b1862c7377f641e984574df7f7e9",
+      "inputHash": "17e3d7a8099c16c9b6f5a9101f9175586c602d86a82c3f517f7cb60ff2ea5847",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "13212324b1e3df42dd83eccc2c96c3db1bd2a6d7ae7747474ab1c408f1908a3a",
+        "canonicalSha256": "78ba966d26d7eab32d6e1b0cf8879057eda1b1862c7377f641e984574df7f7e9",
+        "source": {
+          "document": "FundamentosInferencia_Tema1.pdf",
+          "section": "1.7.1, 1.7.2 y 1.11: probabilidad total, Bayes y eficacia diagnóstica"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "70d2d519d351734d409f84859e3faa015333a97a95585561de6d079964fdfb2c",
+        "transcriptSha256": "f3fac7c3f0d42ab13cb834534fdf9a80124a3e69d9fc1a3262405dea70268ff2",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "bayes-diagnostico",
+      "transcript": {
+        "id": "bayes-diagnostico",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "78ba966d26d7eab32d6e1b0cf8879057eda1b1862c7377f641e984574df7f7e9",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 578.2333333333333,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 63.7,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Hoy vamos a interpretar un test positivo sin invertir por error sus probabilidades.",
+                "start": 1.5,
+                "end": 7.1,
+                "startFrame": 45,
+                "endFrame": 213,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "d994c1f3f863c107cd31087c18810e3ea7d561fa4c7f85117fb7b871a324d83b"
+              },
+              {
+                "text": "La sensibilidad es noventa por ciento: positivos entre infectados.",
+                "start": 7.4,
+                "end": 11.266666666666667,
+                "startFrame": 222,
+                "endFrame": 338,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "516eb82284776f224600773d29aea7322d92aed72426c4af24a9903d8f952605"
+              },
+              {
+                "text": "Queremos la pregunta inversa, infectados entre positivos, que necesita también prevalencia y falsos positivos.",
+                "start": 11.566666666666666,
+                "end": 17.566666666666666,
+                "startFrame": 347,
+                "endFrame": 527,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "6e2ef42fe67b03db533ec2afbab355f88fc3b7bc6538eb25f44ea2d0649c6be0"
+              },
+              {
+                "text": "En mil animales del modelo esperamos cien infectados y novecientos sanos.",
+                "start": 17.866666666666667,
+                "end": 22.6,
+                "startFrame": 536,
+                "endFrame": 678,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "2368c4d81f704caace75909251ec834644d560c4993b39ff5492eea5e3995101"
+              },
+              {
+                "text": "La prevalencia es una décima.",
+                "start": 22.9,
+                "end": 25.066666666666666,
+                "startFrame": 687,
+                "endFrame": 752,
+                "words": 5,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "457f276dc925ad0b98289a010e91dd7f332d352afa687356f42c3faefa772dae"
+              },
+              {
+                "text": "La especificidad es noventa y cinco por ciento, de modo que cinco por ciento de los sanos da positivo.",
+                "start": 25.366666666666667,
+                "end": 33.53333333333333,
+                "startFrame": 761,
+                "endFrame": 1006,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "bb0ac7e2fe9b2a4d227b51c18a05effde29e2690444a92f994b328d5968454e5"
+              },
+              {
+                "text": "Infectado y sano forman una partición: grupos separados que completan la población.",
+                "start": 33.833333333333336,
+                "end": 39,
+                "startFrame": 1015,
+                "endFrame": 1170,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "9aa5015593f2246a6c7e38f2ec506d62661908ea2baad1ee7f7ed8e16ab0233f"
+              },
+              {
+                "text": "Por la regla del producto calculamos los positivos que vienen de cada ruta; por probabilidad total los reunimos sin duplicarlos.",
+                "start": 39.3,
+                "end": 47.9,
+                "startFrame": 1179,
+                "endFrame": 1437,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "6135b42f2068437f5d528acbf3e21155d69d4d65089b3d7fbf8a6d41b982a0b9"
+              },
+              {
+                "text": "Nueve décimas de cien producen noventa positivos verdaderos; cinco centésimas de novecientos producen cuarenta y cinco falsos.",
+                "start": 48.2,
+                "end": 55.5,
+                "startFrame": 1446,
+                "endFrame": 1665,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "089819b8688a32ba5852b44d1e3c11e194794c5059106514283c8adfdb7d60ce"
+              },
+              {
+                "text": "Son recuentos esperados, no un diagnóstico de animales identificados.",
+                "start": 55.8,
+                "end": 59.666666666666664,
+                "startFrame": 1674,
+                "endFrame": 1790,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "b98be4926b73f978fd58593ef3383214ce78e3f7ebed97d21bfc32faeda1c8f3"
+              },
+              {
+                "text": "En total esperamos ciento treinta y cinco positivos.",
+                "start": 59.96666666666667,
+                "end": 63.4,
+                "startFrame": 1799,
+                "endFrame": 1902,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "7140fe3dc47eda7168a6020a99c05cc0fccb47fe3dd3172db95d62d293a31364"
+              }
+            ]
+          },
+          {
+            "start": 63.7,
+            "end": 134.33333333333334,
+            "cues": [
+              {
+                "text": "La definición condicional pide infectados positivos divididos por todos los positivos.",
+                "start": 63.7,
+                "end": 68.43333333333334,
+                "startFrame": 1911,
+                "endFrame": 2053,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "75b3843d8a497c539592ace6631845a890fb7f0005179a819ff59246c7c1354d"
+              },
+              {
+                "text": "Bayes escribe el numerador como sensibilidad por prevalencia.",
+                "start": 68.73333333333333,
+                "end": 72.16666666666667,
+                "startFrame": 2062,
+                "endFrame": 2165,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "1cbe0e1a74786cb591556eeaae359af819c6c6361094680658f1c2901ad7d14b"
+              },
+              {
+                "text": "El denominador debe ser positivo e incluir todas las rutas que pueden producir un positivo.",
+                "start": 72.46666666666667,
+                "end": 78.9,
+                "startFrame": 2174,
+                "endFrame": 2367,
+                "words": 15,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "eaf8b59e74848668941c3fde58324241e8eee5152ac9e07a3921afe73cd6aa77"
+              },
+              {
+                "text": "De los ciento treinta y cinco positivos esperados, noventa están infectados.",
+                "start": 79.2,
+                "end": 83.93333333333334,
+                "startFrame": 2376,
+                "endFrame": 2518,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "fd76c43e44b4b6a5f772b45b8e5fb11f396dff79bfe60e3f5563c7526c23d54e"
+              },
+              {
+                "text": "Dividimos noventa entre ciento treinta y cinco y obtenemos dos tercios.",
+                "start": 84.23333333333333,
+                "end": 88.96666666666667,
+                "startFrame": 2527,
+                "endFrame": 2669,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "17bbd61381709420e8c3dd20e78e8a5e138aabb01ef8c829f2defd7a443eb46d"
+              },
+              {
+                "text": "No es la sensibilidad: estamos usando otro grupo de referencia.",
+                "start": 89.26666666666667,
+                "end": 93.56666666666666,
+                "startFrame": 2678,
+                "endFrame": 2807,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "d307e31a8760a66dceb4470cdf8343d01ece6febeb437ed770037d0a9f787ead"
+              },
+              {
+                "text": "Si la prevalencia baja al uno por ciento y el test no cambia, esperamos nueve verdaderos positivos y cuarenta y nueve coma cinco falsos entre mil animales.",
+                "start": 93.86666666666666,
+                "end": 105.46666666666667,
+                "startFrame": 2816,
+                "endFrame": 3164,
+                "words": 27,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "624c06d12d4161b4483f30d5e610d66340630e1f7784257ef2a6bac3f1e27239"
+              },
+              {
+                "text": "La posterior baja aproximadamente al quince coma treinta y ocho por ciento.",
+                "start": 105.76666666666667,
+                "end": 110.93333333333334,
+                "startFrame": 3173,
+                "endFrame": 3328,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "8cc6d412a406f3ccf88d7f8b895380f253d5da228f0ab5971028ce48197b478b"
+              },
+              {
+                "text": "Las fracciones son admisibles porque contamos expectativas.",
+                "start": 111.23333333333333,
+                "end": 114.23333333333333,
+                "startFrame": 3337,
+                "endFrame": 3427,
+                "words": 7,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "03c8d26f0bd787d7528e167a4cb0669f343a219dc34eac7b19d0bb1e52c1a28f"
+              },
+              {
+                "text": "El mismo test puede tener distinto valor predictivo en poblaciones diferentes.",
+                "start": 114.53333333333333,
+                "end": 119.26666666666667,
+                "startFrame": 3436,
+                "endFrame": 3578,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "8425e67f607348ee8073ca8f17bb68c0fcdc0d07a9fc10655151bdf66cfedd8e"
+              },
+              {
+                "text": "Antes de comunicar la respuesta, identifica la población a la que corresponde la prevalencia y comprueba que las características del test sean aplicables allí.",
+                "start": 119.56666666666666,
+                "end": 129.86666666666667,
+                "startFrame": 3587,
+                "endFrame": 3896,
+                "words": 24,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "d82539bc5865a8dfca063d5616c6a3a90d29dbb4bf39b813f2dbc4896ff36272"
+              },
+              {
+                "text": "Bayes actualiza información bajo esos supuestos; no los demuestra.",
+                "start": 130.16666666666666,
+                "end": 134.03333333333333,
+                "startFrame": 3905,
+                "endFrame": 4021,
+                "words": 9,
+                "sceneIndex": 1,
+                "cueIndex": 11,
+                "sourceCueSha256": "0012cfb9284b4d078739f64532d42487599db3b7013a7b03e736b7eeb24cea41"
+              }
+            ]
+          },
+          {
+            "start": 134.33333333333334,
+            "end": 141.06666666666666,
+            "cues": [
+              {
+                "text": "Se usa una prueba para detectar una infección en animales de una población de cribado.",
+                "start": 134.33333333333334,
+                "end": 140.76666666666668,
+                "startFrame": 4030,
+                "endFrame": 4223,
+                "words": 15,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "79a0543c29823e7afdc43e09aa965a2f30d171997faeccef22080572a655af9f"
+              }
+            ]
+          },
+          {
+            "start": 141.06666666666666,
+            "end": 153.6,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 141.06666666666666,
+                "end": 143.66666666666666,
+                "startFrame": 4232,
+                "endFrame": 4310,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Qué probabilidad tiene un resultado positivo probabilidad de un resultado positivo?",
+                "start": 143.96666666666667,
+                "end": 148.7,
+                "startFrame": 4319,
+                "endFrame": 4461,
+                "words": 11,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "32b4cd29a1514ea391871e365e1c7c6e2ad4c9f66391ffca239b6a65d1e687b5"
+              },
+              {
+                "text": "Queremos todos los resultados positivos antes de conocer su origen.",
+                "start": 149,
+                "end": 153.3,
+                "startFrame": 4470,
+                "endFrame": 4599,
+                "words": 10,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "ababa27c22d32f0b6f265087f8f586b508e9820d684b50cee17cec8e63155d67"
+              }
+            ]
+          },
+          {
+            "start": 153.6,
+            "end": 171.3,
+            "cues": [
+              {
+                "text": "Una probabilidad previa describe el grupo antes de observar la prueba; una verosimilitud describe la prueba dentro de ese grupo.",
+                "start": 153.6,
+                "end": 162.2,
+                "startFrame": 4608,
+                "endFrame": 4866,
+                "words": 20,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "a78813f0593784db0080773fed28297f6d58b49427dced4db248ec9356fc77ee"
+              },
+              {
+                "text": "Multiplicar ambas da una ruta conjunta.",
+                "start": 162.5,
+                "end": 165.1,
+                "startFrame": 4875,
+                "endFrame": 4953,
+                "words": 6,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "e0bfa350990103fc50ce34d85a3f06fac20352535039204a3248db305d959e10"
+              },
+              {
+                "text": "Los orígenes son excluyentes y exhaustivos: sumamos sus rutas para normalizar la posterior.",
+                "start": 165.4,
+                "end": 171,
+                "startFrame": 4962,
+                "endFrame": 5130,
+                "words": 13,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "9e334d6cf001939223cef8fab9b903c166ad178ed9cdb956c098dbb84093b451"
+              }
+            ]
+          },
+          {
+            "start": 171.3,
+            "end": 175.9,
+            "cues": [
+              {
+                "text": "Prevalencia probabilidad de i igual a 0 coma 0 2.",
+                "start": 171.3,
+                "end": 175.6,
+                "startFrame": 5139,
+                "endFrame": 5268,
+                "words": 10,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "8065cbee0270c641a6008bd666f4825df1f1a691c3a2be1742787de5f433a4ae"
+              }
+            ]
+          },
+          {
+            "start": 175.9,
+            "end": 182.2,
+            "cues": [
+              {
+                "text": "Sensibilidad probabilidad de resultado positivo sabiendo que i igual a 0 coma 9 5.",
+                "start": 175.9,
+                "end": 181.9,
+                "startFrame": 5277,
+                "endFrame": 5457,
+                "words": 14,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "eeb158335b3ffb64cd9366aaa19134344c8f02ad7a52dd6d06584dbb5af89eba"
+              }
+            ]
+          },
+          {
+            "start": 182.2,
+            "end": 193.23333333333332,
+            "cues": [
+              {
+                "text": "Tasa de falsos positivos probabilidad de resultado positivo sabiendo que no i igual a 0 coma 0 5; especificidad igual a 0 coma 9 5.",
+                "start": 182.2,
+                "end": 192.93333333333334,
+                "startFrame": 5466,
+                "endFrame": 5788,
+                "words": 25,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "386ba43f75ba3bd0eca9c1bece4d55e483e5a3f3f207ab344ae8307b47ed92ed"
+              }
+            ]
+          },
+          {
+            "start": 193.23333333333332,
+            "end": 204.56666666666666,
+            "cues": [
+              {
+                "text": "Infección y no infección forman una partición.",
+                "start": 193.23333333333332,
+                "end": 196.23333333333332,
+                "startFrame": 5797,
+                "endFrame": 5887,
+                "words": 7,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "14764d66e6dd11f16e003b5f4de2063bf8470fc3f9d914e80e78ad7a42cbf9fd"
+              },
+              {
+                "text": "Cada resultado tiene un único origen entre los considerados: las rutas se pueden sumar sin omisiones ni duplicados.",
+                "start": 196.53333333333333,
+                "end": 204.26666666666668,
+                "startFrame": 5896,
+                "endFrame": 6128,
+                "words": 18,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "5ae1ba307a6adf33ecda840b92e5210abc783d80d31eb8a9e7fe9cb5211f3071"
+              }
+            ]
+          },
+          {
+            "start": 204.56666666666666,
+            "end": 212.6,
+            "cues": [
+              {
+                "text": "Las características de la prueba son aplicables a esta población; no se supone independencia entre prueba e infección.",
+                "start": 204.56666666666666,
+                "end": 212.3,
+                "startFrame": 6137,
+                "endFrame": 6369,
+                "words": 18,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "3993c39bba81fbada1342758047449877cafbeee8b35d12c35263ec63d293051"
+              }
+            ]
+          },
+          {
+            "start": 212.6,
+            "end": 223.53333333333333,
+            "cues": [
+              {
+                "text": "Pondera positivos verdaderos y falsos por el tamaño de cada grupo.",
+                "start": 212.6,
+                "end": 217.33333333333334,
+                "startFrame": 6378,
+                "endFrame": 6520,
+                "words": 11,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "411792e5a1ff257b2ba7c02dfd53754ecfb1e6d2153b761af9b617c791b626a2"
+              },
+              {
+                "text": "Sumamos las rutas verdaderas y falsas, ponderadas por la frecuencia de cada grupo.",
+                "start": 217.63333333333333,
+                "end": 223.23333333333332,
+                "startFrame": 6529,
+                "endFrame": 6697,
+                "words": 13,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "09c1c46f10168ffb3a95df50f9aa39adf60f98feb737e754af7b2e741e6175a7"
+              }
+            ]
+          },
+          {
+            "start": 223.53333333333333,
+            "end": 256.26666666666665,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 223.53333333333333,
+                "end": 226.53333333333333,
+                "startFrame": 6706,
+                "endFrame": 6796,
+                "words": 7,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "¿Qué probabilidad tiene un resultado positivo probabilidad de un resultado positivo?",
+                "start": 226.83333333333334,
+                "end": 231.56666666666666,
+                "startFrame": 6805,
+                "endFrame": 6947,
+                "words": 11,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "6a7fa11c3b907a37c93f3ad3f4f0a14f7e28c32be269611320c6e679a8d34891"
+              },
+              {
+                "text": "Infección y ausencia de infección son grupos disjuntos y exhaustivos.",
+                "start": 231.86666666666667,
+                "end": 236.16666666666666,
+                "startFrame": 6956,
+                "endFrame": 7085,
+                "words": 10,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "1a31071f875f41870c54005d65ed7627aaa1ce45196367cf9ff08c3e8917651e"
+              },
+              {
+                "text": "Primero ponderamos las probabilidades de la prueba por el tamaño de cada grupo.",
+                "start": 236.46666666666667,
+                "end": 242.06666666666666,
+                "startFrame": 7094,
+                "endFrame": 7262,
+                "words": 13,
+                "sceneIndex": 11,
+                "cueIndex": 3,
+                "sourceCueSha256": "75053322a4d2227f07813e3cf246ac095b0c5a0623d58cdc89ad7714d6058bee"
+              },
+              {
+                "text": "Para invertir la pregunta, dividimos la ruta de interés entre todas las rutas compatibles con lo observado.",
+                "start": 242.36666666666667,
+                "end": 249.66666666666666,
+                "startFrame": 7271,
+                "endFrame": 7490,
+                "words": 17,
+                "sceneIndex": 11,
+                "cueIndex": 4,
+                "sourceCueSha256": "ec00a0cf64560953ea7d58a136753757a1790fc61735535562ed3c1338bc371e"
+              },
+              {
+                "text": "Para este apartado: Pondera positivos verdaderos y falsos por el tamaño de cada grupo.",
+                "start": 249.96666666666667,
+                "end": 255.96666666666667,
+                "startFrame": 7499,
+                "endFrame": 7679,
+                "words": 14,
+                "sceneIndex": 11,
+                "cueIndex": 5,
+                "sourceCueSha256": "cf510410da589d4c63b24b1466f68dd938534885c72dd24260b47eae891b3c6b"
+              }
+            ]
+          },
+          {
+            "start": 256.26666666666665,
+            "end": 273.93333333333334,
+            "cues": [
+              {
+                "text": "Separar los dos orígenes.",
+                "start": 256.26666666666665,
+                "end": 258,
+                "startFrame": 7688,
+                "endFrame": 7740,
+                "words": 4,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "608c78aea146d05262770c638bbae4fb54f7e99414932234df7c090e4799d73d"
+              },
+              {
+                "text": "Positivos verdaderos: 0 coma 0 2 por 0 coma 9 5 igual a 0 coma 0 1 9.",
+                "start": 258.3,
+                "end": 266.03333333333336,
+                "startFrame": 7749,
+                "endFrame": 7981,
+                "words": 18,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "504b15fdd5f96a990cc5c1dbb0fc21f6b0da9e4ae8d46445c4a0bea4a5a8c303"
+              },
+              {
+                "text": "Falsos: 0 coma 9 8 por 0 coma 0 5 igual a 0 coma 0 4 9.",
+                "start": 266.3333333333333,
+                "end": 273.6333333333333,
+                "startFrame": 7990,
+                "endFrame": 8209,
+                "words": 17,
+                "sceneIndex": 12,
+                "cueIndex": 2,
+                "sourceCueSha256": "0dc97d7a92dbd59afc7f00caaca084a0697bd98ad495492ba499cb2eefa6690b"
+              }
+            ]
+          },
+          {
+            "start": 273.93333333333334,
+            "end": 297.8333333333333,
+            "cues": [
+              {
+                "text": "Sumar probabilidades totales. 0 coma 0 1 9 más 0 coma 0 4 9 igual a 0 coma 0 6 8. probabilidad de un resultado positivo igual a probabilidad de más sabiendo que i por probabilidad de i más probabilidad de más sabiendo que i elevado a ce por probabilidad de i elevado a ce.",
+                "start": 273.93333333333334,
+                "end": 297.53333333333336,
+                "startFrame": 8218,
+                "endFrame": 8926,
+                "words": 55,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "0f29a617c78b8f1ed570cf8c8f1b192c27531c5b334d9eaff7cf404a107682fc"
+              }
+            ]
+          },
+          {
+            "start": 297.8333333333333,
+            "end": 315.8333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 297.8333333333333,
+                "end": 299.1333333333333,
+                "startFrame": 8935,
+                "endFrame": 8974,
+                "words": 3,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 0 6 8 probabilidad entre 0 y 1.",
+                "start": 299.43333333333334,
+                "end": 305.03333333333336,
+                "startFrame": 8983,
+                "endFrame": 9151,
+                "words": 13,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "f55a70576d01fe3c89c7fd7b8420eec72667fdea951c53c44c45ae7b667bfca7"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 305.3333333333333,
+                "end": 312.6333333333333,
+                "startFrame": 9160,
+                "endFrame": 9379,
+                "words": 17,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "f954204dacd2bd4793341a71e739580c55acaf5237500a2b3d4a45c3b251ebf5"
+              },
+              {
+                "text": "Un positivo no implica necesariamente infección.",
+                "start": 312.93333333333334,
+                "end": 315.53333333333336,
+                "startFrame": 9388,
+                "endFrame": 9466,
+                "words": 6,
+                "sceneIndex": 14,
+                "cueIndex": 3,
+                "sourceCueSha256": "9c58a26a63ccae474d91c0add21ce292b1ccea85aba3c2b7b7d47721b65d7a3d"
+              }
+            ]
+          },
+          {
+            "start": 315.8333333333333,
+            "end": 324.6333333333333,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 6 8 probabilidad entre 0 y 1.",
+                "start": 315.8333333333333,
+                "end": 321.43333333333334,
+                "startFrame": 9475,
+                "endFrame": 9643,
+                "words": 13,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "39b0050f76e5d30151e461526efaed36cbf2f5081c5f143b2feb030220fd8f5a"
+              },
+              {
+                "text": "Un positivo no implica necesariamente infección.",
+                "start": 321.73333333333335,
+                "end": 324.3333333333333,
+                "startFrame": 9652,
+                "endFrame": 9730,
+                "words": 6,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "8c3c3f170f27befb32ecf5e9cb7a0086f7bfece8248d3240a1e3496f20fb5212"
+              }
+            ]
+          },
+          {
+            "start": 324.6333333333333,
+            "end": 338.03333333333336,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 324.6333333333333,
+                "end": 327.23333333333335,
+                "startFrame": 9739,
+                "endFrame": 9817,
+                "words": 6,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Tras un positivo, ¿cuál es probabilidad de i sabiendo que resultado positivo?",
+                "start": 327.53333333333336,
+                "end": 332.7,
+                "startFrame": 9826,
+                "endFrame": 9981,
+                "words": 12,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "de6b754e8f87de9fa86dba63fe8b1051695bb6e84e0c11cebb4df25798ad5b4b"
+              },
+              {
+                "text": "Queremos saber qué proporción de los positivos tiene realmente la condición.",
+                "start": 333,
+                "end": 337.73333333333335,
+                "startFrame": 9990,
+                "endFrame": 10132,
+                "words": 11,
+                "sceneIndex": 16,
+                "cueIndex": 2,
+                "sourceCueSha256": "b5b52756ce04123ca5d20aba5cb0792279c77882cab6919a4749b26aa89629ea"
+              }
+            ]
+          },
+          {
+            "start": 338.03333333333336,
+            "end": 355.73333333333335,
+            "cues": [
+              {
+                "text": "Una probabilidad previa describe el grupo antes de observar la prueba; una verosimilitud describe la prueba dentro de ese grupo.",
+                "start": 338.03333333333336,
+                "end": 346.6333333333333,
+                "startFrame": 10141,
+                "endFrame": 10399,
+                "words": 20,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "a78813f0593784db0080773fed28297f6d58b49427dced4db248ec9356fc77ee"
+              },
+              {
+                "text": "Multiplicar ambas da una ruta conjunta.",
+                "start": 346.93333333333334,
+                "end": 349.53333333333336,
+                "startFrame": 10408,
+                "endFrame": 10486,
+                "words": 6,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "e0bfa350990103fc50ce34d85a3f06fac20352535039204a3248db305d959e10"
+              },
+              {
+                "text": "Los orígenes son excluyentes y exhaustivos: sumamos sus rutas para normalizar la posterior.",
+                "start": 349.8333333333333,
+                "end": 355.43333333333334,
+                "startFrame": 10495,
+                "endFrame": 10663,
+                "words": 13,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "9e334d6cf001939223cef8fab9b903c166ad178ed9cdb956c098dbb84093b451"
+              }
+            ]
+          },
+          {
+            "start": 355.73333333333335,
+            "end": 360.3333333333333,
+            "cues": [
+              {
+                "text": "Prevalencia probabilidad de i igual a 0 coma 0 2.",
+                "start": 355.73333333333335,
+                "end": 360.03333333333336,
+                "startFrame": 10672,
+                "endFrame": 10801,
+                "words": 10,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "8065cbee0270c641a6008bd666f4825df1f1a691c3a2be1742787de5f433a4ae"
+              }
+            ]
+          },
+          {
+            "start": 360.3333333333333,
+            "end": 366.6333333333333,
+            "cues": [
+              {
+                "text": "Sensibilidad probabilidad de resultado positivo sabiendo que i igual a 0 coma 9 5.",
+                "start": 360.3333333333333,
+                "end": 366.3333333333333,
+                "startFrame": 10810,
+                "endFrame": 10990,
+                "words": 14,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "eeb158335b3ffb64cd9366aaa19134344c8f02ad7a52dd6d06584dbb5af89eba"
+              }
+            ]
+          },
+          {
+            "start": 366.6333333333333,
+            "end": 377.6666666666667,
+            "cues": [
+              {
+                "text": "Tasa de falsos positivos probabilidad de resultado positivo sabiendo que no i igual a 0 coma 0 5; especificidad igual a 0 coma 9 5.",
+                "start": 366.6333333333333,
+                "end": 377.3666666666667,
+                "startFrame": 10999,
+                "endFrame": 11321,
+                "words": 25,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "386ba43f75ba3bd0eca9c1bece4d55e483e5a3f3f207ab344ae8307b47ed92ed"
+              }
+            ]
+          },
+          {
+            "start": 377.6666666666667,
+            "end": 389,
+            "cues": [
+              {
+                "text": "Infección y no infección forman una partición.",
+                "start": 377.6666666666667,
+                "end": 380.6666666666667,
+                "startFrame": 11330,
+                "endFrame": 11420,
+                "words": 7,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "14764d66e6dd11f16e003b5f4de2063bf8470fc3f9d914e80e78ad7a42cbf9fd"
+              },
+              {
+                "text": "Cada resultado tiene un único origen entre los considerados: las rutas se pueden sumar sin omisiones ni duplicados.",
+                "start": 380.96666666666664,
+                "end": 388.7,
+                "startFrame": 11429,
+                "endFrame": 11661,
+                "words": 18,
+                "sceneIndex": 21,
+                "cueIndex": 1,
+                "sourceCueSha256": "5ae1ba307a6adf33ecda840b92e5210abc783d80d31eb8a9e7fe9cb5211f3071"
+              }
+            ]
+          },
+          {
+            "start": 389,
+            "end": 397.03333333333336,
+            "cues": [
+              {
+                "text": "Las características de la prueba son aplicables a esta población; no se supone independencia entre prueba e infección.",
+                "start": 389,
+                "end": 396.73333333333335,
+                "startFrame": 11670,
+                "endFrame": 11902,
+                "words": 18,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "3993c39bba81fbada1342758047449877cafbeee8b35d12c35263ec63d293051"
+              }
+            ]
+          },
+          {
+            "start": 397.03333333333336,
+            "end": 409.23333333333335,
+            "cues": [
+              {
+                "text": "Divide la probabilidad conjunta de infección y positivo por todos los positivos.",
+                "start": 397.03333333333336,
+                "end": 402.2,
+                "startFrame": 11911,
+                "endFrame": 12066,
+                "words": 12,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "3d131ff1968407380a7b74dcaed70a8b9c3a2e3671bf281d552a47f7386ee9f1"
+              },
+              {
+                "text": "La sensibilidad condiciona en el sentido contrario; Bayes cambia la referencia a todos los positivos.",
+                "start": 402.5,
+                "end": 408.93333333333334,
+                "startFrame": 12075,
+                "endFrame": 12268,
+                "words": 15,
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "sourceCueSha256": "c43c4ea00fa310b412427bb911102da86c941a3ced0e9a184339fcc1b9f93680"
+              }
+            ]
+          },
+          {
+            "start": 409.23333333333335,
+            "end": 442.8333333333333,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 409.23333333333335,
+                "end": 412.23333333333335,
+                "startFrame": 12277,
+                "endFrame": 12367,
+                "words": 7,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Tras un positivo, ¿cuál es probabilidad de i sabiendo que resultado positivo?",
+                "start": 412.53333333333336,
+                "end": 417.7,
+                "startFrame": 12376,
+                "endFrame": 12531,
+                "words": 12,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "f2730a96d549bea427b2d78eb83a9e3d3b04d461f8258dbdf27f2493e1bafbda"
+              },
+              {
+                "text": "Infección y ausencia de infección son grupos disjuntos y exhaustivos.",
+                "start": 418,
+                "end": 422.3,
+                "startFrame": 12540,
+                "endFrame": 12669,
+                "words": 10,
+                "sceneIndex": 24,
+                "cueIndex": 2,
+                "sourceCueSha256": "e879a764f2efa9ef4c0e0cbdef7819e8882696b300e180a90ddae49b662988e9"
+              },
+              {
+                "text": "Primero ponderamos las probabilidades de la prueba por el tamaño de cada grupo.",
+                "start": 422.6,
+                "end": 428.2,
+                "startFrame": 12678,
+                "endFrame": 12846,
+                "words": 13,
+                "sceneIndex": 24,
+                "cueIndex": 3,
+                "sourceCueSha256": "3d26d90fe2ee5589e542a27cd43ed74e49ef440efaa9bee1c514bc566ee11dc3"
+              },
+              {
+                "text": "Para invertir la pregunta, dividimos la ruta de interés entre todas las rutas compatibles con lo observado.",
+                "start": 428.5,
+                "end": 435.8,
+                "startFrame": 12855,
+                "endFrame": 13074,
+                "words": 17,
+                "sceneIndex": 24,
+                "cueIndex": 4,
+                "sourceCueSha256": "6a96513d7613c76e8e9f1efff8b56b57b14c52f25d8ffedcdf9d9601895ebd9d"
+              },
+              {
+                "text": "Para este apartado: Divide la probabilidad conjunta de infección y positivo por todos los positivos.",
+                "start": 436.1,
+                "end": 442.53333333333336,
+                "startFrame": 13083,
+                "endFrame": 13276,
+                "words": 15,
+                "sceneIndex": 24,
+                "cueIndex": 5,
+                "sourceCueSha256": "2445ce141ea09e7eab656c69ce886441cf77f51f1a1d91d8d88c696637ca1aef"
+              }
+            ]
+          },
+          {
+            "start": 442.8333333333333,
+            "end": 450.3333333333333,
+            "cues": [
+              {
+                "text": "Seleccionar los positivos verdaderos.",
+                "start": 442.8333333333333,
+                "end": 444.56666666666666,
+                "startFrame": 13285,
+                "endFrame": 13337,
+                "words": 4,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "d47afab74dfb0db5b87cca97af216b4cb11209dca11d4fa90851d3a9eac2a383"
+              },
+              {
+                "text": "El numerador es 0 coma 0 1 9, no la sensibilidad sola.",
+                "start": 444.8666666666667,
+                "end": 450.03333333333336,
+                "startFrame": 13346,
+                "endFrame": 13501,
+                "words": 12,
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "sourceCueSha256": "32c4b95cdb6e739c8dafdd465b9250fb7d4b8822b47be2bb62eb687687e6ab80"
+              }
+            ]
+          },
+          {
+            "start": 450.3333333333333,
+            "end": 458.23333333333335,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 450.3333333333333,
+                "end": 453.76666666666665,
+                "startFrame": 13510,
+                "endFrame": 13613,
+                "words": 8,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 454.06666666666666,
+                "end": 457.93333333333334,
+                "startFrame": 13622,
+                "endFrame": 13738,
+                "words": 9,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 458.23333333333335,
+            "end": 483.8333333333333,
+            "cues": [
+              {
+                "text": "Aplicar Bayes. 0 coma 0 1 9 dividido entre 0 coma 0 6 8 igual a 0 coma 2 7 9 4 1 1 8. probabilidad de i sabiendo que resultado positivo igual a abre paréntesis, probabilidad de más sabiendo que i por probabilidad de i, cierra paréntesis dividido entre abre paréntesis, probabilidad de un resultado positivo, cierra paréntesis.",
+                "start": 458.23333333333335,
+                "end": 483.53333333333336,
+                "startFrame": 13747,
+                "endFrame": 14506,
+                "words": 59,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "c9e9d5fbbcd70fb5d57bb84d198f2a2e2567e2a34407e1e5c60de7cd7d0356f2"
+              }
+            ]
+          },
+          {
+            "start": 483.8333333333333,
+            "end": 506.1,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 483.8333333333333,
+                "end": 485.1333333333333,
+                "startFrame": 14515,
+                "endFrame": 14554,
+                "words": 3,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 2 7 9 4 1 1 8 probabilidad entre 0 y 1.",
+                "start": 485.43333333333334,
+                "end": 492.73333333333335,
+                "startFrame": 14563,
+                "endFrame": 14782,
+                "words": 17,
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "sourceCueSha256": "db00e0a67a6b5c8eaa639ae1e3706eb751738d428faf605587cb8dfd4d4e7710"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 493.03333333333336,
+                "end": 500.3333333333333,
+                "startFrame": 14791,
+                "endFrame": 15010,
+                "words": 17,
+                "sceneIndex": 28,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+              },
+              {
+                "text": "La prevalencia modifica el valor predictivo positivo incluso con una prueba sensible.",
+                "start": 500.6333333333333,
+                "end": 505.8,
+                "startFrame": 15019,
+                "endFrame": 15174,
+                "words": 12,
+                "sceneIndex": 28,
+                "cueIndex": 3,
+                "sourceCueSha256": "d060297233d7d50b0f9df57bbf8fb3c2b5aeb2a4720804d9df3328f90522a5f4"
+              }
+            ]
+          },
+          {
+            "start": 506.1,
+            "end": 519.1666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 2 7 9 4 1 1 8 probabilidad entre 0 y 1.",
+                "start": 506.1,
+                "end": 513.4,
+                "startFrame": 15183,
+                "endFrame": 15402,
+                "words": 17,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "ba68be20e768e4f4f9de8493276b8c77a65558f99c272b26cbd166b099c86573"
+              },
+              {
+                "text": "La prevalencia modifica el valor predictivo positivo incluso con una prueba sensible.",
+                "start": 513.7,
+                "end": 518.8666666666667,
+                "startFrame": 15411,
+                "endFrame": 15566,
+                "words": 12,
+                "sceneIndex": 29,
+                "cueIndex": 1,
+                "sourceCueSha256": "62f9a8929aed81cfa112a3398ce1fcde36b71406b5fb2c80e75444d12a9aef7e"
+              }
+            ]
+          },
+          {
+            "start": 519.1666666666666,
+            "end": 578.2333333333333,
+            "cues": [
+              {
+                "text": "Los grupos A forman una partición y la observación B tiene probabilidad positiva. s es sensibilidad, c especificidad y pi prevalencia; cada denominador reúne todos los resultados del signo correspondiente.",
+                "start": 519.1666666666666,
+                "end": 532.0333333333333,
+                "startFrame": 15575,
+                "endFrame": 15961,
+                "words": 30,
+                "sceneIndex": 30,
+                "cueIndex": 0,
+                "sourceCueSha256": "7c90a45f7b3e13ff10bb5964d22ce12261df766233bc0a0f1cf9ba126f27afcd"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 532.3333333333334,
+                "end": 536.2,
+                "startFrame": 15970,
+                "endFrame": 16086,
+                "words": 9,
+                "sceneIndex": 30,
+                "cueIndex": 1,
+                "sourceCueSha256": "c55a4ec1b021781437bc460f7d9c7c9710e4c388edaa2f67ea0e4cfa6bf9a760"
+              },
+              {
+                "text": "Si la prevalencia disminuye y la sensibilidad y especificidad se mantienen, ¿qué suele pasar con el VPP?",
+                "start": 536.5,
+                "end": 543.8,
+                "startFrame": 16095,
+                "endFrame": 16314,
+                "words": 17,
+                "sceneIndex": 30,
+                "cueIndex": 2,
+                "sourceCueSha256": "3dcd3e79ce7bb3dcb73fa69be52fa7b69023d88676e95f60b73e14813d3502d8"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 544.1,
+                "end": 547.9666666666667,
+                "startFrame": 16323,
+                "endFrame": 16439,
+                "words": 9,
+                "sceneIndex": 30,
+                "cueIndex": 3,
+                "sourceCueSha256": "83c639fd832244374360f0725f4e996a51b6a6aa58e8198fa7ea54f5a6f2c7fb"
+              },
+              {
+                "text": "Para una prueba no perfecta con falsos positivos, los positivos verdaderos pesan menos frente a los falsos positivos cuando la condición es más rara.",
+                "start": 548.2666666666667,
+                "end": 558.5666666666667,
+                "startFrame": 16448,
+                "endFrame": 16757,
+                "words": 24,
+                "sceneIndex": 30,
+                "cueIndex": 4,
+                "sourceCueSha256": "838feec589d84eab0a8540d7b96641989d780a0c3c5ba8a69da399a796f7136b"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Identificar sensibilidad con valor predictivo positivo.",
+                "start": 558.8666666666667,
+                "end": 564.8666666666667,
+                "startFrame": 16766,
+                "endFrame": 16946,
+                "words": 14,
+                "sceneIndex": 30,
+                "cueIndex": 5,
+                "sourceCueSha256": "b9bdc16a5e07f56fa0de55b90177245b5ac23c4ef247a1a07124bb49f0a6de9c"
+              },
+              {
+                "text": "La sensibilidad se refiere a quienes tienen la condición; el valor predictivo se refiere a quienes dieron positivo.",
+                "start": 565.1666666666666,
+                "end": 572.9,
+                "startFrame": 16955,
+                "endFrame": 17187,
+                "words": 18,
+                "sceneIndex": 30,
+                "cueIndex": 6,
+                "sourceCueSha256": "1ee17972024b1b3674b1634a3dd81dec67f2d39978fc2925193b6c22cff6a887"
+              },
+              {
+                "text": "Este segundo grupo incluye falsos positivos y depende de la prevalencia.",
+                "start": 573.2,
+                "end": 577.9333333333333,
+                "startFrame": 17196,
+                "endFrame": 17338,
+                "words": 11,
+                "sceneIndex": 30,
+                "cueIndex": 7,
+                "sourceCueSha256": "60bb9abc2ae1d6b4cfbb5052b99c285929c2f91056066200b1e82e7b01b08e10"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
