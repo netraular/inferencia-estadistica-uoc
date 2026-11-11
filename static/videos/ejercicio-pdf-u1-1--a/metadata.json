@@ -5,22 +5,31 @@
   "id": "ejercicio-pdf-u1-1--a",
   "kind": "exercise",
   "title": "¿Cuánto vale P(A∪B)?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "0a64e2034c05746217c31b1e26fe8f11798fd5258f2961dcc52c25555994359f",
   "src": "videos/ejercicio-pdf-u1-1--a/video.mp4",
   "poster": "videos/ejercicio-pdf-u1-1--a/poster.jpg",
-  "duration": 110.02,
-  "frames": 3301,
+  "duration": 99,
+  "frames": 2970,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "audioSource": "audio/ejercicio-pdf-u1-1--a.mp3",
-  "audioSha256": "ed6a0ddab94700508894bdf264eea97aeca761076bba548f2993455ee138a540",
-  "videoSha256": "05423c25985a9c5f55c0ca33f2aca7a0e035409894ed911581e5727b4aa352f5",
-  "posterSha256": "6cb2f777d54d80fe196b348ec2c90efe93f3b5805280587ba144910386006410",
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "76a3518c7518ac9f030743e3a09ec5cd43123ccea60ef35c3afe0e22f95909eb",
+  "videoSha256": "125a1304d7db94fdb2bc6083186bb59f17f91baf171ee9cd24f5d2f7b2c91121",
+  "posterSha256": "74b32db22b89acb7bbc4b7622b88ed5a06225823371cf9fcba2f16e32c2c45e8",
   "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
-  "voice": "Puck",
-  "model": "gemini-3.8-flash-tts",
-  "inputHash": "35f9f087a840b4b918432f60965b5d97b9c903e9732b2282c5776eb84085fbe1",
-  "rendererSha256": "01aeb188bf8c415d97f8e7ac5371e8e65950c3ee2ea194f2452a2c2b0933ca13",
+  "inputHash": "4756659d66016ca3d942ef7af22ce101d7fa9e80a2d4fa9ece232312b35c565a",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
     "itemSha256": "96c5faf67037531f4ce45cf809cf52b2f132c89b13fb40195f42aaa19943f2e5",
@@ -32,2927 +41,320 @@
     },
     "provenance": null,
     "renderedAnimationSha256": "7dfe70ad0b7b1187a11fd0eb70ca81c5709a9ee3bcee9fd0730b352f240888ec",
-    "audioMetadataSha256": "5e254ea4391768f216dbb31d4f45c29fb9259a52bee29ca10eca5dcd732fc50b",
-    "rendererSources": {
-      "Course.jsx": "919fec7b5c90a20e76bf164e688bb567bf33aa85279ee5deeeef1faf661f170a",
-      "course-frame.mjs": "a23be31a172eac33bb7ecc3125190414c70afa4434362122e85d2ee45b124c70",
-      "course-contract.mjs": "90483c64a64b88060bbbd94bd3e9cbd9a786573201454062b24ce73610c38bc7",
-      "course-media.mjs": "5873942a94c7bb6710e642fc2acd133e53f59173133ca8fe57d537cadb56a424",
-      "render-course.mjs": "b2b5ef4f372b26e36a6d59d2150967cd41becde38114907badd3a538e14378e4",
-      "package-lock.json": "7dd9a354312be09cfd38bbdb412595a4351959f05b6b573dd54fd75b77b87fea",
-      "src/classroom/whiteboard.mjs": "6728dcc7986fda1d4613be591d0eecaeb492371c8bf6aa12c07161c352fc4fcc",
+    "transcriptSha256": "76a3518c7518ac9f030743e3a09ec5cd43123ccea60ef35c3afe0e22f95909eb",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
       "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
       "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
-      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036",
-      "stageEquations": "17bfb5afd4d58a75ff4a9d3cd26936b7fa57a5fec74357ae7cf6744b92685404"
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
     }
   },
-  "cueTiming": "measured",
   "testFixture": false,
   "parentLesson": "ejercicio-pdf-u1-1",
-  "evidence": {
-    "posterFrame": 3214,
-    "layout": [
+  "transcript": {
+    "id": "ejercicio-pdf-u1-1--a",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 99,
+    "scenes": [
       {
-        "frame": 0,
-        "scene": 0,
-        "cue": 0,
-        "boxes": [
+        "start": 0,
+        "end": 12.1,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
           },
           {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
+            "text": "¿Cuánto vale probabilidad de A unión be?",
+            "start": 2.9,
+            "end": 5.9,
+            "startFrame": 87,
+            "endFrame": 177,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "8a9685c383d79fe2229c778d8b8c0799ef6c3f7c1ae537e86c7866d473c6bc63"
           },
           {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos.",
+            "start": 6.2,
+            "end": 11.8,
+            "startFrame": 186,
+            "endFrame": 354,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "45bd3f8b0f061610eb86d96d88c2b59ad5d35c8e023a465add64637fda559b42"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "¿Cuánto vale P(A∪B)?",
-            "inkPixels": 3497,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "026d4eb4ea3f1c124696d8e72a8c2ddf0671afd34de9cd26c9157fe628df6b91"
+        ]
       },
       {
-        "frame": 21,
-        "scene": 0,
-        "cue": 0,
-        "boxes": [
+        "start": 12.1,
+        "end": 28.9,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "A y be nombran sucesos, es decir, conjuntos de resultados.",
+            "start": 12.1,
+            "end": 16.4,
+            "startFrame": 363,
+            "endFrame": 492,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "25b27320e78d11ecd9917531e8f71b0cd173dc51daccc5891ef5937a764f7a5f"
           },
           {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
+            "text": "La unión admite cualquiera de ellos; la intersección exige ambos.",
+            "start": 16.7,
+            "end": 21,
+            "startFrame": 501,
+            "endFrame": 630,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "9de818e8657efa3a8660a1dcad15c141bdf23dfec03ebe6c8be417bd4d19826c"
           },
           {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be.",
+            "start": 21.3,
+            "end": 28.6,
+            "startFrame": 639,
+            "endFrame": 858,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "cd9df43d58a903b669cfc674208fb3f3d8856d269c85ad443a29858684fb2bb1"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "¿Cuánto vale P(A∪B)?",
-            "inkPixels": 3497,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "026d4eb4ea3f1c124696d8e72a8c2ddf0671afd34de9cd26c9157fe628df6b91"
+        ]
       },
       {
-        "frame": 110,
-        "scene": 0,
-        "cue": 1,
-        "boxes": [
+        "start": 28.9,
+        "end": 40.36666666666667,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "probabilidad de A igual a 0 coma 3; probabilidad de be igual a 0 coma 6; probabilidad de A intersección be igual a 0 coma 1.",
+            "start": 28.9,
+            "end": 40.06666666666667,
+            "startFrame": 867,
+            "endFrame": 1202,
+            "words": 26,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "13625706c4f2abf2cf372e57f8c1f608a0bb9ce6d62565c4ec433fe20be2d996"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "¿Cuánto vale P(A∪B)?",
-            "inkPixels": 3497,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "026d4eb4ea3f1c124696d8e72a8c2ddf0671afd34de9cd26c9157fe628df6b91"
+        ]
       },
       {
-        "frame": 223,
-        "scene": 0,
-        "cue": 2,
-        "boxes": [
+        "start": 40.36666666666667,
+        "end": 55.766666666666666,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
+            "start": 40.36666666666667,
+            "end": 46.8,
+            "startFrame": 1211,
+            "endFrame": 1404,
+            "words": 15,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "dff4a635ed6c42b3b731085543063f60dab4fb82f41d4ed65a2f59026104bbc3"
           },
           {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
+            "text": "Empiezo sumándolas.",
+            "start": 47.1,
+            "end": 48.3,
+            "startFrame": 1413,
+            "endFrame": 1449,
+            "words": 2,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "9e431c74e3cbaf964f5a7a9e4f2ea848f721550b98271b764388c0e7148fd55e"
           },
           {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez.",
+            "start": 48.6,
+            "end": 55.46666666666667,
+            "startFrame": 1458,
+            "endFrame": 1664,
+            "words": 16,
+            "sceneIndex": 3,
+            "cueIndex": 2,
+            "sourceCueSha256": "271a8cd74842b02231a350bfba823d46993fd245c0da8991be51ee24baef910d"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "¿Cuánto vale P(A∪B)?",
-            "inkPixels": 3497,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "026d4eb4ea3f1c124696d8e72a8c2ddf0671afd34de9cd26c9157fe628df6b91"
+        ]
       },
       {
-        "frame": 414,
-        "scene": 1,
-        "cue": 0,
-        "boxes": [
+        "start": 55.766666666666666,
+        "end": 70.53333333333333,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "Sumar los dos sucesos. pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
+            "start": 55.766666666666666,
+            "end": 63.93333333333333,
+            "startFrame": 1673,
+            "endFrame": 1918,
+            "words": 19,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "1f0fc5d176d529aff47806b7cb4c0915977de888787fa93f422e9d2e612f2c03"
           },
           {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 249.43332912768926
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "Empiezo sumándolas. 0 coma 3 más 0 coma 6 igual a 0 coma 9.",
+            "start": 64.23333333333333,
+            "end": 70.23333333333333,
+            "startFrame": 1927,
+            "endFrame": 2107,
+            "words": 14,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "8ada006208b13c55571e5fd5faced37674bfc789e85813a5c515749674682d3a"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
-            "inkPixels": 3864,
-            "equationPaths": 23
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "630b588170432c89e379f7a011d0d6a68f235f06f3d91a1b905138a2cd24f6d8"
+        ]
       },
       {
-        "frame": 585,
-        "scene": 1,
-        "cue": 1,
-        "boxes": [
+        "start": 70.53333333333333,
+        "end": 84.76666666666667,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "Quitar el duplicado.",
+            "start": 70.53333333333333,
+            "end": 71.83333333333333,
+            "startFrame": 2116,
+            "endFrame": 2155,
+            "words": 3,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "3a3f30d68c88f873030f0bb1e8f8d73d709584e868350e5c286fb36f6a7c244e"
           },
           {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 249.43332912768926
+            "text": "La intersección, los resultados que cumplen ambos, se contó dos veces.",
+            "start": 72.13333333333334,
+            "end": 76.86666666666666,
+            "startFrame": 2164,
+            "endFrame": 2306,
+            "words": 11,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "cb6eb70c14541e32ddac2a623a37ed7fc493cc8f263e699f9c59fe5341526a35"
           },
           {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "Resto una copia. probabilidad de A unión be igual a 0 coma 9 menos 0 coma 1.",
+            "start": 77.16666666666667,
+            "end": 84.46666666666667,
+            "startFrame": 2315,
+            "endFrame": 2534,
+            "words": 17,
+            "sceneIndex": 5,
+            "cueIndex": 2,
+            "sourceCueSha256": "eb715216e75ad03fd4a80440501244b2e16d568b60e7fc09b333138607771f72"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
-            "inkPixels": 3864,
-            "equationPaths": 23
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "630b588170432c89e379f7a011d0d6a68f235f06f3d91a1b905138a2cd24f6d8"
+        ]
       },
       {
-        "frame": 747,
-        "scene": 1,
-        "cue": 2,
-        "boxes": [
+        "start": 84.76666666666667,
+        "end": 89.8,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 249.43332912768926
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "probabilidad de A unión be queda igual a 0 coma 8.",
+            "start": 84.76666666666667,
+            "end": 89.5,
+            "startFrame": 2543,
+            "endFrame": 2685,
+            "words": 11,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "deb36fa71b2eaccb7393dbfb1cc342d88b9d698a80afc54ee021bf198c7b87f0"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
-            "inkPixels": 3864,
-            "equationPaths": 23
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "630b588170432c89e379f7a011d0d6a68f235f06f3d91a1b905138a2cd24f6d8"
+        ]
       },
       {
-        "frame": 991,
-        "scene": 2,
-        "cue": 0,
-        "boxes": [
+        "start": 89.8,
+        "end": 99,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
+            "start": 89.8,
+            "end": 94.53333333333333,
+            "startFrame": 2694,
+            "endFrame": 2836,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "690706cc7743fd1d5021626ec3a73982217a7f9104c246d58c55c3b03e90db1b"
           },
           {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 129.6
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 129.59999999999997
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "La unión incluye el caso en que ocurren ambos.",
+            "start": 94.83333333333333,
+            "end": 98.7,
+            "startFrame": 2845,
+            "endFrame": 2961,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "476b8c9034571003d1c182128925d4f7a1107619fb4548dc110ebe27c811c442"
           }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "P(A)=0,3; P(B)=0,6; P(A∩B)=0,1.",
-            "inkPixels": 5317,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "Dos sucesos y sus complementos",
-            "inkPixels": 5789,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "bcd432b722fba113b853877a808416385cb86ec06984485417d6b7a14e2583fc"
-      },
-      {
-        "frame": 1375,
-        "scene": 3,
-        "cue": 0,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 164.8
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "¿Cuánto vale P(A∪B)?",
-            "inkPixels": 3560,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "P de A es la probabilidad del primer suceso; P de B, la del segundo. Empiezo sumándolas.",
-            "inkPixels": 11112,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "5bdf5d5d16155ff2849700730264e199eb691b45bf404365a7a814e6d9d3d846"
-      },
-      {
-        "frame": 1561,
-        "scene": 3,
-        "cue": 1,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 164.8
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "¿Cuánto vale P(A∪B)?",
-            "inkPixels": 3560,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "P de A es la probabilidad del primer suceso; P de B, la del segundo. Empiezo sumándolas.",
-            "inkPixels": 11112,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "5bdf5d5d16155ff2849700730264e199eb691b45bf404365a7a814e6d9d3d846"
-      },
-      {
-        "frame": 1624,
-        "scene": 3,
-        "cue": 2,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 164.8
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "¿Cuánto vale P(A∪B)?",
-            "inkPixels": 3560,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "P de A es la probabilidad del primer suceso; P de B, la del segundo. Empiezo sumándolas.",
-            "inkPixels": 11112,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "5bdf5d5d16155ff2849700730264e199eb691b45bf404365a7a814e6d9d3d846"
-      },
-      {
-        "frame": 1883,
-        "scene": 4,
-        "cue": 0,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 152.2970266040689
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 164.8
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "0.3+0.6=0.9",
-            "inkPixels": 6998,
-            "equationPaths": 11
-          },
-          {
-            "cue": 0,
-            "value": "P de A es la probabilidad del primer suceso; P de B, la del segundo. Empiezo sumándolas.",
-            "inkPixels": 11757,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "e17a82495931bff9981f8d05a0a8a7f684c2aec77a26d523ba738d14c46981e4"
-      },
-      {
-        "frame": 2126,
-        "scene": 4,
-        "cue": 1,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 152.2970266040689
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 164.8
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "0.3+0.6=0.9",
-            "inkPixels": 6998,
-            "equationPaths": 11
-          },
-          {
-            "cue": 0,
-            "value": "P de A es la probabilidad del primer suceso; P de B, la del segundo. Empiezo sumándolas.",
-            "inkPixels": 11757,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "e17a82495931bff9981f8d05a0a8a7f684c2aec77a26d523ba738d14c46981e4"
-      },
-      {
-        "frame": 2368,
-        "scene": 5,
-        "cue": 0,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 150.0444756372327
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 169.59999999999997
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "P(A\\cup B)=0.9-0.1",
-            "inkPixels": 5004,
-            "equationPaths": 14
-          },
-          {
-            "cue": 0,
-            "value": "La intersección, los resultados que cumplen ambos, se contó dos veces. Resto una copia.",
-            "inkPixels": 12121,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "d22c2d28d490089a81cfa2b767f40142226a6c427289a4273d9be48432f4f289"
-      },
-      {
-        "frame": 2424,
-        "scene": 5,
-        "cue": 1,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 150.0444756372327
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 169.59999999999997
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "P(A\\cup B)=0.9-0.1",
-            "inkPixels": 5004,
-            "equationPaths": 14
-          },
-          {
-            "cue": 0,
-            "value": "La intersección, los resultados que cumplen ambos, se contó dos veces. Resto una copia.",
-            "inkPixels": 12121,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "d22c2d28d490089a81cfa2b767f40142226a6c427289a4273d9be48432f4f289"
-      },
-      {
-        "frame": 2590,
-        "scene": 5,
-        "cue": 2,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 150.0444756372327
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 169.59999999999997
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "P(A\\cup B)=0.9-0.1",
-            "inkPixels": 5004,
-            "equationPaths": 14
-          },
-          {
-            "cue": 0,
-            "value": "La intersección, los resultados que cumplen ambos, se contó dos veces. Resto una copia.",
-            "inkPixels": 12121,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "d22c2d28d490089a81cfa2b767f40142226a6c427289a4273d9be48432f4f289"
-      },
-      {
-        "frame": 2880,
-        "scene": 6,
-        "cue": 0,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 283.91161307505706
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "tex": "P(A\\cup B)=0.9-0.1=0.8",
-            "inkPixels": 5946,
-            "equationPaths": 18
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "1d04be6c37eb2dd5693c0f583d26abc81f0439a0f57af3daa0e8825363464a05"
-      },
-      {
-        "frame": 3033,
-        "scene": 7,
-        "cue": 0,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 129.59999999999997
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "0,8 probabilidad entre 0 y 1",
-            "inkPixels": 4569,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "probabilidad entre 0 y 1",
-            "inkPixels": 3711,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "La unión incluye el caso en que ocurren ambos.",
-            "inkPixels": 6912,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a82d420d48a3b5ea3af6946f41769805fe258e2f913875711e008e38a87427e8"
-      },
-      {
-        "frame": 3214,
-        "scene": 7,
-        "cue": 1,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 129.59999999999997
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "0,8 probabilidad entre 0 y 1",
-            "inkPixels": 4569,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "probabilidad entre 0 y 1",
-            "inkPixels": 3711,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "La unión incluye el caso en que ocurren ambos.",
-            "inkPixels": 6912,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a82d420d48a3b5ea3af6946f41769805fe258e2f913875711e008e38a87427e8"
-      },
-      {
-        "frame": 3300,
-        "scene": 7,
-        "cue": 1,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 129.59999999999997
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 223.33333333333334,
-            "y": 143.1638418079096,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 226,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 369.3333333333333,
-            "y": 321.96610169491527,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-9",
-            "x": 372,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-10",
-            "x": 515.3333333333334,
-            "y": 277.26553672316385,
-            "width": 146,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-11",
-            "x": 518,
-            "y": 408,
-            "width": 140.66666666666666,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 8,
-        "authored": [
-          {
-            "cue": 0,
-            "value": "0,8 probabilidad entre 0 y 1",
-            "inkPixels": 4569,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "probabilidad entre 0 y 1",
-            "inkPixels": 3711,
-            "equationPaths": 0
-          },
-          {
-            "cue": 0,
-            "value": "La unión incluye el caso en que ocurren ambos.",
-            "inkPixels": 6912,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a82d420d48a3b5ea3af6946f41769805fe258e2f913875711e008e38a87427e8"
+        ]
       }
-    ],
-    "pixels": [
-      {
-        "frame": 0,
-        "ink": 3042,
-        "sha256": "c30679a2af150c4e558feb87ac8e859e368561d9f054e7892ab47317462d7d22"
-      },
-      {
-        "frame": 21,
-        "ink": 3044,
-        "sha256": "753d77ec3c870a9a7be3a25f1130c24b35fa740e74cf627bf884342720bdd325"
-      },
-      {
-        "frame": 110,
-        "ink": 3044,
-        "sha256": "753d77ec3c870a9a7be3a25f1130c24b35fa740e74cf627bf884342720bdd325"
-      },
-      {
-        "frame": 223,
-        "ink": 3044,
-        "sha256": "753d77ec3c870a9a7be3a25f1130c24b35fa740e74cf627bf884342720bdd325"
-      },
-      {
-        "frame": 414,
-        "ink": 3007,
-        "sha256": "82ac3e85748d27f0276565cf92060dddfa0d4165a5c5bfa715fa73ce163789c3"
-      },
-      {
-        "frame": 585,
-        "ink": 3009,
-        "sha256": "9e9e41e2b1d755afc8cad2c44c47eb618bf0e2e076e0c1ff2a1074980cc62cc2"
-      },
-      {
-        "frame": 747,
-        "ink": 3009,
-        "sha256": "9e9e41e2b1d755afc8cad2c44c47eb618bf0e2e076e0c1ff2a1074980cc62cc2"
-      },
-      {
-        "frame": 991,
-        "ink": 3372,
-        "sha256": "5c8e305bd0bb06e32d03a67670c7af5430589557d2dde81c42365aef3636706f"
-      },
-      {
-        "frame": 1375,
-        "ink": 3600,
-        "sha256": "96fa592bedda7136bee5bde113218705ba68a46884b424e4b21fa687eba6f45e"
-      },
-      {
-        "frame": 1561,
-        "ink": 3601,
-        "sha256": "c44fa32c58840281144749b536c7b8dd8564f6f8c02141a6efd2fb68ed1478cb"
-      },
-      {
-        "frame": 1624,
-        "ink": 3601,
-        "sha256": "c44fa32c58840281144749b536c7b8dd8564f6f8c02141a6efd2fb68ed1478cb"
-      },
-      {
-        "frame": 1883,
-        "ink": 3837,
-        "sha256": "85cd61c33cc65ae7e3bfba1c6d69462206f48bdb90e23f8818274d99c10d27e3"
-      },
-      {
-        "frame": 2126,
-        "ink": 3843,
-        "sha256": "95abea586f879dec557ee90f61a35784593c4a64a86dd58227a026718a15a5ac"
-      },
-      {
-        "frame": 2368,
-        "ink": 3694,
-        "sha256": "e40c84e6123ee58181ab24f9a983f88ec582db640088e97c126c7a490e30909c"
-      },
-      {
-        "frame": 2424,
-        "ink": 3694,
-        "sha256": "e40c84e6123ee58181ab24f9a983f88ec582db640088e97c126c7a490e30909c"
-      },
-      {
-        "frame": 2590,
-        "ink": 3701,
-        "sha256": "b3982eacaf3f9d9568da94660951d685edc718b589c7a882742c453c7d643f6d"
-      },
-      {
-        "frame": 2880,
-        "ink": 3145,
-        "sha256": "420d53f3687906bd94f280a87570070f2dbabb7c1a2e86d7458268d1ece27634"
-      },
-      {
-        "frame": 3033,
-        "ink": 3723,
-        "sha256": "bfddde9b52652c683d86527b95712afb62a1f80537329cb96407f8b34667041e"
-      },
-      {
-        "frame": 3214,
-        "ink": 3723,
-        "sha256": "bfddde9b52652c683d86527b95712afb62a1f80537329cb96407f8b34667041e"
-      },
-      {
-        "frame": 3300,
-        "ink": 3727,
-        "sha256": "12605bf6f511c7988934f4b2e5254098c0a8557833a5aeed566ae6ac946d400b"
-      }
-    ],
-    "streams": [
-      {
-        "index": 0,
-        "codec_name": "h264",
-        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
-        "profile": "High",
-        "codec_type": "video",
-        "codec_time_base": "1/60",
-        "codec_tag_string": "avc1",
-        "codec_tag": "0x31637661",
-        "width": 1280,
-        "height": 720,
-        "coded_width": 1280,
-        "coded_height": 720,
-        "has_b_frames": 2,
-        "sample_aspect_ratio": "1:1",
-        "display_aspect_ratio": "16:9",
-        "pix_fmt": "yuv420p",
-        "level": 31,
-        "color_range": "tv",
-        "color_transfer": "iec61966-2-1",
-        "color_primaries": "bt709",
-        "chroma_location": "left",
-        "refs": 4,
-        "is_avc": "true",
-        "nal_length_size": "4",
-        "r_frame_rate": "30/1",
-        "avg_frame_rate": "30/1",
-        "time_base": "1/90000",
-        "start_pts": 0,
-        "start_time": "0.000000",
-        "duration_ts": 9903060,
-        "duration": "110.034000",
-        "bit_rate": "64861",
-        "bits_per_raw_sample": "8",
-        "nb_frames": "3301",
-        "nb_read_frames": "3301",
-        "disposition": {
-          "default": 1,
-          "dub": 0,
-          "original": 0,
-          "comment": 0,
-          "lyrics": 0,
-          "karaoke": 0,
-          "forced": 0,
-          "hearing_impaired": 0,
-          "visual_impaired": 0,
-          "clean_effects": 0,
-          "attached_pic": 0,
-          "timed_thumbnails": 0
-        },
-        "tags": {
-          "language": "und",
-          "handler_name": "VideoHandler"
-        }
-      },
-      {
-        "index": 1,
-        "codec_name": "aac",
-        "codec_long_name": "AAC (Advanced Audio Coding)",
-        "profile": "LC",
-        "codec_type": "audio",
-        "codec_time_base": "1/24000",
-        "codec_tag_string": "mp4a",
-        "codec_tag": "0x6134706d",
-        "sample_fmt": "fltp",
-        "sample_rate": "24000",
-        "channels": 1,
-        "channel_layout": "mono",
-        "bits_per_sample": 0,
-        "r_frame_rate": "0/0",
-        "avg_frame_rate": "0/0",
-        "time_base": "1/24000",
-        "start_pts": 0,
-        "start_time": "0.000000",
-        "duration_ts": 2640792,
-        "duration": "110.033000",
-        "bit_rate": "104055",
-        "max_bit_rate": "144000",
-        "nb_frames": "2580",
-        "nb_read_frames": "2579",
-        "disposition": {
-          "default": 1,
-          "dub": 0,
-          "original": 0,
-          "comment": 0,
-          "lyrics": 0,
-          "karaoke": 0,
-          "forced": 0,
-          "hearing_impaired": 0,
-          "visual_impaired": 0,
-          "clean_effects": 0,
-          "attached_pic": 0,
-          "timed_thumbnails": 0
-        },
-        "tags": {
-          "language": "und",
-          "handler_name": "SoundHandler"
-        }
-      }
-    ],
-    "elapsedSeconds": 107.335
-  }
+    ]
+  },
+  "publication": "silent-transcript"
 }
