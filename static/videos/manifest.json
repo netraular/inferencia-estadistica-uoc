@@ -54344,6 +54344,2199 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "cauchy-weibull": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "cauchy-weibull",
+      "kind": "recap",
+      "title": "Cauchy y Weibull: colas y riesgo cambiante",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "2554f76cda18ae4aa38e844cbac8072cb23b0891da0b78ca33611270e312b20e",
+      "src": "videos/cauchy-weibull/video.mp4",
+      "poster": "videos/cauchy-weibull/poster.jpg",
+      "duration": 1055.6666666666667,
+      "frames": 31670,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "905ca03473cb2ec6e75c018e3d2bc2cde4bdf681015ec31f643a26dcf2119e23",
+      "videoSha256": "eefa1f07f419d6a2f64891ba1ed5d5c0ce419368d82ad086abd7731c81886831",
+      "posterSha256": "c9160778c9635d66386e762230cce06ffe177ec5aa89235539ee4dfc8bf74275",
+      "canonicalSha256": "44c31b46e34b6fbcea16d95a7db30fb7038b33270b75bdca26b017f36e55da9d",
+      "inputHash": "7117cb7dcc8705acfa9682b8ded1a6a1cdb9e57acda74df6339774b6a4da44d3",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "83d20fe59bfd96b4c4774b735323d8a3a0901bb9dbcc9896e93ac98b36776bff",
+        "canonicalSha256": "44c31b46e34b6fbcea16d95a7db30fb7038b33270b75bdca26b017f36e55da9d",
+        "source": {
+          "document": "FundamentosInferencia_Tema3.pdf",
+          "section": "3.2.6 y 3.2.7: Cauchy y Weibull; riesgo instantáneo como ampliación explícita"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "9676d6d39f9c324cc6013efc562f8f491e5752e3fe825a221bc619afa1225d6e",
+        "transcriptSha256": "905ca03473cb2ec6e75c018e3d2bc2cde4bdf681015ec31f643a26dcf2119e23",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "cauchy-weibull",
+      "transcript": {
+        "id": "cauchy-weibull",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "44c31b46e34b6fbcea16d95a7db30fb7038b33270b75bdca26b017f36e55da9d",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 1055.6666666666667,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 70.83333333333333,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Hoy compararemos dos límites de nuestra intuición: una distribución simétrica sin media y una espera cuyo riesgo puede cambiar.",
+                "start": 1.5,
+                "end": 9.666666666666666,
+                "startFrame": 45,
+                "endFrame": 290,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "98a3defc05b8a272a0d11d432c1fdf2bc159f2a8f7c94f2dfb709043b1d106d0"
+              },
+              {
+                "text": "La Cauchy tiene localización equis sub cero y escala gamma positiva.",
+                "start": 9.966666666666667,
+                "end": 14.7,
+                "startFrame": 299,
+                "endFrame": 441,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "46df305807637b496d2b348e3247f78448596cbab330da0b6bf152bc9d9f6b48"
+              },
+              {
+                "text": "Su centro es mediana y moda, pero no esperanza.",
+                "start": 15,
+                "end": 18.866666666666667,
+                "startFrame": 450,
+                "endFrame": 566,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "5f2385832a1416b0a8063b2c3d0ed2ac05591ba2eaa1b58b5d76e3166d73a43c"
+              },
+              {
+                "text": "Su acumulada usa arco tangente, la inversa de la tangente en su rama principal.",
+                "start": 19.166666666666668,
+                "end": 25.166666666666668,
+                "startFrame": 575,
+                "endFrame": 755,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "91d90c4fd0c77b13a710fbbe7675e2dbdeec63576fd323395d3a059d0f62bd99"
+              },
+              {
+                "text": "Restar acumuladas permite calcular intervalos aunque los momentos no existan.",
+                "start": 25.466666666666665,
+                "end": 29.766666666666666,
+                "startFrame": 764,
+                "endFrame": 893,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "02e648f4dc01edbe5f8c75df62c73d8686121f574d53b67f614166266292875d"
+              },
+              {
+                "text": "La fórmula incluye el cociente de distancia al centro entre escala.",
+                "start": 30.066666666666666,
+                "end": 34.8,
+                "startFrame": 902,
+                "endFrame": 1044,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "049a4a3678689dab6fa8a1ebd7cb153e24af1175cb3af7f97307b3841abaf4ef"
+              },
+              {
+                "text": "A una escala por debajo y por encima del centro, la arco tangente vale menos y más pi entre cuatro.",
+                "start": 35.1,
+                "end": 43.7,
+                "startFrame": 1053,
+                "endFrame": 1311,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "e0c7f15d83f5c95c6ba4fe8f2b3f859595e35c78f395ae264cf65f5c79a7449f"
+              },
+              {
+                "text": "Las acumuladas son un cuarto y tres cuartos; el intervalo contiene una mitad de probabilidad.",
+                "start": 44,
+                "end": 50.43333333333333,
+                "startFrame": 1320,
+                "endFrame": 1513,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "f39f83be80429d7a34879b6e669d39b24103f4d6a1d32f5368cdaa3a6d0fd342"
+              },
+              {
+                "text": "El centro sigue siendo un umbral válido.",
+                "start": 50.733333333333334,
+                "end": 53.733333333333334,
+                "startFrame": 1522,
+                "endFrame": 1612,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "7a302a3b3783ac879a3235ab34dc4eee2dadc27cf27ca35a00d6efbebfe98fa5"
+              },
+              {
+                "text": "En la Cauchy estándar, la integral positiva de valor por densidad crece como un logaritmo sin límite.",
+                "start": 54.03333333333333,
+                "end": 61.333333333333336,
+                "startFrame": 1621,
+                "endFrame": 1840,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "991cfdbe2bf32832c5452eba9be91c1856743d6771502529d0b1b0199c0f82fa"
+              },
+              {
+                "text": "La negativa también diverge en valor absoluto.",
+                "start": 61.63333333333333,
+                "end": 64.63333333333334,
+                "startFrame": 1849,
+                "endFrame": 1939,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "4aa1d40458ff705b6bdde67641e600e3fb11442283ddef5f26795ec643f7e441"
+              },
+              {
+                "text": "No pueden cancelarse para dar esperanza cero; sin esperanza, tampoco definimos su varianza.",
+                "start": 64.93333333333334,
+                "end": 70.53333333333333,
+                "startFrame": 1948,
+                "endFrame": 2116,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "5801678a35346a6327c88e8b30120a45f834e83a120e46c006ed9bd200dddb23"
+              }
+            ]
+          },
+          {
+            "start": 70.83333333333333,
+            "end": 140.63333333333333,
+            "cues": [
+              {
+                "text": "Weibull describe tiempos no negativos con escala alfa y forma beta positivas.",
+                "start": 70.83333333333333,
+                "end": 76,
+                "startFrame": 2125,
+                "endFrame": 2280,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "f6a477eae88e21ddb93ce6925fe331b1ae0af14a415ca484d3125e0f31b16fbe"
+              },
+              {
+                "text": "Su supervivencia eleva el tiempo relativo a beta antes de aplicar la exponencial negativa.",
+                "start": 76.3,
+                "end": 82.3,
+                "startFrame": 2289,
+                "endFrame": 2469,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "68656f78ce7e417c7e4dcf2367e76949b282aa5f687068f6d5373ea0bdf542d7"
+              },
+              {
+                "text": "El cociente tiempo entre escala no tiene unidades.",
+                "start": 82.6,
+                "end": 86.03333333333333,
+                "startFrame": 2478,
+                "endFrame": 2581,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "91b9af48b533c8d3812ed7fb86ee27eec5d78ef5ac3fce953a73de7441eb546e"
+              },
+              {
+                "text": "Con escala dos y forma dos, a tiempo dos el cociente es uno y su cuadrado también uno.",
+                "start": 86.33333333333333,
+                "end": 94.06666666666666,
+                "startFrame": 2590,
+                "endFrame": 2822,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "41452d5a81eefa250ab4831af2b4c57a4d9ad6aca6532d7b7cae3780fa09df00"
+              },
+              {
+                "text": "La supervivencia es e elevado a menos uno.",
+                "start": 94.36666666666666,
+                "end": 97.8,
+                "startFrame": 2831,
+                "endFrame": 2934,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "722b07f5a1839e7618b461b5457109e38b8f6e0f1e925135e7bfc6078a414fda"
+              },
+              {
+                "text": "Que dos sea la escala no lo convierte en media: la media depende también de la forma.",
+                "start": 98.1,
+                "end": 105.4,
+                "startFrame": 2943,
+                "endFrame": 3162,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "2619642f2026d7c391703b68533be1bf96e8eaa66468d760c0fa91e42a68fdff"
+              },
+              {
+                "text": "El riesgo divide densidad por supervivencia.",
+                "start": 105.7,
+                "end": 108.3,
+                "startFrame": 3171,
+                "endFrame": 3249,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "28e8be3c10f71349c01b61685fbbc81a2ac28def6b1a2dec5e588dbccf6611d3"
+              },
+              {
+                "text": "Su potencia del tiempo crece si beta supera uno, decrece si está entre cero y uno y es constante si beta vale uno.",
+                "start": 108.6,
+                "end": 118.46666666666667,
+                "startFrame": 3258,
+                "endFrame": 3554,
+                "words": 23,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "a5883314019682e99fdc87e53e578cbd6b7b0031b2b67db3b451e3a68d387c04"
+              },
+              {
+                "text": "Solo en ese último caso recuperamos la exponencial y su falta de memoria.",
+                "start": 118.76666666666667,
+                "end": 124.36666666666666,
+                "startFrame": 3563,
+                "endFrame": 3731,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "6806686827ba2b2e011ffbc0485b49249016cd4c722f809a5a53c952b7a1229f"
+              },
+              {
+                "text": "Un percentil se obtiene deshaciendo la exponencial y después la potencia.",
+                "start": 124.66666666666667,
+                "end": 129.4,
+                "startFrame": 3740,
+                "endFrame": 3882,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "3ee619c2f28274c7db282f543999d90bcf58715eda30dc0c49313d735451db5b"
+              },
+              {
+                "text": "Elegir Weibull exige pensar si ese riesgo creciente o decreciente representa el mecanismo.",
+                "start": 129.7,
+                "end": 135.3,
+                "startFrame": 3891,
+                "endFrame": 4059,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "7e04742cfb40e8c9df208c475cc8be5f7a8b8d9f33a7159598b6e5fe644dc159"
+              },
+              {
+                "text": "Una curva flexible no demuestra envejecimiento ni causalidad por sí sola.",
+                "start": 135.6,
+                "end": 140.33333333333334,
+                "startFrame": 4068,
+                "endFrame": 4210,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 11,
+                "sourceCueSha256": "2d74611c918eec9ab4c493a4b754b72170a35e408790b29c5654648283645050"
+              }
+            ]
+          },
+          {
+            "start": 140.63333333333333,
+            "end": 150.36666666666667,
+            "cues": [
+              {
+                "text": "La desviación de una señal de biosensor respecto a una referencia se modeliza, de forma ficticia, con una Cauchy de colas pesadas.",
+                "start": 140.63333333333333,
+                "end": 150.06666666666666,
+                "startFrame": 4219,
+                "endFrame": 4502,
+                "words": 22,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "3d676e029e5f73c65c99af2aa295f0c5334316806ae7d64d0f7a7c7577aa4b39"
+              }
+            ]
+          },
+          {
+            "start": 150.36666666666667,
+            "end": 161.2,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 150.36666666666667,
+                "end": 152.96666666666667,
+                "startFrame": 4511,
+                "endFrame": 4589,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula la probabilidad de que equis caiga en el intervalo indicado.",
+                "start": 153.26666666666668,
+                "end": 158,
+                "startFrame": 4598,
+                "endFrame": 4740,
+                "words": 11,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "3fb961bc636bab810cfdb0b67ce61f5a92cbb91006ce94dc4ddf0f6102cf4832"
+              },
+              {
+                "text": "Queremos la probabilidad entre dos límites.",
+                "start": 158.3,
+                "end": 160.9,
+                "startFrame": 4749,
+                "endFrame": 4827,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "b520489ffbda9cea11bb7236403e42a9d6bdbb883f94809152ad5648c78d6804"
+              }
+            ]
+          },
+          {
+            "start": 161.2,
+            "end": 180.13333333333333,
+            "cues": [
+              {
+                "text": "La localización es el centro de simetría y la escala es positiva.",
+                "start": 161.2,
+                "end": 166.36666666666667,
+                "startFrame": 4836,
+                "endFrame": 4991,
+                "words": 12,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "c0e5fa915b16cb839799f3fd5d02f2a6346b67598e21336eb01e4f037a0f0237"
+              },
+              {
+                "text": "La acumulada de Cauchy usa la arco tangente y permite calcular áreas y mediana.",
+                "start": 166.66666666666666,
+                "end": 172.66666666666666,
+                "startFrame": 5000,
+                "endFrame": 5180,
+                "words": 14,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "261d81ce8a7c10d25bb2b83f5e16805ab97a8e414008d5c2ef30945adc2c7373"
+              },
+              {
+                "text": "Sus colas no tienen esperanza ni varianza: el centro de simetría no puede llamarse media poblacional.",
+                "start": 172.96666666666667,
+                "end": 179.83333333333334,
+                "startFrame": 5189,
+                "endFrame": 5395,
+                "words": 16,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "ae6d40f3b91591e3bcd273c5a5d042a0c1ab93e0904f69b393146666d2ae16a3"
+              }
+            ]
+          },
+          {
+            "start": 180.13333333333333,
+            "end": 190.73333333333332,
+            "cues": [
+              {
+                "text": "Localización equis minúscula subíndice 0 igual a menos 2 y escala gamma igual a 1, en unidades de señal; soporte toda la recta real.",
+                "start": 180.13333333333333,
+                "end": 190.43333333333334,
+                "startFrame": 5404,
+                "endFrame": 5713,
+                "words": 24,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "9e42c94f62a6c0b8028ec8914b47b58a5347151d46f3391eaefe67c82f61285b"
+              }
+            ]
+          },
+          {
+            "start": 190.73333333333332,
+            "end": 202.5,
+            "cues": [
+              {
+                "text": "Intervalo intervalo cerrado desde menos 3 hasta menos 1.",
+                "start": 190.73333333333332,
+                "end": 194.6,
+                "startFrame": 5722,
+                "endFrame": 5838,
+                "words": 9,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "e8cba08365827b6c8a1e109197eed6a9ade71b83b7b18123592594890ca5f734"
+              },
+              {
+                "text": "La localización es mediana, no media: esperanza de equis no existe y la varianza no está definida.",
+                "start": 194.9,
+                "end": 202.2,
+                "startFrame": 5847,
+                "endFrame": 6066,
+                "words": 17,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "a14cd237a41299c564dbb54a8812f5eed0cfa41ff52274ba2fe36235ab986950"
+              }
+            ]
+          },
+          {
+            "start": 202.5,
+            "end": 210.53333333333333,
+            "cues": [
+              {
+                "text": "Se supone este modelo para una señal con signo, no para un recuento ni para toda señal biológica.",
+                "start": 202.5,
+                "end": 210.23333333333332,
+                "startFrame": 6075,
+                "endFrame": 6307,
+                "words": 18,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "820f910dfbe60d4a582114b6fe62de5eeee4204ee67a1aeb0c2b96a872bc4260"
+              }
+            ]
+          },
+          {
+            "start": 210.53333333333333,
+            "end": 216,
+            "cues": [
+              {
+                "text": "La simetría no permite cancelar integrales divergentes para definir una esperanza finita.",
+                "start": 210.53333333333333,
+                "end": 215.7,
+                "startFrame": 6316,
+                "endFrame": 6471,
+                "words": 12,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "4adda6411d92d6db431af46ba55e27daf0a427e2a39b0e45f8388dfe511a6c21"
+              }
+            ]
+          },
+          {
+            "start": 216,
+            "end": 229.46666666666667,
+            "cues": [
+              {
+                "text": "Resta las CDF de los extremos; no uses una media ni una desviación típica inexistentes.",
+                "start": 216,
+                "end": 222.43333333333334,
+                "startFrame": 6480,
+                "endFrame": 6673,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "20ef3111022ca4bf9af95d0c3c35c6f1a7cdfa69ef4a48195cf0513b24d4640c"
+              },
+              {
+                "text": "Restar las dos acumuladas elimina lo anterior al límite inferior y conserva solo el intervalo.",
+                "start": 222.73333333333332,
+                "end": 229.16666666666666,
+                "startFrame": 6682,
+                "endFrame": 6875,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "f0b26360e136342fdd58238fedd44e0934b27fabbee8d7714eff2daef36a6891"
+              }
+            ]
+          },
+          {
+            "start": 229.46666666666667,
+            "end": 258.8666666666667,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 229.46666666666667,
+                "end": 232.46666666666667,
+                "startFrame": 6884,
+                "endFrame": 6974,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula la probabilidad de que equis caiga en el intervalo indicado.",
+                "start": 232.76666666666668,
+                "end": 237.5,
+                "startFrame": 6983,
+                "endFrame": 7125,
+                "words": 11,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "470e0e3539b052e627e971ccead8c87a7990735ae850b13d9cf40a416006b579"
+              },
+              {
+                "text": "La acumulada de Cauchy se expresa mediante arctangentes y permite calcular intervalos y mediana.",
+                "start": 237.8,
+                "end": 243.8,
+                "startFrame": 7134,
+                "endFrame": 7314,
+                "words": 14,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "ac6797047fb51010f7e880151a6db150fbd82ef61809766073181475c2237043"
+              },
+              {
+                "text": "Sus colas impiden definir esperanza y varianza: la simetría no autoriza cancelar dos integrales divergentes.",
+                "start": 244.1,
+                "end": 250.53333333333333,
+                "startFrame": 7323,
+                "endFrame": 7516,
+                "words": 15,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "ddb86e52f96fe54b085e787d980308c0db9dcb6def7af642ccc878338ff9ed75"
+              },
+              {
+                "text": "Para este apartado: Resta las CDF de los extremos; no uses una media ni una desviación típica inexistentes.",
+                "start": 250.83333333333334,
+                "end": 258.56666666666666,
+                "startFrame": 7525,
+                "endFrame": 7757,
+                "words": 18,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "e037acf6fd37f450c8bd5ed216a916abde0475356af3bee320ea833751745c66"
+              }
+            ]
+          },
+          {
+            "start": 258.8666666666667,
+            "end": 276.76666666666665,
+            "cues": [
+              {
+                "text": "Cambiar a la escala estándar. abre paréntesis, ele menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma igual a menos 1 y abre paréntesis, u menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma igual a 1.",
+                "start": 258.8666666666667,
+                "end": 276.46666666666664,
+                "startFrame": 7766,
+                "endFrame": 8294,
+                "words": 41,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "103a35309b9bdd567a976e4e469aa54f3db2deb1d36096da77e7ce1a2ab422e9"
+              }
+            ]
+          },
+          {
+            "start": 276.76666666666665,
+            "end": 284.6666666666667,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 276.76666666666665,
+                "end": 280.2,
+                "startFrame": 8303,
+                "endFrame": 8406,
+                "words": 8,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 280.5,
+                "end": 284.3666666666667,
+                "startFrame": 8415,
+                "endFrame": 8531,
+                "words": 9,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 284.6666666666667,
+            "end": 303.8333333333333,
+            "cues": [
+              {
+                "text": "Escribir la acumulada. efe mayúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 1 dividido entre 2 más arco tangente de abre paréntesis, abre paréntesis, equis minúscula menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma , cierra paréntesis dividido entre pi.",
+                "start": 284.6666666666667,
+                "end": 303.53333333333336,
+                "startFrame": 8540,
+                "endFrame": 9106,
+                "words": 44,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "d6fd8757c81294cb956d8635b7e1d358ebe01c0481f6a31a168900aebf459412"
+              }
+            ]
+          },
+          {
+            "start": 303.8333333333333,
+            "end": 322.2,
+            "cues": [
+              {
+                "text": "Restar las áreas.",
+                "start": 303.8333333333333,
+                "end": 305.1333333333333,
+                "startFrame": 9115,
+                "endFrame": 9154,
+                "words": 3,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "0d46e78e6ee60267eb99e19801ee3a84020201bac582928bea31511c666f051c"
+              },
+              {
+                "text": "Al restar las acumuladas se cancelan las dos mitades.",
+                "start": 305.43333333333334,
+                "end": 309.3,
+                "startFrame": 9163,
+                "endFrame": 9279,
+                "words": 9,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "7f1259c2441671b6c84c7d195164d9dfc87ea94db4c76f4c3e6a598dac85b89f"
+              },
+              {
+                "text": "Queda la diferencia entre arco tangente de 1 y arco tangente de menos uno, dividida entre pi: aproximadamente 0 coma 5.",
+                "start": 309.6,
+                "end": 318.6,
+                "startFrame": 9288,
+                "endFrame": 9558,
+                "words": 21,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "9f69fd30fcaa6af4b54a87e0e393237e06e69d171e7ea2c1986111d67906ebbb"
+              },
+              {
+                "text": "Es el área entre los límites estandarizados.",
+                "start": 318.9,
+                "end": 321.9,
+                "startFrame": 9567,
+                "endFrame": 9657,
+                "words": 7,
+                "sceneIndex": 14,
+                "cueIndex": 3,
+                "sourceCueSha256": "a1331fac414ce4871d23cd8c9972c149f06576175bdd726bbde67b04fbee1447"
+              }
+            ]
+          },
+          {
+            "start": 322.2,
+            "end": 342.73333333333335,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 322.2,
+                "end": 323.5,
+                "startFrame": 9666,
+                "endFrame": 9705,
+                "words": 3,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 323.8,
+                "end": 328.53333333333336,
+                "startFrame": 9714,
+                "endFrame": 9856,
+                "words": 11,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "50c6c5d1bad50ec3564511709f31053bd27c5f4d66de128356fc0db0e8e1f1cf"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 328.8333333333333,
+                "end": 336.1333333333333,
+                "startFrame": 9865,
+                "endFrame": 10084,
+                "words": 17,
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+              },
+              {
+                "text": "Los extremos individuales tienen probabilidad cero; las colas no impiden calcular probabilidades de intervalos.",
+                "start": 336.43333333333334,
+                "end": 342.43333333333334,
+                "startFrame": 10093,
+                "endFrame": 10273,
+                "words": 14,
+                "sceneIndex": 15,
+                "cueIndex": 3,
+                "sourceCueSha256": "cd3a4f45a38b2889b7910d91fa4804d144140c00bcea90fb4bcd5376bbcbebce"
+              }
+            ]
+          },
+          {
+            "start": 342.73333333333335,
+            "end": 354.06666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 342.73333333333335,
+                "end": 347.46666666666664,
+                "startFrame": 10282,
+                "endFrame": 10424,
+                "words": 11,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "a094fd16298cc02b5a91543659cdfdc4c95662e410268ecc69af07f8070307b3"
+              },
+              {
+                "text": "Los extremos individuales tienen probabilidad cero; las colas no impiden calcular probabilidades de intervalos.",
+                "start": 347.76666666666665,
+                "end": 353.76666666666665,
+                "startFrame": 10433,
+                "endFrame": 10613,
+                "words": 14,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "6e92a0073f51fc6204492dc6e2abc63ed9767d6d123690eea689e8df4a0eb58c"
+              }
+            ]
+          },
+          {
+            "start": 354.06666666666666,
+            "end": 366.6,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 354.06666666666666,
+                "end": 356.6666666666667,
+                "startFrame": 10622,
+                "endFrame": 10700,
+                "words": 6,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula la mediana de equis, el cuantil 0 coma 5.",
+                "start": 356.96666666666664,
+                "end": 361.26666666666665,
+                "startFrame": 10709,
+                "endFrame": 10838,
+                "words": 10,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "8a9e529ad06bf84e5f465d61dc430e12b694c81883af704d66dffc2488f844a8"
+              },
+              {
+                "text": "Queremos el umbral que deja a su izquierda la probabilidad indicada.",
+                "start": 361.56666666666666,
+                "end": 366.3,
+                "startFrame": 10847,
+                "endFrame": 10989,
+                "words": 11,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "a2aa862262d7f9ccd6383a2b2c6bb5d3d3abb8b15552f4de9caf504605024a03"
+              }
+            ]
+          },
+          {
+            "start": 366.6,
+            "end": 385.53333333333336,
+            "cues": [
+              {
+                "text": "La localización es el centro de simetría y la escala es positiva.",
+                "start": 366.6,
+                "end": 371.76666666666665,
+                "startFrame": 10998,
+                "endFrame": 11153,
+                "words": 12,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "c0e5fa915b16cb839799f3fd5d02f2a6346b67598e21336eb01e4f037a0f0237"
+              },
+              {
+                "text": "La acumulada de Cauchy usa la arco tangente y permite calcular áreas y mediana.",
+                "start": 372.06666666666666,
+                "end": 378.06666666666666,
+                "startFrame": 11162,
+                "endFrame": 11342,
+                "words": 14,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "261d81ce8a7c10d25bb2b83f5e16805ab97a8e414008d5c2ef30945adc2c7373"
+              },
+              {
+                "text": "Sus colas no tienen esperanza ni varianza: el centro de simetría no puede llamarse media poblacional.",
+                "start": 378.3666666666667,
+                "end": 385.23333333333335,
+                "startFrame": 11351,
+                "endFrame": 11557,
+                "words": 16,
+                "sceneIndex": 18,
+                "cueIndex": 2,
+                "sourceCueSha256": "ae6d40f3b91591e3bcd273c5a5d042a0c1ab93e0904f69b393146666d2ae16a3"
+              }
+            ]
+          },
+          {
+            "start": 385.53333333333336,
+            "end": 396.1333333333333,
+            "cues": [
+              {
+                "text": "Localización equis minúscula subíndice 0 igual a menos 2 y escala gamma igual a 1, en unidades de señal; soporte toda la recta real.",
+                "start": 385.53333333333336,
+                "end": 395.8333333333333,
+                "startFrame": 11566,
+                "endFrame": 11875,
+                "words": 24,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "9e42c94f62a6c0b8028ec8914b47b58a5347151d46f3391eaefe67c82f61285b"
+              }
+            ]
+          },
+          {
+            "start": 396.1333333333333,
+            "end": 407.9,
+            "cues": [
+              {
+                "text": "Intervalo intervalo cerrado desde menos 3 hasta menos 1.",
+                "start": 396.1333333333333,
+                "end": 400,
+                "startFrame": 11884,
+                "endFrame": 12000,
+                "words": 9,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "e8cba08365827b6c8a1e109197eed6a9ade71b83b7b18123592594890ca5f734"
+              },
+              {
+                "text": "La localización es mediana, no media: esperanza de equis no existe y la varianza no está definida.",
+                "start": 400.3,
+                "end": 407.6,
+                "startFrame": 12009,
+                "endFrame": 12228,
+                "words": 17,
+                "sceneIndex": 20,
+                "cueIndex": 1,
+                "sourceCueSha256": "a14cd237a41299c564dbb54a8812f5eed0cfa41ff52274ba2fe36235ab986950"
+              }
+            ]
+          },
+          {
+            "start": 407.9,
+            "end": 415.93333333333334,
+            "cues": [
+              {
+                "text": "Se supone este modelo para una señal con signo, no para un recuento ni para toda señal biológica.",
+                "start": 407.9,
+                "end": 415.6333333333333,
+                "startFrame": 12237,
+                "endFrame": 12469,
+                "words": 18,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "820f910dfbe60d4a582114b6fe62de5eeee4204ee67a1aeb0c2b96a872bc4260"
+              }
+            ]
+          },
+          {
+            "start": 415.93333333333334,
+            "end": 421.4,
+            "cues": [
+              {
+                "text": "La simetría no permite cancelar integrales divergentes para definir una esperanza finita.",
+                "start": 415.93333333333334,
+                "end": 421.1,
+                "startFrame": 12478,
+                "endFrame": 12633,
+                "words": 12,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "4adda6411d92d6db431af46ba55e27daf0a427e2a39b0e45f8388dfe511a6c21"
+              }
+            ]
+          },
+          {
+            "start": 421.4,
+            "end": 440.03333333333336,
+            "cues": [
+              {
+                "text": "Impón efe mayúscula abre paréntesis, eme, cierra paréntesis igual a 1 dividido entre 2, no esperanza de equis igual a equis minúscula subíndice 0.",
+                "start": 421.4,
+                "end": 431.7,
+                "startFrame": 12642,
+                "endFrame": 12951,
+                "words": 24,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "52a4dc4e4f25fe4b32bb54561c1e7b8320eb71e50935615756b3ffd63fc99565"
+              },
+              {
+                "text": "Aquí la probabilidad es el dato y el valor de la variable es la incógnita; invertimos la acumulada.",
+                "start": 432,
+                "end": 439.73333333333335,
+                "startFrame": 12960,
+                "endFrame": 13192,
+                "words": 18,
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "sourceCueSha256": "5a6978c4b92b332473eefe482949421febfb40f920e100c2dc7f82d530dbe7fc"
+              }
+            ]
+          },
+          {
+            "start": 440.03333333333336,
+            "end": 472.8666666666667,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 440.03333333333336,
+                "end": 443.03333333333336,
+                "startFrame": 13201,
+                "endFrame": 13291,
+                "words": 7,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula la mediana de equis, el cuantil 0 coma 5.",
+                "start": 443.3333333333333,
+                "end": 447.6333333333333,
+                "startFrame": 13300,
+                "endFrame": 13429,
+                "words": 10,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "1867f61f53f1683effe590be54b35e78de35e4760bf3bde7b07837e4e97742c5"
+              },
+              {
+                "text": "La acumulada de Cauchy se expresa mediante arctangentes y permite calcular intervalos y mediana.",
+                "start": 447.93333333333334,
+                "end": 453.93333333333334,
+                "startFrame": 13438,
+                "endFrame": 13618,
+                "words": 14,
+                "sceneIndex": 24,
+                "cueIndex": 2,
+                "sourceCueSha256": "9dc7c05c21db2965e8092473249929467f4cf1600dfddbe1d3e790527f03dd0e"
+              },
+              {
+                "text": "Sus colas impiden definir esperanza y varianza: la simetría no autoriza cancelar dos integrales divergentes.",
+                "start": 454.23333333333335,
+                "end": 460.6666666666667,
+                "startFrame": 13627,
+                "endFrame": 13820,
+                "words": 15,
+                "sceneIndex": 24,
+                "cueIndex": 3,
+                "sourceCueSha256": "2896ceae21762aa7b6d2cc55c2140bde9e811b40a42279c465320f4eadf63e8f"
+              },
+              {
+                "text": "Para este apartado: Impón efe mayúscula abre paréntesis, eme, cierra paréntesis igual a 1 dividido entre 2, no esperanza de equis igual a equis minúscula subíndice 0.",
+                "start": 460.96666666666664,
+                "end": 472.56666666666666,
+                "startFrame": 13829,
+                "endFrame": 14177,
+                "words": 27,
+                "sceneIndex": 24,
+                "cueIndex": 4,
+                "sourceCueSha256": "8d08504b65e6972917d9c2e96e8cf8fb1e7bc99c6d4737470b3fc1d6071086ed"
+              }
+            ]
+          },
+          {
+            "start": 472.8666666666667,
+            "end": 508.3333333333333,
+            "cues": [
+              {
+                "text": "Resolver la acumulada central. efe mayúscula abre paréntesis, eme, cierra paréntesis igual a 1 dividido entre 2 implica arco tangente de abre paréntesis, abre paréntesis, eme menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma , cierra paréntesis igual a 0, luego eme igual a equis minúscula subíndice 0. cuantil abre paréntesis, u, cierra paréntesis igual a equis minúscula subíndice 0 más gamma tangente abre paréntesis, pi abre paréntesis, u menos 1 dividido entre 2, cierra paréntesis , cierra paréntesis.",
+                "start": 472.8666666666667,
+                "end": 508.03333333333336,
+                "startFrame": 14186,
+                "endFrame": 15241,
+                "words": 82,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "b73e7698fc0d5a4d2ae5f3650f049ecbd0ebf1dd987093715b83a73430a3e55f"
+              }
+            ]
+          },
+          {
+            "start": 508.3333333333333,
+            "end": 525.1333333333333,
+            "cues": [
+              {
+                "text": "Sustituir el cuantil.",
+                "start": 508.3333333333333,
+                "end": 509.6333333333333,
+                "startFrame": 15250,
+                "endFrame": 15289,
+                "words": 3,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "4de0d76af1ed75ae439116b2b249d5eb204bddd148ea8d92a363a1c5c44feb3b"
+              },
+              {
+                "text": "Para la probabilidad una mitad, el argumento de la tangente es cero y su valor también.",
+                "start": 509.93333333333334,
+                "end": 516.8,
+                "startFrame": 15298,
+                "endFrame": 15504,
+                "words": 16,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "8ffafd4e42dfb483819064307226f11ecd83a2b6b7db81f135a2094217ccb68f"
+              },
+              {
+                "text": "La corrección de escala desaparece: la mediana coincide con la localización, menos 2, aunque no exista una esperanza.",
+                "start": 517.1,
+                "end": 524.8333333333334,
+                "startFrame": 15513,
+                "endFrame": 15745,
+                "words": 18,
+                "sceneIndex": 26,
+                "cueIndex": 2,
+                "sourceCueSha256": "18b74872ea22ced82f908ecfb3a406ba8ec0f14ef9842f25484a2ed3961b5bc5"
+              }
+            ]
+          },
+          {
+            "start": 525.1333333333333,
+            "end": 544.3666666666667,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 525.1333333333333,
+                "end": 526.4333333333333,
+                "startFrame": 15754,
+                "endFrame": 15793,
+                "words": 3,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es menos 2 unidades de señal.",
+                "start": 526.7333333333333,
+                "end": 530.1666666666666,
+                "startFrame": 15802,
+                "endFrame": 15905,
+                "words": 8,
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "sourceCueSha256": "8d387f55c2e19cdbcdb063e4fee8d3e10ea75fb21c99de7d868f7b2886d8fab7"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 530.4666666666667,
+                "end": 536.4666666666667,
+                "startFrame": 15914,
+                "endFrame": 16094,
+                "words": 14,
+                "sceneIndex": 27,
+                "cueIndex": 2,
+                "sourceCueSha256": "6dc6e00240ca53571bfa539f57606b77069459b39c0bf1d3d33276817d072b42"
+              },
+              {
+                "text": "La mediana existe aunque la esperanza no exista; una media muestral finita no crea una media poblacional.",
+                "start": 536.7666666666667,
+                "end": 544.0666666666667,
+                "startFrame": 16103,
+                "endFrame": 16322,
+                "words": 17,
+                "sceneIndex": 27,
+                "cueIndex": 3,
+                "sourceCueSha256": "f305304d9cb1a7247cd58d549833da71c6be5249356aaf0fb72a73f18e613f0d"
+              }
+            ]
+          },
+          {
+            "start": 544.3666666666667,
+            "end": 555.7,
+            "cues": [
+              {
+                "text": "El resultado es menos 2 unidades de señal.",
+                "start": 544.3666666666667,
+                "end": 547.8,
+                "startFrame": 16331,
+                "endFrame": 16434,
+                "words": 8,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "47e0a6942cb36363c6297673539eae5901311a3218b43eb1c6d0384d1e107960"
+              },
+              {
+                "text": "La mediana existe aunque la esperanza no exista; una media muestral finita no crea una media poblacional.",
+                "start": 548.1,
+                "end": 555.4,
+                "startFrame": 16443,
+                "endFrame": 16662,
+                "words": 17,
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "sourceCueSha256": "055647685714db79794cde511a7ae431ebaac146e7ae779599e65a964b82f245"
+              }
+            ]
+          },
+          {
+            "start": 555.7,
+            "end": 562.8666666666667,
+            "cues": [
+              {
+                "text": "T es el tiempo hasta que un biosensor pierde su actividad, bajo un modelo Weibull ficticio.",
+                "start": 555.7,
+                "end": 562.5666666666667,
+                "startFrame": 16671,
+                "endFrame": 16877,
+                "words": 16,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "6fd091518c4e866fe685fa34ed891b623ebbd524940df543aac9dc725f23921d"
+              }
+            ]
+          },
+          {
+            "start": 562.8666666666667,
+            "end": 574.1,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 562.8666666666667,
+                "end": 565.4666666666667,
+                "startFrame": 16886,
+                "endFrame": 16964,
+                "words": 6,
+                "sceneIndex": 30,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de te mayor que te minúscula.",
+                "start": 565.7666666666667,
+                "end": 569.2,
+                "startFrame": 16973,
+                "endFrame": 17076,
+                "words": 8,
+                "sceneIndex": 30,
+                "cueIndex": 1,
+                "sourceCueSha256": "2f04917466d3cfb6e83b0f176afd6a9cd851b4caa5e4e91169e2be194a106d24"
+              },
+              {
+                "text": "Queremos la probabilidad que queda a la derecha del umbral.",
+                "start": 569.5,
+                "end": 573.8,
+                "startFrame": 17085,
+                "endFrame": 17214,
+                "words": 10,
+                "sceneIndex": 30,
+                "cueIndex": 2,
+                "sourceCueSha256": "2e34bb1274df690774b21d51ed60aa60ac862e8447e0412710571904cc890f87"
+              }
+            ]
+          },
+          {
+            "start": 574.1,
+            "end": 593.9,
+            "cues": [
+              {
+                "text": "La escala tiene unidades de tiempo y la forma es adimensional.",
+                "start": 574.1,
+                "end": 578.8333333333334,
+                "startFrame": 17223,
+                "endFrame": 17365,
+                "words": 11,
+                "sceneIndex": 31,
+                "cueIndex": 0,
+                "sourceCueSha256": "57a59883d4a4a41cd8e62570e24eae0fb16fd8c0f0bc4dbc97eb59eaddf0c5da"
+              },
+              {
+                "text": "La supervivencia es la exponencial negativa del tiempo relativo a la escala elevado a la forma.",
+                "start": 579.1333333333333,
+                "end": 586,
+                "startFrame": 17374,
+                "endFrame": 17580,
+                "words": 16,
+                "sceneIndex": 31,
+                "cueIndex": 1,
+                "sourceCueSha256": "917a3aba3e32f6d908ad6b2f23619705348719c5640c8464377c1207881fbbe1"
+              },
+              {
+                "text": "Para recuperar un cuantil deshacemos la exponencial con un logaritmo y luego la potencia con una raíz.",
+                "start": 586.3,
+                "end": 593.6,
+                "startFrame": 17589,
+                "endFrame": 17808,
+                "words": 17,
+                "sceneIndex": 31,
+                "cueIndex": 2,
+                "sourceCueSha256": "510607f7912af4f3a411d4e00e5158d7654ce30c7283d5cae13a6d29685ceac9"
+              }
+            ]
+          },
+          {
+            "start": 593.9,
+            "end": 602.8,
+            "cues": [
+              {
+                "text": "Escala alfa igual a 6 horas; forma beta igual a 1, sin unidades; soporte te mayor o igual que 0.",
+                "start": 593.9,
+                "end": 602.5,
+                "startFrame": 17817,
+                "endFrame": 18075,
+                "words": 20,
+                "sceneIndex": 32,
+                "cueIndex": 0,
+                "sourceCueSha256": "a8fb3e4b2f6e519f7524e8146f4c956479ccf2f0d516e8e23980a73fbbe17d3d"
+              }
+            ]
+          },
+          {
+            "start": 602.8,
+            "end": 609.5333333333333,
+            "cues": [
+              {
+                "text": "Umbral te minúscula igual a 6 horas; cuantil solicitado u igual a 0 coma 8.",
+                "start": 602.8,
+                "end": 609.2333333333333,
+                "startFrame": 18084,
+                "endFrame": 18277,
+                "words": 15,
+                "sceneIndex": 33,
+                "cueIndex": 0,
+                "sourceCueSha256": "74312c9dc71ea63cbf32228520187acd1a1b06256fd2332d91fa545d83e8cc27"
+              }
+            ]
+          },
+          {
+            "start": 609.5333333333333,
+            "end": 616.7,
+            "cues": [
+              {
+                "text": "Forma y escala son positivas; el modelo describe el tiempo completo, sin censura en este ejercicio.",
+                "start": 609.5333333333333,
+                "end": 616.4,
+                "startFrame": 18286,
+                "endFrame": 18492,
+                "words": 16,
+                "sceneIndex": 34,
+                "cueIndex": 0,
+                "sourceCueSha256": "eef81b79c9127f38c0ca7b03397c89a59cd285a9540cd3bc20028784ba90c8b2"
+              }
+            ]
+          },
+          {
+            "start": 616.7,
+            "end": 629.7666666666667,
+            "cues": [
+              {
+                "text": "La supervivencia es la exponencial de menos el tiempo relativo a la escala elevado a la forma.",
+                "start": 616.7,
+                "end": 624,
+                "startFrame": 18501,
+                "endFrame": 18720,
+                "words": 17,
+                "sceneIndex": 35,
+                "cueIndex": 0,
+                "sourceCueSha256": "2c6955042ebfc39f17609dc9395fa92334c35749152935c360ed5ffeaa9937ac"
+              },
+              {
+                "text": "Dividimos por la escala antes de elevar: el exponente debe ser adimensional.",
+                "start": 624.3,
+                "end": 629.4666666666667,
+                "startFrame": 18729,
+                "endFrame": 18884,
+                "words": 12,
+                "sceneIndex": 35,
+                "cueIndex": 1,
+                "sourceCueSha256": "32cf1bc7ba9ca43bdb07e382fd994fe0cdb277b2d0829e9c108bed2ffa94be77"
+              }
+            ]
+          },
+          {
+            "start": 629.7666666666667,
+            "end": 642.4,
+            "cues": [
+              {
+                "text": "Primero divide el tiempo por la escala y después eleva a la forma.",
+                "start": 629.7666666666667,
+                "end": 635.3666666666667,
+                "startFrame": 18893,
+                "endFrame": 19061,
+                "words": 13,
+                "sceneIndex": 36,
+                "cueIndex": 0,
+                "sourceCueSha256": "814edc939bc2223a5867eb3da9c508ffb4b00a33a8c0a3a93cda0412d635d588"
+              },
+              {
+                "text": "La acumulada mide lo que queda a la izquierda; la cola pedida es su complemento.",
+                "start": 635.6666666666666,
+                "end": 642.1,
+                "startFrame": 19070,
+                "endFrame": 19263,
+                "words": 15,
+                "sceneIndex": 36,
+                "cueIndex": 1,
+                "sourceCueSha256": "e388d1aa279f26f12dff60e215945d8f96c43b838295c61e98a86ef6bed12b77"
+              }
+            ]
+          },
+          {
+            "start": 642.4,
+            "end": 674.6666666666666,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 642.4,
+                "end": 645.4,
+                "startFrame": 19272,
+                "endFrame": 19362,
+                "words": 7,
+                "sceneIndex": 37,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de te mayor que te minúscula.",
+                "start": 645.7,
+                "end": 649.1333333333333,
+                "startFrame": 19371,
+                "endFrame": 19474,
+                "words": 8,
+                "sceneIndex": 37,
+                "cueIndex": 1,
+                "sourceCueSha256": "9acd26be76073513e2ef984536ac013dbddb89d341db7ef9325f3d540ea0e3df"
+              },
+              {
+                "text": "La supervivencia eleva el tiempo relativo a la escala a la potencia de forma.",
+                "start": 649.4333333333333,
+                "end": 655.4333333333333,
+                "startFrame": 19483,
+                "endFrame": 19663,
+                "words": 14,
+                "sceneIndex": 37,
+                "cueIndex": 2,
+                "sourceCueSha256": "904b77d2033ecfef6f9fcff0866a6c5520b3cf720af7cee2ea90c81e0e13e8c1"
+              },
+              {
+                "text": "Para un cuantil, deshacemos primero la exponencial con el logaritmo y después la potencia con una raíz.",
+                "start": 655.7333333333333,
+                "end": 663.0333333333333,
+                "startFrame": 19672,
+                "endFrame": 19891,
+                "words": 17,
+                "sceneIndex": 37,
+                "cueIndex": 3,
+                "sourceCueSha256": "fde159e66905d5ac077ca2e5e7b9267b8df7ae4518464b180991508580b9b704"
+              },
+              {
+                "text": "La escala tiene unidades de tiempo; la forma no.",
+                "start": 663.3333333333334,
+                "end": 667.2,
+                "startFrame": 19900,
+                "endFrame": 20016,
+                "words": 9,
+                "sceneIndex": 37,
+                "cueIndex": 4,
+                "sourceCueSha256": "e7a0fc375b7953948f92ae1297e6fad81e4dbb9b88dae259c518763f4a3ef68a"
+              },
+              {
+                "text": "Para este apartado: Primero divide el tiempo por la escala y después eleva a la forma.",
+                "start": 667.5,
+                "end": 674.3666666666667,
+                "startFrame": 20025,
+                "endFrame": 20231,
+                "words": 16,
+                "sceneIndex": 37,
+                "cueIndex": 5,
+                "sourceCueSha256": "d1b1fa8ffc361d6dc2c9a7d6324f922db1e5d2a2e5d3a6baf3f8785ae9697da7"
+              }
+            ]
+          },
+          {
+            "start": 674.6666666666666,
+            "end": 683.1333333333333,
+            "cues": [
+              {
+                "text": "Formar una razón sin unidades. te minúscula dividido entre alfa igual a 6 dividido entre 6 igual a 1.",
+                "start": 674.6666666666666,
+                "end": 682.8333333333334,
+                "startFrame": 20240,
+                "endFrame": 20485,
+                "words": 19,
+                "sceneIndex": 38,
+                "cueIndex": 0,
+                "sourceCueSha256": "88064e988fdd24644557c302e2ec0642152b8953e2bf8eabc4c2517664c80096"
+              }
+            ]
+          },
+          {
+            "start": 683.1333333333333,
+            "end": 710.4333333333333,
+            "cues": [
+              {
+                "text": "Aplicar la potencia y la exponencial. exponencial de abre paréntesis, menos abre paréntesis, 1, cierra paréntesis elevado a 1, cierra paréntesis igual a 0 coma 3 6 7 8 7 9 4. supervivencia abre paréntesis, te minúscula, cierra paréntesis igual a e elevado a abre paréntesis, menos abre paréntesis, te minúscula dividido entre alfa , cierra paréntesis elevado a beta , cierra paréntesis.",
+                "start": 683.1333333333333,
+                "end": 710.1333333333333,
+                "startFrame": 20494,
+                "endFrame": 21304,
+                "words": 63,
+                "sceneIndex": 39,
+                "cueIndex": 0,
+                "sourceCueSha256": "adf0784de5d6e09cdc1345ce42e09e0e3f8290b1484068459b8b2e58f2212d06"
+              }
+            ]
+          },
+          {
+            "start": 710.4333333333333,
+            "end": 728.9333333333333,
+            "cues": [
+              {
+                "text": "Relacionar supervivencia y CDF.",
+                "start": 710.4333333333333,
+                "end": 712.1666666666666,
+                "startFrame": 21313,
+                "endFrame": 21365,
+                "words": 4,
+                "sceneIndex": 40,
+                "cueIndex": 0,
+                "sourceCueSha256": "b8468481243bb3dcd51a1ec26367c236ea455069bb8806942ed36bb45c6a8479"
+              },
+              {
+                "text": "Haber perdido actividad antes del umbral y conservarla después son sucesos complementarios en este modelo continuo.",
+                "start": 712.4666666666667,
+                "end": 719.3333333333334,
+                "startFrame": 21374,
+                "endFrame": 21580,
+                "words": 16,
+                "sceneIndex": 40,
+                "cueIndex": 1,
+                "sourceCueSha256": "fd8a2a7cad15a6c4a2aad5182ec37f45aabe9b8a767c300e910dc6fc590bbdbb"
+              },
+              {
+                "text": "Restar a uno la acumulada en 6 horas da la misma supervivencia, 0 coma 3 6 7 8 7 9 4.",
+                "start": 719.6333333333333,
+                "end": 728.6333333333333,
+                "startFrame": 21589,
+                "endFrame": 21859,
+                "words": 21,
+                "sceneIndex": 40,
+                "cueIndex": 2,
+                "sourceCueSha256": "633b666572bebf77a709eeca0ce6022789d14563b14a57a4aa1c4a563307902b"
+              }
+            ]
+          },
+          {
+            "start": 728.9333333333333,
+            "end": 752.9,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 728.9333333333333,
+                "end": 730.2333333333333,
+                "startFrame": 21868,
+                "endFrame": 21907,
+                "words": 3,
+                "sceneIndex": 41,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 3 6 7 8 7 9 4 probabilidad entre 0 y 1.",
+                "start": 730.5333333333333,
+                "end": 737.8333333333334,
+                "startFrame": 21916,
+                "endFrame": 22135,
+                "words": 17,
+                "sceneIndex": 41,
+                "cueIndex": 1,
+                "sourceCueSha256": "f9a7e643e29334a7393be70a53c8078209cfa470b54ba8f0a02a764b9687689d"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 738.1333333333333,
+                "end": 745.4333333333333,
+                "startFrame": 22144,
+                "endFrame": 22363,
+                "words": 17,
+                "sceneIndex": 41,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+              },
+              {
+                "text": "Con forma uno se recupera una exponencial de escala alfa y tasa 1 dividido entre alfa.",
+                "start": 745.7333333333333,
+                "end": 752.6,
+                "startFrame": 22372,
+                "endFrame": 22578,
+                "words": 16,
+                "sceneIndex": 41,
+                "cueIndex": 3,
+                "sourceCueSha256": "596deb20a7c19495bd8b22d7a2d4a578de43940b843997ee2272b97c5d85b83b"
+              }
+            ]
+          },
+          {
+            "start": 752.9,
+            "end": 767.6666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 3 6 7 8 7 9 4 probabilidad entre 0 y 1.",
+                "start": 752.9,
+                "end": 760.2,
+                "startFrame": 22587,
+                "endFrame": 22806,
+                "words": 17,
+                "sceneIndex": 42,
+                "cueIndex": 0,
+                "sourceCueSha256": "1abe5975f00911d22c48c481d9a7585e5bf833237846653983464992740fa072"
+              },
+              {
+                "text": "Con forma uno se recupera una exponencial de escala alfa y tasa 1 dividido entre alfa.",
+                "start": 760.5,
+                "end": 767.3666666666667,
+                "startFrame": 22815,
+                "endFrame": 23021,
+                "words": 16,
+                "sceneIndex": 42,
+                "cueIndex": 1,
+                "sourceCueSha256": "5aca385fe22d24350357f7b004b2d616b8c4e2b1f99911d7bbbb2543fb32988e"
+              }
+            ]
+          },
+          {
+            "start": 767.6666666666666,
+            "end": 782.3333333333334,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 767.6666666666666,
+                "end": 770.2666666666667,
+                "startFrame": 23030,
+                "endFrame": 23108,
+                "words": 6,
+                "sceneIndex": 43,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula cu tal que probabilidad de te menor o igual que cu igual a u.",
+                "start": 770.5666666666667,
+                "end": 777,
+                "startFrame": 23117,
+                "endFrame": 23310,
+                "words": 15,
+                "sceneIndex": 43,
+                "cueIndex": 1,
+                "sourceCueSha256": "94069cf782be7be0cd7ccd746062c42650bf22d568cd974af0e69aa931d2a300"
+              },
+              {
+                "text": "Queremos el umbral que deja a su izquierda la probabilidad indicada.",
+                "start": 777.3,
+                "end": 782.0333333333333,
+                "startFrame": 23319,
+                "endFrame": 23461,
+                "words": 11,
+                "sceneIndex": 43,
+                "cueIndex": 2,
+                "sourceCueSha256": "9ef01c4dee2b45a332c4a9cf7943d0a3407632017fd11ba49af3410ed814c63a"
+              }
+            ]
+          },
+          {
+            "start": 782.3333333333334,
+            "end": 802.1333333333333,
+            "cues": [
+              {
+                "text": "La escala tiene unidades de tiempo y la forma es adimensional.",
+                "start": 782.3333333333334,
+                "end": 787.0666666666667,
+                "startFrame": 23470,
+                "endFrame": 23612,
+                "words": 11,
+                "sceneIndex": 44,
+                "cueIndex": 0,
+                "sourceCueSha256": "57a59883d4a4a41cd8e62570e24eae0fb16fd8c0f0bc4dbc97eb59eaddf0c5da"
+              },
+              {
+                "text": "La supervivencia es la exponencial negativa del tiempo relativo a la escala elevado a la forma.",
+                "start": 787.3666666666667,
+                "end": 794.2333333333333,
+                "startFrame": 23621,
+                "endFrame": 23827,
+                "words": 16,
+                "sceneIndex": 44,
+                "cueIndex": 1,
+                "sourceCueSha256": "917a3aba3e32f6d908ad6b2f23619705348719c5640c8464377c1207881fbbe1"
+              },
+              {
+                "text": "Para recuperar un cuantil deshacemos la exponencial con un logaritmo y luego la potencia con una raíz.",
+                "start": 794.5333333333333,
+                "end": 801.8333333333334,
+                "startFrame": 23836,
+                "endFrame": 24055,
+                "words": 17,
+                "sceneIndex": 44,
+                "cueIndex": 2,
+                "sourceCueSha256": "510607f7912af4f3a411d4e00e5158d7654ce30c7283d5cae13a6d29685ceac9"
+              }
+            ]
+          },
+          {
+            "start": 802.1333333333333,
+            "end": 811.0333333333333,
+            "cues": [
+              {
+                "text": "Escala alfa igual a 6 horas; forma beta igual a 1, sin unidades; soporte te mayor o igual que 0.",
+                "start": 802.1333333333333,
+                "end": 810.7333333333333,
+                "startFrame": 24064,
+                "endFrame": 24322,
+                "words": 20,
+                "sceneIndex": 45,
+                "cueIndex": 0,
+                "sourceCueSha256": "a8fb3e4b2f6e519f7524e8146f4c956479ccf2f0d516e8e23980a73fbbe17d3d"
+              }
+            ]
+          },
+          {
+            "start": 811.0333333333333,
+            "end": 817.7666666666667,
+            "cues": [
+              {
+                "text": "Umbral te minúscula igual a 6 horas; cuantil solicitado u igual a 0 coma 8.",
+                "start": 811.0333333333333,
+                "end": 817.4666666666667,
+                "startFrame": 24331,
+                "endFrame": 24524,
+                "words": 15,
+                "sceneIndex": 46,
+                "cueIndex": 0,
+                "sourceCueSha256": "74312c9dc71ea63cbf32228520187acd1a1b06256fd2332d91fa545d83e8cc27"
+              }
+            ]
+          },
+          {
+            "start": 817.7666666666667,
+            "end": 824.9333333333333,
+            "cues": [
+              {
+                "text": "Forma y escala son positivas; el modelo describe el tiempo completo, sin censura en este ejercicio.",
+                "start": 817.7666666666667,
+                "end": 824.6333333333333,
+                "startFrame": 24533,
+                "endFrame": 24739,
+                "words": 16,
+                "sceneIndex": 47,
+                "cueIndex": 0,
+                "sourceCueSha256": "eef81b79c9127f38c0ca7b03397c89a59cd285a9540cd3bc20028784ba90c8b2"
+              }
+            ]
+          },
+          {
+            "start": 824.9333333333333,
+            "end": 838,
+            "cues": [
+              {
+                "text": "La supervivencia es la exponencial de menos el tiempo relativo a la escala elevado a la forma.",
+                "start": 824.9333333333333,
+                "end": 832.2333333333333,
+                "startFrame": 24748,
+                "endFrame": 24967,
+                "words": 17,
+                "sceneIndex": 48,
+                "cueIndex": 0,
+                "sourceCueSha256": "2c6955042ebfc39f17609dc9395fa92334c35749152935c360ed5ffeaa9937ac"
+              },
+              {
+                "text": "Dividimos por la escala antes de elevar: el exponente debe ser adimensional.",
+                "start": 832.5333333333333,
+                "end": 837.7,
+                "startFrame": 24976,
+                "endFrame": 25131,
+                "words": 12,
+                "sceneIndex": 48,
+                "cueIndex": 1,
+                "sourceCueSha256": "32cf1bc7ba9ca43bdb07e382fd994fe0cdb277b2d0829e9c108bed2ffa94be77"
+              }
+            ]
+          },
+          {
+            "start": 838,
+            "end": 850.6333333333333,
+            "cues": [
+              {
+                "text": "El cuantil usa 1 menos u como supervivencia, no u.",
+                "start": 838,
+                "end": 842.3,
+                "startFrame": 25140,
+                "endFrame": 25269,
+                "words": 10,
+                "sceneIndex": 49,
+                "cueIndex": 0,
+                "sourceCueSha256": "c2b7afc2cc33a1fe23c76940e1fe876d3657ab2b804040ab6d3f85f72295605c"
+              },
+              {
+                "text": "Aquí la probabilidad es el dato y el valor de la variable es la incógnita; invertimos la acumulada.",
+                "start": 842.6,
+                "end": 850.3333333333334,
+                "startFrame": 25278,
+                "endFrame": 25510,
+                "words": 18,
+                "sceneIndex": 49,
+                "cueIndex": 1,
+                "sourceCueSha256": "880e2815657577ecc0142f72293b5ae397f39834045c2a88fcaf544a0e4625a9"
+              }
+            ]
+          },
+          {
+            "start": 850.6333333333333,
+            "end": 884.6333333333333,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 850.6333333333333,
+                "end": 853.6333333333333,
+                "startFrame": 25519,
+                "endFrame": 25609,
+                "words": 7,
+                "sceneIndex": 50,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula cu tal que probabilidad de te menor o igual que cu igual a u.",
+                "start": 853.9333333333333,
+                "end": 860.3666666666667,
+                "startFrame": 25618,
+                "endFrame": 25811,
+                "words": 15,
+                "sceneIndex": 50,
+                "cueIndex": 1,
+                "sourceCueSha256": "3e8070d9436d7be89a57d40a070ed7ecee48ece5197f193faaa72fee5f8dd508"
+              },
+              {
+                "text": "La supervivencia eleva el tiempo relativo a la escala a la potencia de forma.",
+                "start": 860.6666666666666,
+                "end": 866.6666666666666,
+                "startFrame": 25820,
+                "endFrame": 26000,
+                "words": 14,
+                "sceneIndex": 50,
+                "cueIndex": 2,
+                "sourceCueSha256": "7c30ecbf77bd8fb4a54cc2defbbcf3c155202da16beed7ccdcb8c52d5d181e94"
+              },
+              {
+                "text": "Para un cuantil, deshacemos primero la exponencial con el logaritmo y después la potencia con una raíz.",
+                "start": 866.9666666666667,
+                "end": 874.2666666666667,
+                "startFrame": 26009,
+                "endFrame": 26228,
+                "words": 17,
+                "sceneIndex": 50,
+                "cueIndex": 3,
+                "sourceCueSha256": "c3fe16216684680a819d7dd530aeff4ace42233ca297874fcb4f73d7767a3659"
+              },
+              {
+                "text": "La escala tiene unidades de tiempo; la forma no.",
+                "start": 874.5666666666667,
+                "end": 878.4333333333333,
+                "startFrame": 26237,
+                "endFrame": 26353,
+                "words": 9,
+                "sceneIndex": 50,
+                "cueIndex": 4,
+                "sourceCueSha256": "895bd4ea05c475fd479df2dcd521943ba061d283cccaf4533f33e34fb9fce780"
+              },
+              {
+                "text": "Para este apartado: El cuantil usa 1 menos u como supervivencia, no u.",
+                "start": 878.7333333333333,
+                "end": 884.3333333333334,
+                "startFrame": 26362,
+                "endFrame": 26530,
+                "words": 13,
+                "sceneIndex": 50,
+                "cueIndex": 5,
+                "sourceCueSha256": "f7791ffcf7deebfe7313c8d3f3c473b6a56dcec1264b952549adc9639d9d9d5f"
+              }
+            ]
+          },
+          {
+            "start": 884.6333333333333,
+            "end": 899.1,
+            "cues": [
+              {
+                "text": "Pasar a supervivencia. exponencial de abre paréntesis, menos abre paréntesis, cu dividido entre alfa , cierra paréntesis elevado a beta , cierra paréntesis igual a 1 menos u igual a 0 coma 2.",
+                "start": 884.6333333333333,
+                "end": 898.8,
+                "startFrame": 26539,
+                "endFrame": 26964,
+                "words": 33,
+                "sceneIndex": 51,
+                "cueIndex": 0,
+                "sourceCueSha256": "c921a393833451b4037e3f39a7f82dfad3723b03bd599ec183fce8674139872a"
+              }
+            ]
+          },
+          {
+            "start": 899.1,
+            "end": 938.8333333333334,
+            "cues": [
+              {
+                "text": "Despejar con logaritmos. abre paréntesis, cu dividido entre alfa , cierra paréntesis elevado a beta igual a menos logaritmo natural de abre paréntesis, 1 menos u, cierra paréntesis; cu igual a alfa por abre corchete, menos logaritmo natural de abre paréntesis, 1 menos u, cierra paréntesis , cierra corchete elevado a abre paréntesis, 1 dividido entre beta , cierra paréntesis. cu subíndice u igual a alfa abre corchete, - logaritmo natural abre paréntesis, 1 menos u, cierra paréntesis , cierra corchete elevado a abre paréntesis, 1 dividido entre beta , cierra paréntesis.",
+                "start": 899.1,
+                "end": 938.5333333333333,
+                "startFrame": 26973,
+                "endFrame": 28156,
+                "words": 92,
+                "sceneIndex": 52,
+                "cueIndex": 0,
+                "sourceCueSha256": "756d4ad9caf5e39c49cb7452823c8155a056804e8e9832cfe5c5e018e1e7b4cf"
+              }
+            ]
+          },
+          {
+            "start": 938.8333333333334,
+            "end": 958.9333333333333,
+            "cues": [
+              {
+                "text": "Sustituir forma y escala.",
+                "start": 938.8333333333334,
+                "end": 940.5666666666667,
+                "startFrame": 28165,
+                "endFrame": 28217,
+                "words": 4,
+                "sceneIndex": 53,
+                "cueIndex": 0,
+                "sourceCueSha256": "548b9fd359b24ceb7882fb433c3d718cf88d0514703ed82367d29d7d06c67a69"
+              },
+              {
+                "text": "La supervivencia buscada es 0 coma 2.",
+                "start": 940.8666666666667,
+                "end": 943.8666666666667,
+                "startFrame": 28226,
+                "endFrame": 28316,
+                "words": 7,
+                "sceneIndex": 53,
+                "cueIndex": 1,
+                "sourceCueSha256": "6e83f6dce367114e1a7dc77ce0760952c68c73f85f995139a23977cef584fde8"
+              },
+              {
+                "text": "Tomamos menos su logaritmo, elevamos a uno dividido entre la forma 1 y multiplicamos por la escala 6 horas.",
+                "start": 944.1666666666666,
+                "end": 952.3333333333334,
+                "startFrame": 28325,
+                "endFrame": 28570,
+                "words": 19,
+                "sceneIndex": 53,
+                "cueIndex": 2,
+                "sourceCueSha256": "ceca8edc672c8b2ee75cdd3d702732b84135e60fd52fb33ccb4f688ae5a40e96"
+              },
+              {
+                "text": "El tiempo resultante es aproximadamente 9 coma 6 5 6 6 2 7 horas.",
+                "start": 952.6333333333333,
+                "end": 958.6333333333333,
+                "startFrame": 28579,
+                "endFrame": 28759,
+                "words": 14,
+                "sceneIndex": 53,
+                "cueIndex": 3,
+                "sourceCueSha256": "54f1209f988b4e3a0871458e3f059db27e2dc856758c54a9150ac6fec43d5efe"
+              }
+            ]
+          },
+          {
+            "start": 958.9333333333333,
+            "end": 982.4666666666667,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 958.9333333333333,
+                "end": 960.2333333333333,
+                "startFrame": 28768,
+                "endFrame": 28807,
+                "words": 3,
+                "sceneIndex": 54,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 9 coma 6 5 6 6 2 7 horas.",
+                "start": 960.5333333333333,
+                "end": 965.7,
+                "startFrame": 28816,
+                "endFrame": 28971,
+                "words": 12,
+                "sceneIndex": 54,
+                "cueIndex": 1,
+                "sourceCueSha256": "fb2c85e7be5fe0e0c3a90fe7c4e0446db8f6467ec0f8b89615cbd14c47428b71"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 966,
+                "end": 972,
+                "startFrame": 28980,
+                "endFrame": 29160,
+                "words": 14,
+                "sceneIndex": 54,
+                "cueIndex": 2,
+                "sourceCueSha256": "aab29efc08557594331314da6d376779f4cdea51251ce79f2650d9e9055628fe"
+              },
+              {
+                "text": "Bajo el modelo, la proporción 0 coma 8 pierde su actividad antes de este tiempo; no es una vida útil idéntica para todos.",
+                "start": 972.3,
+                "end": 982.1666666666666,
+                "startFrame": 29169,
+                "endFrame": 29465,
+                "words": 23,
+                "sceneIndex": 54,
+                "cueIndex": 3,
+                "sourceCueSha256": "857d720a16bf04cf049701a1ab006d4e40c7e92f14b5ecb908e059e1ead67be1"
+              }
+            ]
+          },
+          {
+            "start": 982.4666666666667,
+            "end": 998.1,
+            "cues": [
+              {
+                "text": "El resultado es 9 coma 6 5 6 6 2 7 horas.",
+                "start": 982.4666666666667,
+                "end": 987.6333333333333,
+                "startFrame": 29474,
+                "endFrame": 29629,
+                "words": 12,
+                "sceneIndex": 55,
+                "cueIndex": 0,
+                "sourceCueSha256": "53fca022bc1c2fd7779b0bfae795511643fed6a2c8373c87c4bc5c4a2606fadd"
+              },
+              {
+                "text": "Bajo el modelo, la proporción 0 coma 8 pierde su actividad antes de este tiempo; no es una vida útil idéntica para todos.",
+                "start": 987.9333333333333,
+                "end": 997.8,
+                "startFrame": 29638,
+                "endFrame": 29934,
+                "words": 23,
+                "sceneIndex": 55,
+                "cueIndex": 1,
+                "sourceCueSha256": "1dd38a0366ce32214dcf7bc2e3c5d98d139570d3d01ed9eadda125129b66b494"
+              }
+            ]
+          },
+          {
+            "start": 998.1,
+            "end": 1055.6666666666667,
+            "cues": [
+              {
+                "text": "La simetría de la Cauchy estándar no elimina la divergencia de sus colas.",
+                "start": 998.1,
+                "end": 1003.7,
+                "startFrame": 29943,
+                "endFrame": 30111,
+                "words": 13,
+                "sceneIndex": 56,
+                "cueIndex": 0,
+                "sourceCueSha256": "19d568b8902758b6d7923910efd651959ab3ec2852d95a64f134c6fbab2270d8"
+              },
+              {
+                "text": "Alfa es escala y beta forma, ambas positivas; la forma uno recupera la exponencial.",
+                "start": 1004,
+                "end": 1010,
+                "startFrame": 30120,
+                "endFrame": 30300,
+                "words": 14,
+                "sceneIndex": 56,
+                "cueIndex": 1,
+                "sourceCueSha256": "d77a3f136aaa5ecc831ffc1330c61601ec9182693f60aa246189a5b79958d2c2"
+              },
+              {
+                "text": "La Weibull tiene momentos finitos; la función gamma conecta forma, escala y resúmenes.",
+                "start": 1010.3,
+                "end": 1015.9,
+                "startFrame": 30309,
+                "endFrame": 30477,
+                "words": 13,
+                "sceneIndex": 56,
+                "cueIndex": 2,
+                "sourceCueSha256": "03e80a15eefba2017523c9db2dc3f9fbdae6488291c5afd875cb5364698fb4cb"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 1016.2,
+                "end": 1020.0666666666667,
+                "startFrame": 30486,
+                "endFrame": 30602,
+                "words": 9,
+                "sceneIndex": 56,
+                "cueIndex": 3,
+                "sourceCueSha256": "def8198af5c28e53feb1001f6f3d9e7d1be0e7b8e2eeaf0f5a7c831213e63af0"
+              },
+              {
+                "text": "¿Qué afirmación es correcta sobre la Cauchy estándar?",
+                "start": 1020.3666666666667,
+                "end": 1023.8,
+                "startFrame": 30611,
+                "endFrame": 30714,
+                "words": 8,
+                "sceneIndex": 56,
+                "cueIndex": 4,
+                "sourceCueSha256": "6b8ff48ec360374e0523cc4f77cdb13a9008686c7c00fc98aec153a474f3807d"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 1024.1,
+                "end": 1027.9666666666667,
+                "startFrame": 30723,
+                "endFrame": 30839,
+                "words": 9,
+                "sceneIndex": 56,
+                "cueIndex": 5,
+                "sourceCueSha256": "7543d096710750d3b40aa2c520e3855a4c097648ae556e3dc97ff3f8477134d7"
+              },
+              {
+                "text": "La simetría fija una mediana, pero las integrales que definirían la esperanza no convergen de forma admisible.",
+                "start": 1028.2666666666667,
+                "end": 1035.5666666666666,
+                "startFrame": 30848,
+                "endFrame": 31067,
+                "words": 17,
+                "sceneIndex": 56,
+                "cueIndex": 6,
+                "sourceCueSha256": "52aa4f3f2c8c67feb954d954b440d3d56b1d3cf4cc509ba6f7d34e5f2ffd294e"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Confundir valor principal de una integral con esperanza.",
+                "start": 1035.8666666666666,
+                "end": 1042.7333333333333,
+                "startFrame": 31076,
+                "endFrame": 31282,
+                "words": 16,
+                "sceneIndex": 56,
+                "cueIndex": 7,
+                "sourceCueSha256": "a842d0b0c7301ab5993d8cb7238db3bdcbcad27e2704761cdb73b76222c0a238"
+              },
+              {
+                "text": "La esperanza requiere convergencia admisible de sus partes positiva y negativa.",
+                "start": 1043.0333333333333,
+                "end": 1047.7666666666667,
+                "startFrame": 31291,
+                "endFrame": 31433,
+                "words": 11,
+                "sceneIndex": 56,
+                "cueIndex": 8,
+                "sourceCueSha256": "5a3a2b1b24d2d3d630a26883f88e6483d4378901ec978f0c3c594c57c2071b2b"
+              },
+              {
+                "text": "Un límite simétrico que cancela ambas colas es un valor principal, no una media probabilística de Cauchy.",
+                "start": 1048.0666666666666,
+                "end": 1055.3666666666666,
+                "startFrame": 31442,
+                "endFrame": 31661,
+                "words": 17,
+                "sceneIndex": 56,
+                "cueIndex": 9,
+                "sourceCueSha256": "85ed90be41d9612516361423076cd608cf3c763b6b247ed6561ab03315768d38"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
