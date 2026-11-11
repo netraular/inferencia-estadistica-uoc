@@ -1,0 +1,456 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.3--e-mean",
+  "kind": "exercise",
+  "title": "¿Cuál es la esperanza del modelo inicial?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "aab452dc73df20c28402a055d3dbf552da22346fa3d427ed334cd934d37ab06c",
+  "src": "videos/ejercicio-pdf-u2-2.3--e-mean/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.3--e-mean/poster.jpg",
+  "duration": 181.83333333333334,
+  "frames": 5455,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "793fcfc6abee0d7a798fd59d83c31c0d2e35dbe3b6e1a373ac03e639f16cac51",
+  "videoSha256": "91adb84d84de290823713866d22d83f87fb5984b13a232f87f66fe13728c7760",
+  "posterSha256": "f4aa163a715cfa2bd6911b138d2afed43a59698d11517aca838dc7a38339d430",
+  "canonicalSha256": "c5f6f1a0713ca2c85fd462f67321ebd5811e8edb8b1d19106a74729d39e8dd50",
+  "inputHash": "e0144fd93cce42df2cd84c7dd620d85ffcbe7d2215fe7c53756abe33a4b3cc09",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "b6f72fa3409e3c63a4e80c36cb104acbbd695494de623ab8ac80f5341c2f6f47",
+    "canonicalSha256": "c5f6f1a0713ca2c85fd462f67321ebd5811e8edb8b1d19106a74729d39e8dd50",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.3",
+      "page": 8
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "803965c11189347ed9a3809c1a2768d2ac7cf217b7611a71204e2850b7370f67",
+    "transcriptSha256": "793fcfc6abee0d7a798fd59d83c31c0d2e35dbe3b6e1a373ac03e639f16cac51",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.3",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.3--e-mean",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "c5f6f1a0713ca2c85fd462f67321ebd5811e8edb8b1d19106a74729d39e8dd50",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 181.83333333333334,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 10.366666666666667,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es la esperanza del modelo inicial?",
+            "start": 2.9,
+            "end": 5.9,
+            "startFrame": 87,
+            "endFrame": 177,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "70073ca5477d91e0aabea2db1c00ab91563e061a41e8b07b67db34803040d70e"
+          },
+          {
+            "text": "Queremos el valor medio teórico al repetir el experimento.",
+            "start": 6.2,
+            "end": 10.066666666666666,
+            "startFrame": 186,
+            "endFrame": 302,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "17aceff6c2888d392463f7b9ef45df52a49f7d40e2a625a10e497ca84a3f639f"
+          }
+        ]
+      },
+      {
+        "start": 10.366666666666667,
+        "end": 30.6,
+        "cues": [
+          {
+            "text": "El tiempo se mide en años y el soporte inicial termina en dos años.",
+            "start": 10.366666666666667,
+            "end": 16.366666666666667,
+            "startFrame": 311,
+            "endFrame": 491,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "e8bddd01f11055c7d2afc3215cf576c36a7d9238991a0eec60a360bd1b7e06a9"
+          },
+          {
+            "text": "La densidad decrece linealmente; su integral da una acumulada por tramos, cero antes del soporte y uno después.",
+            "start": 16.666666666666668,
+            "end": 24.4,
+            "startFrame": 500,
+            "endFrame": 732,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "031c240da7c95d3371bfb42dee6b47d5fe8bbdeb4bf7d85cdcfb75e8a3aa663e"
+          },
+          {
+            "text": "Este límite superior es una hipótesis del modelo, no una consecuencia biológica demostrada.",
+            "start": 24.7,
+            "end": 30.3,
+            "startFrame": 741,
+            "endFrame": 909,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "aa0d39775135df7c449e349ffeaad35db170ca5f0a8894f5ed2a93d036f0fd4c"
+          }
+        ]
+      },
+      {
+        "start": 30.6,
+        "end": 48.36666666666667,
+        "cues": [
+          {
+            "text": "equis se mide en años.",
+            "start": 30.6,
+            "end": 32.766666666666666,
+            "startFrame": 918,
+            "endFrame": 983,
+            "words": 5,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ad80a05019028e52ed77b2d47aa8f23ff9e3eb8c6dade41ae65e5912c3b5fc91"
+          },
+          {
+            "text": "Modelo inicial: efe minúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 1 menos equis minúscula dividido entre 2 para 0 menor o igual que equis minúscula menor o igual que 2, y cero fuera.",
+            "start": 33.06666666666667,
+            "end": 48.06666666666667,
+            "startFrame": 992,
+            "endFrame": 1442,
+            "words": 35,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "bcb65bf27b62f0a329975801265c233e3dcf049c03cd44cfbc1ffae38d2573f7"
+          }
+        ]
+      },
+      {
+        "start": 48.36666666666667,
+        "end": 66.26666666666667,
+        "cues": [
+          {
+            "text": "Alternativa: ge abre paréntesis, equis minúscula, cierra paréntesis igual a exponencial de abre paréntesis, menos ka por equis minúscula, cierra paréntesis para equis minúscula mayor o igual que 0, y cero fuera; no hay un factor ka delante de la exponencial.",
+            "start": 48.36666666666667,
+            "end": 65.96666666666667,
+            "startFrame": 1451,
+            "endFrame": 1979,
+            "words": 41,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ab24a4cec95deee2b65cd5ba20cb9010bc644ddc3b040e160597984e3179e09"
+          }
+        ]
+      },
+      {
+        "start": 66.26666666666667,
+        "end": 71.73333333333333,
+        "cues": [
+          {
+            "text": "Los dos modelos son continuos y se consideran solo como propuestas docentes.",
+            "start": 66.26666666666667,
+            "end": 71.43333333333334,
+            "startFrame": 1988,
+            "endFrame": 2143,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "7cddd8615edbcf7badec294a952dbe35ceb20d0096e0658098e649990e848c5b"
+          }
+        ]
+      },
+      {
+        "start": 71.73333333333333,
+        "end": 92.63333333333334,
+        "cues": [
+          {
+            "text": "Corrección del PDF: efe mayúscula abre paréntesis, 0 coma 5, cierra paréntesis igual a 0 coma 4 3 7 5; probabilidad de 0 coma 5 menor que equis menor que 1 igual a 0 coma 3 1 2 5, no 0 coma 3 7 5 en ambos casos.",
+            "start": 71.73333333333333,
+            "end": 92.33333333333333,
+            "startFrame": 2152,
+            "endFrame": 2770,
+            "words": 48,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "ece2d79abeb0d53f5609048b22ad0ce1c75789d56a36e8714605ad2bb9687c41"
+          }
+        ]
+      },
+      {
+        "start": 92.63333333333334,
+        "end": 103.96666666666667,
+        "cues": [
+          {
+            "text": "E de equis integra cada tiempo por su densidad.",
+            "start": 92.63333333333334,
+            "end": 96.5,
+            "startFrame": 2779,
+            "endFrame": 2895,
+            "words": 9,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "58e6d851b123ce5ee763943be959e3b3a6dd75c2ded9b29a30dfd71ea84720be"
+          },
+          {
+            "text": "Ponderamos los valores por su probabilidad; el resultado no tiene por qué ser un valor observable.",
+            "start": 96.8,
+            "end": 103.66666666666667,
+            "startFrame": 2904,
+            "endFrame": 3110,
+            "words": 16,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "21b265360e2f6b6760a21cbc49f0b453b3219bdcc9cbce48dcdb57836ac6e87b"
+          }
+        ]
+      },
+      {
+        "start": 103.96666666666667,
+        "end": 114.46666666666667,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 103.96666666666667,
+            "end": 106.13333333333334,
+            "startFrame": 3119,
+            "endFrame": 3184,
+            "words": 5,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 106.43333333333334,
+            "end": 114.16666666666667,
+            "startFrame": 3193,
+            "endFrame": 3425,
+            "words": 18,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 114.46666666666667,
+        "end": 132.23333333333332,
+        "cues": [
+          {
+            "text": "Ponderar el tiempo.",
+            "start": 114.46666666666667,
+            "end": 115.76666666666667,
+            "startFrame": 3434,
+            "endFrame": 3473,
+            "words": 3,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "c603940c0387c0503ab95527ddd4572e9b0540f39b1d9209cbc5c6b8ff4d204a"
+          },
+          {
+            "text": "E de equis integra cada tiempo por su densidad. esperanza de equis igual a integral desde 0 hasta 2 de equis minúscula abre paréntesis, 1 menos equis minúscula dividido entre 2, cierra paréntesis respecto de equis minúscula.",
+            "start": 116.06666666666666,
+            "end": 131.93333333333334,
+            "startFrame": 3482,
+            "endFrame": 3958,
+            "words": 37,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "d374cf4d3e493ff520dc7e520ed282d4ce461058e1a5b3f3144f3973bb12db8d"
+          }
+        ]
+      },
+      {
+        "start": 132.23333333333332,
+        "end": 157.63333333333333,
+        "cues": [
+          {
+            "text": "Integrar.",
+            "start": 132.23333333333332,
+            "end": 133.43333333333334,
+            "startFrame": 3967,
+            "endFrame": 4003,
+            "words": 1,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "99fe9689b00ccfab3b61c85781d7100f57292f64fcd5603f8eec6dfbc1d96069"
+          },
+          {
+            "text": "La primitiva de equis minúscula menos equis minúscula al cuadrado entre dos es equis minúscula al cuadrado entre dos menos equis minúscula al cubo entre seis. esperanza de equis igual a abre corchete, equis minúscula al cuadrado dividido entre 2 menos equis minúscula al cubo dividido entre 6, cierra corchete evaluado desde 0 hasta 2.",
+            "start": 133.73333333333332,
+            "end": 157.33333333333334,
+            "startFrame": 4012,
+            "endFrame": 4720,
+            "words": 55,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "4a9bc1f17a8661c196d14498e2d52d296b6b0ef3ea60feac9d7049d2a10efd54"
+          }
+        ]
+      },
+      {
+        "start": 157.63333333333333,
+        "end": 167.6,
+        "cues": [
+          {
+            "text": "Evaluar.",
+            "start": 157.63333333333333,
+            "end": 158.83333333333334,
+            "startFrame": 4729,
+            "endFrame": 4765,
+            "words": 1,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "e5dacf35c7d6bf023e8a0e6008628941b4a341ffc87d9e78c6696f22c164c532"
+          },
+          {
+            "text": "Resto el valor en cero al de dos. esperanza de equis igual a 2 menos 8 dividido entre 6.",
+            "start": 159.13333333333333,
+            "end": 167.3,
+            "startFrame": 4774,
+            "endFrame": 5019,
+            "words": 19,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "f9daad57ee57e79e8991e91f2b8acdc9ea05d346d570fcfa2fd60f62ae15f078"
+          }
+        ]
+      },
+      {
+        "start": 167.6,
+        "end": 172.2,
+        "cues": [
+          {
+            "text": "esperanza de equis queda igual a 2 dividido entre 3.",
+            "start": 167.6,
+            "end": 171.9,
+            "startFrame": 5028,
+            "endFrame": 5157,
+            "words": 10,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "e55af974f6651c244849be44e9568d545ccf8d0e3c45713e60eea30ef295217c"
+          }
+        ]
+      },
+      {
+        "start": 172.2,
+        "end": 181.83333333333334,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 6 6 6 6 6 6 7 años.",
+            "start": 172.2,
+            "end": 177.8,
+            "startFrame": 5166,
+            "endFrame": 5334,
+            "words": 13,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "e62f56a843329abb3b2c617493ad1ff6a995f9e623e1baac153b9dc22317dd40"
+          },
+          {
+            "text": "El soporte limita cualquier supervivencia a dos años.",
+            "start": 178.1,
+            "end": 181.53333333333333,
+            "startFrame": 5343,
+            "endFrame": 5446,
+            "words": 8,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "ebda7f73d792d21acbc2dc720143dbc7a2e40b71f30726f8f40722f4b9416f98"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
