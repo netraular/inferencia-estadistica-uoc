@@ -95541,6 +95541,1393 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "gamma": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "gamma",
+      "kind": "recap",
+      "title": "Gamma: sumar esperas y separar forma de escala",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "fcc71bd9509cb7a88a8cf210bd8ad334be2a746cd1d2f0bad9f7f0b565203b86",
+      "src": "videos/gamma/video.mp4",
+      "poster": "videos/gamma/poster.jpg",
+      "duration": 563.3,
+      "frames": 16899,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "89611cd7ce0d2af6a443ecb1af30adb8f13b2c0650327888eb02d09c7140a042",
+      "videoSha256": "e7855bbf1ffd0d033aa1ce8bc8edebe8259081e6e3836223887beb545af0ed22",
+      "posterSha256": "824f8ea18140fd75485f54401417181f618efb282706531ad703be4529243bbb",
+      "canonicalSha256": "222c5705bd9867d3e546d90f9ebd44edb6e5b392c79b24044cdd78a32c99dae0",
+      "inputHash": "8afebaef0a9fe1b54444863de2ecc7320be2549cd16411f1c40257c00979090f",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "8d9de5303edee6261f7dec866adb574a92e0f315ba863861b0fa3bc8324c44b3",
+        "canonicalSha256": "222c5705bd9867d3e546d90f9ebd44edb6e5b392c79b24044cdd78a32c99dae0",
+        "source": {
+          "document": "FundamentosInferencia_Tema3.pdf",
+          "section": "3.2.5: gamma, propiedades y sumas con escala común"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "f583b5e40a637b92e195b625432a37f422bdfbfa63a4ae339e4ba73affbbcbe1",
+        "transcriptSha256": "89611cd7ce0d2af6a443ecb1af30adb8f13b2c0650327888eb02d09c7140a042",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "gamma",
+      "transcript": {
+        "id": "gamma",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "222c5705bd9867d3e546d90f9ebd44edb6e5b392c79b24044cdd78a32c99dae0",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 563.3,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 68.86666666666666,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Vamos a modelar una espera que requiere completar varias etapas.",
+                "start": 1.5,
+                "end": 5.8,
+                "startFrame": 45,
+                "endFrame": 174,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "8631f5fc322f60facc1910f3e900e13d3a78c2938813ca571d9a70a63ef60fbc"
+              },
+              {
+                "text": "Una detección necesita tres llegadas de un proceso homogéneo.",
+                "start": 6.1,
+                "end": 9.966666666666667,
+                "startFrame": 183,
+                "endFrame": 299,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "b491c658787ae2bfa500014151e6192c37b9984cc92f7856a1f7a95607100660"
+              },
+              {
+                "text": "Sus esperas son exponenciales independientes, todas con media dos minutos.",
+                "start": 10.266666666666667,
+                "end": 14.566666666666666,
+                "startFrame": 308,
+                "endFrame": 437,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "57aaafb0c61040101f9c30c6cf9e3df5a23bba5aafe713c784ec6c68089dca4a"
+              },
+              {
+                "text": "La espera total suma esas tres duraciones.",
+                "start": 14.866666666666667,
+                "end": 17.866666666666667,
+                "startFrame": 446,
+                "endFrame": 536,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "d5b6151f7f87b9950a8388c7500ac453a0cc795dacb2a5498a6cfa0bc48b11d3"
+              },
+              {
+                "text": "Esa suma es gamma con forma tres y escala dos.",
+                "start": 18.166666666666668,
+                "end": 22.466666666666665,
+                "startFrame": 545,
+                "endFrame": 674,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "9fd8e6a90fd93c26d946edbb947c344a0d75b55b27d7f3b2dc2a9965a5d401a6"
+              },
+              {
+                "text": "La escala conserva unidades de tiempo; la forma cuenta etapas en este ejemplo entero.",
+                "start": 22.766666666666666,
+                "end": 28.766666666666666,
+                "startFrame": 683,
+                "endFrame": 863,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "eff059f5d12ccba4c293dbbe14fa23d96a35b583715706630b5925b7bff12ab0"
+              },
+              {
+                "text": "La tasa equivalente es una mitad por minuto.",
+                "start": 29.066666666666666,
+                "end": 32.5,
+                "startFrame": 872,
+                "endFrame": 975,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "66841d9bc6a1c514f7c3b98cb54725efa0acba16ca03c1284872ef523f4247ea"
+              },
+              {
+                "text": "Forma y escala deben ser positivas.",
+                "start": 32.8,
+                "end": 35.4,
+                "startFrame": 984,
+                "endFrame": 1062,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "0f1cb502eddfe7a2239c66d294b4dabf17d0fe0e508ec23e1c07375bbd957ea9"
+              },
+              {
+                "text": "La densidad contiene una potencia del tiempo y una exponencial decreciente.",
+                "start": 35.7,
+                "end": 40.43333333333333,
+                "startFrame": 1071,
+                "endFrame": 1213,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "6eb595d8960d4b5e7ed66ab327aaa9c3b8003cf1852acea9e5160b5de22210ba"
+              },
+              {
+                "text": "La función gamma mayúscula normaliza su área.",
+                "start": 40.733333333333334,
+                "end": 43.733333333333334,
+                "startFrame": 1222,
+                "endFrame": 1312,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "90093f4d620f8a16bfe8fb4c931ba55a70cbfec04502e4cf5aa4ebe533d6ac0b"
+              },
+              {
+                "text": "Para forma entera ka, gamma de ka es ka menos uno factorial; no es una variable aleatoria adicional.",
+                "start": 44.03333333333333,
+                "end": 51.766666666666666,
+                "startFrame": 1321,
+                "endFrame": 1553,
+                "words": 18,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "229b1e6071025b02cea1b0365459b1ea713fe2ab4cbf5967675da3dcc12f023e"
+              },
+              {
+                "text": "La media suma tres esperas medias de dos minutos: seis.",
+                "start": 52.06666666666667,
+                "end": 56.36666666666667,
+                "startFrame": 1562,
+                "endFrame": 1691,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "ef96fa30d138e863e2196a4880e3ac29b084d26ae7adb279d073ca72cd88af61"
+              },
+              {
+                "text": "La varianza suma tres varianzas de cuatro porque las etapas son independientes: doce minutos cuadrados.",
+                "start": 56.666666666666664,
+                "end": 63.1,
+                "startFrame": 1700,
+                "endFrame": 1893,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "sourceCueSha256": "aec0e9e92bc3427f402c86626f04d6e45ca98b5ade7ec952b34266178a7896f6"
+              },
+              {
+                "text": "En general son forma por escala y forma por escala al cuadrado.",
+                "start": 63.4,
+                "end": 68.56666666666666,
+                "startFrame": 1902,
+                "endFrame": 2057,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 14,
+                "sourceCueSha256": "347a560928d47e6d4c0e07fd5f3c4695f21c84853934897c4ba3dd1c1d35f390"
+              }
+            ]
+          },
+          {
+            "start": 68.86666666666666,
+            "end": 142.5,
+            "cues": [
+              {
+                "text": "Para forma tres, gamma de tres es dos factorial, igual a dos.",
+                "start": 68.86666666666666,
+                "end": 74.03333333333333,
+                "startFrame": 2066,
+                "endFrame": 2221,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "76cb0e19feb64e664fe2b878bbd57e3d2ef1d477baff787bd6759f9f0cc88d21"
+              },
+              {
+                "text": "Sustituimos los parámetros y queda tiempo al cuadrado por exponencial de menos tiempo entre dos, dividido entre dieciséis.",
+                "start": 74.33333333333333,
+                "end": 82.06666666666666,
+                "startFrame": 2230,
+                "endFrame": 2462,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "4cce3e40598fd88856613fc7e314c5fcc1c59a68a1007d463daea948cdd0d41e"
+              },
+              {
+                "text": "La altura sigue siendo densidad, no probabilidad de terminar exactamente ahí.",
+                "start": 82.36666666666666,
+                "end": 87.1,
+                "startFrame": 2471,
+                "endFrame": 2613,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "aab0c7e07a98359607867b4b7ab5d951a925d5888f6700aa593140b5a4db627f"
+              },
+              {
+                "text": "Terminar antes de seis minutos requiere acumular de cero a seis.",
+                "start": 87.4,
+                "end": 92.13333333333334,
+                "startFrame": 2622,
+                "endFrame": 2764,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "d3a4ac8c73c6d9450285a84438f4658e7d5b0623b9b9311fec793682fa3fe543"
+              },
+              {
+                "text": "Para tres etapas podemos usar la cola finita: uno menos la exponencial por uno más el tiempo relativo más su cuadrado entre dos.",
+                "start": 92.43333333333334,
+                "end": 102.3,
+                "startFrame": 2773,
+                "endFrame": 3069,
+                "words": 23,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "1d373a25b5c66eb60b141550acf66a93c4a52a69dbcb9cb1d899f81dd2840777"
+              },
+              {
+                "text": "En seis da aproximadamente cero coma quinientos setenta y siete.",
+                "start": 102.6,
+                "end": 106.9,
+                "startFrame": 3078,
+                "endFrame": 3207,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "79d50a164129a81d6c6f00bfcfdc3a89b1292d2dc02013279060687cfcb10466"
+              },
+              {
+                "text": "Con forma uno recuperamos la exponencial.",
+                "start": 107.2,
+                "end": 109.8,
+                "startFrame": 3216,
+                "endFrame": 3294,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "adc903e0a54c98509f0b891a14d8aa1975e6718b38a6b38e3c89a2d22e396147"
+              },
+              {
+                "text": "Sumar gammas independientes conserva la escala común y suma las formas; si sus escalas son distintas, esa simplificación no vale en general.",
+                "start": 110.1,
+                "end": 119.53333333333333,
+                "startFrame": 3303,
+                "endFrame": 3586,
+                "words": 22,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "f9c1c16df40fd6c20f45fc70eb75d8152dad6bc8bf4ab68ad835ef17089fb9a3"
+              },
+              {
+                "text": "No confundimos sumar etapas con multiplicar su duración.",
+                "start": 119.83333333333333,
+                "end": 123.26666666666667,
+                "startFrame": 3595,
+                "endFrame": 3698,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "2eace1c9a440dda61dc1cd77c405ffd88a6733afd0de7c83aedadc787a575db0"
+              },
+              {
+                "text": "La gamma matemática admite forma real positiva, aunque ya no cuente literalmente etapas enteras.",
+                "start": 123.56666666666666,
+                "end": 129.56666666666666,
+                "startFrame": 3707,
+                "endFrame": 3887,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "a425c63bd2af90b1a08afceb4f34b7871dcfdf0958877a3490a17ae00bddebda"
+              },
+              {
+                "text": "En software revisamos si el segundo parámetro es escala o tasa.",
+                "start": 129.86666666666667,
+                "end": 134.6,
+                "startFrame": 3896,
+                "endFrame": 4038,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "5df05387056ecab32a8b1666aa5360c3e6cb5ae9c20145cb0423646189f57139"
+              },
+              {
+                "text": "Y, salvo el caso exponencial, no trasladamos automáticamente la falta de memoria a toda la familia gamma.",
+                "start": 134.9,
+                "end": 142.2,
+                "startFrame": 4047,
+                "endFrame": 4266,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 11,
+                "sourceCueSha256": "60bfda459a3eebcd23cb4787c9da0cb67b6723b4b04af08f87d3ca62d2e86dc2"
+              }
+            ]
+          },
+          {
+            "start": 142.5,
+            "end": 150.53333333333333,
+            "cues": [
+              {
+                "text": "T es el tiempo hasta la llegada número k a un detector Poisson; suma k esperas exponenciales independientes.",
+                "start": 142.5,
+                "end": 150.23333333333332,
+                "startFrame": 4275,
+                "endFrame": 4507,
+                "words": 18,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "ae7c38941e1f038c490663f4541fcbbc0098587655cd68e101ae831c283e5378"
+              }
+            ]
+          },
+          {
+            "start": 150.53333333333333,
+            "end": 159.63333333333333,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 150.53333333333333,
+                "end": 153.13333333333333,
+                "startFrame": 4516,
+                "endFrame": 4594,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula esperanza de te.",
+                "start": 153.43333333333334,
+                "end": 155.16666666666666,
+                "startFrame": 4603,
+                "endFrame": 4655,
+                "words": 4,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "d63f608fc70701aa46996af510076543b16e6ef98c671a5e5f492040a45e2822"
+              },
+              {
+                "text": "Queremos el valor medio teórico al repetir el experimento.",
+                "start": 155.46666666666667,
+                "end": 159.33333333333334,
+                "startFrame": 4664,
+                "endFrame": 4780,
+                "words": 9,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "c280f28e2f367a4ad24d1ce432dfbfa0fb914ab0448da1d15426333e7bdad1be"
+              }
+            ]
+          },
+          {
+            "start": 159.63333333333333,
+            "end": 181.6,
+            "cues": [
+              {
+                "text": "La espera es una suma de etapas exponenciales independientes con escala común.",
+                "start": 159.63333333333333,
+                "end": 164.8,
+                "startFrame": 4789,
+                "endFrame": 4944,
+                "words": 12,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "6dc2a43fef6da56a0e7b2cd00845c75c8c6cd0a6b27256e51397eddb2a70c549"
+              },
+              {
+                "text": "La forma ka cuenta las etapas de este ejemplo; la escala alfa es el inverso de la tasa.",
+                "start": 165.1,
+                "end": 172.83333333333334,
+                "startFrame": 4953,
+                "endFrame": 5185,
+                "words": 18,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "b17a07efe5cda71dd2afd2f87a433217c97fe0e9a36a227841b27c24e7549e21"
+              },
+              {
+                "text": "La media es forma por escala, y la acumulada integra la densidad, no su altura en el tiempo pedido.",
+                "start": 173.13333333333333,
+                "end": 181.3,
+                "startFrame": 5194,
+                "endFrame": 5439,
+                "words": 19,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "017429a0f7869132c3c95bd3c758d71cd46a89b709cd91a0545e6483e7d98a7f"
+              }
+            ]
+          },
+          {
+            "start": 181.6,
+            "end": 193.5,
+            "cues": [
+              {
+                "text": "Forma ka igual a 2; escala alfa igual a 4 minutos; tasa erre igual a 1 dividido entre alfa igual a 0 coma 2 5 por minuto.",
+                "start": 181.6,
+                "end": 193.2,
+                "startFrame": 5448,
+                "endFrame": 5796,
+                "words": 27,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "c914824d8fcb6fd3a1a7f8461f7b79c73b74aa132974d85fbb6d5584faf63398"
+              }
+            ]
+          },
+          {
+            "start": 193.5,
+            "end": 199.8,
+            "cues": [
+              {
+                "text": "Umbral te minúscula igual a 8 minutos; soporte te mayor o igual que 0.",
+                "start": 193.5,
+                "end": 199.5,
+                "startFrame": 5805,
+                "endFrame": 5985,
+                "words": 14,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "87c98731dbee90a06eef9a808daa883252332586394f3e8966683c4ac1c6f890"
+              }
+            ]
+          },
+          {
+            "start": 199.8,
+            "end": 204.83333333333334,
+            "cues": [
+              {
+                "text": "Proceso de Poisson homogéneo y esperas independientes con la misma tasa.",
+                "start": 199.8,
+                "end": 204.53333333333333,
+                "startFrame": 5994,
+                "endFrame": 6136,
+                "words": 11,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "90194eae5d9c926dda1a731c4f571b914210445c0ddaa7dc35bda42c086ed000"
+              }
+            ]
+          },
+          {
+            "start": 204.83333333333334,
+            "end": 213.16666666666666,
+            "cues": [
+              {
+                "text": "Como en la teoría, ka es forma y alfa escala.",
+                "start": 204.83333333333334,
+                "end": 209.13333333333333,
+                "startFrame": 6145,
+                "endFrame": 6274,
+                "words": 10,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "b9629e01c230d26b93128b44fc36d9b2aad664dbd6f5881eefcbc6ac1383b169"
+              },
+              {
+                "text": "La biblioteca recibe forma y escala, no tasa.",
+                "start": 209.43333333333334,
+                "end": 212.86666666666667,
+                "startFrame": 6283,
+                "endFrame": 6386,
+                "words": 8,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "704194e144809e90d417644e2cf1749873a9503ae67a3e29740af623140ade8e"
+              }
+            ]
+          },
+          {
+            "start": 213.16666666666666,
+            "end": 225.36666666666667,
+            "cues": [
+              {
+                "text": "La media es forma dividida por tasa, o forma por escala.",
+                "start": 213.16666666666666,
+                "end": 217.9,
+                "startFrame": 6395,
+                "endFrame": 6537,
+                "words": 11,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "eab9e44062ad99680ea51d79dc324ced7a434db371bc7148e86de24aecee8145"
+              },
+              {
+                "text": "Ponderamos los valores por su probabilidad; el resultado no tiene por qué ser un valor observable.",
+                "start": 218.2,
+                "end": 225.06666666666666,
+                "startFrame": 6546,
+                "endFrame": 6752,
+                "words": 16,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "ea59a871dbd75a27d5adf7bd7d47051619185dc470dc62f72c4555f44f54b9bf"
+              }
+            ]
+          },
+          {
+            "start": 225.36666666666667,
+            "end": 254.23333333333332,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 225.36666666666667,
+                "end": 228.36666666666667,
+                "startFrame": 6761,
+                "endFrame": 6851,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula esperanza de te.",
+                "start": 228.66666666666666,
+                "end": 230.4,
+                "startFrame": 6860,
+                "endFrame": 6912,
+                "words": 4,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "d6e1ac12904250cb61db8c005505b293b07cd7a54bd67376790825db9c3b941b"
+              },
+              {
+                "text": "Una suma de etapas exponenciales independientes con escala común es gamma.",
+                "start": 230.7,
+                "end": 235.43333333333334,
+                "startFrame": 6921,
+                "endFrame": 7063,
+                "words": 11,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "958268c7db89c0cfe481114361aaa9dc6c60c9216165830a13fc4d2a5b8e5335"
+              },
+              {
+                "text": "La forma cuenta las etapas enteras en este ejemplo; la escala estira sus tiempos.",
+                "start": 235.73333333333332,
+                "end": 241.73333333333332,
+                "startFrame": 7072,
+                "endFrame": 7252,
+                "words": 14,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "63b3e0ed132608121ac644a64d1b8cc0a85746a7b49b373478c29fd2f62b48fc"
+              },
+              {
+                "text": "Una probabilidad requiere integrar la densidad mediante la acumulada, no evaluar su altura.",
+                "start": 242.03333333333333,
+                "end": 247.63333333333333,
+                "startFrame": 7261,
+                "endFrame": 7429,
+                "words": 13,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "ee621440b9c542399d12dc109cd93e2002ea1fc87f7ff5714b78c3cb0f053cff"
+              },
+              {
+                "text": "Para este apartado: La media es forma dividida por tasa, o forma por escala.",
+                "start": 247.93333333333334,
+                "end": 253.93333333333334,
+                "startFrame": 7438,
+                "endFrame": 7618,
+                "words": 14,
+                "sceneIndex": 10,
+                "cueIndex": 5,
+                "sourceCueSha256": "77a9dd75b9c58b1eb7ab6bf3d0cd402cc141a3fe66b1df83c28b5994551337a7"
+              }
+            ]
+          },
+          {
+            "start": 254.23333333333332,
+            "end": 264.73333333333335,
+            "cues": [
+              {
+                "text": "E entre corchetes significa esperanza.",
+                "start": 254.23333333333332,
+                "end": 256.4,
+                "startFrame": 7627,
+                "endFrame": 7692,
+                "words": 5,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+              },
+              {
+                "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+                "start": 256.7,
+                "end": 264.43333333333334,
+                "startFrame": 7701,
+                "endFrame": 7933,
+                "words": 18,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+              }
+            ]
+          },
+          {
+            "start": 264.73333333333335,
+            "end": 276.1,
+            "cues": [
+              {
+                "text": "Sumar las medias de las esperas.",
+                "start": 264.73333333333335,
+                "end": 267.3333333333333,
+                "startFrame": 7942,
+                "endFrame": 8020,
+                "words": 6,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "b5b3471d96439aa4e3dbacf42848bc49d443e4be9fa2a7f1899e4cfc5976b8bc"
+              },
+              {
+                "text": "Cada espera tiene media 4 minutos; 2 por 4 igual a 8. esperanza de te igual a ka alfa.",
+                "start": 267.6333333333333,
+                "end": 275.8,
+                "startFrame": 8029,
+                "endFrame": 8274,
+                "words": 19,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "d8a6b765f1be54bc5da0598bb2289a30308ea94548789d03dfb2a2e970610608"
+              }
+            ]
+          },
+          {
+            "start": 276.1,
+            "end": 280.7,
+            "cues": [
+              {
+                "text": "esperanza de te queda igual a ka dividido entre erre.",
+                "start": 276.1,
+                "end": 280.4,
+                "startFrame": 8283,
+                "endFrame": 8412,
+                "words": 10,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "328c4a9d3a3e13e857b8d6db67cacb3df36a7bfb97a863f746f247194120ec67"
+              }
+            ]
+          },
+          {
+            "start": 280.7,
+            "end": 296.96666666666664,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 280.7,
+                "end": 282,
+                "startFrame": 8421,
+                "endFrame": 8460,
+                "words": 3,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 8 minutos.",
+                "start": 282.3,
+                "end": 284.46666666666664,
+                "startFrame": 8469,
+                "endFrame": 8534,
+                "words": 5,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "957875ade96c2e873326f791f6c5577fa3b53fba592847296f33d2f8fbd9dc0c"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 284.76666666666665,
+                "end": 290.76666666666665,
+                "startFrame": 8543,
+                "endFrame": 8723,
+                "words": 14,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+              },
+              {
+                "text": "La tasa tiene unidades inversas al tiempo; la escala tiene unidades de tiempo.",
+                "start": 291.06666666666666,
+                "end": 296.6666666666667,
+                "startFrame": 8732,
+                "endFrame": 8900,
+                "words": 13,
+                "sceneIndex": 14,
+                "cueIndex": 3,
+                "sourceCueSha256": "832ef04b97a8d980df2969b373a662e0b36c0646181ad1aaaa75ad1b767d2ff7"
+              }
+            ]
+          },
+          {
+            "start": 296.96666666666664,
+            "end": 305.3333333333333,
+            "cues": [
+              {
+                "text": "El resultado es 8 minutos.",
+                "start": 296.96666666666664,
+                "end": 299.1333333333333,
+                "startFrame": 8909,
+                "endFrame": 8974,
+                "words": 5,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "9dabbc6d038a1178fa8b740c97590ed7dd7ca321c392b1a0e562a8fdae77bcbd"
+              },
+              {
+                "text": "La tasa tiene unidades inversas al tiempo; la escala tiene unidades de tiempo.",
+                "start": 299.43333333333334,
+                "end": 305.03333333333336,
+                "startFrame": 8983,
+                "endFrame": 9151,
+                "words": 13,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "22be4834ca3e992c9851e982880ffb790cd34bf42a6dc7614bb2134b7f794098"
+              }
+            ]
+          },
+          {
+            "start": 305.3333333333333,
+            "end": 317,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 305.3333333333333,
+                "end": 307.93333333333334,
+                "startFrame": 9160,
+                "endFrame": 9238,
+                "words": 6,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de te menor o igual que te minúscula.",
+                "start": 308.23333333333335,
+                "end": 312.53333333333336,
+                "startFrame": 9247,
+                "endFrame": 9376,
+                "words": 10,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "9ac7f621af49014cf0bdb0301964de2e2a5d4a9260a348c9202368b7fa621ec1"
+              },
+              {
+                "text": "Queremos el área que queda por debajo del umbral.",
+                "start": 312.8333333333333,
+                "end": 316.7,
+                "startFrame": 9385,
+                "endFrame": 9501,
+                "words": 9,
+                "sceneIndex": 16,
+                "cueIndex": 2,
+                "sourceCueSha256": "b264eb6426f11e11e88b87754f171e03c38bca43cd25afe5b1a171e5fc77f194"
+              }
+            ]
+          },
+          {
+            "start": 317,
+            "end": 338.96666666666664,
+            "cues": [
+              {
+                "text": "La espera es una suma de etapas exponenciales independientes con escala común.",
+                "start": 317,
+                "end": 322.1666666666667,
+                "startFrame": 9510,
+                "endFrame": 9665,
+                "words": 12,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "6dc2a43fef6da56a0e7b2cd00845c75c8c6cd0a6b27256e51397eddb2a70c549"
+              },
+              {
+                "text": "La forma ka cuenta las etapas de este ejemplo; la escala alfa es el inverso de la tasa.",
+                "start": 322.46666666666664,
+                "end": 330.2,
+                "startFrame": 9674,
+                "endFrame": 9906,
+                "words": 18,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "b17a07efe5cda71dd2afd2f87a433217c97fe0e9a36a227841b27c24e7549e21"
+              },
+              {
+                "text": "La media es forma por escala, y la acumulada integra la densidad, no su altura en el tiempo pedido.",
+                "start": 330.5,
+                "end": 338.6666666666667,
+                "startFrame": 9915,
+                "endFrame": 10160,
+                "words": 19,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "017429a0f7869132c3c95bd3c758d71cd46a89b709cd91a0545e6483e7d98a7f"
+              }
+            ]
+          },
+          {
+            "start": 338.96666666666664,
+            "end": 350.8666666666667,
+            "cues": [
+              {
+                "text": "Forma ka igual a 2; escala alfa igual a 4 minutos; tasa erre igual a 1 dividido entre alfa igual a 0 coma 2 5 por minuto.",
+                "start": 338.96666666666664,
+                "end": 350.56666666666666,
+                "startFrame": 10169,
+                "endFrame": 10517,
+                "words": 27,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "c914824d8fcb6fd3a1a7f8461f7b79c73b74aa132974d85fbb6d5584faf63398"
+              }
+            ]
+          },
+          {
+            "start": 350.8666666666667,
+            "end": 357.1666666666667,
+            "cues": [
+              {
+                "text": "Umbral te minúscula igual a 8 minutos; soporte te mayor o igual que 0.",
+                "start": 350.8666666666667,
+                "end": 356.8666666666667,
+                "startFrame": 10526,
+                "endFrame": 10706,
+                "words": 14,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "87c98731dbee90a06eef9a808daa883252332586394f3e8966683c4ac1c6f890"
+              }
+            ]
+          },
+          {
+            "start": 357.1666666666667,
+            "end": 362.2,
+            "cues": [
+              {
+                "text": "Proceso de Poisson homogéneo y esperas independientes con la misma tasa.",
+                "start": 357.1666666666667,
+                "end": 361.9,
+                "startFrame": 10715,
+                "endFrame": 10857,
+                "words": 11,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "90194eae5d9c926dda1a731c4f571b914210445c0ddaa7dc35bda42c086ed000"
+              }
+            ]
+          },
+          {
+            "start": 362.2,
+            "end": 370.53333333333336,
+            "cues": [
+              {
+                "text": "Como en la teoría, ka es forma y alfa escala.",
+                "start": 362.2,
+                "end": 366.5,
+                "startFrame": 10866,
+                "endFrame": 10995,
+                "words": 10,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "b9629e01c230d26b93128b44fc36d9b2aad664dbd6f5881eefcbc6ac1383b169"
+              },
+              {
+                "text": "La biblioteca recibe forma y escala, no tasa.",
+                "start": 366.8,
+                "end": 370.23333333333335,
+                "startFrame": 11004,
+                "endFrame": 11107,
+                "words": 8,
+                "sceneIndex": 21,
+                "cueIndex": 1,
+                "sourceCueSha256": "704194e144809e90d417644e2cf1749873a9503ae67a3e29740af623140ade8e"
+              }
+            ]
+          },
+          {
+            "start": 370.53333333333336,
+            "end": 386.1666666666667,
+            "cues": [
+              {
+                "text": "Acumula el área de la densidad gamma desde cero hasta te minúscula; conserva ka como forma y alfa como escala.",
+                "start": 370.53333333333336,
+                "end": 379.1333333333333,
+                "startFrame": 11116,
+                "endFrame": 11374,
+                "words": 20,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "ec9e6822f1b49bdbf82b558cafd0fab86a9e7e90f5e4cd24e6927cb445da7f32"
+              },
+              {
+                "text": "Acumulamos desde el inicio del soporte y mantenemos las mismas unidades al introducir el límite.",
+                "start": 379.43333333333334,
+                "end": 385.8666666666667,
+                "startFrame": 11383,
+                "endFrame": 11576,
+                "words": 15,
+                "sceneIndex": 22,
+                "cueIndex": 1,
+                "sourceCueSha256": "ed8afec0390660453bec85f83370954b6a8d777c70c227a1190b6a042caa7344"
+              }
+            ]
+          },
+          {
+            "start": 386.1666666666667,
+            "end": 421.46666666666664,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 386.1666666666667,
+                "end": 389.1666666666667,
+                "startFrame": 11585,
+                "endFrame": 11675,
+                "words": 7,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de te menor o igual que te minúscula.",
+                "start": 389.46666666666664,
+                "end": 393.76666666666665,
+                "startFrame": 11684,
+                "endFrame": 11813,
+                "words": 10,
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "sourceCueSha256": "3a614ec4b2476fb73cd3da2deb15d81c2e5ff973b9ecc7e7c305fda2dead197b"
+              },
+              {
+                "text": "Una suma de etapas exponenciales independientes con escala común es gamma.",
+                "start": 394.06666666666666,
+                "end": 398.8,
+                "startFrame": 11822,
+                "endFrame": 11964,
+                "words": 11,
+                "sceneIndex": 23,
+                "cueIndex": 2,
+                "sourceCueSha256": "5b74d7780700c5550e1f4b94b7bd445f40a4267110c3cb5ecd0367a506293a77"
+              },
+              {
+                "text": "La forma cuenta las etapas enteras en este ejemplo; la escala estira sus tiempos.",
+                "start": 399.1,
+                "end": 405.1,
+                "startFrame": 11973,
+                "endFrame": 12153,
+                "words": 14,
+                "sceneIndex": 23,
+                "cueIndex": 3,
+                "sourceCueSha256": "3ae238a2a844ab5732d43cb2668cdfdbe57278ce9f9022a915f0796d128c3b3b"
+              },
+              {
+                "text": "Una probabilidad requiere integrar la densidad mediante la acumulada, no evaluar su altura.",
+                "start": 405.4,
+                "end": 411,
+                "startFrame": 12162,
+                "endFrame": 12330,
+                "words": 13,
+                "sceneIndex": 23,
+                "cueIndex": 4,
+                "sourceCueSha256": "f2668e7ea7257079412d744647c65079053bc9e1ee93d28f35aecdb2cf61043c"
+              },
+              {
+                "text": "Para este apartado: Acumula el área de la densidad gamma desde cero hasta te minúscula; conserva ka como forma y alfa como escala.",
+                "start": 411.3,
+                "end": 421.1666666666667,
+                "startFrame": 12339,
+                "endFrame": 12635,
+                "words": 23,
+                "sceneIndex": 23,
+                "cueIndex": 5,
+                "sourceCueSha256": "d0c82424cd4d4c001eb81170adcce3496d69ff62fa7da427a1253a56860ed97b"
+              }
+            ]
+          },
+          {
+            "start": 421.46666666666664,
+            "end": 433.56666666666666,
+            "cues": [
+              {
+                "text": "Identificar el área.",
+                "start": 421.46666666666664,
+                "end": 422.76666666666665,
+                "startFrame": 12644,
+                "endFrame": 12683,
+                "words": 3,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "f4333ead127a2cb7f6e6c56dabc5605cb2bc933fd91551aae342c5e4f6239678"
+              },
+              {
+                "text": "Queremos el tiempo total de 2 esperas menor o igual que 8 minutos.",
+                "start": 423.06666666666666,
+                "end": 428.6666666666667,
+                "startFrame": 12692,
+                "endFrame": 12860,
+                "words": 13,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "b2d16a65e0f1c750b6c05942a3adeecf26cbaf851f5c9f928c70b85980e3113d"
+              },
+              {
+                "text": "Usamos forma 2 y escala 4, como en la teoría.",
+                "start": 428.96666666666664,
+                "end": 433.26666666666665,
+                "startFrame": 12869,
+                "endFrame": 12998,
+                "words": 10,
+                "sceneIndex": 24,
+                "cueIndex": 2,
+                "sourceCueSha256": "c460e49aaff6da965ae7f879be3ca0a497580ea187e58ed80a5745763b42588a"
+              }
+            ]
+          },
+          {
+            "start": 433.56666666666666,
+            "end": 470,
+            "cues": [
+              {
+                "text": "Consultar la acumulada.",
+                "start": 433.56666666666666,
+                "end": 434.8666666666667,
+                "startFrame": 13007,
+                "endFrame": 13046,
+                "words": 3,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "2b648d5ec749e3e33353784746e028a0011c3b2a55bbcb1ac4895d81e65b22fd"
+              },
+              {
+                "text": "La acumulada gamma integra la densidad desde cero hasta 8 minutos.",
+                "start": 435.1666666666667,
+                "end": 439.9,
+                "startFrame": 13055,
+                "endFrame": 13197,
+                "words": 11,
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "sourceCueSha256": "4ea7b2c15b7a0f6ee797e2cfae949998f0f387f143a7346643ad70524884d6ba"
+              },
+              {
+                "text": "Con forma 2 y escala 4, una calculadora estadística da aproximadamente 0 coma 5 9 3 9 9 4 2.",
+                "start": 440.2,
+                "end": 448.8,
+                "startFrame": 13206,
+                "endFrame": 13464,
+                "words": 20,
+                "sceneIndex": 25,
+                "cueIndex": 2,
+                "sourceCueSha256": "b89ee24fe8248ed603351b2815d4f81ab96e1eb25137fa5f0948ef285315e23e"
+              },
+              {
+                "text": "Este valor mide el área acumulada, no la altura de la curva en el umbral. probabilidad de te menor o igual que te minúscula igual a efe subíndice abre paréntesis, gamma abre paréntesis, ka y alfa , cierra paréntesis , cierra paréntesis abre paréntesis, te minúscula, cierra paréntesis.",
+                "start": 449.1,
+                "end": 469.7,
+                "startFrame": 13473,
+                "endFrame": 14091,
+                "words": 48,
+                "sceneIndex": 25,
+                "cueIndex": 3,
+                "sourceCueSha256": "2b7a9586a6002b3f6b155b468d2276b526647171a238ff08a23edf56be226ef1"
+              }
+            ]
+          },
+          {
+            "start": 470,
+            "end": 492.26666666666665,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 470,
+                "end": 471.3,
+                "startFrame": 14100,
+                "endFrame": 14139,
+                "words": 3,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 5 9 3 9 9 4 2 probabilidad entre 0 y 1.",
+                "start": 471.6,
+                "end": 478.9,
+                "startFrame": 14148,
+                "endFrame": 14367,
+                "words": 17,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "3fdd71459f897689500713147a1b1462f1993ebb6bf24ca27e28a1cae365854b"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 479.2,
+                "end": 486.5,
+                "startFrame": 14376,
+                "endFrame": 14595,
+                "words": 17,
+                "sceneIndex": 26,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+              },
+              {
+                "text": "Es la probabilidad de observar al menos 2 llegadas antes del umbral.",
+                "start": 486.8,
+                "end": 491.96666666666664,
+                "startFrame": 14604,
+                "endFrame": 14759,
+                "words": 12,
+                "sceneIndex": 26,
+                "cueIndex": 3,
+                "sourceCueSha256": "7c3ffde4466fe21e01ac632b1187b727871622e210e71879571dff40e90c76ae"
+              }
+            ]
+          },
+          {
+            "start": 492.26666666666665,
+            "end": 505.3333333333333,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 5 9 3 9 9 4 2 probabilidad entre 0 y 1.",
+                "start": 492.26666666666665,
+                "end": 499.56666666666666,
+                "startFrame": 14768,
+                "endFrame": 14987,
+                "words": 17,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "32f9e387780acbe946d5e8451f976e6afd8b8155c67de5047d772aa7957c6639"
+              },
+              {
+                "text": "Es la probabilidad de observar al menos 2 llegadas antes del umbral.",
+                "start": 499.8666666666667,
+                "end": 505.03333333333336,
+                "startFrame": 14996,
+                "endFrame": 15151,
+                "words": 12,
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "sourceCueSha256": "9e7c11abde5a30ed85bfa6669cb1d73f32be428de6bc03ce41edec314461c83e"
+              }
+            ]
+          },
+          {
+            "start": 505.3333333333333,
+            "end": 563.3,
+            "cues": [
+              {
+                "text": "k es forma y alfa escala; ambos son positivos y fuera del soporte la densidad es cero.",
+                "start": 505.3333333333333,
+                "end": 512.6333333333333,
+                "startFrame": 15160,
+                "endFrame": 15379,
+                "words": 17,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "2753cef35ed53455e987315adc428d29c9e268332901b0959ebaccb10c7f3e10"
+              },
+              {
+                "text": "La función gamma normaliza la densidad y prolonga el factorial a formas no enteras.",
+                "start": 512.9333333333333,
+                "end": 518.9333333333333,
+                "startFrame": 15388,
+                "endFrame": 15568,
+                "words": 14,
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "sourceCueSha256": "8c749b34c3a0f3b78cd0c4dd6e3a65dde293001712851ba8c03be6ed74d65c96"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 519.2333333333333,
+                "end": 523.1,
+                "startFrame": 15577,
+                "endFrame": 15693,
+                "words": 9,
+                "sceneIndex": 28,
+                "cueIndex": 2,
+                "sourceCueSha256": "26f93c6012ef8d516668da414540de8e0080c306f0aa81e5c19964f843575c90"
+              },
+              {
+                "text": "Una gamma tiene forma dos y escala tres.",
+                "start": 523.4,
+                "end": 526.8333333333334,
+                "startFrame": 15702,
+                "endFrame": 15805,
+                "words": 8,
+                "sceneIndex": 28,
+                "cueIndex": 3,
+                "sourceCueSha256": "b9b3a6a08ad14a38d9c03e2ca65a761e9a4fb2cb4e9a8511f154850cdc1be124"
+              },
+              {
+                "text": "¿Cuál es su varianza?",
+                "start": 527.1333333333333,
+                "end": 528.8666666666667,
+                "startFrame": 15814,
+                "endFrame": 15866,
+                "words": 4,
+                "sceneIndex": 28,
+                "cueIndex": 4,
+                "sourceCueSha256": "30a2de661c4bd423051c5aeaa476aa22035c5f93d23065f253f2d4b8f1c04de1"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 529.1666666666666,
+                "end": 533.0333333333333,
+                "startFrame": 15875,
+                "endFrame": 15991,
+                "words": 9,
+                "sceneIndex": 28,
+                "cueIndex": 5,
+                "sourceCueSha256": "83c639fd832244374360f0725f4e996a51b6a6aa58e8198fa7ea54f5a6f2c7fb"
+              },
+              {
+                "text": "La varianza es forma por escala al cuadrado: dos por nueve vale dieciocho.",
+                "start": 533.3333333333334,
+                "end": 538.9333333333333,
+                "startFrame": 16000,
+                "endFrame": 16168,
+                "words": 13,
+                "sceneIndex": 28,
+                "cueIndex": 6,
+                "sourceCueSha256": "f8a49ce44f68ae9877a103a567e656e67c30cb0b1f60d2cd69466ecc58a6188e"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Leer la forma p del PDF como si fuera una probabilidad entre cero y uno.",
+                "start": 539.2333333333333,
+                "end": 549.1,
+                "startFrame": 16177,
+                "endFrame": 16473,
+                "words": 23,
+                "sceneIndex": 28,
+                "cueIndex": 7,
+                "sourceCueSha256": "eb6e769477bac1a7502622f404d3d9f083110ebb396c761bcbe9b94eb17c129c"
+              },
+              {
+                "text": "La forma controla la familia de perfiles y solo necesita ser positiva; puede superar uno.",
+                "start": 549.4,
+                "end": 555.8333333333334,
+                "startFrame": 16482,
+                "endFrame": 16675,
+                "words": 15,
+                "sceneIndex": 28,
+                "cueIndex": 8,
+                "sourceCueSha256": "f452706fd18889dc52eb09195aff0f6f8b309e0aa014f962a3c46d3d68aeec4a"
+              },
+              {
+                "text": "En la interpretación de etapas enteras cuenta cuántas esperas sumamos, no la probabilidad de cada etapa.",
+                "start": 556.1333333333333,
+                "end": 563,
+                "startFrame": 16684,
+                "endFrame": 16890,
+                "words": 16,
+                "sceneIndex": 28,
+                "cueIndex": 9,
+                "sourceCueSha256": "6651c96f43a9418e1f91eaa7e9ac57c53e1436399f5fda69bbb6316687d240e2"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
