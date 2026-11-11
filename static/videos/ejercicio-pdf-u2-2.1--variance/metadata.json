@@ -1,0 +1,680 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.1--variance",
+  "kind": "exercise",
+  "title": "¿Cuál es Var(X)?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "0e0ff7e45165c76d718a133dc0ee0671e6b32ff30355b921d83206ae8e8ea0fa",
+  "src": "videos/ejercicio-pdf-u2-2.1--variance/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.1--variance/poster.jpg",
+  "duration": 219.7,
+  "frames": 6591,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "dcb9846032cc5645dc2c8f48e29ae06e486e3a6e91520398a9b6606deacfd634",
+  "videoSha256": "58fb1d087b35fb2be7edf581c413c7ee3ae1e4f53fbf39dc4b1e2727a8c69989",
+  "posterSha256": "c3a8a1b65675ea8e068c1a68d3f2c82e61196c0b6a45a65faec6590ac39542ae",
+  "canonicalSha256": "3bd0d1fecc3bb7ef6e5f7fc0373c417ef66b6351c50695bea3c5dc3c40754947",
+  "inputHash": "ffd155b947f9de95d780b12a1bb606123c52e526aaed6b4f97a256eec7fd8bcf",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "2558b6606076a678486cdc3010cd13ae39fe2fdf876b62cb089a7641aea994cb",
+    "canonicalSha256": "3bd0d1fecc3bb7ef6e5f7fc0373c417ef66b6351c50695bea3c5dc3c40754947",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.1",
+      "page": 2
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "aa65ec6649d1c21a42be97d8d5e877b717b6f119609d34b5e872a9f3096b2171",
+    "transcriptSha256": "dcb9846032cc5645dc2c8f48e29ae06e486e3a6e91520398a9b6606deacfd634",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.1",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.1--variance",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "3bd0d1fecc3bb7ef6e5f7fc0373c417ef66b6351c50695bea3c5dc3c40754947",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 219.7,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.1,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es varianza de equis?",
+            "start": 2.9,
+            "end": 5.066666666666666,
+            "startFrame": 87,
+            "endFrame": 152,
+            "words": 5,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "25131c7d1fe9adc18b2f6f652d17c0400a069c7fc535e495c98659e274d07ff9"
+          },
+          {
+            "text": "Queremos medir la dispersión alrededor de la media.",
+            "start": 5.366666666666666,
+            "end": 8.8,
+            "startFrame": 161,
+            "endFrame": 264,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "81bf86674a17c30b34a1066776c3c587066293416010da78b253bd104f2f0397"
+          }
+        ]
+      },
+      {
+        "start": 9.1,
+        "end": 27.2,
+        "cues": [
+          {
+            "text": "La masa asigna probabilidad a cada valor posible de equis.",
+            "start": 9.1,
+            "end": 13.4,
+            "startFrame": 273,
+            "endFrame": 402,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "8e1a7ef9f2b6d5fde6074e805b798f5172925b2c0f21b7581af31d6133f8eab9"
+          },
+          {
+            "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
+            "start": 13.7,
+            "end": 18.866666666666667,
+            "startFrame": 411,
+            "endFrame": 566,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "524f9634a2328cfb90f0dd34442064d37094d995e52156111b959ca6951e08e2"
+          },
+          {
+            "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
+            "start": 19.166666666666668,
+            "end": 26.9,
+            "startFrame": 575,
+            "endFrame": 807,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "2ad003c8547ab08837313c40c2a4884a7aab1c98e41ff7823d18fc9b0e571fb4"
+          }
+        ]
+      },
+      {
+        "start": 27.2,
+        "end": 31.8,
+        "cues": [
+          {
+            "text": "Estudio de 300 pacientes; cada individuo presenta una única variante.",
+            "start": 27.2,
+            "end": 31.5,
+            "startFrame": 816,
+            "endFrame": 945,
+            "words": 10,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "e2b8fbbe54f0385a628613e772fba34adb284c246b7d28672d14331d871921c7"
+          }
+        ]
+      },
+      {
+        "start": 31.8,
+        "end": 44.1,
+        "cues": [
+          {
+            "text": "e1: probabilidad 0 coma 1 5, equis igual a 0; e2: 0 coma 1 3, equis igual a 1; e3: 0 coma 0 7, equis igual a 1.",
+            "start": 31.8,
+            "end": 43.8,
+            "startFrame": 954,
+            "endFrame": 1314,
+            "words": 28,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "0cfcabb33c949438384c61fcfd29224a8b43c5b0d134de771bf6ad1c4dd6d619"
+          }
+        ]
+      },
+      {
+        "start": 44.1,
+        "end": 56,
+        "cues": [
+          {
+            "text": "e4: 0 coma 3 0, equis igual a 2; e5: 0 coma 2 0, equis igual a 2; e6: 0 coma 1 5, equis igual a 0.",
+            "start": 44.1,
+            "end": 55.7,
+            "startFrame": 1323,
+            "endFrame": 1671,
+            "words": 27,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "3a46e0bca03f83c35642103e8c76b4813b5823fa0f35fa588adf89bf224bf331"
+          }
+        ]
+      },
+      {
+        "start": 56,
+        "end": 62.733333333333334,
+        "cues": [
+          {
+            "text": "Las probabilidades de las variantes son las estimaciones suministradas; no se supone que sean equiprobables.",
+            "start": 56,
+            "end": 62.43333333333333,
+            "startFrame": 1680,
+            "endFrame": 1873,
+            "words": 15,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "babaa742f189739449301684319fe0feb327ed2615eab1a19c42c55a8fe62510"
+          }
+        ]
+      },
+      {
+        "start": 62.733333333333334,
+        "end": 75.8,
+        "cues": [
+          {
+            "text": "Para el segundo momento ordinario transformo primero el valor, antes de ponderarlo.",
+            "start": 62.733333333333334,
+            "end": 67.9,
+            "startFrame": 1882,
+            "endFrame": 2037,
+            "words": 12,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "aacfa0fd943423f9cf3d691e095c1db023279f95266fbb27a5049f5d0768e707"
+          },
+          {
+            "text": "El segundo momento incluye la posición del centro; restar el cuadrado de la media deja solo dispersión.",
+            "start": 68.2,
+            "end": 75.5,
+            "startFrame": 2046,
+            "endFrame": 2265,
+            "words": 17,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "1b4d2f399a845e47a9e02388eb4c0d6e39aa4c14d00bdcdbf7589e5a20c7773a"
+          }
+        ]
+      },
+      {
+        "start": 75.8,
+        "end": 85.86666666666666,
+        "cues": [
+          {
+            "text": "Elevar 0 al cuadrado.",
+            "start": 75.8,
+            "end": 77.53333333333333,
+            "startFrame": 2274,
+            "endFrame": 2326,
+            "words": 4,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "ae90a2e1486c36a557cab90b570638896d62cad7e939417a341464d3582ef659"
+          },
+          {
+            "text": "Para el segundo momento ordinario transformo primero el valor, antes de ponderarlo. 0 al cuadrado igual a 0.",
+            "start": 77.83333333333333,
+            "end": 85.56666666666666,
+            "startFrame": 2335,
+            "endFrame": 2567,
+            "words": 18,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "2307d2b26a6b9e765dcb12b43694d08279873ebca264ace451c1b0694ff1edab"
+          }
+        ]
+      },
+      {
+        "start": 85.86666666666666,
+        "end": 95.06666666666666,
+        "cues": [
+          {
+            "text": "Ponderar el cuadrado de 0.",
+            "start": 85.86666666666666,
+            "end": 88.03333333333333,
+            "startFrame": 2576,
+            "endFrame": 2641,
+            "words": 5,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "14bd799bb65dc8e61842ab0cafdf4a038e3415d1acf2dccdfc3e99851dee0cff"
+          },
+          {
+            "text": "Conservo la probabilidad original de ese valor. 0 por 0 coma 3 igual a 0.",
+            "start": 88.33333333333333,
+            "end": 94.76666666666667,
+            "startFrame": 2650,
+            "endFrame": 2843,
+            "words": 15,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "9e92815bc88a20c81b961341a4563bf302a9ca78b41caef00e878ca7feb34ede"
+          }
+        ]
+      },
+      {
+        "start": 95.06666666666666,
+        "end": 105.13333333333334,
+        "cues": [
+          {
+            "text": "Elevar 1 al cuadrado.",
+            "start": 95.06666666666666,
+            "end": 96.8,
+            "startFrame": 2852,
+            "endFrame": 2904,
+            "words": 4,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "6d0e0595a8325d069723a32b26129b9b71102e3b6ff2e643adfa62c39971f029"
+          },
+          {
+            "text": "Para el segundo momento ordinario transformo primero el valor, antes de ponderarlo. 1 al cuadrado igual a 1.",
+            "start": 97.1,
+            "end": 104.83333333333333,
+            "startFrame": 2913,
+            "endFrame": 3145,
+            "words": 18,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "11d7b869132ce0b042eac7bc8f1cf00cdea7193a8e6e06173417671a22e3b179"
+          }
+        ]
+      },
+      {
+        "start": 105.13333333333334,
+        "end": 115.2,
+        "cues": [
+          {
+            "text": "Ponderar el cuadrado de 1.",
+            "start": 105.13333333333334,
+            "end": 107.3,
+            "startFrame": 3154,
+            "endFrame": 3219,
+            "words": 5,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "95776ae40eca54e36c96ae5ac44da49f35e7e228363bdcf3007e7c526cb0b7e1"
+          },
+          {
+            "text": "Conservo la probabilidad original de ese valor. 1 por 0 coma 2 igual a 0 coma 2.",
+            "start": 107.6,
+            "end": 114.9,
+            "startFrame": 3228,
+            "endFrame": 3447,
+            "words": 17,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "58e54d65380a6780d381d6c1347c0f28f7422a793c5a00bdc771312b4aa56cfd"
+          }
+        ]
+      },
+      {
+        "start": 115.2,
+        "end": 125.26666666666667,
+        "cues": [
+          {
+            "text": "Elevar 2 al cuadrado.",
+            "start": 115.2,
+            "end": 116.93333333333334,
+            "startFrame": 3456,
+            "endFrame": 3508,
+            "words": 4,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "50d772416d579429e4746da51b0cea8630030795375d4761288d9e8e5beab9da"
+          },
+          {
+            "text": "Para el segundo momento ordinario transformo primero el valor, antes de ponderarlo. 2 al cuadrado igual a 4.",
+            "start": 117.23333333333333,
+            "end": 124.96666666666667,
+            "startFrame": 3517,
+            "endFrame": 3749,
+            "words": 18,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "304003437d5ff5550896dbd22b9337568cb13ba71fa692fd2c973220e6932e7f"
+          }
+        ]
+      },
+      {
+        "start": 125.26666666666667,
+        "end": 134.46666666666667,
+        "cues": [
+          {
+            "text": "Ponderar el cuadrado de 2.",
+            "start": 125.26666666666667,
+            "end": 127.43333333333334,
+            "startFrame": 3758,
+            "endFrame": 3823,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "67148b2a879e0daa49a2230412f7848386a08400fbf9c33e89c42109b0bd8c31"
+          },
+          {
+            "text": "Conservo la probabilidad original de ese valor. 4 por 0 coma 5 igual a 2.",
+            "start": 127.73333333333333,
+            "end": 134.16666666666666,
+            "startFrame": 3832,
+            "endFrame": 4025,
+            "words": 15,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "ff8cb1bed177799d31d3e76fdca944947de7362f43bb70f1254afba60a6a847f"
+          }
+        ]
+      },
+      {
+        "start": 134.46666666666667,
+        "end": 144.96666666666667,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 134.46666666666667,
+            "end": 136.63333333333333,
+            "startFrame": 4034,
+            "endFrame": 4099,
+            "words": 5,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 136.93333333333334,
+            "end": 144.66666666666666,
+            "startFrame": 4108,
+            "endFrame": 4340,
+            "words": 18,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 144.96666666666667,
+        "end": 159.2,
+        "cues": [
+          {
+            "text": "El segundo momento.",
+            "start": 144.96666666666667,
+            "end": 146.26666666666668,
+            "startFrame": 4349,
+            "endFrame": 4388,
+            "words": 3,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "af0ed22f8a44b7bada613d14fc9ef0ae44f07c941af8ef49a9f784049f3ec71f"
+          },
+          {
+            "text": "Sumo los cuadrados ponderados.",
+            "start": 146.56666666666666,
+            "end": 148.3,
+            "startFrame": 4397,
+            "endFrame": 4449,
+            "words": 4,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "efc102c95b4c742ba976d10f7a978cbe9e209dda5704aedd1573344ef2b1ce75"
+          },
+          {
+            "text": "E de equis al cuadrado no es aún la varianza. esperanza de equis al cuadrado igual a 0 más 0 coma 2 más 2.",
+            "start": 148.6,
+            "end": 158.9,
+            "startFrame": 4458,
+            "endFrame": 4767,
+            "words": 24,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "86f8ddb2c2fab5e8208aa3352fb71ee24d40e0d0b6e3f90ad2aa69be75461a17"
+          }
+        ]
+      },
+      {
+        "start": 159.2,
+        "end": 164.23333333333332,
+        "cues": [
+          {
+            "text": "esperanza de equis al cuadrado queda igual a 2 coma 2.",
+            "start": 159.2,
+            "end": 163.93333333333334,
+            "startFrame": 4776,
+            "endFrame": 4918,
+            "words": 11,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "9edf5e4cceefdea26a1e575500312bacba8f848bd40961bca379e8e99fd2fbef"
+          }
+        ]
+      },
+      {
+        "start": 164.23333333333332,
+        "end": 179.33333333333334,
+        "cues": [
+          {
+            "text": "El cuadrado de la media.",
+            "start": 164.23333333333332,
+            "end": 166.4,
+            "startFrame": 4927,
+            "endFrame": 4992,
+            "words": 5,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "f3d798a8cbe79376bbe81a222dc235070b51c423735af29c10df985f5325abc9"
+          },
+          {
+            "text": "La media se obtuvo sumando los valores ponderados.",
+            "start": 166.7,
+            "end": 170.13333333333333,
+            "startFrame": 5001,
+            "endFrame": 5104,
+            "words": 8,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "f29dd33ed0f2ffbedc1d19afea8491f6b365ca328a44536617b11112853668b9"
+          },
+          {
+            "text": "Ahora elevo esa media al cuadrado. esperanza de equis igual a 1 coma 2 y esperanza de equis al cuadrado.",
+            "start": 170.43333333333334,
+            "end": 179.03333333333333,
+            "startFrame": 5113,
+            "endFrame": 5371,
+            "words": 20,
+            "sceneIndex": 16,
+            "cueIndex": 2,
+            "sourceCueSha256": "1c21ea48f6349ae37fe142fa3b9811b0609bcc436698ea8d4797d07d0d673234"
+          }
+        ]
+      },
+      {
+        "start": 179.33333333333334,
+        "end": 183.93333333333334,
+        "cues": [
+          {
+            "text": "esperanza de equis queda igual a 1 coma 4 4.",
+            "start": 179.33333333333334,
+            "end": 183.63333333333333,
+            "startFrame": 5380,
+            "endFrame": 5509,
+            "words": 10,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "930e793540fb6fbfcfec272a62edf9ed010cdedd731789b8e13435b58aca765b"
+          }
+        ]
+      },
+      {
+        "start": 183.93333333333334,
+        "end": 200.3,
+        "cues": [
+          {
+            "text": "Restar para obtener la varianza.",
+            "start": 183.93333333333334,
+            "end": 186.1,
+            "startFrame": 5518,
+            "endFrame": 5583,
+            "words": 5,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "1353ac6bd7a69f3665c4edb1eadf5feec165325cddc24b8dcfc0ab8d6451c729"
+          },
+          {
+            "text": "Var de equis mide dispersión: al segundo momento le resto el cuadrado de la media.",
+            "start": 186.4,
+            "end": 192.83333333333334,
+            "startFrame": 5592,
+            "endFrame": 5785,
+            "words": 15,
+            "sceneIndex": 18,
+            "cueIndex": 1,
+            "sourceCueSha256": "b81d4e1d9c777b4a0323c513224e3a65f167d1fa553f990cf1c8202b6d893b3f"
+          },
+          {
+            "text": "Var abre paréntesis, equis, cierra paréntesis igual a 2 coma 2 menos 1 coma 4 4.",
+            "start": 193.13333333333333,
+            "end": 200,
+            "startFrame": 5794,
+            "endFrame": 6000,
+            "words": 16,
+            "sceneIndex": 18,
+            "cueIndex": 2,
+            "sourceCueSha256": "f6c21dd0d830b11ff9b136567eb40ac02566f47bdabd3697b1c59e53af475c2b"
+          }
+        ]
+      },
+      {
+        "start": 200.3,
+        "end": 212.2,
+        "cues": [
+          {
+            "text": "Var abre paréntesis, equis, cierra paréntesis queda igual a 0 coma 7 6 0 0 0 0 0 0 0 0 0 0 0 0 0 2.",
+            "start": 200.3,
+            "end": 211.9,
+            "startFrame": 6009,
+            "endFrame": 6357,
+            "words": 27,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "4c671e40a0ebd399241223739d0feaf4fb1292ad2428117279b7ae234795fade"
+          }
+        ]
+      },
+      {
+        "start": 212.2,
+        "end": 219.7,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 7 6 genes al cuadrado.",
+            "start": 212.2,
+            "end": 216.5,
+            "startFrame": 6366,
+            "endFrame": 6495,
+            "words": 10,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "5850b291140065d9a62b0b6d0c7928531a7aa56de319a65898d92b5685497115"
+          },
+          {
+            "text": "La varianza tiene unidades al cuadrado.",
+            "start": 216.8,
+            "end": 219.4,
+            "startFrame": 6504,
+            "endFrame": 6582,
+            "words": 6,
+            "sceneIndex": 20,
+            "cueIndex": 1,
+            "sourceCueSha256": "79cf70e846cc6d6b7f4a64a757e25ad45f0e9c84345320e682a5a9d6dc81321f"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
