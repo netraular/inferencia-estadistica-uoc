@@ -1,0 +1,567 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.3--b-cdf",
+  "kind": "exercise",
+  "title": "Obtén la acumulada F por tramos y representa sus valores. Introduce F(1).",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "8705e3dd5282632f708b85e473f714c966d1f4f835262db9ccbee47be2b20662",
+  "src": "videos/ejercicio-pdf-u2-2.3--b-cdf/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.3--b-cdf/poster.jpg",
+  "duration": 242.2,
+  "frames": 7266,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "85cf4d4d3601b2a86d1456ec0d92690e048ee6ba5bbc68f1590028db0c52dc84",
+  "videoSha256": "af9a807123856c9bfb32088b2f093e09f80c210dade1499c9d9a9f1245850bbf",
+  "posterSha256": "3992397dbb5d9be046046729903d7c162e3951a0612c1cd3f3b3b31551a93a8e",
+  "canonicalSha256": "bfc7b2c7383fa13168a1c0a50f6541e71473cc09e36b4f6f862a8b49d8d1a4df",
+  "inputHash": "25d7f63f21deb63791a0dbeb03f0a3d7d1b8f8dae5d25da331816c3717240578",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "e3774b87e9805a8e59fd348777e33e178286938ec0d69c4ab0f3a80197143cd5",
+    "canonicalSha256": "bfc7b2c7383fa13168a1c0a50f6541e71473cc09e36b4f6f862a8b49d8d1a4df",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.3",
+      "page": 8
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "9f0f535e4c36b384e82ff48581e74e93b58bb44dd8624d1420bf15ac9fe9f709",
+    "transcriptSha256": "85cf4d4d3601b2a86d1456ec0d92690e048ee6ba5bbc68f1590028db0c52dc84",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.3",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.3--b-cdf",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "bfc7b2c7383fa13168a1c0a50f6541e71473cc09e36b4f6f862a8b49d8d1a4df",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 242.2,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 17.533333333333335,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Obtén la acumulada efe por tramos y representa sus valores.",
+            "start": 2.9,
+            "end": 7.2,
+            "startFrame": 87,
+            "endFrame": 216,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "c7f9040179bed1e5c6cebad624c3e57761482f5b6848eaf72c512bb7c2352126"
+          },
+          {
+            "text": "Introduce efe mayúscula abre paréntesis, 1, cierra paréntesis.",
+            "start": 7.5,
+            "end": 10.933333333333334,
+            "startFrame": 225,
+            "endFrame": 328,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "5498d0e3eea9ce2e74a2f83e7d2f311faed283e6ef28c07f9b317979a97e867a"
+          },
+          {
+            "text": "Queremos acumular todos los valores que no superan el límite, incluyendo el propio límite.",
+            "start": 11.233333333333333,
+            "end": 17.233333333333334,
+            "startFrame": 337,
+            "endFrame": 517,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "1359a1a0e407530ab21ec0b2bb6d99e090cd96a04ea2965d439d27544b86245b"
+          }
+        ]
+      },
+      {
+        "start": 17.533333333333335,
+        "end": 37.766666666666666,
+        "cues": [
+          {
+            "text": "El tiempo se mide en años y el soporte inicial termina en dos años.",
+            "start": 17.533333333333335,
+            "end": 23.533333333333335,
+            "startFrame": 526,
+            "endFrame": 706,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "e8bddd01f11055c7d2afc3215cf576c36a7d9238991a0eec60a360bd1b7e06a9"
+          },
+          {
+            "text": "La densidad decrece linealmente; su integral da una acumulada por tramos, cero antes del soporte y uno después.",
+            "start": 23.833333333333332,
+            "end": 31.566666666666666,
+            "startFrame": 715,
+            "endFrame": 947,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "031c240da7c95d3371bfb42dee6b47d5fe8bbdeb4bf7d85cdcfb75e8a3aa663e"
+          },
+          {
+            "text": "Este límite superior es una hipótesis del modelo, no una consecuencia biológica demostrada.",
+            "start": 31.866666666666667,
+            "end": 37.46666666666667,
+            "startFrame": 956,
+            "endFrame": 1124,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "aa0d39775135df7c449e349ffeaad35db170ca5f0a8894f5ed2a93d036f0fd4c"
+          }
+        ]
+      },
+      {
+        "start": 37.766666666666666,
+        "end": 55.53333333333333,
+        "cues": [
+          {
+            "text": "equis se mide en años.",
+            "start": 37.766666666666666,
+            "end": 39.93333333333333,
+            "startFrame": 1133,
+            "endFrame": 1198,
+            "words": 5,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ad80a05019028e52ed77b2d47aa8f23ff9e3eb8c6dade41ae65e5912c3b5fc91"
+          },
+          {
+            "text": "Modelo inicial: efe minúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 1 menos equis minúscula dividido entre 2 para 0 menor o igual que equis minúscula menor o igual que 2, y cero fuera.",
+            "start": 40.233333333333334,
+            "end": 55.233333333333334,
+            "startFrame": 1207,
+            "endFrame": 1657,
+            "words": 35,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "bcb65bf27b62f0a329975801265c233e3dcf049c03cd44cfbc1ffae38d2573f7"
+          }
+        ]
+      },
+      {
+        "start": 55.53333333333333,
+        "end": 73.43333333333334,
+        "cues": [
+          {
+            "text": "Alternativa: ge abre paréntesis, equis minúscula, cierra paréntesis igual a exponencial de abre paréntesis, menos ka por equis minúscula, cierra paréntesis para equis minúscula mayor o igual que 0, y cero fuera; no hay un factor ka delante de la exponencial.",
+            "start": 55.53333333333333,
+            "end": 73.13333333333334,
+            "startFrame": 1666,
+            "endFrame": 2194,
+            "words": 41,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ab24a4cec95deee2b65cd5ba20cb9010bc644ddc3b040e160597984e3179e09"
+          }
+        ]
+      },
+      {
+        "start": 73.43333333333334,
+        "end": 78.9,
+        "cues": [
+          {
+            "text": "Los dos modelos son continuos y se consideran solo como propuestas docentes.",
+            "start": 73.43333333333334,
+            "end": 78.6,
+            "startFrame": 2203,
+            "endFrame": 2358,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "7cddd8615edbcf7badec294a952dbe35ceb20d0096e0658098e649990e848c5b"
+          }
+        ]
+      },
+      {
+        "start": 78.9,
+        "end": 99.8,
+        "cues": [
+          {
+            "text": "Corrección del PDF: efe mayúscula abre paréntesis, 0 coma 5, cierra paréntesis igual a 0 coma 4 3 7 5; probabilidad de 0 coma 5 menor que equis menor que 1 igual a 0 coma 3 1 2 5, no 0 coma 3 7 5 en ambos casos.",
+            "start": 78.9,
+            "end": 99.5,
+            "startFrame": 2367,
+            "endFrame": 2985,
+            "words": 48,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "ece2d79abeb0d53f5609048b22ad0ce1c75789d56a36e8714605ad2bb9687c41"
+          }
+        ]
+      },
+      {
+        "start": 99.8,
+        "end": 116.26666666666667,
+        "cues": [
+          {
+            "text": "El tiempo no puede ser negativo, así que antes de cero no hay probabilidad acumulada.",
+            "start": 99.8,
+            "end": 106.23333333333333,
+            "startFrame": 2994,
+            "endFrame": 3187,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "813be40ccda309b995f3973c53e026174d818d05a5212fdd28b83b61d4a69ffc"
+          },
+          {
+            "text": "La acumulada se construye con el soporte completo; si se pide por tramos, el valor de comprobación no sustituye a la función.",
+            "start": 106.53333333333333,
+            "end": 115.96666666666667,
+            "startFrame": 3196,
+            "endFrame": 3479,
+            "words": 22,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "07b147f5df0e2043ff26980dd4a44dd1ee4983ccf6ad47525f5aab48cdd81be8"
+          }
+        ]
+      },
+      {
+        "start": 116.26666666666667,
+        "end": 133.16666666666666,
+        "cues": [
+          {
+            "text": "Antes del soporte.",
+            "start": 116.26666666666667,
+            "end": 117.56666666666666,
+            "startFrame": 3488,
+            "endFrame": 3527,
+            "words": 3,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "1634399c97c2d06a59e3feebf7d4377642f2ad3abb126563811a193e647e0258"
+          },
+          {
+            "text": "El tiempo no puede ser negativo, así que antes de cero no hay probabilidad acumulada. efe mayúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 0 abre paréntesis, equis minúscula menor que 0, cierra paréntesis.",
+            "start": 117.86666666666666,
+            "end": 132.86666666666667,
+            "startFrame": 3536,
+            "endFrame": 3986,
+            "words": 35,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "d3cd6cd779f7dcc0a08c0ff3cb828594068fd88a6341792c829f2ba091635114"
+          }
+        ]
+      },
+      {
+        "start": 133.16666666666666,
+        "end": 165.4,
+        "cues": [
+          {
+            "text": "Integrar en el soporte.",
+            "start": 133.16666666666666,
+            "end": 134.9,
+            "startFrame": 3995,
+            "endFrame": 4047,
+            "words": 4,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "1e16e1f3aff5624f04b59a5cf36a7d585bdd70c8c234bc10064d4739b7ed60ac"
+          },
+          {
+            "text": "La acumulada integra la densidad desde cero hasta equis minúscula.",
+            "start": 135.2,
+            "end": 139.5,
+            "startFrame": 4056,
+            "endFrame": 4185,
+            "words": 10,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "acc5db0c750c07b9e27e6bd9175ab6d4055a6f299ec63093b9de0df265c677c5"
+          },
+          {
+            "text": "Uso te minúscula como variable de integración para no confundirla con el límite equis minúscula. integral desde 0 hasta equis minúscula de abre paréntesis, 1 menos te minúscula dividido entre 2, cierra paréntesis respecto de te minúscula igual a abre corchete, te minúscula menos te minúscula al cuadrado dividido entre 4, cierra corchete evaluado desde 0 hasta equis minúscula.",
+            "start": 139.8,
+            "end": 165.1,
+            "startFrame": 4194,
+            "endFrame": 4953,
+            "words": 59,
+            "sceneIndex": 8,
+            "cueIndex": 2,
+            "sourceCueSha256": "2cf4388ddcdbd8c889bb49f25c4b64af9322e35a4812f1609748ddd873d80306"
+          }
+        ]
+      },
+      {
+        "start": 165.4,
+        "end": 180.7,
+        "cues": [
+          {
+            "text": "integral desde 0 hasta equis minúscula de abre paréntesis, 1 menos te minúscula dividido entre 2, cierra paréntesis respecto de te minúscula queda igual a equis minúscula menos equis minúscula al cuadrado dividido entre 4.",
+            "start": 165.4,
+            "end": 180.4,
+            "startFrame": 4962,
+            "endFrame": 5412,
+            "words": 35,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "5398ea5e0963549f4119490d21a3bbce957abc8d62c36ef726de80bcec8ec3f1"
+          }
+        ]
+      },
+      {
+        "start": 180.7,
+        "end": 186.9,
+        "cues": [
+          {
+            "text": "Completar la definición.",
+            "start": 180.7,
+            "end": 182,
+            "startFrame": 5421,
+            "endFrame": 5460,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "fab56d9233375f712eceef15f4725c7a427b51103f0a570ea3b0bdeec8538c91"
+          },
+          {
+            "text": "Después de dos años, ya se acumuló toda la probabilidad.",
+            "start": 182.3,
+            "end": 186.6,
+            "startFrame": 5469,
+            "endFrame": 5598,
+            "words": 10,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "8b098d75c34910fbc736bdd163187f678b3977f8be2b80e31c2f8af7571ea164"
+          }
+        ]
+      },
+      {
+        "start": 186.9,
+        "end": 208.6,
+        "cues": [
+          {
+            "text": "Trazar la acumulada.",
+            "start": 186.9,
+            "end": 188.2,
+            "startFrame": 5607,
+            "endFrame": 5646,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "9e25538ae5823ba2752b88ad246ea1141b1b2873394aac3eb9402d664b5db86c"
+          },
+          {
+            "text": "La curva continua vale cero antes del origen.",
+            "start": 188.5,
+            "end": 191.93333333333334,
+            "startFrame": 5655,
+            "endFrame": 5758,
+            "words": 8,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "725176cc162b3ba93bb4dd5fca353f016b98c768d59e33686a62a3f6046b8289"
+          },
+          {
+            "text": "Entre cero y dos es una parábola creciente y cóncava hacia abajo, con pendiente uno menos equis minúscula entre dos.",
+            "start": 192.23333333333332,
+            "end": 200.83333333333334,
+            "startFrame": 5767,
+            "endFrame": 6025,
+            "words": 20,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "fcecf5efc105879c269787c318e63f7bf3737de30ba9fa54fa1c78c5965aa898"
+          },
+          {
+            "text": "Llega a uno en dos y permanece horizontal después.",
+            "start": 201.13333333333333,
+            "end": 205,
+            "startFrame": 6034,
+            "endFrame": 6150,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 3,
+            "sourceCueSha256": "99a4c33ec0dee19bd9c14218444cac8067c0871e8cf5edd5f475acf37de707fc"
+          },
+          {
+            "text": "Sus alturas son probabilidades acumuladas, no masas.",
+            "start": 205.3,
+            "end": 208.3,
+            "startFrame": 6159,
+            "endFrame": 6249,
+            "words": 7,
+            "sceneIndex": 11,
+            "cueIndex": 4,
+            "sourceCueSha256": "9c3586bb0db18f36373bb4724cbb0786c94fdecf70aaddea250cc3100f6a42a3"
+          }
+        ]
+      },
+      {
+        "start": 208.6,
+        "end": 222.53333333333333,
+        "cues": [
+          {
+            "text": "Evaluar en un año.",
+            "start": 208.6,
+            "end": 210.33333333333334,
+            "startFrame": 6258,
+            "endFrame": 6310,
+            "words": 4,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "b93823e39d37192df1b118afdf39741913b5ccda2b4afe29fb84fb4c9c2e5600"
+          },
+          {
+            "text": "Sustituyo el umbral por un año en el tramo que le corresponde. efe mayúscula abre paréntesis, 1, cierra paréntesis igual a 1 menos 1 dividido entre 4.",
+            "start": 210.63333333333333,
+            "end": 222.23333333333332,
+            "startFrame": 6319,
+            "endFrame": 6667,
+            "words": 27,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "865ec8518c323c7a0294ca4ca4016a3049fb7dad872603c58199ccac4dac70cd"
+          }
+        ]
+      },
+      {
+        "start": 222.53333333333333,
+        "end": 228.83333333333334,
+        "cues": [
+          {
+            "text": "efe mayúscula abre paréntesis, 1, cierra paréntesis queda igual a 3 dividido entre 4.",
+            "start": 222.53333333333333,
+            "end": 228.53333333333333,
+            "startFrame": 6676,
+            "endFrame": 6856,
+            "words": 14,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "de68f08645f7c4837d3aefe55b199f8525dbac6d0540742e4d5c348f29510854"
+          }
+        ]
+      },
+      {
+        "start": 228.83333333333334,
+        "end": 242.2,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 7 5 probabilidad entre 0 y 1.",
+            "start": 228.83333333333334,
+            "end": 234,
+            "startFrame": 6865,
+            "endFrame": 7020,
+            "words": 12,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "fc04178d06497ab6f148623a61663ebac0586894b7931d5ec8d9b80e25eeda88"
+          },
+          {
+            "text": "La curva representa la acumulada por tramos.",
+            "start": 234.3,
+            "end": 237.3,
+            "startFrame": 7029,
+            "endFrame": 7119,
+            "words": 7,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "759b0bcf823d758e9e8071ec9a2ee0413bc81340259e29777318eae3bfc1106c"
+          },
+          {
+            "text": "La coordenada horizontal mide años y la vertical, probabilidad acumulada.",
+            "start": 237.6,
+            "end": 241.9,
+            "startFrame": 7128,
+            "endFrame": 7257,
+            "words": 10,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "2b3847bfe0b3256e7e3f1c3a9f4f6b14b544521714f29a8dafac0c034e266459"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
