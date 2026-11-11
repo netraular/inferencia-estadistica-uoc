@@ -164,6 +164,19 @@ export function compatibleCourseRecording(animation, recording) {
 }
 
 export function compatibleCourseVideo(animation, recording, video) {
+  if (video?.silent === true) {
+    if (!animation?.steps?.length || video.engine !== 'remotion' || video.sceneEngine !== 'native-svg'
+      || video.complete !== true || video.narrationMode !== 'transcript' || video.cueTiming !== 'estimated'
+      || video.id !== animation.id || video.src !== `videos/${animation.id}/video.mp4`
+      || video.poster !== `videos/${animation.id}/poster.jpg` || video.fps !== 30
+      || video.width !== 1280 || video.height !== 720 || !Number.isInteger(video.frames) || video.frames <= 0
+      || !Number.isFinite(video.duration) || video.duration <= 0
+      || Math.abs(video.frames / video.fps - video.duration) > 1 / video.fps + 1e-6
+      || !Array.isArray(video.transcript?.scenes) || video.transcript.scenes.length !== animation.steps.length
+      || video.audioSource || video.audioSha256 || video.voice || video.model) return false;
+    const timeline = {...video.transcript, src:`audio/${animation.id}.mp3`, duration:video.duration, cueTiming:'measured'};
+    return compatibleCourseRecording(animation, timeline);
+  }
   if (!compatibleCourseRecording(animation, recording) || !video || video.engine !== 'remotion'
     || video.voice !== 'Puck' || video.model !== 'gemini-3.8-flash-tts'
     || video.audioSource !== recording.src || video.src !== `videos/${animation.id}/video.mp4`
@@ -335,7 +348,7 @@ export function mountExercises(root, {exercises, lessonId, formatMath, audio, vi
         const transcript=owner.createElement('details');
         transcript.className='animation-transcript';
         const summary=owner.createElement('summary');summary.textContent='Transcripci\u00f3n';transcript.append(summary);
-        for(const cue of track.scenes.flatMap(scene=>scene.cues)) {
+        for(const cue of (video.silent ? video.transcript : track).scenes.flatMap(scene=>scene.cues)) {
           const paragraph=owner.createElement('p');paragraph.textContent=cue.text;transcript.append(paragraph);
         }
         let native=true;

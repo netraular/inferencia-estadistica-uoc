@@ -5,22 +5,30 @@
   "id": "proporciones--porcentaje-y-exposicion",
   "kind": "section",
   "title": "Porcentaje, tasa y concentración",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "aff54ce1dadecb9d31033ec58a671cd8196425db9ff6856405f97c790b201114",
   "src": "videos/proporciones--porcentaje-y-exposicion/video.mp4",
   "poster": "videos/proporciones--porcentaje-y-exposicion/poster.jpg",
-  "duration": 87.9,
-  "frames": 2637,
+  "duration": 85.06666666666666,
+  "frames": 2552,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "audioSource": "audio/proporciones--porcentaje-y-exposicion.mp3",
-  "audioSha256": "57344bcb8d7a997c32bc080bd480097038a03e636e3ea32bdb0809147ea67512",
-  "videoSha256": "d29f1502bb8c713874615afa56341174b8f5e99405150b4d14fe56517d3878da",
-  "posterSha256": "8ad10b580b28e888fa8c98db4c253adee7731ba50c74b734f9f62d5b9ffdcaad",
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "f0ff61851035fcb20e1184a25c3999a25aa1c6e2be16f2a801fb8498cd3354ff",
+  "videoSha256": "ac1a7cbaacaba2988ffe07fd6b06adac956f960144c583e9cea66af2f2c04e19",
+  "posterSha256": "db26511c4ae2ebf749c2277b147f4627dcfc9d1082343275db83e4758e4af3a8",
   "canonicalSha256": "57b01fd871a625bc975e8fe5327a722468aaba96b4325c331109bac4143bf3cb",
-  "voice": "Puck",
-  "model": "gemini-3.8-flash-tts",
-  "inputHash": "fc3f8339aec8de5db3ff0a4b1f0311c0e2da5de253932c0a070d6acf1300ed28",
-  "rendererSha256": "01aeb188bf8c415d97f8e7ac5371e8e65950c3ee2ea194f2452a2c2b0933ca13",
+  "inputHash": "e3c922b471084660ac26f3ed75c835d3bb50209e3a0a6a647082f555bbd03d62",
+  "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
     "itemSha256": "707f914b56886be2592fd2bf33a3cf054d1d0254938275fa93982f5e12b27ecc",
@@ -30,2068 +38,257 @@
       "section": "Proporciones y análisis dimensional; apoyo para los Temas 1 a 4"
     },
     "provenance": null,
-    "renderedAnimationSha256": "aea78cfe4af133ac382e8dc712ec29340c32903480e2f9aa08932092eeada996",
-    "audioMetadataSha256": "f40b0ba9275b2b9322d805c7e3449053a183bb3440a0fa3b46faa3a1de05fd2f",
-    "rendererSources": {
-      "Course.jsx": "919fec7b5c90a20e76bf164e688bb567bf33aa85279ee5deeeef1faf661f170a",
-      "course-frame.mjs": "a23be31a172eac33bb7ecc3125190414c70afa4434362122e85d2ee45b124c70",
-      "course-contract.mjs": "90483c64a64b88060bbbd94bd3e9cbd9a786573201454062b24ce73610c38bc7",
-      "course-media.mjs": "5873942a94c7bb6710e642fc2acd133e53f59173133ca8fe57d537cadb56a424",
-      "render-course.mjs": "b2b5ef4f372b26e36a6d59d2150967cd41becde38114907badd3a538e14378e4",
-      "package-lock.json": "7dd9a354312be09cfd38bbdb412595a4351959f05b6b573dd54fd75b77b87fea",
-      "src/classroom/whiteboard.mjs": "6728dcc7986fda1d4613be591d0eecaeb492371c8bf6aa12c07161c352fc4fcc",
+    "renderedAnimationSha256": "899174180f37f9282d6162f8ec1d633f0fa99850cf945e3be37b5110b6945689",
+    "transcriptSha256": "f0ff61851035fcb20e1184a25c3999a25aa1c6e2be16f2a801fb8498cd3354ff",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
       "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
       "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
-      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036",
-      "stageEquations": "17bfb5afd4d58a75ff4a9d3cd26936b7fa57a5fec74357ae7cf6744b92685404"
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
     }
   },
-  "cueTiming": "measured",
   "testFixture": false,
   "parentLesson": "proporciones",
-  "evidence": {
-    "posterFrame": 2362,
-    "layout": [
+  "transcript": {
+    "id": "proporciones--porcentaje-y-exposicion",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "57b01fd871a625bc975e8fe5327a722468aaba96b4325c331109bac4143bf3cb",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 85.06666666666666,
+    "scenes": [
       {
-        "frame": 0,
-        "scene": 0,
-        "cue": 0,
-        "boxes": [
+        "start": 0,
+        "end": 85.06666666666666,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
           },
           {
-            "name": "context-0",
-            "x": 25.333333333333332,
-            "y": 214.80000000000004,
-            "width": 312,
-            "height": 20
+            "text": "Un cuarto de nuestras semillas germinó.",
+            "start": 1.5,
+            "end": 4.1,
+            "startFrame": 45,
+            "endFrame": 123,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "ca77c03f35b08020183adfeb902ca085986a0a5b2a4ef3a0f1d25f9eb6be4266"
           },
           {
-            "name": "context-1",
-            "x": 350.6666666666667,
-            "y": 125.53333333333335,
-            "width": 312,
-            "height": 20
+            "text": "¿Cómo contarlo en porcentaje, y por qué no es lo mismo que una tasa?",
+            "start": 4.4,
+            "end": 10.4,
+            "startFrame": 132,
+            "endFrame": 312,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "2e5ff33758e094ca7f137c3259ee666eafd5f92b1972ac95638cfdd365b5f11d"
           },
           {
-            "name": "context-2",
-            "x": 350.6666666666667,
-            "y": 304.06666666666666,
-            "width": 312,
-            "height": 20
+            "text": "Empecemos cambiando solo la escala de la proporción.",
+            "start": 10.7,
+            "end": 14.133333333333333,
+            "startFrame": 321,
+            "endFrame": 424,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "186e8e1c1a8bcb3dd1a0cfadb7d927081bc7cd9d923a2811b87c43e3d91adb3b"
           },
           {
-            "name": "context-3",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "Por ciento significa por cada cien partes del total.",
+            "start": 14.433333333333334,
+            "end": 18.3,
+            "startFrame": 433,
+            "endFrame": 549,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "8aa9f3c4a06f28609392aa3f2a7572563edadd3c0647f2a4ced7f2d47e368577"
+          },
+          {
+            "text": "Como un cuarto de cien son veinticinco, multiplicar cero coma veinticinco por cien nos da la nueva expresión.",
+            "start": 18.6,
+            "end": 26.333333333333332,
+            "startFrame": 558,
+            "endFrame": 790,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "9e743499a755f743ae672eb04b18dfd919eeb8c6bf23194c1f321b007efacb56"
+          },
+          {
+            "text": "Veinticinco por ciento sigue representando las dieciocho de setenta y dos.",
+            "start": 26.633333333333333,
+            "end": 31.366666666666667,
+            "startFrame": 799,
+            "endFrame": 941,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "3504ee2b0a4da92a35ed28179a5e953afe2cd1e3a4949da8dda152ad6d9eefb7"
+          },
+          {
+            "text": "No hemos observado cien semillas nuevas ni cambiado el resultado; hemos usado otra forma de nombrar la misma fracción.",
+            "start": 31.666666666666668,
+            "end": 39.833333333333336,
+            "startFrame": 950,
+            "endFrame": 1195,
+            "words": 19,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "e98cfdae231b29c4cd289a83118d5b7d24ce793a712e3f9e3bcc1eeb678bae82"
+          },
+          {
+            "text": "Cambiemos de pregunta: un sensor ve seis llegadas en tres horas.",
+            "start": 40.13333333333333,
+            "end": 44.86666666666667,
+            "startFrame": 1204,
+            "endFrame": 1346,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "5dd008b9b44c6c3db35f16baf60987318c4e4a27bbeed405257ac862c07333ae"
+          },
+          {
+            "text": "Cada hora aporta exposición, y seis repartido entre tres da dos llegadas por hora.",
+            "start": 45.166666666666664,
+            "end": 51.166666666666664,
+            "startFrame": 1355,
+            "endFrame": 1535,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "4c8bebe3bf3f4d23df92ee674ccccd42b383ddbc1c776f6265710ef7093d5920"
+          },
+          {
+            "text": "Este cociente es una tasa y puede superar uno.",
+            "start": 51.46666666666667,
+            "end": 55.333333333333336,
+            "startFrame": 1544,
+            "endFrame": 1660,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "sourceCueSha256": "202d379b62c45678b6963d262c36b1283981a6919fdb1d488a106ef1e601d7ba"
+          },
+          {
+            "text": "Si el denominador fuese volumen, hablaríamos de concentración.",
+            "start": 55.63333333333333,
+            "end": 59.06666666666667,
+            "startFrame": 1669,
+            "endFrame": 1772,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "sourceCueSha256": "ae6fcdd0f5a810ffdb2872c6b1127173b0de3700253874e909b33af7ecff7d90"
+          },
+          {
+            "text": "Dos colonias por mililitro significa cantidad por volumen, no probabilidad de dos.",
+            "start": 59.36666666666667,
+            "end": 64.53333333333333,
+            "startFrame": 1781,
+            "endFrame": 1936,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 12,
+            "sourceCueSha256": "f3f4f60a4af77b1c75c4998671d36d92efe3a66fcd62c8a9a06a4cb08861aa67"
+          },
+          {
+            "text": "La unidad nos dice qué interpretación admite el número.",
+            "start": 64.83333333333333,
+            "end": 68.7,
+            "startFrame": 1945,
+            "endFrame": 2061,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 13,
+            "sourceCueSha256": "ef5d8ef6ff4492515081d1423303d444d5d6acdf500e8c64da272d07c0c96924"
+          },
+          {
+            "text": "Para reunir dos bandejas sumamos germinadas y sembradas antes de dividir.",
+            "start": 69,
+            "end": 73.73333333333333,
+            "startFrame": 2070,
+            "endFrame": 2212,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 14,
+            "sourceCueSha256": "096f70be6e66d3395b711336be67b6974761f6b3a417dff2c5934b20a56a4909"
+          },
+          {
+            "text": "Un promedio simple de porcentajes daría el mismo peso a una bandeja pequeña y a otra grande; contar cada semilla exige ponderar por sus tamaños.",
+            "start": 74.03333333333333,
+            "end": 84.76666666666667,
+            "startFrame": 2221,
+            "endFrame": 2543,
+            "words": 25,
+            "sceneIndex": 0,
+            "cueIndex": 15,
+            "sourceCueSha256": "db2c0ac82e8a2767e21081ee1207b1d8b2077b6404b7ea2dba4a3b0642387603"
           }
-        ],
-        "errors": [],
-        "diagram": "tree",
-        "marks": 5,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "739adc03ea3a866788b7e76b2f63d94ba82526338bac0f45cccedad30e8b8f6d"
-      },
-      {
-        "frame": 17,
-        "scene": 0,
-        "cue": 0,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 25.333333333333332,
-            "y": 214.80000000000004,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-1",
-            "x": 350.6666666666667,
-            "y": 125.53333333333335,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-2",
-            "x": 350.6666666666667,
-            "y": 304.06666666666666,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-3",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "tree",
-        "marks": 5,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "739adc03ea3a866788b7e76b2f63d94ba82526338bac0f45cccedad30e8b8f6d"
-      },
-      {
-        "frame": 64,
-        "scene": 0,
-        "cue": 1,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "4a5ec1be026b4e3a765361d9e3addb5ab7877efcb13a8ab5ae04f72f6eed3b38"
-      },
-      {
-        "frame": 154,
-        "scene": 0,
-        "cue": 2,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "4a5ec1be026b4e3a765361d9e3addb5ab7877efcb13a8ab5ae04f72f6eed3b38"
-      },
-      {
-        "frame": 309,
-        "scene": 0,
-        "cue": 3,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "4a5ec1be026b4e3a765361d9e3addb5ab7877efcb13a8ab5ae04f72f6eed3b38"
-      },
-      {
-        "frame": 429,
-        "scene": 0,
-        "cue": 4,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 737.1661930323123,
-            "y": 267.79442163982736,
-            "width": 485.50678875907806,
-            "height": 67.35160892154892
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "tex": "100\\cdot0{,}25=25",
-            "inkPixels": 6248,
-            "equationPaths": 11
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "6b0d6e901f4bd5444a82abf8005b2672d6fb90756d63fd92240e9643a6a32a0c"
-      },
-      {
-        "frame": 557,
-        "scene": 0,
-        "cue": 5,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 737.1661930323123,
-            "y": 267.79442163982736,
-            "width": 485.50678875907806,
-            "height": 67.35160892154892
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "tex": "100\\cdot0{,}25=25",
-            "inkPixels": 6248,
-            "equationPaths": 11
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "6b0d6e901f4bd5444a82abf8005b2672d6fb90756d63fd92240e9643a6a32a0c"
-      },
-      {
-        "frame": 804,
-        "scene": 0,
-        "cue": 6,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 737.1661930323123,
-            "y": 156.5277549731607,
-            "width": 485.50678875907806,
-            "height": 67.35160892154892
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "tex": "100\\cdot0{,}25=25",
-            "inkPixels": 6235,
-            "equationPaths": 11
-          },
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1846,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "37382e806d53b67fdba255389f1f16bd3c3eb5d27b87837e8d4c36f5c4947d63"
-      },
-      {
-        "frame": 967,
-        "scene": 0,
-        "cue": 7,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 737.1661930323123,
-            "y": 156.5277549731607,
-            "width": 485.50678875907806,
-            "height": 67.35160892154892
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 309.4666666666667,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "tex": "100\\cdot0{,}25=25",
-            "inkPixels": 6235,
-            "equationPaths": 11
-          },
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1846,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "37382e806d53b67fdba255389f1f16bd3c3eb5d27b87837e8d4c36f5c4947d63"
-      },
-      {
-        "frame": 1210,
-        "scene": 0,
-        "cue": 8,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 737.1661930323123,
-            "y": 119.43886608427184,
-            "width": 485.50678875907806,
-            "height": 67.35160892154889
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 28,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-1",
-            "x": 28,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-2",
-            "x": 158.13333333333333,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-3",
-            "x": 158.13333333333333,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-4",
-            "x": 288.26666666666665,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-5",
-            "x": 288.26666666666665,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-6",
-            "x": 418.3999999999999,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-7",
-            "x": 418.3999999999999,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-8",
-            "x": 548.5333333333333,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-9",
-            "x": 548.5333333333333,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-10",
-            "x": 28,
-            "y": 277.4666666666667,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-11",
-            "x": 28,
-            "y": 302.8,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "trials",
-        "marks": 12,
-        "authored": [
-          {
-            "cue": 4,
-            "tex": "100\\cdot0{,}25=25",
-            "inkPixels": 6186,
-            "equationPaths": 11
-          },
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1851,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2828,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "c508f1bac534d7be61479f5cb2dc6a9106fb458c43f72a418b577ee6aeec77f7"
-      },
-      {
-        "frame": 1378,
-        "scene": 0,
-        "cue": 9,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 737.1661930323123,
-            "y": 119.43886608427184,
-            "width": 485.50678875907806,
-            "height": 67.35160892154889
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 28,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-1",
-            "x": 28,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-2",
-            "x": 158.13333333333333,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-3",
-            "x": 158.13333333333333,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-4",
-            "x": 288.26666666666665,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-5",
-            "x": 288.26666666666665,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-6",
-            "x": 418.3999999999999,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-7",
-            "x": 418.3999999999999,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-8",
-            "x": 548.5333333333333,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-9",
-            "x": 548.5333333333333,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-10",
-            "x": 28,
-            "y": 277.4666666666667,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-11",
-            "x": 28,
-            "y": 302.8,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "trials",
-        "marks": 12,
-        "authored": [
-          {
-            "cue": 4,
-            "tex": "100\\cdot0{,}25=25",
-            "inkPixels": 6186,
-            "equationPaths": 11
-          },
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1851,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2828,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "c508f1bac534d7be61479f5cb2dc6a9106fb458c43f72a418b577ee6aeec77f7"
-      },
-      {
-        "frame": 1576,
-        "scene": 0,
-        "cue": 10,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 737.1661930323123,
-            "y": 119.43886608427184,
-            "width": 485.50678875907806,
-            "height": 67.35160892154889
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 28,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-1",
-            "x": 28,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-2",
-            "x": 158.13333333333333,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-3",
-            "x": 158.13333333333333,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-4",
-            "x": 288.26666666666665,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-5",
-            "x": 288.26666666666665,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-6",
-            "x": 418.3999999999999,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-7",
-            "x": 418.3999999999999,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-8",
-            "x": 548.5333333333333,
-            "y": 105.60000000000001,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-9",
-            "x": 548.5333333333333,
-            "y": 130.93333333333334,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-10",
-            "x": 28,
-            "y": 277.4666666666667,
-            "width": 108.8,
-            "height": 17.333333333333332
-          },
-          {
-            "name": "context-11",
-            "x": 28,
-            "y": 302.8,
-            "width": 108.8,
-            "height": 21.333333333333332
-          },
-          {
-            "name": "context-12",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "trials",
-        "marks": 12,
-        "authored": [
-          {
-            "cue": 4,
-            "tex": "100\\cdot0{,}25=25",
-            "inkPixels": 6186,
-            "equationPaths": 11
-          },
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1851,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2828,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "c508f1bac534d7be61479f5cb2dc6a9106fb458c43f72a418b577ee6aeec77f7"
-      },
-      {
-        "frame": 1702,
-        "scene": 0,
-        "cue": 11,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 25.333333333333332,
-            "y": 214.80000000000004,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-1",
-            "x": 350.6666666666667,
-            "y": 125.53333333333335,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-2",
-            "x": 350.6666666666667,
-            "y": 304.06666666666666,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-3",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "tree",
-        "marks": 5,
-        "authored": [
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1847,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2832,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "Colonias por mililitro",
-            "inkPixels": 3767,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "c05d83ae39de2e649bf27ec39e5f0c92489994072228b012dc2617da3cbd4f6d"
-      },
-      {
-        "frame": 1841,
-        "scene": 0,
-        "cue": 12,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 25.333333333333332,
-            "y": 214.80000000000004,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-1",
-            "x": 350.6666666666667,
-            "y": 125.53333333333335,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-2",
-            "x": 350.6666666666667,
-            "y": 304.06666666666666,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-3",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "tree",
-        "marks": 5,
-        "authored": [
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1847,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2832,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "Colonias por mililitro",
-            "inkPixels": 3767,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "c05d83ae39de2e649bf27ec39e5f0c92489994072228b012dc2617da3cbd4f6d"
-      },
-      {
-        "frame": 2047,
-        "scene": 0,
-        "cue": 13,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 25.333333333333332,
-            "y": 214.80000000000004,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-1",
-            "x": 350.6666666666667,
-            "y": 125.53333333333335,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-2",
-            "x": 350.6666666666667,
-            "y": 304.06666666666666,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-3",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "tree",
-        "marks": 5,
-        "authored": [
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1847,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2832,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "Colonias por mililitro",
-            "inkPixels": 3767,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "c05d83ae39de2e649bf27ec39e5f0c92489994072228b012dc2617da3cbd4f6d"
-      },
-      {
-        "frame": 2184,
-        "scene": 0,
-        "cue": 14,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 232.5649717514124,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1847,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2832,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "Colonias por mililitro",
-            "inkPixels": 3767,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "4c48380a9a1550bdb8588c22231aebfd5d3215357cece75ce53ec3a973f9163a"
-      },
-      {
-        "frame": 2362,
-        "scene": 0,
-        "cue": 15,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 232.5649717514124,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1847,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2832,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "Colonias por mililitro",
-            "inkPixels": 3767,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "4c48380a9a1550bdb8588c22231aebfd5d3215357cece75ce53ec3a973f9163a"
-      },
-      {
-        "frame": 2636,
-        "scene": 0,
-        "cue": 15,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 84.79999999999995
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 84.80000000000001
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 232.5649717514124,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 6,
-            "value": "25 %",
-            "inkPixels": 1847,
-            "equationPaths": 0
-          },
-          {
-            "cue": 8,
-            "value": "2 llegadas/h",
-            "inkPixels": 2832,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "Colonias por mililitro",
-            "inkPixels": 3767,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "4c48380a9a1550bdb8588c22231aebfd5d3215357cece75ce53ec3a973f9163a"
+        ]
       }
-    ],
-    "pixels": [
-      {
-        "frame": 0,
-        "ink": 466,
-        "sha256": "c48789bbac480d3af5cbc432343a61f38841755b7ff39e588f531cc6e75308d1"
-      },
-      {
-        "frame": 17,
-        "ink": 466,
-        "sha256": "8db7d0f89f85e754dd747ef131ad4beea7c137bd0adc2b3a120b19e70ae9039c"
-      },
-      {
-        "frame": 64,
-        "ink": 3956,
-        "sha256": "13d3b598283e7a946a3ced8ef332b398dc9155251991efdc3f1e7c9e187966a4"
-      },
-      {
-        "frame": 154,
-        "ink": 3956,
-        "sha256": "13d3b598283e7a946a3ced8ef332b398dc9155251991efdc3f1e7c9e187966a4"
-      },
-      {
-        "frame": 309,
-        "ink": 3954,
-        "sha256": "9f0c462b370fce07737bbc0bba232b201dbc682287564cd278fd0313e5e56aa9"
-      },
-      {
-        "frame": 429,
-        "ink": 4344,
-        "sha256": "d39fd9a0ece300a850896270f312d5e52ca7f22669d43f54a233cc0ff0f1280c"
-      },
-      {
-        "frame": 557,
-        "ink": 4345,
-        "sha256": "a98d4867ef0e8c06f98aca18df976a5bf8367f4306b336161193e343df49b96a"
-      },
-      {
-        "frame": 804,
-        "ink": 4346,
-        "sha256": "3b5b52de9501a69c2eb67931f0996c7c7dd0b8ec1fdeaf8fa74dda14f2a2acd9"
-      },
-      {
-        "frame": 967,
-        "ink": 4346,
-        "sha256": "3b5b52de9501a69c2eb67931f0996c7c7dd0b8ec1fdeaf8fa74dda14f2a2acd9"
-      },
-      {
-        "frame": 1210,
-        "ink": 1444,
-        "sha256": "781086fdd9460d7d83ec4ec448ebc087d4f522c751404353c337ac253740ea72"
-      },
-      {
-        "frame": 1378,
-        "ink": 1444,
-        "sha256": "781086fdd9460d7d83ec4ec448ebc087d4f522c751404353c337ac253740ea72"
-      },
-      {
-        "frame": 1576,
-        "ink": 1444,
-        "sha256": "781086fdd9460d7d83ec4ec448ebc087d4f522c751404353c337ac253740ea72"
-      },
-      {
-        "frame": 1702,
-        "ink": 828,
-        "sha256": "dd9a04a24e29343066ba890dd83522aa18bf670d76130e6f89e7b83477b65a55"
-      },
-      {
-        "frame": 1841,
-        "ink": 828,
-        "sha256": "dd9a04a24e29343066ba890dd83522aa18bf670d76130e6f89e7b83477b65a55"
-      },
-      {
-        "frame": 2047,
-        "ink": 828,
-        "sha256": "dd9a04a24e29343066ba890dd83522aa18bf670d76130e6f89e7b83477b65a55"
-      },
-      {
-        "frame": 2184,
-        "ink": 4926,
-        "sha256": "8877f698d68c469814837ee86405f3cb6c4bbbba4f70f15dda3246cf15ec69df"
-      },
-      {
-        "frame": 2362,
-        "ink": 4926,
-        "sha256": "4bf2333f866000728ef56f1202bda59c238e9cd4d057474e21874b603ccfff86"
-      },
-      {
-        "frame": 2636,
-        "ink": 4926,
-        "sha256": "4bf2333f866000728ef56f1202bda59c238e9cd4d057474e21874b603ccfff86"
-      }
-    ],
-    "streams": [
-      {
-        "index": 0,
-        "codec_name": "h264",
-        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
-        "profile": "High",
-        "codec_type": "video",
-        "codec_time_base": "1/60",
-        "codec_tag_string": "avc1",
-        "codec_tag": "0x31637661",
-        "width": 1280,
-        "height": 720,
-        "coded_width": 1280,
-        "coded_height": 720,
-        "has_b_frames": 2,
-        "sample_aspect_ratio": "1:1",
-        "display_aspect_ratio": "16:9",
-        "pix_fmt": "yuv420p",
-        "level": 31,
-        "color_range": "tv",
-        "color_transfer": "iec61966-2-1",
-        "color_primaries": "bt709",
-        "chroma_location": "left",
-        "refs": 4,
-        "is_avc": "true",
-        "nal_length_size": "4",
-        "r_frame_rate": "30/1",
-        "avg_frame_rate": "30/1",
-        "time_base": "1/90000",
-        "start_pts": 0,
-        "start_time": "0.000000",
-        "duration_ts": 7911000,
-        "duration": "87.900000",
-        "bit_rate": "59348",
-        "bits_per_raw_sample": "8",
-        "nb_frames": "2637",
-        "nb_read_frames": "2637",
-        "disposition": {
-          "default": 1,
-          "dub": 0,
-          "original": 0,
-          "comment": 0,
-          "lyrics": 0,
-          "karaoke": 0,
-          "forced": 0,
-          "hearing_impaired": 0,
-          "visual_impaired": 0,
-          "clean_effects": 0,
-          "attached_pic": 0,
-          "timed_thumbnails": 0
-        },
-        "tags": {
-          "language": "und",
-          "handler_name": "VideoHandler"
-        }
-      },
-      {
-        "index": 1,
-        "codec_name": "aac",
-        "codec_long_name": "AAC (Advanced Audio Coding)",
-        "profile": "LC",
-        "codec_type": "audio",
-        "codec_time_base": "1/24000",
-        "codec_tag_string": "mp4a",
-        "codec_tag": "0x6134706d",
-        "sample_fmt": "fltp",
-        "sample_rate": "24000",
-        "channels": 1,
-        "channel_layout": "mono",
-        "bits_per_sample": 0,
-        "r_frame_rate": "0/0",
-        "avg_frame_rate": "0/0",
-        "time_base": "1/24000",
-        "start_pts": 0,
-        "start_time": "0.000000",
-        "duration_ts": 2109600,
-        "duration": "87.900000",
-        "bit_rate": "106123",
-        "max_bit_rate": "144000",
-        "nb_frames": "2062",
-        "nb_read_frames": "2061",
-        "disposition": {
-          "default": 1,
-          "dub": 0,
-          "original": 0,
-          "comment": 0,
-          "lyrics": 0,
-          "karaoke": 0,
-          "forced": 0,
-          "hearing_impaired": 0,
-          "visual_impaired": 0,
-          "clean_effects": 0,
-          "attached_pic": 0,
-          "timed_thumbnails": 0
-        },
-        "tags": {
-          "language": "und",
-          "handler_name": "SoundHandler"
-        }
-      }
-    ],
-    "elapsedSeconds": 87.178
-  }
+    ]
+  },
+  "publication": "silent-transcript"
 }

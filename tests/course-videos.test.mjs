@@ -11,6 +11,9 @@ import * as solutions from '../pages/inferencia/exercise-solutions.js';
 import {createLessonAnimation} from '../pages/inferencia/animations.js';
 import {generateExercise} from '../pages/inferencia/exercises.js';
 import {enrichGlobalAnimation} from '../pages/inferencia/lesson-visuals.js';
+import {silentEntry} from '../scripts/publish-course-videos.mjs';
+import {sha256, prepareTranscriptItem} from '../data-src/course-videos/course-contract.mjs';
+import {courseTimeline} from '../data-src/course-videos/course-frame.mjs';
 
 const root = new URL('../', import.meta.url);
 const recording = {
@@ -126,6 +129,63 @@ test('native compatibility rejects missing, stale, malformed and conflicting med
   assert.equal(solutions.compatibleCourseVideo(original, track, video), true, 'optional recording metadata');
   assert.equal(solutions.compatibleCourseVideo({...original, steps:[]}, track, video), false);
 });
+
+test('silent native videos retain their exact transcript without requiring or impersonating audio', () => {
+  const animation = createLessonSections(COURSE.units[0].lessons[0])[0].animation;
+  const {track, video} = generatedMedia(animation);
+  for (const key of ['audioSource', 'audioSha256', 'voice', 'model']) delete video[key];
+  Object.assign(video, {id:animation.id, complete:true, sceneEngine:'native-svg', silent:true, temporary:true,
+    narrationMode:'transcript', cueTiming:'estimated', transcript:{scenes:track.scenes}});
+  assert.equal(solutions.compatibleCourseVideo(animation, undefined, video), true);
+  for (const mutate of [
+    entry => {entry.id = 'other';},
+    entry => {entry.transcript.scenes[0].cues[0].text += ' Revised';},
+    entry => {entry.transcript.scenes[0].cues[0].end = entry.duration + 1;},
+    entry => {entry.complete = false;},
+    entry => {entry.voice = 'Puck';},
+  ]) {
+    const changed = structuredClone(video);
+    mutate(changed);
+    assert.equal(solutions.compatibleCourseVideo(animation, undefined, changed), false);
+  }
+});
+
+test('silent publication rejects stale, unaudited or incomplete render metadata', () => {
+  const animation = createLessonSections(COURSE.units[0].lessons[0])[0].animation;
+  const item = {id:animation.id, kind:'section', title:animation.title, animation, canonicalSha256:'c'.repeat(64)};
+  const storyboard = prepareTranscriptItem(item, undefined, {native:true});
+  const transcript = courseTimeline(storyboard);
+  const metadata = {id:item.id, engine:'remotion', sceneEngine:'native-svg', complete:true, silent:true, temporary:true,
+    narrationMode:'transcript', cueTiming:'estimated', canonicalSha256:item.canonicalSha256,
+    transcriptSha256:sha256(JSON.stringify(transcript)), sourceSnapshot:{itemSha256:sha256(JSON.stringify(item))},
+    src:`videos/${item.id}/video.mp4`, poster:`videos/${item.id}/poster.jpg`,
+    duration:storyboard.duration, frames:storyboard.frames, fps:30, width:1280, height:720,
+    evidence:{layout:[{errors:[]}]}};
+  assert.equal(silentEntry(item, metadata, transcript).publication, 'silent-transcript');
+  for (const mutate of [entry => {entry.complete = false;}, entry => {entry.evidence.layout[0].errors.push('overflow');}, entry => {entry.transcriptSha256 = 'f'.repeat(64);}]) {
+    const changed = structuredClone(metadata);
+    mutate(changed);
+    assert.throws(() => silentEntry(item, changed, transcript));
+  }
+});
+
+test('silent lesson video mounts with its transcript and no recording', () => withReactDom(async ({React, container, renderer}) => {
+  const animation = createLessonSections(COURSE.units[0].lessons[0])[0].animation;
+  const {track, video} = generatedMedia(animation);
+  for (const key of ['audioSource', 'audioSha256', 'voice', 'model']) delete video[key];
+  Object.assign(video, {id:animation.id, complete:true, sceneEngine:'native-svg', silent:true, temporary:true,
+    narrationMode:'transcript', cueTiming:'estimated', transcript:{scenes:track.scenes}});
+  const LessonVideo = loadComponent('src/components/LessonVideo.jsx', {
+    '@docusaurus/useBaseUrl':() => '/inferencia/',
+    '../../static/videos/manifest.json':{lessons:{[animation.id]:video}},
+    '../../static/audio/manifest.json':{lessons:{}},
+    '../../pages/inferencia/exercise-solutions.js':solutions,
+    './LessonVideo.module.css':{},
+  });
+  await React.act(async () => renderer.render(React.createElement(LessonVideo, {animation, fallback:'Fallback'})));
+  assert.ok(container.querySelector('video'));
+  assert.equal(container.querySelectorAll('details p').length, track.scenes.flatMap(scene => scene.cues).length);
+}));
 
 test('native lesson source failures dispose playback and a different media identity recovers', () => withReactDom(async ({React, container, renderer, window, stopped}) => {
   let baseUrl = '/inferencia/';

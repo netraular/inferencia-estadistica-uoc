@@ -101,9 +101,19 @@ FFprobe verifies exact frame counts, codecs and duration; FFmpeg decodes the
 whole MP4 and checks sampled nonblank, changing scene pixels. Regression tests
 also compare continuous geometry within cues and exact narrated reveal anchors.
 
-Silent drafts retain `narrationMode:'transcript'`, `cueTiming:'estimated'`,
-`temporary:true`, `silent:true`, and no audio track. They cannot be published.
-For compatible Puck audio, use a measured frozen batch instead:
+Silent videos retain `narrationMode:'transcript'`, `cueTiming:'estimated'`,
+`temporary:true`, `silent:true`, and no audio track. They cannot be published
+as measured Puck narration. Explicitly publish verified complete native videos,
+including their exact transcript, with:
+
+```sh
+node scripts/publish-course-videos.mjs --batch /absolute/native-transcript-batch
+```
+
+Publication verifies live canonical content, source hashes, layout evidence,
+all decoded frames and media hashes. Failed or incomplete items are not copied.
+Existing compatible narrated videos take precedence. For compatible Puck audio,
+use a measured frozen batch instead:
 
 ```sh
 node data-src/course-videos/render-course.mjs --native --batch /absolute/measured-batch --ready

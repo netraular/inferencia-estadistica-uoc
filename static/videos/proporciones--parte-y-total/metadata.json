@@ -5,22 +5,30 @@
   "id": "proporciones--parte-y-total",
   "kind": "section",
   "title": "Comparar semillas, no solo recuentos",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "40ef4ecd5073db4507e6d36ff23925b7962733c02946832f9f453557af9337d5",
   "src": "videos/proporciones--parte-y-total/video.mp4",
   "poster": "videos/proporciones--parte-y-total/poster.jpg",
-  "duration": 91.98,
-  "frames": 2760,
+  "duration": 81.2,
+  "frames": 2436,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "audioSource": "audio/proporciones--parte-y-total.mp3",
-  "audioSha256": "17dfb1386634515ebfaf222ae1ebfc32f118f76316d334aa6484c9bd9b20aa0e",
-  "videoSha256": "f9f5d0175bc57a28af51ec8f5abb28bb458ed87835de84318ba3a213509119c7",
-  "posterSha256": "75cac2a9bd0eafcbedcc4b44a95e3f74b8c7afe583d3c358405d23fce97c44e7",
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "6f23e8ccbf549f41b45e6cc7b05441f97cf023a6e8876af41962f0cf674db151",
+  "videoSha256": "4e76f7fcdea6c7b74e6d4c3a483a8c7c7b9e9780083f4d1c1d457b9664ce7bcb",
+  "posterSha256": "ace99fe0d67c6ff74a2361382676b1bb150c3a6a369e9c4493dba433fbbe33a0",
   "canonicalSha256": "0423d718ce854c222fa22c75aceaae326e166cd4cb11b4f27429f26078b54b3d",
-  "voice": "Puck",
-  "model": "gemini-3.8-flash-tts",
-  "inputHash": "9d27ab039f8728cfc2d78848ce47b60afea2369fcb590521f33e197fa20c9458",
-  "rendererSha256": "01aeb188bf8c415d97f8e7ac5371e8e65950c3ee2ea194f2452a2c2b0933ca13",
+  "inputHash": "34af71dfacca8ab715143cccbcea1e95902ca0bbbe0ead03008667646ff25392",
+  "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
     "itemSha256": "25690022bca4183f6b8f39443bb9e36e2e7e19059a97f99ffccd1dd61b391a29",
@@ -30,2063 +38,257 @@
       "section": "Proporciones y análisis dimensional; apoyo para los Temas 1 a 4"
     },
     "provenance": null,
-    "renderedAnimationSha256": "c947352320e861861164e637b079b9623f69e11bd8142a4310bf520f6b7c6cf4",
-    "audioMetadataSha256": "7bf04f658fe01878815769b1bc4a744e25628b5eefaf3a2c9a9d2ec2cd04de93",
-    "rendererSources": {
-      "Course.jsx": "919fec7b5c90a20e76bf164e688bb567bf33aa85279ee5deeeef1faf661f170a",
-      "course-frame.mjs": "a23be31a172eac33bb7ecc3125190414c70afa4434362122e85d2ee45b124c70",
-      "course-contract.mjs": "90483c64a64b88060bbbd94bd3e9cbd9a786573201454062b24ce73610c38bc7",
-      "course-media.mjs": "5873942a94c7bb6710e642fc2acd133e53f59173133ca8fe57d537cadb56a424",
-      "render-course.mjs": "b2b5ef4f372b26e36a6d59d2150967cd41becde38114907badd3a538e14378e4",
-      "package-lock.json": "7dd9a354312be09cfd38bbdb412595a4351959f05b6b573dd54fd75b77b87fea",
-      "src/classroom/whiteboard.mjs": "6728dcc7986fda1d4613be591d0eecaeb492371c8bf6aa12c07161c352fc4fcc",
+    "renderedAnimationSha256": "844b618b08a68cd18990a290307d4c7efc18a342ced83a7a80b88161aceba977",
+    "transcriptSha256": "6f23e8ccbf549f41b45e6cc7b05441f97cf023a6e8876af41962f0cf674db151",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
       "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
       "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
-      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036",
-      "stageEquations": "17bfb5afd4d58a75ff4a9d3cd26936b7fa57a5fec74357ae7cf6744b92685404"
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
     }
   },
-  "cueTiming": "measured",
   "testFixture": false,
   "parentLesson": "proporciones",
-  "evidence": {
-    "posterFrame": 2490,
-    "layout": [
+  "transcript": {
+    "id": "proporciones--parte-y-total",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "0423d718ce854c222fa22c75aceaae326e166cd4cb11b4f27429f26078b54b3d",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 81.2,
+    "scenes": [
       {
-        "frame": 0,
-        "scene": 0,
-        "cue": 0,
-        "boxes": [
+        "start": 0,
+        "end": 81.2,
+        "cues": [
           {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
           },
           {
-            "name": "context-0",
-            "x": 25.333333333333332,
-            "y": 214.80000000000004,
-            "width": 312,
-            "height": 20
+            "text": "Comparemos dos bandejas: en una germinan dieciocho semillas y en otra treinta.",
+            "start": 1.5,
+            "end": 6.666666666666667,
+            "startFrame": 45,
+            "endFrame": 200,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "6ce2460815b01eb71b1500e7f053c7dc0d94c8a7d5e8d1d3be5eac4a35d0943c"
           },
           {
-            "name": "context-1",
-            "x": 350.6666666666667,
-            "y": 125.53333333333335,
-            "width": 312,
-            "height": 20
+            "text": "Parece que gana la segunda, pero ¿habíamos sembrado la misma cantidad?",
+            "start": 6.966666666666667,
+            "end": 11.7,
+            "startFrame": 209,
+            "endFrame": 351,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "4ff3241c062849c70d83ca09d988f196f954a84ff6a51bcdbc96922285420b13"
           },
           {
-            "name": "context-2",
-            "x": 350.6666666666667,
-            "y": 304.06666666666666,
-            "width": 312,
-            "height": 20
+            "text": "Sin ese dato la comparación queda abierta.",
+            "start": 12,
+            "end": 15,
+            "startFrame": 360,
+            "endFrame": 450,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "9559e6e5a3dc2b3e343887e33ad8bc97acaab6ba5373a98d2621ea011856a207"
           },
           {
-            "name": "context-3",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
+            "text": "En la primera sembramos setenta y dos.",
+            "start": 15.3,
+            "end": 18.3,
+            "startFrame": 459,
+            "endFrame": 549,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "041151c40d72b2a5a19d7e5835b180ce4657aff1460d4f6900a3f4efc15d178a"
+          },
+          {
+            "text": "Dentro de ese total buscamos las dieciocho germinadas.",
+            "start": 18.6,
+            "end": 22.033333333333335,
+            "startFrame": 558,
+            "endFrame": 661,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "1639bc235dfa6cfa29c43ae7bc339aec7519a37ce1fbc9313f72cae9a355512a"
+          },
+          {
+            "text": "No añadimos dieciocho a setenta y dos: ya están incluidas en las sembradas.",
+            "start": 22.333333333333332,
+            "end": 27.933333333333334,
+            "startFrame": 670,
+            "endFrame": 838,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "cc1a11ef5f1cf441347d1e61afe4c9bb78b87dd450849d5b2b451220faabee6f"
+          },
+          {
+            "text": "Llamemos pe a la proporción observada: dividir dieciocho entre setenta y dos expresa qué fracción del total germinó.",
+            "start": 28.233333333333334,
+            "end": 35.96666666666667,
+            "startFrame": 847,
+            "endFrame": 1079,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "2403e6543194a240eb2eed436b445c1bd806d0658ab4be498aea309d4e0c3ee7"
+          },
+          {
+            "text": "Así podemos comparar bandejas de distinto tamaño.",
+            "start": 36.266666666666666,
+            "end": 39.266666666666666,
+            "startFrame": 1088,
+            "endFrame": 1178,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "bc891acce8bfad62476edc54a5ff7c575f9a0381865ee1150b5d6d3e661878ac"
+          },
+          {
+            "text": "Setenta y dos contiene cuatro grupos de dieciocho, de modo que el cociente es un cuarto, o cero coma veinticinco.",
+            "start": 39.56666666666667,
+            "end": 48.166666666666664,
+            "startFrame": 1187,
+            "endFrame": 1445,
+            "words": 20,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "d7f7b0f3c71050c1e18f82fc407e7617bd30c205dd71ca6b1d8ce5990fa894e8"
+          },
+          {
+            "text": "Germinó una de cada cuatro, como resumen de esta bandeja.",
+            "start": 48.46666666666667,
+            "end": 52.766666666666666,
+            "startFrame": 1454,
+            "endFrame": 1583,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "sourceCueSha256": "c11dc546c17fe944f8a5d4f37afa81787aeab918ec9858064a903af1a10a237a"
+          },
+          {
+            "text": "La segunda tenía doscientas semillas.",
+            "start": 53.06666666666667,
+            "end": 55.233333333333334,
+            "startFrame": 1592,
+            "endFrame": 1657,
+            "words": 5,
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "sourceCueSha256": "37ca01b9f02b49f0c95c51aa45157b47df474c92f192dd5c0dd255aae144a540"
+          },
+          {
+            "text": "Sus treinta germinadas representan quince centésimas del total.",
+            "start": 55.53333333333333,
+            "end": 58.96666666666667,
+            "startFrame": 1666,
+            "endFrame": 1769,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 12,
+            "sourceCueSha256": "c257a071f84157400646eeaf8a3bd0c26f8467237d9bdfa9cf53de181897ed5a"
+          },
+          {
+            "text": "Treinta supera dieciocho, pero quince centésimas es menos que un cuarto: cambia la conclusión al comparar fracciones.",
+            "start": 59.266666666666666,
+            "end": 66.56666666666666,
+            "startFrame": 1778,
+            "endFrame": 1997,
+            "words": 17,
+            "sceneIndex": 0,
+            "cueIndex": 13,
+            "sourceCueSha256": "028150994771a1e531b94c1c28aa959978fc3e67fcfd2796139402c808069a67"
+          },
+          {
+            "text": "La pregunta que nos protege de una comparación engañosa es: ¿de qué total sale esta parte?",
+            "start": 66.86666666666666,
+            "end": 73.73333333333333,
+            "startFrame": 2006,
+            "endFrame": 2212,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 14,
+            "sourceCueSha256": "630627e949aa505067991bb6f9ef7452a3c550aa6fea9f8f3d2433925d84d536"
+          },
+          {
+            "text": "Hemos descrito observaciones; todavía no necesitamos independencia ni afirmamos una probabilidad de germinación para futuras semillas.",
+            "start": 74.03333333333333,
+            "end": 80.9,
+            "startFrame": 2221,
+            "endFrame": 2427,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 15,
+            "sourceCueSha256": "50e57cb71e40bff3165d7c716846d930e2ddb200bb478bc37ce556450b23589e"
           }
-        ],
-        "errors": [],
-        "diagram": "tree",
-        "marks": 5,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "739adc03ea3a866788b7e76b2f63d94ba82526338bac0f45cccedad30e8b8f6d"
-      },
-      {
-        "frame": 12,
-        "scene": 0,
-        "cue": 0,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 25.333333333333332,
-            "y": 214.80000000000004,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-1",
-            "x": 350.6666666666667,
-            "y": 125.53333333333335,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-2",
-            "x": 350.6666666666667,
-            "y": 304.06666666666666,
-            "width": 312,
-            "height": 20
-          },
-          {
-            "name": "context-3",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "tree",
-        "marks": 5,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "739adc03ea3a866788b7e76b2f63d94ba82526338bac0f45cccedad30e8b8f6d"
-      },
-      {
-        "frame": 54,
-        "scene": 0,
-        "cue": 1,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 232.5649717514124,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "e5c6b08038315a3db49befad6a13f5521867054e66627d920055735a1cf60dc4"
-      },
-      {
-        "frame": 249,
-        "scene": 0,
-        "cue": 2,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 232.5649717514124,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "e5c6b08038315a3db49befad6a13f5521867054e66627d920055735a1cf60dc4"
-      },
-      {
-        "frame": 401,
-        "scene": 0,
-        "cue": 3,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 232.5649717514124,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [],
-        "opening": false,
-        "canvasSha256": "e5c6b08038315a3db49befad6a13f5521867054e66627d920055735a1cf60dc4"
-      },
-      {
-        "frame": 514,
-        "scene": 0,
-        "cue": 4,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 437.06666666666666
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "value": "18 de 72",
-            "inkPixels": 3588,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "3d0cd94456b196bf80adf91868e64c79a86df2d55bd586ce51327d84c8c30d7a"
-      },
-      {
-        "frame": 620,
-        "scene": 0,
-        "cue": 5,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 437.06666666666666
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "value": "18 de 72",
-            "inkPixels": 3588,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "3d0cd94456b196bf80adf91868e64c79a86df2d55bd586ce51327d84c8c30d7a"
-      },
-      {
-        "frame": 757,
-        "scene": 0,
-        "cue": 6,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 437.06666666666666
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "value": "18 de 72",
-            "inkPixels": 3588,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "3d0cd94456b196bf80adf91868e64c79a86df2d55bd586ce51327d84c8c30d7a"
-      },
-      {
-        "frame": 922,
-        "scene": 0,
-        "cue": 7,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 214.53333333333336
-          },
-          {
-            "name": "Group-13",
-            "x": 809.6821008130082,
-            "y": 309.4666666666667,
-            "width": 321.9502048780487,
-            "height": 206.5333333333333
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "value": "18 de 72",
-            "inkPixels": 3586,
-            "equationPaths": 0
-          },
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 6741,
-            "equationPaths": 6
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "15e30a69efdeb1d078c85af1ff8023017a8aefea103926cec0d28489bbe9f0af"
-      },
-      {
-        "frame": 1215,
-        "scene": 0,
-        "cue": 8,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 214.53333333333336
-          },
-          {
-            "name": "Group-13",
-            "x": 809.6821008130082,
-            "y": 309.4666666666667,
-            "width": 321.9502048780487,
-            "height": 206.5333333333333
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "value": "18 de 72",
-            "inkPixels": 3586,
-            "equationPaths": 0
-          },
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 6741,
-            "equationPaths": 6
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "15e30a69efdeb1d078c85af1ff8023017a8aefea103926cec0d28489bbe9f0af"
-      },
-      {
-        "frame": 1334,
-        "scene": 0,
-        "cue": 9,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 870.3739967479675,
-            "y": 235.28888888888892,
-            "width": 206.31971382113818,
-            "height": 132.35555555555553
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "value": "18 de 72",
-            "inkPixels": 3587,
-            "equationPaths": 0
-          },
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2795,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2982,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "510fec62c3562fa3d6dbf2c3fa5199748277188dfc90097de3b5bd78bd67dd44"
-      },
-      {
-        "frame": 1612,
-        "scene": 0,
-        "cue": 10,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 730.6666666666666,
-            "y": 86.93333333333334,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 870.3739967479675,
-            "y": 235.28888888888892,
-            "width": 206.31971382113818,
-            "height": 132.35555555555553
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 292.16572504708097,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.16384180790962,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 4,
-            "value": "18 de 72",
-            "inkPixels": 3587,
-            "equationPaths": 0
-          },
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2795,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2982,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "510fec62c3562fa3d6dbf2c3fa5199748277188dfc90097de3b5bd78bd67dd44"
-      },
-      {
-        "frame": 1752,
-        "scene": 0,
-        "cue": 11,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 870.3739967479675,
-            "y": 86.93333333333334,
-            "width": 206.31971382113818,
-            "height": 132.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 327.22499169159187,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2821,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2987,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "30 de 200",
-            "inkPixels": 3710,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a78054e7831ee443381d66e69f8f4366c069717a7cfbed67f4d9a7b3a96ef2c5"
-      },
-      {
-        "frame": 1865,
-        "scene": 0,
-        "cue": 12,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 870.3739967479675,
-            "y": 86.93333333333334,
-            "width": 206.31971382113818,
-            "height": 132.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 327.22499169159187,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2821,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2987,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "30 de 200",
-            "inkPixels": 3710,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a78054e7831ee443381d66e69f8f4366c069717a7cfbed67f4d9a7b3a96ef2c5"
-      },
-      {
-        "frame": 2019,
-        "scene": 0,
-        "cue": 13,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 870.3739967479675,
-            "y": 86.93333333333334,
-            "width": 206.31971382113818,
-            "height": 132.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 327.22499169159187,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2821,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2987,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "30 de 200",
-            "inkPixels": 3710,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a78054e7831ee443381d66e69f8f4366c069717a7cfbed67f4d9a7b3a96ef2c5"
-      },
-      {
-        "frame": 2279,
-        "scene": 0,
-        "cue": 14,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 870.3739967479675,
-            "y": 86.93333333333334,
-            "width": 206.31971382113818,
-            "height": 132.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 327.22499169159187,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2821,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2987,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "30 de 200",
-            "inkPixels": 3710,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a78054e7831ee443381d66e69f8f4366c069717a7cfbed67f4d9a7b3a96ef2c5"
-      },
-      {
-        "frame": 2490,
-        "scene": 0,
-        "cue": 15,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 870.3739967479675,
-            "y": 86.93333333333334,
-            "width": 206.31971382113818,
-            "height": 132.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 327.22499169159187,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2821,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2987,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "30 de 200",
-            "inkPixels": 3710,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a78054e7831ee443381d66e69f8f4366c069717a7cfbed67f4d9a7b3a96ef2c5"
-      },
-      {
-        "frame": 2759,
-        "scene": 0,
-        "cue": 15,
-        "boxes": [
-          {
-            "name": "Text-10",
-            "x": 42.666666666666664,
-            "y": 29.333333333333332,
-            "width": 1194.6666666666665,
-            "height": 41.599999999999994
-          },
-          {
-            "name": "Group-12",
-            "x": 870.3739967479675,
-            "y": 86.93333333333334,
-            "width": 206.31971382113818,
-            "height": 132.35555555555555
-          },
-          {
-            "name": "Group-13",
-            "x": 730.6666666666666,
-            "y": 235.2888888888889,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "Group-14",
-            "x": 730.6666666666666,
-            "y": 383.64444444444445,
-            "width": 495.9999999999999,
-            "height": 140.35555555555555
-          },
-          {
-            "name": "context-0",
-            "x": 4,
-            "y": 386.6666666666667,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-1",
-            "x": 4,
-            "y": 254.80000000000004,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-2",
-            "x": 4,
-            "y": 122.93333333333334,
-            "width": 64,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-3",
-            "x": 77.33333333333333,
-            "y": 97.60000000000001,
-            "width": 584,
-            "height": 20
-          },
-          {
-            "name": "context-4",
-            "x": 77.33333333333333,
-            "y": 327.22499169159187,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-5",
-            "x": 80,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-6",
-            "x": 369.3333333333333,
-            "y": 143.1638418079096,
-            "width": 292,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-7",
-            "x": 372,
-            "y": 408,
-            "width": 286.6666666666667,
-            "height": 18.666666666666668
-          },
-          {
-            "name": "context-8",
-            "x": 21.333333333333332,
-            "y": 476,
-            "width": 650.6666666666666,
-            "height": 20
-          }
-        ],
-        "errors": [],
-        "diagram": "bars",
-        "marks": 6,
-        "authored": [
-          {
-            "cue": 7,
-            "tex": "p=\\frac{18}{72}",
-            "inkPixels": 2821,
-            "equationPaths": 6
-          },
-          {
-            "cue": 9,
-            "value": "1 de 4",
-            "inkPixels": 2987,
-            "equationPaths": 0
-          },
-          {
-            "cue": 11,
-            "value": "30 de 200",
-            "inkPixels": 3710,
-            "equationPaths": 0
-          }
-        ],
-        "opening": false,
-        "canvasSha256": "a78054e7831ee443381d66e69f8f4366c069717a7cfbed67f4d9a7b3a96ef2c5"
+        ]
       }
-    ],
-    "pixels": [
-      {
-        "frame": 0,
-        "ink": 466,
-        "sha256": "c02abd0472ef3cca4e8b4bb54d82e4c33b6f070e02fc8722af75548329a94803"
-      },
-      {
-        "frame": 12,
-        "ink": 466,
-        "sha256": "8239e6ae73e4be8b5527dde0adcf04ce5a027449806e968f02ff7e1932af9cbe"
-      },
-      {
-        "frame": 54,
-        "ink": 4597,
-        "sha256": "7d178c06eb2279defcecbbe4fccf5bd1e957979aba7c4e10b7a31f008d430638"
-      },
-      {
-        "frame": 249,
-        "ink": 4597,
-        "sha256": "7d178c06eb2279defcecbbe4fccf5bd1e957979aba7c4e10b7a31f008d430638"
-      },
-      {
-        "frame": 401,
-        "ink": 4594,
-        "sha256": "51daa9882ba5fe01134269928c73578422d14c97f7c799edcc1da76e4d745a03"
-      },
-      {
-        "frame": 514,
-        "ink": 4113,
-        "sha256": "f589ec3a455ed8f8f52195bc7fde9b09914c889a6f868051ed5c039c2862a4d3"
-      },
-      {
-        "frame": 620,
-        "ink": 4113,
-        "sha256": "81cea05c4a55aabb624873c4e9ee7727c9c14e881260fbc4d2ac22d53a0963a1"
-      },
-      {
-        "frame": 757,
-        "ink": 4113,
-        "sha256": "c2cca756a568f9284b9887be77aad63cae6cc14be56487c7994d81a745e90d13"
-      },
-      {
-        "frame": 922,
-        "ink": 4504,
-        "sha256": "5550ac1a13a3c05e4b4dd7924f37d1c3fe67bb6f69d8c7d531809c2a9d2c30d0"
-      },
-      {
-        "frame": 1215,
-        "ink": 4501,
-        "sha256": "c5fa9dce9ea30409b868c4b7fa2b2017b5aba54b646c9654a86ab07fa059bba6"
-      },
-      {
-        "frame": 1334,
-        "ink": 4276,
-        "sha256": "a11a2c0e52256ab97f1cd89af7195f5672ea08d2172d90e795a2647edee89ce6"
-      },
-      {
-        "frame": 1612,
-        "ink": 4271,
-        "sha256": "650eea8b2b7cce7613625d5ec66bdf0b63a7b0206339f625c46fddeaa1a99d4a"
-      },
-      {
-        "frame": 1752,
-        "ink": 4052,
-        "sha256": "f9ad92f01acde427e2c38d56b680aaf5a71b334b237225c45ce2b8bdbbd1f3e3"
-      },
-      {
-        "frame": 1865,
-        "ink": 4052,
-        "sha256": "f9ad92f01acde427e2c38d56b680aaf5a71b334b237225c45ce2b8bdbbd1f3e3"
-      },
-      {
-        "frame": 2019,
-        "ink": 4052,
-        "sha256": "f9ad92f01acde427e2c38d56b680aaf5a71b334b237225c45ce2b8bdbbd1f3e3"
-      },
-      {
-        "frame": 2279,
-        "ink": 4052,
-        "sha256": "f9ad92f01acde427e2c38d56b680aaf5a71b334b237225c45ce2b8bdbbd1f3e3"
-      },
-      {
-        "frame": 2490,
-        "ink": 4052,
-        "sha256": "6e777120caf4f10e9fbad9306bbbdc53de329e9af23d2e7697b6cc8161b02cf0"
-      },
-      {
-        "frame": 2759,
-        "ink": 4051,
-        "sha256": "a9930a1f0f719c3fd22f2c5910686461241366aea7f62ccc71d59a33741e5617"
-      }
-    ],
-    "streams": [
-      {
-        "index": 0,
-        "codec_name": "h264",
-        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
-        "profile": "High",
-        "codec_type": "video",
-        "codec_time_base": "1/60",
-        "codec_tag_string": "avc1",
-        "codec_tag": "0x31637661",
-        "width": 1280,
-        "height": 720,
-        "coded_width": 1280,
-        "coded_height": 720,
-        "has_b_frames": 2,
-        "sample_aspect_ratio": "1:1",
-        "display_aspect_ratio": "16:9",
-        "pix_fmt": "yuv420p",
-        "level": 31,
-        "color_range": "tv",
-        "color_transfer": "iec61966-2-1",
-        "color_primaries": "bt709",
-        "chroma_location": "left",
-        "refs": 4,
-        "is_avc": "true",
-        "nal_length_size": "4",
-        "r_frame_rate": "30/1",
-        "avg_frame_rate": "30/1",
-        "time_base": "1/90000",
-        "start_pts": 0,
-        "start_time": "0.000000",
-        "duration_ts": 8280000,
-        "duration": "92.000000",
-        "bit_rate": "58041",
-        "bits_per_raw_sample": "8",
-        "nb_frames": "2760",
-        "nb_read_frames": "2760",
-        "disposition": {
-          "default": 1,
-          "dub": 0,
-          "original": 0,
-          "comment": 0,
-          "lyrics": 0,
-          "karaoke": 0,
-          "forced": 0,
-          "hearing_impaired": 0,
-          "visual_impaired": 0,
-          "clean_effects": 0,
-          "attached_pic": 0,
-          "timed_thumbnails": 0
-        },
-        "tags": {
-          "language": "und",
-          "handler_name": "VideoHandler"
-        }
-      },
-      {
-        "index": 1,
-        "codec_name": "aac",
-        "codec_long_name": "AAC (Advanced Audio Coding)",
-        "profile": "LC",
-        "codec_type": "audio",
-        "codec_time_base": "1/24000",
-        "codec_tag_string": "mp4a",
-        "codec_tag": "0x6134706d",
-        "sample_fmt": "fltp",
-        "sample_rate": "24000",
-        "channels": 1,
-        "channel_layout": "mono",
-        "bits_per_sample": 0,
-        "r_frame_rate": "0/0",
-        "avg_frame_rate": "0/0",
-        "time_base": "1/24000",
-        "start_pts": 0,
-        "start_time": "0.000000",
-        "duration_ts": 2208000,
-        "duration": "92.000000",
-        "bit_rate": "106737",
-        "max_bit_rate": "144000",
-        "nb_frames": "2158",
-        "nb_read_frames": "2157",
-        "disposition": {
-          "default": 1,
-          "dub": 0,
-          "original": 0,
-          "comment": 0,
-          "lyrics": 0,
-          "karaoke": 0,
-          "forced": 0,
-          "hearing_impaired": 0,
-          "visual_impaired": 0,
-          "clean_effects": 0,
-          "attached_pic": 0,
-          "timed_thumbnails": 0
-        },
-        "tags": {
-          "language": "und",
-          "handler_name": "SoundHandler"
-        }
-      }
-    ],
-    "elapsedSeconds": 87.09
-  }
+    ]
+  },
+  "publication": "silent-transcript"
 }

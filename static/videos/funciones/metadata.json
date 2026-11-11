@@ -1,0 +1,1270 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "funciones",
+  "kind": "recap",
+  "title": "Funciones, intervalos y sumatorios",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "58e2420f7ab2b66a74a8646679e90174c235c892bcd5011b10bd245a8043e0ff",
+  "src": "videos/funciones/video.mp4",
+  "poster": "videos/funciones/poster.jpg",
+  "duration": 478.06666666666666,
+  "frames": 14342,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "43cee3091df046c5b02e9cc467696c468aafb0a33ea1550d7a40ac9f8192d1fc",
+  "videoSha256": "04cddff0eb61fd8ad9f99c36383003523b67c6ef41a068ef14905f0d650fc5af",
+  "posterSha256": "4ff4966c8f422dbb43174a7f00d98f696f77a6f1a3c6391850487c19dd0e1ffa",
+  "canonicalSha256": "7699ae7437baf4d553c712ec7c2d549b77de6a8f0d466d4f7ff307901ccaabd0",
+  "inputHash": "0d8e21d17668691c0552808ecfbbcf1783f444b2875054487736760f8e83c53f",
+  "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "693ca959c28dadeb57a8aad25fd2ce264b139b9823cad8f2443ba82b004eb205",
+    "canonicalSha256": "7699ae7437baf4d553c712ec7c2d549b77de6a8f0d466d4f7ff307901ccaabd0",
+    "source": {
+      "document": "Puente matemático",
+      "section": "Funciones, soporte, intervalos y sumatorios; preparación para el Tema 2"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "36c37fe541a5d4b28eca4100b273780574abcb99039efa8724bfd16d218c9188",
+    "transcriptSha256": "43cee3091df046c5b02e9cc467696c468aafb0a33ea1550d7a40ac9f8192d1fc",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "funciones",
+  "transcript": {
+    "id": "funciones",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "7699ae7437baf4d553c712ec7c2d549b77de6a8f0d466d4f7ff307901ccaabd0",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 478.06666666666666,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 71.7,
+        "cues": [
+          {
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+          },
+          {
+            "text": "Hoy vamos a leer funciones, intervalos y sumatorios como instrucciones concretas.",
+            "start": 1.5,
+            "end": 6.233333333333333,
+            "startFrame": 45,
+            "endFrame": 187,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "8c3a9ece89ecf7089a9561a6162a13392f2cc7a3d4b6d7dda87fd04dcec7b5ed"
+          },
+          {
+            "text": "Una función recibe una entrada permitida y le asigna una salida.",
+            "start": 6.533333333333333,
+            "end": 11.266666666666667,
+            "startFrame": 196,
+            "endFrame": 338,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "91e4bb9cffb15295b77e5ee8372ea28d516e3f4ddc570c5ea7ee6a1c316b9791"
+          },
+          {
+            "text": "Nuestra regla ge multiplica la entrada por dos y después suma uno.",
+            "start": 11.566666666666666,
+            "end": 16.733333333333334,
+            "startFrame": 347,
+            "endFrame": 502,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "5ca387d8e036df6fa0013d60dbf5b4d6e1f655ca8162d79e123f09e08546f4ee"
+          },
+          {
+            "text": "Para la entrada tres sustituimos equis por tres en la regla completa: dos por tres más uno da siete.",
+            "start": 17.033333333333335,
+            "end": 25.2,
+            "startFrame": 511,
+            "endFrame": 756,
+            "words": 19,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "65f9b6fb5ab30e40c59dc2c35308c6f7522bc140fae22e11c3589d4d8342c94b"
+          },
+          {
+            "text": "Ge de tres no significa ge multiplicado por tres.",
+            "start": 25.5,
+            "end": 29.366666666666667,
+            "startFrame": 765,
+            "endFrame": 881,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "c9f9aa10aac3b1eb56666b6c0bb029f0cdf2d1fc880862b9fed71c9aea65830d"
+          },
+          {
+            "text": "En el dibujo cada entrada se empareja con su salida.",
+            "start": 29.666666666666668,
+            "end": 33.96666666666667,
+            "startFrame": 890,
+            "endFrame": 1019,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "ad1e957ab89d328c5a50d227f0f09c3e411e4c318179b5443445fa3e009b6c2a"
+          },
+          {
+            "text": "El sumatorio indica qué términos recorrer y reunir.",
+            "start": 34.266666666666666,
+            "end": 37.7,
+            "startFrame": 1028,
+            "endFrame": 1131,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "5b25313f49155070aada10f4cc3ec87cf5f9658c1498bab93c64c2694ed2bce6"
+          },
+          {
+            "text": "Si el índice va de cero a dos, calculamos ge de cero, ge de uno y ge de dos: uno, tres y cinco.",
+            "start": 38,
+            "end": 47.86666666666667,
+            "startFrame": 1140,
+            "endFrame": 1436,
+            "words": 23,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "b2ffa7cf0ae2d9dac89defd39c5b473f5ef3ec4954ec8334dc4f461f382ab7bc"
+          },
+          {
+            "text": "Sumamos las salidas y obtenemos nueve, no la suma de los índices.",
+            "start": 48.166666666666664,
+            "end": 53.333333333333336,
+            "startFrame": 1445,
+            "endFrame": 1600,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "9b41ad1b65c18a56357fa0b067a1ce46d73f987dcf96ffaa4d1adcb9d5704bf9"
+          },
+          {
+            "text": "El dominio decide qué entradas admite la regla.",
+            "start": 53.63333333333333,
+            "end": 57.06666666666667,
+            "startFrame": 1609,
+            "endFrame": 1712,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "sourceCueSha256": "ab3e3d7c056cf9961db94998d51655d4098fb5229d1a209d39bc919aa40cafc5"
+          },
+          {
+            "text": "Una función por tramos exige localizar primero la entrada y elegir después su fórmula.",
+            "start": 57.36666666666667,
+            "end": 63.36666666666667,
+            "startFrame": 1721,
+            "endFrame": 1901,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "sourceCueSha256": "b978b12d5ce116e7443d54805bf52e4ff564db7576c3055dd757c0f2938256b0"
+          },
+          {
+            "text": "Una densidad que vale cero fuera de un intervalo no se prolonga usando sin más la fórmula interior.",
+            "start": 63.666666666666664,
+            "end": 71.4,
+            "startFrame": 1910,
+            "endFrame": 2142,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 12,
+            "sourceCueSha256": "dadf539e76da9972ea66d94b23c74d50877111a4bae3ea9d52d65876b191d3b5"
+          }
+        ]
+      },
+      {
+        "start": 71.7,
+        "end": 138.5,
+        "cues": [
+          {
+            "text": "Una medida de brotes solo toma cero, dos o cinco, con masas una décima, seis décimas y tres décimas.",
+            "start": 71.7,
+            "end": 79.86666666666666,
+            "startFrame": 2151,
+            "endFrame": 2396,
+            "words": 19,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "ffc989d1d9654c113d6054bf794b9dcc772a9c58aae552cc05781ae92ce0359d"
+          },
+          {
+            "text": "Esos valores forman su soporte.",
+            "start": 80.16666666666667,
+            "end": 82.33333333333333,
+            "startFrame": 2405,
+            "endFrame": 2470,
+            "words": 5,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "9ad531b098738683a37b53894abd0d6f8c49bc38ce89566753adbfe970dd1a82"
+          },
+          {
+            "text": "El segundo renglón corresponde al valor dos; su posición en la tabla no es un resultado nuevo.",
+            "start": 82.63333333333334,
+            "end": 89.93333333333334,
+            "startFrame": 2479,
+            "endFrame": 2698,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "08453edf7fd5129b486283c468edd826142c447c8982cb2fb070d0472903f9f3"
+          },
+          {
+            "text": "Para calcular la probabilidad de un conjunto sumamos las masas de los valores que lo cumplen.",
+            "start": 90.23333333333333,
+            "end": 97.1,
+            "startFrame": 2707,
+            "endFrame": 2913,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "df8b7aba8c33b75f54d5946304159530501dd8d88a55de41fa737aa19a1068af"
+          },
+          {
+            "text": "Menos de tres admite cero y dos.",
+            "start": 97.4,
+            "end": 100.4,
+            "startFrame": 2922,
+            "endFrame": 3012,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 4,
+            "sourceCueSha256": "d55fa52c03b043052e3701695519d523c142440b2edfdac56cfadc42fcd7de93"
+          },
+          {
+            "text": "Primero seleccionamos esos valores; después sumamos una décima y seis décimas.",
+            "start": 100.7,
+            "end": 105.43333333333334,
+            "startFrame": 3021,
+            "endFrame": 3163,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 5,
+            "sourceCueSha256": "033573ead189402d3948d799d99f04b67bf067fd8da93fe78613e74a7efa9de0"
+          },
+          {
+            "text": "Menos de dos excluye el dos, de modo que solo queda la masa del cero.",
+            "start": 105.73333333333333,
+            "end": 112.16666666666667,
+            "startFrame": 3172,
+            "endFrame": 3365,
+            "words": 15,
+            "sceneIndex": 1,
+            "cueIndex": 6,
+            "sourceCueSha256": "37f2db7ae73d9f51322f3e490490560ef1aeaa9fb36345630048b3511875127c"
+          },
+          {
+            "text": "Como máximo dos lo incluye y vuelve a dar siete décimas.",
+            "start": 112.46666666666667,
+            "end": 117.2,
+            "startFrame": 3374,
+            "endFrame": 3516,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 7,
+            "sourceCueSha256": "f940dea4ef2f787e935d55e6adf4174b07b3a0a25f197618d3461c0e08403d2d"
+          },
+          {
+            "text": "Los extremos abiertos y cerrados sí importan cuando allí hay masa.",
+            "start": 117.5,
+            "end": 122.23333333333333,
+            "startFrame": 3525,
+            "endFrame": 3667,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 8,
+            "sourceCueSha256": "289b6c9d33a29b917d43bade36739a7a5d6e1e3dfee52f347de51ef6e5f4ba8d"
+          },
+          {
+            "text": "Al menos dos significa dos o cinco, no exactamente dos.",
+            "start": 122.53333333333333,
+            "end": 126.83333333333333,
+            "startFrame": 3676,
+            "endFrame": 3805,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 9,
+            "sourceCueSha256": "0e00ee28421eb0cba7cd8e0375236c59a5da23270a7a014856d894f2525ad574"
+          },
+          {
+            "text": "Su probabilidad es nueve décimas.",
+            "start": 127.13333333333334,
+            "end": 129.3,
+            "startFrame": 3814,
+            "endFrame": 3879,
+            "words": 5,
+            "sceneIndex": 1,
+            "cueIndex": 10,
+            "sourceCueSha256": "fdb81ef5cc8d0661568783fd6649d438dfa303df4ec9efda3c660c90ebf50bef"
+          },
+          {
+            "text": "Antes de automatizar un sumatorio, escribe los valores que entran: así compruebas a la vez el soporte y la desigualdad.",
+            "start": 129.6,
+            "end": 138.2,
+            "startFrame": 3888,
+            "endFrame": 4146,
+            "words": 20,
+            "sceneIndex": 1,
+            "cueIndex": 11,
+            "sourceCueSha256": "0311ae224edff4a1a96eb28df0a9d999db037c4a4bc9b46fc0f086137706454d"
+          }
+        ]
+      },
+      {
+        "start": 138.5,
+        "end": 148.13333333333333,
+        "cues": [
+          {
+            "text": "Una regla didáctica transforma una dosis x en una señal g(x).",
+            "start": 138.5,
+            "end": 143.23333333333332,
+            "startFrame": 4155,
+            "endFrame": 4297,
+            "words": 11,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "edcd17d0bd328cdd80f6322bb59acc6917ac98e2ef6fd8ed5e6264292e0031d9"
+          },
+          {
+            "text": "No es una probabilidad ni un ajuste a datos reales.",
+            "start": 143.53333333333333,
+            "end": 147.83333333333334,
+            "startFrame": 4306,
+            "endFrame": 4435,
+            "words": 10,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "4da7adcdde3cd4f0eef2ffd4b5c96b09c096062dd7e462b5478dd038d5631aee"
+          }
+        ]
+      },
+      {
+        "start": 148.13333333333333,
+        "end": 158.53333333333333,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 148.13333333333333,
+            "end": 150.73333333333332,
+            "startFrame": 4444,
+            "endFrame": 4522,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué salida produce la entrada indicada?",
+            "start": 151.03333333333333,
+            "end": 153.63333333333333,
+            "startFrame": 4531,
+            "endFrame": 4609,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "294f7aab5c1ea712096659710eea482899a223ea641718c02c90c76110cdccd2"
+          },
+          {
+            "text": "Queremos la salida de la función en la entrada indicada.",
+            "start": 153.93333333333334,
+            "end": 158.23333333333332,
+            "startFrame": 4618,
+            "endFrame": 4747,
+            "words": 10,
+            "sceneIndex": 3,
+            "cueIndex": 2,
+            "sourceCueSha256": "342ef1cdafb088adc4227ed5e6906ae094b6041c7410e6323878388afad7c1b9"
+          }
+        ]
+      },
+      {
+        "start": 158.53333333333333,
+        "end": 175.33333333333334,
+        "cues": [
+          {
+            "text": "La función asigna una salida a cada entrada del dominio.",
+            "start": 158.53333333333333,
+            "end": 162.83333333333334,
+            "startFrame": 4756,
+            "endFrame": 4885,
+            "words": 10,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "a338e5b2d9476954f1cde6d934595fe9f9c76cb61e0b19b79c1ce7f7a2b1557e"
+          },
+          {
+            "text": "Los paréntesis indican dónde sustituir la entrada.",
+            "start": 163.13333333333333,
+            "end": 166.13333333333333,
+            "startFrame": 4894,
+            "endFrame": 4984,
+            "words": 7,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "59360a1fc880e4bba65eb49a2d421a935dc2fc62aa032d592425e700aaca79fe"
+          },
+          {
+            "text": "Multiplicamos antes de sumar y respetamos los extremos del dominio; sumar salidas es distinto de evaluar la suma de entradas.",
+            "start": 166.43333333333334,
+            "end": 175.03333333333333,
+            "startFrame": 4993,
+            "endFrame": 5251,
+            "words": 20,
+            "sceneIndex": 4,
+            "cueIndex": 2,
+            "sourceCueSha256": "4761eeed1aec1e3729bcc123a27d6effce46a869dc2d97a94ede5093d09ecf52"
+          }
+        ]
+      },
+      {
+        "start": 175.33333333333334,
+        "end": 182.06666666666666,
+        "cues": [
+          {
+            "text": "ge abre paréntesis, equis minúscula, cierra paréntesis igual a 3 por equis minúscula más 5.",
+            "start": 175.33333333333334,
+            "end": 181.76666666666668,
+            "startFrame": 5260,
+            "endFrame": 5453,
+            "words": 15,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "bbbb4176728e89388afb9c7b8fc8125c16fc2d3249e256bd0579f2d4ff5de69c"
+          }
+        ]
+      },
+      {
+        "start": 182.06666666666666,
+        "end": 190.53333333333333,
+        "cues": [
+          {
+            "text": "Se permiten entradas equis minúscula entre 0 y 3, incluidos ambos extremos; entrada pedida: equis minúscula igual a 2.",
+            "start": 182.06666666666666,
+            "end": 190.23333333333332,
+            "startFrame": 5462,
+            "endFrame": 5707,
+            "words": 19,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "fe9a33410d1da191cb7944856bd87b931fcd828b2b914d576ed0c8f348707dc4"
+          }
+        ]
+      },
+      {
+        "start": 190.53333333333333,
+        "end": 194.26666666666668,
+        "cues": [
+          {
+            "text": "Los paréntesis indican la entrada de la función.",
+            "start": 190.53333333333333,
+            "end": 193.96666666666667,
+            "startFrame": 5716,
+            "endFrame": 5819,
+            "words": 8,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "8fae598c37239631923a221271416a737883c5a9d0d984b66fc4a9581afdd3f5"
+          }
+        ]
+      },
+      {
+        "start": 194.26666666666668,
+        "end": 198,
+        "cues": [
+          {
+            "text": "Sumar salidas no significa sumar únicamente sus entradas.",
+            "start": 194.26666666666668,
+            "end": 197.7,
+            "startFrame": 5828,
+            "endFrame": 5931,
+            "words": 8,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "83108a70a56a79a17adb8ed37ebe0178ddfff7fd5492b22a7228e336941c0358"
+          }
+        ]
+      },
+      {
+        "start": 198,
+        "end": 209.76666666666668,
+        "cues": [
+          {
+            "text": "Sustituye equis minúscula por la entrada y multiplica antes de sumar.",
+            "start": 198,
+            "end": 202.73333333333332,
+            "startFrame": 5940,
+            "endFrame": 6082,
+            "words": 11,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "2a529d8ef2cc894a64c253cef084d42fa6ba5b6d25c0a0c446e442f97e57811b"
+          },
+          {
+            "text": "Sustituimos la entrada en la regla; la salida no tiene por qué coincidir con ella.",
+            "start": 203.03333333333333,
+            "end": 209.46666666666667,
+            "startFrame": 6091,
+            "endFrame": 6284,
+            "words": 15,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "04a0903506ce2e4c2c7a2c913a70650c4e33c2d787ad6c38ca21088048fdb8a7"
+          }
+        ]
+      },
+      {
+        "start": 209.76666666666668,
+        "end": 235.63333333333333,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 209.76666666666668,
+            "end": 212.76666666666668,
+            "startFrame": 6293,
+            "endFrame": 6383,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Qué salida produce la entrada indicada?",
+            "start": 213.06666666666666,
+            "end": 215.66666666666666,
+            "startFrame": 6392,
+            "endFrame": 6470,
+            "words": 6,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "f1ffc0e047370f39b223edfa94bcf5bdda3afb8640bc2812834a093b5c0761d8"
+          },
+          {
+            "text": "Una función es una regla de entrada y salida.",
+            "start": 215.96666666666667,
+            "end": 219.83333333333334,
+            "startFrame": 6479,
+            "endFrame": 6595,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "71590c5d2041bcd9df3df38366c07a66c09dd911c4b3265fb44b3166a2875c8d"
+          },
+          {
+            "text": "Primero localizamos la entrada permitida; después la sustituimos en la regla.",
+            "start": 220.13333333333333,
+            "end": 224.86666666666667,
+            "startFrame": 6604,
+            "endFrame": 6746,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "a5988b60a664b55b35b35b4cc630008d971165a30fc251776e0c03c6595def34"
+          },
+          {
+            "text": "Un sumatorio solo abrevia sumar varias de esas salidas.",
+            "start": 225.16666666666666,
+            "end": 229.03333333333333,
+            "startFrame": 6755,
+            "endFrame": 6871,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 4,
+            "sourceCueSha256": "ee7f4aba9d7f8d830303ddd6ec30ac8c4c3e1ce13960a3b15fd6a4f68f9246b3"
+          },
+          {
+            "text": "Para este apartado: Sustituye equis minúscula por la entrada y multiplica antes de sumar.",
+            "start": 229.33333333333334,
+            "end": 235.33333333333334,
+            "startFrame": 6880,
+            "endFrame": 7060,
+            "words": 14,
+            "sceneIndex": 10,
+            "cueIndex": 5,
+            "sourceCueSha256": "5028f8923a78dc6dfbfec20b95554b56eb9ece5717cb2137f65f975c5af5e780"
+          }
+        ]
+      },
+      {
+        "start": 235.63333333333333,
+        "end": 241.93333333333334,
+        "cues": [
+          {
+            "text": "Sustituir. ge abre paréntesis, 2, cierra paréntesis igual a 3 por 2 más 5.",
+            "start": 235.63333333333333,
+            "end": 241.63333333333333,
+            "startFrame": 7069,
+            "endFrame": 7249,
+            "words": 14,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "7b41e4b8dc25dacc730e14dd76e6fdd5cd58da72c7266502dad56d9535688589"
+          }
+        ]
+      },
+      {
+        "start": 241.93333333333334,
+        "end": 249.43333333333334,
+        "cues": [
+          {
+            "text": "Respetar el orden de operaciones.",
+            "start": 241.93333333333334,
+            "end": 244.1,
+            "startFrame": 7258,
+            "endFrame": 7323,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "2c3d13fa411e47a87e77c03f0255e72ac94d51314b34902a925aa08134550aa1"
+          },
+          {
+            "text": "Primero 3 por 2 igual a 6; después sumamos 5: 11.",
+            "start": 244.4,
+            "end": 249.13333333333333,
+            "startFrame": 7332,
+            "endFrame": 7474,
+            "words": 11,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "408010e99efcafbf94da037c1961c00dc6a173f685e96e4161934ba0789b47d8"
+          }
+        ]
+      },
+      {
+        "start": 249.43333333333334,
+        "end": 269.53333333333336,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 249.43333333333334,
+            "end": 250.73333333333332,
+            "startFrame": 7483,
+            "endFrame": 7522,
+            "words": 3,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 11 unidades de señal.",
+            "start": 251.03333333333333,
+            "end": 254.03333333333333,
+            "startFrame": 7531,
+            "endFrame": 7621,
+            "words": 7,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "0d9fe86ef5aa943deb8e22836160ded4c596675d831a62f86a9bea12aa0c3fdd"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 254.33333333333334,
+            "end": 260.3333333333333,
+            "startFrame": 7630,
+            "endFrame": 7810,
+            "words": 14,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "4359d019282d11c360f5c6605577a4cca1a601f2e439655d7b5fdcb0af659a85"
+          },
+          {
+            "text": "La salida ge abre paréntesis, equis minúscula, cierra paréntesis no es equis minúscula: es el resultado de aplicar la regla.",
+            "start": 260.6333333333333,
+            "end": 269.23333333333335,
+            "startFrame": 7819,
+            "endFrame": 8077,
+            "words": 20,
+            "sceneIndex": 13,
+            "cueIndex": 3,
+            "sourceCueSha256": "b0da3b3cfa8cdf41f8bea101cdf8e4ae4949141d4009da29eaa3714a6a120262"
+          }
+        ]
+      },
+      {
+        "start": 269.53333333333336,
+        "end": 281.73333333333335,
+        "cues": [
+          {
+            "text": "El resultado es 11 unidades de señal.",
+            "start": 269.53333333333336,
+            "end": 272.53333333333336,
+            "startFrame": 8086,
+            "endFrame": 8176,
+            "words": 7,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "5cb521fe603b4f591f50813e35c6ac9ce6930a4b6c028a87be999de07532bea0"
+          },
+          {
+            "text": "La salida ge abre paréntesis, equis minúscula, cierra paréntesis no es equis minúscula: es el resultado de aplicar la regla.",
+            "start": 272.8333333333333,
+            "end": 281.43333333333334,
+            "startFrame": 8185,
+            "endFrame": 8443,
+            "words": 20,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "10007fe8746a58da76d47db557b39ecea5a53341df2a3a0493ba47ec1e63c385"
+          }
+        ]
+      },
+      {
+        "start": 281.73333333333335,
+        "end": 297.6666666666667,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 281.73333333333335,
+            "end": 284.3333333333333,
+            "startFrame": 8452,
+            "endFrame": 8530,
+            "words": 6,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuánto vale ge abre paréntesis, 0, cierra paréntesis más ge abre paréntesis, 1, cierra paréntesis más ge abre paréntesis, 2, cierra paréntesis?",
+            "start": 284.6333333333333,
+            "end": 294.06666666666666,
+            "startFrame": 8539,
+            "endFrame": 8822,
+            "words": 22,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "9b056862dc9560c240b6d38aff28600d73ce933a8a4aebd8dee59abe8cbf3e74"
+          },
+          {
+            "text": "Queremos sumar varias salidas de la función.",
+            "start": 294.3666666666667,
+            "end": 297.3666666666667,
+            "startFrame": 8831,
+            "endFrame": 8921,
+            "words": 7,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "fa58ebdf020db8097fa2976ea3b9cce15437ae2a34b95b0cf84be9c73d68563a"
+          }
+        ]
+      },
+      {
+        "start": 297.6666666666667,
+        "end": 314.46666666666664,
+        "cues": [
+          {
+            "text": "La función asigna una salida a cada entrada del dominio.",
+            "start": 297.6666666666667,
+            "end": 301.96666666666664,
+            "startFrame": 8930,
+            "endFrame": 9059,
+            "words": 10,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "a338e5b2d9476954f1cde6d934595fe9f9c76cb61e0b19b79c1ce7f7a2b1557e"
+          },
+          {
+            "text": "Los paréntesis indican dónde sustituir la entrada.",
+            "start": 302.26666666666665,
+            "end": 305.26666666666665,
+            "startFrame": 9068,
+            "endFrame": 9158,
+            "words": 7,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "59360a1fc880e4bba65eb49a2d421a935dc2fc62aa032d592425e700aaca79fe"
+          },
+          {
+            "text": "Multiplicamos antes de sumar y respetamos los extremos del dominio; sumar salidas es distinto de evaluar la suma de entradas.",
+            "start": 305.56666666666666,
+            "end": 314.1666666666667,
+            "startFrame": 9167,
+            "endFrame": 9425,
+            "words": 20,
+            "sceneIndex": 16,
+            "cueIndex": 2,
+            "sourceCueSha256": "4761eeed1aec1e3729bcc123a27d6effce46a869dc2d97a94ede5093d09ecf52"
+          }
+        ]
+      },
+      {
+        "start": 314.46666666666664,
+        "end": 321.2,
+        "cues": [
+          {
+            "text": "ge abre paréntesis, equis minúscula, cierra paréntesis igual a 3 por equis minúscula más 5.",
+            "start": 314.46666666666664,
+            "end": 320.9,
+            "startFrame": 9434,
+            "endFrame": 9627,
+            "words": 15,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "bbbb4176728e89388afb9c7b8fc8125c16fc2d3249e256bd0579f2d4ff5de69c"
+          }
+        ]
+      },
+      {
+        "start": 321.2,
+        "end": 329.6666666666667,
+        "cues": [
+          {
+            "text": "Se permiten entradas equis minúscula entre 0 y 3, incluidos ambos extremos; entrada pedida: equis minúscula igual a 2.",
+            "start": 321.2,
+            "end": 329.3666666666667,
+            "startFrame": 9636,
+            "endFrame": 9881,
+            "words": 19,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "fe9a33410d1da191cb7944856bd87b931fcd828b2b914d576ed0c8f348707dc4"
+          }
+        ]
+      },
+      {
+        "start": 329.6666666666667,
+        "end": 333.4,
+        "cues": [
+          {
+            "text": "Los paréntesis indican la entrada de la función.",
+            "start": 329.6666666666667,
+            "end": 333.1,
+            "startFrame": 9890,
+            "endFrame": 9993,
+            "words": 8,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "8fae598c37239631923a221271416a737883c5a9d0d984b66fc4a9581afdd3f5"
+          }
+        ]
+      },
+      {
+        "start": 333.4,
+        "end": 337.1333333333333,
+        "cues": [
+          {
+            "text": "Sumar salidas no significa sumar únicamente sus entradas.",
+            "start": 333.4,
+            "end": 336.8333333333333,
+            "startFrame": 10002,
+            "endFrame": 10105,
+            "words": 8,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "83108a70a56a79a17adb8ed37ebe0178ddfff7fd5492b22a7228e336941c0358"
+          }
+        ]
+      },
+      {
+        "start": 337.1333333333333,
+        "end": 346.76666666666665,
+        "cues": [
+          {
+            "text": "Calcula las tres salidas por separado.",
+            "start": 337.1333333333333,
+            "end": 339.73333333333335,
+            "startFrame": 10114,
+            "endFrame": 10192,
+            "words": 6,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "788e071993747dda105ba0aaa1e00574844f7df241c4a366e42ea7292aa3facf"
+          },
+          {
+            "text": "Evaluamos cada entrada antes de sumar; evaluar solo la suma de entradas sería otra operación.",
+            "start": 340.03333333333336,
+            "end": 346.46666666666664,
+            "startFrame": 10201,
+            "endFrame": 10394,
+            "words": 15,
+            "sceneIndex": 21,
+            "cueIndex": 1,
+            "sourceCueSha256": "5f23ebdfd6daca5724874c21f467be3050823ae4a5c092fc93be19a2f5149658"
+          }
+        ]
+      },
+      {
+        "start": 346.76666666666665,
+        "end": 377.3333333333333,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 346.76666666666665,
+            "end": 349.76666666666665,
+            "startFrame": 10403,
+            "endFrame": 10493,
+            "words": 7,
+            "sceneIndex": 22,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuánto vale ge abre paréntesis, 0, cierra paréntesis más ge abre paréntesis, 1, cierra paréntesis más ge abre paréntesis, 2, cierra paréntesis?",
+            "start": 350.06666666666666,
+            "end": 359.5,
+            "startFrame": 10502,
+            "endFrame": 10785,
+            "words": 22,
+            "sceneIndex": 22,
+            "cueIndex": 1,
+            "sourceCueSha256": "42c0a26392d8ff97cd72104c5c4b882b0193552a0ffcc455b2ff0783e0057ab0"
+          },
+          {
+            "text": "Una función es una regla de entrada y salida.",
+            "start": 359.8,
+            "end": 363.6666666666667,
+            "startFrame": 10794,
+            "endFrame": 10910,
+            "words": 9,
+            "sceneIndex": 22,
+            "cueIndex": 2,
+            "sourceCueSha256": "cddde47cfcc1ca8b7b59b40377f8c3684d08d059f7d2da52b385aeb91133c54f"
+          },
+          {
+            "text": "Primero localizamos la entrada permitida; después la sustituimos en la regla.",
+            "start": 363.96666666666664,
+            "end": 368.7,
+            "startFrame": 10919,
+            "endFrame": 11061,
+            "words": 11,
+            "sceneIndex": 22,
+            "cueIndex": 3,
+            "sourceCueSha256": "405973c4631d1cb258cb56c39c1ebb12b4d604b99d49b1ffd619ffe1c26e8a09"
+          },
+          {
+            "text": "Un sumatorio solo abrevia sumar varias de esas salidas.",
+            "start": 369,
+            "end": 372.8666666666667,
+            "startFrame": 11070,
+            "endFrame": 11186,
+            "words": 9,
+            "sceneIndex": 22,
+            "cueIndex": 4,
+            "sourceCueSha256": "b535e056faf89aeb4e38560f8467beaadc76082bf62ec089404e346cb24efcd4"
+          },
+          {
+            "text": "Para este apartado: Calcula las tres salidas por separado.",
+            "start": 373.1666666666667,
+            "end": 377.03333333333336,
+            "startFrame": 11195,
+            "endFrame": 11311,
+            "words": 9,
+            "sceneIndex": 22,
+            "cueIndex": 5,
+            "sourceCueSha256": "5902bbd6038baeb140e2cec31a95056517ae8d3abb4dd9ba3919cb00fc997009"
+          }
+        ]
+      },
+      {
+        "start": 377.3333333333333,
+        "end": 390.5,
+        "cues": [
+          {
+            "text": "Abrir la suma. ge abre paréntesis, 0, cierra paréntesis igual a 5; ge abre paréntesis, 1, cierra paréntesis igual a 8; ge abre paréntesis, 2, cierra paréntesis igual a 11.",
+            "start": 377.3333333333333,
+            "end": 390.2,
+            "startFrame": 11320,
+            "endFrame": 11706,
+            "words": 30,
+            "sceneIndex": 23,
+            "cueIndex": 0,
+            "sourceCueSha256": "29452d5630c22c41e04b6ffe8a3a128c73e5f3b3ddb1ebbbdbd97f9c2221dd36"
+          }
+        ]
+      },
+      {
+        "start": 390.5,
+        "end": 401,
+        "cues": [
+          {
+            "text": "Sumar los resultados. 5 más 8 más 11 igual a 24.",
+            "start": 390.5,
+            "end": 395.23333333333335,
+            "startFrame": 11715,
+            "endFrame": 11857,
+            "words": 11,
+            "sceneIndex": 24,
+            "cueIndex": 0,
+            "sourceCueSha256": "4a3fd5920826ad6fd936082df59ff08d35bf900b9a1cb0534f945d66e8e3caa2"
+          },
+          {
+            "text": "Un sumatorio con índices 0, 1 y 2 abreviaría esta misma cuenta.",
+            "start": 395.53333333333336,
+            "end": 400.7,
+            "startFrame": 11866,
+            "endFrame": 12021,
+            "words": 12,
+            "sceneIndex": 24,
+            "cueIndex": 1,
+            "sourceCueSha256": "13cb1c617fc2d68171c9312f10fee34fa44b8447b2009b9dfdf88289b6cf266a"
+          }
+        ]
+      },
+      {
+        "start": 401,
+        "end": 416.3666666666667,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 401,
+            "end": 402.3,
+            "startFrame": 12030,
+            "endFrame": 12069,
+            "words": 3,
+            "sceneIndex": 25,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 24 unidades de señal.",
+            "start": 402.6,
+            "end": 405.6,
+            "startFrame": 12078,
+            "endFrame": 12168,
+            "words": 7,
+            "sceneIndex": 25,
+            "cueIndex": 1,
+            "sourceCueSha256": "8f899932ca506170305abdd019f90ed5ed1de6206910d96c8d4e71e1c21da5d4"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 405.9,
+            "end": 411.9,
+            "startFrame": 12177,
+            "endFrame": 12357,
+            "words": 14,
+            "sceneIndex": 25,
+            "cueIndex": 2,
+            "sourceCueSha256": "4359d019282d11c360f5c6605577a4cca1a601f2e439655d7b5fdcb0af659a85"
+          },
+          {
+            "text": "El índice indica qué entrada usar en cada término.",
+            "start": 412.2,
+            "end": 416.06666666666666,
+            "startFrame": 12366,
+            "endFrame": 12482,
+            "words": 9,
+            "sceneIndex": 25,
+            "cueIndex": 3,
+            "sourceCueSha256": "aa46897130e113fc5314b00a3025a8c3654d740261035558f2996ed265a83a0a"
+          }
+        ]
+      },
+      {
+        "start": 416.3666666666667,
+        "end": 423.8333333333333,
+        "cues": [
+          {
+            "text": "El resultado es 24 unidades de señal.",
+            "start": 416.3666666666667,
+            "end": 419.3666666666667,
+            "startFrame": 12491,
+            "endFrame": 12581,
+            "words": 7,
+            "sceneIndex": 26,
+            "cueIndex": 0,
+            "sourceCueSha256": "297658c2a30a2c1e0d23e472dd4faadcfcd83b5f207ab209fd2bbde2ded0aec9"
+          },
+          {
+            "text": "El índice indica qué entrada usar en cada término.",
+            "start": 419.6666666666667,
+            "end": 423.53333333333336,
+            "startFrame": 12590,
+            "endFrame": 12706,
+            "words": 9,
+            "sceneIndex": 26,
+            "cueIndex": 1,
+            "sourceCueSha256": "1d4bc5174f47973178d5a1098cd9788f1f511c98960617352377c36038ebbd16"
+          }
+        ]
+      },
+      {
+        "start": 423.8333333333333,
+        "end": 478.06666666666666,
+        "cues": [
+          {
+            "text": "Se suman los términos indicados por el índice, no el índice mismo.",
+            "start": 423.8333333333333,
+            "end": 429,
+            "startFrame": 12715,
+            "endFrame": 12870,
+            "words": 12,
+            "sceneIndex": 27,
+            "cueIndex": 0,
+            "sourceCueSha256": "f495c17ce78e7a1b20143135b0278283676655acfe72d68a4fdcc12143b41516"
+          },
+          {
+            "text": "Menos de tres excluye el valor tres cuando X es un recuento no negativo.",
+            "start": 429.3,
+            "end": 435.3,
+            "startFrame": 12879,
+            "endFrame": 13059,
+            "words": 14,
+            "sceneIndex": 27,
+            "cueIndex": 1,
+            "sourceCueSha256": "dccd191465b02b4e925ccd2b311ed3bbe646ebe660e0f81aa2509f3d45a8b818"
+          },
+          {
+            "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+            "start": 435.6,
+            "end": 439.46666666666664,
+            "startFrame": 13068,
+            "endFrame": 13184,
+            "words": 9,
+            "sceneIndex": 27,
+            "cueIndex": 2,
+            "sourceCueSha256": "ac9ed232d51eb831d85e45096ef4863b88e88ff9f68cf62ba98a784cfb91e355"
+          },
+          {
+            "text": "Para un recuento no negativo, ¿qué valores incluye X menor que 2?",
+            "start": 439.76666666666665,
+            "end": 444.93333333333334,
+            "startFrame": 13193,
+            "endFrame": 13348,
+            "words": 12,
+            "sceneIndex": 27,
+            "cueIndex": 3,
+            "sourceCueSha256": "99e1591ad4a2eab45674359dd074d4173622a3216e991997bb1b0ab449e04661"
+          },
+          {
+            "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+            "start": 445.23333333333335,
+            "end": 449.1,
+            "startFrame": 13357,
+            "endFrame": 13473,
+            "words": 9,
+            "sceneIndex": 27,
+            "cueIndex": 4,
+            "sourceCueSha256": "ba5f9163e95661c83f08e550cd14dd24448dd49632e26e466e73c6774ddd3b3a"
+          },
+          {
+            "text": "La desigualdad estricta excluye dos; los enteros no negativos inferiores son cero y uno.",
+            "start": 449.4,
+            "end": 455.4,
+            "startFrame": 13482,
+            "endFrame": 13662,
+            "words": 14,
+            "sceneIndex": 27,
+            "cueIndex": 5,
+            "sourceCueSha256": "0abcfe8c41e14606d2c5a19b4624ae6019d7013c0c65a3250890c75bf6ea128b"
+          },
+          {
+            "text": "Para revisar el próximo problema, evita este error: Confundir el índice de una tabla con el valor de la variable.",
+            "start": 455.7,
+            "end": 464.3,
+            "startFrame": 13671,
+            "endFrame": 13929,
+            "words": 20,
+            "sceneIndex": 27,
+            "cueIndex": 6,
+            "sourceCueSha256": "3fa976037ddd09507b6f382974dd8e44dff1db5bb04861cadd7df33d0c9bbe70"
+          },
+          {
+            "text": "El índice indica qué fila recorremos, pero la etiqueta indica qué valor puede observarse.",
+            "start": 464.6,
+            "end": 470.6,
+            "startFrame": 13938,
+            "endFrame": 14118,
+            "words": 14,
+            "sceneIndex": 27,
+            "cueIndex": 7,
+            "sourceCueSha256": "e832eaf0277ae110f244470134672d353981f525a6cf2c998a9770023b1063e9"
+          },
+          {
+            "text": "En una esperanza multiplicamos cada valor observado por su masa, no por el número de fila.",
+            "start": 470.9,
+            "end": 477.76666666666665,
+            "startFrame": 14127,
+            "endFrame": 14333,
+            "words": 16,
+            "sceneIndex": 27,
+            "cueIndex": 8,
+            "sourceCueSha256": "35e3197bc557c2c8da7f3ce060d906bc1c55a03db8dc0d49608a806b88e3a6cd"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
