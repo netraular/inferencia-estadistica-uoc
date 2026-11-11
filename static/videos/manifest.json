@@ -80446,6 +80446,400 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u2-2.2--at-most-two": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u2-2.2--at-most-two",
+      "kind": "exercise",
+      "title": "¿Qué probabilidad tiene como máximo dos mutaciones?",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "f88c373190b6cc279cb147ccc9ddd411a790e1f6c794412d087aa2dc03083510",
+      "src": "videos/ejercicio-pdf-u2-2.2--at-most-two/video.mp4",
+      "poster": "videos/ejercicio-pdf-u2-2.2--at-most-two/poster.jpg",
+      "duration": 169.13333333333333,
+      "frames": 5074,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "9763ba3ac6a0b5ce9b5bcda676afe8fd34fd0dda786fd74034e803864af1b7ad",
+      "videoSha256": "4f860d397f0c94829790cbadfa0124b1e6f24bb6c330619e58646365a2048b86",
+      "posterSha256": "a111c3f31567bd0883ede3e60bb725580bd97eba317c3a372ae5596c5b00bb02",
+      "canonicalSha256": "3a7cf4c08b6ac2a0a94d3770c3da36af0b313c2cbabae750286e1fb5ee6bae12",
+      "inputHash": "f53cd1679052332223cc4a52d95ac0a990fedc5bd55cfa8a0094a7d4b18018f0",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "e5340aec411fc40308985eebee33e6b4988eafb24fbf2316c1c8bfdb0792b55b",
+        "canonicalSha256": "3a7cf4c08b6ac2a0a94d3770c3da36af0b313c2cbabae750286e1fb5ee6bae12",
+        "source": {
+          "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+          "number": "2.2",
+          "page": 5
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "e8ab4fe05ce4d0f03246d116c86c32fa37253577ee0086e31fb189d585382be5",
+        "transcriptSha256": "9763ba3ac6a0b5ce9b5bcda676afe8fd34fd0dda786fd74034e803864af1b7ad",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u2-2.2",
+      "transcript": {
+        "id": "ejercicio-pdf-u2-2.2--at-most-two",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "3a7cf4c08b6ac2a0a94d3770c3da36af0b313c2cbabae750286e1fb5ee6bae12",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 169.13333333333333,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 10.8,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Qué probabilidad tiene como máximo dos mutaciones?",
+                "start": 2.9,
+                "end": 5.9,
+                "startFrame": 87,
+                "endFrame": 177,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "dc3ad7562308314371791d05d544ce3b30e24edb2767d85cd38207e939fd5041"
+              },
+              {
+                "text": "Queremos todos los recuentos hasta el límite, incluido ese límite.",
+                "start": 6.2,
+                "end": 10.5,
+                "startFrame": 186,
+                "endFrame": 315,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "b96571fa390fa71233f36c26b1375956069b5ff6d925029ca374c5d0532a4aba"
+              }
+            ]
+          },
+          {
+            "start": 10.8,
+            "end": 28.9,
+            "cues": [
+              {
+                "text": "La masa asigna probabilidad a cada valor posible de equis.",
+                "start": 10.8,
+                "end": 15.1,
+                "startFrame": 324,
+                "endFrame": 453,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "8e1a7ef9f2b6d5fde6074e805b798f5172925b2c0f21b7581af31d6133f8eab9"
+              },
+              {
+                "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
+                "start": 15.4,
+                "end": 20.566666666666666,
+                "startFrame": 462,
+                "endFrame": 617,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "524f9634a2328cfb90f0dd34442064d37094d995e52156111b959ca6951e08e2"
+              },
+              {
+                "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
+                "start": 20.866666666666667,
+                "end": 28.6,
+                "startFrame": 626,
+                "endFrame": 858,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "2ad003c8547ab08837313c40c2a4884a7aab1c98e41ff7823d18fc9b0e571fb4"
+              }
+            ]
+          },
+          {
+            "start": 28.9,
+            "end": 49.36666666666667,
+            "cues": [
+              {
+                "text": "pe abre paréntesis, equis minúscula, cierra paréntesis igual a ka mayúscula dividido entre abre paréntesis, 2 más equis minúscula, cierra paréntesis , para equis minúscula igual a 0, 1, 2, 3, 4, 5; pe abre paréntesis, equis minúscula, cierra paréntesis igual a 0 fuera de ese soporte.",
+                "start": 28.9,
+                "end": 49.06666666666667,
+                "startFrame": 867,
+                "endFrame": 1472,
+                "words": 47,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "57f69e51c2af37b162387399633c5c43835b9603eb6a7ef75339c1326e3a1a65"
+              }
+            ]
+          },
+          {
+            "start": 49.36666666666667,
+            "end": 59.4,
+            "cues": [
+              {
+                "text": "Como máximo dos incluye cero, uno y dos.",
+                "start": 49.36666666666667,
+                "end": 52.8,
+                "startFrame": 1481,
+                "endFrame": 1584,
+                "words": 8,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "993bc79a32dd7bbc2b737501c79f39e784065741a8362eff2c046c82259cf681"
+              },
+              {
+                "text": "Las masas de recuentos distintos son disjuntas y se suman sin volver a normalizar.",
+                "start": 53.1,
+                "end": 59.1,
+                "startFrame": 1593,
+                "endFrame": 1773,
+                "words": 14,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "7d6b05277e94fddc2e5707e33d2ff31ca2b9e8e774409f5657c0185d34a5e92a"
+              }
+            ]
+          },
+          {
+            "start": 59.4,
+            "end": 88.3,
+            "cues": [
+              {
+                "text": "Seleccionar las barras.",
+                "start": 59.4,
+                "end": 60.7,
+                "startFrame": 1782,
+                "endFrame": 1821,
+                "words": 3,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "22807e0bd568b5b00794639ad1854c584ea09537d98a73c91eed44510f789aad"
+              },
+              {
+                "text": "Como máximo dos incluye cero, uno y dos. probabilidad de equis menor o igual que 2 igual a ka mayúscula abre paréntesis, abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 4, cierra paréntesis , cierra paréntesis.",
+                "start": 61,
+                "end": 88,
+                "startFrame": 1830,
+                "endFrame": 2640,
+                "words": 63,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "73f13265d4518f56f70a8c074af6745a7d4cb97ba6d3ef85386fecba8257637a"
+              }
+            ]
+          },
+          {
+            "start": 88.3,
+            "end": 96.2,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 88.3,
+                "end": 91.73333333333333,
+                "startFrame": 2649,
+                "endFrame": 2752,
+                "words": 8,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 92.03333333333333,
+                "end": 95.9,
+                "startFrame": 2761,
+                "endFrame": 2877,
+                "words": 9,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 96.2,
+            "end": 125.13333333333334,
+            "cues": [
+              {
+                "text": "Sumar los pesos seleccionados.",
+                "start": 96.2,
+                "end": 97.93333333333334,
+                "startFrame": 2886,
+                "endFrame": 2938,
+                "words": 4,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "cde32b668337a7e20ec1a5abf12875960b55b0557f4a94c4ce212c6a40430348"
+              },
+              {
+                "text": "Sumo las tres fracciones antes de multiplicar por ka mayúscula. abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 4, cierra paréntesis igual a abre paréntesis, 13, cierra paréntesis dividido entre abre paréntesis, 12, cierra paréntesis.",
+                "start": 98.23333333333333,
+                "end": 124.83333333333333,
+                "startFrame": 2947,
+                "endFrame": 3745,
+                "words": 62,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "3502537beb0e173192cb3a95eb7edff2a1a6635e56be12537d308a29aa18ea66"
+              }
+            ]
+          },
+          {
+            "start": 125.13333333333334,
+            "end": 147.63333333333333,
+            "cues": [
+              {
+                "text": "Aplicar la constante.",
+                "start": 125.13333333333334,
+                "end": 126.43333333333334,
+                "startFrame": 3754,
+                "endFrame": 3793,
+                "words": 3,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "2d04bf3b4a93bde620843e8c9939943601aa9f9e18632263d30cae085154d4cf"
+              },
+              {
+                "text": "Uso la misma constante del modelo completo; no vuelvo a normalizar este subgrupo. probabilidad de equis menor o igual que 2 igual a abre paréntesis, 140, cierra paréntesis dividido entre abre paréntesis, 223, cierra paréntesis por abre paréntesis, 13, cierra paréntesis dividido entre abre paréntesis, 12, cierra paréntesis.",
+                "start": 126.73333333333333,
+                "end": 147.33333333333334,
+                "startFrame": 3802,
+                "endFrame": 4420,
+                "words": 48,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "5c979458058459287cdbb27b2b8cd5fa69e49c6e08b71703d90e527fc97e57dc"
+              }
+            ]
+          },
+          {
+            "start": 147.63333333333333,
+            "end": 157.8,
+            "cues": [
+              {
+                "text": "probabilidad de equis menor o igual que 2 queda igual a abre paréntesis, 455, cierra paréntesis dividido entre abre paréntesis, 669, cierra paréntesis.",
+                "start": 147.63333333333333,
+                "end": 157.5,
+                "startFrame": 4429,
+                "endFrame": 4725,
+                "words": 23,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "ca9bf25cb89c3730a975628bea02075ae7e793d154346b872cb39f67ca0e8afb"
+              }
+            ]
+          },
+          {
+            "start": 157.8,
+            "end": 169.13333333333333,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 6 8 0 1 1 9 6 probabilidad entre 0 y 1.",
+                "start": 157.8,
+                "end": 165.1,
+                "startFrame": 4734,
+                "endFrame": 4953,
+                "words": 17,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "9692f448117f18ba1c9036a5b2b173a6abaf5d5f3c3616684b0e3ae18e7a4358"
+              },
+              {
+                "text": "Una probabilidad parcial no debe renormalizarse a uno.",
+                "start": 165.4,
+                "end": 168.83333333333334,
+                "startFrame": 4962,
+                "endFrame": 5065,
+                "words": 8,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "5b7133c3f83460bbe731ff3f314005dc452ac0838e1055353c1a01ad321709c3"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
