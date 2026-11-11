@@ -52,6 +52,10 @@ node scripts/tts/prepare-ming-course.mjs --batch "$BATCH"
 
 The publisher checks live canonical content, exact measured cues, assembled
 PCM/checksums and decoded MP3s before copying complete recordings. It preserves
+the frozen source hashes and requires the complete live catalogue and input
+file list to match; implementation-only edits can change file hashes without
+invalidating otherwise identical narration.
+It preserves
 Puck and other unowned recordings. Sections/recaps use the existing manifest
 and provenance; exercises use their separate files. Both carry the temporary
 Ming identity. No private model/reference paths are copied into public JSON.

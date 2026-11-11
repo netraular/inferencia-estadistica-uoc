@@ -189,10 +189,31 @@ test('validates selection, export identity, canonical inputs and duplicate repor
   }
   save(join(data.batch, 'selection.json'), data.selection);
   data.options.currentCatalogue = async () => ({...data.catalogue, sourceFiles: {changed: hash('wrong')}});
-  await assert.rejects(data.publish(), /Live source hashes/);
+  await assert.rejects(data.publish(), /Live source files/);
   data.options.currentCatalogue = async () => ({...data.catalogue, items: []});
   await assert.rejects(data.publish(), /Live catalogue/);
   assert.equal(existsSync(data.out), false);
+});
+
+test('allows implementation changes only when the complete live catalogue is identical', async context => {
+  const data = fixture(context);
+  const frozen = readFileSync(join(data.batch, 'catalogue.json'));
+  const live = structuredClone(data.catalogue);
+  live.sourceFiles['synthetic.js'] = hash('playback-only change');
+  for (const change of [
+    item => { item.animation.steps[0].cues[0].text = 'Changed narration.'; },
+    item => { item.title = 'Changed title'; },
+    item => { item.source.document = 'changed.pdf'; }
+  ]) {
+    const changed = structuredClone(live);
+    change(changed.items[0]);
+    data.options.currentCatalogue = async () => changed;
+    await assert.rejects(data.publish(), /Live catalogue/);
+    assert.equal(existsSync(data.out), false);
+  }
+  data.options.currentCatalogue = async () => live;
+  assert.deepEqual((await data.publish()).published, data.exported.items.map(item => item.id));
+  assert.deepEqual(readFileSync(join(data.batch, 'catalogue.json')), frozen);
 });
 
 test('retains existing unowned audio and makes no writes for an empty complete export', async context => {
