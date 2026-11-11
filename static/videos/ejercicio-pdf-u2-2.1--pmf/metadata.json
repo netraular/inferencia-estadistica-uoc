@@ -1,0 +1,551 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.1--pmf",
+  "kind": "exercise",
+  "title": "Construye toda la masa de X. Introduce como comprobación P(X=2).",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "e326ab85a5f10bec694fa2d14c4b1c2a0506da82b54c2d9572ed26efc5b2ce4e",
+  "src": "videos/ejercicio-pdf-u2-2.1--pmf/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.1--pmf/poster.jpg",
+  "duration": 194.1,
+  "frames": 5823,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "06abbed3f3595bfe38f1848c5b7d4c6d06350dc2656af23838c70b315fc84bde",
+  "videoSha256": "5763369465ccc248e5cce8c59590ac0099da3fe59ca46ea5b2d0ae810f744785",
+  "posterSha256": "f62e576a6b8a9a60491533ae392b646f92588a40b70b20d14df71abd62199214",
+  "canonicalSha256": "8bcd100f15ee2ea63c047d0daee5afe250ead0501208cd269173189e1ccead0a",
+  "inputHash": "db8067f34d91298f2ab8fdabcef4b9ae7b0e35dff84f7aea7b2ccdb234952cf7",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "c34e67eea29c4c0ccb7ce721606f5897dcd86b92a1ac08eba0b755cf73ef694a",
+    "canonicalSha256": "8bcd100f15ee2ea63c047d0daee5afe250ead0501208cd269173189e1ccead0a",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.1",
+      "page": 2
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "dc7950d337244c474a669cbca77bd15bdbb725bd62068b9f5b93648ce5bc990a",
+    "transcriptSha256": "06abbed3f3595bfe38f1848c5b7d4c6d06350dc2656af23838c70b315fc84bde",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.1",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.1--pmf",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "8bcd100f15ee2ea63c047d0daee5afe250ead0501208cd269173189e1ccead0a",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 194.1,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 15,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Construye toda la masa de equis.",
+            "start": 2.9,
+            "end": 5.5,
+            "startFrame": 87,
+            "endFrame": 165,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "1807221593bf0a81ce83d3e82015f72514aad67ea359344c3a03387dc0c3c076"
+          },
+          {
+            "text": "Introduce como comprobación probabilidad de equis igual a 2.",
+            "start": 5.8,
+            "end": 9.666666666666666,
+            "startFrame": 174,
+            "endFrame": 290,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "27e218f7cb6c2e0150d57b8115effc94ab6d083b0165d3128aa34e687994a3a4"
+          },
+          {
+            "text": "Queremos construir la distribución completa, no solo su valor de comprobación.",
+            "start": 9.966666666666667,
+            "end": 14.7,
+            "startFrame": 299,
+            "endFrame": 441,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "524c8f29be080525398cdefce774b654f0e6ba14ee8c183147b6d1be8a3de10e"
+          }
+        ]
+      },
+      {
+        "start": 15,
+        "end": 33.1,
+        "cues": [
+          {
+            "text": "La masa asigna probabilidad a cada valor posible de equis.",
+            "start": 15,
+            "end": 19.3,
+            "startFrame": 450,
+            "endFrame": 579,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "8e1a7ef9f2b6d5fde6074e805b798f5172925b2c0f21b7581af31d6133f8eab9"
+          },
+          {
+            "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
+            "start": 19.6,
+            "end": 24.766666666666666,
+            "startFrame": 588,
+            "endFrame": 743,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "524f9634a2328cfb90f0dd34442064d37094d995e52156111b959ca6951e08e2"
+          },
+          {
+            "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
+            "start": 25.066666666666666,
+            "end": 32.8,
+            "startFrame": 752,
+            "endFrame": 984,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "2ad003c8547ab08837313c40c2a4884a7aab1c98e41ff7823d18fc9b0e571fb4"
+          }
+        ]
+      },
+      {
+        "start": 33.1,
+        "end": 37.7,
+        "cues": [
+          {
+            "text": "Estudio de 300 pacientes; cada individuo presenta una única variante.",
+            "start": 33.1,
+            "end": 37.4,
+            "startFrame": 993,
+            "endFrame": 1122,
+            "words": 10,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "e2b8fbbe54f0385a628613e772fba34adb284c246b7d28672d14331d871921c7"
+          }
+        ]
+      },
+      {
+        "start": 37.7,
+        "end": 50,
+        "cues": [
+          {
+            "text": "e1: probabilidad 0 coma 1 5, equis igual a 0; e2: 0 coma 1 3, equis igual a 1; e3: 0 coma 0 7, equis igual a 1.",
+            "start": 37.7,
+            "end": 49.7,
+            "startFrame": 1131,
+            "endFrame": 1491,
+            "words": 28,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "0cfcabb33c949438384c61fcfd29224a8b43c5b0d134de771bf6ad1c4dd6d619"
+          }
+        ]
+      },
+      {
+        "start": 50,
+        "end": 61.9,
+        "cues": [
+          {
+            "text": "e4: 0 coma 3 0, equis igual a 2; e5: 0 coma 2 0, equis igual a 2; e6: 0 coma 1 5, equis igual a 0.",
+            "start": 50,
+            "end": 61.6,
+            "startFrame": 1500,
+            "endFrame": 1848,
+            "words": 27,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "3a46e0bca03f83c35642103e8c76b4813b5823fa0f35fa588adf89bf224bf331"
+          }
+        ]
+      },
+      {
+        "start": 61.9,
+        "end": 68.63333333333334,
+        "cues": [
+          {
+            "text": "Las probabilidades de las variantes son las estimaciones suministradas; no se supone que sean equiprobables.",
+            "start": 61.9,
+            "end": 68.33333333333333,
+            "startFrame": 1857,
+            "endFrame": 2050,
+            "words": 15,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "babaa742f189739449301684319fe0feb327ed2615eab1a19c42c55a8fe62510"
+          }
+        ]
+      },
+      {
+        "start": 68.63333333333334,
+        "end": 85,
+        "cues": [
+          {
+            "text": "Las variantes e uno y e seis son resultados distintos, pero ambas producen equis igual a cero.",
+            "start": 68.63333333333334,
+            "end": 75.93333333333334,
+            "startFrame": 2059,
+            "endFrame": 2278,
+            "words": 17,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "9250a2e1cd8e8781b66a3525205b1b2a6058c6289af325e87b63bbf0c098cd36"
+          },
+          {
+            "text": "Sumo sus probabilidades.",
+            "start": 76.23333333333333,
+            "end": 77.53333333333333,
+            "startFrame": 2287,
+            "endFrame": 2326,
+            "words": 3,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "58fd47448d9da5c14bbca223e2ef11d85a01d64ab49759996fd2fe00e5efe622"
+          },
+          {
+            "text": "Agrupamos los resultados elementales que producen cada valor o pareja, sumando sus probabilidades sin perder multiplicidades.",
+            "start": 77.83333333333333,
+            "end": 84.7,
+            "startFrame": 2335,
+            "endFrame": 2541,
+            "words": 16,
+            "sceneIndex": 6,
+            "cueIndex": 2,
+            "sourceCueSha256": "7e6983cbb9c0c1fea0bed587dc19082e03c682be2636b383fe3cffc565675f3d"
+          }
+        ]
+      },
+      {
+        "start": 85,
+        "end": 105.23333333333333,
+        "cues": [
+          {
+            "text": "Agrupar las variantes con cero genes.",
+            "start": 85,
+            "end": 87.6,
+            "startFrame": 2550,
+            "endFrame": 2628,
+            "words": 6,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "9cadec2558729d61cca17467487da494a27bc4d974aa21d2b6ef13377438f265"
+          },
+          {
+            "text": "Las variantes e uno y e seis son resultados distintos, pero ambas producen equis igual a cero.",
+            "start": 87.9,
+            "end": 95.2,
+            "startFrame": 2637,
+            "endFrame": 2856,
+            "words": 17,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "dc69dcde3a04307cbaa036116398c6637846aaddd67f390ace64a014dced6171"
+          },
+          {
+            "text": "Sumo sus probabilidades. pe subíndice equis abre paréntesis, 0, cierra paréntesis igual a 0 coma 1 5 más 0 coma 1 5.",
+            "start": 95.5,
+            "end": 104.93333333333334,
+            "startFrame": 2865,
+            "endFrame": 3148,
+            "words": 22,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "5951ec053f7317eacef12402aa8217366c1987adbf678dfeb3599a4595526768"
+          }
+        ]
+      },
+      {
+        "start": 105.23333333333333,
+        "end": 111.96666666666667,
+        "cues": [
+          {
+            "text": "pe subíndice equis abre paréntesis, 0, cierra paréntesis queda igual a 0 coma 3 0.",
+            "start": 105.23333333333333,
+            "end": 111.66666666666667,
+            "startFrame": 3157,
+            "endFrame": 3350,
+            "words": 15,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "f1c750a487022fd556cb9359451c3a741db42ab9f299d932f9a23a3814524762"
+          }
+        ]
+      },
+      {
+        "start": 111.96666666666667,
+        "end": 128.46666666666667,
+        "cues": [
+          {
+            "text": "Agrupar las variantes con un gen.",
+            "start": 111.96666666666667,
+            "end": 114.56666666666666,
+            "startFrame": 3359,
+            "endFrame": 3437,
+            "words": 6,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "922d827264d9b0694f421e10d0546fc29b20f44d358a8228cf9f5543df5ee9ef"
+          },
+          {
+            "text": "Las variantes e dos y e tres producen equis igual a uno. pe subíndice equis abre paréntesis, 1, cierra paréntesis igual a 0 coma 1 3 más 0 coma 0 7.",
+            "start": 114.86666666666666,
+            "end": 128.16666666666666,
+            "startFrame": 3446,
+            "endFrame": 3845,
+            "words": 31,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "56db12eed427d481e512eab1bcc1aa61347c045ec903e0bb6ba59d458afbe063"
+          }
+        ]
+      },
+      {
+        "start": 128.46666666666667,
+        "end": 135.2,
+        "cues": [
+          {
+            "text": "pe subíndice equis abre paréntesis, 1, cierra paréntesis queda igual a 0 coma 2 0.",
+            "start": 128.46666666666667,
+            "end": 134.9,
+            "startFrame": 3854,
+            "endFrame": 4047,
+            "words": 15,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "5326f95c58302c6fbb15b92a62a05c2aa3091e26cdb63b83e640a90fca73e4ec"
+          }
+        ]
+      },
+      {
+        "start": 135.2,
+        "end": 151.7,
+        "cues": [
+          {
+            "text": "Agrupar las variantes con dos genes.",
+            "start": 135.2,
+            "end": 137.8,
+            "startFrame": 4056,
+            "endFrame": 4134,
+            "words": 6,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "41bd48a8a446d3d1a7c3ce85fbcb16cbfaf165e3f87f505e88b210de4d9bdf5f"
+          },
+          {
+            "text": "Las variantes e cuatro y e cinco producen equis igual a dos. pe subíndice equis abre paréntesis, 2, cierra paréntesis igual a 0 coma 3 0 más 0 coma 2 0.",
+            "start": 138.1,
+            "end": 151.4,
+            "startFrame": 4143,
+            "endFrame": 4542,
+            "words": 31,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "da6cfb7e5f1074632a57e57e3aed25a32114d17c32a5ac3e9916d841d99031cb"
+          }
+        ]
+      },
+      {
+        "start": 151.7,
+        "end": 158.43333333333334,
+        "cues": [
+          {
+            "text": "pe subíndice equis abre paréntesis, 2, cierra paréntesis queda igual a 0 coma 5 0.",
+            "start": 151.7,
+            "end": 158.13333333333333,
+            "startFrame": 4551,
+            "endFrame": 4744,
+            "words": 15,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ccc8f4b7194c9b85446d69d508f8723f37d0336382c2ad568e16589b64bbcca"
+          }
+        ]
+      },
+      {
+        "start": 158.43333333333334,
+        "end": 170.53333333333333,
+        "cues": [
+          {
+            "text": "Comprobar toda la masa.",
+            "start": 158.43333333333334,
+            "end": 160.16666666666666,
+            "startFrame": 4753,
+            "endFrame": 4805,
+            "words": 4,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "dea66ca39a3891e51961354bb27b48fef5cda4afd46299881edfbdfc75914cc3"
+          },
+          {
+            "text": "Las tres barras representan valores de equis, no las seis variantes originales.",
+            "start": 160.46666666666667,
+            "end": 165.63333333333333,
+            "startFrame": 4814,
+            "endFrame": 4969,
+            "words": 12,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "2e6119575112c793a03d2ef0513dc55db1ebe18ec8fbfff44c202d5977c13ed8"
+          },
+          {
+            "text": "Fuera de cero, uno y dos la masa es cero.",
+            "start": 165.93333333333334,
+            "end": 170.23333333333332,
+            "startFrame": 4978,
+            "endFrame": 5107,
+            "words": 10,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "2fb9e0300f61a61246660d7fcebefd47e98454b80488e44b89b566c51ba9e13a"
+          }
+        ]
+      },
+      {
+        "start": 170.53333333333333,
+        "end": 184.03333333333333,
+        "cues": [
+          {
+            "text": "Comprobar el total.",
+            "start": 170.53333333333333,
+            "end": 171.83333333333334,
+            "startFrame": 5116,
+            "endFrame": 5155,
+            "words": 3,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "a57fa6201b5f260214b77b4a0778ed330d3bae7ca49382e9568bbc36f062a897"
+          },
+          {
+            "text": "Sumo las tres masas no negativas para comprobar la normalización. 0 coma 3 0 más 0 coma 2 0 más 0 coma 5 0 igual a 1.",
+            "start": 172.13333333333333,
+            "end": 183.73333333333332,
+            "startFrame": 5164,
+            "endFrame": 5512,
+            "words": 27,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "e86d47de20aef48bbbf808b20edefeb46b94ccc038c9d176a5c4692c80533c27"
+          }
+        ]
+      },
+      {
+        "start": 184.03333333333333,
+        "end": 194.1,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+            "start": 184.03333333333333,
+            "end": 188.76666666666668,
+            "startFrame": 5521,
+            "endFrame": 5663,
+            "words": 11,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "a094fd16298cc02b5a91543659cdfdc4c95662e410268ecc69af07f8070307b3"
+          },
+          {
+            "text": "Se construye la distribución desde el experimento, sin imponer una binomial.",
+            "start": 189.06666666666666,
+            "end": 193.8,
+            "startFrame": 5672,
+            "endFrame": 5814,
+            "words": 11,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "fa551cf65cd5091309c3eb69ca649d887615e24ae7dd1c3e53b530024f9f049f"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
