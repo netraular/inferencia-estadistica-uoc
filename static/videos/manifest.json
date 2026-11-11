@@ -77933,6 +77933,450 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u2-2.2--constant": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u2-2.2--constant",
+      "kind": "exercise",
+      "title": "¿Qué K hace válida la masa?",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "8b0a0f9c8a5692b3c3ef2cd9b753a4ea4a1b23f2f842df1b61c8c8974fbd1146",
+      "src": "videos/ejercicio-pdf-u2-2.2--constant/video.mp4",
+      "poster": "videos/ejercicio-pdf-u2-2.2--constant/poster.jpg",
+      "duration": 181.56666666666666,
+      "frames": 5447,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "874380a9a9c81d8ab5ee8bb6408c4b31f488457f4d75ea3c925b68c4e12f2eba",
+      "videoSha256": "9f4f1b27cedfb3e3f88959075de7def32ed788a97357799a1e1d531381c54c41",
+      "posterSha256": "d1574aa7687a7f28f230caa4af7ad57e09685b7e67707623b8091b71d6f46709",
+      "canonicalSha256": "8dd80c5dcc5418bc8e6ecd13a82a6225c9174971ce545383b0b1ef8066a658c1",
+      "inputHash": "954bcd1aaa852ac94d303f056870c58145cb5d61c8dd73a53b393248d5bc1aea",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "e6d39538f9e2d29c9d5137a7fd9c29d6423f438afb74d8b558e4967d3b4a55bf",
+        "canonicalSha256": "8dd80c5dcc5418bc8e6ecd13a82a6225c9174971ce545383b0b1ef8066a658c1",
+        "source": {
+          "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+          "number": "2.2",
+          "page": 5
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "4db21ea5f63da02f1754b791ca6c35e5cfd45adeb836cec3fe30358130810dad",
+        "transcriptSha256": "874380a9a9c81d8ab5ee8bb6408c4b31f488457f4d75ea3c925b68c4e12f2eba",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u2-2.2",
+      "transcript": {
+        "id": "ejercicio-pdf-u2-2.2--constant",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "8dd80c5dcc5418bc8e6ecd13a82a6225c9174971ce545383b0b1ef8066a658c1",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 181.56666666666666,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 10.366666666666667,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Qué ka mayúscula hace válida la masa?",
+                "start": 2.9,
+                "end": 5.9,
+                "startFrame": 87,
+                "endFrame": 177,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "57544ed89e6f4ecc3788844133e51834ad76519c2722e3eefc19d2768d8464c7"
+              },
+              {
+                "text": "Queremos encontrar la constante que hace válida la distribución.",
+                "start": 6.2,
+                "end": 10.066666666666666,
+                "startFrame": 186,
+                "endFrame": 302,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "9bb1fc10dd2747ac88ab32290b84dd9cbf384043b826b4920dcca258652af841"
+              }
+            ]
+          },
+          {
+            "start": 10.366666666666667,
+            "end": 28.466666666666665,
+            "cues": [
+              {
+                "text": "La masa asigna probabilidad a cada valor posible de equis.",
+                "start": 10.366666666666667,
+                "end": 14.666666666666666,
+                "startFrame": 311,
+                "endFrame": 440,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "8e1a7ef9f2b6d5fde6074e805b798f5172925b2c0f21b7581af31d6133f8eab9"
+              },
+              {
+                "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
+                "start": 14.966666666666667,
+                "end": 20.133333333333333,
+                "startFrame": 449,
+                "endFrame": 604,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "524f9634a2328cfb90f0dd34442064d37094d995e52156111b959ca6951e08e2"
+              },
+              {
+                "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
+                "start": 20.433333333333334,
+                "end": 28.166666666666668,
+                "startFrame": 613,
+                "endFrame": 845,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "2ad003c8547ab08837313c40c2a4884a7aab1c98e41ff7823d18fc9b0e571fb4"
+              }
+            ]
+          },
+          {
+            "start": 28.466666666666665,
+            "end": 48.93333333333333,
+            "cues": [
+              {
+                "text": "pe abre paréntesis, equis minúscula, cierra paréntesis igual a ka mayúscula dividido entre abre paréntesis, 2 más equis minúscula, cierra paréntesis , para equis minúscula igual a 0, 1, 2, 3, 4, 5; pe abre paréntesis, equis minúscula, cierra paréntesis igual a 0 fuera de ese soporte.",
+                "start": 28.466666666666665,
+                "end": 48.63333333333333,
+                "startFrame": 854,
+                "endFrame": 1459,
+                "words": 47,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "57f69e51c2af37b162387399633c5c43835b9603eb6a7ef75339c1326e3a1a65"
+              }
+            ]
+          },
+          {
+            "start": 48.93333333333333,
+            "end": 62.733333333333334,
+            "cues": [
+              {
+                "text": "ka mayúscula multiplica todos los pesos.",
+                "start": 48.93333333333333,
+                "end": 51.53333333333333,
+                "startFrame": 1468,
+                "endFrame": 1546,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "2811eaf535f9a655d5976c72afe7a87b109d60df6f9c3507820fc45309aa97f5"
+              },
+              {
+                "text": "La suma de las masas debe ser uno.",
+                "start": 51.833333333333336,
+                "end": 55.266666666666666,
+                "startFrame": 1555,
+                "endFrame": 1658,
+                "words": 8,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "eddc957c491947d3a27b3f4cc04ada5df81aa8e8af297ea08f24d6e35874d132"
+              },
+              {
+                "text": "Exigimos probabilidad total uno sobre todo el soporte y comprobamos además que no haya valores negativos.",
+                "start": 55.56666666666667,
+                "end": 62.43333333333333,
+                "startFrame": 1667,
+                "endFrame": 1873,
+                "words": 16,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "68bcb0d6c9d3a7b9edd325e861555b835c633a1cefa408f256c7d6ca4e185ccd"
+              }
+            ]
+          },
+          {
+            "start": 62.733333333333334,
+            "end": 107.93333333333334,
+            "cues": [
+              {
+                "text": "Abrir la normalización. ka mayúscula multiplica todos los pesos.",
+                "start": 62.733333333333334,
+                "end": 66.6,
+                "startFrame": 1882,
+                "endFrame": 1998,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "2457810f9ddd6897aa0c5051b9f135771011f0a1d2aa351d0d2212bdf8a62f96"
+              },
+              {
+                "text": "La suma de las masas debe ser uno. ka mayúscula abre paréntesis, abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 4, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 5, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 6, cierra paréntesis más abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 7, cierra paréntesis , cierra paréntesis igual a 1.",
+                "start": 66.9,
+                "end": 107.63333333333334,
+                "startFrame": 2007,
+                "endFrame": 3229,
+                "words": 95,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "1849d73f262417221025bda99b9b000610c05f1c8137f6adfc110c376896578d"
+              }
+            ]
+          },
+          {
+            "start": 107.93333333333334,
+            "end": 115.83333333333333,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 107.93333333333334,
+                "end": 111.36666666666666,
+                "startFrame": 3238,
+                "endFrame": 3341,
+                "words": 8,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 111.66666666666667,
+                "end": 115.53333333333333,
+                "startFrame": 3350,
+                "endFrame": 3466,
+                "words": 9,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 115.83333333333333,
+            "end": 137.9,
+            "cues": [
+              {
+                "text": "Sumar los pesos.",
+                "start": 115.83333333333333,
+                "end": 117.13333333333334,
+                "startFrame": 3475,
+                "endFrame": 3514,
+                "words": 3,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "4f43159c62c7bc40284605610eb984a63f4c10406874512f3eff56e8b7cf01c2"
+              },
+              {
+                "text": "Pongo las seis fracciones sobre denominador 420 y sumo sus numeradores. abre paréntesis, 210 más 140 más 105 más 84 más 70 más 60, cierra paréntesis dividido entre abre paréntesis, 420, cierra paréntesis igual a abre paréntesis, 223, cierra paréntesis dividido entre abre paréntesis, 140, cierra paréntesis.",
+                "start": 117.43333333333334,
+                "end": 137.6,
+                "startFrame": 3523,
+                "endFrame": 4128,
+                "words": 47,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "2a6a99c811355f2d7cab2bd0ce9f9288ac0e1bd51d84be410c7ae725c8a5908d"
+              }
+            ]
+          },
+          {
+            "start": 137.9,
+            "end": 156.4,
+            "cues": [
+              {
+                "text": "Despejar ka mayúscula.",
+                "start": 137.9,
+                "end": 139.2,
+                "startFrame": 4137,
+                "endFrame": 4176,
+                "words": 3,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "cb78f2a2fc6760d7bccdca8488eb909d583f2119ba7acc4487ac0887290ca9f2"
+              },
+              {
+                "text": "Divido por la suma de pesos, que es positiva.",
+                "start": 139.5,
+                "end": 143.36666666666667,
+                "startFrame": 4185,
+                "endFrame": 4301,
+                "words": 9,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "c29065b3dab3709ba9901cc0d5cd4bb24d3cfa8e3f03d94cea9c43a8bce638bc"
+              },
+              {
+                "text": "Así todos los valores de la masa son no negativos. ka mayúscula igual a abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 223 dividido entre 140, cierra paréntesis.",
+                "start": 143.66666666666666,
+                "end": 156.1,
+                "startFrame": 4310,
+                "endFrame": 4683,
+                "words": 29,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "bfd2f93845a56cc5a2d170c62747e25e815c20bcfbce998eb419154720f5708b"
+              }
+            ]
+          },
+          {
+            "start": 156.4,
+            "end": 164,
+            "cues": [
+              {
+                "text": "ka mayúscula queda igual a abre paréntesis, 140, cierra paréntesis dividido entre abre paréntesis, 223, cierra paréntesis.",
+                "start": 156.4,
+                "end": 163.7,
+                "startFrame": 4692,
+                "endFrame": 4911,
+                "words": 17,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "cd0be0c651b47476bbf7d856ab6f6ca96db0a4e01fd1d4ab0cd932f7732874a8"
+              }
+            ]
+          },
+          {
+            "start": 164,
+            "end": 172.76666666666668,
+            "cues": [
+              {
+                "text": "Escribir la masa completa.",
+                "start": 164,
+                "end": 165.73333333333332,
+                "startFrame": 4920,
+                "endFrame": 4972,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "24e010d82406091b84b433fd542d833b6e5a71028cc80961bd3d3b93c4ec3218"
+              },
+              {
+                "text": "Sustituyo ka mayúscula en cada valor del soporte; no extiendo la fórmula a otros recuentos.",
+                "start": 166.03333333333333,
+                "end": 172.46666666666667,
+                "startFrame": 4981,
+                "endFrame": 5174,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "ec8a46fd528e290d7503b7085d0fe5cd2147160acaa8cc0c67c562bb3b663807"
+              }
+            ]
+          },
+          {
+            "start": 172.76666666666668,
+            "end": 181.56666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 6 2 7 8 0 2 7 constante.",
+                "start": 172.76666666666668,
+                "end": 178.36666666666667,
+                "startFrame": 5183,
+                "endFrame": 5351,
+                "words": 13,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "94d3651065dfcec6e5d214ad16ce15d0b8c059cbce1b4ca9854deee2031c6c89"
+              },
+              {
+                "text": "Los pesos originales no eran probabilidades.",
+                "start": 178.66666666666666,
+                "end": 181.26666666666668,
+                "startFrame": 5360,
+                "endFrame": 5438,
+                "words": 6,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "2aa25ffbfc92acd9ed2372bc08413a97641e6c4c92653094b9c023a41cebd473"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
