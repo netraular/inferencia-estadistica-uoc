@@ -1,0 +1,574 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u1-3--a",
+  "kind": "exercise",
+  "title": "¿Qué probabilidad tiene un resultado negativo?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "a14f910640c170ac537477ee4dee6c2915eba286817784ec42aef509ffbda123",
+  "src": "videos/ejercicio-pdf-u1-3--a/video.mp4",
+  "poster": "videos/ejercicio-pdf-u1-3--a/poster.jpg",
+  "duration": 203.43333333333334,
+  "frames": 6103,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "2c3b0533617412dc8dad8bc24b09c61fb05501af680ac0c028dd7b23f015cb60",
+  "videoSha256": "a6889c74be3784ea533cf4380e5b66525b28fd0694d6215f32a17eeda29074a5",
+  "posterSha256": "0dd32f3b7df5f41e79ed59818ef4ee7d49d6d9e8fe84d40af5a745162d4155be",
+  "canonicalSha256": "04e9b835100bfd805241c2ccdb8bf4ec3a9166bbc007290f584b15685df3ad70",
+  "inputHash": "ba463d881d3c72f46a9ddf1d3607dd1e1a51a337380219586eaeeb79b98cae55",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "18887289e63785f7771c18a8307b8431961d5e9364543d2dc029635c6cbfc686",
+    "canonicalSha256": "04e9b835100bfd805241c2ccdb8bf4ec3a9166bbc007290f584b15685df3ad70",
+    "source": {
+      "file": "Ejercicios_Unidad_1-Soluciones.pdf",
+      "number": "3",
+      "page": 4
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "e761d4434682929388e5d07f88216c5058434de4dc657d7ac8a4585127dffb1b",
+    "transcriptSha256": "2c3b0533617412dc8dad8bc24b09c61fb05501af680ac0c028dd7b23f015cb60",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u1-3",
+  "transcript": {
+    "id": "ejercicio-pdf-u1-3--a",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "04e9b835100bfd805241c2ccdb8bf4ec3a9166bbc007290f584b15685df3ad70",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 203.43333333333334,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.533333333333333,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué probabilidad tiene un resultado negativo?",
+            "start": 2.9,
+            "end": 5.5,
+            "startFrame": 87,
+            "endFrame": 165,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "7c5d44e2ba5cd78debf899fd36826d0d449329d4d4dcde181d341609b5da3472"
+          },
+          {
+            "text": "Queremos la probabilidad global de un resultado negativo.",
+            "start": 5.8,
+            "end": 9.233333333333333,
+            "startFrame": 174,
+            "endFrame": 277,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "116885ab1d9fc40e7129a8208d6d5e0ceb758336497a75bda0434561f4f96656"
+          }
+        ]
+      },
+      {
+        "start": 9.533333333333333,
+        "end": 27.233333333333334,
+        "cues": [
+          {
+            "text": "Una probabilidad previa describe el grupo antes de observar la prueba; una verosimilitud describe la prueba dentro de ese grupo.",
+            "start": 9.533333333333333,
+            "end": 18.133333333333333,
+            "startFrame": 286,
+            "endFrame": 544,
+            "words": 20,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "a78813f0593784db0080773fed28297f6d58b49427dced4db248ec9356fc77ee"
+          },
+          {
+            "text": "Multiplicar ambas da una ruta conjunta.",
+            "start": 18.433333333333334,
+            "end": 21.033333333333335,
+            "startFrame": 553,
+            "endFrame": 631,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "e0bfa350990103fc50ce34d85a3f06fac20352535039204a3248db305d959e10"
+          },
+          {
+            "text": "Los orígenes son excluyentes y exhaustivos: sumamos sus rutas para normalizar la posterior.",
+            "start": 21.333333333333332,
+            "end": 26.933333333333334,
+            "startFrame": 640,
+            "endFrame": 808,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "9e334d6cf001939223cef8fab9b903c166ad178ed9cdb956c098dbb84093b451"
+          }
+        ]
+      },
+      {
+        "start": 27.233333333333334,
+        "end": 35.266666666666666,
+        "cues": [
+          {
+            "text": "probabilidad de A igual a 1 dividido entre 3; probabilidad de be igual a 2 dividido entre 3.",
+            "start": 27.233333333333334,
+            "end": 34.96666666666667,
+            "startFrame": 817,
+            "endFrame": 1049,
+            "words": 18,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "9ba8a69e62b2915914775d9a9f2116e5832d228617e29b1862b06e27563e8ba7"
+          }
+        ]
+      },
+      {
+        "start": 35.266666666666666,
+        "end": 46.733333333333334,
+        "cues": [
+          {
+            "text": "probabilidad de resultado positivo sabiendo que A igual a 0 coma 9 9; probabilidad de resultado positivo sabiendo que be igual a 0 coma 0 6.",
+            "start": 35.266666666666666,
+            "end": 46.43333333333333,
+            "startFrame": 1058,
+            "endFrame": 1393,
+            "words": 26,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "fcaa553d5c2ef3ce222e7d3e88cc7776ba1c883e07bb1e87b07d35420516bd9b"
+          }
+        ]
+      },
+      {
+        "start": 46.733333333333334,
+        "end": 60.233333333333334,
+        "cues": [
+          {
+            "text": "A y be son diagnósticos mutuamente excluyentes y exhaustivos en este modelo.",
+            "start": 46.733333333333334,
+            "end": 51.9,
+            "startFrame": 1402,
+            "endFrame": 1557,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "f2d631e5e1445fe76b67bbb797d29fd23a742143d6bf12cd12b8cdb980ea0e8c"
+          },
+          {
+            "text": "Cada resultado tiene un único origen entre los considerados: las rutas se pueden sumar sin omisiones ni duplicados.",
+            "start": 52.2,
+            "end": 59.93333333333333,
+            "startFrame": 1566,
+            "endFrame": 1798,
+            "words": 18,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "4cbad0482b19a56e796e0ab4b73846487131ab2a156e0ff841144d6ef71aa543"
+          }
+        ]
+      },
+      {
+        "start": 60.233333333333334,
+        "end": 72.43333333333334,
+        "cues": [
+          {
+            "text": "El complemento de la positividad en A es uno menos 0 coma 9 9.",
+            "start": 60.233333333333334,
+            "end": 66.23333333333333,
+            "startFrame": 1807,
+            "endFrame": 1987,
+            "words": 14,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "27b4f4894e2019c0690728ac46edc7df7dffc249e99350debd171f2fe58957a9"
+          },
+          {
+            "text": "Ponderamos cada tasa negativa por la frecuencia de su diagnóstico antes de sumar.",
+            "start": 66.53333333333333,
+            "end": 72.13333333333334,
+            "startFrame": 1996,
+            "endFrame": 2164,
+            "words": 13,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "e09faf9dc3940332693b653d720f3b4928a0c3b11681a0758f8b30b259eadf20"
+          }
+        ]
+      },
+      {
+        "start": 72.43333333333334,
+        "end": 86.33333333333333,
+        "cues": [
+          {
+            "text": "Negativo en A.",
+            "start": 72.43333333333334,
+            "end": 73.73333333333333,
+            "startFrame": 2173,
+            "endFrame": 2212,
+            "words": 3,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "a4a0a924330da1d84c902aad4cb1e9be28c8f0c075ca63489ede1e0b99145ef6"
+          },
+          {
+            "text": "El complemento de la positividad en A es uno menos 0 coma 9 9. probabilidad de - sabiendo que A igual a 1 menos 0 coma 9 9.",
+            "start": 74.03333333333333,
+            "end": 86.03333333333333,
+            "startFrame": 2221,
+            "endFrame": 2581,
+            "words": 28,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "9cbf3bf945e1ab9cb2a25f1636d0d60ea72efa8dde00e0b4d75341048aef511b"
+          }
+        ]
+      },
+      {
+        "start": 86.33333333333333,
+        "end": 92.23333333333333,
+        "cues": [
+          {
+            "text": "probabilidad de - sabiendo que A queda igual a 0 coma 0 1.",
+            "start": 86.33333333333333,
+            "end": 91.93333333333334,
+            "startFrame": 2590,
+            "endFrame": 2758,
+            "words": 13,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "dfc7713424e22e82bb3ebf75101d62ecb92d1b6cf10585354633c22dd14aad27"
+          }
+        ]
+      },
+      {
+        "start": 92.23333333333333,
+        "end": 100.13333333333334,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 92.23333333333333,
+            "end": 95.66666666666667,
+            "startFrame": 2767,
+            "endFrame": 2870,
+            "words": 8,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 95.96666666666667,
+            "end": 99.83333333333333,
+            "startFrame": 2879,
+            "endFrame": 2995,
+            "words": 9,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 100.13333333333334,
+        "end": 115.76666666666667,
+        "cues": [
+          {
+            "text": "La ruta A negativa.",
+            "start": 100.13333333333334,
+            "end": 101.86666666666666,
+            "startFrame": 3004,
+            "endFrame": 3056,
+            "words": 4,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "d597bfa87e436e2272823c5fc601f608c7ff20ca98e148edb321461121445618"
+          },
+          {
+            "text": "Pondero por la probabilidad previa de A. probabilidad de A intersección - igual a 0 coma 0 1 por abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis.",
+            "start": 102.16666666666667,
+            "end": 115.46666666666667,
+            "startFrame": 3065,
+            "endFrame": 3464,
+            "words": 31,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "847bd4f2b0c8d7729a948499e141572a0a98f93f2272b23416f9820c7d5f78a7"
+          }
+        ]
+      },
+      {
+        "start": 115.76666666666667,
+        "end": 125.93333333333334,
+        "cues": [
+          {
+            "text": "probabilidad de A intersección - queda igual a abre paréntesis, 0 coma 0 1, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis.",
+            "start": 115.76666666666667,
+            "end": 125.63333333333334,
+            "startFrame": 3473,
+            "endFrame": 3769,
+            "words": 23,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "95d14098f2dcb3eb7f3f2767a7359365567cb9b7bdf8c04b5238b11c3ab4c858"
+          }
+        ]
+      },
+      {
+        "start": 125.93333333333334,
+        "end": 137.26666666666668,
+        "cues": [
+          {
+            "text": "Negativo en be.",
+            "start": 125.93333333333334,
+            "end": 127.23333333333333,
+            "startFrame": 3778,
+            "endFrame": 3817,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "a816c7dd61b15a940a86e2abe265b8fb919af551916db9b2dc11c5580ecf21ca"
+          },
+          {
+            "text": "Obtengo el complemento de la positividad en be. probabilidad de - sabiendo que be igual a 1 menos 0 coma 0 6.",
+            "start": 127.53333333333333,
+            "end": 136.96666666666667,
+            "startFrame": 3826,
+            "endFrame": 4109,
+            "words": 22,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "6fd6ca648a690a76a57b379794ecf104e8bb7b3da0e7713dba9feb1fa069f192"
+          }
+        ]
+      },
+      {
+        "start": 137.26666666666668,
+        "end": 143.16666666666666,
+        "cues": [
+          {
+            "text": "probabilidad de - sabiendo que be queda igual a 0 coma 9 4.",
+            "start": 137.26666666666668,
+            "end": 142.86666666666667,
+            "startFrame": 4118,
+            "endFrame": 4286,
+            "words": 13,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "1e7734a4e50e44a226612dbb8ea24492ca5ff69017a9f8d8b5e4939ab4bfc304"
+          }
+        ]
+      },
+      {
+        "start": 143.16666666666666,
+        "end": 158.8,
+        "cues": [
+          {
+            "text": "La ruta be negativa.",
+            "start": 143.16666666666666,
+            "end": 144.9,
+            "startFrame": 4295,
+            "endFrame": 4347,
+            "words": 4,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "f20a7685fa9a0e5b89f01feb4d3dd87c371e0681f6feb4ca2fe2005ed440c1ba"
+          },
+          {
+            "text": "Pondero por la probabilidad previa de be. probabilidad de be intersección - igual a 0 coma 9 4 por abre paréntesis, 2, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis.",
+            "start": 145.2,
+            "end": 158.5,
+            "startFrame": 4356,
+            "endFrame": 4755,
+            "words": 31,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "ef850e9c667023c0780c739ed50596c2c08474137a2e1ed3c4a409e90a25b141"
+          }
+        ]
+      },
+      {
+        "start": 158.8,
+        "end": 168.96666666666667,
+        "cues": [
+          {
+            "text": "probabilidad de be intersección - queda igual a abre paréntesis, 1 coma 8 8, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis.",
+            "start": 158.8,
+            "end": 168.66666666666666,
+            "startFrame": 4764,
+            "endFrame": 5060,
+            "words": 23,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "d8382986be6921d622202042df70cbe21c0d6ac29897131fa3ee0091b211c052"
+          }
+        ]
+      },
+      {
+        "start": 168.96666666666667,
+        "end": 188.33333333333334,
+        "cues": [
+          {
+            "text": "Sumar las rutas.",
+            "start": 168.96666666666667,
+            "end": 170.26666666666668,
+            "startFrame": 5069,
+            "endFrame": 5108,
+            "words": 3,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "0c80068ca9e378d29c84151aa92a3e81d7a33597ba223f4d3e4184e8c5767eb1"
+          },
+          {
+            "text": "A y be son disjuntos y cubren las posibilidades.",
+            "start": 170.56666666666666,
+            "end": 174.43333333333334,
+            "startFrame": 5117,
+            "endFrame": 5233,
+            "words": 9,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "eeefc35222819cc9c35ebbcf1aa6819984b306064d3740a838d21f5789f3efb5"
+          },
+          {
+            "text": "Sumo sus contribuciones negativas. probabilidad de un resultado negativo igual a abre paréntesis, 0 coma 0 1 más 1 coma 8 8, cierra paréntesis dividido entre abre paréntesis, 3, cierra paréntesis.",
+            "start": 174.73333333333332,
+            "end": 188.03333333333333,
+            "startFrame": 5242,
+            "endFrame": 5641,
+            "words": 31,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "b024372fa584992c5ca7dee3ae2da6be6eac7a5ff5afd041566e5dc2bbb723c4"
+          }
+        ]
+      },
+      {
+        "start": 188.33333333333334,
+        "end": 193.8,
+        "cues": [
+          {
+            "text": "probabilidad de un resultado negativo queda igual a 0 coma 6 3.",
+            "start": 188.33333333333334,
+            "end": 193.5,
+            "startFrame": 5650,
+            "endFrame": 5805,
+            "words": 12,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "7942230673ff297716556d413e219459ba5c861a2fdb72145dde9e9624fa306f"
+          }
+        ]
+      },
+      {
+        "start": 193.8,
+        "end": 203.43333333333334,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 6 3 probabilidad entre 0 y 1.",
+            "start": 193.8,
+            "end": 198.96666666666667,
+            "startFrame": 5814,
+            "endFrame": 5969,
+            "words": 12,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "06c7015cb0c3d2d0c1e65151f4fc5a80741e7df00229a82485d1027f62a2983d"
+          },
+          {
+            "text": "No se promedian sin ponderación las dos tasas negativas.",
+            "start": 199.26666666666668,
+            "end": 203.13333333333333,
+            "startFrame": 5978,
+            "endFrame": 6094,
+            "words": 9,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "a794bd685ddeed5a3916fed952ee66fe833a2d4a4ecd878709ee3589cabe00c2"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
