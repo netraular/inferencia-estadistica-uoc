@@ -1,0 +1,574 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u1-4--vpn-80",
+  "kind": "exercise",
+  "title": "Con prevalencia 80 %, ¿cuál es el valor predictivo negativo?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "914c99a9c76b2258294edd063d26c26e0a29027cd313de47b22329d7ce4258d3",
+  "src": "videos/ejercicio-pdf-u1-4--vpn-80/video.mp4",
+  "poster": "videos/ejercicio-pdf-u1-4--vpn-80/poster.jpg",
+  "duration": 246.26666666666668,
+  "frames": 7388,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "b6255c6e3362e83766db283f32f7b700c03a3c426393ffebc940ae9cac0ffca1",
+  "videoSha256": "ff7816087991fcfbe2a76bbd182f46241de9b81f31755d30419d1c29099abb99",
+  "posterSha256": "cdb9617f831ebb7938b7c619129e18af820327b8d046aaa2e08a0eecd1fc2d52",
+  "canonicalSha256": "177d8576336c58570f3d2e20b78bfecc563288c76dcda28517a229c2944345ea",
+  "inputHash": "cf1fc34bd5dce576f7d89699f79cbd016bd55fb68981bf760e5f63b50b65221b",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "a109efc569b0c7f6bbeecdc0aec83cde51a4fecd2725229be9e9371064eefbe9",
+    "canonicalSha256": "177d8576336c58570f3d2e20b78bfecc563288c76dcda28517a229c2944345ea",
+    "source": {
+      "file": "Ejercicios_Unidad_1-Soluciones.pdf",
+      "number": "4",
+      "page": 5
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "b33a233fe495eb6ba25a82b7cee4e0b5959a6f94afe8627133ac8f5146bdf44c",
+    "transcriptSha256": "b6255c6e3362e83766db283f32f7b700c03a3c426393ffebc940ae9cac0ffca1",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u1-4",
+  "transcript": {
+    "id": "ejercicio-pdf-u1-4--vpn-80",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "177d8576336c58570f3d2e20b78bfecc563288c76dcda28517a229c2944345ea",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 246.26666666666668,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 13.833333333333334,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Con prevalencia 80 por ciento , ¿cuál es el valor predictivo negativo?",
+            "start": 2.9,
+            "end": 8.066666666666666,
+            "startFrame": 87,
+            "endFrame": 242,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "f79fd86e832fe36fee8685ba41618acd8362aa8536af2bef0d61f40ac2d2c0e8"
+          },
+          {
+            "text": "Queremos saber qué proporción de los negativos está libre de la condición.",
+            "start": 8.366666666666667,
+            "end": 13.533333333333333,
+            "startFrame": 251,
+            "endFrame": 406,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "c1c2e049b50bec74676ed1a9a33d26cc880d226d95ba661ae75daf6aaeb4e4b2"
+          }
+        ]
+      },
+      {
+        "start": 13.833333333333334,
+        "end": 31.533333333333335,
+        "cues": [
+          {
+            "text": "Una probabilidad previa describe el grupo antes de observar la prueba; una verosimilitud describe la prueba dentro de ese grupo.",
+            "start": 13.833333333333334,
+            "end": 22.433333333333334,
+            "startFrame": 415,
+            "endFrame": 673,
+            "words": 20,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "a78813f0593784db0080773fed28297f6d58b49427dced4db248ec9356fc77ee"
+          },
+          {
+            "text": "Multiplicar ambas da una ruta conjunta.",
+            "start": 22.733333333333334,
+            "end": 25.333333333333332,
+            "startFrame": 682,
+            "endFrame": 760,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "e0bfa350990103fc50ce34d85a3f06fac20352535039204a3248db305d959e10"
+          },
+          {
+            "text": "Los orígenes son excluyentes y exhaustivos: sumamos sus rutas para normalizar la posterior.",
+            "start": 25.633333333333333,
+            "end": 31.233333333333334,
+            "startFrame": 769,
+            "endFrame": 937,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "9e334d6cf001939223cef8fab9b903c166ad178ed9cdb956c098dbb84093b451"
+          }
+        ]
+      },
+      {
+        "start": 31.533333333333335,
+        "end": 37,
+        "cues": [
+          {
+            "text": "Sensibilidad igual a 95 por ciento; especificidad igual a 75 por ciento.",
+            "start": 31.533333333333335,
+            "end": 36.7,
+            "startFrame": 946,
+            "endFrame": 1101,
+            "words": 12,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "fd57da3c13bb6e49aeeb6b372801847af4fbe139d202b1a3b14fd84c50ac511d"
+          }
+        ]
+      },
+      {
+        "start": 37,
+        "end": 46.3,
+        "cues": [
+          {
+            "text": "Prevalencia inicial igual a 20 por ciento; segunda prevalencia igual a 80 por ciento; criterio positivo: presión menor que 90 mmHg.",
+            "start": 37,
+            "end": 46,
+            "startFrame": 1110,
+            "endFrame": 1380,
+            "words": 21,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "cbe5c98bb387912d68f3117fc4dd0daf138d9bbb698eaca4943ff8a55af8c4c7"
+          }
+        ]
+      },
+      {
+        "start": 46.3,
+        "end": 50.46666666666667,
+        "cues": [
+          {
+            "text": "Sensibilidad y especificidad se mantienen al cambiar la prevalencia.",
+            "start": 46.3,
+            "end": 50.166666666666664,
+            "startFrame": 1389,
+            "endFrame": 1505,
+            "words": 9,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "ed7df33dfbe6f351f1d3849ee0bfcb747be30318d0537579bd9a4f947ae2e8ea"
+          }
+        ]
+      },
+      {
+        "start": 50.46666666666667,
+        "end": 55.93333333333333,
+        "cues": [
+          {
+            "text": "Los datos son los del ejercicio, no una validación del criterio clínico.",
+            "start": 50.46666666666667,
+            "end": 55.63333333333333,
+            "startFrame": 1514,
+            "endFrame": 1669,
+            "words": 12,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "3e7ce2e27b83d63c7ed02ada7703bd33a828d07e6c2f997ef0665ce727181f5b"
+          }
+        ]
+      },
+      {
+        "start": 55.93333333333333,
+        "end": 68.43333333333334,
+        "cues": [
+          {
+            "text": "de complemento significa no tener la condición.",
+            "start": 55.93333333333333,
+            "end": 58.93333333333333,
+            "startFrame": 1678,
+            "endFrame": 1768,
+            "words": 7,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "e14adb46c5c3ee9042a7c0faa1e132f6746ac460c99b952031231dd7201f5937"
+          },
+          {
+            "text": "Multiplico su proporción por la especificidad.",
+            "start": 59.233333333333334,
+            "end": 61.833333333333336,
+            "startFrame": 1777,
+            "endFrame": 1855,
+            "words": 6,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "9840c32b8cb3e19fffb6aa8f16bdf7fcf1913da2dd9139b08e2ab54d87ca4660"
+          },
+          {
+            "text": "El denominador incluye negativos verdaderos y falsos; la especificidad sola no responde esta pregunta.",
+            "start": 62.13333333333333,
+            "end": 68.13333333333334,
+            "startFrame": 1864,
+            "endFrame": 2044,
+            "words": 14,
+            "sceneIndex": 6,
+            "cueIndex": 2,
+            "sourceCueSha256": "a01b69ca9cb2b774715fc3c06ea956995987e907b42871b5ca49321c9f736cf2"
+          }
+        ]
+      },
+      {
+        "start": 68.43333333333334,
+        "end": 90.93333333333334,
+        "cues": [
+          {
+            "text": "La ruta negativa verdadera. de complemento significa no tener la condición.",
+            "start": 68.43333333333334,
+            "end": 73.16666666666667,
+            "startFrame": 2053,
+            "endFrame": 2195,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "94b3022c99f0c2c2f50c908cfb1a58a45be63991f567fde987e4e5c9062212f4"
+          },
+          {
+            "text": "Multiplico su proporción por la especificidad. probabilidad de de elevado a ce intersección - igual a 0 coma 7 5 por 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6.",
+            "start": 73.46666666666667,
+            "end": 90.63333333333334,
+            "startFrame": 2204,
+            "endFrame": 2719,
+            "words": 40,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "cdecc2eadabe6927dd7613413d728aca0342c7842026920dee884e02815e8323"
+          }
+        ]
+      },
+      {
+        "start": 90.93333333333334,
+        "end": 104.1,
+        "cues": [
+          {
+            "text": "probabilidad de de elevado a ce intersección - queda igual a 0 coma 1 4 9 9 9 9 9 9 9 9 9 9 9 9 9 9 7.",
+            "start": 90.93333333333334,
+            "end": 103.8,
+            "startFrame": 2728,
+            "endFrame": 3114,
+            "words": 30,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "29d69a9081e1cae4e47539dfec2a2f00513f3889d4353297744de72bc736cb34"
+          }
+        ]
+      },
+      {
+        "start": 104.1,
+        "end": 119.3,
+        "cues": [
+          {
+            "text": "La tasa de falsos negativos.",
+            "start": 104.1,
+            "end": 106.26666666666667,
+            "startFrame": 3123,
+            "endFrame": 3188,
+            "words": 5,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "c3e360cae0f929e440d340925ddc7df1521452e47386301eabec84ee296d85e4"
+          },
+          {
+            "text": "Resto la sensibilidad de uno porque buscamos un negativo entre quienes sí tienen la condición. probabilidad de - sabiendo que de igual a 1 menos 0 coma 9 5.",
+            "start": 106.56666666666666,
+            "end": 119,
+            "startFrame": 3197,
+            "endFrame": 3570,
+            "words": 29,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "0c10a930a0bbc17f06d474879164091ccbd184ccda5b471fd76f3943acdf5b1e"
+          }
+        ]
+      },
+      {
+        "start": 119.3,
+        "end": 132.03333333333333,
+        "cues": [
+          {
+            "text": "probabilidad de - sabiendo que de queda igual a 0 coma 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 4.",
+            "start": 119.3,
+            "end": 131.73333333333332,
+            "startFrame": 3579,
+            "endFrame": 3952,
+            "words": 29,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "a4e945ef86c2b0272e93b1ea07dc806ef782ec3d8e30c047af69de0a84ad44b7"
+          }
+        ]
+      },
+      {
+        "start": 132.03333333333333,
+        "end": 154.1,
+        "cues": [
+          {
+            "text": "La ruta negativa falsa.",
+            "start": 132.03333333333333,
+            "end": 133.76666666666668,
+            "startFrame": 3961,
+            "endFrame": 4013,
+            "words": 4,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "4ec4d8c20a3626a7516e06cb421e91a210e69740163714d56e7f8c96168c133f"
+          },
+          {
+            "text": "Pondero esa tasa por la prevalencia para obtener la otra entrada de la columna negativa. probabilidad de de intersección - igual a 0 coma 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 4 por 0 coma 8.",
+            "start": 134.06666666666666,
+            "end": 153.8,
+            "startFrame": 4022,
+            "endFrame": 4614,
+            "words": 46,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "63f82e6a3beaf29e269bce09a80e3591eddc22508f0d964575619f8f1e7117ef"
+          }
+        ]
+      },
+      {
+        "start": 154.1,
+        "end": 166.4,
+        "cues": [
+          {
+            "text": "probabilidad de de intersección - queda igual a 0 coma 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 6.",
+            "start": 154.1,
+            "end": 166.1,
+            "startFrame": 4623,
+            "endFrame": 4983,
+            "words": 28,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "a45258d6b0407e0d7c0a2e38ce44acdd29547cbe424f5fbdb0eda9992fa7cc9a"
+          }
+        ]
+      },
+      {
+        "start": 166.4,
+        "end": 192.3,
+        "cues": [
+          {
+            "text": "Todos los negativos.",
+            "start": 166.4,
+            "end": 167.7,
+            "startFrame": 4992,
+            "endFrame": 5031,
+            "words": 3,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "5e6959655dca5dda408ab7f5b21383f7f78bd525da736d0cbf03de0331bf9548"
+          },
+          {
+            "text": "Sumo los negativos verdaderos y falsos antes de condicionar. probabilidad de un resultado negativo igual a 0 coma 1 4 9 9 9 9 9 9 9 9 9 9 9 9 9 9 7 más 0 coma 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 6.",
+            "start": 168,
+            "end": 192,
+            "startFrame": 5040,
+            "endFrame": 5760,
+            "words": 56,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "7ed77d4ff7bbb6b3998f453f708bd8489847be9a4ab29621cfd9ecc84f969165"
+          }
+        ]
+      },
+      {
+        "start": 192.3,
+        "end": 197.76666666666668,
+        "cues": [
+          {
+            "text": "probabilidad de un resultado negativo queda igual a 0 coma 1 9.",
+            "start": 192.3,
+            "end": 197.46666666666667,
+            "startFrame": 5769,
+            "endFrame": 5924,
+            "words": 12,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "7ed6176f254c485f79f060f782d2465cda36a77a633a0fed5c6af4613b7c8545"
+          }
+        ]
+      },
+      {
+        "start": 197.76666666666668,
+        "end": 205.66666666666666,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 197.76666666666668,
+            "end": 201.2,
+            "startFrame": 5933,
+            "endFrame": 6036,
+            "words": 8,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 201.5,
+            "end": 205.36666666666667,
+            "startFrame": 6045,
+            "endFrame": 6161,
+            "words": 9,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 205.66666666666666,
+        "end": 231.16666666666666,
+        "cues": [
+          {
+            "text": "La proporción sin condición.",
+            "start": 205.66666666666666,
+            "end": 207.4,
+            "startFrame": 6170,
+            "endFrame": 6222,
+            "words": 4,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "17aca968afaa450a01a1befabd6f871a2b23149358b5d7a2e7934744795b17a7"
+          },
+          {
+            "text": "Divido los negativos sin condición entre todos los negativos. probabilidad de de elevado a ce sabiendo que resultado negativo igual a abre paréntesis, 0 coma 1 4 9 9 9 9 9 9 9 9 9 9 9 9 9 9 7, cierra paréntesis dividido entre abre paréntesis, 0 coma 1 9, cierra paréntesis.",
+            "start": 207.7,
+            "end": 230.86666666666667,
+            "startFrame": 6231,
+            "endFrame": 6926,
+            "words": 54,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "f4e43ad9fe9856e326e9dc931bc01c20d5adfa7023652eea9e60d39c5b9fba98"
+          }
+        ]
+      },
+      {
+        "start": 231.16666666666666,
+        "end": 246.26666666666668,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 7 8 9 4 7 3 7 probabilidad entre 0 y 1.",
+            "start": 231.16666666666666,
+            "end": 238.46666666666667,
+            "startFrame": 6935,
+            "endFrame": 7154,
+            "words": 17,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "9fbdebf9487070130718e3983900f6ccba755480daff038f760a6d12e5f7e55a"
+          },
+          {
+            "text": "Un negativo no elimina toda incertidumbre.",
+            "start": 238.76666666666668,
+            "end": 241.36666666666667,
+            "startFrame": 7163,
+            "endFrame": 7241,
+            "words": 6,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "bff42abb5911ec6c4ee40096434286a0a69607c5d892520d7e4b4db2fd8b2727"
+          },
+          {
+            "text": "Estas cifras son un modelo docente, no una recomendación clínica.",
+            "start": 241.66666666666666,
+            "end": 245.96666666666667,
+            "startFrame": 7250,
+            "endFrame": 7379,
+            "words": 10,
+            "sceneIndex": 17,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad6e1b42b01353a50340d63e9115528b06777ae5fa14a8e0ceaaa175ff957b48"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
