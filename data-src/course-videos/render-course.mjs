@@ -24,7 +24,7 @@ export function parseOptions(args) {
   const options = {};
   for (let index = 0; index < args.length; index++) {
     const flag = args[index];
-    if (['--ready', '--publish', '--worker', '--help', '--transcript', '--prepare', '--status', '--native'].includes(flag)) options[flag.slice(2)] = true;
+    if (['--ready', '--publish', '--worker', '--help', '--transcript', '--prepare', '--status', '--native', '--continue-on-error'].includes(flag)) options[flag.slice(2)] = true;
     else if (['--batch', '--ids', '--limit', '--source'].includes(flag)) {
       assert.ok(args[index + 1] && !args[index + 1].startsWith('--'), `Missing value for ${flag}`);
       const value = args[++index];
@@ -32,6 +32,7 @@ export function parseOptions(args) {
     } else throw new Error(`Unknown option ${flag}`);
   }
   if (!options.help) assert.ok(options.batch && path.isAbsolute(options.batch), '--batch must be absolute');
+  assert.ok(!options['continue-on-error'] || options.transcript, '--continue-on-error requires --transcript');
   if (options.transcript) {
     assert.ok(!options.publish, 'Cannot publish transcript drafts as Puck videos');
     assert.ok(!options.ready, '--ready is reserved for measured audio');
@@ -142,13 +143,19 @@ export function rendererWebpack(configuration, mathModule, {native = false} = {}
   }}, plugins:[...configuration.plugins, new (require('webpack').DefinePlugin)({PACKAGE_VERSION:JSON.stringify(require('mathjax-full/package.json').version)})]};
 }
 
-async function worker(options) {
+export async function worker(options, {
+  getRenderer = rendererInputs,
+  loadRuntime = async () => ({runtime:await import('@remotion/renderer'), bundle:(await import('@remotion/bundler')).bundle}),
+  verify = verifyMedia,
+  runFfmpeg = execFileSync
+} = {}) {
+  assert.ok(!options['continue-on-error'] || options.transcript, '--continue-on-error requires --transcript');
   const batch = fs.realpathSync(options.batch);
   const cataloguePath = path.join(batch, 'catalogue.json');
   const catalogueBytes = fs.readFileSync(cataloguePath);
   const catalogue = JSON.parse(catalogueBytes);
   const catalogueSha256 = sha256(catalogueBytes);
-  const renderer = rendererInputs({native:options.native});
+  const renderer = getRenderer({native:options.native});
   const selection = options.transcript ? loadTranscriptBatch(batch, catalogueBytes, renderer) : undefined;
   const {prepared, pending} = options.transcript ? {prepared:prepareTranscriptInputs(catalogue, selection, options), pending:[]} : prepareBatchInputs(batch, catalogue, options);
   if (!prepared.length) return;
@@ -158,7 +165,7 @@ async function worker(options) {
   const ffprobeStatic = require('ffprobe-static').path;
   const ffprobe = fs.existsSync(ffprobeStatic) ? ffprobeStatic : '/usr/bin/ffprobe';
   const {rendererSha256, mathSource, sourceHashes} = renderer;
-  const hashRenderer = () => rendererInputs({native:options.native}).rendererSha256;
+  const hashRenderer = () => getRenderer({native:options.native}).rendererSha256;
   const outputRoot = path.join(batch, 'videos');
   fs.mkdirSync(outputRoot, {recursive:true});
   const lockPath = path.join(outputRoot, '.remotion.lock');
@@ -170,6 +177,8 @@ async function worker(options) {
   let runtime;
   const cache = path.join(outputRoot, '.remotion-cache', `${rendererSha256.slice(0, 16)}-${process.pid}`);
   const results = [];
+  const failures = [];
+  let failure;
   let progress;
   let current;
   try {
@@ -178,6 +187,7 @@ async function worker(options) {
       assert.deepEqual(Object.keys(progress.items), selection.targetIds, 'Invalid progress selection');
       for (const entry of Object.values(progress.items)) if (entry.state === 'rendering') entry.state = 'pending';
       Object.assign(progress, {state:'running', pid:process.pid, startedAt:new Date().toISOString(), rendererSha256});
+      delete progress.error;
       writeProgress(batch, progress);
     }
     for (const {item, storyboard, mp3Path, audioPath} of prepared) {
@@ -196,124 +206,153 @@ async function worker(options) {
       const frames = sampleFrames(storyboard);
       const verifyInputs = () => {
         assert.equal(sha256(fs.readFileSync(cataloguePath)), catalogueSha256, 'Frozen catalogue changed during render');
-        if (transcript) loadTranscriptBatch(batch, fs.readFileSync(cataloguePath), rendererInputs({native:options.native}));
+        if (transcript) loadTranscriptBatch(batch, fs.readFileSync(cataloguePath), getRenderer({native:options.native}));
         else {
           assert.equal(sha256(fs.readFileSync(mp3Path)), storyboard.audio.mp3Sha256, 'Audio changed during render');
           assert.deepEqual(readJson(audioPath), storyboard.audio, 'Measured timing changed during render');
         }
         assert.equal(hashRenderer(), rendererSha256, 'Renderer changed during render');
       };
+      verifyInputs();
       if (progress) {
         progress.current = item.id;
-        progress.items[item.id] = {state:'rendering', startedAt:new Date().toISOString()};
+        progress.items[item.id] = {...progress.items[item.id], state:'rendering', startedAt:new Date().toISOString(), error:undefined};
         writeProgress(batch, progress);
       }
-      let metadata;
-      if (fs.existsSync(metadataPath)) {
-        metadata = readJson(metadataPath);
-        if (transcript) {
-          assertTranscriptResume(metadata, {inputHash, rendererSha256, sourceSnapshot});
-          assert.deepEqual(readJson(path.join(destination, 'transcript.json')), timeline, 'Stale transcript cue plan');
-        } else assertPublishable(metadata);
-        assert.equal(metadata.inputHash, inputHash, `${item.id}: stale render; use a new batch or explicitly remove that item's old outputs`);
-        assert.equal(metadata.complete, true, 'Incomplete render metadata');
-        assert.equal(metadata.rendererSha256, rendererSha256, 'Incompatible renderer');
-        assert.deepEqual(metadata.sourceSnapshot, sourceSnapshot, 'Stale source snapshot');
-        const verification = verifyMedia({ffmpeg, ffprobe, video, poster, storyboard, frames});
-        assert.equal(verification.videoSha256, metadata.videoSha256, 'Corrupt resumed video');
-        assert.equal(verification.posterSha256, metadata.posterSha256, 'Corrupt resumed poster');
-        console.log(`COURSE_REUSED ${item.id}`);
-      } else {
-        if (!runtime) {
-          runtime = await import('@remotion/renderer');
-          const {bundle} = await import('@remotion/bundler');
-          const publicDir = path.join(cache, 'public');
-          fs.mkdirSync(publicDir, {recursive:true});
-          const mathModule = path.join(cache, 'stage-equations.mjs');
-          if (!options.native) fs.writeFileSync(mathModule, mathSource);
-          for (const weight of [400, 700]) fs.copyFileSync(path.join(root, `pages/inferencia/vendor/atkinson-latin-${weight}.woff2`), path.join(publicDir, `atkinson-latin-${weight}.woff2`));
-          bundleUrl = await bundle({entryPoint:path.join(owned, options.native ? 'NativeCourse.jsx' : 'Course.jsx'), outDir:path.join(cache, 'bundle'), rootDir:owned, publicDir, enableCaching:false, gitSource:null,
-            webpackOverride:configuration => rendererWebpack(configuration, mathModule, {native:options.native})});
-          assert.equal(hashRenderer(), rendererSha256, 'Renderer changed during bundling');
-          const ensured = await runtime.ensureBrowser();
-          browser = await runtime.openBrowser('chrome', {browserExecutable:ensured.path, logLevel:'error'});
-          browserClosed = false;
+      const work = path.join(cache, item.id);
+      let recoverable = false;
+      try {
+        let metadata;
+        if (fs.existsSync(metadataPath)) {
+          metadata = readJson(metadataPath);
+          if (transcript) {
+            assertTranscriptResume(metadata, {inputHash, rendererSha256, sourceSnapshot});
+            assert.deepEqual(readJson(path.join(destination, 'transcript.json')), timeline, 'Stale transcript cue plan');
+          } else assertPublishable(metadata);
+          assert.equal(metadata.inputHash, inputHash, `${item.id}: stale render; use a new batch or explicitly remove that item's old outputs`);
+          assert.equal(metadata.complete, true, 'Incomplete render metadata');
+          assert.equal(metadata.rendererSha256, rendererSha256, 'Incompatible renderer');
+          assert.deepEqual(metadata.sourceSnapshot, sourceSnapshot, 'Stale source snapshot');
+          recoverable = true;
+          const verification = verify({ffmpeg, ffprobe, video, poster, storyboard, frames});
+          recoverable = false;
+          assert.equal(verification.videoSha256, metadata.videoSha256, 'Corrupt resumed video');
+          assert.equal(verification.posterSha256, metadata.posterSha256, 'Corrupt resumed poster');
+          console.log(`COURSE_REUSED ${item.id}`);
+        } else {
+          if (!runtime) {
+            const loaded = await loadRuntime();
+            runtime = loaded.runtime;
+            const {bundle} = loaded;
+            const publicDir = path.join(cache, 'public');
+            fs.mkdirSync(publicDir, {recursive:true});
+            const mathModule = path.join(cache, 'stage-equations.mjs');
+            if (!options.native) fs.writeFileSync(mathModule, mathSource);
+            for (const weight of [400, 700]) fs.copyFileSync(path.join(root, `pages/inferencia/vendor/atkinson-latin-${weight}.woff2`), path.join(publicDir, `atkinson-latin-${weight}.woff2`));
+            bundleUrl = await bundle({entryPoint:path.join(owned, options.native ? 'NativeCourse.jsx' : 'Course.jsx'), outDir:path.join(cache, 'bundle'), rootDir:owned, publicDir, enableCaching:false, gitSource:null,
+              webpackOverride:configuration => rendererWebpack(configuration, mathModule, {native:options.native})});
+            assert.equal(hashRenderer(), rendererSha256, 'Renderer changed during bundling');
+          }
+          if (!browser) {
+            const ensured = await runtime.ensureBrowser();
+            browser = await runtime.openBrowser('chrome', {browserExecutable:ensured.path, logLevel:'error'});
+            browserClosed = false;
+          }
+          recoverable = true;
+          fs.mkdirSync(work, {recursive:true});
+          const inputProps = {storyboard};
+          const composition = await runtime.selectComposition({serveUrl:bundleUrl, id:'Course', inputProps, puppeteerInstance:browser, logLevel:'error'});
+          const layout = [];
+          for (const frame of frames) {
+            const output = path.join(work, `frame-${frame}.jpg`);
+            await runtime.renderStill({serveUrl:bundleUrl, composition:{...composition, props:{...inputProps, audit:true}}, inputProps:{...inputProps, audit:true}, puppeteerInstance:browser, output, frame, imageFormat:'jpeg', logLevel:'error',
+              onBrowserLog:log => {
+                const prefix = options.native ? 'REMOTION_NATIVE_LAYOUT ' : 'REMOTION_COURSE_LAYOUT ';
+                if (log.text?.startsWith(prefix)) layout.push(JSON.parse(log.text.slice(prefix.length)));
+              }});
+            const evidence = layout.find(entry => entry.frame === frame);
+            assert.ok(evidence, `${item.id}/${frame}: no layout evidence`);
+            assert.deepEqual(evidence.errors, [], `${item.id}/${frame}: layout errors`);
+          }
+          if (timeline.scenes.reduce((count, scene) => count + scene.cues.length, 0) > 1) assert.ok(new Set(layout.map(entry => entry.canvasSha256 || entry.geometrySha256)).size > 1, `${item.id}: static scene geometry`);
+          const silent = path.join(work, 'silent.mp4');
+          await runtime.renderMedia({serveUrl:bundleUrl, composition, inputProps, puppeteerInstance:browser, outputLocation:silent, codec:'h264', pixelFormat:'yuv420p', crf:20, x264Preset:'fast', concurrency:transcript || catalogue.preview || timeline.preview ? 1 : 2, muted:true, overwrite:true, logLevel:'error'});
+          const temporaryVideo = path.join(work, 'video.mp4');
+          const temporaryPoster = path.join(work, 'poster.jpg');
+          if (transcript) runFfmpeg(ffmpeg, ['-v', 'error', '-y', '-threads', '1', '-i', silent, '-map', '0:v:0', '-c:v', 'copy', '-an', '-movflags', '+faststart', temporaryVideo]);
+          else runFfmpeg(ffmpeg, ['-v', 'error', '-y', '-i', silent, '-i', mp3Path, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-af', 'apad', '-t', String(storyboard.frames / storyboard.fps), '-movflags', '+faststart', temporaryVideo]);
+          const posterFrame = options.native ? layout.filter(entry => entry.marks > 0 && !entry.errors.length).at(-1)?.frame : representativeFrame(layout);
+          assert.ok(Number.isInteger(posterFrame), 'Missing representative native scene');
+          fs.copyFileSync(path.join(work, `frame-${posterFrame}.jpg`), temporaryPoster);
+          const verification = verify({ffmpeg, ffprobe, video:temporaryVideo, poster:temporaryPoster, storyboard, frames});
+          recoverable = false;
+          verifyInputs();
+          metadata = {version:1, complete:true, engine:'remotion', id:item.id, kind:item.kind, title:item.title,
+            ...(options.native ? {sceneEngine:'native-svg', nativePlanSha256:sha256(JSON.stringify(storyboard.nativePlan))} : {}),
+            src:`videos/${item.id}/video.mp4`, poster:`videos/${item.id}/poster.jpg`, duration:storyboard.duration, frames:storyboard.frames,
+            fps:storyboard.fps, width:storyboard.width, height:storyboard.height,
+            ...(transcript ? {narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true, timing:timeline.timing, transcriptSha256:sha256(JSON.stringify(timeline))} : {audioSource:`audio/${item.id}.mp3`, audioSha256:timeline.mp3Sha256, voice:VOICE, model:MODEL, cueTiming:'measured'}),
+            videoSha256:verification.videoSha256, posterSha256:verification.posterSha256, canonicalSha256:item.canonicalSha256,
+            inputHash, rendererSha256, sourceSnapshot, testFixture:Boolean(catalogue.testFixture || timeline.testFixture),
+            ...(catalogue.preview || timeline.preview ? {preview:true, originalId:item.originalId, partialCoverage:item.partialCoverage, provenance:catalogue.provenance ?? timeline.provenance} : {}),
+            ...(item.parentLesson ? {parentLesson:item.parentLesson} : {}),
+            evidence:{posterFrame, layout, pixels:verification.pixels, streams:verification.streams, elapsedSeconds:(Date.now() - started) / 1000}};
+          fs.mkdirSync(destination, {recursive:true});
+          fs.copyFileSync(temporaryVideo, video);
+          fs.copyFileSync(temporaryPoster, poster);
+          if (transcript) atomicJson(path.join(destination, 'transcript.json'), timeline);
+          atomicJson(metadataPath, metadata);
+          console.log(`COURSE_RENDERED ${item.id} ${storyboard.frames} frames ${(Date.now() - started) / 1000}s`);
         }
-        const work = path.join(cache, item.id);
-        fs.mkdirSync(work, {recursive:true});
-        const inputProps = {storyboard};
-        const composition = await runtime.selectComposition({serveUrl:bundleUrl, id:'Course', inputProps, puppeteerInstance:browser, logLevel:'error'});
-        const layout = [];
-        for (const frame of frames) {
-          const output = path.join(work, `frame-${frame}.jpg`);
-          await runtime.renderStill({serveUrl:bundleUrl, composition:{...composition, props:{...inputProps, audit:true}}, inputProps:{...inputProps, audit:true}, puppeteerInstance:browser, output, frame, imageFormat:'jpeg', logLevel:'error',
-            onBrowserLog:log => {
-              const prefix = options.native ? 'REMOTION_NATIVE_LAYOUT ' : 'REMOTION_COURSE_LAYOUT ';
-              if (log.text?.startsWith(prefix)) layout.push(JSON.parse(log.text.slice(prefix.length)));
-            }});
-          const evidence = layout.find(entry => entry.frame === frame);
-          assert.ok(evidence, `${item.id}/${frame}: no layout evidence`);
-          assert.deepEqual(evidence.errors, [], `${item.id}/${frame}: layout errors`);
-        }
-        if (timeline.scenes.reduce((count, scene) => count + scene.cues.length, 0) > 1) assert.ok(new Set(layout.map(entry => entry.canvasSha256 || entry.geometrySha256)).size > 1, `${item.id}: static scene geometry`);
-        const silent = path.join(work, 'silent.mp4');
-        await runtime.renderMedia({serveUrl:bundleUrl, composition, inputProps, puppeteerInstance:browser, outputLocation:silent, codec:'h264', pixelFormat:'yuv420p', crf:20, x264Preset:'fast', concurrency:transcript || catalogue.preview || timeline.preview ? 1 : 2, muted:true, overwrite:true, logLevel:'error'});
-        const temporaryVideo = path.join(work, 'video.mp4');
-        const temporaryPoster = path.join(work, 'poster.jpg');
-        if (transcript) execFileSync(ffmpeg, ['-v', 'error', '-y', '-threads', '1', '-i', silent, '-map', '0:v:0', '-c:v', 'copy', '-an', '-movflags', '+faststart', temporaryVideo]);
-        else execFileSync(ffmpeg, ['-v', 'error', '-y', '-i', silent, '-i', mp3Path, '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-af', 'apad', '-t', String(storyboard.frames / storyboard.fps), '-movflags', '+faststart', temporaryVideo]);
-        const posterFrame = options.native ? layout.filter(entry => entry.marks > 0 && !entry.errors.length).at(-1)?.frame : representativeFrame(layout);
-        assert.ok(Number.isInteger(posterFrame), 'Missing representative native scene');
-        fs.copyFileSync(path.join(work, `frame-${posterFrame}.jpg`), temporaryPoster);
-        const verification = verifyMedia({ffmpeg, ffprobe, video:temporaryVideo, poster:temporaryPoster, storyboard, frames});
         verifyInputs();
-        metadata = {version:1, complete:true, engine:'remotion', id:item.id, kind:item.kind, title:item.title,
-          ...(options.native ? {sceneEngine:'native-svg', nativePlanSha256:sha256(JSON.stringify(storyboard.nativePlan))} : {}),
-          src:`videos/${item.id}/video.mp4`, poster:`videos/${item.id}/poster.jpg`, duration:storyboard.duration, frames:storyboard.frames,
-          fps:storyboard.fps, width:storyboard.width, height:storyboard.height,
-          ...(transcript ? {narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true, timing:timeline.timing, transcriptSha256:sha256(JSON.stringify(timeline))} : {audioSource:`audio/${item.id}.mp3`, audioSha256:timeline.mp3Sha256, voice:VOICE, model:MODEL, cueTiming:'measured'}),
-          videoSha256:verification.videoSha256, posterSha256:verification.posterSha256, canonicalSha256:item.canonicalSha256,
-          inputHash, rendererSha256, sourceSnapshot, testFixture:Boolean(catalogue.testFixture || timeline.testFixture),
-          ...(catalogue.preview || timeline.preview ? {preview:true, originalId:item.originalId, partialCoverage:item.partialCoverage, provenance:catalogue.provenance ?? timeline.provenance} : {}),
-          ...(item.parentLesson ? {parentLesson:item.parentLesson} : {}),
-          evidence:{posterFrame, layout, pixels:verification.pixels, streams:verification.streams, elapsedSeconds:(Date.now() - started) / 1000}};
-        fs.mkdirSync(destination, {recursive:true});
-        fs.copyFileSync(temporaryVideo, video);
-        fs.copyFileSync(temporaryPoster, poster);
-        if (transcript) atomicJson(path.join(destination, 'transcript.json'), timeline);
-        atomicJson(metadataPath, metadata);
-        fs.rmSync(work, {recursive:true, force:true});
-        console.log(`COURSE_RENDERED ${item.id} ${storyboard.frames} frames ${(Date.now() - started) / 1000}s`);
-      }
-      verifyInputs();
-      if (options.publish) {
-        assertPublishable(metadata);
-        assert.ok(!metadata.preview, 'Cannot publish partial preview narration');
-        assert.ok(!metadata.testFixture, 'Cannot publish fixture narration');
-        const publishedAudio = path.join(root, 'static', metadata.audioSource);
-        assert.equal(sha256(fs.readFileSync(publishedAudio)), metadata.audioSha256, 'Publish matching audio first');
-        const publishDirectory = path.join(root, 'static/videos', item.id);
-        fs.mkdirSync(publishDirectory, {recursive:true});
-        for (const name of ['video.mp4', 'poster.jpg', 'metadata.json']) fs.copyFileSync(path.join(destination, name), path.join(publishDirectory, name));
-        const manifestPath = path.join(root, 'static/videos/manifest.json');
-        const manifest = fs.existsSync(manifestPath) ? readJson(manifestPath) : {version:1, lessons:{}};
-        assert.equal(manifest.version, 1, 'Unsupported published manifest');
-        const {evidence, ...entry} = metadata;
-        manifest.lessons[item.id] = entry;
-        atomicJson(manifestPath, manifest);
-      }
-      results.push({id:item.id, inputHash, videoSha256:metadata.videoSha256});
-      if (progress) {
-        progress.items[item.id] = {state:'complete', inputHash, videoSha256:metadata.videoSha256, frames:metadata.frames, duration:metadata.duration, elapsedSeconds:metadata.evidence.elapsedSeconds, verifiedAt:new Date().toISOString()};
+        if (options.publish) {
+          assertPublishable(metadata);
+          assert.ok(!metadata.preview, 'Cannot publish partial preview narration');
+          assert.ok(!metadata.testFixture, 'Cannot publish fixture narration');
+          const publishedAudio = path.join(root, 'static', metadata.audioSource);
+          assert.equal(sha256(fs.readFileSync(publishedAudio)), metadata.audioSha256, 'Publish matching audio first');
+          const publishDirectory = path.join(root, 'static/videos', item.id);
+          fs.mkdirSync(publishDirectory, {recursive:true});
+          for (const name of ['video.mp4', 'poster.jpg', 'metadata.json']) fs.copyFileSync(path.join(destination, name), path.join(publishDirectory, name));
+          const manifestPath = path.join(root, 'static/videos/manifest.json');
+          const manifest = fs.existsSync(manifestPath) ? readJson(manifestPath) : {version:1, lessons:{}};
+          assert.equal(manifest.version, 1, 'Unsupported published manifest');
+          const {evidence, ...entry} = metadata;
+          manifest.lessons[item.id] = entry;
+          atomicJson(manifestPath, manifest);
+        }
+        results.push({id:item.id, inputHash, videoSha256:metadata.videoSha256});
+        if (progress) {
+          progress.items[item.id] = {state:'complete', inputHash, videoSha256:metadata.videoSha256, frames:metadata.frames, duration:metadata.duration, elapsedSeconds:metadata.evidence.elapsedSeconds, verifiedAt:new Date().toISOString()};
+          writeProgress(batch, progress);
+        }
+      } catch (error) {
+        if (!options['continue-on-error'] || !recoverable) throw error;
+        verifyInputs();
+        const entry = {id:item.id, error:error.message, frames:storyboard.frames, duration:storyboard.duration, elapsedSeconds:(Date.now() - started) / 1000, failedAt:new Date().toISOString()};
+        failures.push(entry);
+        progress.items[item.id] = {...progress.items[item.id], ...entry, state:'failed'};
         writeProgress(batch, progress);
+        console.error(`COURSE_FAILED ${JSON.stringify(entry)}`);
+        if (browser) {await browser.close({silent:true}); browser = undefined; browserClosed = true;}
+      } finally {
+        fs.rmSync(work, {recursive:true, force:true});
       }
+      current = undefined;
     }
-    if (progress) {progress.state = Object.values(progress.items).every(item => item.state === 'complete') ? 'complete' : 'paused'; delete progress.current; writeProgress(batch, progress);}
+    if (progress) {
+      const failed = options['continue-on-error'] && progress.counts.failed;
+      progress.state = failed ? 'failed' : Object.values(progress.items).every(item => item.state === 'complete') ? 'complete' : 'paused';
+      delete progress.current;
+      writeProgress(batch, progress);
+      if (failed) throw new Error(`${progress.counts.failed} transcript item(s) failed; see progress.json and videos/remotion-run.json`);
+    }
   } catch (error) {
+    failure = error.message;
     if (progress) {
       progress.state = 'failed';
       progress.error = error.message;
-      if (current) progress.items[current] = {state:'failed', error:error.message};
+      if (current) progress.items[current] = {...progress.items[current], state:'failed', error:error.message};
       writeProgress(batch, progress);
     }
     throw error;
@@ -322,7 +361,7 @@ async function worker(options) {
     finally {
       fs.rmSync(cache, {recursive:true, force:true});
       fs.rmSync(lockPath, {force:true});
-      atomicJson(path.join(outputRoot, 'remotion-run.json'), {version:1, browserClosed, rendererSha256, pending, results});
+      atomicJson(path.join(outputRoot, 'remotion-run.json'), {version:1, browserClosed, rendererSha256, pending, results, failures, failedCount:progress?.counts.failed ?? failures.length, counts:progress?.counts, error:failure});
     }
   }
 }
@@ -330,7 +369,7 @@ async function worker(options) {
 async function main() {
   const options = parseOptions(process.argv.slice(2));
   if (options.help) {
-    console.log('node /absolute/path/render-course.mjs --batch /absolute/batch [--native] [--ready] [--ids id1,id2] [--limit N] [--publish]\n--native selects narration-specific SVG/HTML scenes, never the legacy whiteboard. Use a fresh batch.\n--ready skips pending audio; --ids always requires complete compatible audio. --limit counts ready items.\n--transcript --prepare --source /absolute/catalogue.json freezes a silent draft batch (541 native or 538 legacy items). --transcript --worker renders/resumes it. --transcript --status reports persistent counts. Transcript drafts cannot --publish or --ready.');
+    console.log('node /absolute/path/render-course.mjs --batch /absolute/batch [--native] [--ready] [--ids id1,id2] [--limit N] [--publish]\n--native selects narration-specific SVG/HTML scenes, never the legacy whiteboard. Use a fresh batch.\n--ready skips pending audio; --ids always requires complete compatible audio. --limit counts ready items.\n--transcript --prepare --source /absolute/catalogue.json freezes a silent draft batch (541 native or 538 legacy items). --transcript --worker renders/resumes it. --transcript --status reports persistent counts. Transcript drafts cannot --publish or --ready.\n--transcript --continue-on-error attempts each selected item once, continuing after individual render/media failures only. Integrity failures still abort. Any failed items give a nonzero exit; inspect progress.json and videos/remotion-run.json.');
     return;
   }
   if (options.prepare) {

@@ -13,9 +13,40 @@ export function SceneSurface({children, label}) {
   return <div data-native-scene={label} style={{position:'relative', width:1200, height:480, overflow:'hidden'}}>{children}</div>;
 }
 
-export function MathFormula({tex, x = 0, y = 0, width = 1200, fontSize = 28, opacity = 1}) {
-  return <div data-native-math={tex} data-native-bound style={{position:'absolute', left:x, top:y, width, fontSize, opacity, textAlign:'center', color:PALETTE.ink}}
-    dangerouslySetInnerHTML={{__html:katex.renderToString(tex, {throwOnError:true, output:'html', displayMode:true, trust:false})}} />;
+export class MathFormula extends React.Component {
+  componentDidMount() {this.fit();}
+
+  componentDidUpdate(previous) {
+    if (['tex', 'width', 'fontSize'].some(key => previous[key] !== this.props[key])) this.fit();
+  }
+
+  componentWillUnmount() {this.release?.();}
+
+  fit() {
+    const {cancelRender, continueRender, delayRender} = require('remotion');
+    this.release?.();
+    const element = this.element;
+    const {fontSize = 28} = this.props;
+    const gate = delayRender('Fit native mathematical content');
+    let active = true;
+    this.release = () => {if (active) {active = false; continueRender(gate);}};
+    element.style.fontSize = `${fontSize}px`;
+    element.getBoundingClientRect();
+    document.fonts.ready.then(() => {
+      if (!active) return;
+      const available = element.getBoundingClientRect().width;
+      const natural = element.firstElementChild.getBoundingClientRect().width;
+      if (natural > available) element.style.fontSize = `${fontSize * Math.max(0, available - 1) / natural}px`;
+      this.release();
+    }).catch(error => {if (active) {this.release(); cancelRender(error);}});
+  }
+
+  render() {
+    const {tex, x = 0, y = 0, width = 1200, fontSize = 28, opacity = 1} = this.props;
+    return <div ref={element => {this.element = element;}} data-native-math={tex} data-native-bound style={{position:'absolute', left:x, top:y, width, fontSize, opacity, textAlign:'center', color:PALETTE.ink}}>
+      <div style={{display:'flow-root', width:'max-content', margin:'0 auto'}} dangerouslySetInnerHTML={{__html:katex.renderToString(tex, {throwOnError:true, output:'html', displayMode:true, trust:false})}} />
+    </div>;
+  }
 }
 
 export function SvgText({text, children, x, y, width = 400, fontSize = 24, fill = PALETTE.ink, anchor = 'start', ...props}) {
