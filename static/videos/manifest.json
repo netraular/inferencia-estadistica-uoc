@@ -101495,6 +101495,1924 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "familia-exponencial": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "familia-exponencial",
+      "kind": "recap",
+      "title": "Familia exponencial, GLM e introducción a estimación",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "2d14986c180edb986ba24b4564342cacf1dda19edf2706f8f638411fc72e3d72",
+      "src": "videos/familia-exponencial/video.mp4",
+      "poster": "videos/familia-exponencial/poster.jpg",
+      "duration": 901.4333333333333,
+      "frames": 27043,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "965a59577c21bb432616fb0a23cf6a8fc37f8694c8696a8acabeb18f27e9ce40",
+      "videoSha256": "f9232ad08e35a703bfce91ffc6afeb185c0183c62f4207f6a536158af9a074c8",
+      "posterSha256": "5a91fc468dab54dd203ea9b0ba9970470b715c838b32fabf9214d9552d6c8352",
+      "canonicalSha256": "34c6fbd582e11223377fdd185b5ab37771f4554e8e2b298dc19076715b79c423",
+      "inputHash": "19f9e7a3f2a306522e953c068c87d8cb86f5cfba1d7b055182e5aac634ef2db3",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "8af233cae9f25373af95b968e3225f7e771bad958327b4417381e28ea4b21914",
+        "canonicalSha256": "34c6fbd582e11223377fdd185b5ab37771f4554e8e2b298dc19076715b79c423",
+        "source": {
+          "document": "FundamentosInferencia_Tema3.pdf",
+          "section": "3.4 a 3.4.5: familia exponencial, Poisson, normales uniparamétricas, binomial, GLM y estimación introductoria"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "8836ebbf970cb0a6e9dd1437ace35de2c19ee5e23fba2f71d2539f7a739fab02",
+        "transcriptSha256": "965a59577c21bb432616fb0a23cf6a8fc37f8694c8696a8acabeb18f27e9ce40",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "familia-exponencial",
+      "transcript": {
+        "id": "familia-exponencial",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "34c6fbd582e11223377fdd185b5ab37771f4554e8e2b298dc19076715b79c423",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 901.4333333333333,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 74.26666666666667,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Vamos a reconocer una estructura común de distribuciones y a conectarla con estimación.",
+                "start": 1.5,
+                "end": 7.1,
+                "startFrame": 45,
+                "endFrame": 213,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "94115955ba0ef25a08cac3dcb7a7983646cd1137cacc528b2db713316263ada0"
+              },
+              {
+                "text": "Observamos dos, cuatro y tres colonias en placas de igual exposición.",
+                "start": 7.4,
+                "end": 12.133333333333333,
+                "startFrame": 222,
+                "endFrame": 364,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "097cc80f5fdb7f40f75b5886bba52de46514b5bd37a4a4529c02b2b271ddb8af"
+              },
+              {
+                "text": "Suponemos recuentos Poisson independientes con una misma media desconocida.",
+                "start": 12.433333333333334,
+                "end": 16.3,
+                "startFrame": 373,
+                "endFrame": 489,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "b4c7c67e3e98b3d1b11f5cb35fcc9504102b31850cdb47fc4c68d472eae65a23"
+              },
+              {
+                "text": "Los datos quedan fijos; compararemos medias candidatas.",
+                "start": 16.6,
+                "end": 19.6,
+                "startFrame": 498,
+                "endFrame": 588,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "0a540dcc3efb11a88de885e2e9b5218eb792e800c4109eec824d9de73b1e8e58"
+              },
+              {
+                "text": "La verosimilitud es el producto de las masas de los datos visto como función del parámetro.",
+                "start": 19.9,
+                "end": 26.766666666666666,
+                "startFrame": 597,
+                "endFrame": 803,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "2a9f1226edff0687f39aa7b22bf161fa881e13c43fc1fce5a3653eaac3d5796e"
+              },
+              {
+                "text": "Reunimos tres exponenciales y sumamos los exponentes de lambda: queda exponencial de menos tres lambda por lambda a la novena, entre los factoriales observados.",
+                "start": 27.066666666666666,
+                "end": 37.36666666666667,
+                "startFrame": 812,
+                "endFrame": 1121,
+                "words": 24,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "e017eda3e7f597722934ef3eba641f41341fd9dcb2a3a75b9525a9b4e359276e"
+              },
+              {
+                "text": "El logaritmo, creciente, conserva el máximo y convierte productos en sumas.",
+                "start": 37.666666666666664,
+                "end": 42.4,
+                "startFrame": 1130,
+                "endFrame": 1272,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "d6186067c1b976b9ec35d549ea2041c090f85d552c75077e69e6319f80c6f729"
+              },
+              {
+                "text": "Su derivada es nueve entre lambda menos tres.",
+                "start": 42.7,
+                "end": 46.13333333333333,
+                "startFrame": 1281,
+                "endFrame": 1384,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "698d7ed36f995aa8fe711f60cdcaaccf235c354c85510bfe5001f2aded9d1595"
+              },
+              {
+                "text": "Se anula en tres; la segunda derivada es negativa para lambda positiva, de modo que allí hay un máximo.",
+                "start": 46.43333333333333,
+                "end": 54.6,
+                "startFrame": 1393,
+                "endFrame": 1638,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "04f81a74ee25d4ef3b5ec2ba553de80b893451665ba187613f8267614930e85a"
+              },
+              {
+                "text": "La estimación de máxima verosimilitud es la media observada, tres.",
+                "start": 54.9,
+                "end": 59.2,
+                "startFrame": 1647,
+                "endFrame": 1776,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "2a5296d8437c5e24ccc7789c765f04c2444ece27983b905beb8f48310bb9f3d5"
+              },
+              {
+                "text": "No es una probabilidad posterior sobre lambda ni demuestra que el modelo sea correcto.",
+                "start": 59.5,
+                "end": 65.5,
+                "startFrame": 1785,
+                "endFrame": 1965,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "9054b9f9837344794b5f5521639d365f1a07388a824cc7b13b920bc5320b3362"
+              },
+              {
+                "text": "Con tamaño fijo, la suma nueve contiene toda la dependencia en lambda; los factoriales dependen solo de los datos.",
+                "start": 65.8,
+                "end": 73.96666666666667,
+                "startFrame": 1974,
+                "endFrame": 2219,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "2dd7a5ebbcd64ee224421dc5ee929bf174a3b09cc0ef49e0e331fcfeb786b91b"
+              }
+            ]
+          },
+          {
+            "start": 74.26666666666667,
+            "end": 145.1,
+            "cues": [
+              {
+                "text": "Familia exponencial no significa distribución exponencial de esperas.",
+                "start": 74.26666666666667,
+                "end": 77.7,
+                "startFrame": 2228,
+                "endFrame": 2331,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "359fd693533151622863460b43c2acf68d53a64aaa8b754cdc8f1afedb5c9c10"
+              },
+              {
+                "text": "En la forma de un parámetro con soporte fijo separamos hache, que depende del dato; te, el resumen; eta, el parámetro natural; y a, que ajusta la normalización.",
+                "start": 78,
+                "end": 90,
+                "startFrame": 2340,
+                "endFrame": 2700,
+                "words": 28,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "da5b3df27d76de6b64bdc932274c43fdaeedf01c92a3dea933a20dd482eb8f09"
+              },
+              {
+                "text": "Para Poisson, hache es uno entre el factorial, te es el recuento, eta es logaritmo de lambda y a es exponencial de eta.",
+                "start": 90.3,
+                "end": 100.16666666666667,
+                "startFrame": 2709,
+                "endFrame": 3005,
+                "words": 23,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "953862978bea9198d5a02266fea81a40ab0f6e1cde41cbd5bcab6c248ecab07e"
+              },
+              {
+                "text": "Al sustituir recuperamos exactamente la masa Poisson.",
+                "start": 100.46666666666667,
+                "end": 103.46666666666667,
+                "startFrame": 3014,
+                "endFrame": 3104,
+                "words": 7,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "53bd0eff22397a5d58750a9d46a66de9a28130fb895ea9b302137003b5474c84"
+              },
+              {
+                "text": "El soporte de enteros no negativos no depende de lambda positiva.",
+                "start": 103.76666666666667,
+                "end": 108.5,
+                "startFrame": 3113,
+                "endFrame": 3255,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "89f5fb6d3489647fce3889312d6f5bcc445ee319c42882941677bc251fd7feda"
+              },
+              {
+                "text": "La binomial con ene fijo también pertenece a esta familia, con parámetro natural logaritmo de pe entre uno menos pe, para probabilidades interiores.",
+                "start": 108.8,
+                "end": 118.66666666666667,
+                "startFrame": 3264,
+                "endFrame": 3560,
+                "words": 23,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "365cb6bde2021f4f50059d8d7d9c7bac8bdda94764a1165ae73f757d4ba342a5"
+              },
+              {
+                "text": "En una normal uniparamétrica debemos fijar media o varianza; dejar ambas libres requiere la extensión multiparamétrica.",
+                "start": 118.96666666666667,
+                "end": 125.83333333333333,
+                "startFrame": 3569,
+                "endFrame": 3775,
+                "words": 16,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "3e8a22a395ec6219dd6357ce4ecb4e4a6917a019d29fa32b2d8a47182cc5b6bb"
+              },
+              {
+                "text": "Como ampliación, un modelo lineal generalizado Poisson puede relacionar el logaritmo de la media con una dosis.",
+                "start": 126.13333333333334,
+                "end": 133.43333333333334,
+                "startFrame": 3784,
+                "endFrame": 4003,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "2bcdb47d317f3bb8ea823ba0955cc31935409a86721204dfa2b86fb27fc3d834"
+              },
+              {
+                "text": "Volver mediante exponencial asegura media positiva.",
+                "start": 133.73333333333332,
+                "end": 136.33333333333334,
+                "startFrame": 4012,
+                "endFrame": 4090,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "35c6e42cdbb3c9b2ee981a99592e93ee274c148de10513c703c5eec6a672d2eb"
+              },
+              {
+                "text": "No hemos ajustado esos coeficientes con las tres placas, ni elegido el enlace para probar independencia o dispersión Poisson.",
+                "start": 136.63333333333333,
+                "end": 144.8,
+                "startFrame": 4099,
+                "endFrame": 4344,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "b30e1bf0d11394d16cbabcebdc93d25fe4ac120e1afdaed32a7431d70d459eb8"
+              }
+            ]
+          },
+          {
+            "start": 145.1,
+            "end": 156.03333333333333,
+            "cues": [
+              {
+                "text": "Un laboratorio registra detecciones bacterianas en ventanas de un minuto de igual exposición.",
+                "start": 145.1,
+                "end": 150.7,
+                "startFrame": 4353,
+                "endFrame": 4521,
+                "words": 13,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "4e8b9fbcd753c8d0186a29b38a97b952c30d289b46f4b6c1abae5f8f06cf5bcb"
+              },
+              {
+                "text": "Se supone una muestra iid Poisson con media λ común desconocida.",
+                "start": 151,
+                "end": 155.73333333333332,
+                "startFrame": 4530,
+                "endFrame": 4672,
+                "words": 11,
+                "sceneIndex": 2,
+                "cueIndex": 1,
+                "sourceCueSha256": "fc9edf7e341127f8d348c60f3fec73a044fbb33ed3ade6c154af991460d52c19"
+              }
+            ]
+          },
+          {
+            "start": 156.03333333333333,
+            "end": 172,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 156.03333333333333,
+                "end": 158.63333333333333,
+                "startFrame": 4681,
+                "endFrame": 4759,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula te igual a suma de equis minúscula subíndice i , el estadístico suficiente para lambda con ene fijo.",
+                "start": 158.93333333333334,
+                "end": 167.1,
+                "startFrame": 4768,
+                "endFrame": 5013,
+                "words": 19,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "38f16be916b281eef1170b78f8cb7d2a423083a0d124f1981fd737f46e6954c4"
+              },
+              {
+                "text": "Queremos resumir la información de la muestra sobre el parámetro.",
+                "start": 167.4,
+                "end": 171.7,
+                "startFrame": 5022,
+                "endFrame": 5151,
+                "words": 10,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "85964ba4bb701a91907dddff1906df3e25fe12e4554ad88f023fe8feb16be601"
+              }
+            ]
+          },
+          {
+            "start": 172,
+            "end": 191.36666666666667,
+            "cues": [
+              {
+                "text": "La muestra Poisson independiente da un producto de masas.",
+                "start": 172,
+                "end": 175.86666666666667,
+                "startFrame": 5160,
+                "endFrame": 5276,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d1b8c56e523f127f455cd27de9aaec56d1f88e656904a956d923b5e3f03d687"
+              },
+              {
+                "text": "Para tamaño fijo, toda la dependencia en lambda usa la suma de recuentos; los factoriales dependen solo de los datos.",
+                "start": 176.16666666666666,
+                "end": 184.76666666666668,
+                "startFrame": 5285,
+                "endFrame": 5543,
+                "words": 20,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "27d0e1eb3f091222d66f30638bc3cd6ee0f1d688b6c3f3fef93f8ac41a54c2d2"
+              },
+              {
+                "text": "El logaritmo convierte el producto en suma y conserva dónde se alcanza el máximo.",
+                "start": 185.06666666666666,
+                "end": 191.06666666666666,
+                "startFrame": 5552,
+                "endFrame": 5732,
+                "words": 14,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "0d5935815d029ffd4180e1b5638330089cf2580d1b7a5956a73d8389d9293aba"
+              }
+            ]
+          },
+          {
+            "start": 191.36666666666667,
+            "end": 198.96666666666667,
+            "cues": [
+              {
+                "text": "Recuentos observados enteros: abre corchete, 3, 2, 4, 1, 5, cierra corchete; ene igual a 5 ventanas.",
+                "start": 191.36666666666667,
+                "end": 198.66666666666666,
+                "startFrame": 5741,
+                "endFrame": 5960,
+                "words": 17,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "a0b0def1ba1b574f344cc97fca6b62eecace7116ebf820c63f7630dc47a5d639"
+              }
+            ]
+          },
+          {
+            "start": 198.96666666666667,
+            "end": 209.13333333333333,
+            "cues": [
+              {
+                "text": "lambda mayor que 0 se mide en detecciones esperadas por ventana; para evaluar la log-verosimilitud se propone lambda subíndice 0 igual a 1.",
+                "start": 198.96666666666667,
+                "end": 208.83333333333334,
+                "startFrame": 5969,
+                "endFrame": 6265,
+                "words": 23,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "c9394d4cee09e16ebd994a0012eb9f36846378fd102dbaa76b5146bbf9a78ee4"
+              }
+            ]
+          },
+          {
+            "start": 209.13333333333333,
+            "end": 214.6,
+            "cues": [
+              {
+                "text": "Las ventanas son independientes y tienen la misma exposición y media Poisson.",
+                "start": 209.13333333333333,
+                "end": 214.3,
+                "startFrame": 6274,
+                "endFrame": 6429,
+                "words": 12,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "7377faf4bbcacb6c77d77b2bfbb9c0d4216d2e83910b9e26e01eae609a82dee3"
+              }
+            ]
+          },
+          {
+            "start": 214.6,
+            "end": 223.5,
+            "cues": [
+              {
+                "text": "Se mantienen fijos los datos y ene al comparar lambda; la suma observada es positiva y el máximo es interior.",
+                "start": 214.6,
+                "end": 223.2,
+                "startFrame": 6438,
+                "endFrame": 6696,
+                "words": 20,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "70782e90c829d5c74ad5f8ffab203f51150ceb310abafe3fa756552ba2069909"
+              }
+            ]
+          },
+          {
+            "start": 223.5,
+            "end": 237,
+            "cues": [
+              {
+                "text": "Agrupa los exponentes de lambda en el producto de masas Poisson.",
+                "start": 223.5,
+                "end": 228.23333333333332,
+                "startFrame": 6705,
+                "endFrame": 6847,
+                "words": 11,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "dbbca6b41ffd18470b3fa2a8735b65169d797093f027b5dc2d5dbbc4e457aeaa"
+              },
+              {
+                "text": "Con el tamaño fijo, factorizamos la verosimilitud para ver qué combinación de los datos contiene su dependencia del parámetro.",
+                "start": 228.53333333333333,
+                "end": 236.7,
+                "startFrame": 6856,
+                "endFrame": 7101,
+                "words": 19,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "c745cd33bf77b43b725915d5c23f2d1426eb2073728f77296d7c2ecd2be7757f"
+              }
+            ]
+          },
+          {
+            "start": 237,
+            "end": 271.8333333333333,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 237,
+                "end": 240,
+                "startFrame": 7110,
+                "endFrame": 7200,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula te igual a suma de equis minúscula subíndice i , el estadístico suficiente para lambda con ene fijo.",
+                "start": 240.3,
+                "end": 248.46666666666667,
+                "startFrame": 7209,
+                "endFrame": 7454,
+                "words": 19,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "f889269c004bae46679b77b3c0b2e2b2b2570ab84afced921fe01f769a7e9e10"
+              },
+              {
+                "text": "Las observaciones Poisson independientes producen un producto de probabilidades.",
+                "start": 248.76666666666668,
+                "end": 252.63333333333333,
+                "startFrame": 7463,
+                "endFrame": 7579,
+                "words": 9,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "d61d8101a84fcba35e6eb37c7e1f1060afce9f343a3af4d9cadb791482ef347e"
+              },
+              {
+                "text": "Su logaritmo convierte el producto en suma.",
+                "start": 252.93333333333334,
+                "end": 255.93333333333334,
+                "startFrame": 7588,
+                "endFrame": 7678,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "5db266b035e1ef55955c708a09e9f404b2e31d108edd622d6140a5db4c5524c6"
+              },
+              {
+                "text": "Dejamos fijos los recuentos y buscamos qué media candidata da el mayor valor; derivar es una herramienta para localizar ese máximo.",
+                "start": 256.23333333333335,
+                "end": 265.23333333333335,
+                "startFrame": 7687,
+                "endFrame": 7957,
+                "words": 21,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "0c606268ecfe0ad2c6b3c8e2174db1b36876f674785b2acf6ae949c8511f663c"
+              },
+              {
+                "text": "Para este apartado: Agrupa los exponentes de lambda en el producto de masas Poisson.",
+                "start": 265.53333333333336,
+                "end": 271.53333333333336,
+                "startFrame": 7966,
+                "endFrame": 8146,
+                "words": 14,
+                "sceneIndex": 10,
+                "cueIndex": 5,
+                "sourceCueSha256": "d03e73d5e1fd6300d216ba2bfc97f89d9c9bdee19e72266066899860ac2a8e39"
+              }
+            ]
+          },
+          {
+            "start": 271.8333333333333,
+            "end": 282.8666666666667,
+            "cues": [
+              {
+                "text": "En este modelo Poisson, lambda es el recuento esperado por unidad de exposición del enunciado, no una probabilidad ni la inversa de una escala temporal.",
+                "start": 271.8333333333333,
+                "end": 282.56666666666666,
+                "startFrame": 8155,
+                "endFrame": 8477,
+                "words": 25,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "4af63908ce612aa816aadffd1f9991bacb63a4ea9a74f28db62d71249d038421"
+              }
+            ]
+          },
+          {
+            "start": 282.8666666666667,
+            "end": 305.53333333333336,
+            "cues": [
+              {
+                "text": "Factorizar la muestra.",
+                "start": 282.8666666666667,
+                "end": 284.1666666666667,
+                "startFrame": 8486,
+                "endFrame": 8525,
+                "words": 3,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "8a5c5eeb2705712590e07fd65e3ecc929cd3d698309572d182aabc35dd2ff453"
+              },
+              {
+                "text": "La independencia permite multiplicar las masas de todas las ventanas.",
+                "start": 284.46666666666664,
+                "end": 288.76666666666665,
+                "startFrame": 8534,
+                "endFrame": 8663,
+                "words": 10,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "fbfb8651f37fb6ae28bd4960e39b2847c51161f47033b1ae66afd1052c9d3b2f"
+              },
+              {
+                "text": "Cada masa aporta una exponencial de menos lambda, una potencia de lambda con su recuento y un factorial en el denominador.",
+                "start": 289.06666666666666,
+                "end": 298.06666666666666,
+                "startFrame": 8672,
+                "endFrame": 8942,
+                "words": 21,
+                "sceneIndex": 12,
+                "cueIndex": 2,
+                "sourceCueSha256": "3250b51da9d402c1eebe9778941f6116d0a5a3120274839309505eb482de575c"
+              },
+              {
+                "text": "Agrupar las potencias concentra los datos en su suma; los factoriales son constantes cuando comparamos parámetros.",
+                "start": 298.3666666666667,
+                "end": 305.23333333333335,
+                "startFrame": 8951,
+                "endFrame": 9157,
+                "words": 16,
+                "sceneIndex": 12,
+                "cueIndex": 3,
+                "sourceCueSha256": "c9ff8a057ca89a5f78ce31bc7d9773427be9f285e00611bb0329bbbe58acd5ce"
+              }
+            ]
+          },
+          {
+            "start": 305.53333333333336,
+            "end": 320,
+            "cues": [
+              {
+                "text": "Factorizar la muestra queda igual a abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, producto para el índice abre paréntesis, i, cierra paréntesis de equis minúscula subíndice i factorial , cierra paréntesis.",
+                "start": 305.53333333333336,
+                "end": 319.7,
+                "startFrame": 9166,
+                "endFrame": 9591,
+                "words": 33,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "bc3f662797bea16e618071c33bbb36b753e186c12182dfd05b59671a76150802"
+              }
+            ]
+          },
+          {
+            "start": 320,
+            "end": 338.5,
+            "cues": [
+              {
+                "text": "Identificar la información del parámetro.",
+                "start": 320,
+                "end": 322.1666666666667,
+                "startFrame": 9600,
+                "endFrame": 9665,
+                "words": 5,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "fb768e2c5197972d978e371d48ca630eb107fb90b344985aeaec9c5f35a485de"
+              },
+              {
+                "text": "Sumamos los recuentos 3, 2, 4, 1, 5 y obtenemos te igual a 15.",
+                "start": 322.46666666666664,
+                "end": 328.46666666666664,
+                "startFrame": 9674,
+                "endFrame": 9854,
+                "words": 14,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "c2eb65b4a8fe28325e051bf557fbb3fa75b8c4fb59b56cbe168728ea3015536b"
+              },
+              {
+                "text": "El parámetro natural es el logaritmo de lambda; para una observación, el normalizador es la exponencial del parámetro natural, es decir, lambda.",
+                "start": 328.76666666666665,
+                "end": 338.2,
+                "startFrame": 9863,
+                "endFrame": 10146,
+                "words": 22,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "1ad9e2a702a0a99c367ec90ba78e3f9508502c23bc9a0695c54c1e656201d5e5"
+              }
+            ]
+          },
+          {
+            "start": 338.5,
+            "end": 360.3333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 338.5,
+                "end": 339.8,
+                "startFrame": 10155,
+                "endFrame": 10194,
+                "words": 3,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 15 detecciones.",
+                "start": 340.1,
+                "end": 342.26666666666665,
+                "startFrame": 10203,
+                "endFrame": 10268,
+                "words": 5,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "0fc3253621810ca480d2bbe3db28af0ccce936870f7cdb24400832010dba37a0"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 342.56666666666666,
+                "end": 348.56666666666666,
+                "startFrame": 10277,
+                "endFrame": 10457,
+                "words": 14,
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+              },
+              {
+                "text": "Con ene fijo, la parte de la verosimilitud que depende de lambda usa los datos solo mediante te; no se afirma que el modelo sea verdadero.",
+                "start": 348.8666666666667,
+                "end": 360.03333333333336,
+                "startFrame": 10466,
+                "endFrame": 10801,
+                "words": 26,
+                "sceneIndex": 15,
+                "cueIndex": 3,
+                "sourceCueSha256": "0985a996c71c6002c147563d0f16d14fceed583a850c244299680f2f752583ec"
+              }
+            ]
+          },
+          {
+            "start": 360.3333333333333,
+            "end": 374.26666666666665,
+            "cues": [
+              {
+                "text": "El resultado es 15 detecciones.",
+                "start": 360.3333333333333,
+                "end": 362.5,
+                "startFrame": 10810,
+                "endFrame": 10875,
+                "words": 5,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "6bbc58551fdc0aa3325952a7902d319eb479c340e85e9e8f744137a21d7f2117"
+              },
+              {
+                "text": "Con ene fijo, la parte de la verosimilitud que depende de lambda usa los datos solo mediante te; no se afirma que el modelo sea verdadero.",
+                "start": 362.8,
+                "end": 373.96666666666664,
+                "startFrame": 10884,
+                "endFrame": 11219,
+                "words": 26,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "3c10c1edb20978563f8b623d8ec1dc3d2712a7a85533f4e24d5b5a3afb506952"
+              }
+            ]
+          },
+          {
+            "start": 374.26666666666665,
+            "end": 385.5,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 374.26666666666665,
+                "end": 376.8666666666667,
+                "startFrame": 11228,
+                "endFrame": 11306,
+                "words": 6,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula el estimador de máxima verosimilitud de lambda.",
+                "start": 377.1666666666667,
+                "end": 380.6,
+                "startFrame": 11315,
+                "endFrame": 11418,
+                "words": 8,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "49105149dabafe1cbc91083512b668786a549775eafe146b4069fa6e05a54507"
+              },
+              {
+                "text": "Queremos el parámetro que hace más verosímiles los datos observados.",
+                "start": 380.9,
+                "end": 385.2,
+                "startFrame": 11427,
+                "endFrame": 11556,
+                "words": 10,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "0d2c9aa2b26e5d03c8c3fb2e33007e1615c8a42c542f5a0c8e86f8d7201e3642"
+              }
+            ]
+          },
+          {
+            "start": 385.5,
+            "end": 404.8666666666667,
+            "cues": [
+              {
+                "text": "La muestra Poisson independiente da un producto de masas.",
+                "start": 385.5,
+                "end": 389.3666666666667,
+                "startFrame": 11565,
+                "endFrame": 11681,
+                "words": 9,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d1b8c56e523f127f455cd27de9aaec56d1f88e656904a956d923b5e3f03d687"
+              },
+              {
+                "text": "Para tamaño fijo, toda la dependencia en lambda usa la suma de recuentos; los factoriales dependen solo de los datos.",
+                "start": 389.6666666666667,
+                "end": 398.26666666666665,
+                "startFrame": 11690,
+                "endFrame": 11948,
+                "words": 20,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "27d0e1eb3f091222d66f30638bc3cd6ee0f1d688b6c3f3fef93f8ac41a54c2d2"
+              },
+              {
+                "text": "El logaritmo convierte el producto en suma y conserva dónde se alcanza el máximo.",
+                "start": 398.56666666666666,
+                "end": 404.56666666666666,
+                "startFrame": 11957,
+                "endFrame": 12137,
+                "words": 14,
+                "sceneIndex": 18,
+                "cueIndex": 2,
+                "sourceCueSha256": "0d5935815d029ffd4180e1b5638330089cf2580d1b7a5956a73d8389d9293aba"
+              }
+            ]
+          },
+          {
+            "start": 404.8666666666667,
+            "end": 412.46666666666664,
+            "cues": [
+              {
+                "text": "Recuentos observados enteros: abre corchete, 3, 2, 4, 1, 5, cierra corchete; ene igual a 5 ventanas.",
+                "start": 404.8666666666667,
+                "end": 412.1666666666667,
+                "startFrame": 12146,
+                "endFrame": 12365,
+                "words": 17,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "a0b0def1ba1b574f344cc97fca6b62eecace7116ebf820c63f7630dc47a5d639"
+              }
+            ]
+          },
+          {
+            "start": 412.46666666666664,
+            "end": 422.6333333333333,
+            "cues": [
+              {
+                "text": "lambda mayor que 0 se mide en detecciones esperadas por ventana; para evaluar la log-verosimilitud se propone lambda subíndice 0 igual a 1.",
+                "start": 412.46666666666664,
+                "end": 422.3333333333333,
+                "startFrame": 12374,
+                "endFrame": 12670,
+                "words": 23,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "c9394d4cee09e16ebd994a0012eb9f36846378fd102dbaa76b5146bbf9a78ee4"
+              }
+            ]
+          },
+          {
+            "start": 422.6333333333333,
+            "end": 428.1,
+            "cues": [
+              {
+                "text": "Las ventanas son independientes y tienen la misma exposición y media Poisson.",
+                "start": 422.6333333333333,
+                "end": 427.8,
+                "startFrame": 12679,
+                "endFrame": 12834,
+                "words": 12,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "7377faf4bbcacb6c77d77b2bfbb9c0d4216d2e83910b9e26e01eae609a82dee3"
+              }
+            ]
+          },
+          {
+            "start": 428.1,
+            "end": 437,
+            "cues": [
+              {
+                "text": "Se mantienen fijos los datos y ene al comparar lambda; la suma observada es positiva y el máximo es interior.",
+                "start": 428.1,
+                "end": 436.7,
+                "startFrame": 12843,
+                "endFrame": 13101,
+                "words": 20,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "70782e90c829d5c74ad5f8ffab203f51150ceb310abafe3fa756552ba2069909"
+              }
+            ]
+          },
+          {
+            "start": 437,
+            "end": 448.76666666666665,
+            "cues": [
+              {
+                "text": "Deriva la log-verosimilitud respecto a lambda con los datos fijos.",
+                "start": 437,
+                "end": 441.3,
+                "startFrame": 13110,
+                "endFrame": 13239,
+                "words": 10,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "bfea8043fe189d5198533840a2cfcd4a008fac22b5ff29028486de677749193e"
+              },
+              {
+                "text": "Dejamos la muestra fija y variamos el parámetro; comprobamos un máximo, no solo una derivada nula.",
+                "start": 441.6,
+                "end": 448.46666666666664,
+                "startFrame": 13248,
+                "endFrame": 13454,
+                "words": 16,
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "sourceCueSha256": "b61d2455ec69cf910c27ffa92ede20636b5a1066914781c4d5a54ec64dd69cae"
+              }
+            ]
+          },
+          {
+            "start": 448.76666666666665,
+            "end": 478.46666666666664,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 448.76666666666665,
+                "end": 451.76666666666665,
+                "startFrame": 13463,
+                "endFrame": 13553,
+                "words": 7,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula el estimador de máxima verosimilitud de lambda.",
+                "start": 452.06666666666666,
+                "end": 455.5,
+                "startFrame": 13562,
+                "endFrame": 13665,
+                "words": 8,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "dc276dcbf49f6297233fe1ed915cf68bbb97f6be79c60a711fc635a3ac861d2f"
+              },
+              {
+                "text": "Las observaciones Poisson independientes producen un producto de probabilidades.",
+                "start": 455.8,
+                "end": 459.6666666666667,
+                "startFrame": 13674,
+                "endFrame": 13790,
+                "words": 9,
+                "sceneIndex": 24,
+                "cueIndex": 2,
+                "sourceCueSha256": "dc3636b29174750c5627df64b1f11789099adc94f8e209e1842c7b532ac0e50f"
+              },
+              {
+                "text": "Su logaritmo convierte el producto en suma.",
+                "start": 459.96666666666664,
+                "end": 462.96666666666664,
+                "startFrame": 13799,
+                "endFrame": 13889,
+                "words": 7,
+                "sceneIndex": 24,
+                "cueIndex": 3,
+                "sourceCueSha256": "bf5041528d13ec903ee6c6e6a7150208897bd5e4712a519a60f0a645397ef06d"
+              },
+              {
+                "text": "Dejamos fijos los recuentos y buscamos qué media candidata da el mayor valor; derivar es una herramienta para localizar ese máximo.",
+                "start": 463.26666666666665,
+                "end": 472.26666666666665,
+                "startFrame": 13898,
+                "endFrame": 14168,
+                "words": 21,
+                "sceneIndex": 24,
+                "cueIndex": 4,
+                "sourceCueSha256": "bed2ad458bd21fce286c3168449f7e83193cc24240975be7695cf8348f8bc56c"
+              },
+              {
+                "text": "Para este apartado: Deriva la log-verosimilitud respecto a lambda con los datos fijos.",
+                "start": 472.56666666666666,
+                "end": 478.1666666666667,
+                "startFrame": 14177,
+                "endFrame": 14345,
+                "words": 13,
+                "sceneIndex": 24,
+                "cueIndex": 5,
+                "sourceCueSha256": "6d01627826b25cc3808f52cd83cfe6e0b07d15872ad13414f0fdd6ef16e1e3ae"
+              }
+            ]
+          },
+          {
+            "start": 478.46666666666664,
+            "end": 489.5,
+            "cues": [
+              {
+                "text": "En este modelo Poisson, lambda es el recuento esperado por unidad de exposición del enunciado, no una probabilidad ni la inversa de una escala temporal.",
+                "start": 478.46666666666664,
+                "end": 489.2,
+                "startFrame": 14354,
+                "endFrame": 14676,
+                "words": 25,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "4af63908ce612aa816aadffd1f9991bacb63a4ea9a74f28db62d71249d038421"
+              }
+            ]
+          },
+          {
+            "start": 489.5,
+            "end": 522.3666666666667,
+            "cues": [
+              {
+                "text": "Derivar e igualar a cero.",
+                "start": 489.5,
+                "end": 491.6666666666667,
+                "startFrame": 14685,
+                "endFrame": 14750,
+                "words": 5,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d4eba11fab6953f2aa369af1e108638b862aa55d2a85506f6907952d4065ff5"
+              },
+              {
+                "text": "Al tomar logaritmos, el producto se convierte en suma.",
+                "start": 491.96666666666664,
+                "end": 495.8333333333333,
+                "startFrame": 14759,
+                "endFrame": 14875,
+                "words": 9,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "d9087e8fa048e0243b821e174d2a7d310119a3748587d84d358525fc8bc681b0"
+              },
+              {
+                "text": "La derivada del total por log lambda es el total dividido entre lambda; la del término menos ene por lambda es menos ene.",
+                "start": 496.1333333333333,
+                "end": 506,
+                "startFrame": 14884,
+                "endFrame": 15180,
+                "words": 23,
+                "sceneIndex": 26,
+                "cueIndex": 2,
+                "sourceCueSha256": "ca6b86232107c6969159c9b50ba56399a25bded78afbd619f44c3aebe5083a7b"
+              },
+              {
+                "text": "Los factoriales no varían con lambda.",
+                "start": 506.3,
+                "end": 508.9,
+                "startFrame": 15189,
+                "endFrame": 15267,
+                "words": 6,
+                "sceneIndex": 26,
+                "cueIndex": 3,
+                "sourceCueSha256": "3627ea76ed58f92e7737ddbea41a010c81927fef39cb745dbc28a1e776530f82"
+              },
+              {
+                "text": "Igualar la derivada a cero y despejar da el total dividido entre ene. ele minúscula ' abre paréntesis, lambda , cierra paréntesis igual a te dividido entre lambda menos ene.",
+                "start": 509.2,
+                "end": 522.0666666666667,
+                "startFrame": 15276,
+                "endFrame": 15662,
+                "words": 30,
+                "sceneIndex": 26,
+                "cueIndex": 4,
+                "sourceCueSha256": "b4aa74ec422ef7bf93ab66676bad02436f7c80beebe1889786bf9985de70e077"
+              }
+            ]
+          },
+          {
+            "start": 522.3666666666667,
+            "end": 530.4,
+            "cues": [
+              {
+                "text": "ele minúscula ' abre paréntesis, lambda , cierra paréntesis queda igual a 0 por tanto estimador de lambda.",
+                "start": 522.3666666666667,
+                "end": 530.1,
+                "startFrame": 15671,
+                "endFrame": 15903,
+                "words": 18,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "fa95a04a1debeb575a5c9e76ce77a3879bcbd0019a7ae377f089ee2da5882b7c"
+              }
+            ]
+          },
+          {
+            "start": 530.4,
+            "end": 537.5666666666667,
+            "cues": [
+              {
+                "text": "ele minúscula ' abre paréntesis, lambda , cierra paréntesis queda igual a te dividido entre ene.",
+                "start": 530.4,
+                "end": 537.2666666666667,
+                "startFrame": 15912,
+                "endFrame": 16118,
+                "words": 16,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "395c2839c8136964358c1e757adc1b9508fccce864915c3fc2a689c3d0802e8d"
+              }
+            ]
+          },
+          {
+            "start": 537.5666666666667,
+            "end": 546.3333333333334,
+            "cues": [
+              {
+                "text": "Sustituir la muestra.",
+                "start": 537.5666666666667,
+                "end": 538.8666666666667,
+                "startFrame": 16127,
+                "endFrame": 16166,
+                "words": 3,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "4ab13b6a024fec474e427fb81246939075c2cf0f64a0c490c8c2975569c7e573"
+              },
+              {
+                "text": "Dividimos el total 15 entre las 5 ventanas: la media estimada es 3 detecciones por ventana.",
+                "start": 539.1666666666666,
+                "end": 546.0333333333333,
+                "startFrame": 16175,
+                "endFrame": 16381,
+                "words": 16,
+                "sceneIndex": 29,
+                "cueIndex": 1,
+                "sourceCueSha256": "01450d262172068dddd8f33fc586bb1316817ca9e646a762267be823a3f650b9"
+              }
+            ]
+          },
+          {
+            "start": 546.3333333333334,
+            "end": 566.0333333333333,
+            "cues": [
+              {
+                "text": "Comprobar que es máximo.",
+                "start": 546.3333333333334,
+                "end": 548.0666666666667,
+                "startFrame": 16390,
+                "endFrame": 16442,
+                "words": 4,
+                "sceneIndex": 30,
+                "cueIndex": 0,
+                "sourceCueSha256": "870e3b7f9302ef9d4324e0cf8f38cc10d516d7e72fd29de9d7d91b01a42e0efd"
+              },
+              {
+                "text": "La segunda derivada es menos el total dividido entre lambda al cuadrado.",
+                "start": 548.3666666666667,
+                "end": 553.5333333333333,
+                "startFrame": 16451,
+                "endFrame": 16606,
+                "words": 12,
+                "sceneIndex": 30,
+                "cueIndex": 1,
+                "sourceCueSha256": "a60ab837ef77120b41d90ef8afe7bc22164addf62ecaefd0b9696556114ad82b"
+              },
+              {
+                "text": "Como el total es 15, positivo, y lambda también es positivo, esa derivada es negativa.",
+                "start": 553.8333333333334,
+                "end": 560.2666666666667,
+                "startFrame": 16615,
+                "endFrame": 16808,
+                "words": 15,
+                "sceneIndex": 30,
+                "cueIndex": 2,
+                "sourceCueSha256": "6748e6c7f50f90fa33e255d2ed2661ed545bcfb0e0d9700add687ec19469ae79"
+              },
+              {
+                "text": "La log-verosimilitud es cóncava y el punto calculado es su máximo único.",
+                "start": 560.5666666666667,
+                "end": 565.7333333333333,
+                "startFrame": 16817,
+                "endFrame": 16972,
+                "words": 12,
+                "sceneIndex": 30,
+                "cueIndex": 3,
+                "sourceCueSha256": "e63cdb600db5afda25892f2e317da99bf70077cb57c1d36a6840f8d53e5633fb"
+              }
+            ]
+          },
+          {
+            "start": 566.0333333333333,
+            "end": 586.1333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 566.0333333333333,
+                "end": 567.3333333333334,
+                "startFrame": 16981,
+                "endFrame": 17020,
+                "words": 3,
+                "sceneIndex": 31,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 3 detecciones esperadas por ventana.",
+                "start": 567.6333333333333,
+                "end": 571.0666666666667,
+                "startFrame": 17029,
+                "endFrame": 17132,
+                "words": 8,
+                "sceneIndex": 31,
+                "cueIndex": 1,
+                "sourceCueSha256": "649e794f8743543b4738bb555318cfec86c19afaaf14d2b91a7fe9bd89ad641c"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 571.3666666666667,
+                "end": 577.3666666666667,
+                "startFrame": 17141,
+                "endFrame": 17321,
+                "words": 14,
+                "sceneIndex": 31,
+                "cueIndex": 2,
+                "sourceCueSha256": "6dc6e00240ca53571bfa539f57606b77069459b39c0bf1d3d33276817d072b42"
+              },
+              {
+                "text": "La media estimada puede ser fraccionaria aunque todas las observaciones sean enteras; no es una probabilidad posterior de lambda.",
+                "start": 577.6666666666666,
+                "end": 585.8333333333334,
+                "startFrame": 17330,
+                "endFrame": 17575,
+                "words": 19,
+                "sceneIndex": 31,
+                "cueIndex": 3,
+                "sourceCueSha256": "daa19d426aa1114f621129ceec74f268ffc9ac20dba4b1211ab82f6c898c13dc"
+              }
+            ]
+          },
+          {
+            "start": 586.1333333333333,
+            "end": 598.3333333333334,
+            "cues": [
+              {
+                "text": "El resultado es 3 detecciones esperadas por ventana.",
+                "start": 586.1333333333333,
+                "end": 589.5666666666667,
+                "startFrame": 17584,
+                "endFrame": 17687,
+                "words": 8,
+                "sceneIndex": 32,
+                "cueIndex": 0,
+                "sourceCueSha256": "04b05ac4ecbe6df6bd041cc1a8aad4db614c3ab5baf2ec93bb4f72599949697d"
+              },
+              {
+                "text": "La media estimada puede ser fraccionaria aunque todas las observaciones sean enteras; no es una probabilidad posterior de lambda.",
+                "start": 589.8666666666667,
+                "end": 598.0333333333333,
+                "startFrame": 17696,
+                "endFrame": 17941,
+                "words": 19,
+                "sceneIndex": 32,
+                "cueIndex": 1,
+                "sourceCueSha256": "b3cdb18bcc5f0b7be31dc403e9bfa11d805bfc0ef3eece80ba7af4383282a779"
+              }
+            ]
+          },
+          {
+            "start": 598.3333333333334,
+            "end": 614.7,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 598.3333333333334,
+                "end": 600.9333333333333,
+                "startFrame": 17950,
+                "endFrame": 18028,
+                "words": 6,
+                "sceneIndex": 33,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula ele minúscula abre paréntesis, lambda subíndice 0 , cierra paréntesis , incluyendo el término de los factoriales y usando logaritmos naturales.",
+                "start": 601.2333333333333,
+                "end": 610.6666666666666,
+                "startFrame": 18037,
+                "endFrame": 18320,
+                "words": 22,
+                "sceneIndex": 33,
+                "cueIndex": 1,
+                "sourceCueSha256": "49ae7d4445b48b0c58e7ee3b44f19d22e433f6726eb859066a7e3f570619e501"
+              },
+              {
+                "text": "Queremos evaluar la log-verosimilitud en el candidato indicado.",
+                "start": 610.9666666666667,
+                "end": 614.4,
+                "startFrame": 18329,
+                "endFrame": 18432,
+                "words": 8,
+                "sceneIndex": 33,
+                "cueIndex": 2,
+                "sourceCueSha256": "8d72597f2ec608c50400f9710bba66b8fe1cf25040dea81f7d442175a4df24cd"
+              }
+            ]
+          },
+          {
+            "start": 614.7,
+            "end": 634.0666666666667,
+            "cues": [
+              {
+                "text": "La muestra Poisson independiente da un producto de masas.",
+                "start": 614.7,
+                "end": 618.5666666666667,
+                "startFrame": 18441,
+                "endFrame": 18557,
+                "words": 9,
+                "sceneIndex": 34,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d1b8c56e523f127f455cd27de9aaec56d1f88e656904a956d923b5e3f03d687"
+              },
+              {
+                "text": "Para tamaño fijo, toda la dependencia en lambda usa la suma de recuentos; los factoriales dependen solo de los datos.",
+                "start": 618.8666666666667,
+                "end": 627.4666666666667,
+                "startFrame": 18566,
+                "endFrame": 18824,
+                "words": 20,
+                "sceneIndex": 34,
+                "cueIndex": 1,
+                "sourceCueSha256": "27d0e1eb3f091222d66f30638bc3cd6ee0f1d688b6c3f3fef93f8ac41a54c2d2"
+              },
+              {
+                "text": "El logaritmo convierte el producto en suma y conserva dónde se alcanza el máximo.",
+                "start": 627.7666666666667,
+                "end": 633.7666666666667,
+                "startFrame": 18833,
+                "endFrame": 19013,
+                "words": 14,
+                "sceneIndex": 34,
+                "cueIndex": 2,
+                "sourceCueSha256": "0d5935815d029ffd4180e1b5638330089cf2580d1b7a5956a73d8389d9293aba"
+              }
+            ]
+          },
+          {
+            "start": 634.0666666666667,
+            "end": 641.6666666666666,
+            "cues": [
+              {
+                "text": "Recuentos observados enteros: abre corchete, 3, 2, 4, 1, 5, cierra corchete; ene igual a 5 ventanas.",
+                "start": 634.0666666666667,
+                "end": 641.3666666666667,
+                "startFrame": 19022,
+                "endFrame": 19241,
+                "words": 17,
+                "sceneIndex": 35,
+                "cueIndex": 0,
+                "sourceCueSha256": "a0b0def1ba1b574f344cc97fca6b62eecace7116ebf820c63f7630dc47a5d639"
+              }
+            ]
+          },
+          {
+            "start": 641.6666666666666,
+            "end": 651.8333333333334,
+            "cues": [
+              {
+                "text": "lambda mayor que 0 se mide en detecciones esperadas por ventana; para evaluar la log-verosimilitud se propone lambda subíndice 0 igual a 1.",
+                "start": 641.6666666666666,
+                "end": 651.5333333333333,
+                "startFrame": 19250,
+                "endFrame": 19546,
+                "words": 23,
+                "sceneIndex": 36,
+                "cueIndex": 0,
+                "sourceCueSha256": "c9394d4cee09e16ebd994a0012eb9f36846378fd102dbaa76b5146bbf9a78ee4"
+              }
+            ]
+          },
+          {
+            "start": 651.8333333333334,
+            "end": 657.3,
+            "cues": [
+              {
+                "text": "Las ventanas son independientes y tienen la misma exposición y media Poisson.",
+                "start": 651.8333333333334,
+                "end": 657,
+                "startFrame": 19555,
+                "endFrame": 19710,
+                "words": 12,
+                "sceneIndex": 37,
+                "cueIndex": 0,
+                "sourceCueSha256": "7377faf4bbcacb6c77d77b2bfbb9c0d4216d2e83910b9e26e01eae609a82dee3"
+              }
+            ]
+          },
+          {
+            "start": 657.3,
+            "end": 666.2,
+            "cues": [
+              {
+                "text": "Se mantienen fijos los datos y ene al comparar lambda; la suma observada es positiva y el máximo es interior.",
+                "start": 657.3,
+                "end": 665.9,
+                "startFrame": 19719,
+                "endFrame": 19977,
+                "words": 20,
+                "sceneIndex": 38,
+                "cueIndex": 0,
+                "sourceCueSha256": "70782e90c829d5c74ad5f8ffab203f51150ceb310abafe3fa756552ba2069909"
+              }
+            ]
+          },
+          {
+            "start": 666.2,
+            "end": 686.1333333333333,
+            "cues": [
+              {
+                "text": "Incluye menos suma de logaritmo natural de abre paréntesis, equis minúscula subíndice i factorial , cierra paréntesis , aunque ese término no cambie el máximo.",
+                "start": 666.2,
+                "end": 676.9333333333333,
+                "startFrame": 19986,
+                "endFrame": 20308,
+                "words": 25,
+                "sceneIndex": 39,
+                "cueIndex": 0,
+                "sourceCueSha256": "27f28f358bb41ccc6828503639baf1c813f054243982c4cec96897c7c44b9935"
+              },
+              {
+                "text": "El logaritmo convierte productos en sumas y conserva los máximos; para evaluar su valor absoluto no descartamos los términos constantes.",
+                "start": 677.2333333333333,
+                "end": 685.8333333333334,
+                "startFrame": 20317,
+                "endFrame": 20575,
+                "words": 20,
+                "sceneIndex": 39,
+                "cueIndex": 1,
+                "sourceCueSha256": "733e997ad851ac4fa5e8d7d99b5ef5ae01e016606209623587112532ab036442"
+              }
+            ]
+          },
+          {
+            "start": 686.1333333333333,
+            "end": 728.2333333333333,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 686.1333333333333,
+                "end": 689.1333333333333,
+                "startFrame": 20584,
+                "endFrame": 20674,
+                "words": 7,
+                "sceneIndex": 40,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula ele minúscula abre paréntesis, lambda subíndice 0 , cierra paréntesis , incluyendo el término de los factoriales y usando logaritmos naturales.",
+                "start": 689.4333333333333,
+                "end": 698.8666666666667,
+                "startFrame": 20683,
+                "endFrame": 20966,
+                "words": 22,
+                "sceneIndex": 40,
+                "cueIndex": 1,
+                "sourceCueSha256": "4382bbb9a84e28ff2bc1c528ca0f7c9ed6f7a83150603c21c773dcceb42fad89"
+              },
+              {
+                "text": "Las observaciones Poisson independientes producen un producto de probabilidades.",
+                "start": 699.1666666666666,
+                "end": 703.0333333333333,
+                "startFrame": 20975,
+                "endFrame": 21091,
+                "words": 9,
+                "sceneIndex": 40,
+                "cueIndex": 2,
+                "sourceCueSha256": "62fa46c824d30a4a351fa9429a3089367de300cbd13012f3629db266ac042707"
+              },
+              {
+                "text": "Su logaritmo convierte el producto en suma.",
+                "start": 703.3333333333334,
+                "end": 706.3333333333334,
+                "startFrame": 21100,
+                "endFrame": 21190,
+                "words": 7,
+                "sceneIndex": 40,
+                "cueIndex": 3,
+                "sourceCueSha256": "e4563c0e4826b9996030cf96ca1557e3053553c04e87590a7fb2bfae27f23a97"
+              },
+              {
+                "text": "Dejamos fijos los recuentos y buscamos qué media candidata da el mayor valor; derivar es una herramienta para localizar ese máximo.",
+                "start": 706.6333333333333,
+                "end": 715.6333333333333,
+                "startFrame": 21199,
+                "endFrame": 21469,
+                "words": 21,
+                "sceneIndex": 40,
+                "cueIndex": 4,
+                "sourceCueSha256": "e8a810687939f788a5de1cebe699c2a0c3e0f6978a28d780e0e661c3a51fd1cc"
+              },
+              {
+                "text": "Para este apartado: Incluye menos suma de logaritmo natural de abre paréntesis, equis minúscula subíndice i factorial , cierra paréntesis , aunque ese término no cambie el máximo.",
+                "start": 715.9333333333333,
+                "end": 727.9333333333333,
+                "startFrame": 21478,
+                "endFrame": 21838,
+                "words": 28,
+                "sceneIndex": 40,
+                "cueIndex": 5,
+                "sourceCueSha256": "2c42e5ef84df32287ba09b4d80f37ac6b1f8fad6ae5bbc619e8f77f38ebc080c"
+              }
+            ]
+          },
+          {
+            "start": 728.2333333333333,
+            "end": 775.8,
+            "cues": [
+              {
+                "text": "Convertir el producto en suma.",
+                "start": 728.2333333333333,
+                "end": 730.4,
+                "startFrame": 21847,
+                "endFrame": 21912,
+                "words": 5,
+                "sceneIndex": 41,
+                "cueIndex": 0,
+                "sourceCueSha256": "72f1f23646c8aad7603006ea8dffbcbb311fd130154bd5c712b5399997ed68f0"
+              },
+              {
+                "text": "La log-verosimilitud suma tres contribuciones: el total observado por el logaritmo natural de la media candidata, menos el número de ventanas por esa media, menos la suma de logaritmos de los factoriales observados.",
+                "start": 730.7,
+                "end": 744.8666666666667,
+                "startFrame": 21921,
+                "endFrame": 22346,
+                "words": 33,
+                "sceneIndex": 41,
+                "cueIndex": 1,
+                "sourceCueSha256": "a4058c9c809b969104de4d7cb9739bd83c12eddfad48c399ae3e32442f800f88"
+              },
+              {
+                "text": "Para cero, el factorial es uno y su logaritmo es cero.",
+                "start": 745.1666666666666,
+                "end": 749.9,
+                "startFrame": 22355,
+                "endFrame": 22497,
+                "words": 11,
+                "sceneIndex": 41,
+                "cueIndex": 2,
+                "sourceCueSha256": "1605d9654fc3e2946fe15a78f528bcf0013dca5bd199beb35777979eb49bed91"
+              },
+              {
+                "text": "La biblioteca usa la función gamma para evaluar esos mismos factoriales sin desbordamiento. ele minúscula abre paréntesis, lambda subíndice 0, cierra paréntesis igual a te logaritmo natural lambda subíndice 0 menos ene lambda subíndice 0 menos suma para el índice abre paréntesis, i, cierra paréntesis de logaritmo natural gamma abre paréntesis, equis minúscula subíndice i más 1, cierra paréntesis.",
+                "start": 750.2,
+                "end": 775.5,
+                "startFrame": 22506,
+                "endFrame": 23265,
+                "words": 59,
+                "sceneIndex": 41,
+                "cueIndex": 3,
+                "sourceCueSha256": "2685d9b88b99c0f01bddb3af0e1624905534bf8bf3be8ff4035fd6f18f14ad32"
+              }
+            ]
+          },
+          {
+            "start": 775.8,
+            "end": 801.3666666666667,
+            "cues": [
+              {
+                "text": "Sustituir todos los términos.",
+                "start": 775.8,
+                "end": 777.5333333333333,
+                "startFrame": 23274,
+                "endFrame": 23326,
+                "words": 4,
+                "sceneIndex": 42,
+                "cueIndex": 0,
+                "sourceCueSha256": "10d3a0f8562f780903d5ad16b3a448773d83334903b94ea2d48d17c1e33fba77"
+              },
+              {
+                "text": "El primer término es 15 por el logaritmo natural de 1, que vale 0.",
+                "start": 777.8333333333334,
+                "end": 783.8333333333334,
+                "startFrame": 23335,
+                "endFrame": 23515,
+                "words": 14,
+                "sceneIndex": 42,
+                "cueIndex": 1,
+                "sourceCueSha256": "834ee68cf67c325ce4a45693a88c3e3d1eb8d2b1484559d0f92fbe9e7cf73bea"
+              },
+              {
+                "text": "Restamos 5 por 1, es decir, 5, y después 10 coma 4 5 0 4 5 por los factoriales.",
+                "start": 784.1333333333333,
+                "end": 792.3,
+                "startFrame": 23524,
+                "endFrame": 23769,
+                "words": 19,
+                "sceneIndex": 42,
+                "cueIndex": 2,
+                "sourceCueSha256": "726ddb34cb52e92d482fc2faea772ffdde244509432ab94182d858e5b09710cb"
+              },
+              {
+                "text": "El resultado es menos 15 coma 4 5 0 4 5.",
+                "start": 792.6,
+                "end": 797.3333333333334,
+                "startFrame": 23778,
+                "endFrame": 23920,
+                "words": 11,
+                "sceneIndex": 42,
+                "cueIndex": 3,
+                "sourceCueSha256": "3f5c689547c4e110b42b03543a922441b05c4456956bc854b1dfcdb9597fe3f9"
+              },
+              {
+                "text": "No es una probabilidad y puede ser negativo.",
+                "start": 797.6333333333333,
+                "end": 801.0666666666667,
+                "startFrame": 23929,
+                "endFrame": 24032,
+                "words": 8,
+                "sceneIndex": 42,
+                "cueIndex": 4,
+                "sourceCueSha256": "75f8534ac528ce7d86a81a88ad37ffd3c0f2c01893a0d447f98977c85b366df8"
+              }
+            ]
+          },
+          {
+            "start": 801.3666666666667,
+            "end": 822.7333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 801.3666666666667,
+                "end": 802.6666666666666,
+                "startFrame": 24041,
+                "endFrame": 24080,
+                "words": 3,
+                "sceneIndex": 43,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es menos 15 coma 4 5 0 4 5 log-verosimilitud sin unidades.",
+                "start": 802.9666666666667,
+                "end": 808.9666666666667,
+                "startFrame": 24089,
+                "endFrame": 24269,
+                "words": 14,
+                "sceneIndex": 43,
+                "cueIndex": 1,
+                "sourceCueSha256": "39f643d7adb4239442a7f0aa5acd618a94ea93aad106ec407239ef0fe933f29e"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 809.2666666666667,
+                "end": 815.2666666666667,
+                "startFrame": 24278,
+                "endFrame": 24458,
+                "words": 14,
+                "sceneIndex": 43,
+                "cueIndex": 2,
+                "sourceCueSha256": "ae30f7d81b2f013541a146ca2bc8212ed602a570ebb30cdb8272c3cf2878bbe8"
+              },
+              {
+                "text": "La familia exponencial es una estructura de modelos; este ejemplo trata recuentos Poisson, no tiempos exponenciales.",
+                "start": 815.5666666666667,
+                "end": 822.4333333333333,
+                "startFrame": 24467,
+                "endFrame": 24673,
+                "words": 16,
+                "sceneIndex": 43,
+                "cueIndex": 3,
+                "sourceCueSha256": "fa2963006e6afd88ba57a37347f1271c38e0e2469d9b1124b8787cc75fe9ebb2"
+              }
+            ]
+          },
+          {
+            "start": 822.7333333333333,
+            "end": 836.2,
+            "cues": [
+              {
+                "text": "El resultado es menos 15 coma 4 5 0 4 5 log-verosimilitud sin unidades.",
+                "start": 822.7333333333333,
+                "end": 828.7333333333333,
+                "startFrame": 24682,
+                "endFrame": 24862,
+                "words": 14,
+                "sceneIndex": 44,
+                "cueIndex": 0,
+                "sourceCueSha256": "44e7c0b96e1adff3adf63fe6fd5c352a28fb2dd773670cd35d94973f9032f6e4"
+              },
+              {
+                "text": "La familia exponencial es una estructura de modelos; este ejemplo trata recuentos Poisson, no tiempos exponenciales.",
+                "start": 829.0333333333333,
+                "end": 835.9,
+                "startFrame": 24871,
+                "endFrame": 25077,
+                "words": 16,
+                "sceneIndex": 44,
+                "cueIndex": 1,
+                "sourceCueSha256": "8fc1a70749da97029a1cfed0f496ed6f648bb7ee107844c9cb0b436d18b7bfd0"
+              }
+            ]
+          },
+          {
+            "start": 836.2,
+            "end": 901.4333333333333,
+            "cues": [
+              {
+                "text": "Esta forma uniparamétrica separa estadístico T, parámetro natural eta y normalizador A; se declaran soporte y dominio.",
+                "start": 836.2,
+                "end": 843.5,
+                "startFrame": 25086,
+                "endFrame": 25305,
+                "words": 17,
+                "sceneIndex": 45,
+                "cueIndex": 0,
+                "sourceCueSha256": "5871bcaa6a957e56c09c28e7543491409253165719ee41916b5f7fb17166e90d"
+              },
+              {
+                "text": "El primer caso es Poisson; la última expresión ilustra un GLM con media mu y enlace g.",
+                "start": 843.8,
+                "end": 851.1,
+                "startFrame": 25314,
+                "endFrame": 25533,
+                "words": 17,
+                "sceneIndex": 45,
+                "cueIndex": 1,
+                "sourceCueSha256": "22f7412e1732f5317d0e52f3e4667b64e707ba1a06782737176d46a2c6f684b2"
+              },
+              {
+                "text": "El producto es una verosimilitud bajo observaciones independientes; una muestra dependiente requiere su distribución conjunta.",
+                "start": 851.4,
+                "end": 857.8333333333334,
+                "startFrame": 25542,
+                "endFrame": 25735,
+                "words": 15,
+                "sceneIndex": 45,
+                "cueIndex": 2,
+                "sourceCueSha256": "1098ac7e267aae1dbae966ab03359beef4de4a2233ba073da295d4d47f91d329"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 858.1333333333333,
+                "end": 862,
+                "startFrame": 25744,
+                "endFrame": 25860,
+                "words": 9,
+                "sceneIndex": 45,
+                "cueIndex": 3,
+                "sourceCueSha256": "1a426c2ea1eb66d74d312669ce472b6ee3addc8160ac4e57b8e9d8d7cd521fa3"
+              },
+              {
+                "text": "¿Qué se considera fijo al comparar parámetros mediante la verosimilitud de una muestra observada?",
+                "start": 862.3,
+                "end": 868.3,
+                "startFrame": 25869,
+                "endFrame": 26049,
+                "words": 14,
+                "sceneIndex": 45,
+                "cueIndex": 4,
+                "sourceCueSha256": "847dc2e97c7a41201e35b27911cd7b0dad50cfc350ad2cf88a3a7307e338e022"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 868.6,
+                "end": 872.4666666666667,
+                "startFrame": 26058,
+                "endFrame": 26174,
+                "words": 9,
+                "sceneIndex": 45,
+                "cueIndex": 5,
+                "sourceCueSha256": "456407063a79fc90eaf69b201f1833a5d77869787b0c0d85629584dd05ece5d8"
+              },
+              {
+                "text": "La verosimilitud es función del parámetro con los datos ya observados; no asigna por sí sola una posterior al parámetro.",
+                "start": 872.7666666666667,
+                "end": 881.3666666666667,
+                "startFrame": 26183,
+                "endFrame": 26441,
+                "words": 20,
+                "sceneIndex": 45,
+                "cueIndex": 6,
+                "sourceCueSha256": "d6b141f30197314b2c8c8c6c31afbfea5915b9a562d023386fab746a097ebf28"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Confundir familia exponencial con la distribución exponencial.",
+                "start": 881.6666666666666,
+                "end": 888.1,
+                "startFrame": 26450,
+                "endFrame": 26643,
+                "words": 15,
+                "sceneIndex": 45,
+                "cueIndex": 7,
+                "sourceCueSha256": "992b447b3ef9e124bd649759944067fff08b18ab4ec93628368c29a9c5acfcde"
+              },
+              {
+                "text": "La familia exponencial es una estructura de factorización que incluye recuentos Poisson y modelos binomiales.",
+                "start": 888.4,
+                "end": 894.8333333333334,
+                "startFrame": 26652,
+                "endFrame": 26845,
+                "words": 15,
+                "sceneIndex": 45,
+                "cueIndex": 8,
+                "sourceCueSha256": "4336be79525f6ecfe842e98e491cb2fe0b7460a40b142e003522fa0c52a1a17f"
+              },
+              {
+                "text": "La distribución exponencial, en cambio, es una ley concreta de espera con riesgo constante.",
+                "start": 895.1333333333333,
+                "end": 901.1333333333333,
+                "startFrame": 26854,
+                "endFrame": 27034,
+                "words": 14,
+                "sceneIndex": 45,
+                "cueIndex": 9,
+                "sourceCueSha256": "4d2cfb059d50bb894753fa4ea8922d6b3dc4c04f2fa5718eb2a02604f1432123"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
