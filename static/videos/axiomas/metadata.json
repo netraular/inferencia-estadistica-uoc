@@ -1,0 +1,1198 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "axiomas",
+  "kind": "recap",
+  "title": "Axiomas, solapamientos y frecuencia relativa",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "8e3efe6109b2fd9b7962a42074b7fe4ef276a205be174eccd111cec9dd36e9a7",
+  "src": "videos/axiomas/video.mp4",
+  "poster": "videos/axiomas/poster.jpg",
+  "duration": 475.06666666666666,
+  "frames": 14252,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "744fd1216b669b9878376e0721a51e5800aa977525b2003bfe35fb74e10a291e",
+  "videoSha256": "7186fda6552dda268b814c799d6ee5012df91e2d5ad782975903855b3639417f",
+  "posterSha256": "ac18be33cc623c734aa7a2dc19d072f5036fad486a915bc70b4be43c87b1462f",
+  "canonicalSha256": "e3a89bcc2829d69f11a13620a5f98a6d340a5d05d7382734d8bc36e27cc91583",
+  "inputHash": "d486b58b74165ac07f9950b64c79a8f7865150a09af254c2bf35bcfbc67c57c2",
+  "rendererSha256": "da223f1dcc48414491e812ac44733ff24644c6f9a0f5be64edb1df652c61ac99",
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "3052a6f1282f94ab4bfb217eb581dbdc79aae9a356679dd438e6f27ace1c4e7b",
+    "canonicalSha256": "e3a89bcc2829d69f11a13620a5f98a6d340a5d05d7382734d8bc36e27cc91583",
+    "source": {
+      "document": "FundamentosInferencia_Tema1.pdf",
+      "section": "1.2 a 1.5 y 1.10: cálculo, propiedades, frecuencia y simulación"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "546653cd2b01ae6f75ee8fae03782519ab94f40f7845e6197ecc82d0817c07c4",
+    "transcriptSha256": "744fd1216b669b9878376e0721a51e5800aa977525b2003bfe35fb74e10a291e",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS-archive/2026-11-11/video/remotion-native-transcripts-course-2026-11-11-v5/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "axiomas",
+  "transcript": {
+    "id": "axiomas",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "e3a89bcc2829d69f11a13620a5f98a6d340a5d05d7382734d8bc36e27cc91583",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 475.06666666666666,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 64.33333333333333,
+        "cues": [
+          {
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+          },
+          {
+            "text": "Vamos a deducir reglas de cálculo de tres exigencias de coherencia.",
+            "start": 1.5,
+            "end": 6.233333333333333,
+            "startFrame": 45,
+            "endFrame": 187,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "34f59147108fa2c39e87958797e29d7adc32bf763b1d8859f7aafde80e644eec"
+          },
+          {
+            "text": "Una probabilidad no es negativa, el suceso seguro vale uno y la probabilidad de una unión de sucesos disjuntos es la suma de sus probabilidades.",
+            "start": 6.533333333333333,
+            "end": 17.266666666666666,
+            "startFrame": 196,
+            "endFrame": 518,
+            "words": 25,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "85cfb9178999583c769d12213173b5ed052a55e3fa4d81e5ca875c6421eb22aa"
+          },
+          {
+            "text": "La suma sirve incluso para una lista numerable de sucesos, siempre que sean disjuntos dos a dos.",
+            "start": 17.566666666666666,
+            "end": 24.866666666666667,
+            "startFrame": 527,
+            "endFrame": 746,
+            "words": 17,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "7cee6ecb1406d627b16e4bc0718c6afdfab7f5ed9d98694fabba0c4bf6217a6e"
+          },
+          {
+            "text": "Tres estados excluyentes con probabilidades dos, tres y cinco décimas permiten reunir los dos primeros sumando: una mitad.",
+            "start": 25.166666666666668,
+            "end": 32.9,
+            "startFrame": 755,
+            "endFrame": 987,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "86a08ddf433303ceff712892ef4fa1b0b152a68db79b307c568e91fd3e2ea98c"
+          },
+          {
+            "text": "Si se solapan, hay que corregir.",
+            "start": 33.2,
+            "end": 35.8,
+            "startFrame": 996,
+            "endFrame": 1074,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "ba3bedfeb007aa506f473bc16fe2d030135b360a23b36bde2f91c08382037c5d"
+          },
+          {
+            "text": "Para dos sucesos restamos una copia de la intersección.",
+            "start": 36.1,
+            "end": 39.96666666666667,
+            "startFrame": 1083,
+            "endFrame": 1199,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "68425e135fb50a58f7ae923d3504f0a41c6f06195a4d4d057cf3ebecdafb172b"
+          },
+          {
+            "text": "Con tres, restamos cada intersección por parejas y añadimos la triple, que habíamos eliminado demasiado.",
+            "start": 40.266666666666666,
+            "end": 46.7,
+            "startFrame": 1208,
+            "endFrame": 1401,
+            "words": 15,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "57232f5fa73432a93a6af487735a36ccc2eae22bcb8cd87a9afdfb392a954b31"
+          },
+          {
+            "text": "El complemento completa el espacio, por lo que su probabilidad es uno menos la original.",
+            "start": 47,
+            "end": 53.43333333333333,
+            "startFrame": 1410,
+            "endFrame": 1603,
+            "words": 15,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "3260f8b1f0c1f0681ad6adfb4b250a7dc35e881368c864c11114b6387b28b768"
+          },
+          {
+            "text": "Además, si un suceso está contenido en otro no puede tener más probabilidad: el grupo mayor incluye todo el menor y quizá algo más.",
+            "start": 53.733333333333334,
+            "end": 64.03333333333333,
+            "startFrame": 1612,
+            "endFrame": 1921,
+            "words": 24,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "2c9b03a7d22dc6733cc4af8dce6ae5ba50f8dba1766fe4d4b35f628400b0c1c3"
+          }
+        ]
+      },
+      {
+        "start": 64.33333333333333,
+        "end": 131.3,
+        "cues": [
+          {
+            "text": "Aunque no conozcamos los solapamientos, una unión no supera la suma de probabilidades individuales.",
+            "start": 64.33333333333333,
+            "end": 70.33333333333333,
+            "startFrame": 1930,
+            "endFrame": 2110,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "6826d9d1da4c2d79d835b3549070b9d034c83710755d3512721901314b236249"
+          },
+          {
+            "text": "Aplicado a los fallos de tres controles, cada uno con probabilidad una décima, el riesgo de algún fallo no supera tres décimas.",
+            "start": 70.63333333333334,
+            "end": 80.06666666666666,
+            "startFrame": 2119,
+            "endFrame": 2402,
+            "words": 22,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "6af93b630f90b8d14a8b6d9f02c6e128a14cf1b7d15cd28fdebfd88725918a29"
+          },
+          {
+            "text": "Por complemento, la probabilidad de pasar los tres controles es al menos siete décimas.",
+            "start": 80.36666666666666,
+            "end": 86.36666666666666,
+            "startFrame": 2411,
+            "endFrame": 2591,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "0ba2efa9db0929fcc580405c70c462ee97730179550bfbdf156acb17296c6595"
+          },
+          {
+            "text": "Es una cota de Bonferroni, no una igualdad.",
+            "start": 86.66666666666667,
+            "end": 90.1,
+            "startFrame": 2600,
+            "endFrame": 2703,
+            "words": 8,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "8f9fcd1fa0e102e0fee45613169aa858d2434dde33848d76f5e39fd66b5f1ce0"
+          },
+          {
+            "text": "Multiplicar nueve décimas tres veces pediría independencia mutua, que no hemos supuesto.",
+            "start": 90.4,
+            "end": 95.56666666666666,
+            "startFrame": 2712,
+            "endFrame": 2867,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 4,
+            "sourceCueSha256": "a53c5fdff8b2169f0697a9e218fdd9b922248f14b191687ff0add624b728cfb5"
+          },
+          {
+            "text": "La frecuencia relativa es otra cosa: éxitos observados divididos por repeticiones.",
+            "start": 95.86666666666666,
+            "end": 100.6,
+            "startFrame": 2876,
+            "endFrame": 3018,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 5,
+            "sourceCueSha256": "8f1538e8b5715c1aa93f4b2610db0bd52f82a4a0429d27c57d4d6eb384c538ae"
+          },
+          {
+            "text": "Bajo ensayos independientes de probabilidad estable se concentra alrededor de esa probabilidad al aumentar el tamaño, pero sigue fluctuando y no necesita acercarse en cada paso.",
+            "start": 100.9,
+            "end": 112.06666666666666,
+            "startFrame": 3027,
+            "endFrame": 3362,
+            "words": 26,
+            "sceneIndex": 1,
+            "cueIndex": 6,
+            "sourceCueSha256": "87f7f18477596cf9b4a9232b2f2e06e75b32b59ca5a17e2cc8c159ad201da1ba"
+          },
+          {
+            "text": "Una racha no obliga al siguiente ensayo a compensar nada.",
+            "start": 112.36666666666666,
+            "end": 116.66666666666667,
+            "startFrame": 3371,
+            "endFrame": 3500,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 7,
+            "sourceCueSha256": "5a3f10c89db1ff1c92896dd9e5d835bbaa087e9b93849f1c9315d3b6d13a0a7c"
+          },
+          {
+            "text": "Tampoco una simulación demuestra que el mecanismo real cumpla el modelo.",
+            "start": 116.96666666666667,
+            "end": 121.7,
+            "startFrame": 3509,
+            "endFrame": 3651,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 8,
+            "sourceCueSha256": "a6df9b51275d550f163b42b16ef900bba5fcda1be6e2822c5b4e26c28b21a3c0"
+          },
+          {
+            "text": "Si una cuenta de probabilidad supera uno, revisa el denominador y los solapamientos: no recortes el resultado para ocultar el error.",
+            "start": 122,
+            "end": 131,
+            "startFrame": 3660,
+            "endFrame": 3930,
+            "words": 21,
+            "sceneIndex": 1,
+            "cueIndex": 9,
+            "sourceCueSha256": "92a5220a184accd156bbb7c30830bde615d2b25e1028e701655363138e9883ae"
+          }
+        ]
+      },
+      {
+        "start": 131.3,
+        "end": 139.23333333333332,
+        "cues": [
+          {
+            "text": "En un cultivo, A indica fluorescencia verde y B fluorescencia roja.",
+            "start": 131.3,
+            "end": 136.03333333333333,
+            "startFrame": 3939,
+            "endFrame": 4081,
+            "words": 11,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "cd7da21c6235ee88f896502e40a4d1dcf1a3be3b522be5be0b6c6326f7d63b0f"
+          },
+          {
+            "text": "Se elige una célula al azar.",
+            "start": 136.33333333333334,
+            "end": 138.93333333333334,
+            "startFrame": 4090,
+            "endFrame": 4168,
+            "words": 6,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "1bdf5227a2b1e3680814a456a3288f4771c892835738594323a0ac326448a9a6"
+          }
+        ]
+      },
+      {
+        "start": 139.23333333333332,
+        "end": 154.76666666666668,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 139.23333333333332,
+            "end": 141.83333333333334,
+            "startFrame": 4177,
+            "endFrame": 4255,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?",
+            "start": 142.13333333333333,
+            "end": 148.56666666666666,
+            "startFrame": 4264,
+            "endFrame": 4457,
+            "words": 15,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "eed80b43b86a0d2fbe893795b079f94e163eb7b56375df52bcd81a2f17050e11"
+          },
+          {
+            "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos.",
+            "start": 148.86666666666667,
+            "end": 154.46666666666667,
+            "startFrame": 4466,
+            "endFrame": 4634,
+            "words": 13,
+            "sceneIndex": 3,
+            "cueIndex": 2,
+            "sourceCueSha256": "50beca251fcc8649f036d6257be6910c3e335c9c2674595809f2438d6ff5c15b"
+          }
+        ]
+      },
+      {
+        "start": 154.76666666666668,
+        "end": 171.56666666666666,
+        "cues": [
+          {
+            "text": "A y be nombran sucesos, es decir, conjuntos de resultados.",
+            "start": 154.76666666666668,
+            "end": 159.06666666666666,
+            "startFrame": 4643,
+            "endFrame": 4772,
+            "words": 10,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "25b27320e78d11ecd9917531e8f71b0cd173dc51daccc5891ef5937a764f7a5f"
+          },
+          {
+            "text": "La unión admite cualquiera de ellos; la intersección exige ambos.",
+            "start": 159.36666666666667,
+            "end": 163.66666666666666,
+            "startFrame": 4781,
+            "endFrame": 4910,
+            "words": 10,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "9de818e8657efa3a8660a1dcad15c141bdf23dfec03ebe6c8be417bd4d19826c"
+          },
+          {
+            "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be.",
+            "start": 163.96666666666667,
+            "end": 171.26666666666668,
+            "startFrame": 4919,
+            "endFrame": 5138,
+            "words": 17,
+            "sceneIndex": 4,
+            "cueIndex": 2,
+            "sourceCueSha256": "cd9df43d58a903b669cfc674208fb3f3d8856d269c85ad443a29858684fb2bb1"
+          }
+        ]
+      },
+      {
+        "start": 171.56666666666666,
+        "end": 173.6,
+        "cues": [
+          {
+            "text": "160 células en total.",
+            "start": 171.56666666666666,
+            "end": 173.3,
+            "startFrame": 5147,
+            "endFrame": 5199,
+            "words": 4,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "3b354ff801248b3cf8b0bac1400ab43a3fc58d212306a4a650474a75fd48df6b"
+          }
+        ]
+      },
+      {
+        "start": 173.6,
+        "end": 178.63333333333333,
+        "cues": [
+          {
+            "text": "96 presentan A, 48 presentan be y 32 presentan ambos marcadores.",
+            "start": 173.6,
+            "end": 178.33333333333334,
+            "startFrame": 5208,
+            "endFrame": 5350,
+            "words": 11,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "fe7a8eaff873c4df68956e1685a725afa3dc5cfc2b3f0accc9eabe1fc55a972d"
+          }
+        ]
+      },
+      {
+        "start": 178.63333333333333,
+        "end": 182.8,
+        "cues": [
+          {
+            "text": "Cada célula tiene la misma probabilidad de ser elegida.",
+            "start": 178.63333333333333,
+            "end": 182.5,
+            "startFrame": 5359,
+            "endFrame": 5475,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "b772fe94764fd78ec6a11191260d73c0043fffc3542b64f2f886ca1cb770fc30"
+          }
+        ]
+      },
+      {
+        "start": 182.8,
+        "end": 187.83333333333334,
+        "cues": [
+          {
+            "text": "Los grupos A y be pueden solaparse; no se supone independencia.",
+            "start": 182.8,
+            "end": 187.53333333333333,
+            "startFrame": 5484,
+            "endFrame": 5626,
+            "words": 11,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "5427528d496c4fafb0e4c322d457add274348a524598abdecc9e2a54a697bba4"
+          }
+        ]
+      },
+      {
+        "start": 187.83333333333334,
+        "end": 199.6,
+        "cues": [
+          {
+            "text": "Las células con ambos marcadores se han contado dos veces.",
+            "start": 187.83333333333334,
+            "end": 192.13333333333333,
+            "startFrame": 5635,
+            "endFrame": 5764,
+            "words": 10,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "f981cb1ba30c5137d0f72a903e00dcde70920efa13e72533d8b02b53086a6d18"
+          },
+          {
+            "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez.",
+            "start": 192.43333333333334,
+            "end": 199.3,
+            "startFrame": 5773,
+            "endFrame": 5979,
+            "words": 16,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "2b6bf283ea391a15e0f8280fb9b9020b76a556b71104ab9d120b412b4b9013df"
+          }
+        ]
+      },
+      {
+        "start": 199.6,
+        "end": 229.03333333333333,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 199.6,
+            "end": 202.6,
+            "startFrame": 5988,
+            "endFrame": 6078,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?",
+            "start": 202.9,
+            "end": 209.33333333333334,
+            "startFrame": 6087,
+            "endFrame": 6280,
+            "words": 15,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "3557795ffc44561fd4c3eb262d70a88a788e84d85fa50ee5c9e835913e75607e"
+          },
+          {
+            "text": "El experimento elige una célula equiprobablemente.",
+            "start": 209.63333333333333,
+            "end": 212.23333333333332,
+            "startFrame": 6289,
+            "endFrame": 6367,
+            "words": 6,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "1b504f7521ab994791434d32720bdecc2cb878ed8008853b5747eca15b24cc84"
+          },
+          {
+            "text": "Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez.",
+            "start": 212.53333333333333,
+            "end": 222.83333333333334,
+            "startFrame": 6376,
+            "endFrame": 6685,
+            "words": 24,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "185c84486b8594cb1c34e13c8a67066a2b334706e4bc021b78067345eae78d63"
+          },
+          {
+            "text": "Para este apartado: Las células con ambos marcadores se han contado dos veces.",
+            "start": 223.13333333333333,
+            "end": 228.73333333333332,
+            "startFrame": 6694,
+            "endFrame": 6862,
+            "words": 13,
+            "sceneIndex": 10,
+            "cueIndex": 4,
+            "sourceCueSha256": "fa32eb29bcd399605ab37763e47aeec15d946f887bc4f37ac8aacf2511562c60"
+          }
+        ]
+      },
+      {
+        "start": 229.03333333333333,
+        "end": 252.36666666666667,
+        "cues": [
+          {
+            "text": "Contar sin duplicar.",
+            "start": 229.03333333333333,
+            "end": 230.33333333333334,
+            "startFrame": 6871,
+            "endFrame": 6910,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "4eb50e2dc48a25a0aab6976ebf5bd6f7eb2d6c6a145e8d6adf6dc583910fa49f"
+          },
+          {
+            "text": "Sumamos los dos grupos y restamos el solapamiento: 96 más 48 menos 32 igual a 112. sabiendo que A unión be sabiendo que igual a valor absoluto de abre paréntesis, A, cierra paréntesis más valor absoluto de abre paréntesis, be, cierra paréntesis - sabiendo que A intersección be sabiendo que.",
+            "start": 230.63333333333333,
+            "end": 252.06666666666666,
+            "startFrame": 6919,
+            "endFrame": 7562,
+            "words": 50,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "bad2af9757d597c7af057402b21f187731941adcfe7826b791dc8d3435274af6"
+          }
+        ]
+      },
+      {
+        "start": 252.36666666666667,
+        "end": 260.26666666666665,
+        "cues": [
+          {
+            "text": "Convertir en probabilidad.",
+            "start": 252.36666666666667,
+            "end": 253.66666666666666,
+            "startFrame": 7571,
+            "endFrame": 7610,
+            "words": 3,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "1a7901692694fb5a40d1d5224cff0918198465ef8ccfcc983fdfb6cfc41cf0c3"
+          },
+          {
+            "text": "Dividimos por todas las células: 112 dividido entre 160 igual a 0 coma 7.",
+            "start": 253.96666666666667,
+            "end": 259.96666666666664,
+            "startFrame": 7619,
+            "endFrame": 7799,
+            "words": 14,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "6b5932d3827f7667b5a1ed250f6094b2e9520fea07a93f90ddfb75b226b07ec8"
+          }
+        ]
+      },
+      {
+        "start": 260.26666666666665,
+        "end": 279.1,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 260.26666666666665,
+            "end": 261.56666666666666,
+            "startFrame": 7808,
+            "endFrame": 7847,
+            "words": 3,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1.",
+            "start": 261.8666666666667,
+            "end": 266.6,
+            "startFrame": 7856,
+            "endFrame": 7998,
+            "words": 11,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "1de62b23db444809e9c0b93eb63c8d79f07f455b17d16f8ed7c5af517b0681d0"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 266.9,
+            "end": 274.2,
+            "startFrame": 8007,
+            "endFrame": 8226,
+            "words": 17,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+          },
+          {
+            "text": "Incluye las células con uno o con los dos marcadores.",
+            "start": 274.5,
+            "end": 278.8,
+            "startFrame": 8235,
+            "endFrame": 8364,
+            "words": 10,
+            "sceneIndex": 13,
+            "cueIndex": 3,
+            "sourceCueSha256": "61d098bbda0b051e25cbe339ae80e5263166d2ce20ce80d021283fc2ebe26b61"
+          }
+        ]
+      },
+      {
+        "start": 279.1,
+        "end": 288.73333333333335,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1.",
+            "start": 279.1,
+            "end": 283.8333333333333,
+            "startFrame": 8373,
+            "endFrame": 8515,
+            "words": 11,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "41771fa048bf592910ea53a9ebc5d2213d4a3555bc961fc1d380903608821b8c"
+          },
+          {
+            "text": "Incluye las células con uno o con los dos marcadores.",
+            "start": 284.1333333333333,
+            "end": 288.43333333333334,
+            "startFrame": 8524,
+            "endFrame": 8653,
+            "words": 10,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "65f5cb3fe4c35f988409b627e5ff8f90538056ea8081b98e8c9ab4161599f293"
+          }
+        ]
+      },
+      {
+        "start": 288.73333333333335,
+        "end": 301.26666666666665,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 288.73333333333335,
+            "end": 291.3333333333333,
+            "startFrame": 8662,
+            "endFrame": 8740,
+            "words": 6,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es la probabilidad de no presentar ninguno de los dos marcadores?",
+            "start": 291.6333333333333,
+            "end": 296.8,
+            "startFrame": 8749,
+            "endFrame": 8904,
+            "words": 12,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "f98d73a64e634d4cdb19cb8f92a9c99dad452f6bfcef70509a8facc68cb3b450"
+          },
+          {
+            "text": "Queremos que no ocurra ninguno de los dos sucesos.",
+            "start": 297.1,
+            "end": 300.96666666666664,
+            "startFrame": 8913,
+            "endFrame": 9029,
+            "words": 9,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "67d82e1b6d4dca5ff698a7cad456146669c7e3de2e42b48e14f9ca44458be324"
+          }
+        ]
+      },
+      {
+        "start": 301.26666666666665,
+        "end": 318.06666666666666,
+        "cues": [
+          {
+            "text": "A y be nombran sucesos, es decir, conjuntos de resultados.",
+            "start": 301.26666666666665,
+            "end": 305.56666666666666,
+            "startFrame": 9038,
+            "endFrame": 9167,
+            "words": 10,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "25b27320e78d11ecd9917531e8f71b0cd173dc51daccc5891ef5937a764f7a5f"
+          },
+          {
+            "text": "La unión admite cualquiera de ellos; la intersección exige ambos.",
+            "start": 305.8666666666667,
+            "end": 310.1666666666667,
+            "startFrame": 9176,
+            "endFrame": 9305,
+            "words": 10,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "9de818e8657efa3a8660a1dcad15c141bdf23dfec03ebe6c8be417bd4d19826c"
+          },
+          {
+            "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be.",
+            "start": 310.46666666666664,
+            "end": 317.76666666666665,
+            "startFrame": 9314,
+            "endFrame": 9533,
+            "words": 17,
+            "sceneIndex": 16,
+            "cueIndex": 2,
+            "sourceCueSha256": "cd9df43d58a903b669cfc674208fb3f3d8856d269c85ad443a29858684fb2bb1"
+          }
+        ]
+      },
+      {
+        "start": 318.06666666666666,
+        "end": 320.1,
+        "cues": [
+          {
+            "text": "160 células en total.",
+            "start": 318.06666666666666,
+            "end": 319.8,
+            "startFrame": 9542,
+            "endFrame": 9594,
+            "words": 4,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "3b354ff801248b3cf8b0bac1400ab43a3fc58d212306a4a650474a75fd48df6b"
+          }
+        ]
+      },
+      {
+        "start": 320.1,
+        "end": 325.1333333333333,
+        "cues": [
+          {
+            "text": "96 presentan A, 48 presentan be y 32 presentan ambos marcadores.",
+            "start": 320.1,
+            "end": 324.8333333333333,
+            "startFrame": 9603,
+            "endFrame": 9745,
+            "words": 11,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "fe7a8eaff873c4df68956e1685a725afa3dc5cfc2b3f0accc9eabe1fc55a972d"
+          }
+        ]
+      },
+      {
+        "start": 325.1333333333333,
+        "end": 329.3,
+        "cues": [
+          {
+            "text": "Cada célula tiene la misma probabilidad de ser elegida.",
+            "start": 325.1333333333333,
+            "end": 329,
+            "startFrame": 9754,
+            "endFrame": 9870,
+            "words": 9,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "b772fe94764fd78ec6a11191260d73c0043fffc3542b64f2f886ca1cb770fc30"
+          }
+        ]
+      },
+      {
+        "start": 329.3,
+        "end": 334.3333333333333,
+        "cues": [
+          {
+            "text": "Los grupos A y be pueden solaparse; no se supone independencia.",
+            "start": 329.3,
+            "end": 334.03333333333336,
+            "startFrame": 9879,
+            "endFrame": 10021,
+            "words": 11,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "5427528d496c4fafb0e4c322d457add274348a524598abdecc9e2a54a697bba4"
+          }
+        ]
+      },
+      {
+        "start": 334.3333333333333,
+        "end": 344.3666666666667,
+        "cues": [
+          {
+            "text": "El complemento de al menos uno es ninguno.",
+            "start": 334.3333333333333,
+            "end": 337.76666666666665,
+            "startFrame": 10030,
+            "endFrame": 10133,
+            "words": 8,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "5daca0d8839a804dc2369c06dd313cb75c36ac4811d8f759de1c6b2fc362d2ee"
+          },
+          {
+            "text": "Primero reunimos todo lo que cumple A o be y después conservamos su complemento.",
+            "start": 338.06666666666666,
+            "end": 344.06666666666666,
+            "startFrame": 10142,
+            "endFrame": 10322,
+            "words": 14,
+            "sceneIndex": 21,
+            "cueIndex": 1,
+            "sourceCueSha256": "e4c63c9cf6343cdbe8c549766752f4f293da41b7304c3649c1d4cdd80bf88961"
+          }
+        ]
+      },
+      {
+        "start": 344.3666666666667,
+        "end": 371.6666666666667,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 344.3666666666667,
+            "end": 347.3666666666667,
+            "startFrame": 10331,
+            "endFrame": 10421,
+            "words": 7,
+            "sceneIndex": 22,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuál es la probabilidad de no presentar ninguno de los dos marcadores?",
+            "start": 347.6666666666667,
+            "end": 352.8333333333333,
+            "startFrame": 10430,
+            "endFrame": 10585,
+            "words": 12,
+            "sceneIndex": 22,
+            "cueIndex": 1,
+            "sourceCueSha256": "e604dc146a68635aa91cd7b0b34612f17d5e45565ce741c9185d6241d77b0f64"
+          },
+          {
+            "text": "El experimento elige una célula equiprobablemente.",
+            "start": 353.1333333333333,
+            "end": 355.73333333333335,
+            "startFrame": 10594,
+            "endFrame": 10672,
+            "words": 6,
+            "sceneIndex": 22,
+            "cueIndex": 2,
+            "sourceCueSha256": "b7df3f1fb2e7768d3473122bdd3a7938a5503099149d58358c0d2a4568df14a3"
+          },
+          {
+            "text": "Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez.",
+            "start": 356.03333333333336,
+            "end": 366.3333333333333,
+            "startFrame": 10681,
+            "endFrame": 10990,
+            "words": 24,
+            "sceneIndex": 22,
+            "cueIndex": 3,
+            "sourceCueSha256": "74040978a7ed9473237fceb7687bf89f17c074c4421f6856462c51f00cb29bcf"
+          },
+          {
+            "text": "Para este apartado: El complemento de al menos uno es ninguno.",
+            "start": 366.6333333333333,
+            "end": 371.3666666666667,
+            "startFrame": 10999,
+            "endFrame": 11141,
+            "words": 11,
+            "sceneIndex": 22,
+            "cueIndex": 4,
+            "sourceCueSha256": "aea4584444aeccf8a1e19530fc64bada76489f5cba0e4bfce349b90b2a25d8bd"
+          }
+        ]
+      },
+      {
+        "start": 371.6666666666667,
+        "end": 393.73333333333335,
+        "cues": [
+          {
+            "text": "Tomar el complemento.",
+            "start": 371.6666666666667,
+            "end": 372.96666666666664,
+            "startFrame": 11150,
+            "endFrame": 11189,
+            "words": 3,
+            "sceneIndex": 23,
+            "cueIndex": 0,
+            "sourceCueSha256": "2c25263e91b6035cb88c7f128f82b5eae4ee3a97437862f9b21e64f8e2f214db"
+          },
+          {
+            "text": "Los grupos con algún marcador y sin marcadores cubren todo el cultivo: 1 menos 0 coma 7 igual a 0 coma 3. probabilidad de abre paréntesis, abre paréntesis, A unión be, cierra paréntesis elevado a ce, cierra paréntesis igual a 1 menos probabilidad de A unión be.",
+            "start": 373.26666666666665,
+            "end": 393.43333333333334,
+            "startFrame": 11198,
+            "endFrame": 11803,
+            "words": 47,
+            "sceneIndex": 23,
+            "cueIndex": 1,
+            "sourceCueSha256": "75de714edb23f40ff1a3577ee6e7e0021e56559e332747e5a09128288288bf86"
+          }
+        ]
+      },
+      {
+        "start": 393.73333333333335,
+        "end": 413.43333333333334,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 393.73333333333335,
+            "end": 395.03333333333336,
+            "startFrame": 11812,
+            "endFrame": 11851,
+            "words": 3,
+            "sceneIndex": 24,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1.",
+            "start": 395.3333333333333,
+            "end": 400.06666666666666,
+            "startFrame": 11860,
+            "endFrame": 12002,
+            "words": 11,
+            "sceneIndex": 24,
+            "cueIndex": 1,
+            "sourceCueSha256": "19778b8e82b5740d1152bbc11ea996599a0e578790f799502de27e63fa1b0b60"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 400.3666666666667,
+            "end": 407.6666666666667,
+            "startFrame": 12011,
+            "endFrame": 12230,
+            "words": 17,
+            "sceneIndex": 24,
+            "cueIndex": 2,
+            "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+          },
+          {
+            "text": "No tener ninguno no es lo mismo que no tener ambos simultáneamente.",
+            "start": 407.96666666666664,
+            "end": 413.1333333333333,
+            "startFrame": 12239,
+            "endFrame": 12394,
+            "words": 12,
+            "sceneIndex": 24,
+            "cueIndex": 3,
+            "sourceCueSha256": "91e6f0cd865976054beba7e21ad35d5a31fbffff905938c6f12cdf5e030f2737"
+          }
+        ]
+      },
+      {
+        "start": 413.43333333333334,
+        "end": 423.93333333333334,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1.",
+            "start": 413.43333333333334,
+            "end": 418.1666666666667,
+            "startFrame": 12403,
+            "endFrame": 12545,
+            "words": 11,
+            "sceneIndex": 25,
+            "cueIndex": 0,
+            "sourceCueSha256": "8546ee274ba8f6a104a5db3e4e97071905864d6d95439a67d0048d84a298800d"
+          },
+          {
+            "text": "No tener ninguno no es lo mismo que no tener ambos simultáneamente.",
+            "start": 418.46666666666664,
+            "end": 423.6333333333333,
+            "startFrame": 12554,
+            "endFrame": 12709,
+            "words": 12,
+            "sceneIndex": 25,
+            "cueIndex": 1,
+            "sourceCueSha256": "2a61e878874b5b8ef8ca22ab0265cb58816b539dce5498aafab78a2851713a73"
+          }
+        ]
+      },
+      {
+        "start": 423.93333333333334,
+        "end": 475.06666666666666,
+        "cues": [
+          {
+            "text": "La intersección corrige el doble recuento y el complemento completa el total.",
+            "start": 423.93333333333334,
+            "end": 429.1,
+            "startFrame": 12718,
+            "endFrame": 12873,
+            "words": 12,
+            "sceneIndex": 26,
+            "cueIndex": 0,
+            "sourceCueSha256": "037acfc5c678b803470206838f434e412d1d0da2c3a92c8f6eda896a1bf23267"
+          },
+          {
+            "text": "La frecuencia relativa usa indicadores observados; no es necesariamente igual a la probabilidad teórica en una muestra finita.",
+            "start": 429.4,
+            "end": 437.1333333333333,
+            "startFrame": 12882,
+            "endFrame": 13114,
+            "words": 18,
+            "sceneIndex": 26,
+            "cueIndex": 1,
+            "sourceCueSha256": "3a52934c06edc16be085c7aa915e756928a98b9116cbe4352d120fc68f616ac0"
+          },
+          {
+            "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+            "start": 437.43333333333334,
+            "end": 441.3,
+            "startFrame": 13123,
+            "endFrame": 13239,
+            "words": 9,
+            "sceneIndex": 26,
+            "cueIndex": 2,
+            "sourceCueSha256": "aece555504e124aac181e2d749b37a00606d11f97cb435edaa9088c919b3bb7f"
+          },
+          {
+            "text": "A tiene probabilidad 0,4; B, 0,3; y ambos, 0,1.",
+            "start": 441.6,
+            "end": 445.46666666666664,
+            "startFrame": 13248,
+            "endFrame": 13364,
+            "words": 9,
+            "sceneIndex": 26,
+            "cueIndex": 3,
+            "sourceCueSha256": "91e1e20207af6b2c29825bf5387416a594ac6e616775e462f3ec68951ee03c16"
+          },
+          {
+            "text": "¿Cuánto vale la unión?",
+            "start": 445.76666666666665,
+            "end": 447.5,
+            "startFrame": 13373,
+            "endFrame": 13425,
+            "words": 4,
+            "sceneIndex": 26,
+            "cueIndex": 4,
+            "sourceCueSha256": "a7ce61e498dd0c3e7214a98e9255765dbf33b52339032128ed631dd245e3f3e4"
+          },
+          {
+            "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+            "start": 447.8,
+            "end": 451.6666666666667,
+            "startFrame": 13434,
+            "endFrame": 13550,
+            "words": 9,
+            "sceneIndex": 26,
+            "cueIndex": 5,
+            "sourceCueSha256": "83c639fd832244374360f0725f4e996a51b6a6aa58e8198fa7ea54f5a6f2c7fb"
+          },
+          {
+            "text": "Se suman 0,4 y 0,3 y se resta 0,1 para eliminar el doble recuento.",
+            "start": 451.96666666666664,
+            "end": 457.96666666666664,
+            "startFrame": 13559,
+            "endFrame": 13739,
+            "words": 14,
+            "sceneIndex": 26,
+            "cueIndex": 6,
+            "sourceCueSha256": "d86158712c5c58559ffb4a7ea8783f53411ae7c7bed094f43d6278c48c93986b"
+          },
+          {
+            "text": "Para revisar el próximo problema, evita este error: Aplicar equiprobabilidad sin justificarla.",
+            "start": 458.26666666666665,
+            "end": 463.43333333333334,
+            "startFrame": 13748,
+            "endFrame": 13903,
+            "words": 12,
+            "sceneIndex": 26,
+            "cueIndex": 7,
+            "sourceCueSha256": "5e40e4e7755cb58b87f693e0cac5b6df4bf4f5a91cbf708c4ac940856b6347dd"
+          },
+          {
+            "text": "Los axiomas permiten sumar probabilidades de sucesos disjuntos, pero no asignan pesos iguales a resultados.",
+            "start": 463.73333333333335,
+            "end": 470.1666666666667,
+            "startFrame": 13912,
+            "endFrame": 14105,
+            "words": 15,
+            "sceneIndex": 26,
+            "cueIndex": 8,
+            "sourceCueSha256": "a95135180228816b35f97f5fffdf10cee965a9294d07d17869e80955bdfed45c"
+          },
+          {
+            "text": "Dividir casos favorables entre posibles exige además justificar la equiprobabilidad.",
+            "start": 470.46666666666664,
+            "end": 474.76666666666665,
+            "startFrame": 14114,
+            "endFrame": 14243,
+            "words": 10,
+            "sceneIndex": 26,
+            "cueIndex": 9,
+            "sourceCueSha256": "19511286dac70c25d75d4804bc3af6c4d7697a407a21809ab4d423970ff2f3c5"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
