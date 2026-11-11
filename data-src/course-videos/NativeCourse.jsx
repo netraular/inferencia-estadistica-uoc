@@ -11,7 +11,7 @@ const renderers = {foundations:FoundationsScene, univariate:UnivariateScene, mul
 
 function fitContent(element, minimum) {
   let size = Number.parseFloat(element.style.fontSize);
-  while (element.scrollWidth > element.clientWidth + 1 && size > minimum) element.style.fontSize = `${--size}px`;
+  while ((element.scrollWidth > element.clientWidth + 1 || element.scrollHeight > element.clientHeight + 1) && size > minimum) element.style.fontSize = `${--size}px`;
 }
 
 async function auditScene(frame, scene, state) {
@@ -75,6 +75,9 @@ export function NativeCourse({storyboard, audit = false}) {
       .then(() => document.fonts.ready).then(async () => {
         if (!active) return;
         for (const element of Array.from(document.querySelectorAll('[data-native-math]'))) fitContent(element, 14);
+        const caption = document.querySelector('[data-native-zone="caption"]');
+        caption.style.fontSize = '23px';
+        fitContent(caption, 12);
         if (audit) await auditScene(frame, scene, state);
         continueRender(gate);
       }).catch(cancelRender);

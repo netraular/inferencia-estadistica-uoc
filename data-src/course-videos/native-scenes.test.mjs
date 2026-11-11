@@ -45,6 +45,50 @@ test('native audit rejects clipped text, overlapping labels and overflowing para
   assert.match(nativeLayoutErrors([{...first,x:1190}], []).join(' '), /outside native stage/);
 });
 
+test('real 720p failed recap frames retain geometry and fit their complete captions', {skip:!process.env.COURSE_VIDEO_REAL_STILLS}, async () => {
+  assert.ok(process.env.COURSE_VIDEO_CATALOGUE);
+  const catalogue = JSON.parse(fs.readFileSync(process.env.COURSE_VIDEO_CATALOGUE));
+  const require = createRequire(import.meta.url);
+  const runtime = require('@remotion/renderer');
+  const {bundle} = require('@remotion/bundler');
+  const owned = path.dirname(fileURLToPath(import.meta.url));
+  const work = fs.mkdtempSync(path.join(os.tmpdir(), 'native-recap-stills-'));
+  const publicDir = path.join(work, 'public');
+  fs.mkdirSync(publicDir);
+  for (const weight of [400, 700]) fs.copyFileSync(path.resolve(owned, `../../pages/inferencia/vendor/atkinson-latin-${weight}.woff2`), path.join(publicDir, `atkinson-latin-${weight}.woff2`));
+  let browser;
+  try {
+    const serveUrl = await bundle({entryPoint:path.join(owned, 'NativeCourse.jsx'), outDir:path.join(work, 'bundle'), rootDir:owned, publicDir, enableCaching:false, gitSource:null});
+    const ensured = await runtime.ensureBrowser();
+    browser = await runtime.openBrowser('chrome', {browserExecutable:ensured.path, logLevel:'error'});
+    for (const [id, failedFrame] of [['algebra',12641], ['calculo',7198], ['axiomas',5168]]) {
+      const item = catalogue.items.find(entry => entry.id === id);
+      assert.ok(item);
+      const storyboard = prepareTranscriptItem(item, TRANSCRIPT_TIMING, {native:true});
+      storyboard.nativePlan = createNativePlan(item);
+      const inputProps = {storyboard, audit:true};
+      const composition = {id:'Course', width:1280, height:720, fps:30, durationInFrames:storyboard.frames, props:inputProps, defaultProps:{}};
+      for (const frame of [failedFrame, failedFrame-1, failedFrame+1]) {
+        const layouts = [];
+        const still = path.join(work, `${id}-${frame}.png`);
+        await runtime.renderStill({serveUrl, composition, inputProps, puppeteerInstance:browser, frame, output:still, imageFormat:'png', logLevel:'error', onBrowserLog:log => {
+          if (log.text?.startsWith('REMOTION_NATIVE_LAYOUT ')) layouts.push(JSON.parse(log.text.slice('REMOTION_NATIVE_LAYOUT '.length)));
+        }});
+        const layout = layouts.find(entry => entry.frame === frame);
+        assert.ok(layout, `Missing layout at ${id}/${frame}`);
+        assert.deepEqual(layout.errors, []);
+        const pixels = execFileSync('/usr/bin/ffmpeg', ['-v', 'error', '-xerror', '-i', still, '-vf', 'scale=320:180,crop=320:135:0:22', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], {maxBuffer:1024*1024});
+        let ink = 0;
+        for (let offset = 0; offset < pixels.length; offset += 3) if (Math.min(...pixels.subarray(offset, offset+3)) < 150) ink++;
+        assert.ok(ink > 60, `Blank still at ${id}/${frame}: ${ink}`);
+      }
+    }
+  } finally {
+    if (browser) await browser.close({silent:true});
+    fs.rmSync(work, {recursive:true, force:true});
+  }
+});
+
 test('real 720p native formulas fit frozen long content and reverse seeks', {skip:!process.env.COURSE_VIDEO_REAL_STILLS}, async () => {
   assert.ok(process.env.COURSE_VIDEO_CATALOGUE, 'Real stills require the frozen catalogue');
   const catalogue = JSON.parse(fs.readFileSync(process.env.COURSE_VIDEO_CATALOGUE));
