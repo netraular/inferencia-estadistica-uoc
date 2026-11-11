@@ -8,22 +8,20 @@ soluciones de preguntas: 541 piezas y 17.872 frases. El exportador congela los
 guiones y sus visuales; cada frase se genera por separado y se mide antes de
 ensamblar el audio. No se asignan tiempos estimados a grabaciones reales.
 
-Las claves se leen localmente desde `~/.config/inferencia-tts/gemini.env`;
-no se incluyen en el repositorio ni en los registros. El usuario ha confirmado
-seis proyectos distintos, todos Free Tier: `GEMINI_API_KEY_1` a
-`GEMINI_API_KEY_6`. El modo `--independent-projects` reparte solicitudes entre
-ellos, con un intervalo minimo de quince segundos por proyecto. Conserva las
-esperas y los intentos de cada uno; nunca repite resultados inciertos. Sin ese
-modo se mantiene la seleccion exclusiva de la primera clave.
+La gestion online se realiza en https://tts.raular.com, desplegada desde
+`proxmox-k8s/k8sprjs/tts-queue`: grupos, cola persistente, descarga, borrado y
+esperas de cuota. Las seis claves de proyectos Free Tier se obtienen de
+Bitwarden en Kubernetes, no desde este checkout. El 11 de noviembre de 2026
+se importaron 17.740 frases pendientes en el grupo del curso, excluyendo 132
+fragmentos Puck ya verificados. La siguiente ventana conocida empieza el
+12 de noviembre a las 08:00 UTC (09:00 peninsular). La publicacion de los
+audios de esa cola en el curso todavia es un paso separado.
 
-El lote de produccion es
-`/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1`.
-El 10 de noviembre de 2026 se aprovecharon los seis proyectos: quedaron
-64 frases guardadas y tres audios completos, con sus tres videos Remotion
-completos y verificados. Los seis proyectos indican esperar aproximadamente
-hasta el 11 de noviembre a las 08:00 UTC (09:00 peninsular). Quedan 538 piezas
-pendientes en Gemini. No hay una reanudacion Gemini programada; los trabajos
-locales de respaldo descritos abajo si estan activos.
+El proyecto `/home/aquiluer/Scripts/TTS` queda reservado a Ming local. Los
+materiales anteriores de Gemini, Remotion y depuracion se conservaron en
+`/home/aquiluer/Scripts/TTS-archive/2026-11-11/`, sin borrar grabaciones.
+El origen Gemini anterior permanece accesible por un enlace de compatibilidad
+para las herramientas de lectura y verificacion:
 
 ```bash
 SCRIPT=/home/aquiluer/Scripts/inferencia-estadistica-uoc/scripts/tts/gemini-course.mjs
@@ -31,19 +29,9 @@ BATCH=/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1
 node "$SCRIPT" --status "$BATCH"
 ```
 
-Despues del reinicio de cuota, reanudar explicitamente la solicitud rechazada:
-
-```bash
-node "$SCRIPT" --generate "$BATCH" --independent-projects --max-requests 120 \
-  --min-interval-ms 15000 --free-tier-confirmed
-```
-
-Un 429 aparta ese proyecto durante la tanda y conserva lo recibido; los demas
-pueden continuar. El lote se pausa cuando ninguno esta disponible. Solo las
-solicitudes rechazadas con HTTP 429 admiten reanudacion con otro proyecto
-independiente. Los errores de resultado incierto detienen todos los proyectos
-y no se reintentan automaticamente. No cambies la copia
-congelada ni empieces otro lote para recuperar fragmentos ya generados.
+No ejecutes `--generate` en el generador Gemini anterior ni programes otra
+generacion online en WSL: duplicaria el trabajo y competiria por la cuota de
+la web. Conserva el catalogo, los audios y sus checkpoints originales.
 
 Cuando existan piezas completas, publicar sus audios compatibles y renderizar
 solo los videos disponibles:
@@ -60,9 +48,29 @@ con audio sintetico de tono tampoco producen material publicable.
 Consulta [el flujo Gemini](scripts/tts/README.md) y
 [el renderizador Remotion](data-src/course-videos/README.md).
 
+## Verificacion Ming Local
+
+El lote Ming actual se controla con
+`inferencia-ming-temporary-20261111.service`. La generacion y reanudacion leen
+su propio catalogo congelado y no necesitan acceder al servicio Gemini.
+
+```bash
+MING=/home/aquiluer/Scripts/TTS/outputs/ming-temporary-course-2026-11-10-v1
+PYTHON=/home/aquiluer/Scripts/TTS/.venv/bin/python
+"$PYTHON" scripts/tts/generate-ming-course.py --batch "$MING" --status
+```
+
+`--verify` mantiene el hash exacto de los originales y valida los fragmentos
+locales. El `progress.json` del origen es mutable: debe conservar version,
+catalogo e identificadores conocidos, pero puede avanzar sin invalidar el
+lote Ming. No se reescriben la seleccion ni los checkpoints para actualizar
+hashes. Ejecuta la auditoria con la generacion pausada o detenida, para no leer
+un fragmento entre la escritura del WAV y la de sus metadatos.
+
 ## Produccion Temporal En Paralelo
 
-Desde el 10 de noviembre de 2026 hay dos trabajos locales independientes para
+La configuracion historica del 10 de noviembre de 2026 tenia dos trabajos
+locales independientes para
 las 538 explicaciones que no tienen un conjunto Puck completo. Ambos usan una
 copia inmutable de las transcripciones actuales: 116 apartados, 36 repasos y
 386 preguntas de ejercicios. No reescriben los textos ni modifican el lote
