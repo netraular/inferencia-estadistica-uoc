@@ -15,7 +15,7 @@ import {createLessonAnimation} from '../pages/inferencia/animations.js';
 import {generateExercise} from '../pages/inferencia/exercises.js';
 import {enrichGlobalAnimation} from '../pages/inferencia/lesson-visuals.js';
 import {silentEntry} from '../scripts/publish-course-videos.mjs';
-import {remainingVideoIds, pushPublication} from '../scripts/complete-course-videos.mjs';
+import {remainingVideoIds, pushPublication, parseOptions as parseCompletionOptions} from '../scripts/complete-course-videos.mjs';
 import {sha256, prepareTranscriptItem} from '../data-src/course-videos/course-contract.mjs';
 import {courseTimeline} from '../data-src/course-videos/course-frame.mjs';
 
@@ -168,6 +168,19 @@ test('course completion counts only compatible canonical videos with available a
   const stale = structuredClone(item);
   stale.animation.steps[0].cues[0].text += ' Revised';
   assert.deepEqual(remainingVideoIds([stale], lessons, audio), [item.id]);
+});
+
+test('course completion validates parallelism and keeps batch paths absolute', () => {
+  const directory = mkdtempSync(path.join(os.tmpdir(), 'course-publication-options-'));
+  try {
+    const options = parseCompletionOptions(['--batch', directory, '--previous', os.tmpdir(), '--concurrency', '8']);
+    assert.equal(options.batch, directory);
+    assert.deepEqual(options.previous, [os.tmpdir()]);
+    assert.equal(options.concurrency, 8);
+    for (const value of ['0', '9', '-1', '1.5', 'NaN']) assert.throws(() => parseCompletionOptions(['--batch', directory, '--concurrency', value]), /concurrency/);
+    assert.throws(() => parseCompletionOptions(['--batch', directory, '--concurrency', '4', '--concurrency', '8']), /Duplicate/);
+    assert.throws(() => parseCompletionOptions(['--batch', 'relative']), /absolute/);
+  } finally {rmSync(directory, {recursive:true, force:true});}
 });
 
 test('automatic publication pushes verified increments atomically and refuses unrelated edits or divergent main', () => {

@@ -25,13 +25,14 @@ export function parseOptions(args) {
   for (let index = 0; index < args.length; index++) {
     const flag = args[index];
     if (['--ready', '--publish', '--worker', '--help', '--transcript', '--prepare', '--status', '--native', '--continue-on-error'].includes(flag)) options[flag.slice(2)] = true;
-    else if (['--batch', '--ids', '--limit', '--source'].includes(flag)) {
+    else if (['--batch', '--ids', '--limit', '--source', '--concurrency'].includes(flag)) {
       assert.ok(args[index + 1] && !args[index + 1].startsWith('--'), `Missing value for ${flag}`);
       const value = args[++index];
-      options[flag.slice(2)] = flag === '--limit' ? Number(value) : flag === '--ids' ? value.split(',') : value;
+      options[flag.slice(2)] = ['--limit', '--concurrency'].includes(flag) ? Number(value) : flag === '--ids' ? value.split(',') : value;
     } else throw new Error(`Unknown option ${flag}`);
   }
   if (!options.help) assert.ok(options.batch && path.isAbsolute(options.batch), '--batch must be absolute');
+  if (options.concurrency !== undefined) assert.ok(Number.isInteger(options.concurrency) && options.concurrency >= 1 && options.concurrency <= 8, '--concurrency must be an integer from 1 to 8');
   assert.ok(!options['continue-on-error'] || options.transcript, '--continue-on-error requires --transcript');
   if (options.transcript) {
     assert.ok(!options.publish, 'Cannot publish transcript drafts as Puck videos');
@@ -195,7 +196,9 @@ export async function worker(options, {
       if (options.native) storyboard.nativePlan = createNativePlan(item);
       const transcript = storyboard.narrationMode === 'transcript';
       const timeline = courseTimeline(storyboard);
-      const inputHash = sha256(JSON.stringify({version:1, rendererSha256, item, ...(transcript ? {transcript:timeline} : {audio:timeline}), style:catalogue.style}));
+      const renderConcurrency = options.concurrency ?? (transcript || catalogue.preview || timeline.preview ? 1 : 2);
+      assert.ok(Number.isInteger(renderConcurrency) && renderConcurrency >= 1 && renderConcurrency <= 8, '--concurrency must be an integer from 1 to 8');
+      const inputHash = sha256(JSON.stringify({version:1, rendererSha256, renderConcurrency, item, ...(transcript ? {transcript:timeline} : {audio:timeline}), style:catalogue.style}));
       const sourceSnapshot = {catalogueSha256, itemSha256:sha256(JSON.stringify(item)), canonicalSha256:item.canonicalSha256, source:item.source ?? null, provenance:catalogue.provenance ?? null, renderedAnimationSha256:sha256(JSON.stringify(storyboard.animation)),
         ...(transcript ? {transcriptSha256:sha256(JSON.stringify(timeline)), sourceFiles:selection.sourceFiles, sourceInputSha256:selection.sourceInputSha256, sourceCatalogue:selection.sourceCatalogue, sourceRevision:selection.sourceRevision} : {audioMetadataSha256:sha256(JSON.stringify(timeline))}), rendererSources:sourceHashes};
       const started = Date.now();
@@ -276,7 +279,7 @@ export async function worker(options, {
           }
           if (timeline.scenes.reduce((count, scene) => count + scene.cues.length, 0) > 1) assert.ok(new Set(layout.map(entry => entry.canvasSha256 || entry.geometrySha256)).size > 1, `${item.id}: static scene geometry`);
           const silent = path.join(work, 'silent.mp4');
-          await runtime.renderMedia({serveUrl:bundleUrl, composition, inputProps, puppeteerInstance:browser, outputLocation:silent, codec:'h264', pixelFormat:'yuv420p', crf:20, x264Preset:'fast', concurrency:transcript || catalogue.preview || timeline.preview ? 1 : 2, muted:true, overwrite:true, logLevel:'error'});
+          await runtime.renderMedia({serveUrl:bundleUrl, composition, inputProps, puppeteerInstance:browser, outputLocation:silent, codec:'h264', pixelFormat:'yuv420p', crf:20, x264Preset:'fast', concurrency:renderConcurrency, muted:true, overwrite:true, logLevel:'error'});
           const temporaryVideo = path.join(work, 'video.mp4');
           const temporaryPoster = path.join(work, 'poster.jpg');
           if (transcript) runFfmpeg(ffmpeg, ['-v', 'error', '-y', '-threads', '1', '-i', silent, '-map', '0:v:0', '-c:v', 'copy', '-an', '-movflags', '+faststart', temporaryVideo]);
@@ -293,7 +296,7 @@ export async function worker(options, {
             fps:storyboard.fps, width:storyboard.width, height:storyboard.height,
             ...(transcript ? {narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true, timing:timeline.timing, transcriptSha256:sha256(JSON.stringify(timeline))} : {audioSource:`audio/${item.id}.mp3`, audioSha256:timeline.mp3Sha256, voice:VOICE, model:MODEL, cueTiming:'measured'}),
             videoSha256:verification.videoSha256, posterSha256:verification.posterSha256, canonicalSha256:item.canonicalSha256,
-            inputHash, rendererSha256, sourceSnapshot, testFixture:Boolean(catalogue.testFixture || timeline.testFixture),
+            inputHash, rendererSha256, renderConcurrency, sourceSnapshot, testFixture:Boolean(catalogue.testFixture || timeline.testFixture),
             ...(catalogue.preview || timeline.preview ? {preview:true, originalId:item.originalId, partialCoverage:item.partialCoverage, provenance:catalogue.provenance ?? timeline.provenance} : {}),
             ...(item.parentLesson ? {parentLesson:item.parentLesson} : {}),
             evidence:{posterFrame, layout, pixels:verification.pixels, streams:verification.streams, elapsedSeconds:(Date.now() - started) / 1000}};
@@ -370,6 +373,7 @@ async function main() {
   const options = parseOptions(process.argv.slice(2));
   if (options.help) {
     console.log('node /absolute/path/render-course.mjs --batch /absolute/batch [--native] [--ready] [--ids id1,id2] [--limit N] [--publish]\n--native selects narration-specific SVG/HTML scenes, never the legacy whiteboard. Use a fresh batch.\n--ready skips pending audio; --ids always requires complete compatible audio. --limit counts ready items.\n--transcript --prepare --source /absolute/catalogue.json freezes a silent draft batch (541 native or 538 legacy items). --transcript --worker renders/resumes it. --transcript --status reports persistent counts. Transcript drafts cannot --publish or --ready.\n--transcript --continue-on-error attempts each selected item once, continuing after individual render/media failures only. Integrity failures still abort. Any failed items give a nonzero exit; inspect progress.json and videos/remotion-run.json.');
+    console.log('--concurrency N renders up to 8 frames in parallel (default 1 for transcript). Ensure nproc exposes enough CPUs; OMP_NUM_THREADS=1 limits its result. Changing concurrency requires a fresh batch for existing outputs.');
     return;
   }
   if (options.prepare) {

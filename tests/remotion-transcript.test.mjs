@@ -192,8 +192,8 @@ function workerFixture(context, hooks = {}, {native = false, catalogue = catalog
       fs.writeFileSync(output, 'mock still');
       onBrowserLog({text:`${native ? 'REMOTION_NATIVE_LAYOUT ' : 'REMOTION_COURSE_LAYOUT '}${JSON.stringify({frame, cue:0, diagram:'bars', errors:hooks.layout?.(active, frame) ?? [], marks:1, canvasSha256:sha256(String(frame))})}`});
     },
-    renderMedia:async ({outputLocation}) => {
-      await hooks.media?.(active);
+    renderMedia:async ({outputLocation, concurrency}) => {
+      await hooks.media?.(active, concurrency);
       fs.writeFileSync(outputLocation, 'mock video');
     }
   };
@@ -217,6 +217,19 @@ function workerFixture(context, hooks = {}, {native = false, catalogue = catalog
   const report = () => JSON.parse(fs.readFileSync(path.join(batch, 'videos/remotion-run.json')));
   return {batch, source, calls, browsers, dependencies, run, progress, report};
 }
+
+test('parallel rendering validates its limits and preserves concurrency in resume provenance', async context => {
+  assert.equal(parseOptions(['--batch', '/tmp/batch', '--transcript', '--concurrency', '8']).concurrency, 8);
+  for (const value of ['0', '9', '-1', '1.5', 'NaN']) assert.throws(() => parseOptions(['--batch', '/tmp/batch', '--transcript', '--concurrency', value]), /concurrency/);
+  const calls = [];
+  const fixture = workerFixture(context, {media:(_board, concurrency) => calls.push(concurrency)});
+  await fixture.run({concurrency:8});
+  assert.deepEqual(calls, [8, 8]);
+  const metadata = JSON.parse(fs.readFileSync(path.join(fixture.batch, 'videos/section-0/metadata.json')));
+  assert.equal(metadata.renderConcurrency, 8);
+  await assert.rejects(fixture.run({concurrency:4}), /Stale transcript inputHash/);
+  assert.deepEqual(calls, [8, 8]);
+});
 
 test('continue-on-error is opt-in and restricted to transcript drafts', () => {
   assert.equal(parseOptions(['--batch', '/tmp/batch', '--transcript', '--continue-on-error'])['continue-on-error'], true);

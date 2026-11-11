@@ -117,8 +117,28 @@ First prepare a new native transcript batch with the current renderer. Preserve
 older batches: their completed exports can be published without rerendering.
 
 ```bash
-node scripts/complete-course-videos.mjs --batch /absolute/new-native-batch --previous /absolute/older-native-batch
+OMP_NUM_THREADS=8 node scripts/complete-course-videos.mjs --batch /absolute/new-native-batch --previous /absolute/older-native-batch --concurrency 8
 ```
+
+`--concurrency` accepts integers from 1 to 8 and defaults to 1. It controls parallel
+frames within one video, not competing publishers. Keep `OPENBLAS_NUM_THREADS=1`
+for numerical libraries, but do not use `OMP_NUM_THREADS=1`: Remotion reads `nproc`,
+which that variable limits to one CPU. An eight-page worker also needs a suitable
+CPU quota; the current 32-thread host uses `CPUQuota=800%`, `MemoryHigh=4G` and
+`MemoryMax=6G`, independently of the unchanged TTS service.
+
+The renderer records concurrency in metadata and input hashes. Use a fresh batch
+when changing it, retaining previous batches as `--previous` arguments so their
+verified complete videos are preserved. Do not edit the renderer of a live batch.
+
+`benchmark-course.mjs /frozen/batch /new/output` compares 300-frame fragments from
+foundations, bivariate normal and an exercise at 1, 4 and 8 pages. It checks every
+layout, exact native geometry, decoded frame count and full-video SSIM >= 0.9995.
+Only its JSON results remain; temporary media and Chromium are cleaned up. The
+2026-11-11 run measured 3.6-4.5x faster rendering at eight pages; full-job speedups
+can be smaller because preflight and publication remain serial. H264 pixels need
+not be bit-identical: the bivariate comparison measured SSIM 0.999784 with identical
+native geometry; foundations and exercise frames were bit-identical.
 
 The coordinator validates and publishes completed exports, then renders only the
 missing current videos. Filesystem events trigger publication after each completed

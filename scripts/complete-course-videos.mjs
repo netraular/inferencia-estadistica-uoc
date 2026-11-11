@@ -23,7 +23,14 @@ export function parseOptions(args) {
   for (let index = 0; index < args.length; index += 2) {
     const flag = args[index];
     const value = args[index+1];
-    assert.ok(['--batch', '--previous'].includes(flag) && value && path.isAbsolute(value), 'Usage: complete-course-videos.mjs --batch /new/batch [--previous /completed/batch]');
+    assert.ok(['--batch', '--previous', '--concurrency'].includes(flag) && value, 'Usage: complete-course-videos.mjs --batch /new/batch [--previous /completed/batch] [--concurrency 1-8]');
+    if (flag === '--concurrency') {
+      assert.ok(options.concurrency === undefined, 'Duplicate --concurrency');
+      options.concurrency = Number(value);
+      assert.ok(Number.isInteger(options.concurrency) && options.concurrency >= 1 && options.concurrency <= 8, '--concurrency must be an integer from 1 to 8');
+      continue;
+    }
+    assert.ok(path.isAbsolute(value), 'Batch paths must be absolute');
     if (flag === '--previous') options.previous.push(fs.realpathSync(value));
     else {
       assert.ok(!options.batch, 'Duplicate --batch');
@@ -55,13 +62,14 @@ export function pushPublication(root, published, total, {check = () => execFileS
   return git('rev-parse', 'HEAD');
 }
 
-export async function completeCourseVideos({batch, previous = [], root = ROOT}) {
+export async function completeCourseVideos({batch, previous = [], root = ROOT, concurrency = 1}) {
+  assert.ok(Number.isInteger(concurrency) && concurrency >= 1 && concurrency <= 8, '--concurrency must be an integer from 1 to 8');
   const catalogue = validateFrozenCatalogue(json(path.join(batch, 'catalogue.json')));
   assert.equal(catalogue.items.length, 541, 'Expected the complete course');
   const batches = [...previous, batch];
   for (const source of previous) assert.deepEqual(json(path.join(source, 'catalogue.json')), catalogue, 'Cannot combine different frozen catalogues');
   const statusPath = path.join(batch, 'publication-progress.json');
-  const status = {version:1, pid:process.pid, startedAt:new Date().toISOString(), state:'starting', total:catalogue.items.length, batches};
+  const status = {version:1, pid:process.pid, startedAt:new Date().toISOString(), state:'starting', total:catalogue.items.length, batches, concurrency};
   const saveStatus = () => writeJson(statusPath, {...status, updatedAt:new Date().toISOString()});
   const coverage = () => {
     const manifest = json(path.join(root, 'static/videos/manifest.json'));
@@ -118,7 +126,7 @@ export async function completeCourseVideos({batch, previous = [], root = ROOT}) 
       for (const source of batches) watchers.push(fs.watch(source, (_event, filename) => {
         if (String(filename) === 'progress.json') schedule();
       }));
-      renderer = spawn(process.execPath, [path.join(root, 'data-src/course-videos/render-course.mjs'), '--native', '--transcript', '--continue-on-error', '--batch', batch, '--ids', missing.join(','), '--worker'], {cwd:root, stdio:'inherit'});
+      renderer = spawn(process.execPath, [path.join(root, 'data-src/course-videos/render-course.mjs'), '--native', '--transcript', '--continue-on-error', '--batch', batch, '--ids', missing.join(','), '--concurrency', String(concurrency), '--worker'], {cwd:root, stdio:'inherit'});
       const result = await new Promise((resolve, reject) => {
         renderer.once('error', reject);
         renderer.once('exit', (code, signal) => resolve({code, signal}));
