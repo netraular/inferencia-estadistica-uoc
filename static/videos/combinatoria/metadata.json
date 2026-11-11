@@ -1,0 +1,2468 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "combinatoria",
+  "kind": "recap",
+  "title": "Contar resultados: orden y repetición",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "e150167fd349f39c3dbba8ff62d6c5bb8926e0a35ad8a9cb4e9c4d71f401b763",
+  "src": "videos/combinatoria/video.mp4",
+  "poster": "videos/combinatoria/poster.jpg",
+  "duration": 1010,
+  "frames": 30300,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "2040383cf7c514e66e5f8e911f20a6b0a1fa810a5091169b89598e60df056d92",
+  "videoSha256": "79456894658707583cc96afb3a5b42d2d6c554cba8be72d99b1a20cf35068d27",
+  "posterSha256": "287a3d6285e6e3224ddf72273ab1619423f7fd5255dcbaad19f9c8b7fcc06a87",
+  "canonicalSha256": "4b1ac75c3ed5641b56a82c7c50223ca116eedb51b965942aa78b0783b9360077",
+  "inputHash": "f386672b788eb0c30f1c52712fb8202756bef32fa37f8a3140b33df6fc856ec5",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "ec8d7cf5ec88e4970433403afc8188d0a2c3b611e39ccaf243ee5a064606dcb6",
+    "canonicalSha256": "4b1ac75c3ed5641b56a82c7c50223ca116eedb51b965942aa78b0783b9360077",
+    "source": {
+      "document": "FundamentosInferencia_Tema1.pdf",
+      "section": "1.8 y 1.9: experimentos múltiples y las cinco reglas de combinatoria"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "b25be955e5539f3cd9e3e4dbf90790bb75aff6e3271ac085dd26395130c74aeb",
+    "transcriptSha256": "2040383cf7c514e66e5f8e911f20a6b0a1fa810a5091169b89598e60df056d92",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "combinatoria",
+  "transcript": {
+    "id": "combinatoria",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "4b1ac75c3ed5641b56a82c7c50223ca116eedb51b965942aa78b0783b9360077",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 1010,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 61.93333333333333,
+        "cues": [
+          {
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+          },
+          {
+            "text": "Hoy vamos a elegir una cuenta a partir del experimento, no del aspecto de una fórmula.",
+            "start": 1.5,
+            "end": 8.366666666666667,
+            "startFrame": 45,
+            "endFrame": 251,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "f3fa690183a479ef72fa16a66a9ff0e0dafb62bfc02ca88df18d22a604ab693e"
+          },
+          {
+            "text": "Hay cinco muestras distintas y necesitamos dos.",
+            "start": 8.666666666666666,
+            "end": 11.666666666666666,
+            "startFrame": 260,
+            "endFrame": 350,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "acc122882bd4bf1c7610564750c5f0828b3369cf026d96f83676800529f83a41"
+          },
+          {
+            "text": "Primero decidimos si importa el orden y si podemos repetir una muestra.",
+            "start": 11.966666666666667,
+            "end": 17.133333333333333,
+            "startFrame": 359,
+            "endFrame": 514,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "c7391c8284eb9435171ae2f70649e58661b352275b819a3f33b642fbf440632c"
+          },
+          {
+            "text": "Para dos posiciones etiquetadas sin repetición hay cinco opciones y después cuatro.",
+            "start": 17.433333333333334,
+            "end": 22.6,
+            "startFrame": 523,
+            "endFrame": 678,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "c1cfb8bd598995619f1e6f097207c1efb87a939336db1c95415396fab44db47d"
+          },
+          {
+            "text": "El principio del producto da veinte asignaciones.",
+            "start": 22.9,
+            "end": 25.9,
+            "startFrame": 687,
+            "endFrame": 777,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "7e684e6bae02180cf0cec95ae9fe6230d50e54e572e79ba33d5608171bfcd279"
+          },
+          {
+            "text": "Si usamos todos los elementos, ese producto decreciente se llama factorial; cero factorial vale uno.",
+            "start": 26.2,
+            "end": 32.63333333333333,
+            "startFrame": 786,
+            "endFrame": 979,
+            "words": 15,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "c8b9092f76385b22585dd851c872021a9045a8f91a782e2df2b284545acf4cd4"
+          },
+          {
+            "text": "Para analizar un par conjunto, a seguida de be y be seguida de a son la misma selección.",
+            "start": 32.93333333333333,
+            "end": 40.666666666666664,
+            "startFrame": 988,
+            "endFrame": 1220,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "8957d3fb4c7b39c42cae1a4c42084088948e340ef5dadfce6b8c1c5b60e17aee"
+          },
+          {
+            "text": "Cada par aparece dos factorial veces entre las asignaciones.",
+            "start": 40.96666666666667,
+            "end": 44.833333333333336,
+            "startFrame": 1229,
+            "endFrame": 1345,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "cc8524b995b025d1c96a7af9655cc4cb5b861eed7fb6121a39ea24a357d2b0fe"
+          },
+          {
+            "text": "Las combinaciones dividen por esas reordenaciones que ya no distinguimos.",
+            "start": 45.13333333333333,
+            "end": 49.43333333333333,
+            "startFrame": 1354,
+            "endFrame": 1483,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "71bec3917ebeaf45e7027575fe99422086a40308308609b4590cae83e12c537f"
+          },
+          {
+            "text": "Con cinco muestras y grupos de dos, veinte dividido entre dos da diez pares.",
+            "start": 49.733333333333334,
+            "end": 55.733333333333334,
+            "startFrame": 1492,
+            "endFrame": 1672,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "sourceCueSha256": "9faa2f08874dec4380227b8264ebd589cfe86a79394c409947a273f4b85bcfe4"
+          },
+          {
+            "text": "El símbolo cinco sobre dos cuenta selecciones; no significa dividir cinco entre dos.",
+            "start": 56.03333333333333,
+            "end": 61.63333333333333,
+            "startFrame": 1681,
+            "endFrame": 1849,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "sourceCueSha256": "d299a04ad7f6b3a0a779dfcc2595eeb7ae422a67165f54cda35330ecc7299d1d"
+          }
+        ]
+      },
+      {
+        "start": 61.93333333333333,
+        "end": 126.7,
+        "cues": [
+          {
+            "text": "Si una muestra recibe tratamiento y otra es control, intercambiarlas sí cambia el diseño.",
+            "start": 61.93333333333333,
+            "end": 67.93333333333334,
+            "startFrame": 1858,
+            "endFrame": 2038,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "85ae08959f6b9f54354e3c432dae72be65875f7a9d735c3d7356c5ebda65a228"
+          },
+          {
+            "text": "Ya no quitamos los dos órdenes: conservamos veinte asignaciones.",
+            "start": 68.23333333333333,
+            "end": 72.1,
+            "startFrame": 2047,
+            "endFrame": 2163,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "3d6152cf0d7db509f4ded0db66ff50a13040a8060e663c59a06f4bf7b9ab62de"
+          },
+          {
+            "text": "No se divide por un factorial solo porque estamos eligiendo dos elementos.",
+            "start": 72.4,
+            "end": 77.56666666666666,
+            "startFrame": 2172,
+            "endFrame": 2327,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "d485723594b2fe027126218971b5866f074d0a872565ebd5c713e8eb0414ac6c"
+          },
+          {
+            "text": "Si devolvemos la primera antes de la segunda elección, hay cinco posibilidades de nuevo.",
+            "start": 77.86666666666666,
+            "end": 83.86666666666666,
+            "startFrame": 2336,
+            "endFrame": 2516,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "e23b7a63492d0f233f4b7979d631983a311aba3dacc66796e03d02a49a6e8f99"
+          },
+          {
+            "text": "Dos posiciones con repetición producen cinco al cuadrado, veinticinco secuencias.",
+            "start": 84.16666666666667,
+            "end": 88.46666666666667,
+            "startFrame": 2525,
+            "endFrame": 2654,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 4,
+            "sourceCueSha256": "dcb9ea6361dec2c93c60f5571aa3bcd90a54c2c5a8370e61fbd6b40a468b69fb"
+          },
+          {
+            "text": "El espacio producto enumera rutas, pero todavía no les asigna probabilidades.",
+            "start": 88.76666666666667,
+            "end": 93.5,
+            "startFrame": 2663,
+            "endFrame": 2805,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 5,
+            "sourceCueSha256": "9e1f578c37b83b56c09e2421dd77fd111e3f055f169b39f8ed8f1cb32c4d073c"
+          },
+          {
+            "text": "Otro problema es ordenar etiquetas repetidas.",
+            "start": 93.8,
+            "end": 96.4,
+            "startFrame": 2814,
+            "endFrame": 2892,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 6,
+            "sourceCueSha256": "6e3f9ea9e9bd03c0d35e30013385d035120c6c43033c505bf515cea70be4b7cf"
+          },
+          {
+            "text": "Dos etiquetas a y dos be permiten cuatro factorial órdenes si las distinguiéramos.",
+            "start": 96.7,
+            "end": 102.3,
+            "startFrame": 2901,
+            "endFrame": 3069,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 7,
+            "sourceCueSha256": "09bc06167fae70a187963d8147ac7d3e2e05149c0d2811092b54d2e81f624155"
+          },
+          {
+            "text": "Dividir por dos factorial para cada letra elimina los intercambios invisibles y deja seis secuencias diferentes.",
+            "start": 102.6,
+            "end": 109.46666666666667,
+            "startFrame": 3078,
+            "endFrame": 3284,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 8,
+            "sourceCueSha256": "c994bd80b256cc8a9653c91d44ad38b0af0a14e1a08c0fe0d37766284ed8b978"
+          },
+          {
+            "text": "Para convertir recuentos en probabilidades necesitamos equiprobabilidad de los resultados contados.",
+            "start": 109.76666666666667,
+            "end": 114.5,
+            "startFrame": 3293,
+            "endFrame": 3435,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 9,
+            "sourceCueSha256": "d0bec4c7b512328efabf0c63b0f991b26b4ed72383c0f504b67a433e6039ccdd"
+          },
+          {
+            "text": "Que existan diez pares no garantiza que cada uno se elija con probabilidad una décima: un mecanismo de selección sesgado conserva la cuenta pero cambia las probabilidades.",
+            "start": 114.8,
+            "end": 126.4,
+            "startFrame": 3444,
+            "endFrame": 3792,
+            "words": 27,
+            "sceneIndex": 1,
+            "cueIndex": 10,
+            "sourceCueSha256": "6b960db5bcae256288416d7dbb869313277ddb69e01eaea7a3d82fe28cc747a0"
+          }
+        ]
+      },
+      {
+        "start": 126.7,
+        "end": 135.16666666666666,
+        "cues": [
+          {
+            "text": "Un laboratorio diseña selecciones de aislados y secuencias de etiquetas para tubos; cada apartado cambia qué resultados se distinguen.",
+            "start": 126.7,
+            "end": 134.86666666666667,
+            "startFrame": 3801,
+            "endFrame": 4046,
+            "words": 19,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ef6be6f3494a9f37217d770dde572338274983810506cec858040862d1a27521"
+          }
+        ]
+      },
+      {
+        "start": 135.16666666666666,
+        "end": 147.26666666666668,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 135.16666666666666,
+            "end": 137.76666666666668,
+            "startFrame": 4055,
+            "endFrame": 4133,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuántos grupos de erre aislados sin orden y sin reemplazo hay?",
+            "start": 138.06666666666666,
+            "end": 142.8,
+            "startFrame": 4142,
+            "endFrame": 4284,
+            "words": 11,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "68291a54cd0d05782c1a1afc71dea4b93e1885c8f6c6250fa16036225947a201"
+          },
+          {
+            "text": "Queremos contar grupos, sin distinguir posiciones ni repetir elementos.",
+            "start": 143.1,
+            "end": 146.96666666666667,
+            "startFrame": 4293,
+            "endFrame": 4409,
+            "words": 9,
+            "sceneIndex": 3,
+            "cueIndex": 2,
+            "sourceCueSha256": "06edacdd3810df65c2f22a79fa0e986b8d0d4a9e4e4fb7779af02c2f606b6758"
+          }
+        ]
+      },
+      {
+        "start": 147.26666666666668,
+        "end": 163.63333333333333,
+        "cues": [
+          {
+            "text": "Contar requiere decidir si el orden se distingue, si se permite repetir y si hay etiquetas idénticas.",
+            "start": 147.26666666666668,
+            "end": 154.56666666666666,
+            "startFrame": 4418,
+            "endFrame": 4637,
+            "words": 17,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "ab3e5d097f823048481040aef598578d18d371d464ce787246f438dad810a0c8"
+          },
+          {
+            "text": "El producto cuenta decisiones sucesivas.",
+            "start": 154.86666666666667,
+            "end": 157.03333333333333,
+            "startFrame": 4646,
+            "endFrame": 4711,
+            "words": 5,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "d5a2deedeba2baa2b143d3b2ea98e849565971b7583e4bace96016c67ebc86f0"
+          },
+          {
+            "text": "Dividir por factoriales elimina solo reordenaciones que el experimento considera indistinguibles, no elecciones distintas.",
+            "start": 157.33333333333334,
+            "end": 163.33333333333334,
+            "startFrame": 4720,
+            "endFrame": 4900,
+            "words": 14,
+            "sceneIndex": 4,
+            "cueIndex": 2,
+            "sourceCueSha256": "31c798f836702fa384bf89a6014f36e2c3c8731e23c0f2e47a444ec5c009e9db"
+          }
+        ]
+      },
+      {
+        "start": 163.63333333333333,
+        "end": 169.93333333333334,
+        "cues": [
+          {
+            "text": "Hay ene igual a 7 aislados distintos y se seleccionan erre igual a 3.",
+            "start": 163.63333333333333,
+            "end": 169.63333333333333,
+            "startFrame": 4909,
+            "endFrame": 5089,
+            "words": 14,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "eeb6b70664b58a51d615fb56b67b09056405dc66fd80e0b03b996df565729cb5"
+          }
+        ]
+      },
+      {
+        "start": 169.93333333333334,
+        "end": 180.53333333333333,
+        "cues": [
+          {
+            "text": "En otro lote hay 8 etiquetas: 3 de especie A, 3 de be y 2 de ce; las de una misma especie son indistinguibles.",
+            "start": 169.93333333333334,
+            "end": 180.23333333333332,
+            "startFrame": 5098,
+            "endFrame": 5407,
+            "words": 24,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "f7826fb210b02ebeb10f67eb7f14762a7a86c2202c7dba8b54f9281d31f0e9ef"
+          }
+        ]
+      },
+      {
+        "start": 180.53333333333333,
+        "end": 185.56666666666666,
+        "cues": [
+          {
+            "text": "Sin reemplazo no se puede seleccionar dos veces un mismo aislado.",
+            "start": 180.53333333333333,
+            "end": 185.26666666666668,
+            "startFrame": 5416,
+            "endFrame": 5558,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "38fc12c7f8bdf1394821dd233bdeb2846e9d367a91252fe7b0730dd5de150d06"
+          }
+        ]
+      },
+      {
+        "start": 185.56666666666666,
+        "end": 202.06666666666666,
+        "cues": [
+          {
+            "text": "El orden solo importa en posiciones etiquetadas; estos recuentos no presuponen equiprobabilidad.",
+            "start": 185.56666666666666,
+            "end": 190.73333333333332,
+            "startFrame": 5567,
+            "endFrame": 5722,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "b911f9a334cf21011d4ed9b6a523220558cca3439582fb5bcc099d4647a1700b"
+          },
+          {
+            "text": "Contar resultados no les asigna por sí solo el mismo peso; para pasar de estos recuentos a probabilidades haría falta especificar un mecanismo de selección.",
+            "start": 191.03333333333333,
+            "end": 201.76666666666668,
+            "startFrame": 5731,
+            "endFrame": 6053,
+            "words": 25,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "a28f0b3407a58bc2f9343867e52c41ac470cc9eb92da10811a10ff24c0e890fc"
+          }
+        ]
+      },
+      {
+        "start": 202.06666666666666,
+        "end": 213,
+        "cues": [
+          {
+            "text": "Cuenta primero selecciones ordenadas y elimina los erre factorial órdenes de cada grupo.",
+            "start": 202.06666666666666,
+            "end": 207.66666666666666,
+            "startFrame": 6062,
+            "endFrame": 6230,
+            "words": 13,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "dd9a70e8fc858a8cf2a7e040fd8c230a0b91bdb385c84dc1b4b271b1c1040cd4"
+          },
+          {
+            "text": "Dividimos las secuencias por las reordenaciones que describen el mismo grupo.",
+            "start": 207.96666666666667,
+            "end": 212.7,
+            "startFrame": 6239,
+            "endFrame": 6381,
+            "words": 11,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "d5f4135914a6faa9497b82791567ac71bdb9d284aa6a1ffcb35d270c97f589e4"
+          }
+        ]
+      },
+      {
+        "start": 213,
+        "end": 243.26666666666668,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 213,
+            "end": 216,
+            "startFrame": 6390,
+            "endFrame": 6480,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuántos grupos de erre aislados sin orden y sin reemplazo hay?",
+            "start": 216.3,
+            "end": 221.03333333333333,
+            "startFrame": 6489,
+            "endFrame": 6631,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "3474eaf794368a987b6966228edb0c58e1bceb59e4491d56d61896917696eb8f"
+          },
+          {
+            "text": "Antes de contar decidimos si importan las posiciones y si hay reemplazo.",
+            "start": 221.33333333333334,
+            "end": 226.5,
+            "startFrame": 6640,
+            "endFrame": 6795,
+            "words": 12,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "c4906927807c4a6a0a520d6ecdc9748602a8618c06e2ddf7ecd814400efcefcc"
+          },
+          {
+            "text": "Multiplicar opciones cuenta secuencias; dividir por las reordenaciones de los elementos seleccionados elimina únicamente el orden que el experimento no distingue.",
+            "start": 226.8,
+            "end": 235.8,
+            "startFrame": 6804,
+            "endFrame": 7074,
+            "words": 21,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "c5b89be4338e3c67d4088df773f685be068f097388b6f2077378d71fc923ca35"
+          },
+          {
+            "text": "Para este apartado: Cuenta primero selecciones ordenadas y elimina los erre factorial órdenes de cada grupo.",
+            "start": 236.1,
+            "end": 242.96666666666667,
+            "startFrame": 7083,
+            "endFrame": 7289,
+            "words": 16,
+            "sceneIndex": 10,
+            "cueIndex": 4,
+            "sourceCueSha256": "2b58382d80363e3bbc7a477dab20de7acc628c9bd1060aa5aaaddd00f6ef02e5"
+          }
+        ]
+      },
+      {
+        "start": 243.26666666666668,
+        "end": 251.16666666666666,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 243.26666666666668,
+            "end": 246.7,
+            "startFrame": 7298,
+            "endFrame": 7401,
+            "words": 8,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 247,
+            "end": 250.86666666666667,
+            "startFrame": 7410,
+            "endFrame": 7526,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 251.16666666666666,
+        "end": 276.76666666666665,
+        "cues": [
+          {
+            "text": "Contar con orden. ene factorial dividido entre abre paréntesis, ene menos erre, cierra paréntesis factorial igual a 7 factorial dividido entre 4 factorial igual a 210. uve subíndice abre paréntesis, ene y erre, cierra paréntesis igual a abre paréntesis, ene factorial , cierra paréntesis dividido entre abre paréntesis, abre paréntesis, ene menos erre, cierra paréntesis factorial , cierra paréntesis.",
+            "start": 251.16666666666666,
+            "end": 276.46666666666664,
+            "startFrame": 7535,
+            "endFrame": 8294,
+            "words": 59,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "6f830d80630409466dbe2669e63d77b655a73915ce4f29963cc6efd455b2d592"
+          }
+        ]
+      },
+      {
+        "start": 276.76666666666665,
+        "end": 286.8333333333333,
+        "cues": [
+          {
+            "text": "El coeficiente binomial cuenta subconjuntos o posiciones sin orden.",
+            "start": 276.76666666666665,
+            "end": 280.6333333333333,
+            "startFrame": 8303,
+            "endFrame": 8419,
+            "words": 9,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "eac76991b7a03bb3cd90333125765554ea0270d8a1ca92d28d21230ca59f2ca3"
+          },
+          {
+            "text": "Se calcula con factoriales, no multiplicando los dos números que aparecen en él.",
+            "start": 280.93333333333334,
+            "end": 286.53333333333336,
+            "startFrame": 8428,
+            "endFrame": 8596,
+            "words": 13,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "c11b524215758a97b7db32ac6d145fc137ee6fe79d4ebd2d5001fbb17c925da0"
+          }
+        ]
+      },
+      {
+        "start": 286.8333333333333,
+        "end": 312,
+        "cues": [
+          {
+            "text": "Eliminar las reordenaciones. 210 dividido entre 3 factorial igual a 35. combinaciones de abre paréntesis, ene, cierra paréntesis elementos tomados de abre paréntesis, erre, cierra paréntesis en abre paréntesis, erre, cierra paréntesis igual a abre paréntesis, ene factorial , cierra paréntesis dividido entre abre paréntesis, erre factorial abre paréntesis, ene menos erre, cierra paréntesis factorial , cierra paréntesis.",
+            "start": 286.8333333333333,
+            "end": 311.7,
+            "startFrame": 8605,
+            "endFrame": 9351,
+            "words": 58,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "3d7062588846deec2cc16bf8b27857098ec9b32fdd8c15d73a43ad1159f3c1ec"
+          }
+        ]
+      },
+      {
+        "start": 312,
+        "end": 327.8333333333333,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 312,
+            "end": 313.3,
+            "startFrame": 9360,
+            "endFrame": 9399,
+            "words": 3,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 35 grupos.",
+            "start": 313.6,
+            "end": 315.76666666666665,
+            "startFrame": 9408,
+            "endFrame": 9473,
+            "words": 5,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "1e22eb06d7eed4dcdc7506825bff719baba572b17fd742d5be9c406db47be58f"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 316.06666666666666,
+            "end": 322.06666666666666,
+            "startFrame": 9482,
+            "endFrame": 9662,
+            "words": 14,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "Un grupo no cambia si se intercambia el orden de sus aislados.",
+            "start": 322.3666666666667,
+            "end": 327.53333333333336,
+            "startFrame": 9671,
+            "endFrame": 9826,
+            "words": 12,
+            "sceneIndex": 15,
+            "cueIndex": 3,
+            "sourceCueSha256": "bfe05f6ac123fcbb271ca9dd62ad6b7dc6e90b14685c2bdb371a2f3e5202bca4"
+          }
+        ]
+      },
+      {
+        "start": 327.8333333333333,
+        "end": 335.76666666666665,
+        "cues": [
+          {
+            "text": "El resultado es 35 grupos.",
+            "start": 327.8333333333333,
+            "end": 330,
+            "startFrame": 9835,
+            "endFrame": 9900,
+            "words": 5,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "a6ca26c8678f77a22efa3defb3094ccb2fc0ada37b245a197140b7cf050e7438"
+          },
+          {
+            "text": "Un grupo no cambia si se intercambia el orden de sus aislados.",
+            "start": 330.3,
+            "end": 335.46666666666664,
+            "startFrame": 9909,
+            "endFrame": 10064,
+            "words": 12,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "202cf3535cd0d277ba527744f1b5d4c1fef6d84a0dcbf385521474ee304d94b6"
+          }
+        ]
+      },
+      {
+        "start": 335.76666666666665,
+        "end": 347.8666666666667,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 335.76666666666665,
+            "end": 338.3666666666667,
+            "startFrame": 10073,
+            "endFrame": 10151,
+            "words": 6,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuántas asignaciones de erre aislados distintos a erre posiciones etiquetadas hay?",
+            "start": 338.6666666666667,
+            "end": 343.4,
+            "startFrame": 10160,
+            "endFrame": 10302,
+            "words": 11,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "28ba609738e75ff53f619f05a30d2eb75ffbc8cd40195f2a3b12374a0a987398"
+          },
+          {
+            "text": "Queremos contar asignaciones a posiciones identificadas, sin repetir elementos.",
+            "start": 343.7,
+            "end": 347.56666666666666,
+            "startFrame": 10311,
+            "endFrame": 10427,
+            "words": 9,
+            "sceneIndex": 17,
+            "cueIndex": 2,
+            "sourceCueSha256": "ada9377d73c1ded5ca50953980edb9e72789f26f6d8816625d2071093201de74"
+          }
+        ]
+      },
+      {
+        "start": 347.8666666666667,
+        "end": 364.23333333333335,
+        "cues": [
+          {
+            "text": "Contar requiere decidir si el orden se distingue, si se permite repetir y si hay etiquetas idénticas.",
+            "start": 347.8666666666667,
+            "end": 355.1666666666667,
+            "startFrame": 10436,
+            "endFrame": 10655,
+            "words": 17,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "ab3e5d097f823048481040aef598578d18d371d464ce787246f438dad810a0c8"
+          },
+          {
+            "text": "El producto cuenta decisiones sucesivas.",
+            "start": 355.46666666666664,
+            "end": 357.6333333333333,
+            "startFrame": 10664,
+            "endFrame": 10729,
+            "words": 5,
+            "sceneIndex": 18,
+            "cueIndex": 1,
+            "sourceCueSha256": "d5a2deedeba2baa2b143d3b2ea98e849565971b7583e4bace96016c67ebc86f0"
+          },
+          {
+            "text": "Dividir por factoriales elimina solo reordenaciones que el experimento considera indistinguibles, no elecciones distintas.",
+            "start": 357.93333333333334,
+            "end": 363.93333333333334,
+            "startFrame": 10738,
+            "endFrame": 10918,
+            "words": 14,
+            "sceneIndex": 18,
+            "cueIndex": 2,
+            "sourceCueSha256": "31c798f836702fa384bf89a6014f36e2c3c8731e23c0f2e47a444ec5c009e9db"
+          }
+        ]
+      },
+      {
+        "start": 364.23333333333335,
+        "end": 370.53333333333336,
+        "cues": [
+          {
+            "text": "Hay ene igual a 7 aislados distintos y se seleccionan erre igual a 3.",
+            "start": 364.23333333333335,
+            "end": 370.23333333333335,
+            "startFrame": 10927,
+            "endFrame": 11107,
+            "words": 14,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "eeb6b70664b58a51d615fb56b67b09056405dc66fd80e0b03b996df565729cb5"
+          }
+        ]
+      },
+      {
+        "start": 370.53333333333336,
+        "end": 381.1333333333333,
+        "cues": [
+          {
+            "text": "En otro lote hay 8 etiquetas: 3 de especie A, 3 de be y 2 de ce; las de una misma especie son indistinguibles.",
+            "start": 370.53333333333336,
+            "end": 380.8333333333333,
+            "startFrame": 11116,
+            "endFrame": 11425,
+            "words": 24,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "f7826fb210b02ebeb10f67eb7f14762a7a86c2202c7dba8b54f9281d31f0e9ef"
+          }
+        ]
+      },
+      {
+        "start": 381.1333333333333,
+        "end": 386.1666666666667,
+        "cues": [
+          {
+            "text": "Sin reemplazo no se puede seleccionar dos veces un mismo aislado.",
+            "start": 381.1333333333333,
+            "end": 385.8666666666667,
+            "startFrame": 11434,
+            "endFrame": 11576,
+            "words": 11,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "38fc12c7f8bdf1394821dd233bdeb2846e9d367a91252fe7b0730dd5de150d06"
+          }
+        ]
+      },
+      {
+        "start": 386.1666666666667,
+        "end": 402.6666666666667,
+        "cues": [
+          {
+            "text": "El orden solo importa en posiciones etiquetadas; estos recuentos no presuponen equiprobabilidad.",
+            "start": 386.1666666666667,
+            "end": 391.3333333333333,
+            "startFrame": 11585,
+            "endFrame": 11740,
+            "words": 12,
+            "sceneIndex": 22,
+            "cueIndex": 0,
+            "sourceCueSha256": "b911f9a334cf21011d4ed9b6a523220558cca3439582fb5bcc099d4647a1700b"
+          },
+          {
+            "text": "Contar resultados no les asigna por sí solo el mismo peso; para pasar de estos recuentos a probabilidades haría falta especificar un mecanismo de selección.",
+            "start": 391.6333333333333,
+            "end": 402.3666666666667,
+            "startFrame": 11749,
+            "endFrame": 12071,
+            "words": 25,
+            "sceneIndex": 22,
+            "cueIndex": 1,
+            "sourceCueSha256": "a28f0b3407a58bc2f9343867e52c41ac470cc9eb92da10811a10ff24c0e890fc"
+          }
+        ]
+      },
+      {
+        "start": 402.6666666666667,
+        "end": 413.56666666666666,
+        "cues": [
+          {
+            "text": "Las opciones disminuyen al ocupar cada posición sin reemplazo.",
+            "start": 402.6666666666667,
+            "end": 406.53333333333336,
+            "startFrame": 12080,
+            "endFrame": 12196,
+            "words": 9,
+            "sceneIndex": 23,
+            "cueIndex": 0,
+            "sourceCueSha256": "99b9f1c447e28b1647b1bb45fef35c8415cd470485a8bc8970a446ab5e6016f0"
+          },
+          {
+            "text": "Cada elección reduce las opciones de la posición siguiente; intercambiar posiciones sí crea otra asignación.",
+            "start": 406.8333333333333,
+            "end": 413.26666666666665,
+            "startFrame": 12205,
+            "endFrame": 12398,
+            "words": 15,
+            "sceneIndex": 23,
+            "cueIndex": 1,
+            "sourceCueSha256": "21a8bf847cc0b25a6adb5239d1e5496a0792b746824ab278c0ea1ea830339dca"
+          }
+        ]
+      },
+      {
+        "start": 413.56666666666666,
+        "end": 442.1333333333333,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 413.56666666666666,
+            "end": 416.56666666666666,
+            "startFrame": 12407,
+            "endFrame": 12497,
+            "words": 7,
+            "sceneIndex": 24,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuántas asignaciones de erre aislados distintos a erre posiciones etiquetadas hay?",
+            "start": 416.8666666666667,
+            "end": 421.6,
+            "startFrame": 12506,
+            "endFrame": 12648,
+            "words": 11,
+            "sceneIndex": 24,
+            "cueIndex": 1,
+            "sourceCueSha256": "9015f64570bd6afbfa422004d900b5bec48b875d3166a81544656a865c5b34b4"
+          },
+          {
+            "text": "Antes de contar decidimos si importan las posiciones y si hay reemplazo.",
+            "start": 421.9,
+            "end": 427.06666666666666,
+            "startFrame": 12657,
+            "endFrame": 12812,
+            "words": 12,
+            "sceneIndex": 24,
+            "cueIndex": 2,
+            "sourceCueSha256": "c4906927807c4a6a0a520d6ecdc9748602a8618c06e2ddf7ecd814400efcefcc"
+          },
+          {
+            "text": "Multiplicar opciones cuenta secuencias; dividir por las reordenaciones de los elementos seleccionados elimina únicamente el orden que el experimento no distingue.",
+            "start": 427.3666666666667,
+            "end": 436.3666666666667,
+            "startFrame": 12821,
+            "endFrame": 13091,
+            "words": 21,
+            "sceneIndex": 24,
+            "cueIndex": 3,
+            "sourceCueSha256": "c5b89be4338e3c67d4088df773f685be068f097388b6f2077378d71fc923ca35"
+          },
+          {
+            "text": "Para este apartado: Las opciones disminuyen al ocupar cada posición sin reemplazo.",
+            "start": 436.6666666666667,
+            "end": 441.8333333333333,
+            "startFrame": 13100,
+            "endFrame": 13255,
+            "words": 12,
+            "sceneIndex": 24,
+            "cueIndex": 4,
+            "sourceCueSha256": "e70b25fae20c6152bedf1cb295a5ac29297d79272c8f4981a82092ce4e784d74"
+          }
+        ]
+      },
+      {
+        "start": 442.1333333333333,
+        "end": 448.76666666666665,
+        "cues": [
+          {
+            "text": "Aplicar el producto.",
+            "start": 442.1333333333333,
+            "end": 443.43333333333334,
+            "startFrame": 13264,
+            "endFrame": 13303,
+            "words": 3,
+            "sceneIndex": 25,
+            "cueIndex": 0,
+            "sourceCueSha256": "52649653c15494a8d2763e82dec7a4badabd8c0f9e1321452aa679d0575e49cb"
+          },
+          {
+            "text": "Las primeras posiciones tienen 7, 6 y 5 opciones; se multiplican.",
+            "start": 443.73333333333335,
+            "end": 448.46666666666664,
+            "startFrame": 13312,
+            "endFrame": 13454,
+            "words": 11,
+            "sceneIndex": 25,
+            "cueIndex": 1,
+            "sourceCueSha256": "5180da03863053488e00031a332d99d3e1aefdf4153eece552988781c5e16ff6"
+          }
+        ]
+      },
+      {
+        "start": 448.76666666666665,
+        "end": 458.8333333333333,
+        "cues": [
+          {
+            "text": "El coeficiente binomial cuenta subconjuntos o posiciones sin orden.",
+            "start": 448.76666666666665,
+            "end": 452.6333333333333,
+            "startFrame": 13463,
+            "endFrame": 13579,
+            "words": 9,
+            "sceneIndex": 26,
+            "cueIndex": 0,
+            "sourceCueSha256": "eac76991b7a03bb3cd90333125765554ea0270d8a1ca92d28d21230ca59f2ca3"
+          },
+          {
+            "text": "Se calcula con factoriales, no multiplicando los dos números que aparecen en él.",
+            "start": 452.93333333333334,
+            "end": 458.53333333333336,
+            "startFrame": 13588,
+            "endFrame": 13756,
+            "words": 13,
+            "sceneIndex": 26,
+            "cueIndex": 1,
+            "sourceCueSha256": "c11b524215758a97b7db32ac6d145fc137ee6fe79d4ebd2d5001fbb17c925da0"
+          }
+        ]
+      },
+      {
+        "start": 458.8333333333333,
+        "end": 481,
+        "cues": [
+          {
+            "text": "Expresar con factoriales. 7 factorial dividido entre 4 factorial igual a 210; también 35 por 3 factorial. uve subíndice abre paréntesis, ene y erre, cierra paréntesis igual a combinaciones de abre paréntesis, ene, cierra paréntesis elementos tomados de abre paréntesis, erre, cierra paréntesis en abre paréntesis, erre, cierra paréntesis erre factorial.",
+            "start": 458.8333333333333,
+            "end": 480.7,
+            "startFrame": 13765,
+            "endFrame": 14421,
+            "words": 51,
+            "sceneIndex": 27,
+            "cueIndex": 0,
+            "sourceCueSha256": "56c8f47b59a51f9c4f3cf1b2b36be7d98e0ef3f9852591a700ae4104d6528ffb"
+          }
+        ]
+      },
+      {
+        "start": 481,
+        "end": 495.1,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 481,
+            "end": 482.3,
+            "startFrame": 14430,
+            "endFrame": 14469,
+            "words": 3,
+            "sceneIndex": 28,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 210 asignaciones.",
+            "start": 482.6,
+            "end": 484.76666666666665,
+            "startFrame": 14478,
+            "endFrame": 14543,
+            "words": 5,
+            "sceneIndex": 28,
+            "cueIndex": 1,
+            "sourceCueSha256": "1cbc06d3f4b3174226284331fd9ebfe653df100f65210c88881ebd14006bd114"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 485.06666666666666,
+            "end": 491.06666666666666,
+            "startFrame": 14552,
+            "endFrame": 14732,
+            "words": 14,
+            "sceneIndex": 28,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "Cambiar de posición dos aislados produce otra asignación.",
+            "start": 491.3666666666667,
+            "end": 494.8,
+            "startFrame": 14741,
+            "endFrame": 14844,
+            "words": 8,
+            "sceneIndex": 28,
+            "cueIndex": 3,
+            "sourceCueSha256": "9a15d30600ffafc955c75266b852d73c6cacd292681af3e75d8608107d4ce414"
+          }
+        ]
+      },
+      {
+        "start": 495.1,
+        "end": 501.3,
+        "cues": [
+          {
+            "text": "El resultado es 210 asignaciones.",
+            "start": 495.1,
+            "end": 497.26666666666665,
+            "startFrame": 14853,
+            "endFrame": 14918,
+            "words": 5,
+            "sceneIndex": 29,
+            "cueIndex": 0,
+            "sourceCueSha256": "6b128a8a60f786fc22bf1beb1c5bfbe9321af203664d8912ef1af36b35da2ecd"
+          },
+          {
+            "text": "Cambiar de posición dos aislados produce otra asignación.",
+            "start": 497.56666666666666,
+            "end": 501,
+            "startFrame": 14927,
+            "endFrame": 15030,
+            "words": 8,
+            "sceneIndex": 29,
+            "cueIndex": 1,
+            "sourceCueSha256": "355903ba12726b5d819c9ae9ed2f4792b543e4e7000399c7ffd6a5472b3ccf4e"
+          }
+        ]
+      },
+      {
+        "start": 501.3,
+        "end": 515.9666666666667,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 501.3,
+            "end": 503.9,
+            "startFrame": 15039,
+            "endFrame": 15117,
+            "words": 6,
+            "sceneIndex": 30,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Si cada posición recibe una etiqueta de cualquiera de los ene aislados y se permiten repeticiones, ¿cuántas secuencias hay?",
+            "start": 504.2,
+            "end": 512.3666666666667,
+            "startFrame": 15126,
+            "endFrame": 15371,
+            "words": 19,
+            "sceneIndex": 30,
+            "cueIndex": 1,
+            "sourceCueSha256": "53d0d531567158a5ed616d0856750c077a8a852a38856146984318725334dfef"
+          },
+          {
+            "text": "Queremos contar secuencias que pueden repetir etiquetas.",
+            "start": 512.6666666666666,
+            "end": 515.6666666666666,
+            "startFrame": 15380,
+            "endFrame": 15470,
+            "words": 7,
+            "sceneIndex": 30,
+            "cueIndex": 2,
+            "sourceCueSha256": "cb0df5d5b65b63e867b82504f4f78f035474788ee281ab99ee911f4a5e8b9c5d"
+          }
+        ]
+      },
+      {
+        "start": 515.9666666666667,
+        "end": 532.3333333333334,
+        "cues": [
+          {
+            "text": "Contar requiere decidir si el orden se distingue, si se permite repetir y si hay etiquetas idénticas.",
+            "start": 515.9666666666667,
+            "end": 523.2666666666667,
+            "startFrame": 15479,
+            "endFrame": 15698,
+            "words": 17,
+            "sceneIndex": 31,
+            "cueIndex": 0,
+            "sourceCueSha256": "ab3e5d097f823048481040aef598578d18d371d464ce787246f438dad810a0c8"
+          },
+          {
+            "text": "El producto cuenta decisiones sucesivas.",
+            "start": 523.5666666666667,
+            "end": 525.7333333333333,
+            "startFrame": 15707,
+            "endFrame": 15772,
+            "words": 5,
+            "sceneIndex": 31,
+            "cueIndex": 1,
+            "sourceCueSha256": "d5a2deedeba2baa2b143d3b2ea98e849565971b7583e4bace96016c67ebc86f0"
+          },
+          {
+            "text": "Dividir por factoriales elimina solo reordenaciones que el experimento considera indistinguibles, no elecciones distintas.",
+            "start": 526.0333333333333,
+            "end": 532.0333333333333,
+            "startFrame": 15781,
+            "endFrame": 15961,
+            "words": 14,
+            "sceneIndex": 31,
+            "cueIndex": 2,
+            "sourceCueSha256": "31c798f836702fa384bf89a6014f36e2c3c8731e23c0f2e47a444ec5c009e9db"
+          }
+        ]
+      },
+      {
+        "start": 532.3333333333334,
+        "end": 538.6333333333333,
+        "cues": [
+          {
+            "text": "Hay ene igual a 7 aislados distintos y se seleccionan erre igual a 3.",
+            "start": 532.3333333333334,
+            "end": 538.3333333333334,
+            "startFrame": 15970,
+            "endFrame": 16150,
+            "words": 14,
+            "sceneIndex": 32,
+            "cueIndex": 0,
+            "sourceCueSha256": "eeb6b70664b58a51d615fb56b67b09056405dc66fd80e0b03b996df565729cb5"
+          }
+        ]
+      },
+      {
+        "start": 538.6333333333333,
+        "end": 549.2333333333333,
+        "cues": [
+          {
+            "text": "En otro lote hay 8 etiquetas: 3 de especie A, 3 de be y 2 de ce; las de una misma especie son indistinguibles.",
+            "start": 538.6333333333333,
+            "end": 548.9333333333333,
+            "startFrame": 16159,
+            "endFrame": 16468,
+            "words": 24,
+            "sceneIndex": 33,
+            "cueIndex": 0,
+            "sourceCueSha256": "f7826fb210b02ebeb10f67eb7f14762a7a86c2202c7dba8b54f9281d31f0e9ef"
+          }
+        ]
+      },
+      {
+        "start": 549.2333333333333,
+        "end": 554.2666666666667,
+        "cues": [
+          {
+            "text": "Sin reemplazo no se puede seleccionar dos veces un mismo aislado.",
+            "start": 549.2333333333333,
+            "end": 553.9666666666667,
+            "startFrame": 16477,
+            "endFrame": 16619,
+            "words": 11,
+            "sceneIndex": 34,
+            "cueIndex": 0,
+            "sourceCueSha256": "38fc12c7f8bdf1394821dd233bdeb2846e9d367a91252fe7b0730dd5de150d06"
+          }
+        ]
+      },
+      {
+        "start": 554.2666666666667,
+        "end": 570.7666666666667,
+        "cues": [
+          {
+            "text": "El orden solo importa en posiciones etiquetadas; estos recuentos no presuponen equiprobabilidad.",
+            "start": 554.2666666666667,
+            "end": 559.4333333333333,
+            "startFrame": 16628,
+            "endFrame": 16783,
+            "words": 12,
+            "sceneIndex": 35,
+            "cueIndex": 0,
+            "sourceCueSha256": "b911f9a334cf21011d4ed9b6a523220558cca3439582fb5bcc099d4647a1700b"
+          },
+          {
+            "text": "Contar resultados no les asigna por sí solo el mismo peso; para pasar de estos recuentos a probabilidades haría falta especificar un mecanismo de selección.",
+            "start": 559.7333333333333,
+            "end": 570.4666666666667,
+            "startFrame": 16792,
+            "endFrame": 17114,
+            "words": 25,
+            "sceneIndex": 35,
+            "cueIndex": 1,
+            "sourceCueSha256": "a28f0b3407a58bc2f9343867e52c41ac470cc9eb92da10811a10ff24c0e890fc"
+          }
+        ]
+      },
+      {
+        "start": 570.7666666666667,
+        "end": 580.3666666666667,
+        "cues": [
+          {
+            "text": "Ahora cada posición conserva las ene opciones.",
+            "start": 570.7666666666667,
+            "end": 573.7666666666667,
+            "startFrame": 17123,
+            "endFrame": 17213,
+            "words": 7,
+            "sceneIndex": 36,
+            "cueIndex": 0,
+            "sourceCueSha256": "6e0f8ef85f881df31cb8e7e5ba0291021de18403372e195929b2cbcc705f8cdb"
+          },
+          {
+            "text": "Todas las posiciones conservan el mismo número de opciones porque no se retiran etiquetas.",
+            "start": 574.0666666666667,
+            "end": 580.0666666666667,
+            "startFrame": 17222,
+            "endFrame": 17402,
+            "words": 14,
+            "sceneIndex": 36,
+            "cueIndex": 1,
+            "sourceCueSha256": "ad1640be2eb937ebec8571a980b7fe91799137edb088e840b514641dee3c634b"
+          }
+        ]
+      },
+      {
+        "start": 580.3666666666667,
+        "end": 611.5,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 580.3666666666667,
+            "end": 583.3666666666667,
+            "startFrame": 17411,
+            "endFrame": 17501,
+            "words": 7,
+            "sceneIndex": 37,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Si cada posición recibe una etiqueta de cualquiera de los ene aislados y se permiten repeticiones, ¿cuántas secuencias hay?",
+            "start": 583.6666666666666,
+            "end": 591.8333333333334,
+            "startFrame": 17510,
+            "endFrame": 17755,
+            "words": 19,
+            "sceneIndex": 37,
+            "cueIndex": 1,
+            "sourceCueSha256": "45b1f92a4268f09fc949f6ea6a6c1f0ea8c32d6c2e04637e4169adbdae199c51"
+          },
+          {
+            "text": "Antes de contar decidimos si importan las posiciones y si hay reemplazo.",
+            "start": 592.1333333333333,
+            "end": 597.3,
+            "startFrame": 17764,
+            "endFrame": 17919,
+            "words": 12,
+            "sceneIndex": 37,
+            "cueIndex": 2,
+            "sourceCueSha256": "2680c04dda1b825ff81db4214f7746b747757d351abf206942b9c1cd7d396bec"
+          },
+          {
+            "text": "Multiplicar opciones cuenta secuencias; dividir por las reordenaciones de los elementos seleccionados elimina únicamente el orden que el experimento no distingue.",
+            "start": 597.6,
+            "end": 606.6,
+            "startFrame": 17928,
+            "endFrame": 18198,
+            "words": 21,
+            "sceneIndex": 37,
+            "cueIndex": 3,
+            "sourceCueSha256": "d3998fafe4cf2dd1033b99289f399f97d703908482e4715fce2dc2c2d30966c9"
+          },
+          {
+            "text": "Para este apartado: Ahora cada posición conserva las ene opciones.",
+            "start": 606.9,
+            "end": 611.2,
+            "startFrame": 18207,
+            "endFrame": 18336,
+            "words": 10,
+            "sceneIndex": 37,
+            "cueIndex": 4,
+            "sourceCueSha256": "d0fedf4c607c7b9372fae51a885c14dbd2f95773e4db907bc3757725b5a56985"
+          }
+        ]
+      },
+      {
+        "start": 611.5,
+        "end": 620.7,
+        "cues": [
+          {
+            "text": "Cambiar el mecanismo.",
+            "start": 611.5,
+            "end": 612.8,
+            "startFrame": 18345,
+            "endFrame": 18384,
+            "words": 3,
+            "sceneIndex": 38,
+            "cueIndex": 0,
+            "sourceCueSha256": "29c6d173fc5aaf672f029a4fa596aa4844f6122c506ad2844a32d08438c78cbb"
+          },
+          {
+            "text": "Se asignan etiquetas, no se extraen aislados; cada una de las 3 posiciones admite las 7 etiquetas.",
+            "start": 613.1,
+            "end": 620.4,
+            "startFrame": 18393,
+            "endFrame": 18612,
+            "words": 17,
+            "sceneIndex": 38,
+            "cueIndex": 1,
+            "sourceCueSha256": "c84408767b3d4ca534dc551c38fd4dfe064783986eed749b0c4f9f4be04040b5"
+          }
+        ]
+      },
+      {
+        "start": 620.7,
+        "end": 631.6,
+        "cues": [
+          {
+            "text": "Multiplicar opciones constantes. 7 al cubo igual a 343.",
+            "start": 620.7,
+            "end": 624.5666666666667,
+            "startFrame": 18621,
+            "endFrame": 18737,
+            "words": 9,
+            "sceneIndex": 39,
+            "cueIndex": 0,
+            "sourceCueSha256": "fd9a418f0a105bdeca32205a162f5006acac8bc83fab31b3eeb307a1c41306e3"
+          },
+          {
+            "text": "VR subíndice abre paréntesis, ene y erre, cierra paréntesis igual a ene elevado a erre.",
+            "start": 624.8666666666667,
+            "end": 631.3,
+            "startFrame": 18746,
+            "endFrame": 18939,
+            "words": 15,
+            "sceneIndex": 39,
+            "cueIndex": 1,
+            "sourceCueSha256": "fd67514aab3b24dd1af0d2cc3defa4ab57711bfc3c062a723343408f34c86793"
+          }
+        ]
+      },
+      {
+        "start": 631.6,
+        "end": 647.4333333333333,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 631.6,
+            "end": 632.9,
+            "startFrame": 18948,
+            "endFrame": 18987,
+            "words": 3,
+            "sceneIndex": 40,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 343 secuencias.",
+            "start": 633.2,
+            "end": 635.3666666666667,
+            "startFrame": 18996,
+            "endFrame": 19061,
+            "words": 5,
+            "sceneIndex": 40,
+            "cueIndex": 1,
+            "sourceCueSha256": "f1dd1f1b9eb9b4a6ec247544a146bba7034b3259e07b0cffe8e903502c841227"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 635.6666666666666,
+            "end": 641.6666666666666,
+            "startFrame": 19070,
+            "endFrame": 19250,
+            "words": 14,
+            "sceneIndex": 40,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "Repetir una etiqueta está permitido en este apartado, no en los anteriores.",
+            "start": 641.9666666666667,
+            "end": 647.1333333333333,
+            "startFrame": 19259,
+            "endFrame": 19414,
+            "words": 12,
+            "sceneIndex": 40,
+            "cueIndex": 3,
+            "sourceCueSha256": "5f208de74a8612ea2b2b9171b132fdab0af5661aa5ce528c01a4268f1caace2a"
+          }
+        ]
+      },
+      {
+        "start": 647.4333333333333,
+        "end": 655.3666666666667,
+        "cues": [
+          {
+            "text": "El resultado es 343 secuencias.",
+            "start": 647.4333333333333,
+            "end": 649.6,
+            "startFrame": 19423,
+            "endFrame": 19488,
+            "words": 5,
+            "sceneIndex": 41,
+            "cueIndex": 0,
+            "sourceCueSha256": "00f8a8c465a828791d2270d8118926920e3edea0cde0cdcac9f722dc7e8cae3a"
+          },
+          {
+            "text": "Repetir una etiqueta está permitido en este apartado, no en los anteriores.",
+            "start": 649.9,
+            "end": 655.0666666666667,
+            "startFrame": 19497,
+            "endFrame": 19652,
+            "words": 12,
+            "sceneIndex": 41,
+            "cueIndex": 1,
+            "sourceCueSha256": "433dc4060cb7cdd939cc0d74fe41a42ede211e0a68639ff22189ca12e11ae2ba"
+          }
+        ]
+      },
+      {
+        "start": 655.3666666666667,
+        "end": 666.2,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 655.3666666666667,
+            "end": 657.9666666666667,
+            "startFrame": 19661,
+            "endFrame": 19739,
+            "words": 6,
+            "sceneIndex": 42,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿De cuántas maneras se pueden ordenar todos los ene aislados distintos?",
+            "start": 658.2666666666667,
+            "end": 663,
+            "startFrame": 19748,
+            "endFrame": 19890,
+            "words": 11,
+            "sceneIndex": 42,
+            "cueIndex": 1,
+            "sourceCueSha256": "b885c0df6a7602a904a210c5afd665f183903f95196419d35a6e6d353b71684b"
+          },
+          {
+            "text": "Queremos ordenar todos los elementos distintos.",
+            "start": 663.3,
+            "end": 665.9,
+            "startFrame": 19899,
+            "endFrame": 19977,
+            "words": 6,
+            "sceneIndex": 42,
+            "cueIndex": 2,
+            "sourceCueSha256": "690779e4ad5ac6edabdf0b063f080d1988f1216c3e4883a5453ef0ce179d8a7e"
+          }
+        ]
+      },
+      {
+        "start": 666.2,
+        "end": 682.5666666666667,
+        "cues": [
+          {
+            "text": "Contar requiere decidir si el orden se distingue, si se permite repetir y si hay etiquetas idénticas.",
+            "start": 666.2,
+            "end": 673.5,
+            "startFrame": 19986,
+            "endFrame": 20205,
+            "words": 17,
+            "sceneIndex": 43,
+            "cueIndex": 0,
+            "sourceCueSha256": "ab3e5d097f823048481040aef598578d18d371d464ce787246f438dad810a0c8"
+          },
+          {
+            "text": "El producto cuenta decisiones sucesivas.",
+            "start": 673.8,
+            "end": 675.9666666666667,
+            "startFrame": 20214,
+            "endFrame": 20279,
+            "words": 5,
+            "sceneIndex": 43,
+            "cueIndex": 1,
+            "sourceCueSha256": "d5a2deedeba2baa2b143d3b2ea98e849565971b7583e4bace96016c67ebc86f0"
+          },
+          {
+            "text": "Dividir por factoriales elimina solo reordenaciones que el experimento considera indistinguibles, no elecciones distintas.",
+            "start": 676.2666666666667,
+            "end": 682.2666666666667,
+            "startFrame": 20288,
+            "endFrame": 20468,
+            "words": 14,
+            "sceneIndex": 43,
+            "cueIndex": 2,
+            "sourceCueSha256": "31c798f836702fa384bf89a6014f36e2c3c8731e23c0f2e47a444ec5c009e9db"
+          }
+        ]
+      },
+      {
+        "start": 682.5666666666667,
+        "end": 688.8666666666667,
+        "cues": [
+          {
+            "text": "Hay ene igual a 7 aislados distintos y se seleccionan erre igual a 3.",
+            "start": 682.5666666666667,
+            "end": 688.5666666666667,
+            "startFrame": 20477,
+            "endFrame": 20657,
+            "words": 14,
+            "sceneIndex": 44,
+            "cueIndex": 0,
+            "sourceCueSha256": "eeb6b70664b58a51d615fb56b67b09056405dc66fd80e0b03b996df565729cb5"
+          }
+        ]
+      },
+      {
+        "start": 688.8666666666667,
+        "end": 699.4666666666667,
+        "cues": [
+          {
+            "text": "En otro lote hay 8 etiquetas: 3 de especie A, 3 de be y 2 de ce; las de una misma especie son indistinguibles.",
+            "start": 688.8666666666667,
+            "end": 699.1666666666666,
+            "startFrame": 20666,
+            "endFrame": 20975,
+            "words": 24,
+            "sceneIndex": 45,
+            "cueIndex": 0,
+            "sourceCueSha256": "f7826fb210b02ebeb10f67eb7f14762a7a86c2202c7dba8b54f9281d31f0e9ef"
+          }
+        ]
+      },
+      {
+        "start": 699.4666666666667,
+        "end": 704.5,
+        "cues": [
+          {
+            "text": "Sin reemplazo no se puede seleccionar dos veces un mismo aislado.",
+            "start": 699.4666666666667,
+            "end": 704.2,
+            "startFrame": 20984,
+            "endFrame": 21126,
+            "words": 11,
+            "sceneIndex": 46,
+            "cueIndex": 0,
+            "sourceCueSha256": "38fc12c7f8bdf1394821dd233bdeb2846e9d367a91252fe7b0730dd5de150d06"
+          }
+        ]
+      },
+      {
+        "start": 704.5,
+        "end": 721,
+        "cues": [
+          {
+            "text": "El orden solo importa en posiciones etiquetadas; estos recuentos no presuponen equiprobabilidad.",
+            "start": 704.5,
+            "end": 709.6666666666666,
+            "startFrame": 21135,
+            "endFrame": 21290,
+            "words": 12,
+            "sceneIndex": 47,
+            "cueIndex": 0,
+            "sourceCueSha256": "b911f9a334cf21011d4ed9b6a523220558cca3439582fb5bcc099d4647a1700b"
+          },
+          {
+            "text": "Contar resultados no les asigna por sí solo el mismo peso; para pasar de estos recuentos a probabilidades haría falta especificar un mecanismo de selección.",
+            "start": 709.9666666666667,
+            "end": 720.7,
+            "startFrame": 21299,
+            "endFrame": 21621,
+            "words": 25,
+            "sceneIndex": 47,
+            "cueIndex": 1,
+            "sourceCueSha256": "a28f0b3407a58bc2f9343867e52c41ac470cc9eb92da10811a10ff24c0e890fc"
+          }
+        ]
+      },
+      {
+        "start": 721,
+        "end": 731.0333333333333,
+        "cues": [
+          {
+            "text": "Se usan todos, una vez cada uno.",
+            "start": 721,
+            "end": 724,
+            "startFrame": 21630,
+            "endFrame": 21720,
+            "words": 7,
+            "sceneIndex": 48,
+            "cueIndex": 0,
+            "sourceCueSha256": "1c769e7e8832822af32998fcdc51cd97faad9235136dd0aadcd0b23afc1fd5f3"
+          },
+          {
+            "text": "Queda una opción menos tras cada posición; el producto de esas opciones es el factorial.",
+            "start": 724.3,
+            "end": 730.7333333333333,
+            "startFrame": 21729,
+            "endFrame": 21922,
+            "words": 15,
+            "sceneIndex": 48,
+            "cueIndex": 1,
+            "sourceCueSha256": "324dbeb676d0609f7a778dacb5a02f54cbcc1efc2a583abaf760ba32b23bf754"
+          }
+        ]
+      },
+      {
+        "start": 731.0333333333333,
+        "end": 758.7333333333333,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 731.0333333333333,
+            "end": 734.0333333333333,
+            "startFrame": 21931,
+            "endFrame": 22021,
+            "words": 7,
+            "sceneIndex": 49,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿De cuántas maneras se pueden ordenar todos los ene aislados distintos?",
+            "start": 734.3333333333334,
+            "end": 739.0666666666667,
+            "startFrame": 22030,
+            "endFrame": 22172,
+            "words": 11,
+            "sceneIndex": 49,
+            "cueIndex": 1,
+            "sourceCueSha256": "ba6d6793cdf9ce3836985967785b6a8c970a45eea6d24bc574bd0d4a6275ed93"
+          },
+          {
+            "text": "Antes de contar decidimos si importan las posiciones y si hay reemplazo.",
+            "start": 739.3666666666667,
+            "end": 744.5333333333333,
+            "startFrame": 22181,
+            "endFrame": 22336,
+            "words": 12,
+            "sceneIndex": 49,
+            "cueIndex": 2,
+            "sourceCueSha256": "c4906927807c4a6a0a520d6ecdc9748602a8618c06e2ddf7ecd814400efcefcc"
+          },
+          {
+            "text": "Multiplicar opciones cuenta secuencias; dividir por las reordenaciones de los elementos seleccionados elimina únicamente el orden que el experimento no distingue.",
+            "start": 744.8333333333334,
+            "end": 753.8333333333334,
+            "startFrame": 22345,
+            "endFrame": 22615,
+            "words": 21,
+            "sceneIndex": 49,
+            "cueIndex": 3,
+            "sourceCueSha256": "c5b89be4338e3c67d4088df773f685be068f097388b6f2077378d71fc923ca35"
+          },
+          {
+            "text": "Para este apartado: Se usan todos, una vez cada uno.",
+            "start": 754.1333333333333,
+            "end": 758.4333333333333,
+            "startFrame": 22624,
+            "endFrame": 22753,
+            "words": 10,
+            "sceneIndex": 49,
+            "cueIndex": 4,
+            "sourceCueSha256": "2dd2db02f1bb345a7e2a722dded1792c15c04e72687fcfc405e4e564b77b7a1d"
+          }
+        ]
+      },
+      {
+        "start": 758.7333333333333,
+        "end": 766.6333333333333,
+        "cues": [
+          {
+            "text": "Agotar las opciones.",
+            "start": 758.7333333333333,
+            "end": 760.0333333333333,
+            "startFrame": 22762,
+            "endFrame": 22801,
+            "words": 3,
+            "sceneIndex": 50,
+            "cueIndex": 0,
+            "sourceCueSha256": "3ba9becaa2ad20d83002331acdb70e0366469e4e235b477ba4af6baba740cdcb"
+          },
+          {
+            "text": "Hay 7 opciones al principio y una menos en cada posición, hasta quedar una.",
+            "start": 760.3333333333334,
+            "end": 766.3333333333334,
+            "startFrame": 22810,
+            "endFrame": 22990,
+            "words": 14,
+            "sceneIndex": 50,
+            "cueIndex": 1,
+            "sourceCueSha256": "4b8cc7ead1c237c4a9f63dd1ed94062c7b5bcf18bb6dd234fbb3d0c808d7bfe6"
+          }
+        ]
+      },
+      {
+        "start": 766.6333333333333,
+        "end": 773.3666666666667,
+        "cues": [
+          {
+            "text": "Evaluar el factorial. 7 factorial igual a 5040. pe subíndice ene igual a ene factorial.",
+            "start": 766.6333333333333,
+            "end": 773.0666666666667,
+            "startFrame": 22999,
+            "endFrame": 23192,
+            "words": 15,
+            "sceneIndex": 51,
+            "cueIndex": 0,
+            "sourceCueSha256": "cc25162b1f04ebaa7272b18f266639cba07ffaa0871b10f666d5b5c05cc54ca1"
+          }
+        ]
+      },
+      {
+        "start": 773.3666666666667,
+        "end": 789.2,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 773.3666666666667,
+            "end": 774.6666666666666,
+            "startFrame": 23201,
+            "endFrame": 23240,
+            "words": 3,
+            "sceneIndex": 52,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 5040 ordenaciones.",
+            "start": 774.9666666666667,
+            "end": 777.1333333333333,
+            "startFrame": 23249,
+            "endFrame": 23314,
+            "words": 5,
+            "sceneIndex": 52,
+            "cueIndex": 1,
+            "sourceCueSha256": "c33b171701e38903646f88295ba837e87574d08f093c68285484fed6cb437bb6"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 777.4333333333333,
+            "end": 783.4333333333333,
+            "startFrame": 23323,
+            "endFrame": 23503,
+            "words": 14,
+            "sceneIndex": 52,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "Es el caso erre igual a ene de las variaciones sin repetición.",
+            "start": 783.7333333333333,
+            "end": 788.9,
+            "startFrame": 23512,
+            "endFrame": 23667,
+            "words": 12,
+            "sceneIndex": 52,
+            "cueIndex": 3,
+            "sourceCueSha256": "7c3015b8d57cf4fca1c61e796be8a7062da882bc7a943430622ca412b136eba0"
+          }
+        ]
+      },
+      {
+        "start": 789.2,
+        "end": 797.1333333333333,
+        "cues": [
+          {
+            "text": "El resultado es 5040 ordenaciones.",
+            "start": 789.2,
+            "end": 791.3666666666667,
+            "startFrame": 23676,
+            "endFrame": 23741,
+            "words": 5,
+            "sceneIndex": 53,
+            "cueIndex": 0,
+            "sourceCueSha256": "89a15f91d4c055336b05a42603f3fba07cd24dbf75991a605223099917f51aa3"
+          },
+          {
+            "text": "Es el caso erre igual a ene de las variaciones sin repetición.",
+            "start": 791.6666666666666,
+            "end": 796.8333333333334,
+            "startFrame": 23750,
+            "endFrame": 23905,
+            "words": 12,
+            "sceneIndex": 53,
+            "cueIndex": 1,
+            "sourceCueSha256": "99d3d5ea128b8c5b872c4fcdcf2506f64e0b8856aa1cb495a44f91d96c63d40b"
+          }
+        ]
+      },
+      {
+        "start": 797.1333333333333,
+        "end": 808.8,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 797.1333333333333,
+            "end": 799.7333333333333,
+            "startFrame": 23914,
+            "endFrame": 23992,
+            "words": 6,
+            "sceneIndex": 54,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuántas secuencias distintas se forman usando todas las etiquetas del otro lote?",
+            "start": 800.0333333333333,
+            "end": 805.2,
+            "startFrame": 24001,
+            "endFrame": 24156,
+            "words": 12,
+            "sceneIndex": 54,
+            "cueIndex": 1,
+            "sourceCueSha256": "232baeeffc343f3c6dc7c3fb02760f47cf41514f62847e220adf3fd4fed25b6e"
+          },
+          {
+            "text": "Queremos ordenar etiquetas que incluyen copias indistinguibles.",
+            "start": 805.5,
+            "end": 808.5,
+            "startFrame": 24165,
+            "endFrame": 24255,
+            "words": 7,
+            "sceneIndex": 54,
+            "cueIndex": 2,
+            "sourceCueSha256": "b1eb4ba2fc7167e1d6b25723b1a0993edc3e1496672b32a68df63516a6b76acd"
+          }
+        ]
+      },
+      {
+        "start": 808.8,
+        "end": 825.1666666666666,
+        "cues": [
+          {
+            "text": "Contar requiere decidir si el orden se distingue, si se permite repetir y si hay etiquetas idénticas.",
+            "start": 808.8,
+            "end": 816.1,
+            "startFrame": 24264,
+            "endFrame": 24483,
+            "words": 17,
+            "sceneIndex": 55,
+            "cueIndex": 0,
+            "sourceCueSha256": "ab3e5d097f823048481040aef598578d18d371d464ce787246f438dad810a0c8"
+          },
+          {
+            "text": "El producto cuenta decisiones sucesivas.",
+            "start": 816.4,
+            "end": 818.5666666666667,
+            "startFrame": 24492,
+            "endFrame": 24557,
+            "words": 5,
+            "sceneIndex": 55,
+            "cueIndex": 1,
+            "sourceCueSha256": "d5a2deedeba2baa2b143d3b2ea98e849565971b7583e4bace96016c67ebc86f0"
+          },
+          {
+            "text": "Dividir por factoriales elimina solo reordenaciones que el experimento considera indistinguibles, no elecciones distintas.",
+            "start": 818.8666666666667,
+            "end": 824.8666666666667,
+            "startFrame": 24566,
+            "endFrame": 24746,
+            "words": 14,
+            "sceneIndex": 55,
+            "cueIndex": 2,
+            "sourceCueSha256": "31c798f836702fa384bf89a6014f36e2c3c8731e23c0f2e47a444ec5c009e9db"
+          }
+        ]
+      },
+      {
+        "start": 825.1666666666666,
+        "end": 831.4666666666667,
+        "cues": [
+          {
+            "text": "Hay ene igual a 7 aislados distintos y se seleccionan erre igual a 3.",
+            "start": 825.1666666666666,
+            "end": 831.1666666666666,
+            "startFrame": 24755,
+            "endFrame": 24935,
+            "words": 14,
+            "sceneIndex": 56,
+            "cueIndex": 0,
+            "sourceCueSha256": "eeb6b70664b58a51d615fb56b67b09056405dc66fd80e0b03b996df565729cb5"
+          }
+        ]
+      },
+      {
+        "start": 831.4666666666667,
+        "end": 842.0666666666667,
+        "cues": [
+          {
+            "text": "En otro lote hay 8 etiquetas: 3 de especie A, 3 de be y 2 de ce; las de una misma especie son indistinguibles.",
+            "start": 831.4666666666667,
+            "end": 841.7666666666667,
+            "startFrame": 24944,
+            "endFrame": 25253,
+            "words": 24,
+            "sceneIndex": 57,
+            "cueIndex": 0,
+            "sourceCueSha256": "f7826fb210b02ebeb10f67eb7f14762a7a86c2202c7dba8b54f9281d31f0e9ef"
+          }
+        ]
+      },
+      {
+        "start": 842.0666666666667,
+        "end": 847.1,
+        "cues": [
+          {
+            "text": "Sin reemplazo no se puede seleccionar dos veces un mismo aislado.",
+            "start": 842.0666666666667,
+            "end": 846.8,
+            "startFrame": 25262,
+            "endFrame": 25404,
+            "words": 11,
+            "sceneIndex": 58,
+            "cueIndex": 0,
+            "sourceCueSha256": "38fc12c7f8bdf1394821dd233bdeb2846e9d367a91252fe7b0730dd5de150d06"
+          }
+        ]
+      },
+      {
+        "start": 847.1,
+        "end": 863.6,
+        "cues": [
+          {
+            "text": "El orden solo importa en posiciones etiquetadas; estos recuentos no presuponen equiprobabilidad.",
+            "start": 847.1,
+            "end": 852.2666666666667,
+            "startFrame": 25413,
+            "endFrame": 25568,
+            "words": 12,
+            "sceneIndex": 59,
+            "cueIndex": 0,
+            "sourceCueSha256": "b911f9a334cf21011d4ed9b6a523220558cca3439582fb5bcc099d4647a1700b"
+          },
+          {
+            "text": "Contar resultados no les asigna por sí solo el mismo peso; para pasar de estos recuentos a probabilidades haría falta especificar un mecanismo de selección.",
+            "start": 852.5666666666667,
+            "end": 863.3,
+            "startFrame": 25577,
+            "endFrame": 25899,
+            "words": 25,
+            "sceneIndex": 59,
+            "cueIndex": 1,
+            "sourceCueSha256": "a28f0b3407a58bc2f9343867e52c41ac470cc9eb92da10811a10ff24c0e890fc"
+          }
+        ]
+      },
+      {
+        "start": 863.6,
+        "end": 874.5333333333333,
+        "cues": [
+          {
+            "text": "Intercambiar etiquetas de la misma especie no crea una secuencia nueva.",
+            "start": 863.6,
+            "end": 868.3333333333334,
+            "startFrame": 25908,
+            "endFrame": 26050,
+            "words": 11,
+            "sceneIndex": 60,
+            "cueIndex": 0,
+            "sourceCueSha256": "bf3ea749a358364a61e7f15804c2ba0d94bdc3fe0fc5202773567a8c76088ca2"
+          },
+          {
+            "text": "El factorial total cuenta intercambios invisibles; dividimos por el factorial de cada multiplicidad.",
+            "start": 868.6333333333333,
+            "end": 874.2333333333333,
+            "startFrame": 26059,
+            "endFrame": 26227,
+            "words": 13,
+            "sceneIndex": 60,
+            "cueIndex": 1,
+            "sourceCueSha256": "d47ce0517095190086ce5db380c45a8da1623ea25618db241f6694fc0e11a2f2"
+          }
+        ]
+      },
+      {
+        "start": 874.5333333333333,
+        "end": 904.3666666666667,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 874.5333333333333,
+            "end": 877.5333333333333,
+            "startFrame": 26236,
+            "endFrame": 26326,
+            "words": 7,
+            "sceneIndex": 61,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuántas secuencias distintas se forman usando todas las etiquetas del otro lote?",
+            "start": 877.8333333333334,
+            "end": 883,
+            "startFrame": 26335,
+            "endFrame": 26490,
+            "words": 12,
+            "sceneIndex": 61,
+            "cueIndex": 1,
+            "sourceCueSha256": "0e439e99fd2b5788a1c4be42c4292fb65622f8730916060ca9bdf286a3368986"
+          },
+          {
+            "text": "Antes de contar decidimos si importan las posiciones y si hay reemplazo.",
+            "start": 883.3,
+            "end": 888.4666666666667,
+            "startFrame": 26499,
+            "endFrame": 26654,
+            "words": 12,
+            "sceneIndex": 61,
+            "cueIndex": 2,
+            "sourceCueSha256": "dc31e15a2867af6fc600915f9c7e3864a2b3dcd6a88dec5c08df859c3c4ae870"
+          },
+          {
+            "text": "Multiplicar opciones cuenta secuencias; dividir por las reordenaciones de los elementos seleccionados elimina únicamente el orden que el experimento no distingue.",
+            "start": 888.7666666666667,
+            "end": 897.7666666666667,
+            "startFrame": 26663,
+            "endFrame": 26933,
+            "words": 21,
+            "sceneIndex": 61,
+            "cueIndex": 3,
+            "sourceCueSha256": "e934da155d64d5080599f594d1b422278ff0a165598ab033366dbcb86aa04655"
+          },
+          {
+            "text": "Para este apartado: Intercambiar etiquetas de la misma especie no crea una secuencia nueva.",
+            "start": 898.0666666666667,
+            "end": 904.0666666666667,
+            "startFrame": 26942,
+            "endFrame": 27122,
+            "words": 14,
+            "sceneIndex": 61,
+            "cueIndex": 4,
+            "sourceCueSha256": "238af95b0adbf70b9c893143e8951d8c8b54385a1d8893f1f9f50980eaa1a1a1"
+          }
+        ]
+      },
+      {
+        "start": 904.3666666666667,
+        "end": 909.7333333333333,
+        "cues": [
+          {
+            "text": "Contar como si todas fueran distintas.",
+            "start": 904.3666666666667,
+            "end": 906.9666666666667,
+            "startFrame": 27131,
+            "endFrame": 27209,
+            "words": 6,
+            "sceneIndex": 62,
+            "cueIndex": 0,
+            "sourceCueSha256": "3e26b6bc042c545d24f184e788aae4e60e8d51189f217a2fc3a6c25e0967fbae"
+          },
+          {
+            "text": "Inicialmente habría 8 factorial ordenaciones.",
+            "start": 907.2666666666667,
+            "end": 909.4333333333333,
+            "startFrame": 27218,
+            "endFrame": 27283,
+            "words": 5,
+            "sceneIndex": 62,
+            "cueIndex": 1,
+            "sourceCueSha256": "39a8dd8d4e9453c25b26ca5636319487f14b3b6e8a840b4e595bd97c736fbc3a"
+          }
+        ]
+      },
+      {
+        "start": 909.7333333333333,
+        "end": 917.6333333333333,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 909.7333333333333,
+            "end": 913.1666666666666,
+            "startFrame": 27292,
+            "endFrame": 27395,
+            "words": 8,
+            "sceneIndex": 63,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 913.4666666666667,
+            "end": 917.3333333333334,
+            "startFrame": 27404,
+            "endFrame": 27520,
+            "words": 9,
+            "sceneIndex": 63,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 917.6333333333333,
+        "end": 937.1333333333333,
+        "cues": [
+          {
+            "text": "Quitar duplicaciones internas.",
+            "start": 917.6333333333333,
+            "end": 918.9333333333333,
+            "startFrame": 27529,
+            "endFrame": 27568,
+            "words": 3,
+            "sceneIndex": 64,
+            "cueIndex": 0,
+            "sourceCueSha256": "4d0dc05d6473367072b23229e9ae49b8854b40dd2f799fc21a2c5c2884d121be"
+          },
+          {
+            "text": "Dividimos por 3 factorial por 3 factorial por 2 factorial : resultado 560. abre paréntesis, eme factorial , cierra paréntesis dividido entre abre paréntesis, eme subíndice A factorial por eme subíndice be factorial por eme subíndice ce factorial , cierra paréntesis.",
+            "start": 919.2333333333333,
+            "end": 936.8333333333334,
+            "startFrame": 27577,
+            "endFrame": 28105,
+            "words": 41,
+            "sceneIndex": 64,
+            "cueIndex": 1,
+            "sourceCueSha256": "9157080fca19f78ab43b67bfe1f8c59a5bd1f486e966c273e669b78f19b6d6ea"
+          }
+        ]
+      },
+      {
+        "start": 937.1333333333333,
+        "end": 952.5333333333333,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 937.1333333333333,
+            "end": 938.4333333333333,
+            "startFrame": 28114,
+            "endFrame": 28153,
+            "words": 3,
+            "sceneIndex": 65,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 560 secuencias.",
+            "start": 938.7333333333333,
+            "end": 940.9,
+            "startFrame": 28162,
+            "endFrame": 28227,
+            "words": 5,
+            "sceneIndex": 65,
+            "cueIndex": 1,
+            "sourceCueSha256": "2f19441dbe2ba145f3e5cc2f9455e5c73e5d4429916f96b29b53f5c1ad7d4ffb"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 941.2,
+            "end": 947.2,
+            "startFrame": 28236,
+            "endFrame": 28416,
+            "words": 14,
+            "sceneIndex": 65,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "Las multiplicidades fijan cuántas veces aparece cada especie, no una probabilidad.",
+            "start": 947.5,
+            "end": 952.2333333333333,
+            "startFrame": 28425,
+            "endFrame": 28567,
+            "words": 11,
+            "sceneIndex": 65,
+            "cueIndex": 3,
+            "sourceCueSha256": "cc4e01da5669b3392f59eec347acda55eba9263d03f64e93810f2b16118d2f58"
+          }
+        ]
+      },
+      {
+        "start": 952.5333333333333,
+        "end": 960.0333333333333,
+        "cues": [
+          {
+            "text": "El resultado es 560 secuencias.",
+            "start": 952.5333333333333,
+            "end": 954.7,
+            "startFrame": 28576,
+            "endFrame": 28641,
+            "words": 5,
+            "sceneIndex": 66,
+            "cueIndex": 0,
+            "sourceCueSha256": "13d4bd0b1239889662ac498d133c11e1ff4ffd66ec038ff2c422272b431d0f9b"
+          },
+          {
+            "text": "Las multiplicidades fijan cuántas veces aparece cada especie, no una probabilidad.",
+            "start": 955,
+            "end": 959.7333333333333,
+            "startFrame": 28650,
+            "endFrame": 28792,
+            "words": 11,
+            "sceneIndex": 66,
+            "cueIndex": 1,
+            "sourceCueSha256": "d5598549e0106a4bada59fbf1f865dce6d6dfa5da60b90465f42951b3a0be7f6"
+          }
+        ]
+      },
+      {
+        "start": 960.0333333333333,
+        "end": 1010,
+        "cues": [
+          {
+            "text": "Ordenar r elementos de n sin repetición o con repetición produce recuentos distintos.",
+            "start": 960.0333333333333,
+            "end": 965.6333333333333,
+            "startFrame": 28801,
+            "endFrame": 28969,
+            "words": 13,
+            "sceneIndex": 67,
+            "cueIndex": 0,
+            "sourceCueSha256": "1c233a68e0f3cc8d7c808cd6829f9badce4344e22d4b4b14a6f6e52ba04af294"
+          },
+          {
+            "text": "La primera expresión cuenta selecciones sin orden; la segunda, ordenaciones con multiplicidades fijas.",
+            "start": 965.9333333333333,
+            "end": 971.5333333333333,
+            "startFrame": 28978,
+            "endFrame": 29146,
+            "words": 13,
+            "sceneIndex": 67,
+            "cueIndex": 1,
+            "sourceCueSha256": "aa5286152b6e6ae98edbb55848c258efcaf6edb0e3f11331ee32722a5a45b9cf"
+          },
+          {
+            "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+            "start": 971.8333333333334,
+            "end": 975.7,
+            "startFrame": 29155,
+            "endFrame": 29271,
+            "words": 9,
+            "sceneIndex": 67,
+            "cueIndex": 2,
+            "sourceCueSha256": "ac9ed232d51eb831d85e45096ef4863b88e88ff9f68cf62ba98a784cfb91e355"
+          },
+          {
+            "text": "¿Cuántos pares sin orden se pueden elegir de cuatro muestras distintas?",
+            "start": 976,
+            "end": 980.7333333333333,
+            "startFrame": 29280,
+            "endFrame": 29422,
+            "words": 11,
+            "sceneIndex": 67,
+            "cueIndex": 3,
+            "sourceCueSha256": "4ea91a441b727027e83e56476d0a28ac2abba6eb91ff077918a3e789f2c6faa7"
+          },
+          {
+            "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+            "start": 981.0333333333333,
+            "end": 984.9,
+            "startFrame": 29431,
+            "endFrame": 29547,
+            "words": 9,
+            "sceneIndex": 67,
+            "cueIndex": 4,
+            "sourceCueSha256": "c745c8f392e98f8d9c167593a4bad513dec13605ccc402b6ac8f30dd51b6e524"
+          },
+          {
+            "text": "Hay doce pares ordenados, pero cada pareja aparece en dos órdenes; quedan seis combinaciones.",
+            "start": 985.2,
+            "end": 991.2,
+            "startFrame": 29556,
+            "endFrame": 29736,
+            "words": 14,
+            "sceneIndex": 67,
+            "cueIndex": 5,
+            "sourceCueSha256": "e8da27243fb59a8c799f0f35025c98f38bb3b232f74d8cbfb75efaef9452ebbc"
+          },
+          {
+            "text": "Para revisar el próximo problema, evita este error: Dividir por un factorial cuando las posiciones sí están etiquetadas.",
+            "start": 991.5,
+            "end": 999.2333333333333,
+            "startFrame": 29745,
+            "endFrame": 29977,
+            "words": 18,
+            "sceneIndex": 67,
+            "cueIndex": 6,
+            "sourceCueSha256": "7bdf6256d628b13ce58ff466335007efbc81d04de732ad43e54aacbdb3bb0d0b"
+          },
+          {
+            "text": "Intercambiar dos posiciones etiquetadas cambia la asignación.",
+            "start": 999.5333333333333,
+            "end": 1002.5333333333333,
+            "startFrame": 29986,
+            "endFrame": 30076,
+            "words": 7,
+            "sceneIndex": 67,
+            "cueIndex": 7,
+            "sourceCueSha256": "f502415a9ff18adf6a4fa7fc27536fefa9b82383d1cb0e61e01f3fd448baa5e5"
+          },
+          {
+            "text": "Dividir por un factorial solo es correcto cuando esas permutaciones representan el mismo resultado del experimento.",
+            "start": 1002.8333333333334,
+            "end": 1009.7,
+            "startFrame": 30085,
+            "endFrame": 30291,
+            "words": 16,
+            "sceneIndex": 67,
+            "cueIndex": 8,
+            "sourceCueSha256": "9700149e9f2d740374106fd8edc3b80c03d2ae3bb910cfb51e91854984fe1c23"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
