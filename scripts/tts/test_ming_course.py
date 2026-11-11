@@ -99,7 +99,14 @@ class RuntimeTests(unittest.TestCase):
         original = json.dumps({"items": items, "sourceFiles": {}, "inputSha256": "inputs", "sourceRevision": "revision"}).encode()
         self.items = items
         self.selection = ming.select_snapshot(original, {"catalogueSha256": ming.sha256(original), "items": {}})
-        self.selection.update(seed=42, runtimeFiles={}, helperSha256="fixture", origin=str(self.batch), originFiles={})
+        self.origin = self.batch.parent / "origin"
+        self.origin.mkdir()
+        (self.origin / "catalogue.json").write_bytes(original)
+        self.origin_progress = {"version": 1, "catalogueSha256": ming.sha256(original), "items": {}}
+        ming.write_json(self.origin / "progress.json", self.origin_progress)
+        sf.write(self.origin / "audio.wav", np.full(4410, 0.1, dtype=np.float32), 24000, subtype="PCM_16")
+        self.selection.update(seed=42, runtimeFiles={}, helperSha256="fixture", origin=str(self.origin),
+                      originFiles={path.name: ming.file_hash(path) for path in self.origin.iterdir()})
         (self.batch / "catalogue.json").write_bytes(original)
         ming.write_json(self.batch / "selection.json", self.selection)
         ming.write_json(self.batch / "progress.json", {**ming.IDENTITY, "selectionSha256": ming.file_hash(self.batch / "selection.json"),
@@ -202,6 +209,37 @@ class RuntimeTests(unittest.TestCase):
         ming.write_json(self.batch / "selection.json", selection)
         with self.assertRaisesRegex(ValueError, "checksum"):
             ming.load_batch(self.batch)
+
+    def test_origin_progress_can_advance_without_rewriting_selection(self):
+        self.run_batch(max_new_cues=1)
+        selection_bytes = (self.batch / "selection.json").read_bytes()
+        checkpoint_bytes = (self.batch / "progress.json").read_bytes()
+        progress = copy.deepcopy(self.origin_progress)
+        progress.update(updatedAt=1000, items={self.items[0]["id"]: {"status": "partial"}})
+        ming.write_json(self.origin / "progress.json", progress)
+        ming.verify_batch(self.batch)
+        self.assertEqual((self.batch / "selection.json").read_bytes(), selection_bytes)
+        self.assertEqual((self.batch / "progress.json").read_bytes(), checkpoint_bytes)
+
+    def test_origin_progress_rejects_changed_identity_and_unknown_items(self):
+        self.run_batch(max_new_cues=1)
+        for changed in ({"catalogueSha256": "changed"}, {"version": 2}, {"items": []},
+                        {"items": {"unknown-item": {"status": "complete"}}}):
+            with self.subTest(changed=changed):
+                ming.write_json(self.origin / "progress.json", {**self.origin_progress, **changed})
+                with self.assertRaisesRegex(ValueError, "progress"):
+                    ming.verify_batch(self.batch)
+
+    def test_original_catalogue_and_audio_corruption_still_rejected(self):
+        self.run_batch(max_new_cues=1)
+        for name in ("catalogue.json", "audio.wav"):
+            with self.subTest(name=name):
+                path = self.origin / name
+                original = path.read_bytes()
+                path.write_bytes(original + b"corrupt")
+                with self.assertRaisesRegex(ValueError, "Original Gemini artifact changed"):
+                    ming.verify_batch(self.batch)
+                path.write_bytes(original)
 
     def test_corrupt_completed_mp3_never_regenerated(self):
         self.run_batch(ids=[self.items[0]["id"]])

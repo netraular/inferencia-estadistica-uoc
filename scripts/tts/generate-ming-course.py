@@ -546,6 +546,14 @@ def verify_batch(batch):
     catalogue, selection, state = load_batch(batch)
     origin = Path(selection["origin"])
     for relative, expected_hash in selection["originFiles"].items():
+        if relative == "progress.json":
+            progress = read_json(origin / relative)
+            if (not isinstance(progress, dict) or progress.get("version") != selection["version"]
+                    or progress.get("catalogueSha256") != selection["catalogueSha256"]
+                    or not isinstance(progress.get("items"), dict)
+                    or not set(progress["items"]).issubset({item["id"] for item in catalogue["items"]})):
+                raise ValueError("Original Gemini progress identity/items changed")
+            continue
         if file_hash(origin / relative) != expected_hash:
             raise ValueError(f"Original Gemini artifact changed: {relative}")
     reference = batch / "voice-reference.wav"

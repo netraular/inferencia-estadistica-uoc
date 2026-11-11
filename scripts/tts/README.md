@@ -26,7 +26,7 @@ BATCH=/home/aquiluer/Scripts/TTS/outputs/ming-temporary-course-2026-11-10-v1
 ```
 
 This batch is already prepared and actively generating under
-`inferencia-ming-temporary-v1.service`. Do not launch a second model or acquire
+`inferencia-ming-temporary-20261111.service`. Do not launch a second model or acquire
 its output while that service is active. The generator verifies runtime,
 weights, reference and exact text signatures, reuses valid fragments and
 requires one exclusive GPU lock. It loads the model once, uses CUDA with two
@@ -63,8 +63,8 @@ and cannot be published as final audio-aligned videos.
 Inspect or resume an existing failed transient unit:
 
 ```sh
-systemctl --user show inferencia-ming-temporary-v1.service --property=ActiveState --property=SubState --property=MainPID --property=ExecMainStatus
-systemctl --user restart inferencia-ming-temporary-v1.service
+systemctl --user show inferencia-ming-temporary-20261111.service --property=ActiveState --property=SubState --property=MainPID --property=ExecMainStatus
+systemctl --user restart inferencia-ming-temporary-20261111.service
 ```
 
 Keep WSL running. Terminal closure does not stop the job; reboot removes the
@@ -72,7 +72,7 @@ transient unit. After reboot, or when no unit exists, start the same frozen
 batch again rather than preparing another one:
 
 ```sh
-systemd-run --user --unit=inferencia-ming-temporary-v1 \
+systemd-run --user --unit=inferencia-ming-temporary-20261111 \
   --property=WorkingDirectory=/home/aquiluer/Scripts/inferencia-estadistica-uoc \
   --property=StandardOutput=append:"$BATCH/generation.log" \
   --property=StandardError=append:"$BATCH/generation.log" \
@@ -81,9 +81,14 @@ systemd-run --user --unit=inferencia-ming-temporary-v1 \
 
 The file lock is an OS lock with its owner recorded in the batch; do not remove
 a live owner's files. A restart validates all cached PCM before synthesis.
-The stricter `--verify` mode also compares all original Gemini artifacts with
-their initial hashes; use it for the original preservation audit, not for
-publishing while a new fragment is being written or Gemini is being resumed.
+The stricter `--verify` mode also compares the original Gemini catalogue,
+recordings and other immutable artifacts with their initial hashes. The origin
+`progress.json` is mutable: its version, catalogue hash and item IDs must still
+match, but legitimate progress updates do not invalidate Ming. The saved
+selection and local checkpoints are never rewritten to accept a new hash.
+Run this preservation audit with synthesis paused or stopped, so a fragment
+cannot be read between its WAV and metadata writes. Normal resume and publishing
+remain independent of the original online progress.
 
 ```sh
 "$PYTHON" -m unittest discover -s scripts/tts -p 'test_*.py'
