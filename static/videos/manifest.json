@@ -30936,6 +30936,323 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "varianza--segundo-momento": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "varianza--segundo-momento",
+      "kind": "section",
+      "title": "Calcular con momentos finitos",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "af8833a54ffd54ab5fde57b15d552dea3faad8753a17288bba163282902aff58",
+      "src": "videos/varianza--segundo-momento/video.mp4",
+      "poster": "videos/varianza--segundo-momento/poster.jpg",
+      "duration": 120.8,
+      "frames": 3624,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "fefd34599ac070d9f499d58407b20a6a706104acb019936e6812e012101ddc16",
+      "videoSha256": "3d6d121adaecd84c9a41205215f213bd3c23543ec8138c4519c55e743c5cdbda",
+      "posterSha256": "377e74986138c2ea6920024207a51e0a474aac302f72a0c6168694d68d5b080d",
+      "canonicalSha256": "474b8ae75189422529ba742964c7aa9b9525246194cc290abce05063cf6d29b2",
+      "inputHash": "9dc215a3ed96e3da2f1194aac74823a00e7a0fffcb53e9239a79269151d00d39",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "feafc1d47cbe3381c28d5e0387273734a19bd0480a3e013efa8ccdd6856a16c5",
+        "canonicalSha256": "474b8ae75189422529ba742964c7aa9b9525246194cc290abce05063cf6d29b2",
+        "source": {
+          "document": "FundamentosInferencia_Tema2.pdf",
+          "section": "2.12, 2.12.1 y 2.15.12: varianza y propiedades"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "1e43363845778b43032d3fd9edca4610802a2e1d616f57653cbae824b7c8e382",
+        "transcriptSha256": "fefd34599ac070d9f499d58407b20a6a706104acb019936e6812e012101ddc16",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "varianza",
+      "transcript": {
+        "id": "varianza--segundo-momento",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "474b8ae75189422529ba742964c7aa9b9525246194cc290abce05063cf6d29b2",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 120.8,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 120.8,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Calculemos la misma dispersión de cero, uno y dos por otro camino.",
+                "start": 1.5,
+                "end": 6.666666666666667,
+                "startFrame": 45,
+                "endFrame": 200,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "502775ed191cc6368eebc9d5666bf70a6e4ecabf44bcd3f20c862015f46c6597"
+              },
+              {
+                "text": "En vez de centrar cada valor, promediaremos sus cuadrados originales y después retiraremos la contribución del centro.",
+                "start": 6.966666666666667,
+                "end": 14.266666666666667,
+                "startFrame": 209,
+                "endFrame": 428,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "085bbbc7eca9f17aeb353a8809fcb0e16f168be7cbb62ffb2dfe81351bc55e65"
+              },
+              {
+                "text": "Para manejar esta resta como números finitos necesitamos un segundo momento finito, que aquí está garantizado por el soporte acotado.",
+                "start": 14.566666666666666,
+                "end": 23.166666666666668,
+                "startFrame": 437,
+                "endFrame": 695,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "0a14c93a5a7235a8dbc004478f212e64d14f294607606f93146053633b8c2112"
+              },
+              {
+                "text": "Los cuadrados originales son cero, uno y cuatro.",
+                "start": 23.466666666666665,
+                "end": 26.9,
+                "startFrame": 704,
+                "endFrame": 807,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "89a32c6cb5f9a33a1ef4b55700103d851b055c756d7d24f81e04a700ac943629"
+              },
+              {
+                "text": "Conservamos las masas un cuarto, una mitad y un cuarto: cero aporta cero, uno aporta una mitad y cuatro aporta uno.",
+                "start": 27.2,
+                "end": 36.2,
+                "startFrame": 816,
+                "endFrame": 1086,
+                "words": 21,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "8c10b7c9fc4c1d70aff4ce5854f80b961e4d87e10b8ad6828de1ae8ab55efd92"
+              },
+              {
+                "text": "El total uno coma cinco es esperanza del cuadrado, también llamada segundo momento ordinario.",
+                "start": 36.5,
+                "end": 42.5,
+                "startFrame": 1095,
+                "endFrame": 1275,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "07e0e4f433acda6cd5635dff7c3056d808e2704dd6d3dc8b72791b50dcc94079"
+              },
+              {
+                "text": "Por separado, la media original es uno y su cuadrado también uno.",
+                "start": 42.8,
+                "end": 47.96666666666667,
+                "startFrame": 1284,
+                "endFrame": 1439,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "8decf021faa7e50a67ada539b25486c2818bcab7e6b9dedfc5bc053e0f51f72c"
+              },
+              {
+                "text": "Fíjate en los paréntesis: cuadrado de la esperanza significa promediar primero y elevar después.",
+                "start": 48.266666666666666,
+                "end": 54.266666666666666,
+                "startFrame": 1448,
+                "endFrame": 1628,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "b487fc803becc0db4335ae1ea4ed0e6b1212631f5c43149706ca4e8abc9d47c6"
+              },
+              {
+                "text": "No es el uno coma cinco que obtuvimos elevando cada valor antes de promediar.",
+                "start": 54.56666666666667,
+                "end": 60.56666666666667,
+                "startFrame": 1637,
+                "endFrame": 1817,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "64d74f94c7482695cbab2ed3339e764dceb0491f196655870677e6c4055c80d2"
+              },
+              {
+                "text": "Restamos uno a uno coma cinco y queda una mitad, igual que con las distancias centradas.",
+                "start": 60.86666666666667,
+                "end": 67.73333333333333,
+                "startFrame": 1826,
+                "endFrame": 2032,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "35a88fdd4d7ac507254ecb0c21363e884015c6b6d571c3bf7e32a57bbbb05e7d"
+              },
+              {
+                "text": "Retiramos el cuadrado de la media porque el segundo momento original incluye tanto la posición del centro como la variación alrededor de él.",
+                "start": 68.03333333333333,
+                "end": 77.9,
+                "startFrame": 2041,
+                "endFrame": 2337,
+                "words": 23,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "8bea22e59411f7f737643f7eb070da64b2ef1b8d88fe0edf6c7378c35044d94c"
+              },
+              {
+                "text": "La identidad general es varianza igual a esperanza del cuadrado menos cuadrado de la esperanza.",
+                "start": 78.2,
+                "end": 84.63333333333334,
+                "startFrame": 2346,
+                "endFrame": 2539,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "b512829a813d8a6b497aadd164592f17e5dec71b300a6e9807b26d6134d8ae78"
+              },
+              {
+                "text": "Sale al desarrollar el cuadrado de equis menos su media y aplicar linealidad: los términos del centro se combinan y dejan esta resta.",
+                "start": 84.93333333333334,
+                "end": 94.8,
+                "startFrame": 2548,
+                "endFrame": 2844,
+                "words": 23,
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "sourceCueSha256": "d5deeedad00d508366ac0728ae43771337c1470461450114ea9671e4ea368a50"
+              },
+              {
+                "text": "No es una regla basada en independencia.",
+                "start": 95.1,
+                "end": 98.1,
+                "startFrame": 2853,
+                "endFrame": 2943,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 14,
+                "sourceCueSha256": "80906ff9745670ac008c2ea69d7fed3a2e51e162fcc5c464ab3e29082dfb2784"
+              },
+              {
+                "text": "El resultado nunca puede ser negativo porque equivale a promediar cuadrados no negativos.",
+                "start": 98.4,
+                "end": 104,
+                "startFrame": 2952,
+                "endFrame": 3120,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 15,
+                "sourceCueSha256": "8bac9088474c15a389c5125bab50b165dab73419b7de96b6164ad20b8727cdc4"
+              },
+              {
+                "text": "Si aparece un valor negativo revisamos pesos, fórmulas y precisión: restar números grandes casi iguales puede perder decimales.",
+                "start": 104.3,
+                "end": 112.03333333333333,
+                "startFrame": 3129,
+                "endFrame": 3361,
+                "words": 18,
+                "sceneIndex": 0,
+                "cueIndex": 16,
+                "sourceCueSha256": "2fcdb616467ec8a1f131a2278d5e9d5dfa225ea07a97eee721611f071be25117"
+              },
+              {
+                "text": "En esa situación el cálculo con desviaciones centradas suele ser más estable; no interpretamos el error como dispersión negativa.",
+                "start": 112.33333333333333,
+                "end": 120.5,
+                "startFrame": 3370,
+                "endFrame": 3615,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 17,
+                "sourceCueSha256": "26d824703f50d6298f694773532db80e749fe8435d8f0643c623faddfec7e403"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
