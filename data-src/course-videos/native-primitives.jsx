@@ -17,7 +17,7 @@ export class MathFormula extends React.Component {
   componentDidMount() {this.fit();}
 
   componentDidUpdate(previous) {
-    if (['tex', 'width', 'fontSize'].some(key => previous[key] !== this.props[key])) this.fit();
+    if (['tex', 'width', 'height', 'y', 'fontSize'].some(key => previous[key] !== this.props[key])) this.fit();
   }
 
   componentWillUnmount() {this.release?.();}
@@ -26,7 +26,7 @@ export class MathFormula extends React.Component {
     const {cancelRender, continueRender, delayRender} = require('remotion');
     this.release?.();
     const element = this.element;
-    const {fontSize = 28} = this.props;
+    const {fontSize = 28, y = 0, height = 480 - y} = this.props;
     const gate = delayRender('Fit native mathematical content');
     let active = true;
     this.release = () => {if (active) {active = false; continueRender(gate);}};
@@ -35,8 +35,9 @@ export class MathFormula extends React.Component {
     document.fonts.ready.then(() => {
       if (!active) return;
       const available = element.getBoundingClientRect().width;
-      const natural = element.firstElementChild.getBoundingClientRect().width;
-      if (natural > available) element.style.fontSize = `${fontSize * Math.max(0, available - 1) / natural}px`;
+      const natural = element.firstElementChild.getBoundingClientRect();
+      const scale = Math.min(1, Math.max(0, available - 1) / natural.width, Math.max(0, height - 1) / natural.height);
+      if (scale < 1) element.style.fontSize = `${fontSize * scale}px`;
       this.release();
     }).catch(error => {if (active) {this.release(); cancelRender(error);}});
   }

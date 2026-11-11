@@ -72,7 +72,7 @@ function AuthoredCurve({plot, phase}) {
 function Marker({at, height = 1, label, color = C.coral}) {
   return <g>
     <path data-native-mark data-native-bound d={`M${px(at)},${BASE}V${py(height)}`} stroke={color} strokeWidth="3" strokeDasharray="6 5" />
-    {label && <Label x={px(at)} y={BASE + 32} text={label} anchor="middle" width={160} color={color} />}
+    {label && <Label x={px(at) + 10} y={BASE - 14} text={label} width={160} color={color} />}
   </g>;
 }
 
@@ -293,8 +293,8 @@ function Inversion({phase, story, cueIndex, lines}) {
         <Label x={px(index / Math.max(1, entries.length - 1) * 0.8 + 0.1)} y={390} text={String(entry.value)} width={110} anchor="middle" />
       </g>;
     })}
-    <circle data-native-mark data-native-bound cx={px(value)} cy={mix(90, 120, phase)} r="10" fill={C.gold} />
-    {input && <Label x={px(value)} y={80} text={`U=${input.value}`} width={130} anchor="middle" color={C.gold} />}
+    <circle data-native-mark data-native-bound cx={px(value)} cy={mix(110, 120, phase)} r="10" fill={C.gold} />
+    {input && <Label x={px(value)} y={98} text={`U=${input.value}`} width={130} anchor="middle" color={C.gold} />}
     {input && <Label x={90} y={450} text={`Q(${input.value}) = ${input.output}`} width={640} />}
   </g>;
 }

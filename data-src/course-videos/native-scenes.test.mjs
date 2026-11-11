@@ -45,7 +45,7 @@ test('native audit rejects clipped text, overlapping labels and overflowing para
   assert.match(nativeLayoutErrors([{...first,x:1190}], []).join(' '), /outside native stage/);
 });
 
-test('real 720p failed recap frames retain geometry and fit their complete captions', {skip:!process.env.COURSE_VIDEO_REAL_STILLS}, async () => {
+test('real 720p failed frames retain geometry and fit their complete captions', {skip:!process.env.COURSE_VIDEO_REAL_STILLS}, async () => {
   assert.ok(process.env.COURSE_VIDEO_CATALOGUE);
   const catalogue = JSON.parse(fs.readFileSync(process.env.COURSE_VIDEO_CATALOGUE));
   const require = createRequire(import.meta.url);
@@ -56,19 +56,29 @@ test('real 720p failed recap frames retain geometry and fit their complete capti
   const publicDir = path.join(work, 'public');
   fs.mkdirSync(publicDir);
   for (const weight of [400, 700]) fs.copyFileSync(path.resolve(owned, `../../pages/inferencia/vendor/atkinson-latin-${weight}.woff2`), path.join(publicDir, `atkinson-latin-${weight}.woff2`));
+  const recorded = process.env.COURSE_VIDEO_FAILURE_PROGRESS ? Object.entries(JSON.parse(fs.readFileSync(process.env.COURSE_VIDEO_FAILURE_PROGRESS)).items)
+    .filter(([, item]) => item.state === 'failed').map(([id, item]) => {
+      const match = item.error.match(/(?:\/|Frame )(\d+):/);
+      assert.ok(match, `${id}: failure without a reproducible frame: ${item.error}`);
+      return [id, Number(match[1])];
+    }) : [];
   let browser;
   try {
     const serveUrl = await bundle({entryPoint:path.join(owned, 'NativeCourse.jsx'), outDir:path.join(work, 'bundle'), rootDir:owned, publicDir, enableCaching:false, gitSource:null});
     const ensured = await runtime.ensureBrowser();
     browser = await runtime.openBrowser('chrome', {browserExecutable:ensured.path, logLevel:'error'});
-    for (const [id, failedFrame] of [['algebra',12641], ['calculo',7198], ['axiomas',5168]]) {
+    for (const [id, failedFrame] of [['algebra',12641], ['calculo',7198], ['axiomas',5168],
+      ['independencia-sucesos--producto',596], ['multinomial--categorias-y-secuencias',2157], ['covarianza-matrices--matrices-admisibles',2713],
+      ['variable-cdf--escalones',18], ['densidad',20552], ['uniforme-montecarlo--inversion-y-montecarlo',872],
+      ['exponencial--escala-y-supervivencia',3736], ['calculo-modelos--operacion-correcta',3357],
+      ['calculo-modelos--consulta-con-unidades',3846], ['familia-exponencial--datos-fijos-y-maximo',4810], ...recorded]) {
       const item = catalogue.items.find(entry => entry.id === id);
       assert.ok(item);
       const storyboard = prepareTranscriptItem(item, TRANSCRIPT_TIMING, {native:true});
       storyboard.nativePlan = createNativePlan(item);
       const inputProps = {storyboard, audit:true};
       const composition = {id:'Course', width:1280, height:720, fps:30, durationInFrames:storyboard.frames, props:inputProps, defaultProps:{}};
-      for (const frame of [failedFrame, failedFrame-1, failedFrame+1]) {
+      for (const frame of [failedFrame, failedFrame-1, failedFrame+1].filter(frame => frame >= 0 && frame < storyboard.frames)) {
         const layouts = [];
         const still = path.join(work, `${id}-${frame}.png`);
         await runtime.renderStill({serveUrl, composition, inputProps, puppeteerInstance:browser, frame, output:still, imageFormat:'png', logLevel:'error', onBrowserLog:log => {

@@ -328,7 +328,7 @@ function Population({lines, progress, mode, cueIndex}) {
   const products = lines.filter(line=>line.tex && /\\cdot/.test(line.tex)).map(line=>numbers(line.tex)).filter(values=>values.length>=2 && values[0]>=0 && values[0]<=1 && values[1]>=0 && values[1]<=1);
   const factors = products.at(-1);
   return <g {...mark('conditional-area')}>
-    <rect {...bound} x={100} y={75} width={600} height={320} fill={PALETTE.soft} stroke={PALETTE.line}/>
+    <rect {...bound} x={100} y={75} width={600} height={320} fill={PALETTE.soft} stroke={PALETTE.muted} strokeWidth={3}/>
     {factors ? <><rect x={100} y={75} width={600*factors[0]} height={320} fill={PALETTE.green} opacity={.25}/><rect x={100} y={75} width={600*factors[0]} height={320*factors[1]*progress} fill={PALETTE.coral} opacity={.7}/>{label(String(factors[0]),100,435,160)}{label(String(factors[1]),710,160,100)}</> : <><path d={`M${mix(180,620,progress)} 75V395`} stroke={PALETTE.coral} strokeWidth={5}/>{label(mode === 'compare-conditional' ? 'A | B' : 'A',210,245,200)}{label('B',590,245,100)}</>}
   </g>;
 }
