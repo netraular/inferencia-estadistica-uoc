@@ -40273,6 +40273,312 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "hipergeometrica--sin-reemplazo": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "hipergeometrica--sin-reemplazo",
+      "kind": "section",
+      "title": "Contar muestras de un lote finito",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "b6561f0e3c00c6c4cbc1960caa5e160525870899f3fb209753cf24b3a411dd26",
+      "src": "videos/hipergeometrica--sin-reemplazo/video.mp4",
+      "poster": "videos/hipergeometrica--sin-reemplazo/poster.jpg",
+      "duration": 120.13333333333334,
+      "frames": 3604,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "c60ddd30f100f52d9dab441ad07bcf6a6f6265421f2a0d96e620c921360b90c0",
+      "videoSha256": "88c23bff0295a9b5158467296cb58cb1b5e1fb06f4967e0433a7f21aeac36b37",
+      "posterSha256": "d0a9c2e1960a65118ca7e1d8ddc2528bff7c2abf80b1152e8c60d4173f5f271b",
+      "canonicalSha256": "a0e94350a53ca76833e7d67b9f63ee4e9c6e1acb81f85b61f303e0fdd947b0b0",
+      "inputHash": "9e3dbab099f7b4dfbedbc6216eba56300b777ce430bfd691c7ec7f7dd1322130",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "72fde1c6b1edeba1f9a4f0de7c57da2a7ffb06db4ea06bd5d39d132efb6dfc2b",
+        "canonicalSha256": "a0e94350a53ca76833e7d67b9f63ee4e9c6e1acb81f85b61f303e0fdd947b0b0",
+        "source": {
+          "document": "FundamentosInferencia_Tema3.pdf",
+          "section": "3.1.5: modelo hipergeométrico; asociación con ejercicio 2.9"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "7ef30b817d4af8047b8a666c093d2e2aa9840d7d838c8d3cdd1aa3b5a9e5ab32",
+        "transcriptSha256": "c60ddd30f100f52d9dab441ad07bcf6a6f6265421f2a0d96e620c921360b90c0",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "hipergeometrica",
+      "transcript": {
+        "id": "hipergeometrica--sin-reemplazo",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "a0e94350a53ca76833e7d67b9f63ee4e9c6e1acb81f85b61f303e0fdd947b0b0",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 120.13333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 120.13333333333334,
+            "cues": [
+              {
+                "text": "Hola, elegimos tres semillas sin reemplazo de un lote de doce, con cuatro de la variedad de interés y ocho restantes: esos son los tamaños del diseño.",
+                "start": 0,
+                "end": 11.6,
+                "startFrame": 0,
+                "endFrame": 348,
+                "words": 27,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "bc94544eb410f8ad969c55f905f6e992947f1f023da252d1254b8a95d5204593"
+              },
+              {
+                "text": "Equis contará cuántas son de la variedad.",
+                "start": 11.9,
+                "end": 14.9,
+                "startFrame": 357,
+                "endFrame": 447,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "d58f7750b1289ed13ec3a4172621ff88a232f33e4169f8786af4deafbe9c41c1"
+              },
+              {
+                "text": "Como lo retirado ya no está disponible, debemos contar muestras de un conjunto finito, no repetir ensayos con composición inalterada.",
+                "start": 15.2,
+                "end": 23.8,
+                "startFrame": 456,
+                "endFrame": 714,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "2a481c56ababd15c7df24a1e5e681bdf34ea6c810413aeea82c03d2df50b93f6"
+              },
+              {
+                "text": "Ene mayúscula indica las doce semillas de la población, ka mayúscula las cuatro de interés y ene minúscula las tres plazas de la muestra.",
+                "start": 24.1,
+                "end": 34.4,
+                "startFrame": 723,
+                "endFrame": 1032,
+                "words": 24,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "6e995209fcf8bedc1564cfae02d1debd5a84155cd354d55f1981feb570eae684"
+              },
+              {
+                "text": "La hipergeométrica supone que todos los subconjuntos de tres semillas tienen la misma probabilidad.",
+                "start": 34.7,
+                "end": 40.7,
+                "startFrame": 1041,
+                "endFrame": 1221,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "def0d23ae0258af12465a248bca0909cee2b6ba30d8c948ebc917d71464ac569"
+              },
+              {
+                "text": "El orden de extracción no cambia qué muestra de tres hemos elegido.",
+                "start": 41,
+                "end": 46.166666666666664,
+                "startFrame": 1230,
+                "endFrame": 1385,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "452ea60569ce99031c082669df4e3953ce083338ebd1b1335f0ae84f7d854cd3"
+              },
+              {
+                "text": "Para obtener exactamente una semilla de interés, primero elegimos cuál de las cuatro será.",
+                "start": 46.46666666666667,
+                "end": 52.46666666666667,
+                "startFrame": 1394,
+                "endFrame": 1574,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "144ebdbc6972ff6c26a3da887fa07155864a2b4984ac5372511e074a7f9e22be"
+              },
+              {
+                "text": "La combinación cuatro sobre uno vale cuatro.",
+                "start": 52.766666666666666,
+                "end": 55.766666666666666,
+                "startFrame": 1583,
+                "endFrame": 1673,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "c98fe1383f3615d92c6f2c76cf74304e41e99c17e04406f7dcba80f6dec8d328"
+              },
+              {
+                "text": "Contamos semillas distintas aunque pertenezcan a la misma variedad: cada una puede formar muestras diferentes.",
+                "start": 56.06666666666667,
+                "end": 62.5,
+                "startFrame": 1682,
+                "endFrame": 1875,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "068dfeab1e8f27a4fae7eb88740b04cc120746d6fab2fe3b8a5bf4c2e7201c43"
+              },
+              {
+                "text": "Quedan dos plazas que deben proceder de las ocho semillas restantes; de otro modo dejaríamos de tener exactamente una de interés.",
+                "start": 62.8,
+                "end": 71.8,
+                "startFrame": 1884,
+                "endFrame": 2154,
+                "words": 21,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "fd50eb1dbb3fdeea10b45f14454c283bf4ca56c8527cb3a619e64722bc3b712f"
+              },
+              {
+                "text": "La combinación ocho sobre dos cuenta las parejas sin duplicarlas por cambiar su orden: ocho por siete dividido entre dos da veintiocho.",
+                "start": 72.1,
+                "end": 81.53333333333333,
+                "startFrame": 2163,
+                "endFrame": 2446,
+                "words": 22,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "976234d76a3015d9da27176bed05cade556620585a046e3839424da199063adf"
+              },
+              {
+                "text": "Cada una de las cuatro elecciones de interés puede acompañarse de cualquiera de las veintiocho parejas restantes.",
+                "start": 81.83333333333333,
+                "end": 89.13333333333334,
+                "startFrame": 2455,
+                "endFrame": 2674,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "4c56203e65b69b2978afcc6a7c85ceda26188d8d80896796455e317ba9011619"
+              },
+              {
+                "text": "Por esa regla del producto hay ciento doce muestras favorables.",
+                "start": 89.43333333333334,
+                "end": 93.73333333333333,
+                "startFrame": 2683,
+                "endFrame": 2812,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "a9b4554101e1b5b2e902b53386749666b942df06db27b7e17f122a5e28c254cf"
+              },
+              {
+                "text": "Esta multiplicación cuenta opciones compatibles; no supone independencia probabilística entre extracciones.",
+                "start": 94.03333333333333,
+                "end": 98.76666666666667,
+                "startFrame": 2821,
+                "endFrame": 2963,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "sourceCueSha256": "72a6f7c1ca8300dbe27fd6ccb7553e2d4b868b6112eb17fc3feb35632e437f24"
+              },
+              {
+                "text": "Todavía tenemos un número de muestras, no una probabilidad: falta compararlo con todas las muestras equiprobables.",
+                "start": 99.06666666666666,
+                "end": 105.93333333333334,
+                "startFrame": 2972,
+                "endFrame": 3178,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 14,
+                "sourceCueSha256": "239f5239821f324145789480b6c1a38c7c0d086a63686b09986b64fc684eb644"
+              },
+              {
+                "text": "Mezclar bien el lote puede justificar esa equiprobabilidad, pero no vuelve independientes las extracciones.",
+                "start": 106.23333333333333,
+                "end": 112.23333333333333,
+                "startFrame": 3187,
+                "endFrame": 3367,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 15,
+                "sourceCueSha256": "787a22e51e1025b87a7be1767974b902d5cce5981e23f712d2c9cea0097f60a9"
+              },
+              {
+                "text": "Si retiramos una semilla de interés quedan tres de once; si retiramos otra, quedan cuatro de once.",
+                "start": 112.53333333333333,
+                "end": 119.83333333333333,
+                "startFrame": 3376,
+                "endFrame": 3595,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 16,
+                "sourceCueSha256": "07dbe9c19624935c5eb716165241c58e7e7f099300924ce1883cf758f808e5c5"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
