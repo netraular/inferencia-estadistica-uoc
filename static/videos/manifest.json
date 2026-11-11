@@ -103741,6 +103741,1472 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "multinomial": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "multinomial",
+      "kind": "recap",
+      "title": "Multinomial: varias categorías con total fijo",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "1e2496ebb33a16902a74be54d2a061213cdfafd79e6adeb8e742fdbb0e3778a9",
+      "src": "videos/multinomial/video.mp4",
+      "poster": "videos/multinomial/poster.jpg",
+      "duration": 734.3333333333334,
+      "frames": 22030,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "b74259b35314002454a2a71bdcf8903f966001d011e2f15acca8e125585b059a",
+      "videoSha256": "c1cc0fcfc78360f36ce2ba6eb20a625002ce66c6ca26426988b5ebe158b76da9",
+      "posterSha256": "b5f0a5004328bd27a223af8ce30299d821c4d2a0ec0c194b3d1af8058963333b",
+      "canonicalSha256": "6517aa9cb06ccbe2f6b0b46145556561545fea56445719b43f77bbe383a58853",
+      "inputHash": "2519dddd7c3f65a21901d860865c376888a5d8180cdc22a15b91d672db1e6918",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "ce26818336fdaabca91e33b4ae53da75874b0648fb2935cac16137239843cab8",
+        "canonicalSha256": "6517aa9cb06ccbe2f6b0b46145556561545fea56445719b43f77bbe383a58853",
+        "source": {
+          "document": "FundamentosInferencia_Tema4.pdf",
+          "section": "4.3 y 4.8.8: multinomial, trinomial y momentos; ejercicios U3 1, 3, 6 y 8"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "836910bc13f89624da00b7b20e9c896d91f5b2c9ab707ec215beb09a52aa1583",
+        "transcriptSha256": "b74259b35314002454a2a71bdcf8903f966001d011e2f15acca8e125585b059a",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "multinomial",
+      "transcript": {
+        "id": "multinomial",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "6517aa9cb06ccbe2f6b0b46145556561545fea56445719b43f77bbe383a58853",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 734.3333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 67.1,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Vamos a repartir un número fijo de observaciones entre varias categorías.",
+                "start": 1.5,
+                "end": 6.233333333333333,
+                "startFrame": 45,
+                "endFrame": 187,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "7a5a8c5db0fc98195451578a09b57bf2604762ab2345d6279af68511daddba44"
+              },
+              {
+                "text": "Clasificamos tres células como en reposo, activadas o dañadas: categorías excluyentes y exhaustivas.",
+                "start": 6.533333333333333,
+                "end": 12.133333333333333,
+                "startFrame": 196,
+                "endFrame": 364,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "aaedcc2715ff31eb8eb03d859a65598325fcf3d07dc17da5627a35948eb48128"
+              },
+              {
+                "text": "Suponemos independencia entre células y probabilidades comunes una mitad, un cuarto y un cuarto.",
+                "start": 12.433333333333334,
+                "end": 18.433333333333334,
+                "startFrame": 373,
+                "endFrame": 553,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "ed5d9b0fcac6138fa86330614b08673fef4cf2c6840b6523f15e67ca2f2c9f6e"
+              },
+              {
+                "text": "La masa multinomial multiplica el peso de una secuencia por cuántas secuencias producen los mismos recuentos.",
+                "start": 18.733333333333334,
+                "end": 25.6,
+                "startFrame": 562,
+                "endFrame": 768,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "2ea6115ff862225bd6a0a1d703fd5bff36c93fdd2281f154a88dd2803f88ec85"
+              },
+              {
+                "text": "El numerador factorial ordena todos los ensayos y los factoriales del denominador eliminan intercambios dentro de cada categoría.",
+                "start": 25.9,
+                "end": 33.63333333333333,
+                "startFrame": 777,
+                "endFrame": 1009,
+                "words": 18,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "379fcef2e2a95c4b3f714d41514cf85b26c77e7d8603e4766a87ca9be12d6b70"
+              },
+              {
+                "text": "Para una célula de cada categoría, un orden concreto pesa una mitad por un cuarto por un cuarto: un treintaidosavo.",
+                "start": 33.93333333333333,
+                "end": 42.53333333333333,
+                "startFrame": 1018,
+                "endFrame": 1276,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "0f243c4820b08a2e08bcb439eb0cdd0777949341dd485e0fad5ab9389e454d73"
+              },
+              {
+                "text": "Hay seis órdenes, porque tres factorial dividido entre tres factoriales de uno es seis.",
+                "start": 42.833333333333336,
+                "end": 48.833333333333336,
+                "startFrame": 1285,
+                "endFrame": 1465,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "dfa746d1ff7029dd861a7719cb62a2facf7acec6f1a58235f0422d9ea162203b"
+              },
+              {
+                "text": "Obtenemos tres dieciseisavos.",
+                "start": 49.13333333333333,
+                "end": 50.43333333333333,
+                "startFrame": 1474,
+                "endFrame": 1513,
+                "words": 3,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "32a73431c836ad2d06378df1651b152d300e1949a88c1eaa82bb9ba462cf51b5"
+              },
+              {
+                "text": "Los recuentos deben ser enteros no negativos y sumar tres.",
+                "start": 50.733333333333334,
+                "end": 55.03333333333333,
+                "startFrame": 1522,
+                "endFrame": 1651,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "141cbf52955ae6475bf844b4621f414c20ab267bc41b4c2345c629ac12d4760c"
+              },
+              {
+                "text": "Una terna como dos, dos, cero es imposible, aunque cada componente por separado parezca admisible.",
+                "start": 55.333333333333336,
+                "end": 61.766666666666666,
+                "startFrame": 1660,
+                "endFrame": 1853,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "085e1ac087e0ea6f40734be0dbce6b85c71496e2a311c0e30d48b8dbdb246727"
+              },
+              {
+                "text": "El soporte conjunto es parte del modelo, no una comprobación opcional.",
+                "start": 62.06666666666667,
+                "end": 66.8,
+                "startFrame": 1862,
+                "endFrame": 2004,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "25d44b4de984f3fc1c028fa53b09bbd94c997a190be13e5d032cc7994288330c"
+              }
+            ]
+          },
+          {
+            "start": 67.1,
+            "end": 136.93333333333334,
+            "cues": [
+              {
+                "text": "Si miramos solo activadas, las otras dos categorías se agrupan como no activada.",
+                "start": 67.1,
+                "end": 72.7,
+                "startFrame": 2013,
+                "endFrame": 2181,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "9e0ca598083e10f352e3c30a59f7dcff4764d2f06b118be391d06be5361a3b2d"
+              },
+              {
+                "text": "Cada célula aporta un indicador Bernoulli, así que el recuento marginal es binomial con tres ensayos y probabilidad un cuarto.",
+                "start": 73,
+                "end": 81.6,
+                "startFrame": 2190,
+                "endFrame": 2448,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "f17ff81522c20b20c2c47ff4c3b19acfbaff8c697b952f6b792c997bff986fa7"
+              },
+              {
+                "text": "Su media es tres cuartos y su varianza nueve dieciseisavos.",
+                "start": 81.9,
+                "end": 86.2,
+                "startFrame": 2457,
+                "endFrame": 2586,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "0045849c9969db25fa46fac45cbf13edda8f01106869ff0f1e412689173d2282"
+              },
+              {
+                "text": "Entre células los indicadores son independientes.",
+                "start": 86.5,
+                "end": 89.1,
+                "startFrame": 2595,
+                "endFrame": 2673,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "d3efcc9319492b810b5476d45582b044dc23c5e21b65f54cb404a35d08c0a1c7"
+              },
+              {
+                "text": "Dentro de una misma célula, reposo y activación no pueden ocurrir juntos: su producto vale cero.",
+                "start": 89.4,
+                "end": 96.26666666666667,
+                "startFrame": 2682,
+                "endFrame": 2888,
+                "words": 16,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "5b94c5351791903628f1583b09ea2f17a0f3f90de179fbb7368aefd27b44c03f"
+              },
+              {
+                "text": "Su covarianza es por tanto cero menos el producto de sus probabilidades.",
+                "start": 96.56666666666666,
+                "end": 101.73333333333333,
+                "startFrame": 2897,
+                "endFrame": 3052,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "88082a59bcb813bcfbde3d99153ebc18541f3cc85168392559c3e67990a0c66b"
+              },
+              {
+                "text": "Al sumar tres células, las covarianzas entre ensayos distintos desaparecen y quedan tres aportes negativos.",
+                "start": 102.03333333333333,
+                "end": 108.46666666666667,
+                "startFrame": 3061,
+                "endFrame": 3254,
+                "words": 15,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "d3d89c584d6bf54baaca3a6038f2dcba01830008ae3b42a7717567eaba6f98cd"
+              },
+              {
+                "text": "Entre reposo y activadas obtenemos menos tres octavos.",
+                "start": 108.76666666666667,
+                "end": 112.2,
+                "startFrame": 3263,
+                "endFrame": 3366,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "5708437a49ad4f411d73835b7767f6ee92f0953111d43aec0e10573eae672bbb"
+              },
+              {
+                "text": "El total fijo genera dependencia entre recuentos aunque los ensayos sean independientes.",
+                "start": 112.5,
+                "end": 117.66666666666667,
+                "startFrame": 3375,
+                "endFrame": 3530,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "a57c2b1c91ea8441dc561661c30bdaa7ba11f4dbd11ce240dd1ba7dc453553e4"
+              },
+              {
+                "text": "Si agrupamos categorías, sumamos sus probabilidades y conservamos una multinomial con menos categorías.",
+                "start": 117.96666666666667,
+                "end": 123.56666666666666,
+                "startFrame": 3539,
+                "endFrame": 3707,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "be6edb244fddc49d8fdf01bf1bef84ab6a0d224c532ea461cb3499787c88a1d3"
+              },
+              {
+                "text": "Si las probabilidades cambian entre células o las observaciones se influyen, el modelo multinomial común deja de estar justificado.",
+                "start": 123.86666666666666,
+                "end": 132.03333333333333,
+                "startFrame": 3716,
+                "endFrame": 3961,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "5b47af9835c82cfa809187026c1a85850077433be21f086d190001062d9b4947"
+              },
+              {
+                "text": "La covarianza negativa de sus recuentos no demuestra causalidad biológica.",
+                "start": 132.33333333333334,
+                "end": 136.63333333333333,
+                "startFrame": 3970,
+                "endFrame": 4099,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 11,
+                "sourceCueSha256": "8c8dd573f91426b86192e30e552cfd1ebf842b527f18475e61ee24e6c088220a"
+              }
+            ]
+          },
+          {
+            "start": 136.93333333333334,
+            "end": 149.13333333333333,
+            "cues": [
+              {
+                "text": "Cada célula de un lote se clasifica en una sola categoría: A en reposo, B activada o C dañada.",
+                "start": 136.93333333333334,
+                "end": 145.1,
+                "startFrame": 4108,
+                "endFrame": 4353,
+                "words": 19,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "812cf47578c04dd6685770a9aea26f8065cdcbec13bdbc8a14d91b8dc9fc3239"
+              },
+              {
+                "text": "X_A, X_B y X_C cuentan las tres categorías.",
+                "start": 145.4,
+                "end": 148.83333333333334,
+                "startFrame": 4362,
+                "endFrame": 4465,
+                "words": 8,
+                "sceneIndex": 2,
+                "cueIndex": 1,
+                "sourceCueSha256": "4be3aa825043361d406e1166f3ac33cacf7bb51ff604992f4f9072fde210bf8d"
+              }
+            ]
+          },
+          {
+            "start": 149.13333333333333,
+            "end": 170.23333333333332,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 149.13333333333333,
+                "end": 151.73333333333332,
+                "startFrame": 4474,
+                "endFrame": 4552,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de equis subíndice A igual a equis minúscula subíndice A y equis subíndice be igual a equis minúscula subíndice be y equis subíndice ce igual a equis minúscula subíndice ce.",
+                "start": 152.03333333333333,
+                "end": 165.76666666666668,
+                "startFrame": 4561,
+                "endFrame": 4973,
+                "words": 32,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "8ad4b07db747396fb0f05e72dc4fb2b84e017aca65b3fea1164fef3e0312e147"
+              },
+              {
+                "text": "Queremos la probabilidad de los tres recuentos indicados simultáneamente.",
+                "start": 166.06666666666666,
+                "end": 169.93333333333334,
+                "startFrame": 4982,
+                "endFrame": 5098,
+                "words": 9,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "af1c987dc8f8aca27917aa51a02d8940fece2e3f204d4de82ef580ef2e83510a"
+              }
+            ]
+          },
+          {
+            "start": 170.23333333333332,
+            "end": 190.46666666666667,
+            "cues": [
+              {
+                "text": "Cada ensayo independiente acaba en una sola de las categorías, cuyas probabilidades suman uno.",
+                "start": 170.23333333333332,
+                "end": 176.23333333333332,
+                "startFrame": 5107,
+                "endFrame": 5287,
+                "words": 14,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "898dec525c92df230d425f02e79d87c3ddc5adabcf96aa69e948e366953f91b2"
+              },
+              {
+                "text": "Los recuentos comparten el total fijo y no son independientes entre sí.",
+                "start": 176.53333333333333,
+                "end": 181.7,
+                "startFrame": 5296,
+                "endFrame": 5451,
+                "words": 12,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "4a359b088e44ab6e169bf3237c69860f1740bfb3054c242cc84ae4b66e779ac1"
+              },
+              {
+                "text": "El factorial multinomial cuenta ordenaciones de esos recuentos y el producto de potencias da el peso de cada ordenación.",
+                "start": 182,
+                "end": 190.16666666666666,
+                "startFrame": 5460,
+                "endFrame": 5705,
+                "words": 19,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "6a0d161472745dfdd0e28ba737fd7d6adc132f452d859066b6bedacf7c030a8f"
+              }
+            ]
+          },
+          {
+            "start": 190.46666666666667,
+            "end": 206.63333333333333,
+            "cues": [
+              {
+                "text": "ene igual a 6; abre paréntesis, pe subíndice A ,pe subíndice be ,pe subíndice ce , cierra paréntesis igual a abre paréntesis, 0 coma 2; 0 coma 5; 0 coma 3, cierra paréntesis , con suma uno.",
+                "start": 190.46666666666667,
+                "end": 206.33333333333334,
+                "startFrame": 5714,
+                "endFrame": 6190,
+                "words": 37,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "cb63dc14298a98ee117538105b0faabb7a8d0210f8263e5908f5b1545aeaed64"
+              }
+            ]
+          },
+          {
+            "start": 206.63333333333333,
+            "end": 224.93333333333334,
+            "cues": [
+              {
+                "text": "Recuentos observados abre paréntesis, equis minúscula subíndice A ,equis minúscula subíndice be ,equis minúscula subíndice ce , cierra paréntesis igual a abre paréntesis, 2, 2, 2, cierra paréntesis , con suma 6; el soporte son ternas enteras no negativas que suman ene.",
+                "start": 206.63333333333333,
+                "end": 224.63333333333333,
+                "startFrame": 6199,
+                "endFrame": 6739,
+                "words": 42,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "66df17f0ee128f1feec778989a6460ad758838a5d199f42a2032335373d68c5c"
+              }
+            ]
+          },
+          {
+            "start": 224.93333333333334,
+            "end": 228.66666666666666,
+            "cues": [
+              {
+                "text": "Categorías mutuamente excluyentes y exhaustivas para cada célula.",
+                "start": 224.93333333333334,
+                "end": 228.36666666666667,
+                "startFrame": 6748,
+                "endFrame": 6851,
+                "words": 8,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e66c9a3ccecbdbbf0e4c9a67faa9c1ebf8085792071395313fafbbf364a1022"
+              }
+            ]
+          },
+          {
+            "start": 228.66666666666666,
+            "end": 234.13333333333333,
+            "cues": [
+              {
+                "text": "Células independientes con probabilidades constantes; los recuentos de categorías no son independientes.",
+                "start": 228.66666666666666,
+                "end": 233.83333333333334,
+                "startFrame": 6860,
+                "endFrame": 7015,
+                "words": 12,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "f6e871ae853ee15a70f04bfbba40aa6a5d970f7574209a4e95a137365a5b33c8"
+              }
+            ]
+          },
+          {
+            "start": 234.13333333333333,
+            "end": 251.9,
+            "cues": [
+              {
+                "text": "Una secuencia tiene probabilidad producto; el coeficiente reúne todas las secuencias con esos recuentos.",
+                "start": 234.13333333333333,
+                "end": 240.13333333333333,
+                "startFrame": 7024,
+                "endFrame": 7204,
+                "words": 14,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "935a16f693b6724eafa2158e7888414045f7f4cdfd3e1924e235a34d28ab995a"
+              },
+              {
+                "text": "Los recuentos deben sumar el total fijo; sumamos los pesos de todas las secuencias con esa misma terna, no las probabilidades de cada recuento por separado.",
+                "start": 240.43333333333334,
+                "end": 251.6,
+                "startFrame": 7213,
+                "endFrame": 7548,
+                "words": 26,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "4cf989e6ec28f9659345d063feb600eb579bbfc525d4fc3d7355b3627e32d346"
+              }
+            ]
+          },
+          {
+            "start": 251.9,
+            "end": 292.76666666666665,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 251.9,
+                "end": 254.9,
+                "startFrame": 7557,
+                "endFrame": 7647,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de equis subíndice A igual a equis minúscula subíndice A y equis subíndice be igual a equis minúscula subíndice be y equis subíndice ce igual a equis minúscula subíndice ce.",
+                "start": 255.2,
+                "end": 268.93333333333334,
+                "startFrame": 7656,
+                "endFrame": 8068,
+                "words": 32,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "655305c4e2bf483289dc178baf655279cfbb2f5bd614f522950c68202e71d2bc"
+              },
+              {
+                "text": "Las categorías son excluyentes y cubren cada ensayo.",
+                "start": 269.23333333333335,
+                "end": 272.6666666666667,
+                "startFrame": 8077,
+                "endFrame": 8180,
+                "words": 8,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "c1273e02344cc3b9cf6914f46ecc593e98a8cdb43f1e4c054f84ecdf5aeda4e2"
+              },
+              {
+                "text": "El factorial multinomial cuenta secuencias con esos recuentos y el producto de potencias pondera cada secuencia.",
+                "start": 272.96666666666664,
+                "end": 279.8333333333333,
+                "startFrame": 8189,
+                "endFrame": 8395,
+                "words": 16,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "39bfe687a9d41ef2302f12a213c293cb38c138eb85f0f4716a5210f42f2a1fbb"
+              },
+              {
+                "text": "Los ensayos son independientes, pero los recuentos comparten un total fijo.",
+                "start": 280.1333333333333,
+                "end": 284.8666666666667,
+                "startFrame": 8404,
+                "endFrame": 8546,
+                "words": 11,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "7d379cc64908035bf63c7dd9c08abb532171b1cdd17c3ea5af9f42c90fc66570"
+              },
+              {
+                "text": "Para este apartado: Una secuencia tiene probabilidad producto; el coeficiente reúne todas las secuencias con esos recuentos.",
+                "start": 285.1666666666667,
+                "end": 292.46666666666664,
+                "startFrame": 8555,
+                "endFrame": 8774,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 5,
+                "sourceCueSha256": "6e4a703d73a91ed42ef443852823d778f07ef07089bd72139182bdd0ab23f31e"
+              }
+            ]
+          },
+          {
+            "start": 292.76666666666665,
+            "end": 334.53333333333336,
+            "cues": [
+              {
+                "text": "Contar las secuencias.",
+                "start": 292.76666666666665,
+                "end": 294.06666666666666,
+                "startFrame": 8783,
+                "endFrame": 8822,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "4fcf7233da17e1a3ad2a542445019e12662c8dd2fca99350750b6e79bd40d0f6"
+              },
+              {
+                "text": "Coeficiente ene factorial dividido entre abre paréntesis, equis minúscula subíndice A factorial por equis minúscula subíndice be factorial por equis minúscula subíndice ce factorial , cierra paréntesis; gamma mayúscula abre paréntesis, eme más 1, cierra paréntesis igual a eme factorial , incluido 0 factorial igual a 1. logaritmo natural ce igual a logaritmo natural gamma abre paréntesis, ene más 1, cierra paréntesis menos suma para el índice abre paréntesis, i igual a A y be y ce, cierra paréntesis de logaritmo natural gamma abre paréntesis, equis minúscula subíndice i más 1, cierra paréntesis.",
+                "start": 294.3666666666667,
+                "end": 334.23333333333335,
+                "startFrame": 8831,
+                "endFrame": 10027,
+                "words": 93,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "7332e0e06e1d91f969d9923c56b3ce1f63b72150ed9e3b90a0caaad491a57ed4"
+              }
+            ]
+          },
+          {
+            "start": 334.53333333333336,
+            "end": 349.6333333333333,
+            "cues": [
+              {
+                "text": "Evaluar el coeficiente.",
+                "start": 334.53333333333336,
+                "end": 335.8333333333333,
+                "startFrame": 10036,
+                "endFrame": 10075,
+                "words": 3,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "225ee74367a5720245f72661d2687b42a59fe66ae7de4b87567d535b97a098c7"
+              },
+              {
+                "text": "El factorial de 6 se divide por los factoriales de 2, 2, 2.",
+                "start": 336.1333333333333,
+                "end": 341.73333333333335,
+                "startFrame": 10084,
+                "endFrame": 10252,
+                "words": 13,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "7a283308534ceba322ff90647ebb7411124b55db1976a75849bc524bff55c9ca"
+              },
+              {
+                "text": "El numerador es 720 y el denominador es 2 por 2 por 2; obtenemos 90 secuencias diferentes.",
+                "start": 342.03333333333336,
+                "end": 349.3333333333333,
+                "startFrame": 10261,
+                "endFrame": 10480,
+                "words": 17,
+                "sceneIndex": 12,
+                "cueIndex": 2,
+                "sourceCueSha256": "d73bde19e040408f65cb3e2447e4991883e437562b45011a9d9f87451d2ba68c"
+              }
+            ]
+          },
+          {
+            "start": 349.6333333333333,
+            "end": 369.43333333333334,
+            "cues": [
+              {
+                "text": "Ponderar una secuencia.",
+                "start": 349.6333333333333,
+                "end": 350.93333333333334,
+                "startFrame": 10489,
+                "endFrame": 10528,
+                "words": 3,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "4535bb61da6233a2adbdda13883ce4c272fd959697aee4282b13bcddcce72b10"
+              },
+              {
+                "text": "Multiplicamos 0 coma 2 elevado a 2 por 0 coma 5 elevado a 2 por 0 coma 3 elevado a 2.",
+                "start": 351.23333333333335,
+                "end": 360.23333333333335,
+                "startFrame": 10537,
+                "endFrame": 10807,
+                "words": 21,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "010f1a6c78681a35911fc4fb74a004cb86f2842196aed4f6a905a1d4e465c662"
+              },
+              {
+                "text": "La probabilidad de una secuencia concreta es 0 coma 0 0 0 9; cualquier factor con exponente cero vale uno.",
+                "start": 360.53333333333336,
+                "end": 369.1333333333333,
+                "startFrame": 10816,
+                "endFrame": 11074,
+                "words": 20,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "2ac547326c64af55cdbfbe2fbfc2ac63dab8d52397dd32d273603320e0506d25"
+              }
+            ]
+          },
+          {
+            "start": 369.43333333333334,
+            "end": 377.3333333333333,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 369.43333333333334,
+                "end": 372.8666666666667,
+                "startFrame": 11083,
+                "endFrame": 11186,
+                "words": 8,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 373.1666666666667,
+                "end": 377.03333333333336,
+                "startFrame": 11195,
+                "endFrame": 11311,
+                "words": 9,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 377.3333333333333,
+            "end": 398.73333333333335,
+            "cues": [
+              {
+                "text": "Reunir todas las secuencias.",
+                "start": 377.3333333333333,
+                "end": 379.06666666666666,
+                "startFrame": 11320,
+                "endFrame": 11372,
+                "words": 4,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "6f053a371772a56dd6b5a39d91a915fd55d7e424c44c4d4f5c6e37614ee0e06b"
+              },
+              {
+                "text": "Las 90 secuencias son excluyentes y tienen la misma probabilidad.",
+                "start": 379.3666666666667,
+                "end": 383.6666666666667,
+                "startFrame": 11381,
+                "endFrame": 11510,
+                "words": 10,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "f2d152364c641d774e8914f5e3626c273a100842d7f4fca1990f7fe061108966"
+              },
+              {
+                "text": "Multiplicamos 90 por 0 coma 0 0 0 9 y obtenemos 0 coma 0 8 1.",
+                "start": 383.96666666666664,
+                "end": 390.8333333333333,
+                "startFrame": 11519,
+                "endFrame": 11725,
+                "words": 16,
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "sourceCueSha256": "ec6e47cd6fe37f72327f02b65eabc1549eebc2b886c72be3b5d91b26f1590b7e"
+              },
+              {
+                "text": "Para números grandes, el software calcula la misma expresión con logaritmos de factoriales y una exponencial final.",
+                "start": 391.1333333333333,
+                "end": 398.43333333333334,
+                "startFrame": 11734,
+                "endFrame": 11953,
+                "words": 17,
+                "sceneIndex": 15,
+                "cueIndex": 3,
+                "sourceCueSha256": "50300563d0c512a8d1c9b1a1b5af6bb84e06fdb31b046713c556f1903d41a7c6"
+              }
+            ]
+          },
+          {
+            "start": 398.73333333333335,
+            "end": 424.3333333333333,
+            "cues": [
+              {
+                "text": "Reunir todas las secuencias queda igual a abre paréntesis, ene factorial , cierra paréntesis dividido entre abre paréntesis, producto para el índice abre paréntesis, i, cierra paréntesis de equis minúscula subíndice i factorial , cierra paréntesis producto para el índice abre paréntesis, i, cierra paréntesis de pe subíndice i elevado a abre paréntesis, equis minúscula subíndice i, cierra paréntesis.",
+                "start": 398.73333333333335,
+                "end": 424.03333333333336,
+                "startFrame": 11962,
+                "endFrame": 12721,
+                "words": 59,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d8bb4b85033c52e8efbec67f2abfa439317c5b95bfb5f02802fb98216a926f6"
+              }
+            ]
+          },
+          {
+            "start": 424.3333333333333,
+            "end": 433.6333333333333,
+            "cues": [
+              {
+                "text": "Comprobar la restricción. 2 más 2 más 2 igual a 6; omitir una categoría sin ajustar su recuento rompería el total.",
+                "start": 424.3333333333333,
+                "end": 433.3333333333333,
+                "startFrame": 12730,
+                "endFrame": 13000,
+                "words": 21,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "ca192e1ce59bd2d815ca16ac85b4e09ae154e51aad75649863ee582843c1877b"
+              }
+            ]
+          },
+          {
+            "start": 433.6333333333333,
+            "end": 455.46666666666664,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 433.6333333333333,
+                "end": 434.93333333333334,
+                "startFrame": 13009,
+                "endFrame": 13048,
+                "words": 3,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 0 8 1 probabilidad entre 0 y 1.",
+                "start": 435.23333333333335,
+                "end": 440.8333333333333,
+                "startFrame": 13057,
+                "endFrame": 13225,
+                "words": 13,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "5c42630afd14931a73b613c0cf2d8f13c015b1491634524d903a0ddb0b65708d"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 441.1333333333333,
+                "end": 448.43333333333334,
+                "startFrame": 13234,
+                "endFrame": 13453,
+                "words": 17,
+                "sceneIndex": 18,
+                "cueIndex": 2,
+                "sourceCueSha256": "f954204dacd2bd4793341a71e739580c55acaf5237500a2b3d4a45c3b251ebf5"
+              },
+              {
+                "text": "La masa corresponde a una terna de recuentos, no a una secuencia particular de células.",
+                "start": 448.73333333333335,
+                "end": 455.1666666666667,
+                "startFrame": 13462,
+                "endFrame": 13655,
+                "words": 15,
+                "sceneIndex": 18,
+                "cueIndex": 3,
+                "sourceCueSha256": "c44efbbdde7ca6c5d0af1d429b1eaae1813da5fe912e505d9b32edd6b5403f26"
+              }
+            ]
+          },
+          {
+            "start": 455.46666666666664,
+            "end": 468.1,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 8 1 probabilidad entre 0 y 1.",
+                "start": 455.46666666666664,
+                "end": 461.06666666666666,
+                "startFrame": 13664,
+                "endFrame": 13832,
+                "words": 13,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "9fcb6bcd7f9605df0bf0a4e27725b205fa260f605fbac1b5d1a70be9a8741b80"
+              },
+              {
+                "text": "La masa corresponde a una terna de recuentos, no a una secuencia particular de células.",
+                "start": 461.3666666666667,
+                "end": 467.8,
+                "startFrame": 13841,
+                "endFrame": 14034,
+                "words": 15,
+                "sceneIndex": 19,
+                "cueIndex": 1,
+                "sourceCueSha256": "a71a67ff3cf485411135cacaa2a68df7b3984e54e7a92c62fc43452a8b766243"
+              }
+            ]
+          },
+          {
+            "start": 468.1,
+            "end": 484.46666666666664,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 468.1,
+                "end": 470.7,
+                "startFrame": 14043,
+                "endFrame": 14121,
+                "words": 6,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de equis subíndice A igual a equis minúscula subíndice A , sin fijar equis subíndice be ni equis subíndice ce.",
+                "start": 471,
+                "end": 480.43333333333334,
+                "startFrame": 14130,
+                "endFrame": 14413,
+                "words": 22,
+                "sceneIndex": 20,
+                "cueIndex": 1,
+                "sourceCueSha256": "23ec9ad09e1aa96d50f1961d41eca41a87c2191207e86c0c36511769afcf907f"
+              },
+              {
+                "text": "Queremos describir una variable sin fijar la otra.",
+                "start": 480.73333333333335,
+                "end": 484.1666666666667,
+                "startFrame": 14422,
+                "endFrame": 14525,
+                "words": 8,
+                "sceneIndex": 20,
+                "cueIndex": 2,
+                "sourceCueSha256": "6188b81d98a1e09016928a80c4db13e5b07336f7471bca2392ed1f90f5d32529"
+              }
+            ]
+          },
+          {
+            "start": 484.46666666666664,
+            "end": 504.7,
+            "cues": [
+              {
+                "text": "Cada ensayo independiente acaba en una sola de las categorías, cuyas probabilidades suman uno.",
+                "start": 484.46666666666664,
+                "end": 490.46666666666664,
+                "startFrame": 14534,
+                "endFrame": 14714,
+                "words": 14,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "898dec525c92df230d425f02e79d87c3ddc5adabcf96aa69e948e366953f91b2"
+              },
+              {
+                "text": "Los recuentos comparten el total fijo y no son independientes entre sí.",
+                "start": 490.76666666666665,
+                "end": 495.93333333333334,
+                "startFrame": 14723,
+                "endFrame": 14878,
+                "words": 12,
+                "sceneIndex": 21,
+                "cueIndex": 1,
+                "sourceCueSha256": "4a359b088e44ab6e169bf3237c69860f1740bfb3054c242cc84ae4b66e779ac1"
+              },
+              {
+                "text": "El factorial multinomial cuenta ordenaciones de esos recuentos y el producto de potencias da el peso de cada ordenación.",
+                "start": 496.23333333333335,
+                "end": 504.4,
+                "startFrame": 14887,
+                "endFrame": 15132,
+                "words": 19,
+                "sceneIndex": 21,
+                "cueIndex": 2,
+                "sourceCueSha256": "6a0d161472745dfdd0e28ba737fd7d6adc132f452d859066b6bedacf7c030a8f"
+              }
+            ]
+          },
+          {
+            "start": 504.7,
+            "end": 520.8666666666667,
+            "cues": [
+              {
+                "text": "ene igual a 6; abre paréntesis, pe subíndice A ,pe subíndice be ,pe subíndice ce , cierra paréntesis igual a abre paréntesis, 0 coma 2; 0 coma 5; 0 coma 3, cierra paréntesis , con suma uno.",
+                "start": 504.7,
+                "end": 520.5666666666667,
+                "startFrame": 15141,
+                "endFrame": 15617,
+                "words": 37,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "cb63dc14298a98ee117538105b0faabb7a8d0210f8263e5908f5b1545aeaed64"
+              }
+            ]
+          },
+          {
+            "start": 520.8666666666667,
+            "end": 539.1666666666666,
+            "cues": [
+              {
+                "text": "Recuentos observados abre paréntesis, equis minúscula subíndice A ,equis minúscula subíndice be ,equis minúscula subíndice ce , cierra paréntesis igual a abre paréntesis, 2, 2, 2, cierra paréntesis , con suma 6; el soporte son ternas enteras no negativas que suman ene.",
+                "start": 520.8666666666667,
+                "end": 538.8666666666667,
+                "startFrame": 15626,
+                "endFrame": 16166,
+                "words": 42,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "66df17f0ee128f1feec778989a6460ad758838a5d199f42a2032335373d68c5c"
+              }
+            ]
+          },
+          {
+            "start": 539.1666666666666,
+            "end": 542.9,
+            "cues": [
+              {
+                "text": "Categorías mutuamente excluyentes y exhaustivas para cada célula.",
+                "start": 539.1666666666666,
+                "end": 542.6,
+                "startFrame": 16175,
+                "endFrame": 16278,
+                "words": 8,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e66c9a3ccecbdbbf0e4c9a67faa9c1ebf8085792071395313fafbbf364a1022"
+              }
+            ]
+          },
+          {
+            "start": 542.9,
+            "end": 548.3666666666667,
+            "cues": [
+              {
+                "text": "Células independientes con probabilidades constantes; los recuentos de categorías no son independientes.",
+                "start": 542.9,
+                "end": 548.0666666666667,
+                "startFrame": 16287,
+                "endFrame": 16442,
+                "words": 12,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "f6e871ae853ee15a70f04bfbba40aa6a5d970f7574209a4e95a137365a5b33c8"
+              }
+            ]
+          },
+          {
+            "start": 548.3666666666667,
+            "end": 559.7,
+            "cues": [
+              {
+                "text": "Agrupa be y ce como no A y usa una binomial.",
+                "start": 548.3666666666667,
+                "end": 553.1,
+                "startFrame": 16451,
+                "endFrame": 16593,
+                "words": 11,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "6b52bcaf7ae49b27412a5dca99844a6d9ab0cdb6020927852c7e5d3201beb789"
+              },
+              {
+                "text": "Sumar o integrar sobre la coordenada descartada conserva todas sus posibilidades; no es condicionar.",
+                "start": 553.4,
+                "end": 559.4,
+                "startFrame": 16602,
+                "endFrame": 16782,
+                "words": 14,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "5267d0278d1eabf8eaf53f21ccacbed1178eae6d9fcdc30c962992dcedda70d9"
+              }
+            ]
+          },
+          {
+            "start": 559.7,
+            "end": 594.9666666666667,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 559.7,
+                "end": 562.7,
+                "startFrame": 16791,
+                "endFrame": 16881,
+                "words": 7,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de equis subíndice A igual a equis minúscula subíndice A , sin fijar equis subíndice be ni equis subíndice ce.",
+                "start": 563,
+                "end": 572.4333333333333,
+                "startFrame": 16890,
+                "endFrame": 17173,
+                "words": 22,
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "sourceCueSha256": "d990e12bff3984aeea687404e1f6fe2ace162cbf4241774dfacc4cf0ce4aa8fa"
+              },
+              {
+                "text": "Las categorías son excluyentes y cubren cada ensayo.",
+                "start": 572.7333333333333,
+                "end": 576.1666666666666,
+                "startFrame": 17182,
+                "endFrame": 17285,
+                "words": 8,
+                "sceneIndex": 27,
+                "cueIndex": 2,
+                "sourceCueSha256": "e10f1adce2c63ecbb362e08da69bba1be0040b21ef6e46a0f406aba0727e9edc"
+              },
+              {
+                "text": "El factorial multinomial cuenta secuencias con esos recuentos y el producto de potencias pondera cada secuencia.",
+                "start": 576.4666666666667,
+                "end": 583.3333333333334,
+                "startFrame": 17294,
+                "endFrame": 17500,
+                "words": 16,
+                "sceneIndex": 27,
+                "cueIndex": 3,
+                "sourceCueSha256": "535300b2f16348a42a087052e77ef6322d4652560c55fcb1476ada41d41eb14b"
+              },
+              {
+                "text": "Los ensayos son independientes, pero los recuentos comparten un total fijo.",
+                "start": 583.6333333333333,
+                "end": 588.3666666666667,
+                "startFrame": 17509,
+                "endFrame": 17651,
+                "words": 11,
+                "sceneIndex": 27,
+                "cueIndex": 4,
+                "sourceCueSha256": "613158a47fb85b91fe714cece6549195328dc99cbaefbdecc4d63dd387355549"
+              },
+              {
+                "text": "Para este apartado: Agrupa be y ce como no A y usa una binomial.",
+                "start": 588.6666666666666,
+                "end": 594.6666666666666,
+                "startFrame": 17660,
+                "endFrame": 17840,
+                "words": 14,
+                "sceneIndex": 27,
+                "cueIndex": 5,
+                "sourceCueSha256": "8ffd010842d5d25674af400d3b545282ead5d1f695deea78ab6e8b73a63bd66b"
+              }
+            ]
+          },
+          {
+            "start": 594.9666666666667,
+            "end": 606.3,
+            "cues": [
+              {
+                "text": "Reducir a dos resultados.",
+                "start": 594.9666666666667,
+                "end": 596.7,
+                "startFrame": 17849,
+                "endFrame": 17901,
+                "words": 4,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "6120bf41d3ab5c4499910b7e22deb597eaeb26f65cbd5b74db2a10cc6b1714f2"
+              },
+              {
+                "text": "A tiene probabilidad 0 coma 2; no A tiene 0 coma 5 más 0 coma 3 igual a 0 coma 8.",
+                "start": 597,
+                "end": 606,
+                "startFrame": 17910,
+                "endFrame": 18180,
+                "words": 21,
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "sourceCueSha256": "cd03115c0acfc3099c1ecf9403c9d5ae4c18b4b7bda06a7f62721fb425f1eabf"
+              }
+            ]
+          },
+          {
+            "start": 606.3,
+            "end": 639.7,
+            "cues": [
+              {
+                "text": "Evaluar la masa marginal.",
+                "start": 606.3,
+                "end": 608.0333333333333,
+                "startFrame": 18189,
+                "endFrame": 18241,
+                "words": 4,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "1c295c58ccb61aca81859d28614ac36131adee1c426c195ab2b18e7687187351"
+              },
+              {
+                "text": "Para contar la categoría A reunimos las otras dos como no A.",
+                "start": 608.3333333333334,
+                "end": 613.5,
+                "startFrame": 18250,
+                "endFrame": 18405,
+                "words": 12,
+                "sceneIndex": 29,
+                "cueIndex": 1,
+                "sourceCueSha256": "76637649234ba71dbb3af0ac0595f5199807894abd14ba9a33752f0612f1737c"
+              },
+              {
+                "text": "Elegimos 2 posiciones entre 6 y ponderamos: combinaciones de 6 elementos tomados de 2 en 2 por 0 coma 2 al cuadrado por 0 coma 8 elevado a 4 igual a 0 coma 2 4 5 7 6.",
+                "start": 613.8,
+                "end": 630.1,
+                "startFrame": 18414,
+                "endFrame": 18903,
+                "words": 38,
+                "sceneIndex": 29,
+                "cueIndex": 2,
+                "sourceCueSha256": "21824fa242bd5a84b88ffbe7ade7ff373a1ebd5dd349a79e7dac19bc1d1ed07c"
+              },
+              {
+                "text": "Es la binomial ya estudiada. equis subíndice A sigue la distribución Bin abre paréntesis, ene y pe subíndice A, cierra paréntesis.",
+                "start": 630.4,
+                "end": 639.4,
+                "startFrame": 18912,
+                "endFrame": 19182,
+                "words": 21,
+                "sceneIndex": 29,
+                "cueIndex": 3,
+                "sourceCueSha256": "2d215e2bab34b5e0daf1c7a13105d80789f8eac892e9ffb0eb904fca16712bdd"
+              }
+            ]
+          },
+          {
+            "start": 639.7,
+            "end": 662.8,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 639.7,
+                "end": 641,
+                "startFrame": 19191,
+                "endFrame": 19230,
+                "words": 3,
+                "sceneIndex": 30,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 2 4 5 7 6 probabilidad entre 0 y 1.",
+                "start": 641.3,
+                "end": 647.7333333333333,
+                "startFrame": 19239,
+                "endFrame": 19432,
+                "words": 15,
+                "sceneIndex": 30,
+                "cueIndex": 1,
+                "sourceCueSha256": "c4e5af7772ce2b4984d24e68dad774d27030f523040837db85732aa43ec3ae50"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 648.0333333333333,
+                "end": 655.3333333333334,
+                "startFrame": 19441,
+                "endFrame": 19660,
+                "words": 17,
+                "sceneIndex": 30,
+                "cueIndex": 2,
+                "sourceCueSha256": "8e8914e99ffb758866ed68d872636f97c52ea86ee42dcc187cb93017afce01cd"
+              },
+              {
+                "text": "La marginal suma todas las maneras compatibles de repartir las otras células entre be y ce.",
+                "start": 655.6333333333333,
+                "end": 662.5,
+                "startFrame": 19669,
+                "endFrame": 19875,
+                "words": 16,
+                "sceneIndex": 30,
+                "cueIndex": 3,
+                "sourceCueSha256": "8275668d71c1240aacca3b51ec6b4d050e1ad533e438c52f17d9aee096fd753b"
+              }
+            ]
+          },
+          {
+            "start": 662.8,
+            "end": 676.7,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 2 4 5 7 6 probabilidad entre 0 y 1.",
+                "start": 662.8,
+                "end": 669.2333333333333,
+                "startFrame": 19884,
+                "endFrame": 20077,
+                "words": 15,
+                "sceneIndex": 31,
+                "cueIndex": 0,
+                "sourceCueSha256": "fe4f19d192e03e35b08163a3b0918edb4fc8c9c5ffb6a3bb80a9b38a78a8d5db"
+              },
+              {
+                "text": "La marginal suma todas las maneras compatibles de repartir las otras células entre be y ce.",
+                "start": 669.5333333333333,
+                "end": 676.4,
+                "startFrame": 20086,
+                "endFrame": 20292,
+                "words": 16,
+                "sceneIndex": 31,
+                "cueIndex": 1,
+                "sourceCueSha256": "f93fdfefbab5d349c57e8c4ee2c4711d48ff7d1390e13dc79464f0a37be438e4"
+              }
+            ]
+          },
+          {
+            "start": 676.7,
+            "end": 734.3333333333334,
+            "cues": [
+              {
+                "text": "Los recuentos son enteros no negativos y las categorías forman una partición en cada ensayo; un factor con exponente cero vale uno.",
+                "start": 676.7,
+                "end": 686.1333333333333,
+                "startFrame": 20301,
+                "endFrame": 20584,
+                "words": 22,
+                "sceneIndex": 32,
+                "cueIndex": 0,
+                "sourceCueSha256": "977df6365ac43730f4ff75f01fd0f650aced861688c7bec717b847f282df87ac"
+              },
+              {
+                "text": "Marginales binomiales pueden estar relacionadas negativamente por compartir un total fijo.",
+                "start": 686.4333333333333,
+                "end": 691.1666666666666,
+                "startFrame": 20593,
+                "endFrame": 20735,
+                "words": 11,
+                "sceneIndex": 32,
+                "cueIndex": 1,
+                "sourceCueSha256": "e773bec05f26c29d4c35dfd8af34b21d82add4eb63fcd831c1759e4aacaa3229"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 691.4666666666667,
+                "end": 695.3333333333334,
+                "startFrame": 20744,
+                "endFrame": 20860,
+                "words": 9,
+                "sceneIndex": 32,
+                "cueIndex": 2,
+                "sourceCueSha256": "e6617c3e2ac3d6460819d81c41231f0495e0b037e7b634ae3cca59edc86bc895"
+              },
+              {
+                "text": "En una multinomial, ¿son generalmente independientes los recuentos de dos categorías con probabilidades positivas?",
+                "start": 695.6333333333333,
+                "end": 701.6333333333333,
+                "startFrame": 20869,
+                "endFrame": 21049,
+                "words": 14,
+                "sceneIndex": 32,
+                "cueIndex": 3,
+                "sourceCueSha256": "ae481c3014678ab3772ecd3a7c4b2aa1d5667ad6b98d508b7112d8d9e3c8eb07"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 701.9333333333333,
+                "end": 705.8,
+                "startFrame": 21058,
+                "endFrame": 21174,
+                "words": 9,
+                "sceneIndex": 32,
+                "cueIndex": 4,
+                "sourceCueSha256": "8239a8ae656c228df85c96b3ebfbf1f05921cd31f51685b1f995a40df851be9b"
+              },
+              {
+                "text": "La independencia entre ensayos no elimina la restricción de suma de los recuentos, que genera covarianza negativa.",
+                "start": 706.1,
+                "end": 713.4,
+                "startFrame": 21183,
+                "endFrame": 21402,
+                "words": 17,
+                "sceneIndex": 32,
+                "cueIndex": 5,
+                "sourceCueSha256": "05249baaa46637629d701cb3067b982aa173b8bb11a05750769ecc23be7177ee"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Usar categorías superpuestas en un modelo multinomial.",
+                "start": 713.7,
+                "end": 720.1333333333333,
+                "startFrame": 21411,
+                "endFrame": 21604,
+                "words": 15,
+                "sceneIndex": 32,
+                "cueIndex": 6,
+                "sourceCueSha256": "ca834ffb50e63397b40a8bb3efaab4f5df772d8887126c5202a5f15ff8d46467"
+              },
+              {
+                "text": "Cada ensayo debe aportar exactamente una categoría.",
+                "start": 720.4333333333333,
+                "end": 723.4333333333333,
+                "startFrame": 21613,
+                "endFrame": 21703,
+                "words": 7,
+                "sceneIndex": 32,
+                "cueIndex": 7,
+                "sourceCueSha256": "6d29342f3a4753c23ebe9e73385e77574a8c4dda47799f30feb32b3edb346979"
+              },
+              {
+                "text": "Si las categorías se superponen, un mismo individuo puede contarse dos veces y los recuentos ya no cumplen el total fijo de la multinomial.",
+                "start": 723.7333333333333,
+                "end": 734.0333333333333,
+                "startFrame": 21712,
+                "endFrame": 22021,
+                "words": 24,
+                "sceneIndex": 32,
+                "cueIndex": 8,
+                "sourceCueSha256": "297b8ba15140beadc2b8c9aff5593cc4b6a9de30ca5138c47294ca1bbe22e297"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
