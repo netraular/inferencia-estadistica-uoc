@@ -1,0 +1,1650 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "calculo",
+  "kind": "recap",
+  "title": "Derivadas, integrales y área acumulada",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "f3068079e45d147dedd6e3c55918f2a88e97bb4da63c378f334493d3a5f2dfdc",
+  "src": "videos/calculo/video.mp4",
+  "poster": "videos/calculo/poster.jpg",
+  "duration": 689.7666666666667,
+  "frames": 20693,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "7507e90115c4f0ce7ecda076b6482a6446ce738cd5e31ba06d0d0e9def832365",
+  "videoSha256": "4a66a538d78b24b64918546d6037a54bdd301074e0a1c1cbd20b7049b80fde8c",
+  "posterSha256": "aa00be9f2474e11385328bea8fa650857ddc62c59ac4d1a24d99d06a996e73d7",
+  "canonicalSha256": "df50551a3c7ee9f6fd094e19288cbd1403a3e2cb5f5264a1960b3781b2c01fe5",
+  "inputHash": "4ba00846b34e56feb89eed3299ab5eb2764955959cd44865cff5d14d335f876a",
+  "rendererSha256": "da223f1dcc48414491e812ac44733ff24644c6f9a0f5be64edb1df652c61ac99",
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "320520add714e9342b748ad31cc346bd6fba5ea601248c607c1afb9e91d1b77c",
+    "canonicalSha256": "df50551a3c7ee9f6fd094e19288cbd1403a3e2cb5f5264a1960b3781b2c01fe5",
+    "source": {
+      "document": "Puente matemático",
+      "section": "Cálculo integral y diferencial elemental; preparación para 2.7 y 4.6"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "7bd74f2df2e96fa21b02a4afd89553123de5827acac58dbcb31731d1f4d5c647",
+    "transcriptSha256": "7507e90115c4f0ce7ecda076b6482a6446ce738cd5e31ba06d0d0e9def832365",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS-archive/2026-11-11/video/remotion-native-transcripts-course-2026-11-11-v5/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "calculo",
+  "transcript": {
+    "id": "calculo",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "df50551a3c7ee9f6fd094e19288cbd1403a3e2cb5f5264a1960b3781b2c01fe5",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 689.7666666666667,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 65.76666666666667,
+        "cues": [
+          {
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+          },
+          {
+            "text": "Vamos a entender una integral antes de usarla para calcular probabilidades.",
+            "start": 1.5,
+            "end": 6.233333333333333,
+            "startFrame": 45,
+            "endFrame": 187,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "61d1c4e717734cdab05beb533a667ea0fd8b6afcf9c75b78c067ca316cc8bd66"
+          },
+          {
+            "text": "Imagina una duración entre cero y dos minutos, con densidad constante de medio por minuto.",
+            "start": 6.533333333333333,
+            "end": 12.966666666666667,
+            "startFrame": 196,
+            "endFrame": 389,
+            "words": 15,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "1b3f862d3fa3c72315d1d8681383b59076bba1b05c036fdb0bcecf9bd00e3467"
+          },
+          {
+            "text": "El rectángulo completo tiene área uno: hemos normalizado el modelo.",
+            "start": 13.266666666666667,
+            "end": 17.566666666666666,
+            "startFrame": 398,
+            "endFrame": 527,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "21566af9ccbbcebefc0b84ed27517f8f6c419bcc392c78fc81745e16005c81e8"
+          },
+          {
+            "text": "La probabilidad de un intervalo es el área sobre él.",
+            "start": 17.866666666666667,
+            "end": 22.166666666666668,
+            "startFrame": 536,
+            "endFrame": 665,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "a0625d8d7efe6f27e3f37f53603ab9eebfdd807f1156abde4ee593e6360a7bf7"
+          },
+          {
+            "text": "Si la altura es constante, usamos altura por anchura.",
+            "start": 22.466666666666665,
+            "end": 26.333333333333332,
+            "startFrame": 674,
+            "endFrame": 790,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "8fd64815f9e1dae252efb8823424d4fcb19c40be884ccbeb20fcbe177a112708"
+          },
+          {
+            "text": "Entre cero coma cuatro y uno coma dos la anchura es cero coma ocho minutos; las unidades de tiempo se cancelan.",
+            "start": 26.633333333333333,
+            "end": 35.63333333333333,
+            "startFrame": 799,
+            "endFrame": 1069,
+            "words": 21,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "8e47605f6911f0ea495bd03d979c79438a2690f16d66adcf513bfd817c7fa62d"
+          },
+          {
+            "text": "Multiplicamos medio por cero coma ocho y obtenemos cero coma cuatro.",
+            "start": 35.93333333333333,
+            "end": 40.666666666666664,
+            "startFrame": 1078,
+            "endFrame": 1220,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "f6de08e22d615f36ae2c8fd2ce87d5f000df28f34443affe6d15c7544aedc1a8"
+          },
+          {
+            "text": "La zona sombreada representa esa probabilidad; la altura medio por minuto no era la respuesta por sí sola.",
+            "start": 40.96666666666667,
+            "end": 48.7,
+            "startFrame": 1229,
+            "endFrame": 1461,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "2af79857b90e1cc6b4604d219181381b3984a05d542df68a15dcd1da7debc83f"
+          },
+          {
+            "text": "Cuando cambia la altura, dividimos el intervalo en franjas estrechas y sumamos altura por anchura.",
+            "start": 49,
+            "end": 55.43333333333333,
+            "startFrame": 1470,
+            "endFrame": 1663,
+            "words": 15,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "c7f6841deb1beb08302792536093a57890ad3e03da35d991be8f5cfbb482efbc"
+          },
+          {
+            "text": "La integral es el límite de esas sumas.",
+            "start": 55.733333333333334,
+            "end": 59.166666666666664,
+            "startFrame": 1672,
+            "endFrame": 1775,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "sourceCueSha256": "cffcd35c023882d699ffac7e857bb7f386a17035d195137e2013827ad7da85d5"
+          },
+          {
+            "text": "Si el intervalo cruza un cambio de fórmula, separamos los tramos antes de acumular.",
+            "start": 59.46666666666667,
+            "end": 65.46666666666667,
+            "startFrame": 1784,
+            "endFrame": 1964,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "sourceCueSha256": "7999668e64cdbe7f3027500e1579e875bc744249f68dd68d096c822dbb9840f0"
+          }
+        ]
+      },
+      {
+        "start": 65.76666666666667,
+        "end": 134.2,
+        "cues": [
+          {
+            "text": "Cambiamos a una densidad que vale te dividido entre dos desde cero hasta dos, y cero fuera.",
+            "start": 65.76666666666667,
+            "end": 73.06666666666666,
+            "startFrame": 1973,
+            "endFrame": 2192,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf594bf2260ee212ab8df1d2d001748c6386c570fb0dbc69e0b512106e6b2560"
+          },
+          {
+            "text": "Las franjas derechas son más altas.",
+            "start": 73.36666666666666,
+            "end": 75.96666666666667,
+            "startFrame": 2201,
+            "endFrame": 2279,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "71c735174ad44b834554b7a286068cdbd80581ee40ba6fd820d39a12357c33aa"
+          },
+          {
+            "text": "Su área total sigue siendo uno, pero no podemos multiplicar cualquier altura por toda la anchura.",
+            "start": 76.26666666666667,
+            "end": 83.13333333333334,
+            "startFrame": 2288,
+            "endFrame": 2494,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "998ea526d3724f095f02d0b8d17dae8cd8dad9da9b3b0120e7d4f60f3168d289"
+          },
+          {
+            "text": "Una primitiva es una función cuya derivada devuelve la densidad.",
+            "start": 83.43333333333334,
+            "end": 87.73333333333333,
+            "startFrame": 2503,
+            "endFrame": 2632,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "b4b0af80b8dbb3e4d0bca85522110687874b49e935cc32f4d61eee83667a4dfc"
+          },
+          {
+            "text": "La derivada de te al cuadrado dividido entre cuatro es te dividido entre dos.",
+            "start": 88.03333333333333,
+            "end": 94.03333333333333,
+            "startFrame": 2641,
+            "endFrame": 2821,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 4,
+            "sourceCueSha256": "974f9aa0d46899da12f67015a34a4524e7f696bfc8892f89f43c1905d4f6cd91"
+          },
+          {
+            "text": "El teorema fundamental del cálculo permite restar los valores de esa primitiva en los dos extremos.",
+            "start": 94.33333333333333,
+            "end": 101.2,
+            "startFrame": 2830,
+            "endFrame": 3036,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 5,
+            "sourceCueSha256": "766c0b192e205aed370d618338aca53926e859dd9e8af1897f653581ed2b4aa8"
+          },
+          {
+            "text": "Hasta un minuto evaluamos la primitiva en uno y en cero.",
+            "start": 101.5,
+            "end": 106.23333333333333,
+            "startFrame": 3045,
+            "endFrame": 3187,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 6,
+            "sourceCueSha256": "4e1abd901ca3a9b077166e2fd881f78094cb9b40ee6549db3b0a0a451d007da0"
+          },
+          {
+            "text": "Un cuarto menos cero da un cuarto.",
+            "start": 106.53333333333333,
+            "end": 109.53333333333333,
+            "startFrame": 3196,
+            "endFrame": 3286,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 7,
+            "sourceCueSha256": "146bc90951eae67dac12ed74e32289e0f5c87b431518ec5dc3464d064ca63356"
+          },
+          {
+            "text": "Hasta dos minutos obtendríamos uno, que comprueba la normalización.",
+            "start": 109.83333333333333,
+            "end": 113.7,
+            "startFrame": 3295,
+            "endFrame": 3411,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 8,
+            "sourceCueSha256": "18928245a3e4f244987b5d62cf5b56689fd8df36ecebafd126efd85c201f45b0"
+          },
+          {
+            "text": "Dentro del soporte, la acumulada es esa primitiva y su pendiente es la densidad.",
+            "start": 114,
+            "end": 120,
+            "startFrame": 3420,
+            "endFrame": 3600,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 9,
+            "sourceCueSha256": "c8c9d71a4fcacec4efe8475c0a5e8b53b08069b4388b33176a96b367bf8f9622"
+          },
+          {
+            "text": "En un minuto la pendiente vale medio por minuto, pero el área acumulada vale un cuarto.",
+            "start": 120.3,
+            "end": 127.16666666666667,
+            "startFrame": 3609,
+            "endFrame": 3815,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 10,
+            "sourceCueSha256": "ef2398c55516a73f008a5990b83a994bb0b38b496084b35db16e5578cd3603c3"
+          },
+          {
+            "text": "Una pendiente, un área y la probabilidad cero de un instante son tres cantidades diferentes.",
+            "start": 127.46666666666667,
+            "end": 133.9,
+            "startFrame": 3824,
+            "endFrame": 4017,
+            "words": 15,
+            "sceneIndex": 1,
+            "cueIndex": 11,
+            "sourceCueSha256": "08a77df3fda08cd8fce0e7266b9e4f1b3ea9926605257bf1ed87ebe2ef035e34"
+          }
+        ]
+      },
+      {
+        "start": 134.2,
+        "end": 143.93333333333334,
+        "cues": [
+          {
+            "text": "X mide una longitud celular, en unidades calibradas, con densidad creciente f(x)=c x para 0 ≤ x ≤ b y cero fuera.",
+            "start": 134.2,
+            "end": 143.63333333333333,
+            "startFrame": 4026,
+            "endFrame": 4309,
+            "words": 22,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "b5844050ed04b4dad9cdbfb819f04a1d7557ab66a05d707abf1893f773bed4cc"
+          }
+        ]
+      },
+      {
+        "start": 143.93333333333334,
+        "end": 154.73333333333332,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 143.93333333333334,
+            "end": 146.53333333333333,
+            "startFrame": 4318,
+            "endFrame": 4396,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula ce para que efe sea una densidad.",
+            "start": 146.83333333333334,
+            "end": 150.26666666666668,
+            "startFrame": 4405,
+            "endFrame": 4508,
+            "words": 8,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "2aac895459fb96db577feaaed730ab50ca1c40d9a35f7448e6a983a59211db4c"
+          },
+          {
+            "text": "Queremos encontrar la constante que hace válida la distribución.",
+            "start": 150.56666666666666,
+            "end": 154.43333333333334,
+            "startFrame": 4517,
+            "endFrame": 4633,
+            "words": 9,
+            "sceneIndex": 3,
+            "cueIndex": 2,
+            "sourceCueSha256": "53b32255c7a2e4ccab45da64d28540d17680f36a4ab9ad9f31ffa53626d534fc"
+          }
+        ]
+      },
+      {
+        "start": 154.73333333333332,
+        "end": 171.1,
+        "cues": [
+          {
+            "text": "Una densidad es probabilidad por unidad, no probabilidad de un punto.",
+            "start": 154.73333333333332,
+            "end": 159.46666666666667,
+            "startFrame": 4642,
+            "endFrame": 4784,
+            "words": 11,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "05d4efe578dbb94d081bb9622c4057e50cc4f2b1e5471faae321af144a49d26d"
+          },
+          {
+            "text": "Su integral suma pequeñas áreas de altura por anchura.",
+            "start": 159.76666666666668,
+            "end": 163.63333333333333,
+            "startFrame": 4793,
+            "endFrame": 4909,
+            "words": 9,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "3f297aeb4b5851aab819019a78ee0563797f31677a6427e0bc638b25dd980c2d"
+          },
+          {
+            "text": "El soporte fija los límites permitidos y la normalización exige área uno y altura no negativa.",
+            "start": 163.93333333333334,
+            "end": 170.8,
+            "startFrame": 4918,
+            "endFrame": 5124,
+            "words": 16,
+            "sceneIndex": 4,
+            "cueIndex": 2,
+            "sourceCueSha256": "61a5a64822a3f83b31f98c11ef42aed07badf4c99a844b54c50e8f1d6bbb4545"
+          }
+        ]
+      },
+      {
+        "start": 171.1,
+        "end": 176.56666666666666,
+        "cues": [
+          {
+            "text": "be igual a 3; umbral te minúscula igual a 1 coma 5.",
+            "start": 171.1,
+            "end": 176.26666666666668,
+            "startFrame": 5133,
+            "endFrame": 5288,
+            "words": 12,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "a1d7b3441af350347796923cce084a1fe042543105f9ba2ee9f47ff339a3c470"
+          }
+        ]
+      },
+      {
+        "start": 176.56666666666666,
+        "end": 179.86666666666667,
+        "cues": [
+          {
+            "text": "La densidad no es una probabilidad puntual.",
+            "start": 176.56666666666666,
+            "end": 179.56666666666666,
+            "startFrame": 5297,
+            "endFrame": 5387,
+            "words": 7,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "279e84905e52328bc0a59b23ec5ebc9c84fca7a0c3caad072e9da0860f7ffa2a"
+          }
+        ]
+      },
+      {
+        "start": 179.86666666666667,
+        "end": 185.76666666666668,
+        "cues": [
+          {
+            "text": "equis es continua y su soporte es intervalo cerrado desde 0 hasta be.",
+            "start": 179.86666666666667,
+            "end": 185.46666666666667,
+            "startFrame": 5396,
+            "endFrame": 5564,
+            "words": 13,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "fecfe77dd1f176f77270ad2777ca14e94996b1bb86bbb9a182722abf077553e5"
+          }
+        ]
+      },
+      {
+        "start": 185.76666666666668,
+        "end": 190.8,
+        "cues": [
+          {
+            "text": "La integral de la densidad sobre el soporte debe ser uno.",
+            "start": 185.76666666666668,
+            "end": 190.5,
+            "startFrame": 5573,
+            "endFrame": 5715,
+            "words": 11,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "00a07a7cc2a6d98f5a2b767fa70da843253894404be5739d4d01cb285d68a846"
+          }
+        ]
+      },
+      {
+        "start": 190.8,
+        "end": 201.7,
+        "cues": [
+          {
+            "text": "Integra ce equis minúscula desde cero hasta be.",
+            "start": 190.8,
+            "end": 194.23333333333332,
+            "startFrame": 5724,
+            "endFrame": 5827,
+            "words": 8,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "06e8264f530f43721f57f39e6ac910744f1a3b2c92e283995cf4dd78d0cb40db"
+          },
+          {
+            "text": "Exigimos probabilidad total uno sobre todo el soporte y comprobamos además que no haya valores negativos.",
+            "start": 194.53333333333333,
+            "end": 201.4,
+            "startFrame": 5836,
+            "endFrame": 6042,
+            "words": 16,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "e5466b54e0e2cf83968ec4b00781252729f1a73fe1f7654ef249855c4a6ebff1"
+          }
+        ]
+      },
+      {
+        "start": 201.7,
+        "end": 228.86666666666667,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 201.7,
+            "end": 204.7,
+            "startFrame": 6051,
+            "endFrame": 6141,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula ce para que efe sea una densidad.",
+            "start": 205,
+            "end": 208.43333333333334,
+            "startFrame": 6150,
+            "endFrame": 6253,
+            "words": 8,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "8acd15782f74eefd329b673f6c8b6a1aec2d3f95a16bbb15c2abacb86b0ffe96"
+          },
+          {
+            "text": "La probabilidad continua es un área.",
+            "start": 208.73333333333332,
+            "end": 211.33333333333334,
+            "startFrame": 6262,
+            "endFrame": 6340,
+            "words": 6,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "093aff3a9dc888addd263c87e132aa731728236d574d57df3e95489636746ff5"
+          },
+          {
+            "text": "Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites.",
+            "start": 211.63333333333333,
+            "end": 218.5,
+            "startFrame": 6349,
+            "endFrame": 6555,
+            "words": 16,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "90ad2f62be65a3ac8fe6c9d2c28f53cc89fc8651fa24970488ef3843dd1bc5f6"
+          },
+          {
+            "text": "Normalizamos sobre todo el soporte antes de integrar la región solicitada.",
+            "start": 218.8,
+            "end": 223.53333333333333,
+            "startFrame": 6564,
+            "endFrame": 6706,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 4,
+            "sourceCueSha256": "a139d143afd7c7846c0b5c8cbbacf5a35138420fe0bcde196c7b730092a249bb"
+          },
+          {
+            "text": "Para este apartado: Integra ce equis minúscula desde cero hasta be.",
+            "start": 223.83333333333334,
+            "end": 228.56666666666666,
+            "startFrame": 6715,
+            "endFrame": 6857,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 5,
+            "sourceCueSha256": "b3d374db5eb1c079525f356c85d2a4313d22e872cf4e3db8244e7e6d91be0d61"
+          }
+        ]
+      },
+      {
+        "start": 228.86666666666667,
+        "end": 236.76666666666668,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 228.86666666666667,
+            "end": 232.3,
+            "startFrame": 6866,
+            "endFrame": 6969,
+            "words": 8,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 232.6,
+            "end": 236.46666666666667,
+            "startFrame": 6978,
+            "endFrame": 7094,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 236.76666666666668,
+        "end": 268.7,
+        "cues": [
+          {
+            "text": "Área total igual a uno.",
+            "start": 236.76666666666668,
+            "end": 238.93333333333334,
+            "startFrame": 7103,
+            "endFrame": 7168,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "a2284fca6f04b26e0135a63fd05f8e87df71028ab92ecc3a22235f353de37969"
+          },
+          {
+            "text": "La integral es ce be al cuadrado dividido entre 2; por tanto ce igual a 2 dividido entre 3 elevado a abre paréntesis, 2, cierra paréntesis igual a 0 coma 2 2 2 2 2 2 2. integral desde 0 hasta be de ce por equis minúscula respecto de equis minúscula igual a abre paréntesis, cb al cuadrado , cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis.",
+            "start": 239.23333333333332,
+            "end": 268.4,
+            "startFrame": 7177,
+            "endFrame": 8052,
+            "words": 68,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "322508ea6baef991780f105c586f7e7617d1d32a2b82a4d718dcfdbb5d13a12f"
+          }
+        ]
+      },
+      {
+        "start": 268.7,
+        "end": 276.73333333333335,
+        "cues": [
+          {
+            "text": "integral desde 0 hasta be de ce por equis minúscula respecto de equis minúscula queda igual a 1.",
+            "start": 268.7,
+            "end": 276.43333333333334,
+            "startFrame": 8061,
+            "endFrame": 8293,
+            "words": 18,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "61b1b9f2cb6662842d6ed3a89661c62f2a4680930933bf517ee08b8a5834e82f"
+          }
+        ]
+      },
+      {
+        "start": 276.73333333333335,
+        "end": 299,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 276.73333333333335,
+            "end": 278.03333333333336,
+            "startFrame": 8302,
+            "endFrame": 8341,
+            "words": 3,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 2 2 2 2 2 2 2 unidades de longitud a la potencia menos 2.",
+            "start": 278.3333333333333,
+            "end": 286.93333333333334,
+            "startFrame": 8350,
+            "endFrame": 8608,
+            "words": 20,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "7fd559d8170595f0ff99451fdc2080617887c461f442993d9e346fb1724600f1"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 287.23333333333335,
+            "end": 293.23333333333335,
+            "startFrame": 8617,
+            "endFrame": 8797,
+            "words": 14,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "3eda5d12baaa5409adbdd08b53d68ed2f35e923388f26ab864b8f4decee36877"
+          },
+          {
+            "text": "La altura de una densidad puede superar uno; el área total no.",
+            "start": 293.53333333333336,
+            "end": 298.7,
+            "startFrame": 8806,
+            "endFrame": 8961,
+            "words": 12,
+            "sceneIndex": 14,
+            "cueIndex": 3,
+            "sourceCueSha256": "e91148455c4224a7ea8518361d70515f9b9e975380f03da2954d67d0c557834d"
+          }
+        ]
+      },
+      {
+        "start": 299,
+        "end": 313.3666666666667,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 2 2 2 2 2 2 2 unidades de longitud a la potencia menos 2.",
+            "start": 299,
+            "end": 307.6,
+            "startFrame": 8970,
+            "endFrame": 9228,
+            "words": 20,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "8248869c74f664c2f1e801ff001d99e0462fc26c9f3d825c1191d8e1e60b20ef"
+          },
+          {
+            "text": "La altura de una densidad puede superar uno; el área total no.",
+            "start": 307.9,
+            "end": 313.06666666666666,
+            "startFrame": 9237,
+            "endFrame": 9392,
+            "words": 12,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "f60f23fea4d280b135f4ff434089fa736f753ea05b7f869de58f141e7b4a0f30"
+          }
+        ]
+      },
+      {
+        "start": 313.3666666666667,
+        "end": 325.03333333333336,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 313.3666666666667,
+            "end": 315.96666666666664,
+            "startFrame": 9401,
+            "endFrame": 9479,
+            "words": 6,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula probabilidad de equis menor o igual que te minúscula.",
+            "start": 316.26666666666665,
+            "end": 320.56666666666666,
+            "startFrame": 9488,
+            "endFrame": 9617,
+            "words": 10,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "31a4b074c72979d07eafb55ef75413bd7a4e4c32492299da2b54ec25a446a398"
+          },
+          {
+            "text": "Queremos el área que queda por debajo del umbral.",
+            "start": 320.8666666666667,
+            "end": 324.73333333333335,
+            "startFrame": 9626,
+            "endFrame": 9742,
+            "words": 9,
+            "sceneIndex": 16,
+            "cueIndex": 2,
+            "sourceCueSha256": "b264eb6426f11e11e88b87754f171e03c38bca43cd25afe5b1a171e5fc77f194"
+          }
+        ]
+      },
+      {
+        "start": 325.03333333333336,
+        "end": 341.4,
+        "cues": [
+          {
+            "text": "Una densidad es probabilidad por unidad, no probabilidad de un punto.",
+            "start": 325.03333333333336,
+            "end": 329.76666666666665,
+            "startFrame": 9751,
+            "endFrame": 9893,
+            "words": 11,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "05d4efe578dbb94d081bb9622c4057e50cc4f2b1e5471faae321af144a49d26d"
+          },
+          {
+            "text": "Su integral suma pequeñas áreas de altura por anchura.",
+            "start": 330.06666666666666,
+            "end": 333.93333333333334,
+            "startFrame": 9902,
+            "endFrame": 10018,
+            "words": 9,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "3f297aeb4b5851aab819019a78ee0563797f31677a6427e0bc638b25dd980c2d"
+          },
+          {
+            "text": "El soporte fija los límites permitidos y la normalización exige área uno y altura no negativa.",
+            "start": 334.23333333333335,
+            "end": 341.1,
+            "startFrame": 10027,
+            "endFrame": 10233,
+            "words": 16,
+            "sceneIndex": 17,
+            "cueIndex": 2,
+            "sourceCueSha256": "61a5a64822a3f83b31f98c11ef42aed07badf4c99a844b54c50e8f1d6bbb4545"
+          }
+        ]
+      },
+      {
+        "start": 341.4,
+        "end": 346.8666666666667,
+        "cues": [
+          {
+            "text": "be igual a 3; umbral te minúscula igual a 1 coma 5.",
+            "start": 341.4,
+            "end": 346.56666666666666,
+            "startFrame": 10242,
+            "endFrame": 10397,
+            "words": 12,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "a1d7b3441af350347796923cce084a1fe042543105f9ba2ee9f47ff339a3c470"
+          }
+        ]
+      },
+      {
+        "start": 346.8666666666667,
+        "end": 350.1666666666667,
+        "cues": [
+          {
+            "text": "La densidad no es una probabilidad puntual.",
+            "start": 346.8666666666667,
+            "end": 349.8666666666667,
+            "startFrame": 10406,
+            "endFrame": 10496,
+            "words": 7,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "279e84905e52328bc0a59b23ec5ebc9c84fca7a0c3caad072e9da0860f7ffa2a"
+          }
+        ]
+      },
+      {
+        "start": 350.1666666666667,
+        "end": 356.06666666666666,
+        "cues": [
+          {
+            "text": "equis es continua y su soporte es intervalo cerrado desde 0 hasta be.",
+            "start": 350.1666666666667,
+            "end": 355.76666666666665,
+            "startFrame": 10505,
+            "endFrame": 10673,
+            "words": 13,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "fecfe77dd1f176f77270ad2777ca14e94996b1bb86bbb9a182722abf077553e5"
+          }
+        ]
+      },
+      {
+        "start": 356.06666666666666,
+        "end": 361.1,
+        "cues": [
+          {
+            "text": "La integral de la densidad sobre el soporte debe ser uno.",
+            "start": 356.06666666666666,
+            "end": 360.8,
+            "startFrame": 10682,
+            "endFrame": 10824,
+            "words": 11,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "00a07a7cc2a6d98f5a2b767fa70da843253894404be5739d4d01cb285d68a846"
+          }
+        ]
+      },
+      {
+        "start": 361.1,
+        "end": 372.43333333333334,
+        "cues": [
+          {
+            "text": "La probabilidad es el área desde cero hasta te minúscula.",
+            "start": 361.1,
+            "end": 365.4,
+            "startFrame": 10833,
+            "endFrame": 10962,
+            "words": 10,
+            "sceneIndex": 22,
+            "cueIndex": 0,
+            "sourceCueSha256": "a19598e47bee20c129d9bb4c43869032559959ae4d094204e89b1d7b0e34a9cc"
+          },
+          {
+            "text": "Acumulamos desde el inicio del soporte y mantenemos las mismas unidades al introducir el límite.",
+            "start": 365.7,
+            "end": 372.1333333333333,
+            "startFrame": 10971,
+            "endFrame": 11164,
+            "words": 15,
+            "sceneIndex": 22,
+            "cueIndex": 1,
+            "sourceCueSha256": "bac8a048360aeb77013bcf2664326242e2e71fd0dff16854b507dc3721ab364c"
+          }
+        ]
+      },
+      {
+        "start": 372.43333333333334,
+        "end": 401.3333333333333,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 372.43333333333334,
+            "end": 375.43333333333334,
+            "startFrame": 11173,
+            "endFrame": 11263,
+            "words": 7,
+            "sceneIndex": 23,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula probabilidad de equis menor o igual que te minúscula.",
+            "start": 375.73333333333335,
+            "end": 380.03333333333336,
+            "startFrame": 11272,
+            "endFrame": 11401,
+            "words": 10,
+            "sceneIndex": 23,
+            "cueIndex": 1,
+            "sourceCueSha256": "2068de4dd55ac4817d080441422d978de9762edf788f6d5ee3dcdec8479567ef"
+          },
+          {
+            "text": "La probabilidad continua es un área.",
+            "start": 380.3333333333333,
+            "end": 382.93333333333334,
+            "startFrame": 11410,
+            "endFrame": 11488,
+            "words": 6,
+            "sceneIndex": 23,
+            "cueIndex": 2,
+            "sourceCueSha256": "f0e9fc153478029986e8c9b1b15243c248d6ea7b5dbfca761f782ef33e6c73e6"
+          },
+          {
+            "text": "Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites.",
+            "start": 383.23333333333335,
+            "end": 390.1,
+            "startFrame": 11497,
+            "endFrame": 11703,
+            "words": 16,
+            "sceneIndex": 23,
+            "cueIndex": 3,
+            "sourceCueSha256": "abd7b22a1f364aae5560b67b55bdbabe4a87e8c8eb3dec1a4559bbfb2bf6f03d"
+          },
+          {
+            "text": "Normalizamos sobre todo el soporte antes de integrar la región solicitada.",
+            "start": 390.4,
+            "end": 395.1333333333333,
+            "startFrame": 11712,
+            "endFrame": 11854,
+            "words": 11,
+            "sceneIndex": 23,
+            "cueIndex": 4,
+            "sourceCueSha256": "addfd0f9010547f1b05252bc5b0d6faffc122838e296ab643f474f6d51cefb43"
+          },
+          {
+            "text": "Para este apartado: La probabilidad es el área desde cero hasta te minúscula.",
+            "start": 395.43333333333334,
+            "end": 401.03333333333336,
+            "startFrame": 11863,
+            "endFrame": 12031,
+            "words": 13,
+            "sceneIndex": 23,
+            "cueIndex": 5,
+            "sourceCueSha256": "0ebaca7c06c2dbf04012bb165e53050b08e9cfe9050660db93f77e9abf01dcb1"
+          }
+        ]
+      },
+      {
+        "start": 401.3333333333333,
+        "end": 431.6333333333333,
+        "cues": [
+          {
+            "text": "Integrar en el intervalo pedido. ce te minúscula al cuadrado dividido entre 2 igual a 0 coma 2 2 2 2 2 2 2 por 1 coma 5 elevado a abre paréntesis, 2, cierra paréntesis dividido entre 2 igual a 0 coma 2 5. probabilidad de equis menor o igual que te minúscula igual a integral desde 0 hasta te minúscula de ce por equis minúscula respecto de equis minúscula.",
+            "start": 401.3333333333333,
+            "end": 431.3333333333333,
+            "startFrame": 12040,
+            "endFrame": 12940,
+            "words": 70,
+            "sceneIndex": 24,
+            "cueIndex": 0,
+            "sourceCueSha256": "e2cfc2321bb2dd2705936bce36bd2c6b9cf66a685f97ad23802af80443bf9090"
+          }
+        ]
+      },
+      {
+        "start": 431.6333333333333,
+        "end": 457.76666666666665,
+        "cues": [
+          {
+            "text": "Comprobar el área.",
+            "start": 431.6333333333333,
+            "end": 432.93333333333334,
+            "startFrame": 12949,
+            "endFrame": 12988,
+            "words": 3,
+            "sceneIndex": 25,
+            "cueIndex": 0,
+            "sourceCueSha256": "9c68ab23e50d9c0afcd24b93a924f5705ee4fe63398dc32ab4d51a7ff6d9a689"
+          },
+          {
+            "text": "La primitiva de ce por equis minúscula es ce por equis minúscula al cuadrado dividido entre dos: su derivada vuelve a ser ce por equis minúscula.",
+            "start": 433.23333333333335,
+            "end": 444.4,
+            "startFrame": 12997,
+            "endFrame": 13332,
+            "words": 26,
+            "sceneIndex": 25,
+            "cueIndex": 1,
+            "sourceCueSha256": "513290edcf610ba1fb4d5752131d4be275b0a9a895ac1185afdcd03a77165a75"
+          },
+          {
+            "text": "En cero vale cero; en 1 coma 5 vale 0 coma 2 5.",
+            "start": 444.7,
+            "end": 450.3,
+            "startFrame": 13341,
+            "endFrame": 13509,
+            "words": 13,
+            "sceneIndex": 25,
+            "cueIndex": 2,
+            "sourceCueSha256": "6f28318a01dbde721d9c525fc42f5f7dcfe92177170398406820dc65fefb0e1b"
+          },
+          {
+            "text": "Restamos el valor inicial y obtenemos 0 coma 2 5, una probabilidad entre cero y uno.",
+            "start": 450.6,
+            "end": 457.46666666666664,
+            "startFrame": 13518,
+            "endFrame": 13724,
+            "words": 16,
+            "sceneIndex": 25,
+            "cueIndex": 3,
+            "sourceCueSha256": "10b4cc427e84ce0d786cb7b198fb01963159df5270ac51f0fc67d5c4c95b21bd"
+          }
+        ]
+      },
+      {
+        "start": 457.76666666666665,
+        "end": 482.6,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 457.76666666666665,
+            "end": 459.06666666666666,
+            "startFrame": 13733,
+            "endFrame": 13772,
+            "words": 3,
+            "sceneIndex": 26,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 2 5 probabilidad entre 0 y 1.",
+            "start": 459.3666666666667,
+            "end": 464.53333333333336,
+            "startFrame": 13781,
+            "endFrame": 13936,
+            "words": 12,
+            "sceneIndex": 26,
+            "cueIndex": 1,
+            "sourceCueSha256": "66243d7a663d2ab052353109f697ae66c29399be2b84e560f82ebc8a65b5d10c"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 464.8333333333333,
+            "end": 472.1333333333333,
+            "startFrame": 13945,
+            "endFrame": 14164,
+            "words": 17,
+            "sceneIndex": 26,
+            "cueIndex": 2,
+            "sourceCueSha256": "d9e4d8cafd4e8ce493017773be40e592189a7c6c8559ada1b16402e41af66c03"
+          },
+          {
+            "text": "Al ser continua, probabilidad de equis menor que te minúscula es la misma; probabilidad de equis igual a te minúscula igual a 0.",
+            "start": 472.43333333333334,
+            "end": 482.3,
+            "startFrame": 14173,
+            "endFrame": 14469,
+            "words": 23,
+            "sceneIndex": 26,
+            "cueIndex": 3,
+            "sourceCueSha256": "e4f48fb02d328799996a791712ceb5af94f680addfe43c767798c43d06ae2317"
+          }
+        ]
+      },
+      {
+        "start": 482.6,
+        "end": 498.23333333333335,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 2 5 probabilidad entre 0 y 1.",
+            "start": 482.6,
+            "end": 487.76666666666665,
+            "startFrame": 14478,
+            "endFrame": 14633,
+            "words": 12,
+            "sceneIndex": 27,
+            "cueIndex": 0,
+            "sourceCueSha256": "16f8cbc83ddd6b7e7a107863d43ccc2ae3b75b303116b2be3d9a1f277b6e14e3"
+          },
+          {
+            "text": "Al ser continua, probabilidad de equis menor que te minúscula es la misma; probabilidad de equis igual a te minúscula igual a 0.",
+            "start": 488.06666666666666,
+            "end": 497.93333333333334,
+            "startFrame": 14642,
+            "endFrame": 14938,
+            "words": 23,
+            "sceneIndex": 27,
+            "cueIndex": 1,
+            "sourceCueSha256": "0784f2178eabb63bea00b43eec2ed1020659a81801951a258b261e01df98974b"
+          }
+        ]
+      },
+      {
+        "start": 498.23333333333335,
+        "end": 512.0666666666667,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 498.23333333333335,
+            "end": 500.8333333333333,
+            "startFrame": 14947,
+            "endFrame": 15025,
+            "words": 6,
+            "sceneIndex": 28,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula probabilidad de equis igual a te minúscula, exactamente en el umbral.",
+            "start": 501.1333333333333,
+            "end": 506.3,
+            "startFrame": 15034,
+            "endFrame": 15189,
+            "words": 12,
+            "sceneIndex": 28,
+            "cueIndex": 1,
+            "sourceCueSha256": "674083978f012ac0f7919d7aa9e1d464b22caeb2ed1573c4914a1fab19192a92"
+          },
+          {
+            "text": "Queremos la probabilidad de un único valor de una variable con densidad.",
+            "start": 506.6,
+            "end": 511.76666666666665,
+            "startFrame": 15198,
+            "endFrame": 15353,
+            "words": 12,
+            "sceneIndex": 28,
+            "cueIndex": 2,
+            "sourceCueSha256": "59974ef8530c759a21dd4cd63ec2e820791ca5207a89bfc319c9a8c290f8abcb"
+          }
+        ]
+      },
+      {
+        "start": 512.0666666666667,
+        "end": 528.4333333333333,
+        "cues": [
+          {
+            "text": "Una densidad es probabilidad por unidad, no probabilidad de un punto.",
+            "start": 512.0666666666667,
+            "end": 516.8,
+            "startFrame": 15362,
+            "endFrame": 15504,
+            "words": 11,
+            "sceneIndex": 29,
+            "cueIndex": 0,
+            "sourceCueSha256": "05d4efe578dbb94d081bb9622c4057e50cc4f2b1e5471faae321af144a49d26d"
+          },
+          {
+            "text": "Su integral suma pequeñas áreas de altura por anchura.",
+            "start": 517.1,
+            "end": 520.9666666666667,
+            "startFrame": 15513,
+            "endFrame": 15629,
+            "words": 9,
+            "sceneIndex": 29,
+            "cueIndex": 1,
+            "sourceCueSha256": "3f297aeb4b5851aab819019a78ee0563797f31677a6427e0bc638b25dd980c2d"
+          },
+          {
+            "text": "El soporte fija los límites permitidos y la normalización exige área uno y altura no negativa.",
+            "start": 521.2666666666667,
+            "end": 528.1333333333333,
+            "startFrame": 15638,
+            "endFrame": 15844,
+            "words": 16,
+            "sceneIndex": 29,
+            "cueIndex": 2,
+            "sourceCueSha256": "61a5a64822a3f83b31f98c11ef42aed07badf4c99a844b54c50e8f1d6bbb4545"
+          }
+        ]
+      },
+      {
+        "start": 528.4333333333333,
+        "end": 533.9,
+        "cues": [
+          {
+            "text": "be igual a 3; umbral te minúscula igual a 1 coma 5.",
+            "start": 528.4333333333333,
+            "end": 533.6,
+            "startFrame": 15853,
+            "endFrame": 16008,
+            "words": 12,
+            "sceneIndex": 30,
+            "cueIndex": 0,
+            "sourceCueSha256": "a1d7b3441af350347796923cce084a1fe042543105f9ba2ee9f47ff339a3c470"
+          }
+        ]
+      },
+      {
+        "start": 533.9,
+        "end": 537.2,
+        "cues": [
+          {
+            "text": "La densidad no es una probabilidad puntual.",
+            "start": 533.9,
+            "end": 536.9,
+            "startFrame": 16017,
+            "endFrame": 16107,
+            "words": 7,
+            "sceneIndex": 31,
+            "cueIndex": 0,
+            "sourceCueSha256": "279e84905e52328bc0a59b23ec5ebc9c84fca7a0c3caad072e9da0860f7ffa2a"
+          }
+        ]
+      },
+      {
+        "start": 537.2,
+        "end": 543.1,
+        "cues": [
+          {
+            "text": "equis es continua y su soporte es intervalo cerrado desde 0 hasta be.",
+            "start": 537.2,
+            "end": 542.8,
+            "startFrame": 16116,
+            "endFrame": 16284,
+            "words": 13,
+            "sceneIndex": 32,
+            "cueIndex": 0,
+            "sourceCueSha256": "fecfe77dd1f176f77270ad2777ca14e94996b1bb86bbb9a182722abf077553e5"
+          }
+        ]
+      },
+      {
+        "start": 543.1,
+        "end": 548.1333333333333,
+        "cues": [
+          {
+            "text": "La integral de la densidad sobre el soporte debe ser uno.",
+            "start": 543.1,
+            "end": 547.8333333333334,
+            "startFrame": 16293,
+            "endFrame": 16435,
+            "words": 11,
+            "sceneIndex": 33,
+            "cueIndex": 0,
+            "sourceCueSha256": "00a07a7cc2a6d98f5a2b767fa70da843253894404be5739d4d01cb285d68a846"
+          }
+        ]
+      },
+      {
+        "start": 548.1333333333333,
+        "end": 556.5,
+        "cues": [
+          {
+            "text": "Un único punto tiene longitud cero.",
+            "start": 548.1333333333333,
+            "end": 550.7333333333333,
+            "startFrame": 16444,
+            "endFrame": 16522,
+            "words": 6,
+            "sceneIndex": 34,
+            "cueIndex": 0,
+            "sourceCueSha256": "b659c487fc99598529520ee330f8d7378aa0e7eb19ba0645482d4394a73218e9"
+          },
+          {
+            "text": "Un punto tiene anchura cero; una altura positiva no le proporciona área.",
+            "start": 551.0333333333333,
+            "end": 556.2,
+            "startFrame": 16531,
+            "endFrame": 16686,
+            "words": 12,
+            "sceneIndex": 34,
+            "cueIndex": 1,
+            "sourceCueSha256": "69bfa1378d929d2423357fc76dd6950a4d652a20bf578c9bd3338d537425f49e"
+          }
+        ]
+      },
+      {
+        "start": 556.5,
+        "end": 584.5333333333333,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 556.5,
+            "end": 559.5,
+            "startFrame": 16695,
+            "endFrame": 16785,
+            "words": 7,
+            "sceneIndex": 35,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula probabilidad de equis igual a te minúscula, exactamente en el umbral.",
+            "start": 559.8,
+            "end": 564.9666666666667,
+            "startFrame": 16794,
+            "endFrame": 16949,
+            "words": 12,
+            "sceneIndex": 35,
+            "cueIndex": 1,
+            "sourceCueSha256": "cd05db16bcbd0493d95cfe858dbe7a04dbcd9ae8b034c44df960f68ba371ca73"
+          },
+          {
+            "text": "La probabilidad continua es un área.",
+            "start": 565.2666666666667,
+            "end": 567.8666666666667,
+            "startFrame": 16958,
+            "endFrame": 17036,
+            "words": 6,
+            "sceneIndex": 35,
+            "cueIndex": 2,
+            "sourceCueSha256": "00fbac5f7fee7d0fe5df180d7b89cec1ef659431dbd700f7c12cf500de0d2b61"
+          },
+          {
+            "text": "Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites.",
+            "start": 568.1666666666666,
+            "end": 575.0333333333333,
+            "startFrame": 17045,
+            "endFrame": 17251,
+            "words": 16,
+            "sceneIndex": 35,
+            "cueIndex": 3,
+            "sourceCueSha256": "e07b0afcfb012f49c274d1be3bd9bc1d0164198547955266483aa19b4766e12b"
+          },
+          {
+            "text": "Normalizamos sobre todo el soporte antes de integrar la región solicitada.",
+            "start": 575.3333333333334,
+            "end": 580.0666666666667,
+            "startFrame": 17260,
+            "endFrame": 17402,
+            "words": 11,
+            "sceneIndex": 35,
+            "cueIndex": 4,
+            "sourceCueSha256": "943ccd993a6ad829f2b2af706da51b670cbceaf563c41e2c91efe79902c54460"
+          },
+          {
+            "text": "Para este apartado: Un único punto tiene longitud cero.",
+            "start": 580.3666666666667,
+            "end": 584.2333333333333,
+            "startFrame": 17411,
+            "endFrame": 17527,
+            "words": 9,
+            "sceneIndex": 35,
+            "cueIndex": 5,
+            "sourceCueSha256": "f2556e7c13d72335881503fc9835cc6c4a4696833add0d05a5c993300fef2965"
+          }
+        ]
+      },
+      {
+        "start": 584.5333333333333,
+        "end": 601.0333333333333,
+        "cues": [
+          {
+            "text": "Distinguir altura y área.",
+            "start": 584.5333333333333,
+            "end": 586.2666666666667,
+            "startFrame": 17536,
+            "endFrame": 17588,
+            "words": 4,
+            "sceneIndex": 36,
+            "cueIndex": 0,
+            "sourceCueSha256": "82d3932c435bcf33ba373c5f89c2748c5b33505388bef57fa72d1ff7601ccfa4"
+          },
+          {
+            "text": "Aunque efe minúscula abre paréntesis, te minúscula, cierra paréntesis igual a 0 coma 3 3 3 3 3 3 3, el intervalo intervalo cerrado desde te minúscula hasta te minúscula tiene área cero.",
+            "start": 586.5666666666667,
+            "end": 600.7333333333333,
+            "startFrame": 17597,
+            "endFrame": 18022,
+            "words": 33,
+            "sceneIndex": 36,
+            "cueIndex": 1,
+            "sourceCueSha256": "4451791d69bc13da0fe5254061c5a11d2eb93f0b44e9384e37cfc538bac507e8"
+          }
+        ]
+      },
+      {
+        "start": 601.0333333333333,
+        "end": 621.2666666666667,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 601.0333333333333,
+            "end": 602.3333333333334,
+            "startFrame": 18031,
+            "endFrame": 18070,
+            "words": 3,
+            "sceneIndex": 37,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 probabilidad entre 0 y 1.",
+            "start": 602.6333333333333,
+            "end": 606.5,
+            "startFrame": 18079,
+            "endFrame": 18195,
+            "words": 9,
+            "sceneIndex": 37,
+            "cueIndex": 1,
+            "sourceCueSha256": "233bf90a25368669feb0c0b4905d84791d4cc7a3f1b0a9776a3604702e41405d"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso. probabilidad de equis igual a te minúscula no se obtiene sustituyendo te minúscula en la densidad.",
+            "start": 606.8,
+            "end": 620.9666666666667,
+            "startFrame": 18204,
+            "endFrame": 18629,
+            "words": 33,
+            "sceneIndex": 37,
+            "cueIndex": 2,
+            "sourceCueSha256": "7a04313e5aab1a8fcc25502fbe550b2a42e9482e995c454bf4a97ddeae000e82"
+          }
+        ]
+      },
+      {
+        "start": 621.2666666666667,
+        "end": 632.3,
+        "cues": [
+          {
+            "text": "El resultado es 0 probabilidad entre 0 y 1. probabilidad de equis igual a te minúscula no se obtiene sustituyendo te minúscula en la densidad.",
+            "start": 621.2666666666667,
+            "end": 632,
+            "startFrame": 18638,
+            "endFrame": 18960,
+            "words": 25,
+            "sceneIndex": 38,
+            "cueIndex": 0,
+            "sourceCueSha256": "bdc370e6f5aff1fb22076c08fe7599916003b8832ec33ae21bdde5b16822c0ef"
+          }
+        ]
+      },
+      {
+        "start": 632.3,
+        "end": 689.7666666666667,
+        "cues": [
+          {
+            "text": "La primitiva G permite calcular el área acumulada entre a y b.",
+            "start": 632.3,
+            "end": 637.4666666666667,
+            "startFrame": 18969,
+            "endFrame": 19124,
+            "words": 12,
+            "sceneIndex": 39,
+            "cueIndex": 0,
+            "sourceCueSha256": "f0ded491ffd91744be67bb217acd634df5260fb0a6c744a47e5b4d059464d0ad"
+          },
+          {
+            "text": "La densidad es la pendiente de la acumulada, no la probabilidad de un punto.",
+            "start": 637.7666666666667,
+            "end": 643.7666666666667,
+            "startFrame": 19133,
+            "endFrame": 19313,
+            "words": 14,
+            "sceneIndex": 39,
+            "cueIndex": 1,
+            "sourceCueSha256": "324943e7f28e249bc2a1df294509291941074224e12183413e555b1c88b5ae6e"
+          },
+          {
+            "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+            "start": 644.0666666666667,
+            "end": 647.9333333333333,
+            "startFrame": 19322,
+            "endFrame": 19438,
+            "words": 9,
+            "sceneIndex": 39,
+            "cueIndex": 2,
+            "sourceCueSha256": "ac9ed232d51eb831d85e45096ef4863b88e88ff9f68cf62ba98a784cfb91e355"
+          },
+          {
+            "text": "Una densidad vale 2 en un intervalo de anchura 0,1.",
+            "start": 648.2333333333333,
+            "end": 652.5333333333333,
+            "startFrame": 19447,
+            "endFrame": 19576,
+            "words": 10,
+            "sceneIndex": 39,
+            "cueIndex": 3,
+            "sourceCueSha256": "d84ca9b07bbfd38e32cfce3d45834a1d0f4e1132149dab9ba244430762abad63"
+          },
+          {
+            "text": "¿Qué probabilidad aporta ese intervalo?",
+            "start": 652.8333333333334,
+            "end": 655,
+            "startFrame": 19585,
+            "endFrame": 19650,
+            "words": 5,
+            "sceneIndex": 39,
+            "cueIndex": 4,
+            "sourceCueSha256": "61ab9531350ad887246dda155bf9fddc147443bd33d04596760f0ab9e0337b52"
+          },
+          {
+            "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+            "start": 655.3,
+            "end": 659.1666666666666,
+            "startFrame": 19659,
+            "endFrame": 19775,
+            "words": 9,
+            "sceneIndex": 39,
+            "cueIndex": 5,
+            "sourceCueSha256": "e4613f88a4c67d28979c4a85b97a79d90aeb0c6525fe1200dd9e5a9797367645"
+          },
+          {
+            "text": "El área del rectángulo es altura por anchura, 2 por 0,1.",
+            "start": 659.4666666666667,
+            "end": 664.2,
+            "startFrame": 19784,
+            "endFrame": 19926,
+            "words": 11,
+            "sceneIndex": 39,
+            "cueIndex": 6,
+            "sourceCueSha256": "77ee16320e188682371d79dc941ee587d6fad5e0fadf4c3986642daa5b2770b0"
+          },
+          {
+            "text": "Una densidad puede superar uno sin que su área lo haga.",
+            "start": 664.5,
+            "end": 669.2333333333333,
+            "startFrame": 19935,
+            "endFrame": 20077,
+            "words": 11,
+            "sceneIndex": 39,
+            "cueIndex": 7,
+            "sourceCueSha256": "5c5a74b9f05430fcbd1ef1a49c96730f89877ec9360ba70d280847b0cd71d9bb"
+          },
+          {
+            "text": "Para revisar el próximo problema, evita este error: Usar la altura de la curva como probabilidad.",
+            "start": 669.5333333333333,
+            "end": 676.4,
+            "startFrame": 20086,
+            "endFrame": 20292,
+            "words": 16,
+            "sceneIndex": 39,
+            "cueIndex": 8,
+            "sourceCueSha256": "ef1d871b6d545bfebdaa340301ab1e90f7502ef3ee704ab032d51c765844518c"
+          },
+          {
+            "text": "Una altura debe multiplicarse por anchura o integrarse para dar área.",
+            "start": 676.7,
+            "end": 681.4333333333333,
+            "startFrame": 20301,
+            "endFrame": 20443,
+            "words": 11,
+            "sceneIndex": 39,
+            "cueIndex": 9,
+            "sourceCueSha256": "cd66f5d113bf284fd41f23541cfaac60caf185d37e79dc964a94d6b96dfa0479"
+          },
+          {
+            "text": "Si la anchura se reduce a cero, la probabilidad puntual es cero aunque la altura siga siendo positiva.",
+            "start": 681.7333333333333,
+            "end": 689.4666666666667,
+            "startFrame": 20452,
+            "endFrame": 20684,
+            "words": 18,
+            "sceneIndex": 39,
+            "cueIndex": 10,
+            "sourceCueSha256": "5425b3938223107b09565e41bdf26103e71698a964a26bb8da9006f02e6c5d13"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
