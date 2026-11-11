@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync, existsSync} from 'node:fs';
+import {readFileSync, existsSync, mkdtempSync, mkdirSync, writeFileSync, rmSync} from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
 import {createRequire} from 'node:module';
 import {runInNewContext} from 'node:vm';
 import {parseHTML} from 'linkedom';
@@ -12,6 +15,7 @@ import {createLessonAnimation} from '../pages/inferencia/animations.js';
 import {generateExercise} from '../pages/inferencia/exercises.js';
 import {enrichGlobalAnimation} from '../pages/inferencia/lesson-visuals.js';
 import {silentEntry} from '../scripts/publish-course-videos.mjs';
+import {remainingVideoIds, pushPublication} from '../scripts/complete-course-videos.mjs';
 import {sha256, prepareTranscriptItem} from '../data-src/course-videos/course-contract.mjs';
 import {courseTimeline} from '../data-src/course-videos/course-frame.mjs';
 
@@ -148,6 +152,66 @@ test('silent native videos retain their exact transcript without requiring or im
     mutate(changed);
     assert.equal(solutions.compatibleCourseVideo(animation, undefined, changed), false);
   }
+});
+
+test('course completion counts only compatible canonical videos with available assets', () => {
+  const animation = createLessonSections(COURSE.units[0].lessons[0])[0].animation;
+  const {track, video} = generatedMedia(animation);
+  const item = {id:animation.id, animation, canonicalSha256:video.canonicalSha256};
+  const lessons = {[item.id]:video};
+  const audio = {[item.id]:track};
+  assert.deepEqual(remainingVideoIds([item], lessons, audio), []);
+  assert.deepEqual(remainingVideoIds([item], {}, audio), [item.id]);
+  assert.deepEqual(remainingVideoIds([item], lessons, {}), [item.id]);
+  assert.deepEqual(remainingVideoIds([{...item, canonicalSha256:'c'.repeat(64)}], lessons, audio), [item.id]);
+  assert.deepEqual(remainingVideoIds([item], lessons, audio, () => false), [item.id]);
+  const stale = structuredClone(item);
+  stale.animation.steps[0].cues[0].text += ' Revised';
+  assert.deepEqual(remainingVideoIds([stale], lessons, audio), [item.id]);
+});
+
+test('automatic publication pushes verified increments atomically and refuses unrelated edits or divergent main', () => {
+  const temporary = mkdtempSync(path.join(os.tmpdir(), 'course-publication-git-'));
+  const remote = path.join(temporary, 'remote.git');
+  const checkout = path.join(temporary, 'checkout');
+  const other = path.join(temporary, 'other');
+  const git = (directory, ...args) => execFileSync('git', ['-C', directory, ...args], {encoding:'utf8', stdio:['ignore','pipe','pipe']}).trim();
+  const commit = (directory, message) => git(directory, '-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-m', message);
+  try {
+    mkdirSync(remote);
+    git(remote, 'init', '--bare');
+    mkdirSync(checkout);
+    git(checkout, 'init');
+    git(checkout, 'switch', '-c', 'main');
+    writeFileSync(path.join(checkout, 'README.md'), 'Fixture\n');
+    git(checkout, 'add', '.');
+    commit(checkout, 'Initial fixture');
+    git(checkout, 'remote', 'add', 'origin', remote);
+    git(checkout, 'push', 'origin', 'main');
+    git(checkout, 'switch', '-c', 'feature/video-fixture');
+    mkdirSync(path.join(checkout, 'static/videos'), {recursive:true});
+    writeFileSync(path.join(checkout, 'static/videos/manifest.json'), '{}\n');
+    let checks = 0;
+    const revision = pushPublication(checkout, 1, 541, {check:() => checks++});
+    assert.equal(checks, 1);
+    assert.equal(git(remote, 'rev-parse', 'main'), revision);
+    assert.equal(git(remote, 'rev-parse', 'feature/video-fixture'), revision);
+    assert.equal(git(checkout, 'status', '--porcelain'), '');
+    writeFileSync(path.join(checkout, 'README.md'), 'Unrelated edit\n');
+    assert.throws(() => pushPublication(checkout, 1, 541), /Unrelated worktree changes/);
+    assert.equal(git(remote, 'rev-parse', 'main'), revision);
+    writeFileSync(path.join(checkout, 'README.md'), 'Fixture\n');
+    git(temporary, 'clone', '--branch', 'main', remote, other);
+    writeFileSync(path.join(other, 'other.txt'), 'Concurrent main\n');
+    git(other, 'add', '.');
+    commit(other, 'Concurrent update');
+    git(other, 'push', 'origin', 'main');
+    const concurrent = git(remote, 'rev-parse', 'main');
+    writeFileSync(path.join(checkout, 'static/videos/manifest.json'), '{"updated":true}\n');
+    assert.throws(() => pushPublication(checkout, 2, 541, {check:() => checks++}));
+    assert.equal(git(remote, 'rev-parse', 'main'), concurrent);
+    assert.equal(git(remote, 'rev-parse', 'feature/video-fixture'), revision);
+  } finally {rmSync(temporary, {recursive:true, force:true});}
 });
 
 test('silent publication rejects stale, unaudited or incomplete render metadata', () => {

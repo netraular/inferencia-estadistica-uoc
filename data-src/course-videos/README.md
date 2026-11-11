@@ -110,6 +110,32 @@ including their exact transcript, with:
 node scripts/publish-course-videos.mjs --batch /absolute/native-transcript-batch
 ```
 
+### Complete and Publish the Whole Course
+
+Run the unattended coordinator from a clean, dedicated task-branch worktree.
+First prepare a new native transcript batch with the current renderer. Preserve
+older batches: their completed exports can be published without rerendering.
+
+```bash
+node scripts/complete-course-videos.mjs --batch /absolute/new-native-batch --previous /absolute/older-native-batch
+```
+
+The coordinator validates and publishes completed exports, then renders only the
+missing current videos. Filesystem events trigger publication after each completed
+item. Every publication runs the player regression tests and commits only
+`static/videos/`. Both the task branch and `main` are pushed atomically without
+force. A concurrent divergent `main` or unrelated worktree edits block publication
+instead of overwriting them; rendering can continue with the error recorded.
+
+`publication-progress.json` in the new batch records the last successfully pushed
+revision, published coverage and errors. Completion requires all 541 canonical
+items, compatible transcripts, present assets and matching final file hashes.
+Recoverable render failures remain explicit; they are not counted as complete.
+There are no automatic retry loops. A systemd user unit can keep the coordinator
+running after terminal disconnection, but the computer and user manager must stay
+running. After a reboot, inspect the recorded renderer PID and lock before manual
+resumption; never remove a live lock or run a second coordinator for the batch.
+
 Publication verifies live canonical content, source hashes, layout evidence,
 all decoded frames and media hashes. Failed or incomplete items are not copied.
 Existing compatible narrated videos take precedence. For compatible Puck audio,
