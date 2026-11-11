@@ -166,13 +166,13 @@ function Quantity({lines, progress, mode, cueIndex}) {
 function Balance({lines, progress, mode}) {
   const bar = lines.filter(line=>line.bar).at(-1);
   if (bar) return <><Tray {...bar.bar} title={bar.label} x={80} y={105} width={600} height={250} progress={progress}/><Arrow from={[100,425]} to={[700,425]} progress={progress}/></>;
-  if (mode === 'inverse-exponential') {
+  if (mode === 'inverse-exponential' && lines.some(line => /e\^\{?-t\//.test(line.tex || ''))) {
     const expression = lines.find(line => /e\^\{?-t\//.test(line.tex || ''));
     const scale = expression ? Number(expression.tex.match(/-t\/(\d+)/)?.[1]) : null;
     const points = scale ? Array.from({length:81},(_,index) => [70+index*8,350-250*Math.exp(-index*scale/40/scale)]) : [];
     return <g {...mark('inverse-function')}><path d="M65 70V355H745" fill="none" stroke={PALETTE.muted} strokeWidth={2}/>{points.length > 0 && <><polyline points={points.map(point=>point.join(',')).join(' ')} fill="none" stroke={PALETTE.green} strokeWidth={5}/><line x1={70} y1={225} x2={710} y2={225} stroke={PALETTE.coral} strokeDasharray="8 7"/><circle cx={70+640*progress} cy={350-250*Math.exp(-2*progress)} r={10} fill={PALETTE.coral}/></>}<Arrow from={[380,400]} to={[120+500*(1-progress),400]} progress={progress}/></g>;
   }
-  const weightsLine = lines.find(line => /pesos/i.test(line.label || ''));
+  const weightsLine = lines.find(line => /pesos/i.test(`${line.label || ''} ${line.value || ''}`));
   const weights = weightsLine ? numbers(weightsLine.value) : [];
   const total = weights.reduce((sum,value)=>sum+value,0);
   const knownFactor = lines.some(line => /c=/.test(line.tex || ''));
@@ -294,7 +294,7 @@ function Sets({lines, progress, operation, mode, anchor = ''}) {
 
 function Probability({lines, progress, mode, operation, cueIndex, anchor}) {
   if (mode === 'empirical-frequency') return <Quantity lines={lines} progress={progress} mode={mode} cueIndex={cueIndex}/>;
-  if (mode !== 'disjoint-mass') return <Sets lines={lines} progress={progress} mode={mode} operation={operation} anchor={anchor}/>;
+  if (mode !== 'disjoint-mass' || lines.some(line => /\\(?:cup|cap)/.test(line.tex || ''))) return <Sets lines={lines} progress={progress} mode={mode} operation={operation} anchor={anchor}/>;
   const equation=lines.find(line=>/^0\{,\}\d+\+0\{,\}\d+=/.test(line.tex || ''));
   const weights=equation ? numbers(equation.tex).slice(0,2) : [];
   return <g {...mark('disjoint-probability-mass')}>
