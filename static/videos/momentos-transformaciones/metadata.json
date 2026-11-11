@@ -1,0 +1,1289 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "momentos-transformaciones",
+  "kind": "recap",
+  "title": "Momentos, colas y transformaciones",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "320b48cafef51f9365cfa040037935c6eca99caf6b5647b31bc21e1b8f6b9cdf",
+  "src": "videos/momentos-transformaciones/video.mp4",
+  "poster": "videos/momentos-transformaciones/poster.jpg",
+  "duration": 550,
+  "frames": 16500,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "29ce3b055968d6e405514b4efcf7a43d8d5647f707821790098d6706dddd7670",
+  "videoSha256": "1b33a7025cf80efff894beabd4c1bd2bfcfd078623585797813511704c893cf8",
+  "posterSha256": "65a06a027199e673379e91aaa55dcb154d88e905b19188cb743b0dedc02026ce",
+  "canonicalSha256": "237c9b9ce0ae565446ebfff232dbeafee1b32c01c229e36b07c16fbffe7b1746",
+  "inputHash": "76443c509374485a7af438b44d5b7c8267ae6dd0c7cd171fb77a5738657b810a",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "7f86deabedd0d95371ce0cce6f254773cf8dd4e984aed507c86b90645742961b",
+    "canonicalSha256": "237c9b9ce0ae565446ebfff232dbeafee1b32c01c229e36b07c16fbffe7b1746",
+    "source": {
+      "document": "FundamentosInferencia_Tema2.pdf",
+      "section": "2.13 y ejemplos de 2.15; estandarización y cambio de variable como ampliación didáctica"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "fe00530fc36df9889c13bc4fc27bfe086f4ed6ff0ed4957378f93119b01b81f3",
+    "transcriptSha256": "29ce3b055968d6e405514b4efcf7a43d8d5647f707821790098d6706dddd7670",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "momentos-transformaciones",
+  "transcript": {
+    "id": "momentos-transformaciones",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "237c9b9ce0ae565446ebfff232dbeafee1b32c01c229e36b07c16fbffe7b1746",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 550,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 69.6,
+        "cues": [
+          {
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+          },
+          {
+            "text": "Vamos a distinguir momentos ordinarios y centrales, y a seguir qué ocurre al transformar una variable.",
+            "start": 1.5,
+            "end": 8.366666666666667,
+            "startFrame": 45,
+            "endFrame": 251,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "4ea4d9fde3e15c8f9339e9f8f41b7ef64d02f472fd6938024635aeef4304f565"
+          },
+          {
+            "text": "Un momento ordinario de orden ka promedia la potencia ka del valor; uno central promedia la potencia de su desviación respecto a la media.",
+            "start": 8.666666666666666,
+            "end": 18.966666666666665,
+            "startFrame": 260,
+            "endFrame": 569,
+            "words": 24,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "b9f2008726d9f947f0bc7acf4f7a24d82962ca0f2c92c55638c72bac771ff679"
+          },
+          {
+            "text": "El primer momento ordinario es la media.",
+            "start": 19.266666666666666,
+            "end": 22.266666666666666,
+            "startFrame": 578,
+            "endFrame": 668,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "d7e5830a1b670ed1e9d2a6447b78fa00a85316b0d80ea55497ea8483a3fad9d6"
+          },
+          {
+            "text": "El segundo central es la varianza; el primero central vale cero cuando la media es finita.",
+            "start": 22.566666666666666,
+            "end": 29.433333333333334,
+            "startFrame": 677,
+            "endFrame": 883,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "8f2b8f284054d0bd0e8847cb480d3e37a97b6c38f737a28944ca30e80df294a2"
+          },
+          {
+            "text": "La palabra central cambia lo que elevamos a la potencia, no solo el nombre.",
+            "start": 29.733333333333334,
+            "end": 35.733333333333334,
+            "startFrame": 892,
+            "endFrame": 1072,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "2463c0dd26d927141591204b89b9aee901c660eb5d860d5dbbb448feff2dc584"
+          },
+          {
+            "text": "Con cero y dos equiprobables, la media es uno y el promedio de los cuadrados es dos.",
+            "start": 36.03333333333333,
+            "end": 43.333333333333336,
+            "startFrame": 1081,
+            "endFrame": 1300,
+            "words": 17,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "b562a0b3ccf6645f9bc4accd85edb69b35a1d015e32a9f4c6c246a7bc2f501ac"
+          },
+          {
+            "text": "Restar uno al segundo momento deja varianza uno.",
+            "start": 43.63333333333333,
+            "end": 47.06666666666667,
+            "startFrame": 1309,
+            "endFrame": 1412,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "b7ecb039c8b4060d7de24a95cde61ca00be6a0e9e7310f582f679ac22cf839ca"
+          },
+          {
+            "text": "No debemos llamar varianza al promedio de cuadrados sin centrar.",
+            "start": 47.36666666666667,
+            "end": 51.666666666666664,
+            "startFrame": 1421,
+            "endFrame": 1550,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "4310dd1974515f78ab994503ede54b74b1b4ef9812435f588c8ce03e3f2a1b5a"
+          },
+          {
+            "text": "Antes de dar un momento por finito comprobamos la esperanza del valor absoluto de esa potencia.",
+            "start": 51.96666666666667,
+            "end": 58.833333333333336,
+            "startFrame": 1559,
+            "endFrame": 1765,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "b41b55f1175313f1a5caa1af92d7250d1fbdedc4773fd8cbf0b9394527a531bf"
+          },
+          {
+            "text": "Una distribución con colas pesadas puede tener media y no segundo momento, o ni siquiera media.",
+            "start": 59.13333333333333,
+            "end": 66,
+            "startFrame": 1774,
+            "endFrame": 1980,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "sourceCueSha256": "948a085a82ee9f17c3d9899d09dc6a945c4011c41a34d85ac21917dce1f1a090"
+          },
+          {
+            "text": "Una fórmula simbólica no elimina una divergencia.",
+            "start": 66.3,
+            "end": 69.3,
+            "startFrame": 1989,
+            "endFrame": 2079,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "sourceCueSha256": "d764a8d52f48dfd9c7f48d0e46425def39f2be1fb90f378c1973bd507b6f6650"
+          }
+        ]
+      },
+      {
+        "start": 69.6,
+        "end": 140.23333333333332,
+        "cues": [
+          {
+            "text": "Para la distribución de i griega igual a equis al cuadrado, seguimos qué entradas producen cada salida.",
+            "start": 69.6,
+            "end": 76.9,
+            "startFrame": 2088,
+            "endFrame": 2307,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "3f707fea2703ccdd2612590987abc82968172d510e2512d0367da5d6845afc2e"
+          },
+          {
+            "text": "En discreto, menos dos y dos llegan ambos a cuatro: sumamos sus masas.",
+            "start": 77.2,
+            "end": 82.8,
+            "startFrame": 2316,
+            "endFrame": 2484,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "c59ea0c4ccc6f8715475b4230702337c4c702d363ba016f9b2e0231f744812c9"
+          },
+          {
+            "text": "No podemos elegir solo una de esas dos entradas.",
+            "start": 83.1,
+            "end": 86.96666666666667,
+            "startFrame": 2493,
+            "endFrame": 2609,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "827f40d79d03b724d8281e4db0d991463c1705113189a91511bdd4cb6a6e01c3"
+          },
+          {
+            "text": "En continuo podemos empezar por la acumulada.",
+            "start": 87.26666666666667,
+            "end": 90.26666666666667,
+            "startFrame": 2618,
+            "endFrame": 2708,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "b36ed3d4630c0c021757771d1ed9e36180997b64b635376612c421e9c3156e56"
+          },
+          {
+            "text": "Si equis es no negativa, para un umbral no negativo pedimos equis menor o igual que su raíz.",
+            "start": 90.56666666666666,
+            "end": 98.3,
+            "startFrame": 2717,
+            "endFrame": 2949,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 4,
+            "sourceCueSha256": "96ec6347adf4ba5bb7b152f3711358397a478f5c2fc60d3d6ab6c05637222cc9"
+          },
+          {
+            "text": "Para umbrales negativos la probabilidad es cero porque un cuadrado no es negativo.",
+            "start": 98.6,
+            "end": 104.2,
+            "startFrame": 2958,
+            "endFrame": 3126,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 5,
+            "sourceCueSha256": "8fc4dd59306e71a2e51820cbbeae91ce8dccd0cb032604ef998790faa6b6e2d4"
+          },
+          {
+            "text": "Si equis admite ambos signos, la condición correcta es estar entre menos la raíz y más la raíz.",
+            "start": 104.5,
+            "end": 112.23333333333333,
+            "startFrame": 3135,
+            "endFrame": 3367,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 6,
+            "sourceCueSha256": "9acc12d17861722739028e9b7ecc71d81cdbc6a591e6f098fda2f6579f7b0fe5"
+          },
+          {
+            "text": "Así contamos los dos caminos.",
+            "start": 112.53333333333333,
+            "end": 114.7,
+            "startFrame": 3376,
+            "endFrame": 3441,
+            "words": 5,
+            "sceneIndex": 1,
+            "cueIndex": 7,
+            "sourceCueSha256": "51f60eeb8e23528ccdd63d8d36010fbd6c7ed046a1f838bc2e74c63b28be229b"
+          },
+          {
+            "text": "Con una densidad continua restamos acumuladas en esos extremos; no usamos una sola inversa global.",
+            "start": 115,
+            "end": 121.43333333333334,
+            "startFrame": 3450,
+            "endFrame": 3643,
+            "words": 15,
+            "sceneIndex": 1,
+            "cueIndex": 8,
+            "sourceCueSha256": "bc2a280946299c122f73700ac47ac54784e81d79a86369ce3054a6d29d32f7fd"
+          },
+          {
+            "text": "En un tramo monótono con inversa diferenciable, la densidad transformada multiplica la densidad original por el valor absoluto de la derivada de la inversa.",
+            "start": 121.73333333333333,
+            "end": 132.03333333333333,
+            "startFrame": 3652,
+            "endFrame": 3961,
+            "words": 24,
+            "sceneIndex": 1,
+            "cueIndex": 9,
+            "sourceCueSha256": "2e9845cf8596b7b46e7d416a974f36f119193ac9a74912c70d16a4931299988e"
+          },
+          {
+            "text": "Ese factor ajusta la anchura para conservar probabilidad.",
+            "start": 132.33333333333334,
+            "end": 135.76666666666668,
+            "startFrame": 3970,
+            "endFrame": 4073,
+            "words": 8,
+            "sceneIndex": 1,
+            "cueIndex": 10,
+            "sourceCueSha256": "6029d04210af3ae21eb64535a10085e8506017106c8c280de1f336189fbd0bda"
+          },
+          {
+            "text": "Si hay varias ramas válidas, se suman sus aportes.",
+            "start": 136.06666666666666,
+            "end": 139.93333333333334,
+            "startFrame": 4082,
+            "endFrame": 4198,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 11,
+            "sourceCueSha256": "0d60d787aa0ebeb9a63bda0b9756ef39ea8ef6eec817f3003907d0647ed88a12"
+          }
+        ]
+      },
+      {
+        "start": 140.23333333333332,
+        "end": 147.7,
+        "cues": [
+          {
+            "text": "Una señal de concentración X toma dos valores equiprobables.",
+            "start": 140.23333333333332,
+            "end": 144.1,
+            "startFrame": 4207,
+            "endFrame": 4323,
+            "words": 9,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "7aabe16813aae6584f32aac8d9bf072f1dc8b6b58e28ad57cbcdbbae58e5d5d6"
+          },
+          {
+            "text": "El instrumento transforma la señal en Y=X².",
+            "start": 144.4,
+            "end": 147.4,
+            "startFrame": 4332,
+            "endFrame": 4422,
+            "words": 7,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "cbf98fd8578962183a13ac5be9ce5b9a2d75990718635c4d5df14d608f130bf5"
+          }
+        ]
+      },
+      {
+        "start": 147.7,
+        "end": 162.8,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 147.7,
+            "end": 150.3,
+            "startFrame": 4431,
+            "endFrame": 4509,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula esperanza de i griega igual a esperanza de abre corchete, equis al cuadrado , cierra corchete.",
+            "start": 150.6,
+            "end": 157.9,
+            "startFrame": 4518,
+            "endFrame": 4737,
+            "words": 17,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "dc5867ade6f2ce5f2e057dda8cdcef895d729c965ef4c69b1ab399a85e5e755c"
+          },
+          {
+            "text": "Queremos distinguir promediar cuadrados de elevar el promedio al cuadrado.",
+            "start": 158.2,
+            "end": 162.5,
+            "startFrame": 4746,
+            "endFrame": 4875,
+            "words": 10,
+            "sceneIndex": 3,
+            "cueIndex": 2,
+            "sourceCueSha256": "06837e7aa34ce04d5a1b7e9e88030de09c4b9c5761b078700ccd64316e8423bf"
+          }
+        ]
+      },
+      {
+        "start": 162.8,
+        "end": 181.73333333333332,
+        "cues": [
+          {
+            "text": "Conservamos las probabilidades originales y transformamos cada valor antes de promediarlo.",
+            "start": 162.8,
+            "end": 167.53333333333333,
+            "startFrame": 4884,
+            "endFrame": 5026,
+            "words": 11,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "4a42bf03c498966522ec63e521a93855dc33a86682c206797749328ca857ec69"
+          },
+          {
+            "text": "Para el cuadrado, la diferencia entre esperanza del cuadrado y cuadrado de la esperanza es la varianza, que no puede ser negativa.",
+            "start": 167.83333333333334,
+            "end": 177.26666666666668,
+            "startFrame": 5035,
+            "endFrame": 5318,
+            "words": 22,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "b804d545eff44fce593f69c599bac9eaa3e5fb59a564577b5d431fbaf20393d1"
+          },
+          {
+            "text": "Por eso la convexidad no autoriza intercambiar esas operaciones.",
+            "start": 177.56666666666666,
+            "end": 181.43333333333334,
+            "startFrame": 5327,
+            "endFrame": 5443,
+            "words": 9,
+            "sceneIndex": 4,
+            "cueIndex": 2,
+            "sourceCueSha256": "2642e8ab718eb0d1bac4207f85731c5a27c4509cf09049c99525758bf9d4abe5"
+          }
+        ]
+      },
+      {
+        "start": 181.73333333333332,
+        "end": 189.76666666666668,
+        "cues": [
+          {
+            "text": "equis igual a 1 o equis igual a 7 unidades, cada uno con probabilidad 1 dividido entre 2.",
+            "start": 181.73333333333332,
+            "end": 189.46666666666667,
+            "startFrame": 5452,
+            "endFrame": 5684,
+            "words": 18,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "ac63b0fb5f4af79bbbf8275e235b673c3d468ab60ea3f277a1fdd28ebd11c088"
+          }
+        ]
+      },
+      {
+        "start": 189.76666666666668,
+        "end": 193.5,
+        "cues": [
+          {
+            "text": "i griega se expresa en unidades al cuadrado.",
+            "start": 189.76666666666668,
+            "end": 193.2,
+            "startFrame": 5693,
+            "endFrame": 5796,
+            "words": 8,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "a16f7321967358530b1cbc7bbf4fb08140fb7bc77e22451263aebc07747ddb06"
+          }
+        ]
+      },
+      {
+        "start": 193.5,
+        "end": 196.8,
+        "cues": [
+          {
+            "text": "La transformación es no lineal y convexa.",
+            "start": 193.5,
+            "end": 196.5,
+            "startFrame": 5805,
+            "endFrame": 5895,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "10eae35bdc340d02259d0abd20fcb127daa628a03dedae16c1ac5d0ccdf56311"
+          }
+        ]
+      },
+      {
+        "start": 196.8,
+        "end": 202.26666666666668,
+        "cues": [
+          {
+            "text": "Los momentos son finitos; no se intercambia esperanza y función sin justificación.",
+            "start": 196.8,
+            "end": 201.96666666666667,
+            "startFrame": 5904,
+            "endFrame": 6059,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "eab699b963e5b00bbf9fecf429282012f7e0c5b40b89d7b1d962a0e823efb85e"
+          }
+        ]
+      },
+      {
+        "start": 202.26666666666668,
+        "end": 212.76666666666668,
+        "cues": [
+          {
+            "text": "Transforma cada resultado antes de promediar.",
+            "start": 202.26666666666668,
+            "end": 204.86666666666667,
+            "startFrame": 6068,
+            "endFrame": 6146,
+            "words": 6,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "8aa662c132430dee49d01386a208d7d687facda16fe4c21ae584c09de8aa0c79"
+          },
+          {
+            "text": "Una transformación no lineal no se intercambia con la esperanza; conservamos las probabilidades de los valores originales.",
+            "start": 205.16666666666666,
+            "end": 212.46666666666667,
+            "startFrame": 6155,
+            "endFrame": 6374,
+            "words": 17,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "4812d0f59c86e91c837c68a671e38d4d51cc07c8b97aedea3b9addd9729ae0fa"
+          }
+        ]
+      },
+      {
+        "start": 212.76666666666668,
+        "end": 243.9,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 212.76666666666668,
+            "end": 215.76666666666668,
+            "startFrame": 6383,
+            "endFrame": 6473,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula esperanza de i griega igual a esperanza de abre corchete, equis al cuadrado , cierra corchete.",
+            "start": 216.06666666666666,
+            "end": 223.36666666666667,
+            "startFrame": 6482,
+            "endFrame": 6701,
+            "words": 17,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "abf3308ba7414fdb695687291c1ff7747d92dbdf5f2834b0d14ae2fe9deddf7a"
+          },
+          {
+            "text": "Primero transformamos cada resultado y después ponderamos por su probabilidad original.",
+            "start": 223.66666666666666,
+            "end": 228.4,
+            "startFrame": 6710,
+            "endFrame": 6852,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "a74adff101d63019351c74e94ea07dce8d80dc3440df15c4e906154fee366470"
+          },
+          {
+            "text": "Una operación no lineal, como elevar al cuadrado, no se puede aplicar simplemente a la media; se necesita calcular la esperanza de los valores transformados.",
+            "start": 228.7,
+            "end": 239.43333333333334,
+            "startFrame": 6861,
+            "endFrame": 7183,
+            "words": 25,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "17c20595f5b0fb5f4dfac6a842f74bcdab8a8668143cb24b180ba79070adcbb4"
+          },
+          {
+            "text": "Para este apartado: Transforma cada resultado antes de promediar.",
+            "start": 239.73333333333332,
+            "end": 243.6,
+            "startFrame": 7192,
+            "endFrame": 7308,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 4,
+            "sourceCueSha256": "a16440d033b9cb5f60e7802bfdaa1390fd13fce6c99d52b626305b8ecbe65cf4"
+          }
+        ]
+      },
+      {
+        "start": 243.9,
+        "end": 248.06666666666666,
+        "cues": [
+          {
+            "text": "Transformar los resultados. i griega toma 1 y 49.",
+            "start": 243.9,
+            "end": 247.76666666666668,
+            "startFrame": 7317,
+            "endFrame": 7433,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "51b5a9b90c407ecef568b759342fc9206c1dc5c7df3d5079b2e3a844bc01416e"
+          }
+        ]
+      },
+      {
+        "start": 248.06666666666666,
+        "end": 258.56666666666666,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 248.06666666666666,
+            "end": 250.23333333333332,
+            "startFrame": 7442,
+            "endFrame": 7507,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 250.53333333333333,
+            "end": 258.26666666666665,
+            "startFrame": 7516,
+            "endFrame": 7748,
+            "words": 18,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 258.56666666666666,
+        "end": 282.46666666666664,
+        "cues": [
+          {
+            "text": "Promediar las transformaciones. abre paréntesis, 1 más 49, cierra paréntesis dividido entre 2 igual a 25. esperanza de abre corchete, ge abre paréntesis, equis, cierra paréntesis , cierra corchete igual a suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de ge abre paréntesis, equis minúscula, cierra paréntesis por probabilidad de abre paréntesis, equis.",
+            "start": 258.56666666666666,
+            "end": 282.1666666666667,
+            "startFrame": 7757,
+            "endFrame": 8465,
+            "words": 55,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "8f66916fb2583650c190a57c80e3962d98c4cb6b21c10e0f4cafe808b215315c"
+          }
+        ]
+      },
+      {
+        "start": 282.46666666666664,
+        "end": 291.3666666666667,
+        "cues": [
+          {
+            "text": "esperanza de abre corchete, ge abre paréntesis, equis, cierra paréntesis , cierra corchete queda igual a equis minúscula, cierra paréntesis.",
+            "start": 282.46666666666664,
+            "end": 291.06666666666666,
+            "startFrame": 8474,
+            "endFrame": 8732,
+            "words": 20,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "c1e2564f59e67f1980b1c718c5999b392c18871243fb86c121c519044ab7e5a7"
+          }
+        ]
+      },
+      {
+        "start": 291.3666666666667,
+        "end": 311.8666666666667,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 291.3666666666667,
+            "end": 292.6666666666667,
+            "startFrame": 8741,
+            "endFrame": 8780,
+            "words": 3,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 25 unidades al cuadrado.",
+            "start": 292.96666666666664,
+            "end": 295.96666666666664,
+            "startFrame": 8789,
+            "endFrame": 8879,
+            "words": 7,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "3e8772e12bab5728481bdf878d8d9e1cc82ba12787a8cd414257b8e017c2d136"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 296.26666666666665,
+            "end": 302.26666666666665,
+            "startFrame": 8888,
+            "endFrame": 9068,
+            "words": 14,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "4359d019282d11c360f5c6605577a4cca1a601f2e439655d7b5fdcb0af659a85"
+          },
+          {
+            "text": "Elevar la media 4 al cuadrado daría 16, que no es esperanza de abre corchete, equis al cuadrado , cierra corchete.",
+            "start": 302.56666666666666,
+            "end": 311.56666666666666,
+            "startFrame": 9077,
+            "endFrame": 9347,
+            "words": 21,
+            "sceneIndex": 15,
+            "cueIndex": 3,
+            "sourceCueSha256": "23e30172edbde76e21af63fec407b001009a555d39185c1bed8694053fabc6c9"
+          }
+        ]
+      },
+      {
+        "start": 311.8666666666667,
+        "end": 324.46666666666664,
+        "cues": [
+          {
+            "text": "El resultado es 25 unidades al cuadrado.",
+            "start": 311.8666666666667,
+            "end": 314.8666666666667,
+            "startFrame": 9356,
+            "endFrame": 9446,
+            "words": 7,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "5dba09241b9d4ad22c1c070cef79e183ddbbc93914c6e10f2992ac6df44d4790"
+          },
+          {
+            "text": "Elevar la media 4 al cuadrado daría 16, que no es esperanza de abre corchete, equis al cuadrado , cierra corchete.",
+            "start": 315.1666666666667,
+            "end": 324.1666666666667,
+            "startFrame": 9455,
+            "endFrame": 9725,
+            "words": 21,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "01925608678cab0f91de0e8ac9a31cd4b8917f5de03ab88b7a517ac61487b937"
+          }
+        ]
+      },
+      {
+        "start": 324.46666666666664,
+        "end": 343.43333333333334,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 324.46666666666664,
+            "end": 327.06666666666666,
+            "startFrame": 9734,
+            "endFrame": 9812,
+            "words": 6,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula esperanza de abre corchete, equis al cuadrado , cierra corchete menos abre paréntesis, esperanza de equis, cierra paréntesis elevado a abre paréntesis, 2, cierra paréntesis.",
+            "start": 327.3666666666667,
+            "end": 338.53333333333336,
+            "startFrame": 9821,
+            "endFrame": 10156,
+            "words": 26,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "cbe03514ae262a37ec5c16306d193214e1c65e70790299efe3bb175c00de94a5"
+          },
+          {
+            "text": "Queremos distinguir promediar cuadrados de elevar el promedio al cuadrado.",
+            "start": 338.8333333333333,
+            "end": 343.1333333333333,
+            "startFrame": 10165,
+            "endFrame": 10294,
+            "words": 10,
+            "sceneIndex": 17,
+            "cueIndex": 2,
+            "sourceCueSha256": "e21101191363966d0d4d0b87523998b19b4c74d64ce9fa7d421d44c73a830c8d"
+          }
+        ]
+      },
+      {
+        "start": 343.43333333333334,
+        "end": 362.3666666666667,
+        "cues": [
+          {
+            "text": "Conservamos las probabilidades originales y transformamos cada valor antes de promediarlo.",
+            "start": 343.43333333333334,
+            "end": 348.1666666666667,
+            "startFrame": 10303,
+            "endFrame": 10445,
+            "words": 11,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "4a42bf03c498966522ec63e521a93855dc33a86682c206797749328ca857ec69"
+          },
+          {
+            "text": "Para el cuadrado, la diferencia entre esperanza del cuadrado y cuadrado de la esperanza es la varianza, que no puede ser negativa.",
+            "start": 348.46666666666664,
+            "end": 357.9,
+            "startFrame": 10454,
+            "endFrame": 10737,
+            "words": 22,
+            "sceneIndex": 18,
+            "cueIndex": 1,
+            "sourceCueSha256": "b804d545eff44fce593f69c599bac9eaa3e5fb59a564577b5d431fbaf20393d1"
+          },
+          {
+            "text": "Por eso la convexidad no autoriza intercambiar esas operaciones.",
+            "start": 358.2,
+            "end": 362.06666666666666,
+            "startFrame": 10746,
+            "endFrame": 10862,
+            "words": 9,
+            "sceneIndex": 18,
+            "cueIndex": 2,
+            "sourceCueSha256": "2642e8ab718eb0d1bac4207f85731c5a27c4509cf09049c99525758bf9d4abe5"
+          }
+        ]
+      },
+      {
+        "start": 362.3666666666667,
+        "end": 370.4,
+        "cues": [
+          {
+            "text": "equis igual a 1 o equis igual a 7 unidades, cada uno con probabilidad 1 dividido entre 2.",
+            "start": 362.3666666666667,
+            "end": 370.1,
+            "startFrame": 10871,
+            "endFrame": 11103,
+            "words": 18,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "ac63b0fb5f4af79bbbf8275e235b673c3d468ab60ea3f277a1fdd28ebd11c088"
+          }
+        ]
+      },
+      {
+        "start": 370.4,
+        "end": 374.1333333333333,
+        "cues": [
+          {
+            "text": "i griega se expresa en unidades al cuadrado.",
+            "start": 370.4,
+            "end": 373.8333333333333,
+            "startFrame": 11112,
+            "endFrame": 11215,
+            "words": 8,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "a16f7321967358530b1cbc7bbf4fb08140fb7bc77e22451263aebc07747ddb06"
+          }
+        ]
+      },
+      {
+        "start": 374.1333333333333,
+        "end": 377.43333333333334,
+        "cues": [
+          {
+            "text": "La transformación es no lineal y convexa.",
+            "start": 374.1333333333333,
+            "end": 377.1333333333333,
+            "startFrame": 11224,
+            "endFrame": 11314,
+            "words": 7,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "10eae35bdc340d02259d0abd20fcb127daa628a03dedae16c1ac5d0ccdf56311"
+          }
+        ]
+      },
+      {
+        "start": 377.43333333333334,
+        "end": 382.9,
+        "cues": [
+          {
+            "text": "Los momentos son finitos; no se intercambia esperanza y función sin justificación.",
+            "start": 377.43333333333334,
+            "end": 382.6,
+            "startFrame": 11323,
+            "endFrame": 11478,
+            "words": 12,
+            "sceneIndex": 22,
+            "cueIndex": 0,
+            "sourceCueSha256": "eab699b963e5b00bbf9fecf429282012f7e0c5b40b89d7b1d962a0e823efb85e"
+          }
+        ]
+      },
+      {
+        "start": 382.9,
+        "end": 395.53333333333336,
+        "cues": [
+          {
+            "text": "La diferencia es exactamente varianza de equis para la función cuadrado.",
+            "start": 382.9,
+            "end": 387.6333333333333,
+            "startFrame": 11487,
+            "endFrame": 11629,
+            "words": 11,
+            "sceneIndex": 23,
+            "cueIndex": 0,
+            "sourceCueSha256": "ba45ba5336a21c4096ac00d40f88a1b8766421234af4747d513409b941c6e8f4"
+          },
+          {
+            "text": "Una transformación no lineal no se intercambia con la esperanza; conservamos las probabilidades de los valores originales.",
+            "start": 387.93333333333334,
+            "end": 395.23333333333335,
+            "startFrame": 11638,
+            "endFrame": 11857,
+            "words": 17,
+            "sceneIndex": 23,
+            "cueIndex": 1,
+            "sourceCueSha256": "e3840267861cf6263255149454a0caec069f9e519efc984868e183077a62c8fb"
+          }
+        ]
+      },
+      {
+        "start": 395.53333333333336,
+        "end": 432.6666666666667,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 395.53333333333336,
+            "end": 398.53333333333336,
+            "startFrame": 11866,
+            "endFrame": 11956,
+            "words": 7,
+            "sceneIndex": 24,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula esperanza de abre corchete, equis al cuadrado , cierra corchete menos abre paréntesis, esperanza de equis, cierra paréntesis elevado a abre paréntesis, 2, cierra paréntesis.",
+            "start": 398.8333333333333,
+            "end": 410,
+            "startFrame": 11965,
+            "endFrame": 12300,
+            "words": 26,
+            "sceneIndex": 24,
+            "cueIndex": 1,
+            "sourceCueSha256": "73ca593b2850a6153e5f62c61136deb7b3d7b7c1675c59e1e5e8e905c4b3bcc9"
+          },
+          {
+            "text": "Primero transformamos cada resultado y después ponderamos por su probabilidad original.",
+            "start": 410.3,
+            "end": 415.03333333333336,
+            "startFrame": 12309,
+            "endFrame": 12451,
+            "words": 11,
+            "sceneIndex": 24,
+            "cueIndex": 2,
+            "sourceCueSha256": "1e84597fcc61134b7b9e82afe0636b9d510da7178184ebed22d5f07a5577ac26"
+          },
+          {
+            "text": "Una operación no lineal, como elevar al cuadrado, no se puede aplicar simplemente a la media; se necesita calcular la esperanza de los valores transformados.",
+            "start": 415.3333333333333,
+            "end": 426.06666666666666,
+            "startFrame": 12460,
+            "endFrame": 12782,
+            "words": 25,
+            "sceneIndex": 24,
+            "cueIndex": 3,
+            "sourceCueSha256": "fbb5d52bd25ccdfa2d921573fb34ec81f85bbcc97a094888946e3d09c7ca317b"
+          },
+          {
+            "text": "Para este apartado: La diferencia es exactamente varianza de equis para la función cuadrado.",
+            "start": 426.3666666666667,
+            "end": 432.3666666666667,
+            "startFrame": 12791,
+            "endFrame": 12971,
+            "words": 14,
+            "sceneIndex": 24,
+            "cueIndex": 4,
+            "sourceCueSha256": "2199299393d0ff76ca2bf8a3814298387b11558ec7d9f4a7e931a48a0d2e25b5"
+          }
+        ]
+      },
+      {
+        "start": 432.6666666666667,
+        "end": 441.96666666666664,
+        "cues": [
+          {
+            "text": "Promediar sin transformar. esperanza de equis igual a abre paréntesis, 1 más 7, cierra paréntesis dividido entre 2 igual a 4.",
+            "start": 432.6666666666667,
+            "end": 441.6666666666667,
+            "startFrame": 12980,
+            "endFrame": 13250,
+            "words": 21,
+            "sceneIndex": 25,
+            "cueIndex": 0,
+            "sourceCueSha256": "4bc6ecad091c0c9d23605c341168cd976e925dc0b8f8ce667c9de130949044f7"
+          }
+        ]
+      },
+      {
+        "start": 441.96666666666664,
+        "end": 452.46666666666664,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 441.96666666666664,
+            "end": 444.1333333333333,
+            "startFrame": 13259,
+            "endFrame": 13324,
+            "words": 5,
+            "sceneIndex": 26,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 444.43333333333334,
+            "end": 452.1666666666667,
+            "startFrame": 13333,
+            "endFrame": 13565,
+            "words": 18,
+            "sceneIndex": 26,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 452.46666666666664,
+        "end": 469.06666666666666,
+        "cues": [
+          {
+            "text": "Comparar los dos órdenes. 25 menos 4 elevado a abre paréntesis, 2, cierra paréntesis igual a 9 mayor que 0. esperanza de equis al cuadrado mayor o igual que abre paréntesis, esperanza de equis, cierra paréntesis al cuadrado.",
+            "start": 452.46666666666664,
+            "end": 468.76666666666665,
+            "startFrame": 13574,
+            "endFrame": 14063,
+            "words": 38,
+            "sceneIndex": 27,
+            "cueIndex": 0,
+            "sourceCueSha256": "30041a601ed26f955c064dbfb6a4a24c1ca69c7d0be193a745e591f22650fba3"
+          }
+        ]
+      },
+      {
+        "start": 469.06666666666666,
+        "end": 487,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 469.06666666666666,
+            "end": 470.3666666666667,
+            "startFrame": 14072,
+            "endFrame": 14111,
+            "words": 3,
+            "sceneIndex": 28,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 9 unidades al cuadrado.",
+            "start": 470.6666666666667,
+            "end": 473.6666666666667,
+            "startFrame": 14120,
+            "endFrame": 14210,
+            "words": 7,
+            "sceneIndex": 28,
+            "cueIndex": 1,
+            "sourceCueSha256": "47e54b1ba2c0b27f1bed3a934c936515058cca10c42d89df118e529ae4fe3987"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 473.96666666666664,
+            "end": 479.96666666666664,
+            "startFrame": 14219,
+            "endFrame": 14399,
+            "words": 14,
+            "sceneIndex": 28,
+            "cueIndex": 2,
+            "sourceCueSha256": "4359d019282d11c360f5c6605577a4cca1a601f2e439655d7b5fdcb0af659a85"
+          },
+          {
+            "text": "Jensen predice esta desigualdad para funciones convexas; aquí es estricta porque equis no es constante.",
+            "start": 480.26666666666665,
+            "end": 486.7,
+            "startFrame": 14408,
+            "endFrame": 14601,
+            "words": 15,
+            "sceneIndex": 28,
+            "cueIndex": 3,
+            "sourceCueSha256": "e8f89efc770391b0f7df4dcc410298b17f846dab50910801f480233c3a1ee6fd"
+          }
+        ]
+      },
+      {
+        "start": 487,
+        "end": 497.03333333333336,
+        "cues": [
+          {
+            "text": "El resultado es 9 unidades al cuadrado.",
+            "start": 487,
+            "end": 490,
+            "startFrame": 14610,
+            "endFrame": 14700,
+            "words": 7,
+            "sceneIndex": 29,
+            "cueIndex": 0,
+            "sourceCueSha256": "3eee0665074a8d9b0e91a6f0727c0220f070ac37a1587582136bba619761c6c0"
+          },
+          {
+            "text": "Jensen predice esta desigualdad para funciones convexas; aquí es estricta porque equis no es constante.",
+            "start": 490.3,
+            "end": 496.73333333333335,
+            "startFrame": 14709,
+            "endFrame": 14902,
+            "words": 15,
+            "sceneIndex": 29,
+            "cueIndex": 1,
+            "sourceCueSha256": "62c23a003cb1d8a01711c80e6c8c627943997633b4cb0cb14c6199020eeaefa6"
+          }
+        ]
+      },
+      {
+        "start": 497.03333333333336,
+        "end": 550,
+        "cues": [
+          {
+            "text": "Los momentos ordinarios y centrales ponderan potencias distintas; se comprueba su existencia.",
+            "start": 497.03333333333336,
+            "end": 502.2,
+            "startFrame": 14911,
+            "endFrame": 15066,
+            "words": 12,
+            "sceneIndex": 30,
+            "cueIndex": 0,
+            "sourceCueSha256": "4970703be831cf119f31923c305aed0527d6e5d1a4fb19b68c0fce16eb21f35f"
+          },
+          {
+            "text": "La primera igualdad supone g creciente; la segunda vale para un cambio diferenciable e invertible en el soporte.",
+            "start": 502.5,
+            "end": 510.23333333333335,
+            "startFrame": 15075,
+            "endFrame": 15307,
+            "words": 18,
+            "sceneIndex": 30,
+            "cueIndex": 1,
+            "sourceCueSha256": "658713c9bd38fa8dcb238ee65d1647ca70e7849500921f33f410ed07fe88d0b5"
+          },
+          {
+            "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+            "start": 510.53333333333336,
+            "end": 514.4,
+            "startFrame": 15316,
+            "endFrame": 15432,
+            "words": 9,
+            "sceneIndex": 30,
+            "cueIndex": 2,
+            "sourceCueSha256": "aece555504e124aac181e2d749b37a00606d11f97cb435edaa9088c919b3bb7f"
+          },
+          {
+            "text": "¿Cuál es el segundo momento central de una variable con varianza finita?",
+            "start": 514.7,
+            "end": 519.8666666666667,
+            "startFrame": 15441,
+            "endFrame": 15596,
+            "words": 12,
+            "sceneIndex": 30,
+            "cueIndex": 3,
+            "sourceCueSha256": "acca542b456c4a590897a8cd06bed28bf9e62838832bd9a3c4b71b7f40381724"
+          },
+          {
+            "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+            "start": 520.1666666666666,
+            "end": 524.0333333333333,
+            "startFrame": 15605,
+            "endFrame": 15721,
+            "words": 9,
+            "sceneIndex": 30,
+            "cueIndex": 4,
+            "sourceCueSha256": "971eafc41a04d81da9e0d142af42ab31588578b42e0e94b6dfbe63095213af10"
+          },
+          {
+            "text": "El segundo momento central promedia desviaciones cuadráticas respecto a la media: es precisamente la varianza.",
+            "start": 524.3333333333334,
+            "end": 530.7666666666667,
+            "startFrame": 15730,
+            "endFrame": 15923,
+            "words": 15,
+            "sceneIndex": 30,
+            "cueIndex": 5,
+            "sourceCueSha256": "e6c7893c821c73ef896ec2fa2cab7f3ba14f9da5b528d4a8d92f9fc7ccf1fecd"
+          },
+          {
+            "text": "Para revisar el próximo problema, evita este error: Asumir que todos los momentos existen.",
+            "start": 531.0666666666667,
+            "end": 537.0666666666667,
+            "startFrame": 15932,
+            "endFrame": 16112,
+            "words": 14,
+            "sceneIndex": 30,
+            "cueIndex": 6,
+            "sourceCueSha256": "a0e870e5b2993007ca2278c2fad2d7a6a04921f56e62f7da84d60de3dbf13e31"
+          },
+          {
+            "text": "Antes de promediar una potencia comprobamos que su valor absoluto sea integrable.",
+            "start": 537.3666666666667,
+            "end": 542.5333333333333,
+            "startFrame": 16121,
+            "endFrame": 16276,
+            "words": 12,
+            "sceneIndex": 30,
+            "cueIndex": 7,
+            "sourceCueSha256": "e9d60ab0bf1e8135d983db9b1caf9c3db66b43aae888646d2bd247f7e981c0d8"
+          },
+          {
+            "text": "La cancelación de colas divergentes no define un momento, aunque una expresión formal parezca dar cero.",
+            "start": 542.8333333333334,
+            "end": 549.7,
+            "startFrame": 16285,
+            "endFrame": 16491,
+            "words": 16,
+            "sceneIndex": 30,
+            "cueIndex": 8,
+            "sourceCueSha256": "7ccff311b8e5e0bbef234ed63f43dd96c9e625adcb10018a8b6dbb269906be80"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
