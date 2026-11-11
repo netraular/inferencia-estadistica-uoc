@@ -1,0 +1,388 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.3--f-height",
+  "kind": "exercise",
+  "title": "¿Cuánto vale la densidad g(1)?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "2061ba40fa611d0f6afc0646fc2fadbe7d93202d58b703436c4be0bbfc98146a",
+  "src": "videos/ejercicio-pdf-u2-2.3--f-height/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.3--f-height/poster.jpg",
+  "duration": 140.4,
+  "frames": 4212,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "92080c6ddc6a022774dc31e75466ba0c870a1ebc1cce097706834eee17e1a000",
+  "videoSha256": "6f16d2d4be014bcd16091a29275d5f6cf97007966a8a6bc5d9f49bb936949155",
+  "posterSha256": "215ce653d575ccc254394a2a6ab30d561471941c65223e7b9b513604fe4ce3bf",
+  "canonicalSha256": "37f22a581ad64931b9468ed298cc834131f1ecfe1b20aa5f5167159775f53697",
+  "inputHash": "569e7125b295f9a8e7579b097f1591f82940946709421374e2e36271ec86565a",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "901669e69106d5c42b5ecdf4001b01e052b21028ee14e38e71b95e5e0873c90b",
+    "canonicalSha256": "37f22a581ad64931b9468ed298cc834131f1ecfe1b20aa5f5167159775f53697",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.3",
+      "page": 8
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "717fd43c5238987573fe0a2461ef6f64056e4056c6a363d903a712e419c48353",
+    "transcriptSha256": "92080c6ddc6a022774dc31e75466ba0c870a1ebc1cce097706834eee17e1a000",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.3",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.3--f-height",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "37f22a581ad64931b9468ed298cc834131f1ecfe1b20aa5f5167159775f53697",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 140.4,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 11.666666666666666,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuánto vale la densidad ge abre paréntesis, 1, cierra paréntesis?",
+            "start": 2.9,
+            "end": 7.2,
+            "startFrame": 87,
+            "endFrame": 216,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "c1ee0756db6e4dd3810e7eae5cf4348a86e2ca7d329ee35f1b529d8096fb25ba"
+          },
+          {
+            "text": "Queremos una altura de densidad, no una probabilidad puntual.",
+            "start": 7.5,
+            "end": 11.366666666666667,
+            "startFrame": 225,
+            "endFrame": 341,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "f2670b5260020eaf0934c5b230591370e6e5ace1dc61649524943fa27555e5ff"
+          }
+        ]
+      },
+      {
+        "start": 11.666666666666666,
+        "end": 34.766666666666666,
+        "cues": [
+          {
+            "text": "La propuesta es e elevado a menos ka por equis minúscula, sin el factor ka habitual delante.",
+            "start": 11.666666666666666,
+            "end": 18.966666666666665,
+            "startFrame": 350,
+            "endFrame": 569,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "2f03ee2671e655dbb33ffe9eccad3dcaf69ff81d03d3391338fdae2003dcf0bb"
+          },
+          {
+            "text": "Su área es uno entre ka cuando ka es positivo: exigir área uno fija ka en uno.",
+            "start": 19.266666666666666,
+            "end": 26.566666666666666,
+            "startFrame": 578,
+            "endFrame": 797,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "59b79801473ed4e379b7159cf0fea56f330cb03f4651d86e2061dad80e4b02f5"
+          },
+          {
+            "text": "No podemos elegir cualquier tasa sin cambiar también la normalización.",
+            "start": 26.866666666666667,
+            "end": 31.166666666666668,
+            "startFrame": 806,
+            "endFrame": 935,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "85da219d50a7dcd3207a5125fa5c2f3fdc820225c00cbbc3d39964ad726dddc6"
+          },
+          {
+            "text": "El soporte no tiene un máximo finito.",
+            "start": 31.466666666666665,
+            "end": 34.46666666666667,
+            "startFrame": 944,
+            "endFrame": 1034,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "150a2ebdf927755547d635a1450382da99ce17d3a1d1656b2fef0e88fe3b6a72"
+          }
+        ]
+      },
+      {
+        "start": 34.766666666666666,
+        "end": 52.53333333333333,
+        "cues": [
+          {
+            "text": "equis se mide en años.",
+            "start": 34.766666666666666,
+            "end": 36.93333333333333,
+            "startFrame": 1043,
+            "endFrame": 1108,
+            "words": 5,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ad80a05019028e52ed77b2d47aa8f23ff9e3eb8c6dade41ae65e5912c3b5fc91"
+          },
+          {
+            "text": "Modelo inicial: efe minúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 1 menos equis minúscula dividido entre 2 para 0 menor o igual que equis minúscula menor o igual que 2, y cero fuera.",
+            "start": 37.233333333333334,
+            "end": 52.233333333333334,
+            "startFrame": 1117,
+            "endFrame": 1567,
+            "words": 35,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "bcb65bf27b62f0a329975801265c233e3dcf049c03cd44cfbc1ffae38d2573f7"
+          }
+        ]
+      },
+      {
+        "start": 52.53333333333333,
+        "end": 70.43333333333334,
+        "cues": [
+          {
+            "text": "Alternativa: ge abre paréntesis, equis minúscula, cierra paréntesis igual a exponencial de abre paréntesis, menos ka por equis minúscula, cierra paréntesis para equis minúscula mayor o igual que 0, y cero fuera; no hay un factor ka delante de la exponencial.",
+            "start": 52.53333333333333,
+            "end": 70.13333333333334,
+            "startFrame": 1576,
+            "endFrame": 2104,
+            "words": 41,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ab24a4cec95deee2b65cd5ba20cb9010bc644ddc3b040e160597984e3179e09"
+          }
+        ]
+      },
+      {
+        "start": 70.43333333333334,
+        "end": 75.9,
+        "cues": [
+          {
+            "text": "Los dos modelos son continuos y se consideran solo como propuestas docentes.",
+            "start": 70.43333333333334,
+            "end": 75.6,
+            "startFrame": 2113,
+            "endFrame": 2268,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "7cddd8615edbcf7badec294a952dbe35ceb20d0096e0658098e649990e848c5b"
+          }
+        ]
+      },
+      {
+        "start": 75.9,
+        "end": 96.8,
+        "cues": [
+          {
+            "text": "Corrección del PDF: efe mayúscula abre paréntesis, 0 coma 5, cierra paréntesis igual a 0 coma 4 3 7 5; probabilidad de 0 coma 5 menor que equis menor que 1 igual a 0 coma 3 1 2 5, no 0 coma 3 7 5 en ambos casos.",
+            "start": 75.9,
+            "end": 96.5,
+            "startFrame": 2277,
+            "endFrame": 2895,
+            "words": 48,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "ece2d79abeb0d53f5609048b22ad0ce1c75789d56a36e8714605ad2bb9687c41"
+          }
+        ]
+      },
+      {
+        "start": 96.8,
+        "end": 112.73333333333333,
+        "cues": [
+          {
+            "text": "La letra minúscula representa densidad por año.",
+            "start": 96.8,
+            "end": 99.8,
+            "startFrame": 2904,
+            "endFrame": 2994,
+            "words": 7,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "cc68dbb7b24f20e10157143716ded19b36a2ef39904766915689ca0720dff977"
+          },
+          {
+            "text": "Sustituyo equis minúscula por uno, sin confundir el resultado con una probabilidad puntual.",
+            "start": 100.1,
+            "end": 105.7,
+            "startFrame": 3003,
+            "endFrame": 3171,
+            "words": 13,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "88a35854d612fb3794aa54b744ebd052b629a2c6449001f22e9d51740bb98836"
+          },
+          {
+            "text": "Evaluar la función da densidad por unidad; solo su integral sobre una región da probabilidad.",
+            "start": 106,
+            "end": 112.43333333333334,
+            "startFrame": 3180,
+            "endFrame": 3373,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 2,
+            "sourceCueSha256": "7643540cba1aa01e106c715164117f0b9310218b7876332ff2e581d036759ef6"
+          }
+        ]
+      },
+      {
+        "start": 112.73333333333333,
+        "end": 130.8,
+        "cues": [
+          {
+            "text": "Evaluar la altura.",
+            "start": 112.73333333333333,
+            "end": 114.03333333333333,
+            "startFrame": 3382,
+            "endFrame": 3421,
+            "words": 3,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "8ed25c9aa276f722747c361e953ad8b0059d806251deb8c14489a894abe2cca6"
+          },
+          {
+            "text": "La letra minúscula representa densidad por año.",
+            "start": 114.33333333333333,
+            "end": 117.33333333333333,
+            "startFrame": 3430,
+            "endFrame": 3520,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "8c6e7bd2519f17703962edd7a682a371e79dc3f69e3dd389a31630aef210c7e7"
+          },
+          {
+            "text": "Sustituyo equis minúscula por uno, sin confundir el resultado con una probabilidad puntual. ge abre paréntesis, 1, cierra paréntesis igual a e elevado a abre paréntesis, menos 1, cierra paréntesis.",
+            "start": 117.63333333333334,
+            "end": 130.5,
+            "startFrame": 3529,
+            "endFrame": 3915,
+            "words": 30,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "9fbbc52829bb03182f385d298ac343b819a5769a80a9630f598fe98e77e6eae9"
+          }
+        ]
+      },
+      {
+        "start": 130.8,
+        "end": 140.4,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 3 6 7 8 7 9 4 años inversos.",
+            "start": 130.8,
+            "end": 136.8,
+            "startFrame": 3924,
+            "endFrame": 4104,
+            "words": 14,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "e7b07c7fb9c46ef1d7331bb6ef79998dd15f8329336404ef9c44498d54b7711f"
+          },
+          {
+            "text": "La altura tiene unidades de años inversos.",
+            "start": 137.1,
+            "end": 140.1,
+            "startFrame": 4113,
+            "endFrame": 4203,
+            "words": 7,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "c1c285c849ebbe69734700daa1ae95d117a4b3fe05b7d315c71bef6d6b8dc32a"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
