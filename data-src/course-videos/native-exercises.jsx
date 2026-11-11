@@ -1,4 +1,5 @@
 import React from 'react';
+import statistics from 'jstat';
 import {PALETTE, ease, mix, SceneSurface, MathFormula, SvgText} from './native-primitives.jsx';
 import {selectedCount, layoutExerciseExplanation} from './native-exercises.mjs';
 
@@ -17,11 +18,192 @@ function Mark({children,...props}) {
 }
 
 function Axes({x=65,y=365,width=650,height=280,xLabel='x',yLabel='f(x)'}) {
-  return <g stroke={PALETTE.line} strokeWidth={2}>
+  return <g stroke={PALETTE.ink} strokeWidth={3}>
     <path d={`M${x},${y-height}V${y}H${x+width}`} fill="none" />
-    <SvgText text={xLabel} x={x+width} y={y+30} fontSize={20} anchor="end" />
+    <SvgText text={xLabel} x={x+width} y={y+62} fontSize={20} anchor="end" />
     <SvgText text={yLabel} x={x} y={y-height-15} fontSize={20} />
   </g>;
+}
+
+const extent = (values,zero=false) => {
+  const minimum = Math.min(...values,...(zero ? [0] : []));
+  const maximum = Math.max(...values,...(zero ? [0] : []));
+  return minimum === maximum ? [minimum-1,maximum+1] : [minimum,maximum];
+};
+const plotPath = (points,x,y) => points.map(([first,second],index) => `${index ? 'L' : 'M'}${x(first)},${y(second)}`).join('');
+
+function PlotAxes({domain,range,xLabel='x',yLabel='y',ticks}) {
+  const x = value => 85+630*(value-domain[0])/(domain[1]-domain[0]);
+  const y = value => 350-255*(value-range[0])/(range[1]-range[0]);
+  const occupied = [];
+  return <g>
+    <Axes x={85} y={350} width={630} height={255} xLabel="" yLabel={yLabel} />
+    {[range[0],(range[0]+range[1])/2,range[1]].map((value,index) => <g key={index}>
+      <path d={`M80 ${y(value)}H715`} stroke={PALETTE.line} fill="none" />
+      <SvgText text={number(value)} x={67} y={y(value)+6} width={65} fontSize={17} anchor="end" />
+    </g>)}
+    {(ticks || [domain[0],(domain[0]+domain[1])/2,domain[1]]).map((value,index) => {
+      const width = Math.max(28,number(value).length*10);
+      let lane = 0;
+      while (occupied.some(box => box.lane === lane && Math.abs(box.x-x(value)) < (box.width+width)/2+8)) lane++;
+      occupied.push({x:x(value),width,lane});
+      return <g key={index}>
+        <path d={`M${x(value)} 350v6`} stroke={PALETTE.muted} />
+        <SvgText text={number(value)} x={x(value)} y={382+lane*25} width={width+10} fontSize={18} anchor="middle" />
+      </g>;
+    })}
+    <SvgText text={xLabel} x={400} y={451} width={630} fontSize={20} anchor="middle" />
+  </g>;
+}
+
+function SourceDiagram({diagram,phase:cuePhase}) {
+  const selected = diagram.highlight || diagram.selected || cuePhase?.focus?.targets?.indices || [];
+  const kind = diagram.kind;
+  let content;
+  if (kind === 'matrix') {
+    const cellWidth = 570/diagram.columns.length;
+    const dense = cellWidth < 70;
+    const top = dense ? 150 : 80;
+    const cellHeight = (dense ? 250 : 300)/diagram.rows.length;
+    const labelSize = Math.min(20,cellHeight*0.65);
+    content = <g>
+      {diagram.columns.map((label,index) => {
+        const left = 135+(index+0.5)*cellWidth;
+        return <SvgText key={index} text={String(label)} x={left} y={dense ? 130 : 55} width={dense ? 240 : cellWidth-12} fontSize={dense ? 14 : 20} anchor={dense ? 'start' : 'middle'} transform={dense ? `rotate(-90 ${left} 130)` : undefined} />;
+      })}
+      {diagram.rows.map((label,row) => <g key={row}>
+        <SvgText text={String(label)} x={115} y={top+(row+0.5)*cellHeight+6} width={105} fontSize={labelSize} anchor="end" />
+        {diagram.values[row].map((value,column) => {
+          const active = (diagram.highlight || cuePhase?.focus?.targets?.cells || []).some(([first,second]) => first === row && second === column);
+          return <g key={column}>
+            <rect x={135+column*cellWidth} y={top+row*cellHeight} width={cellWidth-3} height={cellHeight-3} fill={active ? PALETTE.green : PALETTE.soft} stroke={PALETTE.ink} strokeWidth={3} />
+            <SvgText text={value === null ? '?' : number(value)} x={135+(column+0.5)*cellWidth} y={top+(row+0.5)*cellHeight+6} width={cellWidth-12} fontSize={Math.min(22,cellHeight*0.7)} anchor="middle" fill={active ? PALETTE.paper : PALETTE.ink} />
+          </g>;
+        })}
+      </g>)}
+    </g>;
+  } else if (kind === 'trials') {
+    const columns = Math.min(7,diagram.outcomes.length);
+    const rows = Math.ceil(diagram.outcomes.length/columns);
+    const width = 690/columns;
+    const height = 370/rows;
+    content = diagram.outcomes.map((outcome,index) => <g key={index}>
+      <rect x={40+index%columns*width} y={35+Math.floor(index/columns)*height} width={width-8} height={height-8} fill={selected.includes(index) ? PALETTE.soft : PALETTE.paper} stroke={PALETTE.muted} />
+      <SvgText text={outcome} x={45+index%columns*width} y={65+Math.floor(index/columns)*height} width={width-18} fontSize={20} />
+      {(diagram.groups || []).filter(group => group.indices.includes(index)).map((group,groupIndex) => <path key={group.label} d={`M${45+index%columns*width} ${35+(Math.floor(index/columns)+1)*height-18-groupIndex*6}h${width-22}`} stroke={COLORS[groupIndex%4]} strokeWidth={3} />)}
+    </g>);
+  } else if (kind === 'tree') {
+    const leaves = node => node.children?.length ? sum(node.children.map(leaves)) : 1;
+    const depth = node => 1+Math.max(0,...(node.children || []).map(depth));
+    const count = sum(diagram.nodes.map(leaves));
+    const width = 690/Math.max(...diagram.nodes.map(depth));
+    let offset = 0;
+    const walk = (node,level,start,parent) => {
+      const left = 40+level*width;
+      const top = 40+(start+leaves(node)/2)*350/count;
+      let next = start;
+      return <g key={`${level}-${start}`}>
+        {parent && <path d={`M${parent[0]} ${parent[1]}L${left} ${top}`} stroke={PALETTE.ink} strokeWidth={3} />}
+        <circle cx={left} cy={top} r={5} fill={PALETTE.green} />
+        <SvgText text={node.weight === undefined ? node.label : `${node.label}; p = ${number(node.weight)}`} x={left+10} y={top-12} width={width-20} fontSize={20} />
+        {(node.children || []).map(child => {const result = walk(child,level+1,next,[left+width-10,top]); next += leaves(child); return result;})}
+      </g>;
+    };
+    content = diagram.nodes.map(node => {const result = walk(node,0,offset); offset += leaves(node); return result;});
+  } else if (kind === 'number-line') {
+    const domain = [diagram.min,diagram.max];
+    const x = value => 85+630*(value-domain[0])/(domain[1]-domain[0]);
+    content = <g>
+      <PlotAxes domain={domain} range={[0,1]} xLabel={diagram.xLabel || 'x'} yLabel="" ticks={[...new Set([diagram.min,...(diagram.points || []),diagram.max])]} />
+      {(diagram.intervals || []).map((interval,index) => <g key={index}>
+        <path d={`M${x(interval.from)} ${125+index*65}H${x(interval.to)}`} stroke={COLORS[index%4]} strokeWidth={4} />
+        {[interval.from,interval.to].map((value,end) => <circle key={end} cx={x(value)} cy={125+index*65} r={6} fill={interval.closed?.[end] === false ? PALETTE.paper : COLORS[index%4]} stroke={COLORS[index%4]} strokeWidth={2} />)}
+        <SvgText text={interval.label} x={400} y={155+index*65} width={630} anchor="middle" fontSize={18} />
+      </g>)}
+    </g>;
+  } else {
+    const curve = kind === 'curve' || kind === 'normal';
+    const plane = ['scatter','region','joint-normal'].includes(kind);
+    if (!curve && !plane && kind !== 'bars') throw new RangeError(`Unsupported source exercise diagram: ${kind}`);
+    let points = diagram.points || [];
+    let domain = diagram.domain;
+    let range = diagram.range;
+    if (kind === 'normal') {
+      domain ||= [diagram.mean-4*diagram.sd,diagram.mean+4*diagram.sd];
+      points = Array.from({length:161},(_,index) => {
+        const value = domain[0]+(domain[1]-domain[0])*index/160;
+        return [value,statistics.jStat.normal.pdf(value,diagram.mean,diagram.sd)];
+      });
+    } else if (kind === 'joint-normal') {
+      domain ||= [diagram.meanX-3.6*diagram.sdX,diagram.meanX+3.6*diagram.sdX];
+      range ||= [diagram.meanY-3.6*diagram.sdY,diagram.meanY+3.6*diagram.sdY];
+    } else if (kind === 'bars') {
+      domain ||= [0,diagram.values.length];
+      const limits = extent(diagram.values,true);
+      range ||= [Math.min(0,limits[0])*1.14,Math.max(0,limits[1])*1.18];
+    }
+    const all = [...points,...(plane ? [...(diagram.markers || []),...(diagram.cut || []),...(diagram.polygons || []).flat()] : [])];
+    domain ||= extent(all.map(point => point[0]),kind === 'region');
+    range ||= curve ? [Math.min(0,...points.map(point => point[1])),Math.max(0.000001,...points.map(point => point[1]))*1.12] : extent(all.map(point => point[1]),kind === 'region');
+    const x = value => 85+630*(value-domain[0])/(domain[1]-domain[0]);
+    const y = value => 350-255*(value-range[0])/(range[1]-range[0]);
+    const path = values => plotPath(values,x,y);
+    const clip = `exercise-source-${kind}`;
+    const at = position => {
+      const upper = points.findIndex(point => point[0] > position);
+      if (upper < 0) return points.at(-1)[1];
+      if (!upper) return points[0][1];
+      const first = points[upper-1];
+      const second = points[upper];
+      return first[1]+(second[1]-first[1])*(position-first[0])/(second[0]-first[0]);
+    };
+    const shade = diagram.shade || (kind === 'normal' && (diagram.lower !== undefined || diagram.upper !== undefined) ? [diagram.lower ?? domain[0],diagram.upper ?? domain[1]] : null);
+    content = <g>
+      <defs><clipPath id={clip}><rect x={85} y={95} width={630} height={255} /></clipPath></defs>
+      <PlotAxes domain={domain} range={range} ticks={kind === 'bars' ? [] : diagram.ticks} xLabel={diagram.xLabel || (plane ? 'X' : 'x')} yLabel={diagram.yLabel || (kind === 'normal' ? 'Densidad' : kind === 'bars' ? diagram.measure === 'mass' ? 'Masa' : 'Valor' : diagram.label || (plane ? 'Y' : 'y'))} />
+      <g clipPath={`url(#${clip})`}>
+        {curve && <g>
+          {shade && <path d={`${path([[Math.max(domain[0],shade[0]),0],[Math.max(domain[0],shade[0]),at(Math.max(domain[0],shade[0]))],...points.filter(([value]) => value > shade[0] && value < shade[1]),[Math.min(domain[1],shade[1]),at(Math.min(domain[1],shade[1]))],[Math.min(domain[1],shade[1]),0]])}Z`} fill={PALETTE.soft} stroke={PALETTE.green} />}
+          <path d={path(points)} fill="none" stroke={PALETTE.blue} strokeWidth={4} />
+          {[...(diagram.markers || []),...(Number.isFinite(diagram.marker) ? [diagram.marker] : [])].map((marker,index) => <g key={index}>
+            <path d={`M${x(marker)} ${y(0)}V${y(at(marker))}`} stroke={PALETTE.coral} strokeWidth={3} strokeDasharray="5 3" />
+            <circle cx={x(marker)} cy={y(at(marker))} r={5} fill={PALETTE.coral} />
+          </g>)}
+          {kind !== 'normal' && Number.isFinite(diagram.level) && <path d={`M85 ${y(diagram.level)}H715`} stroke={PALETTE.gold} strokeWidth={3} />}
+        </g>}
+        {kind === 'region' && <g>
+          <path d={`${path(points)}Z`} fill={PALETTE.soft} stroke={PALETTE.green} strokeWidth={3} />
+          {(diagram.polygons || []).map((polygon,index) => <path key={index} d={`${path(polygon)}Z`} fill={PALETTE.green} fillOpacity={0.3} stroke={PALETTE.coral} strokeWidth={3} />)}
+          {diagram.cut && <path d={path(diagram.cut)} fill="none" stroke={PALETTE.coral} strokeWidth={3} />}
+          {(diagram.markers || []).map(([first,second],index) => <circle key={index} cx={x(first)} cy={y(second)} r={6} fill={PALETTE.coral} />)}
+          {diagram.sweep && Array.from({length:9},(_,index) => {
+            const value = diagram.sweep[0]+(diagram.sweep[1]-diagram.sweep[0])*(index+1)/10;
+            const intersections = points.flatMap((first,pointIndex) => {
+              const second = points[(pointIndex+1)%points.length];
+              return first[0] !== second[0] && value >= Math.min(first[0],second[0]) && value <= Math.max(first[0],second[0]) ? [first[1]+(second[1]-first[1])*(value-first[0])/(second[0]-first[0])] : [];
+            });
+            return intersections.length > 1 ? <path key={index} d={`M${x(value)} ${y(Math.min(...intersections))}V${y(Math.max(...intersections))}`} stroke={PALETTE.green} /> : null;
+          })}
+        </g>}
+        {kind === 'scatter' && <g>
+          {diagram.line && <path d={path(domain.map(value => [value,diagram.line.slope*value+diagram.line.intercept]))} fill="none" stroke={PALETTE.muted} strokeWidth={2} />}
+          {points.map(([first,second],index) => <circle key={index} cx={x(first)} cy={y(second)} r={6} fill={selected.includes(index) ? PALETTE.coral : PALETTE.green} />)}
+        </g>}
+        {kind === 'joint-normal' && <g>
+          {[3,2,1].map(radius => <path key={radius} d={path(Array.from({length:97},(_,index) => {
+            const angle = index*Math.PI/48;
+            return [diagram.meanX+diagram.sdX*radius*Math.cos(angle),diagram.meanY+diagram.sdY*radius*(diagram.rho*Math.cos(angle)+Math.sqrt(1-diagram.rho**2)*Math.sin(angle))];
+          }))} fill={PALETTE.soft} fillOpacity={0.3} stroke={PALETTE.green} strokeWidth={3} />)}
+          {['x','both'].includes(diagram.highlightAxis) && <path d={`M85 ${y(diagram.meanY)}H715`} stroke={PALETTE.gold} strokeWidth={2} />}
+          {['y','both'].includes(diagram.highlightAxis) && <path d={`M${x(diagram.meanX)} 95V350`} stroke={PALETTE.gold} strokeWidth={2} />}
+          {Number.isFinite(diagram.cutX) && <path d={`M${x(diagram.cutX)} 95V350`} stroke={PALETTE.coral} strokeWidth={3} />}
+        </g>}
+        {kind === 'bars' && diagram.values.map((value,index) => <rect key={index} x={x(index+0.18)} y={y(Math.max(0,value))} width={630/diagram.values.length*0.64} height={Math.abs(y(value)-y(0))} fill={selected.includes(index) ? PALETTE.coral : PALETTE.green} />)}
+      </g>
+      {kind === 'bars' && diagram.labels.map((label,index) => <SvgText key={index} text={String(label)} x={x(index+0.5)} y={382+index%2*28} width={630/diagram.values.length-4} fontSize={Math.min(19,630/diagram.values.length/4)} anchor="middle" />)}
+    </g>;
+  }
+  return <svg data-native-source-diagram={kind} width="780" height="480"><Mark>{content}</Mark></svg>;
 }
 
 function SetAllocation({plan,state}) {
@@ -206,17 +388,21 @@ function DensityArea({plan,state}) {
     const cdfDomain = plan.data.context?.kind === 'curve' ? plan.data.context.domain : density.domain;
     const cdfX = value => 430+300*(value-cdfDomain[0])/(cdfDomain[1]-cdfDomain[0]);
     return <svg width="780" height="480">
+      <Mark>
       <Axes x={50} width={310} yLabel="f(x)" /><Axes x={430} width={300} yLabel="F(x)" />
       <path data-native-bound d={density.points.map(([value,height],index) => `${index ? 'L' : 'M'}${50+310*(value-minimum)/(maximum-minimum)},${y(height)}`).join('')} stroke={PALETTE.blue} strokeWidth={3} fill="none" />
-      <Mark><path d={`M50 365${density.points.filter(([value]) => value <= at).map(([value,height]) => `L${50+310*(value-minimum)/(maximum-minimum)} ${y(height)}`).join('')}L${50+310*progress} 365Z`} fill={PALETTE.green} opacity={0.3} /></Mark>
       <path data-native-bound d={cdf.map(([value,height],index) => `${index ? 'L' : 'M'}${cdfX(value)},${365-260*height}`).join('')} stroke={PALETTE.coral} strokeWidth={3} fill="none" />
+      </Mark>
+      <Mark><path d={`M50 365${density.points.filter(([value]) => value <= at).map(([value,height]) => `L${50+310*(value-minimum)/(maximum-minimum)} ${y(height)}`).join('')}L${50+310*progress} 365Z`} fill={PALETTE.green} opacity={0.3} /></Mark>
       <Mark><line x1={cdfX(at)} x2={cdfX(at)} y1={80} y2={365} stroke={PALETTE.gold} strokeWidth={2} /></Mark>
     </svg>;
   }
   return <svg width="780" height="480">
+    <Mark>
     <Axes yLabel={momentPower === 2 ? 'x² f(x)' : momentPower === 1 ? 'x f(x)' : 'f(x)'} />
-    {!density.point && <Mark><path d={area} fill={PALETTE.green} opacity={0.3} /></Mark>}
     <path data-native-bound d={line} fill="none" stroke={PALETTE.blue} strokeWidth={4} />
+    </Mark>
+    {!density.point && <Mark><path d={area} fill={PALETTE.green} opacity={0.3} /></Mark>}
     {plan.data.questionId === 'memoryless' && <Mark><path d={density.points.filter(([value]) => value >= plan.data.model.elapsed).map(([value,height],index) => `${index ? 'L' : 'M'}${x(value-plan.data.model.elapsed*progress)},${y(height*Math.exp(plan.data.model.rate*plan.data.model.elapsed*progress))}`).join('')} stroke={PALETTE.coral} strokeWidth={3} fill="none" /></Mark>}
     <Mark><line x1={x(density.point ? plan.data.model.threshold ?? 1 : boundary)} x2={x(density.point ? plan.data.model.threshold ?? 1 : boundary)} y1={90} y2={365} stroke={density.point ? PALETTE.coral : PALETTE.gold} strokeWidth={density.point ? mix(8,1,progress) : 2} /></Mark>
     {[minimum,maximum].map(value => <SvgText key={value} text={number(value)} x={x(value)} y={395} fontSize={20} anchor="middle" />)}
@@ -348,11 +534,11 @@ function LabelledSelection({plan,state}) {
       const left = 90+second*27+(selectedFirst ? selected*310 : 130);
       const top = 80+first*30;
       return <Mark key={index}>
-        <rect x={left} y={top} width={23} height={25} fill={observed && solving ? both ? PALETTE.green : PALETTE.gold : PALETTE.blue} opacity={solving ? observed ? 0.9 : mix(0.3,0.06,progress) : 0.3} />
+        <rect x={left} y={top} width={23} height={25} fill={observed && solving ? both ? PALETTE.green : PALETTE.gold : PALETTE.blue} fillOpacity={solving ? observed ? 0.9 : mix(0.3,0.06,progress) : 0.3} stroke={PALETTE.ink} strokeWidth={3} />
         {first === Math.floor(progress*10)%10 && <rect x={left} y={top} width={23} height={25} fill="none" stroke={PALETTE.coral} />}
       </Mark>;
     })}
-    <SvgText text={selectedFirst ? 'S = 1                                     S = 2' : '10 estados × 10 estados'} x={390} y={425} anchor="middle" width={680} fontSize={22} />
+    {selectedFirst ? <g><SvgText text="S = 1" x={220} y={425} anchor="middle" width={270} fontSize={22} /><SvgText text="S = 2" x={530} y={425} anchor="middle" width={270} fontSize={22} /></g> : <SvgText text="10 estados × 10 estados" x={390} y={425} anchor="middle" width={680} fontSize={22} />}
   </svg>;
 }
 
@@ -555,8 +741,17 @@ function Geometry({plan,state}) {
 export function ExerciseScene({plan,state}) {
   if (!plan?.data || !Number.isInteger(state?.cueIndex)) throw new TypeError('ExerciseScene requires one native scene and its cue state');
   const layout = layoutExerciseExplanation(plan.sourceLines,state.cueIndex);
+  const cuePhase = state.cueIndex >= 0 ? plan.data.phases?.[state.cueIndex] : null;
+  const diagram = state.cueIndex >= 0 ? cuePhase?.context || plan.data.context : null;
+  if (!diagram && (state.cueIndex < 0 || !numeric(plan,state))) return <SceneSurface label={`exercise:${plan.family}`}>
+    <div data-native-zone="exercise-explanation" style={{position:'absolute',left:65,top:40,width:1080,height:390,display:'flex',flexDirection:'column',gap:layout.gap,color:PALETTE.ink}}>
+      {layout.lines.map((line,index) => line.tex ? <div key={index} data-native-mark data-native-bound style={{position:'relative',height:layout.mathHeight,flexShrink:0}}>
+        <MathFormula tex={line.tex} x={0} y={0} width={1080} fontSize={26} />
+      </div> : <div key={index} data-native-mark data-native-text data-native-bound style={{fontSize:layout.lines.length === 1 && (line.value || line.label || '').length < 80 ? 32 : 28,lineHeight:1.35,overflowWrap:'anywhere',flexShrink:0}}>{line.value || line.label || ''}</div>)}
+    </div>
+  </SceneSurface>;
   return <SceneSurface label={`exercise:${plan.family}`}>
-    <Geometry plan={plan} state={state} />
+    {diagram ? <SourceDiagram diagram={diagram} phase={cuePhase} /> : <Geometry plan={plan} state={state} />}
     <div style={{position:'absolute',left:785,top:15,width:1,height:445,background:PALETTE.line}} />
     <div data-native-zone="exercise-explanation" data-native-bound style={{position:'absolute',left:805,top:20,width:layout.width,height:layout.height,display:'flex',flexDirection:'column',gap:layout.gap,color:PALETTE.ink}}>
     {layout.lines.map((line,index) => {

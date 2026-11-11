@@ -17,10 +17,31 @@ function Axes({x = 70, y = 300, width = 620, height = 260, xLabel = 'X', yLabel 
 
 function SourceNotes({lines}) {
   const notes = lines.filter(line => !line.tex && (line.value || line.label)).slice(-2);
-  return <g>{notes.map((line, index) => <g key={index}>
-    {line.label && <SvgText text={line.label} x={820} y={38 + index * 150} width={330} fontSize={19} fill={C.green} />}
-    {line.value && line.value.length <= 150 && <SvgText text={line.value} x={820} y={85 + index * 150} width={330} fontSize={18} />}
-  </g>)}</g>;
+  const fields = notes.flatMap((line,index) => [
+    ...(line.label ? [{text:line.label, label:true, key:`${index}-label`}] : []),
+    ...(line.value ? [{text:line.value, label:false, key:`${index}-value`}] : []),
+  ]);
+  let fontSize = 18, layout = [];
+  while (fontSize > 1) {
+    let top = 16;
+    layout = fields.map(field => {
+      const size = fontSize+(field.label ? 1 : 0);
+      const words = field.text.split(/\s+/u);
+      const limit = Math.max(4,Math.floor(264/(size*.56)));
+      let rows = 1, length = 0;
+      for (const word of words) {
+        if (length && length+1+word.length > limit) {rows++; length=word.length;}
+        else length += (length ? 1 : 0)+word.length;
+      }
+      const entry = {...field, size, y:top+size, fits:words.every(word=>word.length*size*.7<=330)};
+      top += rows*size*1.25+8;
+      return entry;
+    });
+    if (top <= 329 && layout.every(field=>field.fits)) break;
+    fontSize -= .5;
+  }
+  return <g data-native-notes>{layout.map(field => <SvgText key={field.key} text={field.text} x={820} y={field.y}
+    width={264} fontSize={field.size} fill={field.label ? C.green : C.ink} />)}</g>;
 }
 
 function FormulaRail({lines, cueIndex, progress}) {
@@ -46,6 +67,7 @@ function TableScene({plan, state, p, action, lines}) {
   const selected = cellMatch ? Number(cellMatch[1] ?? cellMatch[3]) * 2 + Number(cellMatch[2] ?? cellMatch[4]) : null;
   const regionX = /X=0|X\\leq 0|X\\le0/.test(reference) ? 0 : null;
   return <g>
+    <path {...mark} data-native-table-frame d="M170,70H520V300H170ZM170,185H520M345,70V300" fill="none" stroke={C.ink} strokeWidth={4} />
     <SvgText text="X" x={85} y={105} width={60} fontSize={22} />
     <SvgText text="Y" x={370} y={30} width={60} fontSize={22} />
     {[0, 1].map(index => <g key={index}><SvgText text={index} x={110} y={126 + index * 115} width={40} fontSize={20} />
@@ -299,9 +321,9 @@ function TransformScene({p, action}) {
 
 export function MultivariateScene({plan, state}) {
   if (!plan?.data || !Array.isArray(plan.cues) || !Number.isInteger(state?.cueIndex)) throw new TypeError('Missing multivariate scene state');
-  const cue = plan.cues[state.cueIndex];
-  if (!cue) throw new RangeError(`Unknown multivariate cue: ${state.cueIndex}`);
-  const p = ease(bounded(state.cueDuration > 0 ? state.cueElapsed / state.cueDuration : state.progress || 0));
+  const cue = plan.cues[state.cueIndex === -1 ? 0 : state.cueIndex];
+  if (!cue || state.cueIndex < -1) throw new RangeError(`Unknown multivariate cue: ${state.cueIndex}`);
+  const p = state.cueIndex === -1 ? 0 : ease(bounded(state.cueDuration > 0 ? state.cueElapsed / state.cueDuration : state.progress || 0));
   const lines = plan.sourceLines.filter(line => (line.cue ?? 0) <= state.cueIndex);
   const props = {plan, state, p, action:cue.action, lines};
   let diagram;

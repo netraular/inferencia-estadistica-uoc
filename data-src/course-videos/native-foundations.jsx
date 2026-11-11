@@ -16,10 +16,25 @@ function Arrow({from, to, color = PALETTE.green, progress = 1, width = 5}) {
 
 function SourceNotes({lines, cueIndex, progress}) {
   const formulas = lines.filter(line => line.tex).slice(-2);
-  const descriptions = lines.filter(line => !line.tex && line.value && !line.bar && !line.plot && line.value.length <= 130).slice(-1);
+  const descriptions = lines.filter(line => !line.tex && line.value && !line.bar && !line.plot).slice(-1);
+  const top = formulas.length ? 190+(formulas.length-1)*125 : 80;
   return <>
     {formulas.map((line, index) => <MathFormula key={`${line.cue}-${line.tex}`} tex={line.tex} x={820} y={90+index*125} width={350} fontSize={line.tex.length > 95 ? 17 : line.tex.length > 55 ? 21 : 29} opacity={line.cue === cueIndex ? .25+.75*ease(progress) : 1}/>)}
-    {descriptions.map(line => <svg key={`${line.cue}-${line.value}`} width="1200" height="480" style={{position:'absolute',inset:0,pointerEvents:'none'}}>{label(line.value,835,formulas.length ? 365 : 130,320,{fontSize:18})}</svg>)}
+    {descriptions.map(line => {
+      const words = line.value.split(/\s+/u);
+      let fontSize = 18;
+      while (fontSize > 1) {
+        const limit = Math.max(4,Math.floor(256/(fontSize*.56)));
+        let rows = 1, length = 0;
+        for (const word of words) {
+          if (length && length+1+word.length > limit) {rows++; length=word.length;}
+          else length += (length ? 1 : 0)+word.length;
+        }
+        if (rows*fontSize*1.25 <= 464-top && words.every(word=>word.length*fontSize*.7<=320)) break;
+        fontSize -= .5;
+      }
+      return <svg key={`${line.cue}-${line.value}`} width="1200" height="480" style={{position:'absolute',inset:0,pointerEvents:'none'}}>{label(line.value,835,top+fontSize,256,{fontSize})}</svg>;
+    })}
   </>;
 }
 
@@ -142,7 +157,7 @@ function Quantity({lines, progress, mode, cueIndex}) {
   const conversion = lines.find(line => /100\\cdot/.test(line.tex || ''));
   const amount = conversion ? numbers(conversion.tex)[1] : null;
   return <g {...mark('quantity-scale')}>
-    <rect {...bound} x={65} y={140} width={650} height={150} fill={PALETTE.soft} stroke={PALETTE.line}/>
+    <rect {...bound} x={65} y={140} width={650} height={150} fill={PALETTE.soft} stroke={PALETTE.green} strokeWidth={3}/>
     {Array.from({length:100},(_,index) => <rect key={index} x={70+index%20*32} y={145+Math.floor(index/20)*28} width={26} height={22} fill={amount !== null && index < amount*100 ? PALETTE.green : PALETTE.line} opacity={.5+.5*progress}/>)}
     <Arrow from={[80,350]} to={[700,350]} progress={progress}/>
   </g>;
@@ -218,7 +233,7 @@ function FunctionScene({lines, progress, mode}) {
   const equation = lines.filter(line=>line.tex).at(-1)?.tex;
   const output = equation && /^\d+\\cdot\d+=\d+$|^\d+\+\d+=\d+$/.test(equation) ? numbers(equation) : [];
   return <g {...mark('function-machine')}>
-    {sums.length ? sums.map(({input,output:value},index)=><g key={index} transform={`translate(${90+index*220} 90)`}><rect width={140} height={270} fill={PALETTE.soft}/><rect y={270-value/Math.max(...sums.map(entry=>entry.output))*230*progress} width={140} height={value/Math.max(...sums.map(entry=>entry.output))*230*progress} fill={colors[index%4]}/>{label(`g(${input})`,15,315,150)}{label(String(value),50,250,100)}</g>) : <><rect {...bound} x={270} y={130} width={270} height={180} rx={5} fill={PALETTE.soft} stroke={PALETTE.green} strokeWidth={3}/><Arrow from={[70,220]} to={[265,220]} progress={progress}/><Arrow from={[545,220]} to={[755,220]} progress={progress}/><circle cx={mix(100,700,progress)} cy={220} r={16} fill={PALETTE.coral}/>{label('g',390,230,100,{fontSize:48})}{output.length > 0 && label(String(output[0]),80,175,130)}{output.length > 0 && label(String(output.at(-1)),660,175,130)}</>}
+    {sums.length ? sums.map(({input,output:value},index)=><g key={index} transform={`translate(${90+index*220} 90)`}><rect {...bound} width={140} height={270} fill={PALETTE.soft} stroke={colors[index%4]} strokeWidth={3}/><rect y={270-value/Math.max(...sums.map(entry=>entry.output))*230*progress} width={140} height={value/Math.max(...sums.map(entry=>entry.output))*230*progress} fill={colors[index%4]}/>{label(`g(${input})`,15,315,150)}{label(String(value),50,250,100)}</g>) : <><rect {...bound} x={270} y={130} width={270} height={180} rx={5} fill={PALETTE.soft} stroke={PALETTE.green} strokeWidth={3}/><Arrow from={[70,220]} to={[265,220]} progress={progress}/><Arrow from={[545,220]} to={[755,220]} progress={progress}/><circle cx={mix(100,700,progress)} cy={220} r={16} fill={PALETTE.coral}/>{label('g',390,230,100,{fontSize:48})}{output.length > 0 && label(String(output[0]),80,175,130)}{output.length > 0 && label(String(output.at(-1)),660,175,130)}</>}
   </g>;
 }
 
@@ -228,14 +243,14 @@ function Region({lines, progress, mode}) {
     const entries = matrix ? matrix.tex.split('pmatrix}')[1]?.split('\\end')[0].split(/&|\\\\/).map(entry=>entry.trim()).filter(Boolean) : [];
     return <g {...mark('matrix-order')}>
       {entries.map((entry,index)=><g key={index}><rect {...bound} x={175+index%2*180} y={100+Math.floor(index/2)*140} width={155} height={115} fill={index === Math.floor(progress*3.999) ? PALETTE.soft : PALETTE.paper} stroke={colors[index%4]} strokeWidth={3}/>{label(entry,245+index%2*180,170+Math.floor(index/2)*140,100,{fontSize:36})}</g>)}
-      {!entries.length && <><Arrow from={[150,120]} to={[150,350]} progress={progress}/><Arrow from={[250,120]} to={[650,120]} progress={progress}/>{label('x',110,90,100)}{label('y',675,130,100)}</>}
+      {!entries.length && <><path {...bound} d="M150 120V350M250 120H650" fill="none" stroke={PALETTE.green} strokeWidth={4}/><Arrow from={[150,120]} to={[150,350]} progress={progress}/><Arrow from={[250,120]} to={[650,120]} progress={progress}/>{label('x',110,90,100)}{label('y',675,130,100)}</>}
       <Arrow from={[100,410]} to={[650,410]} progress={progress}/>
     </g>;
   }
   const source = lines.filter(line=>line.plot).at(-1)?.plot;
   const formula = lines.some(line=>/1-x|1\\cdot1/.test(line.tex || ''));
   const points = source?.points || (formula ? [[0,1],[1,0]] : null);
-  if (!points) return <g {...mark('coordinate-motion')}><path d="M100 80V370H720" stroke={PALETTE.muted} strokeWidth={3} fill="none"/><circle cx={mix(130,650,progress)} cy={mix(330,120,progress)} r={14} fill={PALETTE.green}/>{label('x',720,400,60)}{label('y',70,70,60)}</g>;
+  if (!points) return <g {...mark('coordinate-motion')}><path d="M100 80V370H720" stroke={PALETTE.muted} strokeWidth={4} fill="none"/><circle cx={mix(130,650,progress)} cy={mix(330,120,progress)} r={14} fill={PALETTE.green}/>{label('x',720,400,60)}{label('y',70,70,60)}</g>;
   const limit = Math.max(...points.flat());
   const cut = source?.cut ?? progress*limit;
   return <g {...mark('triangular-support')}>
@@ -337,12 +352,12 @@ function Bayes({lines, progress, mode}) {
 
 export function FoundationsScene({plan, state}) {
   if (!plan?.data || !plan.cues?.length) throw new TypeError('Missing native foundations scene');
-  const cueIndex = Math.max(0, Math.min(plan.cues.length-1, state.cueIndex));
+  const cueIndex = Math.max(-1, Math.min(plan.cues.length-1, state.cueIndex));
   const cue = plan.cues[cueIndex];
-  const progress = ease(Math.max(0,Math.min(1,state.progress)));
+  const progress = cueIndex < 0 ? 0 : ease(Math.max(0,Math.min(1,state.progress)));
   const lines = plan.data.lines.filter(line=>(line.cue ?? 0)<=cueIndex);
   const modelLines = [...(plan.data.history || []),...lines];
-  const props = {lines:modelLines, progress, mode:plan.data.mode, cueIndex, operation:cue.operation, anchor:cue.anchor};
+  const props = {lines:modelLines, progress, mode:plan.data.mode, cueIndex, operation:cue?.operation, anchor:cue?.anchor || ''};
   let geometry;
   switch (plan.family) {
     case 'quantity': geometry=plan.data.seed ? <SeedComparison seed={plan.data.seed} cueIndex={cueIndex} progress={progress}/> : <Quantity {...props}/>; break;

@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import Module, {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import test from 'node:test';
+import {courseFrame, MODEL, VOICE, prepareCourseItem, sha256} from './course-contract.mjs';
 import {planMultivariate} from './native-multivariate.mjs';
 import {validateNativePlan} from './native-plan.mjs';
 
@@ -94,6 +95,123 @@ test('all cue frames render native marks and only originally revealed mathematic
       assert.ok(!/NaN|Infinity|undefined/.test(markup), `${item.id}/${index}/${cueIndex}: invalid geometry`);
     }
   }
+});
+
+test('six real preflight table openings retain a dark reference grid without revealing future content', {skip:!catalogue}, () => {
+  const fixtures = [
+    ['conjunta-discreta--parejas', 0],
+    ['conjunta-discreta--rectangulo-acumulado', 0],
+    ['marginales--proyeccion-y-corte', 0],
+    ['conjunta-discreta', 1],
+    ['conjunta-discreta', 2],
+    ['marginales', 2],
+  ];
+  for (const [id, index] of fixtures) {
+    const {item, plan} = owned.find(entry => entry.item.id === id);
+    const scene = plan.scenes[index], step = item.animation.steps[index];
+    const original = JSON.stringify({item, plan});
+    let reference;
+    for (const [cueIndex, progress] of [[-1, 0], [-1, 0.8], [0, 0], [0, 0.8]]) {
+      const context = `${id}/${index}/${cueIndex}/${progress}`;
+      const {document} = parseHTML(render(scene, step, index, cueIndex, progress));
+      const grid = document.querySelector('[data-native-table-frame]');
+      assert.ok(grid, `${context}: missing persistent table context`);
+      assert.ok(grid.hasAttribute('data-native-bound') && grid.hasAttribute('data-native-mark'), `${context}: unaudited reference`);
+      assert.equal(grid.getAttribute('fill'), 'none');
+      assert.equal(grid.getAttribute('stroke'), '#253330');
+      assert.equal(Number(grid.getAttribute('stroke-width')), 4);
+      assert.equal(grid.getAttribute('d'), 'M170,70H520V300H170ZM170,185H520M345,70V300');
+      reference ??= grid.outerHTML;
+      assert.equal(grid.outerHTML, reference, `${context}: reference collapses with progress`);
+      const cells = Array.from(document.querySelectorAll('[data-cell]'));
+      assert.equal(cells.length, 4);
+      const masses = scene.data.table.find(entry => entry.cue <= cueIndex)?.masses;
+      const values = cells.flatMap(cell => Array.from(cell.parentNode.querySelectorAll('text'), text => text.textContent));
+      assert.deepEqual(values, masses ? masses.map(value => String(value).replace('.', ',')) : [], `${context}: future cell mass`);
+      const allowed = scene.sourceLines.filter(line => (line.cue ?? 0) <= cueIndex && line.tex).map(line => line.tex).slice(-2);
+      assert.deepEqual(Array.from(document.querySelectorAll('[data-native-math]'), formula => formula.getAttribute('data-native-math')), allowed, `${context}: future formula`);
+      if (cueIndex === -1) assert.equal(document.querySelector('[data-native-notes]').textContent, '');
+    }
+    assert.equal(JSON.stringify({item, plan}), original);
+  }
+});
+
+test('frozen multivariate source notes retain full text without stage or formula overflow', {skip:!catalogue}, () => {
+  const regression=owned.find(entry=>entry.item.id==='multinomial').plan.scenes[10];
+  assert.equal(regression.sourceLines[0].value.length,404);
+  let longNotes=0;
+  for (const {item,plan} of owned) for (const [index,scene] of plan.scenes.entries()) {
+    for (const [cueIndex] of scene.cues.entries()) {
+      const notes=scene.sourceLines.filter(line=>(line.cue ?? 0)<=cueIndex && !line.tex && (line.value || line.label)).slice(-2);
+      if (!notes.length) continue;
+      const context=`${item.id}/${index}/${cueIndex}`;
+      const {document}=parseHTML(render(scene,item.animation.steps[index],index,cueIndex,.5));
+      const fields=notes.flatMap(line=>[line.label,line.value].filter(Boolean));
+      const texts=Array.from(document.querySelectorAll('[data-native-notes] > text'));
+      assert.deepEqual(texts.map(node=>Array.from(node.children,span=>span.textContent).join(' ')),fields,`${context}: source note omitted`);
+      let previousBottom=0;
+      for (const text of texts) {
+        const fontSize=Number(text.getAttribute('font-size'));
+        const x=Number(text.getAttribute('x'));
+        let baseline=Number(text.getAttribute('y'));
+        assert.ok(x>=820,`${context}: note overlaps diagram`);
+        assert.ok(baseline-fontSize>=previousBottom,`${context}: notes overlap`);
+        for (const span of text.children) {
+          baseline+=Number(span.getAttribute('dy') || 0);
+          assert.ok(x+span.textContent.length*fontSize*.7<=1200,`${context}: horizontal note overflow`);
+          assert.ok(baseline-fontSize>=0 && baseline+fontSize*.25<=345,`${context}: note crosses formula rail`);
+        }
+        previousBottom=baseline+fontSize*.25;
+      }
+      longNotes+=notes.filter(line=>line.value?.length>150).length;
+    }
+  }
+  assert.ok(longNotes>0);
+});
+
+test('a valid frozen conditional scene holds its opening during 300ms of leading silence', {skip:!catalogue}, () => {
+  const {item,plan}=owned.find(entry=>entry.item.id==='normal-bivariante--media-y-varianza-condicional');
+  const original=JSON.stringify(item);
+  assert.equal(item.animation.steps.length,1);
+  const step=item.animation.steps[0];
+  const mp3=Buffer.from('fixture-only, never rendered or published');
+  const audio={id:item.id,model:MODEL,voice:VOICE,cueTiming:'measured',canonicalSha256:item.canonicalSha256,
+    mp3Sha256:sha256(mp3),mp3Bytes:mp3.length,duration:step.duration+.3,
+    scenes:[{start:0,end:step.duration+.3,cues:step.cues.map(cue=>({...cue,start:cue.start+.3,end:cue.end+.3}))}]};
+  const storyboard=prepareCourseItem(item,audio,mp3,{native:true});
+  assert.equal(storyboard.audio.scenes[0].start,0);
+  assert.equal(storyboard.audio.scenes[0].cues[0].start,.3);
+  const marks=document=>Array.from(document.querySelectorAll('[data-native-mark]'),node=>node.outerHTML);
+  const frameDocument=frame=>{
+    const state=courseFrame(storyboard,frame);
+    const timing=storyboard.audio.scenes[state.index];
+    const cue=timing.cues[state.cueIndex];
+    const seconds=frame/storyboard.fps;
+    const cueDuration=Math.max(1/storyboard.fps,(cue?.end ?? timing.end)-(cue?.start ?? timing.start));
+    const cueElapsed=Math.max(0,seconds-(cue?.start ?? timing.start));
+    const markup=renderToStaticMarkup(React.createElement(MultivariateScene,{plan:plan.scenes[state.index],
+      state:{...state,seconds,cueDuration,cueElapsed,sceneElapsed:seconds-timing.start,progress:Math.min(1,cueElapsed/cueDuration)}}));
+    return {state,document:parseHTML(markup).document};
+  };
+  const opening=frameDocument(0);
+  assert.equal(opening.state.cueIndex,-1);
+  assert.equal(opening.state.caption,'');
+  assert.ok(marks(opening.document).length>0);
+  for (const frame of [0,4,8]) {
+    const {state,document}=frameDocument(frame);
+    assert.equal(state.cueIndex,-1);
+    assert.equal(state.caption,'');
+    assert.deepEqual(marks(document),marks(opening.document));
+    assert.equal(document.querySelector('[data-native-math]'),null);
+  }
+  const firstCue=frameDocument(9);
+  assert.equal(firstCue.state.cueIndex,0);
+  assert.equal(firstCue.state.caption,step.cues[0].text);
+  assert.deepEqual(marks(firstCue.document),marks(opening.document));
+  assert.deepEqual(Array.from(firstCue.document.querySelectorAll('[data-native-math]'),node=>node.getAttribute('data-native-math')),['40-30=10']);
+  assert.ok(JSON.stringify(marks(frameDocument(30).document))!==JSON.stringify(marks(firstCue.document)));
+  for (const cueIndex of [-2,plan.scenes[0].cues.length]) assert.throws(()=>render(plan.scenes[0],step,0,cueIndex,0),/Unknown multivariate cue/);
+  assert.equal(JSON.stringify(item),original);
 });
 
 test('each family has changing mathematical geometry within an explanatory cue', {skip:!catalogue}, () => {

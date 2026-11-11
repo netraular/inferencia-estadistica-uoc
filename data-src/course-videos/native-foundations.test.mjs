@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import {createRequire, Module} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import test from 'node:test';
+import {courseFrame} from './course-frame.mjs';
 import {foundationTopics, planFoundations} from './native-foundations.mjs';
 import {validateNativePlan} from './native-plan.mjs';
 
@@ -135,6 +136,54 @@ test('Babel compiles the helper and every fixture cue without an external catalo
   }
 }));
 
+test('function sum opening retains original bar context at progress zero', () => withRenderer(({document}) => {
+  const item = {
+    id:'funciones--sumar-salidas', parentLesson:'funciones', kind:'section', canonicalSha256:'sum-opening',
+    animation:{steps:[{title:'Sumar salidas', cues:['Observar las salidas.'], visual:{lines:[{value:'g(0): 1; g(1): 3; g(2): 5', cue:0}]}}]},
+  };
+  const scene = planFoundations(item).scenes[0];
+  const dom = document(scene, 0, 0);
+  const bars = dom.querySelectorAll('[data-native-mark="function-machine"] rect[data-native-bound]');
+  assert.equal(bars.length, 3);
+  for (const bar of bars) {
+    assert.equal(bar.getAttribute('height'), '270');
+    assert.equal(bar.getAttribute('stroke-width'), '3');
+    assert.ok(bar.getAttribute('stroke'));
+    assert.equal(bar.nextElementSibling.getAttribute('height'), '0');
+  }
+  assert.equal(dom.querySelectorAll('[data-native-math]').length, 0);
+}));
+
+test('foundations silence before the first valid cue does not reveal its equation', () => withRenderer(({document}) => {
+  const item = {
+    id:'funciones--sumar-salidas', parentLesson:'funciones', kind:'section', canonicalSha256:'silent-opening',
+    animation:{steps:[{title:'Sumar salidas', cues:['Ahora la ecuacion.'], visual:{lines:[{tex:'1+2=3', cue:0}]}}]},
+  };
+  const scene = planFoundations(item).scenes[0];
+  const storyboard = {fps:30, frames:60, animation:item.animation, narrationMode:'transcript', transcript:{scenes:[{start:0, end:2, cues:[{start:0.5, end:2, text:scene.cues[0].text}]}]}};
+  const silent = courseFrame(storyboard, 0);
+  const speaking = courseFrame(storyboard, 15);
+  assert.equal(silent.cueIndex, -1);
+  assert.equal(speaking.cueIndex, 0);
+  assert.ok(document(scene, silent.cueIndex, silent.progress).querySelector('[data-native-math]') === null);
+  assert.equal(document(scene, 0, 0).querySelector('[data-native-math]').getAttribute('data-native-math'), '1+2=3');
+  assert.ok(document(scene, -1, 0).querySelector('[data-native-mark]'));
+}));
+
+test('frozen percent and coordinate openings retain their original reference geometry', fullCatalogue, () => withRenderer(({document}) => {
+  const percent = planFoundations(owned.find(item => item.id === 'proporciones--porcentaje-y-exposicion')).scenes[0];
+  const scale = document(percent, 0, 0).querySelector('[data-native-mark="quantity-scale"] rect');
+  assert.equal(scale.getAttribute('stroke'), '#117568');
+  assert.equal(scale.getAttribute('stroke-width'), '3');
+  const matrix = planFoundations(owned.find(item => item.id === 'regiones-matrices--orden-de-matriz')).scenes[0];
+  const matrixReference = Array.from(document(matrix, 0, 0).querySelectorAll('path')).find(path => path.getAttribute('d') === 'M150 120V350M250 120H650');
+  assert.ok(matrixReference);
+  assert.equal(matrixReference.getAttribute('stroke'), '#117568');
+  assert.equal(matrixReference.getAttribute('stroke-width'), '4');
+  const region = planFoundations(owned.find(item => item.id === 'regiones-matrices--frontera')).scenes[0];
+  assert.equal(document(region, 0, 0).querySelector('[data-native-mark="coordinate-motion"] path').getAttribute('stroke-width'), '4');
+}));
+
 test('seed trays reveal only narrated populations, conserve members, and hold between transfers', () => withRenderer(({document}) => {
   const scene=planFoundations(seedFixture()).scenes[0];
   const selector=name=>`[data-native-mark="${name}"]`;
@@ -185,6 +234,37 @@ test('frozen recap gates early source lines by narration instead of source revea
   assert.ok(document(scene,10).querySelector('[data-native-math]').getAttribute('data-native-math').includes('25\\%'));
   assert.equal(document(scene,11).querySelectorAll('[data-native-math]').length,1);
   assert.equal(document(scene,12).querySelectorAll('[data-native-math]').length,2);
+}));
+
+test('frozen source notes retain full paragraphs inside the formula column', fullCatalogue, () => withRenderer(({document}) => {
+  const recap=owned.find(item=>item.id==='proporciones');
+  const regression=planFoundations(recap).scenes[10];
+  assert.equal(regression.sourceLines[0].value.length,312);
+  let longNotes=0;
+  for (const item of owned) for (const [index,scene] of planFoundations(item).scenes.entries()) {
+    if (scene.data.seed) continue;
+    for (const [cueIndex] of scene.cues.entries()) {
+      const line=scene.data.lines.filter(line=>(line.cue ?? 0)<=cueIndex && !line.tex && line.value && !line.bar && !line.plot).at(-1);
+      if (!line) continue;
+      const context=`${item.id}/${index}/${cueIndex}`;
+      const dom=document(scene,cueIndex);
+      const text=Array.from(dom.querySelectorAll('text')).find(node=>Array.from(node.children,span=>span.textContent).join(' ')===line.value);
+      assert.ok(text,`${context}: source note omitted`);
+      const fontSize=Number(text.getAttribute('font-size'));
+      const x=Number(text.getAttribute('x'));
+      let baseline=Number(text.getAttribute('y'));
+      assert.ok(x>=820,`${context}: note overlaps diagram`);
+      for (const span of text.children) {
+        baseline+=Number(span.getAttribute('dy') || 0);
+        assert.ok(x+span.textContent.length*fontSize*.7<=1200,`${context}: horizontal note overflow`);
+        assert.ok(baseline-fontSize>=0 && baseline+fontSize*.25<=480,`${context}: vertical note overflow`);
+      }
+      const formulaBottom=Math.max(0,...Array.from(dom.querySelectorAll('[data-native-math]'),formula=>parseFloat(formula.style.top)+parseFloat(formula.style.fontSize)*3));
+      assert.ok(Number(text.getAttribute('y'))-fontSize>=formulaBottom,`${context}: note overlaps formulas`);
+      if (line.value.length>130) longNotes++;
+    }
+  }
+  assert.ok(longNotes>0);
 }));
 
 test('seed geometry stays in its stage column and formula slots do not overlap', () => withRenderer(({document}) => {

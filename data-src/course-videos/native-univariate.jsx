@@ -24,7 +24,7 @@ function Label({x, y, text, width = 300, size = 21, color = C.ink, anchor = 'sta
 
 function Axis({xLabel = 'x', yLabel = '', mid = false}) {
   return <g>
-    <path data-native-bound d={`M${X0},${TOP}V${BASE}H${X1 + 20}`} fill="none" stroke={C.muted} strokeWidth="2" />
+    <path data-native-mark data-native-bound d={`M${X0},${TOP}V${BASE}H${X1 + 20}`} fill="none" stroke={C.muted} strokeWidth="4" />
     {mid && <path d={`M${px(0.5)},${TOP}V${BASE}`} stroke={C.line} strokeWidth="2" strokeDasharray="5 7" />}
     <Label x={X1} y={BASE + 34} text={xLabel} anchor="end" width={300} />
     {yLabel && <Label x={X0} y={TOP - 15} text={yLabel} width={500} />}
@@ -64,8 +64,8 @@ function AuthoredCurve({plot, phase}) {
     <path data-native-bound d={pathFor(points)} fill="none" stroke={C.green} strokeWidth="4" />
     {selected.length > 1 && <path data-native-mark data-native-bound d={`${pathFor(selected)}L${selected.at(-1)[0]},${BASE}L${selected[0][0]},${BASE}Z`} fill={C.coral} fillOpacity="0.24" />}
     <path data-native-mark data-native-bound d={`M${x(end)},${BASE}V${TOP + 10}`} stroke={C.coral} strokeWidth="2" strokeDasharray="5 5" />
-    <Label x={X0} y={BASE + 34} text={String(low)} width={90} />
-    <Label x={X1} y={BASE + 34} text={String(high)} width={90} anchor="end" />
+    <Label x={X0} y={BASE + 75} text={String(low)} width={90} />
+    <Label x={X1} y={BASE + 75} text={String(high)} width={90} anchor="end" />
   </g>;
 }
 
@@ -79,23 +79,48 @@ function Marker({at, height = 1, label, color = C.coral}) {
 function parseTable(lines) {
   for (const line of [...lines].reverse()) {
     if (!line.value) continue;
-    const cells = String(line.value).split(';').map(cell => cell.trim().match(/^(-?\d+(?:[.,]\d+)?)\s*:\s*(-?\d+(?:[.,]\d+)?)$/));
-    if (cells.length > 1 && cells.every(Boolean)) return cells.map(cell => ({value:Number(cell[1].replace(',', '.')), weight:Number(cell[2].replace(',', '.'))}));
+    const cells = String(line.value).trim().replace(/\.$/, '').split(/[;\u00b7]/u).map(cell => {
+      const text = cell.trim();
+      return text.match(/^(-?\d+(?:[.,]\d+)?)\s*:\s*(-?\d+(?:[.,]\d+)?)$/)
+        || text.match(/^P\(\s*X\s*=\s*(-?\d+(?:[.,]\d+)?)\s*\)\s*=\s*(-?\d+(?:[.,]\d+)?)$/);
+    });
+    if (cells.length > 1 && cells.every(Boolean)) {
+      const entries = cells.map(cell => ({value:Number(cell[1].replace(',', '.')), weight:Number(cell[2].replace(',', '.'))}));
+      const total = entries.reduce((sum, entry) => sum + entry.weight, 0);
+      if (!entries.every(entry => Number.isFinite(entry.value) && Number.isFinite(entry.weight) && entry.weight >= 0) || !Number.isFinite(total) || total <= 0 || new Set(entries.map(entry => entry.value)).size !== entries.length) return null;
+      return entries.sort((left, right) => left.value - right.value);
+    }
   }
   return null;
 }
 
+function SymbolicDistribution({family, phase}) {
+  const cdf = family === 'step-cdf' || family === 'cdf-difference';
+  const inverse = family === 'uniform-invert';
+  return <g data-native-distribution="symbolic">
+    <Label x={80} y={80} text={inverse ? 'Q(u) = primer x con F(x) >= u' : cdf ? 'F(x) = P(X <= x)' : 'p_i = P(X = x_i)'} width={660} size={27} />
+    <Label x={80} y={155} text={inverse ? 'Acumular p_i hasta alcanzar u' : cdf ? 'Sumar p_i para los valores x_i <= x' : family === 'mass-normalize' ? 'p_i = w_i / suma de w_j' : 'p_i >= 0; suma de p_i = 1'} width={660} />
+    <path data-native-mark data-native-bound d={`M80,205H${mix(100, 730, phase)}`} stroke={C.green} strokeWidth="3" />
+    <Label x={110} y={270} text="p_i" width={130} />
+    <Label x={410} y={270} text="..." anchor="middle" width={130} />
+    <Label x={710} y={270} text="p_j" anchor="end" width={130} />
+    <path data-native-mark data-native-bound data-native-symbolic="sum" d="M110,290V340H710V290M410,340V375" fill="none" stroke={C.green} strokeWidth="3" />
+    <Label x={410} y={415} text={inverse ? 'Suma acumulada hasta u' : cdf ? 'Suma sobre x_i <= x' : 'Suma de masas simbolicas'} anchor="middle" width={600} />
+  </g>;
+}
+
 function Mass({lines, phase, action, family}) {
-  const table = parseTable(lines);
-  const values = table || [{value:null, weight:1}, {value:null, weight:1}, {value:null, weight:1}];
+  const values = parseTable(lines);
+  if (!values) return <SymbolicDistribution {...{family, phase}} />;
   const total = values.reduce((sum, entry) => sum + entry.weight, 0);
+  if (family !== 'mass-normalize' && Math.abs(total - 1) > 1e-9) return <SymbolicDistribution {...{family, phase}} />;
   const max = Math.max(...values.map(entry => entry.weight));
   const normalized = family !== 'mass-normalize' || Math.abs(total - 1) < 1e-9;
   const threshold = phase;
   let cumulative = 0;
   const cdf = family === 'step-cdf' || family === 'cdf-difference';
   const cdfPoints = [[px(0.08), BASE]];
-  return <g>
+  return <g data-native-distribution="numeric">
     <Axis xLabel={cdf ? 'Umbral x' : 'Valores de X'} yLabel={cdf ? 'F(x)' : normalized ? 'Masa' : 'Peso relativo'} />
     {values.map((entry, index) => {
       const position = 0.18 + index * 0.64 / Math.max(1, values.length - 1);
@@ -104,7 +129,7 @@ function Mass({lines, phase, action, family}) {
       const previous = cumulative;
       cumulative += entry.weight / total;
       cdfPoints.push([px(position), py(previous)], [px(position), py(cumulative)]);
-      return <g key={index}>
+      return <g key={index} data-native-value={entry.value} data-native-weight={entry.weight}>
         {!cdf && <>
           <rect data-native-bound x={px(position) - 25} y={py(weight * 0.85)} width="50" height={BASE - py(weight * 0.85)} fill={C.green} />
           <circle data-native-mark data-native-bound cx={px(position)} cy={mix(BASE, py(weight * 0.85), phase)} r="7" fill={selected ? C.coral : C.gold} />
@@ -113,12 +138,11 @@ function Mass({lines, phase, action, family}) {
           <circle data-native-mark data-native-bound cx={px(position)} cy={py(previous)} r="5" fill={C.paper} stroke={C.green} strokeWidth="2" />
           <circle data-native-bound cx={px(position)} cy={py(cumulative)} r="5" fill={C.green} />
         </>}
-        <Label x={px(position)} y={BASE + 34} text={entry.value == null ? `x${index + 1}` : String(entry.value)} anchor="middle" width={100} />
+        <Label x={px(position)} y={BASE + 34} text={String(entry.value)} anchor="middle" width={100} />
       </g>;
     })}
     {cdf && <path data-native-mark data-native-bound d={pathFor([...cdfPoints, [px(0.95), py(1)]])} pathLength="1" strokeDasharray={`${phase} 1`} fill="none" stroke={C.green} strokeWidth="4" />}
     <Marker at={threshold} height={0.95} label={cdf ? 'x' : ''} />
-    {family === 'cdf-difference' && <path data-native-mark data-native-bound d={`M${px(0.85)},${py(0.2)}V${py(0.2 + 0.7 * phase)}`} stroke={C.coral} strokeWidth="11" />}
   </g>;
 }
 
@@ -247,9 +271,10 @@ function UniformComparison({phase}) {
 
 function Inversion({phase, story, cueIndex, lines}) {
   const concrete = story?.mode === 'discrete-inversion';
-  const table = concrete ? story.states.map((value, index) => ({value, weight:story.masses[index]})) : parseTable(lines);
-  const entries = table || [{value:'x1', weight:1}, {value:'xi', weight:1}, {value:'xk', weight:1}];
+  const entries = concrete ? story.states.map((value, index) => ({value, weight:story.masses[index]})) : parseTable(lines);
+  if (!entries) return <SymbolicDistribution family="uniform-invert" phase={phase} />;
   const total = entries.reduce((sum, entry) => sum + entry.weight, 0);
+  if (Math.abs(total - 1) > 1e-9) return <SymbolicDistribution family="uniform-invert" phase={phase} />;
   const visibleInputs = concrete ? story.inputs.filter(input => input.cue <= cueIndex) : [];
   const input = visibleInputs.at(-1);
   const value = input ? input.value : phase;
@@ -452,7 +477,7 @@ function Likelihood({family, phase, lines}) {
   const logL = value => total * Math.log(value) - count * value - data.reduce((sum, entry) => sum + jStat.gammaln(entry + 1), 0);
   const maximum = known ? logL(Math.max(0.001, total / count)) : 0;
   return <g>
-    <Axis xLabel={link ? 'Predictor / parametro natural' : 'Parametro candidato: los datos no cambian'} yLabel={link ? 'Media del modelo' : family === 'likelihood-log' ? 'Log-verosimilitud: el maximo no cambia' : 'Comparacion de verosimilitudes'} />
+    <Axis xLabel={link ? 'Predictor / parametro natural' : 'Parametro candidato'} yLabel={link ? 'Media del modelo' : family === 'likelihood-log' ? 'Log-verosimilitud: el maximo no cambia' : 'Comparacion de verosimilitudes'} />
     {link ? <Curve fn={value => 1 / (1 + Math.exp(-value))} low={-5} high={5} sweep={phase} /> : known ? <>
       <Curve fn={value => family === 'likelihood-log' ? Math.max(0, 0.9 + (logL(value) - maximum) / 10) : Math.exp(logL(value) - maximum) * 0.9} low={0.01} high={4} />
       <Marker at={candidate / 4} height={family === 'likelihood-log' ? Math.max(0, 0.9 + (logL(candidate) - maximum) / 10) : Math.exp(logL(candidate) - maximum) * 0.9} label="lambda" />
@@ -462,7 +487,7 @@ function Likelihood({family, phase, lines}) {
         <Label x={182 + index * 205} y={mix(260, 140 + index * 35, phase)} text={['h(x)', 'T(x)', 'A(eta)'][index]} anchor="middle" width={125} />
         <path data-native-mark data-native-bound d={`M${182 + index * 205},285L405,330`} stroke={C.muted} strokeWidth="2" />
       </g>)}
-      <Label x={400} y={420} text="Datos fijos; parametro variable" anchor="middle" width={500} />
+      <Label x={400} y={450} text="Datos fijos; parametro variable" anchor="middle" width={500} />
     </>}
     {data && data.map((value, index) => <g key={index}>
       <circle data-native-bound cx={145 + index * 60} cy={420} r="17" fill={C.soft} stroke={C.green} />
@@ -509,6 +534,29 @@ function Story({family, phase, action, lines, story, cueIndex}) {
   throw new RangeError(`Unsupported univariate scene family: ${family}`);
 }
 
+function Description({line, progress, cueIndex, hasEquations}) {
+  const rowCount = (text, size) => {
+    const limit = Math.max(4, Math.floor(340 / (size * 0.56)));
+    let rows = 1;
+    let length = 0;
+    for (const word of String(text).split(/\s+/u)) {
+      if (length && length + 1 + word.length > limit) {rows++; length = word.length;}
+      else length += (length ? 1 : 0) + word.length;
+    }
+    return rows;
+  };
+  const label = line.label || '';
+  const value = String(line.value ?? '');
+  const valueY = 80 + (rowCount(label, 18) - 1) * 22.5;
+  const bottom = hasEquations ? 205 : 450;
+  let size = 19;
+  while (size > 1 && valueY + (rowCount(value, size) - 1) * size * 1.25 + size * 0.3 > bottom) size -= 0.5;
+  return <g data-native-note opacity={(line.cue ?? 0) === cueIndex ? mix(0.25, 1, progress) : 1}>
+    <Label x={830} y={55} text={label} width={340} size={18} color={C.muted} />
+    {value && <Label x={830} y={valueY} text={value} width={340} size={size} />}
+  </g>;
+}
+
 export function UnivariateScene({plan, state}) {
   const cueIndex = Math.max(0, Math.min(plan.cues.length - 1, state.cueIndex));
   const cue = plan.cues[cueIndex];
@@ -523,10 +571,7 @@ export function UnivariateScene({plan, state}) {
     <svg width="1200" height="480" viewBox="0 0 1200 480" style={{position:'absolute', inset:0}}>
       <Story family={plan.family} phase={phase} action={cue.action} lines={modelLines} story={story} cueIndex={cueIndex} />
       <path d="M800,30V450" stroke={C.line} strokeWidth="2" />
-      {descriptions.map((line, index) => <g key={`${line.cue}-${index}`} opacity={(line.cue ?? 0) === cueIndex ? mix(0.25, 1, progress) : 1}>
-        <Label x={830} y={55 + index * 70} text={line.label || ''} width={340} size={18} color={C.muted} />
-        {line.value && <Label x={830} y={80 + index * 70} text={String(line.value).length > 110 ? `${String(line.value).slice(0, 107)}...` : line.value} width={340} size={19} />}
-      </g>)}
+      {descriptions.map((line, index) => <Description key={`${line.cue}-${index}`} {...{line, progress, cueIndex}} hasEquations={equations.length > 0} />)}
     </svg>
     {equations.map((line, index) => <MathFormula key={`${line.cue}-${index}-${line.tex}`} tex={line.tex} x={815} y={225 + index * 76} width={370} fontSize={line.tex.length > 100 ? 14 : line.tex.length > 65 ? 17 : 22} opacity={(line.cue ?? 0) === cueIndex ? mix(0.15, 1, progress) : 1} />)}
   </SceneSurface>;
