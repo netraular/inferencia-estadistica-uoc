@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.3--d-six-to-twelve",
+  "kind": "exercise",
+  "title": "¿Qué probabilidad tiene entre seis meses y un año en el modelo inicial?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "87b3a89d72e8f8dcc64e6d382355afedd5436016b75f11370ddf07672af2cbf2",
+  "src": "videos/ejercicio-pdf-u2-2.3--d-six-to-twelve/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.3--d-six-to-twelve/poster.jpg",
+  "duration": 173.96666666666667,
+  "frames": 5219,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "387076b8ac3fb46bf1432d03b8340cb46144848e19633f3ad3bfc17947b94811",
+  "videoSha256": "cbaf4ccebaf3344dcc1ddc928245856651d86b5ddd5792a1d7bbc6625bd7d82a",
+  "posterSha256": "c3bf526732f15a3fbf807a9c6c32c3df278d7bdef5565ba4c36570ef7badfe36",
+  "canonicalSha256": "295d1042933a9070e0e50727cd8399581248bce780546e52406dc952c22ad5d7",
+  "inputHash": "b5405edcda08c6a263fbbf8a71ec7860a98424ae4c3721628a644b99cffb1109",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "9d249ceff14684613a75d829bb616ed02eaa3f391b802a03f1d8daaf955a82f7",
+    "canonicalSha256": "295d1042933a9070e0e50727cd8399581248bce780546e52406dc952c22ad5d7",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.3",
+      "page": 8
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "e7c15d59579c3c7714f633b094a3ddfabd0d1ba09cc64ce90368e66bc8e05df9",
+    "transcriptSha256": "387076b8ac3fb46bf1432d03b8340cb46144848e19633f3ad3bfc17947b94811",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.3",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.3--d-six-to-twelve",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "295d1042933a9070e0e50727cd8399581248bce780546e52406dc952c22ad5d7",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 173.96666666666667,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 11.7,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué probabilidad tiene entre seis meses y un año en el modelo inicial?",
+            "start": 2.9,
+            "end": 8.5,
+            "startFrame": 87,
+            "endFrame": 255,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "696466213f33493b73b6446773bb0698de4e7f94a7ffbc1c232014a5e37f4704"
+          },
+          {
+            "text": "Queremos la probabilidad entre dos límites.",
+            "start": 8.8,
+            "end": 11.4,
+            "startFrame": 264,
+            "endFrame": 342,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "7d5c59d050a1ea5a9d332de36aee860796645da3a8948888b24d5da0a1a70c6f"
+          }
+        ]
+      },
+      {
+        "start": 11.7,
+        "end": 31.933333333333334,
+        "cues": [
+          {
+            "text": "El tiempo se mide en años y el soporte inicial termina en dos años.",
+            "start": 11.7,
+            "end": 17.7,
+            "startFrame": 351,
+            "endFrame": 531,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "e8bddd01f11055c7d2afc3215cf576c36a7d9238991a0eec60a360bd1b7e06a9"
+          },
+          {
+            "text": "La densidad decrece linealmente; su integral da una acumulada por tramos, cero antes del soporte y uno después.",
+            "start": 18,
+            "end": 25.733333333333334,
+            "startFrame": 540,
+            "endFrame": 772,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "031c240da7c95d3371bfb42dee6b47d5fe8bbdeb4bf7d85cdcfb75e8a3aa663e"
+          },
+          {
+            "text": "Este límite superior es una hipótesis del modelo, no una consecuencia biológica demostrada.",
+            "start": 26.033333333333335,
+            "end": 31.633333333333333,
+            "startFrame": 781,
+            "endFrame": 949,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "aa0d39775135df7c449e349ffeaad35db170ca5f0a8894f5ed2a93d036f0fd4c"
+          }
+        ]
+      },
+      {
+        "start": 31.933333333333334,
+        "end": 49.7,
+        "cues": [
+          {
+            "text": "equis se mide en años.",
+            "start": 31.933333333333334,
+            "end": 34.1,
+            "startFrame": 958,
+            "endFrame": 1023,
+            "words": 5,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ad80a05019028e52ed77b2d47aa8f23ff9e3eb8c6dade41ae65e5912c3b5fc91"
+          },
+          {
+            "text": "Modelo inicial: efe minúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 1 menos equis minúscula dividido entre 2 para 0 menor o igual que equis minúscula menor o igual que 2, y cero fuera.",
+            "start": 34.4,
+            "end": 49.4,
+            "startFrame": 1032,
+            "endFrame": 1482,
+            "words": 35,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "bcb65bf27b62f0a329975801265c233e3dcf049c03cd44cfbc1ffae38d2573f7"
+          }
+        ]
+      },
+      {
+        "start": 49.7,
+        "end": 67.6,
+        "cues": [
+          {
+            "text": "Alternativa: ge abre paréntesis, equis minúscula, cierra paréntesis igual a exponencial de abre paréntesis, menos ka por equis minúscula, cierra paréntesis para equis minúscula mayor o igual que 0, y cero fuera; no hay un factor ka delante de la exponencial.",
+            "start": 49.7,
+            "end": 67.3,
+            "startFrame": 1491,
+            "endFrame": 2019,
+            "words": 41,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ab24a4cec95deee2b65cd5ba20cb9010bc644ddc3b040e160597984e3179e09"
+          }
+        ]
+      },
+      {
+        "start": 67.6,
+        "end": 73.06666666666666,
+        "cues": [
+          {
+            "text": "Los dos modelos son continuos y se consideran solo como propuestas docentes.",
+            "start": 67.6,
+            "end": 72.76666666666667,
+            "startFrame": 2028,
+            "endFrame": 2183,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "7cddd8615edbcf7badec294a952dbe35ceb20d0096e0658098e649990e848c5b"
+          }
+        ]
+      },
+      {
+        "start": 73.06666666666666,
+        "end": 93.96666666666667,
+        "cues": [
+          {
+            "text": "Corrección del PDF: efe mayúscula abre paréntesis, 0 coma 5, cierra paréntesis igual a 0 coma 4 3 7 5; probabilidad de 0 coma 5 menor que equis menor que 1 igual a 0 coma 3 1 2 5, no 0 coma 3 7 5 en ambos casos.",
+            "start": 73.06666666666666,
+            "end": 93.66666666666667,
+            "startFrame": 2192,
+            "endFrame": 2810,
+            "words": 48,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "ece2d79abeb0d53f5609048b22ad0ce1c75789d56a36e8714605ad2bb9687c41"
+          }
+        ]
+      },
+      {
+        "start": 93.96666666666667,
+        "end": 105.73333333333333,
+        "cues": [
+          {
+            "text": "La variable se mide en años: seis meses son medio año.",
+            "start": 93.96666666666667,
+            "end": 98.7,
+            "startFrame": 2819,
+            "endFrame": 2961,
+            "words": 11,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "2aecb733223c900efd4547707659d6b193531e05db762ba99005505b35e971d5"
+          },
+          {
+            "text": "Restar las dos acumuladas elimina lo anterior al límite inferior y conserva solo el intervalo.",
+            "start": 99,
+            "end": 105.43333333333334,
+            "startFrame": 2970,
+            "endFrame": 3163,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "c1c2c23aa481e5d7f9d37084541794f75135345a0dad62c1f421f3a48dbfa0be"
+          }
+        ]
+      },
+      {
+        "start": 105.73333333333333,
+        "end": 117.06666666666666,
+        "cues": [
+          {
+            "text": "Pasar meses a años.",
+            "start": 105.73333333333333,
+            "end": 107.46666666666667,
+            "startFrame": 3172,
+            "endFrame": 3224,
+            "words": 4,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "0180fcffd4dde3e91615377965443b7aef6cc5a33b029ae643fadaaf2b2827e3"
+          },
+          {
+            "text": "La variable se mide en años: seis meses son medio año. 6 dividido entre 12 igual a 0 coma 5 años.",
+            "start": 107.76666666666667,
+            "end": 116.76666666666667,
+            "startFrame": 3233,
+            "endFrame": 3503,
+            "words": 21,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "6f04781c30d74c046a53ebb6781496cc188a701367a894c8b2c8d92426a63834"
+          }
+        ]
+      },
+      {
+        "start": 117.06666666666666,
+        "end": 133.96666666666667,
+        "cues": [
+          {
+            "text": "Acumular hasta el extremo inferior. efe de equis minúscula significa probabilidad hasta equis minúscula.",
+            "start": 117.06666666666666,
+            "end": 123.06666666666666,
+            "startFrame": 3512,
+            "endFrame": 3692,
+            "words": 14,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "487a3d73574c153a693cfcfea48c657d5a609bd70d4b417826dd6007d58c80e1"
+          },
+          {
+            "text": "Evalúo la acumulada en el límite inferior. efe mayúscula abre paréntesis, 0 coma 5, cierra paréntesis igual a 0 coma 4 3 7 5.",
+            "start": 123.36666666666666,
+            "end": 133.66666666666666,
+            "startFrame": 3701,
+            "endFrame": 4010,
+            "words": 24,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "5845ea88ea046d2e885e36b6d57fffd66870ae2d936a2a3b0c925eae4bd56233"
+          }
+        ]
+      },
+      {
+        "start": 133.96666666666667,
+        "end": 145.73333333333332,
+        "cues": [
+          {
+            "text": "Acumular hasta el extremo superior.",
+            "start": 133.96666666666667,
+            "end": 136.13333333333333,
+            "startFrame": 4019,
+            "endFrame": 4084,
+            "words": 5,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "6c856bad10c842b6271e54ed811f5fc049a206ee61ac4160ae5a1584c081f5d9"
+          },
+          {
+            "text": "Evalúo la misma acumulada en el otro límite. efe mayúscula abre paréntesis, 1, cierra paréntesis igual a 0 coma 7 5.",
+            "start": 136.43333333333334,
+            "end": 145.43333333333334,
+            "startFrame": 4093,
+            "endFrame": 4363,
+            "words": 21,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "220bf04e9e89df95217c7ad078074bdbe217573017e1dfbb192796ebeb134af1"
+          }
+        ]
+      },
+      {
+        "start": 145.73333333333332,
+        "end": 162.63333333333333,
+        "cues": [
+          {
+            "text": "Restar las acumuladas.",
+            "start": 145.73333333333332,
+            "end": 147.03333333333333,
+            "startFrame": 4372,
+            "endFrame": 4411,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "34d01d23e04ca38f81e9819b1c1bb85425f47601475f6ec7b8a731c3b7ff65b8"
+          },
+          {
+            "text": "La probabilidad del intervalo es la acumulada superior menos la inferior. probabilidad de 0 coma 5 menor que equis menor que 1 igual a 0 coma 7 5 menos 0 coma 4 3 7 5.",
+            "start": 147.33333333333334,
+            "end": 162.33333333333334,
+            "startFrame": 4420,
+            "endFrame": 4870,
+            "words": 35,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "756babe2171ba11e0312d34c7fc929859ddeffe5516ac42a677bf6ae9dc0bbb3"
+          }
+        ]
+      },
+      {
+        "start": 162.63333333333333,
+        "end": 173.96666666666667,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 3 1 2 5 probabilidad entre 0 y 1.",
+            "start": 162.63333333333333,
+            "end": 168.63333333333333,
+            "startFrame": 4879,
+            "endFrame": 5059,
+            "words": 14,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "94614f9bacaf799dfa0bffb835d5273411a3202323e8d8025498fb32692a7566"
+          },
+          {
+            "text": "En un modelo con densidad, incluir extremos no cambia la probabilidad.",
+            "start": 168.93333333333334,
+            "end": 173.66666666666666,
+            "startFrame": 5068,
+            "endFrame": 5210,
+            "words": 11,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "183938bcccd0e77a9165dadb1ed277370f620a934b739a5bcd89b866c94ad4fa"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
