@@ -65254,6 +65254,943 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "independencia-variables": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "independencia-variables",
+      "kind": "recap",
+      "title": "Independencia de variables y factorización",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "d9a5d46fb9b969f4a5b0d34610a7414b11c50a7f59556c6d7cf6586124bb50da",
+      "src": "videos/independencia-variables/video.mp4",
+      "poster": "videos/independencia-variables/poster.jpg",
+      "duration": 464.3,
+      "frames": 13929,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "4522e9c7cb45e6901932ce6ce1bafc86aa0b7a8cca722a442a4ec24269c1520d",
+      "videoSha256": "5f880b029e539a437a543f0e34c71dcaeb7741d3923fa9d71156b3268465c2b1",
+      "posterSha256": "2aee2b5c194130cbc80927790d65d31f0068330f42e85b9ee379a1157d63c4f0",
+      "canonicalSha256": "00ad0fb36cef452f692d7bed750ac55fbe19a475bf14e53d480a079bbdb39730",
+      "inputHash": "f2b1b099f928dc21f2173a8b301a590eb818ef3d55ae198945b3131622833639",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "98c3ffb733321b374fecd14854cb26bac0b1c2c108961adb8b065c19d51307e3",
+        "canonicalSha256": "00ad0fb36cef452f692d7bed750ac55fbe19a475bf14e53d480a079bbdb39730",
+        "source": {
+          "document": "FundamentosInferencia_Tema4.pdf",
+          "section": "4.7 a 4.7.3 y 4.8.6: caracterizaciones, propiedades y producto de esperanzas"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "62ba60d76c5ac51bbe9805cc8ce1bc197edda3ec67a68cbcc0294c038b774f76",
+        "transcriptSha256": "4522e9c7cb45e6901932ce6ce1bafc86aa0b7a8cca722a442a4ec24269c1520d",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "independencia-variables",
+      "transcript": {
+        "id": "independencia-variables",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "00ad0fb36cef452f692d7bed750ac55fbe19a475bf14e53d480a079bbdb39730",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 464.3,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 77.23333333333333,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Vamos a comprobar independencia de variables a partir de su distribución completa.",
+                "start": 1.5,
+                "end": 6.666666666666667,
+                "startFrame": 45,
+                "endFrame": 200,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "a39296e428b90281abf3a5b299f31d70893c371a33e602d801b6e28f79b4621a"
+              },
+              {
+                "text": "Conocer una no debe cambiar la ley de la otra.",
+                "start": 6.966666666666667,
+                "end": 11.266666666666667,
+                "startFrame": 209,
+                "endFrame": 338,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "190b09c98e0688521d2ad514dbf534b0aeb785c0709fbc1547f339565e24680c"
+              },
+              {
+                "text": "La caracterización general exige que la acumulada conjunta se separe en las dos acumuladas marginales para todos los umbrales.",
+                "start": 11.566666666666666,
+                "end": 19.733333333333334,
+                "startFrame": 347,
+                "endFrame": 592,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "a1000ef84d9ad6cb4b67eee4fe8b60fc6bd2f1449a69ce7e946a4d9a088574ad"
+              },
+              {
+                "text": "En una tabla discreta esto equivale a factorizar cada masa en el producto de sus marginales.",
+                "start": 20.033333333333335,
+                "end": 26.9,
+                "startFrame": 601,
+                "endFrame": 807,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "3623d58fef303507679f499e27b76fc8ca06c2330460658e6629919cc655ae96"
+              },
+              {
+                "text": "Consideremos dos filas iguales: cero coma dos y cero coma tres.",
+                "start": 27.2,
+                "end": 31.933333333333334,
+                "startFrame": 816,
+                "endFrame": 958,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "fbd168a966a53a96ec5982690a6ede8e8f2b44bd3a6ba081e300099d3f1a8ba8"
+              },
+              {
+                "text": "Las marginales de equis son una mitad y una mitad; las de i griega, cero coma cuatro y cero coma seis.",
+                "start": 32.233333333333334,
+                "end": 41.233333333333334,
+                "startFrame": 967,
+                "endFrame": 1237,
+                "words": 21,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "d6adc9e9fac823d3998762d6afbedef683566b9363cb7684adb0601d005e9276"
+              },
+              {
+                "text": "La primera celda es una mitad por cero coma cuatro, igual a cero coma dos.",
+                "start": 41.53333333333333,
+                "end": 47.96666666666667,
+                "startFrame": 1246,
+                "endFrame": 1439,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "9e3c03136afe1c14ab892f87d6f85f4005fe45da17b7ebcc51794fc0edc12826"
+              },
+              {
+                "text": "La segunda es una mitad por cero coma seis, igual a cero coma tres.",
+                "start": 48.266666666666666,
+                "end": 54.266666666666666,
+                "startFrame": 1448,
+                "endFrame": 1628,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "f4ba1e546350f42555c86334c4aaac101e80fc557702377f71c156cb4449e5b0"
+              },
+              {
+                "text": "La otra fila verifica los mismos productos, así que aquí sí factoriza toda la tabla.",
+                "start": 54.56666666666667,
+                "end": 61,
+                "startFrame": 1637,
+                "endFrame": 1830,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "c0dd7f48cc5e1ccb69f1599fe52eaa07f2a82e4c647943964bb32491c57d17a1"
+              },
+              {
+                "text": "Una coincidencia aislada no demuestra independencia; una discrepancia basta para refutarla.",
+                "start": 61.3,
+                "end": 66.03333333333333,
+                "startFrame": 1839,
+                "endFrame": 1981,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "4f728b668a6eccbe81ecd3e51b34e2b5993fbd593d2912e09b2cd46de37428db"
+              },
+              {
+                "text": "Tampoco basta comparar medias ni obtener correlación cero.",
+                "start": 66.33333333333333,
+                "end": 69.76666666666667,
+                "startFrame": 1990,
+                "endFrame": 2093,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "7a6262873c2bd7925e13efd4ca62ad502dc45e368000a5aaca7b190b6e2a9da8"
+              },
+              {
+                "text": "El criterio habla de todos los sucesos de ambas variables, no solo de un resumen numérico.",
+                "start": 70.06666666666666,
+                "end": 76.93333333333334,
+                "startFrame": 2102,
+                "endFrame": 2308,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "4fcc0b2d0d4836cd603f3bc34fbf6a139e54411bf6487afd49dea59a179308e2"
+              }
+            ]
+          },
+          {
+            "start": 77.23333333333333,
+            "end": 148.5,
+            "cues": [
+              {
+                "text": "Con densidad conjunta, la factorización debe valer casi por todas partes en todo el plano, incluyendo donde la conjunta es cero.",
+                "start": 77.23333333333333,
+                "end": 86.23333333333333,
+                "startFrame": 2317,
+                "endFrame": 2587,
+                "words": 21,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "1d29f54d8281a5866d4ae52adfa6deb6ea118305bcf84f207738c7ee489152b3"
+              },
+              {
+                "text": "Casi por todas partes permite diferencias en conjuntos de área cero; no permite ignorar una región entera fuera del soporte.",
+                "start": 86.53333333333333,
+                "end": 95.13333333333334,
+                "startFrame": 2596,
+                "endFrame": 2854,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "0f198dca4ca209fbcc48db2878515ffabf995e1eb43bff8fd98548521dac2aaf"
+              },
+              {
+                "text": "En el triángulo de capacidad dos, cada marginal es positiva entre cero y dos.",
+                "start": 95.43333333333334,
+                "end": 101.43333333333334,
+                "startFrame": 2863,
+                "endFrame": 3043,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "03f9a45158cf00c912691de9538727e8ebf1931e407860754e0a32a3bf34066d"
+              },
+              {
+                "text": "Sin embargo, cerca de la pareja uno coma cinco, uno coma cinco, la conjunta vale cero porque se supera la capacidad.",
+                "start": 101.73333333333333,
+                "end": 110.73333333333333,
+                "startFrame": 3052,
+                "endFrame": 3322,
+                "words": 21,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "4235494ed2cc1301b94c790ed34db4bbf65ab114db1ab8d30fda58a49a809ff5"
+              },
+              {
+                "text": "El producto marginal es positivo en esa región: no hay independencia.",
+                "start": 111.03333333333333,
+                "end": 115.76666666666667,
+                "startFrame": 3331,
+                "endFrame": 3473,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "56766f55d6c476474d4b53af6b012630361ead80c9018f7f1fa192a6aeff502e"
+              },
+              {
+                "text": "Con independencia podemos separar la esperanza del producto de funciones de ambas variables, siempre que sean integrables.",
+                "start": 116.06666666666666,
+                "end": 123.36666666666666,
+                "startFrame": 3482,
+                "endFrame": 3701,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "b035135705663bfce0bfc57b7ca9fc7826cb570c4b185d4524372c49e7dc408c"
+              },
+              {
+                "text": "Las transformaciones por separado conservan independencia.",
+                "start": 123.66666666666667,
+                "end": 126.26666666666667,
+                "startFrame": 3710,
+                "endFrame": 3788,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "2a0332630c7b3bf805bbc20afc8b4eb8e6b48ad7e1dc75530892420390c2f005"
+              },
+              {
+                "text": "Esta es una consecuencia de la factorización, no una sustitución de su comprobación.",
+                "start": 126.56666666666666,
+                "end": 132.16666666666666,
+                "startFrame": 3797,
+                "endFrame": 3965,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "d963453c9fde9c45ce2564aec9a5200898dee2e0d02b3839bf2e61cb1fe27c3e"
+              },
+              {
+                "text": "Para decidir en un problema distinguimos independencia justificada por el experimento, independencia impuesta como modelo e independencia demostrada desde la conjunta.",
+                "start": 132.46666666666667,
+                "end": 141.46666666666667,
+                "startFrame": 3974,
+                "endFrame": 4244,
+                "words": 21,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "b235111d20c08300e3ad1cd0279d035096a3ba30dc7bba328c2fcce7dc9ae77c"
+              },
+              {
+                "text": "Una forma rectangular del soporte por sí sola tampoco basta: aún deben factorizar los pesos.",
+                "start": 141.76666666666668,
+                "end": 148.2,
+                "startFrame": 4253,
+                "endFrame": 4446,
+                "words": 15,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "98e0cfa7683ccf53b98d43cf8f5a4afa7b92c71e4e30bfeda28b708b591b3507"
+              }
+            ]
+          },
+          {
+            "start": 148.5,
+            "end": 155.66666666666666,
+            "cues": [
+              {
+                "text": "X es una desviación simétrica respecto a una referencia biológica y Y=X² es su desviación cuadrática.",
+                "start": 148.5,
+                "end": 155.36666666666667,
+                "startFrame": 4455,
+                "endFrame": 4661,
+                "words": 16,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "934b1a2f04e1534aecb11a693e5e6fe8213b26277a1c08ce17f518e78cb187d6"
+              }
+            ]
+          },
+          {
+            "start": 155.66666666666666,
+            "end": 175.9,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 155.66666666666666,
+                "end": 158.26666666666668,
+                "startFrame": 4670,
+                "endFrame": 4748,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de equis igual a 0 y i griega igual a 0 menos probabilidad de equis igual a 0 por probabilidad de i griega igual a 0.",
+                "start": 158.56666666666666,
+                "end": 170.56666666666666,
+                "startFrame": 4757,
+                "endFrame": 5117,
+                "words": 28,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "9a010b199cc589250fcdfec4d5ae7fe0f0a7273b8efa37e3076942da71654777"
+              },
+              {
+                "text": "Queremos comparar una masa conjunta con el producto de sus marginales.",
+                "start": 170.86666666666667,
+                "end": 175.6,
+                "startFrame": 5126,
+                "endFrame": 5268,
+                "words": 11,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "be3df36d21db85a5f6e14f80604e413c776e41f0636244fe75812293fb3ccb41"
+              }
+            ]
+          },
+          {
+            "start": 175.9,
+            "end": 192.7,
+            "cues": [
+              {
+                "text": "Independencia exige factorizar toda la distribución conjunta en marginales.",
+                "start": 175.9,
+                "end": 179.76666666666668,
+                "startFrame": 5277,
+                "endFrame": 5393,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "4ff3105af64fc306e6c107edaf0580fd10aeff2ade82a1c786fbab1557417342"
+              },
+              {
+                "text": "La covarianza solo mide asociación lineal: puede anularse por simetría aunque una variable determine a la otra.",
+                "start": 180.06666666666666,
+                "end": 187.36666666666667,
+                "startFrame": 5402,
+                "endFrame": 5621,
+                "words": 17,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "749ffc6a53c0ba97905fb0d672beeb2deed9086913af95f99f67c7c408141674"
+              },
+              {
+                "text": "Una única celda incompatible con la factorización basta para demostrar dependencia.",
+                "start": 187.66666666666666,
+                "end": 192.4,
+                "startFrame": 5630,
+                "endFrame": 5772,
+                "words": 11,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "96a7ebbc2dc9988d5e365c8864a5fe9f38a8ee88cef8e3551dc21199a8721415"
+              }
+            ]
+          },
+          {
+            "start": 192.7,
+            "end": 208,
+            "cues": [
+              {
+                "text": "equis toma menos 1, 0, 1 con probabilidades 0 coma 3 3 3 3 3 3 3, 0 coma 3 3 3 3 3 3 3, 0 coma 3 3 3 3 3 3 3.",
+                "start": 192.7,
+                "end": 207.7,
+                "startFrame": 5781,
+                "endFrame": 6231,
+                "words": 35,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "fe357ee0d27a751f328f38265f111fef1cc3893fdc22b71987859c513c16311b"
+              }
+            ]
+          },
+          {
+            "start": 208,
+            "end": 217.3,
+            "cues": [
+              {
+                "text": "i griega solo toma 0 y a al cuadrado , donde a es la amplitud; i griega queda determinado por equis.",
+                "start": 208,
+                "end": 217,
+                "startFrame": 6240,
+                "endFrame": 6510,
+                "words": 21,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "05f0a03efb59ff2937f6d0a7a6d3361c3af678e7b6b8d4624a3b95f32c24619f"
+              }
+            ]
+          },
+          {
+            "start": 217.3,
+            "end": 219.76666666666668,
+            "cues": [
+              {
+                "text": "Distribución discreta con momentos finitos.",
+                "start": 217.3,
+                "end": 219.46666666666667,
+                "startFrame": 6519,
+                "endFrame": 6584,
+                "words": 5,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "923c46af8ccb29baf6aa7d06776bb057c261211899eab4ce4e3cfd4e42fa0597"
+              }
+            ]
+          },
+          {
+            "start": 219.76666666666668,
+            "end": 223.06666666666666,
+            "cues": [
+              {
+                "text": "Covarianza cero no implica independencia en general.",
+                "start": 219.76666666666668,
+                "end": 222.76666666666668,
+                "startFrame": 6593,
+                "endFrame": 6683,
+                "words": 7,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "a37672dac04785a7cb18ad0943d225a7353b15dee40c5d42612c6caafc4ae8ec"
+              }
+            ]
+          },
+          {
+            "start": 223.06666666666666,
+            "end": 237.4,
+            "cues": [
+              {
+                "text": "Si equis igual a 0 entonces i griega igual a 0; ambos sucesos tienen probabilidad pe subíndice 0.",
+                "start": 223.06666666666666,
+                "end": 230.8,
+                "startFrame": 6692,
+                "endFrame": 6924,
+                "words": 18,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "7de9aa9a7de5f640f072569936cc501c8d83d8af4b3930e127d18ef8ab329b00"
+              },
+              {
+                "text": "Una discrepancia en una sola pareja refuta la independencia, aunque la covarianza sea nula.",
+                "start": 231.1,
+                "end": 237.1,
+                "startFrame": 6933,
+                "endFrame": 7113,
+                "words": 14,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "c5f5873e02b868361de926376fc3ab6831030551c66fed5a55d1b6bf38b63af8"
+              }
+            ]
+          },
+          {
+            "start": 237.4,
+            "end": 274.1,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 237.4,
+                "end": 240.4,
+                "startFrame": 7122,
+                "endFrame": 7212,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de equis igual a 0 y i griega igual a 0 menos probabilidad de equis igual a 0 por probabilidad de i griega igual a 0.",
+                "start": 240.7,
+                "end": 252.7,
+                "startFrame": 7221,
+                "endFrame": 7581,
+                "words": 28,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "6e251a673ce22e43de5d6e6ab9772e3666ec70eb136fa458503de6e9e3c8da30"
+              },
+              {
+                "text": "La independencia exige que todas las masas conjuntas coincidan con productos de marginales.",
+                "start": 253,
+                "end": 258.6,
+                "startFrame": 7590,
+                "endFrame": 7758,
+                "words": 13,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "63ef684b46d84b0ceb1965f9d1a12af31be5a2704f06493b51bf9ff2261a1f1c"
+              },
+              {
+                "text": "Una sola discrepancia basta para refutarla; una sola coincidencia no basta para demostrarla.",
+                "start": 258.9,
+                "end": 264.5,
+                "startFrame": 7767,
+                "endFrame": 7935,
+                "words": 13,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "77e3b098d58bb3659563dd65ca31cd54cdd0ccdb8b28bee3c6617520795ca3e8"
+              },
+              {
+                "text": "Para este apartado: Si equis igual a 0 entonces i griega igual a 0; ambos sucesos tienen probabilidad pe subíndice 0.",
+                "start": 264.8,
+                "end": 273.8,
+                "startFrame": 7944,
+                "endFrame": 8214,
+                "words": 21,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "f25ec61306e60ac6b9a35842f48998f2b4b3a0df4077872fd0b557cb6ab2635c"
+              }
+            ]
+          },
+          {
+            "start": 274.1,
+            "end": 288.1333333333333,
+            "cues": [
+              {
+                "text": "Calcular la conjunta real. probabilidad de equis igual a 0 y i griega igual a 0 igual a pe subíndice 0 igual a 0 coma 3 3 3 3 3 3 3.",
+                "start": 274.1,
+                "end": 287.8333333333333,
+                "startFrame": 8223,
+                "endFrame": 8635,
+                "words": 32,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "92476423437cf5d2b3cfb71f917e8a70b78e169dc329bdece7f423a944b32e44"
+              }
+            ]
+          },
+          {
+            "start": 288.1333333333333,
+            "end": 322.73333333333335,
+            "cues": [
+              {
+                "text": "Comparar con la factorización. pe subíndice 0 menos pe subíndice 0 elevado a abre paréntesis, 2, cierra paréntesis igual a 0 coma 3 3 3 3 3 3 3 menos abre paréntesis, 0 coma 3 3 3 3 3 3 3, cierra paréntesis elevado a abre paréntesis, 2, cierra paréntesis igual a 0 coma 2 2 2 2 2 2 2. equis independiente de i griega por tanto probabilidad de abre paréntesis, equis igual a equis minúscula y i griega.",
+                "start": 288.1333333333333,
+                "end": 322.43333333333334,
+                "startFrame": 8644,
+                "endFrame": 9673,
+                "words": 80,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "5f6efba609ac0970e57b90a801b3d2a659b9c96a30741ad2c820a5ccb82ac53f"
+              }
+            ]
+          },
+          {
+            "start": 322.73333333333335,
+            "end": 333.76666666666665,
+            "cues": [
+              {
+                "text": "equis independiente de i griega por tanto probabilidad de abre paréntesis, equis igual a equis minúscula y i griega queda igual a y, cierra paréntesis.",
+                "start": 322.73333333333335,
+                "end": 333.46666666666664,
+                "startFrame": 9682,
+                "endFrame": 10004,
+                "words": 25,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d83e1a2b102e1201505e00bb476de37a854d60fa8228f99d64f2838e1856dba"
+              }
+            ]
+          },
+          {
+            "start": 333.76666666666665,
+            "end": 345.6666666666667,
+            "cues": [
+              {
+                "text": "equis independiente de i griega por tanto probabilidad de abre paréntesis, equis igual a equis minúscula y i griega queda igual a probabilidad de abre paréntesis, equis.",
+                "start": 333.76666666666665,
+                "end": 345.3666666666667,
+                "startFrame": 10013,
+                "endFrame": 10361,
+                "words": 27,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "63c30b602973a2a9d54ab8a73f3feeb66730962d8acc85da1838b037556e901b"
+              }
+            ]
+          },
+          {
+            "start": 345.6666666666667,
+            "end": 360.1333333333333,
+            "cues": [
+              {
+                "text": "equis independiente de i griega por tanto probabilidad de abre paréntesis, equis igual a equis minúscula y i griega queda igual a equis minúscula, cierra paréntesis por probabilidad de abre paréntesis, i griega.",
+                "start": 345.6666666666667,
+                "end": 359.8333333333333,
+                "startFrame": 10370,
+                "endFrame": 10795,
+                "words": 33,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "c3d9987b56d6fac900820abf957720398d8b1296a8dd586379da4314929346b7"
+              }
+            ]
+          },
+          {
+            "start": 360.1333333333333,
+            "end": 371.1666666666667,
+            "cues": [
+              {
+                "text": "equis independiente de i griega por tanto probabilidad de abre paréntesis, equis igual a equis minúscula y i griega queda igual a y, cierra paréntesis.",
+                "start": 360.1333333333333,
+                "end": 370.8666666666667,
+                "startFrame": 10804,
+                "endFrame": 11126,
+                "words": 25,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d83e1a2b102e1201505e00bb476de37a854d60fa8228f99d64f2838e1856dba"
+              }
+            ]
+          },
+          {
+            "start": 371.1666666666667,
+            "end": 392.96666666666664,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 371.1666666666667,
+                "end": 372.46666666666664,
+                "startFrame": 11135,
+                "endFrame": 11174,
+                "words": 3,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 2 2 2 2 2 2 2 diferencia de probabilidades.",
+                "start": 372.76666666666665,
+                "end": 379.2,
+                "startFrame": 11183,
+                "endFrame": 11376,
+                "words": 15,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "806ed1a1c39df4706dce2c19ba0b564ff911cf4a4efb942f9e36a71d46360e5f"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 379.5,
+                "end": 385.5,
+                "startFrame": 11385,
+                "endFrame": 11565,
+                "words": 14,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "81a7b8a004818b6748fd017c8ee9d4335b3c95ec82a7f9a7dbab062ff0add45c"
+              },
+              {
+                "text": "La diferencia positiva en una sola celda basta para refutar independencia, aunque la covarianza sea cero.",
+                "start": 385.8,
+                "end": 392.6666666666667,
+                "startFrame": 11574,
+                "endFrame": 11780,
+                "words": 16,
+                "sceneIndex": 17,
+                "cueIndex": 3,
+                "sourceCueSha256": "e79394df9d878ddde30abf143f7495d0a2ff7c2c2845710a7b3a46f677cc7b60"
+              }
+            ]
+          },
+          {
+            "start": 392.96666666666664,
+            "end": 406.8666666666667,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 2 2 2 2 2 2 2 diferencia de probabilidades.",
+                "start": 392.96666666666664,
+                "end": 399.4,
+                "startFrame": 11789,
+                "endFrame": 11982,
+                "words": 15,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "6414a1e6f79bcc04b66047554490ded4168f7665ccd26d9acad48ce5cf5b9401"
+              },
+              {
+                "text": "La diferencia positiva en una sola celda basta para refutar independencia, aunque la covarianza sea cero.",
+                "start": 399.7,
+                "end": 406.56666666666666,
+                "startFrame": 11991,
+                "endFrame": 12197,
+                "words": 16,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "8307ffcc03d4ae31262d4680f9ae5d33c45a2dd8182127302295a5561c49de68"
+              }
+            ]
+          },
+          {
+            "start": 406.8666666666667,
+            "end": 464.3,
+            "cues": [
+              {
+                "text": "La igualdad para todos los umbrales caracteriza independencia de variables reales.",
+                "start": 406.8666666666667,
+                "end": 411.6,
+                "startFrame": 12206,
+                "endFrame": 12348,
+                "words": 11,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "fa3b647363e3d9c0401194475c83af5fd1d6fa54b96cd71b4d331d39a5a2a055"
+              },
+              {
+                "text": "Se usa la caracterización correspondiente al caso discreto o absolutamente continuo y se incluye el soporte.",
+                "start": 411.9,
+                "end": 418.76666666666665,
+                "startFrame": 12357,
+                "endFrame": 12563,
+                "words": 16,
+                "sceneIndex": 19,
+                "cueIndex": 1,
+                "sourceCueSha256": "70d8d35f34811558768a167bb1561061de617502e4faf82da434a2e677b32641"
+              },
+              {
+                "text": "La separación requiere transformaciones medibles y condiciones de integrabilidad para las esperanzas empleadas.",
+                "start": 419.06666666666666,
+                "end": 424.6666666666667,
+                "startFrame": 12572,
+                "endFrame": 12740,
+                "words": 13,
+                "sceneIndex": 19,
+                "cueIndex": 2,
+                "sourceCueSha256": "1f7209ddd65b038d92fdeaef36346b218f5b931ec327c10a7b87a83ed82aa0ff"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 424.96666666666664,
+                "end": 428.8333333333333,
+                "startFrame": 12749,
+                "endFrame": 12865,
+                "words": 9,
+                "sceneIndex": 19,
+                "cueIndex": 3,
+                "sourceCueSha256": "def8198af5c28e53feb1001f6f3d9e7d1be0e7b8e2eeaf0f5a7c831213e63af0"
+              },
+              {
+                "text": "Una celda conjunta difiere del producto de sus marginales.",
+                "start": 429.1333333333333,
+                "end": 433,
+                "startFrame": 12874,
+                "endFrame": 12990,
+                "words": 9,
+                "sceneIndex": 19,
+                "cueIndex": 4,
+                "sourceCueSha256": "a7c2b00849a7790224bdb67df152741edd27e3ded9e8f58f218f1e4d4abab9ff"
+              },
+              {
+                "text": "¿Qué permite concluir?",
+                "start": 433.3,
+                "end": 434.6,
+                "startFrame": 12999,
+                "endFrame": 13038,
+                "words": 3,
+                "sceneIndex": 19,
+                "cueIndex": 5,
+                "sourceCueSha256": "6f7497d69441895e7bc0da9f5bcdeac0a64b6e48810643e397df72b21a123fb3"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 434.9,
+                "end": 438.76666666666665,
+                "startFrame": 13047,
+                "endFrame": 13163,
+                "words": 9,
+                "sceneIndex": 19,
+                "cueIndex": 6,
+                "sourceCueSha256": "357cd2489cb0524658f870022376e8c5a811b4301600d6744cfb31376e4fc53b"
+              },
+              {
+                "text": "La independencia exige todas las igualdades; una discrepancia basta para refutarla.",
+                "start": 439.06666666666666,
+                "end": 443.8,
+                "startFrame": 13172,
+                "endFrame": 13314,
+                "words": 11,
+                "sceneIndex": 19,
+                "cueIndex": 7,
+                "sourceCueSha256": "2555de6b5128a84c8a79998327e861277ca9114b83e7c1bd937d78cef73e0833"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Verificar solo una celda favorable y concluir independencia.",
+                "start": 444.1,
+                "end": 450.96666666666664,
+                "startFrame": 13323,
+                "endFrame": 13529,
+                "words": 16,
+                "sceneIndex": 19,
+                "cueIndex": 8,
+                "sourceCueSha256": "0ff4afaf96f7e49413a43ba8551f5d2b7c65b80f58a9d3956da36520b89a67bf"
+              },
+              {
+                "text": "La independencia exige factorizar toda la distribución.",
+                "start": 451.26666666666665,
+                "end": 454.26666666666665,
+                "startFrame": 13538,
+                "endFrame": 13628,
+                "words": 7,
+                "sceneIndex": 19,
+                "cueIndex": 9,
+                "sourceCueSha256": "833ff2ebbafd88e9d4cbb82aa64bfc4daf1285c944f15cc87e7a80791d9eb78e"
+              },
+              {
+                "text": "Una igualdad aislada puede ser accidental; una discrepancia válida basta para mostrar que conocer una variable altera alguna probabilidad de la otra.",
+                "start": 454.56666666666666,
+                "end": 464,
+                "startFrame": 13637,
+                "endFrame": 13920,
+                "words": 22,
+                "sceneIndex": 19,
+                "cueIndex": 10,
+                "sourceCueSha256": "b8390b4b85856671f9cb0bf8dfdc697e88d74fda09b2aaa3d72f95e891633139"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
