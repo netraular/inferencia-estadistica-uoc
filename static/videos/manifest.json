@@ -59161,6 +59161,1310 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "conjunta-discreta": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "conjunta-discreta",
+      "kind": "recap",
+      "title": "Vectores y tablas de probabilidad conjunta",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "b6dc0b58d11533f45164ff15a0ff0ef4f051ba315ddbf353fb9085af1b48ce73",
+      "src": "videos/conjunta-discreta/video.mp4",
+      "poster": "videos/conjunta-discreta/poster.jpg",
+      "duration": 531.9333333333333,
+      "frames": 15958,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "0c67f2401f2418a04842ceaab3b2c2e6ac8b20c1badcb665604e82553f97234e",
+      "videoSha256": "6e3fbc39a566f5076f7ef4f80bace664642211763912f3246673e5352c507eba",
+      "posterSha256": "07ae7dfb8a2b0ed7c0e653aa400ba9a54ec80873ae40d8c8dd330d1be9138492",
+      "canonicalSha256": "2c00da3a122dc72cfbf6421d76caaac512cfc81c68a356cfa1440131a8dd84f4",
+      "inputHash": "9cd359897d6dbb1c79a137f25e19dd0d26f3904a88f3b0c9640fbd82a78ac565",
+      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "b66a7595a3e2a0f682a8cd0a55f46f0fe0d274a904f15385e704828a45618257",
+        "canonicalSha256": "2c00da3a122dc72cfbf6421d76caaac512cfc81c68a356cfa1440131a8dd84f4",
+        "source": {
+          "document": "FundamentosInferencia_Tema4.pdf",
+          "section": "4.1 y 4.2: vectores, acumulada bivariante y masa conjunta; ejercicios U3 1 y 2"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "4361f794cf2c32f64582b5e0c710351546e5c3413f89af5227abd5d48e52df40",
+        "transcriptSha256": "0c67f2401f2418a04842ceaab3b2c2e6ac8b20c1badcb665604e82553f97234e",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "conjunta-discreta",
+      "transcript": {
+        "id": "conjunta-discreta",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "2c00da3a122dc72cfbf6421d76caaac512cfc81c68a356cfa1440131a8dd84f4",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 531.9333333333333,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 73,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Vamos a describir dos medidas simultáneas sin perder qué parejas pueden ocurrir.",
+                "start": 1.5,
+                "end": 6.666666666666667,
+                "startFrame": 45,
+                "endFrame": 200,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "81a47aade1afe21ccba0f3b8d117ac161dc5ef0a1ca48c4cef207b542dc93119"
+              },
+              {
+                "text": "Equis indica un marcador e i griega una respuesta del mismo organismo.",
+                "start": 6.966666666666667,
+                "end": 12.133333333333333,
+                "startFrame": 209,
+                "endFrame": 364,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "3527c204d0913ac16917d5782da77fbb0a7d0a9c1e4d26b7cba860dbaa15c2ff"
+              },
+              {
+                "text": "La masa conjunta asigna una probabilidad a cada pareja, no dos probabilidades separadas.",
+                "start": 12.433333333333334,
+                "end": 18.033333333333335,
+                "startFrame": 373,
+                "endFrame": 541,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "ba4e6db4eca5c760987265ccca19afe884ea35a0b0350685744e983c46916d71"
+              },
+              {
+                "text": "Una masa conjunta válida no tiene celdas negativas y suma uno sobre todo el soporte.",
+                "start": 18.333333333333332,
+                "end": 24.766666666666666,
+                "startFrame": 550,
+                "endFrame": 743,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "dbae15e058723e61a487a547e9dd6fe821efa7ba2eb3b6b074ae9dd6cf9479aa"
+              },
+              {
+                "text": "Usamos cero coma dos y cero coma tres en la fila equis cero, y cero coma uno y cero coma cuatro en la fila equis uno.",
+                "start": 25.066666666666666,
+                "end": 36.233333333333334,
+                "startFrame": 752,
+                "endFrame": 1087,
+                "words": 26,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "cd00f6282621d8b6f2e0711ea293c9aaed5a01bb251770d095e75829090c2be9"
+              },
+              {
+                "text": "Todas las parejas llevan su peso explícito.",
+                "start": 36.53333333333333,
+                "end": 39.53333333333333,
+                "startFrame": 1096,
+                "endFrame": 1186,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "a347e548a8b1f3bac20b179a70449ade3f787b4418ab27ac3cca1581d5a8e788"
+              },
+              {
+                "text": "La coma dentro de pe exige ambas condiciones a la vez.",
+                "start": 39.833333333333336,
+                "end": 44.56666666666667,
+                "startFrame": 1195,
+                "endFrame": 1337,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "2d71bff54e5e4a41aaeab4faf0f36a87490113b912975bd35399ad915083b876"
+              },
+              {
+                "text": "Para equis uno e i griega uno seleccionamos solo la última celda: cero coma cuatro.",
+                "start": 44.86666666666667,
+                "end": 51.3,
+                "startFrame": 1346,
+                "endFrame": 1539,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "0502cc41323f03d991e7cc3d150f77f186e66de028451807c8378378f4bb5ab3"
+              },
+              {
+                "text": "No sumamos toda su fila ni multiplicamos marginales sin justificar independencia.",
+                "start": 51.6,
+                "end": 56.333333333333336,
+                "startFrame": 1548,
+                "endFrame": 1690,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "5f98e59fd7575358c7388f5e7224b7f3ab33253789ac1b6aa458038e209486d5"
+              },
+              {
+                "text": "La suma de la fila equis cero, en cambio, reúne las dos respuestas posibles de ese marcador.",
+                "start": 56.63333333333333,
+                "end": 63.93333333333333,
+                "startFrame": 1699,
+                "endFrame": 1918,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "8d2a4680c697679c0d3b41ddda851b8b98d7d8c658cf3b7729776439d9b19e0c"
+              },
+              {
+                "text": "Vale una mitad.",
+                "start": 64.23333333333333,
+                "end": 65.53333333333333,
+                "startFrame": 1927,
+                "endFrame": 1966,
+                "words": 3,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "25bf6955d5c27fc716e8ddb057bbf13a013115046447e719bac080d93b1230a5"
+              },
+              {
+                "text": "La distinción entre celda y fila traduce dos sucesos diferentes, no dos maneras intercambiables de operar.",
+                "start": 65.83333333333333,
+                "end": 72.7,
+                "startFrame": 1975,
+                "endFrame": 2181,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "f9b731bf7038210a5bc7bf20dcaf5de06e8c5144927ad1e13678790f612f8129"
+              }
+            ]
+          },
+          {
+            "start": 73,
+            "end": 139.06666666666666,
+            "cues": [
+              {
+                "text": "La acumulada conjunta reúne parejas que no superan ninguno de dos umbrales.",
+                "start": 73,
+                "end": 78.16666666666667,
+                "startFrame": 2190,
+                "endFrame": 2345,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "3cdcc1216cb499e9aa61aee6c585aa109732b21cc95aaa22d4855477751f0d60"
+              },
+              {
+                "text": "Deben cumplirse simultáneamente ambas desigualdades.",
+                "start": 78.46666666666667,
+                "end": 80.63333333333334,
+                "startFrame": 2354,
+                "endFrame": 2419,
+                "words": 5,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "7cf865607f33e1d452421289de74c8f88d2d292a2cb9ca500ce33cbd7f7a9090"
+              },
+              {
+                "text": "Se suman las celdas del rectángulo inferior izquierdo, incluidos sus límites.",
+                "start": 80.93333333333334,
+                "end": 85.66666666666667,
+                "startFrame": 2428,
+                "endFrame": 2570,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "398a04ec07eeb89a2f937cb501c5f1ded53bf816085ce2ee5f8155d9d9ce8d41"
+              },
+              {
+                "text": "Con ambos umbrales cero entra solo la primera celda y obtenemos cero coma dos.",
+                "start": 85.96666666666667,
+                "end": 91.96666666666667,
+                "startFrame": 2579,
+                "endFrame": 2759,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "260b97ea21fde1effef6bb61c940f75048ea27b4842fa13a32d518e801dd5ad4"
+              },
+              {
+                "text": "Con equis cero e i griega uno entra toda la primera fila y obtenemos una mitad.",
+                "start": 92.26666666666667,
+                "end": 99.13333333333334,
+                "startFrame": 2768,
+                "endFrame": 2974,
+                "words": 16,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "3f435352028dc5e6b568864d5928d4b4b805aa8b0249bda6de986274f0ee358c"
+              },
+              {
+                "text": "La acumulada está definida aunque usemos umbrales que no sean valores observables.",
+                "start": 99.43333333333334,
+                "end": 104.6,
+                "startFrame": 2983,
+                "endFrame": 3138,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "89aa01d953cf1f5d5251c4e9dfce07d42359f3f68a1105157b993fa36165eee3"
+              },
+              {
+                "text": "Para la región donde la suma de las dos variables es al menos uno, seleccionamos cero uno, uno cero y uno uno.",
+                "start": 104.9,
+                "end": 114.33333333333333,
+                "startFrame": 3147,
+                "endFrame": 3430,
+                "words": 22,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "80e8fdab9ea32e7d6d04041cc5b77dbdcfea552ec5118e946f9764815530187e"
+              },
+              {
+                "text": "Sus masas suman cero coma ocho.",
+                "start": 114.63333333333334,
+                "end": 117.23333333333333,
+                "startFrame": 3439,
+                "endFrame": 3517,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "e10134f34df8c0f1d34e1f3b6a9364102f6857fcc50711af62d439384edf977d"
+              },
+              {
+                "text": "La última celda satisface ambas alternativas, pero la contamos una sola vez.",
+                "start": 117.53333333333333,
+                "end": 122.7,
+                "startFrame": 3526,
+                "endFrame": 3681,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "053b275700df9e4ce9db12ba8d8e73210f339adbf9cd2986f32c3b8c548b7d26"
+              },
+              {
+                "text": "Una pareja imposible lleva masa cero aunque aparezca un hueco en la tabla.",
+                "start": 123,
+                "end": 128.6,
+                "startFrame": 3690,
+                "endFrame": 3858,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "df7864e6f6832c0916c491abd7f784e04dc1035b4b274a9a110541d3206cbca0"
+              },
+              {
+                "text": "Y conocer las marginales no reconstruye en general qué valores se emparejan: distintas conjuntas pueden compartir las mismas sumas de filas y columnas.",
+                "start": 128.9,
+                "end": 138.76666666666668,
+                "startFrame": 3867,
+                "endFrame": 4163,
+                "words": 23,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "886dd23cb07e2cd8e276887693d346f69737d6bf6a9f8c49c242b5e037dc0928"
+              }
+            ]
+          },
+          {
+            "start": 139.06666666666666,
+            "end": 149.1,
+            "cues": [
+              {
+                "text": "Se observan dos marcadores en la misma célula.",
+                "start": 139.06666666666666,
+                "end": 142.5,
+                "startFrame": 4172,
+                "endFrame": 4275,
+                "words": 8,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "3ff88f2245ec87c6879a60c365fc55cf4ab89187bd203cf2a06352a6fb8229aa"
+              },
+              {
+                "text": "X indica marcador verde e Y marcador rojo: uno significa presencia y cero ausencia.",
+                "start": 142.8,
+                "end": 148.8,
+                "startFrame": 4284,
+                "endFrame": 4464,
+                "words": 14,
+                "sceneIndex": 2,
+                "cueIndex": 1,
+                "sourceCueSha256": "851644cea443dfbb3c127708ecc1722ab9f71bb5638568c5e7079545ff3b33ab"
+              }
+            ]
+          },
+          {
+            "start": 149.1,
+            "end": 163.76666666666668,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 149.1,
+                "end": 151.7,
+                "startFrame": 4473,
+                "endFrame": 4551,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Cuál es probabilidad de equis igual a 1 y i griega igual a 0, verde presente y rojo ausente?",
+                "start": 152,
+                "end": 160.16666666666666,
+                "startFrame": 4560,
+                "endFrame": 4805,
+                "words": 19,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "65ceeb4ea110eb7b448c741be8351dad4f5231af40101904e4ce951822b65974"
+              },
+              {
+                "text": "Queremos una pareja exacta de valores simultáneos.",
+                "start": 160.46666666666667,
+                "end": 163.46666666666667,
+                "startFrame": 4814,
+                "endFrame": 4904,
+                "words": 7,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "6a3185db3647ed56bf361dee4273d4ff23cf6bbe6e803e9ba2e2937d1bc11c1d"
+              }
+            ]
+          },
+          {
+            "start": 163.76666666666668,
+            "end": 182.73333333333332,
+            "cues": [
+              {
+                "text": "Una fila fija equis y una columna fija i griega.",
+                "start": 163.76666666666668,
+                "end": 168.06666666666666,
+                "startFrame": 4913,
+                "endFrame": 5042,
+                "words": 10,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "c838dbb4463435465b7921d3386291bd83702caf75cdadb285bd00fb858b8cb0"
+              },
+              {
+                "text": "La celda es la probabilidad de cumplir las dos condiciones a la vez.",
+                "start": 168.36666666666667,
+                "end": 173.96666666666667,
+                "startFrame": 5051,
+                "endFrame": 5219,
+                "words": 13,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "4c28bc53fac1f9020b7401e658d16a38a279a0d7021bbeeb8b69f69acd1cb488"
+              },
+              {
+                "text": "Para una región seleccionamos todas las celdas compatibles sin duplicarlas; las etiquetas de filas y columnas no son probabilidades.",
+                "start": 174.26666666666668,
+                "end": 182.43333333333334,
+                "startFrame": 5228,
+                "endFrame": 5473,
+                "words": 19,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "5768a9036c807ed5f2d0b914fbb128f782ca08c3be44af19a98db931ab98aacc"
+              }
+            ]
+          },
+          {
+            "start": 182.73333333333332,
+            "end": 198.36666666666667,
+            "cues": [
+              {
+                "text": "Filas equis igual a 0, 1; columnas i griega igual a 0, 1.",
+                "start": 182.73333333333332,
+                "end": 188.33333333333334,
+                "startFrame": 5482,
+                "endFrame": 5650,
+                "words": 13,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "b347c8b671bc573a221072264d8bafb7f67d1f639179d6c3ec9802fd6c936535"
+              },
+              {
+                "text": "Tabla: intervalo cerrado desde 0 coma 2 hasta 0 coma 3 y intervalo cerrado desde 0 coma 3 hasta 0 coma 2.",
+                "start": 188.63333333333333,
+                "end": 198.06666666666666,
+                "startFrame": 5659,
+                "endFrame": 5942,
+                "words": 22,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "3f284daabd569de467893873de15f751ee7abe516532fa837a03e67a5376e8b9"
+              }
+            ]
+          },
+          {
+            "start": 198.36666666666667,
+            "end": 204.66666666666666,
+            "cues": [
+              {
+                "text": "Cada entrada es una probabilidad de dos valores simultáneos; las cuatro entradas suman uno.",
+                "start": 198.36666666666667,
+                "end": 204.36666666666667,
+                "startFrame": 5951,
+                "endFrame": 6131,
+                "words": 14,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "921806157c43d70537921ccb1f4b29e6d5f2ab8840483f30409553c48d782651"
+              }
+            ]
+          },
+          {
+            "start": 204.66666666666666,
+            "end": 208.4,
+            "cues": [
+              {
+                "text": "Las filas y las columnas tienen etiquetas distintas.",
+                "start": 204.66666666666666,
+                "end": 208.1,
+                "startFrame": 6140,
+                "endFrame": 6243,
+                "words": 8,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e737c780eb51e41c3248826db03d8eee13aee4afc29da8999f673e440608117"
+              }
+            ]
+          },
+          {
+            "start": 208.4,
+            "end": 211.7,
+            "cues": [
+              {
+                "text": "No se supone independencia entre los marcadores.",
+                "start": 208.4,
+                "end": 211.4,
+                "startFrame": 6252,
+                "endFrame": 6342,
+                "words": 7,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "2f1f6c8bceceb4ea763e3837e6dd937223cfacea17f135682b365555a9e86f04"
+              }
+            ]
+          },
+          {
+            "start": 211.7,
+            "end": 224.33333333333334,
+            "cues": [
+              {
+                "text": "Busca la fila equis igual a 1 y la columna i griega igual a 0.",
+                "start": 211.7,
+                "end": 218.13333333333333,
+                "startFrame": 6351,
+                "endFrame": 6544,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "87b537b27a963b9fce334e69f456e6aa2a168191428058f5e77066ec110c69c0"
+              },
+              {
+                "text": "Seleccionamos una celda de la tabla, sin sumar toda su fila o columna.",
+                "start": 218.43333333333334,
+                "end": 224.03333333333333,
+                "startFrame": 6553,
+                "endFrame": 6721,
+                "words": 13,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "7e3ebd21e0bc6165072fb2465aa15765291c157d118606168f61879a82417ae9"
+              }
+            ]
+          },
+          {
+            "start": 224.33333333333334,
+            "end": 260.1,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 224.33333333333334,
+                "end": 227.33333333333334,
+                "startFrame": 6730,
+                "endFrame": 6820,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "¿Cuál es probabilidad de equis igual a 1 y i griega igual a 0, verde presente y rojo ausente?",
+                "start": 227.63333333333333,
+                "end": 235.8,
+                "startFrame": 6829,
+                "endFrame": 7074,
+                "words": 19,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "582be2162db90d94674dae313efd96f2515719cbf3e3f1ffa52f042032af787d"
+              },
+              {
+                "text": "Cada celda describe dos valores simultáneos.",
+                "start": 236.1,
+                "end": 238.7,
+                "startFrame": 7083,
+                "endFrame": 7161,
+                "words": 6,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "1c387e4f4a4e534f043752de9322ce787a821b8cb6adf585bcfc3acd33a4a1d0"
+              },
+              {
+                "text": "Antes de sumar, identificamos la fila de equis, la columna de i griega y las celdas que cumplen la condición.",
+                "start": 239,
+                "end": 247.6,
+                "startFrame": 7170,
+                "endFrame": 7428,
+                "words": 20,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "16a77c3373c6106b00c35c95110605a3069d2daaac74dc5ac16b4f44e9840dc5"
+              },
+              {
+                "text": "La coma dentro de pe significa y, no o.",
+                "start": 247.9,
+                "end": 251.76666666666668,
+                "startFrame": 7437,
+                "endFrame": 7553,
+                "words": 9,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "ec11b765d3a69ca9856aca111462549055bc834ab4ca9b88b3c59954365bbbe9"
+              },
+              {
+                "text": "Para este apartado: Busca la fila equis igual a 1 y la columna i griega igual a 0.",
+                "start": 252.06666666666666,
+                "end": 259.8,
+                "startFrame": 7562,
+                "endFrame": 7794,
+                "words": 18,
+                "sceneIndex": 10,
+                "cueIndex": 5,
+                "sourceCueSha256": "ade7e93290b83607c00925fc7544d5b81f8616eddf660e56893e16bfbef20373"
+              }
+            ]
+          },
+          {
+            "start": 260.1,
+            "end": 272.3,
+            "cues": [
+              {
+                "text": "Localizar la celda.",
+                "start": 260.1,
+                "end": 261.4,
+                "startFrame": 7803,
+                "endFrame": 7842,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "2439efa3e49e439f4c0fceeb13f5e2a126a9348812ab6efbabf949095c22104b"
+              },
+              {
+                "text": "La segunda fila es equis igual a 1 y la primera columna es i griega igual a 0: su entrada es 0 coma 3.",
+                "start": 261.7,
+                "end": 272,
+                "startFrame": 7851,
+                "endFrame": 8160,
+                "words": 24,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "4c976e2c2086ab4bfb1f1b65fd6fe067a19a3d1daab5ddfec75e5b25cb8a0410"
+              }
+            ]
+          },
+          {
+            "start": 272.3,
+            "end": 283.53333333333336,
+            "cues": [
+              {
+                "text": "Leer la condición simultánea.",
+                "start": 272.3,
+                "end": 274.03333333333336,
+                "startFrame": 8169,
+                "endFrame": 8221,
+                "words": 4,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "e5976e4582f111a78a5deadf16bf486dfa442d9cf2d14f301873a43a9013e7c3"
+              },
+              {
+                "text": "La coma pide que se cumplan ambas condiciones en la misma célula.",
+                "start": 274.3333333333333,
+                "end": 279.5,
+                "startFrame": 8230,
+                "endFrame": 8385,
+                "words": 12,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "9b0a452936c8129e9b1857e651009a53262420f5d16508ea354be63a2eb02687"
+              },
+              {
+                "text": "No sumamos una fila ni cambiamos el denominador.",
+                "start": 279.8,
+                "end": 283.23333333333335,
+                "startFrame": 8394,
+                "endFrame": 8497,
+                "words": 8,
+                "sceneIndex": 12,
+                "cueIndex": 2,
+                "sourceCueSha256": "0a5ece823ef2ea7e65c5c0a0a79aed693d46839486874ad6e8f6e4d1bcd01afb"
+              }
+            ]
+          },
+          {
+            "start": 283.53333333333336,
+            "end": 301.5,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 283.53333333333336,
+                "end": 284.8333333333333,
+                "startFrame": 8506,
+                "endFrame": 8545,
+                "words": 3,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1.",
+                "start": 285.1333333333333,
+                "end": 289.8666666666667,
+                "startFrame": 8554,
+                "endFrame": 8696,
+                "words": 11,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "19778b8e82b5740d1152bbc11ea996599a0e578790f799502de27e63fa1b0b60"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 290.1666666666667,
+                "end": 297.46666666666664,
+                "startFrame": 8705,
+                "endFrame": 8924,
+                "words": 17,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+              },
+              {
+                "text": "Una celda conjunta no es una probabilidad condicionada.",
+                "start": 297.76666666666665,
+                "end": 301.2,
+                "startFrame": 8933,
+                "endFrame": 9036,
+                "words": 8,
+                "sceneIndex": 13,
+                "cueIndex": 3,
+                "sourceCueSha256": "5be4be84495fd8b43fe981c3a9edc7fe7cdee0e6dd3ae51183d020ab1249b192"
+              }
+            ]
+          },
+          {
+            "start": 301.5,
+            "end": 310.26666666666665,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 3 probabilidad entre 0 y 1.",
+                "start": 301.5,
+                "end": 306.23333333333335,
+                "startFrame": 9045,
+                "endFrame": 9187,
+                "words": 11,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "8546ee274ba8f6a104a5db3e4e97071905864d6d95439a67d0048d84a298800d"
+              },
+              {
+                "text": "Una celda conjunta no es una probabilidad condicionada.",
+                "start": 306.53333333333336,
+                "end": 309.96666666666664,
+                "startFrame": 9196,
+                "endFrame": 9299,
+                "words": 8,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "0444db04b0e218b2df8d9404fb8eff03702037e3164530d758e7a008b1d36bb3"
+              }
+            ]
+          },
+          {
+            "start": 310.26666666666665,
+            "end": 329.6333333333333,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 310.26666666666665,
+                "end": 312.8666666666667,
+                "startFrame": 9308,
+                "endFrame": 9386,
+                "words": 6,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Cuál es probabilidad de equis menor o igual que 0 y i griega menor o igual que 1, la acumulada en abre paréntesis, 0 coma 1, cierra paréntesis?",
+                "start": 313.1666666666667,
+                "end": 325.1666666666667,
+                "startFrame": 9395,
+                "endFrame": 9755,
+                "words": 28,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "38c419ee1fd98a827f4b55e93e29ebfa564a684cf2eb82cea714ba98dd0a4e7a"
+              },
+              {
+                "text": "Queremos todas las parejas que satisfacen simultáneamente las restricciones.",
+                "start": 325.46666666666664,
+                "end": 329.3333333333333,
+                "startFrame": 9764,
+                "endFrame": 9880,
+                "words": 9,
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "sourceCueSha256": "315bbc45ec0f101a1406551c59e7bdeacc8e2191df5d157a92e3b45d3140356b"
+              }
+            ]
+          },
+          {
+            "start": 329.6333333333333,
+            "end": 348.6,
+            "cues": [
+              {
+                "text": "Una fila fija equis y una columna fija i griega.",
+                "start": 329.6333333333333,
+                "end": 333.93333333333334,
+                "startFrame": 9889,
+                "endFrame": 10018,
+                "words": 10,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "c838dbb4463435465b7921d3386291bd83702caf75cdadb285bd00fb858b8cb0"
+              },
+              {
+                "text": "La celda es la probabilidad de cumplir las dos condiciones a la vez.",
+                "start": 334.23333333333335,
+                "end": 339.8333333333333,
+                "startFrame": 10027,
+                "endFrame": 10195,
+                "words": 13,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "4c28bc53fac1f9020b7401e658d16a38a279a0d7021bbeeb8b69f69acd1cb488"
+              },
+              {
+                "text": "Para una región seleccionamos todas las celdas compatibles sin duplicarlas; las etiquetas de filas y columnas no son probabilidades.",
+                "start": 340.1333333333333,
+                "end": 348.3,
+                "startFrame": 10204,
+                "endFrame": 10449,
+                "words": 19,
+                "sceneIndex": 16,
+                "cueIndex": 2,
+                "sourceCueSha256": "5768a9036c807ed5f2d0b914fbb128f782ca08c3be44af19a98db931ab98aacc"
+              }
+            ]
+          },
+          {
+            "start": 348.6,
+            "end": 364.23333333333335,
+            "cues": [
+              {
+                "text": "Filas equis igual a 0, 1; columnas i griega igual a 0, 1.",
+                "start": 348.6,
+                "end": 354.2,
+                "startFrame": 10458,
+                "endFrame": 10626,
+                "words": 13,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "b347c8b671bc573a221072264d8bafb7f67d1f639179d6c3ec9802fd6c936535"
+              },
+              {
+                "text": "Tabla: intervalo cerrado desde 0 coma 2 hasta 0 coma 3 y intervalo cerrado desde 0 coma 3 hasta 0 coma 2.",
+                "start": 354.5,
+                "end": 363.93333333333334,
+                "startFrame": 10635,
+                "endFrame": 10918,
+                "words": 22,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "3f284daabd569de467893873de15f751ee7abe516532fa837a03e67a5376e8b9"
+              }
+            ]
+          },
+          {
+            "start": 364.23333333333335,
+            "end": 370.53333333333336,
+            "cues": [
+              {
+                "text": "Cada entrada es una probabilidad de dos valores simultáneos; las cuatro entradas suman uno.",
+                "start": 364.23333333333335,
+                "end": 370.23333333333335,
+                "startFrame": 10927,
+                "endFrame": 11107,
+                "words": 14,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "921806157c43d70537921ccb1f4b29e6d5f2ab8840483f30409553c48d782651"
+              }
+            ]
+          },
+          {
+            "start": 370.53333333333336,
+            "end": 374.26666666666665,
+            "cues": [
+              {
+                "text": "Las filas y las columnas tienen etiquetas distintas.",
+                "start": 370.53333333333336,
+                "end": 373.96666666666664,
+                "startFrame": 11116,
+                "endFrame": 11219,
+                "words": 8,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e737c780eb51e41c3248826db03d8eee13aee4afc29da8999f673e440608117"
+              }
+            ]
+          },
+          {
+            "start": 374.26666666666665,
+            "end": 377.56666666666666,
+            "cues": [
+              {
+                "text": "No se supone independencia entre los marcadores.",
+                "start": 374.26666666666665,
+                "end": 377.26666666666665,
+                "startFrame": 11228,
+                "endFrame": 11318,
+                "words": 7,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "2f1f6c8bceceb4ea763e3837e6dd937223cfacea17f135682b365555a9e86f04"
+              }
+            ]
+          },
+          {
+            "start": 377.56666666666666,
+            "end": 385.9,
+            "cues": [
+              {
+                "text": "Marca las dos celdas de la primera fila.",
+                "start": 377.56666666666666,
+                "end": 381,
+                "startFrame": 11327,
+                "endFrame": 11430,
+                "words": 8,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "afe2496ab785a0a39ad8c83b69d2d489b849c482a4c3e585d9a6fb48f9303631"
+              },
+              {
+                "text": "Seleccionamos primero las celdas admisibles y después sumamos sus masas.",
+                "start": 381.3,
+                "end": 385.6,
+                "startFrame": 11439,
+                "endFrame": 11568,
+                "words": 10,
+                "sceneIndex": 21,
+                "cueIndex": 1,
+                "sourceCueSha256": "c483352e0b2f40826327478e1a8247ed8891d02c64cb2f3000037d19fb959d69"
+              }
+            ]
+          },
+          {
+            "start": 385.9,
+            "end": 422.5,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 385.9,
+                "end": 388.9,
+                "startFrame": 11577,
+                "endFrame": 11667,
+                "words": 7,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "¿Cuál es probabilidad de equis menor o igual que 0 y i griega menor o igual que 1, la acumulada en abre paréntesis, 0 coma 1, cierra paréntesis?",
+                "start": 389.2,
+                "end": 401.2,
+                "startFrame": 11676,
+                "endFrame": 12036,
+                "words": 28,
+                "sceneIndex": 22,
+                "cueIndex": 1,
+                "sourceCueSha256": "9e018f7025d6d95cebf2aced8bb7e66bb277df004e28a5acb3c074ce9bef3af4"
+              },
+              {
+                "text": "Cada celda describe dos valores simultáneos.",
+                "start": 401.5,
+                "end": 404.1,
+                "startFrame": 12045,
+                "endFrame": 12123,
+                "words": 6,
+                "sceneIndex": 22,
+                "cueIndex": 2,
+                "sourceCueSha256": "15e85bb8d493518c955b47a58d8deed0b7ff50e1b7b2da6274a0a977c776d1c8"
+              },
+              {
+                "text": "Antes de sumar, identificamos la fila de equis, la columna de i griega y las celdas que cumplen la condición.",
+                "start": 404.4,
+                "end": 413,
+                "startFrame": 12132,
+                "endFrame": 12390,
+                "words": 20,
+                "sceneIndex": 22,
+                "cueIndex": 3,
+                "sourceCueSha256": "c32bd2da50de44da1cad689a158ec9d8f138f2f7d05a588af1fc1bba673098a2"
+              },
+              {
+                "text": "La coma dentro de pe significa y, no o.",
+                "start": 413.3,
+                "end": 417.1666666666667,
+                "startFrame": 12399,
+                "endFrame": 12515,
+                "words": 9,
+                "sceneIndex": 22,
+                "cueIndex": 4,
+                "sourceCueSha256": "df23f96055b507ed57132349c0e0ad81df54cdf66910c48bc605b22f1d68e66f"
+              },
+              {
+                "text": "Para este apartado: Marca las dos celdas de la primera fila.",
+                "start": 417.46666666666664,
+                "end": 422.2,
+                "startFrame": 12524,
+                "endFrame": 12666,
+                "words": 11,
+                "sceneIndex": 22,
+                "cueIndex": 5,
+                "sourceCueSha256": "c39adc4283b61b3de93ebc10316d055e5d2d4ca0d9dc573b49fc71564fd792c0"
+              }
+            ]
+          },
+          {
+            "start": 422.5,
+            "end": 437.4,
+            "cues": [
+              {
+                "text": "Traducir los umbrales. equis menor o igual que 0 admite solo equis igual a 0. i griega menor o igual que 1 admite i griega igual a 0 e i griega igual a 1.",
+                "start": 422.5,
+                "end": 437.1,
+                "startFrame": 12675,
+                "endFrame": 13113,
+                "words": 34,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "545b962a60b4f0efb3ac076c6d4e891548bbd02e56543e26702f25471389cab4"
+              }
+            ]
+          },
+          {
+            "start": 437.4,
+            "end": 446.6,
+            "cues": [
+              {
+                "text": "Sumar las celdas elegidas.",
+                "start": 437.4,
+                "end": 439.1333333333333,
+                "startFrame": 13122,
+                "endFrame": 13174,
+                "words": 4,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "139b351eb7c830d4c97f476a2d9ac4240a42e3399d8d38398932af2ea3d31f80"
+              },
+              {
+                "text": "La primera fila suma 0 coma 2 más 0 coma 3 igual a 0 coma 5.",
+                "start": 439.43333333333334,
+                "end": 446.3,
+                "startFrame": 13183,
+                "endFrame": 13389,
+                "words": 16,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "1a6388ffab9527aa0b95ce28542b22be37f3363eca85431647427e59edf36b89"
+              }
+            ]
+          },
+          {
+            "start": 446.6,
+            "end": 466.3,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 446.6,
+                "end": 447.9,
+                "startFrame": 13398,
+                "endFrame": 13437,
+                "words": 3,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 448.2,
+                "end": 452.93333333333334,
+                "startFrame": 13446,
+                "endFrame": 13588,
+                "words": 11,
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "sourceCueSha256": "50c6c5d1bad50ec3564511709f31053bd27c5f4d66de128356fc0db0e8e1f1cf"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 453.23333333333335,
+                "end": 460.53333333333336,
+                "startFrame": 13597,
+                "endFrame": 13816,
+                "words": 17,
+                "sceneIndex": 25,
+                "cueIndex": 2,
+                "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+              },
+              {
+                "text": "Una acumulada conjunta reúne una región de celdas, no una única celda.",
+                "start": 460.8333333333333,
+                "end": 466,
+                "startFrame": 13825,
+                "endFrame": 13980,
+                "words": 12,
+                "sceneIndex": 25,
+                "cueIndex": 3,
+                "sourceCueSha256": "182f99c29f935972d732321610f32cf1f93530c0c2a19434379e67742fb958ce"
+              }
+            ]
+          },
+          {
+            "start": 466.3,
+            "end": 476.8,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 466.3,
+                "end": 471.03333333333336,
+                "startFrame": 13989,
+                "endFrame": 14131,
+                "words": 11,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "a094fd16298cc02b5a91543659cdfdc4c95662e410268ecc69af07f8070307b3"
+              },
+              {
+                "text": "Una acumulada conjunta reúne una región de celdas, no una única celda.",
+                "start": 471.3333333333333,
+                "end": 476.5,
+                "startFrame": 14140,
+                "endFrame": 14295,
+                "words": 12,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "17f7ec8fb43b7b4b02370a6679fb4a8fcb552a9abeb2db5a333f5f679658e709"
+              }
+            ]
+          },
+          {
+            "start": 476.8,
+            "end": 531.9333333333333,
+            "cues": [
+              {
+                "text": "Cada masa corresponde a una combinación de valores, no a una probabilidad condicionada.",
+                "start": 476.8,
+                "end": 482.4,
+                "startFrame": 14304,
+                "endFrame": 14472,
+                "words": 13,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "68960812b112afa9adcf08fbdef4d1d0c93ac2c7d5c1627d199932c8a2da9953"
+              },
+              {
+                "text": "La acumulada suma la región inferior izquierda determinada por los dos umbrales.",
+                "start": 482.7,
+                "end": 487.8666666666667,
+                "startFrame": 14481,
+                "endFrame": 14636,
+                "words": 12,
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "sourceCueSha256": "268cdc37d5241b8847bae2c3b951bd545533d716419536206069fd07560b9660"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 488.1666666666667,
+                "end": 492.03333333333336,
+                "startFrame": 14645,
+                "endFrame": 14761,
+                "words": 9,
+                "sceneIndex": 27,
+                "cueIndex": 2,
+                "sourceCueSha256": "ae2758f24ddff2a475dd65b82fd587f959678f1197ab1a7ebcb43822ce7086eb"
+              },
+              {
+                "text": "¿Qué describe la celda p(1,0) de una masa conjunta?",
+                "start": 492.3333333333333,
+                "end": 496.2,
+                "startFrame": 14770,
+                "endFrame": 14886,
+                "words": 9,
+                "sceneIndex": 27,
+                "cueIndex": 3,
+                "sourceCueSha256": "a547e42f95179a749f5737ce4f39b7044f4e9fe56442783f7910aa9a25a6d98a"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 496.5,
+                "end": 500.3666666666667,
+                "startFrame": 14895,
+                "endFrame": 15011,
+                "words": 9,
+                "sceneIndex": 27,
+                "cueIndex": 4,
+                "sourceCueSha256": "ce97c16b6b6e0accef5212ac999834165768b6e197ea1d466ec8f5dbb9f38567"
+              },
+              {
+                "text": "La masa conjunta describe la ocurrencia simultánea de los dos valores; no está normalizada dentro de una fila o columna.",
+                "start": 500.6666666666667,
+                "end": 509.26666666666665,
+                "startFrame": 15020,
+                "endFrame": 15278,
+                "words": 20,
+                "sceneIndex": 27,
+                "cueIndex": 5,
+                "sourceCueSha256": "050da227764b41613585d01072175f67450f64deb781c6bd972d75a049844e45"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Llamar conjunta a una tabla de probabilidades condicionadas por fila.",
+                "start": 509.56666666666666,
+                "end": 517.3,
+                "startFrame": 15287,
+                "endFrame": 15519,
+                "words": 18,
+                "sceneIndex": 27,
+                "cueIndex": 6,
+                "sourceCueSha256": "df4b6dd6be11dc2438fe0d63948e0bf889f07896566f66345753950e4c6be054"
+              },
+              {
+                "text": "La conjunta suma uno en toda la tabla.",
+                "start": 517.6,
+                "end": 521.0333333333333,
+                "startFrame": 15528,
+                "endFrame": 15631,
+                "words": 8,
+                "sceneIndex": 27,
+                "cueIndex": 7,
+                "sourceCueSha256": "307902d4c70e0176779806c43db2d3f9e66dfeaceeaf66b04b90519381d98c6a"
+              },
+              {
+                "text": "Una tabla que suma uno en cada fila describe distribuciones condicionadas y necesita además los pesos marginales de las filas para reconstruir la conjunta.",
+                "start": 521.3333333333334,
+                "end": 531.6333333333333,
+                "startFrame": 15640,
+                "endFrame": 15949,
+                "words": 24,
+                "sceneIndex": 27,
+                "cueIndex": 8,
+                "sourceCueSha256": "8a11617e7cb237448a43238bf4535cbe0eef81779c11be46e16d2eeb4eafc431"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
