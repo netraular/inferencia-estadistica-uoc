@@ -1,0 +1,1244 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "condicionada",
+  "kind": "recap",
+  "title": "Condicionar es cambiar el universo relevante",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "7987052f96028c40cd6b8e636d4e0e51fff4cd2c7c5fe6d3693fc510918fced5",
+  "src": "videos/condicionada/video.mp4",
+  "poster": "videos/condicionada/poster.jpg",
+  "duration": 460.93333333333334,
+  "frames": 13828,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "2c60762b1f8ad3848933fbb8499ffafa5800f263246169a4f70a27765ff17880",
+  "videoSha256": "fc7a2bdd0d8b406b277dca4105b625bdb2664fefddf6048da234feb8452009d1",
+  "posterSha256": "1d7cc165aee568c0d921cfe426533cb965e3f0edf62760de23591145d7f5cd40",
+  "canonicalSha256": "34604ba292469f9f78adde355397016e411803552d37d61e81e3e31077ecea36",
+  "inputHash": "7cbc2cb6a786f0d3f7ce889021fb4c365f8ae5afd1449a0f55f3abca954a5831",
+  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "65b8130c6d3b3c78622108ea03219202ecd057f991372b05200b2deb4ce2ae09",
+    "canonicalSha256": "34604ba292469f9f78adde355397016e411803552d37d61e81e3e31077ecea36",
+    "source": {
+      "document": "FundamentosInferencia_Tema1.pdf",
+      "section": "1.6, 1.6.1 y 1.7: condicionamiento y regla del producto"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "15d1538ac5f3f763e46901dc9804fa0a0d38946aa6ce6ed59ed59b679fffc200",
+    "transcriptSha256": "2c60762b1f8ad3848933fbb8499ffafa5800f263246169a4f70a27765ff17880",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "condicionada",
+  "transcript": {
+    "id": "condicionada",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "34604ba292469f9f78adde355397016e411803552d37d61e81e3e31077ecea36",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 460.93333333333334,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 56.833333333333336,
+        "cues": [
+          {
+            "text": "Hola.",
+            "start": 0,
+            "end": 1.2,
+            "startFrame": 0,
+            "endFrame": 36,
+            "words": 1,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+          },
+          {
+            "text": "Vamos a calcular qué cambia cuando recibimos información.",
+            "start": 1.5,
+            "end": 4.933333333333334,
+            "startFrame": 45,
+            "endFrame": 148,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "24ee1bce7604e59f6722c3f5738635eb6347cfa9f990c62481efb09bef60a854"
+          },
+          {
+            "text": "De cien bacterias equiprobables, cuarenta tienen a y diez tienen a y be.",
+            "start": 5.233333333333333,
+            "end": 10.833333333333334,
+            "startFrame": 157,
+            "endFrame": 325,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "2a8257a3aa40c7b117e95cd1e076799698f7be722b129b053ed65e94b7703fcc"
+          },
+          {
+            "text": "Sin más información, ambas características aparecen en una décima de la colección.",
+            "start": 11.133333333333333,
+            "end": 16.3,
+            "startFrame": 334,
+            "endFrame": 489,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "1b49e77050809323f0db33566d14cb7c70abcc289c7686f74d8494d3f21fd935"
+          },
+          {
+            "text": "Ahora sabemos que la bacteria elegida tiene a.",
+            "start": 16.6,
+            "end": 20.033333333333335,
+            "startFrame": 498,
+            "endFrame": 601,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "sourceCueSha256": "fcc701e379034421a754f943d3756f87ebbdf1516b4629a3f16d49af50da193b"
+          },
+          {
+            "text": "Eliminamos las sesenta incompatibles con esa información.",
+            "start": 20.333333333333332,
+            "end": 23.333333333333332,
+            "startFrame": 610,
+            "endFrame": 700,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "sourceCueSha256": "c774e38fc6b6b0e92b083ca3b3a8160d44fd6e43101dac44460c3b2c3d59c86a"
+          },
+          {
+            "text": "Las diez dobles siguen siendo favorables, pero el grupo de referencia contiene cuarenta, no cien.",
+            "start": 23.633333333333333,
+            "end": 30.066666666666666,
+            "startFrame": 709,
+            "endFrame": 902,
+            "words": 15,
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "sourceCueSha256": "d351a84cd848c7599b924884ac2961d23699aa839bc272b967544d2a5bf37ca1"
+          },
+          {
+            "text": "La probabilidad condicional divide la intersección por la probabilidad del grupo conocido.",
+            "start": 30.366666666666667,
+            "end": 35.53333333333333,
+            "startFrame": 911,
+            "endFrame": 1066,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "sourceCueSha256": "f532aa5aed61019a29e7a2d6c6c460c8cff4515deb769397e643f44bbae881c0"
+          },
+          {
+            "text": "Exigimos que esta última sea positiva.",
+            "start": 35.833333333333336,
+            "end": 38.43333333333333,
+            "startFrame": 1075,
+            "endFrame": 1153,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "sourceCueSha256": "4f940fc2ce6feab09754fbc89b563750b16f9833db28803ac9a2d5e2d82f2796"
+          },
+          {
+            "text": "La barra se lee dado que; indica qué información estamos utilizando.",
+            "start": 38.733333333333334,
+            "end": 43.46666666666667,
+            "startFrame": 1162,
+            "endFrame": 1304,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "sourceCueSha256": "41e3391bebd677b642396c5c82c313906b1e499169d47be6582bb2d2d5f3829a"
+          },
+          {
+            "text": "Sustituir una décima entre cuatro décimas equivale a diez entre cuarenta: un cuarto.",
+            "start": 43.766666666666666,
+            "end": 49.36666666666667,
+            "startFrame": 1313,
+            "endFrame": 1481,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "sourceCueSha256": "4f1f8063c8144d34f5b88409cc1e0db63315b19f342ebf5220e55020a9eb61bd"
+          },
+          {
+            "text": "No ha cambiado el marcador de ninguna bacteria; ha cambiado la colección sobre la que respondemos.",
+            "start": 49.666666666666664,
+            "end": 56.53333333333333,
+            "startFrame": 1490,
+            "endFrame": 1696,
+            "words": 16,
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "sourceCueSha256": "583414dcabffd7077e23ac7981f93543f3aca5157a779189c3997821d9d07a98"
+          }
+        ]
+      },
+      {
+        "start": 56.833333333333336,
+        "end": 124.83333333333333,
+        "cues": [
+          {
+            "text": "La condicional sigue siendo una probabilidad: dentro de a, be y no be completan el total.",
+            "start": 56.833333333333336,
+            "end": 63.7,
+            "startFrame": 1705,
+            "endFrame": 1911,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "51f7811b4529b4b1e401bee8cdbbf6a131b21ff48a23adf289820e2384c2abbc"
+          },
+          {
+            "text": "Por eso sus probabilidades suman uno.",
+            "start": 64,
+            "end": 66.6,
+            "startFrame": 1920,
+            "endFrame": 1998,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "f82722b799133a2b7904396c3010c85daf62adb970ab317574e089a09fedefda"
+          },
+          {
+            "text": "Renormalizar no consiste solo en quitar casos: también hay que ajustar su peso al nuevo total.",
+            "start": 66.9,
+            "end": 73.76666666666667,
+            "startFrame": 2007,
+            "endFrame": 2213,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "21c34bcf36ab99fa6a9ded9d44a23c60405c8c430ca5d36512cd07b5ff2d7e6f"
+          },
+          {
+            "text": "Podemos deshacer el cociente para obtener la regla del producto.",
+            "start": 74.06666666666666,
+            "end": 78.36666666666666,
+            "startFrame": 2222,
+            "endFrame": 2351,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "553abfc98c07e745c8aeefcab29649966cf05b772a8ad4bd3a1745cbf2e55c5c"
+          },
+          {
+            "text": "La probabilidad de ambas es la de llegar al grupo a multiplicada por la fracción de ese grupo que cumple be.",
+            "start": 78.66666666666667,
+            "end": 87.66666666666667,
+            "startFrame": 2360,
+            "endFrame": 2630,
+            "words": 21,
+            "sceneIndex": 1,
+            "cueIndex": 4,
+            "sourceCueSha256": "b97db3c523e9210cb8aba86325142a92f661c6d53980889fcfa5a11dcfea6ce1"
+          },
+          {
+            "text": "No necesitamos independencia para usar esta regla.",
+            "start": 87.96666666666667,
+            "end": 90.96666666666667,
+            "startFrame": 2639,
+            "endFrame": 2729,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 5,
+            "sourceCueSha256": "6cff1a0b88e4e9cb88911f9e0569b2fe9e0a4b21855d27e044e70f00ef4c1e18"
+          },
+          {
+            "text": "Si invertimos y pedimos a dado be, cambia el denominador.",
+            "start": 91.26666666666667,
+            "end": 95.56666666666666,
+            "startFrame": 2738,
+            "endFrame": 2867,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 6,
+            "sourceCueSha256": "30b45cd5e230ea41532e525f348e7efc4b49f2ce4b5c92c491604d4e8438b1a7"
+          },
+          {
+            "text": "En la colección hay treinta con be: diez entre treinta es un tercio, no un cuarto.",
+            "start": 95.86666666666666,
+            "end": 102.73333333333333,
+            "startFrame": 2876,
+            "endFrame": 3082,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 7,
+            "sourceCueSha256": "2f80de3f9712f7c6a610c0441af2a4fcea84d6fd868554f06d4df6de04b71b73"
+          },
+          {
+            "text": "Infectados entre positivos y positivos entre infectados son preguntas distintas por la misma razón.",
+            "start": 103.03333333333333,
+            "end": 109.03333333333333,
+            "startFrame": 3091,
+            "endFrame": 3271,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 8,
+            "sourceCueSha256": "1046eff3d7c8bf35cfbc1fc97dfae7ef35b8cb03fa5dc6c03e437a262e807698"
+          },
+          {
+            "text": "Si la condición tiene probabilidad cero, este cociente no está definido.",
+            "start": 109.33333333333333,
+            "end": 114.06666666666666,
+            "startFrame": 3280,
+            "endFrame": 3422,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 9,
+            "sourceCueSha256": "df96c6b2e4c330f7f17c26afc9c5e889dfe2d18f3d351524a38f7653e103dabf"
+          },
+          {
+            "text": "No lo convertimos en cero ni dividimos entre cero.",
+            "start": 114.36666666666666,
+            "end": 118.23333333333333,
+            "startFrame": 3431,
+            "endFrame": 3547,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 10,
+            "sourceCueSha256": "ce09608ad67384532bb31f2fefd645622b8fa4dcb862a5f17c7ae684922f7872"
+          },
+          {
+            "text": "Más adelante, las condiciones sobre puntos continuos se construirán con densidades bajo supuestos específicos.",
+            "start": 118.53333333333333,
+            "end": 124.53333333333333,
+            "startFrame": 3556,
+            "endFrame": 3736,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 11,
+            "sourceCueSha256": "eae408b6421f8b2e68e1e649a835b828d14bbee2a79b6ac3192a5fec9baa56f3"
+          }
+        ]
+      },
+      {
+        "start": 124.83333333333333,
+        "end": 131.13333333333333,
+        "cues": [
+          {
+            "text": "Un estudio registra tratamiento T y recuperación R en plantas afectadas por un hongo.",
+            "start": 124.83333333333333,
+            "end": 130.83333333333334,
+            "startFrame": 3745,
+            "endFrame": 3925,
+            "words": 14,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "4eb1aea370e134c29235f4e2a838bdf80b5fb50edd2058ba77d81c1f8c33e332"
+          }
+        ]
+      },
+      {
+        "start": 131.13333333333333,
+        "end": 143.23333333333332,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 131.13333333333333,
+            "end": 133.73333333333332,
+            "startFrame": 3934,
+            "endFrame": 4012,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula probabilidad de erre sabiendo que te.",
+            "start": 134.03333333333333,
+            "end": 137.03333333333333,
+            "startFrame": 4021,
+            "endFrame": 4111,
+            "words": 7,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "72856c4669e3b2c33fdf769a2fea8b82beb2b366248b74c5b13d8839c22c7b6e"
+          },
+          {
+            "text": "Queremos una proporción dentro del grupo que ya sabemos que se ha seleccionado.",
+            "start": 137.33333333333334,
+            "end": 142.93333333333334,
+            "startFrame": 4120,
+            "endFrame": 4288,
+            "words": 13,
+            "sceneIndex": 3,
+            "cueIndex": 2,
+            "sourceCueSha256": "cc53bc62aef8ba2397f2c1c170a1b45824cc95c4c11d252c8e6b50369c9d9fe0"
+          }
+        ]
+      },
+      {
+        "start": 143.23333333333332,
+        "end": 160.86666666666667,
+        "cues": [
+          {
+            "text": "La barra de una probabilidad condicionada se lee sabiendo que.",
+            "start": 143.23333333333332,
+            "end": 147.53333333333333,
+            "startFrame": 4297,
+            "endFrame": 4426,
+            "words": 10,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "b775923cbd3ee8c71819de38feb2c2f194d456ba84857a87d6befa05c104eb66"
+          },
+          {
+            "text": "Solo conservamos los resultados compatibles con esa información.",
+            "start": 147.83333333333334,
+            "end": 151.26666666666668,
+            "startFrame": 4435,
+            "endFrame": 4538,
+            "words": 8,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "9ba364e38820021c1511e6a0dcdc44363d77ad7bd3091bc6d9f63906cba8dd98"
+          },
+          {
+            "text": "Dividimos la intersección por la probabilidad positiva de la condición, de modo que el grupo seleccionado vuelva a tener total uno.",
+            "start": 151.56666666666666,
+            "end": 160.56666666666666,
+            "startFrame": 4547,
+            "endFrame": 4817,
+            "words": 21,
+            "sceneIndex": 4,
+            "cueIndex": 2,
+            "sourceCueSha256": "1738fbaea5149d273029d1816bb99d63d95f4eac88213c102d357d7d9c14b307"
+          }
+        ]
+      },
+      {
+        "start": 160.86666666666667,
+        "end": 162.9,
+        "cues": [
+          {
+            "text": "100 plantas; 40 tratadas.",
+            "start": 160.86666666666667,
+            "end": 162.6,
+            "startFrame": 4826,
+            "endFrame": 4878,
+            "words": 4,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "3592d8d057df017ce80fafe104ce8897b0f12981f564e2ed01a9cd51a97cd8e7"
+          }
+        ]
+      },
+      {
+        "start": 162.9,
+        "end": 167.06666666666666,
+        "cues": [
+          {
+            "text": "32 tratadas se recuperan; 18 no tratadas se recuperan.",
+            "start": 162.9,
+            "end": 166.76666666666668,
+            "startFrame": 4887,
+            "endFrame": 5003,
+            "words": 9,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "4ac57c140f0fcf0e733d2d14d43d0aa775dcc043a85b05a747167d2b3bfe782f"
+          }
+        ]
+      },
+      {
+        "start": 167.06666666666666,
+        "end": 169.53333333333333,
+        "cues": [
+          {
+            "text": "Se selecciona una planta equiprobablemente.",
+            "start": 167.06666666666666,
+            "end": 169.23333333333332,
+            "startFrame": 5012,
+            "endFrame": 5077,
+            "words": 5,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "910daaee9c2e952e1e3e829cc62551c7acb863cf42ae76addae6b052f387a859"
+          }
+        ]
+      },
+      {
+        "start": 169.53333333333333,
+        "end": 174.56666666666666,
+        "cues": [
+          {
+            "text": "Son frecuencias observadas: no se presupone asignación aleatoria ni efecto causal.",
+            "start": 169.53333333333333,
+            "end": 174.26666666666668,
+            "startFrame": 5086,
+            "endFrame": 5228,
+            "words": 11,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "1aea1db80a81250ec0a327e1e309eb0b22c695a75710706aa587cb3282fbf3db"
+          }
+        ]
+      },
+      {
+        "start": 174.56666666666666,
+        "end": 185.9,
+        "cues": [
+          {
+            "text": "Una vez condicionado a te, solo cuentan las plantas tratadas.",
+            "start": 174.56666666666666,
+            "end": 178.86666666666667,
+            "startFrame": 5237,
+            "endFrame": 5366,
+            "words": 10,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "7b5e63ea71c697768a4c3984fc973b2390ecd236e4ccc1567383a732c3ad897e"
+          },
+          {
+            "text": "El denominador es ese grupo, no la población original; invertir la condición cambia el denominador.",
+            "start": 179.16666666666666,
+            "end": 185.6,
+            "startFrame": 5375,
+            "endFrame": 5568,
+            "words": 15,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "5a0a34763b182d47584ef1f625756aa45b7ac36dd6cb3c08255ed512b59f5b24"
+          }
+        ]
+      },
+      {
+        "start": 185.9,
+        "end": 212.33333333333334,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 185.9,
+            "end": 188.9,
+            "startFrame": 5577,
+            "endFrame": 5667,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula probabilidad de erre sabiendo que te.",
+            "start": 189.2,
+            "end": 192.2,
+            "startFrame": 5676,
+            "endFrame": 5766,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "3660ea0785cf83eff5974112a25b9648026a718ebc461b6e13295a2198cdab60"
+          },
+          {
+            "text": "La información dada selecciona un subgrupo.",
+            "start": 192.5,
+            "end": 195.1,
+            "startFrame": 5775,
+            "endFrame": 5853,
+            "words": 6,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "9d214a9accf06b477050d2e58c510a2f2ea066fc9d23bbddf8439de5bd8b1a4c"
+          },
+          {
+            "text": "La intersección indica los casos que cumplen las dos condiciones y el denominador reúne todos los casos de la condición conocida, no toda la población.",
+            "start": 195.4,
+            "end": 206.13333333333333,
+            "startFrame": 5862,
+            "endFrame": 6184,
+            "words": 25,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "f374c3b356295e1da5aeb0dac0ade922318f4ff685ad59231f150a9905a5e3da"
+          },
+          {
+            "text": "Para este apartado: Una vez condicionado a te, solo cuentan las plantas tratadas.",
+            "start": 206.43333333333334,
+            "end": 212.03333333333333,
+            "startFrame": 6193,
+            "endFrame": 6361,
+            "words": 13,
+            "sceneIndex": 10,
+            "cueIndex": 4,
+            "sourceCueSha256": "7c1cb064f0889a127a8546b42fae139505ec6d796e52ab5f5e81d7a13b01005d"
+          }
+        ]
+      },
+      {
+        "start": 212.33333333333334,
+        "end": 219.4,
+        "cues": [
+          {
+            "text": "Restringir el universo.",
+            "start": 212.33333333333334,
+            "end": 213.63333333333333,
+            "startFrame": 6370,
+            "endFrame": 6409,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "1beb1f7d11aaa7b3312e3114601c20fdd98823e66f0d9d9e163702fc540c6b82"
+          },
+          {
+            "text": "El grupo condicionado contiene 40 plantas, de las cuales 32 se recuperan.",
+            "start": 213.93333333333334,
+            "end": 219.1,
+            "startFrame": 6418,
+            "endFrame": 6573,
+            "words": 12,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "e83dfc2916150424ea252540de9d067493bd59df709f98bad311596044427617"
+          }
+        ]
+      },
+      {
+        "start": 219.4,
+        "end": 227.3,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 219.4,
+            "end": 222.83333333333334,
+            "startFrame": 6582,
+            "endFrame": 6685,
+            "words": 8,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 223.13333333333333,
+            "end": 227,
+            "startFrame": 6694,
+            "endFrame": 6810,
+            "words": 9,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 227.3,
+        "end": 244.33333333333334,
+        "cues": [
+          {
+            "text": "Dividir dentro del grupo. 32 dividido entre 40 igual a 0 coma 8. probabilidad de erre sabiendo que te igual a abre paréntesis, probabilidad de erre intersección te, cierra paréntesis dividido entre abre paréntesis, probabilidad de te, cierra paréntesis.",
+            "start": 227.3,
+            "end": 244.03333333333333,
+            "startFrame": 6819,
+            "endFrame": 7321,
+            "words": 39,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "bf387959a42aba848490454cf7e11b561e4ee3296ca049a066e23fbcb7106eb0"
+          }
+        ]
+      },
+      {
+        "start": 244.33333333333334,
+        "end": 264.46666666666664,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 244.33333333333334,
+            "end": 245.63333333333333,
+            "startFrame": 7330,
+            "endFrame": 7369,
+            "words": 3,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
+            "start": 245.93333333333334,
+            "end": 250.66666666666666,
+            "startFrame": 7378,
+            "endFrame": 7520,
+            "words": 11,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "709e20efcd3b8285570efc796342bb8bb22989556ef2997220d7676d87dbf5ab"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 250.96666666666667,
+            "end": 258.26666666666665,
+            "startFrame": 7529,
+            "endFrame": 7748,
+            "words": 17,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+          },
+          {
+            "text": "Es la proporción de recuperación entre las tratadas, no entre todas las plantas.",
+            "start": 258.56666666666666,
+            "end": 264.1666666666667,
+            "startFrame": 7757,
+            "endFrame": 7925,
+            "words": 13,
+            "sceneIndex": 14,
+            "cueIndex": 3,
+            "sourceCueSha256": "80e5ab27397b8b1240e4af2cb740c09668c47aa178899594acfa3c355a465b3c"
+          }
+        ]
+      },
+      {
+        "start": 264.46666666666664,
+        "end": 275.4,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
+            "start": 264.46666666666664,
+            "end": 269.2,
+            "startFrame": 7934,
+            "endFrame": 8076,
+            "words": 11,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "690706cc7743fd1d5021626ec3a73982217a7f9104c246d58c55c3b03e90db1b"
+          },
+          {
+            "text": "Es la proporción de recuperación entre las tratadas, no entre todas las plantas.",
+            "start": 269.5,
+            "end": 275.1,
+            "startFrame": 8085,
+            "endFrame": 8253,
+            "words": 13,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "a4d0e7e43acab982d31f80dea6e8037c4332d6313cbe5e9620f07a9dae39e224"
+          }
+        ]
+      },
+      {
+        "start": 275.4,
+        "end": 287.5,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 275.4,
+            "end": 278,
+            "startFrame": 8262,
+            "endFrame": 8340,
+            "words": 6,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula probabilidad de te sabiendo que erre.",
+            "start": 278.3,
+            "end": 281.3,
+            "startFrame": 8349,
+            "endFrame": 8439,
+            "words": 7,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "239f8707cb8474e46e19e1b3c88dd210b8da112b7ed15bb852fc3e1b5ac7a6ee"
+          },
+          {
+            "text": "Queremos una proporción dentro del grupo que ya sabemos que se ha seleccionado.",
+            "start": 281.6,
+            "end": 287.2,
+            "startFrame": 8448,
+            "endFrame": 8616,
+            "words": 13,
+            "sceneIndex": 16,
+            "cueIndex": 2,
+            "sourceCueSha256": "cc53bc62aef8ba2397f2c1c170a1b45824cc95c4c11d252c8e6b50369c9d9fe0"
+          }
+        ]
+      },
+      {
+        "start": 287.5,
+        "end": 305.1333333333333,
+        "cues": [
+          {
+            "text": "La barra de una probabilidad condicionada se lee sabiendo que.",
+            "start": 287.5,
+            "end": 291.8,
+            "startFrame": 8625,
+            "endFrame": 8754,
+            "words": 10,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "b775923cbd3ee8c71819de38feb2c2f194d456ba84857a87d6befa05c104eb66"
+          },
+          {
+            "text": "Solo conservamos los resultados compatibles con esa información.",
+            "start": 292.1,
+            "end": 295.53333333333336,
+            "startFrame": 8763,
+            "endFrame": 8866,
+            "words": 8,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "9ba364e38820021c1511e6a0dcdc44363d77ad7bd3091bc6d9f63906cba8dd98"
+          },
+          {
+            "text": "Dividimos la intersección por la probabilidad positiva de la condición, de modo que el grupo seleccionado vuelva a tener total uno.",
+            "start": 295.8333333333333,
+            "end": 304.8333333333333,
+            "startFrame": 8875,
+            "endFrame": 9145,
+            "words": 21,
+            "sceneIndex": 17,
+            "cueIndex": 2,
+            "sourceCueSha256": "1738fbaea5149d273029d1816bb99d63d95f4eac88213c102d357d7d9c14b307"
+          }
+        ]
+      },
+      {
+        "start": 305.1333333333333,
+        "end": 307.1666666666667,
+        "cues": [
+          {
+            "text": "100 plantas; 40 tratadas.",
+            "start": 305.1333333333333,
+            "end": 306.8666666666667,
+            "startFrame": 9154,
+            "endFrame": 9206,
+            "words": 4,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "3592d8d057df017ce80fafe104ce8897b0f12981f564e2ed01a9cd51a97cd8e7"
+          }
+        ]
+      },
+      {
+        "start": 307.1666666666667,
+        "end": 311.3333333333333,
+        "cues": [
+          {
+            "text": "32 tratadas se recuperan; 18 no tratadas se recuperan.",
+            "start": 307.1666666666667,
+            "end": 311.03333333333336,
+            "startFrame": 9215,
+            "endFrame": 9331,
+            "words": 9,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "4ac57c140f0fcf0e733d2d14d43d0aa775dcc043a85b05a747167d2b3bfe782f"
+          }
+        ]
+      },
+      {
+        "start": 311.3333333333333,
+        "end": 313.8,
+        "cues": [
+          {
+            "text": "Se selecciona una planta equiprobablemente.",
+            "start": 311.3333333333333,
+            "end": 313.5,
+            "startFrame": 9340,
+            "endFrame": 9405,
+            "words": 5,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "910daaee9c2e952e1e3e829cc62551c7acb863cf42ae76addae6b052f387a859"
+          }
+        ]
+      },
+      {
+        "start": 313.8,
+        "end": 318.8333333333333,
+        "cues": [
+          {
+            "text": "Son frecuencias observadas: no se presupone asignación aleatoria ni efecto causal.",
+            "start": 313.8,
+            "end": 318.53333333333336,
+            "startFrame": 9414,
+            "endFrame": 9556,
+            "words": 11,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "1aea1db80a81250ec0a327e1e309eb0b22c695a75710706aa587cb3282fbf3db"
+          }
+        ]
+      },
+      {
+        "start": 318.8333333333333,
+        "end": 329.3,
+        "cues": [
+          {
+            "text": "Ahora el denominador son todas las plantas recuperadas.",
+            "start": 318.8333333333333,
+            "end": 322.26666666666665,
+            "startFrame": 9565,
+            "endFrame": 9668,
+            "words": 8,
+            "sceneIndex": 22,
+            "cueIndex": 0,
+            "sourceCueSha256": "62d28bf5eb6d6078fb9a50940a8c84ee6dff0d70439a92ab2c96ab070dec1078"
+          },
+          {
+            "text": "El denominador es ese grupo, no la población original; invertir la condición cambia el denominador.",
+            "start": 322.56666666666666,
+            "end": 329,
+            "startFrame": 9677,
+            "endFrame": 9870,
+            "words": 15,
+            "sceneIndex": 22,
+            "cueIndex": 1,
+            "sourceCueSha256": "32885ccaa770a9fafaf6b107a7189552908ef79d1a7478d5d982ba37d9f7733d"
+          }
+        ]
+      },
+      {
+        "start": 329.3,
+        "end": 354.8666666666667,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 329.3,
+            "end": 332.3,
+            "startFrame": 9879,
+            "endFrame": 9969,
+            "words": 7,
+            "sceneIndex": 23,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula probabilidad de te sabiendo que erre.",
+            "start": 332.6,
+            "end": 335.6,
+            "startFrame": 9978,
+            "endFrame": 10068,
+            "words": 7,
+            "sceneIndex": 23,
+            "cueIndex": 1,
+            "sourceCueSha256": "9e054d8ea1b300575aba19326c0322c88b7e76299c6bb9a25027ab3025a48f2f"
+          },
+          {
+            "text": "La información dada selecciona un subgrupo.",
+            "start": 335.9,
+            "end": 338.5,
+            "startFrame": 10077,
+            "endFrame": 10155,
+            "words": 6,
+            "sceneIndex": 23,
+            "cueIndex": 2,
+            "sourceCueSha256": "9d214a9accf06b477050d2e58c510a2f2ea066fc9d23bbddf8439de5bd8b1a4c"
+          },
+          {
+            "text": "La intersección indica los casos que cumplen las dos condiciones y el denominador reúne todos los casos de la condición conocida, no toda la población.",
+            "start": 338.8,
+            "end": 349.53333333333336,
+            "startFrame": 10164,
+            "endFrame": 10486,
+            "words": 25,
+            "sceneIndex": 23,
+            "cueIndex": 3,
+            "sourceCueSha256": "f374c3b356295e1da5aeb0dac0ade922318f4ff685ad59231f150a9905a5e3da"
+          },
+          {
+            "text": "Para este apartado: Ahora el denominador son todas las plantas recuperadas.",
+            "start": 349.8333333333333,
+            "end": 354.56666666666666,
+            "startFrame": 10495,
+            "endFrame": 10637,
+            "words": 11,
+            "sceneIndex": 23,
+            "cueIndex": 4,
+            "sourceCueSha256": "50353198212dd44bbec3bd6b4329bd166265670ff39d57bf1ed52bb9c395de4a"
+          }
+        ]
+      },
+      {
+        "start": 354.8666666666667,
+        "end": 359.03333333333336,
+        "cues": [
+          {
+            "text": "Contar las recuperadas. 32 más 18 igual a 50.",
+            "start": 354.8666666666667,
+            "end": 358.73333333333335,
+            "startFrame": 10646,
+            "endFrame": 10762,
+            "words": 9,
+            "sceneIndex": 24,
+            "cueIndex": 0,
+            "sourceCueSha256": "4a2b0849bd855742b49ffb39b9c59ce659c7a5582fbabaddd97319ea6b9030bd"
+          }
+        ]
+      },
+      {
+        "start": 359.03333333333336,
+        "end": 369.53333333333336,
+        "cues": [
+          {
+            "text": "Invertir la condición, no la fracción.",
+            "start": 359.03333333333336,
+            "end": 361.6333333333333,
+            "startFrame": 10771,
+            "endFrame": 10849,
+            "words": 6,
+            "sceneIndex": 25,
+            "cueIndex": 0,
+            "sourceCueSha256": "23499a563a17cd6449db2a8445b5194ceaebdef326eb606e31dde2e4e6a8da8d"
+          },
+          {
+            "text": "Entre las 50 recuperadas, 32 recibieron tratamiento: 32 dividido entre 50 igual a 0 coma 6 4.",
+            "start": 361.93333333333334,
+            "end": 369.23333333333335,
+            "startFrame": 10858,
+            "endFrame": 11077,
+            "words": 17,
+            "sceneIndex": 25,
+            "cueIndex": 1,
+            "sourceCueSha256": "44ffe27cdb7f11e70cb0edf6d5235dea53ab6f3e4dcf5cc27a491109fb61fa69"
+          }
+        ]
+      },
+      {
+        "start": 369.53333333333336,
+        "end": 391.9,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 369.53333333333336,
+            "end": 370.8333333333333,
+            "startFrame": 11086,
+            "endFrame": 11125,
+            "words": 3,
+            "sceneIndex": 26,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 6 4 probabilidad entre 0 y 1.",
+            "start": 371.1333333333333,
+            "end": 376.3,
+            "startFrame": 11134,
+            "endFrame": 11289,
+            "words": 12,
+            "sceneIndex": 26,
+            "cueIndex": 1,
+            "sourceCueSha256": "18364c7e30fca64fe542e3ba151e75d1ac3b1d854fd8012926bfff983aee73bd"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso. probabilidad de te sabiendo que erre responde a una selección distinta de probabilidad de erre sabiendo que te.",
+            "start": 376.6,
+            "end": 391.6,
+            "startFrame": 11298,
+            "endFrame": 11748,
+            "words": 35,
+            "sceneIndex": 26,
+            "cueIndex": 2,
+            "sourceCueSha256": "c38b313fb459ec1602d716714d1fbc612a8d5200f73539aaab38d7aea818d278"
+          }
+        ]
+      },
+      {
+        "start": 391.9,
+        "end": 405.06666666666666,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 6 4 probabilidad entre 0 y 1. probabilidad de te sabiendo que erre responde a una selección distinta de probabilidad de erre sabiendo que te.",
+            "start": 391.9,
+            "end": 404.76666666666665,
+            "startFrame": 11757,
+            "endFrame": 12143,
+            "words": 30,
+            "sceneIndex": 27,
+            "cueIndex": 0,
+            "sourceCueSha256": "a4ab96d2712110829a1245285a1e82df55ea924beedcd8f48cb3e83832127bbc"
+          }
+        ]
+      },
+      {
+        "start": 405.06666666666666,
+        "end": 460.93333333333334,
+        "cues": [
+          {
+            "text": "Entre los resultados con B, se mide qué fracción también cumple A.",
+            "start": 405.06666666666666,
+            "end": 410.23333333333335,
+            "startFrame": 12152,
+            "endFrame": 12307,
+            "words": 12,
+            "sceneIndex": 28,
+            "cueIndex": 0,
+            "sourceCueSha256": "8e56bf815050cf8be7641dcb13468a48bb76a45819139cc823cfcbf7f7f79f20"
+          },
+          {
+            "text": "La probabilidad de una ruta usa la información disponible en cada etapa, siempre que los condicionamientos estén definidos.",
+            "start": 410.53333333333336,
+            "end": 418.26666666666665,
+            "startFrame": 12316,
+            "endFrame": 12548,
+            "words": 18,
+            "sceneIndex": 28,
+            "cueIndex": 1,
+            "sourceCueSha256": "e4e5ec7f8993c8733725eafe990a1d030e45d64cd518e048c1178f896a8dac99"
+          },
+          {
+            "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+            "start": 418.56666666666666,
+            "end": 422.43333333333334,
+            "startFrame": 12557,
+            "endFrame": 12673,
+            "words": 9,
+            "sceneIndex": 28,
+            "cueIndex": 2,
+            "sourceCueSha256": "aece555504e124aac181e2d749b37a00606d11f97cb435edaa9088c919b3bb7f"
+          },
+          {
+            "text": "De 40 muestras seleccionadas, 10 tienen un marcador.",
+            "start": 422.73333333333335,
+            "end": 426.1666666666667,
+            "startFrame": 12682,
+            "endFrame": 12785,
+            "words": 8,
+            "sceneIndex": 28,
+            "cueIndex": 3,
+            "sourceCueSha256": "8e0b703ec1a398cfee4bdb3381199ee80a45467ffe27dfcee1229757c3a19e04"
+          },
+          {
+            "text": "¿Qué probabilidad condicionada describe el marcador en ese grupo?",
+            "start": 426.46666666666664,
+            "end": 430.3333333333333,
+            "startFrame": 12794,
+            "endFrame": 12910,
+            "words": 9,
+            "sceneIndex": 28,
+            "cueIndex": 4,
+            "sourceCueSha256": "fce8f75354bdb251c7e772cc25225f6413468caa8304a8cee4a3302fe443553c"
+          },
+          {
+            "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+            "start": 430.6333333333333,
+            "end": 434.5,
+            "startFrame": 12919,
+            "endFrame": 13035,
+            "words": 9,
+            "sceneIndex": 28,
+            "cueIndex": 5,
+            "sourceCueSha256": "9ebb9536ddd14aeddc1781a8a8a883421d2749005573d2b9728d81c0b05d6ede"
+          },
+          {
+            "text": "El universo relevante son las 40 muestras seleccionadas; diez entre cuarenta vale 0,25.",
+            "start": 434.8,
+            "end": 440.4,
+            "startFrame": 13044,
+            "endFrame": 13212,
+            "words": 13,
+            "sceneIndex": 28,
+            "cueIndex": 6,
+            "sourceCueSha256": "aad5856884b443376bee39cc2ad6733778b2d3b0f23c2d0516b4d302ee843f74"
+          },
+          {
+            "text": "Para revisar el próximo problema, evita este error: Mantener el total original en el denominador después de condicionar.",
+            "start": 440.7,
+            "end": 448.43333333333334,
+            "startFrame": 13221,
+            "endFrame": 13453,
+            "words": 18,
+            "sceneIndex": 28,
+            "cueIndex": 7,
+            "sourceCueSha256": "b0a012b40d82c83e06c5ee26592edcf4a27c536843380cfe0c0e9ba0ae02854b"
+          },
+          {
+            "text": "La condición cambia el universo de referencia.",
+            "start": 448.73333333333335,
+            "end": 451.73333333333335,
+            "startFrame": 13462,
+            "endFrame": 13552,
+            "words": 7,
+            "sceneIndex": 28,
+            "cueIndex": 8,
+            "sourceCueSha256": "418204dfcf8b7c2a07f5f82ef15e373dc3dbe300aa73574391d9b04e4e3972c9"
+          },
+          {
+            "text": "El denominador reúne únicamente los casos compatibles y positivos; conservar el total anterior calcularía una probabilidad conjunta, no la condicional.",
+            "start": 452.03333333333336,
+            "end": 460.6333333333333,
+            "startFrame": 13561,
+            "endFrame": 13819,
+            "words": 20,
+            "sceneIndex": 28,
+            "cueIndex": 9,
+            "sourceCueSha256": "dc99af679ea940245e1c269e3a2adc4ca8b5d6b7d6d2541555139184f4ac4606"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
