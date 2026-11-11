@@ -290,6 +290,15 @@ unprivileged nginx image. Node.js, npm and the build dependencies do not run in
 production. Upstream dependency-audit advisories affecting Docusaurus build tools
 must be reviewed separately; a static runtime does not make the builder immune.
 
+The build stage installs both lockfiles (the site and isolated Remotion package)
+and the Git, Python and FFmpeg tools required by the media checks. Git history
+and local `node_modules` are not copied into the image. BuildKit supplies the
+full `SOURCE_REVISION`; for a local build run:
+
+```bash
+docker build --build-arg SOURCE_REVISION="$(git rev-parse HEAD)" -t inferencia-estadistica .
+```
+
 The `proxmox-k8s` repository owns deployment, registry credentials, the public
 Traefik path and the BuildKit/Flux automation. No cluster credentials belong in
 this repository. `main` changes build immutable images; Flux updates their tag.

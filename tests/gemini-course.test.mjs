@@ -27,6 +27,16 @@ test('freezes the full course and preserves original visuals, sources and cues',
   assert.equal(globalThis.jStat, undefined);
 });
 
+test('container catalogue accepts only a full explicit source revision', async () => {
+  const sourceRevision = '0123456789abcdef0123456789abcdef01234567';
+  const catalogue = await buildCatalogue({sourceRevision});
+  assert.equal(catalogue.sourceRevision, sourceRevision);
+  assert.equal(catalogue.items.length, 541);
+  for (const invalid of ['', 'local', 'abcdef0', `${sourceRevision}\n`]) {
+    await assert.rejects(buildCatalogue({source: '/missing/course', sourceRevision: invalid}), /full Git source revision/);
+  }
+});
+
 test('preparation resumes without reading live sources and rejects changed snapshots', async () => {
   const batch = mkdtempSync(join(tmpdir(), 'gemini-course-'));
   try {

@@ -96,8 +96,9 @@ function sourceFiles(source) {
   return Object.fromEntries(files.sort().map(path => [path, hash(readFileSync(join(source, path)))]));
 }
 
-export async function buildCatalogue({source = ROOT} = {}) {
+export async function buildCatalogue({source = ROOT, sourceRevision = process.env.COURSE_SOURCE_REVISION} = {}) {
   source = resolve(source);
+  if (sourceRevision !== undefined) assert.match(sourceRevision, /^[0-9a-f]{40}$/, 'Expected a full Git source revision');
   const inputs = sourceFiles(source);
   const require = createRequire(join(source, 'package.json'));
   const {jStat} = require('jstat');
@@ -133,7 +134,7 @@ export async function buildCatalogue({source = ROOT} = {}) {
     }
     assert.equal(new Set(items.map(item => item.id)).size, items.length, 'Duplicate animation IDs');
     assert.deepEqual(sourceFiles(source), inputs, 'Source changed during preparation; use a new process');
-    const revision = execFileSync('git', ['-C', source, 'rev-parse', 'HEAD'], {encoding: 'utf8'}).trim();
+    const revision = sourceRevision ?? execFileSync('git', ['-C', source, 'rev-parse', 'HEAD'], {encoding: 'utf8'}).trim();
     return {version: 1, model: MODEL, voice: VOICE, style: STYLE, sourceRevision: revision,
       sourceFiles: inputs, inputSha256: hash(JSON.stringify(inputs)), exerciseCount: exercises.length, items};
   } finally {
