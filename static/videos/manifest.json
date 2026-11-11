@@ -96928,6 +96928,312 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "calculo-modelos--operacion-correcta": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "calculo-modelos--operacion-correcta",
+      "kind": "section",
+      "title": "La calculadora responde a la pregunta que recibe",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "0fbbefc7e0a713d0c7cbe2f2c0df8f35f4f2a1d0e852719be54d7526c6994b5e",
+      "src": "videos/calculo-modelos--operacion-correcta/video.mp4",
+      "poster": "videos/calculo-modelos--operacion-correcta/poster.jpg",
+      "duration": 111.93333333333334,
+      "frames": 3358,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "e6e76d68314316ffa96c49e6152526b8a95624d95a2cb5281dda0039c76588fa",
+      "videoSha256": "ba034093781edbd0e16d0093530bb74532c7fd6c7de980dc5a05d579598f0fde",
+      "posterSha256": "ea8a70cd3d494c246cab176da6bbe86aa455d5edb52f260dfe94e1e359b487f9",
+      "canonicalSha256": "b4d590b89dfd83b3c322b0e54e90bf539c48f6edcc9142c5da26ab652fa5a3b7",
+      "inputHash": "c1e1b812fd624a2bf90eef01fe96889e36a0cc1ec78c4821a2868e88609631ff",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "cc1801b2256d713d6384ea2dc23be5f5fd4dcbd8b8e7e939ec583aaa10445e03",
+        "canonicalSha256": "b4d590b89dfd83b3c322b0e54e90bf539c48f6edcc9142c5da26ab652fa5a3b7",
+        "source": {
+          "document": "FundamentosInferencia_Tema3.pdf",
+          "section": "3.1.8, 3.2.8 y 3.3: resúmenes y cálculo con R y Python; revisión de modelos como apoyo didáctico"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "c9e6244aed34f6a1ad36bb31663193088cace8976ef20746673a2e68185d1a70",
+        "transcriptSha256": "e6e76d68314316ffa96c49e6152526b8a95624d95a2cb5281dda0039c76588fa",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "calculo-modelos",
+      "transcript": {
+        "id": "calculo-modelos--operacion-correcta",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "b4d590b89dfd83b3c322b0e54e90bf539c48f6edcc9142c5da26ab652fa5a3b7",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 111.93333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 111.93333333333334,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Un programa puede devolver un número correcto para una pregunta equivocada.",
+                "start": 1.5,
+                "end": 6.233333333333333,
+                "startFrame": 45,
+                "endFrame": 187,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "a7e806a92a549ebd2bba5e22718dac1252dbbabd4e085178c5ff48b8e7b4feba"
+              },
+              {
+                "text": "En una normal de media veinte y desviación tres, evaluar la densidad en veintiséis no responde a superar veintiséis: la primera consulta devuelve altura y la segunda pide área.",
+                "start": 6.533333333333333,
+                "end": 18.966666666666665,
+                "startFrame": 196,
+                "endFrame": 569,
+                "words": 29,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "a9b12ee64c5d6365647d602dc15f60d3955426141105bd593c95ab9df256e495"
+              },
+              {
+                "text": "Antes de elegir una función escribamos qué buscamos.",
+                "start": 19.266666666666666,
+                "end": 22.7,
+                "startFrame": 578,
+                "endFrame": 681,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "2f74701ad2108305a8da4b99b2f9b54a60914d745dac08d98214a4ad40964fa7"
+              },
+              {
+                "text": "Hay cuatro operaciones distintas.",
+                "start": 23,
+                "end": 24.733333333333334,
+                "startFrame": 690,
+                "endFrame": 742,
+                "words": 4,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "c13836b062a7d21b73c46f4ff4d8e34f096e4f759b58ecc538d75e6ffc4defe1"
+              },
+              {
+                "text": "La masa da probabilidad exacta de un valor discreto y la densidad una altura continua; la acumulada reúne valores hasta un umbral.",
+                "start": 25.033333333333335,
+                "end": 34.46666666666667,
+                "startFrame": 751,
+                "endFrame": 1034,
+                "words": 22,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "397f30561a4dc37cf05317f4b16859041d92a906099afbecca2d9714a24e9774"
+              },
+              {
+                "text": "El cuantil recibe una proporción y devuelve un umbral.",
+                "start": 34.766666666666666,
+                "end": 38.63333333333333,
+                "startFrame": 1043,
+                "endFrame": 1159,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "e4663b416ba3e10fb6ff70f7f48c41ae13120dd21ed72b094cabbf8df4ac7039"
+              },
+              {
+                "text": "La generación recibe parámetros y produce realizaciones aleatorias del modelo, no una probabilidad calculada.",
+                "start": 38.93333333333333,
+                "end": 44.93333333333333,
+                "startFrame": 1168,
+                "endFrame": 1348,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "d40379eb725e18c108a552ffd7139a3bb261ed4890d2b29e22a9a7a49d1681f7"
+              },
+              {
+                "text": "En R los prefijos habituales son de para masa o densidad, pe para acumulada, cu para cuantil y erre para generación.",
+                "start": 45.233333333333334,
+                "end": 54.233333333333334,
+                "startFrame": 1357,
+                "endFrame": 1627,
+                "words": 21,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "76f5ce0f6334c0586b621d88be1da60c8d5e167a88cad90f0b7c26803b21361c"
+              },
+              {
+                "text": "En SciPy distinguimos pmf y pdf, cdf, ppf y rvs.",
+                "start": 54.53333333333333,
+                "end": 58.833333333333336,
+                "startFrame": 1636,
+                "endFrame": 1765,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "17402968643537646bdab0388bf265bbb3ce19f049695165e6c17afb2b1b833e"
+              },
+              {
+                "text": "Son nombres que elegimos después de identificar la operación; de o pdf no son atajos para calcular una cola.",
+                "start": 59.13333333333333,
+                "end": 67.3,
+                "startFrame": 1774,
+                "endFrame": 2019,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "1a983e4dd0f186a7c212a277536536e6b0499a5f0a7431fb3a1cb13cfe37c22f"
+              },
+              {
+                "text": "Las unidades permiten detectar una confusión: densidad tiene unidades inversas de la medida; cuantil y realizaciones tienen las unidades originales; una probabilidad de cola no tiene unidades y queda entre cero y uno.",
+                "start": 67.6,
+                "end": 81.76666666666667,
+                "startFrame": 2028,
+                "endFrame": 2453,
+                "words": 33,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "c0dc7a8cf28ff101509b1831c93f2796057e2d5969bda91e36c805ffec2541b3"
+              },
+              {
+                "text": "Una masa también queda en ese rango, pero una altura de densidad puede superar uno sin invalidar el modelo.",
+                "start": 82.06666666666666,
+                "end": 90.23333333333333,
+                "startFrame": 2462,
+                "endFrame": 2707,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "20ebbba939cab151a0abbf72eec86f613655f9a67216519cf697501354bfc03a"
+              },
+              {
+                "text": "Revisemos además la parametrización.",
+                "start": 90.53333333333333,
+                "end": 92.26666666666667,
+                "startFrame": 2716,
+                "endFrame": 2768,
+                "words": 4,
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "sourceCueSha256": "1455f1c1aae8ea1f500cf464dc1b051b559936195340ed2f7427fece3c8ce0fc"
+              },
+              {
+                "text": "Escribimos la normal con varianza como segundo parámetro, pero muchos programas piden desviación típica.",
+                "start": 92.56666666666666,
+                "end": 98.56666666666666,
+                "startFrame": 2777,
+                "endFrame": 2957,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 14,
+                "sourceCueSha256": "b222e3aaa6eaf8aeaf0cf90b1b38c22ed3d3f42779aab897e28d6dc6f150b7f0"
+              },
+              {
+                "text": "En esperas podemos encontrar tasa en vez de escala.",
+                "start": 98.86666666666666,
+                "end": 102.73333333333333,
+                "startFrame": 2966,
+                "endFrame": 3082,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 15,
+                "sourceCueSha256": "277fda3b26d8a25972f0b0eef3ea692bbd7a295b96e05cb48fb308fbc24d637a"
+              },
+              {
+                "text": "Que el programa acepte el argumento solo garantiza que pudo evaluarlo, no que representa el mecanismo ni la pregunta previstos.",
+                "start": 103.03333333333333,
+                "end": 111.63333333333334,
+                "startFrame": 3091,
+                "endFrame": 3349,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 16,
+                "sourceCueSha256": "c33bce288e26e3b935af1bac14af104d6dbc991b4cdd1638e996902dc8a1cdc4"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
