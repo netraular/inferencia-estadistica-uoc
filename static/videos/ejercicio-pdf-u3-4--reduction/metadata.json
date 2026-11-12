@@ -1,0 +1,601 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u3-4--reduction",
+  "kind": "exercise",
+  "title": "¿Cuál es P(Y1≥3Y2)?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "0e42ed9dd709c33d0a5ece9ca79a59cb0ffa8bc2cd29bc345b4d5bc0a0b05fad",
+  "src": "videos/ejercicio-pdf-u3-4--reduction/video.mp4",
+  "poster": "videos/ejercicio-pdf-u3-4--reduction/poster.jpg",
+  "duration": 328.2,
+  "frames": 9846,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "3a8ed22ca5714001c0fc5b6acdaeb46a05fe676b1b52828b00ec5ed2d5269364",
+  "videoSha256": "ce1064a8011dd0a9e069e285f694c2785e426bf213cbcf66da1d930cd1627a45",
+  "posterSha256": "2bca4fc9939e7de92b087d22f76d5ba0bbca65fb821387ef9dccc01de9446790",
+  "canonicalSha256": "c3b4a99da10242339a1dec037da0ab1e736553088dcefb87b644e7dc1a7d4572",
+  "inputHash": "5f00015f88b2d66261cda5aa02459c535112b16502e92c78fb6a8bb13a6a8bd3",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "d1f164fff5ad09bc1984b1f7f46b52bd482301b6f4b9f2f2b8ecca4ea3cc830c",
+    "canonicalSha256": "c3b4a99da10242339a1dec037da0ab1e736553088dcefb87b644e7dc1a7d4572",
+    "source": {
+      "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+      "number": "4",
+      "page": 7
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "91eda5d6410bf2cb0b664a8c22ca4718aa5f4509e97e83640538b4df14cbe701",
+    "transcriptSha256": "3a8ed22ca5714001c0fc5b6acdaeb46a05fe676b1b52828b00ec5ed2d5269364",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u3-4",
+  "transcript": {
+    "id": "ejercicio-pdf-u3-4--reduction",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "c3b4a99da10242339a1dec037da0ab1e736553088dcefb87b644e7dc1a7d4572",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 328.2,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 15.1,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es probabilidad de i griega subíndice 1 mayor o igual que 3 por i griega subíndice 2?",
+            "start": 2.9,
+            "end": 10.633333333333333,
+            "startFrame": 87,
+            "endFrame": 319,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "03c92475f12b9ddceb6066c8731a36a022a3b514250037ab75f2c258e2266304"
+          },
+          {
+            "text": "Queremos el área del suceso dentro del soporte conjunto.",
+            "start": 10.933333333333334,
+            "end": 14.8,
+            "startFrame": 328,
+            "endFrame": 444,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "3cb5b0e7099ff6832040815a15680433f9c87fc0d58fdfad63a33da20874ab33"
+          }
+        ]
+      },
+      {
+        "start": 15.1,
+        "end": 33.93333333333333,
+        "cues": [
+          {
+            "text": "El soporte conjunto delimita qué parejas son posibles.",
+            "start": 15.1,
+            "end": 18.533333333333335,
+            "startFrame": 453,
+            "endFrame": 556,
+            "words": 8,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "f63b1f9e0d6890ff071c86fe7ab857d8518bf681368256b515f543407de0de8d"
+          },
+          {
+            "text": "Al fijar una coordenada, la frontera determina el intervalo de la otra.",
+            "start": 18.833333333333332,
+            "end": 24,
+            "startFrame": 565,
+            "endFrame": 720,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "6d98d64f66ce3ab30c2bc7c848b2310a32c5d79e02ff0dffae96abc9814b787c"
+          },
+          {
+            "text": "Integramos solo esos cortes.",
+            "start": 24.3,
+            "end": 26.033333333333335,
+            "startFrame": 729,
+            "endFrame": 781,
+            "words": 4,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "9cd49477efad5fe66a3ff67b7aa1491c3ff956f347c20c8f70fdb4be21b42e47"
+          },
+          {
+            "text": "Una densidad condicional divide por una marginal positiva, nunca por la probabilidad nula de un punto continuo.",
+            "start": 26.333333333333332,
+            "end": 33.63333333333333,
+            "startFrame": 790,
+            "endFrame": 1009,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "5839ce4b45a37b8ed884e3b3c2836a7794be7698df4a2ab745141f175f1d8cc3"
+          }
+        ]
+      },
+      {
+        "start": 33.93333333333333,
+        "end": 60.833333333333336,
+        "cues": [
+          {
+            "text": "efe minúscula abre paréntesis, i griega minúscula subíndice 1 ,i griega minúscula subíndice 2 , cierra paréntesis igual a ka si 0 menor o igual que y subíndice 1 menor o igual que 2, 0 menor o igual que y subíndice 2 menor o igual que 1 y 2 por y subíndice 2 menor o igual que y subíndice 1; cero fuera.",
+            "start": 33.93333333333333,
+            "end": 60.53333333333333,
+            "startFrame": 1018,
+            "endFrame": 1816,
+            "words": 62,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "fd6c03b9bc6012e45e3093527ac1f4e07656c0fe9ed9831e33164f17bfcf72ed"
+          }
+        ]
+      },
+      {
+        "start": 60.833333333333336,
+        "end": 79.46666666666667,
+        "cues": [
+          {
+            "text": "Fronteras: y subíndice 1 igual a 2, y subíndice 2 igual a 0, y subíndice 2 igual a y subíndice 1 dividido entre 2.",
+            "start": 60.833333333333336,
+            "end": 71.13333333333334,
+            "startFrame": 1825,
+            "endFrame": 2134,
+            "words": 24,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "200414131b344d8065cfd14a923eea54d435d1675a6d84ff13e86ea2e3086da5"
+          },
+          {
+            "text": "Se pide el suceso i griega subíndice 1 mayor o igual que 3 por i griega subíndice 2.",
+            "start": 71.43333333333334,
+            "end": 79.16666666666667,
+            "startFrame": 2143,
+            "endFrame": 2375,
+            "words": 18,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "cc38367802a0d986332b206f78a87a20cfbae5c678e4903978c9377ea7f9716a"
+          }
+        ]
+      },
+      {
+        "start": 79.46666666666667,
+        "end": 88.36666666666666,
+        "cues": [
+          {
+            "text": "Se interpreta el objetivo matemático explícito i griega subíndice 1 mayor o igual que 3 por i griega subíndice 2.",
+            "start": 79.46666666666667,
+            "end": 88.06666666666666,
+            "startFrame": 2384,
+            "endFrame": 2642,
+            "words": 20,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "53da80252c6326b5cc6b0b8d997c2d8e833e6543b295e5d79d0012214aee1d4b"
+          }
+        ]
+      },
+      {
+        "start": 88.36666666666666,
+        "end": 98.1,
+        "cues": [
+          {
+            "text": "La descripción verbal del PDF de reducción de un tercio no equivale a esa desigualdad: su probabilidad sería uno en este soporte.",
+            "start": 88.36666666666666,
+            "end": 97.8,
+            "startFrame": 2651,
+            "endFrame": 2934,
+            "words": 22,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "3f7ef9e2b5c7ae47f55d1e8b72935304cb6922574d3e1f22fc5e455a936ca713"
+          }
+        ]
+      },
+      {
+        "start": 98.1,
+        "end": 110.73333333333333,
+        "cues": [
+          {
+            "text": "Divido la desigualdad entre tres para delimitar y dos a cada y uno.",
+            "start": 98.1,
+            "end": 103.7,
+            "startFrame": 2943,
+            "endFrame": 3111,
+            "words": 13,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "553f5d822bb63e20263802099d62203b64d4ef4fc68052f26fc8a631c65b0aee"
+          },
+          {
+            "text": "La desigualdad recorta la región antes de integrar; integrar el soporte entero respondería otra pregunta.",
+            "start": 104,
+            "end": 110.43333333333334,
+            "startFrame": 3120,
+            "endFrame": 3313,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "43f3eef3942bc9778124932b3a01b24453e1fb3cec24fe63d273aac3ee12542d"
+          }
+        ]
+      },
+      {
+        "start": 110.73333333333333,
+        "end": 123.8,
+        "cues": [
+          {
+            "text": "Traducir el suceso.",
+            "start": 110.73333333333333,
+            "end": 112.03333333333333,
+            "startFrame": 3322,
+            "endFrame": 3361,
+            "words": 3,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a41ba57d6ae08c8c480cd3432f7b36e0cb15f30a67a746f8f6dff7b3351ebf51"
+          },
+          {
+            "text": "Divido la desigualdad entre tres para delimitar y dos a cada y uno. y subíndice 2 menor o igual que y subíndice 1 dividido entre 3.",
+            "start": 112.33333333333333,
+            "end": 123.5,
+            "startFrame": 3370,
+            "endFrame": 3705,
+            "words": 26,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "c4979b346355b953f01a82a1ab718b1322d7d5d7e320ead869487a56d3b96145"
+          }
+        ]
+      },
+      {
+        "start": 123.8,
+        "end": 144.26666666666668,
+        "cues": [
+          {
+            "text": "Comparar las fronteras. i griega uno entre tres es menor que y uno entre dos en este soporte positivo; la región pedida queda dentro del soporte. 0 menor o igual que y subíndice 1 dividido entre 3 menor o igual que y subíndice 1 dividido entre 2.",
+            "start": 123.8,
+            "end": 143.96666666666667,
+            "startFrame": 3714,
+            "endFrame": 4319,
+            "words": 47,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "1c2a6bef003e93ee1d1f04d45002f217ed333ba7f5ad73b88e59d105c6d3ba88"
+          }
+        ]
+      },
+      {
+        "start": 144.26666666666668,
+        "end": 162.46666666666667,
+        "cues": [
+          {
+            "text": "Integrar el corte pedido.",
+            "start": 144.26666666666668,
+            "end": 146,
+            "startFrame": 4328,
+            "endFrame": 4380,
+            "words": 4,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "2351f93be1bfe2bc42da9507d1ab15733980d5ec07f52e96f594d485ff9df24e"
+          },
+          {
+            "text": "Con ka igual a uno, la probabilidad por corte es su longitud. integral desde 0 hasta y subíndice 1 dividido entre 3 de 1 respecto de y subíndice 2 igual a y subíndice 1 dividido entre 3.",
+            "start": 146.3,
+            "end": 162.16666666666666,
+            "startFrame": 4389,
+            "endFrame": 4865,
+            "words": 37,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "b4638b3fdb83b2210e1f6208079e5c566ab2f805cc197bc2ac1e7c17880badcd"
+          }
+        ]
+      },
+      {
+        "start": 162.46666666666667,
+        "end": 183.23333333333332,
+        "cues": [
+          {
+            "text": "Sumar los cortes.",
+            "start": 162.46666666666667,
+            "end": 163.76666666666668,
+            "startFrame": 4874,
+            "endFrame": 4913,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "9a7ddba1fc291c1e441f8aac93780fe2ddabad147e225dcaab245e6fc6b4336d"
+          },
+          {
+            "text": "Integro desde cero hasta dos sin añadir puntos imposibles. probabilidad de i griega subíndice 1 mayor o igual que 3 por i griega subíndice 2 igual a integral desde 0 hasta 2 de y subíndice 1 dividido entre 3 respecto de y subíndice 1.",
+            "start": 164.06666666666666,
+            "end": 182.93333333333334,
+            "startFrame": 4922,
+            "endFrame": 5488,
+            "words": 44,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "2c8b753a8788518ae7622df117a19260a2c6fb06ef88756091b95c001d5a6c7d"
+          }
+        ]
+      },
+      {
+        "start": 183.23333333333332,
+        "end": 198.96666666666667,
+        "cues": [
+          {
+            "text": "probabilidad de i griega subíndice 1 mayor o igual que 3 por i griega subíndice 2 queda igual a abre corchete, y subíndice 1 al cuadrado dividido entre 6, cierra corchete evaluado desde 0 hasta 2.",
+            "start": 183.23333333333332,
+            "end": 198.66666666666666,
+            "startFrame": 5497,
+            "endFrame": 5960,
+            "words": 36,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "1e9996fbfacc2561a22cfb447a16343ce6b8580e6f2684f7182461e1bbcec908"
+          }
+        ]
+      },
+      {
+        "start": 198.96666666666667,
+        "end": 209.13333333333333,
+        "cues": [
+          {
+            "text": "probabilidad de i griega subíndice 1 mayor o igual que 3 por i griega subíndice 2 queda igual a 2 dividido entre 3.",
+            "start": 198.96666666666667,
+            "end": 208.83333333333334,
+            "startFrame": 5969,
+            "endFrame": 6265,
+            "words": 23,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "22ce658cc2e725bcdc6012058bf63baef30ff2b401125162dfbaf1e7c798985c"
+          }
+        ]
+      },
+      {
+        "start": 209.13333333333333,
+        "end": 239.66666666666666,
+        "cues": [
+          {
+            "text": "Separar la frase del PDF.",
+            "start": 209.13333333333333,
+            "end": 211.3,
+            "startFrame": 6274,
+            "endFrame": 6339,
+            "words": 5,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "7d30a067c891d73a8ab9d9de1721fb00047843ded3f305378380c4a21a914b91"
+          },
+          {
+            "text": "Reducir al menos un tercio significaría que la cantidad final no supera dos tercios de la inicial.",
+            "start": 211.6,
+            "end": 218.9,
+            "startFrame": 6348,
+            "endFrame": 6567,
+            "words": 17,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "00e406bbfadf982587ba0116dcdbff0e624132c3b5deddf305e99fcee8b7e353"
+          },
+          {
+            "text": "No es la desigualdad escrita en el problema. i griega subíndice 1 menos i griega subíndice 2 mayor o igual que i griega subíndice 1 dividido entre 3 equivale a i griega subíndice 2 menor o igual que 2 por i griega subíndice 1 dividido entre 3.",
+            "start": 219.2,
+            "end": 239.36666666666667,
+            "startFrame": 6576,
+            "endFrame": 7181,
+            "words": 47,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "18de0c07514d438016140b4ccf663d8eafd064ddc4c8856844ca90f0beca3794"
+          }
+        ]
+      },
+      {
+        "start": 239.66666666666666,
+        "end": 285.9,
+        "cues": [
+          {
+            "text": "Resolver la lectura verbal.",
+            "start": 239.66666666666666,
+            "end": 241.4,
+            "startFrame": 7190,
+            "endFrame": 7242,
+            "words": 4,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "4218a02ff1ea99be5baeb9e38d8fe1838a26da3da4dcaece73c4f7bc7838d7a0"
+          },
+          {
+            "text": "En todo el soporte, i griega dos no supera la mitad de i griega uno, que tampoco supera sus dos tercios.",
+            "start": 241.7,
+            "end": 250.7,
+            "startFrame": 7251,
+            "endFrame": 7521,
+            "words": 21,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "8a27f8e3f502a7a6b05cb28a78f2753d40e61d0ef5d1bc8238e142a03f0567cb"
+          },
+          {
+            "text": "Por eso la frase verbal tendría probabilidad uno.",
+            "start": 251,
+            "end": 254.43333333333334,
+            "startFrame": 7530,
+            "endFrame": 7633,
+            "words": 8,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "d8ed228d2ca1f4fa9b9b9439179667dbbc7fac67eae380c0e188e5aafd065dde"
+          },
+          {
+            "text": "El comprobador mantiene dos tercios para la desigualdad explícita i griega uno mayor o igual que tres i griega dos. i griega subíndice 2 menor o igual que i griega subíndice 1 dividido entre 2 menor o igual que 2 por i griega subíndice 1 dividido entre 3 por tanto probabilidad de i griega subíndice 2 menor o igual que 2 por i griega subíndice 1 dividido entre 3 igual a 1.",
+            "start": 254.73333333333332,
+            "end": 285.6,
+            "startFrame": 7642,
+            "endFrame": 8568,
+            "words": 72,
+            "sceneIndex": 14,
+            "cueIndex": 3,
+            "sourceCueSha256": "a114b661cce9f658c6da856ef5e604c6fc1310fa861546f666fb99354e4e0c87"
+          }
+        ]
+      },
+      {
+        "start": 285.9,
+        "end": 310.8666666666667,
+        "cues": [
+          {
+            "text": "Responder a la desigualdad escrita.",
+            "start": 285.9,
+            "end": 288.06666666666666,
+            "startFrame": 8577,
+            "endFrame": 8642,
+            "words": 5,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "ad665dee0c4652be40fd2b34ef2431232804ac7225e5e8de6d92b83ffc930d2f"
+          },
+          {
+            "text": "Vuelvo a la región i griega dos menor o igual que un tercio de i griega uno.",
+            "start": 288.3666666666667,
+            "end": 295.6666666666667,
+            "startFrame": 8651,
+            "endFrame": 8870,
+            "words": 17,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "9dfd134beb7a4c9aec921f786c47167917cfc83abded64c67401aa437563576d"
+          },
+          {
+            "text": "Esta es la pregunta numérica del comprobador, distinta de la frase verbal. probabilidad de i griega subíndice 1 mayor o igual que 3 por i griega subíndice 2 igual a 2 dividido entre 3.",
+            "start": 295.96666666666664,
+            "end": 310.56666666666666,
+            "startFrame": 8879,
+            "endFrame": 9317,
+            "words": 34,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "0a1da16b388de60ecd8e7b2e37672e6cb5787441ceef5f0d2ade26877389ec7a"
+          }
+        ]
+      },
+      {
+        "start": 310.8666666666667,
+        "end": 328.2,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 6 6 6 6 6 6 7 probabilidad entre 0 y 1.",
+            "start": 310.8666666666667,
+            "end": 318.1666666666667,
+            "startFrame": 9326,
+            "endFrame": 9545,
+            "words": 17,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "492be95d3d6d0b1dbd286e36a10f43475a059c4418703fc63adcdd153172d0f8"
+          },
+          {
+            "text": "El suceso escrito deja como máximo un tercio del contaminante inicial: representa reducción de al menos dos tercios, no de un tercio.",
+            "start": 318.46666666666664,
+            "end": 327.9,
+            "startFrame": 9554,
+            "endFrame": 9837,
+            "words": 22,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "267c53661a9695ccb8697d2bfd5cebd55723f1e25266205f3216a2ad166f5813"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
