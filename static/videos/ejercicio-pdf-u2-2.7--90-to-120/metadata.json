@@ -1,0 +1,718 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.7--90-to-120",
+  "kind": "exercise",
+  "title": "¿Qué proporción tiene glucosa entre 90 y 120 mg/100 ml y a qué porcentaje equivale?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "cb758d161404f4b4376cd5e4182175dc697b17877d36ee3409a689020aea2b76",
+  "src": "videos/ejercicio-pdf-u2-2.7--90-to-120/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.7--90-to-120/poster.jpg",
+  "duration": 269.73333333333335,
+  "frames": 8092,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "25cf7df1294b2f81271ece5ddb15e7771382d707e2fe1d019ab75be0d3d58780",
+  "videoSha256": "f1edd32982049bd61d2b710e0ac27fc316e2253fd690bb15a2e674eda81e8058",
+  "posterSha256": "02628ff86b87717456a3a2d009de3476cfc8a75d8a74d78ffcf4d29efe1b7f1f",
+  "canonicalSha256": "ef8c547b46339a588b861e93ef7bb0dafdc5ec1031410557e4e42b9cf79a5051",
+  "inputHash": "57d17a46886f77a28dfd9343d571920d65af6371ec076ed3394f64c7b5555965",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "670cc2d9fb5bef3794bf05f4a50155d0ff1fe1a0666df3944d0ff3b9ded444e2",
+    "canonicalSha256": "ef8c547b46339a588b861e93ef7bb0dafdc5ec1031410557e4e42b9cf79a5051",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.7",
+      "page": 20
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "0e85fd8180faf9ce77fd8618e53dcb68712eef0fb386f22023c02835935b0b29",
+    "transcriptSha256": "25cf7df1294b2f81271ece5ddb15e7771382d707e2fe1d019ab75be0d3d58780",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.7",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.7--90-to-120",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "ef8c547b46339a588b861e93ef7bb0dafdc5ec1031410557e4e42b9cf79a5051",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 269.73333333333335,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 13.833333333333334,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué proporción tiene glucosa entre 90 y 120 mg dividido entre 100 ml y a qué porcentaje equivale?",
+            "start": 2.9,
+            "end": 10.633333333333333,
+            "startFrame": 87,
+            "endFrame": 319,
+            "words": 18,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "564bd0ae96f5fa0bad588ceaac75413ef50a3b2f49cde4852328731e37bfd4fa"
+          },
+          {
+            "text": "Queremos la probabilidad entre dos límites.",
+            "start": 10.933333333333334,
+            "end": 13.533333333333333,
+            "startFrame": 328,
+            "endFrame": 406,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "2eea1f4bfd43dfe60cc981ee50e1be3f084c77aad829120bde595e1748b28dab"
+          }
+        ]
+      },
+      {
+        "start": 13.833333333333334,
+        "end": 34.06666666666667,
+        "cues": [
+          {
+            "text": "Mu es la media y sigma la desviación típica, no la varianza.",
+            "start": 13.833333333333334,
+            "end": 19,
+            "startFrame": 415,
+            "endFrame": 570,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "9bde7a04b10a080a2dbe70efa83b36181823c2220174dcc8c4a18f109471095f"
+          },
+          {
+            "text": "Restar mu centra la medida y dividir por sigma expresa la distancia en desviaciones.",
+            "start": 19.3,
+            "end": 25.3,
+            "startFrame": 579,
+            "endFrame": 759,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "87a051014f9387d27563d5edd25b848cb18a3f978bc01756b7ef2bf8c6a4f507"
+          },
+          {
+            "text": "La normal estándar tiene media cero y desviación uno; su acumulada Phi permite comparar áreas sin cambiar su probabilidad.",
+            "start": 25.6,
+            "end": 33.766666666666666,
+            "startFrame": 768,
+            "endFrame": 1013,
+            "words": 19,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "360a78284cf1e375899b8da7985ad0e00eb804b42b7839ce001b4d109804384a"
+          }
+        ]
+      },
+      {
+        "start": 34.06666666666667,
+        "end": 45.1,
+        "cues": [
+          {
+            "text": "Media mu igual a 106 mg dividido entre 100 ml; desviación típica sigma igual a 8 mg dividido entre 100 ml; varianza igual a 64.",
+            "start": 34.06666666666667,
+            "end": 44.8,
+            "startFrame": 1022,
+            "endFrame": 1344,
+            "words": 25,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "8e33d019962e4b019a695473d2b604d875be66c1244748b8aaa09da20bf947bc"
+          }
+        ]
+      },
+      {
+        "start": 45.1,
+        "end": 48.4,
+        "cues": [
+          {
+            "text": "Modelo aproximadamente normal, suministrado para practicar cálculos.",
+            "start": 45.1,
+            "end": 48.1,
+            "startFrame": 1353,
+            "endFrame": 1443,
+            "words": 7,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "cb5240c0f5215d9b9318fc00cdc708f2cc6baa757cbedc7c653592c485ab38fa"
+          }
+        ]
+      },
+      {
+        "start": 48.4,
+        "end": 65.86666666666666,
+        "cues": [
+          {
+            "text": "Corrección del texto del PDF: el área desde 90 hasta 120 es 0 coma 9 3 7 1 9 0 7, equivalente a 93 coma 7 1 9 0 7 por ciento , no 0 coma 9 5 7 5.",
+            "start": 48.4,
+            "end": 65.56666666666666,
+            "startFrame": 1452,
+            "endFrame": 1967,
+            "words": 40,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "eb53f62b44573c794039f147605145f3394b5c0d15ee2b59ca9897a801f5a842"
+          }
+        ]
+      },
+      {
+        "start": 65.86666666666666,
+        "end": 79.66666666666667,
+        "cues": [
+          {
+            "text": "Mu es la media, 106.",
+            "start": 65.86666666666666,
+            "end": 68.03333333333333,
+            "startFrame": 1976,
+            "endFrame": 2041,
+            "words": 5,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "6cf67d780120d1baa4ef38d33e58f2d33039571928ac812379bd61a6ab77640b"
+          },
+          {
+            "text": "Resto la media al umbral 90 para medir su desplazamiento.",
+            "start": 68.33333333333333,
+            "end": 72.63333333333334,
+            "startFrame": 2050,
+            "endFrame": 2179,
+            "words": 10,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "fc8976974d6a107bea41d5d14439f20f6358d5e4a53aeb02f319717522c6f7a3"
+          },
+          {
+            "text": "Restar las dos acumuladas elimina lo anterior al límite inferior y conserva solo el intervalo.",
+            "start": 72.93333333333334,
+            "end": 79.36666666666666,
+            "startFrame": 2188,
+            "endFrame": 2381,
+            "words": 15,
+            "sceneIndex": 5,
+            "cueIndex": 2,
+            "sourceCueSha256": "5e37d25d532547b0c164ec6ca07cb68b1bc3877876821f4fcdfe9e20f76c8bd0"
+          }
+        ]
+      },
+      {
+        "start": 79.66666666666667,
+        "end": 91.76666666666667,
+        "cues": [
+          {
+            "text": "Centrar el límite inferior.",
+            "start": 79.66666666666667,
+            "end": 81.4,
+            "startFrame": 2390,
+            "endFrame": 2442,
+            "words": 4,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "bd250bc6773b238c6be76a1d8fc113d0d78c64ab6e98d4363ac7cac339a34f3b"
+          },
+          {
+            "text": "Mu es la media, 106.",
+            "start": 81.7,
+            "end": 83.86666666666666,
+            "startFrame": 2451,
+            "endFrame": 2516,
+            "words": 5,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "11be87599a1c7c2352e605e761291de7159dbad67f00e2a0218413cba538d513"
+          },
+          {
+            "text": "Resto la media al umbral 90 para medir su desplazamiento. 90 menos 106 igual a menos 16.",
+            "start": 84.16666666666667,
+            "end": 91.46666666666667,
+            "startFrame": 2525,
+            "endFrame": 2744,
+            "words": 17,
+            "sceneIndex": 6,
+            "cueIndex": 2,
+            "sourceCueSha256": "447b93b19ed72dc8d8c4f64819c282b8362f400a0b615b14b13d8719c90a406b"
+          }
+        ]
+      },
+      {
+        "start": 91.76666666666667,
+        "end": 99.66666666666667,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 91.76666666666667,
+            "end": 95.2,
+            "startFrame": 2753,
+            "endFrame": 2856,
+            "words": 8,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 95.5,
+            "end": 99.36666666666666,
+            "startFrame": 2865,
+            "endFrame": 2981,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 99.66666666666667,
+        "end": 119.06666666666666,
+        "cues": [
+          {
+            "text": "Tipificar el límite inferior.",
+            "start": 99.66666666666667,
+            "end": 101.4,
+            "startFrame": 2990,
+            "endFrame": 3042,
+            "words": 4,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "a15d95f4768b69fe939938ca0371eb6c8a194a5758f51e344b68518f0245ee98"
+          },
+          {
+            "text": "Sigma es la desviación típica, 8.",
+            "start": 101.7,
+            "end": 104.3,
+            "startFrame": 3051,
+            "endFrame": 3129,
+            "words": 6,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "5422a39ab6b65e6b453bab6800e0a2ecfbbc08fbc77695d9aa9fb6a2cf51d302"
+          },
+          {
+            "text": "Divido el desplazamiento entre sigma para obtener zeta, medido en desviaciones. zeta subíndice abre paréntesis, inferior, cierra paréntesis igual a abre paréntesis, menos 16, cierra paréntesis dividido entre abre paréntesis, 8, cierra paréntesis.",
+            "start": 104.6,
+            "end": 118.76666666666667,
+            "startFrame": 3138,
+            "endFrame": 3563,
+            "words": 33,
+            "sceneIndex": 8,
+            "cueIndex": 2,
+            "sourceCueSha256": "16c1ebebf376d18c73a264656c811df0b744d51de743de4c7e2114cae3f83e23"
+          }
+        ]
+      },
+      {
+        "start": 119.06666666666666,
+        "end": 124.53333333333333,
+        "cues": [
+          {
+            "text": "zeta subíndice abre paréntesis, inferior, cierra paréntesis queda igual a menos 2.",
+            "start": 119.06666666666666,
+            "end": 124.23333333333333,
+            "startFrame": 3572,
+            "endFrame": 3727,
+            "words": 12,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "99f25adc618098218fa49a23cb4be89c5534a9bfd751fd136483b163d213a3bd"
+          }
+        ]
+      },
+      {
+        "start": 124.53333333333333,
+        "end": 134.6,
+        "cues": [
+          {
+            "text": "Phi es la probabilidad acumulada a la izquierda en la normal estándar.",
+            "start": 124.53333333333333,
+            "end": 129.7,
+            "startFrame": 3736,
+            "endFrame": 3891,
+            "words": 12,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "fd4504d86dd5e4fc0aee7d154ac953ae4cbbfabae9f36c3b989f7e1e0d8f01a3"
+          },
+          {
+            "text": "Su inversa recibe una probabilidad y devuelve el umbral estandarizado.",
+            "start": 130,
+            "end": 134.3,
+            "startFrame": 3900,
+            "endFrame": 4029,
+            "words": 10,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "44c6072506ac74645a0419bbe86a45de26011be51d24ec6e7aae11145267e898"
+          }
+        ]
+      },
+      {
+        "start": 134.6,
+        "end": 155.66666666666666,
+        "cues": [
+          {
+            "text": "Consultar la acumulada inferior.",
+            "start": 134.6,
+            "end": 136.33333333333334,
+            "startFrame": 4038,
+            "endFrame": 4090,
+            "words": 4,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "0a15dcf1805340cfd5b9778c52089f1f01b98d4ba0131bcf8025b49f7481917d"
+          },
+          {
+            "text": "Phi, la acumulada de la normal estándar, mide el área a la izquierda de zeta.",
+            "start": 136.63333333333333,
+            "end": 143.06666666666666,
+            "startFrame": 4099,
+            "endFrame": 4292,
+            "words": 15,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "99f52a16d5e2dba4fed35c5b28bda5b6e983443e150fb1744410edb186d0d15d"
+          },
+          {
+            "text": "Phi abre paréntesis, menos 2, cierra paréntesis igual a 0 coma 0 2 2 7 5 0 1 3 1 9 4 8 1 7 9 2 1.",
+            "start": 143.36666666666667,
+            "end": 155.36666666666667,
+            "startFrame": 4301,
+            "endFrame": 4661,
+            "words": 28,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "7bcf3d9a4e30c236daef91de7120fa2db3a805606f5402dbad866a420f404bd2"
+          }
+        ]
+      },
+      {
+        "start": 155.66666666666666,
+        "end": 167.33333333333334,
+        "cues": [
+          {
+            "text": "Centrar el límite superior.",
+            "start": 155.66666666666666,
+            "end": 157.4,
+            "startFrame": 4670,
+            "endFrame": 4722,
+            "words": 4,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "79cf7d2090a09b921af3dbf964b0c5cb2831d68e749db3f780f3d5d2df82c979"
+          },
+          {
+            "text": "Mu es la media, 106.",
+            "start": 157.7,
+            "end": 159.86666666666667,
+            "startFrame": 4731,
+            "endFrame": 4796,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "11be87599a1c7c2352e605e761291de7159dbad67f00e2a0218413cba538d513"
+          },
+          {
+            "text": "Resto la media al umbral 120 para medir su desplazamiento. 120 menos 106 igual a 14.",
+            "start": 160.16666666666666,
+            "end": 167.03333333333333,
+            "startFrame": 4805,
+            "endFrame": 5011,
+            "words": 16,
+            "sceneIndex": 12,
+            "cueIndex": 2,
+            "sourceCueSha256": "dd51d2c654ec347b29d445bc5b7f30924ef0ce4ac8f5507d11980b729925da51"
+          }
+        ]
+      },
+      {
+        "start": 167.33333333333334,
+        "end": 186.3,
+        "cues": [
+          {
+            "text": "Tipificar el límite superior.",
+            "start": 167.33333333333334,
+            "end": 169.06666666666666,
+            "startFrame": 5020,
+            "endFrame": 5072,
+            "words": 4,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "7011a8679c942b4210eb42ec82f4a14e28bd0ff701a261e971ea95b1b9bca84c"
+          },
+          {
+            "text": "Sigma es la desviación típica, 8.",
+            "start": 169.36666666666667,
+            "end": 171.96666666666667,
+            "startFrame": 5081,
+            "endFrame": 5159,
+            "words": 6,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "5422a39ab6b65e6b453bab6800e0a2ecfbbc08fbc77695d9aa9fb6a2cf51d302"
+          },
+          {
+            "text": "Divido el desplazamiento entre sigma para obtener zeta, medido en desviaciones. zeta subíndice abre paréntesis, superior, cierra paréntesis igual a abre paréntesis, 14, cierra paréntesis dividido entre abre paréntesis, 8, cierra paréntesis.",
+            "start": 172.26666666666668,
+            "end": 186,
+            "startFrame": 5168,
+            "endFrame": 5580,
+            "words": 32,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "691f5c26e73cc891f43c6a6d39f31eadb2ee56cdf8aa0c6510bfcc594c042e4b"
+          }
+        ]
+      },
+      {
+        "start": 186.3,
+        "end": 192.6,
+        "cues": [
+          {
+            "text": "zeta subíndice abre paréntesis, superior, cierra paréntesis queda igual a 1 coma 7 5.",
+            "start": 186.3,
+            "end": 192.3,
+            "startFrame": 5589,
+            "endFrame": 5769,
+            "words": 14,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "6cc1f9e14b4dece50c0cfa6b3a4812d6765864fc23eac0e7dfd39d7c5f5afbd1"
+          }
+        ]
+      },
+      {
+        "start": 192.6,
+        "end": 214.1,
+        "cues": [
+          {
+            "text": "Consultar la acumulada superior.",
+            "start": 192.6,
+            "end": 194.33333333333334,
+            "startFrame": 5778,
+            "endFrame": 5830,
+            "words": 4,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "af9a160f1437a6ce285ae50ed94d2d9c7bc07b74d4ca3c193354f471f7dc6827"
+          },
+          {
+            "text": "Phi, la acumulada de la normal estándar, mide el área a la izquierda de zeta.",
+            "start": 194.63333333333333,
+            "end": 201.06666666666666,
+            "startFrame": 5839,
+            "endFrame": 6032,
+            "words": 15,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "99f52a16d5e2dba4fed35c5b28bda5b6e983443e150fb1744410edb186d0d15d"
+          },
+          {
+            "text": "Phi abre paréntesis, 1 coma 7 5, cierra paréntesis igual a 0 coma 9 5 9 9 4 0 8 4 3 1 3 6 1 8 2 9.",
+            "start": 201.36666666666667,
+            "end": 213.8,
+            "startFrame": 6041,
+            "endFrame": 6414,
+            "words": 29,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "adaf7b22fec9d65ba913741bc0589da99739d9d5004e1ddedf7b8852654d8921"
+          }
+        ]
+      },
+      {
+        "start": 214.1,
+        "end": 238.3,
+        "cues": [
+          {
+            "text": "Restar las áreas.",
+            "start": 214.1,
+            "end": 215.4,
+            "startFrame": 6423,
+            "endFrame": 6462,
+            "words": 3,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "0d46e78e6ee60267eb99e19801ee3a84020201bac582928bea31511c666f051c"
+          },
+          {
+            "text": "El área entre límites es la acumulada superior menos la inferior. pe igual a 0 coma 9 5 9 9 4 0 8 4 3 1 3 6 1 8 2 9 menos 0 coma 0 2 2 7 5 0 1 3 1 9 4 8 1 7 9 2 1.",
+            "start": 215.7,
+            "end": 238,
+            "startFrame": 6471,
+            "endFrame": 7140,
+            "words": 52,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "7f50e2bfef0892decc3d0fdd300d179ea7f97bd3df728a9f8d8d56ff09aec9d1"
+          }
+        ]
+      },
+      {
+        "start": 238.3,
+        "end": 248.03333333333333,
+        "cues": [
+          {
+            "text": "pe queda igual a 0 coma 9 3 7 1 9 0 7 1 1 1 8 8 0 0 3 7.",
+            "start": 238.3,
+            "end": 247.73333333333332,
+            "startFrame": 7149,
+            "endFrame": 7432,
+            "words": 22,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "26d366502bb754d0dddb618e4a5344aa6f8cc89b1a650087cec83dc5c8b00634"
+          }
+        ]
+      },
+      {
+        "start": 248.03333333333333,
+        "end": 253.8,
+        "cues": [
+          {
+            "text": "Expresar el porcentaje.",
+            "start": 248.03333333333333,
+            "end": 249.33333333333334,
+            "startFrame": 7441,
+            "endFrame": 7480,
+            "words": 3,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "1156aa3a527a8f5895b5ac5b90d6ea687c5861a3a9d4f962eeff6e6e29a3c5af"
+          },
+          {
+            "text": "Multiplico la probabilidad por cien para responder en porcentaje.",
+            "start": 249.63333333333333,
+            "end": 253.5,
+            "startFrame": 7489,
+            "endFrame": 7605,
+            "words": 9,
+            "sceneIndex": 18,
+            "cueIndex": 1,
+            "sourceCueSha256": "4144882c38d28e99b90c91e9fb7d095d25b492eb2929cde3a539abea885d2933"
+          }
+        ]
+      },
+      {
+        "start": 253.8,
+        "end": 269.73333333333335,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 9 3 7 1 9 0 7 probabilidad entre 0 y 1.",
+            "start": 253.8,
+            "end": 261.1,
+            "startFrame": 7614,
+            "endFrame": 7833,
+            "words": 17,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "75077aad785fb5972532c24200c72359c80b3ef32b18a106c6d4973f2ba2153f"
+          },
+          {
+            "text": "Los extremos aislados no alteran un área normal.",
+            "start": 261.4,
+            "end": 264.8333333333333,
+            "startFrame": 7842,
+            "endFrame": 7945,
+            "words": 8,
+            "sceneIndex": 19,
+            "cueIndex": 1,
+            "sourceCueSha256": "777dcb498a53bbe3731406cbb10d4fc8b3ef02bb048caeee938b425b563c31ee"
+          },
+          {
+            "text": "Puedes responder con la proporción o con un porcentaje explícito.",
+            "start": 265.1333333333333,
+            "end": 269.43333333333334,
+            "startFrame": 7954,
+            "endFrame": 8083,
+            "words": 10,
+            "sceneIndex": 19,
+            "cueIndex": 2,
+            "sourceCueSha256": "cd489abd12dcf97915d1a2b73bf38767a6bdf7d97d102b3c97b81fd9dfd5bcc3"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
