@@ -219556,6 +219556,488 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-ejemplo-funciones-cdf-table-1--cdf": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-ejemplo-funciones-cdf-table-1--cdf",
+      "kind": "exercise",
+      "title": "¿Cuánto vale F(3), la probabilidad de como máximo tres brotes?",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "a9035ae9c9ca236e4971c393578e7ed97ba9962c4982e151e596910f338101d4",
+      "src": "videos/ejercicio-ejemplo-funciones-cdf-table-1--cdf/video.mp4",
+      "poster": "videos/ejercicio-ejemplo-funciones-cdf-table-1--cdf/poster.jpg",
+      "duration": 179.43333333333334,
+      "frames": 5383,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "7f9538d9e961051c7c2d2fa745fea2f0303ad4fc5c500b9724ab7a6edf15d6fe",
+      "videoSha256": "a0bf59ee39ceab206e96e737b2aee626e57c173f6b1c812a4aa9bf773ded0563",
+      "posterSha256": "0998c6fc9aaee2355e5259389ee5d9c04bd049a3a8fffb45a7bffa28c4d13c49",
+      "canonicalSha256": "76917fd76f1509d536f3b5492c755eaa3b08374317ea50ac3e92574bbbada719",
+      "inputHash": "be7d31289733b38459b67f2f9dd5b7b32a14c803a49beacbfbbeaa72013ff7af",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "541a6fae8359af5473fe86b116b933e88495c64187afa98ff823dadd0de0349c",
+        "canonicalSha256": "76917fd76f1509d536f3b5492c755eaa3b08374317ea50ac3e92574bbbada719",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Tabla y probabilidad acumulada"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "b2d286daf95ca0164da7cf7cdbb915bb3033cc8f36cefd5c363c0bd0a25d9467",
+        "transcriptSha256": "7f9538d9e961051c7c2d2fa745fea2f0303ad4fc5c500b9724ab7a6edf15d6fe",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-ejemplo-funciones-cdf-table-1",
+      "transcript": {
+        "id": "ejercicio-ejemplo-funciones-cdf-table-1--cdf",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "76917fd76f1509d536f3b5492c755eaa3b08374317ea50ac3e92574bbbada719",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 179.43333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 16.8,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Cuánto vale efe mayúscula abre paréntesis, 3, cierra paréntesis , la probabilidad de como máximo tres brotes?",
+                "start": 2.9,
+                "end": 10.2,
+                "startFrame": 87,
+                "endFrame": 306,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "92c7540a860e4af1defe0ef83b574b226fb7c1decdfadea2a7ac006ad07cf83b"
+              },
+              {
+                "text": "Queremos acumular todos los valores que no superan el límite, incluyendo el propio límite.",
+                "start": 10.5,
+                "end": 16.5,
+                "startFrame": 315,
+                "endFrame": 495,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "767aca68bb9c80a66892d09d40e7439676bbc6b5a22e387a9292de77ac4e75e4"
+              }
+            ]
+          },
+          {
+            "start": 16.8,
+            "end": 39.6,
+            "cues": [
+              {
+                "text": "La tabla da masas en los únicos valores posibles.",
+                "start": 16.8,
+                "end": 20.666666666666668,
+                "startFrame": 504,
+                "endFrame": 620,
+                "words": 9,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "092429dff7e8d1906d8bd8e7a879a62ab76b4dacedb80d7f350351f97433067d"
+              },
+              {
+                "text": "La acumulada efe de te minúscula suma los valores menores o iguales que te minúscula y está definida aunque te minúscula no pueda observarse.",
+                "start": 20.966666666666665,
+                "end": 31.266666666666666,
+                "startFrame": 629,
+                "endFrame": 938,
+                "words": 24,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "05a38161aacc8d0723d243a97473397632003cf3ce4cd3213cd12ee56da08e46"
+              },
+              {
+                "text": "Entre dos valores posibles no aparece masa nueva; en un valor con masa la acumulada da un salto.",
+                "start": 31.566666666666666,
+                "end": 39.3,
+                "startFrame": 947,
+                "endFrame": 1179,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "84181094e9c7a68a4c00e86654a2aa5c2004e9b9c46a7cfdd717b29cc65acf95"
+              }
+            ]
+          },
+          {
+            "start": 39.6,
+            "end": 54.06666666666667,
+            "cues": [
+              {
+                "text": "probabilidad de equis igual a 0 igual a 0 coma 1; probabilidad de equis igual a 2 igual a 0 coma 4; probabilidad de equis igual a 5 igual a 0 coma 5.",
+                "start": 39.6,
+                "end": 53.766666666666666,
+                "startFrame": 1188,
+                "endFrame": 1613,
+                "words": 33,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "b4a8a95a40493a99e3aa5ae0aaea6f94e2efa093e0cc18fc1fdc72902bbcb11b"
+              }
+            ]
+          },
+          {
+            "start": 54.06666666666667,
+            "end": 63.8,
+            "cues": [
+              {
+                "text": "efe mayúscula abre paréntesis, te minúscula, cierra paréntesis significa probabilidad de que equis sea menor o igual que el umbral te minúscula.",
+                "start": 54.06666666666667,
+                "end": 63.5,
+                "startFrame": 1622,
+                "endFrame": 1905,
+                "words": 22,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8367b52c8d17d371dfb500178279b2999040f1fbaa4577dee7f69988e1d3f494"
+              }
+            ]
+          },
+          {
+            "start": 63.8,
+            "end": 67.96666666666667,
+            "cues": [
+              {
+                "text": "Las tres probabilidades son no negativas y suman uno.",
+                "start": 63.8,
+                "end": 67.66666666666667,
+                "startFrame": 1914,
+                "endFrame": 2030,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "b66fa9e317d23b7969741680117eb55df4e9606bd05b8e8b98b9a46a1ef33e98"
+              }
+            ]
+          },
+          {
+            "start": 67.96666666666667,
+            "end": 73.86666666666666,
+            "cues": [
+              {
+                "text": "Un umbral puede estar entre dos valores posibles sin ser una observación posible.",
+                "start": 67.96666666666667,
+                "end": 73.56666666666666,
+                "startFrame": 2039,
+                "endFrame": 2207,
+                "words": 13,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "427ff2c777a4311e4d144903573ff3b9a836da23e9843d414f74e9c8d458844c"
+              }
+            ]
+          },
+          {
+            "start": 73.86666666666666,
+            "end": 88.63333333333334,
+            "cues": [
+              {
+                "text": "Incluye las filas de cero y dos; excluye la de cinco.",
+                "start": 73.86666666666666,
+                "end": 78.6,
+                "startFrame": 2216,
+                "endFrame": 2358,
+                "words": 11,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "471d94c0ec4c12b22053b0a00132cd4e3ceaa9b9a2b7c4140ecaa0e93422290f"
+              },
+              {
+                "text": "La acumulada se construye con el soporte completo; si se pide por tramos, el valor de comprobación no sustituye a la función.",
+                "start": 78.9,
+                "end": 88.33333333333333,
+                "startFrame": 2367,
+                "endFrame": 2650,
+                "words": 22,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "4c08b7b74977152a2081312f8e1ef52915a7ea634dea359d4f84c5545e08e1ef"
+              }
+            ]
+          },
+          {
+            "start": 88.63333333333334,
+            "end": 125.6,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 88.63333333333334,
+                "end": 91.63333333333334,
+                "startFrame": 2659,
+                "endFrame": 2749,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "¿Cuánto vale efe mayúscula abre paréntesis, 3, cierra paréntesis , la probabilidad de como máximo tres brotes?",
+                "start": 91.93333333333334,
+                "end": 99.23333333333333,
+                "startFrame": 2758,
+                "endFrame": 2977,
+                "words": 17,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "ff9932117cba27a93d46ed95a9817ecba44a31bea33d5b26795255d5c1b527d2"
+              },
+              {
+                "text": "La tabla da la probabilidad de cada valor exacto.",
+                "start": 99.53333333333333,
+                "end": 103.4,
+                "startFrame": 2986,
+                "endFrame": 3102,
+                "words": 9,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "91fb6ceb71cb11662b7bdc4281a4eb50130d5722b13b137a85b1d5b2be83e6b7"
+              },
+              {
+                "text": "La acumulada efe mayúscula abre paréntesis, te minúscula, cierra paréntesis pregunta por todos los valores menores o iguales que te minúscula.",
+                "start": 103.7,
+                "end": 112.7,
+                "startFrame": 3111,
+                "endFrame": 3381,
+                "words": 21,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "04d13eb8cd80b9b54256909ec3cad7b055ff0a2ed5f7677f69a27481c08a52e5"
+              },
+              {
+                "text": "Elegimos esas filas y sumamos sus probabilidades, sin sumar las etiquetas de las filas.",
+                "start": 113,
+                "end": 119,
+                "startFrame": 3390,
+                "endFrame": 3570,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "2499d935aa74d4fd60ce370038c032e4937f321bb51c8060664e9ffd946fe791"
+              },
+              {
+                "text": "Para este apartado: Incluye las filas de cero y dos; excluye la de cinco.",
+                "start": 119.3,
+                "end": 125.3,
+                "startFrame": 3579,
+                "endFrame": 3759,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "cd3bb4d4eec618c8bdfd31d977599d471b0f13ec8f4b997af3bb3f171b91c473"
+              }
+            ]
+          },
+          {
+            "start": 125.6,
+            "end": 133.4,
+            "cues": [
+              {
+                "text": "Elegir las filas.",
+                "start": 125.6,
+                "end": 126.9,
+                "startFrame": 3768,
+                "endFrame": 3807,
+                "words": 3,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "3c9510e93eb0843da43ee18db80820c0579cd922a9ba65694949c3e7486d48aa"
+              },
+              {
+                "text": "Cero y dos son menores o iguales que tres.",
+                "start": 127.2,
+                "end": 131.06666666666666,
+                "startFrame": 3816,
+                "endFrame": 3932,
+                "words": 9,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "58de55a80eafbd4f9be236f9b56310e69419a4db6bf67f67e0516414dc5abe68"
+              },
+              {
+                "text": "Cinco no lo es.",
+                "start": 131.36666666666667,
+                "end": 133.1,
+                "startFrame": 3941,
+                "endFrame": 3993,
+                "words": 4,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "9cf39286fa0c18a053afeb53f5ba987bebe4f739830e62f3b421dd61bfbbb3fc"
+              }
+            ]
+          },
+          {
+            "start": 133.4,
+            "end": 146.43333333333334,
+            "cues": [
+              {
+                "text": "Sumar sus probabilidades. 0 coma 1 más 0 coma 4 igual a 0 coma 5.",
+                "start": 133.4,
+                "end": 139.83333333333334,
+                "startFrame": 4002,
+                "endFrame": 4195,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "489ba6f61872944791a0f4b681cfb8cbc568b91cd9630444632030688d44ddc3"
+              },
+              {
+                "text": "No añadimos una fila para tres: no es un resultado posible en este modelo.",
+                "start": 140.13333333333333,
+                "end": 146.13333333333333,
+                "startFrame": 4204,
+                "endFrame": 4384,
+                "words": 14,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "5a4f91043f00c07875ca5f226bbd2a894ffb97869fd7ab59d33bd248674b7061"
+              }
+            ]
+          },
+          {
+            "start": 146.43333333333334,
+            "end": 167.53333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 146.43333333333334,
+                "end": 147.73333333333332,
+                "startFrame": 4393,
+                "endFrame": 4432,
+                "words": 3,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 148.03333333333333,
+                "end": 152.76666666666668,
+                "startFrame": 4441,
+                "endFrame": 4583,
+                "words": 11,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "50c6c5d1bad50ec3564511709f31053bd27c5f4d66de128356fc0db0e8e1f1cf"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso. efe mayúscula abre paréntesis, 3, cierra paréntesis está definida aunque nunca se observen exactamente tres brotes.",
+                "start": 153.06666666666666,
+                "end": 167.23333333333332,
+                "startFrame": 4592,
+                "endFrame": 5017,
+                "words": 33,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "1ee8d2497252246c3df6cc873731c8fa7591bd0215e2376cc5dcde7b5e05d64d"
+              }
+            ]
+          },
+          {
+            "start": 167.53333333333333,
+            "end": 179.43333333333334,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1. efe mayúscula abre paréntesis, 3, cierra paréntesis está definida aunque nunca se observen exactamente tres brotes.",
+                "start": 167.53333333333333,
+                "end": 179.13333333333333,
+                "startFrame": 5026,
+                "endFrame": 5374,
+                "words": 27,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "d33de033a8384815a7a4457c59a9858ac2563b9bbcb0c2b3df60d5a042a870d4"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
