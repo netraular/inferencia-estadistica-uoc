@@ -1,0 +1,521 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-practica-gamma-gamma--mean",
+  "kind": "exercise",
+  "title": "Calcula E[T].",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "c9b68e43b9b334c62b91ac1d9b612f74b23954b23660b9027b1e54d1ac98dc9b",
+  "src": "videos/ejercicio-practica-gamma-gamma--mean/video.mp4",
+  "poster": "videos/ejercicio-practica-gamma-gamma--mean/poster.jpg",
+  "duration": 154.8,
+  "frames": 4644,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "a13cd09398a87e17faa91ef0cec420047e3213ac8eaa13cfb096742868ed844e",
+  "videoSha256": "8c0cce0eca45066dce3fe2ce4cee9a0238a7d21fea35a75c8c4b97e7ee650e77",
+  "posterSha256": "eb4362c86a78acdc8074fa9fef42e047d8bbd9c91203d3a8daae2ed12b5a65c3",
+  "canonicalSha256": "3df1c445a204f43bdbd2a32e16ab1962deeb51a2ed63264a95507fc7685fa3e8",
+  "inputHash": "ef7c1f71f34ce1dafeab24af1c178e2ca10b9682cb22f1be4752361b104fcd88",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "826b4e68c8e45c9232191f166271d072f0731e5928b6af013ccd0358cdbb5336",
+    "canonicalSha256": "3df1c445a204f43bdbd2a32e16ab1962deeb51a2ed63264a95507fc7685fa3e8",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Gamma"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "14968a5bc3eee61b94b0298e2558f7bec3fa7c77164b913f68967b5c28841d92",
+    "transcriptSha256": "a13cd09398a87e17faa91ef0cec420047e3213ac8eaa13cfb096742868ed844e",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-practica-gamma-gamma",
+  "transcript": {
+    "id": "ejercicio-practica-gamma-gamma--mean",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "3df1c445a204f43bdbd2a32e16ab1962deeb51a2ed63264a95507fc7685fa3e8",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 154.8,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.1,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula esperanza de te.",
+            "start": 2.9,
+            "end": 4.633333333333334,
+            "startFrame": 87,
+            "endFrame": 139,
+            "words": 4,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "d63f608fc70701aa46996af510076543b16e6ef98c671a5e5f492040a45e2822"
+          },
+          {
+            "text": "Queremos el valor medio teórico al repetir el experimento.",
+            "start": 4.933333333333334,
+            "end": 8.8,
+            "startFrame": 148,
+            "endFrame": 264,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "c280f28e2f367a4ad24d1ce432dfbfa0fb914ab0448da1d15426333e7bdad1be"
+          }
+        ]
+      },
+      {
+        "start": 9.1,
+        "end": 31.066666666666666,
+        "cues": [
+          {
+            "text": "La espera es una suma de etapas exponenciales independientes con escala común.",
+            "start": 9.1,
+            "end": 14.266666666666667,
+            "startFrame": 273,
+            "endFrame": 428,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "6dc2a43fef6da56a0e7b2cd00845c75c8c6cd0a6b27256e51397eddb2a70c549"
+          },
+          {
+            "text": "La forma ka cuenta las etapas de este ejemplo; la escala alfa es el inverso de la tasa.",
+            "start": 14.566666666666666,
+            "end": 22.3,
+            "startFrame": 437,
+            "endFrame": 669,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "b17a07efe5cda71dd2afd2f87a433217c97fe0e9a36a227841b27c24e7549e21"
+          },
+          {
+            "text": "La media es forma por escala, y la acumulada integra la densidad, no su altura en el tiempo pedido.",
+            "start": 22.6,
+            "end": 30.766666666666666,
+            "startFrame": 678,
+            "endFrame": 923,
+            "words": 19,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "017429a0f7869132c3c95bd3c758d71cd46a89b709cd91a0545e6483e7d98a7f"
+          }
+        ]
+      },
+      {
+        "start": 31.066666666666666,
+        "end": 42.96666666666667,
+        "cues": [
+          {
+            "text": "Forma ka igual a 4; escala alfa igual a 4 minutos; tasa erre igual a 1 dividido entre alfa igual a 0 coma 2 5 por minuto.",
+            "start": 31.066666666666666,
+            "end": 42.666666666666664,
+            "startFrame": 932,
+            "endFrame": 1280,
+            "words": 27,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "3cb713ca7315ebda83e8c4f16a479ff87ea0617e29bc60ec974667177f96f24c"
+          }
+        ]
+      },
+      {
+        "start": 42.96666666666667,
+        "end": 49.266666666666666,
+        "cues": [
+          {
+            "text": "Umbral te minúscula igual a 16 minutos; soporte te mayor o igual que 0.",
+            "start": 42.96666666666667,
+            "end": 48.96666666666667,
+            "startFrame": 1289,
+            "endFrame": 1469,
+            "words": 14,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "3b0b43481d877e28d04ac6caa456593e012f5b09c30561a7d326e06b5c302ec9"
+          }
+        ]
+      },
+      {
+        "start": 49.266666666666666,
+        "end": 54.3,
+        "cues": [
+          {
+            "text": "Proceso de Poisson homogéneo y esperas independientes con la misma tasa.",
+            "start": 49.266666666666666,
+            "end": 54,
+            "startFrame": 1478,
+            "endFrame": 1620,
+            "words": 11,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "90194eae5d9c926dda1a731c4f571b914210445c0ddaa7dc35bda42c086ed000"
+          }
+        ]
+      },
+      {
+        "start": 54.3,
+        "end": 62.63333333333333,
+        "cues": [
+          {
+            "text": "Como en la teoría, ka es forma y alfa escala.",
+            "start": 54.3,
+            "end": 58.6,
+            "startFrame": 1629,
+            "endFrame": 1758,
+            "words": 10,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "b9629e01c230d26b93128b44fc36d9b2aad664dbd6f5881eefcbc6ac1383b169"
+          },
+          {
+            "text": "La biblioteca recibe forma y escala, no tasa.",
+            "start": 58.9,
+            "end": 62.333333333333336,
+            "startFrame": 1767,
+            "endFrame": 1870,
+            "words": 8,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "704194e144809e90d417644e2cf1749873a9503ae67a3e29740af623140ade8e"
+          }
+        ]
+      },
+      {
+        "start": 62.63333333333333,
+        "end": 74.83333333333333,
+        "cues": [
+          {
+            "text": "La media es forma dividida por tasa, o forma por escala.",
+            "start": 62.63333333333333,
+            "end": 67.36666666666666,
+            "startFrame": 1879,
+            "endFrame": 2021,
+            "words": 11,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "eab9e44062ad99680ea51d79dc324ced7a434db371bc7148e86de24aecee8145"
+          },
+          {
+            "text": "Ponderamos los valores por su probabilidad; el resultado no tiene por qué ser un valor observable.",
+            "start": 67.66666666666667,
+            "end": 74.53333333333333,
+            "startFrame": 2030,
+            "endFrame": 2236,
+            "words": 16,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "ea59a871dbd75a27d5adf7bd7d47051619185dc470dc62f72c4555f44f54b9bf"
+          }
+        ]
+      },
+      {
+        "start": 74.83333333333333,
+        "end": 103.7,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 74.83333333333333,
+            "end": 77.83333333333333,
+            "startFrame": 2245,
+            "endFrame": 2335,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula esperanza de te.",
+            "start": 78.13333333333334,
+            "end": 79.86666666666666,
+            "startFrame": 2344,
+            "endFrame": 2396,
+            "words": 4,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "d6e1ac12904250cb61db8c005505b293b07cd7a54bd67376790825db9c3b941b"
+          },
+          {
+            "text": "Una suma de etapas exponenciales independientes con escala común es gamma.",
+            "start": 80.16666666666667,
+            "end": 84.9,
+            "startFrame": 2405,
+            "endFrame": 2547,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "958268c7db89c0cfe481114361aaa9dc6c60c9216165830a13fc4d2a5b8e5335"
+          },
+          {
+            "text": "La forma cuenta las etapas enteras en este ejemplo; la escala estira sus tiempos.",
+            "start": 85.2,
+            "end": 91.2,
+            "startFrame": 2556,
+            "endFrame": 2736,
+            "words": 14,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "63b3e0ed132608121ac644a64d1b8cc0a85746a7b49b373478c29fd2f62b48fc"
+          },
+          {
+            "text": "Una probabilidad requiere integrar la densidad mediante la acumulada, no evaluar su altura.",
+            "start": 91.5,
+            "end": 97.1,
+            "startFrame": 2745,
+            "endFrame": 2913,
+            "words": 13,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "ee621440b9c542399d12dc109cd93e2002ea1fc87f7ff5714b78c3cb0f053cff"
+          },
+          {
+            "text": "Para este apartado: La media es forma dividida por tasa, o forma por escala.",
+            "start": 97.4,
+            "end": 103.4,
+            "startFrame": 2922,
+            "endFrame": 3102,
+            "words": 14,
+            "sceneIndex": 7,
+            "cueIndex": 5,
+            "sourceCueSha256": "77a9dd75b9c58b1eb7ab6bf3d0cd402cc141a3fe66b1df83c28b5994551337a7"
+          }
+        ]
+      },
+      {
+        "start": 103.7,
+        "end": 114.2,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 103.7,
+            "end": 105.86666666666666,
+            "startFrame": 3111,
+            "endFrame": 3176,
+            "words": 5,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 106.16666666666667,
+            "end": 113.9,
+            "startFrame": 3185,
+            "endFrame": 3417,
+            "words": 18,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 114.2,
+        "end": 125.56666666666666,
+        "cues": [
+          {
+            "text": "Sumar las medias de las esperas.",
+            "start": 114.2,
+            "end": 116.8,
+            "startFrame": 3426,
+            "endFrame": 3504,
+            "words": 6,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "b5b3471d96439aa4e3dbacf42848bc49d443e4be9fa2a7f1899e4cfc5976b8bc"
+          },
+          {
+            "text": "Cada espera tiene media 4 minutos; 4 por 4 igual a 16. esperanza de te igual a ka alfa.",
+            "start": 117.1,
+            "end": 125.26666666666667,
+            "startFrame": 3513,
+            "endFrame": 3758,
+            "words": 19,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "5682c6b24cc80e091bc5d190f02ecc62c08593f4bc72de22aa6db3c4399e84f2"
+          }
+        ]
+      },
+      {
+        "start": 125.56666666666666,
+        "end": 130.16666666666666,
+        "cues": [
+          {
+            "text": "esperanza de te queda igual a ka dividido entre erre.",
+            "start": 125.56666666666666,
+            "end": 129.86666666666667,
+            "startFrame": 3767,
+            "endFrame": 3896,
+            "words": 10,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "328c4a9d3a3e13e857b8d6db67cacb3df36a7bfb97a863f746f247194120ec67"
+          }
+        ]
+      },
+      {
+        "start": 130.16666666666666,
+        "end": 146.43333333333334,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 130.16666666666666,
+            "end": 131.46666666666667,
+            "startFrame": 3905,
+            "endFrame": 3944,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 16 minutos.",
+            "start": 131.76666666666668,
+            "end": 133.93333333333334,
+            "startFrame": 3953,
+            "endFrame": 4018,
+            "words": 5,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "b82d2d0ea26cceb205005583dfa424a61fc972e194347782f2a8de4e7fde5fbc"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 134.23333333333332,
+            "end": 140.23333333333332,
+            "startFrame": 4027,
+            "endFrame": 4207,
+            "words": 14,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "La tasa tiene unidades inversas al tiempo; la escala tiene unidades de tiempo.",
+            "start": 140.53333333333333,
+            "end": 146.13333333333333,
+            "startFrame": 4216,
+            "endFrame": 4384,
+            "words": 13,
+            "sceneIndex": 11,
+            "cueIndex": 3,
+            "sourceCueSha256": "832ef04b97a8d980df2969b373a662e0b36c0646181ad1aaaa75ad1b767d2ff7"
+          }
+        ]
+      },
+      {
+        "start": 146.43333333333334,
+        "end": 154.8,
+        "cues": [
+          {
+            "text": "El resultado es 16 minutos.",
+            "start": 146.43333333333334,
+            "end": 148.6,
+            "startFrame": 4393,
+            "endFrame": 4458,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "a09048adace481e0f15a3c4f899692c8504fedf1200b58fd64d62b1bb070d48e"
+          },
+          {
+            "text": "La tasa tiene unidades inversas al tiempo; la escala tiene unidades de tiempo.",
+            "start": 148.9,
+            "end": 154.5,
+            "startFrame": 4467,
+            "endFrame": 4635,
+            "words": 13,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "22be4834ca3e992c9851e982880ffb790cd34bf42a6dc7614bb2134b7f794098"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
