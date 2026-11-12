@@ -1,0 +1,482 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-ejemplo-axiomas-events-1--union",
+  "kind": "exercise",
+  "title": "¿Cuál es P(A ∪ B), la probabilidad de presentar al menos un marcador?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "2c474771a18174c8e75858219f0d3e39b2b57afaa3874ebabc8a2b1285c276ef",
+  "src": "videos/ejercicio-ejemplo-axiomas-events-1--union/video.mp4",
+  "poster": "videos/ejercicio-ejemplo-axiomas-events-1--union/poster.jpg",
+  "duration": 149.5,
+  "frames": 4485,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "7aa964c06c1c23a88b2325d40a3dd532a0190d2bd35c22ee009bb269dfa71631",
+  "videoSha256": "aa8ed73317ce7170a7ddac64282b4f107074954a1b0d9777839d232f40de6bd8",
+  "posterSha256": "e023da252a6cdd2e7b98cdb2e69fb8810a3ca5dc7ba5e10e7baedb0f97b60802",
+  "canonicalSha256": "92e5b892f7edf5b92566bb75fec5a65dd88fee12d920b6ea8ac5dbbfc4e28bc6",
+  "inputHash": "463c2015de86f5b7cecf1d9de75137437e0f805df892a313756edee36ad18622",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "25e3a068ffb4b407dc6eb2df8a56fe872dfffde674b81b72c5f622fc966d026f",
+    "canonicalSha256": "92e5b892f7edf5b92566bb75fec5a65dd88fee12d920b6ea8ac5dbbfc4e28bc6",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Sucesos"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "cacf92ae7c87606ed148e6879358911de958d4501fb59063ebda67a36ff04ef7",
+    "transcriptSha256": "7aa964c06c1c23a88b2325d40a3dd532a0190d2bd35c22ee009bb269dfa71631",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-ejemplo-axiomas-events-1",
+  "transcript": {
+    "id": "ejercicio-ejemplo-axiomas-events-1--union",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "92e5b892f7edf5b92566bb75fec5a65dd88fee12d920b6ea8ac5dbbfc4e28bc6",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 149.5,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 15.533333333333333,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?",
+            "start": 2.9,
+            "end": 9.333333333333334,
+            "startFrame": 87,
+            "endFrame": 280,
+            "words": 15,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "eed80b43b86a0d2fbe893795b079f94e163eb7b56375df52bcd81a2f17050e11"
+          },
+          {
+            "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos.",
+            "start": 9.633333333333333,
+            "end": 15.233333333333333,
+            "startFrame": 289,
+            "endFrame": 457,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "50beca251fcc8649f036d6257be6910c3e335c9c2674595809f2438d6ff5c15b"
+          }
+        ]
+      },
+      {
+        "start": 15.533333333333333,
+        "end": 32.333333333333336,
+        "cues": [
+          {
+            "text": "A y be nombran sucesos, es decir, conjuntos de resultados.",
+            "start": 15.533333333333333,
+            "end": 19.833333333333332,
+            "startFrame": 466,
+            "endFrame": 595,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "25b27320e78d11ecd9917531e8f71b0cd173dc51daccc5891ef5937a764f7a5f"
+          },
+          {
+            "text": "La unión admite cualquiera de ellos; la intersección exige ambos.",
+            "start": 20.133333333333333,
+            "end": 24.433333333333334,
+            "startFrame": 604,
+            "endFrame": 733,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "9de818e8657efa3a8660a1dcad15c141bdf23dfec03ebe6c8be417bd4d19826c"
+          },
+          {
+            "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be.",
+            "start": 24.733333333333334,
+            "end": 32.03333333333333,
+            "startFrame": 742,
+            "endFrame": 961,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "cd9df43d58a903b669cfc674208fb3f3d8856d269c85ad443a29858684fb2bb1"
+          }
+        ]
+      },
+      {
+        "start": 32.333333333333336,
+        "end": 34.36666666666667,
+        "cues": [
+          {
+            "text": "160 células en total.",
+            "start": 32.333333333333336,
+            "end": 34.06666666666667,
+            "startFrame": 970,
+            "endFrame": 1022,
+            "words": 4,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "3b354ff801248b3cf8b0bac1400ab43a3fc58d212306a4a650474a75fd48df6b"
+          }
+        ]
+      },
+      {
+        "start": 34.36666666666667,
+        "end": 39.4,
+        "cues": [
+          {
+            "text": "96 presentan A, 48 presentan be y 32 presentan ambos marcadores.",
+            "start": 34.36666666666667,
+            "end": 39.1,
+            "startFrame": 1031,
+            "endFrame": 1173,
+            "words": 11,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "fe7a8eaff873c4df68956e1685a725afa3dc5cfc2b3f0accc9eabe1fc55a972d"
+          }
+        ]
+      },
+      {
+        "start": 39.4,
+        "end": 43.56666666666667,
+        "cues": [
+          {
+            "text": "Cada célula tiene la misma probabilidad de ser elegida.",
+            "start": 39.4,
+            "end": 43.266666666666666,
+            "startFrame": 1182,
+            "endFrame": 1298,
+            "words": 9,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "b772fe94764fd78ec6a11191260d73c0043fffc3542b64f2f886ca1cb770fc30"
+          }
+        ]
+      },
+      {
+        "start": 43.56666666666667,
+        "end": 48.6,
+        "cues": [
+          {
+            "text": "Los grupos A y be pueden solaparse; no se supone independencia.",
+            "start": 43.56666666666667,
+            "end": 48.3,
+            "startFrame": 1307,
+            "endFrame": 1449,
+            "words": 11,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "5427528d496c4fafb0e4c322d457add274348a524598abdecc9e2a54a697bba4"
+          }
+        ]
+      },
+      {
+        "start": 48.6,
+        "end": 60.36666666666667,
+        "cues": [
+          {
+            "text": "Las células con ambos marcadores se han contado dos veces.",
+            "start": 48.6,
+            "end": 52.9,
+            "startFrame": 1458,
+            "endFrame": 1587,
+            "words": 10,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "f981cb1ba30c5137d0f72a903e00dcde70920efa13e72533d8b02b53086a6d18"
+          },
+          {
+            "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez.",
+            "start": 53.2,
+            "end": 60.06666666666667,
+            "startFrame": 1596,
+            "endFrame": 1802,
+            "words": 16,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "2b6bf283ea391a15e0f8280fb9b9020b76a556b71104ab9d120b412b4b9013df"
+          }
+        ]
+      },
+      {
+        "start": 60.36666666666667,
+        "end": 89.8,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 60.36666666666667,
+            "end": 63.36666666666667,
+            "startFrame": 1811,
+            "endFrame": 1901,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuál es probabilidad de A unión be, la probabilidad de presentar al menos un marcador?",
+            "start": 63.666666666666664,
+            "end": 70.1,
+            "startFrame": 1910,
+            "endFrame": 2103,
+            "words": 15,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "3557795ffc44561fd4c3eb262d70a88a788e84d85fa50ee5c9e835913e75607e"
+          },
+          {
+            "text": "El experimento elige una célula equiprobablemente.",
+            "start": 70.4,
+            "end": 73,
+            "startFrame": 2112,
+            "endFrame": 2190,
+            "words": 6,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "1b504f7521ab994791434d32720bdecc2cb878ed8008853b5747eca15b24cc84"
+          },
+          {
+            "text": "Por eso podemos convertir recuentos en probabilidades dividiendo entre el total; antes hay que corregir los solapamientos para contar cada célula una sola vez.",
+            "start": 73.3,
+            "end": 83.6,
+            "startFrame": 2199,
+            "endFrame": 2508,
+            "words": 24,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "185c84486b8594cb1c34e13c8a67066a2b334706e4bc021b78067345eae78d63"
+          },
+          {
+            "text": "Para este apartado: Las células con ambos marcadores se han contado dos veces.",
+            "start": 83.9,
+            "end": 89.5,
+            "startFrame": 2517,
+            "endFrame": 2685,
+            "words": 13,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "fa32eb29bcd399605ab37763e47aeec15d946f887bc4f37ac8aacf2511562c60"
+          }
+        ]
+      },
+      {
+        "start": 89.8,
+        "end": 113.13333333333334,
+        "cues": [
+          {
+            "text": "Contar sin duplicar.",
+            "start": 89.8,
+            "end": 91.1,
+            "startFrame": 2694,
+            "endFrame": 2733,
+            "words": 3,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "4eb50e2dc48a25a0aab6976ebf5bd6f7eb2d6c6a145e8d6adf6dc583910fa49f"
+          },
+          {
+            "text": "Sumamos los dos grupos y restamos el solapamiento: 96 más 48 menos 32 igual a 112. sabiendo que A unión be sabiendo que igual a valor absoluto de abre paréntesis, A, cierra paréntesis más valor absoluto de abre paréntesis, be, cierra paréntesis - sabiendo que A intersección be sabiendo que.",
+            "start": 91.4,
+            "end": 112.83333333333333,
+            "startFrame": 2742,
+            "endFrame": 3385,
+            "words": 50,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "bad2af9757d597c7af057402b21f187731941adcfe7826b791dc8d3435274af6"
+          }
+        ]
+      },
+      {
+        "start": 113.13333333333334,
+        "end": 121.03333333333333,
+        "cues": [
+          {
+            "text": "Convertir en probabilidad.",
+            "start": 113.13333333333334,
+            "end": 114.43333333333334,
+            "startFrame": 3394,
+            "endFrame": 3433,
+            "words": 3,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "1a7901692694fb5a40d1d5224cff0918198465ef8ccfcc983fdfb6cfc41cf0c3"
+          },
+          {
+            "text": "Dividimos por todas las células: 112 dividido entre 160 igual a 0 coma 7.",
+            "start": 114.73333333333333,
+            "end": 120.73333333333333,
+            "startFrame": 3442,
+            "endFrame": 3622,
+            "words": 14,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "6b5932d3827f7667b5a1ed250f6094b2e9520fea07a93f90ddfb75b226b07ec8"
+          }
+        ]
+      },
+      {
+        "start": 121.03333333333333,
+        "end": 139.86666666666667,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 121.03333333333333,
+            "end": 122.33333333333333,
+            "startFrame": 3631,
+            "endFrame": 3670,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1.",
+            "start": 122.63333333333334,
+            "end": 127.36666666666666,
+            "startFrame": 3679,
+            "endFrame": 3821,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "1de62b23db444809e9c0b93eb63c8d79f07f455b17d16f8ed7c5af517b0681d0"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 127.66666666666667,
+            "end": 134.96666666666667,
+            "startFrame": 3830,
+            "endFrame": 4049,
+            "words": 17,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+          },
+          {
+            "text": "Incluye las células con uno o con los dos marcadores.",
+            "start": 135.26666666666668,
+            "end": 139.56666666666666,
+            "startFrame": 4058,
+            "endFrame": 4187,
+            "words": 10,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "61d098bbda0b051e25cbe339ae80e5263166d2ce20ce80d021283fc2ebe26b61"
+          }
+        ]
+      },
+      {
+        "start": 139.86666666666667,
+        "end": 149.5,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 7 probabilidad entre 0 y 1.",
+            "start": 139.86666666666667,
+            "end": 144.6,
+            "startFrame": 4196,
+            "endFrame": 4338,
+            "words": 11,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "41771fa048bf592910ea53a9ebc5d2213d4a3555bc961fc1d380903608821b8c"
+          },
+          {
+            "text": "Incluye las células con uno o con los dos marcadores.",
+            "start": 144.9,
+            "end": 149.2,
+            "startFrame": 4347,
+            "endFrame": 4476,
+            "words": 10,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "65f5cb3fe4c35f988409b627e5ff8f90538056ea8081b98e8c9ab4161599f293"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
