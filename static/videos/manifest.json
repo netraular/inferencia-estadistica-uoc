@@ -215497,6 +215497,609 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-capstone-pec1-2--a-tail": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-capstone-pec1-2--a-tail",
+      "kind": "exercise",
+      "title": "En el mismo apartado a, calcula la probabilidad de al menos tres colonias.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "dd8ee633eda5fbe4225512f3d54d9c551d9c8a6927a780d23e21d18189f4c3a6",
+      "src": "videos/ejercicio-capstone-pec1-2--a-tail/video.mp4",
+      "poster": "videos/ejercicio-capstone-pec1-2--a-tail/poster.jpg",
+      "duration": 240.86666666666667,
+      "frames": 7226,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "51f38b762e6bb6ab34e944ce8f9577b4e57794c857ba1f214f95f60f3248d6c2",
+      "videoSha256": "c48583b8bfaf1e6435299bf29fc07da123a5e3c87380c514614b28347b4aa60d",
+      "posterSha256": "da997c6f9d368195fdb362b42f9a2bbb2caa8bbb2694ed273444750a89ce52da",
+      "canonicalSha256": "b7b42bca91ac6bc6e6e2551683cd0bd6623f54adc6b896a686a3e9a4c95340eb",
+      "inputHash": "4f02d1e278af1d206ff21bcb753b9367be504952e2e1dd730db11902c2aed7ee",
+      "rendererSha256": "f60bdaea42c0b2348ef394c62f21f1a126993417da93a07d18378a0cec6ba9d5",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "f9221610fc5719325d03cb67c4ab267336b7a142ff608c8c518ae4473bc9c676",
+        "canonicalSha256": "b7b42bca91ac6bc6e6e2551683cd0bd6623f54adc6b896a686a3e9a4c95340eb",
+        "source": {
+          "file": "UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "url": "/materiales/UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "kind": "statement",
+          "title": "UOC MU IE 2026-27 S1: PEC 1, enunciado",
+          "number": "2"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "c3f4bd1e2609c7070b072cc3c41655b88027d4cfd84fc22ed95f232e55b0d9f9",
+        "transcriptSha256": "51f38b762e6bb6ab34e944ce8f9577b4e57794c857ba1f214f95f60f3248d6c2",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "dccd16566333a29a8e95f56f4a53e20f936629e330bbe15aa9c465e5a98d77db",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-capstone-pec1-2",
+      "transcript": {
+        "id": "ejercicio-capstone-pec1-2--a-tail",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "b7b42bca91ac6bc6e6e2551683cd0bd6623f54adc6b896a686a3e9a4c95340eb",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 240.86666666666667,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 12.1,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "En el mismo apartado a, calcula la probabilidad de al menos tres colonias.",
+                "start": 2.9,
+                "end": 8.5,
+                "startFrame": 87,
+                "endFrame": 255,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "dafa7bcd5acd32dfc1b6353ef739dcf4b568729e5fd6e276581c5a8e588725a4"
+              },
+              {
+                "text": "Queremos alcanzar o superar el recuento indicado.",
+                "start": 8.8,
+                "end": 11.8,
+                "startFrame": 264,
+                "endFrame": 354,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "538fb0b64c953ec20193d35ac98f83f9a97e9de2a492b20102eb5444216f4545"
+              }
+            ]
+          },
+          {
+            "start": 12.1,
+            "end": 34.5,
+            "cues": [
+              {
+                "text": "equis cuenta eventos en una exposición fija y lambda es su recuento esperado en esa exposición, no una probabilidad.",
+                "start": 12.1,
+                "end": 20.266666666666666,
+                "startFrame": 363,
+                "endFrame": 608,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "a993244c4393e65194e8e0c7bb9febac29b21dd2f4053edf6116522e527adfc4"
+              },
+              {
+                "text": "La masa de ka combina e elevado a menos lambda, lambda a ka y ka factorial; el factorial corrige las permutaciones de los mismos eventos.",
+                "start": 20.566666666666666,
+                "end": 31.3,
+                "startFrame": 617,
+                "endFrame": 939,
+                "words": 25,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "342ed2159c1346fa50af1e172cad92fadcfa3b85d9e9e92a2f0c363ec8f62f94"
+              },
+              {
+                "text": "La exponencial normaliza todas las masas.",
+                "start": 31.6,
+                "end": 34.2,
+                "startFrame": 948,
+                "endFrame": 1026,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "9155a939092b4b4da0d10a07d78a451e70139382ab3d6853f74618fa04c6a588"
+              }
+            ]
+          },
+          {
+            "start": 34.5,
+            "end": 39.96666666666667,
+            "cues": [
+              {
+                "text": "Una placa tiene un recuento Poisson con media 1 coma 5 colonias.",
+                "start": 34.5,
+                "end": 39.666666666666664,
+                "startFrame": 1035,
+                "endFrame": 1190,
+                "words": 12,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "eeb9d0873548588380b0da978bf86531346212fcfba92948c63aace288edb5fd"
+              }
+            ]
+          },
+          {
+            "start": 39.96666666666667,
+            "end": 45.86666666666667,
+            "cues": [
+              {
+                "text": "En be se suman cinco placas independientes, todas con media 1 coma 5.",
+                "start": 39.96666666666667,
+                "end": 45.56666666666667,
+                "startFrame": 1199,
+                "endFrame": 1367,
+                "words": 13,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "ff23a832da1c179f445adc3789a1ed3c1734942e288956ec1f7abb892d49ccd0"
+              }
+            ]
+          },
+          {
+            "start": 45.86666666666667,
+            "end": 59.8,
+            "cues": [
+              {
+                "text": "En ce la incubadora I1 tiene probabilidad previa 0 coma 6 y media 1 coma 5; I2 tiene previa 0 coma 4 y media 3.",
+                "start": 45.86666666666667,
+                "end": 56.6,
+                "startFrame": 1376,
+                "endFrame": 1698,
+                "words": 25,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "d39af8d5890d131c60632f7b6a230addfbe1e219920ef393dfa7e09959679e88"
+              },
+              {
+                "text": "La primera placa tiene cuatro colonias.",
+                "start": 56.9,
+                "end": 59.5,
+                "startFrame": 1707,
+                "endFrame": 1785,
+                "words": 6,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "78f1edfad7f7fa2a87c4f48c6a28a7fc32a7c77d704509eb5664658796072e35"
+              }
+            ]
+          },
+          {
+            "start": 59.8,
+            "end": 65.26666666666667,
+            "cues": [
+              {
+                "text": "La siguiente placa procede de la misma incubadora desconocida que la primera.",
+                "start": 59.8,
+                "end": 64.96666666666667,
+                "startFrame": 1794,
+                "endFrame": 1949,
+                "words": 12,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "08c341b7171708e95aed0844e0a4b0bf576c1bd12647677bb4080bedb0d38c56"
+              }
+            ]
+          },
+          {
+            "start": 65.26666666666667,
+            "end": 73.3,
+            "cues": [
+              {
+                "text": "Las medias Poisson corresponden a una placa con la misma exposición, no a una tasa sin unidad experimental.",
+                "start": 65.26666666666667,
+                "end": 73,
+                "startFrame": 1958,
+                "endFrame": 2190,
+                "words": 18,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "733f9458d916cbd256e3a455a6ed6f694505d5ceba82532a404f10c91cb4cf15"
+              }
+            ]
+          },
+          {
+            "start": 73.3,
+            "end": 81.76666666666667,
+            "cues": [
+              {
+                "text": "En ce los recuentos son independientes condicionados a la incubadora; no se supone independencia marginal tras ocultar su identidad.",
+                "start": 73.3,
+                "end": 81.46666666666667,
+                "startFrame": 2199,
+                "endFrame": 2444,
+                "words": 19,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "50430a4bf4b64f8f2be00675d3c1f6bcd0048fc41ac96dc504a189def8167ab0"
+              }
+            ]
+          },
+          {
+            "start": 81.76666666666667,
+            "end": 97.26666666666667,
+            "cues": [
+              {
+                "text": "Al menos tres incluye tres, cuatro y todos los enteros superiores.",
+                "start": 81.76666666666667,
+                "end": 86.5,
+                "startFrame": 2453,
+                "endFrame": 2595,
+                "words": 11,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "5f5447d75ae79a5697248d8587bb7173463b00a0e692e12dd4dfe10eb560927a"
+              },
+              {
+                "text": "Su complemento contiene cero, uno y dos.",
+                "start": 86.8,
+                "end": 89.8,
+                "startFrame": 2604,
+                "endFrame": 2694,
+                "words": 7,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "139b9b3d7c56476f58a04847d11c3e75ce0ae4eedc5b1c6a27e1d1ee79bd202b"
+              },
+              {
+                "text": "El complemento acaba un entero antes del límite para no perder la masa del propio límite.",
+                "start": 90.1,
+                "end": 96.96666666666667,
+                "startFrame": 2703,
+                "endFrame": 2909,
+                "words": 16,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "19a6d6ed56ac6f798a3d87703e7cf8afdb924b05974dac39d61323e440ed7bd7"
+              }
+            ]
+          },
+          {
+            "start": 97.26666666666667,
+            "end": 117.06666666666666,
+            "cues": [
+              {
+                "text": "Traducir al menos tres.",
+                "start": 97.26666666666667,
+                "end": 99,
+                "startFrame": 2918,
+                "endFrame": 2970,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "ac75a282d1fc8b51d0b27eb4900e0f3f31413b3436aef2336ee7e91969fa07f2"
+              },
+              {
+                "text": "Al menos tres incluye tres, cuatro y todos los enteros superiores.",
+                "start": 99.3,
+                "end": 104.03333333333333,
+                "startFrame": 2979,
+                "endFrame": 3121,
+                "words": 11,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "7be3bf53e390ccdc539c282c6b88b5dd4f641450f716b8e717cb5d4a68eaecd5"
+              },
+              {
+                "text": "Su complemento contiene cero, uno y dos. probabilidad de ene mayúscula mayor o igual que 3 igual a 1 menos probabilidad de ene mayúscula menor o igual que 2.",
+                "start": 104.33333333333333,
+                "end": 116.76666666666667,
+                "startFrame": 3130,
+                "endFrame": 3503,
+                "words": 29,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "81ff96be20e6784c13f48c1ccc737d0029bcec6eafee7aa68438dd4b6debd24d"
+              }
+            ]
+          },
+          {
+            "start": 117.06666666666666,
+            "end": 133.56666666666666,
+            "cues": [
+              {
+                "text": "La masa de cero.",
+                "start": 117.06666666666666,
+                "end": 118.8,
+                "startFrame": 3512,
+                "endFrame": 3564,
+                "words": 4,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "d1de64a02c1c126de07ce2437f2866d1e25fca8926fe3b9f9dde87004e8d7010"
+              },
+              {
+                "text": "Empiezo con la probabilidad de ninguna colonia, sin redondear para los pasos siguientes. probabilidad de ene mayúscula igual a 0 igual a e elevado a abre paréntesis, menos 1 coma 5, cierra paréntesis.",
+                "start": 119.1,
+                "end": 133.26666666666668,
+                "startFrame": 3573,
+                "endFrame": 3998,
+                "words": 33,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "17ed3f4ebc15f92b1512fd368a4b765a0cbfb2f8e40548511be903dd91fd8215"
+              }
+            ]
+          },
+          {
+            "start": 133.56666666666666,
+            "end": 150.93333333333334,
+            "cues": [
+              {
+                "text": "La masa de una colonia.",
+                "start": 133.56666666666666,
+                "end": 135.73333333333332,
+                "startFrame": 4007,
+                "endFrame": 4072,
+                "words": 5,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "95307b02eafada7ef5ac3d1429d8254614e0c7b9ea1c285ad31c9b4698cf6f7b"
+              },
+              {
+                "text": "La masa de uno multiplica la exponencial por la media. probabilidad de ene mayúscula igual a 1 igual a 1 coma 5 por e elevado a abre paréntesis, menos 1 coma 5, cierra paréntesis.",
+                "start": 136.03333333333333,
+                "end": 150.63333333333333,
+                "startFrame": 4081,
+                "endFrame": 4519,
+                "words": 34,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "56fde4e3e78ec2606cec46a5cd74cdc0af16aab1a899707609f6f4cd79cc545d"
+              }
+            ]
+          },
+          {
+            "start": 150.93333333333334,
+            "end": 158.83333333333334,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 150.93333333333334,
+                "end": 154.36666666666667,
+                "startFrame": 4528,
+                "endFrame": 4631,
+                "words": 8,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 154.66666666666666,
+                "end": 158.53333333333333,
+                "startFrame": 4640,
+                "endFrame": 4756,
+                "words": 9,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 158.83333333333334,
+            "end": 180.9,
+            "cues": [
+              {
+                "text": "La masa de dos colonias.",
+                "start": 158.83333333333334,
+                "end": 161,
+                "startFrame": 4765,
+                "endFrame": 4830,
+                "words": 5,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "fcc036bc5e30f5a3601929d1fca88b9e93694fd894727e42c0e7fea0dcaeb0f9"
+              },
+              {
+                "text": "Divido la potencia de lambda por dos factorial. probabilidad de ene mayúscula igual a 2 igual a abre paréntesis, 1 coma 5 al cuadrado , cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis e elevado a abre paréntesis, menos 1 coma 5, cierra paréntesis.",
+                "start": 161.3,
+                "end": 180.6,
+                "startFrame": 4839,
+                "endFrame": 5418,
+                "words": 45,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "60bd11f1c242bb4ed233dd2b3eafa1f301a6177648f1a6305b0885b8f6c99aa5"
+              }
+            ]
+          },
+          {
+            "start": 180.9,
+            "end": 208.86666666666667,
+            "cues": [
+              {
+                "text": "Sumar el complemento.",
+                "start": 180.9,
+                "end": 182.2,
+                "startFrame": 5427,
+                "endFrame": 5466,
+                "words": 3,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "225342ff391fca7f8322cb8495dbda9a1163950b26e98c843c24d3707d552db9"
+              },
+              {
+                "text": "Las tres masas son disjuntas.",
+                "start": 182.5,
+                "end": 184.66666666666666,
+                "startFrame": 5475,
+                "endFrame": 5540,
+                "words": 5,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "33e884567f2de5b1acf5f5cabf88783b2faf157d106dccb355b0965f3ed1582d"
+              },
+              {
+                "text": "Las sumo, sin incluir el tres. probabilidad de ene mayúscula menor o igual que 2 igual a 0 coma 2 2 3 1 3 0 1 6 0 1 más 0 coma 3 3 4 6 9 5 2 4 0 2 más 0 coma 2 5 1 0 2 1 4 3 0 2.",
+                "start": 184.96666666666667,
+                "end": 208.56666666666666,
+                "startFrame": 5549,
+                "endFrame": 6257,
+                "words": 55,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "c20bb03c67bbcf12d9679d94d153f2a8a1604c9c97fc967aa2304b95324814fc"
+              }
+            ]
+          },
+          {
+            "start": 208.86666666666667,
+            "end": 228.23333333333332,
+            "cues": [
+              {
+                "text": "Conservar la cola pedida.",
+                "start": 208.86666666666667,
+                "end": 210.6,
+                "startFrame": 6266,
+                "endFrame": 6318,
+                "words": 4,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "2985d4ccbeb9ec942a0fce6c91e028234f9fc44e05198ccff0e8591df66f1cce"
+              },
+              {
+                "text": "Resto la acumulada de dos a uno.",
+                "start": 210.9,
+                "end": 213.9,
+                "startFrame": 6327,
+                "endFrame": 6417,
+                "words": 7,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "b9f5f518326138a7ada329ec234cd2d86acf02e4c48c844716526943466a0797"
+              },
+              {
+                "text": "La respuesta es aproximadamente cero coma uno nueve uno. probabilidad de ene mayúscula mayor o igual que 3 igual a 0 coma 1 9 1 1 5 3 1 6 9 5.",
+                "start": 214.2,
+                "end": 227.93333333333334,
+                "startFrame": 6426,
+                "endFrame": 6838,
+                "words": 32,
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "sourceCueSha256": "e163293d2633034fb3d62492c81f3865c972261eff9e1fb452e09e1a4b775bd8"
+              }
+            ]
+          },
+          {
+            "start": 228.23333333333332,
+            "end": 240.86666666666667,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 1 9 1 1 5 3 2 probabilidad entre 0 y 1.",
+                "start": 228.23333333333332,
+                "end": 235.53333333333333,
+                "startFrame": 6847,
+                "endFrame": 7066,
+                "words": 17,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "de9d7363543e8997df2632df876521ff679106f9d79e7269df1ea8124a81b343"
+              },
+              {
+                "text": "Al menos tres no significa exactamente tres, ni más de tres.",
+                "start": 235.83333333333334,
+                "end": 240.56666666666666,
+                "startFrame": 7075,
+                "endFrame": 7217,
+                "words": 11,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "38b1324cf4f7f8296cab849fe6c4e8d1720f01785f099b032b32d8c4029d1f2b"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
