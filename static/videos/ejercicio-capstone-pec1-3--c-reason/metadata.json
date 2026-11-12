@@ -1,0 +1,742 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-capstone-pec1-3--c-reason",
+  "kind": "exercise",
+  "title": "Justifica por qué X e Y no son independientes, pero X y V=Y-0,8X sí lo son.",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "d6ff2abc63e9502b6a2272586c956938cc785d5a9dbdf111614136eebddcd00a",
+  "src": "videos/ejercicio-capstone-pec1-3--c-reason/video.mp4",
+  "poster": "videos/ejercicio-capstone-pec1-3--c-reason/poster.jpg",
+  "duration": 291.3666666666667,
+  "frames": 8741,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "9adedfa4aab90c9d2b4734033065667f5aa3782a3ee25f7a9d3aa0e1937af982",
+  "videoSha256": "bf53f7981a8d5da53d294244eebed2c776f0e54e581bd625a4d16249c8599870",
+  "posterSha256": "50d09605619e7fe73f1f84bab3cf9461591401d9fb67947d767b3996f884445e",
+  "canonicalSha256": "1127538e0f2eaf3a104450b0e52f04c1431da54747b092c1ad64c229920c742a",
+  "inputHash": "fdd1157ac806cae694636379422977e07496130a6e8ebef376987457b8bb8bb9",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "16c43cef040a07aa63515ef178367cbe1c3a48581a54766aa682e09090b03210",
+    "canonicalSha256": "1127538e0f2eaf3a104450b0e52f04c1431da54747b092c1ad64c229920c742a",
+    "source": {
+      "file": "UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+      "url": "/materiales/UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+      "kind": "statement",
+      "title": "UOC MU IE 2026-27 S1: PEC 1, enunciado",
+      "number": "3"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "b3f0ad1537f6dbcc1c7e0cc79a16f3ef5511eda976a0d4a873035e6ac088a766",
+    "transcriptSha256": "9adedfa4aab90c9d2b4734033065667f5aa3782a3ee25f7a9d3aa0e1937af982",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-capstone-pec1-3",
+  "transcript": {
+    "id": "ejercicio-capstone-pec1-3--c-reason",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "1127538e0f2eaf3a104450b0e52f04c1431da54747b092c1ad64c229920c742a",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 291.3666666666667,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 19.4,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Justifica por qué equis e i griega no son independientes, pero equis y uve igual a i griega menos 0 coma 8 por equis sí lo son.",
+            "start": 2.9,
+            "end": 14.5,
+            "startFrame": 87,
+            "endFrame": 435,
+            "words": 27,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "daeca6502b925b1bb12ab84ebe8dcceea52599f55d0d14c3fab786823573466f"
+          },
+          {
+            "text": "Queremos justificar dependencia e independencia bajo el modelo normal conjunto.",
+            "start": 14.8,
+            "end": 19.1,
+            "startFrame": 444,
+            "endFrame": 573,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "86a35d1b38cdae66095f9de3ec1a102a4d82b5c3c846568ec98a50f5f73a9779"
+          }
+        ]
+      },
+      {
+        "start": 19.4,
+        "end": 37.46666666666667,
+        "cues": [
+          {
+            "text": "Una transformación lineal conserva la normalidad conjunta.",
+            "start": 19.4,
+            "end": 22.4,
+            "startFrame": 582,
+            "endFrame": 672,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "106c2010705ee5468696fdc078ce6b265b60effe95024ea563bb31560411b6f5"
+          },
+          {
+            "text": "La esperanza de la diferencia resta medias, pero su varianza suma varianzas y resta dos veces la covarianza.",
+            "start": 22.7,
+            "end": 30.433333333333334,
+            "startFrame": 681,
+            "endFrame": 913,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "9c1b330bfdc50cdd982c5de4995b95856a3f28b8487a5f52197f9732be5c91db"
+          },
+          {
+            "text": "Para independencia, anular covarianza basta únicamente gracias a la normalidad conjunta de las variables transformadas.",
+            "start": 30.733333333333334,
+            "end": 37.166666666666664,
+            "startFrame": 922,
+            "endFrame": 1115,
+            "words": 15,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "2a32591ac6ab013d23c259788f5eda23de9a111a22d0f8752170facbb89e5019"
+          }
+        ]
+      },
+      {
+        "start": 37.46666666666667,
+        "end": 49.36666666666667,
+        "cues": [
+          {
+            "text": "abre paréntesis, equis,i griega, cierra paréntesis tiene distribución normal bivariante: media de equis 100, desviación 15; media de i griega 120, desviación 20; correlación 0 coma 6.",
+            "start": 37.46666666666667,
+            "end": 49.06666666666667,
+            "startFrame": 1124,
+            "endFrame": 1472,
+            "words": 27,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "c2b544988a71429351b0260a93ddf245dd4438d1bdc3d2007005920030884e8f"
+          }
+        ]
+      },
+      {
+        "start": 49.36666666666667,
+        "end": 59.53333333333333,
+        "cues": [
+          {
+            "text": "En a se observa equis igual a 110 y se pide la distribución condicional de i griega y su probabilidad de superar 140.",
+            "start": 49.36666666666667,
+            "end": 59.233333333333334,
+            "startFrame": 1481,
+            "endFrame": 1777,
+            "words": 23,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "41a9a0ea8c686ed0dd272f5976468a0c3aa3fcb3b59d97e5c7a44a6e973e39fc"
+          }
+        ]
+      },
+      {
+        "start": 59.53333333333333,
+        "end": 76.86666666666666,
+        "cues": [
+          {
+            "text": "En de se toman 10 individuos; las categorías son i griega menor que 100, 100 menor o igual que i griega menor o igual que 140 e i griega mayor que 140.",
+            "start": 59.53333333333333,
+            "end": 73.26666666666667,
+            "startFrame": 1786,
+            "endFrame": 2198,
+            "words": 32,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "535ab7a972499d9d7f83f997e7c07e83a9b56e69a45fe0d6006ea8bf22168d54"
+          },
+          {
+            "text": "Se piden exactamente 2, 6 y 2.",
+            "start": 73.56666666666666,
+            "end": 76.56666666666666,
+            "startFrame": 2207,
+            "endFrame": 2297,
+            "words": 7,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "5b7beea16a69adfa703c9e7a45544145005433d2fd3ff2622912fb0ecfe06731"
+          }
+        ]
+      },
+      {
+        "start": 76.86666666666666,
+        "end": 86.6,
+        "cues": [
+          {
+            "text": "En e se toman 400 individuos y se aproxima la probabilidad de que al menos 75 tengan i griega mayor que 140.",
+            "start": 76.86666666666666,
+            "end": 86.3,
+            "startFrame": 2306,
+            "endFrame": 2589,
+            "words": 22,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "40d3cdce1502f302bc5ea9a80115afaac6eb433b95c0093d73a5628f3fb26239"
+          }
+        ]
+      },
+      {
+        "start": 86.6,
+        "end": 98.9,
+        "cues": [
+          {
+            "text": "La notación normal de media abre paréntesis, media, cierra paréntesis y varianza abre paréntesis, varianza, cierra paréntesis usa varianza como segundo parámetro; el diagrama normal usa desviación típica.",
+            "start": 86.6,
+            "end": 98.6,
+            "startFrame": 2598,
+            "endFrame": 2958,
+            "words": 28,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "7dc3546496f7dcac97b879887d43977e9287662ca2e9cb1655d11c23686d4e5f"
+          }
+        ]
+      },
+      {
+        "start": 98.9,
+        "end": 109.5,
+        "cues": [
+          {
+            "text": "Las unidades de equis e i griega son las unidades de medida del enunciado; no se atribuyen unidades físicas que no se han especificado.",
+            "start": 98.9,
+            "end": 109.2,
+            "startFrame": 2967,
+            "endFrame": 3276,
+            "words": 24,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a28ccb3c10c3d2d5a041b27fe2ee1d78830822428dd639d591c2cf0eb89f52e7"
+          }
+        ]
+      },
+      {
+        "start": 109.5,
+        "end": 120.43333333333334,
+        "cues": [
+          {
+            "text": "Las muestras de de y e contienen individuos independientes e identicamente distribuidos.",
+            "start": 109.5,
+            "end": 114.66666666666667,
+            "startFrame": 3285,
+            "endFrame": 3440,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "3c62aaa6b4abc74bb34c7b2ad3bca7c41ee47d8b7d2b4dba4d46324f71b521fa"
+          },
+          {
+            "text": "Las medidas equis e i griega del mismo individuo no son independientes.",
+            "start": 114.96666666666667,
+            "end": 120.13333333333334,
+            "startFrame": 3449,
+            "endFrame": 3604,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "b06080496a9c3a9159557e8e479ac48016ae02c0c1371250330d14e451c37f58"
+          }
+        ]
+      },
+      {
+        "start": 120.43333333333334,
+        "end": 134.76666666666668,
+        "cues": [
+          {
+            "text": "i griega tiene densidad continua: incluir los extremos 100 y 140 no cambia las probabilidades.",
+            "start": 120.43333333333334,
+            "end": 126.86666666666666,
+            "startFrame": 3613,
+            "endFrame": 3806,
+            "words": 15,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "6fe68898fe79e5fc21c320e70d78e28b11cc07a624d34d9fd6ef589c1ccb7e45"
+          },
+          {
+            "text": "Condicionar a equis igual a equis minúscula se entiende mediante la distribución condicional regular de la normal.",
+            "start": 127.16666666666667,
+            "end": 134.46666666666667,
+            "startFrame": 3815,
+            "endFrame": 4034,
+            "words": 17,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "56ffc923edbe216144b0a5ccd07d050907add7af4e00d211c402f791ae6bf681"
+          }
+        ]
+      },
+      {
+        "start": 134.76666666666668,
+        "end": 153.7,
+        "cues": [
+          {
+            "text": "La independencia con segundos momentos finitos implicaría covarianza cero.",
+            "start": 134.76666666666668,
+            "end": 138.63333333333333,
+            "startFrame": 4043,
+            "endFrame": 4159,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "8298d947a2cebf37287873bf8e24517754d823e980536cd2a5858096c2d3c698"
+          },
+          {
+            "text": "Ciento ochenta es distinto de cero, así que equis e i griega son dependientes.",
+            "start": 138.93333333333334,
+            "end": 144.93333333333334,
+            "startFrame": 4168,
+            "endFrame": 4348,
+            "words": 14,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "390f197e463198fc93ecb57862c214b24a5786b641609cbb6476f83a4e7dce8b"
+          },
+          {
+            "text": "La covarianza no nula refuta independencia; la covarianza nula la demuestra aquí por normalidad conjunta, no como regla universal.",
+            "start": 145.23333333333332,
+            "end": 153.4,
+            "startFrame": 4357,
+            "endFrame": 4602,
+            "words": 19,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "64547698aff78c1a5651f5179102af67162333e5ea7f955547d019b1252f9e9c"
+          }
+        ]
+      },
+      {
+        "start": 153.7,
+        "end": 171.23333333333332,
+        "cues": [
+          {
+            "text": "Descartar independencia original.",
+            "start": 153.7,
+            "end": 155,
+            "startFrame": 4611,
+            "endFrame": 4650,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "534b67ac780c091a953dd7fc3ad86158fbede60000e5c9192617671ca00d6123"
+          },
+          {
+            "text": "La independencia con segundos momentos finitos implicaría covarianza cero.",
+            "start": 155.3,
+            "end": 159.16666666666666,
+            "startFrame": 4659,
+            "endFrame": 4775,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "3dd264d76bc61741006b10d102fc3a3ade942ab1c63ac0572c4024ff7e97a001"
+          },
+          {
+            "text": "Ciento ochenta es distinto de cero, así que equis e i griega son dependientes.",
+            "start": 159.46666666666667,
+            "end": 165.46666666666667,
+            "startFrame": 4784,
+            "endFrame": 4964,
+            "words": 14,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "256742c551634607981be9d74802ed7cb412623beafd22c4e8c12e8be20fd5b4"
+          },
+          {
+            "text": "Cov abre paréntesis, equis y i griega, cierra paréntesis igual a 180.",
+            "start": 165.76666666666668,
+            "end": 170.93333333333334,
+            "startFrame": 4973,
+            "endFrame": 5128,
+            "words": 12,
+            "sceneIndex": 11,
+            "cueIndex": 3,
+            "sourceCueSha256": "a35bac4dd03420310225693176c91edcbb1f76bacd9c2850877b27714ee74e54"
+          }
+        ]
+      },
+      {
+        "start": 171.23333333333332,
+        "end": 185.46666666666667,
+        "cues": [
+          {
+            "text": "Conservar normalidad conjunta.",
+            "start": 171.23333333333332,
+            "end": 172.53333333333333,
+            "startFrame": 5137,
+            "endFrame": 5176,
+            "words": 3,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "f39aed6b1de7387c570ba0f043e97294bf421489daf5f9702d159995dc004c29"
+          },
+          {
+            "text": "El par equis y uve es una transformación lineal del par normal equis e i griega.",
+            "start": 172.83333333333334,
+            "end": 179.7,
+            "startFrame": 5185,
+            "endFrame": 5391,
+            "words": 16,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "1a24766a1d313843c01ebfd2e3765e9ead176b52abf30eb8426864a8c55a9987"
+          },
+          {
+            "text": "Por tanto, también es conjuntamente normal, no solo normal en cada marginal.",
+            "start": 180,
+            "end": 185.16666666666666,
+            "startFrame": 5400,
+            "endFrame": 5555,
+            "words": 12,
+            "sceneIndex": 12,
+            "cueIndex": 2,
+            "sourceCueSha256": "1b06cc643a4df108d3ff253c2b3c6925bddd0b25be25cadab96c342b799facda"
+          }
+        ]
+      },
+      {
+        "start": 185.46666666666667,
+        "end": 197.56666666666666,
+        "cues": [
+          {
+            "text": "Verificar covarianza nula.",
+            "start": 185.46666666666667,
+            "end": 186.76666666666668,
+            "startFrame": 5564,
+            "endFrame": 5603,
+            "words": 3,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "355cfde618cb6ae089db85f545bf01316b698b7b5f684ecf044b44e0066f59ff"
+          },
+          {
+            "text": "Con la pendiente encontrada la covarianza entre equis y uve es cero.",
+            "start": 187.06666666666666,
+            "end": 192.23333333333332,
+            "startFrame": 5612,
+            "endFrame": 5767,
+            "words": 12,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "ea9de89c110f41266fa5f5c52f3dd84bd785c25d770b144ce8026fd772aac6d3"
+          },
+          {
+            "text": "Cov abre paréntesis, equis y uve, cierra paréntesis igual a 0.",
+            "start": 192.53333333333333,
+            "end": 197.26666666666668,
+            "startFrame": 5776,
+            "endFrame": 5918,
+            "words": 11,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "03c0f3d2ebd0d8b20932a1422da9126fb36d05416b72292faf6ca90c4a635d05"
+          }
+        ]
+      },
+      {
+        "start": 197.56666666666666,
+        "end": 208.8,
+        "cues": [
+          {
+            "text": "Usar el criterio gaussiano.",
+            "start": 197.56666666666666,
+            "end": 199.3,
+            "startFrame": 5927,
+            "endFrame": 5979,
+            "words": 4,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "0128174cb25ff8b8c417be3407bff56aa3230d94593090e13bde849451a41d5b"
+          },
+          {
+            "text": "En una distribución conjuntamente normal, covarianza nula implica independencia.",
+            "start": 199.6,
+            "end": 203.46666666666667,
+            "startFrame": 5988,
+            "endFrame": 6104,
+            "words": 9,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "a2f3c2864b4449a2cf02d99198fe41d19ae3798a191c7eb1b6fbd3df959df054"
+          },
+          {
+            "text": "Fuera de ese modelo, incorrelación no bastaría. equis independiente de uve.",
+            "start": 203.76666666666668,
+            "end": 208.5,
+            "startFrame": 6113,
+            "endFrame": 6255,
+            "words": 11,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "15ee9f91d6acc8eb16c9647ae806082ade69e0ea9bb2d8c5a50198c79b5c9add"
+          }
+        ]
+      },
+      {
+        "start": 208.8,
+        "end": 219.3,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 208.8,
+            "end": 210.96666666666667,
+            "startFrame": 6264,
+            "endFrame": 6329,
+            "words": 5,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 211.26666666666668,
+            "end": 219,
+            "startFrame": 6338,
+            "endFrame": 6570,
+            "words": 18,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 219.3,
+        "end": 239.66666666666666,
+        "cues": [
+          {
+            "text": "Obtener el centro de uve.",
+            "start": 219.3,
+            "end": 221.46666666666667,
+            "startFrame": 6579,
+            "endFrame": 6644,
+            "words": 5,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "186cb157c82cde967d049d955af85c0105d82ede4c858df4558e29d75317a68b"
+          },
+          {
+            "text": "Resto cero coma ocho veces la media de equis a la media de i griega. uve no tiene media cero, porque no se ha restado la ordenada del ajuste. esperanza de uve igual a 120 menos 0 coma 8 por 100.",
+            "start": 221.76666666666668,
+            "end": 239.36666666666667,
+            "startFrame": 6653,
+            "endFrame": 7181,
+            "words": 41,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "a276837a33a4663a6d6f901f266543e1035c978ab309f1f1c99e29abd736d370"
+          }
+        ]
+      },
+      {
+        "start": 239.66666666666666,
+        "end": 259.06666666666666,
+        "cues": [
+          {
+            "text": "Obtener la varianza de uve.",
+            "start": 239.66666666666666,
+            "end": 241.83333333333334,
+            "startFrame": 7190,
+            "endFrame": 7255,
+            "words": 5,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "1ac8f437a15d39adb15b2f9f323235470cb170601f3dc4826f3fc7854439cf79"
+          },
+          {
+            "text": "Aplico la regla de varianza de una combinación lineal, incluyendo la covarianza original.",
+            "start": 242.13333333333333,
+            "end": 247.73333333333332,
+            "startFrame": 7264,
+            "endFrame": 7432,
+            "words": 13,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "3788f93d0a45d8731901f87f3eeaf7b995921e6d07a0b0188b8a528e83efd5a3"
+          },
+          {
+            "text": "Var abre paréntesis, uve, cierra paréntesis igual a 400 más 0 coma 8 al cuadrado por 225 menos 2 por 0 coma 8 por 180.",
+            "start": 248.03333333333333,
+            "end": 258.76666666666665,
+            "startFrame": 7441,
+            "endFrame": 7763,
+            "words": 25,
+            "sceneIndex": 17,
+            "cueIndex": 2,
+            "sourceCueSha256": "2ec38aec4c96768393fd7d120f56d86d3a84654572410ace841ddf6b106c585c"
+          }
+        ]
+      },
+      {
+        "start": 259.06666666666666,
+        "end": 271.26666666666665,
+        "cues": [
+          {
+            "text": "Identificar la ley residual. uve es normal con media cuarenta y varianza doscientos cincuenta y seis.",
+            "start": 259.06666666666666,
+            "end": 265.93333333333334,
+            "startFrame": 7772,
+            "endFrame": 7978,
+            "words": 16,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "a212ba49c5874d48c8b2796f86460e51bf7b2a54aba86d97602de98cb2d69abf"
+          },
+          {
+            "text": "Su independencia de equis explica la dispersión condicional constante de a.",
+            "start": 266.23333333333335,
+            "end": 270.96666666666664,
+            "startFrame": 7987,
+            "endFrame": 8129,
+            "words": 11,
+            "sceneIndex": 18,
+            "cueIndex": 1,
+            "sourceCueSha256": "99b1e84527e9fb70062477852ee442fa89bb8bb72368752b1c56013604e835dd"
+          }
+        ]
+      },
+      {
+        "start": 271.26666666666665,
+        "end": 291.3666666666667,
+        "cues": [
+          {
+            "text": "La respuesta razonada es Covarianza nula basta aquí porque el par transformado es conjuntamente normal.",
+            "start": 271.26666666666665,
+            "end": 277.7,
+            "startFrame": 8138,
+            "endFrame": 8331,
+            "words": 15,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "421c5149943f3a05f65e6160629d0118799ca6f1864dfe641ed1cfbfd84ad735"
+          },
+          {
+            "text": "No se está afirmando ese criterio para variables arbitrarias..",
+            "start": 278,
+            "end": 281.8666666666667,
+            "startFrame": 8340,
+            "endFrame": 8456,
+            "words": 9,
+            "sceneIndex": 19,
+            "cueIndex": 1,
+            "sourceCueSha256": "f165e1d4e820259e4d48e8c0aa7550464c4430521c8ddc3141c92f851dc45285"
+          },
+          {
+            "text": "Covarianza nula basta aquí porque el par transformado es conjuntamente normal.",
+            "start": 282.1666666666667,
+            "end": 286.9,
+            "startFrame": 8465,
+            "endFrame": 8607,
+            "words": 11,
+            "sceneIndex": 19,
+            "cueIndex": 2,
+            "sourceCueSha256": "1921ca1953d30290ad3c84c04d1b1596625d05619d31445d00e7da8e323124ac"
+          },
+          {
+            "text": "No se está afirmando ese criterio para variables arbitrarias.",
+            "start": 287.2,
+            "end": 291.06666666666666,
+            "startFrame": 8616,
+            "endFrame": 8732,
+            "words": 9,
+            "sceneIndex": 19,
+            "cueIndex": 3,
+            "sourceCueSha256": "28d35331cb022767f6b4ed720dc3e71aebb1cfb2a46a68ac4c08a23c0a66ca73"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
