@@ -146957,6 +146957,872 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-capstone-pec1-3--d": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-capstone-pec1-3--d",
+      "kind": "exercise",
+      "title": "En 10 individuos independientes, calcula la probabilidad de exactamente 2 con Y<100, 6 con 100<=Y<=140 y 2 con Y>140.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "e2f634695159c54058e6c52818b685715a5e133fc846dc5655807be7a3113397",
+      "src": "videos/ejercicio-capstone-pec1-3--d/video.mp4",
+      "poster": "videos/ejercicio-capstone-pec1-3--d/poster.jpg",
+      "duration": 402.26666666666665,
+      "frames": 12068,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "9f5a46395941ff5df296035730ddebb55a53ad9427e9fe51e40c518b345b948c",
+      "videoSha256": "fa11cd8985d9c86d55f183c79e5b5a2e6c125b199e094a6368019d051ee011ab",
+      "posterSha256": "2fe4e7471ff8b9ceb97ce664acdceae8e3a022662ddc52965de4a5b4e4d8ada5",
+      "canonicalSha256": "554bfcd491815030d177f4e6445089daaff185a303163807c36e810319147565",
+      "inputHash": "d0738cd5495f89743a694bd9297fa4af2b016a4cf01344197d0b1815df0a80dd",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "c4bda21a7c95ce4ba1eede31c2e68c2a878520b00039f9cf2b17afef31036c3c",
+        "canonicalSha256": "554bfcd491815030d177f4e6445089daaff185a303163807c36e810319147565",
+        "source": {
+          "file": "UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "url": "/materiales/UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "kind": "statement",
+          "title": "UOC MU IE 2026-27 S1: PEC 1, enunciado",
+          "number": "3"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "66116314291b52b70e4a390707009f34417ec440e2fe2420d43d45368dc5655a",
+        "transcriptSha256": "9f5a46395941ff5df296035730ddebb55a53ad9427e9fe51e40c518b345b948c",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-capstone-pec1-3",
+      "transcript": {
+        "id": "ejercicio-capstone-pec1-3--d",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "554bfcd491815030d177f4e6445089daaff185a303163807c36e810319147565",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 402.26666666666665,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 22.8,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "En 10 individuos independientes, calcula la probabilidad de exactamente 2 con i griega menor que 100, 6 con 100 menor o igual que i griega menor o igual que 140 y 2 con i griega mayor que 140.",
+                "start": 2.9,
+                "end": 19.2,
+                "startFrame": 87,
+                "endFrame": 576,
+                "words": 38,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "226f2dd1fd36bafa1e05546692036afde62dcb2048223b6fde1b4230946b52ce"
+              },
+              {
+                "text": "Queremos los tres recuentos de categorías simultáneamente.",
+                "start": 19.5,
+                "end": 22.5,
+                "startFrame": 585,
+                "endFrame": 675,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "87abf4941617695e7fc5bcdd34e64093276be5f97f2cba469a540c546244027a"
+              }
+            ]
+          },
+          {
+            "start": 22.8,
+            "end": 43.03333333333333,
+            "cues": [
+              {
+                "text": "Cada ensayo independiente acaba en una sola de las categorías, cuyas probabilidades suman uno.",
+                "start": 22.8,
+                "end": 28.8,
+                "startFrame": 684,
+                "endFrame": 864,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "898dec525c92df230d425f02e79d87c3ddc5adabcf96aa69e948e366953f91b2"
+              },
+              {
+                "text": "Los recuentos comparten el total fijo y no son independientes entre sí.",
+                "start": 29.1,
+                "end": 34.266666666666666,
+                "startFrame": 873,
+                "endFrame": 1028,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "4a359b088e44ab6e169bf3237c69860f1740bfb3054c242cc84ae4b66e779ac1"
+              },
+              {
+                "text": "El factorial multinomial cuenta ordenaciones de esos recuentos y el producto de potencias da el peso de cada ordenación.",
+                "start": 34.56666666666667,
+                "end": 42.733333333333334,
+                "startFrame": 1037,
+                "endFrame": 1282,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "6a0d161472745dfdd0e28ba737fd7d6adc132f452d859066b6bedacf7c030a8f"
+              }
+            ]
+          },
+          {
+            "start": 43.03333333333333,
+            "end": 54.93333333333333,
+            "cues": [
+              {
+                "text": "abre paréntesis, equis,i griega, cierra paréntesis tiene distribución normal bivariante: media de equis 100, desviación 15; media de i griega 120, desviación 20; correlación 0 coma 6.",
+                "start": 43.03333333333333,
+                "end": 54.63333333333333,
+                "startFrame": 1291,
+                "endFrame": 1639,
+                "words": 27,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "c2b544988a71429351b0260a93ddf245dd4438d1bdc3d2007005920030884e8f"
+              }
+            ]
+          },
+          {
+            "start": 54.93333333333333,
+            "end": 65.1,
+            "cues": [
+              {
+                "text": "En a se observa equis igual a 110 y se pide la distribución condicional de i griega y su probabilidad de superar 140.",
+                "start": 54.93333333333333,
+                "end": 64.8,
+                "startFrame": 1648,
+                "endFrame": 1944,
+                "words": 23,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "41a9a0ea8c686ed0dd272f5976468a0c3aa3fcb3b59d97e5c7a44a6e973e39fc"
+              }
+            ]
+          },
+          {
+            "start": 65.1,
+            "end": 82.43333333333334,
+            "cues": [
+              {
+                "text": "En de se toman 10 individuos; las categorías son i griega menor que 100, 100 menor o igual que i griega menor o igual que 140 e i griega mayor que 140.",
+                "start": 65.1,
+                "end": 78.83333333333333,
+                "startFrame": 1953,
+                "endFrame": 2365,
+                "words": 32,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "535ab7a972499d9d7f83f997e7c07e83a9b56e69a45fe0d6006ea8bf22168d54"
+              },
+              {
+                "text": "Se piden exactamente 2, 6 y 2.",
+                "start": 79.13333333333334,
+                "end": 82.13333333333334,
+                "startFrame": 2374,
+                "endFrame": 2464,
+                "words": 7,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "5b7beea16a69adfa703c9e7a45544145005433d2fd3ff2622912fb0ecfe06731"
+              }
+            ]
+          },
+          {
+            "start": 82.43333333333334,
+            "end": 92.16666666666667,
+            "cues": [
+              {
+                "text": "En e se toman 400 individuos y se aproxima la probabilidad de que al menos 75 tengan i griega mayor que 140.",
+                "start": 82.43333333333334,
+                "end": 91.86666666666666,
+                "startFrame": 2473,
+                "endFrame": 2756,
+                "words": 22,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "40d3cdce1502f302bc5ea9a80115afaac6eb433b95c0093d73a5628f3fb26239"
+              }
+            ]
+          },
+          {
+            "start": 92.16666666666667,
+            "end": 104.46666666666667,
+            "cues": [
+              {
+                "text": "La notación normal de media abre paréntesis, media, cierra paréntesis y varianza abre paréntesis, varianza, cierra paréntesis usa varianza como segundo parámetro; el diagrama normal usa desviación típica.",
+                "start": 92.16666666666667,
+                "end": 104.16666666666667,
+                "startFrame": 2765,
+                "endFrame": 3125,
+                "words": 28,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "7dc3546496f7dcac97b879887d43977e9287662ca2e9cb1655d11c23686d4e5f"
+              }
+            ]
+          },
+          {
+            "start": 104.46666666666667,
+            "end": 115.06666666666666,
+            "cues": [
+              {
+                "text": "Las unidades de equis e i griega son las unidades de medida del enunciado; no se atribuyen unidades físicas que no se han especificado.",
+                "start": 104.46666666666667,
+                "end": 114.76666666666667,
+                "startFrame": 3134,
+                "endFrame": 3443,
+                "words": 24,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a28ccb3c10c3d2d5a041b27fe2ee1d78830822428dd639d591c2cf0eb89f52e7"
+              }
+            ]
+          },
+          {
+            "start": 115.06666666666666,
+            "end": 126,
+            "cues": [
+              {
+                "text": "Las muestras de de y e contienen individuos independientes e identicamente distribuidos.",
+                "start": 115.06666666666666,
+                "end": 120.23333333333333,
+                "startFrame": 3452,
+                "endFrame": 3607,
+                "words": 12,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "3c62aaa6b4abc74bb34c7b2ad3bca7c41ee47d8b7d2b4dba4d46324f71b521fa"
+              },
+              {
+                "text": "Las medidas equis e i griega del mismo individuo no son independientes.",
+                "start": 120.53333333333333,
+                "end": 125.7,
+                "startFrame": 3616,
+                "endFrame": 3771,
+                "words": 12,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "b06080496a9c3a9159557e8e479ac48016ae02c0c1371250330d14e451c37f58"
+              }
+            ]
+          },
+          {
+            "start": 126,
+            "end": 140.33333333333334,
+            "cues": [
+              {
+                "text": "i griega tiene densidad continua: incluir los extremos 100 y 140 no cambia las probabilidades.",
+                "start": 126,
+                "end": 132.43333333333334,
+                "startFrame": 3780,
+                "endFrame": 3973,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "6fe68898fe79e5fc21c320e70d78e28b11cc07a624d34d9fd6ef589c1ccb7e45"
+              },
+              {
+                "text": "Condicionar a equis igual a equis minúscula se entiende mediante la distribución condicional regular de la normal.",
+                "start": 132.73333333333332,
+                "end": 140.03333333333333,
+                "startFrame": 3982,
+                "endFrame": 4201,
+                "words": 17,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "56ffc923edbe216144b0a5ccd07d050907add7af4e00d211c402f791ae6bf681"
+              }
+            ]
+          },
+          {
+            "start": 140.33333333333334,
+            "end": 155.4,
+            "cues": [
+              {
+                "text": "Esta muestra no está condicionada a equis igual a ciento diez.",
+                "start": 140.33333333333334,
+                "end": 145.06666666666666,
+                "startFrame": 4210,
+                "endFrame": 4352,
+                "words": 11,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "72508da05ac5b7d2348a6f26ace67a0c73bc313f100dfe11a47babf15d37c963"
+              },
+              {
+                "text": "Uso media ciento veinte y desviación veinte.",
+                "start": 145.36666666666667,
+                "end": 148.36666666666667,
+                "startFrame": 4361,
+                "endFrame": 4451,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "f969df98baba032bdbbe11c3ec22a5a8f96f27854a521966a69d8199a0fb7cc8"
+              },
+              {
+                "text": "Los individuos son independientes, pero los tres recuentos suman diez y requieren una masa multinomial.",
+                "start": 148.66666666666666,
+                "end": 155.1,
+                "startFrame": 4460,
+                "endFrame": 4653,
+                "words": 15,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "b36ea86e50605e218dc70e9150308e51a50a3617739de9bac8abde082a4f1e0d"
+              }
+            ]
+          },
+          {
+            "start": 155.4,
+            "end": 166.63333333333333,
+            "cues": [
+              {
+                "text": "Usar la marginal de i griega.",
+                "start": 155.4,
+                "end": 158,
+                "startFrame": 4662,
+                "endFrame": 4740,
+                "words": 6,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "cdc6fe152cf875afcdfbc5c9488bf99cb59b33a6b4910570c5c3759bdd960402"
+              },
+              {
+                "text": "Esta muestra no está condicionada a equis igual a ciento diez.",
+                "start": 158.3,
+                "end": 163.03333333333333,
+                "startFrame": 4749,
+                "endFrame": 4891,
+                "words": 11,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "4e9f29a178558e33ee857ac91e0c4bc8cd5af4ad4a32ca3e752a9f8820b25663"
+              },
+              {
+                "text": "Uso media ciento veinte y desviación veinte.",
+                "start": 163.33333333333334,
+                "end": 166.33333333333334,
+                "startFrame": 4900,
+                "endFrame": 4990,
+                "words": 7,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "e76350f13dd658476af9c1d27b21ea4e508d926685632d44153b3faf975049e0"
+              }
+            ]
+          },
+          {
+            "start": 166.63333333333333,
+            "end": 174.53333333333333,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 166.63333333333333,
+                "end": 170.06666666666666,
+                "startFrame": 4999,
+                "endFrame": 5102,
+                "words": 8,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 170.36666666666667,
+                "end": 174.23333333333332,
+                "startFrame": 5111,
+                "endFrame": 5227,
+                "words": 9,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 174.53333333333333,
+            "end": 188.86666666666667,
+            "cues": [
+              {
+                "text": "Tipificar el límite inferior.",
+                "start": 174.53333333333333,
+                "end": 176.26666666666668,
+                "startFrame": 5236,
+                "endFrame": 5288,
+                "words": 4,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "a15d95f4768b69fe939938ca0371eb6c8a194a5758f51e344b68518f0245ee98"
+              },
+              {
+                "text": "Cien está una desviación por debajo de la media. zeta subíndice ele igual a abre paréntesis, 100 menos 120, cierra paréntesis dividido entre abre paréntesis, 20, cierra paréntesis.",
+                "start": 176.56666666666666,
+                "end": 188.56666666666666,
+                "startFrame": 5297,
+                "endFrame": 5657,
+                "words": 28,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "b8b555549a3a8dc76c50b36f3d04df10e6f8139d268a1649cfd86e7b0f2333ce"
+              }
+            ]
+          },
+          {
+            "start": 188.86666666666667,
+            "end": 198.93333333333334,
+            "cues": [
+              {
+                "text": "Phi es la probabilidad acumulada a la izquierda en la normal estándar.",
+                "start": 188.86666666666667,
+                "end": 194.03333333333333,
+                "startFrame": 5666,
+                "endFrame": 5821,
+                "words": 12,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "fd4504d86dd5e4fc0aee7d154ac953ae4cbbfabae9f36c3b989f7e1e0d8f01a3"
+              },
+              {
+                "text": "Su inversa recibe una probabilidad y devuelve el umbral estandarizado.",
+                "start": 194.33333333333334,
+                "end": 198.63333333333333,
+                "startFrame": 5830,
+                "endFrame": 5959,
+                "words": 10,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "44c6072506ac74645a0419bbe86a45de26011be51d24ec6e7aae11145267e898"
+              }
+            ]
+          },
+          {
+            "start": 198.93333333333334,
+            "end": 209.86666666666667,
+            "cues": [
+              {
+                "text": "Medir la categoría baja.",
+                "start": 198.93333333333334,
+                "end": 200.66666666666666,
+                "startFrame": 5968,
+                "endFrame": 6020,
+                "words": 4,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "18c266ad2261248fb689823209e86c170fcc9e95d2b39bbf1ffb2504bd4d994c"
+              },
+              {
+                "text": "La probabilidad baja es Phi de menos uno. pe subíndice ele igual a Phi abre paréntesis, menos 1, cierra paréntesis.",
+                "start": 200.96666666666667,
+                "end": 209.56666666666666,
+                "startFrame": 6029,
+                "endFrame": 6287,
+                "words": 20,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "57c981e7eeeb0643726314c487d044b1514431cbf2ba086b28d7572fed785d17"
+              }
+            ]
+          },
+          {
+            "start": 209.86666666666667,
+            "end": 224.2,
+            "cues": [
+              {
+                "text": "Tipificar el límite superior.",
+                "start": 209.86666666666667,
+                "end": 211.6,
+                "startFrame": 6296,
+                "endFrame": 6348,
+                "words": 4,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "7011a8679c942b4210eb42ec82f4a14e28bd0ff701a261e971ea95b1b9bca84c"
+              },
+              {
+                "text": "Ciento cuarenta está una desviación por encima del centro. zeta subíndice hache igual a abre paréntesis, 140 menos 120, cierra paréntesis dividido entre abre paréntesis, 20, cierra paréntesis.",
+                "start": 211.9,
+                "end": 223.9,
+                "startFrame": 6357,
+                "endFrame": 6717,
+                "words": 28,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "ecb7685d927e6dc2a5059d79abc1c7bd359d522d3721cda1a35eead4acd16c50"
+              }
+            ]
+          },
+          {
+            "start": 224.2,
+            "end": 238.86666666666667,
+            "cues": [
+              {
+                "text": "Medir la categoría alta.",
+                "start": 224.2,
+                "end": 225.93333333333334,
+                "startFrame": 6726,
+                "endFrame": 6778,
+                "words": 4,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "8637950feea45f926917be2c19f0e2bbab2f16a40eaf34e185c01250a4fa1e93"
+              },
+              {
+                "text": "La probabilidad alta es la cola derecha de uno.",
+                "start": 226.23333333333332,
+                "end": 230.1,
+                "startFrame": 6787,
+                "endFrame": 6903,
+                "words": 9,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "f5f61f367034b446ef065ae234d385da3804586af0a8d56179f7dbf0ffe68676"
+              },
+              {
+                "text": "Por simetría coincide con la baja. pe subíndice hache igual a 1 menos Phi abre paréntesis, 1, cierra paréntesis.",
+                "start": 230.4,
+                "end": 238.56666666666666,
+                "startFrame": 6912,
+                "endFrame": 7157,
+                "words": 19,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "1dd4ab8c5a80fadf9fee44e56489a8409719af066d9401f0b1b3adc4ac1e850a"
+              }
+            ]
+          },
+          {
+            "start": 238.86666666666667,
+            "end": 258.23333333333335,
+            "cues": [
+              {
+                "text": "Medir la categoría central.",
+                "start": 238.86666666666667,
+                "end": 240.6,
+                "startFrame": 7166,
+                "endFrame": 7218,
+                "words": 4,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "d190fe7d04c94677fae3ebb01b378f1f25be946d9129c25629b15d5037b87127"
+              },
+              {
+                "text": "Resto la acumulada de menos uno a la de uno.",
+                "start": 240.9,
+                "end": 245.2,
+                "startFrame": 7227,
+                "endFrame": 7356,
+                "words": 10,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "ce9f7d2399c7f242e2d2aedb36bb526c9b1b08ddeaef277bd56debab34911516"
+              },
+              {
+                "text": "Las tres categorías son disjuntas y cubren todos los valores. pe subíndice eme igual a Phi abre paréntesis, 1, cierra paréntesis menos Phi abre paréntesis, menos 1, cierra paréntesis.",
+                "start": 245.5,
+                "end": 257.93333333333334,
+                "startFrame": 7365,
+                "endFrame": 7738,
+                "words": 29,
+                "sceneIndex": 18,
+                "cueIndex": 2,
+                "sourceCueSha256": "afbc2053244104223c71c34b7fc2be15e107fcefe433d92eff3db1e88aa20138"
+              }
+            ]
+          },
+          {
+            "start": 258.23333333333335,
+            "end": 285.76666666666665,
+            "cues": [
+              {
+                "text": "Modelar el vector de recuentos.",
+                "start": 258.23333333333335,
+                "end": 260.4,
+                "startFrame": 7747,
+                "endFrame": 7812,
+                "words": 5,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "57b4ce2ea076e7253b1b8b6face631ebd89b05ad89206e2cb5a6465307251dbc"
+              },
+              {
+                "text": "Cada individuo cae en exactamente una categoría con probabilidades constantes.",
+                "start": 260.7,
+                "end": 265,
+                "startFrame": 7821,
+                "endFrame": 7950,
+                "words": 10,
+                "sceneIndex": 19,
+                "cueIndex": 1,
+                "sourceCueSha256": "0d95209272c796a077c585a2ccd7d2a833da85171a09d22016de5fdd9a271126"
+              },
+              {
+                "text": "Los recuentos suman diez y no son independientes entre sí. abre paréntesis, ka mayúscula subíndice ele y ka mayúscula subíndice eme y ka mayúscula subíndice hache, cierra paréntesis sigue la distribución Mult abre paréntesis, 10;pe subíndice ele y pe subíndice eme y pe subíndice hache, cierra paréntesis.",
+                "start": 265.3,
+                "end": 285.46666666666664,
+                "startFrame": 7959,
+                "endFrame": 8564,
+                "words": 47,
+                "sceneIndex": 19,
+                "cueIndex": 2,
+                "sourceCueSha256": "cfd89c161e5308cac37fd920ddf69e87d4337359d8f4f23948c90aea42371ad7"
+              }
+            ]
+          },
+          {
+            "start": 285.76666666666665,
+            "end": 304.4,
+            "cues": [
+              {
+                "text": "Contar las asignaciones.",
+                "start": 285.76666666666665,
+                "end": 287.06666666666666,
+                "startFrame": 8573,
+                "endFrame": 8612,
+                "words": 3,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "93a1be308a76b3b4fbb8dc5fb9696f3f605c9342674ef0f8c743f6654ba978e7"
+              },
+              {
+                "text": "El coeficiente multinomial cuenta que individuos ocupan cada categoría, sin ordenar dentro de una misma categoría. eme igual a abre paréntesis, 10 factorial , cierra paréntesis dividido entre abre paréntesis, 2 factorial 6 factorial 2 factorial , cierra paréntesis.",
+                "start": 287.3666666666667,
+                "end": 304.1,
+                "startFrame": 8621,
+                "endFrame": 9123,
+                "words": 39,
+                "sceneIndex": 20,
+                "cueIndex": 1,
+                "sourceCueSha256": "b3447d0736e8bb99597422ce4d7593fbaf042ae8ed213c52c1ab7192c390b6cb"
+              }
+            ]
+          },
+          {
+            "start": 304.4,
+            "end": 314.9,
+            "cues": [
+              {
+                "text": "Evaluar el coeficiente.",
+                "start": 304.4,
+                "end": 305.7,
+                "startFrame": 9132,
+                "endFrame": 9171,
+                "words": 3,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "225ee74367a5720245f72661d2687b42a59fe66ae7de4b87567d535b97a098c7"
+              },
+              {
+                "text": "El número de asignaciones es mil doscientas sesenta, no un coeficiente binomial para una sola categoría. eme igual a 1260.",
+                "start": 306,
+                "end": 314.6,
+                "startFrame": 9180,
+                "endFrame": 9438,
+                "words": 20,
+                "sceneIndex": 21,
+                "cueIndex": 1,
+                "sourceCueSha256": "5af0d640c3dbc1a908e255e65533e93f754c8493228035be41da87afd18d93bb"
+              }
+            ]
+          },
+          {
+            "start": 314.9,
+            "end": 335.23333333333335,
+            "cues": [
+              {
+                "text": "Ponderar una asignación.",
+                "start": 314.9,
+                "end": 316.2,
+                "startFrame": 9447,
+                "endFrame": 9486,
+                "words": 3,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "da7fb1f927b34b227c9bc9e432d9995940c601920e004f47ae1cd5ba6c3de57e"
+              },
+              {
+                "text": "La independencia entre individuos permite multiplicar dos factores bajos, seis centrales y dos altos. pe subíndice abre paréntesis, asignacion , cierra paréntesis igual a pe subíndice ele elevado a 2 por pe subíndice eme elevado a 6 por pe subíndice hache al cuadrado.",
+                "start": 316.5,
+                "end": 334.93333333333334,
+                "startFrame": 9495,
+                "endFrame": 10048,
+                "words": 43,
+                "sceneIndex": 22,
+                "cueIndex": 1,
+                "sourceCueSha256": "34ffb84909a787f9f3c21c7c8756b367b7050490f2ce15ac60804ccdd6736093"
+              }
+            ]
+          },
+          {
+            "start": 335.23333333333335,
+            "end": 362.8666666666667,
+            "cues": [
+              {
+                "text": "Reunir asignaciones disjuntas.",
+                "start": 335.23333333333335,
+                "end": 336.53333333333336,
+                "startFrame": 10057,
+                "endFrame": 10096,
+                "words": 3,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "b095ea54847eedf3400313173af0c62caad2c61e0281b50bb6fe4111f3c2c161"
+              },
+              {
+                "text": "Multiplico el peso de una asignación por el número de asignaciones posibles. probabilidad de ka mayúscula subíndice ele igual a 2 y ka mayúscula subíndice eme igual a 6 y ka mayúscula subíndice hache igual a 2 igual a 1260 por pe subíndice ele elevado a 2 por pe subíndice eme elevado a 6 por pe subíndice hache al cuadrado.",
+                "start": 336.8333333333333,
+                "end": 362.56666666666666,
+                "startFrame": 10105,
+                "endFrame": 10877,
+                "words": 60,
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "sourceCueSha256": "71801fe44b5931cc321be413bad230dc235b0f87e141acc47be811fcf87ae1f0"
+              }
+            ]
+          },
+          {
+            "start": 362.8666666666667,
+            "end": 387.5,
+            "cues": [
+              {
+                "text": "Evaluar sin redondear categorías.",
+                "start": 362.8666666666667,
+                "end": 364.6,
+                "startFrame": 10886,
+                "endFrame": 10938,
+                "words": 4,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "8a4bb5bef005739a17196dd6c6baa392a8de71a4cd700869ec9af34a27669ced"
+              },
+              {
+                "text": "Utilizo las probabilidades normales completas para no acumular error en las potencias. probabilidad de ka mayúscula subíndice ele igual a 2 y ka mayúscula subíndice eme igual a 6 y ka mayúscula subíndice hache igual a 2 igual a 0 coma 0 8 0 8 2 1 6 4 5 6 3.",
+                "start": 364.9,
+                "end": 387.2,
+                "startFrame": 10947,
+                "endFrame": 11616,
+                "words": 52,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "9858b280c86c5ee9fce1cc482d3d9dfd55973b8fbc78797cf4d59c74e0ef1ed4"
+              }
+            ]
+          },
+          {
+            "start": 387.5,
+            "end": 402.26666666666665,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 8 0 8 2 1 6 5 probabilidad entre 0 y 1.",
+                "start": 387.5,
+                "end": 395.23333333333335,
+                "startFrame": 11625,
+                "endFrame": 11857,
+                "words": 18,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "0579c38a0db45b0da24a5954e9fbf0a489f5cd586b534792e2d4e7046a4336ed"
+              },
+              {
+                "text": "La independencia corresponde a los individuos; no a los tres recuentos multinomiales con total fijo.",
+                "start": 395.53333333333336,
+                "end": 401.96666666666664,
+                "startFrame": 11866,
+                "endFrame": 12059,
+                "words": 15,
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "sourceCueSha256": "212ae3bc02e9054fa0ad43e35ff0c09951638e6b4a3f1d9829ed642e8069d354"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
