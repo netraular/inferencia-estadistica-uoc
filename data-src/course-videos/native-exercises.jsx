@@ -746,7 +746,7 @@ export function ExerciseScene({plan,state}) {
   if (!diagram && (state.cueIndex < 0 || !numeric(plan,state))) return <SceneSurface label={`exercise:${plan.family}`}>
     <div data-native-zone="exercise-explanation" style={{position:'absolute',left:65,top:40,width:1080,height:390,display:'flex',flexDirection:'column',gap:layout.gap,color:PALETTE.ink}}>
       {layout.lines.map((line,index) => line.tex ? <div key={index} data-native-mark data-native-bound style={{position:'relative',height:layout.mathHeight,flexShrink:0}}>
-        <MathFormula tex={line.tex} x={0} y={0} width={1080} fontSize={26} />
+        <MathFormula tex={line.tex} x={0} y={0} width={1080} height={layout.mathHeight} fontSize={42} />
       </div> : <div key={index} data-native-mark data-native-text data-native-bound style={{fontSize:layout.lines.length === 1 && (line.value || line.label || '').length < 80 ? 32 : 28,lineHeight:1.35,overflowWrap:'anywhere',flexShrink:0}}>{line.value || line.label || ''}</div>)}
     </div>
   </SceneSurface>;
@@ -758,7 +758,7 @@ export function ExerciseScene({plan,state}) {
       const text = line.value || line.label || '';
       const opacity = line.cue === state.cueIndex ? mix(0.35,1,state.progress) : 1;
       if (line.tex) return <div key={index} style={{position:'relative',height:layout.mathHeight,flexShrink:0}}>
-        <MathFormula tex={line.tex} x={0} y={0} width={layout.width} fontSize={Math.max(12,Math.min(26,720/Math.max(28,line.tex.length)))} opacity={opacity} />
+        <MathFormula tex={line.tex} x={0} y={0} width={layout.width} height={layout.mathHeight} fontSize={26} opacity={opacity} />
       </div>;
       return <div key={index} data-native-text data-native-bound style={{fontFamily:'Atkinson',fontSize:layout.fontSize,lineHeight:1.35,overflowWrap:'anywhere',flexShrink:0,opacity}}>{text}</div>;
     })}
