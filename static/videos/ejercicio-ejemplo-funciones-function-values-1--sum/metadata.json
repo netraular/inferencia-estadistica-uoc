@@ -1,0 +1,482 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-ejemplo-funciones-function-values-1--sum",
+  "kind": "exercise",
+  "title": "¿Cuánto vale g(0) + g(1) + g(2)?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "345484e8a6cbd1be7b94bf20f766f1590c39ffaee0eb804c0eed511f4af4f659",
+  "src": "videos/ejercicio-ejemplo-funciones-function-values-1--sum/video.mp4",
+  "poster": "videos/ejercicio-ejemplo-funciones-function-values-1--sum/poster.jpg",
+  "duration": 142.1,
+  "frames": 4263,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "de3965e152ea1430bb1cf3cdf73b4a179bca00e2c8f4354026357a5d7a4908fd",
+  "videoSha256": "e284e3170c2ebc33b197b4a486d88686f5fcd5830cefc59e11bcbba0d8dc0f1d",
+  "posterSha256": "b5e128450c005829382430c1f869ef65c63e88bd34aadaabe6c039d53026daad",
+  "canonicalSha256": "0944625e51bfc065c351000257fafb6aa291512581118680f2549e6eb445c54a",
+  "inputHash": "0502279ceb10d3d57a2eecb8eec5f5fe22304cbc1bfea2cfc5f449b9e7af8fae",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "381e66bbf5f8e773d11bab93f45d7ce2b8e14154b799c98cf629ba0002efc52b",
+    "canonicalSha256": "0944625e51bfc065c351000257fafb6aa291512581118680f2549e6eb445c54a",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Leer una función"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "85dcf97b19e5de24c123c11057e20c00c7e49b687d8ca6cc263a95d405c80e2f",
+    "transcriptSha256": "de3965e152ea1430bb1cf3cdf73b4a179bca00e2c8f4354026357a5d7a4908fd",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-ejemplo-funciones-function-values-1",
+  "transcript": {
+    "id": "ejercicio-ejemplo-funciones-function-values-1--sum",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "0944625e51bfc065c351000257fafb6aa291512581118680f2549e6eb445c54a",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 142.1,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 15.933333333333334,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuánto vale ge abre paréntesis, 0, cierra paréntesis más ge abre paréntesis, 1, cierra paréntesis más ge abre paréntesis, 2, cierra paréntesis?",
+            "start": 2.9,
+            "end": 12.333333333333334,
+            "startFrame": 87,
+            "endFrame": 370,
+            "words": 22,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "9b056862dc9560c240b6d38aff28600d73ce933a8a4aebd8dee59abe8cbf3e74"
+          },
+          {
+            "text": "Queremos sumar varias salidas de la función.",
+            "start": 12.633333333333333,
+            "end": 15.633333333333333,
+            "startFrame": 379,
+            "endFrame": 469,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "fa58ebdf020db8097fa2976ea3b9cce15437ae2a34b95b0cf84be9c73d68563a"
+          }
+        ]
+      },
+      {
+        "start": 15.933333333333334,
+        "end": 32.733333333333334,
+        "cues": [
+          {
+            "text": "La función asigna una salida a cada entrada del dominio.",
+            "start": 15.933333333333334,
+            "end": 20.233333333333334,
+            "startFrame": 478,
+            "endFrame": 607,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "a338e5b2d9476954f1cde6d934595fe9f9c76cb61e0b19b79c1ce7f7a2b1557e"
+          },
+          {
+            "text": "Los paréntesis indican dónde sustituir la entrada.",
+            "start": 20.533333333333335,
+            "end": 23.533333333333335,
+            "startFrame": 616,
+            "endFrame": 706,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "59360a1fc880e4bba65eb49a2d421a935dc2fc62aa032d592425e700aaca79fe"
+          },
+          {
+            "text": "Multiplicamos antes de sumar y respetamos los extremos del dominio; sumar salidas es distinto de evaluar la suma de entradas.",
+            "start": 23.833333333333332,
+            "end": 32.43333333333333,
+            "startFrame": 715,
+            "endFrame": 973,
+            "words": 20,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "4761eeed1aec1e3729bcc123a27d6effce46a869dc2d97a94ede5093d09ecf52"
+          }
+        ]
+      },
+      {
+        "start": 32.733333333333334,
+        "end": 39.46666666666667,
+        "cues": [
+          {
+            "text": "ge abre paréntesis, equis minúscula, cierra paréntesis igual a 3 por equis minúscula más 5.",
+            "start": 32.733333333333334,
+            "end": 39.166666666666664,
+            "startFrame": 982,
+            "endFrame": 1175,
+            "words": 15,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "bbbb4176728e89388afb9c7b8fc8125c16fc2d3249e256bd0579f2d4ff5de69c"
+          }
+        ]
+      },
+      {
+        "start": 39.46666666666667,
+        "end": 47.93333333333333,
+        "cues": [
+          {
+            "text": "Se permiten entradas equis minúscula entre 0 y 3, incluidos ambos extremos; entrada pedida: equis minúscula igual a 2.",
+            "start": 39.46666666666667,
+            "end": 47.63333333333333,
+            "startFrame": 1184,
+            "endFrame": 1429,
+            "words": 19,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "fe9a33410d1da191cb7944856bd87b931fcd828b2b914d576ed0c8f348707dc4"
+          }
+        ]
+      },
+      {
+        "start": 47.93333333333333,
+        "end": 51.666666666666664,
+        "cues": [
+          {
+            "text": "Los paréntesis indican la entrada de la función.",
+            "start": 47.93333333333333,
+            "end": 51.36666666666667,
+            "startFrame": 1438,
+            "endFrame": 1541,
+            "words": 8,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "8fae598c37239631923a221271416a737883c5a9d0d984b66fc4a9581afdd3f5"
+          }
+        ]
+      },
+      {
+        "start": 51.666666666666664,
+        "end": 55.4,
+        "cues": [
+          {
+            "text": "Sumar salidas no significa sumar únicamente sus entradas.",
+            "start": 51.666666666666664,
+            "end": 55.1,
+            "startFrame": 1550,
+            "endFrame": 1653,
+            "words": 8,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "83108a70a56a79a17adb8ed37ebe0178ddfff7fd5492b22a7228e336941c0358"
+          }
+        ]
+      },
+      {
+        "start": 55.4,
+        "end": 65.03333333333333,
+        "cues": [
+          {
+            "text": "Calcula las tres salidas por separado.",
+            "start": 55.4,
+            "end": 58,
+            "startFrame": 1662,
+            "endFrame": 1740,
+            "words": 6,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "788e071993747dda105ba0aaa1e00574844f7df241c4a366e42ea7292aa3facf"
+          },
+          {
+            "text": "Evaluamos cada entrada antes de sumar; evaluar solo la suma de entradas sería otra operación.",
+            "start": 58.3,
+            "end": 64.73333333333333,
+            "startFrame": 1749,
+            "endFrame": 1942,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "5f23ebdfd6daca5724874c21f467be3050823ae4a5c092fc93be19a2f5149658"
+          }
+        ]
+      },
+      {
+        "start": 65.03333333333333,
+        "end": 95.6,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 65.03333333333333,
+            "end": 68.03333333333333,
+            "startFrame": 1951,
+            "endFrame": 2041,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Cuánto vale ge abre paréntesis, 0, cierra paréntesis más ge abre paréntesis, 1, cierra paréntesis más ge abre paréntesis, 2, cierra paréntesis?",
+            "start": 68.33333333333333,
+            "end": 77.76666666666667,
+            "startFrame": 2050,
+            "endFrame": 2333,
+            "words": 22,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "42c0a26392d8ff97cd72104c5c4b882b0193552a0ffcc455b2ff0783e0057ab0"
+          },
+          {
+            "text": "Una función es una regla de entrada y salida.",
+            "start": 78.06666666666666,
+            "end": 81.93333333333334,
+            "startFrame": 2342,
+            "endFrame": 2458,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "cddde47cfcc1ca8b7b59b40377f8c3684d08d059f7d2da52b385aeb91133c54f"
+          },
+          {
+            "text": "Primero localizamos la entrada permitida; después la sustituimos en la regla.",
+            "start": 82.23333333333333,
+            "end": 86.96666666666667,
+            "startFrame": 2467,
+            "endFrame": 2609,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "405973c4631d1cb258cb56c39c1ebb12b4d604b99d49b1ffd619ffe1c26e8a09"
+          },
+          {
+            "text": "Un sumatorio solo abrevia sumar varias de esas salidas.",
+            "start": 87.26666666666667,
+            "end": 91.13333333333334,
+            "startFrame": 2618,
+            "endFrame": 2734,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "b535e056faf89aeb4e38560f8467beaadc76082bf62ec089404e346cb24efcd4"
+          },
+          {
+            "text": "Para este apartado: Calcula las tres salidas por separado.",
+            "start": 91.43333333333334,
+            "end": 95.3,
+            "startFrame": 2743,
+            "endFrame": 2859,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 5,
+            "sourceCueSha256": "5902bbd6038baeb140e2cec31a95056517ae8d3abb4dd9ba3919cb00fc997009"
+          }
+        ]
+      },
+      {
+        "start": 95.6,
+        "end": 108.76666666666667,
+        "cues": [
+          {
+            "text": "Abrir la suma. ge abre paréntesis, 0, cierra paréntesis igual a 5; ge abre paréntesis, 1, cierra paréntesis igual a 8; ge abre paréntesis, 2, cierra paréntesis igual a 11.",
+            "start": 95.6,
+            "end": 108.46666666666667,
+            "startFrame": 2868,
+            "endFrame": 3254,
+            "words": 30,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "29452d5630c22c41e04b6ffe8a3a128c73e5f3b3ddb1ebbbdbd97f9c2221dd36"
+          }
+        ]
+      },
+      {
+        "start": 108.76666666666667,
+        "end": 119.26666666666667,
+        "cues": [
+          {
+            "text": "Sumar los resultados. 5 más 8 más 11 igual a 24.",
+            "start": 108.76666666666667,
+            "end": 113.5,
+            "startFrame": 3263,
+            "endFrame": 3405,
+            "words": 11,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "4a3fd5920826ad6fd936082df59ff08d35bf900b9a1cb0534f945d66e8e3caa2"
+          },
+          {
+            "text": "Un sumatorio con índices 0, 1 y 2 abreviaría esta misma cuenta.",
+            "start": 113.8,
+            "end": 118.96666666666667,
+            "startFrame": 3414,
+            "endFrame": 3569,
+            "words": 12,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "13cb1c617fc2d68171c9312f10fee34fa44b8447b2009b9dfdf88289b6cf266a"
+          }
+        ]
+      },
+      {
+        "start": 119.26666666666667,
+        "end": 134.63333333333333,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 119.26666666666667,
+            "end": 120.56666666666666,
+            "startFrame": 3578,
+            "endFrame": 3617,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 24 unidades de señal.",
+            "start": 120.86666666666666,
+            "end": 123.86666666666666,
+            "startFrame": 3626,
+            "endFrame": 3716,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "8f899932ca506170305abdd019f90ed5ed1de6206910d96c8d4e71e1c21da5d4"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 124.16666666666667,
+            "end": 130.16666666666666,
+            "startFrame": 3725,
+            "endFrame": 3905,
+            "words": 14,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "4359d019282d11c360f5c6605577a4cca1a601f2e439655d7b5fdcb0af659a85"
+          },
+          {
+            "text": "El índice indica qué entrada usar en cada término.",
+            "start": 130.46666666666667,
+            "end": 134.33333333333334,
+            "startFrame": 3914,
+            "endFrame": 4030,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "aa46897130e113fc5314b00a3025a8c3654d740261035558f2996ed265a83a0a"
+          }
+        ]
+      },
+      {
+        "start": 134.63333333333333,
+        "end": 142.1,
+        "cues": [
+          {
+            "text": "El resultado es 24 unidades de señal.",
+            "start": 134.63333333333333,
+            "end": 137.63333333333333,
+            "startFrame": 4039,
+            "endFrame": 4129,
+            "words": 7,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "297658c2a30a2c1e0d23e472dd4faadcfcd83b5f207ab209fd2bbde2ded0aec9"
+          },
+          {
+            "text": "El índice indica qué entrada usar en cada término.",
+            "start": 137.93333333333334,
+            "end": 141.8,
+            "startFrame": 4138,
+            "endFrame": 4254,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "1d4bc5174f47973178d5a1098cd9788f1f511c98960617352377c36038ebbd16"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
