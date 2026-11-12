@@ -205094,6 +205094,499 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-practica-cauchy-weibull-cauchy--median": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-practica-cauchy-weibull-cauchy--median",
+      "kind": "exercise",
+      "title": "Calcula la mediana de X, el cuantil 0,5.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "2e80566dfcd51eef4a970837a28f6fd0c6846b02a6b4db3f6584edaedc1d5835",
+      "src": "videos/ejercicio-practica-cauchy-weibull-cauchy--median/video.mp4",
+      "poster": "videos/ejercicio-practica-cauchy-weibull-cauchy--median/poster.jpg",
+      "duration": 202.06666666666666,
+      "frames": 6062,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "2a12ef914e12946d36de1188830eceb431fc4b1b8215fa45ca72e594798e3cab",
+      "videoSha256": "2449a4f7731b552b2b945b98c4675c17b96a2b53e464c33e8967d10224ea124a",
+      "posterSha256": "2fa8b634ecfbbe4d0417a8708feabc613f039f9292e9df7d2347486fb8a9cbe5",
+      "canonicalSha256": "38386264af9c5964b91d21bf6fc7af35c5029987f9bdb0e7d2842ad02f7939f5",
+      "inputHash": "6dc0629d7c117858c045270812bf3d92d55fba05be121ecd2eb093355b12cfe3",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "075c54b1277ee04c6d11798753bc319699c038215a211fdaf98d097c220f45c5",
+        "canonicalSha256": "38386264af9c5964b91d21bf6fc7af35c5029987f9bdb0e7d2842ad02f7939f5",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Cauchy"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "76545fca0089da87534f4fc4613a554604ef42f42c36e1fb36c699a2cfdb2205",
+        "transcriptSha256": "2a12ef914e12946d36de1188830eceb431fc4b1b8215fa45ca72e594798e3cab",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-practica-cauchy-weibull-cauchy",
+      "transcript": {
+        "id": "ejercicio-practica-cauchy-weibull-cauchy--median",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "38386264af9c5964b91d21bf6fc7af35c5029987f9bdb0e7d2842ad02f7939f5",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 202.06666666666666,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 12.533333333333333,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula la mediana de equis, el cuantil 0 coma 5.",
+                "start": 2.9,
+                "end": 7.2,
+                "startFrame": 87,
+                "endFrame": 216,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "8a9e529ad06bf84e5f465d61dc430e12b694c81883af704d66dffc2488f844a8"
+              },
+              {
+                "text": "Queremos el umbral que deja a su izquierda la probabilidad indicada.",
+                "start": 7.5,
+                "end": 12.233333333333333,
+                "startFrame": 225,
+                "endFrame": 367,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "a2aa862262d7f9ccd6383a2b2c6bb5d3d3abb8b15552f4de9caf504605024a03"
+              }
+            ]
+          },
+          {
+            "start": 12.533333333333333,
+            "end": 31.466666666666665,
+            "cues": [
+              {
+                "text": "La localización es el centro de simetría y la escala es positiva.",
+                "start": 12.533333333333333,
+                "end": 17.7,
+                "startFrame": 376,
+                "endFrame": 531,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "c0e5fa915b16cb839799f3fd5d02f2a6346b67598e21336eb01e4f037a0f0237"
+              },
+              {
+                "text": "La acumulada de Cauchy usa la arco tangente y permite calcular áreas y mediana.",
+                "start": 18,
+                "end": 24,
+                "startFrame": 540,
+                "endFrame": 720,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "261d81ce8a7c10d25bb2b83f5e16805ab97a8e414008d5c2ef30945adc2c7373"
+              },
+              {
+                "text": "Sus colas no tienen esperanza ni varianza: el centro de simetría no puede llamarse media poblacional.",
+                "start": 24.3,
+                "end": 31.166666666666668,
+                "startFrame": 729,
+                "endFrame": 935,
+                "words": 16,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "ae6d40f3b91591e3bcd273c5a5d042a0c1ab93e0904f69b393146666d2ae16a3"
+              }
+            ]
+          },
+          {
+            "start": 31.466666666666665,
+            "end": 42.5,
+            "cues": [
+              {
+                "text": "Localización equis minúscula subíndice 0 igual a 0 y escala gamma igual a 0 coma 5, en unidades de señal; soporte toda la recta real.",
+                "start": 31.466666666666665,
+                "end": 42.2,
+                "startFrame": 944,
+                "endFrame": 1266,
+                "words": 25,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e57cfd76e898e25ae0bbd9957fb6e86619c4e5aae4cd23990ede4f206e31793"
+              }
+            ]
+          },
+          {
+            "start": 42.5,
+            "end": 55.56666666666667,
+            "cues": [
+              {
+                "text": "Intervalo intervalo cerrado desde menos 0 coma 5 hasta 1 coma 5.",
+                "start": 42.5,
+                "end": 47.666666666666664,
+                "startFrame": 1275,
+                "endFrame": 1430,
+                "words": 12,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "52af1c29bc8dcd54d49642a49ef2dac3e6fda66bf4e8123cc75048d4b13363b1"
+              },
+              {
+                "text": "La localización es mediana, no media: esperanza de equis no existe y la varianza no está definida.",
+                "start": 47.96666666666667,
+                "end": 55.266666666666666,
+                "startFrame": 1439,
+                "endFrame": 1658,
+                "words": 17,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "d9c4f39569d550a2500c376452ec62556301c2f086c57a01083955267bfe9c79"
+              }
+            ]
+          },
+          {
+            "start": 55.56666666666667,
+            "end": 63.6,
+            "cues": [
+              {
+                "text": "Se supone este modelo para una señal con signo, no para un recuento ni para toda señal biológica.",
+                "start": 55.56666666666667,
+                "end": 63.3,
+                "startFrame": 1667,
+                "endFrame": 1899,
+                "words": 18,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "820f910dfbe60d4a582114b6fe62de5eeee4204ee67a1aeb0c2b96a872bc4260"
+              }
+            ]
+          },
+          {
+            "start": 63.6,
+            "end": 69.06666666666666,
+            "cues": [
+              {
+                "text": "La simetría no permite cancelar integrales divergentes para definir una esperanza finita.",
+                "start": 63.6,
+                "end": 68.76666666666667,
+                "startFrame": 1908,
+                "endFrame": 2063,
+                "words": 12,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "4adda6411d92d6db431af46ba55e27daf0a427e2a39b0e45f8388dfe511a6c21"
+              }
+            ]
+          },
+          {
+            "start": 69.06666666666666,
+            "end": 87.7,
+            "cues": [
+              {
+                "text": "Impón efe mayúscula abre paréntesis, eme, cierra paréntesis igual a 1 dividido entre 2, no esperanza de equis igual a equis minúscula subíndice 0.",
+                "start": 69.06666666666666,
+                "end": 79.36666666666666,
+                "startFrame": 2072,
+                "endFrame": 2381,
+                "words": 24,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "52a4dc4e4f25fe4b32bb54561c1e7b8320eb71e50935615756b3ffd63fc99565"
+              },
+              {
+                "text": "Aquí la probabilidad es el dato y el valor de la variable es la incógnita; invertimos la acumulada.",
+                "start": 79.66666666666667,
+                "end": 87.4,
+                "startFrame": 2390,
+                "endFrame": 2622,
+                "words": 18,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "5a6978c4b92b332473eefe482949421febfb40f920e100c2dc7f82d530dbe7fc"
+              }
+            ]
+          },
+          {
+            "start": 87.7,
+            "end": 120.53333333333333,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 87.7,
+                "end": 90.7,
+                "startFrame": 2631,
+                "endFrame": 2721,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula la mediana de equis, el cuantil 0 coma 5.",
+                "start": 91,
+                "end": 95.3,
+                "startFrame": 2730,
+                "endFrame": 2859,
+                "words": 10,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "1867f61f53f1683effe590be54b35e78de35e4760bf3bde7b07837e4e97742c5"
+              },
+              {
+                "text": "La acumulada de Cauchy se expresa mediante arctangentes y permite calcular intervalos y mediana.",
+                "start": 95.6,
+                "end": 101.6,
+                "startFrame": 2868,
+                "endFrame": 3048,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "9dc7c05c21db2965e8092473249929467f4cf1600dfddbe1d3e790527f03dd0e"
+              },
+              {
+                "text": "Sus colas impiden definir esperanza y varianza: la simetría no autoriza cancelar dos integrales divergentes.",
+                "start": 101.9,
+                "end": 108.33333333333333,
+                "startFrame": 3057,
+                "endFrame": 3250,
+                "words": 15,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "2896ceae21762aa7b6d2cc55c2140bde9e811b40a42279c465320f4eadf63e8f"
+              },
+              {
+                "text": "Para este apartado: Impón efe mayúscula abre paréntesis, eme, cierra paréntesis igual a 1 dividido entre 2, no esperanza de equis igual a equis minúscula subíndice 0.",
+                "start": 108.63333333333334,
+                "end": 120.23333333333333,
+                "startFrame": 3259,
+                "endFrame": 3607,
+                "words": 27,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "8d08504b65e6972917d9c2e96e8cf8fb1e7bc99c6d4737470b3fc1d6071086ed"
+              }
+            ]
+          },
+          {
+            "start": 120.53333333333333,
+            "end": 156,
+            "cues": [
+              {
+                "text": "Resolver la acumulada central. efe mayúscula abre paréntesis, eme, cierra paréntesis igual a 1 dividido entre 2 implica arco tangente de abre paréntesis, abre paréntesis, eme menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma , cierra paréntesis igual a 0, luego eme igual a equis minúscula subíndice 0. cuantil abre paréntesis, u, cierra paréntesis igual a equis minúscula subíndice 0 más gamma tangente abre paréntesis, pi abre paréntesis, u menos 1 dividido entre 2, cierra paréntesis , cierra paréntesis.",
+                "start": 120.53333333333333,
+                "end": 155.7,
+                "startFrame": 3616,
+                "endFrame": 4671,
+                "words": 82,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "b73e7698fc0d5a4d2ae5f3650f049ecbd0ebf1dd987093715b83a73430a3e55f"
+              }
+            ]
+          },
+          {
+            "start": 156,
+            "end": 172.36666666666667,
+            "cues": [
+              {
+                "text": "Sustituir el cuantil.",
+                "start": 156,
+                "end": 157.3,
+                "startFrame": 4680,
+                "endFrame": 4719,
+                "words": 3,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "4de0d76af1ed75ae439116b2b249d5eb204bddd148ea8d92a363a1c5c44feb3b"
+              },
+              {
+                "text": "Para la probabilidad una mitad, el argumento de la tangente es cero y su valor también.",
+                "start": 157.6,
+                "end": 164.46666666666667,
+                "startFrame": 4728,
+                "endFrame": 4934,
+                "words": 16,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "8ffafd4e42dfb483819064307226f11ecd83a2b6b7db81f135a2094217ccb68f"
+              },
+              {
+                "text": "La corrección de escala desaparece: la mediana coincide con la localización, 0, aunque no exista una esperanza.",
+                "start": 164.76666666666668,
+                "end": 172.06666666666666,
+                "startFrame": 4943,
+                "endFrame": 5162,
+                "words": 17,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "b22e6e467f0899a1a194e21095f3a33ac5653cc89bad698c7152362d5e63dc2e"
+              }
+            ]
+          },
+          {
+            "start": 172.36666666666667,
+            "end": 191.16666666666666,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 172.36666666666667,
+                "end": 173.66666666666666,
+                "startFrame": 5171,
+                "endFrame": 5210,
+                "words": 3,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 unidades de señal.",
+                "start": 173.96666666666667,
+                "end": 176.96666666666667,
+                "startFrame": 5219,
+                "endFrame": 5309,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "f570ec57416e9e9e3ca7716fabf1d6db6e4a68e767831e7b01bb800b90d180d0"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 177.26666666666668,
+                "end": 183.26666666666668,
+                "startFrame": 5318,
+                "endFrame": 5498,
+                "words": 14,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "4359d019282d11c360f5c6605577a4cca1a601f2e439655d7b5fdcb0af659a85"
+              },
+              {
+                "text": "La mediana existe aunque la esperanza no exista; una media muestral finita no crea una media poblacional.",
+                "start": 183.56666666666666,
+                "end": 190.86666666666667,
+                "startFrame": 5507,
+                "endFrame": 5726,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "937146d6b868bbe66b2ac2479afa7f8bae685c7b91e72b375996461ab5c3557e"
+              }
+            ]
+          },
+          {
+            "start": 191.16666666666666,
+            "end": 202.06666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 0 unidades de señal.",
+                "start": 191.16666666666666,
+                "end": 194.16666666666666,
+                "startFrame": 5735,
+                "endFrame": 5825,
+                "words": 7,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "aeee208e17f304d44f892bb5bc1f8ecc6928ff4dd07dbf327073380ec7c704f5"
+              },
+              {
+                "text": "La mediana existe aunque la esperanza no exista; una media muestral finita no crea una media poblacional.",
+                "start": 194.46666666666667,
+                "end": 201.76666666666668,
+                "startFrame": 5834,
+                "endFrame": 6053,
+                "words": 17,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "b650756d3f882858486402788e19201574d4428784ebe82c41aab329495a513c"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
