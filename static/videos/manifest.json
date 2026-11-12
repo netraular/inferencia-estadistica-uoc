@@ -280397,6 +280397,605 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-ejemplo-normal-bivariante-normal-1--interval": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-ejemplo-normal-bivariante-normal-1--interval",
+      "kind": "exercise",
+      "title": "Calcula P(μ−σ ≤ X ≤ μ+2σ).",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "6c5d2cf5659934eed9bee1831ef564a96cdc2a3f5d7be57ea72f7d59bca4cc6f",
+      "src": "videos/ejercicio-ejemplo-normal-bivariante-normal-1--interval/video.mp4",
+      "poster": "videos/ejercicio-ejemplo-normal-bivariante-normal-1--interval/poster.jpg",
+      "duration": 227.33333333333334,
+      "frames": 6820,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "7bb96b18f287b39c23513b2fd022c8fe1e3310e4b4ba2b224c2f15ecfb02cb2b",
+      "videoSha256": "07c6274736627208831712180140399ff600152f2fe2458dccb7818548717d7c",
+      "posterSha256": "80dcf955a586ee5dbcbbaf82c1ebb66c156430d5a1e0051df7d771e0a2e0509f",
+      "canonicalSha256": "990be0059b98e8e905969c8c0ef14314185dc862739ddcdc176c5d13ba316268",
+      "inputHash": "0857461dfcbff120f48654039bf1639238f75dc8da0c99437766d1c0ff441b08",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "3843955c303c326c10adc9f3b1842892f926ad9605e71698fb2a344c986562b1",
+        "canonicalSha256": "990be0059b98e8e905969c8c0ef14314185dc862739ddcdc176c5d13ba316268",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Normal"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "427deca4879d6ef22bc2f4332737d917b02140b8ebffe9108557efda5dc53091",
+        "transcriptSha256": "7bb96b18f287b39c23513b2fd022c8fe1e3310e4b4ba2b224c2f15ecfb02cb2b",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-ejemplo-normal-bivariante-normal-1",
+      "transcript": {
+        "id": "ejercicio-ejemplo-normal-bivariante-normal-1--interval",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "990be0059b98e8e905969c8c0ef14314185dc862739ddcdc176c5d13ba316268",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 227.33333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 14.266666666666667,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de mu menos sigma menor o igual que equis menor o igual que mu más 2 sigma.",
+                "start": 2.9,
+                "end": 11.066666666666666,
+                "startFrame": 87,
+                "endFrame": 332,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "7df50f007db8b5cf67ab871d7068365d6cb0af809a616b07a1cb597071e82db0"
+              },
+              {
+                "text": "Queremos la probabilidad entre dos límites.",
+                "start": 11.366666666666667,
+                "end": 13.966666666666667,
+                "startFrame": 341,
+                "endFrame": 419,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "badd82159e2768d90997a5a94288b122f4383eec1ab2ced9a3ebe0d8b2fc5a0c"
+              }
+            ]
+          },
+          {
+            "start": 14.266666666666667,
+            "end": 34.5,
+            "cues": [
+              {
+                "text": "Mu es la media y sigma la desviación típica, no la varianza.",
+                "start": 14.266666666666667,
+                "end": 19.433333333333334,
+                "startFrame": 428,
+                "endFrame": 583,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "9bde7a04b10a080a2dbe70efa83b36181823c2220174dcc8c4a18f109471095f"
+              },
+              {
+                "text": "Restar mu centra la medida y dividir por sigma expresa la distancia en desviaciones.",
+                "start": 19.733333333333334,
+                "end": 25.733333333333334,
+                "startFrame": 592,
+                "endFrame": 772,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "87a051014f9387d27563d5edd25b848cb18a3f978bc01756b7ef2bf8c6a4f507"
+              },
+              {
+                "text": "La normal estándar tiene media cero y desviación uno; su acumulada Phi permite comparar áreas sin cambiar su probabilidad.",
+                "start": 26.033333333333335,
+                "end": 34.2,
+                "startFrame": 781,
+                "endFrame": 1026,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "360a78284cf1e375899b8da7985ad0e00eb804b42b7839ce001b4d109804384a"
+              }
+            ]
+          },
+          {
+            "start": 34.5,
+            "end": 42.96666666666667,
+            "cues": [
+              {
+                "text": "Media mu igual a 24 micrómetros; desviación típica sigma igual a 4 micrómetros abre paréntesis, no varianza, cierra paréntesis.",
+                "start": 34.5,
+                "end": 42.666666666666664,
+                "startFrame": 1035,
+                "endFrame": 1280,
+                "words": 19,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "12408738e08b357007108fd245c3ebaaeb3ecbe6a7a48ccb227863937e910949"
+              }
+            ]
+          },
+          {
+            "start": 42.96666666666667,
+            "end": 48.86666666666667,
+            "cues": [
+              {
+                "text": "Intervalo: intervalo cerrado desde 20 hasta 32; soporte teórico: toda la recta real.",
+                "start": 42.96666666666667,
+                "end": 48.56666666666667,
+                "startFrame": 1289,
+                "endFrame": 1457,
+                "words": 13,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "7db302d5c08a35434b264cfe3bc4134bd8e020aca58270d67f6a2d790d12d092"
+              }
+            ]
+          },
+          {
+            "start": 48.86666666666667,
+            "end": 54.333333333333336,
+            "cues": [
+              {
+                "text": "El modelo normal es una aproximación adecuada en el rango de interés.",
+                "start": 48.86666666666667,
+                "end": 54.03333333333333,
+                "startFrame": 1466,
+                "endFrame": 1621,
+                "words": 12,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "6ad1a74ebb22ae9226f549cfa70d5a980c09608e4e7e03529c16415fcc5cfe62"
+              }
+            ]
+          },
+          {
+            "start": 54.333333333333336,
+            "end": 59.8,
+            "cues": [
+              {
+                "text": "No se está afirmando que todas las longitudes biológicas sigan una normal.",
+                "start": 54.333333333333336,
+                "end": 59.5,
+                "startFrame": 1630,
+                "endFrame": 1785,
+                "words": 12,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "2adb062cbb1557af8a670bc16349ed41c4ca3cce7afcc99c1dd326eb23957d62"
+              }
+            ]
+          },
+          {
+            "start": 59.8,
+            "end": 69.83333333333333,
+            "cues": [
+              {
+                "text": "Tipifica los extremos y resta las acumuladas.",
+                "start": 59.8,
+                "end": 62.8,
+                "startFrame": 1794,
+                "endFrame": 1884,
+                "words": 7,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "6390e4f837c6cb8002c8210cd59c94f8f56fdde4d500da4b6793b090a998aca6"
+              },
+              {
+                "text": "Restar las dos acumuladas elimina lo anterior al límite inferior y conserva solo el intervalo.",
+                "start": 63.1,
+                "end": 69.53333333333333,
+                "startFrame": 1893,
+                "endFrame": 2086,
+                "words": 15,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "1c3f3972988bc2f7ffa8f02eef51eb0aa814d18f3bd1e5b0f29dfe80b87cf7b3"
+              }
+            ]
+          },
+          {
+            "start": 69.83333333333333,
+            "end": 103.86666666666666,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 69.83333333333333,
+                "end": 72.83333333333333,
+                "startFrame": 2095,
+                "endFrame": 2185,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de mu menos sigma menor o igual que equis menor o igual que mu más 2 sigma.",
+                "start": 73.13333333333334,
+                "end": 81.3,
+                "startFrame": 2194,
+                "endFrame": 2439,
+                "words": 19,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "8a8d73154fedc17b23188f0199acf2b7b2a285d148a1111c2de11a84a13897c8"
+              },
+              {
+                "text": "Restar la media y dividir por la desviación típica traduce el umbral a desviaciones respecto al centro.",
+                "start": 81.6,
+                "end": 88.9,
+                "startFrame": 2448,
+                "endFrame": 2667,
+                "words": 17,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "d3a8ecbeaa51d8d7155b4c4fc53b006f45650af3916f9bdd65a59ac82db22202"
+              },
+              {
+                "text": "Phi acumula la normal estándar; un intervalo resta dos acumuladas y una cola derecha usa el complemento.",
+                "start": 89.2,
+                "end": 96.5,
+                "startFrame": 2676,
+                "endFrame": 2895,
+                "words": 17,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "8edefd2381475f993e3b4b5f2c876928e7982f47a855f5c25fa28a39488ab133"
+              },
+              {
+                "text": "Un cuantil invierte esta operación.",
+                "start": 96.8,
+                "end": 98.96666666666667,
+                "startFrame": 2904,
+                "endFrame": 2969,
+                "words": 5,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "657d75f1c216a343c21826384ddfbc65e6ed53bf7bd645620779bfc9858fcb4f"
+              },
+              {
+                "text": "Para este apartado: Tipifica los extremos y resta las acumuladas.",
+                "start": 99.26666666666667,
+                "end": 103.56666666666666,
+                "startFrame": 2978,
+                "endFrame": 3107,
+                "words": 10,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "d41401d6657b19e45e90ee3711e143b528f202258787d735ff5cfa1fcd9eebf6"
+              }
+            ]
+          },
+          {
+            "start": 103.86666666666666,
+            "end": 111.76666666666667,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 103.86666666666666,
+                "end": 107.3,
+                "startFrame": 3116,
+                "endFrame": 3219,
+                "words": 8,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 107.6,
+                "end": 111.46666666666667,
+                "startFrame": 3228,
+                "endFrame": 3344,
+                "words": 9,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 111.76666666666667,
+            "end": 122.23333333333333,
+            "cues": [
+              {
+                "text": "Mu nombra una media; sigma una desviación típica.",
+                "start": 111.76666666666667,
+                "end": 115.2,
+                "startFrame": 3353,
+                "endFrame": 3456,
+                "words": 8,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "7c10d7b79e3bfd55257abea734a614773830c4f3163702fa55aa303c54c27e48"
+              },
+              {
+                "text": "Sigma al cuadrado es la varianza: al tipificar dividimos por sigma, no por su cuadrado.",
+                "start": 115.5,
+                "end": 121.93333333333334,
+                "startFrame": 3465,
+                "endFrame": 3658,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "4e83b9aaba1a7a0c63a83905551fdd1b42e1ed2466df1b9899c8e10c04fcbfd6"
+              }
+            ]
+          },
+          {
+            "start": 122.23333333333333,
+            "end": 142.7,
+            "cues": [
+              {
+                "text": "Tipificar. abre paréntesis, 20 menos 24, cierra paréntesis dividido entre 4 igual a menos 1; abre paréntesis, 32 menos 24, cierra paréntesis dividido entre 4 igual a 2. zeta igual a abre paréntesis, equis menos mu , cierra paréntesis dividido entre abre paréntesis, sigma , cierra paréntesis.",
+                "start": 122.23333333333333,
+                "end": 142.4,
+                "startFrame": 3667,
+                "endFrame": 4272,
+                "words": 47,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "5752b3690ef5b63e3cd165089adb7a2c4eb12960b6693da909f979bc41d259de"
+              }
+            ]
+          },
+          {
+            "start": 142.7,
+            "end": 168.06666666666666,
+            "cues": [
+              {
+                "text": "Consultar las dos áreas.",
+                "start": 142.7,
+                "end": 144.43333333333334,
+                "startFrame": 4281,
+                "endFrame": 4333,
+                "words": 4,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "bb457ee707f678c797b8fd9a7213ec47679611a91d8d1ed50a5430064ce7c363"
+              },
+              {
+                "text": "Phi se lee fi y da el área a la izquierda.",
+                "start": 144.73333333333332,
+                "end": 149.46666666666667,
+                "startFrame": 4342,
+                "endFrame": 4484,
+                "words": 11,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "b29f68bc67744ece53a6a2d4b32d3c3bca4c19c88365c365345f7e434253275e"
+              },
+              {
+                "text": "Una tabla o calculadora normal da Phi abre paréntesis, 2, cierra paréntesis igual a 0 coma 9 7 7 2 4 9 9 y Phi abre paréntesis, menos 1, cierra paréntesis igual a 0 coma 1 5 8 6 5 5 3.",
+                "start": 149.76666666666668,
+                "end": 167.76666666666668,
+                "startFrame": 4493,
+                "endFrame": 5033,
+                "words": 42,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "aee84a3a519fb62bbd31cba0d2df882d8da45bded5b7467e4e27f1f63f55a0a9"
+              }
+            ]
+          },
+          {
+            "start": 168.06666666666666,
+            "end": 193.73333333333332,
+            "cues": [
+              {
+                "text": "Restar las áreas.",
+                "start": 168.06666666666666,
+                "end": 169.36666666666667,
+                "startFrame": 5042,
+                "endFrame": 5081,
+                "words": 3,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "0d46e78e6ee60267eb99e19801ee3a84020201bac582928bea31511c666f051c"
+              },
+              {
+                "text": "La primera área incluye también todo lo que queda a la izquierda de menos 1.",
+                "start": 169.66666666666666,
+                "end": 176.1,
+                "startFrame": 5090,
+                "endFrame": 5283,
+                "words": 15,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "fcc1e74b1df659ea0e96ad957fec6aaa5e86375a43615731bfea88406ec653a9"
+              },
+              {
+                "text": "Lo quitamos: 0 coma 9 7 7 2 4 9 9 menos 0 coma 1 5 8 6 5 5 3 igual a 0 coma 8 1 8 5 9 4 6.",
+                "start": 176.4,
+                "end": 190.13333333333333,
+                "startFrame": 5292,
+                "endFrame": 5704,
+                "words": 32,
+                "sceneIndex": 12,
+                "cueIndex": 2,
+                "sourceCueSha256": "85a787c16bed22adfd334ee5c8c236d6914458e3099bf4fe3cb08b02e0fd6f3a"
+              },
+              {
+                "text": "Queda solo el intervalo entre ambos umbrales.",
+                "start": 190.43333333333334,
+                "end": 193.43333333333334,
+                "startFrame": 5713,
+                "endFrame": 5803,
+                "words": 7,
+                "sceneIndex": 12,
+                "cueIndex": 3,
+                "sourceCueSha256": "6cf6ddc7540efd9e33d7a9a4636cedeb50db526a994ab6aeeabcb9dcae64ea44"
+              }
+            ]
+          },
+          {
+            "start": 193.73333333333332,
+            "end": 215.13333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 193.73333333333332,
+                "end": 195.03333333333333,
+                "startFrame": 5812,
+                "endFrame": 5851,
+                "words": 3,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 8 1 8 5 9 4 6 probabilidad entre 0 y 1.",
+                "start": 195.33333333333334,
+                "end": 202.63333333333333,
+                "startFrame": 5860,
+                "endFrame": 6079,
+                "words": 17,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "1c6a7df6dcbba6f6a35dff02bf3acf4f20982e30c431974ebad3ad9c2796b02d"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 202.93333333333334,
+                "end": 210.23333333333332,
+                "startFrame": 6088,
+                "endFrame": 6307,
+                "words": 17,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+              },
+              {
+                "text": "Los límites abiertos o cerrados no cambian la probabilidad continua.",
+                "start": 210.53333333333333,
+                "end": 214.83333333333334,
+                "startFrame": 6316,
+                "endFrame": 6445,
+                "words": 10,
+                "sceneIndex": 13,
+                "cueIndex": 3,
+                "sourceCueSha256": "615bf4be25e381e2487f1f1ffe87689da83bd80a553b09817884a7ec06306b3d"
+              }
+            ]
+          },
+          {
+            "start": 215.13333333333333,
+            "end": 227.33333333333334,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 8 1 8 5 9 4 6 probabilidad entre 0 y 1.",
+                "start": 215.13333333333333,
+                "end": 222.43333333333334,
+                "startFrame": 6454,
+                "endFrame": 6673,
+                "words": 17,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "fb6b43d494a35a6f2b925a2182360e36fddbae430e4539c3e8f0fbd84a65eb4c"
+              },
+              {
+                "text": "Los límites abiertos o cerrados no cambian la probabilidad continua.",
+                "start": 222.73333333333332,
+                "end": 227.03333333333333,
+                "startFrame": 6682,
+                "endFrame": 6811,
+                "words": 10,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "a88b6ec4bc1412dc7f24b89abe332e904f0062e6cc464651cef09d2cd944724a"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
