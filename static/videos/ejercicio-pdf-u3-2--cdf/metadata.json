@@ -1,0 +1,523 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u3-2--cdf",
+  "kind": "exercise",
+  "title": "¿Cuál es F(2,1), la probabilidad de menos de tres caras y ganancia de un euro o menos?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "1dbccb0e619c10422225bd5463593333ccffe69d4f7b7bc13fde9be702c2898c",
+  "src": "videos/ejercicio-pdf-u3-2--cdf/video.mp4",
+  "poster": "videos/ejercicio-pdf-u3-2--cdf/poster.jpg",
+  "duration": 207.2,
+  "frames": 6216,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "262153ba11e89045393307658a1aec03ce31837eda062fc355f508464f0a7544",
+  "videoSha256": "69f6acc5d476f6b4ef95bb3656d86f66182b6184fdec1a55eb34ee74e447a9ed",
+  "posterSha256": "1b924e6e1eed5180e586b87fdc602879f360f9bd83445eaafdd13895eabc5465",
+  "canonicalSha256": "594ef817011e765f1e715828721d26219ee7dbb590105c07eb03a235c3fbc88b",
+  "inputHash": "ca4f8513e4adb0c98c8d03d9ca644de8293328afcd4f4ecd2dd49d6527d0d090",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "b3e9457f84d92dcdaa809799e22cc36bd3ddbc8767d0cfae210d7fd138481643",
+    "canonicalSha256": "594ef817011e765f1e715828721d26219ee7dbb590105c07eb03a235c3fbc88b",
+    "source": {
+      "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+      "number": "2",
+      "page": 3
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "39ab86d0bd3f2a4a11b4376f91d1e0cc0d3f544f663b7ae93046dd085cc00f52",
+    "transcriptSha256": "262153ba11e89045393307658a1aec03ce31837eda062fc355f508464f0a7544",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u3-2",
+  "transcript": {
+    "id": "ejercicio-pdf-u3-2--cdf",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "594ef817011e765f1e715828721d26219ee7dbb590105c07eb03a235c3fbc88b",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 207.2,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 20.666666666666668,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es efe mayúscula abre paréntesis, 2 y 1, cierra paréntesis , la probabilidad de menos de tres caras y ganancia de un euro o menos?",
+            "start": 2.9,
+            "end": 14.066666666666666,
+            "startFrame": 87,
+            "endFrame": 422,
+            "words": 26,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "ae00d75e6bb1ce4e902eb980a310d6ce169285154df3888967a2815d9e46efc1"
+          },
+          {
+            "text": "Queremos acumular todos los valores que no superan el límite, incluyendo el propio límite.",
+            "start": 14.366666666666667,
+            "end": 20.366666666666667,
+            "startFrame": 431,
+            "endFrame": 611,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "2ee1dd5b22909a542dba8798ac94fa0f6b349d93b5a7a774d4144e41e20a0135"
+          }
+        ]
+      },
+      {
+        "start": 20.666666666666668,
+        "end": 38.666666666666664,
+        "cues": [
+          {
+            "text": "Cada celda de la conjunta representa dos valores del mismo resultado.",
+            "start": 20.666666666666668,
+            "end": 25.4,
+            "startFrame": 620,
+            "endFrame": 762,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "3f702495895226a07fcbc476e9e4210a70b35a622f15b3fdc7a1e50c22b9d29d"
+          },
+          {
+            "text": "Sumar sobre la coordenada que descartamos produce una marginal.",
+            "start": 25.7,
+            "end": 29.566666666666666,
+            "startFrame": 771,
+            "endFrame": 887,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "d179f69456c855dcd1b6ae2f29bd995d8a3edb51fe3d9bd93119da517bf58848"
+          },
+          {
+            "text": "Si fijamos una coordenada, dividimos por su marginal positiva para normalizar la condicional.",
+            "start": 29.866666666666667,
+            "end": 35.46666666666667,
+            "startFrame": 896,
+            "endFrame": 1064,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "b519009337c9d4c5ebf6a45c29e91b421da0ad1198b905e1ad259e6a61c28d2d"
+          },
+          {
+            "text": "No suponemos independencia de las coordenadas.",
+            "start": 35.766666666666666,
+            "end": 38.36666666666667,
+            "startFrame": 1073,
+            "endFrame": 1151,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "f3a0b63826844f6292a3cd1451eeef283234320558974f7c06ab7e1df4926c49"
+          }
+        ]
+      },
+      {
+        "start": 38.666666666666664,
+        "end": 47.43333333333333,
+        "cues": [
+          {
+            "text": "ce igual a cara; equis igual a cruz.",
+            "start": 38.666666666666664,
+            "end": 42.1,
+            "startFrame": 1160,
+            "endFrame": 1263,
+            "words": 8,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ec233cb6ba2d754efad8211cea1710fa636fd129867160f7644edd753cb2900a"
+          },
+          {
+            "text": "Tres lanzamientos independientes, cada cara con probabilidad 1 dividido entre 2.",
+            "start": 42.4,
+            "end": 47.13333333333333,
+            "startFrame": 1272,
+            "endFrame": 1414,
+            "words": 11,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "a81cf7eda619625452db85faef9ce8d4e496b1ebac6e4cde1ea73ca2f6d48253"
+          }
+        ]
+      },
+      {
+        "start": 47.43333333333333,
+        "end": 67.03333333333333,
+        "cues": [
+          {
+            "text": "i griega subíndice 1 igual a número de caras. i griega subíndice 2 igual a 1, 2 o 3 euros si la primera cara sale en el lanzamiento 1, 2 o 3; i griega subíndice 2 igual a menos 1 euro si no sale ninguna.",
+            "start": 47.43333333333333,
+            "end": 66.73333333333333,
+            "startFrame": 1423,
+            "endFrame": 2002,
+            "words": 45,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "b993aaefa500a68b6fa154e417b3b01aca57b7e3b4fb1b7c19605d8dd83eada0"
+          }
+        ]
+      },
+      {
+        "start": 67.03333333333333,
+        "end": 69.5,
+        "cues": [
+          {
+            "text": "Las ocho secuencias son equiprobables.",
+            "start": 67.03333333333333,
+            "end": 69.2,
+            "startFrame": 2011,
+            "endFrame": 2076,
+            "words": 5,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "a92072d3880c45526616872bafcf5598d385dd975dfb52f67b270b838381deda"
+          }
+        ]
+      },
+      {
+        "start": 69.5,
+        "end": 83.96666666666667,
+        "cues": [
+          {
+            "text": "Corrección de la fórmula resumida del PDF: pe abre paréntesis, 2 y 1, cierra paréntesis igual a 2 dividido entre 8; las otras seis celdas no nulas tienen masa 1 dividido entre 8.",
+            "start": 69.5,
+            "end": 83.66666666666667,
+            "startFrame": 2085,
+            "endFrame": 2510,
+            "words": 33,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "10b696577459ed416537c142f74ed3a603129ff83a43877353a647e4bf776318"
+          }
+        ]
+      },
+      {
+        "start": 83.96666666666667,
+        "end": 105.06666666666666,
+        "cues": [
+          {
+            "text": "i griega uno no supera dos y i griega dos no supera uno.",
+            "start": 83.96666666666667,
+            "end": 89.56666666666666,
+            "startFrame": 2519,
+            "endFrame": 2687,
+            "words": 13,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "15d99f183c61b8b8290c24b0ba06d475e5677ec4ffc8dd1a5da26def40d1b94c"
+          },
+          {
+            "text": "Incluyo la pérdida de un euro, porque también cumple el segundo límite.",
+            "start": 89.86666666666666,
+            "end": 95.03333333333333,
+            "startFrame": 2696,
+            "endFrame": 2851,
+            "words": 12,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "d663812f6e755c0fcc99095d06e0f8416663ee17f2ca27a8cd416b9a0f35a708"
+          },
+          {
+            "text": "La acumulada se construye con el soporte completo; si se pide por tramos, el valor de comprobación no sustituye a la función.",
+            "start": 95.33333333333333,
+            "end": 104.76666666666667,
+            "startFrame": 2860,
+            "endFrame": 3143,
+            "words": 22,
+            "sceneIndex": 6,
+            "cueIndex": 2,
+            "sourceCueSha256": "48aa7a8012f7f8fec14625d492bb06e892960744355dfbb47502e97a100e59c2"
+          }
+        ]
+      },
+      {
+        "start": 105.06666666666666,
+        "end": 134.4,
+        "cues": [
+          {
+            "text": "Seleccionar las dos condiciones. i griega uno no supera dos y i griega dos no supera uno.",
+            "start": 105.06666666666666,
+            "end": 112.36666666666666,
+            "startFrame": 3152,
+            "endFrame": 3371,
+            "words": 17,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "b7bfac6c16fb0516bcc929133dfaee467118545ea2623f927dc305a820d3ff14"
+          },
+          {
+            "text": "Incluyo la pérdida de un euro, porque también cumple el segundo límite. efe mayúscula abre paréntesis, 2 y 1, cierra paréntesis igual a pe abre paréntesis, 0 y menos 1, cierra paréntesis más pe abre paréntesis, 1 y 1, cierra paréntesis más pe abre paréntesis, 2 y 1, cierra paréntesis.",
+            "start": 112.66666666666667,
+            "end": 134.1,
+            "startFrame": 3380,
+            "endFrame": 4023,
+            "words": 50,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "b357fb64c50be2dfa93fa3b3a69d5b9168d94921a8e7ae88e1127074d76ae735"
+          }
+        ]
+      },
+      {
+        "start": 134.4,
+        "end": 143.6,
+        "cues": [
+          {
+            "text": "Añadir la pérdida.",
+            "start": 134.4,
+            "end": 135.7,
+            "startFrame": 4032,
+            "endFrame": 4071,
+            "words": 3,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "c169a5fe1354db3bbf424854b23d8967e9bc9ebf2820ee9082f4cec07ea44fb4"
+          },
+          {
+            "text": "XXX aporta una secuencia de las ocho posibles. ese subíndice 1 igual a 1 dividido entre 8.",
+            "start": 136,
+            "end": 143.3,
+            "startFrame": 4080,
+            "endFrame": 4299,
+            "words": 17,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "c69a59a40c65a0cffcb6e36fd99be3719eb758c5e88a3a9663e23e2061304db0"
+          }
+        ]
+      },
+      {
+        "start": 143.6,
+        "end": 156.23333333333332,
+        "cues": [
+          {
+            "text": "Añadir una cara con ganancia uno.",
+            "start": 143.6,
+            "end": 146.2,
+            "startFrame": 4308,
+            "endFrame": 4386,
+            "words": 6,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "332a27d2c38deeaf9a6ccb85b7e1da374ed92e98d8c0a23fa9cc2f952cbe4719"
+          },
+          {
+            "text": "CXX es compatible y añade una octava parte. ese subíndice 2 igual a 1 dividido entre 8 más 1 dividido entre 8.",
+            "start": 146.5,
+            "end": 155.93333333333334,
+            "startFrame": 4395,
+            "endFrame": 4678,
+            "words": 22,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "b99f73b261fc511b6e34807ad81af6a5cb912ee2d8c7cfd32c0a91d3e6397899"
+          }
+        ]
+      },
+      {
+        "start": 156.23333333333332,
+        "end": 160.83333333333334,
+        "cues": [
+          {
+            "text": "ese subíndice 2 queda igual a 2 dividido entre 8.",
+            "start": 156.23333333333332,
+            "end": 160.53333333333333,
+            "startFrame": 4687,
+            "endFrame": 4816,
+            "words": 10,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "aef399a452d1a83667f2b7f2ffdcfc40b92e6fcc1d89af04f7f85e1e531d9b6b"
+          }
+        ]
+      },
+      {
+        "start": 160.83333333333334,
+        "end": 179.36666666666667,
+        "cues": [
+          {
+            "text": "Añadir dos caras con ganancia uno.",
+            "start": 160.83333333333334,
+            "end": 163.43333333333334,
+            "startFrame": 4825,
+            "endFrame": 4903,
+            "words": 6,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "a4046bfd1116ce68b0605c638d36fef29bf91263f48de680ce6a63f3f31a8a9f"
+          },
+          {
+            "text": "CCX y CXC son dos secuencias distintas para la misma pareja.",
+            "start": 163.73333333333332,
+            "end": 168.46666666666667,
+            "startFrame": 4912,
+            "endFrame": 5054,
+            "words": 11,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "ed7de6b4122f3b3b9d9404067cd3a9b9e042d76445da65a7c7d03ee46e02b51e"
+          },
+          {
+            "text": "Añado dos octavas partes. efe mayúscula abre paréntesis, 2 y 1, cierra paréntesis igual a 2 dividido entre 8 más 2 dividido entre 8.",
+            "start": 168.76666666666668,
+            "end": 179.06666666666666,
+            "startFrame": 5063,
+            "endFrame": 5372,
+            "words": 24,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "d311a035a7662182204a7c99e68fce029c03792f4b21a745d23597f8c08aed41"
+          }
+        ]
+      },
+      {
+        "start": 179.36666666666667,
+        "end": 186.53333333333333,
+        "cues": [
+          {
+            "text": "efe mayúscula abre paréntesis, 2 y 1, cierra paréntesis queda igual a 4 dividido entre 8.",
+            "start": 179.36666666666667,
+            "end": 186.23333333333332,
+            "startFrame": 5381,
+            "endFrame": 5587,
+            "words": 16,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "2c29e0a1a7d7f03f0342d09477f0489f813d440e77d4414e36119139d303c386"
+          }
+        ]
+      },
+      {
+        "start": 186.53333333333333,
+        "end": 193.7,
+        "cues": [
+          {
+            "text": "efe mayúscula abre paréntesis, 2 y 1, cierra paréntesis queda igual a 1 dividido entre 2.",
+            "start": 186.53333333333333,
+            "end": 193.4,
+            "startFrame": 5596,
+            "endFrame": 5802,
+            "words": 16,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "fc30d4bc44cd117967ceccba1f71d2d98395797bcd8548ca8a8b53af92ba3b2a"
+          }
+        ]
+      },
+      {
+        "start": 193.7,
+        "end": 207.2,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+            "start": 193.7,
+            "end": 198.43333333333334,
+            "startFrame": 5811,
+            "endFrame": 5953,
+            "words": 11,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "a094fd16298cc02b5a91543659cdfdc4c95662e410268ecc69af07f8070307b3"
+          },
+          {
+            "text": "No se excluye la pérdida ni se asigna una sola octava parte a una celda alcanzada por dos secuencias.",
+            "start": 198.73333333333332,
+            "end": 206.9,
+            "startFrame": 5962,
+            "endFrame": 6207,
+            "words": 19,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "d36531f27a03f7882f23c59a7707c3f1c6995f3dbb876a3d4ec21124cec2d873"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
