@@ -141330,6 +141330,676 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-capstone-pec1-2--c-i": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-capstone-pec1-2--c-i",
+      "kind": "exercise",
+      "title": "Dadas cuatro colonias en la primera placa, calcula la probabilidad posterior de que proceda de I2.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "2526770f40dac5216698e591e07fc7d585a6f77b577bbbd250b0c27dbf34ac5d",
+      "src": "videos/ejercicio-capstone-pec1-2--c-i/video.mp4",
+      "poster": "videos/ejercicio-capstone-pec1-2--c-i/poster.jpg",
+      "duration": 299.5,
+      "frames": 8985,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "69efca0366b965073ea0152569fd27cfcce6b2b271c3f37c6f9ec19aae243ceb",
+      "videoSha256": "0fa0eca117aaa11b95848f69a9faa7f543e0f3b32a24537188ab754c0341d434",
+      "posterSha256": "b9ec2ac8024e4d4422da76ed32bc437cd7f0e5ed703d104b32177c10cfa80f47",
+      "canonicalSha256": "61e7054cc5c1f40f411263a2aa172acb8766431315bd9c8b5ca4f1421e0f20b4",
+      "inputHash": "aca31e3bb0ea66a671bf1a7cf0c8af5ea7dde1d4238cc80c04bef02380a8eeea",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "f767ca5fed056e2cadbc4b7f65dd7004a76a76e2734a75def7072e7499c5b620",
+        "canonicalSha256": "61e7054cc5c1f40f411263a2aa172acb8766431315bd9c8b5ca4f1421e0f20b4",
+        "source": {
+          "file": "UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "url": "/materiales/UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "kind": "statement",
+          "title": "UOC MU IE 2026-27 S1: PEC 1, enunciado",
+          "number": "2"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "08aac2cdbed06d4181f62616d7d59280f2e4731b073d0561d87e7b3946a207b4",
+        "transcriptSha256": "69efca0366b965073ea0152569fd27cfcce6b2b271c3f37c6f9ec19aae243ceb",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-capstone-pec1-2",
+      "transcript": {
+        "id": "ejercicio-capstone-pec1-2--c-i",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "61e7054cc5c1f40f411263a2aa172acb8766431315bd9c8b5ca4f1421e0f20b4",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 299.5,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 15.1,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Dadas cuatro colonias en la primera placa, calcula la probabilidad posterior de que proceda de I2.",
+                "start": 2.9,
+                "end": 9.766666666666667,
+                "startFrame": 87,
+                "endFrame": 293,
+                "words": 16,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "25314925f98cf911b18082f635184e2d8410eeed690b069f227f8a04527930b4"
+              },
+              {
+                "text": "Queremos saber qué proporción de los positivos tiene realmente la condición.",
+                "start": 10.066666666666666,
+                "end": 14.8,
+                "startFrame": 302,
+                "endFrame": 444,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "5b3b91037150b544a8b1ebba1ee06319d1d3ab67331b924f00ac7d3afcd1520f"
+              }
+            ]
+          },
+          {
+            "start": 15.1,
+            "end": 32.8,
+            "cues": [
+              {
+                "text": "Una probabilidad previa describe el grupo antes de observar la prueba; una verosimilitud describe la prueba dentro de ese grupo.",
+                "start": 15.1,
+                "end": 23.7,
+                "startFrame": 453,
+                "endFrame": 711,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "a78813f0593784db0080773fed28297f6d58b49427dced4db248ec9356fc77ee"
+              },
+              {
+                "text": "Multiplicar ambas da una ruta conjunta.",
+                "start": 24,
+                "end": 26.6,
+                "startFrame": 720,
+                "endFrame": 798,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "e0bfa350990103fc50ce34d85a3f06fac20352535039204a3248db305d959e10"
+              },
+              {
+                "text": "Los orígenes son excluyentes y exhaustivos: sumamos sus rutas para normalizar la posterior.",
+                "start": 26.9,
+                "end": 32.5,
+                "startFrame": 807,
+                "endFrame": 975,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "9e334d6cf001939223cef8fab9b903c166ad178ed9cdb956c098dbb84093b451"
+              }
+            ]
+          },
+          {
+            "start": 32.8,
+            "end": 38.266666666666666,
+            "cues": [
+              {
+                "text": "Una placa tiene un recuento Poisson con media 1 coma 5 colonias.",
+                "start": 32.8,
+                "end": 37.96666666666667,
+                "startFrame": 984,
+                "endFrame": 1139,
+                "words": 12,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "eeb9d0873548588380b0da978bf86531346212fcfba92948c63aace288edb5fd"
+              }
+            ]
+          },
+          {
+            "start": 38.266666666666666,
+            "end": 44.166666666666664,
+            "cues": [
+              {
+                "text": "En be se suman cinco placas independientes, todas con media 1 coma 5.",
+                "start": 38.266666666666666,
+                "end": 43.86666666666667,
+                "startFrame": 1148,
+                "endFrame": 1316,
+                "words": 13,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "ff23a832da1c179f445adc3789a1ed3c1734942e288956ec1f7abb892d49ccd0"
+              }
+            ]
+          },
+          {
+            "start": 44.166666666666664,
+            "end": 58.1,
+            "cues": [
+              {
+                "text": "En ce la incubadora I1 tiene probabilidad previa 0 coma 6 y media 1 coma 5; I2 tiene previa 0 coma 4 y media 3.",
+                "start": 44.166666666666664,
+                "end": 54.9,
+                "startFrame": 1325,
+                "endFrame": 1647,
+                "words": 25,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "d39af8d5890d131c60632f7b6a230addfbe1e219920ef393dfa7e09959679e88"
+              },
+              {
+                "text": "La primera placa tiene cuatro colonias.",
+                "start": 55.2,
+                "end": 57.8,
+                "startFrame": 1656,
+                "endFrame": 1734,
+                "words": 6,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "78f1edfad7f7fa2a87c4f48c6a28a7fc32a7c77d704509eb5664658796072e35"
+              }
+            ]
+          },
+          {
+            "start": 58.1,
+            "end": 63.56666666666667,
+            "cues": [
+              {
+                "text": "La siguiente placa procede de la misma incubadora desconocida que la primera.",
+                "start": 58.1,
+                "end": 63.266666666666666,
+                "startFrame": 1743,
+                "endFrame": 1898,
+                "words": 12,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "08c341b7171708e95aed0844e0a4b0bf576c1bd12647677bb4080bedb0d38c56"
+              }
+            ]
+          },
+          {
+            "start": 63.56666666666667,
+            "end": 71.6,
+            "cues": [
+              {
+                "text": "Las medias Poisson corresponden a una placa con la misma exposición, no a una tasa sin unidad experimental.",
+                "start": 63.56666666666667,
+                "end": 71.3,
+                "startFrame": 1907,
+                "endFrame": 2139,
+                "words": 18,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "733f9458d916cbd256e3a455a6ed6f694505d5ceba82532a404f10c91cb4cf15"
+              }
+            ]
+          },
+          {
+            "start": 71.6,
+            "end": 80.06666666666666,
+            "cues": [
+              {
+                "text": "En ce los recuentos son independientes condicionados a la incubadora; no se supone independencia marginal tras ocultar su identidad.",
+                "start": 71.6,
+                "end": 79.76666666666667,
+                "startFrame": 2148,
+                "endFrame": 2393,
+                "words": 19,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "50430a4bf4b64f8f2be00675d3c1f6bcd0048fc41ac96dc504a189def8167ab0"
+              }
+            ]
+          },
+          {
+            "start": 80.06666666666666,
+            "end": 93.53333333333333,
+            "cues": [
+              {
+                "text": "Antes de contar colonias, I1 tiene peso cero coma seis e I2 cero coma cuatro.",
+                "start": 80.06666666666666,
+                "end": 86.5,
+                "startFrame": 2402,
+                "endFrame": 2595,
+                "words": 15,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "5353b8a34fdfd4fed638a8b53988949570b2876bfad0e2c0a67e76075655fe9f"
+              },
+              {
+                "text": "La sensibilidad condiciona en el sentido contrario; Bayes cambia la referencia a todos los positivos.",
+                "start": 86.8,
+                "end": 93.23333333333333,
+                "startFrame": 2604,
+                "endFrame": 2797,
+                "words": 15,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "a38924d737fe70339030d7745a7985b2de62cededce70853c5409bfe0fc9138c"
+              }
+            ]
+          },
+          {
+            "start": 93.53333333333333,
+            "end": 106.6,
+            "cues": [
+              {
+                "text": "Conservar las probabilidades previas.",
+                "start": 93.53333333333333,
+                "end": 95.26666666666667,
+                "startFrame": 2806,
+                "endFrame": 2858,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "026c4560216afa35f8603cc74b812b3cb98b7c0929ae40f50dfbd2c623a7f061"
+              },
+              {
+                "text": "Antes de contar colonias, I1 tiene peso cero coma seis e I2 cero coma cuatro. probabilidad de i subíndice 2 igual a 0 coma 4.",
+                "start": 95.56666666666666,
+                "end": 106.3,
+                "startFrame": 2867,
+                "endFrame": 3189,
+                "words": 25,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "ca992400d3753f181ce529860591bf5b30c6ba003b1c7afae790cc7789af8015"
+              }
+            ]
+          },
+          {
+            "start": 106.6,
+            "end": 114.5,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 106.6,
+                "end": 110.03333333333333,
+                "startFrame": 3198,
+                "endFrame": 3301,
+                "words": 8,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 110.33333333333333,
+                "end": 114.2,
+                "startFrame": 3310,
+                "endFrame": 3426,
+                "words": 9,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 114.5,
+            "end": 145.9,
+            "cues": [
+              {
+                "text": "Verosimilitud de I1.",
+                "start": 114.5,
+                "end": 115.8,
+                "startFrame": 3435,
+                "endFrame": 3474,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "442a127e927740a00357045bbadc65ceef789e693e968d22957bb32e16100049"
+              },
+              {
+                "text": "Si conozco I1, cuatro colonias tienen masa Poisson con parámetro uno coma cinco.",
+                "start": 116.1,
+                "end": 121.7,
+                "startFrame": 3483,
+                "endFrame": 3651,
+                "words": 13,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "d8318edb2465a1185739d80c20ad90f221302a1d4dc1e75d94178402a75b0a2e"
+              },
+              {
+                "text": "Esto no es la posterior de I1. probabilidad de ene mayúscula subíndice 1 igual a 4 sabiendo que i subíndice 1 igual a abre paréntesis, 1 coma 5 elevado a 4 por e elevado a abre paréntesis, menos 1 coma 5, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, 4 factorial , cierra paréntesis.",
+                "start": 122,
+                "end": 145.6,
+                "startFrame": 3660,
+                "endFrame": 4368,
+                "words": 55,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "a543467350eb481b8c8559c30752da718d61ad55e86e337516a00286f4af60b7"
+              }
+            ]
+          },
+          {
+            "start": 145.9,
+            "end": 171.4,
+            "cues": [
+              {
+                "text": "Verosimilitud de I2.",
+                "start": 145.9,
+                "end": 147.2,
+                "startFrame": 4377,
+                "endFrame": 4416,
+                "words": 3,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "845343436484a0de06f61734d65d7ff39ddc1937a44c146d8155e0a7be57e021"
+              },
+              {
+                "text": "La otra incubadora usa lambda tres, conservando el mismo recuento observado. probabilidad de ene mayúscula subíndice 1 igual a 4 sabiendo que i subíndice 2 igual a abre paréntesis, 3 elevado a 4 por e elevado a abre paréntesis, menos 3, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, 4 factorial , cierra paréntesis.",
+                "start": 147.5,
+                "end": 171.1,
+                "startFrame": 4425,
+                "endFrame": 5133,
+                "words": 55,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "3d9495db569eee2a5a5d889d6945015956bec15177560d2fda6a6ead4fd400d2"
+              }
+            ]
+          },
+          {
+            "start": 171.4,
+            "end": 180.06666666666666,
+            "cues": [
+              {
+                "text": "Ponderar la primera ruta.",
+                "start": 171.4,
+                "end": 173.13333333333333,
+                "startFrame": 5142,
+                "endFrame": 5194,
+                "words": 4,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "5b4ea5aff5b98c7264c5b171609f293678f94526b26c700ebef53da26512c5d4"
+              },
+              {
+                "text": "Multiplico la previa de I1 por su verosimilitud.",
+                "start": 173.43333333333334,
+                "end": 176.86666666666667,
+                "startFrame": 5203,
+                "endFrame": 5306,
+                "words": 8,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "dead99ed59944930fcb075112161bd8df575ff94814a3f72244bd1307f4fd18a"
+              },
+              {
+                "text": "La barra mide una probabilidad conjunta.",
+                "start": 177.16666666666666,
+                "end": 179.76666666666668,
+                "startFrame": 5315,
+                "endFrame": 5393,
+                "words": 6,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "62699595e15ec6cdcb2e307417614d0cfc5e04c230039a514648b0a714861fd1"
+              }
+            ]
+          },
+          {
+            "start": 180.06666666666666,
+            "end": 188.73333333333332,
+            "cues": [
+              {
+                "text": "Ponderar la segunda ruta.",
+                "start": 180.06666666666666,
+                "end": 181.8,
+                "startFrame": 5402,
+                "endFrame": 5454,
+                "words": 4,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "711e33d641e51c302361cbf08c0fc4ceab87a82af17dd6c86c0e51556340e108"
+              },
+              {
+                "text": "Hago lo mismo con I2.",
+                "start": 182.1,
+                "end": 184.26666666666668,
+                "startFrame": 5463,
+                "endFrame": 5528,
+                "words": 5,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "98485d9fcfb89ee46b0b3915cfbcdc5db4931a5f022fbc0636779570ed5a1e70"
+              },
+              {
+                "text": "Solo ahora dibujo ambas rutas conjuntas, sin normalizarlas todavía.",
+                "start": 184.56666666666666,
+                "end": 188.43333333333334,
+                "startFrame": 5537,
+                "endFrame": 5653,
+                "words": 9,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "4d6c5136b08e6c198418162e5623c7182bc58240b2ba99a0d9d22ed0eda586bd"
+              }
+            ]
+          },
+          {
+            "start": 188.73333333333332,
+            "end": 213.8,
+            "cues": [
+              {
+                "text": "Sumar todas las rutas observadas.",
+                "start": 188.73333333333332,
+                "end": 190.9,
+                "startFrame": 5662,
+                "endFrame": 5727,
+                "words": 5,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "f87a29a6ce1f252b1373ff3bca7a6528280d65f257f2bdfa0ba352fc8ccfa028"
+              },
+              {
+                "text": "El denominador de Bayes es la probabilidad de cuatro colonias, sumando los dos origenes posibles. probabilidad de ene mayúscula subíndice 1 igual a 4 igual a 0 coma 0 2 8 2 3 9 9 1 0 8 9 más 0 coma 0 6 7 2 1 2 5 4 2 3.",
+                "start": 191.2,
+                "end": 213.5,
+                "startFrame": 5736,
+                "endFrame": 6405,
+                "words": 52,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "bc8bed06404334e08c67bcf05a15fd2aaf0c33695c143e12d71d33986173dcc6"
+              }
+            ]
+          },
+          {
+            "start": 213.8,
+            "end": 258.1666666666667,
+            "cues": [
+              {
+                "text": "Normalizar la ruta de I2.",
+                "start": 213.8,
+                "end": 215.96666666666667,
+                "startFrame": 6414,
+                "endFrame": 6479,
+                "words": 5,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "ed8fb506accadaadd81d34ea6cb92525f3ed6dc2ca8eb278934e76206ebd85c7"
+              },
+              {
+                "text": "Divido la ruta de I2 por la evidencia total, sin redondear ninguna ruta. probabilidad de i subíndice 2 sabiendo que ene mayúscula subíndice 1 igual a 4 igual a abre paréntesis, 0 coma 4 3 elevado a 4 por e elevado a abre paréntesis, menos 3, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, 0 coma 6 1 coma 5 elevado a 4 por e elevado a abre paréntesis, menos 1 coma 5, cierra paréntesis más 0 coma 4 3 elevado a 4 por e elevado a abre paréntesis, menos 3, cierra paréntesis , cierra paréntesis.",
+                "start": 216.26666666666668,
+                "end": 257.8666666666667,
+                "startFrame": 6488,
+                "endFrame": 7736,
+                "words": 97,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "ecca4fe335418b3a210fd2ad1ef5e5ea452dd1901f86b483b0dc356c4dca7987"
+              }
+            ]
+          },
+          {
+            "start": 258.1666666666667,
+            "end": 281.4,
+            "cues": [
+              {
+                "text": "Leer la posterior.",
+                "start": 258.1666666666667,
+                "end": 259.46666666666664,
+                "startFrame": 7745,
+                "endFrame": 7784,
+                "words": 3,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "e1e0f0188772aeafc3bfdf1233d2253d69f7d5047bf2a2c101d85d319d2b18b4"
+              },
+              {
+                "text": "Cuatro colonias favorecen la incubadora con media tres.",
+                "start": 259.76666666666665,
+                "end": 263.2,
+                "startFrame": 7793,
+                "endFrame": 7896,
+                "words": 8,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "720c29ff58c4de353bc2d1157cf7050cafaa07d3b75aa77679ede7bee67e3ef4"
+              },
+              {
+                "text": "La posterior supera su previa cero coma cuatro, pero no llega a uno. probabilidad de i subíndice 2 sabiendo que ene mayúscula subíndice 1 igual a 4 igual a 0 coma 7 0 4 1 4 6 8 2 9 7.",
+                "start": 263.5,
+                "end": 281.1,
+                "startFrame": 7905,
+                "endFrame": 8433,
+                "words": 41,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "5025d889a6ad44d88c0f701d1860ba595eba19f7d3c24610fe7183ff2296f560"
+              }
+            ]
+          },
+          {
+            "start": 281.4,
+            "end": 299.5,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 7 0 4 1 4 6 8 probabilidad entre 0 y 1.",
+                "start": 281.4,
+                "end": 288.7,
+                "startFrame": 8442,
+                "endFrame": 8661,
+                "words": 17,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "bbcaa8dde0d42c10c18085411dc4c6694c9fdb75592dad5c878ed5d3420fb05c"
+              },
+              {
+                "text": "La verosimilitud no es una posterior.",
+                "start": 289,
+                "end": 291.6,
+                "startFrame": 8670,
+                "endFrame": 8748,
+                "words": 6,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "308ab105ff88817bacb1ac0caf71cc0f4755df82bc7b250e0bc849637dbc5e28"
+              },
+              {
+                "text": "Los pesos 0 coma 6 y 0 coma 4 y las dos rutas deben figurar en Bayes.",
+                "start": 291.9,
+                "end": 299.2,
+                "startFrame": 8757,
+                "endFrame": 8976,
+                "words": 17,
+                "sceneIndex": 18,
+                "cueIndex": 2,
+                "sourceCueSha256": "16464c0a4f94ebe92549f8b59ca3b03b8ecd81c3b95c1faf137cf74a9c724167"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
