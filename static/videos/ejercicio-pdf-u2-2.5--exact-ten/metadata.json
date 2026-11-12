@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.5--exact-ten",
+  "kind": "exercise",
+  "title": "¿Qué probabilidad tiene exactamente diez muertes?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "dfc921f9c8bc0c73cc6d513e0280bc6d18ef974666019997582f3718b7ff00cd",
+  "src": "videos/ejercicio-pdf-u2-2.5--exact-ten/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.5--exact-ten/poster.jpg",
+  "duration": 166.03333333333333,
+  "frames": 4981,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "e7ef62433cb576fe140842f73214ac36e69469f4789840cb21f6fdef8422cbac",
+  "videoSha256": "9f4e6c984df2b1eb34b74870e8e91cfc46c485396f43c412f8dbf4d7b50b436d",
+  "posterSha256": "7166d5dc6bda7e762ca32388cc74dadfd780b4747cc1c08219941f8592778076",
+  "canonicalSha256": "e2e7a03bafc52bf562f451497ad93f3da936d67b16fbd01aca5f854abe17efec",
+  "inputHash": "7d93d6c80dd1c41a40e22b14fc4f06c208528e1bc54371fab89d29d95534be4f",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "51cdee499c7087b24b05d02ee206239bb00e250fde2c2e4f4807a6e7661bc2cd",
+    "canonicalSha256": "e2e7a03bafc52bf562f451497ad93f3da936d67b16fbd01aca5f854abe17efec",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.5",
+      "page": 15
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "0197f1b922aaca620c2920901c7a223246180811e64fad51300cd48bac81d4fa",
+    "transcriptSha256": "e7ef62433cb576fe140842f73214ac36e69469f4789840cb21f6fdef8422cbac",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.5",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.5--exact-ten",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "e2e7a03bafc52bf562f451497ad93f3da936d67b16fbd01aca5f854abe17efec",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 166.03333333333333,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.1,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué probabilidad tiene exactamente diez muertes?",
+            "start": 2.9,
+            "end": 5.5,
+            "startFrame": 87,
+            "endFrame": 165,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "ed84c1edd780c07be1484a11757183e5237cc69a85bedd69f1dea7e4f75a331b"
+          },
+          {
+            "text": "Queremos un recuento exacto, no una acumulada.",
+            "start": 5.8,
+            "end": 8.8,
+            "startFrame": 174,
+            "endFrame": 264,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "dd51392a0a1d34f623ecf34dbe3da60ac9cb7fbfc525e093de9da13592f7ce2f"
+          }
+        ]
+      },
+      {
+        "start": 9.1,
+        "end": 31.5,
+        "cues": [
+          {
+            "text": "equis cuenta eventos en una exposición fija y lambda es su recuento esperado en esa exposición, no una probabilidad.",
+            "start": 9.1,
+            "end": 17.266666666666666,
+            "startFrame": 273,
+            "endFrame": 518,
+            "words": 19,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "a993244c4393e65194e8e0c7bb9febac29b21dd2f4053edf6116522e527adfc4"
+          },
+          {
+            "text": "La masa de ka combina e elevado a menos lambda, lambda a ka y ka factorial; el factorial corrige las permutaciones de los mismos eventos.",
+            "start": 17.566666666666666,
+            "end": 28.3,
+            "startFrame": 527,
+            "endFrame": 849,
+            "words": 25,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "342ed2159c1346fa50af1e172cad92fadcfa3b85d9e9e92a2f0c363ec8f62f94"
+          },
+          {
+            "text": "La exponencial normaliza todas las masas.",
+            "start": 28.6,
+            "end": 31.2,
+            "startFrame": 858,
+            "endFrame": 936,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "9155a939092b4b4da0d10a07d78a451e70139382ab3d6853f74618fa04c6a588"
+          }
+        ]
+      },
+      {
+        "start": 31.5,
+        "end": 35.666666666666664,
+        "cues": [
+          {
+            "text": "Media anual lambda igual a 12; exposición: un año.",
+            "start": 31.5,
+            "end": 35.36666666666667,
+            "startFrame": 945,
+            "endFrame": 1061,
+            "words": 9,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "c8661b699219f1d49ee2cc454fc5c48994c5457859525906cd52922f5e51974c"
+          }
+        ]
+      },
+      {
+        "start": 35.666666666666664,
+        "end": 42.4,
+        "cues": [
+          {
+            "text": "Se adopta el modelo Poisson indicado; la media anual no garantiza un recuento de doce.",
+            "start": 35.666666666666664,
+            "end": 42.1,
+            "startFrame": 1070,
+            "endFrame": 1263,
+            "words": 15,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "b78dede84b9fcd892b13348a09d6e9cf191c9021269458c963fa553acc506df0"
+          }
+        ]
+      },
+      {
+        "start": 42.4,
+        "end": 55.8,
+        "cues": [
+          {
+            "text": "Lambda, la media de eventos en la exposición del enunciado, vale 12.",
+            "start": 42.4,
+            "end": 47.56666666666667,
+            "startFrame": 1272,
+            "endFrame": 1427,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "8c6206610803d5861de2a09173e251c07f5d9917e52e8a8c9ac9dbb08b3040aa"
+          },
+          {
+            "text": "No cambio esa exposición.",
+            "start": 47.86666666666667,
+            "end": 49.6,
+            "startFrame": 1436,
+            "endFrame": 1488,
+            "words": 4,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "0d1260e0aa5299c2ffa36a5015bacc45f9c8105a33754d12834cc11563ac04d4"
+          },
+          {
+            "text": "Conservamos solo el entero pedido; las condiciones del modelo determinan qué masa utilizar.",
+            "start": 49.9,
+            "end": 55.5,
+            "startFrame": 1497,
+            "endFrame": 1665,
+            "words": 13,
+            "sceneIndex": 4,
+            "cueIndex": 2,
+            "sourceCueSha256": "7eb8b0e1cf3268615536936c355da4847855bcd2a6b5bfc73e9244b9259444c0"
+          }
+        ]
+      },
+      {
+        "start": 55.8,
+        "end": 66.83333333333333,
+        "cues": [
+          {
+            "text": "En este modelo Poisson, lambda es el recuento esperado por unidad de exposición del enunciado, no una probabilidad ni la inversa de una escala temporal.",
+            "start": 55.8,
+            "end": 66.53333333333333,
+            "startFrame": 1674,
+            "endFrame": 1996,
+            "words": 25,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "4af63908ce612aa816aadffd1f9991bacb63a4ea9a74f28db62d71249d038421"
+          }
+        ]
+      },
+      {
+        "start": 66.83333333333333,
+        "end": 77.63333333333334,
+        "cues": [
+          {
+            "text": "Identificar la exposición.",
+            "start": 66.83333333333333,
+            "end": 68.13333333333334,
+            "startFrame": 2005,
+            "endFrame": 2044,
+            "words": 3,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "273c3779b03b1c448263f5e418600c5a19399565ffeffa07e71901f2722c3193"
+          },
+          {
+            "text": "Lambda, la media de eventos en la exposición del enunciado, vale 12.",
+            "start": 68.43333333333334,
+            "end": 73.6,
+            "startFrame": 2053,
+            "endFrame": 2208,
+            "words": 12,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "99c1e3d0d38972402b8a7bcdf40b03260b3a25cb22b5442108074da6ccc633ab"
+          },
+          {
+            "text": "No cambio esa exposición. lambda igual a 12.",
+            "start": 73.9,
+            "end": 77.33333333333333,
+            "startFrame": 2217,
+            "endFrame": 2320,
+            "words": 8,
+            "sceneIndex": 6,
+            "cueIndex": 2,
+            "sourceCueSha256": "476b47ffbd319be4e8c9a5dd5179b3affdb62f9696c4ae43c760fd855aa3d9a7"
+          }
+        ]
+      },
+      {
+        "start": 77.63333333333334,
+        "end": 89.4,
+        "cues": [
+          {
+            "text": "Elevar la media.",
+            "start": 77.63333333333334,
+            "end": 78.93333333333334,
+            "startFrame": 2329,
+            "endFrame": 2368,
+            "words": 3,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "b2676554ff0837b20741d1ae3a213cb2b9cf2231446ff10489ae1a844646f07e"
+          },
+          {
+            "text": "Para exactamente 10 eventos, la masa contiene lambda elevada a ese recuento. 12 elevado a abre paréntesis, 10, cierra paréntesis igual a 61917364224.",
+            "start": 79.23333333333333,
+            "end": 89.1,
+            "startFrame": 2377,
+            "endFrame": 2673,
+            "words": 23,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "8ced76b55fd007de387345e28d47df474b3f3bd0a061776d4f11c39cf5af057c"
+          }
+        ]
+      },
+      {
+        "start": 89.4,
+        "end": 110.6,
+        "cues": [
+          {
+            "text": "La atenuación exponencial.",
+            "start": 89.4,
+            "end": 90.7,
+            "startFrame": 2682,
+            "endFrame": 2721,
+            "words": 3,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "db351141f399dcb560026f40ca968a5f43333b613cf18dbfa851c3dc0b927aea"
+          },
+          {
+            "text": "La masa de Poisson incluye el factor e elevado a menos lambda. e elevado a abre paréntesis, menos 12, cierra paréntesis igual a 0 coma 0 0 0 0 0 6 1 4 4 2 1 2 3 5 3 3 2 8 2 1.",
+            "start": 91,
+            "end": 110.3,
+            "startFrame": 2730,
+            "endFrame": 3309,
+            "words": 45,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "a993cb86d1300a0a86bb9e17561238a7ff81a17bb0c09e6f07f0a4b12d13c2e7"
+          }
+        ]
+      },
+      {
+        "start": 110.6,
+        "end": 119.7,
+        "cues": [
+          {
+            "text": "Contar reordenaciones.",
+            "start": 110.6,
+            "end": 111.8,
+            "startFrame": 3318,
+            "endFrame": 3354,
+            "words": 2,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "9ce8b8e9d7177620c92308ed92a757254d756881742836504efb99996ad6b1c1"
+          },
+          {
+            "text": "El factorial del recuento corrige las ordenaciones del mismo conjunto de eventos. 10 factorial igual a 3628800.",
+            "start": 112.1,
+            "end": 119.4,
+            "startFrame": 3363,
+            "endFrame": 3582,
+            "words": 17,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "83678c0b71892777758a276107d73fb4f11201682c4660d3d00e57e735b72838"
+          }
+        ]
+      },
+      {
+        "start": 119.7,
+        "end": 127.6,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 119.7,
+            "end": 123.13333333333334,
+            "startFrame": 3591,
+            "endFrame": 3694,
+            "words": 8,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 123.43333333333334,
+            "end": 127.3,
+            "startFrame": 3703,
+            "endFrame": 3819,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 127.6,
+        "end": 136.8,
+        "cues": [
+          {
+            "text": "Combinar los factores.",
+            "start": 127.6,
+            "end": 128.9,
+            "startFrame": 3828,
+            "endFrame": 3867,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "22e9c39589b1f6b04c267947463aefb83973c2bbf0cd1578421c9d6d9e9fb326"
+          },
+          {
+            "text": "Multiplico la potencia por la exponencial y divido por el factorial. probabilidad de equis igual a 10.",
+            "start": 129.2,
+            "end": 136.5,
+            "startFrame": 3876,
+            "endFrame": 4095,
+            "words": 17,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "6ed9ef9dd61e206a2b400ae73d35a7b8987aa680bc0a9793ddba525ce4d8005a"
+          }
+        ]
+      },
+      {
+        "start": 136.8,
+        "end": 154.26666666666668,
+        "cues": [
+          {
+            "text": "probabilidad de equis igual a 10 queda igual a abre paréntesis, 12 elevado a abre paréntesis, 10, cierra paréntesis e elevado a abre paréntesis, menos 12, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, 10 factorial , cierra paréntesis.",
+            "start": 136.8,
+            "end": 153.96666666666667,
+            "startFrame": 4104,
+            "endFrame": 4619,
+            "words": 40,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "21c7663aa7fa05e0feb20a1622c9bba7211a1d481d71ede0cad5ad3df47deba9"
+          }
+        ]
+      },
+      {
+        "start": 154.26666666666668,
+        "end": 166.03333333333333,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 1 0 4 8 3 7 3 probabilidad entre 0 y 1.",
+            "start": 154.26666666666668,
+            "end": 161.56666666666666,
+            "startFrame": 4628,
+            "endFrame": 4847,
+            "words": 17,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "5543b0b54af60bcb9cdff935f9562b296eb37416ae20380c0843ea1b091c6c5c"
+          },
+          {
+            "text": "Esta es una masa puntual, no una probabilidad acumulada.",
+            "start": 161.86666666666667,
+            "end": 165.73333333333332,
+            "startFrame": 4856,
+            "endFrame": 4972,
+            "words": 9,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "03b3cc094ac78ffba6fd03ab1150b4fbe46a2c51b511734fe08bbf5fa5667f47"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
