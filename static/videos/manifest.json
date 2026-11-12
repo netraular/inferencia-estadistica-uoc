@@ -113347,6 +113347,1295 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "combinaciones-incorrelacion": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "combinaciones-incorrelacion",
+      "kind": "recap",
+      "title": "Combinaciones lineales e incorrelación",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "be71f1c2b4e59fd701e474a5d244aa1832c7190456c674b38709dce72d5d6921",
+      "src": "videos/combinaciones-incorrelacion/video.mp4",
+      "poster": "videos/combinaciones-incorrelacion/poster.jpg",
+      "duration": 580.2333333333333,
+      "frames": 17407,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "1094c92150b945e693337d57e97274af9f0b10c6d77221ff71416773eb04846f",
+      "videoSha256": "c2567be40121712bdb82fae7fa763fc98c31d148c960434ae8997f795c3b11d8",
+      "posterSha256": "f043b6fa1061eff8722af56a8ab8e183731a014ad83eec5a914884958a907b28",
+      "canonicalSha256": "b6039449ae434b56a54412ed56f74907363f2183c1a8dbcc1ccce2aa69807148",
+      "inputHash": "a1841dc5604e66da59e000cb31217f111808291bd03597f995744814efb4f17a",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "df972a2aac0f3838757afcf3c5d272a335ee3e164c843275ebb6f8bdc4ceed15",
+        "canonicalSha256": "b6039449ae434b56a54412ed56f74907363f2183c1a8dbcc1ccce2aa69807148",
+        "source": {
+          "document": "FundamentosInferencia_Tema4.pdf",
+          "section": "4.8.6 a 4.8.9: productos, combinaciones lineales, multinomial e incorrelación; ejercicios U3 6 a 8"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "15b621cde4b73ea03b7eb1f029dd8cd825abeab818436fceab4fa0f04cd3e1e4",
+        "transcriptSha256": "1094c92150b945e693337d57e97274af9f0b10c6d77221ff71416773eb04846f",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "combinaciones-incorrelacion",
+      "transcript": {
+        "id": "combinaciones-incorrelacion",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "b6039449ae434b56a54412ed56f74907363f2183c1a8dbcc1ccce2aa69807148",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 580.2333333333333,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 64.7,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Vamos a combinar medidas conservando la contribución de su dependencia.",
+                "start": 1.5,
+                "end": 5.8,
+                "startFrame": 45,
+                "endFrame": 174,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "cc1d845187fda6988e697d715558dbbaffecfca50e3b58766c12a5779a8d7df6"
+              },
+              {
+                "text": "Para variables integrables, la esperanza es lineal sin exigir independencia.",
+                "start": 6.1,
+                "end": 10.4,
+                "startFrame": 183,
+                "endFrame": 312,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "2c7305fe0826eb1dfc2fb59680f5baba4b0afdf5383380086551117dc900d148"
+              },
+              {
+                "text": "La media de dos veces equis menos i griega es dos medias de equis menos una de i griega.",
+                "start": 10.7,
+                "end": 18.866666666666667,
+                "startFrame": 321,
+                "endFrame": 566,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "d126a09e61511e1bc36d63242c2164e618201b34a8df16bb991330c7cc771dcd"
+              },
+              {
+                "text": "Con medias diez y tres, obtenemos veinte menos tres: diecisiete.",
+                "start": 19.166666666666668,
+                "end": 23.466666666666665,
+                "startFrame": 575,
+                "endFrame": 704,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "bfc1b6f18c1612193439a547373f57d33fdfb87f9a938c520823a78d16c6ae90"
+              },
+              {
+                "text": "Añadir una constante desplazaría ese centro, pero no cambiaría la dispersión.",
+                "start": 23.766666666666666,
+                "end": 28.5,
+                "startFrame": 713,
+                "endFrame": 855,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "5c3302e97f03153143b636c2c1ad495b692eb253c4f78ea156d29309a3cb9913"
+              },
+              {
+                "text": "No necesitamos conocer toda la conjunta para calcular esta esperanza.",
+                "start": 28.8,
+                "end": 33.1,
+                "startFrame": 864,
+                "endFrame": 993,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "20cbe5cbc57baf844468abe4cb85c0492b2802ed60b797f453cf2cc09393d624"
+              },
+              {
+                "text": "Con segundos momentos finitos, la varianza eleva los coeficientes al cuadrado y añade dos veces su producto por la covarianza.",
+                "start": 33.4,
+                "end": 42,
+                "startFrame": 1002,
+                "endFrame": 1260,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "eee40d8eef5819b7094b2f399ea707d27bde62c870edc6dc618532caa328cb0c"
+              },
+              {
+                "text": "El coeficiente negativo afecta al término cruzado; no hace negativa una varianza individual.",
+                "start": 42.3,
+                "end": 47.9,
+                "startFrame": 1269,
+                "endFrame": 1437,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "4aa4b3c59bc2b2c66dbc921ea049ef1f455fd9bbf662eea40fad06eb571e09d7"
+              },
+              {
+                "text": "Con varianzas cuatro y uno y covarianza una mitad, para dos equis menos i griega queda cuatro por cuatro más uno menos cuatro por una mitad: quince.",
+                "start": 48.2,
+                "end": 59.8,
+                "startFrame": 1446,
+                "endFrame": 1794,
+                "words": 27,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "85c9311dee72118f75ccc6fa476e460239861a7b1b4461653dd530c74e465304"
+              },
+              {
+                "text": "Omitir el término cruzado daría diecisiete y describiría otra dispersión.",
+                "start": 60.1,
+                "end": 64.4,
+                "startFrame": 1803,
+                "endFrame": 1932,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "73c140a9ca319ac78ab47e44863f237ccc9f83754c30da4eb8d11893ab2ca75b"
+              }
+            ]
+          },
+          {
+            "start": 64.7,
+            "end": 134.6,
+            "cues": [
+              {
+                "text": "Toma equis menos uno, cero y uno con igual probabilidad y define i griega como su cuadrado.",
+                "start": 64.7,
+                "end": 72,
+                "startFrame": 1941,
+                "endFrame": 2160,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "e7fdb6ff5ffb5c60db94a9f5cb47ea0ecf8b55af9870543b18766aa59e7c20aa"
+              },
+              {
+                "text": "La media de equis y su tercer momento son cero por simetría.",
+                "start": 72.3,
+                "end": 77.46666666666667,
+                "startFrame": 2169,
+                "endFrame": 2324,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "93a29d492d52cbf13b2d24905e39b667baa65aaab2d359168a63f055282b70d1"
+              },
+              {
+                "text": "La covarianza entre equis y su cuadrado es por tanto cero: son incorreladas.",
+                "start": 77.76666666666667,
+                "end": 83.36666666666666,
+                "startFrame": 2333,
+                "endFrame": 2501,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "31377157dff3be2615009fa32b32ed678cde4756a18ea35513663bb7a4c765dc"
+              },
+              {
+                "text": "Pero son dependientes.",
+                "start": 83.66666666666667,
+                "end": 84.96666666666667,
+                "startFrame": 2510,
+                "endFrame": 2549,
+                "words": 3,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "ab699629844ff16d3fd8325fbee7c2d4175953b6cf8069a0f84e650e79807c44"
+              },
+              {
+                "text": "Saber equis cero obliga a i griega cero, mientras que sin esa información i griega cero solo tiene probabilidad un tercio.",
+                "start": 85.26666666666667,
+                "end": 94.26666666666667,
+                "startFrame": 2558,
+                "endFrame": 2828,
+                "words": 21,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "b507ab801fa4099d5b8c2edc9d14db7838e453a215be25e2b1c156d08ecc53e5"
+              },
+              {
+                "text": "La covarianza se anuló por compensación de signos, no porque desapareciera la relación.",
+                "start": 94.56666666666666,
+                "end": 100.16666666666667,
+                "startFrame": 2837,
+                "endFrame": 3005,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "ec971f05a458f95f04646503e8116f286d0f4891c2da49d159acc91b34cc793a"
+              },
+              {
+                "text": "La independencia implica covarianza cero con los momentos necesarios finitos, pero la recíproca falla.",
+                "start": 100.46666666666667,
+                "end": 106.46666666666667,
+                "startFrame": 3014,
+                "endFrame": 3194,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "2ea6a3bddd1aca84cbd1f9ab7d6ae4111abe1fc14bf053598ffd123e3cf8169d"
+              },
+              {
+                "text": "En el caso especial de normalidad conjunta, una matriz diagonal sí permite concluir independencia.",
+                "start": 106.76666666666667,
+                "end": 112.76666666666667,
+                "startFrame": 3203,
+                "endFrame": 3383,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "af122047413b7def6520779f1b52fa494a4be619e1ec5c8db32c3fe990686060"
+              },
+              {
+                "text": "Dos marginales normales por separado no justifican usar esa excepción.",
+                "start": 113.06666666666666,
+                "end": 117.36666666666666,
+                "startFrame": 3392,
+                "endFrame": 3521,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "1789532aa10127ee95274816b7aa4588c54726ce6680abf321017550dee3de36"
+              },
+              {
+                "text": "Para la varianza de una combinación basta incorrelación para borrar los términos cruzados; independencia es más fuerte de lo necesario.",
+                "start": 117.66666666666667,
+                "end": 126.26666666666667,
+                "startFrame": 3530,
+                "endFrame": 3788,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "a21c7ba2e4dba9e700e36c5d5f15f93390b2bcc314f52bb90045ff6b39e3612e"
+              },
+              {
+                "text": "Tampoco hemos demostrado que la combinación sea normal: conocer media y varianza no determina en general su distribución.",
+                "start": 126.56666666666666,
+                "end": 134.3,
+                "startFrame": 3797,
+                "endFrame": 4029,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "76faaec7acefbe71cfabd929cae63e91062b13936ed736b5c1b4e3d576915b73"
+              }
+            ]
+          },
+          {
+            "start": 134.6,
+            "end": 141.33333333333334,
+            "cues": [
+              {
+                "text": "X e Y son indicadores 0/1 de dos marcadores moleculares medidos en el mismo organismo.",
+                "start": 134.6,
+                "end": 141.03333333333333,
+                "startFrame": 4038,
+                "endFrame": 4231,
+                "words": 15,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "c523b1f28233c4cce9f11fd2beb23db7ac019e87ab25580f091be8354e51ca52"
+              }
+            ]
+          },
+          {
+            "start": 141.33333333333334,
+            "end": 150.43333333333334,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 141.33333333333334,
+                "end": 143.93333333333334,
+                "startFrame": 4240,
+                "endFrame": 4318,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula covarianza de equis y i griega.",
+                "start": 144.23333333333332,
+                "end": 147.23333333333332,
+                "startFrame": 4327,
+                "endFrame": 4417,
+                "words": 7,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "bd61ffc7f511fd141ed1374d059277fadf6d4d8c08c86e4f040452754284ecda"
+              },
+              {
+                "text": "Queremos cuantificar la variación lineal compartida.",
+                "start": 147.53333333333333,
+                "end": 150.13333333333333,
+                "startFrame": 4426,
+                "endFrame": 4504,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "8ebc665d27ebabeaa45ea71f78b8f588640a635081b485ee7cade5e8cfe41079"
+              }
+            ]
+          },
+          {
+            "start": 150.43333333333334,
+            "end": 168.06666666666666,
+            "cues": [
+              {
+                "text": "La covarianza es la esperanza del producto de las desviaciones respecto a las medias.",
+                "start": 150.43333333333334,
+                "end": 156.43333333333334,
+                "startFrame": 4513,
+                "endFrame": 4693,
+                "words": 14,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "b39e2810a077a18227c868732906dbf70c19784ba5fc55eb0e5d1af3b2a657c1"
+              },
+              {
+                "text": "Desarrollar ese producto da esperanza del producto menos producto de medias.",
+                "start": 156.73333333333332,
+                "end": 161.46666666666667,
+                "startFrame": 4702,
+                "endFrame": 4844,
+                "words": 11,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "8e0dfaba82469a1d895ee5707c712dd27b3535a1b2b7658934903b541009c469"
+              },
+              {
+                "text": "La correlación divide por ambas desviaciones positivas y elimina las unidades; no demuestra causalidad.",
+                "start": 161.76666666666668,
+                "end": 167.76666666666668,
+                "startFrame": 4853,
+                "endFrame": 5033,
+                "words": 14,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "5d200402079f3ee8f4daaaf8e3e04a5ff134d488ce132653ffa859e0574dcabe"
+              }
+            ]
+          },
+          {
+            "start": 168.06666666666666,
+            "end": 185.1,
+            "cues": [
+              {
+                "text": "Tabla de probabilidades, filas equis igual a 0 y 1 y columnas i griega igual a 0 y 1: intervalo cerrado desde 0 coma 3 hasta 0 coma 2; intervalo cerrado desde 0 coma 2 hasta 0 coma 3.",
+                "start": 168.06666666666666,
+                "end": 184.8,
+                "startFrame": 5042,
+                "endFrame": 5544,
+                "words": 39,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "4bf15b535509cabc1dc139331699b615a5556f22eb11e14fcbf7840feecc3661"
+              }
+            ]
+          },
+          {
+            "start": 185.1,
+            "end": 189.7,
+            "cues": [
+              {
+                "text": "Ambas marginales tienen probabilidad 0 coma 5 de valer uno.",
+                "start": 185.1,
+                "end": 189.4,
+                "startFrame": 5553,
+                "endFrame": 5682,
+                "words": 10,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "1cce34ed32309754bf1953ab78725588608def29bac244298bcb12e03b44eec9"
+              }
+            ]
+          },
+          {
+            "start": 189.7,
+            "end": 195.16666666666666,
+            "cues": [
+              {
+                "text": "La tabla es una distribución conjunta: entradas no negativas y suma uno.",
+                "start": 189.7,
+                "end": 194.86666666666667,
+                "startFrame": 5691,
+                "endFrame": 5846,
+                "words": 12,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "ab04ec2aec3d84e99ebce1d14b600643530f34dc228410f3b392fa361ebf3b8b"
+              }
+            ]
+          },
+          {
+            "start": 195.16666666666666,
+            "end": 198.06666666666666,
+            "cues": [
+              {
+                "text": "Los indicadores no se presuponen independientes.",
+                "start": 195.16666666666666,
+                "end": 197.76666666666668,
+                "startFrame": 5855,
+                "endFrame": 5933,
+                "words": 6,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "8034116aa706d74baa32ba892b5dd23865f8b3df62eeb76ad34b91365677b669"
+              }
+            ]
+          },
+          {
+            "start": 198.06666666666666,
+            "end": 212.83333333333334,
+            "cues": [
+              {
+                "text": "equis por i griega solo vale uno en la celda equis igual a 1,i griega igual a 1.",
+                "start": 198.06666666666666,
+                "end": 205.8,
+                "startFrame": 5942,
+                "endFrame": 6174,
+                "words": 18,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "858634acae4f2fcd32b85e4cbe7f7cb1925b21a9c7ba677c95755b0ed713c967"
+              },
+              {
+                "text": "Restamos el producto de medias a la esperanza del producto; no confundimos esas dos operaciones.",
+                "start": 206.1,
+                "end": 212.53333333333333,
+                "startFrame": 6183,
+                "endFrame": 6376,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "69b6499962145345ca9c123956fc1be35c1c89ec0bc21148ab0d79913163e004"
+              }
+            ]
+          },
+          {
+            "start": 212.83333333333334,
+            "end": 243.93333333333334,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 212.83333333333334,
+                "end": 215.83333333333334,
+                "startFrame": 6385,
+                "endFrame": 6475,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula covarianza de equis y i griega.",
+                "start": 216.13333333333333,
+                "end": 219.13333333333333,
+                "startFrame": 6484,
+                "endFrame": 6574,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "9a0179ec9ee4ce044b3ee19e54427fda0bdc2702c4cd94696a752c39065dfcad"
+              },
+              {
+                "text": "La covarianza compara variación compartida: calculamos la esperanza del producto y restamos el producto de medias.",
+                "start": 219.43333333333334,
+                "end": 226.3,
+                "startFrame": 6583,
+                "endFrame": 6789,
+                "words": 16,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "a089eb148d5ce910413e1a170945580e1d1cc47494b50a64a79448cf32bace6c"
+              },
+              {
+                "text": "La correlación divide además por las dos desviaciones, siempre que sean positivas; ninguna de las dos implica causalidad.",
+                "start": 226.6,
+                "end": 234.33333333333334,
+                "startFrame": 6798,
+                "endFrame": 7030,
+                "words": 18,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "2e6c150baebc5e363f34e38a23969f53f4e0c1a3f335bad9a98d4b77c82635b9"
+              },
+              {
+                "text": "Para este apartado: equis por i griega solo vale uno en la celda equis igual a 1,i griega igual a 1.",
+                "start": 234.63333333333333,
+                "end": 243.63333333333333,
+                "startFrame": 7039,
+                "endFrame": 7309,
+                "words": 21,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "1b775b098388f1d5c61e9a0bec245f3e0d4b47b1b8a5a20709935924d34fbdb6"
+              }
+            ]
+          },
+          {
+            "start": 243.93333333333334,
+            "end": 262.6666666666667,
+            "cues": [
+              {
+                "text": "Obtener los momentos. esperanza de equis igual a esperanza de i griega igual a 0 coma 5 y esperanza de equis por i griega igual a probabilidad de equis igual a 1 y i griega igual a 1 igual a 0 coma 3.",
+                "start": 243.93333333333334,
+                "end": 262.3666666666667,
+                "startFrame": 7318,
+                "endFrame": 7871,
+                "words": 43,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "b3dd3d82fbbf20076da8b581f831eaa57f88cbd1d16f728ff7ea0c188171114e"
+              }
+            ]
+          },
+          {
+            "start": 262.6666666666667,
+            "end": 273.1666666666667,
+            "cues": [
+              {
+                "text": "E entre corchetes significa esperanza.",
+                "start": 262.6666666666667,
+                "end": 264.8333333333333,
+                "startFrame": 7880,
+                "endFrame": 7945,
+                "words": 5,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+              },
+              {
+                "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+                "start": 265.1333333333333,
+                "end": 272.8666666666667,
+                "startFrame": 7954,
+                "endFrame": 8186,
+                "words": 18,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+              }
+            ]
+          },
+          {
+            "start": 273.1666666666667,
+            "end": 293.53333333333336,
+            "cues": [
+              {
+                "text": "Centrar el producto. 0 coma 3 menos 0 coma 5 por 0 coma 5 igual a 0 coma 0 5.",
+                "start": 273.1666666666667,
+                "end": 281.76666666666665,
+                "startFrame": 8195,
+                "endFrame": 8453,
+                "words": 20,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "c7fa6ba4c54d634541840fb102198f014434952d9475afbe4e144df6c68d30c1"
+              },
+              {
+                "text": "Cov abre paréntesis, equis y i griega, cierra paréntesis igual a esperanza de equis por i griega menos esperanza de equis por esperanza de i griega.",
+                "start": 282.06666666666666,
+                "end": 293.23333333333335,
+                "startFrame": 8462,
+                "endFrame": 8797,
+                "words": 26,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "f197af4dc3e12bfcb56697eca13754d574898fb4b1815af233d54edd517f3c50"
+              }
+            ]
+          },
+          {
+            "start": 293.53333333333336,
+            "end": 314.06666666666666,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 293.53333333333336,
+                "end": 294.8333333333333,
+                "startFrame": 8806,
+                "endFrame": 8845,
+                "words": 3,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 0 5 producto de unidades de los indicadores.",
+                "start": 295.1333333333333,
+                "end": 300.73333333333335,
+                "startFrame": 8854,
+                "endFrame": 9022,
+                "words": 13,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "6d97d8f4da3e7e214b57c3029e50a90f3e4f4a6b34aec33f41d8cd96f0c31be5"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 301.03333333333336,
+                "end": 307.03333333333336,
+                "startFrame": 9031,
+                "endFrame": 9211,
+                "words": 14,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "c3973aeafad6dcf478005d128ea0671ff25eda02f2ab7c87fcf3e20d3d89dbf8"
+              },
+              {
+                "text": "Los valores altos tienden a coincidir más de lo esperado bajo independencia; no prueba causalidad.",
+                "start": 307.3333333333333,
+                "end": 313.76666666666665,
+                "startFrame": 9220,
+                "endFrame": 9413,
+                "words": 15,
+                "sceneIndex": 14,
+                "cueIndex": 3,
+                "sourceCueSha256": "6181ebb02beb11a6de0bd96ecdb207d4bf9b9320d21d1e0f59f7a9f7bbdb624d"
+              }
+            ]
+          },
+          {
+            "start": 314.06666666666666,
+            "end": 326.7,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 5 producto de unidades de los indicadores.",
+                "start": 314.06666666666666,
+                "end": 319.6666666666667,
+                "startFrame": 9422,
+                "endFrame": 9590,
+                "words": 13,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "2023875a2857597a4a8d65288711e07f992e398e49d7599abaefb64b72fad22d"
+              },
+              {
+                "text": "Los valores altos tienden a coincidir más de lo esperado bajo independencia; no prueba causalidad.",
+                "start": 319.96666666666664,
+                "end": 326.4,
+                "startFrame": 9599,
+                "endFrame": 9792,
+                "words": 15,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "479dbff1ebbc927a69b393db4e2784a38726d87998b6b8a2dea6fd4541b0795e"
+              }
+            ]
+          },
+          {
+            "start": 326.7,
+            "end": 337.93333333333334,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 326.7,
+                "end": 329.3,
+                "startFrame": 9801,
+                "endFrame": 9879,
+                "words": 6,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula la correlación rho por abre paréntesis, equis,i griega, cierra paréntesis.",
+                "start": 329.6,
+                "end": 334.3333333333333,
+                "startFrame": 9888,
+                "endFrame": 10030,
+                "words": 11,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "51a8efa98f1b70f39647789e753d1662668a778c639f581914aad18cd4058efb"
+              },
+              {
+                "text": "Queremos expresar la asociación lineal sin unidades.",
+                "start": 334.6333333333333,
+                "end": 337.6333333333333,
+                "startFrame": 10039,
+                "endFrame": 10129,
+                "words": 7,
+                "sceneIndex": 16,
+                "cueIndex": 2,
+                "sourceCueSha256": "3e21802bd5ee78e1037e8699b45dcf78680bc5b36bc6915a4673f847e5268fb7"
+              }
+            ]
+          },
+          {
+            "start": 337.93333333333334,
+            "end": 355.56666666666666,
+            "cues": [
+              {
+                "text": "La covarianza es la esperanza del producto de las desviaciones respecto a las medias.",
+                "start": 337.93333333333334,
+                "end": 343.93333333333334,
+                "startFrame": 10138,
+                "endFrame": 10318,
+                "words": 14,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "b39e2810a077a18227c868732906dbf70c19784ba5fc55eb0e5d1af3b2a657c1"
+              },
+              {
+                "text": "Desarrollar ese producto da esperanza del producto menos producto de medias.",
+                "start": 344.23333333333335,
+                "end": 348.96666666666664,
+                "startFrame": 10327,
+                "endFrame": 10469,
+                "words": 11,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "8e0dfaba82469a1d895ee5707c712dd27b3535a1b2b7658934903b541009c469"
+              },
+              {
+                "text": "La correlación divide por ambas desviaciones positivas y elimina las unidades; no demuestra causalidad.",
+                "start": 349.26666666666665,
+                "end": 355.26666666666665,
+                "startFrame": 10478,
+                "endFrame": 10658,
+                "words": 14,
+                "sceneIndex": 17,
+                "cueIndex": 2,
+                "sourceCueSha256": "5d200402079f3ee8f4daaaf8e3e04a5ff134d488ce132653ffa859e0574dcabe"
+              }
+            ]
+          },
+          {
+            "start": 355.56666666666666,
+            "end": 372.6,
+            "cues": [
+              {
+                "text": "Tabla de probabilidades, filas equis igual a 0 y 1 y columnas i griega igual a 0 y 1: intervalo cerrado desde 0 coma 3 hasta 0 coma 2; intervalo cerrado desde 0 coma 2 hasta 0 coma 3.",
+                "start": 355.56666666666666,
+                "end": 372.3,
+                "startFrame": 10667,
+                "endFrame": 11169,
+                "words": 39,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "4bf15b535509cabc1dc139331699b615a5556f22eb11e14fcbf7840feecc3661"
+              }
+            ]
+          },
+          {
+            "start": 372.6,
+            "end": 377.2,
+            "cues": [
+              {
+                "text": "Ambas marginales tienen probabilidad 0 coma 5 de valer uno.",
+                "start": 372.6,
+                "end": 376.9,
+                "startFrame": 11178,
+                "endFrame": 11307,
+                "words": 10,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "1cce34ed32309754bf1953ab78725588608def29bac244298bcb12e03b44eec9"
+              }
+            ]
+          },
+          {
+            "start": 377.2,
+            "end": 382.6666666666667,
+            "cues": [
+              {
+                "text": "La tabla es una distribución conjunta: entradas no negativas y suma uno.",
+                "start": 377.2,
+                "end": 382.3666666666667,
+                "startFrame": 11316,
+                "endFrame": 11471,
+                "words": 12,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "ab04ec2aec3d84e99ebce1d14b600643530f34dc228410f3b392fa361ebf3b8b"
+              }
+            ]
+          },
+          {
+            "start": 382.6666666666667,
+            "end": 385.56666666666666,
+            "cues": [
+              {
+                "text": "Los indicadores no se presuponen independientes.",
+                "start": 382.6666666666667,
+                "end": 385.26666666666665,
+                "startFrame": 11480,
+                "endFrame": 11558,
+                "words": 6,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "8034116aa706d74baa32ba892b5dd23865f8b3df62eeb76ad34b91365677b669"
+              }
+            ]
+          },
+          {
+            "start": 385.56666666666666,
+            "end": 404.2,
+            "cues": [
+              {
+                "text": "Cada indicador tiene varianza 0 coma 5 por abre paréntesis, 1 menos 0 coma 5, cierra paréntesis igual a 0 coma 2 5.",
+                "start": 385.56666666666666,
+                "end": 395.43333333333334,
+                "startFrame": 11567,
+                "endFrame": 11863,
+                "words": 23,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "2bfdf68acd514f224b25913bbd1dd0dc0703a3bd3748a8a8452ec3dfb784acce"
+              },
+              {
+                "text": "Dividimos por el producto de desviaciones positivas y contrastamos el resultado con el intervalo de menos uno a uno.",
+                "start": 395.73333333333335,
+                "end": 403.9,
+                "startFrame": 11872,
+                "endFrame": 12117,
+                "words": 19,
+                "sceneIndex": 22,
+                "cueIndex": 1,
+                "sourceCueSha256": "ee6647e283a49f4c0f3d790ab85ec12a1cde2929bea377a289cd67a315a06604"
+              }
+            ]
+          },
+          {
+            "start": 404.2,
+            "end": 439.2,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 404.2,
+                "end": 407.2,
+                "startFrame": 12126,
+                "endFrame": 12216,
+                "words": 7,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula la correlación rho por abre paréntesis, equis,i griega, cierra paréntesis.",
+                "start": 407.5,
+                "end": 412.23333333333335,
+                "startFrame": 12225,
+                "endFrame": 12367,
+                "words": 11,
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "sourceCueSha256": "e5d31a42ba7cf3aa8f27feb46d4af1a08aac2e473ff85b6f33e2f320c7a5d82a"
+              },
+              {
+                "text": "La covarianza compara variación compartida: calculamos la esperanza del producto y restamos el producto de medias.",
+                "start": 412.53333333333336,
+                "end": 419.4,
+                "startFrame": 12376,
+                "endFrame": 12582,
+                "words": 16,
+                "sceneIndex": 23,
+                "cueIndex": 2,
+                "sourceCueSha256": "dc3f4b06ed88b4c75c9b0cf868a712765a899ceb259bf15bf7d4921679f0896c"
+              },
+              {
+                "text": "La correlación divide además por las dos desviaciones, siempre que sean positivas; ninguna de las dos implica causalidad.",
+                "start": 419.7,
+                "end": 427.43333333333334,
+                "startFrame": 12591,
+                "endFrame": 12823,
+                "words": 18,
+                "sceneIndex": 23,
+                "cueIndex": 3,
+                "sourceCueSha256": "ad004597be8b99989e46e588057b0ae5f62064d1dacb539c612bbba83fea0187"
+              },
+              {
+                "text": "Para este apartado: Cada indicador tiene varianza 0 coma 5 por abre paréntesis, 1 menos 0 coma 5, cierra paréntesis igual a 0 coma 2 5.",
+                "start": 427.73333333333335,
+                "end": 438.9,
+                "startFrame": 12832,
+                "endFrame": 13167,
+                "words": 26,
+                "sceneIndex": 23,
+                "cueIndex": 4,
+                "sourceCueSha256": "72ac897ab513ab43a0c58cc56d8bd15aaeace232c4b3253e12ad2faea19f6f7e"
+              }
+            ]
+          },
+          {
+            "start": 439.2,
+            "end": 454.5,
+            "cues": [
+              {
+                "text": "Calcular las desviaciones. sigma subíndice equis igual a sigma subíndice i griega igual a raíz cuadrada de 0 coma 2 5 igual a 0 coma 5; el producto de desviaciones es 0 coma 2 5.",
+                "start": 439.2,
+                "end": 454.2,
+                "startFrame": 13176,
+                "endFrame": 13626,
+                "words": 35,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "b96e06be391f2ed6dcd2326ad2a622d1c7ece686493a806a5fec8aafa38cc3cd"
+              }
+            ]
+          },
+          {
+            "start": 454.5,
+            "end": 462.4,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 454.5,
+                "end": 457.93333333333334,
+                "startFrame": 13635,
+                "endFrame": 13738,
+                "words": 8,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 458.23333333333335,
+                "end": 462.1,
+                "startFrame": 13747,
+                "endFrame": 13863,
+                "words": 9,
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 462.4,
+            "end": 470.76666666666665,
+            "cues": [
+              {
+                "text": "Rho es la correlación: covarianza dividida por el producto de desviaciones positivas.",
+                "start": 462.4,
+                "end": 467.56666666666666,
+                "startFrame": 13872,
+                "endFrame": 14027,
+                "words": 12,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "7faaed6529cc9c47f3bac671fab79a83ba99d37ca2e6a0076e59c3bd894ea635"
+              },
+              {
+                "text": "Está entre menos uno y uno.",
+                "start": 467.8666666666667,
+                "end": 470.46666666666664,
+                "startFrame": 14036,
+                "endFrame": 14114,
+                "words": 6,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "ccfe017d7e66abccf44ad326f1d42e008ee1b7ee7d8f112ffcdc87cc374bd1b1"
+              }
+            ]
+          },
+          {
+            "start": 470.76666666666665,
+            "end": 491.6666666666667,
+            "cues": [
+              {
+                "text": "Normalizar la covarianza. 0 coma 0 5 dividido entre 0 coma 2 5 igual a 0 coma 2. rho igual a abre paréntesis, Cov abre paréntesis, equis y i griega, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, sigma subíndice equis sigma subíndice i griega, cierra paréntesis.",
+                "start": 470.76666666666665,
+                "end": 491.3666666666667,
+                "startFrame": 14123,
+                "endFrame": 14741,
+                "words": 48,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "d6eb963ab54539b5c555707a219a415a33a78109e57ccf4c00d24161eb14e8a1"
+              }
+            ]
+          },
+          {
+            "start": 491.6666666666667,
+            "end": 509.6333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 491.6666666666667,
+                "end": 492.96666666666664,
+                "startFrame": 14750,
+                "endFrame": 14789,
+                "words": 3,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 2 correlación sin unidades.",
+                "start": 493.26666666666665,
+                "end": 497.1333333333333,
+                "startFrame": 14798,
+                "endFrame": 14914,
+                "words": 9,
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "sourceCueSha256": "7851b6200951dc53e89855d90e9a8f6174117d330907b5df9054e6cb7c871d6d"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 497.43333333333334,
+                "end": 503.43333333333334,
+                "startFrame": 14923,
+                "endFrame": 15103,
+                "words": 14,
+                "sceneIndex": 28,
+                "cueIndex": 2,
+                "sourceCueSha256": "da5eb2e2e00451d68286b3102bf82db2641e6e59f6d52fe6638dcf8a68acec18"
+              },
+              {
+                "text": "La correlación mide asociación lineal y debe estar entre menos 1 y 1.",
+                "start": 503.73333333333335,
+                "end": 509.3333333333333,
+                "startFrame": 15112,
+                "endFrame": 15280,
+                "words": 13,
+                "sceneIndex": 28,
+                "cueIndex": 3,
+                "sourceCueSha256": "a630ae505a25a349fdb16379135d8462a5186c87f439ec2d02dd58b55d5842c5"
+              }
+            ]
+          },
+          {
+            "start": 509.6333333333333,
+            "end": 519.7,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 2 correlación sin unidades.",
+                "start": 509.6333333333333,
+                "end": 513.5,
+                "startFrame": 15289,
+                "endFrame": 15405,
+                "words": 9,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "01ba2a596c0bde3f5751bcc5e44d4e9fb60f1e6653f89ced332ae09d20aa3f7f"
+              },
+              {
+                "text": "La correlación mide asociación lineal y debe estar entre menos 1 y 1.",
+                "start": 513.8,
+                "end": 519.4,
+                "startFrame": 15414,
+                "endFrame": 15582,
+                "words": 13,
+                "sceneIndex": 29,
+                "cueIndex": 1,
+                "sourceCueSha256": "afe9bb4cd9d6ba2dd0d3860ccb1fcb99484fd1bfa49138dc4d6d448e2bdbbe7f"
+              }
+            ]
+          },
+          {
+            "start": 519.7,
+            "end": 580.2333333333333,
+            "cues": [
+              {
+                "text": "El signo de los coeficientes determina cómo entra la variación compartida.",
+                "start": 519.7,
+                "end": 524.4333333333333,
+                "startFrame": 15591,
+                "endFrame": 15733,
+                "words": 11,
+                "sceneIndex": 30,
+                "cueIndex": 0,
+                "sourceCueSha256": "8d6e1bd607b518a5efe56ca68d9a7e3d79ad3c2de81ab52bec652db07256fc32"
+              },
+              {
+                "text": "La forma matricial reúne todos los términos de una combinación lineal con momentos finitos.",
+                "start": 524.7333333333333,
+                "end": 530.7333333333333,
+                "startFrame": 15742,
+                "endFrame": 15922,
+                "words": 14,
+                "sceneIndex": 30,
+                "cueIndex": 1,
+                "sourceCueSha256": "65dfc4169286ec0ba7024d3230e8e87f158a4252cf63755b6819ac8069e8bf4a"
+              },
+              {
+                "text": "El recíproco falla en general; en un vector conjuntamente normal sí existe la equivalencia correspondiente.",
+                "start": 531.0333333333333,
+                "end": 537.4666666666667,
+                "startFrame": 15931,
+                "endFrame": 16124,
+                "words": 15,
+                "sceneIndex": 30,
+                "cueIndex": 2,
+                "sourceCueSha256": "a4997bfe4b0cfea5ee75079cdabde401cef0cff52a95e71872cb62bd6abd19d0"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 537.7666666666667,
+                "end": 541.6333333333333,
+                "startFrame": 16133,
+                "endFrame": 16249,
+                "words": 9,
+                "sceneIndex": 30,
+                "cueIndex": 3,
+                "sourceCueSha256": "def8198af5c28e53feb1001f6f3d9e7d1be0e7b8e2eeaf0f5a7c831213e63af0"
+              },
+              {
+                "text": "Si Y es el cuadrado de una X uniforme simétrica y no constante, ¿qué afirmación puede ser cierta?",
+                "start": 541.9333333333333,
+                "end": 549.6666666666666,
+                "startFrame": 16258,
+                "endFrame": 16490,
+                "words": 18,
+                "sceneIndex": 30,
+                "cueIndex": 4,
+                "sourceCueSha256": "485a6120ecc916853eab5eef0920980c28f855fc7ec9196ffbf8c68c3c5c66f2"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 549.9666666666667,
+                "end": 553.8333333333334,
+                "startFrame": 16499,
+                "endFrame": 16615,
+                "words": 9,
+                "sceneIndex": 30,
+                "cueIndex": 5,
+                "sourceCueSha256": "7b9f008ab13a061ce18bee4cc3a7b5f9228979dd8d864c3d20ec1fcef36d25eb"
+              },
+              {
+                "text": "La simetría anula los momentos impares que entran en la covarianza, pero conocer X determina Y.",
+                "start": 554.1333333333333,
+                "end": 561,
+                "startFrame": 16624,
+                "endFrame": 16830,
+                "words": 16,
+                "sceneIndex": 30,
+                "cueIndex": 6,
+                "sourceCueSha256": "7f8009b704cc389378fa26ac56c4f6266b2460f7978cd104afb8d75bd5eb2c70"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Omitir el término de covarianza en medidas emparejadas.",
+                "start": 561.3,
+                "end": 568.1666666666666,
+                "startFrame": 16839,
+                "endFrame": 17045,
+                "words": 16,
+                "sceneIndex": 30,
+                "cueIndex": 7,
+                "sourceCueSha256": "0c27a4d516032660fe958c45202f5bf3d0c2d53f6d235e4842e6e1ac191cd512"
+              },
+              {
+                "text": "Las desviaciones de medidas emparejadas pueden reforzarse o compensarse.",
+                "start": 568.4666666666667,
+                "end": 572.3333333333334,
+                "startFrame": 17054,
+                "endFrame": 17170,
+                "words": 9,
+                "sceneIndex": 30,
+                "cueIndex": 8,
+                "sourceCueSha256": "b05f0949bbf39f6d352834b398a440bfa5e2dfe7f366e2504940a6150c6dfc08"
+              },
+              {
+                "text": "Su covarianza entra con el producto de coeficientes; eliminarla exige incorrelación justificada, no solo comodidad de cálculo.",
+                "start": 572.6333333333333,
+                "end": 579.9333333333333,
+                "startFrame": 17179,
+                "endFrame": 17398,
+                "words": 17,
+                "sceneIndex": 30,
+                "cueIndex": 9,
+                "sourceCueSha256": "5e79ca7d4e5a71fc1a8ace098c302b42ca6de0bb96baa9e5bb05c3cc9a23e52b"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
