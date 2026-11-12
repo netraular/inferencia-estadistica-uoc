@@ -132674,6 +132674,529 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u3-5--conditional-tail": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u3-5--conditional-tail",
+      "kind": "exercise",
+      "title": "¿Cuál es P(Y1>1,5|Y2=0,5)?",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "f6d5b4e904e1d953fb4abc536c613e17653e4b0c19f3c53a8e8edf310b31bd80",
+      "src": "videos/ejercicio-pdf-u3-5--conditional-tail/video.mp4",
+      "poster": "videos/ejercicio-pdf-u3-5--conditional-tail/poster.jpg",
+      "duration": 257.3666666666667,
+      "frames": 7721,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "a404b046303dc9edb50cc392ee8e829c6c61be2adfa8c289d9be66dfd9a49469",
+      "videoSha256": "00a11ef0b90cdd5cea9f64d8e1253f9c857a092bc08f5a0101718fa627cb7540",
+      "posterSha256": "36e6e4ce423111efd6ffd2be8d55db30caab4f3eff662d1b2b67e09bab6050b9",
+      "canonicalSha256": "8dee82dd49dd25e317daf3c2843a70ad1952a491d2e65395592be20d47269706",
+      "inputHash": "7d0ec3493e2f575dca2105875ef8d16c972e41eec4d53e74b9823c4f9f71c00d",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "71f9254a58d0e8a3bfee34efbeca233969bdae15807cb7671ae26f71d13d037a",
+        "canonicalSha256": "8dee82dd49dd25e317daf3c2843a70ad1952a491d2e65395592be20d47269706",
+        "source": {
+          "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+          "number": "5",
+          "page": 9
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "fcc06bf3979acd8531470fe09b0356c4552965830c9e6f01d1dee75d00940350",
+        "transcriptSha256": "a404b046303dc9edb50cc392ee8e829c6c61be2adfa8c289d9be66dfd9a49469",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u3-5",
+      "transcript": {
+        "id": "ejercicio-pdf-u3-5--conditional-tail",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "8dee82dd49dd25e317daf3c2843a70ad1952a491d2e65395592be20d47269706",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 257.3666666666667,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 18.1,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Cuál es probabilidad de i griega subíndice 1 mayor que 1 coma 5 sabiendo que i griega subíndice 2 igual a 0 coma 5?",
+                "start": 2.9,
+                "end": 13.2,
+                "startFrame": 87,
+                "endFrame": 396,
+                "words": 24,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "1bb9a7b29ec7051d104b7992e6160319d7258f976959c51bedf2f2700367f69a"
+              },
+              {
+                "text": "Queremos una probabilidad después de fijar información sobre otra variable.",
+                "start": 13.5,
+                "end": 17.8,
+                "startFrame": 405,
+                "endFrame": 534,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "ab7a9c4f3f6ac57bfd4a453e71353539849c253953b0202a836c8896701ed7d9"
+              }
+            ]
+          },
+          {
+            "start": 18.1,
+            "end": 36.93333333333333,
+            "cues": [
+              {
+                "text": "El soporte conjunto delimita qué parejas son posibles.",
+                "start": 18.1,
+                "end": 21.533333333333335,
+                "startFrame": 543,
+                "endFrame": 646,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "f63b1f9e0d6890ff071c86fe7ab857d8518bf681368256b515f543407de0de8d"
+              },
+              {
+                "text": "Al fijar una coordenada, la frontera determina el intervalo de la otra.",
+                "start": 21.833333333333332,
+                "end": 27,
+                "startFrame": 655,
+                "endFrame": 810,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "6d98d64f66ce3ab30c2bc7c848b2310a32c5d79e02ff0dffae96abc9814b787c"
+              },
+              {
+                "text": "Integramos solo esos cortes.",
+                "start": 27.3,
+                "end": 29.033333333333335,
+                "startFrame": 819,
+                "endFrame": 871,
+                "words": 4,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "9cd49477efad5fe66a3ff67b7aa1491c3ff956f347c20c8f70fdb4be21b42e47"
+              },
+              {
+                "text": "Una densidad condicional divide por una marginal positiva, nunca por la probabilidad nula de un punto continuo.",
+                "start": 29.333333333333332,
+                "end": 36.63333333333333,
+                "startFrame": 880,
+                "endFrame": 1099,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "5839ce4b45a37b8ed884e3b3c2836a7794be7698df4a2ab745141f175f1d8cc3"
+              }
+            ]
+          },
+          {
+            "start": 36.93333333333333,
+            "end": 59.96666666666667,
+            "cues": [
+              {
+                "text": "efe minúscula abre paréntesis, i griega minúscula subíndice 1 ,i griega minúscula subíndice 2 , cierra paréntesis igual a 1 en 0 menor o igual que y subíndice 2 menor o igual que 1, 2 por y subíndice 2 menor o igual que y subíndice 1 menor o igual que 2; cero fuera.",
+                "start": 36.93333333333333,
+                "end": 59.666666666666664,
+                "startFrame": 1108,
+                "endFrame": 1790,
+                "words": 53,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "2c5e5fdca210143f38b1f7f91404484d87864963f25c0006b8dcb746597f7a40"
+              }
+            ]
+          },
+          {
+            "start": 59.96666666666667,
+            "end": 75.7,
+            "cues": [
+              {
+                "text": "Se pide probabilidad de i griega subíndice 2 mayor que 0 coma 5 y probabilidad de i griega subíndice 1 mayor que 1 coma 5 sabiendo que i griega subíndice 2 igual a 0 coma 5.",
+                "start": 59.96666666666667,
+                "end": 75.4,
+                "startFrame": 1799,
+                "endFrame": 2262,
+                "words": 36,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "fcc30a5f10fb50e65055ba270e416ecdd86adbe29fbc6ece3915d3f459b93e2f"
+              }
+            ]
+          },
+          {
+            "start": 75.7,
+            "end": 80.73333333333333,
+            "cues": [
+              {
+                "text": "Se usa ka igual a 1 obtenido en el ejercicio 4.",
+                "start": 75.7,
+                "end": 80.43333333333334,
+                "startFrame": 2271,
+                "endFrame": 2413,
+                "words": 11,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "64260468e6b661b8d18eda6f7a0f99ceafe118ff646378a0555564d792265d62"
+              }
+            ]
+          },
+          {
+            "start": 80.73333333333333,
+            "end": 93.26666666666667,
+            "cues": [
+              {
+                "text": "Sustituyo y dos por medio.",
+                "start": 80.73333333333333,
+                "end": 82.9,
+                "startFrame": 2422,
+                "endFrame": 2487,
+                "words": 5,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "548ab256de3798f5517f9bf9d0556df34518e3e5255fdb5ff943e7af40772222"
+              },
+              {
+                "text": "La frontera inclinada obliga a y uno entre uno y dos.",
+                "start": 83.2,
+                "end": 87.93333333333334,
+                "startFrame": 2496,
+                "endFrame": 2638,
+                "words": 11,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "4d88651b701e7d1742a7a24b839671b1578adcc742a4df58d1904fd76704c021"
+              },
+              {
+                "text": "Normalizamos dentro de la condición; una marginal no incorpora esa información.",
+                "start": 88.23333333333333,
+                "end": 92.96666666666667,
+                "startFrame": 2647,
+                "endFrame": 2789,
+                "words": 11,
+                "sceneIndex": 5,
+                "cueIndex": 2,
+                "sourceCueSha256": "0e30a79b519548b1711b035f0bc7d0427ef18c6d63de7e2700030f6c283167bc"
+              }
+            ]
+          },
+          {
+            "start": 93.26666666666667,
+            "end": 112.66666666666667,
+            "cues": [
+              {
+                "text": "Fijar el corte condicional.",
+                "start": 93.26666666666667,
+                "end": 95,
+                "startFrame": 2798,
+                "endFrame": 2850,
+                "words": 4,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "cb032fd7c93f0e4d9f32a9dcdc0343ccae3bfab0710393a7c2ab11fc89b42351"
+              },
+              {
+                "text": "Sustituyo y dos por medio.",
+                "start": 95.3,
+                "end": 97.46666666666667,
+                "startFrame": 2859,
+                "endFrame": 2924,
+                "words": 5,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "8ee34fc56d3a638cb0a0c83dd04c53a513d8cb10110bebd33863fc326b0d13a3"
+              },
+              {
+                "text": "La frontera inclinada obliga a y uno entre uno y dos. 2 por 0 coma 5 igual a 1 por tanto 1 menor o igual que y subíndice 1 menor o igual que 2.",
+                "start": 97.76666666666667,
+                "end": 112.36666666666666,
+                "startFrame": 2933,
+                "endFrame": 3371,
+                "words": 34,
+                "sceneIndex": 6,
+                "cueIndex": 2,
+                "sourceCueSha256": "93e78dbcae90b82eff3405f19287d8c8e9c223604ffcb69776eea77ae3c1f24f"
+              }
+            ]
+          },
+          {
+            "start": 112.66666666666667,
+            "end": 132.6,
+            "cues": [
+              {
+                "text": "La marginal en el corte.",
+                "start": 112.66666666666667,
+                "end": 114.83333333333333,
+                "startFrame": 3380,
+                "endFrame": 3445,
+                "words": 5,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "c5d404e00c16687c0e09945c11a26c9f7c8ebd145ddc6d202bf6f9bfa2e84426"
+              },
+              {
+                "text": "La marginal de i griega dos en medio es la longitud total del corte. efe subíndice abre paréntesis, i griega subíndice 2, cierra paréntesis abre paréntesis, 0 coma 5, cierra paréntesis igual a 2 menos 2 por 0 coma 5.",
+                "start": 115.13333333333334,
+                "end": 132.3,
+                "startFrame": 3454,
+                "endFrame": 3969,
+                "words": 40,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "48b8dda18b7ec4aa24a033ef90f18e945aa8e9e5e5e19f72ff48f38487f5e544"
+              }
+            ]
+          },
+          {
+            "start": 132.6,
+            "end": 141.9,
+            "cues": [
+              {
+                "text": "efe subíndice abre paréntesis, i griega subíndice 2, cierra paréntesis abre paréntesis, 0 coma 5, cierra paréntesis queda igual a 1.",
+                "start": 132.6,
+                "end": 141.6,
+                "startFrame": 3978,
+                "endFrame": 4248,
+                "words": 21,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "157bf5b3efadce023d1eda80caf83133edb236d7fdf8b17a415c5270448db4eb"
+              }
+            ]
+          },
+          {
+            "start": 141.9,
+            "end": 172,
+            "cues": [
+              {
+                "text": "Normalizar la densidad condicional.",
+                "start": 141.9,
+                "end": 143.63333333333333,
+                "startFrame": 4257,
+                "endFrame": 4309,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "b277d90d2d6835b5c2afdb72d455a8ee0c19751ea03e74a4a496b48eca2d8cb6"
+              },
+              {
+                "text": "Divido la densidad conjunta del corte por la marginal positiva.",
+                "start": 143.93333333333334,
+                "end": 148.23333333333332,
+                "startFrame": 4318,
+                "endFrame": 4447,
+                "words": 10,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "776d0fe28978e53bd604eeb0e84b177cf42aa5108915b6d25abc13e395b872b3"
+              },
+              {
+                "text": "Es un cociente de densidades, no de probabilidades de puntos. efe subíndice abre paréntesis, i griega subíndice 1 sabiendo que i griega subíndice 2, cierra paréntesis abre paréntesis, i griega minúscula subíndice 1 sabiendo que 0 coma 5, cierra paréntesis igual a abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 1, cierra paréntesis.",
+                "start": 148.53333333333333,
+                "end": 171.7,
+                "startFrame": 4456,
+                "endFrame": 5151,
+                "words": 54,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "2f721812f17e36b0abaff3f2898900184e9e68ad1c5841d103cf0e453182313d"
+              }
+            ]
+          },
+          {
+            "start": 172,
+            "end": 194.16666666666666,
+            "cues": [
+              {
+                "text": "efe subíndice abre paréntesis, i griega subíndice 1 sabiendo que i griega subíndice 2, cierra paréntesis abre paréntesis, i griega minúscula subíndice 1 sabiendo que 0 coma 5, cierra paréntesis queda igual a 1 abre paréntesis, 1 menor o igual que y subíndice 1 menor o igual que 2, cierra paréntesis.",
+                "start": 172,
+                "end": 193.86666666666667,
+                "startFrame": 5160,
+                "endFrame": 5816,
+                "words": 51,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "13eece569d3f39f510d18cf619af83c9ae912ad534b6120f979360b5e5fd9293"
+              }
+            ]
+          },
+          {
+            "start": 194.16666666666666,
+            "end": 211.1,
+            "cues": [
+              {
+                "text": "Integrar la parte pedida.",
+                "start": 194.16666666666666,
+                "end": 195.9,
+                "startFrame": 5825,
+                "endFrame": 5877,
+                "words": 4,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "d3b758b3e8f55c663977a81175b7fb4814155c910b38ea4dbbebb46a3dde737c"
+              },
+              {
+                "text": "De ese corte uniforme solo conservo desde uno y medio hasta dos. probabilidad de i griega subíndice 1 mayor que 1 coma 5 sabiendo que i griega subíndice 2 igual a 0 coma 5.",
+                "start": 196.2,
+                "end": 210.8,
+                "startFrame": 5886,
+                "endFrame": 6324,
+                "words": 34,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "304488756b241cd78b701745e8b585ef44b759156d5c87b9ee1f02370fc79482"
+              }
+            ]
+          },
+          {
+            "start": 211.1,
+            "end": 228.13333333333333,
+            "cues": [
+              {
+                "text": "probabilidad de i griega subíndice 1 mayor que 1 coma 5 sabiendo que i griega subíndice 2 igual a 0 coma 5 queda igual a integral desde 1 coma 5 hasta 2 de 1 respecto de y subíndice 1.",
+                "start": 211.1,
+                "end": 227.83333333333334,
+                "startFrame": 6333,
+                "endFrame": 6835,
+                "words": 39,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "b30d25813947b4da327e5b46b119eaa4f5a9b50e0a275810d38ae71d8862b739"
+              }
+            ]
+          },
+          {
+            "start": 228.13333333333333,
+            "end": 240.43333333333334,
+            "cues": [
+              {
+                "text": "probabilidad de i griega subíndice 1 mayor que 1 coma 5 sabiendo que i griega subíndice 2 igual a 0 coma 5 queda igual a 0 coma 5.",
+                "start": 228.13333333333333,
+                "end": 240.13333333333333,
+                "startFrame": 6844,
+                "endFrame": 7204,
+                "words": 28,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "d6ad68a4aa4017bc9f8ff3a268b0316cf5256d84728306ef56fa294592a9f24e"
+              }
+            ]
+          },
+          {
+            "start": 240.43333333333334,
+            "end": 257.3666666666667,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 240.43333333333334,
+                "end": 245.16666666666666,
+                "startFrame": 7213,
+                "endFrame": 7355,
+                "words": 11,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "a094fd16298cc02b5a91543659cdfdc4c95662e410268ecc69af07f8070307b3"
+              },
+              {
+                "text": "La condición continua se describe con una densidad condicional; probabilidad de i griega subíndice 2 igual a 0 coma 5 es cero y no sirve de denominador.",
+                "start": 245.46666666666667,
+                "end": 257.06666666666666,
+                "startFrame": 7364,
+                "endFrame": 7712,
+                "words": 27,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "61cd669316a3e03ac5d432a69cf3269a526251b09c6c0d1da65ba0cd9ec243ed"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
