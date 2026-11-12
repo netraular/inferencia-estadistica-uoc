@@ -745,8 +745,8 @@ export function ExerciseScene({plan,state}) {
   const diagram = state.cueIndex >= 0 ? cuePhase?.context || plan.data.context : null;
   if (!diagram && (state.cueIndex < 0 || !numeric(plan,state))) return <SceneSurface label={`exercise:${plan.family}`}>
     <div data-native-zone="exercise-explanation" style={{position:'absolute',left:65,top:40,width:1080,height:390,display:'flex',flexDirection:'column',gap:layout.gap,color:PALETTE.ink}}>
-      {layout.lines.map((line,index) => line.tex ? <div key={index} data-native-mark data-native-bound style={{position:'relative',height:layout.mathHeight,flexShrink:0}}>
-        <MathFormula tex={line.tex} x={0} y={0} width={1080} height={layout.mathHeight} fontSize={42} />
+      {layout.lines.map((line,index) => line.tex ? <div key={index} data-native-mark data-native-bound style={{position:'relative',height:layout.lines.length === 1 ? 300 : layout.mathHeight,flexShrink:0}}>
+        <MathFormula tex={line.tex} x={0} y={0} width={1080} height={layout.lines.length === 1 ? 300 : layout.mathHeight} fontSize={layout.lines.length === 1 ? 64 : 42} />
       </div> : <div key={index} data-native-mark data-native-text data-native-bound style={{fontSize:layout.lines.length === 1 && (line.value || line.label || '').length < 80 ? 32 : 28,lineHeight:1.35,overflowWrap:'anywhere',flexShrink:0}}>{line.value || line.label || ''}</div>)}
     </div>
   </SceneSurface>;
