@@ -1,0 +1,596 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u3-6--covariance",
+  "kind": "exercise",
+  "title": "¿Cuál es Cov(Y1,Y2)?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "5099120bc908653826c3a9120c7c0be8cff4a0dd3c7d26a8e30807c8dca4072d",
+  "src": "videos/ejercicio-pdf-u3-6--covariance/video.mp4",
+  "poster": "videos/ejercicio-pdf-u3-6--covariance/poster.jpg",
+  "duration": 245.9,
+  "frames": 7377,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "76fbd79249be32058acab10c541e12277b7ccc70cdcaf63150c4bb1635e23532",
+  "videoSha256": "a9ea6012e123bde363492ebb79277999300dabaebd9a2ab35b2836e4d5af292f",
+  "posterSha256": "e8eefda44617671269ab49cb0c777adc9cae45522fe29da75a97116ccafaca00",
+  "canonicalSha256": "947b478a40bb7b7cdfde2d601e6b065927d61b12f474188ab1b0a3ed0d140edf",
+  "inputHash": "c3fa049d922ca113c411b5b59f358b8455bdead9ab2e3ed87ede9bcc07c01edf",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "226891d5b10f89c310714a5e59d854b66db13b5dbe6f42b6a3c263b3f32c3274",
+    "canonicalSha256": "947b478a40bb7b7cdfde2d601e6b065927d61b12f474188ab1b0a3ed0d140edf",
+    "source": {
+      "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+      "number": "6",
+      "page": 11
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "dfe066f24edfb4b411f38c76bec9fe69ab7ab33150a768f3b99c43ccab6a1214",
+    "transcriptSha256": "76fbd79249be32058acab10c541e12277b7ccc70cdcaf63150c4bb1635e23532",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u3-6",
+  "transcript": {
+    "id": "ejercicio-pdf-u3-6--covariance",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "947b478a40bb7b7cdfde2d601e6b065927d61b12f474188ab1b0a3ed0d140edf",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 245.9,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 11.7,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es covarianza de i griega subíndice 1 y i griega subíndice 2?",
+            "start": 2.9,
+            "end": 8.5,
+            "startFrame": 87,
+            "endFrame": 255,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "f6ebc640020bc3276cc4f80eebe6ee2446737454bb0c84cdd23f60a57c9b21bb"
+          },
+          {
+            "text": "Queremos cuantificar la variación lineal compartida.",
+            "start": 8.8,
+            "end": 11.4,
+            "startFrame": 264,
+            "endFrame": 342,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "5421e7fe0f382f0d41ac002dbbc045058fc32a7a7e4af66ac24a76d1e8937145"
+          }
+        ]
+      },
+      {
+        "start": 11.7,
+        "end": 29.333333333333332,
+        "cues": [
+          {
+            "text": "La covarianza es la esperanza del producto de las desviaciones respecto a las medias.",
+            "start": 11.7,
+            "end": 17.7,
+            "startFrame": 351,
+            "endFrame": 531,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "b39e2810a077a18227c868732906dbf70c19784ba5fc55eb0e5d1af3b2a657c1"
+          },
+          {
+            "text": "Desarrollar ese producto da esperanza del producto menos producto de medias.",
+            "start": 18,
+            "end": 22.733333333333334,
+            "startFrame": 540,
+            "endFrame": 682,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "8e0dfaba82469a1d895ee5707c712dd27b3535a1b2b7658934903b541009c469"
+          },
+          {
+            "text": "La correlación divide por ambas desviaciones positivas y elimina las unidades; no demuestra causalidad.",
+            "start": 23.033333333333335,
+            "end": 29.033333333333335,
+            "startFrame": 691,
+            "endFrame": 871,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "5d200402079f3ee8f4daaaf8e3e04a5ff134d488ce132653ffa859e0574dcabe"
+          }
+        ]
+      },
+      {
+        "start": 29.333333333333332,
+        "end": 38.233333333333334,
+        "cues": [
+          {
+            "text": "Filas i griega subíndice 1 igual a 0, 1, 2; columnas i griega subíndice 2 igual a 0, 1, 2.",
+            "start": 29.333333333333332,
+            "end": 37.93333333333333,
+            "startFrame": 880,
+            "endFrame": 1138,
+            "words": 20,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "c9fc4bbef6a63a1123f18a29344595d7a27f68663783192edb195357e402ebee"
+          }
+        ]
+      },
+      {
+        "start": 38.233333333333334,
+        "end": 53.13333333333333,
+        "cues": [
+          {
+            "text": "Masa conjunta por filas: abre paréntesis, 1, 2, 1, cierra paréntesis dividido entre 9; abre paréntesis, 2, 2, 0, cierra paréntesis dividido entre 9; abre paréntesis, 1, 0, 0, cierra paréntesis dividido entre 9.",
+            "start": 38.233333333333334,
+            "end": 52.833333333333336,
+            "startFrame": 1147,
+            "endFrame": 1585,
+            "words": 34,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ef37a3310c90312baea39e28eb5756bb7f161dfbc37745f1b89787fbe8e42c9"
+          }
+        ]
+      },
+      {
+        "start": 53.13333333333333,
+        "end": 61.6,
+        "cues": [
+          {
+            "text": "La repetición de la solución del ejercicio 5 en las páginas 13–15 del PDF no introduce un problema nuevo.",
+            "start": 53.13333333333333,
+            "end": 61.3,
+            "startFrame": 1594,
+            "endFrame": 1839,
+            "words": 19,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "b11b0d1a76a0644649aa5ca5cb09a45bf9c64a7be352add3e9bab6bc06ef051c"
+          }
+        ]
+      },
+      {
+        "start": 61.6,
+        "end": 76.66666666666667,
+        "cues": [
+          {
+            "text": "La marginal de i griega uno tiene masas cuatro novenos, cuatro novenos y un noveno.",
+            "start": 61.6,
+            "end": 68.03333333333333,
+            "startFrame": 1848,
+            "endFrame": 2041,
+            "words": 15,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "6adb9f7fbb20b4307a0ae74ea4fd9e2c6c7f4dd19d1cc1aa107546c6fb8bfc15"
+          },
+          {
+            "text": "Pondero sus valores.",
+            "start": 68.33333333333333,
+            "end": 69.63333333333334,
+            "startFrame": 2050,
+            "endFrame": 2089,
+            "words": 3,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "8ab0b67479d16560c0e6b9aa8f138bb1f788a2f45b369649461493eea33d3741"
+          },
+          {
+            "text": "Restamos el producto de medias a la esperanza del producto; no confundimos esas dos operaciones.",
+            "start": 69.93333333333334,
+            "end": 76.36666666666666,
+            "startFrame": 2098,
+            "endFrame": 2291,
+            "words": 15,
+            "sceneIndex": 5,
+            "cueIndex": 2,
+            "sourceCueSha256": "c5f5014b332ef5911480c98633b8397140faadd5adbbf914746ee6fa3ddf139c"
+          }
+        ]
+      },
+      {
+        "start": 76.66666666666667,
+        "end": 87.16666666666667,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 76.66666666666667,
+            "end": 78.83333333333333,
+            "startFrame": 2300,
+            "endFrame": 2365,
+            "words": 5,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 79.13333333333334,
+            "end": 86.86666666666666,
+            "startFrame": 2374,
+            "endFrame": 2606,
+            "words": 18,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 87.16666666666667,
+        "end": 109.1,
+        "cues": [
+          {
+            "text": "La primera media.",
+            "start": 87.16666666666667,
+            "end": 88.46666666666667,
+            "startFrame": 2615,
+            "endFrame": 2654,
+            "words": 3,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "00ed9709770c83b5da66e68c3af46c2bfc6069dcefb8e1891069cda4c88a210e"
+          },
+          {
+            "text": "La marginal de i griega uno tiene masas cuatro novenos, cuatro novenos y un noveno.",
+            "start": 88.76666666666667,
+            "end": 95.2,
+            "startFrame": 2663,
+            "endFrame": 2856,
+            "words": 15,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "6463c11d3cf0b09b7d16a3bb24c1cf110198a6a49d48ee2e917973336fc99d51"
+          },
+          {
+            "text": "Pondero sus valores. esperanza de i griega subíndice 1 igual a 0 por 4 dividido entre 9 más 1 por 4 dividido entre 9 más 2 por 1 dividido entre 9.",
+            "start": 95.5,
+            "end": 108.8,
+            "startFrame": 2865,
+            "endFrame": 3264,
+            "words": 31,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "bcb275b9468f28b23485fdd326a036e99481f67ed245891051e24d495f4c57d6"
+          }
+        ]
+      },
+      {
+        "start": 109.1,
+        "end": 115,
+        "cues": [
+          {
+            "text": "esperanza de i griega subíndice 1 queda igual a 2 dividido entre 3.",
+            "start": 109.1,
+            "end": 114.7,
+            "startFrame": 3273,
+            "endFrame": 3441,
+            "words": 13,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "e9ecb72a1100baac16b53a8995be612427b62104ddbe19ea119523d0919f9be6"
+          }
+        ]
+      },
+      {
+        "start": 115,
+        "end": 134.9,
+        "cues": [
+          {
+            "text": "La segunda media.",
+            "start": 115,
+            "end": 116.3,
+            "startFrame": 3450,
+            "endFrame": 3489,
+            "words": 3,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "85cae758addef0576f9690ad3933264f09b15ea4b64b375a4af65e122a5448d7"
+          },
+          {
+            "text": "La simetría entre A y be da la misma marginal para i griega dos. esperanza de i griega subíndice 2 igual a 0 por 4 dividido entre 9 más 1 por 4 dividido entre 9 más 2 por 1 dividido entre 9.",
+            "start": 116.6,
+            "end": 134.6,
+            "startFrame": 3498,
+            "endFrame": 4038,
+            "words": 42,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "77b86b1b66e9eea1ef3afe1704e0792ecd18e4c077a8e514ed5166929412ee1e"
+          }
+        ]
+      },
+      {
+        "start": 134.9,
+        "end": 140.8,
+        "cues": [
+          {
+            "text": "esperanza de i griega subíndice 2 queda igual a 2 dividido entre 3.",
+            "start": 134.9,
+            "end": 140.5,
+            "startFrame": 4047,
+            "endFrame": 4215,
+            "words": 13,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "17a4010e43e2e7a3b3fdf55fa5659ea09559c268b65e01c649673eebe04b14be"
+          }
+        ]
+      },
+      {
+        "start": 140.8,
+        "end": 161.56666666666666,
+        "cues": [
+          {
+            "text": "Localizar productos no nulos.",
+            "start": 140.8,
+            "end": 142.53333333333333,
+            "startFrame": 4224,
+            "endFrame": 4276,
+            "words": 4,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "61d4aad815c15725c19caa1decf264bea7ddc1342f2f50239398b6efe8bfe791"
+          },
+          {
+            "text": "Solo la pareja uno y uno tiene ambos valores positivos y masa positiva; los demás productos se anulan. esperanza de i griega subíndice 1 por i griega subíndice 2 igual a 1 por 1 por pe abre paréntesis, 1 y 1, cierra paréntesis.",
+            "start": 142.83333333333334,
+            "end": 161.26666666666668,
+            "startFrame": 4285,
+            "endFrame": 4838,
+            "words": 43,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "42e73a0f7ecaeda2c925c48ff2a124679f95fae0c701606800801e4e10047eb2"
+          }
+        ]
+      },
+      {
+        "start": 161.56666666666666,
+        "end": 169.6,
+        "cues": [
+          {
+            "text": "esperanza de i griega subíndice 1 por i griega subíndice 2 queda igual a 2 dividido entre 9.",
+            "start": 161.56666666666666,
+            "end": 169.3,
+            "startFrame": 4847,
+            "endFrame": 5079,
+            "words": 18,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "791c4844ac040e259454ccc9f4eaf3be15e032373b6b06f26129faeeb3a1de8e"
+          }
+        ]
+      },
+      {
+        "start": 169.6,
+        "end": 191.23333333333332,
+        "cues": [
+          {
+            "text": "El producto de medias.",
+            "start": 169.6,
+            "end": 171.33333333333334,
+            "startFrame": 5088,
+            "endFrame": 5140,
+            "words": 4,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "971522b97091003d2b078accfbc988d7f012aeb65a1c7bc8bde11cf0bb641437"
+          },
+          {
+            "text": "Multiplico las dos medias, que no es lo mismo que promediar el producto. esperanza de i griega subíndice 1 por esperanza de i griega subíndice 2 igual a abre paréntesis, 2 dividido entre 3, cierra paréntesis por abre paréntesis, 2 dividido entre 3, cierra paréntesis.",
+            "start": 171.63333333333333,
+            "end": 190.93333333333334,
+            "startFrame": 5149,
+            "endFrame": 5728,
+            "words": 45,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "e4fb5528e9955c0270ed51526e6c0dfde7e536e4342ef95def5e62bc2c3294e2"
+          }
+        ]
+      },
+      {
+        "start": 191.23333333333332,
+        "end": 200.13333333333333,
+        "cues": [
+          {
+            "text": "esperanza de i griega subíndice 1 por esperanza de i griega subíndice 2 queda igual a 4 dividido entre 9.",
+            "start": 191.23333333333332,
+            "end": 199.83333333333334,
+            "startFrame": 5737,
+            "endFrame": 5995,
+            "words": 20,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "7dcd0ae83bfdcf6fcdc90b822519d976112998399174b313c45cba190e4e8260"
+          }
+        ]
+      },
+      {
+        "start": 200.13333333333333,
+        "end": 218.96666666666667,
+        "cues": [
+          {
+            "text": "Restar.",
+            "start": 200.13333333333333,
+            "end": 201.33333333333334,
+            "startFrame": 6004,
+            "endFrame": 6040,
+            "words": 1,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "f6653875d958a3a73f248f3ed98c77963eea79cf023c685ab9956b9941e00f81"
+          },
+          {
+            "text": "La covarianza compara el producto observado en promedio con el producto de las medias.",
+            "start": 201.63333333333333,
+            "end": 207.63333333333333,
+            "startFrame": 6049,
+            "endFrame": 6229,
+            "words": 14,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "d00892498062636ad56c575142d5023480a61a958634732737ad1d679ebcd853"
+          },
+          {
+            "text": "Cov abre paréntesis, i griega subíndice 1 y i griega subíndice 2, cierra paréntesis igual a 2 dividido entre 9 menos 4 dividido entre 9.",
+            "start": 207.93333333333334,
+            "end": 218.66666666666666,
+            "startFrame": 6238,
+            "endFrame": 6560,
+            "words": 25,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "e377b3a31813cb756d828095a6b55f00508cd842867c3cb183ab136df44a5d24"
+          }
+        ]
+      },
+      {
+        "start": 218.96666666666667,
+        "end": 228.7,
+        "cues": [
+          {
+            "text": "Cov abre paréntesis, i griega subíndice 1 y i griega subíndice 2, cierra paréntesis queda igual a menos 2 dividido entre 9.",
+            "start": 218.96666666666667,
+            "end": 228.4,
+            "startFrame": 6569,
+            "endFrame": 6852,
+            "words": 22,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "55ef6c72ec5401b99384eb9d920ffdef2f1768c144e044515644f5323f3e02c4"
+          }
+        ]
+      },
+      {
+        "start": 228.7,
+        "end": 245.9,
+        "cues": [
+          {
+            "text": "El resultado es menos 0 coma 2 2 2 2 2 2 2 estudios al cuadrado.",
+            "start": 228.7,
+            "end": 235.56666666666666,
+            "startFrame": 6861,
+            "endFrame": 7067,
+            "words": 16,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3b0b975ea8e95666c91758823341ede2e5a787614af8b4418a110e45c63e511"
+          },
+          {
+            "text": "No sorprende el signo negativo: los recuentos compiten por un total de dos estudios.",
+            "start": 235.86666666666667,
+            "end": 241.86666666666667,
+            "startFrame": 7076,
+            "endFrame": 7256,
+            "words": 14,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "3e9dd18cbba7f00150119b95fc62e94638c70b34a80a93156685b23ae745f30f"
+          },
+          {
+            "text": "Aumentar uno deja menos disponibles para el otro.",
+            "start": 242.16666666666666,
+            "end": 245.6,
+            "startFrame": 7265,
+            "endFrame": 7368,
+            "words": 8,
+            "sceneIndex": 17,
+            "cueIndex": 2,
+            "sourceCueSha256": "d525c899e592072386458688b2e99a40518832059beb43194e1ae970227ee1d9"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
