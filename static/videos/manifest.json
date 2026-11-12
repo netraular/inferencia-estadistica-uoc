@@ -241866,6 +241866,510 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-practica-gamma-exponential--memoryless": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-practica-gamma-exponential--memoryless",
+      "kind": "exercise",
+      "title": "Calcula P(T > t+s | T > t).",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "267dd2eea927014b6fc5987ff6f8069d03fa1f49da549b734196d136485c6e93",
+      "src": "videos/ejercicio-practica-gamma-exponential--memoryless/video.mp4",
+      "poster": "videos/ejercicio-practica-gamma-exponential--memoryless/poster.jpg",
+      "duration": 199.76666666666668,
+      "frames": 5993,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "2dec557344edafeb8cdb2c725aa8ad2195576c57fe8a2de1aa0ace81467d238d",
+      "videoSha256": "87c65f87f00077f6af65cc74999100d4cd485c1e8ded70e3d508426d87e98369",
+      "posterSha256": "8d8be7c552ff952b98d288c8929c37633fc5ef7bb35cb112cb594fc4f1d930ce",
+      "canonicalSha256": "7777c3caa1e55c41dd653ba3faa8a203bb454fccb3707e9fed9c8fde023f7781",
+      "inputHash": "5374debc2c690d799b9a10626e62a6afa5cc33bd516b13436738edcc6b4b5677",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "622d6138fd32bb94d34fc5a4ea09c87f3d2f4593f86184a4c0b140997c1f8d0c",
+        "canonicalSha256": "7777c3caa1e55c41dd653ba3faa8a203bb454fccb3707e9fed9c8fde023f7781",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Exponencial"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "44d338ca4903de05f8b1322cd21c7acefa3e199f265d29acb089fde51caa004d",
+        "transcriptSha256": "2dec557344edafeb8cdb2c725aa8ad2195576c57fe8a2de1aa0ace81467d238d",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-practica-gamma-exponential",
+      "transcript": {
+        "id": "ejercicio-practica-gamma-exponential--memoryless",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "7777c3caa1e55c41dd653ba3faa8a203bb454fccb3707e9fed9c8fde023f7781",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 199.76666666666668,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 15.966666666666667,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de te mayor que te minúscula más ese sabiendo que te mayor que te minúscula.",
+                "start": 2.9,
+                "end": 10.2,
+                "startFrame": 87,
+                "endFrame": 306,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "b7ef3dcdf1027e8732cfc0cf01298aa8b2e49733f4263cbc577ddf7f7afd3def"
+              },
+              {
+                "text": "Queremos seguir esperando, después de haber esperado ya un tiempo sin evento.",
+                "start": 10.5,
+                "end": 15.666666666666666,
+                "startFrame": 315,
+                "endFrame": 470,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "c0486d607557a21c6241227c1beeb282c0c84d862cadcdab2c712374d05e5d13"
+              }
+            ]
+          },
+          {
+            "start": 15.966666666666667,
+            "end": 35.766666666666666,
+            "cues": [
+              {
+                "text": "La tasa lambda mide eventos por unidad de tiempo; su inversa es la espera media.",
+                "start": 15.966666666666667,
+                "end": 22.4,
+                "startFrame": 479,
+                "endFrame": 672,
+                "words": 15,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "5141c1bf79e97d068a93e31349e1fa4a3be5b1eb3121c625b44aa5d71955f118"
+              },
+              {
+                "text": "La supervivencia es e elevado a menos tasa por tiempo.",
+                "start": 22.7,
+                "end": 27,
+                "startFrame": 681,
+                "endFrame": 810,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "f54fbbaa0180167b24d27eeaa5f092c28326c6c6a0fef19a24b92773b1a6f580"
+              },
+              {
+                "text": "Su riesgo constante permite cancelar el tiempo ya esperado al condicionar en que todavía no ha ocurrido el evento.",
+                "start": 27.3,
+                "end": 35.46666666666667,
+                "startFrame": 819,
+                "endFrame": 1064,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "cdaeaf05ec53129f6985c214aafc1db4e8b16d777b89fb21cb9ff2a19634f397"
+              }
+            ]
+          },
+          {
+            "start": 35.766666666666666,
+            "end": 42.5,
+            "cues": [
+              {
+                "text": "Tasa lambda igual a 0 coma 5 por minuto; espera media igual a 2 minutos.",
+                "start": 35.766666666666666,
+                "end": 42.2,
+                "startFrame": 1073,
+                "endFrame": 1266,
+                "words": 15,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "2c056b2d748fe01177da64424470f84b4cf1ff554b37e87c01f6d42c0c280b2c"
+              }
+            ]
+          },
+          {
+            "start": 42.5,
+            "end": 52.233333333333334,
+            "cues": [
+              {
+                "text": "Tiempo ya transcurrido te minúscula igual a 4; espera adicional ese igual a 1 minutos; soporte te mayor o igual que 0.",
+                "start": 42.5,
+                "end": 51.93333333333333,
+                "startFrame": 1275,
+                "endFrame": 1558,
+                "words": 22,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "2972cfb7f02192f00997a1bd9e269e7c0abada76597756805b0631394871c3cb"
+              }
+            ]
+          },
+          {
+            "start": 52.233333333333334,
+            "end": 54.7,
+            "cues": [
+              {
+                "text": "Tasa constante e incrementos independientes.",
+                "start": 52.233333333333334,
+                "end": 54.4,
+                "startFrame": 1567,
+                "endFrame": 1632,
+                "words": 5,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "c30345d06408b65072626a91dd0df0f35c8567e866232f1fa7dec39d95b1601e"
+              }
+            ]
+          },
+          {
+            "start": 54.7,
+            "end": 61.86666666666667,
+            "cues": [
+              {
+                "text": "lambda es la tasa por minuto; su inversa es la escala o espera media en minutos.",
+                "start": 54.7,
+                "end": 61.56666666666667,
+                "startFrame": 1641,
+                "endFrame": 1847,
+                "words": 16,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "8a708d3d176e068c8960653569bbd34532bfbb5e9540dc0804a990e6cd274384"
+              }
+            ]
+          },
+          {
+            "start": 61.86666666666667,
+            "end": 72.36666666666666,
+            "cues": [
+              {
+                "text": "La condición indica que la espera ya ha superado te minúscula.",
+                "start": 61.86666666666667,
+                "end": 66.6,
+                "startFrame": 1856,
+                "endFrame": 1998,
+                "words": 11,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "430181230a8964f3ab10eb1cbff44260df39f070acd5bf8ad6aff7b1074adb11"
+              },
+              {
+                "text": "Dividimos dos supervivencias: con tasa constante se cancela la espera ya transcurrida.",
+                "start": 66.9,
+                "end": 72.06666666666666,
+                "startFrame": 2007,
+                "endFrame": 2162,
+                "words": 12,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "d6762cb7ca2ec09ad55560f3ca9af0624951b9a41670971c8941df0e65e8c2d8"
+              }
+            ]
+          },
+          {
+            "start": 72.36666666666666,
+            "end": 107.63333333333334,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 72.36666666666666,
+                "end": 75.36666666666666,
+                "startFrame": 2171,
+                "endFrame": 2261,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de te mayor que te minúscula más ese sabiendo que te mayor que te minúscula.",
+                "start": 75.66666666666667,
+                "end": 82.96666666666667,
+                "startFrame": 2270,
+                "endFrame": 2489,
+                "words": 17,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "52d43c7bf06b3837d2aee7d4a1f0bb9face32330c5262fde132e842e041ec3fe"
+              },
+              {
+                "text": "La tasa es el inverso del tiempo medio.",
+                "start": 83.26666666666667,
+                "end": 86.7,
+                "startFrame": 2498,
+                "endFrame": 2601,
+                "words": 8,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "719803a21c6c3c977ed8cb5cc127835015386da4319bc532fffcc70be2ce038d"
+              },
+              {
+                "text": "La supervivencia es la exponencial negativa de tasa por tiempo; la acumulada es su complemento.",
+                "start": 87,
+                "end": 93.43333333333334,
+                "startFrame": 2610,
+                "endFrame": 2803,
+                "words": 15,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "43d4b3ee594248ee41bd1dfc4b35ecd7fa95c73b63a7c3b56bea00091f10d9a5"
+              },
+              {
+                "text": "La carencia de memoria procede de un riesgo constante, no de una fecha fija para el evento.",
+                "start": 93.73333333333333,
+                "end": 101.03333333333333,
+                "startFrame": 2812,
+                "endFrame": 3031,
+                "words": 17,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "32ce66abb0b02f017dd0bb56ced44850ba12b6c9c2f99f4315938b225931409f"
+              },
+              {
+                "text": "Para este apartado: La condición indica que la espera ya ha superado te minúscula.",
+                "start": 101.33333333333333,
+                "end": 107.33333333333333,
+                "startFrame": 3040,
+                "endFrame": 3220,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "a36505a487dec97aa7dbf6d7197805eaba80967863b9e0b8e88e8c8f1d71eb49"
+              }
+            ]
+          },
+          {
+            "start": 107.63333333333334,
+            "end": 128.93333333333334,
+            "cues": [
+              {
+                "text": "Escribir el cociente condicionado. probabilidad de te mayor que 5 dividido entre probabilidad de te mayor que 4 igual a exponencial de abre paréntesis, menos lambda por abre paréntesis, 4 más 1, cierra paréntesis , cierra paréntesis dividido entre exponencial de abre paréntesis, menos lambda por 4, cierra paréntesis.",
+                "start": 107.63333333333334,
+                "end": 128.63333333333333,
+                "startFrame": 3229,
+                "endFrame": 3859,
+                "words": 49,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "dece236814f49949734bc81fb0570749bbaa802bf8d050dc020623b201508347"
+              }
+            ]
+          },
+          {
+            "start": 128.93333333333334,
+            "end": 161.9,
+            "cues": [
+              {
+                "text": "Cancelar el tiempo transcurrido.",
+                "start": 128.93333333333334,
+                "end": 130.66666666666666,
+                "startFrame": 3868,
+                "endFrame": 3920,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "56f170eaf2e61ece3eb716af4525b7337b8248b05e3bb072cc458e8ade603a7b"
+              },
+              {
+                "text": "Al dividir exponenciales de la misma base restamos exponentes.",
+                "start": 130.96666666666667,
+                "end": 134.83333333333334,
+                "startFrame": 3929,
+                "endFrame": 4045,
+                "words": 9,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "b04c639c9deabc1e256ab66d8615c456fd2435ae16c92da14d42a5aa441af7cd"
+              },
+              {
+                "text": "El término del tiempo ya transcurrido se cancela: queda exponencial de abre paréntesis, menos 0 coma 5 por 1, cierra paréntesis igual a 0 coma 6 0 6 5 3 0 7.",
+                "start": 135.13333333333333,
+                "end": 148.86666666666667,
+                "startFrame": 4054,
+                "endFrame": 4466,
+                "words": 32,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "cba1bdaa8cf1ca81a0405e0ba2ce873e197e695ac455617ee32a188de7a336af"
+              },
+              {
+                "text": "Solo interviene la espera adicional. probabilidad de te mayor que te minúscula más ese sabiendo que te mayor que te minúscula igual a probabilidad de te mayor que ese.",
+                "start": 149.16666666666666,
+                "end": 161.6,
+                "startFrame": 4475,
+                "endFrame": 4848,
+                "words": 29,
+                "sceneIndex": 9,
+                "cueIndex": 3,
+                "sourceCueSha256": "2209b3c5e9cbf27680f7f0b3b5ce2ff34e984a6d3e1c45c14967ccce1780b2f6"
+              }
+            ]
+          },
+          {
+            "start": 161.9,
+            "end": 185.43333333333334,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 161.9,
+                "end": 163.2,
+                "startFrame": 4857,
+                "endFrame": 4896,
+                "words": 3,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 6 0 6 5 3 0 7 probabilidad entre 0 y 1.",
+                "start": 163.5,
+                "end": 170.8,
+                "startFrame": 4905,
+                "endFrame": 5124,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "804e80f56e68b3fafa8fb107efe3d9fb0030afb20f8853ae94e9375443ef0afc"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 171.1,
+                "end": 178.4,
+                "startFrame": 5133,
+                "endFrame": 5352,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+              },
+              {
+                "text": "La falta de memoria es una propiedad de este modelo, no de cualquier tiempo biológico.",
+                "start": 178.7,
+                "end": 185.13333333333333,
+                "startFrame": 5361,
+                "endFrame": 5554,
+                "words": 15,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "acb483ed5c99b9a0f3cc08963fa34fcf90c79159181a93ab14f804a8aa98f00e"
+              }
+            ]
+          },
+          {
+            "start": 185.43333333333334,
+            "end": 199.76666666666668,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 6 0 6 5 3 0 7 probabilidad entre 0 y 1.",
+                "start": 185.43333333333334,
+                "end": 192.73333333333332,
+                "startFrame": 5563,
+                "endFrame": 5782,
+                "words": 17,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "04d3a2fda3abe379201a83fcf6e2ee6efe23e86b9ba4ac7c69a9fc466d2725a1"
+              },
+              {
+                "text": "La falta de memoria es una propiedad de este modelo, no de cualquier tiempo biológico.",
+                "start": 193.03333333333333,
+                "end": 199.46666666666667,
+                "startFrame": 5791,
+                "endFrame": 5984,
+                "words": 15,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "4f35028fb54a8ce4ea79aa5e6e9cf60561d44e0af643f5d19989ee6d1ecd35f3"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
