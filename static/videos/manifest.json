@@ -107950,6 +107950,312 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "conjunta-condicional--normalizar-corte": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "conjunta-condicional--normalizar-corte",
+      "kind": "section",
+      "title": "El denominador continuo es una densidad marginal",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "ec7f0d1f0b32245fd129a30012337399ccaaf3e12e29e5187ac592914e924bae",
+      "src": "videos/conjunta-condicional--normalizar-corte/video.mp4",
+      "poster": "videos/conjunta-condicional--normalizar-corte/poster.jpg",
+      "duration": 133.93333333333334,
+      "frames": 4018,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "0e8825e0e5c888b461117ae0be8f8968e48d367df815ca624b005d0b45084146",
+      "videoSha256": "45da59d386edd55f3da52ffd95f39b449a6b5b7a28c596fda717f451e66c11bd",
+      "posterSha256": "8a49ebf2bcd2f99ef910e777217459bf808d3644b8e8c7b6f1d2c3b4953fb31c",
+      "canonicalSha256": "40b51d425cd4899c3a496a5e70637df5a1ce2c9200933b646187dfcd981ef0f1",
+      "inputHash": "9c427fd7707a3640304aab9698bb6a2ee11680aaa64e896cbc9378680652652b",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "61d73cbe8117a2264117da395267e695e9c49abca9b818eb1c29d3c6a5f3c19f",
+        "canonicalSha256": "40b51d425cd4899c3a496a5e70637df5a1ce2c9200933b646187dfcd981ef0f1",
+        "source": {
+          "document": "FundamentosInferencia_Tema4.pdf",
+          "section": "4.5 y 4.6 a 4.6.3: condicionales, densidad conjunta y regiones; ejercicios U3 4 y 5"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "d46e4d7a56b73eac3ba47c963ffbbed30f232d88bd37fc77664eb619e766e7bf",
+        "transcriptSha256": "0e8825e0e5c888b461117ae0be8f8968e48d367df815ca624b005d0b45084146",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "conjunta-condicional",
+      "transcript": {
+        "id": "conjunta-condicional--normalizar-corte",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "40b51d425cd4899c3a496a5e70637df5a1ce2c9200933b646187dfcd981ef0f1",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 133.93333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 133.93333333333334,
+            "cues": [
+              {
+                "text": "Hola, el corte señalado fija equis en dos décimas dentro del reparto triangular y deja a i griega entre cero y ocho décimas por la capacidad restante.",
+                "start": 0,
+                "end": 11.6,
+                "startFrame": 0,
+                "endFrame": 348,
+                "words": 27,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "348b47477d80b6859535ef1b91c192e3aadd588e002b725f05b71e8c00787e61"
+              },
+              {
+                "text": "Queremos una distribución de i griega con esa información.",
+                "start": 11.9,
+                "end": 15.766666666666667,
+                "startFrame": 357,
+                "endFrame": 473,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "5a358777d4578b576a9760fa6369360d032014ee622f483f775c5abcdf5a06e8"
+              },
+              {
+                "text": "Tomamos las alturas conjuntas de ese corte, pero aún necesitamos normalizarlas: fijar una coordenada no convierte automáticamente el área del corte en uno.",
+                "start": 16.066666666666666,
+                "end": 25.933333333333334,
+                "startFrame": 482,
+                "endFrame": 778,
+                "words": 23,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "7fa117ea881936ca1a0ded78e6071a56e21f97248f2547315e35ccf951abf08b"
+              },
+              {
+                "text": "La integral del corte es la densidad marginal de equis en dos décimas.",
+                "start": 26.233333333333334,
+                "end": 31.833333333333332,
+                "startFrame": 787,
+                "endFrame": 955,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "edd341f716fe00496ea4a9e51bb4e18c2879d31b735b2a4e8e5ab072d86d255a"
+              },
+              {
+                "text": "Como la altura conjunta es dos y la longitud disponible ocho décimas, multiplicamos y obtenemos uno coma seis.",
+                "start": 32.13333333333333,
+                "end": 39.86666666666667,
+                "startFrame": 964,
+                "endFrame": 1196,
+                "words": 18,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "d07423ebb259078fb042761fae2fdd29584751fc4ee1ea1efb5ad80cda50b1db"
+              },
+              {
+                "text": "Este número positivo es el normalizador del corte; no es la probabilidad de equis exactamente dos décimas.",
+                "start": 40.166666666666664,
+                "end": 47.46666666666667,
+                "startFrame": 1205,
+                "endFrame": 1424,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "fe0ea2544bea06e819d9302665fa6a242cf0621c00bbaa103cb0d4f6f21f5636"
+              },
+              {
+                "text": "Dividimos cada altura conjunta del corte por su integral uno coma seis.",
+                "start": 47.766666666666666,
+                "end": 52.93333333333333,
+                "startFrame": 1433,
+                "endFrame": 1588,
+                "words": 12,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "f5e6ea3972943fad642cd6e8943f074c62d011f402b72850cd4367004245c2ce"
+              },
+              {
+                "text": "Así obtenemos la densidad de i griega dado equis dos décimas: dos entre uno coma seis, que vale uno coma veinticinco.",
+                "start": 53.233333333333334,
+                "end": 62.233333333333334,
+                "startFrame": 1597,
+                "endFrame": 1867,
+                "words": 21,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "4d619023288f316d296f4983ce5db1d42d8b763ab2f8bd763f5dee34d055fdc4"
+              },
+              {
+                "text": "Al cancelar las unidades de equis queda densidad por unidad de i griega, como debe ocurrir en una distribución univariante.",
+                "start": 62.53333333333333,
+                "end": 71.13333333333334,
+                "startFrame": 1876,
+                "endFrame": 2134,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "a0e4f224e713bcdfe1238a5b969cb84c95a277ff99314b1e31fd3b773228d919"
+              },
+              {
+                "text": "Comprobemos la normalización: altura uno coma veinticinco por anchura cero coma ocho da uno.",
+                "start": 71.43333333333334,
+                "end": 77.43333333333334,
+                "startFrame": 2143,
+                "endFrame": 2323,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "13c1b00e89782b6073b27da511a7d2e87203be95217e5cbb56b256802807730a"
+              },
+              {
+                "text": "Por eso el corte es ahora una uniforme sobre ese intervalo y podemos calcular dentro de él probabilidades de i griega.",
+                "start": 77.73333333333333,
+                "end": 86.73333333333333,
+                "startFrame": 2332,
+                "endFrame": 2602,
+                "words": 21,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "64a99634e7b1a5509c1fdf6b0d54d5269d6582d309bca3e75ac8bac3bd526467"
+              },
+              {
+                "text": "Fuera del recorrido compatible la densidad condicional es cero.",
+                "start": 87.03333333333333,
+                "end": 90.9,
+                "startFrame": 2611,
+                "endFrame": 2727,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "e9b45cbd0f1867470912405d6262353024f27f0e628f912a1596a553372053f3"
+              },
+              {
+                "text": "En este modelo continuo, la probabilidad de equis exactamente dos décimas es cero: dividir probabilidades puntuales no definiría la condicional.",
+                "start": 91.2,
+                "end": 99.8,
+                "startFrame": 2736,
+                "endFrame": 2994,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "sourceCueSha256": "34e235c92afa0c6fe793c137d253f780a9fdf733e6c915f9b7725dab1bef96ab"
+              },
+              {
+                "text": "El cociente válido usa densidad conjunta y densidad marginal positiva, y equivale aquí al límite de normalizar franjas cada vez más estrechas alrededor del valor conocido.",
+                "start": 100.1,
+                "end": 111.26666666666667,
+                "startFrame": 3003,
+                "endFrame": 3338,
+                "words": 26,
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "sourceCueSha256": "b7daf75ef99ce4a5a1c444ac9a2be93a81dff69526547022abb0ef2866f385c3"
+              },
+              {
+                "text": "En discreto sí existe masa puntual positiva para una condición posible.",
+                "start": 111.56666666666666,
+                "end": 116.3,
+                "startFrame": 3347,
+                "endFrame": 3489,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 14,
+                "sourceCueSha256": "9e1e2127a5dd3b701ca75a6179bc71856608fcbf29475dcce37f19da60faed9d"
+              },
+              {
+                "text": "La regla es masa conjunta dividida entre masa marginal de equis: reúne solo la fila conocida y la convierte en total uno.",
+                "start": 116.6,
+                "end": 126.03333333333333,
+                "startFrame": 3498,
+                "endFrame": 3781,
+                "words": 22,
+                "sceneIndex": 0,
+                "cueIndex": 15,
+                "sourceCueSha256": "481fa98c34d9fd671c97d32c4b8d445aebe93949afe36de7812d9c5a862f0618"
+              },
+              {
+                "text": "No intercambiamos masas y densidades por tener notación parecida; comprobamos primero qué tipo de distribución estamos condicionando.",
+                "start": 126.33333333333333,
+                "end": 133.63333333333333,
+                "startFrame": 3790,
+                "endFrame": 4009,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 16,
+                "sourceCueSha256": "70e4260c16e568f46ed71d2b3429b586b6aee85b2acf6556ca3de9fbf666b2d2"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
