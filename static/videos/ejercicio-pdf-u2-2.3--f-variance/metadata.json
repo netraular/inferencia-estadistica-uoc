@@ -1,0 +1,551 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.3--f-variance",
+  "kind": "exercise",
+  "title": "¿Cuál es la varianza de la alternativa?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "571131665b777442d6c5eecd6ac17504addcd28044400da386b092af662a257d",
+  "src": "videos/ejercicio-pdf-u2-2.3--f-variance/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.3--f-variance/poster.jpg",
+  "duration": 207.13333333333333,
+  "frames": 6214,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "38b0b05201433fe4fc615ccb2ab9059a773f8163afa4ec1bbe63ecc6add79070",
+  "videoSha256": "780f2512eb9f89965594e7d7f14de08a307955d588b37ca9f36852be7cc72615",
+  "posterSha256": "ea559fb4645ac68756c2b5a204e28a5c5b5c23b15fca9f6aeb8b54aa5284eb93",
+  "canonicalSha256": "9efee981f93052665af1fcac8c0f53b791c02e58699aeeb933fbb123ead91e40",
+  "inputHash": "2d00f5b7f4f704505443a804439c4e901484b130f155de1a268721c542000904",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "0c318c307b541b1a6c417eabfeea5d9c7f4272c781f8b470b2980be87c3161e8",
+    "canonicalSha256": "9efee981f93052665af1fcac8c0f53b791c02e58699aeeb933fbb123ead91e40",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.3",
+      "page": 8
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "2d3da882495d7ca5cfa3bbf92253394a2b6a1c1fa7d0f11b2c0ca76369b42a8d",
+    "transcriptSha256": "38b0b05201433fe4fc615ccb2ab9059a773f8163afa4ec1bbe63ecc6add79070",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.3",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.3--f-variance",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "9efee981f93052665af1fcac8c0f53b791c02e58699aeeb933fbb123ead91e40",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 207.13333333333333,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.933333333333334,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es la varianza de la alternativa?",
+            "start": 2.9,
+            "end": 5.9,
+            "startFrame": 87,
+            "endFrame": 177,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "77d9df3c0a385e330d9c21f29d79edec22901487d0bcda8eca1331adbc3b5fec"
+          },
+          {
+            "text": "Queremos medir la dispersión alrededor de la media.",
+            "start": 6.2,
+            "end": 9.633333333333333,
+            "startFrame": 186,
+            "endFrame": 289,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "8eefe6ac2679de310c09237b1234b53e2df527326cc78157c580be44e1ccd817"
+          }
+        ]
+      },
+      {
+        "start": 9.933333333333334,
+        "end": 33.03333333333333,
+        "cues": [
+          {
+            "text": "La propuesta es e elevado a menos ka por equis minúscula, sin el factor ka habitual delante.",
+            "start": 9.933333333333334,
+            "end": 17.233333333333334,
+            "startFrame": 298,
+            "endFrame": 517,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "2f03ee2671e655dbb33ffe9eccad3dcaf69ff81d03d3391338fdae2003dcf0bb"
+          },
+          {
+            "text": "Su área es uno entre ka cuando ka es positivo: exigir área uno fija ka en uno.",
+            "start": 17.533333333333335,
+            "end": 24.833333333333332,
+            "startFrame": 526,
+            "endFrame": 745,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "59b79801473ed4e379b7159cf0fea56f330cb03f4651d86e2061dad80e4b02f5"
+          },
+          {
+            "text": "No podemos elegir cualquier tasa sin cambiar también la normalización.",
+            "start": 25.133333333333333,
+            "end": 29.433333333333334,
+            "startFrame": 754,
+            "endFrame": 883,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "85da219d50a7dcd3207a5125fa5c2f3fdc820225c00cbbc3d39964ad726dddc6"
+          },
+          {
+            "text": "El soporte no tiene un máximo finito.",
+            "start": 29.733333333333334,
+            "end": 32.733333333333334,
+            "startFrame": 892,
+            "endFrame": 982,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "150a2ebdf927755547d635a1450382da99ce17d3a1d1656b2fef0e88fe3b6a72"
+          }
+        ]
+      },
+      {
+        "start": 33.03333333333333,
+        "end": 50.8,
+        "cues": [
+          {
+            "text": "equis se mide en años.",
+            "start": 33.03333333333333,
+            "end": 35.2,
+            "startFrame": 991,
+            "endFrame": 1056,
+            "words": 5,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ad80a05019028e52ed77b2d47aa8f23ff9e3eb8c6dade41ae65e5912c3b5fc91"
+          },
+          {
+            "text": "Modelo inicial: efe minúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 1 menos equis minúscula dividido entre 2 para 0 menor o igual que equis minúscula menor o igual que 2, y cero fuera.",
+            "start": 35.5,
+            "end": 50.5,
+            "startFrame": 1065,
+            "endFrame": 1515,
+            "words": 35,
+            "sceneIndex": 2,
+            "cueIndex": 1,
+            "sourceCueSha256": "bcb65bf27b62f0a329975801265c233e3dcf049c03cd44cfbc1ffae38d2573f7"
+          }
+        ]
+      },
+      {
+        "start": 50.8,
+        "end": 68.7,
+        "cues": [
+          {
+            "text": "Alternativa: ge abre paréntesis, equis minúscula, cierra paréntesis igual a exponencial de abre paréntesis, menos ka por equis minúscula, cierra paréntesis para equis minúscula mayor o igual que 0, y cero fuera; no hay un factor ka delante de la exponencial.",
+            "start": 50.8,
+            "end": 68.4,
+            "startFrame": 1524,
+            "endFrame": 2052,
+            "words": 41,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ab24a4cec95deee2b65cd5ba20cb9010bc644ddc3b040e160597984e3179e09"
+          }
+        ]
+      },
+      {
+        "start": 68.7,
+        "end": 74.16666666666667,
+        "cues": [
+          {
+            "text": "Los dos modelos son continuos y se consideran solo como propuestas docentes.",
+            "start": 68.7,
+            "end": 73.86666666666666,
+            "startFrame": 2061,
+            "endFrame": 2216,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "7cddd8615edbcf7badec294a952dbe35ceb20d0096e0658098e649990e848c5b"
+          }
+        ]
+      },
+      {
+        "start": 74.16666666666667,
+        "end": 95.06666666666666,
+        "cues": [
+          {
+            "text": "Corrección del PDF: efe mayúscula abre paréntesis, 0 coma 5, cierra paréntesis igual a 0 coma 4 3 7 5; probabilidad de 0 coma 5 menor que equis menor que 1 igual a 0 coma 3 1 2 5, no 0 coma 3 7 5 en ambos casos.",
+            "start": 74.16666666666667,
+            "end": 94.76666666666667,
+            "startFrame": 2225,
+            "endFrame": 2843,
+            "words": 48,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "ece2d79abeb0d53f5609048b22ad0ce1c75789d56a36e8714605ad2bb9687c41"
+          }
+        ]
+      },
+      {
+        "start": 95.06666666666666,
+        "end": 107.26666666666667,
+        "cues": [
+          {
+            "text": "Para los cuadrados, una integración por partes reduce la potencia.",
+            "start": 95.06666666666666,
+            "end": 99.36666666666666,
+            "startFrame": 2852,
+            "endFrame": 2981,
+            "words": 10,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "9e32b97acb0fffd6ac4f80ba8bf529b48c0ba6d0e021a2499bfb420a9e134097"
+          },
+          {
+            "text": "El segundo momento incluye la posición del centro; restar el cuadrado de la media deja solo dispersión.",
+            "start": 99.66666666666667,
+            "end": 106.96666666666667,
+            "startFrame": 2990,
+            "endFrame": 3209,
+            "words": 17,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "420cf772b1e403752b96d74bf5a10bc58ca4b4b1e65bbf6cc1e6e8296d79c1e9"
+          }
+        ]
+      },
+      {
+        "start": 107.26666666666667,
+        "end": 117.76666666666667,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 107.26666666666667,
+            "end": 109.43333333333334,
+            "startFrame": 3218,
+            "endFrame": 3283,
+            "words": 5,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 109.73333333333333,
+            "end": 117.46666666666667,
+            "startFrame": 3292,
+            "endFrame": 3524,
+            "words": 18,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 117.76666666666667,
+        "end": 148.4,
+        "cues": [
+          {
+            "text": "El segundo momento.",
+            "start": 117.76666666666667,
+            "end": 119.06666666666666,
+            "startFrame": 3533,
+            "endFrame": 3572,
+            "words": 3,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "af0ed22f8a44b7bada613d14fc9ef0ae44f07c941af8ef49a9f784049f3ec71f"
+          },
+          {
+            "text": "Para los cuadrados, una integración por partes reduce la potencia. esperanza de equis al cuadrado igual a abre corchete, menos equis minúscula elevado a 2 por e elevado a abre paréntesis, menos equis minúscula, cierra paréntesis , cierra corchete subíndice 0 elevado a infinito más 2 por integral desde 0 hasta infinito de xe elevado a abre paréntesis, menos equis minúscula, cierra paréntesis respecto de equis minúscula.",
+            "start": 119.36666666666666,
+            "end": 148.1,
+            "startFrame": 3581,
+            "endFrame": 4443,
+            "words": 67,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "5eba463bd1fe9991e8604d69546a934f4f93dc0ba52e06d2d7637746aab028e9"
+          }
+        ]
+      },
+      {
+        "start": 148.4,
+        "end": 160.93333333333334,
+        "cues": [
+          {
+            "text": "Evaluar.",
+            "start": 148.4,
+            "end": 149.6,
+            "startFrame": 4452,
+            "endFrame": 4488,
+            "words": 1,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "e5dacf35c7d6bf023e8a0e6008628941b4a341ffc87d9e78c6696f22c164c532"
+          },
+          {
+            "text": "La frontera es cero y la integral que queda es la media, que vale uno. esperanza de equis al cuadrado igual a 2 por 1.",
+            "start": 149.9,
+            "end": 160.63333333333333,
+            "startFrame": 4497,
+            "endFrame": 4819,
+            "words": 25,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "2e401253a0d6aa74286e0c424977e2c04889bcd091129aee6069732157f6d473"
+          }
+        ]
+      },
+      {
+        "start": 160.93333333333334,
+        "end": 165.1,
+        "cues": [
+          {
+            "text": "esperanza de equis al cuadrado queda igual a 2.",
+            "start": 160.93333333333334,
+            "end": 164.8,
+            "startFrame": 4828,
+            "endFrame": 4944,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "1ac97d431b94c740892dce65012859ebfee641a1fc70469f6bdd2956132902ee"
+          }
+        ]
+      },
+      {
+        "start": 165.1,
+        "end": 174.73333333333332,
+        "cues": [
+          {
+            "text": "Cuadrar la media.",
+            "start": 165.1,
+            "end": 166.4,
+            "startFrame": 4953,
+            "endFrame": 4992,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "cb02b92dc1d9a611fbe9bc0bdd7c23c11eb4e3439265aa97c281ed0417a04d9f"
+          },
+          {
+            "text": "Elevo a dos la media de un año. esperanza de equis al cuadrado igual a 1 al cuadrado.",
+            "start": 166.7,
+            "end": 174.43333333333334,
+            "startFrame": 5001,
+            "endFrame": 5233,
+            "words": 18,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "218215c5675ccd53843cc87472522d6eca5cdb901d6163299a933fe7f5e519b1"
+          }
+        ]
+      },
+      {
+        "start": 174.73333333333332,
+        "end": 178.9,
+        "cues": [
+          {
+            "text": "esperanza de equis al cuadrado queda igual a 1.",
+            "start": 174.73333333333332,
+            "end": 178.6,
+            "startFrame": 5242,
+            "endFrame": 5358,
+            "words": 9,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "805dc8d33df03558f8303aff8e24ebf683db4e724411c8ac5a8891833dbd8593"
+          }
+        ]
+      },
+      {
+        "start": 178.9,
+        "end": 189.6,
+        "cues": [
+          {
+            "text": "Restar.",
+            "start": 178.9,
+            "end": 180.1,
+            "startFrame": 5367,
+            "endFrame": 5403,
+            "words": 1,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "f6653875d958a3a73f248f3ed98c77963eea79cf023c685ab9956b9941e00f81"
+          },
+          {
+            "text": "Obtengo la dispersión, sin confundirla con el segundo momento.",
+            "start": 180.4,
+            "end": 184.26666666666668,
+            "startFrame": 5412,
+            "endFrame": 5528,
+            "words": 9,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "1d27dff75f012c104cf5bb7cc8e9d8a6e4288f268939fc175e9ca27814fe98aa"
+          },
+          {
+            "text": "Var abre paréntesis, equis, cierra paréntesis igual a 2 menos 1.",
+            "start": 184.56666666666666,
+            "end": 189.3,
+            "startFrame": 5537,
+            "endFrame": 5679,
+            "words": 11,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "e80d064574566dbea8cefcb4a85461d6e36d29cb1f3fd59b2ec5b745ff709f3c"
+          }
+        ]
+      },
+      {
+        "start": 189.6,
+        "end": 194.2,
+        "cues": [
+          {
+            "text": "Var abre paréntesis, equis, cierra paréntesis queda igual a 1.",
+            "start": 189.6,
+            "end": 193.9,
+            "startFrame": 5688,
+            "endFrame": 5817,
+            "words": 10,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "2f0769549bf0174d142ce967bf5a1ec5d8f1fe476b74dd023394a7e78ebf7365"
+          }
+        ]
+      },
+      {
+        "start": 194.2,
+        "end": 207.13333333333333,
+        "cues": [
+          {
+            "text": "El resultado es 1 años al cuadrado.",
+            "start": 194.2,
+            "end": 197.2,
+            "startFrame": 5826,
+            "endFrame": 5916,
+            "words": 7,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "4114d6defcc86d6ca8cbda79531a4dc521ea10bc665cd7203276136e241c9a51"
+          },
+          {
+            "text": "El primer modelo impone una duración máxima artificial; el segundo no, pero supone riesgo constante.",
+            "start": 197.5,
+            "end": 203.93333333333334,
+            "startFrame": 5925,
+            "endFrame": 6118,
+            "words": 15,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "6fa945560fbb475e46d70b397ef10e45dff060b8934920a5d95d4598fd765e02"
+          },
+          {
+            "text": "Ninguno queda validado solo por normalizarlo.",
+            "start": 204.23333333333332,
+            "end": 206.83333333333334,
+            "startFrame": 6127,
+            "endFrame": 6205,
+            "words": 6,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "83f156f3b0f0d5b248a5545b2f418010bb04cd31011fb719472538787fd34c55"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
