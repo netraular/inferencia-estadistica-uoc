@@ -124840,6 +124840,568 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u2-2.8--healthy-count-factor": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u2-2.8--healthy-count-factor",
+      "kind": "exercise",
+      "title": "Expresa el número de sanos mal clasificados como función de N sanos. Introduce el factor que multiplica N.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "e1a733ebe745faf33f5858429bbc6de6cafde6f9e078c88fda13a20d8d03bd87",
+      "src": "videos/ejercicio-pdf-u2-2.8--healthy-count-factor/video.mp4",
+      "poster": "videos/ejercicio-pdf-u2-2.8--healthy-count-factor/poster.jpg",
+      "duration": 208.93333333333334,
+      "frames": 6268,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "cfd29cb613db5b5286ba8fae3a8875096961dd6757f5a99c3e40dbf8a357c4d9",
+      "videoSha256": "127cabe0db286c0ae864a4b8aa92fc32854aa9a0fb07964186d92e9d3e2eaf8d",
+      "posterSha256": "1997ce8cbe01bb017ea6a895ed0981e9323e45b8ca188e472ed027b47d7503a6",
+      "canonicalSha256": "52501657f5490307de6a74220b48f9fdb5007a7d8de12fdf553c2b7c58bacdb7",
+      "inputHash": "333810d9dc70fcfdbd4822820fb81d4dd2d0c702477cc2dda7cb658086159507",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "12109a1c1eb8a09880ab0d382dfc1269d3027b57ca2c87d1a18988322f0cbe22",
+        "canonicalSha256": "52501657f5490307de6a74220b48f9fdb5007a7d8de12fdf553c2b7c58bacdb7",
+        "source": {
+          "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+          "number": "2.8",
+          "page": 22
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "13d927ff639fff2bc6f41864662cb1f59b2eeb5e1b50332b959b0c9d73403fbb",
+        "transcriptSha256": "cfd29cb613db5b5286ba8fae3a8875096961dd6757f5a99c3e40dbf8a357c4d9",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u2-2.8",
+      "transcript": {
+        "id": "ejercicio-pdf-u2-2.8--healthy-count-factor",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "52501657f5490307de6a74220b48f9fdb5007a7d8de12fdf553c2b7c58bacdb7",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 208.93333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 15.4,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Expresa el número de sanos mal clasificados como función de ene mayúscula sanos.",
+                "start": 2.9,
+                "end": 8.5,
+                "startFrame": 87,
+                "endFrame": 255,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "a0d48e02537d85ffb020603c515b0c5bc33b80e9319b849512182cf8b50d0965"
+              },
+              {
+                "text": "Introduce el factor que multiplica ene mayúscula.",
+                "start": 8.8,
+                "end": 11.8,
+                "startFrame": 264,
+                "endFrame": 354,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "3a95a563b8f5f79934fcf1a793881d20c44a25f50f1011f465b0d05a8b9b3360"
+              },
+              {
+                "text": "Queremos cuantificar errores entre las personas sanas.",
+                "start": 12.1,
+                "end": 15.1,
+                "startFrame": 363,
+                "endFrame": 453,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "0588365dda6328d1c6d06b604dc03ad9a8943d01ff18fed3e875372efe65cb2f"
+              }
+            ]
+          },
+          {
+            "start": 15.4,
+            "end": 35.63333333333333,
+            "cues": [
+              {
+                "text": "Mu es la media y sigma la desviación típica, no la varianza.",
+                "start": 15.4,
+                "end": 20.566666666666666,
+                "startFrame": 462,
+                "endFrame": 617,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "9bde7a04b10a080a2dbe70efa83b36181823c2220174dcc8c4a18f109471095f"
+              },
+              {
+                "text": "Restar mu centra la medida y dividir por sigma expresa la distancia en desviaciones.",
+                "start": 20.866666666666667,
+                "end": 26.866666666666667,
+                "startFrame": 626,
+                "endFrame": 806,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "87a051014f9387d27563d5edd25b848cb18a3f978bc01756b7ef2bf8c6a4f507"
+              },
+              {
+                "text": "La normal estándar tiene media cero y desviación uno; su acumulada Phi permite comparar áreas sin cambiar su probabilidad.",
+                "start": 27.166666666666668,
+                "end": 35.333333333333336,
+                "startFrame": 815,
+                "endFrame": 1060,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "360a78284cf1e375899b8da7985ad0e00eb804b42b7839ce001b4d109804384a"
+              }
+            ]
+          },
+          {
+            "start": 35.63333333333333,
+            "end": 47.4,
+            "cues": [
+              {
+                "text": "Sanos: normal con mu igual a 80 y sigma igual a 10.",
+                "start": 35.63333333333333,
+                "end": 40.8,
+                "startFrame": 1069,
+                "endFrame": 1224,
+                "words": 12,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "895c9ac007305cf3322155f08be7e0f70d8cabb0760a96f2790e379ef7d191cc"
+              },
+              {
+                "text": "Diabéticos: normal con mu igual a 160 y sigma igual a 31 coma 4.",
+                "start": 41.1,
+                "end": 47.1,
+                "startFrame": 1233,
+                "endFrame": 1413,
+                "words": 14,
+                "sceneIndex": 2,
+                "cueIndex": 1,
+                "sourceCueSha256": "23fcbe6f7360b5c05ad176159932e2883e2c8e9278aa91152016e6a5a04a2622"
+              }
+            ]
+          },
+          {
+            "start": 47.4,
+            "end": 60.56666666666667,
+            "cues": [
+              {
+                "text": "Regla: sano si equis menor que ce; diabético si equis mayor o igual que ce. probabilidad de equis menor que ce sabiendo que de igual a 0 coma 0 2.",
+                "start": 47.4,
+                "end": 60.266666666666666,
+                "startFrame": 1422,
+                "endFrame": 1808,
+                "words": 30,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "b002e3cbaa964e8c736e5ab48f81787bd6c0fea62f7989eb313aecfda8b8e4a9"
+              }
+            ]
+          },
+          {
+            "start": 60.56666666666667,
+            "end": 71.6,
+            "cues": [
+              {
+                "text": "Prevalencia de diabetes en el segundo apartado: probabilidad de de igual a 0 coma 1 0; probabilidad de ese igual a 0 coma 9 0.",
+                "start": 60.56666666666667,
+                "end": 71.3,
+                "startFrame": 1817,
+                "endFrame": 2139,
+                "words": 25,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "1651866104eb041dc06f3ddf3bcabe0f3a46d59bf0d3542b8624c49fa81f24c7"
+              }
+            ]
+          },
+          {
+            "start": 71.6,
+            "end": 75.33333333333333,
+            "cues": [
+              {
+                "text": "Los grupos sano y diabético forman una partición.",
+                "start": 71.6,
+                "end": 75.03333333333333,
+                "startFrame": 2148,
+                "endFrame": 2251,
+                "words": 8,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "acab6a8b107e06e5ccd744dea5094b1134ed2dbc209027003b62fc2c56f641a4"
+              }
+            ]
+          },
+          {
+            "start": 75.33333333333333,
+            "end": 81.23333333333333,
+            "cues": [
+              {
+                "text": "El 2 por ciento es la cola inferior de diabéticos, no la superior.",
+                "start": 75.33333333333333,
+                "end": 80.93333333333334,
+                "startFrame": 2260,
+                "endFrame": 2428,
+                "words": 13,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "40449074f1e9ed5d4b3527d67a34c801834360313d04b9c760f237eefe424506"
+              }
+            ]
+          },
+          {
+            "start": 81.23333333333333,
+            "end": 86.7,
+            "cues": [
+              {
+                "text": "No se proporciona tamaño poblacional para un número absoluto de falsos positivos.",
+                "start": 81.23333333333333,
+                "end": 86.4,
+                "startFrame": 2437,
+                "endFrame": 2592,
+                "words": 12,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e19d54865b46670a26cbb27337dd94d828c0a98c98c41f827df5beb57a5469d"
+              }
+            ]
+          },
+          {
+            "start": 86.7,
+            "end": 102.63333333333334,
+            "cues": [
+              {
+                "text": "La clasificación errónea cae por encima del umbral.",
+                "start": 86.7,
+                "end": 90.13333333333334,
+                "startFrame": 2601,
+                "endFrame": 2704,
+                "words": 8,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "e1076fb926c9f6b70d19d1a8e43e4e87a1abd0b9480f26f76eb42639bc1615ac"
+              },
+              {
+                "text": "No uso la acumulada izquierda.",
+                "start": 90.43333333333334,
+                "end": 92.6,
+                "startFrame": 2713,
+                "endFrame": 2778,
+                "words": 5,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "db5591877f3367af612ab4782ee816456d62799e9cd304f02cf4b5d26e803285"
+              },
+              {
+                "text": "La regla positiva selecciona la cola superior de los sanos; un recuento esperado exige multiplicar esa proporción por su tamaño de población.",
+                "start": 92.9,
+                "end": 102.33333333333333,
+                "startFrame": 2787,
+                "endFrame": 3070,
+                "words": 22,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "1837ec4df219870a2fe426fa5bf3faada613e253d8d21d6f2cc56e234d258bd0"
+              }
+            ]
+          },
+          {
+            "start": 102.63333333333334,
+            "end": 110.53333333333333,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 102.63333333333334,
+                "end": 106.06666666666666,
+                "startFrame": 3079,
+                "endFrame": 3182,
+                "words": 8,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 106.36666666666666,
+                "end": 110.23333333333333,
+                "startFrame": 3191,
+                "endFrame": 3307,
+                "words": 9,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 110.53333333333333,
+            "end": 120.6,
+            "cues": [
+              {
+                "text": "Phi es la probabilidad acumulada a la izquierda en la normal estándar.",
+                "start": 110.53333333333333,
+                "end": 115.7,
+                "startFrame": 3316,
+                "endFrame": 3471,
+                "words": 12,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "fd4504d86dd5e4fc0aee7d154ac953ae4cbbfabae9f36c3b989f7e1e0d8f01a3"
+              },
+              {
+                "text": "Su inversa recibe una probabilidad y devuelve el umbral estandarizado.",
+                "start": 116,
+                "end": 120.3,
+                "startFrame": 3480,
+                "endFrame": 3609,
+                "words": 10,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "44c6072506ac74645a0419bbe86a45de26011be51d24ec6e7aae11145267e898"
+              }
+            ]
+          },
+          {
+            "start": 120.6,
+            "end": 135.26666666666668,
+            "cues": [
+              {
+                "text": "La probabilidad de error en sanos.",
+                "start": 120.6,
+                "end": 123.2,
+                "startFrame": 3618,
+                "endFrame": 3696,
+                "words": 6,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "6ced811df561ee70af6f2ff051f16d03c57e09931ac535889b79d1bab0e48b8e"
+              },
+              {
+                "text": "La clasificación errónea cae por encima del umbral.",
+                "start": 123.5,
+                "end": 126.93333333333334,
+                "startFrame": 3705,
+                "endFrame": 3808,
+                "words": 8,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "97e03495f60af0b5ce2964ec26150ac263ae08a1ffa95a85c7927966759ca070"
+              },
+              {
+                "text": "No uso la acumulada izquierda. cu igual a probabilidad de equis subíndice ese mayor o igual que ce.",
+                "start": 127.23333333333333,
+                "end": 134.96666666666667,
+                "startFrame": 3817,
+                "endFrame": 4049,
+                "words": 18,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "077e0bcc89f61de555009961189244590c485e0f57f6a9d5f5cec2de7aff4847"
+              }
+            ]
+          },
+          {
+            "start": 135.26666666666668,
+            "end": 153.16666666666666,
+            "cues": [
+              {
+                "text": "cu queda igual a 1 menos Phi abre paréntesis, abre paréntesis, 95 coma 5 1 2 2 8 4 2 0 6 1 6 0 7 6 menos 80, cierra paréntesis dividido entre abre paréntesis, 10, cierra paréntesis , cierra paréntesis.",
+                "start": 135.26666666666668,
+                "end": 152.86666666666667,
+                "startFrame": 4058,
+                "endFrame": 4586,
+                "words": 41,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "1cb07a876fddd2d1b23c13f870454e7a0ece09f1171ad8c57142620888c6282a"
+              }
+            ]
+          },
+          {
+            "start": 153.16666666666666,
+            "end": 163.66666666666666,
+            "cues": [
+              {
+                "text": "E entre corchetes significa esperanza.",
+                "start": 153.16666666666666,
+                "end": 155.33333333333334,
+                "startFrame": 4595,
+                "endFrame": 4660,
+                "words": 5,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+              },
+              {
+                "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+                "start": 155.63333333333333,
+                "end": 163.36666666666667,
+                "startFrame": 4669,
+                "endFrame": 4901,
+                "words": 18,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+              }
+            ]
+          },
+          {
+            "start": 163.66666666666666,
+            "end": 192.46666666666667,
+            "cues": [
+              {
+                "text": "El número esperado.",
+                "start": 163.66666666666666,
+                "end": 164.96666666666667,
+                "startFrame": 4910,
+                "endFrame": 4949,
+                "words": 3,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "dc83e16135bdf7c0808e5b9a2cb97be23763a388e3f297a92e643eb28bc54758"
+              },
+              {
+                "text": "Si hay ene mayúscula sanos, el número esperado de falsos positivos es ene mayúscula por cu.",
+                "start": 165.26666666666668,
+                "end": 172.13333333333333,
+                "startFrame": 4958,
+                "endFrame": 5164,
+                "words": 16,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "1eb4bcca0e11a93f259508a77e5c61e24875711c64790c5a9fdacb4d835619e9"
+              },
+              {
+                "text": "El enunciado no da ene mayúscula, así que no invento un recuento absoluto. esperanza de falsos positivos entre ene mayúscula sanos igual a ene mayúscula por 0 coma 0 6 0 4 2 3 4 7 6 7 6 8 6 0 4 0 4 5.",
+                "start": 172.43333333333334,
+                "end": 192.16666666666666,
+                "startFrame": 5173,
+                "endFrame": 5765,
+                "words": 46,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "e8d8420e18adde23b451cc60010e59ba3a5a5ccb373555dc7ce8c7de7ea499bb"
+              }
+            ]
+          },
+          {
+            "start": 192.46666666666667,
+            "end": 208.93333333333334,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 6 0 4 2 3 4 8 factor de recuento.",
+                "start": 192.46666666666667,
+                "end": 199.33333333333334,
+                "startFrame": 5774,
+                "endFrame": 5980,
+                "words": 16,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "5e226f454796068ff592b8b36ae012ed7c8ee4c2498c34e540fc59f6a72dfdd6"
+              },
+              {
+                "text": "En porcentaje es aproximadamente 6 coma 0 4 por ciento de los sanos; el número absoluto exige conocer cuántos sanos hay.",
+                "start": 199.63333333333333,
+                "end": 208.63333333333333,
+                "startFrame": 5989,
+                "endFrame": 6259,
+                "words": 21,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "5a1d6cc529e62b78a6154148d9e24224b675cc8c09c6ec0b7ca91aceb2093454"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
