@@ -1,0 +1,748 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-capstone-pec1-3--a",
+  "kind": "exercise",
+  "title": "Calcula P(Y>140 | X=110).",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "f244719f92e30b4c4b86e732b7d4262f1db0a33f3d26867c128b12eb1eaab79a",
+  "src": "videos/ejercicio-capstone-pec1-3--a/video.mp4",
+  "poster": "videos/ejercicio-capstone-pec1-3--a/poster.jpg",
+  "duration": 299.46666666666664,
+  "frames": 8984,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "c11c4fc2d68c84c0891776879f6fa0ee070bc37a131ceeb0adbae1155623fe2e",
+  "videoSha256": "cc30c38acafde7eb15f02e4cb49beb7fc1a9b938dd23a5bf461c2cb76a21fad3",
+  "posterSha256": "1122acab669a85c39dadb4795358b6fafe7bf2a8239c313881db002215cd2abb",
+  "canonicalSha256": "163961ee795dab7d66554b20a7bd5e6097d9c5e8dac83949ce441f734ea8f5e0",
+  "inputHash": "ef043eba6c0887557a32d79cc9bf86e29ec1f9c556e82d1ace10064816e18554",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "379ebf9b0b7231b4458a68e266e8f1df4cf8956b654c03aa2c30564d615a6098",
+    "canonicalSha256": "163961ee795dab7d66554b20a7bd5e6097d9c5e8dac83949ce441f734ea8f5e0",
+    "source": {
+      "file": "UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+      "url": "/materiales/UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+      "kind": "statement",
+      "title": "UOC MU IE 2026-27 S1: PEC 1, enunciado",
+      "number": "3"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "a8526fb3fd816745a4547a3300dd57111960b0d65f05f9986cb1dbdbb0ba6cf4",
+    "transcriptSha256": "c11c4fc2d68c84c0891776879f6fa0ee070bc37a131ceeb0adbae1155623fe2e",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-capstone-pec1-3",
+  "transcript": {
+    "id": "ejercicio-capstone-pec1-3--a",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "163961ee795dab7d66554b20a7bd5e6097d9c5e8dac83949ce441f734ea8f5e0",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 299.46666666666664,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 13.8,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula probabilidad de i griega mayor que 140 sabiendo que equis igual a 110.",
+            "start": 2.9,
+            "end": 8.9,
+            "startFrame": 87,
+            "endFrame": 267,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "9014095aae2e27df801b9021e599059cd9a31247fb778eca88ba60d0860cb091"
+          },
+          {
+            "text": "Queremos una probabilidad después de fijar información sobre otra variable.",
+            "start": 9.2,
+            "end": 13.5,
+            "startFrame": 276,
+            "endFrame": 405,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "803457f3f51a6ac5c07915e54754a3d6b3f952110f557eda6cd58d2acea080a1"
+          }
+        ]
+      },
+      {
+        "start": 13.8,
+        "end": 34.46666666666667,
+        "cues": [
+          {
+            "text": "La normalidad conjunta, no solo la de las marginales, garantiza una normal condicional.",
+            "start": 13.8,
+            "end": 19.4,
+            "startFrame": 414,
+            "endFrame": 582,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "d0943973df0964672f7d9655424f8644f8e13835b67018078267d270c123bcb0"
+          },
+          {
+            "text": "Su media desplaza el centro de i griega según la correlación y la razón de desviaciones.",
+            "start": 19.7,
+            "end": 26.566666666666666,
+            "startFrame": 591,
+            "endFrame": 797,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "f559429c6cbc60e87a8649517ca8f89c2ac6b722130c9dc6e53880f2a74d2c11"
+          },
+          {
+            "text": "Su varianza es la marginal por uno menos rho al cuadrado; la raíz es su desviación residual.",
+            "start": 26.866666666666667,
+            "end": 34.166666666666664,
+            "startFrame": 806,
+            "endFrame": 1025,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "41cc95354bd68332fb3c24d9a2e06a61949f85bd892e867ba9b519286c22ea7d"
+          }
+        ]
+      },
+      {
+        "start": 34.46666666666667,
+        "end": 46.36666666666667,
+        "cues": [
+          {
+            "text": "abre paréntesis, equis,i griega, cierra paréntesis tiene distribución normal bivariante: media de equis 100, desviación 15; media de i griega 120, desviación 20; correlación 0 coma 6.",
+            "start": 34.46666666666667,
+            "end": 46.06666666666667,
+            "startFrame": 1034,
+            "endFrame": 1382,
+            "words": 27,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "c2b544988a71429351b0260a93ddf245dd4438d1bdc3d2007005920030884e8f"
+          }
+        ]
+      },
+      {
+        "start": 46.36666666666667,
+        "end": 56.53333333333333,
+        "cues": [
+          {
+            "text": "En a se observa equis igual a 110 y se pide la distribución condicional de i griega y su probabilidad de superar 140.",
+            "start": 46.36666666666667,
+            "end": 56.233333333333334,
+            "startFrame": 1391,
+            "endFrame": 1687,
+            "words": 23,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "41a9a0ea8c686ed0dd272f5976468a0c3aa3fcb3b59d97e5c7a44a6e973e39fc"
+          }
+        ]
+      },
+      {
+        "start": 56.53333333333333,
+        "end": 73.86666666666666,
+        "cues": [
+          {
+            "text": "En de se toman 10 individuos; las categorías son i griega menor que 100, 100 menor o igual que i griega menor o igual que 140 e i griega mayor que 140.",
+            "start": 56.53333333333333,
+            "end": 70.26666666666667,
+            "startFrame": 1696,
+            "endFrame": 2108,
+            "words": 32,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "535ab7a972499d9d7f83f997e7c07e83a9b56e69a45fe0d6006ea8bf22168d54"
+          },
+          {
+            "text": "Se piden exactamente 2, 6 y 2.",
+            "start": 70.56666666666666,
+            "end": 73.56666666666666,
+            "startFrame": 2117,
+            "endFrame": 2207,
+            "words": 7,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "5b7beea16a69adfa703c9e7a45544145005433d2fd3ff2622912fb0ecfe06731"
+          }
+        ]
+      },
+      {
+        "start": 73.86666666666666,
+        "end": 83.6,
+        "cues": [
+          {
+            "text": "En e se toman 400 individuos y se aproxima la probabilidad de que al menos 75 tengan i griega mayor que 140.",
+            "start": 73.86666666666666,
+            "end": 83.3,
+            "startFrame": 2216,
+            "endFrame": 2499,
+            "words": 22,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "40d3cdce1502f302bc5ea9a80115afaac6eb433b95c0093d73a5628f3fb26239"
+          }
+        ]
+      },
+      {
+        "start": 83.6,
+        "end": 95.9,
+        "cues": [
+          {
+            "text": "La notación normal de media abre paréntesis, media, cierra paréntesis y varianza abre paréntesis, varianza, cierra paréntesis usa varianza como segundo parámetro; el diagrama normal usa desviación típica.",
+            "start": 83.6,
+            "end": 95.6,
+            "startFrame": 2508,
+            "endFrame": 2868,
+            "words": 28,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "7dc3546496f7dcac97b879887d43977e9287662ca2e9cb1655d11c23686d4e5f"
+          }
+        ]
+      },
+      {
+        "start": 95.9,
+        "end": 106.5,
+        "cues": [
+          {
+            "text": "Las unidades de equis e i griega son las unidades de medida del enunciado; no se atribuyen unidades físicas que no se han especificado.",
+            "start": 95.9,
+            "end": 106.2,
+            "startFrame": 2877,
+            "endFrame": 3186,
+            "words": 24,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a28ccb3c10c3d2d5a041b27fe2ee1d78830822428dd639d591c2cf0eb89f52e7"
+          }
+        ]
+      },
+      {
+        "start": 106.5,
+        "end": 117.43333333333334,
+        "cues": [
+          {
+            "text": "Las muestras de de y e contienen individuos independientes e identicamente distribuidos.",
+            "start": 106.5,
+            "end": 111.66666666666667,
+            "startFrame": 3195,
+            "endFrame": 3350,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "3c62aaa6b4abc74bb34c7b2ad3bca7c41ee47d8b7d2b4dba4d46324f71b521fa"
+          },
+          {
+            "text": "Las medidas equis e i griega del mismo individuo no son independientes.",
+            "start": 111.96666666666667,
+            "end": 117.13333333333334,
+            "startFrame": 3359,
+            "endFrame": 3514,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "b06080496a9c3a9159557e8e479ac48016ae02c0c1371250330d14e451c37f58"
+          }
+        ]
+      },
+      {
+        "start": 117.43333333333334,
+        "end": 131.76666666666668,
+        "cues": [
+          {
+            "text": "i griega tiene densidad continua: incluir los extremos 100 y 140 no cambia las probabilidades.",
+            "start": 117.43333333333334,
+            "end": 123.86666666666666,
+            "startFrame": 3523,
+            "endFrame": 3716,
+            "words": 15,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "6fe68898fe79e5fc21c320e70d78e28b11cc07a624d34d9fd6ef589c1ccb7e45"
+          },
+          {
+            "text": "Condicionar a equis igual a equis minúscula se entiende mediante la distribución condicional regular de la normal.",
+            "start": 124.16666666666667,
+            "end": 131.46666666666667,
+            "startFrame": 3725,
+            "endFrame": 3944,
+            "words": 17,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "56ffc923edbe216144b0a5ccd07d050907add7af4e00d211c402f791ae6bf681"
+          }
+        ]
+      },
+      {
+        "start": 131.76666666666668,
+        "end": 146,
+        "cues": [
+          {
+            "text": "El desplazamiento de equis respecto a cien es diez.",
+            "start": 131.76666666666668,
+            "end": 135.63333333333333,
+            "startFrame": 3953,
+            "endFrame": 4069,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "6d0520f5a010ec45f7d7a16e225f3ce538bbcd6ef185c6a15a3d0b0a3bf3be7a"
+          },
+          {
+            "text": "Aplico la pendiente condicional, no la media marginal de i griega.",
+            "start": 135.93333333333334,
+            "end": 140.66666666666666,
+            "startFrame": 4078,
+            "endFrame": 4220,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "86432c9b35b139c657602cb6d2e6a70168e3521082c684d731d6e95131f6f32e"
+          },
+          {
+            "text": "Normalizamos dentro de la condición; una marginal no incorpora esa información.",
+            "start": 140.96666666666667,
+            "end": 145.7,
+            "startFrame": 4229,
+            "endFrame": 4371,
+            "words": 11,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "d77dd06e6961545481b01f1aac5fd697a7f4567c76df11b11c65b85995f51037"
+          }
+        ]
+      },
+      {
+        "start": 146,
+        "end": 168.36666666666667,
+        "cues": [
+          {
+            "text": "Sustituir el valor observado.",
+            "start": 146,
+            "end": 147.73333333333332,
+            "startFrame": 4380,
+            "endFrame": 4432,
+            "words": 4,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "71bfa6eb1e4f2b276354fccb5d0fae49c3c71eb8ae1dcbfb4517e447395a6db0"
+          },
+          {
+            "text": "El desplazamiento de equis respecto a cien es diez.",
+            "start": 148.03333333333333,
+            "end": 151.9,
+            "startFrame": 4441,
+            "endFrame": 4557,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "9ed7ff0d1ce5dca7b06fe6936ad8c435031047cde46afa71d938f61bc212923e"
+          },
+          {
+            "text": "Aplico la pendiente condicional, no la media marginal de i griega. mu subíndice abre paréntesis, i griega sabiendo que 110, cierra paréntesis igual a 120 más 0 coma 8 por abre paréntesis, 110 menos 100, cierra paréntesis.",
+            "start": 152.2,
+            "end": 168.06666666666666,
+            "startFrame": 4566,
+            "endFrame": 5042,
+            "words": 37,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "e54e670a5b8e199556d443b22aa1cf35b2c25b3b7a5d4991c108bb33f3e02ff1"
+          }
+        ]
+      },
+      {
+        "start": 168.36666666666667,
+        "end": 183.03333333333333,
+        "cues": [
+          {
+            "text": "Situar la normal condicional.",
+            "start": 168.36666666666667,
+            "end": 170.1,
+            "startFrame": 5051,
+            "endFrame": 5103,
+            "words": 4,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "cc1814026f0c6c176bc969c6f300ffde3dcf9e252d36ff6c0312cc879cea3483"
+          },
+          {
+            "text": "La media es ciento veintiocho y la desviación dieciseis.",
+            "start": 170.4,
+            "end": 174.26666666666668,
+            "startFrame": 5112,
+            "endFrame": 5228,
+            "words": 9,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "1e0e60a562e0910d78208cceea830e7a6a5384ce466962ca2c99b6dd9b8ea760"
+          },
+          {
+            "text": "Todavía no sombreamos la cola. mu subíndice abre paréntesis, i griega sabiendo que 110, cierra paréntesis igual a 128.",
+            "start": 174.56666666666666,
+            "end": 182.73333333333332,
+            "startFrame": 5237,
+            "endFrame": 5482,
+            "words": 19,
+            "sceneIndex": 12,
+            "cueIndex": 2,
+            "sourceCueSha256": "c10f901364b7d33b250d31c7fd7548276a14bfda74659789ad39a3221ceab739"
+          }
+        ]
+      },
+      {
+        "start": 183.03333333333333,
+        "end": 190.93333333333334,
+        "cues": [
+          {
+            "text": "Centrar el umbral.",
+            "start": 183.03333333333333,
+            "end": 184.33333333333334,
+            "startFrame": 5491,
+            "endFrame": 5530,
+            "words": 3,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "d439cad927738ebe5bcb00bd393beb947b066267e21d5c12fa8e5812f84b6182"
+          },
+          {
+            "text": "Resto la media condicional al umbral ciento cuarenta. 140 menos 128 igual a 12.",
+            "start": 184.63333333333333,
+            "end": 190.63333333333333,
+            "startFrame": 5539,
+            "endFrame": 5719,
+            "words": 14,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "3c5526f45751c57efe3b29178cda392026c257a1933f718822578041d5569a0d"
+          }
+        ]
+      },
+      {
+        "start": 190.93333333333334,
+        "end": 198.83333333333334,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 190.93333333333334,
+            "end": 194.36666666666667,
+            "startFrame": 5728,
+            "endFrame": 5831,
+            "words": 8,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 194.66666666666666,
+            "end": 198.53333333333333,
+            "startFrame": 5840,
+            "endFrame": 5956,
+            "words": 9,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 198.83333333333334,
+        "end": 213.93333333333334,
+        "cues": [
+          {
+            "text": "Tipificar el umbral.",
+            "start": 198.83333333333334,
+            "end": 200.13333333333333,
+            "startFrame": 5965,
+            "endFrame": 6004,
+            "words": 3,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "2d849c70c97ba6aa6a640e7028e9037e1fe19c0a8288e3c7f08d8bd698ac136f"
+          },
+          {
+            "text": "Divido doce por la desviación dieciseis.",
+            "start": 200.43333333333334,
+            "end": 203.03333333333333,
+            "startFrame": 6013,
+            "endFrame": 6091,
+            "words": 6,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "9db6d9e966fac42ef27f606cf660f7c8f59184a4be44f8e099a47beb81642b67"
+          },
+          {
+            "text": "No divido por la varianza doscientos cincuenta y seis. zeta igual a abre paréntesis, 12, cierra paréntesis dividido entre abre paréntesis, 16, cierra paréntesis.",
+            "start": 203.33333333333334,
+            "end": 213.63333333333333,
+            "startFrame": 6100,
+            "endFrame": 6409,
+            "words": 24,
+            "sceneIndex": 15,
+            "cueIndex": 2,
+            "sourceCueSha256": "03591defbee79462ad6afc47073882482749dd7e12e9a14097d8a9f494166c7f"
+          }
+        ]
+      },
+      {
+        "start": 213.93333333333334,
+        "end": 228.6,
+        "cues": [
+          {
+            "text": "Localizar la cola derecha.",
+            "start": 213.93333333333334,
+            "end": 215.66666666666666,
+            "startFrame": 6418,
+            "endFrame": 6470,
+            "words": 4,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "26830689ba5b298e2de46b9c85dab9a4c8767a01418138639fa9be98bc400a3c"
+          },
+          {
+            "text": "El umbral está a cero coma setenta y cinco desviaciones del centro.",
+            "start": 215.96666666666667,
+            "end": 221.13333333333333,
+            "startFrame": 6479,
+            "endFrame": 6634,
+            "words": 12,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "e0d53a9939f94d2cd58b224cbf487be6cbd6446f763743331ffecca6219ec577"
+          },
+          {
+            "text": "Ahora marco el área por encima de ciento cuarenta. zeta igual a 0 coma 7 5.",
+            "start": 221.43333333333334,
+            "end": 228.3,
+            "startFrame": 6643,
+            "endFrame": 6849,
+            "words": 16,
+            "sceneIndex": 16,
+            "cueIndex": 2,
+            "sourceCueSha256": "b72212f423523a6e99ec0e9c5a7519ce4da3418c1a63edced8f363a604634b77"
+          }
+        ]
+      },
+      {
+        "start": 228.6,
+        "end": 238.66666666666666,
+        "cues": [
+          {
+            "text": "Phi es la probabilidad acumulada a la izquierda en la normal estándar.",
+            "start": 228.6,
+            "end": 233.76666666666668,
+            "startFrame": 6858,
+            "endFrame": 7013,
+            "words": 12,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "fd4504d86dd5e4fc0aee7d154ac953ae4cbbfabae9f36c3b989f7e1e0d8f01a3"
+          },
+          {
+            "text": "Su inversa recibe una probabilidad y devuelve el umbral estandarizado.",
+            "start": 234.06666666666666,
+            "end": 238.36666666666667,
+            "startFrame": 7022,
+            "endFrame": 7151,
+            "words": 10,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "44c6072506ac74645a0419bbe86a45de26011be51d24ec6e7aae11145267e898"
+          }
+        ]
+      },
+      {
+        "start": 238.66666666666666,
+        "end": 257.3,
+        "cues": [
+          {
+            "text": "Restar la acumulada.",
+            "start": 238.66666666666666,
+            "end": 239.96666666666667,
+            "startFrame": 7160,
+            "endFrame": 7199,
+            "words": 3,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "16a7fcb75fa8fa99be000ac035fb3aa5d77b9d7f1ddec67ca350b21948182c99"
+          },
+          {
+            "text": "Phi mide el área a la izquierda; el enunciado pide la cola derecha. probabilidad de i griega mayor que 140 sabiendo que equis igual a 110 igual a 1 menos Phi abre paréntesis, 0 coma 7 5, cierra paréntesis.",
+            "start": 240.26666666666668,
+            "end": 257,
+            "startFrame": 7208,
+            "endFrame": 7710,
+            "words": 39,
+            "sceneIndex": 18,
+            "cueIndex": 1,
+            "sourceCueSha256": "4b1ae7249d936e9e41517e93148543f07fd3b7fbd95da66578da01d2a86fd232"
+          }
+        ]
+      },
+      {
+        "start": 257.3,
+        "end": 282.6666666666667,
+        "cues": [
+          {
+            "text": "Evaluar la cola condicional.",
+            "start": 257.3,
+            "end": 259.03333333333336,
+            "startFrame": 7719,
+            "endFrame": 7771,
+            "words": 4,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "efbce33f23068a38326d37e428612f3b5168415a2af1e8c4f5ce1e0c7394d674"
+          },
+          {
+            "text": "La probabilidad es aproximadamente cero coma dos dos siete.",
+            "start": 259.3333333333333,
+            "end": 263.2,
+            "startFrame": 7780,
+            "endFrame": 7896,
+            "words": 9,
+            "sceneIndex": 19,
+            "cueIndex": 1,
+            "sourceCueSha256": "ef695c0e4682a03f3af7c1dbd3b6d738611d1972e3cd15da1a1c46e2ede50cff"
+          },
+          {
+            "text": "Es mayor que la cola marginal porque equis igual a ciento diez desplaza i griega hacia arriba. probabilidad de i griega mayor que 140 sabiendo que equis igual a 110 igual a 0 coma 2 2 6 6 2 7 3 5 2 4.",
+            "start": 263.5,
+            "end": 282.3666666666667,
+            "startFrame": 7905,
+            "endFrame": 8471,
+            "words": 44,
+            "sceneIndex": 19,
+            "cueIndex": 2,
+            "sourceCueSha256": "9402e8f50ae80580a34c2c43e2e81d33c90fdad080b35d48303c2ba3eb6a43c7"
+          }
+        ]
+      },
+      {
+        "start": 282.6666666666667,
+        "end": 299.46666666666664,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 2 2 6 6 2 7 4 probabilidad entre 0 y 1.",
+            "start": 282.6666666666667,
+            "end": 289.96666666666664,
+            "startFrame": 8480,
+            "endFrame": 8699,
+            "words": 17,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "89f6642c3246bd7b11b997cd84b540793e3fcabaf58bc34ca6f7181951779f0b"
+          },
+          {
+            "text": "Esta probabilidad es condicional.",
+            "start": 290.26666666666665,
+            "end": 292,
+            "startFrame": 8708,
+            "endFrame": 8760,
+            "words": 4,
+            "sceneIndex": 20,
+            "cueIndex": 1,
+            "sourceCueSha256": "fe99fd462a68bb8cdc6a65c78431b46dc907857e9940c40f96fe80601f19b0fe"
+          },
+          {
+            "text": "No se debe sustituir por la cola marginal 1 menos Phi abre paréntesis, 1, cierra paréntesis.",
+            "start": 292.3,
+            "end": 299.1666666666667,
+            "startFrame": 8769,
+            "endFrame": 8975,
+            "words": 16,
+            "sceneIndex": 20,
+            "cueIndex": 2,
+            "sourceCueSha256": "038be95ddcb68cb7ae21e8cf7a168c1feabff82c484822082a527f4ba86709a1"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
