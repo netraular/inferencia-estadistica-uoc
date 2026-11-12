@@ -196659,6 +196659,560 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-practica-geometrica-negativa-negative-binomial--at-most": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-practica-geometrica-negativa-negative-binomial--at-most",
+      "kind": "exercise",
+      "title": "Calcula P(F≤k), incluyendo cero y k.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "7643bcb483265a033124deef4d5119f469b936493681206a5b04fe1118aac827",
+      "src": "videos/ejercicio-practica-geometrica-negativa-negative-binomial--at-most/video.mp4",
+      "poster": "videos/ejercicio-practica-geometrica-negativa-negative-binomial--at-most/poster.jpg",
+      "duration": 229.83333333333334,
+      "frames": 6895,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "4650cbb580fec61371c6cc0afc7ebfa8c6b1cbc56da64d48ca9f622adc7db122",
+      "videoSha256": "736b63580d1f8e4973d7d1e36046f8cf6cc7aab715288e396cfea7a57c1b1ee6",
+      "posterSha256": "66088954ec3139e8d05d22c2e3d97791e8c2ca6fdb331954a087c52860ba326a",
+      "canonicalSha256": "b90b482c20cc7205eaf146aa18d127baf5d830a9b6dcf4f520451e39053ae968",
+      "inputHash": "da3014c851e30d016c1c5a8406da8aa188fefad36fbaa14e4bc61fc29ba38e01",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "73d650f7ff80be69588fad69fd5c402a6d6e88b27bda7d2421a56a7240558531",
+        "canonicalSha256": "b90b482c20cc7205eaf146aa18d127baf5d830a9b6dcf4f520451e39053ae968",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Binomial negativa"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "5d88d7bb941f63180a13df72d36b9a0214969bbce3158e55c6bc46513590a2df",
+        "transcriptSha256": "4650cbb580fec61371c6cc0afc7ebfa8c6b1cbc56da64d48ca9f622adc7db122",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-practica-geometrica-negativa-negative-binomial",
+      "transcript": {
+        "id": "ejercicio-practica-geometrica-negativa-negative-binomial--at-most",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "b90b482c20cc7205eaf146aa18d127baf5d830a9b6dcf4f520451e39053ae968",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 229.83333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 13.4,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de efe menor o igual que ka, incluyendo cero y ka.",
+                "start": 2.9,
+                "end": 8.5,
+                "startFrame": 87,
+                "endFrame": 255,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "5001de9c7aae21818259817d95a6743f24ef6d27abee1f4dbd79a9cda4396c1a"
+              },
+              {
+                "text": "Queremos todos los recuentos hasta el límite, incluido ese límite.",
+                "start": 8.8,
+                "end": 13.1,
+                "startFrame": 264,
+                "endFrame": 393,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "b2dc7d9c24ca78a6d23f8e2d5a8045ecb4d12e143250c3187bf2e9207acfad0f"
+              }
+            ]
+          },
+          {
+            "start": 13.4,
+            "end": 33.2,
+            "cues": [
+              {
+                "text": "Aquí efe cuenta fracasos antes del éxito número erre, así que puede valer cero.",
+                "start": 13.4,
+                "end": 19.4,
+                "startFrame": 402,
+                "endFrame": 582,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "bf670e95bb7ea0b05256130cd1bbe6d4bac3bff247c3aa6d5680557d7086a144"
+              },
+              {
+                "text": "Los ensayos son independientes con probabilidad de éxito pe constante.",
+                "start": 19.7,
+                "end": 24,
+                "startFrame": 591,
+                "endFrame": 720,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "5f52c8e35006d61b406f4db13fc237423d8b056b55e6264272918abb614ba9fc"
+              },
+              {
+                "text": "El último ensayo es necesariamente un éxito; elegimos dónde colocar los otros erre menos uno éxitos entre los ensayos anteriores.",
+                "start": 24.3,
+                "end": 32.9,
+                "startFrame": 729,
+                "endFrame": 987,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "bbbb24c9df9aef40f1b08cfd9f452946eca62dd02a7da02fc6ee7114c624147c"
+              }
+            ]
+          },
+          {
+            "start": 33.2,
+            "end": 40.8,
+            "cues": [
+              {
+                "text": "erre igual a 4 éxitos, pe igual a 0 coma 2 5, ka igual a 2 fallos.",
+                "start": 33.2,
+                "end": 40.5,
+                "startFrame": 996,
+                "endFrame": 1215,
+                "words": 17,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "8d3e7e224bbfdc8996498c109938910ae418c192c0c5487b66f63688534e4085"
+              }
+            ]
+          },
+          {
+            "start": 40.8,
+            "end": 52.7,
+            "cues": [
+              {
+                "text": "Soporte efe igual a 0, 1, 2,...; el total de ensayos es te igual a efe más erre. efe igual a 0 significa erre éxitos iniciales consecutivos.",
+                "start": 40.8,
+                "end": 52.4,
+                "startFrame": 1224,
+                "endFrame": 1572,
+                "words": 27,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "f2b571630d05ea7400fb8c35a4e6182170e8f725065c48b0dd6e9eae18102ec5"
+              }
+            ]
+          },
+          {
+            "start": 52.7,
+            "end": 56.43333333333333,
+            "cues": [
+              {
+                "text": "Ensayos Bernoulli independientes con probabilidad de éxito constante.",
+                "start": 52.7,
+                "end": 56.13333333333333,
+                "startFrame": 1581,
+                "endFrame": 1684,
+                "words": 8,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "e01757017bf12764d48c1715bb80dbbc19b2d2a98e1d7823b9f9889840a57b70"
+              }
+            ]
+          },
+          {
+            "start": 56.43333333333333,
+            "end": 68.63333333333334,
+            "cues": [
+              {
+                "text": "El objetivo erre es un número entero positivo de éxitos.",
+                "start": 56.43333333333333,
+                "end": 60.733333333333334,
+                "startFrame": 1693,
+                "endFrame": 1822,
+                "words": 10,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "845e1f2054cccb58abe9247d090c0b42b1740497a346c9999e71b9140c865aa7"
+              },
+              {
+                "text": "La variable efe cuenta los fallos anteriores, no el total de ensayos; para contar ensayos añadiríamos erre.",
+                "start": 61.03333333333333,
+                "end": 68.33333333333333,
+                "startFrame": 1831,
+                "endFrame": 2050,
+                "words": 17,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "672168c674df9b860e31cdf615bef1f10e943aba6c165cdf50b616ef935c39fe"
+              }
+            ]
+          },
+          {
+            "start": 68.63333333333334,
+            "end": 79.96666666666667,
+            "cues": [
+              {
+                "text": "Suma las masas desde cero hasta ka, sin desplazar el soporte.",
+                "start": 68.63333333333334,
+                "end": 73.36666666666666,
+                "startFrame": 2059,
+                "endFrame": 2201,
+                "words": 11,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "a4b75b4d0cf91d88ea0adbb144d2cdd481b8a05b892da5585fcc6235e242cb35"
+              },
+              {
+                "text": "Las masas de recuentos distintos son disjuntas y se suman sin volver a normalizar.",
+                "start": 73.66666666666667,
+                "end": 79.66666666666667,
+                "startFrame": 2210,
+                "endFrame": 2390,
+                "words": 14,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "f7f7734f0613767d70fd80f499a6a745391a5481f342ede7fdc1bf66d5959d74"
+              }
+            ]
+          },
+          {
+            "start": 79.96666666666667,
+            "end": 111.4,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 79.96666666666667,
+                "end": 82.96666666666667,
+                "startFrame": 2399,
+                "endFrame": 2489,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de efe menor o igual que ka, incluyendo cero y ka.",
+                "start": 83.26666666666667,
+                "end": 88.86666666666666,
+                "startFrame": 2498,
+                "endFrame": 2666,
+                "words": 13,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "832fcdeda0c62bcf632e74d7dc62de5044a9565f08351c0c8d06dd60b69d7f8f"
+              },
+              {
+                "text": "Contamos fracasos antes del éxito número erre.",
+                "start": 89.16666666666667,
+                "end": 92.16666666666667,
+                "startFrame": 2675,
+                "endFrame": 2765,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "5b0528fe48d768869516d3245c92a3e9b4df0b6c37d5ac8f05f403201daf2729"
+              },
+              {
+                "text": "El último ensayo es necesariamente un éxito; el coeficiente cuenta cómo colocar los erre menos uno éxitos anteriores.",
+                "start": 92.46666666666667,
+                "end": 100.2,
+                "startFrame": 2774,
+                "endFrame": 3006,
+                "words": 18,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "09c13b58fe5ea23e7758d0908e354f2787f8587913c2b8b5e4085ec0b99fff75"
+              },
+              {
+                "text": "El total de ensayos varía, a diferencia del diseño binomial.",
+                "start": 100.5,
+                "end": 104.8,
+                "startFrame": 3015,
+                "endFrame": 3144,
+                "words": 10,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "68b1b8b573a72e624700dcc698e3de57233eb13c7ab794ffa5ef1ea5af6a9519"
+              },
+              {
+                "text": "Para este apartado: Suma las masas desde cero hasta ka, sin desplazar el soporte.",
+                "start": 105.1,
+                "end": 111.1,
+                "startFrame": 3153,
+                "endFrame": 3333,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "d90ada4c87c3b2245d3f793986908d032480384ff9318f36cf306b71b4dc5f86"
+              }
+            ]
+          },
+          {
+            "start": 111.4,
+            "end": 121.9,
+            "cues": [
+              {
+                "text": "Delimitar los fallos.",
+                "start": 111.4,
+                "end": 112.7,
+                "startFrame": 3342,
+                "endFrame": 3381,
+                "words": 3,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "2c1e30c8b87e2cae5f99fad77e65b78893ede83b53832b5340c118d6b7fce81e"
+              },
+              {
+                "text": "Los valores incluidos son los enteros de 0 a 2; no se suman erre ensayos al argumento de la CDF.",
+                "start": 113,
+                "end": 121.6,
+                "startFrame": 3390,
+                "endFrame": 3648,
+                "words": 20,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "3b09d4655e211fb13e1a3f79b09294210840dfa4654d326bf0fac1c4ff76778a"
+              }
+            ]
+          },
+          {
+            "start": 121.9,
+            "end": 131.96666666666667,
+            "cues": [
+              {
+                "text": "El coeficiente binomial cuenta subconjuntos o posiciones sin orden.",
+                "start": 121.9,
+                "end": 125.76666666666667,
+                "startFrame": 3657,
+                "endFrame": 3773,
+                "words": 9,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "eac76991b7a03bb3cd90333125765554ea0270d8a1ca92d28d21230ca59f2ca3"
+              },
+              {
+                "text": "Se calcula con factoriales, no multiplicando los dos números que aparecen en él.",
+                "start": 126.06666666666666,
+                "end": 131.66666666666666,
+                "startFrame": 3782,
+                "endFrame": 3950,
+                "words": 13,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "c11b524215758a97b7db32ac6d145fc137ee6fe79d4ebd2d5001fbb17c925da0"
+              }
+            ]
+          },
+          {
+            "start": 131.96666666666667,
+            "end": 186.76666666666668,
+            "cues": [
+              {
+                "text": "Sumar las masas.",
+                "start": 131.96666666666667,
+                "end": 133.26666666666668,
+                "startFrame": 3959,
+                "endFrame": 3998,
+                "words": 3,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "1ab8779b8a6d485da6d0434acea361ae95e12fbe03c55453cd6af3bb56ec3619"
+              },
+              {
+                "text": "Aplicamos la fórmula anterior a cada número de fallos.",
+                "start": 133.56666666666666,
+                "end": 137.43333333333334,
+                "startFrame": 4007,
+                "endFrame": 4123,
+                "words": 9,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "290b8e83f429767524ed5c60134dfbbeb948b0eb359824b24466ad1e33837f55"
+              },
+              {
+                "text": "Las probabilidades son, aproximadamente, 0 coma 0 0 3 9 0 6 2 5 más 0 coma 0 1 1 7 1 8 7 5 más 0 coma 0 2 1 9 7 2 6 6.",
+                "start": 137.73333333333332,
+                "end": 153.16666666666666,
+                "startFrame": 4132,
+                "endFrame": 4595,
+                "words": 36,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "c4634cd99ec0fd4f01d5cecb8f383b086bd0cbe0dafa0ed5942bf107cc18485c"
+              },
+              {
+                "text": "Suman 0 coma 0 3 7 5 9 7 6 6; la función de acumulada calcula esa misma suma. probabilidad de efe menor o igual que ka igual a suma desde jota igual a 0 hasta ka de combinaciones de abre paréntesis, jota más erre menos 1, cierra paréntesis elementos tomados de abre paréntesis, jota, cierra paréntesis en abre paréntesis, jota, cierra paréntesis pe elevado a erre abre paréntesis, 1 menos pe, cierra paréntesis elevado a jota.",
+                "start": 153.46666666666667,
+                "end": 186.46666666666667,
+                "startFrame": 4604,
+                "endFrame": 5594,
+                "words": 77,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "dcbd654e38ceb94a8ca5ce910632c8866a6bbea041bfb7b4e5e0c5b9a71d4578"
+              }
+            ]
+          },
+          {
+            "start": 186.76666666666668,
+            "end": 212.9,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 186.76666666666668,
+                "end": 188.06666666666666,
+                "startFrame": 5603,
+                "endFrame": 5642,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 0 3 7 5 9 7 6 6 probabilidad entre 0 y 1.",
+                "start": 188.36666666666667,
+                "end": 196.1,
+                "startFrame": 5651,
+                "endFrame": 5883,
+                "words": 18,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "d8410722dbe29c5648e4f5969afb972fff5df6cae2542db03bacd9e4c689601d"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 196.4,
+                "end": 203.7,
+                "startFrame": 5892,
+                "endFrame": 6111,
+                "words": 17,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "058f362a1b348f34975abb4302c446211e81e8089dbfd4fca10aab6235723f3f"
+              },
+              {
+                "text": "Con ka igual a 0, la acumulada coincide con la masa pe elevado a erre de no observar ningún fallo.",
+                "start": 204,
+                "end": 212.6,
+                "startFrame": 6120,
+                "endFrame": 6378,
+                "words": 20,
+                "sceneIndex": 11,
+                "cueIndex": 3,
+                "sourceCueSha256": "8b45e917e210b7dd3d596d38624e34370f01cb119113396eaf3bf838fda4d864"
+              }
+            ]
+          },
+          {
+            "start": 212.9,
+            "end": 229.83333333333334,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 3 7 5 9 7 6 6 probabilidad entre 0 y 1.",
+                "start": 212.9,
+                "end": 220.63333333333333,
+                "startFrame": 6387,
+                "endFrame": 6619,
+                "words": 18,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "62330cdba7ed8cda8a71614b75718b869001b078306342ffccf11d741d20ad63"
+              },
+              {
+                "text": "Con ka igual a 0, la acumulada coincide con la masa pe elevado a erre de no observar ningún fallo.",
+                "start": 220.93333333333334,
+                "end": 229.53333333333333,
+                "startFrame": 6628,
+                "endFrame": 6886,
+                "words": 20,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "ce008e06cd7dee1579976fd334ee3a46efe64c82d6e59a7611710d60d344b050"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
