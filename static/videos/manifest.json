@@ -227085,6 +227085,499 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-practica-masa-cdf-table--strict": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-practica-masa-cdf-table--strict",
+      "kind": "exercise",
+      "title": "¿Qué probabilidad hay de menos de dos brotes, sin incluir dos?",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "ba396d91321068ebae4ba3370719f97f4279e5e7e31d03db234acaea0862e79b",
+      "src": "videos/ejercicio-practica-masa-cdf-table--strict/video.mp4",
+      "poster": "videos/ejercicio-practica-masa-cdf-table--strict/poster.jpg",
+      "duration": 163.5,
+      "frames": 4905,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "2e49efdc41da359e9ebc5863b045584727ddeb9b6628d3d33e5df3c8dec6351f",
+      "videoSha256": "658455ba881b9f33e6ce28022c35038318344cebbef96fdd2223bbdd1e7acf97",
+      "posterSha256": "be5386910e5208c0d9448bdc9b1bfe150bdec1b319f6f0c4af2b2326ad407c1e",
+      "canonicalSha256": "8832284a924e11ef997f6453de5916fa2361f1569a866a795da7a2972f906ada",
+      "inputHash": "31061e26489651bfa0b5e187effd9c706ef1e8f3540e0648687be1901f9f04c9",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "a94172781459e56bb92de07869aebe8e8b85d623dabf634dca874aa1d1e4f052",
+        "canonicalSha256": "8832284a924e11ef997f6453de5916fa2361f1569a866a795da7a2972f906ada",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Tabla y probabilidad acumulada"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "6b3725cbaa15469fd9305b6f0ce92241062e16d625084e17a39c46001a76d07a",
+        "transcriptSha256": "2e49efdc41da359e9ebc5863b045584727ddeb9b6628d3d33e5df3c8dec6351f",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-practica-masa-cdf-table",
+      "transcript": {
+        "id": "ejercicio-practica-masa-cdf-table--strict",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "8832284a924e11ef997f6453de5916fa2361f1569a866a795da7a2972f906ada",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 163.5,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 11.666666666666666,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Qué probabilidad hay de menos de dos brotes, sin incluir dos?",
+                "start": 2.9,
+                "end": 7.633333333333334,
+                "startFrame": 87,
+                "endFrame": 229,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "3e6a3aac07d0612b6a0cfa7a2592083d7e6a16fc6229669c2173303bc7d732f7"
+              },
+              {
+                "text": "Queremos los valores estrictamente menores que el umbral.",
+                "start": 7.933333333333334,
+                "end": 11.366666666666667,
+                "startFrame": 238,
+                "endFrame": 341,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "d48e7dd5957a33f0db84765908847a65d18355819c3d8fc0e78816ff98a70b9c"
+              }
+            ]
+          },
+          {
+            "start": 11.666666666666666,
+            "end": 34.46666666666667,
+            "cues": [
+              {
+                "text": "La tabla da masas en los únicos valores posibles.",
+                "start": 11.666666666666666,
+                "end": 15.533333333333333,
+                "startFrame": 350,
+                "endFrame": 466,
+                "words": 9,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "092429dff7e8d1906d8bd8e7a879a62ab76b4dacedb80d7f350351f97433067d"
+              },
+              {
+                "text": "La acumulada efe de te minúscula suma los valores menores o iguales que te minúscula y está definida aunque te minúscula no pueda observarse.",
+                "start": 15.833333333333334,
+                "end": 26.133333333333333,
+                "startFrame": 475,
+                "endFrame": 784,
+                "words": 24,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "05a38161aacc8d0723d243a97473397632003cf3ce4cd3213cd12ee56da08e46"
+              },
+              {
+                "text": "Entre dos valores posibles no aparece masa nueva; en un valor con masa la acumulada da un salto.",
+                "start": 26.433333333333334,
+                "end": 34.166666666666664,
+                "startFrame": 793,
+                "endFrame": 1025,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "84181094e9c7a68a4c00e86654a2aa5c2004e9b9c46a7cfdd717b29cc65acf95"
+              }
+            ]
+          },
+          {
+            "start": 34.46666666666667,
+            "end": 48.93333333333333,
+            "cues": [
+              {
+                "text": "probabilidad de equis igual a 0 igual a 0 coma 2; probabilidad de equis igual a 2 igual a 0 coma 4; probabilidad de equis igual a 5 igual a 0 coma 4.",
+                "start": 34.46666666666667,
+                "end": 48.63333333333333,
+                "startFrame": 1034,
+                "endFrame": 1459,
+                "words": 33,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "71177e0b14a472129a273bf171f245b1f655b0e7ff21044e65479ac02be1a752"
+              }
+            ]
+          },
+          {
+            "start": 48.93333333333333,
+            "end": 58.666666666666664,
+            "cues": [
+              {
+                "text": "efe mayúscula abre paréntesis, te minúscula, cierra paréntesis significa probabilidad de que equis sea menor o igual que el umbral te minúscula.",
+                "start": 48.93333333333333,
+                "end": 58.36666666666667,
+                "startFrame": 1468,
+                "endFrame": 1751,
+                "words": 22,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8367b52c8d17d371dfb500178279b2999040f1fbaa4577dee7f69988e1d3f494"
+              }
+            ]
+          },
+          {
+            "start": 58.666666666666664,
+            "end": 62.833333333333336,
+            "cues": [
+              {
+                "text": "Las tres probabilidades son no negativas y suman uno.",
+                "start": 58.666666666666664,
+                "end": 62.53333333333333,
+                "startFrame": 1760,
+                "endFrame": 1876,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "b66fa9e317d23b7969741680117eb55df4e9606bd05b8e8b98b9a46a1ef33e98"
+              }
+            ]
+          },
+          {
+            "start": 62.833333333333336,
+            "end": 68.73333333333333,
+            "cues": [
+              {
+                "text": "Un umbral puede estar entre dos valores posibles sin ser una observación posible.",
+                "start": 62.833333333333336,
+                "end": 68.43333333333334,
+                "startFrame": 1885,
+                "endFrame": 2053,
+                "words": 13,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "427ff2c777a4311e4d144903573ff3b9a836da23e9843d414f74e9c8d458844c"
+              }
+            ]
+          },
+          {
+            "start": 68.73333333333333,
+            "end": 82.66666666666667,
+            "cues": [
+              {
+                "text": "La condición estricta equis menor que 2 solo admite cero en esta tabla.",
+                "start": 68.73333333333333,
+                "end": 74.33333333333333,
+                "startFrame": 2062,
+                "endFrame": 2230,
+                "words": 13,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "36daf72165a1bddaaa39dc7dc15f3cb003c092fe71133e97aa6d3364bc99b751"
+              },
+              {
+                "text": "Excluimos su masa si la variable es discreta: cambiar menor por menor o igual puede cambiar la respuesta.",
+                "start": 74.63333333333334,
+                "end": 82.36666666666666,
+                "startFrame": 2239,
+                "endFrame": 2471,
+                "words": 18,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "ab6a4822d27af1bfbe3d5d3f2dbb7ce92480fc7c8fc8094c8cc84a3192792bbd"
+              }
+            ]
+          },
+          {
+            "start": 82.66666666666667,
+            "end": 117.93333333333334,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 82.66666666666667,
+                "end": 85.66666666666667,
+                "startFrame": 2480,
+                "endFrame": 2570,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "¿Qué probabilidad hay de menos de dos brotes, sin incluir dos?",
+                "start": 85.96666666666667,
+                "end": 90.7,
+                "startFrame": 2579,
+                "endFrame": 2721,
+                "words": 11,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "c2630f3422637f1a1e9ba144300617c2243384c1c26bd080e74d7800d54a1175"
+              },
+              {
+                "text": "La tabla da la probabilidad de cada valor exacto.",
+                "start": 91,
+                "end": 94.86666666666666,
+                "startFrame": 2730,
+                "endFrame": 2846,
+                "words": 9,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "d985a25908d5000b0b1eba4266d8a53697ec029283454f422a81e61c86673e32"
+              },
+              {
+                "text": "La acumulada efe mayúscula abre paréntesis, te minúscula, cierra paréntesis pregunta por todos los valores menores o iguales que te minúscula.",
+                "start": 95.16666666666667,
+                "end": 104.16666666666667,
+                "startFrame": 2855,
+                "endFrame": 3125,
+                "words": 21,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "c4a902aa5fb36ed8225eed9a70dcc35545afd6d471a73a3c927bbd92bd09e261"
+              },
+              {
+                "text": "Elegimos esas filas y sumamos sus probabilidades, sin sumar las etiquetas de las filas.",
+                "start": 104.46666666666667,
+                "end": 110.46666666666667,
+                "startFrame": 3134,
+                "endFrame": 3314,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "66ce903ab2bfe7768bef3acb17d1cbe5aa5103e0eff8b1ad3e148525cff2c24c"
+              },
+              {
+                "text": "Para este apartado: La condición estricta equis menor que 2 solo admite cero en esta tabla.",
+                "start": 110.76666666666667,
+                "end": 117.63333333333334,
+                "startFrame": 3323,
+                "endFrame": 3529,
+                "words": 16,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "b143ffb68c2c70fd2725ffc93ff607bac36bd7fd581b54594436940aaf6810b4"
+              }
+            ]
+          },
+          {
+            "start": 117.93333333333334,
+            "end": 126.6,
+            "cues": [
+              {
+                "text": "Leer el extremo.",
+                "start": 117.93333333333334,
+                "end": 119.23333333333333,
+                "startFrame": 3538,
+                "endFrame": 3577,
+                "words": 3,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "6ad5adea0954442429e31f064dedb7edc423b8e2f1df36d4c8405b278717d3c0"
+              },
+              {
+                "text": "Menos de dos no incluye dos.",
+                "start": 119.53333333333333,
+                "end": 122.13333333333334,
+                "startFrame": 3586,
+                "endFrame": 3664,
+                "words": 6,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "c40239d23b24e24f2f431dcc1afbb8fda864b16c99564d339e08158697c60a8f"
+              },
+              {
+                "text": "El único valor permitido inferior a dos es cero.",
+                "start": 122.43333333333334,
+                "end": 126.3,
+                "startFrame": 3673,
+                "endFrame": 3789,
+                "words": 9,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "25a564b4523ee536d00aa3ec33ec4740f980017c05cee56a730254b5f1fd0399"
+              }
+            ]
+          },
+          {
+            "start": 126.6,
+            "end": 136.76666666666668,
+            "cues": [
+              {
+                "text": "Tomar la masa correspondiente. probabilidad de equis menor que 2 igual a probabilidad de equis igual a 0 igual a 0 coma 2.",
+                "start": 126.6,
+                "end": 136.46666666666667,
+                "startFrame": 3798,
+                "endFrame": 4094,
+                "words": 23,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "b78e70e68803c125de8728438b2db88b12c124f68a210e34d927b271e977ac85"
+              }
+            ]
+          },
+          {
+            "start": 136.76666666666668,
+            "end": 154.73333333333332,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 136.76666666666668,
+                "end": 138.06666666666666,
+                "startFrame": 4103,
+                "endFrame": 4142,
+                "words": 3,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 2 probabilidad entre 0 y 1.",
+                "start": 138.36666666666667,
+                "end": 143.1,
+                "startFrame": 4151,
+                "endFrame": 4293,
+                "words": 11,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "f47d38d2e851f5db8915122c53172ae07bf9bc34e5293a7ca8044424d0794bd5"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 143.4,
+                "end": 150.7,
+                "startFrame": 4302,
+                "endFrame": 4521,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+              },
+              {
+                "text": "Incluir dos daría otra pregunta y otra probabilidad.",
+                "start": 151,
+                "end": 154.43333333333334,
+                "startFrame": 4530,
+                "endFrame": 4633,
+                "words": 8,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "c540002b8b15f03953cedaa5a9d0a667317ab90657a45e1279c2bb3d3039ee05"
+              }
+            ]
+          },
+          {
+            "start": 154.73333333333332,
+            "end": 163.5,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 2 probabilidad entre 0 y 1.",
+                "start": 154.73333333333332,
+                "end": 159.46666666666667,
+                "startFrame": 4642,
+                "endFrame": 4784,
+                "words": 11,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "76e45757f91ff9bff476d99b3bc438999d16ff1ad9f971516f0f5f6d1c1f0479"
+              },
+              {
+                "text": "Incluir dos daría otra pregunta y otra probabilidad.",
+                "start": 159.76666666666668,
+                "end": 163.2,
+                "startFrame": 4793,
+                "endFrame": 4896,
+                "words": 8,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "dfa6025853e53f4814ec1228ddc05621089358901962fe4ec3668e03fe237280"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
