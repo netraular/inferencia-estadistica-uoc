@@ -253978,6 +253978,566 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-ejemplo-familia-exponencial-exponential-family-1--sufficient-statistic": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-ejemplo-familia-exponencial-exponential-family-1--sufficient-statistic",
+      "kind": "exercise",
+      "title": "Calcula T=Σx_i, el estadístico suficiente para λ con n fijo.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "63ad245dd3841b761e4636879f934243041316e33804187c9d26f9bf6469fdc3",
+      "src": "videos/ejercicio-ejemplo-familia-exponencial-exponential-family-1--sufficient-statistic/video.mp4",
+      "poster": "videos/ejercicio-ejemplo-familia-exponencial-exponential-family-1--sufficient-statistic/poster.jpg",
+      "duration": 218.23333333333332,
+      "frames": 6547,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "35523b10f318b847754a3e232d3c9a51fb0bce2ceb1592d54c65c6953f0b9f8f",
+      "videoSha256": "23a41e4bd9cd546d48837427e157b9443d42939d0b05646d56b3a76ab46f56d8",
+      "posterSha256": "301dc5b99bf237d53a81eef4465f41fda17474bd257e3c29ea583ffa78c19682",
+      "canonicalSha256": "6adb6f9e0495654c08b236caf2587bd98b36a2bc0fc651a47791332cc58f9515",
+      "inputHash": "6def638f32f7bae7682617170ade113ae07d5ad4080225eabd17c1df0d00324f",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "40764947d829740c433a64197de88099065b676576c65dc863534cb53ce79a9d",
+        "canonicalSha256": "6adb6f9e0495654c08b236caf2587bd98b36a2bc0fc651a47791332cc58f9515",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Familia exponencial"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "49df52d232f5dad9fcfbaaa796d72fbe52d5ac2b4e50fcda78a6c64cf08e87c0",
+        "transcriptSha256": "35523b10f318b847754a3e232d3c9a51fb0bce2ceb1592d54c65c6953f0b9f8f",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-ejemplo-familia-exponencial-exponential-family-1",
+      "transcript": {
+        "id": "ejercicio-ejemplo-familia-exponencial-exponential-family-1--sufficient-statistic",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "6adb6f9e0495654c08b236caf2587bd98b36a2bc0fc651a47791332cc58f9515",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 218.23333333333332,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 15.966666666666667,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula te igual a suma de equis minúscula subíndice i , el estadístico suficiente para lambda con ene fijo.",
+                "start": 2.9,
+                "end": 11.066666666666666,
+                "startFrame": 87,
+                "endFrame": 332,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "38f16be916b281eef1170b78f8cb7d2a423083a0d124f1981fd737f46e6954c4"
+              },
+              {
+                "text": "Queremos resumir la información de la muestra sobre el parámetro.",
+                "start": 11.366666666666667,
+                "end": 15.666666666666666,
+                "startFrame": 341,
+                "endFrame": 470,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "85964ba4bb701a91907dddff1906df3e25fe12e4554ad88f023fe8feb16be601"
+              }
+            ]
+          },
+          {
+            "start": 15.966666666666667,
+            "end": 35.333333333333336,
+            "cues": [
+              {
+                "text": "La muestra Poisson independiente da un producto de masas.",
+                "start": 15.966666666666667,
+                "end": 19.833333333333332,
+                "startFrame": 479,
+                "endFrame": 595,
+                "words": 9,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "9d1b8c56e523f127f455cd27de9aaec56d1f88e656904a956d923b5e3f03d687"
+              },
+              {
+                "text": "Para tamaño fijo, toda la dependencia en lambda usa la suma de recuentos; los factoriales dependen solo de los datos.",
+                "start": 20.133333333333333,
+                "end": 28.733333333333334,
+                "startFrame": 604,
+                "endFrame": 862,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "27d0e1eb3f091222d66f30638bc3cd6ee0f1d688b6c3f3fef93f8ac41a54c2d2"
+              },
+              {
+                "text": "El logaritmo convierte el producto en suma y conserva dónde se alcanza el máximo.",
+                "start": 29.033333333333335,
+                "end": 35.03333333333333,
+                "startFrame": 871,
+                "endFrame": 1051,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "0d5935815d029ffd4180e1b5638330089cf2580d1b7a5956a73d8389d9293aba"
+              }
+            ]
+          },
+          {
+            "start": 35.333333333333336,
+            "end": 42.93333333333333,
+            "cues": [
+              {
+                "text": "Recuentos observados enteros: abre corchete, 3, 2, 4, 1, 5, cierra corchete; ene igual a 5 ventanas.",
+                "start": 35.333333333333336,
+                "end": 42.63333333333333,
+                "startFrame": 1060,
+                "endFrame": 1279,
+                "words": 17,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "a0b0def1ba1b574f344cc97fca6b62eecace7116ebf820c63f7630dc47a5d639"
+              }
+            ]
+          },
+          {
+            "start": 42.93333333333333,
+            "end": 53.1,
+            "cues": [
+              {
+                "text": "lambda mayor que 0 se mide en detecciones esperadas por ventana; para evaluar la log-verosimilitud se propone lambda subíndice 0 igual a 1.",
+                "start": 42.93333333333333,
+                "end": 52.8,
+                "startFrame": 1288,
+                "endFrame": 1584,
+                "words": 23,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "c9394d4cee09e16ebd994a0012eb9f36846378fd102dbaa76b5146bbf9a78ee4"
+              }
+            ]
+          },
+          {
+            "start": 53.1,
+            "end": 58.56666666666667,
+            "cues": [
+              {
+                "text": "Las ventanas son independientes y tienen la misma exposición y media Poisson.",
+                "start": 53.1,
+                "end": 58.266666666666666,
+                "startFrame": 1593,
+                "endFrame": 1748,
+                "words": 12,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "7377faf4bbcacb6c77d77b2bfbb9c0d4216d2e83910b9e26e01eae609a82dee3"
+              }
+            ]
+          },
+          {
+            "start": 58.56666666666667,
+            "end": 67.46666666666667,
+            "cues": [
+              {
+                "text": "Se mantienen fijos los datos y ene al comparar lambda; la suma observada es positiva y el máximo es interior.",
+                "start": 58.56666666666667,
+                "end": 67.16666666666667,
+                "startFrame": 1757,
+                "endFrame": 2015,
+                "words": 20,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "70782e90c829d5c74ad5f8ffab203f51150ceb310abafe3fa756552ba2069909"
+              }
+            ]
+          },
+          {
+            "start": 67.46666666666667,
+            "end": 80.96666666666667,
+            "cues": [
+              {
+                "text": "Agrupa los exponentes de lambda en el producto de masas Poisson.",
+                "start": 67.46666666666667,
+                "end": 72.2,
+                "startFrame": 2024,
+                "endFrame": 2166,
+                "words": 11,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "dbbca6b41ffd18470b3fa2a8735b65169d797093f027b5dc2d5dbbc4e457aeaa"
+              },
+              {
+                "text": "Con el tamaño fijo, factorizamos la verosimilitud para ver qué combinación de los datos contiene su dependencia del parámetro.",
+                "start": 72.5,
+                "end": 80.66666666666667,
+                "startFrame": 2175,
+                "endFrame": 2420,
+                "words": 19,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "c745cd33bf77b43b725915d5c23f2d1426eb2073728f77296d7c2ecd2be7757f"
+              }
+            ]
+          },
+          {
+            "start": 80.96666666666667,
+            "end": 115.8,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 80.96666666666667,
+                "end": 83.96666666666667,
+                "startFrame": 2429,
+                "endFrame": 2519,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula te igual a suma de equis minúscula subíndice i , el estadístico suficiente para lambda con ene fijo.",
+                "start": 84.26666666666667,
+                "end": 92.43333333333334,
+                "startFrame": 2528,
+                "endFrame": 2773,
+                "words": 19,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "f889269c004bae46679b77b3c0b2e2b2b2570ab84afced921fe01f769a7e9e10"
+              },
+              {
+                "text": "Las observaciones Poisson independientes producen un producto de probabilidades.",
+                "start": 92.73333333333333,
+                "end": 96.6,
+                "startFrame": 2782,
+                "endFrame": 2898,
+                "words": 9,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "d61d8101a84fcba35e6eb37c7e1f1060afce9f343a3af4d9cadb791482ef347e"
+              },
+              {
+                "text": "Su logaritmo convierte el producto en suma.",
+                "start": 96.9,
+                "end": 99.9,
+                "startFrame": 2907,
+                "endFrame": 2997,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "5db266b035e1ef55955c708a09e9f404b2e31d108edd622d6140a5db4c5524c6"
+              },
+              {
+                "text": "Dejamos fijos los recuentos y buscamos qué media candidata da el mayor valor; derivar es una herramienta para localizar ese máximo.",
+                "start": 100.2,
+                "end": 109.2,
+                "startFrame": 3006,
+                "endFrame": 3276,
+                "words": 21,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "0c606268ecfe0ad2c6b3c8e2174db1b36876f674785b2acf6ae949c8511f663c"
+              },
+              {
+                "text": "Para este apartado: Agrupa los exponentes de lambda en el producto de masas Poisson.",
+                "start": 109.5,
+                "end": 115.5,
+                "startFrame": 3285,
+                "endFrame": 3465,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "d03e73d5e1fd6300d216ba2bfc97f89d9c9bdee19e72266066899860ac2a8e39"
+              }
+            ]
+          },
+          {
+            "start": 115.8,
+            "end": 126.83333333333333,
+            "cues": [
+              {
+                "text": "En este modelo Poisson, lambda es el recuento esperado por unidad de exposición del enunciado, no una probabilidad ni la inversa de una escala temporal.",
+                "start": 115.8,
+                "end": 126.53333333333333,
+                "startFrame": 3474,
+                "endFrame": 3796,
+                "words": 25,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "4af63908ce612aa816aadffd1f9991bacb63a4ea9a74f28db62d71249d038421"
+              }
+            ]
+          },
+          {
+            "start": 126.83333333333333,
+            "end": 149.5,
+            "cues": [
+              {
+                "text": "Factorizar la muestra.",
+                "start": 126.83333333333333,
+                "end": 128.13333333333333,
+                "startFrame": 3805,
+                "endFrame": 3844,
+                "words": 3,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "8a5c5eeb2705712590e07fd65e3ecc929cd3d698309572d182aabc35dd2ff453"
+              },
+              {
+                "text": "La independencia permite multiplicar las masas de todas las ventanas.",
+                "start": 128.43333333333334,
+                "end": 132.73333333333332,
+                "startFrame": 3853,
+                "endFrame": 3982,
+                "words": 10,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "fbfb8651f37fb6ae28bd4960e39b2847c51161f47033b1ae66afd1052c9d3b2f"
+              },
+              {
+                "text": "Cada masa aporta una exponencial de menos lambda, una potencia de lambda con su recuento y un factorial en el denominador.",
+                "start": 133.03333333333333,
+                "end": 142.03333333333333,
+                "startFrame": 3991,
+                "endFrame": 4261,
+                "words": 21,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "3250b51da9d402c1eebe9778941f6116d0a5a3120274839309505eb482de575c"
+              },
+              {
+                "text": "Agrupar las potencias concentra los datos en su suma; los factoriales son constantes cuando comparamos parámetros.",
+                "start": 142.33333333333334,
+                "end": 149.2,
+                "startFrame": 4270,
+                "endFrame": 4476,
+                "words": 16,
+                "sceneIndex": 9,
+                "cueIndex": 3,
+                "sourceCueSha256": "c9ff8a057ca89a5f78ce31bc7d9773427be9f285e00611bb0329bbbe58acd5ce"
+              }
+            ]
+          },
+          {
+            "start": 149.5,
+            "end": 163.96666666666667,
+            "cues": [
+              {
+                "text": "Factorizar la muestra queda igual a abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, producto para el índice abre paréntesis, i, cierra paréntesis de equis minúscula subíndice i factorial , cierra paréntesis.",
+                "start": 149.5,
+                "end": 163.66666666666666,
+                "startFrame": 4485,
+                "endFrame": 4910,
+                "words": 33,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "bc3f662797bea16e618071c33bbb36b753e186c12182dfd05b59671a76150802"
+              }
+            ]
+          },
+          {
+            "start": 163.96666666666667,
+            "end": 182.46666666666667,
+            "cues": [
+              {
+                "text": "Identificar la información del parámetro.",
+                "start": 163.96666666666667,
+                "end": 166.13333333333333,
+                "startFrame": 4919,
+                "endFrame": 4984,
+                "words": 5,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "fb768e2c5197972d978e371d48ca630eb107fb90b344985aeaec9c5f35a485de"
+              },
+              {
+                "text": "Sumamos los recuentos 3, 2, 4, 1, 5 y obtenemos te igual a 15.",
+                "start": 166.43333333333334,
+                "end": 172.43333333333334,
+                "startFrame": 4993,
+                "endFrame": 5173,
+                "words": 14,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "c2eb65b4a8fe28325e051bf557fbb3fa75b8c4fb59b56cbe168728ea3015536b"
+              },
+              {
+                "text": "El parámetro natural es el logaritmo de lambda; para una observación, el normalizador es la exponencial del parámetro natural, es decir, lambda.",
+                "start": 172.73333333333332,
+                "end": 182.16666666666666,
+                "startFrame": 5182,
+                "endFrame": 5465,
+                "words": 22,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "1ad9e2a702a0a99c367ec90ba78e3f9508502c23bc9a0695c54c1e656201d5e5"
+              }
+            ]
+          },
+          {
+            "start": 182.46666666666667,
+            "end": 204.3,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 182.46666666666667,
+                "end": 183.76666666666668,
+                "startFrame": 5474,
+                "endFrame": 5513,
+                "words": 3,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 15 detecciones.",
+                "start": 184.06666666666666,
+                "end": 186.23333333333332,
+                "startFrame": 5522,
+                "endFrame": 5587,
+                "words": 5,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "0fc3253621810ca480d2bbe3db28af0ccce936870f7cdb24400832010dba37a0"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 186.53333333333333,
+                "end": 192.53333333333333,
+                "startFrame": 5596,
+                "endFrame": 5776,
+                "words": 14,
+                "sceneIndex": 12,
+                "cueIndex": 2,
+                "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+              },
+              {
+                "text": "Con ene fijo, la parte de la verosimilitud que depende de lambda usa los datos solo mediante te; no se afirma que el modelo sea verdadero.",
+                "start": 192.83333333333334,
+                "end": 204,
+                "startFrame": 5785,
+                "endFrame": 6120,
+                "words": 26,
+                "sceneIndex": 12,
+                "cueIndex": 3,
+                "sourceCueSha256": "0985a996c71c6002c147563d0f16d14fceed583a850c244299680f2f752583ec"
+              }
+            ]
+          },
+          {
+            "start": 204.3,
+            "end": 218.23333333333332,
+            "cues": [
+              {
+                "text": "El resultado es 15 detecciones.",
+                "start": 204.3,
+                "end": 206.46666666666667,
+                "startFrame": 6129,
+                "endFrame": 6194,
+                "words": 5,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "6bbc58551fdc0aa3325952a7902d319eb479c340e85e9e8f744137a21d7f2117"
+              },
+              {
+                "text": "Con ene fijo, la parte de la verosimilitud que depende de lambda usa los datos solo mediante te; no se afirma que el modelo sea verdadero.",
+                "start": 206.76666666666668,
+                "end": 217.93333333333334,
+                "startFrame": 6203,
+                "endFrame": 6538,
+                "words": 26,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "3c10c1edb20978563f8b623d8ec1dc3d2712a7a85533f4e24d5b5a3afb506952"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
