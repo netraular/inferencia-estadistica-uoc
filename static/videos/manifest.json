@@ -213936,6 +213936,521 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-practica-multinomial-multinomial--marginal-a": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-practica-multinomial-multinomial--marginal-a",
+      "kind": "exercise",
+      "title": "Calcula P(X_A=x_A), sin fijar X_B ni X_C.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "ebf54c8b23b7ce93d9e8cf33a903b1ef65d4c95b7e54e361fc762eda749073a9",
+      "src": "videos/ejercicio-practica-multinomial-multinomial--marginal-a/video.mp4",
+      "poster": "videos/ejercicio-practica-multinomial-multinomial--marginal-a/poster.jpg",
+      "duration": 208.16666666666666,
+      "frames": 6245,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "7221b5724deb9a52e7b1dc0ef4c1b6187800861b5bbad38ad18ea1b279691ced",
+      "videoSha256": "ff323fc6b1cd35d744835f647e97a0ecfd343612f511ef94ffa84d9aa59b7d8b",
+      "posterSha256": "c2965cbb766da339c322d0dbf7714b0610f5ce15a99cd0dbdc1bde2bd6a83362",
+      "canonicalSha256": "2cfa2efe2b5f8957493cd5d1178c7186b63d584bc7de374c7f963509bdac2b06",
+      "inputHash": "c0c4c9b72eef689967535da2c53aaf742d3ac40d2759c7bf775a05ef15e8fc7a",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "b7e338134902c73e5a974effaa3bc32bbbb9a433d2f5a5151ca36c16e32c4508",
+        "canonicalSha256": "2cfa2efe2b5f8957493cd5d1178c7186b63d584bc7de374c7f963509bdac2b06",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Multinomial"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "3bbb3abf8d999f1ad963302153695d4d37d8340c9070a1807d99787f8a3fc919",
+        "transcriptSha256": "7221b5724deb9a52e7b1dc0ef4c1b6187800861b5bbad38ad18ea1b279691ced",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-practica-multinomial-multinomial",
+      "transcript": {
+        "id": "ejercicio-practica-multinomial-multinomial--marginal-a",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "2cfa2efe2b5f8957493cd5d1178c7186b63d584bc7de374c7f963509bdac2b06",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 208.16666666666666,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 16.366666666666667,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de equis subíndice A igual a equis minúscula subíndice A , sin fijar equis subíndice be ni equis subíndice ce.",
+                "start": 2.9,
+                "end": 12.333333333333334,
+                "startFrame": 87,
+                "endFrame": 370,
+                "words": 22,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "23ec9ad09e1aa96d50f1961d41eca41a87c2191207e86c0c36511769afcf907f"
+              },
+              {
+                "text": "Queremos describir una variable sin fijar la otra.",
+                "start": 12.633333333333333,
+                "end": 16.066666666666666,
+                "startFrame": 379,
+                "endFrame": 482,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "6188b81d98a1e09016928a80c4db13e5b07336f7471bca2392ed1f90f5d32529"
+              }
+            ]
+          },
+          {
+            "start": 16.366666666666667,
+            "end": 36.6,
+            "cues": [
+              {
+                "text": "Cada ensayo independiente acaba en una sola de las categorías, cuyas probabilidades suman uno.",
+                "start": 16.366666666666667,
+                "end": 22.366666666666667,
+                "startFrame": 491,
+                "endFrame": 671,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "898dec525c92df230d425f02e79d87c3ddc5adabcf96aa69e948e366953f91b2"
+              },
+              {
+                "text": "Los recuentos comparten el total fijo y no son independientes entre sí.",
+                "start": 22.666666666666668,
+                "end": 27.833333333333332,
+                "startFrame": 680,
+                "endFrame": 835,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "4a359b088e44ab6e169bf3237c69860f1740bfb3054c242cc84ae4b66e779ac1"
+              },
+              {
+                "text": "El factorial multinomial cuenta ordenaciones de esos recuentos y el producto de potencias da el peso de cada ordenación.",
+                "start": 28.133333333333333,
+                "end": 36.3,
+                "startFrame": 844,
+                "endFrame": 1089,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "6a0d161472745dfdd0e28ba737fd7d6adc132f452d859066b6bedacf7c030a8f"
+              }
+            ]
+          },
+          {
+            "start": 36.6,
+            "end": 52.766666666666666,
+            "cues": [
+              {
+                "text": "ene igual a 6; abre paréntesis, pe subíndice A ,pe subíndice be ,pe subíndice ce , cierra paréntesis igual a abre paréntesis, 0 coma 2; 0 coma 5; 0 coma 3, cierra paréntesis , con suma uno.",
+                "start": 36.6,
+                "end": 52.46666666666667,
+                "startFrame": 1098,
+                "endFrame": 1574,
+                "words": 37,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "cb63dc14298a98ee117538105b0faabb7a8d0210f8263e5908f5b1545aeaed64"
+              }
+            ]
+          },
+          {
+            "start": 52.766666666666666,
+            "end": 71.06666666666666,
+            "cues": [
+              {
+                "text": "Recuentos observados abre paréntesis, equis minúscula subíndice A ,equis minúscula subíndice be ,equis minúscula subíndice ce , cierra paréntesis igual a abre paréntesis, 3, 0, 3, cierra paréntesis , con suma 6; el soporte son ternas enteras no negativas que suman ene.",
+                "start": 52.766666666666666,
+                "end": 70.76666666666667,
+                "startFrame": 1583,
+                "endFrame": 2123,
+                "words": 42,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "e325216a4139c98c12b4fddfb55208f09a986e5033cb901674255bfc4fbeaac4"
+              }
+            ]
+          },
+          {
+            "start": 71.06666666666666,
+            "end": 74.8,
+            "cues": [
+              {
+                "text": "Categorías mutuamente excluyentes y exhaustivas para cada célula.",
+                "start": 71.06666666666666,
+                "end": 74.5,
+                "startFrame": 2132,
+                "endFrame": 2235,
+                "words": 8,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e66c9a3ccecbdbbf0e4c9a67faa9c1ebf8085792071395313fafbbf364a1022"
+              }
+            ]
+          },
+          {
+            "start": 74.8,
+            "end": 80.26666666666667,
+            "cues": [
+              {
+                "text": "Células independientes con probabilidades constantes; los recuentos de categorías no son independientes.",
+                "start": 74.8,
+                "end": 79.96666666666667,
+                "startFrame": 2244,
+                "endFrame": 2399,
+                "words": 12,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "f6e871ae853ee15a70f04bfbba40aa6a5d970f7574209a4e95a137365a5b33c8"
+              }
+            ]
+          },
+          {
+            "start": 80.26666666666667,
+            "end": 91.6,
+            "cues": [
+              {
+                "text": "Agrupa be y ce como no A y usa una binomial.",
+                "start": 80.26666666666667,
+                "end": 85,
+                "startFrame": 2408,
+                "endFrame": 2550,
+                "words": 11,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "6b52bcaf7ae49b27412a5dca99844a6d9ab0cdb6020927852c7e5d3201beb789"
+              },
+              {
+                "text": "Sumar o integrar sobre la coordenada descartada conserva todas sus posibilidades; no es condicionar.",
+                "start": 85.3,
+                "end": 91.3,
+                "startFrame": 2559,
+                "endFrame": 2739,
+                "words": 14,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "5267d0278d1eabf8eaf53f21ccacbed1178eae6d9fcdc30c962992dcedda70d9"
+              }
+            ]
+          },
+          {
+            "start": 91.6,
+            "end": 126.86666666666666,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 91.6,
+                "end": 94.6,
+                "startFrame": 2748,
+                "endFrame": 2838,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de equis subíndice A igual a equis minúscula subíndice A , sin fijar equis subíndice be ni equis subíndice ce.",
+                "start": 94.9,
+                "end": 104.33333333333333,
+                "startFrame": 2847,
+                "endFrame": 3130,
+                "words": 22,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "d990e12bff3984aeea687404e1f6fe2ace162cbf4241774dfacc4cf0ce4aa8fa"
+              },
+              {
+                "text": "Las categorías son excluyentes y cubren cada ensayo.",
+                "start": 104.63333333333334,
+                "end": 108.06666666666666,
+                "startFrame": 3139,
+                "endFrame": 3242,
+                "words": 8,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "e10f1adce2c63ecbb362e08da69bba1be0040b21ef6e46a0f406aba0727e9edc"
+              },
+              {
+                "text": "El factorial multinomial cuenta secuencias con esos recuentos y el producto de potencias pondera cada secuencia.",
+                "start": 108.36666666666666,
+                "end": 115.23333333333333,
+                "startFrame": 3251,
+                "endFrame": 3457,
+                "words": 16,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "535300b2f16348a42a087052e77ef6322d4652560c55fcb1476ada41d41eb14b"
+              },
+              {
+                "text": "Los ensayos son independientes, pero los recuentos comparten un total fijo.",
+                "start": 115.53333333333333,
+                "end": 120.26666666666667,
+                "startFrame": 3466,
+                "endFrame": 3608,
+                "words": 11,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "613158a47fb85b91fe714cece6549195328dc99cbaefbdecc4d63dd387355549"
+              },
+              {
+                "text": "Para este apartado: Agrupa be y ce como no A y usa una binomial.",
+                "start": 120.56666666666666,
+                "end": 126.56666666666666,
+                "startFrame": 3617,
+                "endFrame": 3797,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "8ffd010842d5d25674af400d3b545282ead5d1f695deea78ab6e8b73a63bd66b"
+              }
+            ]
+          },
+          {
+            "start": 126.86666666666666,
+            "end": 138.2,
+            "cues": [
+              {
+                "text": "Reducir a dos resultados.",
+                "start": 126.86666666666666,
+                "end": 128.6,
+                "startFrame": 3806,
+                "endFrame": 3858,
+                "words": 4,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "6120bf41d3ab5c4499910b7e22deb597eaeb26f65cbd5b74db2a10cc6b1714f2"
+              },
+              {
+                "text": "A tiene probabilidad 0 coma 2; no A tiene 0 coma 5 más 0 coma 3 igual a 0 coma 8.",
+                "start": 128.9,
+                "end": 137.9,
+                "startFrame": 3867,
+                "endFrame": 4137,
+                "words": 21,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "cd03115c0acfc3099c1ecf9403c9d5ae4c18b4b7bda06a7f62721fb425f1eabf"
+              }
+            ]
+          },
+          {
+            "start": 138.2,
+            "end": 171.16666666666666,
+            "cues": [
+              {
+                "text": "Evaluar la masa marginal.",
+                "start": 138.2,
+                "end": 139.93333333333334,
+                "startFrame": 4146,
+                "endFrame": 4198,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "1c295c58ccb61aca81859d28614ac36131adee1c426c195ab2b18e7687187351"
+              },
+              {
+                "text": "Para contar la categoría A reunimos las otras dos como no A.",
+                "start": 140.23333333333332,
+                "end": 145.4,
+                "startFrame": 4207,
+                "endFrame": 4362,
+                "words": 12,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "76637649234ba71dbb3af0ac0595f5199807894abd14ba9a33752f0612f1737c"
+              },
+              {
+                "text": "Elegimos 3 posiciones entre 6 y ponderamos: combinaciones de 6 elementos tomados de 3 en 3 por 0 coma 2 al cubo por 0 coma 8 al cubo igual a 0 coma 0 8 1 9 2.",
+                "start": 145.7,
+                "end": 161.56666666666666,
+                "startFrame": 4371,
+                "endFrame": 4847,
+                "words": 37,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "f85a82a0ecce1b7ee852bd5585432286a2786e1f295d2c72ab08586c516e0c0f"
+              },
+              {
+                "text": "Es la binomial ya estudiada. equis subíndice A sigue la distribución Bin abre paréntesis, ene y pe subíndice A, cierra paréntesis.",
+                "start": 161.86666666666667,
+                "end": 170.86666666666667,
+                "startFrame": 4856,
+                "endFrame": 5126,
+                "words": 21,
+                "sceneIndex": 9,
+                "cueIndex": 3,
+                "sourceCueSha256": "984635dd1ec2e6f813a222fcca40ec5c2f4ea93bb750439b0cf4e1d443d77476"
+              }
+            ]
+          },
+          {
+            "start": 171.16666666666666,
+            "end": 194.26666666666668,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 171.16666666666666,
+                "end": 172.46666666666667,
+                "startFrame": 5135,
+                "endFrame": 5174,
+                "words": 3,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 0 8 1 9 2 probabilidad entre 0 y 1.",
+                "start": 172.76666666666668,
+                "end": 179.2,
+                "startFrame": 5183,
+                "endFrame": 5376,
+                "words": 15,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "42d92f56c43585c67bd7f5b84f8f1611fb447c6b3b97cc2abd2aff6aca1906a5"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 179.5,
+                "end": 186.8,
+                "startFrame": 5385,
+                "endFrame": 5604,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "8e8914e99ffb758866ed68d872636f97c52ea86ee42dcc187cb93017afce01cd"
+              },
+              {
+                "text": "La marginal suma todas las maneras compatibles de repartir las otras células entre be y ce.",
+                "start": 187.1,
+                "end": 193.96666666666667,
+                "startFrame": 5613,
+                "endFrame": 5819,
+                "words": 16,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "8275668d71c1240aacca3b51ec6b4d050e1ad533e438c52f17d9aee096fd753b"
+              }
+            ]
+          },
+          {
+            "start": 194.26666666666668,
+            "end": 208.16666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 8 1 9 2 probabilidad entre 0 y 1.",
+                "start": 194.26666666666668,
+                "end": 200.7,
+                "startFrame": 5828,
+                "endFrame": 6021,
+                "words": 15,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "20faeafe6245f4dd06bbe35559d28de5d2a9ed6ab73f62a5aa47e4d3512e2bc1"
+              },
+              {
+                "text": "La marginal suma todas las maneras compatibles de repartir las otras células entre be y ce.",
+                "start": 201,
+                "end": 207.86666666666667,
+                "startFrame": 6030,
+                "endFrame": 6236,
+                "words": 16,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "f93fdfefbab5d349c57e8c4ee2c4711d48ff7d1390e13dc79464f0a37be438e4"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
