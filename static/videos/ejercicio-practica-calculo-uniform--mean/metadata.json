@@ -1,0 +1,510 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-practica-calculo-uniform--mean",
+  "kind": "exercise",
+  "title": "Calcula E[X].",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "023b834f4ab944f67fd38cea19e7f1c25b5e3fc2505b9740a89b071e8000b759",
+  "src": "videos/ejercicio-practica-calculo-uniform--mean/video.mp4",
+  "poster": "videos/ejercicio-practica-calculo-uniform--mean/poster.jpg",
+  "duration": 149.3,
+  "frames": 4479,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "347eae55f09b870185dd8db7b7e8b6d52d19360195f18f58c3575586282a2441",
+  "videoSha256": "0503bde4b9c21ac9e3b730348b5c88dac7c5bb840fd74b337b3b39fddbb51f2d",
+  "posterSha256": "94ffe682f7a722539d93db8f4650d4829ae4b5b3a8c76d80d4d73484b19fa65f",
+  "canonicalSha256": "fd59773042c9dc2dfa0068cbeb419911a148aacc6cfcf616d3f298c8e4ca1ebe",
+  "inputHash": "f972f13703a06c3d3373f64f1915b0ecca9e7e60f9557fa20b6a2ae32ffe9687",
+  "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "96e3b5d0b0e74cdc317714297d3e65497bed6e26a0f03afab340d8153221e762",
+    "canonicalSha256": "fd59773042c9dc2dfa0068cbeb419911a148aacc6cfcf616d3f298c8e4ca1ebe",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Uniforme"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "6801b82fcdadde6b0d939ee085cd24845c50b1500fcad0349f9cf26606c9b308",
+    "transcriptSha256": "347eae55f09b870185dd8db7b7e8b6d52d19360195f18f58c3575586282a2441",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-practica-calculo-uniform",
+  "transcript": {
+    "id": "ejercicio-practica-calculo-uniform--mean",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "fd59773042c9dc2dfa0068cbeb419911a148aacc6cfcf616d3f298c8e4ca1ebe",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 149.3,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.1,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula esperanza de equis.",
+            "start": 2.9,
+            "end": 4.633333333333334,
+            "startFrame": 87,
+            "endFrame": 139,
+            "words": 4,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "abf153c79fd9990c45fb9be89ee2a613ca70417d8661a4379bb6417d4390b083"
+          },
+          {
+            "text": "Queremos el valor medio teórico al repetir el experimento.",
+            "start": 4.933333333333334,
+            "end": 8.8,
+            "startFrame": 148,
+            "endFrame": 264,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "c280f28e2f367a4ad24d1ce432dfbfa0fb914ab0448da1d15426333e7bdad1be"
+          }
+        ]
+      },
+      {
+        "start": 9.1,
+        "end": 27.6,
+        "cues": [
+          {
+            "text": "En el intervalo de soporte la densidad es constante: cada subintervalo de igual longitud tiene la misma probabilidad.",
+            "start": 9.1,
+            "end": 16.833333333333332,
+            "startFrame": 273,
+            "endFrame": 505,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "401cace4fb3515a89abbefd466f1226c9f06fdcb67c6a3fd61e7203d0baa99ca"
+          },
+          {
+            "text": "Para que el área total sea uno, su altura es uno dividido por la longitud total.",
+            "start": 17.133333333333333,
+            "end": 24,
+            "startFrame": 514,
+            "endFrame": 720,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "329cba677affdc18d53e2e6cdf28536512943c9ee0c67a07e30167d16b403ba6"
+          },
+          {
+            "text": "Fuera del soporte la densidad vale cero.",
+            "start": 24.3,
+            "end": 27.3,
+            "startFrame": 729,
+            "endFrame": 819,
+            "words": 7,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "d2c23a65fc5b5846961b2829c751f15505d26ca4779b5ec1a0cc1cae149ab443"
+          }
+        ]
+      },
+      {
+        "start": 27.6,
+        "end": 36.5,
+        "cues": [
+          {
+            "text": "Ventana intervalo cerrado desde 6 hasta 16 minutos; intervalo solicitado intervalo cerrado desde 8 coma 5 hasta 13 coma 5.",
+            "start": 27.6,
+            "end": 36.2,
+            "startFrame": 828,
+            "endFrame": 1086,
+            "words": 20,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "83293eb783397c8b11cfd10b6b51e4cce3e108c53fde776f4b014aba12626941"
+          }
+        ]
+      },
+      {
+        "start": 36.5,
+        "end": 45.4,
+        "cues": [
+          {
+            "text": "La densidad es 1 dividido entre abre paréntesis, be menos a, cierra paréntesis dentro de la ventana y cero fuera.",
+            "start": 36.5,
+            "end": 45.1,
+            "startFrame": 1095,
+            "endFrame": 1353,
+            "words": 20,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "20d88c8d207094fb8597ccee4d207f5ebd7982b82d74a87f77b11d64aab5b3e7"
+          }
+        ]
+      },
+      {
+        "start": 45.4,
+        "end": 51.3,
+        "cues": [
+          {
+            "text": "Todos los intervalos de igual longitud dentro de la ventana tienen igual probabilidad.",
+            "start": 45.4,
+            "end": 51,
+            "startFrame": 1362,
+            "endFrame": 1530,
+            "words": 13,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "7b327025119a5d0b047a36e63751301af4d3b2b07dbc7c5f466eee275abed9ad"
+          }
+        ]
+      },
+      {
+        "start": 51.3,
+        "end": 55.46666666666667,
+        "cues": [
+          {
+            "text": "equis es continua; los extremos individuales tienen probabilidad cero.",
+            "start": 51.3,
+            "end": 55.166666666666664,
+            "startFrame": 1539,
+            "endFrame": 1655,
+            "words": 9,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "4703d3e5896827c5ccd61ee5ceeb64664562bab8c90231f7c13d60183d1d9e15"
+          }
+        ]
+      },
+      {
+        "start": 55.46666666666667,
+        "end": 66.8,
+        "cues": [
+          {
+            "text": "Por simetría, la esperanza está en el punto medio.",
+            "start": 55.46666666666667,
+            "end": 59.333333333333336,
+            "startFrame": 1664,
+            "endFrame": 1780,
+            "words": 9,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "85a796cad33d933fef5ea80fa169c369aa110a5bc5e527a83c882c80cb349d73"
+          },
+          {
+            "text": "Ponderamos los valores por su probabilidad; el resultado no tiene por qué ser un valor observable.",
+            "start": 59.63333333333333,
+            "end": 66.5,
+            "startFrame": 1789,
+            "endFrame": 1995,
+            "words": 16,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "21b265360e2f6b6760a21cbc49f0b453b3219bdcc9cbce48dcdb57836ac6e87b"
+          }
+        ]
+      },
+      {
+        "start": 66.8,
+        "end": 92.7,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 66.8,
+            "end": 69.8,
+            "startFrame": 2004,
+            "endFrame": 2094,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula esperanza de equis.",
+            "start": 70.1,
+            "end": 71.83333333333333,
+            "startFrame": 2103,
+            "endFrame": 2155,
+            "words": 4,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "92fc1b9f2d67deb7ea4d71bc8106cb9598624c31dffb645fce14309d60979960"
+          },
+          {
+            "text": "La densidad es constante y el área total es uno.",
+            "start": 72.13333333333334,
+            "end": 76.43333333333334,
+            "startFrame": 2164,
+            "endFrame": 2293,
+            "words": 10,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "71c94d18e4e377419f2f1499ec6e0348836717123e4b4446eaa449355f655e5e"
+          },
+          {
+            "text": "Por ello una probabilidad de intervalo es su longitud dentro del soporte dividida entre la longitud total.",
+            "start": 76.73333333333333,
+            "end": 84.03333333333333,
+            "startFrame": 2302,
+            "endFrame": 2521,
+            "words": 17,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "30353481f99abd9a00ab1124096164f2583eaf6654ad33f5f4f5537d55ea75c0"
+          },
+          {
+            "text": "No incluimos partes exteriores al soporte.",
+            "start": 84.33333333333333,
+            "end": 86.93333333333334,
+            "startFrame": 2530,
+            "endFrame": 2608,
+            "words": 6,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "98b0aac8b24f5919daff86f6e4cbb6994a793d88c200b4e8c70a02a9a032e0b0"
+          },
+          {
+            "text": "Para este apartado: Por simetría, la esperanza está en el punto medio.",
+            "start": 87.23333333333333,
+            "end": 92.4,
+            "startFrame": 2617,
+            "endFrame": 2772,
+            "words": 12,
+            "sceneIndex": 7,
+            "cueIndex": 5,
+            "sourceCueSha256": "51fc5dd4f828075aa840afc4dec00fd48cb62dd2d6e8b07a616a8b54da0a10d8"
+          }
+        ]
+      },
+      {
+        "start": 92.7,
+        "end": 100.6,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 92.7,
+            "end": 96.13333333333334,
+            "startFrame": 2781,
+            "endFrame": 2884,
+            "words": 8,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 96.43333333333334,
+            "end": 100.3,
+            "startFrame": 2893,
+            "endFrame": 3009,
+            "words": 9,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 100.6,
+        "end": 111.1,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 100.6,
+            "end": 102.76666666666667,
+            "startFrame": 3018,
+            "endFrame": 3083,
+            "words": 5,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 103.06666666666666,
+            "end": 110.8,
+            "startFrame": 3092,
+            "endFrame": 3324,
+            "words": 18,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 111.1,
+        "end": 127.26666666666667,
+        "cues": [
+          {
+            "text": "Usar la simetría del soporte. abre paréntesis, 6 más 16, cierra paréntesis dividido entre 2 igual a 11. esperanza de equis igual a abre paréntesis, a más be, cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis.",
+            "start": 111.1,
+            "end": 126.96666666666667,
+            "startFrame": 3333,
+            "endFrame": 3809,
+            "words": 37,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "3ddd6a5e46659af7fe684b405e52f786de58a3ffc1943804e9aa0e0215326d49"
+          }
+        ]
+      },
+      {
+        "start": 127.26666666666667,
+        "end": 142.23333333333332,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 127.26666666666667,
+            "end": 128.56666666666666,
+            "startFrame": 3818,
+            "endFrame": 3857,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 11 minutos.",
+            "start": 128.86666666666667,
+            "end": 131.03333333333333,
+            "startFrame": 3866,
+            "endFrame": 3931,
+            "words": 5,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "b4418e3b264fcb92c01c3139996d9dd4c4d2b00733e169efbb6a35f5db35b573"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 131.33333333333334,
+            "end": 137.33333333333334,
+            "startFrame": 3940,
+            "endFrame": 4120,
+            "words": 14,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "Es el promedio de muchas inspecciones realizadas con este mecanismo.",
+            "start": 137.63333333333333,
+            "end": 141.93333333333334,
+            "startFrame": 4129,
+            "endFrame": 4258,
+            "words": 10,
+            "sceneIndex": 11,
+            "cueIndex": 3,
+            "sourceCueSha256": "7fc70f35966d7a2a313969c0a51a7c8c045e00fe0b687791512027123ad16fd1"
+          }
+        ]
+      },
+      {
+        "start": 142.23333333333332,
+        "end": 149.3,
+        "cues": [
+          {
+            "text": "El resultado es 11 minutos.",
+            "start": 142.23333333333332,
+            "end": 144.4,
+            "startFrame": 4267,
+            "endFrame": 4332,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "e9fb5967ce79c2ef2c0cfbefd589c3d7c27f32ac039310401945fd153a7faeaa"
+          },
+          {
+            "text": "Es el promedio de muchas inspecciones realizadas con este mecanismo.",
+            "start": 144.7,
+            "end": 149,
+            "startFrame": 4341,
+            "endFrame": 4470,
+            "words": 10,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "c0b80d342a2c51b38e6c830c989e31d5c4c3d15647a654a47000d2be5dadff0c"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
