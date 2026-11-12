@@ -200916,6 +200916,538 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-ejemplo-geometrica-negativa-negative-binomial-1--variance": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-ejemplo-geometrica-negativa-negative-binomial-1--variance",
+      "kind": "exercise",
+      "title": "Calcula Var(F).",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "b1853ebfa1eb54a2ce3f661e291e5a8c30a57da6589e16c9ed64d6983b54a3be",
+      "src": "videos/ejercicio-ejemplo-geometrica-negativa-negative-binomial-1--variance/video.mp4",
+      "poster": "videos/ejercicio-ejemplo-geometrica-negativa-negative-binomial-1--variance/poster.jpg",
+      "duration": 172.56666666666666,
+      "frames": 5177,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "1df8a38d227433f3b41bc30e7247ad0d9ade770fc4342bf5e2d4d96632a37317",
+      "videoSha256": "de2b5ed0594e2151bfea1b3c598de632703cf8d2f437384c5ecd5eca3bb36f39",
+      "posterSha256": "4b6b520203782ea5542416e8d7a69e8b574e0cb10a15624b33177df3ed85745e",
+      "canonicalSha256": "61a2b82bae4ff4d60098c113ff21eb3794ca59f1d5d0dbbd42852558cc2f9ec9",
+      "inputHash": "3c87ef1638c7f99bef9c18d9ca6ec0fa2a4b2380f92a98f7040ddb54f2dd37fe",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "980e6bc8a5ecfc1499accf7105d92b1d90b95aea8776d7da856a9713cdbe1344",
+        "canonicalSha256": "61a2b82bae4ff4d60098c113ff21eb3794ca59f1d5d0dbbd42852558cc2f9ec9",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Binomial negativa"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "5625fbe378912042ab3bf5313c5f043cf6d93673fa6c96b37fccaf44ba730ad4",
+        "transcriptSha256": "1df8a38d227433f3b41bc30e7247ad0d9ade770fc4342bf5e2d4d96632a37317",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-ejemplo-geometrica-negativa-negative-binomial-1",
+      "transcript": {
+        "id": "ejercicio-ejemplo-geometrica-negativa-negative-binomial-1--variance",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "61a2b82bae4ff4d60098c113ff21eb3794ca59f1d5d0dbbd42852558cc2f9ec9",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 172.56666666666666,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 8.666666666666666,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula varianza de efe.",
+                "start": 2.9,
+                "end": 4.633333333333334,
+                "startFrame": 87,
+                "endFrame": 139,
+                "words": 4,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "eba86f874148ccd9f79d1413c775eac5c8d8dd24bffc0cc4f96c808123f207c3"
+              },
+              {
+                "text": "Queremos medir la dispersión alrededor de la media.",
+                "start": 4.933333333333334,
+                "end": 8.366666666666667,
+                "startFrame": 148,
+                "endFrame": 251,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "7a4016c58db178b0ae026c32d575e7a784be3dacea3c0ec8fc8e605a7723d22b"
+              }
+            ]
+          },
+          {
+            "start": 8.666666666666666,
+            "end": 28.466666666666665,
+            "cues": [
+              {
+                "text": "Aquí efe cuenta fracasos antes del éxito número erre, así que puede valer cero.",
+                "start": 8.666666666666666,
+                "end": 14.666666666666666,
+                "startFrame": 260,
+                "endFrame": 440,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "bf670e95bb7ea0b05256130cd1bbe6d4bac3bff247c3aa6d5680557d7086a144"
+              },
+              {
+                "text": "Los ensayos son independientes con probabilidad de éxito pe constante.",
+                "start": 14.966666666666667,
+                "end": 19.266666666666666,
+                "startFrame": 449,
+                "endFrame": 578,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "5f52c8e35006d61b406f4db13fc237423d8b056b55e6264272918abb614ba9fc"
+              },
+              {
+                "text": "El último ensayo es necesariamente un éxito; elegimos dónde colocar los otros erre menos uno éxitos entre los ensayos anteriores.",
+                "start": 19.566666666666666,
+                "end": 28.166666666666668,
+                "startFrame": 587,
+                "endFrame": 845,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "bbbb24c9df9aef40f1b08cfd9f452946eca62dd02a7da02fc6ee7114c624147c"
+              }
+            ]
+          },
+          {
+            "start": 28.466666666666665,
+            "end": 36.06666666666667,
+            "cues": [
+              {
+                "text": "erre igual a 4 éxitos, pe igual a 0 coma 2 5, ka igual a 0 fallos.",
+                "start": 28.466666666666665,
+                "end": 35.766666666666666,
+                "startFrame": 854,
+                "endFrame": 1073,
+                "words": 17,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "c364e1ee8f5311ba3d785618ea98bf8f780043cd8d6df77e6857836a0465c59d"
+              }
+            ]
+          },
+          {
+            "start": 36.06666666666667,
+            "end": 47.96666666666667,
+            "cues": [
+              {
+                "text": "Soporte efe igual a 0, 1, 2,...; el total de ensayos es te igual a efe más erre. efe igual a 0 significa erre éxitos iniciales consecutivos.",
+                "start": 36.06666666666667,
+                "end": 47.666666666666664,
+                "startFrame": 1082,
+                "endFrame": 1430,
+                "words": 27,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "f2b571630d05ea7400fb8c35a4e6182170e8f725065c48b0dd6e9eae18102ec5"
+              }
+            ]
+          },
+          {
+            "start": 47.96666666666667,
+            "end": 51.7,
+            "cues": [
+              {
+                "text": "Ensayos Bernoulli independientes con probabilidad de éxito constante.",
+                "start": 47.96666666666667,
+                "end": 51.4,
+                "startFrame": 1439,
+                "endFrame": 1542,
+                "words": 8,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "e01757017bf12764d48c1715bb80dbbc19b2d2a98e1d7823b9f9889840a57b70"
+              }
+            ]
+          },
+          {
+            "start": 51.7,
+            "end": 63.9,
+            "cues": [
+              {
+                "text": "El objetivo erre es un número entero positivo de éxitos.",
+                "start": 51.7,
+                "end": 56,
+                "startFrame": 1551,
+                "endFrame": 1680,
+                "words": 10,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "845e1f2054cccb58abe9247d090c0b42b1740497a346c9999e71b9140c865aa7"
+              },
+              {
+                "text": "La variable efe cuenta los fallos anteriores, no el total de ensayos; para contar ensayos añadiríamos erre.",
+                "start": 56.3,
+                "end": 63.6,
+                "startFrame": 1689,
+                "endFrame": 1908,
+                "words": 17,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "672168c674df9b860e31cdf615bef1f10e943aba6c165cdf50b616ef935c39fe"
+              }
+            ]
+          },
+          {
+            "start": 63.9,
+            "end": 74.4,
+            "cues": [
+              {
+                "text": "Las erre esperas geométricas son independientes.",
+                "start": 63.9,
+                "end": 66.5,
+                "startFrame": 1917,
+                "endFrame": 1995,
+                "words": 6,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "7bc1828b958a2aa885af20d69bd8a2099ba68cb20a8b141f7ab75be487b381ac"
+              },
+              {
+                "text": "El segundo momento incluye la posición del centro; restar el cuadrado de la media deja solo dispersión.",
+                "start": 66.8,
+                "end": 74.1,
+                "startFrame": 2004,
+                "endFrame": 2223,
+                "words": 17,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "136adcb679e1a741ba98d58e558afe1fbc47eb89fe0c8549dfdc5fa76a1f745c"
+              }
+            ]
+          },
+          {
+            "start": 74.4,
+            "end": 99.83333333333333,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 74.4,
+                "end": 77.4,
+                "startFrame": 2232,
+                "endFrame": 2322,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula varianza de efe.",
+                "start": 77.7,
+                "end": 79.43333333333334,
+                "startFrame": 2331,
+                "endFrame": 2383,
+                "words": 4,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "1e77f644e25af417008b83cf246d3ffe1dccc7a6b0aee3f778abaee21a048298"
+              },
+              {
+                "text": "Contamos fracasos antes del éxito número erre.",
+                "start": 79.73333333333333,
+                "end": 82.73333333333333,
+                "startFrame": 2392,
+                "endFrame": 2482,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "3f49fe7be9e04576878927f0fbc1862f2d7a7927771e17c7819208e4153581d3"
+              },
+              {
+                "text": "El último ensayo es necesariamente un éxito; el coeficiente cuenta cómo colocar los erre menos uno éxitos anteriores.",
+                "start": 83.03333333333333,
+                "end": 90.76666666666667,
+                "startFrame": 2491,
+                "endFrame": 2723,
+                "words": 18,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "e2b4fdf9a31e3859b2b8ab8798e7705bb63ea9e0a2cca729c7a8c5e84b6241a4"
+              },
+              {
+                "text": "El total de ensayos varía, a diferencia del diseño binomial.",
+                "start": 91.06666666666666,
+                "end": 95.36666666666666,
+                "startFrame": 2732,
+                "endFrame": 2861,
+                "words": 10,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "61d520e9d54d83da2918d7a96fd70c94bab8f1915b066e5d2d20417e8b033ac4"
+              },
+              {
+                "text": "Para este apartado: Las erre esperas geométricas son independientes.",
+                "start": 95.66666666666667,
+                "end": 99.53333333333333,
+                "startFrame": 2870,
+                "endFrame": 2986,
+                "words": 9,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "dce634a30b06bc9e1babfdaba265e5dd1450c10bd9473b11dd891aa0ccd7764a"
+              }
+            ]
+          },
+          {
+            "start": 99.83333333333333,
+            "end": 111.2,
+            "cues": [
+              {
+                "text": "Usar la varianza de un tramo.",
+                "start": 99.83333333333333,
+                "end": 102.43333333333334,
+                "startFrame": 2995,
+                "endFrame": 3073,
+                "words": 6,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "631201258d777fc8ccc20499e7ecc64bfb85cb3fde4809270b1b36422362a50b"
+              },
+              {
+                "text": "Un tramo tiene varianza abre paréntesis, 1 menos pe, cierra paréntesis dividido entre pe al cuadrado igual a 12.",
+                "start": 102.73333333333333,
+                "end": 110.9,
+                "startFrame": 3082,
+                "endFrame": 3327,
+                "words": 19,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "164a2ab743adb32d8fb70e8e199b9cc519cd94bf8e7832e39db616bff5eaf0f2"
+              }
+            ]
+          },
+          {
+            "start": 111.2,
+            "end": 119.1,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 111.2,
+                "end": 114.63333333333334,
+                "startFrame": 3336,
+                "endFrame": 3439,
+                "words": 8,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 114.93333333333334,
+                "end": 118.8,
+                "startFrame": 3448,
+                "endFrame": 3564,
+                "words": 9,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 119.1,
+            "end": 143.73333333333332,
+            "cues": [
+              {
+                "text": "Sumar las varianzas. 4 por 0 coma 7 5 dividido entre 0 coma 2 5 elevado a abre paréntesis, 2, cierra paréntesis igual a 48.",
+                "start": 119.1,
+                "end": 129.83333333333334,
+                "startFrame": 3573,
+                "endFrame": 3895,
+                "words": 25,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "07a8ce89e8f489039ab6afb3eb7eaf0b2809bd8e6cbbf8e182fe3561c33798b5"
+              },
+              {
+                "text": "Var abre paréntesis, efe, cierra paréntesis igual a abre paréntesis, erre abre paréntesis, 1 menos pe, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, pe al cuadrado , cierra paréntesis.",
+                "start": 130.13333333333333,
+                "end": 143.43333333333334,
+                "startFrame": 3904,
+                "endFrame": 4303,
+                "words": 31,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "cdbbf9b718115c58af8942e30a2e155468cd0be3f948319598e877fa22f0b5ba"
+              }
+            ]
+          },
+          {
+            "start": 143.73333333333332,
+            "end": 162.1,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 143.73333333333332,
+                "end": 145.03333333333333,
+                "startFrame": 4312,
+                "endFrame": 4351,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 48 fallos al cuadrado.",
+                "start": 145.33333333333334,
+                "end": 148.33333333333334,
+                "startFrame": 4360,
+                "endFrame": 4450,
+                "words": 7,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "c70987ed7965504d1f15e89ba500cf2a3974b8aae89a6b9e64ad1e7f79749e29"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 148.63333333333333,
+                "end": 154.63333333333333,
+                "startFrame": 4459,
+                "endFrame": 4639,
+                "words": 14,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "4359d019282d11c360f5c6605577a4cca1a601f2e439655d7b5fdcb0af659a85"
+              },
+              {
+                "text": "La varianza supera la media; añadir la constante erre para contar ensayos no cambia la varianza.",
+                "start": 154.93333333333334,
+                "end": 161.8,
+                "startFrame": 4648,
+                "endFrame": 4854,
+                "words": 16,
+                "sceneIndex": 11,
+                "cueIndex": 3,
+                "sourceCueSha256": "6f333cf8882005dbcf5837ecfb6ceb1d3854f4806cc700b19eedc7c1c3d11d81"
+              }
+            ]
+          },
+          {
+            "start": 162.1,
+            "end": 172.56666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 48 fallos al cuadrado.",
+                "start": 162.1,
+                "end": 165.1,
+                "startFrame": 4863,
+                "endFrame": 4953,
+                "words": 7,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "21d25673e7d07b17cdfbff1385bc59f0d16056e0e443601d49f56cc32a231039"
+              },
+              {
+                "text": "La varianza supera la media; añadir la constante erre para contar ensayos no cambia la varianza.",
+                "start": 165.4,
+                "end": 172.26666666666668,
+                "startFrame": 4962,
+                "endFrame": 5168,
+                "words": 16,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "c68eb6cd201928c2dd80d46fb12c32d25f3542acb0b4b8346007b77c2dec58f9"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
