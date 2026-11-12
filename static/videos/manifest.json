@@ -138582,6 +138582,546 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u3-8--difference-variance": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u3-8--difference-variance",
+      "kind": "exercise",
+      "title": "Obtén Var(Y2−Y3) para n general. Introduce su valor para n=6.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "9dbb08543f9bd5465717e7f8a1d77819a2d04f8364b1ebf72813e43f59bf624e",
+      "src": "videos/ejercicio-pdf-u3-8--difference-variance/video.mp4",
+      "poster": "videos/ejercicio-pdf-u3-8--difference-variance/poster.jpg",
+      "duration": 224.9,
+      "frames": 6747,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "361605c0afdb10400987e8b13735dbd6e522e5fee723b6e619af13666b7ccef0",
+      "videoSha256": "3a2a45bb5c09a7802d640c081e93029a33012fdea20268dc95fa4fde7d56a9df",
+      "posterSha256": "2a80b4876a3fa44b1573452e22e72b6dbacacdc78950d73ba28269bd7eda3e88",
+      "canonicalSha256": "f9786527bc5c5fcfa4acb10b9031e5b5767482a3bb001bf7217a3d107987c486",
+      "inputHash": "03ec7c76ffe9ca1ebe0df36d904fdb1e0ea6a3c9b68bd91b21c1d2aacb166f00",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "1f422db0e4372c76f880e1753ed34ab822e021f2117de0b260bfa4bb2207899b",
+        "canonicalSha256": "f9786527bc5c5fcfa4acb10b9031e5b5767482a3bb001bf7217a3d107987c486",
+        "source": {
+          "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+          "number": "8",
+          "page": 17
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "d0c8c52cb10dc074585c270fd6c77fb083c3a0cc2584a70fc8448194eb931264",
+        "transcriptSha256": "361605c0afdb10400987e8b13735dbd6e522e5fee723b6e619af13666b7ccef0",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u3-8",
+      "transcript": {
+        "id": "ejercicio-pdf-u3-8--difference-variance",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "f9786527bc5c5fcfa4acb10b9031e5b5767482a3bb001bf7217a3d107987c486",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 224.9,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 17.966666666666665,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Obtén varianza de i griega subíndice 2 menos i griega subíndice 3 para ene general.",
+                "start": 2.9,
+                "end": 9.333333333333334,
+                "startFrame": 87,
+                "endFrame": 280,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "30beb46ede9bafb37951585408d1d218d8baf952c34ec46cff44568cea0fce17"
+              },
+              {
+                "text": "Introduce su valor para ene igual a 6.",
+                "start": 9.633333333333333,
+                "end": 13.066666666666666,
+                "startFrame": 289,
+                "endFrame": 392,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "870d32cb20f0d19f3f182d7b0ce45e0ebde6d4ce22ff2ff0689fa3b663ccf0f0"
+              },
+              {
+                "text": "Queremos la varianza de la diferencia conservando el tamaño general.",
+                "start": 13.366666666666667,
+                "end": 17.666666666666668,
+                "startFrame": 401,
+                "endFrame": 530,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "6b0f21af6c9fd975753352676b02e3b49c8c78ff6820a169ba1315ecd8577522"
+              }
+            ]
+          },
+          {
+            "start": 17.966666666666665,
+            "end": 38.2,
+            "cues": [
+              {
+                "text": "Cada ensayo independiente acaba en una sola de las categorías, cuyas probabilidades suman uno.",
+                "start": 17.966666666666665,
+                "end": 23.966666666666665,
+                "startFrame": 539,
+                "endFrame": 719,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "898dec525c92df230d425f02e79d87c3ddc5adabcf96aa69e948e366953f91b2"
+              },
+              {
+                "text": "Los recuentos comparten el total fijo y no son independientes entre sí.",
+                "start": 24.266666666666666,
+                "end": 29.433333333333334,
+                "startFrame": 728,
+                "endFrame": 883,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "4a359b088e44ab6e169bf3237c69860f1740bfb3054c242cc84ae4b66e779ac1"
+              },
+              {
+                "text": "El factorial multinomial cuenta ordenaciones de esos recuentos y el producto de potencias da el peso de cada ordenación.",
+                "start": 29.733333333333334,
+                "end": 37.9,
+                "startFrame": 892,
+                "endFrame": 1137,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "6a0d161472745dfdd0e28ba737fd7d6adc132f452d859066b6bedacf7c030a8f"
+              }
+            ]
+          },
+          {
+            "start": 38.2,
+            "end": 53.93333333333333,
+            "cues": [
+              {
+                "text": "i griega subíndice 1 ,i griega subíndice 2 ,i griega subíndice 3 cuentan elecciones de cada salida; pe subíndice 1 igual a pe subíndice 2 igual a pe subíndice 3 igual a 1 dividido entre 3.",
+                "start": 38.2,
+                "end": 53.63333333333333,
+                "startFrame": 1146,
+                "endFrame": 1609,
+                "words": 36,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "376a4b4dabe5b4cf093ff7402218f5a5502816716020eb281baa454088927476"
+              }
+            ]
+          },
+          {
+            "start": 53.93333333333333,
+            "end": 61.53333333333333,
+            "cues": [
+              {
+                "text": "Para la probabilidad conjunta: ene igual a 6 y recuentos abre paréntesis, 3, 1, 2, cierra paréntesis.",
+                "start": 53.93333333333333,
+                "end": 61.233333333333334,
+                "startFrame": 1618,
+                "endFrame": 1837,
+                "words": 17,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "b6994b21152c79ac0ccc4993eeb47933d552d292ba5f1830f108579a3b29a19f"
+              }
+            ]
+          },
+          {
+            "start": 61.53333333333333,
+            "end": 71.7,
+            "cues": [
+              {
+                "text": "Para los demás apartados se pide una fórmula para ene general; el comprobador usa el ene igual a 6 original como representante numérico.",
+                "start": 61.53333333333333,
+                "end": 71.4,
+                "startFrame": 1846,
+                "endFrame": 2142,
+                "words": 23,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "4b4eb41b1d89211e639a178285badc6b7688006d6e6cf0bf5c77ea567176845c"
+              }
+            ]
+          },
+          {
+            "start": 71.7,
+            "end": 75.43333333333334,
+            "cues": [
+              {
+                "text": "Recorridos independientes, probabilidades constantes y tres salidas equiprobables.",
+                "start": 71.7,
+                "end": 75.13333333333334,
+                "startFrame": 2151,
+                "endFrame": 2254,
+                "words": 8,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "934e3fc85c8363af65f750c2a36e75be8be37f2dfbecd4bd0ce615da4fa3e292"
+              }
+            ]
+          },
+          {
+            "start": 75.43333333333334,
+            "end": 80.03333333333333,
+            "cues": [
+              {
+                "text": "La recompensa no modifica las probabilidades bajo la hipótesis solicitada.",
+                "start": 75.43333333333334,
+                "end": 79.73333333333333,
+                "startFrame": 2263,
+                "endFrame": 2392,
+                "words": 10,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "d93a4df3a1f5b4db912b9d3fc774f838b072c00582e0d171e3faaa03aba23262"
+              }
+            ]
+          },
+          {
+            "start": 80.03333333333333,
+            "end": 96.53333333333333,
+            "cues": [
+              {
+                "text": "El signo menos de la diferencia cambia el término de covarianza, pero no el signo de las dos varianzas.",
+                "start": 80.03333333333333,
+                "end": 88.2,
+                "startFrame": 2401,
+                "endFrame": 2646,
+                "words": 19,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "12a10982931116e7c08e80219fc9c9a7bd729d80780d2acd863daa044695988c"
+              },
+              {
+                "text": "Al restar variables aparece menos dos veces la covarianza; si es negativa, aumenta la dispersión de la diferencia.",
+                "start": 88.5,
+                "end": 96.23333333333333,
+                "startFrame": 2655,
+                "endFrame": 2887,
+                "words": 18,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "8dc5e2ddfea3f70b6f227f46108a443eacdb7183d03b5cfb66a6f3ca7edcdf37"
+              }
+            ]
+          },
+          {
+            "start": 96.53333333333333,
+            "end": 129.63333333333333,
+            "cues": [
+              {
+                "text": "La varianza de una diferencia.",
+                "start": 96.53333333333333,
+                "end": 98.7,
+                "startFrame": 2896,
+                "endFrame": 2961,
+                "words": 5,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "83df299e4db50347b6725e96ab60565c2cdabe6e626705f384b2adeeaa3d0f51"
+              },
+              {
+                "text": "El signo menos de la diferencia cambia el término de covarianza, pero no el signo de las dos varianzas.",
+                "start": 99,
+                "end": 107.16666666666667,
+                "startFrame": 2970,
+                "endFrame": 3215,
+                "words": 19,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "db8b91ca4f6744c511bafd9779bf49cd4dd37cc55231a702cd48de36e108ce51"
+              },
+              {
+                "text": "Var abre paréntesis, i griega subíndice 2 menos i griega subíndice 3, cierra paréntesis igual a Var abre paréntesis, i griega subíndice 2, cierra paréntesis más Var abre paréntesis, i griega subíndice 3, cierra paréntesis menos 2 Cov abre paréntesis, i griega subíndice 2 y i griega subíndice 3, cierra paréntesis.",
+                "start": 107.46666666666667,
+                "end": 129.33333333333334,
+                "startFrame": 3224,
+                "endFrame": 3880,
+                "words": 51,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "e25b0a2d3c5ff0e1314695948d350dd73286edf7e04c1264523cd9042541611c"
+              }
+            ]
+          },
+          {
+            "start": 129.63333333333333,
+            "end": 144.4,
+            "cues": [
+              {
+                "text": "Sumar las dos varianzas.",
+                "start": 129.63333333333333,
+                "end": 131.36666666666667,
+                "startFrame": 3889,
+                "endFrame": 3941,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "9af8f7af5f25be55a977e8013f4a89ac5a7bcd3ba0d01db805c55b3313e484de"
+              },
+              {
+                "text": "Cada marginal tiene varianza dos ene entre nueve. 2 por ene dividido entre 9 más 2 por ene dividido entre 9 igual a 4 por ene dividido entre 9.",
+                "start": 131.66666666666666,
+                "end": 144.1,
+                "startFrame": 3950,
+                "endFrame": 4323,
+                "words": 29,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "47ff3921f79d20a5f29a603eee4ab4b49e7400ae19ba07f4da807ec6625b1d1b"
+              }
+            ]
+          },
+          {
+            "start": 144.4,
+            "end": 160.03333333333333,
+            "cues": [
+              {
+                "text": "Aplicar el término compartido.",
+                "start": 144.4,
+                "end": 146.13333333333333,
+                "startFrame": 4332,
+                "endFrame": 4384,
+                "words": 4,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "20dbe7fb5c10be1f917baff20f1c2933f5303225400ba0c1f0fd6c86d0c80447"
+              },
+              {
+                "text": "La covarianza es negativa; menos dos por esa cantidad añade variación. menos 2 por abre paréntesis, menos ene dividido entre 9, cierra paréntesis igual a 2 por ene dividido entre 9.",
+                "start": 146.43333333333334,
+                "end": 159.73333333333332,
+                "startFrame": 4393,
+                "endFrame": 4792,
+                "words": 31,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "130ae7b276eeb63525aeb52df926200c8c3be25b79f97a21c7cf948af4df0513"
+              }
+            ]
+          },
+          {
+            "start": 160.03333333333333,
+            "end": 173.83333333333334,
+            "cues": [
+              {
+                "text": "Sumar todo.",
+                "start": 160.03333333333333,
+                "end": 161.23333333333332,
+                "startFrame": 4801,
+                "endFrame": 4837,
+                "words": 2,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "b3db7d071bfafdee33880423f17086d8f9c194ebe7fac85a5a3b51128a73649d"
+              },
+              {
+                "text": "Obtengo la fórmula general para la diferencia. 4 por ene dividido entre 9 más 2 por ene dividido entre 9 igual a 6 por ene dividido entre 9.",
+                "start": 161.53333333333333,
+                "end": 173.53333333333333,
+                "startFrame": 4846,
+                "endFrame": 5206,
+                "words": 28,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "55b85db731dea6ed3c8a0e9d62a9ec9718944d21c63dd6e33c26c35b4d0fb8bf"
+              }
+            ]
+          },
+          {
+            "start": 173.83333333333334,
+            "end": 183.56666666666666,
+            "cues": [
+              {
+                "text": "4 por ene dividido entre 9 más 2 por ene dividido entre 9 queda igual a 2 por ene dividido entre 3.",
+                "start": 173.83333333333334,
+                "end": 183.26666666666668,
+                "startFrame": 5215,
+                "endFrame": 5498,
+                "words": 22,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "a48a54fbc74ac6bb702163e9df8a48e7a5b0a1c2d29ec9ca56b87fd11d47ea88"
+              }
+            ]
+          },
+          {
+            "start": 183.56666666666666,
+            "end": 201.23333333333332,
+            "cues": [
+              {
+                "text": "El caso de seis.",
+                "start": 183.56666666666666,
+                "end": 185.3,
+                "startFrame": 5507,
+                "endFrame": 5559,
+                "words": 4,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "22094268e4c3283d5077e12e3dbf1ddebbbcd9e1150069a07e34c455a1718ee4"
+              },
+              {
+                "text": "Sustituyo ene por seis.",
+                "start": 185.6,
+                "end": 187.33333333333334,
+                "startFrame": 5568,
+                "endFrame": 5620,
+                "words": 4,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "c0a90bf1dcae1c803d17f8939b7f09d71180c721edb31d2191b5b7f55f03eca6"
+              },
+              {
+                "text": "Var abre paréntesis, i griega subíndice 2 menos i griega subíndice 3, cierra paréntesis subíndice abre paréntesis, ene igual a 6, cierra paréntesis igual a 2 por 6 dividido entre 3.",
+                "start": 187.63333333333333,
+                "end": 200.93333333333334,
+                "startFrame": 5629,
+                "endFrame": 6028,
+                "words": 31,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "cc07c44d59396b5241779b092dcf71a6914e9409a40c57fbea06f36eadf658dc"
+              }
+            ]
+          },
+          {
+            "start": 201.23333333333332,
+            "end": 213.13333333333333,
+            "cues": [
+              {
+                "text": "Var abre paréntesis, i griega subíndice 2 menos i griega subíndice 3, cierra paréntesis subíndice abre paréntesis, ene igual a 6, cierra paréntesis queda igual a 4.",
+                "start": 201.23333333333332,
+                "end": 212.83333333333334,
+                "startFrame": 6037,
+                "endFrame": 6385,
+                "words": 27,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "f685c5b49ce87734e210d216d1f7d5c853c9e9e8bb4e5ce2b7393740f948f76b"
+              }
+            ]
+          },
+          {
+            "start": 213.13333333333333,
+            "end": 224.9,
+            "cues": [
+              {
+                "text": "El resultado es 4 recorridos al cuadrado.",
+                "start": 213.13333333333333,
+                "end": 216.13333333333333,
+                "startFrame": 6394,
+                "endFrame": 6484,
+                "words": 7,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "a17fc62d68df792be8ecc5784b6d2c16db099ba4bf55f200c14b8c1c169886fd"
+              },
+              {
+                "text": "Ignorar la covarianza daría 4 por ene dividido entre 9 en lugar de 2 por ene dividido entre 3.",
+                "start": 216.43333333333334,
+                "end": 224.6,
+                "startFrame": 6493,
+                "endFrame": 6738,
+                "words": 19,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "1d99b4cb1ae13802f0984932689f30c43573171fe12e5ca9e8577b46f678f1a5"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
