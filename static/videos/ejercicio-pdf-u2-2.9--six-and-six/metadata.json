@@ -1,0 +1,573 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.9--six-and-six",
+  "kind": "exercise",
+  "title": "¿Qué probabilidad tiene una selección de seis tratadas y seis no tratadas?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "a6583d74dae638665d20b6740cba6c7dc0adf358d0712e6b2523c981de1b2b7a",
+  "src": "videos/ejercicio-pdf-u2-2.9--six-and-six/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.9--six-and-six/poster.jpg",
+  "duration": 209.2,
+  "frames": 6276,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "63b4e208e0ad0a785b1daa1b8f9f3fab13a735f3c9ca7023b752eb5a9f9c1214",
+  "videoSha256": "9c2b7f98263bfdff6ea4596c9842ef1c1f9111914b395ed2d264dfa2d62447c5",
+  "posterSha256": "386af340cfc150efd3e9fe64700c7faa7a769d33dfb4dd60d57869b804cef76b",
+  "canonicalSha256": "3215105d75ef2ea16952ce48e475dbf271b01632d537deba4ee21fd01fb0f2b5",
+  "inputHash": "ba4cb6ea54e4b46cbb3113e487702d2522aa33c3c22f25bd91d24e6ed54b582a",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "87cf932e9ccac70d74e4bbe3f25bd8d36738dab31da8d0ffc13e9bacf9fc028d",
+    "canonicalSha256": "3215105d75ef2ea16952ce48e475dbf271b01632d537deba4ee21fd01fb0f2b5",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.9",
+      "page": 24
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "984351aacf19fac865ad0eb73d7b638c88b5eebc6f6e623f5867bcf4569af43d",
+    "transcriptSha256": "63b4e208e0ad0a785b1daa1b8f9f3fab13a735f3c9ca7023b752eb5a9f9c1214",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.9",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.9--six-and-six",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "3215105d75ef2ea16952ce48e475dbf271b01632d537deba4ee21fd01fb0f2b5",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 209.2,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 12.966666666666667,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué probabilidad tiene una selección de seis tratadas y seis no tratadas?",
+            "start": 2.9,
+            "end": 8.066666666666666,
+            "startFrame": 87,
+            "endFrame": 242,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "c646c3148ecefed9104aa88810ce4fca50eb2cfa230b01db727346fa8c8ad3e4"
+          },
+          {
+            "text": "Queremos una muestra con los recuentos indicados de ambos grupos.",
+            "start": 8.366666666666667,
+            "end": 12.666666666666666,
+            "startFrame": 251,
+            "endFrame": 380,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "af87b82b508482192117f08b320cfaf730eba261efbad18d9a0187da425ef543"
+          }
+        ]
+      },
+      {
+        "start": 12.966666666666667,
+        "end": 36.2,
+        "cues": [
+          {
+            "text": "Se extrae sin reemplazo de una población finita. ene mayúscula es el tamaño poblacional, ka mayúscula, también llamado eme, el número de elementos de interés y ene el tamaño de muestra.",
+            "start": 12.966666666666667,
+            "end": 26.266666666666666,
+            "startFrame": 389,
+            "endFrame": 788,
+            "words": 31,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "f72544298551094213a337a3e03dbbf81914b6e3c83386c93884ae3271bbeadc"
+          },
+          {
+            "text": "Las extracciones son dependientes, pero los subconjuntos de tamaño ene son equiprobables.",
+            "start": 26.566666666666666,
+            "end": 31.733333333333334,
+            "startFrame": 797,
+            "endFrame": 952,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "3fd831851fb61ae8b413da1b97ee33b1825ac516d0c68ccf1355b913407af17a"
+          },
+          {
+            "text": "Las combinaciones cuentan esos subconjuntos sin distinguir su orden.",
+            "start": 32.03333333333333,
+            "end": 35.9,
+            "startFrame": 961,
+            "endFrame": 1077,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "b63f28b597d1000f85a9aba42e976778e33296ec6a89a3b4cee6d9de17834b63"
+          }
+        ]
+      },
+      {
+        "start": 36.2,
+        "end": 43.36666666666667,
+        "cues": [
+          {
+            "text": "Población ene mayúscula igual a 20; tratadas eme igual a 10; no tratadas igual a 10.",
+            "start": 36.2,
+            "end": 43.06666666666667,
+            "startFrame": 1086,
+            "endFrame": 1292,
+            "words": 16,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "2f8a9baced4fa348c5276525b760bf0edc38030c5dced80543aaa38d73e2e650"
+          }
+        ]
+      },
+      {
+        "start": 43.36666666666667,
+        "end": 49.266666666666666,
+        "cues": [
+          {
+            "text": "Muestra ene igual a 12; se piden 6 tratadas y 6 no tratadas.",
+            "start": 43.36666666666667,
+            "end": 48.96666666666667,
+            "startFrame": 1301,
+            "endFrame": 1469,
+            "words": 13,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "84e49d38dd4551dd9ab68100f61cb11de4f9c5f8dd48ac59a413749c485ba1e1"
+          }
+        ]
+      },
+      {
+        "start": 49.266666666666666,
+        "end": 59.733333333333334,
+        "cues": [
+          {
+            "text": "Selección uniforme de subconjuntos de doce; no hay reemplazo.",
+            "start": 49.266666666666666,
+            "end": 53.13333333333333,
+            "startFrame": 1478,
+            "endFrame": 1594,
+            "words": 9,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "8608900d4a5f84836b0a92cd0e27fe26f9cb0acdaea6a0957656c7e2239f7ec0"
+          },
+          {
+            "text": "Cada extracción modifica la composición restante: contamos muestras equiprobables, no ensayos con probabilidad fija.",
+            "start": 53.43333333333333,
+            "end": 59.43333333333333,
+            "startFrame": 1603,
+            "endFrame": 1783,
+            "words": 14,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "6e74b8f305cea5eb4ad73dd67f350a05088d5b2c4aca31686c01ebdbea969f31"
+          }
+        ]
+      },
+      {
+        "start": 59.733333333333334,
+        "end": 73.56666666666666,
+        "cues": [
+          {
+            "text": "La selección no distingue el orden.",
+            "start": 59.733333333333334,
+            "end": 62.333333333333336,
+            "startFrame": 1792,
+            "endFrame": 1870,
+            "words": 6,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "fa21ee24fc8f9cd5d0e84feac9dabb86211f83c1f4ad1cc6c1342ae8fbb5defd"
+          },
+          {
+            "text": "Cuento combinaciones de seis entre diez.",
+            "start": 62.63333333333333,
+            "end": 65.23333333333333,
+            "startFrame": 1879,
+            "endFrame": 1957,
+            "words": 6,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "f5518d50a18f93cb1f0cbb1e9c5e1384536c75a63458d94e58edfbfbcbdf1c5d"
+          },
+          {
+            "text": "Sin reemplazo las extracciones no son independientes; contamos subconjuntos favorables y los dividimos por todos los subconjuntos posibles.",
+            "start": 65.53333333333333,
+            "end": 73.26666666666667,
+            "startFrame": 1966,
+            "endFrame": 2198,
+            "words": 18,
+            "sceneIndex": 5,
+            "cueIndex": 2,
+            "sourceCueSha256": "180713a88153064bc3f233ab4b568ffb6b6e70beef961f2dde7738de49e4d248"
+          }
+        ]
+      },
+      {
+        "start": 73.56666666666666,
+        "end": 83.63333333333334,
+        "cues": [
+          {
+            "text": "El coeficiente binomial cuenta subconjuntos o posiciones sin orden.",
+            "start": 73.56666666666666,
+            "end": 77.43333333333334,
+            "startFrame": 2207,
+            "endFrame": 2323,
+            "words": 9,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "eac76991b7a03bb3cd90333125765554ea0270d8a1ca92d28d21230ca59f2ca3"
+          },
+          {
+            "text": "Se calcula con factoriales, no multiplicando los dos números que aparecen en él.",
+            "start": 77.73333333333333,
+            "end": 83.33333333333333,
+            "startFrame": 2332,
+            "endFrame": 2500,
+            "words": 13,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "c11b524215758a97b7db32ac6d145fc137ee6fe79d4ebd2d5001fbb17c925da0"
+          }
+        ]
+      },
+      {
+        "start": 83.63333333333334,
+        "end": 101.3,
+        "cues": [
+          {
+            "text": "Elegir seis tratadas.",
+            "start": 83.63333333333334,
+            "end": 84.93333333333334,
+            "startFrame": 2509,
+            "endFrame": 2548,
+            "words": 3,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "e5be86df8f437b47d5382b3ca7d5e142e79f704ea959e60235c4c512c156372e"
+          },
+          {
+            "text": "La selección no distingue el orden.",
+            "start": 85.23333333333333,
+            "end": 87.83333333333333,
+            "startFrame": 2557,
+            "endFrame": 2635,
+            "words": 6,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "e8bb7bdf2c2496961f279d5c623260420ffaa902caad8b8d4ec31a3896c3c325"
+          },
+          {
+            "text": "Cuento combinaciones de seis entre diez. combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 6, cierra paréntesis en abre paréntesis, 6, cierra paréntesis igual a 210.",
+            "start": 88.13333333333334,
+            "end": 101,
+            "startFrame": 2644,
+            "endFrame": 3030,
+            "words": 30,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "ae18e1d525bb49dd97aeba1bf95995893b3e86053b4097b694eaec28c99d89c1"
+          }
+        ]
+      },
+      {
+        "start": 101.3,
+        "end": 128.5,
+        "cues": [
+          {
+            "text": "Elegir seis no tratadas.",
+            "start": 101.3,
+            "end": 103.03333333333333,
+            "startFrame": 3039,
+            "endFrame": 3091,
+            "words": 4,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "d4262895e52b5a081a06f92f0f2d83c066addb17ebac3b02071ce3736979478c"
+          },
+          {
+            "text": "Las otras seis se eligen entre las diez no tratadas. combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 12 menos 6, cierra paréntesis en abre paréntesis, 12 menos 6, cierra paréntesis igual a combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 6, cierra paréntesis en abre paréntesis, 6, cierra paréntesis.",
+            "start": 103.33333333333333,
+            "end": 128.2,
+            "startFrame": 3100,
+            "endFrame": 3846,
+            "words": 58,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "b110439679e53a07ef5ce4b6119b510a8af27e8db92e07fa6db4f4783afab014"
+          }
+        ]
+      },
+      {
+        "start": 128.5,
+        "end": 141.23333333333332,
+        "cues": [
+          {
+            "text": "combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 12 menos 6, cierra paréntesis en abre paréntesis, 12 menos 6, cierra paréntesis queda igual a 210.",
+            "start": 128.5,
+            "end": 140.93333333333334,
+            "startFrame": 3855,
+            "endFrame": 4228,
+            "words": 29,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "2291611c48704abdda5d64e23da3716541b9d9d0e17e20d6592e0e6f9251a98e"
+          }
+        ]
+      },
+      {
+        "start": 141.23333333333332,
+        "end": 151.3,
+        "cues": [
+          {
+            "text": "Contar muestras favorables.",
+            "start": 141.23333333333332,
+            "end": 142.53333333333333,
+            "startFrame": 4237,
+            "endFrame": 4276,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "9f82bd1f3ff08ff8eeb00ba175a6d453a406b5c117855c8677b3f8e23bcdf959"
+          },
+          {
+            "text": "Combino ambas elecciones independientes como recuentos de subconjuntos, no como ensayos probabilísticos independientes. 210 por 210 igual a 44100.",
+            "start": 142.83333333333334,
+            "end": 151,
+            "startFrame": 4285,
+            "endFrame": 4530,
+            "words": 19,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "94ea81f719ce1dfbb4ca8381a370b6c20103713ecbb6cb7222f65ec8b6c4e8a7"
+          }
+        ]
+      },
+      {
+        "start": 151.3,
+        "end": 167.8,
+        "cues": [
+          {
+            "text": "Contar todas las muestras.",
+            "start": 151.3,
+            "end": 153.03333333333333,
+            "startFrame": 4539,
+            "endFrame": 4591,
+            "words": 4,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "94da8074a8ee770e76082031e77ba065d730d0fdc227b0b6404343cad78b9c61"
+          },
+          {
+            "text": "El denominador reúne cada subconjunto de doce entre veinte. combinaciones de abre paréntesis, 20, cierra paréntesis elementos tomados de abre paréntesis, 12, cierra paréntesis en abre paréntesis, 12, cierra paréntesis igual a 125970.",
+            "start": 153.33333333333334,
+            "end": 167.5,
+            "startFrame": 4600,
+            "endFrame": 5025,
+            "words": 33,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "5e06c959eb986f8e0bf2a3392c59a4aaa8038c863a57180940d3da522ccd0b71"
+          }
+        ]
+      },
+      {
+        "start": 167.8,
+        "end": 175.7,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 167.8,
+            "end": 171.23333333333332,
+            "startFrame": 5034,
+            "endFrame": 5137,
+            "words": 8,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 171.53333333333333,
+            "end": 175.4,
+            "startFrame": 5146,
+            "endFrame": 5262,
+            "words": 9,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 175.7,
+        "end": 186.4,
+        "cues": [
+          {
+            "text": "Dividir recuentos.",
+            "start": 175.7,
+            "end": 176.9,
+            "startFrame": 5271,
+            "endFrame": 5307,
+            "words": 2,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "d574e1b8d68ce68e964041122711243536b327dddfa987aab487a4d96f19aba3"
+          },
+          {
+            "text": "Todas las muestras sin orden son equiprobables.",
+            "start": 177.2,
+            "end": 180.2,
+            "startFrame": 5316,
+            "endFrame": 5406,
+            "words": 7,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "822d04a1a9be686f55f10758465e59ea7a45d4598e45ae9b8094d42140e2a0f8"
+          },
+          {
+            "text": "La masa hipergeométrica es favorables entre posibles. probabilidad de equis igual a 6.",
+            "start": 180.5,
+            "end": 186.1,
+            "startFrame": 5415,
+            "endFrame": 5583,
+            "words": 13,
+            "sceneIndex": 13,
+            "cueIndex": 2,
+            "sourceCueSha256": "939164617b3b852435285e132a64b83681ad9c2728e8b3701ada95a13317daea"
+          }
+        ]
+      },
+      {
+        "start": 186.4,
+        "end": 195.7,
+        "cues": [
+          {
+            "text": "probabilidad de equis igual a 6 queda igual a abre paréntesis, 44100, cierra paréntesis dividido entre abre paréntesis, 125970, cierra paréntesis.",
+            "start": 186.4,
+            "end": 195.4,
+            "startFrame": 5592,
+            "endFrame": 5862,
+            "words": 21,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "1f74024af519979b30e310e88c873d520235c70233e5345a61bb3f93d7c8db48"
+          }
+        ]
+      },
+      {
+        "start": 195.7,
+        "end": 209.2,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 3 5 0 0 8 3 4 probabilidad entre 0 y 1.",
+            "start": 195.7,
+            "end": 203,
+            "startFrame": 5871,
+            "endFrame": 6090,
+            "words": 17,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "83365a6d0af10a972948fd526377a18cb880c527e5438ec92d05ddda60290ce2"
+          },
+          {
+            "text": "Sin reemplazo, las extracciones son dependientes; una binomial no describe exactamente este experimento.",
+            "start": 203.3,
+            "end": 208.9,
+            "startFrame": 6099,
+            "endFrame": 6267,
+            "words": 13,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "82dbdedd9757ced48c40450fbdbcae8c6cdd5fe8a7214155d9b2022979b31d44"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
