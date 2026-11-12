@@ -1,0 +1,484 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u3-3--marginal",
+  "kind": "exercise",
+  "title": "Construye la marginal completa de Y1. Introduce P(Y1=1).",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "fc47bb2a6ad26b10e6342f88ac7aa3f7ebf6a873da7003742fb968c7810d9830",
+  "src": "videos/ejercicio-pdf-u3-3--marginal/video.mp4",
+  "poster": "videos/ejercicio-pdf-u3-3--marginal/poster.jpg",
+  "duration": 196.3,
+  "frames": 5889,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "fd3a82ea97d9a5a10b7a9b9a91bde9797a0c59d0671cfd98f32c77d35c8ae9cc",
+  "videoSha256": "d70f46743b36bffb506d3cef7acf7abe5f69f3be41c25efb3cb46f2deec9e2b9",
+  "posterSha256": "55ffabe83155ba68cc1dc2dc0f24c335e44877b73f3d30c1bbaa7c787e3b512f",
+  "canonicalSha256": "cc42e4d704584a1883ac43f66fa9f2599c01c9cf33ba3d5a1f853bb33e9eb55b",
+  "inputHash": "e4317697507ce5719b1d0cbeb8162053d450c125781b2befa8e19997ef673a79",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "5496eedabefa5a2654889039b12b5e935bc60f29c3afcab93857f1e27dd8e9ce",
+    "canonicalSha256": "cc42e4d704584a1883ac43f66fa9f2599c01c9cf33ba3d5a1f853bb33e9eb55b",
+    "source": {
+      "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+      "number": "3",
+      "page": 5
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "9bb99ae41194688eb1d3864a34f3a88143ce3f547aa3d94bc0b212e5640be865",
+    "transcriptSha256": "fd3a82ea97d9a5a10b7a9b9a91bde9797a0c59d0671cfd98f32c77d35c8ae9cc",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u3-3",
+  "transcript": {
+    "id": "ejercicio-pdf-u3-3--marginal",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "cc42e4d704584a1883ac43f66fa9f2599c01c9cf33ba3d5a1f853bb33e9eb55b",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 196.3,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 15.4,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Construye la marginal completa de i griega subíndice 1.",
+            "start": 2.9,
+            "end": 6.766666666666667,
+            "startFrame": 87,
+            "endFrame": 203,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "f8b04b05a87f0546883e3a81fa3668a101359ad1dedbc5fac464615bd007fe11"
+          },
+          {
+            "text": "Introduce probabilidad de i griega subíndice 1 igual a 1.",
+            "start": 7.066666666666666,
+            "end": 11.366666666666667,
+            "startFrame": 212,
+            "endFrame": 341,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "9bf38c0992f7fcfea678851077ff58da2838a32c8fbb3efb7051c3735cf2be4d"
+          },
+          {
+            "text": "Queremos describir una variable sin fijar la otra.",
+            "start": 11.666666666666666,
+            "end": 15.1,
+            "startFrame": 350,
+            "endFrame": 453,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "30c241fcdbbfab9f3a7a822bed6ffce19daefb531008a5fb23ae846822d87e29"
+          }
+        ]
+      },
+      {
+        "start": 15.4,
+        "end": 33.4,
+        "cues": [
+          {
+            "text": "Cada celda de la conjunta representa dos valores del mismo resultado.",
+            "start": 15.4,
+            "end": 20.133333333333333,
+            "startFrame": 462,
+            "endFrame": 604,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "3f702495895226a07fcbc476e9e4210a70b35a622f15b3fdc7a1e50c22b9d29d"
+          },
+          {
+            "text": "Sumar sobre la coordenada que descartamos produce una marginal.",
+            "start": 20.433333333333334,
+            "end": 24.3,
+            "startFrame": 613,
+            "endFrame": 729,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "d179f69456c855dcd1b6ae2f29bd995d8a3edb51fe3d9bd93119da517bf58848"
+          },
+          {
+            "text": "Si fijamos una coordenada, dividimos por su marginal positiva para normalizar la condicional.",
+            "start": 24.6,
+            "end": 30.2,
+            "startFrame": 738,
+            "endFrame": 906,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "b519009337c9d4c5ebf6a45c29e91b421da0ad1198b905e1ad259e6a61c28d2d"
+          },
+          {
+            "text": "No suponemos independencia de las coordenadas.",
+            "start": 30.5,
+            "end": 33.1,
+            "startFrame": 915,
+            "endFrame": 993,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "f3a0b63826844f6292a3cd1451eeef283234320558974f7c06ab7e1df4926c49"
+          }
+        ]
+      },
+      {
+        "start": 33.4,
+        "end": 42.3,
+        "cues": [
+          {
+            "text": "Filas i griega subíndice 1 igual a 0, 1, 2; columnas i griega subíndice 2 igual a 0, 1, 2.",
+            "start": 33.4,
+            "end": 42,
+            "startFrame": 1002,
+            "endFrame": 1260,
+            "words": 20,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "c9fc4bbef6a63a1123f18a29344595d7a27f68663783192edb195357e402ebee"
+          }
+        ]
+      },
+      {
+        "start": 42.3,
+        "end": 57.2,
+        "cues": [
+          {
+            "text": "Masa conjunta por filas: abre paréntesis, 1, 2, 1, cierra paréntesis dividido entre 9; abre paréntesis, 2, 2, 0, cierra paréntesis dividido entre 9; abre paréntesis, 1, 0, 0, cierra paréntesis dividido entre 9.",
+            "start": 42.3,
+            "end": 56.9,
+            "startFrame": 1269,
+            "endFrame": 1707,
+            "words": 34,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "2ef37a3310c90312baea39e28eb5756bb7f161dfbc37745f1b89787fbe8e42c9"
+          }
+        ]
+      },
+      {
+        "start": 57.2,
+        "end": 62.233333333333334,
+        "cues": [
+          {
+            "text": "Se conserva el mismo experimento independiente y uniforme del ejercicio 1.",
+            "start": 57.2,
+            "end": 61.93333333333333,
+            "startFrame": 1716,
+            "endFrame": 1858,
+            "words": 11,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "953db97a1fdbd06a9728e91178e258b834e0869c5f2d68887b1506956df56c56"
+          }
+        ]
+      },
+      {
+        "start": 62.233333333333334,
+        "end": 76.56666666666666,
+        "cues": [
+          {
+            "text": "Para conservar i griega uno y olvidar i griega dos sumo la fila completa, no una sola celda.",
+            "start": 62.233333333333334,
+            "end": 69.96666666666667,
+            "startFrame": 1867,
+            "endFrame": 2099,
+            "words": 18,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "dbbc48377dbda4a5de7c55b6bd0897f72c660d244e26ff662a32c12e51a342f1"
+          },
+          {
+            "text": "Sumar o integrar sobre la coordenada descartada conserva todas sus posibilidades; no es condicionar.",
+            "start": 70.26666666666667,
+            "end": 76.26666666666667,
+            "startFrame": 2108,
+            "endFrame": 2288,
+            "words": 14,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "5d571d7c932498128b94a50ba73654b8f9025275968abab1083961077b2bd500"
+          }
+        ]
+      },
+      {
+        "start": 76.56666666666666,
+        "end": 99.9,
+        "cues": [
+          {
+            "text": "Sumar la fila 0.",
+            "start": 76.56666666666666,
+            "end": 78.3,
+            "startFrame": 2297,
+            "endFrame": 2349,
+            "words": 4,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "39f718ceaa2d38369f5c99f405e0a3231d07e4cd6efd6de901b41857d73597cb"
+          },
+          {
+            "text": "Para conservar i griega uno y olvidar i griega dos sumo la fila completa, no una sola celda. pe subíndice abre paréntesis, i griega subíndice 1, cierra paréntesis abre paréntesis, 0, cierra paréntesis igual a 1 dividido entre 9 más 2 dividido entre 9 más 1 dividido entre 9.",
+            "start": 78.6,
+            "end": 99.6,
+            "startFrame": 2358,
+            "endFrame": 2988,
+            "words": 49,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "a23f5d2d2e92ceb260dadeb7fdd91a47d0d51063cb7f53f417d4d60892b62e93"
+          }
+        ]
+      },
+      {
+        "start": 99.9,
+        "end": 109.63333333333334,
+        "cues": [
+          {
+            "text": "pe subíndice abre paréntesis, i griega subíndice 1, cierra paréntesis abre paréntesis, 0, cierra paréntesis queda igual a 4 dividido entre 9.",
+            "start": 99.9,
+            "end": 109.33333333333333,
+            "startFrame": 2997,
+            "endFrame": 3280,
+            "words": 22,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "dc07a538e231ff9b1cc63cb47df8be2bc9ded9ebdde8a999233e5c6f1376f944"
+          }
+        ]
+      },
+      {
+        "start": 109.63333333333334,
+        "end": 132.96666666666667,
+        "cues": [
+          {
+            "text": "Sumar la fila 1.",
+            "start": 109.63333333333334,
+            "end": 111.36666666666666,
+            "startFrame": 3289,
+            "endFrame": 3341,
+            "words": 4,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "59926a5a66c0968947103d2639b981f00389771f72ce276319b3abfff2dadfb9"
+          },
+          {
+            "text": "Para conservar i griega uno y olvidar i griega dos sumo la fila completa, no una sola celda. pe subíndice abre paréntesis, i griega subíndice 1, cierra paréntesis abre paréntesis, 1, cierra paréntesis igual a 2 dividido entre 9 más 2 dividido entre 9 más 0 dividido entre 9.",
+            "start": 111.66666666666667,
+            "end": 132.66666666666666,
+            "startFrame": 3350,
+            "endFrame": 3980,
+            "words": 49,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "b2c6f01ce99084ff76a30ae86044a05fcb36cdcc911b87ca415ac5805aa3702f"
+          }
+        ]
+      },
+      {
+        "start": 132.96666666666667,
+        "end": 142.7,
+        "cues": [
+          {
+            "text": "pe subíndice abre paréntesis, i griega subíndice 1, cierra paréntesis abre paréntesis, 1, cierra paréntesis queda igual a 4 dividido entre 9.",
+            "start": 132.96666666666667,
+            "end": 142.4,
+            "startFrame": 3989,
+            "endFrame": 4272,
+            "words": 22,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "8075e3a3b66a96f4f15cc92ae3466d70d61cc8d29da04de55a412612b7057d4c"
+          }
+        ]
+      },
+      {
+        "start": 142.7,
+        "end": 166.03333333333333,
+        "cues": [
+          {
+            "text": "Sumar la fila 2.",
+            "start": 142.7,
+            "end": 144.43333333333334,
+            "startFrame": 4281,
+            "endFrame": 4333,
+            "words": 4,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "8e6b460905ae29b7e3b13daa0cdc5c568b7050a9565374e693f9f6fbc91068d4"
+          },
+          {
+            "text": "Para conservar i griega uno y olvidar i griega dos sumo la fila completa, no una sola celda. pe subíndice abre paréntesis, i griega subíndice 1, cierra paréntesis abre paréntesis, 2, cierra paréntesis igual a 1 dividido entre 9 más 0 dividido entre 9 más 0 dividido entre 9.",
+            "start": 144.73333333333332,
+            "end": 165.73333333333332,
+            "startFrame": 4342,
+            "endFrame": 4972,
+            "words": 49,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "276dcd2eff3bc4ea92c48684ffa5ba8ed118f87f9647a2713671c1a7c62ac683"
+          }
+        ]
+      },
+      {
+        "start": 166.03333333333333,
+        "end": 175.76666666666668,
+        "cues": [
+          {
+            "text": "pe subíndice abre paréntesis, i griega subíndice 1, cierra paréntesis abre paréntesis, 2, cierra paréntesis queda igual a 1 dividido entre 9.",
+            "start": 166.03333333333333,
+            "end": 175.46666666666667,
+            "startFrame": 4981,
+            "endFrame": 5264,
+            "words": 22,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "2dfc952d74baf1c74c2ee413ed1e9c2dd542aca65010d0813c8522ef7766234c"
+          }
+        ]
+      },
+      {
+        "start": 175.76666666666668,
+        "end": 184.53333333333333,
+        "cues": [
+          {
+            "text": "Escribir la marginal.",
+            "start": 175.76666666666668,
+            "end": 177.06666666666666,
+            "startFrame": 5273,
+            "endFrame": 5312,
+            "words": 3,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "8db47c36071ac117a54d9835d3fbad8200586f7a6a2927a1d8eba0d2d0d7b706"
+          },
+          {
+            "text": "La tabla marginal tiene tres valores; fuera de cero, uno y dos la masa es cero.",
+            "start": 177.36666666666667,
+            "end": 184.23333333333332,
+            "startFrame": 5321,
+            "endFrame": 5527,
+            "words": 16,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "18779d2074dc64916c1df96b5a6b0875ccdb19046bfd2374d21fc2fe26c95f6d"
+          }
+        ]
+      },
+      {
+        "start": 184.53333333333333,
+        "end": 196.3,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 4 4 4 4 4 4 4 probabilidad entre 0 y 1.",
+            "start": 184.53333333333333,
+            "end": 191.83333333333334,
+            "startFrame": 5536,
+            "endFrame": 5755,
+            "words": 17,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "9f2986a02e3f209f0635b000526e70350eb90b12fae459f219cb8015e4c75eb9"
+          },
+          {
+            "text": "La marginal se obtiene sumando sobre la coordenada descartada.",
+            "start": 192.13333333333333,
+            "end": 196,
+            "startFrame": 5764,
+            "endFrame": 5880,
+            "words": 9,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "d0b67ad85541fd026aa6323365a08fb7effa3df88f8c6f3fc439d8d721dd2b01"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
