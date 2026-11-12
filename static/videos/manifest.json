@@ -137069,6 +137069,501 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u3-8--variance": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u3-8--variance",
+      "kind": "exercise",
+      "title": "Obtén Var(Y1) para n general. Introduce su valor para n=6.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "9f1db342fa1a1b7691958897cc2ba70e16f6c333caec15fca1018c6d54f78edd",
+      "src": "videos/ejercicio-pdf-u3-8--variance/video.mp4",
+      "poster": "videos/ejercicio-pdf-u3-8--variance/poster.jpg",
+      "duration": 174.8,
+      "frames": 5244,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "b00dc86881355ca32c1ec399014f27152e986a39b13ac1e5410d8920e0fef90c",
+      "videoSha256": "23218409f30f2fd34d5b8f1ecc4fb681708d06ae8f56d9b070637fd07f09a71d",
+      "posterSha256": "9afe2a65d442c65e87831f4345247417aa73a1b4b3f61cb76400d20cfb5122ee",
+      "canonicalSha256": "b2bdcd02da376069d9faee166fd73c0fb3ffb6d38ced01364a38816f092b3188",
+      "inputHash": "8fdc265d595efb80366a2bece89144bd89375dc86084b524980c1cfe4fe325ab",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "6251eca3c4f9b91019e169c6a53c0318ffb6ed0866c9d4d162dd1530564279f3",
+        "canonicalSha256": "b2bdcd02da376069d9faee166fd73c0fb3ffb6d38ced01364a38816f092b3188",
+        "source": {
+          "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+          "number": "8",
+          "page": 17
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "c25ed811f15cc8c119bbf48fa95c20c98224cf6cdcf4efd850e916bbdfefe95b",
+        "transcriptSha256": "b00dc86881355ca32c1ec399014f27152e986a39b13ac1e5410d8920e0fef90c",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u3-8",
+      "transcript": {
+        "id": "ejercicio-pdf-u3-8--variance",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "b2bdcd02da376069d9faee166fd73c0fb3ffb6d38ced01364a38816f092b3188",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 174.8,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 14.966666666666667,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Obtén varianza de i griega subíndice 1 para ene general.",
+                "start": 2.9,
+                "end": 7.2,
+                "startFrame": 87,
+                "endFrame": 216,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "069260db28f86f347686c34d00f3e62af0a82d5045707491e636e6dee27c5282"
+              },
+              {
+                "text": "Introduce su valor para ene igual a 6.",
+                "start": 7.5,
+                "end": 10.933333333333334,
+                "startFrame": 225,
+                "endFrame": 328,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "9cd20c7b962f11eb5f476f0d1c222c1a7f7b8bf9097e0b814b4ad9777981e250"
+              },
+              {
+                "text": "Queremos medir la dispersión alrededor de la media.",
+                "start": 11.233333333333333,
+                "end": 14.666666666666666,
+                "startFrame": 337,
+                "endFrame": 440,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "ade87fcbad64b59e95d27bc78434613c32bf21b2b970dd8e40a91026b36f3493"
+              }
+            ]
+          },
+          {
+            "start": 14.966666666666667,
+            "end": 35.2,
+            "cues": [
+              {
+                "text": "Cada ensayo independiente acaba en una sola de las categorías, cuyas probabilidades suman uno.",
+                "start": 14.966666666666667,
+                "end": 20.966666666666665,
+                "startFrame": 449,
+                "endFrame": 629,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "898dec525c92df230d425f02e79d87c3ddc5adabcf96aa69e948e366953f91b2"
+              },
+              {
+                "text": "Los recuentos comparten el total fijo y no son independientes entre sí.",
+                "start": 21.266666666666666,
+                "end": 26.433333333333334,
+                "startFrame": 638,
+                "endFrame": 793,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "4a359b088e44ab6e169bf3237c69860f1740bfb3054c242cc84ae4b66e779ac1"
+              },
+              {
+                "text": "El factorial multinomial cuenta ordenaciones de esos recuentos y el producto de potencias da el peso de cada ordenación.",
+                "start": 26.733333333333334,
+                "end": 34.9,
+                "startFrame": 802,
+                "endFrame": 1047,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "6a0d161472745dfdd0e28ba737fd7d6adc132f452d859066b6bedacf7c030a8f"
+              }
+            ]
+          },
+          {
+            "start": 35.2,
+            "end": 50.93333333333333,
+            "cues": [
+              {
+                "text": "i griega subíndice 1 ,i griega subíndice 2 ,i griega subíndice 3 cuentan elecciones de cada salida; pe subíndice 1 igual a pe subíndice 2 igual a pe subíndice 3 igual a 1 dividido entre 3.",
+                "start": 35.2,
+                "end": 50.63333333333333,
+                "startFrame": 1056,
+                "endFrame": 1519,
+                "words": 36,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "376a4b4dabe5b4cf093ff7402218f5a5502816716020eb281baa454088927476"
+              }
+            ]
+          },
+          {
+            "start": 50.93333333333333,
+            "end": 58.53333333333333,
+            "cues": [
+              {
+                "text": "Para la probabilidad conjunta: ene igual a 6 y recuentos abre paréntesis, 3, 1, 2, cierra paréntesis.",
+                "start": 50.93333333333333,
+                "end": 58.233333333333334,
+                "startFrame": 1528,
+                "endFrame": 1747,
+                "words": 17,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "b6994b21152c79ac0ccc4993eeb47933d552d292ba5f1830f108579a3b29a19f"
+              }
+            ]
+          },
+          {
+            "start": 58.53333333333333,
+            "end": 68.7,
+            "cues": [
+              {
+                "text": "Para los demás apartados se pide una fórmula para ene general; el comprobador usa el ene igual a 6 original como representante numérico.",
+                "start": 58.53333333333333,
+                "end": 68.4,
+                "startFrame": 1756,
+                "endFrame": 2052,
+                "words": 23,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "4b4eb41b1d89211e639a178285badc6b7688006d6e6cf0bf5c77ea567176845c"
+              }
+            ]
+          },
+          {
+            "start": 68.7,
+            "end": 72.43333333333334,
+            "cues": [
+              {
+                "text": "Recorridos independientes, probabilidades constantes y tres salidas equiprobables.",
+                "start": 68.7,
+                "end": 72.13333333333334,
+                "startFrame": 2061,
+                "endFrame": 2164,
+                "words": 8,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "934e3fc85c8363af65f750c2a36e75be8be37f2dfbecd4bd0ce615da4fa3e292"
+              }
+            ]
+          },
+          {
+            "start": 72.43333333333334,
+            "end": 77.03333333333333,
+            "cues": [
+              {
+                "text": "La recompensa no modifica las probabilidades bajo la hipótesis solicitada.",
+                "start": 72.43333333333334,
+                "end": 76.73333333333333,
+                "startFrame": 2173,
+                "endFrame": 2302,
+                "words": 10,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "d93a4df3a1f5b4db912b9d3fc774f838b072c00582e0d171e3faaa03aba23262"
+              }
+            ]
+          },
+          {
+            "start": 77.03333333333333,
+            "end": 90.53333333333333,
+            "cues": [
+              {
+                "text": "Un indicador de probabilidad un tercio tiene varianza pe por uno menos pe.",
+                "start": 77.03333333333333,
+                "end": 82.63333333333334,
+                "startFrame": 2311,
+                "endFrame": 2479,
+                "words": 13,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "f9e2dae2d3ff572a0fb48cb9670b3a23ccfc35adc141420170367d3edb4a2106"
+              },
+              {
+                "text": "El segundo momento incluye la posición del centro; restar el cuadrado de la media deja solo dispersión.",
+                "start": 82.93333333333334,
+                "end": 90.23333333333333,
+                "startFrame": 2488,
+                "endFrame": 2707,
+                "words": 17,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "078b394928159fcc767a69427e93d5c4486da1e373ee4a9f57b94af55ea3a446"
+              }
+            ]
+          },
+          {
+            "start": 90.53333333333333,
+            "end": 109.93333333333334,
+            "cues": [
+              {
+                "text": "Varianza del indicador.",
+                "start": 90.53333333333333,
+                "end": 91.83333333333333,
+                "startFrame": 2716,
+                "endFrame": 2755,
+                "words": 3,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "42c18ce4e3d8f53326bdc71bf7c58d8d8bddc70e9de14e216a4a4caf3f384187"
+              },
+              {
+                "text": "Un indicador de probabilidad un tercio tiene varianza pe por uno menos pe.",
+                "start": 92.13333333333334,
+                "end": 97.73333333333333,
+                "startFrame": 2764,
+                "endFrame": 2932,
+                "words": 13,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "9153ab748ef0d4c9dc6ce00828ba8cf215b53574483564b0c6f2aa68bbe06c54"
+              },
+              {
+                "text": "Var abre paréntesis, i subíndice 1, cierra paréntesis igual a abre paréntesis, 1 dividido entre 3, cierra paréntesis por abre paréntesis, 2 dividido entre 3, cierra paréntesis.",
+                "start": 98.03333333333333,
+                "end": 109.63333333333334,
+                "startFrame": 2941,
+                "endFrame": 3289,
+                "words": 27,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "d1224528cdc0e4f7c4d69834850c7d460a3c4a6e8c822ef5006949105a91adfb"
+              }
+            ]
+          },
+          {
+            "start": 109.93333333333334,
+            "end": 116.66666666666667,
+            "cues": [
+              {
+                "text": "Var abre paréntesis, i subíndice 1, cierra paréntesis queda igual a 2 dividido entre 9.",
+                "start": 109.93333333333334,
+                "end": 116.36666666666666,
+                "startFrame": 3298,
+                "endFrame": 3491,
+                "words": 15,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "7e569401862189fc34eaf2d347e01daed5b8423b43e0ee71c54aab9d95601346"
+              }
+            ]
+          },
+          {
+            "start": 116.66666666666667,
+            "end": 133.03333333333333,
+            "cues": [
+              {
+                "text": "Sumar recorridos independientes.",
+                "start": 116.66666666666667,
+                "end": 117.96666666666667,
+                "startFrame": 3500,
+                "endFrame": 3539,
+                "words": 3,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "6c0374ce1cdc3c3271d1983846fc13cfd310ac71b69a27126f0baac636a82cfc"
+              },
+              {
+                "text": "La varianza de la suma de ene indicadores independientes es ene veces la varianza de uno.",
+                "start": 118.26666666666667,
+                "end": 125.13333333333334,
+                "startFrame": 3548,
+                "endFrame": 3754,
+                "words": 16,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "001b10214f6f6f1ee2258a66a92646a5c881a5056e1d50ea59c718a621a0c208"
+              },
+              {
+                "text": "Var abre paréntesis, i griega subíndice 1, cierra paréntesis igual a 2 por ene dividido entre 9.",
+                "start": 125.43333333333334,
+                "end": 132.73333333333332,
+                "startFrame": 3763,
+                "endFrame": 3982,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "70e179b0de31ad212407aa961ec56adae043f96152693b83a4743b300a8603b3"
+              }
+            ]
+          },
+          {
+            "start": 133.03333333333333,
+            "end": 148.56666666666666,
+            "cues": [
+              {
+                "text": "El caso de seis.",
+                "start": 133.03333333333333,
+                "end": 134.76666666666668,
+                "startFrame": 3991,
+                "endFrame": 4043,
+                "words": 4,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "22094268e4c3283d5077e12e3dbf1ddebbbcd9e1150069a07e34c455a1718ee4"
+              },
+              {
+                "text": "Sustituyo el número de recorridos original.",
+                "start": 135.06666666666666,
+                "end": 137.66666666666666,
+                "startFrame": 4052,
+                "endFrame": 4130,
+                "words": 6,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "1fbf561bba1b6e75233b5bce5735c41bde4d0f43ccfcb06ffcbd250aed23d33d"
+              },
+              {
+                "text": "Var abre paréntesis, i griega subíndice 1, cierra paréntesis subíndice abre paréntesis, ene igual a 6, cierra paréntesis igual a 12 dividido entre 9.",
+                "start": 137.96666666666667,
+                "end": 148.26666666666668,
+                "startFrame": 4139,
+                "endFrame": 4448,
+                "words": 24,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "96ba55e4ebab6add7d0f13bdd3a9acc42fa5e72f35c9d6b6bd4387d2d66896cc"
+              }
+            ]
+          },
+          {
+            "start": 148.56666666666666,
+            "end": 159.6,
+            "cues": [
+              {
+                "text": "Var abre paréntesis, i griega subíndice 1, cierra paréntesis subíndice abre paréntesis, ene igual a 6, cierra paréntesis queda igual a 4 dividido entre 3.",
+                "start": 148.56666666666666,
+                "end": 159.3,
+                "startFrame": 4457,
+                "endFrame": 4779,
+                "words": 25,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "4865fe36931477c3b6222b31d4ad46d0d1ab28c1172214eb4d011d55dd27947a"
+              }
+            ]
+          },
+          {
+            "start": 159.6,
+            "end": 174.8,
+            "cues": [
+              {
+                "text": "El resultado es 1 coma 3 3 3 3 3 3 recorridos al cuadrado.",
+                "start": 159.6,
+                "end": 165.6,
+                "startFrame": 4788,
+                "endFrame": 4968,
+                "words": 14,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "03a111e54910e6f15851b75c3649160711f19d38a75566a7cbe9278301cf7b49"
+              },
+              {
+                "text": "La varianza no se obtiene de los recuentos observados abre paréntesis, 3, 1, 2, cierra paréntesis , sino del modelo.",
+                "start": 165.9,
+                "end": 174.5,
+                "startFrame": 4977,
+                "endFrame": 5235,
+                "words": 20,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "f6e6c469f74bef55b028b07890ffd71bd40c8a87149872490dffa0846546f791"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
