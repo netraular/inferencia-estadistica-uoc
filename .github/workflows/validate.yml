@@ -18,6 +18,10 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - name: Install media tools
+        run: |
+          sudo -n apt-get update
+          sudo -n apt-get install --no-install-recommends --yes ffmpeg
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -35,6 +39,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - name: Install media tools
+        run: |
+          sudo -n apt-get update
+          sudo -n apt-get install --no-install-recommends --yes ffmpeg
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
