@@ -119194,6 +119194,839 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u2-2.5--at-most-ten": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u2-2.5--at-most-ten",
+      "kind": "exercise",
+      "title": "¿Qué probabilidad tiene diez o menos muertes este año?",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "c8471546e551caa092950c1000eca18eedddbfad40e91800bd1426fc1be22976",
+      "src": "videos/ejercicio-pdf-u2-2.5--at-most-ten/video.mp4",
+      "poster": "videos/ejercicio-pdf-u2-2.5--at-most-ten/poster.jpg",
+      "duration": 543.4,
+      "frames": 16302,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "c88068e2bb01fc6cf1b926b6020f29bc5f3950f5c83d5e110e1a20a406faf61d",
+      "videoSha256": "e7bb690c20917c8fbb74786a75bfc698429cc67cc1577a2ba336b2b769093f61",
+      "posterSha256": "e397846bf46c6fba6c352814f42caa969ee868454493fd458d33830810196edb",
+      "canonicalSha256": "08e5cccc2d3c93aff93b5251f6bab062ae5c4ec2e673a2866320064466089eba",
+      "inputHash": "4fd8b2b1b88df200817eadf66ed21d27acbdd78df80bb5f199a8a67a8ca7deaa",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "a8a0e7296412bfe65a3bf7262c8f2a3cb5c60460208e94b16b551fd7d2da38a2",
+        "canonicalSha256": "08e5cccc2d3c93aff93b5251f6bab062ae5c4ec2e673a2866320064466089eba",
+        "source": {
+          "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+          "number": "2.5",
+          "page": 15
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "fa311af63603081fc291e968788a83be232393c3feb1a85360a4b63d3bf7c45b",
+        "transcriptSha256": "c88068e2bb01fc6cf1b926b6020f29bc5f3950f5c83d5e110e1a20a406faf61d",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u2-2.5",
+      "transcript": {
+        "id": "ejercicio-pdf-u2-2.5--at-most-ten",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "08e5cccc2d3c93aff93b5251f6bab062ae5c4ec2e673a2866320064466089eba",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 543.4,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 11.666666666666666,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "¿Qué probabilidad tiene diez o menos muertes este año?",
+                "start": 2.9,
+                "end": 6.766666666666667,
+                "startFrame": 87,
+                "endFrame": 203,
+                "words": 9,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "58713e8825d6f6bf14e0b7db31d6a18f3e672fcd34f148ff75ff0f8f7051a480"
+              },
+              {
+                "text": "Queremos todos los recuentos hasta el límite, incluido ese límite.",
+                "start": 7.066666666666666,
+                "end": 11.366666666666667,
+                "startFrame": 212,
+                "endFrame": 341,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "34a61a7270207cbea91e522ee1e49147e9c8fe46d5db5b5112ef3f0771e55ffb"
+              }
+            ]
+          },
+          {
+            "start": 11.666666666666666,
+            "end": 34.06666666666667,
+            "cues": [
+              {
+                "text": "equis cuenta eventos en una exposición fija y lambda es su recuento esperado en esa exposición, no una probabilidad.",
+                "start": 11.666666666666666,
+                "end": 19.833333333333332,
+                "startFrame": 350,
+                "endFrame": 595,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "a993244c4393e65194e8e0c7bb9febac29b21dd2f4053edf6116522e527adfc4"
+              },
+              {
+                "text": "La masa de ka combina e elevado a menos lambda, lambda a ka y ka factorial; el factorial corrige las permutaciones de los mismos eventos.",
+                "start": 20.133333333333333,
+                "end": 30.866666666666667,
+                "startFrame": 604,
+                "endFrame": 926,
+                "words": 25,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "342ed2159c1346fa50af1e172cad92fadcfa3b85d9e9e92a2f0c363ec8f62f94"
+              },
+              {
+                "text": "La exponencial normaliza todas las masas.",
+                "start": 31.166666666666668,
+                "end": 33.766666666666666,
+                "startFrame": 935,
+                "endFrame": 1013,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "9155a939092b4b4da0d10a07d78a451e70139382ab3d6853f74618fa04c6a588"
+              }
+            ]
+          },
+          {
+            "start": 34.06666666666667,
+            "end": 38.233333333333334,
+            "cues": [
+              {
+                "text": "Media anual lambda igual a 12; exposición: un año.",
+                "start": 34.06666666666667,
+                "end": 37.93333333333333,
+                "startFrame": 1022,
+                "endFrame": 1138,
+                "words": 9,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "c8661b699219f1d49ee2cc454fc5c48994c5457859525906cd52922f5e51974c"
+              }
+            ]
+          },
+          {
+            "start": 38.233333333333334,
+            "end": 44.96666666666667,
+            "cues": [
+              {
+                "text": "Se adopta el modelo Poisson indicado; la media anual no garantiza un recuento de doce.",
+                "start": 38.233333333333334,
+                "end": 44.666666666666664,
+                "startFrame": 1147,
+                "endFrame": 1340,
+                "words": 15,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "b78dede84b9fcd892b13348a09d6e9cf191c9021269458c963fa553acc506df0"
+              }
+            ]
+          },
+          {
+            "start": 44.96666666666667,
+            "end": 56.3,
+            "cues": [
+              {
+                "text": "Diez o menos incluye todos los enteros desde cero hasta diez.",
+                "start": 44.96666666666667,
+                "end": 49.7,
+                "startFrame": 1349,
+                "endFrame": 1491,
+                "words": 11,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "0947926e8a0963f249a8db8b600f8c3f7fff2f752ce25825af63300f5337f723"
+              },
+              {
+                "text": "Las masas de recuentos distintos son disjuntas y se suman sin volver a normalizar.",
+                "start": 50,
+                "end": 56,
+                "startFrame": 1500,
+                "endFrame": 1680,
+                "words": 14,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "f7f7734f0613767d70fd80f499a6a745391a5481f342ede7fdc1bf66d5959d74"
+              }
+            ]
+          },
+          {
+            "start": 56.3,
+            "end": 62.93333333333333,
+            "cues": [
+              {
+                "text": "Traducir el límite.",
+                "start": 56.3,
+                "end": 57.6,
+                "startFrame": 1689,
+                "endFrame": 1728,
+                "words": 3,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "37f547cf6c71f61e86ff2a175f0235f49bcf887518e90ff2903d4a7dac486dc1"
+              },
+              {
+                "text": "Diez o menos incluye todos los enteros desde cero hasta diez.",
+                "start": 57.9,
+                "end": 62.63333333333333,
+                "startFrame": 1737,
+                "endFrame": 1879,
+                "words": 11,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "3ba2d1faa95fa248daf37d97be165d43cb1c8e1d30f8af720d9675862b79fe24"
+              }
+            ]
+          },
+          {
+            "start": 62.93333333333333,
+            "end": 84.13333333333334,
+            "cues": [
+              {
+                "text": "Añadir la masa 0.",
+                "start": 62.93333333333333,
+                "end": 64.66666666666667,
+                "startFrame": 1888,
+                "endFrame": 1940,
+                "words": 4,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "32ee4770f70660ca3cb675ee48c02f2a67b25e33c745d4512536b8300e8ae441"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 0 eventos a la suma acumulada. ese subíndice abre paréntesis, 0, cierra paréntesis igual a 0 más 0 coma 0 0 0 0 0 6 1 4 4 2 1 2 3 5 3 3 2 8 2 1.",
+                "start": 64.96666666666667,
+                "end": 83.83333333333333,
+                "startFrame": 1949,
+                "endFrame": 2515,
+                "words": 44,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "ec2b778bf7be5d72bd66c904804ec2056df70ffb7827c4df888ce721ddc50a4e"
+              }
+            ]
+          },
+          {
+            "start": 84.13333333333334,
+            "end": 98.16666666666667,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 0, cierra paréntesis queda igual a 0 coma 0 0 0 0 0 6 1 4 4 2 1 2 3 5 3 3 2 8 2 1.",
+                "start": 84.13333333333334,
+                "end": 97.86666666666666,
+                "startFrame": 2524,
+                "endFrame": 2936,
+                "words": 32,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "37ec61540d2b7ab0685695d15b117f7e7e44d2a0d4bbfa4556ccdcef0287ea09"
+              }
+            ]
+          },
+          {
+            "start": 98.16666666666667,
+            "end": 128.36666666666667,
+            "cues": [
+              {
+                "text": "Añadir la masa 1.",
+                "start": 98.16666666666667,
+                "end": 99.9,
+                "startFrame": 2945,
+                "endFrame": 2997,
+                "words": 4,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "6b180ed94f12b215137904ac3960798a85ba2932dfde526b1f97f6a646880b37"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 1 eventos a la suma acumulada. ese subíndice abre paréntesis, 1, cierra paréntesis igual a 0 coma 0 0 0 0 0 6 1 4 4 2 1 2 3 5 3 3 2 8 2 1 más 0 coma 0 0 0 0 7 3 7 3 0 5 4 8 2 3 9 9 3 8 5 1.",
+                "start": 100.2,
+                "end": 128.06666666666666,
+                "startFrame": 3006,
+                "endFrame": 3842,
+                "words": 65,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "8f732af6e078b74d5e6a6786339d4861f379966015f88b77184705877f034a38"
+              }
+            ]
+          },
+          {
+            "start": 128.36666666666667,
+            "end": 142.4,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 1, cierra paréntesis queda igual a 0 coma 0 0 0 0 7 9 8 7 4 7 6 0 5 9 3 2 6 6 7 3.",
+                "start": 128.36666666666667,
+                "end": 142.1,
+                "startFrame": 3851,
+                "endFrame": 4263,
+                "words": 32,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "c692b42423b92175d040602bff0321927d4d7d2e901dc2f4144b111d93f14b2a"
+              }
+            ]
+          },
+          {
+            "start": 142.4,
+            "end": 172.16666666666666,
+            "cues": [
+              {
+                "text": "Añadir la masa 2.",
+                "start": 142.4,
+                "end": 144.13333333333333,
+                "startFrame": 4272,
+                "endFrame": 4324,
+                "words": 4,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "17913cd778e8a06d29233809764b4755e2fbddc89d28b0c27c442a67eb968600"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 2 eventos a la suma acumulada. ese subíndice abre paréntesis, 2, cierra paréntesis igual a 0 coma 0 0 0 0 7 9 8 7 4 7 6 0 5 9 3 2 6 6 7 3 más 0 coma 0 0 0 4 4 2 3 8 3 2 8 9 4 3 9 6 3 1 1.",
+                "start": 144.43333333333334,
+                "end": 171.86666666666667,
+                "startFrame": 4333,
+                "endFrame": 5156,
+                "words": 64,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "27bdae04bc3bd608ba2a8c54807ff64416ed37e9ac8f3b1f938ee8185903138f"
+              }
+            ]
+          },
+          {
+            "start": 172.16666666666666,
+            "end": 185.76666666666668,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 2, cierra paréntesis queda igual a 0 coma 0 0 0 5 2 2 2 5 8 0 5 0 0 3 2 8 9 7 8.",
+                "start": 172.16666666666666,
+                "end": 185.46666666666667,
+                "startFrame": 5165,
+                "endFrame": 5564,
+                "words": 31,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "e67004759f972fd131c3517b983a20159f287dd15ce5988b2426aadb3ca8806e"
+              }
+            ]
+          },
+          {
+            "start": 185.76666666666668,
+            "end": 215.1,
+            "cues": [
+              {
+                "text": "Añadir la masa 3.",
+                "start": 185.76666666666668,
+                "end": 187.5,
+                "startFrame": 5573,
+                "endFrame": 5625,
+                "words": 4,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "3cb9a0db5a3ff8f5ca5a06e4dcdcaa5b105189e1c7aba8bf34c1464ee06cdfb7"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 3 eventos a la suma acumulada. ese subíndice abre paréntesis, 3, cierra paréntesis igual a 0 coma 0 0 0 5 2 2 2 5 8 0 5 0 0 3 2 8 9 7 8 más 0 coma 0 0 1 7 6 9 5 3 3 1 5 7 7 5 8 5 2 4 3.",
+                "start": 187.8,
+                "end": 214.8,
+                "startFrame": 5634,
+                "endFrame": 6444,
+                "words": 63,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "fe03d4125135196257372b82d51e43385f1e4d3f87d7d8c442c3f3b2738f6d0f"
+              }
+            ]
+          },
+          {
+            "start": 215.1,
+            "end": 228.26666666666668,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 3, cierra paréntesis queda igual a 0 coma 0 0 2 2 9 1 7 9 1 2 0 7 7 9 1 4 2 2.",
+                "start": 215.1,
+                "end": 227.96666666666667,
+                "startFrame": 6453,
+                "endFrame": 6839,
+                "words": 30,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "1b705eccf6fa1b88c8f456b58599e0ce43d97ef20767fd85b656fd15fc225201"
+              }
+            ]
+          },
+          {
+            "start": 228.26666666666668,
+            "end": 256.76666666666665,
+            "cues": [
+              {
+                "text": "Añadir la masa 4.",
+                "start": 228.26666666666668,
+                "end": 230,
+                "startFrame": 6848,
+                "endFrame": 6900,
+                "words": 4,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "1d31607e92ba2a723ba541ba449c744701875fb60212b746ed1f221626af66ac"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 4 eventos a la suma acumulada. ese subíndice abre paréntesis, 4, cierra paréntesis igual a 0 coma 0 0 2 2 9 1 7 9 1 2 0 7 7 9 1 4 2 2 más 0 coma 0 0 5 3 0 8 5 9 9 4 7 3 2 7 5 5 7 3.",
+                "start": 230.3,
+                "end": 256.46666666666664,
+                "startFrame": 6909,
+                "endFrame": 7694,
+                "words": 61,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "1d724f75435dd1b9f315703ac7ce468390876985d6ceb430103d58e8c4738cb9"
+              }
+            ]
+          },
+          {
+            "start": 256.76666666666665,
+            "end": 269.93333333333334,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 4, cierra paréntesis queda igual a 0 coma 0 0 7 6 0 0 3 9 0 6 8 1 0 6 6 9 9 5.",
+                "start": 256.76666666666665,
+                "end": 269.6333333333333,
+                "startFrame": 7703,
+                "endFrame": 8089,
+                "words": 30,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "7ead786549dd8a6de494ce47b8e804638f54dd374191bdb8c613de0bf8fdaa1d"
+              }
+            ]
+          },
+          {
+            "start": 269.93333333333334,
+            "end": 298.43333333333334,
+            "cues": [
+              {
+                "text": "Añadir la masa 5.",
+                "start": 269.93333333333334,
+                "end": 271.6666666666667,
+                "startFrame": 8098,
+                "endFrame": 8150,
+                "words": 4,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "321e55998cd16e2f1515811c15f4cbf87c2f546391656289d7902431c25fdde0"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 5 eventos a la suma acumulada. ese subíndice abre paréntesis, 5, cierra paréntesis igual a 0 coma 0 0 7 6 0 0 3 9 0 6 8 1 0 6 6 9 9 5 más 0 coma 0 1 2 7 4 0 6 3 8 7 3 5 8 6 1 3 7 6.",
+                "start": 271.96666666666664,
+                "end": 298.1333333333333,
+                "startFrame": 8159,
+                "endFrame": 8944,
+                "words": 61,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "4d5f78066bc36e0b7ad5c7e96577ec03a8acdb713f93f8be1e13dad0882f6fc9"
+              }
+            ]
+          },
+          {
+            "start": 298.43333333333334,
+            "end": 311.1666666666667,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 5, cierra paréntesis queda igual a 0 coma 0 2 0 3 4 1 0 2 9 4 1 6 9 2 8 3 7.",
+                "start": 298.43333333333334,
+                "end": 310.8666666666667,
+                "startFrame": 8953,
+                "endFrame": 9326,
+                "words": 29,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "9885f25d0e39164f0f4a8aebc208759bf7f80eb1f132580daeb8820f8fa2f99e"
+              }
+            ]
+          },
+          {
+            "start": 311.1666666666667,
+            "end": 338.8,
+            "cues": [
+              {
+                "text": "Añadir la masa 6.",
+                "start": 311.1666666666667,
+                "end": 312.9,
+                "startFrame": 9335,
+                "endFrame": 9387,
+                "words": 4,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "88aefc4010b5c4239f1f3d1b828c0a25096ff413235ebf42591d1317e1fd9918"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 6 eventos a la suma acumulada. ese subíndice abre paréntesis, 6, cierra paréntesis igual a 0 coma 0 2 0 3 4 1 0 2 9 4 1 6 9 2 8 3 7 más 0 coma 0 2 5 4 8 1 2 7 7 4 7 1 7 2 2 7 5.",
+                "start": 313.2,
+                "end": 338.5,
+                "startFrame": 9396,
+                "endFrame": 10155,
+                "words": 59,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "38f4fd917f3589a607f7cf7388d1791ddf7cf339f0b52761be497e95e8ffa504"
+              }
+            ]
+          },
+          {
+            "start": 338.8,
+            "end": 351.53333333333336,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 6, cierra paréntesis queda igual a 0 coma 0 4 5 8 2 2 3 0 6 8 8 8 6 5 1 1 2.",
+                "start": 338.8,
+                "end": 351.23333333333335,
+                "startFrame": 10164,
+                "endFrame": 10537,
+                "words": 29,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "6c97971a8c47a4ad8151d98f3f1c07d8916ede8e7ae3183ff4d4f899077d2dd4"
+              }
+            ]
+          },
+          {
+            "start": 351.53333333333336,
+            "end": 379.6,
+            "cues": [
+              {
+                "text": "Añadir la masa 7.",
+                "start": 351.53333333333336,
+                "end": 353.26666666666665,
+                "startFrame": 10546,
+                "endFrame": 10598,
+                "words": 4,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "a68d7806413a3ec8debdd6695544e162c13137bc9f4b2008ed6fa8372e8996fd"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 7 eventos a la suma acumulada. ese subíndice abre paréntesis, 7, cierra paréntesis igual a 0 coma 0 4 5 8 2 2 3 0 6 8 8 8 6 5 1 1 2 más 0 coma 0 4 3 6 8 2 1 8 9 9 5 1 5 2 4 7 1 6.",
+                "start": 353.56666666666666,
+                "end": 379.3,
+                "startFrame": 10607,
+                "endFrame": 11379,
+                "words": 60,
+                "sceneIndex": 20,
+                "cueIndex": 1,
+                "sourceCueSha256": "f4615f1396aa1bd389ef414e4e9f34e95cda46a1b66ca5ad215b5b5678646dfa"
+              }
+            ]
+          },
+          {
+            "start": 379.6,
+            "end": 392.3333333333333,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 7, cierra paréntesis queda igual a 0 coma 0 8 9 5 0 4 4 9 6 8 4 0 1 7 5 8 3.",
+                "start": 379.6,
+                "end": 392.03333333333336,
+                "startFrame": 11388,
+                "endFrame": 11761,
+                "words": 29,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "1b4e910432513f17cdb5527d22a0c4ddab09b358283376ab4e66f9da13a8bf5e"
+              }
+            ]
+          },
+          {
+            "start": 392.3333333333333,
+            "end": 419.96666666666664,
+            "cues": [
+              {
+                "text": "Añadir la masa 8.",
+                "start": 392.3333333333333,
+                "end": 394.06666666666666,
+                "startFrame": 11770,
+                "endFrame": 11822,
+                "words": 4,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "2b1f5d1a6528918c86db0d66e7d407458aaa3e4faf735d3203864cf1d36e3802"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 8 eventos a la suma acumulada. ese subíndice abre paréntesis, 8, cierra paréntesis igual a 0 coma 0 8 9 5 0 4 4 9 6 8 4 0 1 7 5 8 3 más 0 coma 0 6 5 5 2 3 2 8 4 9 2 7 2 8 7 0 7.",
+                "start": 394.3666666666667,
+                "end": 419.6666666666667,
+                "startFrame": 11831,
+                "endFrame": 12590,
+                "words": 59,
+                "sceneIndex": 22,
+                "cueIndex": 1,
+                "sourceCueSha256": "d2d6262aba4287b69b653be101a7ef72c351e79de68d8aa0a05ca157ca1aa794"
+              }
+            ]
+          },
+          {
+            "start": 419.96666666666664,
+            "end": 432.26666666666665,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 8, cierra paréntesis queda igual a 0 coma 1 5 5 0 2 7 7 8 1 7 6 7 4 6 2 9.",
+                "start": 419.96666666666664,
+                "end": 431.96666666666664,
+                "startFrame": 12599,
+                "endFrame": 12959,
+                "words": 28,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "6b84a010732a16c1aea23762640d2bafa6b3d5c10794737895a2d287c38f9f05"
+              }
+            ]
+          },
+          {
+            "start": 432.26666666666665,
+            "end": 459.46666666666664,
+            "cues": [
+              {
+                "text": "Añadir la masa 9.",
+                "start": 432.26666666666665,
+                "end": 434,
+                "startFrame": 12968,
+                "endFrame": 13020,
+                "words": 4,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "3800cc6b0878161a5c38e28fb50103c39670f5f3e0fb259278bf83c96fabc3ec"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 9 eventos a la suma acumulada. ese subíndice abre paréntesis, 9, cierra paréntesis igual a 0 coma 1 5 5 0 2 7 7 8 1 7 6 7 4 6 2 9 más 0 coma 0 8 7 3 6 4 3 7 9 9 0 3 0 4 9 4 3.",
+                "start": 434.3,
+                "end": 459.1666666666667,
+                "startFrame": 13029,
+                "endFrame": 13775,
+                "words": 58,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "ca37d23f980db5671e5bf917ec47ed4cdb8a895faaf3fb901935de7d5cd771fb"
+              }
+            ]
+          },
+          {
+            "start": 459.46666666666664,
+            "end": 472.2,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 9, cierra paréntesis queda igual a 0 coma 2 4 2 3 9 2 1 6 1 6 7 0 5 1 2 3 3.",
+                "start": 459.46666666666664,
+                "end": 471.9,
+                "startFrame": 13784,
+                "endFrame": 14157,
+                "words": 29,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "46c20bce0e7296069631ab7913f3dabf012b392ed1b3c6674430ab04599eef88"
+              }
+            ]
+          },
+          {
+            "start": 472.2,
+            "end": 499.8333333333333,
+            "cues": [
+              {
+                "text": "Añadir la masa 10.",
+                "start": 472.2,
+                "end": 473.93333333333334,
+                "startFrame": 14166,
+                "endFrame": 14218,
+                "words": 4,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "90fd6e3bf73ab310f7f77586e4d20f59503db3d0758bc84255a10cfc0e6d8b1f"
+              },
+              {
+                "text": "Incorporo solo la probabilidad de 10 eventos a la suma acumulada. ese subíndice abre paréntesis, 10, cierra paréntesis igual a 0 coma 2 4 2 3 9 2 1 6 1 6 7 0 5 1 2 3 3 más 0 coma 1 0 4 8 3 7 2 5 5 8 8 3 6 5 9 3 2.",
+                "start": 474.23333333333335,
+                "end": 499.53333333333336,
+                "startFrame": 14227,
+                "endFrame": 14986,
+                "words": 59,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "a0e2cca81f8bf2200b26119febfea6ebcd311aa571b148b6ad27cb2505dc00ab"
+              }
+            ]
+          },
+          {
+            "start": 499.8333333333333,
+            "end": 512.5666666666667,
+            "cues": [
+              {
+                "text": "ese subíndice abre paréntesis, 10, cierra paréntesis queda igual a 0 coma 3 4 7 2 2 9 4 1 7 5 5 4 1 7 1 6 4.",
+                "start": 499.8333333333333,
+                "end": 512.2666666666667,
+                "startFrame": 14995,
+                "endFrame": 15368,
+                "words": 29,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "66b2c0e9d361c7959f41110065c19d2329873101dfd25558f441e5425ba4736a"
+              }
+            ]
+          },
+          {
+            "start": 512.5666666666667,
+            "end": 529.9,
+            "cues": [
+              {
+                "text": "Conservar la suma.",
+                "start": 512.5666666666667,
+                "end": 513.8666666666667,
+                "startFrame": 15377,
+                "endFrame": 15416,
+                "words": 3,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "54053b2ad18b294c5c4138d0b36a6f090e990f73ac906cca1295099e92221c3a"
+              },
+              {
+                "text": "La suma ya representa el suceso pedido. probabilidad de equis menor o igual que 10 igual a 0 coma 3 4 7 2 2 9 4 1 7 5 5 4 1 7 1 6 4.",
+                "start": 514.1666666666666,
+                "end": 529.6,
+                "startFrame": 15425,
+                "endFrame": 15888,
+                "words": 36,
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "sourceCueSha256": "4ae4df20438109705eb9e69ea069ec57ce23cf29846dabb88d19670b6d9d0436"
+              }
+            ]
+          },
+          {
+            "start": 529.9,
+            "end": 543.4,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 3 4 7 2 2 9 4 probabilidad entre 0 y 1.",
+                "start": 529.9,
+                "end": 537.2,
+                "startFrame": 15897,
+                "endFrame": 16116,
+                "words": 17,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "ed2c261c5c0993d695cb27257dd0915e57c7d154a6facf7df3fab95761305b9c"
+              },
+              {
+                "text": "No confundas una masa con una acumulada; lambda sigue siendo doce por año.",
+                "start": 537.5,
+                "end": 543.1,
+                "startFrame": 16125,
+                "endFrame": 16293,
+                "words": 13,
+                "sceneIndex": 29,
+                "cueIndex": 1,
+                "sourceCueSha256": "c6580d1b2d65ab0700c8bfc0b589431a23b02c7b9e97d9ec291c608f39272696"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
