@@ -1,0 +1,1133 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.4--survivors",
+  "kind": "exercise",
+  "title": "¿Qué probabilidad tiene al menos ocho supervivientes?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "6185de0fdf3e60891cfb6bd6c67e7650f90ef535a0aa72e50db673185c8a0626",
+  "src": "videos/ejercicio-pdf-u2-2.4--survivors/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.4--survivors/poster.jpg",
+  "duration": 623,
+  "frames": 18690,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "c1d81f0f44a7abb9cd080348579d43ba5e547b0fdb8d4ee736d404e8636b30b1",
+  "videoSha256": "a99f09a87a92d29ab79bfb01ccdd447eef080abcb9199ee4fd7397cd38073219",
+  "posterSha256": "33e6762d603105d32d24e7109ce5d30d49cca164883f29a7adfc43ead85ae169",
+  "canonicalSha256": "3dcbae445e040eff4ce0cc1b5561ea976bb9a0598f3332e94a1cbbd3a2a8a042",
+  "inputHash": "87b37f7eeb6051ed988b906fc6857c9c43118ef4ff912c8a4b77d5f06db8e84f",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "541931a16d900d0447d2a5a77c9bd1a59836d38430fb3011eaffd221a5757e19",
+    "canonicalSha256": "3dcbae445e040eff4ce0cc1b5561ea976bb9a0598f3332e94a1cbbd3a2a8a042",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.4",
+      "page": 13
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "2568f339d35a3b22be5ea96b1f794aac7f1883237e422fd8694ea2841db05fdd",
+    "transcriptSha256": "c1d81f0f44a7abb9cd080348579d43ba5e547b0fdb8d4ee736d404e8636b30b1",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.4",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.4--survivors",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "3dcbae445e040eff4ce0cc1b5561ea976bb9a0598f3332e94a1cbbd3a2a8a042",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 623,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.5,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué probabilidad tiene al menos ocho supervivientes?",
+            "start": 2.9,
+            "end": 5.9,
+            "startFrame": 87,
+            "endFrame": 177,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "740e2bc8eb19e0544d4a63364452796efb40008e2e0b860592006d16da94c0c4"
+          },
+          {
+            "text": "Queremos alcanzar o superar el recuento indicado.",
+            "start": 6.2,
+            "end": 9.2,
+            "startFrame": 186,
+            "endFrame": 276,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "4812e58bf1d92e1e43551b65ee8e8f27aaa29eac83db4a331eaa84e13c288152"
+          }
+        ]
+      },
+      {
+        "start": 9.5,
+        "end": 30.5,
+        "cues": [
+          {
+            "text": "equis cuenta éxitos en ene ensayos independientes con probabilidad común pe.",
+            "start": 9.5,
+            "end": 14.233333333333333,
+            "startFrame": 285,
+            "endFrame": 427,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "2a4061cef78b3b4978b37fbac3376eed043694f162f2ead3c5ba88651f0e192b"
+          },
+          {
+            "text": "Para ka éxitos, cada secuencia tiene ka factores pe y ene menos ka factores uno menos pe.",
+            "start": 14.533333333333333,
+            "end": 21.833333333333332,
+            "startFrame": 436,
+            "endFrame": 655,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "c11700b8a7f3052d71b9376784c9fbc62701ec33c3282ce37ff790910717b7dc"
+          },
+          {
+            "text": "El coeficiente binomial cuenta sus posiciones.",
+            "start": 22.133333333333333,
+            "end": 24.733333333333334,
+            "startFrame": 664,
+            "endFrame": 742,
+            "words": 6,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "aa86324a0d7fb5bbed2167d07dfabd534417d1895225b6bf4ec975c4b6622586"
+          },
+          {
+            "text": "Esto explica por qué multiplicamos posiciones por el peso de una secuencia.",
+            "start": 25.033333333333335,
+            "end": 30.2,
+            "startFrame": 751,
+            "endFrame": 906,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 3,
+            "sourceCueSha256": "7f1779130dd0ea9463d17270d2a6807078b6de26e72ad68d8c9b78cac31106a1"
+          }
+        ]
+      },
+      {
+        "start": 30.5,
+        "end": 35.96666666666667,
+        "cues": [
+          {
+            "text": "Mueren 4 de cada 20 animales; se tratan ene igual a 10.",
+            "start": 30.5,
+            "end": 35.666666666666664,
+            "startFrame": 915,
+            "endFrame": 1070,
+            "words": 12,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "5dc133b9ed03ce516b7b4ee3098466b13df46eddab93f8dd618103ee6651484c"
+          }
+        ]
+      },
+      {
+        "start": 35.96666666666667,
+        "end": 40.56666666666667,
+        "cues": [
+          {
+            "text": "Animales independientes y probabilidad de supervivencia común en el modelo.",
+            "start": 35.96666666666667,
+            "end": 40.266666666666666,
+            "startFrame": 1079,
+            "endFrame": 1208,
+            "words": 10,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "ec80cf8a5f2e039335258dce6f0b1b0b3b74603b06dbdf3d72a97dab2f536133"
+          }
+        ]
+      },
+      {
+        "start": 40.56666666666667,
+        "end": 51.03333333333333,
+        "cues": [
+          {
+            "text": "Convierto el recuento de muertes en proporción.",
+            "start": 40.56666666666667,
+            "end": 43.56666666666667,
+            "startFrame": 1217,
+            "endFrame": 1307,
+            "words": 7,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "8a94421f2bcc4f7ecf7f9df281decb6bb0777748061a135e1d307e33ab3bc66a"
+          },
+          {
+            "text": "El complemento acaba un entero antes del límite para no perder la masa del propio límite.",
+            "start": 43.86666666666667,
+            "end": 50.733333333333334,
+            "startFrame": 1316,
+            "endFrame": 1522,
+            "words": 16,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "8d46cd42bc21e0f6b40537b5ba828c1b9f231ef981aeb14c11203b6dad5e255a"
+          }
+        ]
+      },
+      {
+        "start": 51.03333333333333,
+        "end": 60.233333333333334,
+        "cues": [
+          {
+            "text": "La probabilidad de morir.",
+            "start": 51.03333333333333,
+            "end": 52.766666666666666,
+            "startFrame": 1531,
+            "endFrame": 1583,
+            "words": 4,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "1ad181f0fe8d154d9b3bec7dc587229f9811a24ee92e41b83214eee02f021c05"
+          },
+          {
+            "text": "Convierto el recuento de muertes en proporción. probabilidad de morir igual a 4 dividido entre 20.",
+            "start": 53.06666666666667,
+            "end": 59.93333333333333,
+            "startFrame": 1592,
+            "endFrame": 1798,
+            "words": 16,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "6402141b942bbec2a83c9a3dbf0b3a989a72b10a63927e509992a784b855bb18"
+          }
+        ]
+      },
+      {
+        "start": 60.233333333333334,
+        "end": 64.4,
+        "cues": [
+          {
+            "text": "probabilidad de morir queda igual a 0 coma 2.",
+            "start": 60.233333333333334,
+            "end": 64.1,
+            "startFrame": 1807,
+            "endFrame": 1923,
+            "words": 9,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "74e51fee627fdd3dfb9356f05aa130b08261f130740bbc18bc2cd7e59072db28"
+          }
+        ]
+      },
+      {
+        "start": 64.4,
+        "end": 75.33333333333333,
+        "cues": [
+          {
+            "text": "La probabilidad de sobrevivir.",
+            "start": 64.4,
+            "end": 66.13333333333334,
+            "startFrame": 1932,
+            "endFrame": 1984,
+            "words": 4,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "02ac2cb381dcbe5603ab53e96c74b7fc99571c5267607ecdc4f9aed08932ffd0"
+          },
+          {
+            "text": "El éxito que cuenta equis es sobrevivir, por eso tomo el complemento. pe igual a 1 menos 0 coma 2.",
+            "start": 66.43333333333334,
+            "end": 75.03333333333333,
+            "startFrame": 1993,
+            "endFrame": 2251,
+            "words": 20,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "1e8e86139fbe74534bf57b659f3bd668b8e1e15b249e5eea7584723c4233dad4"
+          }
+        ]
+      },
+      {
+        "start": 75.33333333333333,
+        "end": 78.63333333333334,
+        "cues": [
+          {
+            "text": "pe queda igual a 0 coma 8.",
+            "start": 75.33333333333333,
+            "end": 78.33333333333333,
+            "startFrame": 2260,
+            "endFrame": 2350,
+            "words": 7,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "1dfa6adebb85a73b1984e35446f128e214f077d880a3cca1455fd79598b86f6a"
+          }
+        ]
+      },
+      {
+        "start": 78.63333333333334,
+        "end": 94.56666666666666,
+        "cues": [
+          {
+            "text": "Identificar el modelo.",
+            "start": 78.63333333333334,
+            "end": 79.93333333333334,
+            "startFrame": 2359,
+            "endFrame": 2398,
+            "words": 3,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "615e045726480439685a6ffbc8c686dd7c9310fe2a5fb71d22284a5c0bdfe58c"
+          },
+          {
+            "text": "El total es fijo y cada animal tiene dos resultados.",
+            "start": 80.23333333333333,
+            "end": 84.53333333333333,
+            "startFrame": 2407,
+            "endFrame": 2536,
+            "words": 10,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "a39ac7b3e91abbbd8b7092d9dfdbe06405940be1e2f21b90eacf8eeb71204607"
+          },
+          {
+            "text": "Bajo independencia y probabilidad común, equis es binomial. equis sigue la distribución Bin abre paréntesis, 10 y 0 coma 8, cierra paréntesis.",
+            "start": 84.83333333333333,
+            "end": 94.26666666666667,
+            "startFrame": 2545,
+            "endFrame": 2828,
+            "words": 22,
+            "sceneIndex": 9,
+            "cueIndex": 2,
+            "sourceCueSha256": "134fee8a389465909007763d157f81845123d6043245a7bc877e36105cf0bba3"
+          }
+        ]
+      },
+      {
+        "start": 94.56666666666666,
+        "end": 102.46666666666667,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 94.56666666666666,
+            "end": 98,
+            "startFrame": 2837,
+            "endFrame": 2940,
+            "words": 8,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 98.3,
+            "end": 102.16666666666667,
+            "startFrame": 2949,
+            "endFrame": 3065,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 102.46666666666667,
+        "end": 112.53333333333333,
+        "cues": [
+          {
+            "text": "El coeficiente binomial cuenta subconjuntos o posiciones sin orden.",
+            "start": 102.46666666666667,
+            "end": 106.33333333333333,
+            "startFrame": 3074,
+            "endFrame": 3190,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "eac76991b7a03bb3cd90333125765554ea0270d8a1ca92d28d21230ca59f2ca3"
+          },
+          {
+            "text": "Se calcula con factoriales, no multiplicando los dos números que aparecen en él.",
+            "start": 106.63333333333334,
+            "end": 112.23333333333333,
+            "startFrame": 3199,
+            "endFrame": 3367,
+            "words": 13,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "c11b524215758a97b7db32ac6d145fc137ee6fe79d4ebd2d5001fbb17c925da0"
+          }
+        ]
+      },
+      {
+        "start": 112.53333333333333,
+        "end": 140.03333333333333,
+        "cues": [
+          {
+            "text": "8 supervivientes: Contar las posiciones.",
+            "start": 112.53333333333333,
+            "end": 114.7,
+            "startFrame": 3376,
+            "endFrame": 3441,
+            "words": 5,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "bfda311c52f3b56b32fb724d892f80ffd6741844ff6d487804a96830d4a5281e"
+          },
+          {
+            "text": "Hay 10 ensayos y quiero 8 éxitos.",
+            "start": 115,
+            "end": 118,
+            "startFrame": 3450,
+            "endFrame": 3540,
+            "words": 7,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "cdc0ca88ee013b655daf09d34b9a8128a9473bfb6a36252635843cdfbf368633"
+          },
+          {
+            "text": "El coeficiente binomial cuenta en qué posiciones pueden aparecer. combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 8, cierra paréntesis en abre paréntesis, 8, cierra paréntesis igual a abre paréntesis, 10 factorial , cierra paréntesis dividido entre abre paréntesis, 8 factorial 2 factorial , cierra paréntesis.",
+            "start": 118.3,
+            "end": 139.73333333333332,
+            "startFrame": 3549,
+            "endFrame": 4192,
+            "words": 50,
+            "sceneIndex": 12,
+            "cueIndex": 2,
+            "sourceCueSha256": "a913e2a2df259d02f98f7929741de6b15a22196849cb45f442b6bce8aff45da1"
+          }
+        ]
+      },
+      {
+        "start": 140.03333333333333,
+        "end": 151.06666666666666,
+        "cues": [
+          {
+            "text": "combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 8, cierra paréntesis en abre paréntesis, 8, cierra paréntesis queda igual a 45.",
+            "start": 140.03333333333333,
+            "end": 150.76666666666668,
+            "startFrame": 4201,
+            "endFrame": 4523,
+            "words": 25,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "aedc0af086ef629dce3e2cb511de715bae15d24964737d0181dc0d71f251b929"
+          }
+        ]
+      },
+      {
+        "start": 151.06666666666666,
+        "end": 172.56666666666666,
+        "cues": [
+          {
+            "text": "8 supervivientes: Ponderar los éxitos.",
+            "start": 151.06666666666666,
+            "end": 153.23333333333332,
+            "startFrame": 4532,
+            "endFrame": 4597,
+            "words": 5,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "31cd3ab0469cf60345646564672bcf8b69b5abd316617985b69ee02953827e4a"
+          },
+          {
+            "text": "Cada éxito tiene probabilidad 0 coma 8.",
+            "start": 153.53333333333333,
+            "end": 156.53333333333333,
+            "startFrame": 4606,
+            "endFrame": 4696,
+            "words": 7,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "5c7f8749a3553c05ba02d46063bcdd9449332e7c0c9d35f7bddb34558ee448c5"
+          },
+          {
+            "text": "La independencia permite multiplicar esas probabilidades. 0 coma 8 elevado a abre paréntesis, 8, cierra paréntesis igual a 0 coma 1 6 7 7 7 2 1 6 0 0 0 0 0 0 0 1.",
+            "start": 156.83333333333334,
+            "end": 172.26666666666668,
+            "startFrame": 4705,
+            "endFrame": 5168,
+            "words": 36,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "5d7a80b6c836440298f7dbc7bba58d9e01deef27f3c9191896e5c13f5b2c910c"
+          }
+        ]
+      },
+      {
+        "start": 172.56666666666666,
+        "end": 192.93333333333334,
+        "cues": [
+          {
+            "text": "8 supervivientes: La probabilidad de fracaso.",
+            "start": 172.56666666666666,
+            "end": 175.16666666666666,
+            "startFrame": 5177,
+            "endFrame": 5255,
+            "words": 6,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "b470487c2910bcb6e1cab912e3372090de2043f5e508b7c0ac338c8ebafe0c14"
+          },
+          {
+            "text": "Resto la probabilidad de éxito de uno para obtener la probabilidad del otro resultado. 1 menos 0 coma 8 igual a 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6.",
+            "start": 175.46666666666667,
+            "end": 192.63333333333333,
+            "startFrame": 5264,
+            "endFrame": 5779,
+            "words": 40,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "67029fbee2383da0e2156049fbaf4cf409acebf48a75709fa0b4e5cae7741630"
+          }
+        ]
+      },
+      {
+        "start": 192.93333333333334,
+        "end": 221,
+        "cues": [
+          {
+            "text": "8 supervivientes: Ponderar los fracasos.",
+            "start": 192.93333333333334,
+            "end": 195.1,
+            "startFrame": 5788,
+            "endFrame": 5853,
+            "words": 5,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "87b1ea8f888200bc13d4ee09c2fa07f37fee3723adcdfe29886d80a6e5c3d3dc"
+          },
+          {
+            "text": "Quedan 2 fracasos, cada uno con probabilidad uno menos 0 coma 8. 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6 elevado a abre paréntesis, 2, cierra paréntesis igual a 0 coma 0 3 9 9 9 9 9 9 9 9 9 9 9 9 9 9 8.",
+            "start": 195.4,
+            "end": 220.7,
+            "startFrame": 5862,
+            "endFrame": 6621,
+            "words": 59,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "a5f687189a750565ff4c18c9058fee30480940ac5ce1b78aa7a2a49516cefef4"
+          }
+        ]
+      },
+      {
+        "start": 221,
+        "end": 233.2,
+        "cues": [
+          {
+            "text": "8 supervivientes: Combinar posiciones y pesos.",
+            "start": 221,
+            "end": 223.6,
+            "startFrame": 6630,
+            "endFrame": 6708,
+            "words": 6,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "189435422d3b68b575628bf2c646b784cfa4bff4112c2cf759a73e63c5f9e071"
+          },
+          {
+            "text": "Multiplico el número de secuencias por la probabilidad de cada secuencia, sin redondear los factores. probabilidad de equis igual a 8.",
+            "start": 223.9,
+            "end": 232.9,
+            "startFrame": 6717,
+            "endFrame": 6987,
+            "words": 21,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "9fde54b77ebebe11794dd7f906a26de8fc6a2e7194a86a2c90efdb631e6ac841"
+          }
+        ]
+      },
+      {
+        "start": 233.2,
+        "end": 261.8,
+        "cues": [
+          {
+            "text": "probabilidad de equis igual a 8 queda igual a combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 8, cierra paréntesis en abre paréntesis, 8, cierra paréntesis 0 coma 8 elevado a abre paréntesis, 8, cierra paréntesis 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6 elevado a abre paréntesis, 2, cierra paréntesis.",
+            "start": 233.2,
+            "end": 261.5,
+            "startFrame": 6996,
+            "endFrame": 7845,
+            "words": 66,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "162bc937407c4d0587e87095f0d5a0d4873614556d5ad3b50e8d6ac88fd4ceee"
+          }
+        ]
+      },
+      {
+        "start": 261.8,
+        "end": 289.3,
+        "cues": [
+          {
+            "text": "9 supervivientes: Contar las posiciones.",
+            "start": 261.8,
+            "end": 263.96666666666664,
+            "startFrame": 7854,
+            "endFrame": 7919,
+            "words": 5,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "ef3338062918adb892b7b5c61dd79b15a7e37f71adc1496c2b0b5199b51799e9"
+          },
+          {
+            "text": "Hay 10 ensayos y quiero 9 éxitos.",
+            "start": 264.26666666666665,
+            "end": 267.26666666666665,
+            "startFrame": 7928,
+            "endFrame": 8018,
+            "words": 7,
+            "sceneIndex": 19,
+            "cueIndex": 1,
+            "sourceCueSha256": "0ebbd015cbc428bb0b1e0288183568f106d9b99ac9c4c7cd9ec14fbc1264570c"
+          },
+          {
+            "text": "El coeficiente binomial cuenta en qué posiciones pueden aparecer. combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 9, cierra paréntesis en abre paréntesis, 9, cierra paréntesis igual a abre paréntesis, 10 factorial , cierra paréntesis dividido entre abre paréntesis, 9 factorial 1 factorial , cierra paréntesis.",
+            "start": 267.56666666666666,
+            "end": 289,
+            "startFrame": 8027,
+            "endFrame": 8670,
+            "words": 50,
+            "sceneIndex": 19,
+            "cueIndex": 2,
+            "sourceCueSha256": "0bb12d8ee42539a49755b930931a6bc67729ebbf3e248b5d22025d181c2bdbc1"
+          }
+        ]
+      },
+      {
+        "start": 289.3,
+        "end": 300.3333333333333,
+        "cues": [
+          {
+            "text": "combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 9, cierra paréntesis en abre paréntesis, 9, cierra paréntesis queda igual a 10.",
+            "start": 289.3,
+            "end": 300.03333333333336,
+            "startFrame": 8679,
+            "endFrame": 9001,
+            "words": 25,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "bb8265bdd9fbd5c5cbf7a3cd90440b742407dc8608927a1606e003a53da0d0fc"
+          }
+        ]
+      },
+      {
+        "start": 300.3333333333333,
+        "end": 322.26666666666665,
+        "cues": [
+          {
+            "text": "9 supervivientes: Ponderar los éxitos.",
+            "start": 300.3333333333333,
+            "end": 302.5,
+            "startFrame": 9010,
+            "endFrame": 9075,
+            "words": 5,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "75314a55cac8068806cbc6d1f6b411e0629baff7e34b6d00d3c87a3759914206"
+          },
+          {
+            "text": "Cada éxito tiene probabilidad 0 coma 8.",
+            "start": 302.8,
+            "end": 305.8,
+            "startFrame": 9084,
+            "endFrame": 9174,
+            "words": 7,
+            "sceneIndex": 21,
+            "cueIndex": 1,
+            "sourceCueSha256": "5c7f8749a3553c05ba02d46063bcdd9449332e7c0c9d35f7bddb34558ee448c5"
+          },
+          {
+            "text": "La independencia permite multiplicar esas probabilidades. 0 coma 8 elevado a abre paréntesis, 9, cierra paréntesis igual a 0 coma 1 3 4 2 1 7 7 2 8 0 0 0 0 0 0 0 6.",
+            "start": 306.1,
+            "end": 321.96666666666664,
+            "startFrame": 9183,
+            "endFrame": 9659,
+            "words": 37,
+            "sceneIndex": 21,
+            "cueIndex": 2,
+            "sourceCueSha256": "d98cbbd309c4c29cc2a3f6351aa5726242f633b67778bdc68ce848fa6a66cde9"
+          }
+        ]
+      },
+      {
+        "start": 322.26666666666665,
+        "end": 342.6333333333333,
+        "cues": [
+          {
+            "text": "9 supervivientes: La probabilidad de fracaso.",
+            "start": 322.26666666666665,
+            "end": 324.8666666666667,
+            "startFrame": 9668,
+            "endFrame": 9746,
+            "words": 6,
+            "sceneIndex": 22,
+            "cueIndex": 0,
+            "sourceCueSha256": "fc5bfdd86c4926b2802ec81a451315c74f8bc461251dd34f30498448b8e8e889"
+          },
+          {
+            "text": "Resto la probabilidad de éxito de uno para obtener la probabilidad del otro resultado. 1 menos 0 coma 8 igual a 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6.",
+            "start": 325.1666666666667,
+            "end": 342.3333333333333,
+            "startFrame": 9755,
+            "endFrame": 10270,
+            "words": 40,
+            "sceneIndex": 22,
+            "cueIndex": 1,
+            "sourceCueSha256": "67029fbee2383da0e2156049fbaf4cf409acebf48a75709fa0b4e5cae7741630"
+          }
+        ]
+      },
+      {
+        "start": 342.6333333333333,
+        "end": 370.7,
+        "cues": [
+          {
+            "text": "9 supervivientes: Ponderar los fracasos.",
+            "start": 342.6333333333333,
+            "end": 344.8,
+            "startFrame": 10279,
+            "endFrame": 10344,
+            "words": 5,
+            "sceneIndex": 23,
+            "cueIndex": 0,
+            "sourceCueSha256": "5cb678ef31ff27880e7a970778fe21b6af34c7490fd499d3847c67d06d51d8bd"
+          },
+          {
+            "text": "Quedan 1 fracasos, cada uno con probabilidad uno menos 0 coma 8. 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6 elevado a abre paréntesis, 1, cierra paréntesis igual a 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6.",
+            "start": 345.1,
+            "end": 370.4,
+            "startFrame": 10353,
+            "endFrame": 11112,
+            "words": 59,
+            "sceneIndex": 23,
+            "cueIndex": 1,
+            "sourceCueSha256": "19547850774755dc1d228b65160e83e4aaf79679afa8377e96d3c8274f267e3c"
+          }
+        ]
+      },
+      {
+        "start": 370.7,
+        "end": 382.9,
+        "cues": [
+          {
+            "text": "9 supervivientes: Combinar posiciones y pesos.",
+            "start": 370.7,
+            "end": 373.3,
+            "startFrame": 11121,
+            "endFrame": 11199,
+            "words": 6,
+            "sceneIndex": 24,
+            "cueIndex": 0,
+            "sourceCueSha256": "b9a2fcc0b9191c4b40594f5301a9d52d493852837b2337c15e8bdf5cbbe3bc8d"
+          },
+          {
+            "text": "Multiplico el número de secuencias por la probabilidad de cada secuencia, sin redondear los factores. probabilidad de equis igual a 9.",
+            "start": 373.6,
+            "end": 382.6,
+            "startFrame": 11208,
+            "endFrame": 11478,
+            "words": 21,
+            "sceneIndex": 24,
+            "cueIndex": 1,
+            "sourceCueSha256": "c98fb4febceef6ccde1e0f62d1c82027fa9996db0ef3b457ffbd24cc4e65592b"
+          }
+        ]
+      },
+      {
+        "start": 382.9,
+        "end": 411.5,
+        "cues": [
+          {
+            "text": "probabilidad de equis igual a 9 queda igual a combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 9, cierra paréntesis en abre paréntesis, 9, cierra paréntesis 0 coma 8 elevado a abre paréntesis, 9, cierra paréntesis 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6 elevado a abre paréntesis, 1, cierra paréntesis.",
+            "start": 382.9,
+            "end": 411.2,
+            "startFrame": 11487,
+            "endFrame": 12336,
+            "words": 66,
+            "sceneIndex": 25,
+            "cueIndex": 0,
+            "sourceCueSha256": "fbb455196ce4299191e18636272c36b55a8b2100764d3e3b8b6435d8524befab"
+          }
+        ]
+      },
+      {
+        "start": 411.5,
+        "end": 439,
+        "cues": [
+          {
+            "text": "10 supervivientes: Contar las posiciones.",
+            "start": 411.5,
+            "end": 413.6666666666667,
+            "startFrame": 12345,
+            "endFrame": 12410,
+            "words": 5,
+            "sceneIndex": 26,
+            "cueIndex": 0,
+            "sourceCueSha256": "e0a2d524a200c3a88760222a4e61aa2da9ba969cb110efa376aaa256a40c425e"
+          },
+          {
+            "text": "Hay 10 ensayos y quiero 10 éxitos.",
+            "start": 413.96666666666664,
+            "end": 416.96666666666664,
+            "startFrame": 12419,
+            "endFrame": 12509,
+            "words": 7,
+            "sceneIndex": 26,
+            "cueIndex": 1,
+            "sourceCueSha256": "243b5502154880e1903494932289c75fc38c6413cf95d13b7d7dc470c95cdd2e"
+          },
+          {
+            "text": "El coeficiente binomial cuenta en qué posiciones pueden aparecer. combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 10, cierra paréntesis en abre paréntesis, 10, cierra paréntesis igual a abre paréntesis, 10 factorial , cierra paréntesis dividido entre abre paréntesis, 10 factorial 0 factorial , cierra paréntesis.",
+            "start": 417.26666666666665,
+            "end": 438.7,
+            "startFrame": 12518,
+            "endFrame": 13161,
+            "words": 50,
+            "sceneIndex": 26,
+            "cueIndex": 2,
+            "sourceCueSha256": "baec946de9ae626ad978a4d5696e43efca22c9184066787854e6dfb81d5c3d52"
+          }
+        ]
+      },
+      {
+        "start": 439,
+        "end": 450.03333333333336,
+        "cues": [
+          {
+            "text": "combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 10, cierra paréntesis en abre paréntesis, 10, cierra paréntesis queda igual a 1.",
+            "start": 439,
+            "end": 449.73333333333335,
+            "startFrame": 13170,
+            "endFrame": 13492,
+            "words": 25,
+            "sceneIndex": 27,
+            "cueIndex": 0,
+            "sourceCueSha256": "ba5c6ebce557164c79f046136a67869a701539b3c7a0787bd4d6643bd6f0a7e6"
+          }
+        ]
+      },
+      {
+        "start": 450.03333333333336,
+        "end": 471.96666666666664,
+        "cues": [
+          {
+            "text": "10 supervivientes: Ponderar los éxitos.",
+            "start": 450.03333333333336,
+            "end": 452.2,
+            "startFrame": 13501,
+            "endFrame": 13566,
+            "words": 5,
+            "sceneIndex": 28,
+            "cueIndex": 0,
+            "sourceCueSha256": "3ded85209bc4442c4b8f91e7c03da181601a4ffde639a3c78215059f23081d77"
+          },
+          {
+            "text": "Cada éxito tiene probabilidad 0 coma 8.",
+            "start": 452.5,
+            "end": 455.5,
+            "startFrame": 13575,
+            "endFrame": 13665,
+            "words": 7,
+            "sceneIndex": 28,
+            "cueIndex": 1,
+            "sourceCueSha256": "5c7f8749a3553c05ba02d46063bcdd9449332e7c0c9d35f7bddb34558ee448c5"
+          },
+          {
+            "text": "La independencia permite multiplicar esas probabilidades. 0 coma 8 elevado a abre paréntesis, 10, cierra paréntesis igual a 0 coma 1 0 7 3 7 4 1 8 2 4 0 0 0 0 0 0 6.",
+            "start": 455.8,
+            "end": 471.6666666666667,
+            "startFrame": 13674,
+            "endFrame": 14150,
+            "words": 37,
+            "sceneIndex": 28,
+            "cueIndex": 2,
+            "sourceCueSha256": "9aceeef9aeea3ddcf6bb83f8dbe5c836750458eadbe159580593fcb79bdf73f8"
+          }
+        ]
+      },
+      {
+        "start": 471.96666666666664,
+        "end": 492.3333333333333,
+        "cues": [
+          {
+            "text": "10 supervivientes: La probabilidad de fracaso.",
+            "start": 471.96666666666664,
+            "end": 474.56666666666666,
+            "startFrame": 14159,
+            "endFrame": 14237,
+            "words": 6,
+            "sceneIndex": 29,
+            "cueIndex": 0,
+            "sourceCueSha256": "2294592b424f885ef8e0738f0637a68ae8f38d3cbe1a7616f1031ac5cc9faf61"
+          },
+          {
+            "text": "Resto la probabilidad de éxito de uno para obtener la probabilidad del otro resultado. 1 menos 0 coma 8 igual a 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6.",
+            "start": 474.8666666666667,
+            "end": 492.03333333333336,
+            "startFrame": 14246,
+            "endFrame": 14761,
+            "words": 40,
+            "sceneIndex": 29,
+            "cueIndex": 1,
+            "sourceCueSha256": "67029fbee2383da0e2156049fbaf4cf409acebf48a75709fa0b4e5cae7741630"
+          }
+        ]
+      },
+      {
+        "start": 492.3333333333333,
+        "end": 512.7,
+        "cues": [
+          {
+            "text": "10 supervivientes: Ponderar los fracasos.",
+            "start": 492.3333333333333,
+            "end": 494.5,
+            "startFrame": 14770,
+            "endFrame": 14835,
+            "words": 5,
+            "sceneIndex": 30,
+            "cueIndex": 0,
+            "sourceCueSha256": "061f0941d7638b11c9e407f857d94039520b48bca8c575a651de7bea25b7adb9"
+          },
+          {
+            "text": "Quedan 0 fracasos, cada uno con probabilidad uno menos 0 coma 8. 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6 elevado a abre paréntesis, 0, cierra paréntesis igual a 1.",
+            "start": 494.8,
+            "end": 512.4,
+            "startFrame": 14844,
+            "endFrame": 15372,
+            "words": 41,
+            "sceneIndex": 30,
+            "cueIndex": 1,
+            "sourceCueSha256": "571b7d68a9fd31c1ae7de756f3db1f1c04160fad1ad7b5149954d0687c88c92f"
+          }
+        ]
+      },
+      {
+        "start": 512.7,
+        "end": 524.9,
+        "cues": [
+          {
+            "text": "10 supervivientes: Combinar posiciones y pesos.",
+            "start": 512.7,
+            "end": 515.3,
+            "startFrame": 15381,
+            "endFrame": 15459,
+            "words": 6,
+            "sceneIndex": 31,
+            "cueIndex": 0,
+            "sourceCueSha256": "3a289d0731ee7d571e54501482896d289cf801c451cef65744194d55edba3b9f"
+          },
+          {
+            "text": "Multiplico el número de secuencias por la probabilidad de cada secuencia, sin redondear los factores. probabilidad de equis igual a 10.",
+            "start": 515.6,
+            "end": 524.6,
+            "startFrame": 15468,
+            "endFrame": 15738,
+            "words": 21,
+            "sceneIndex": 31,
+            "cueIndex": 1,
+            "sourceCueSha256": "695d78d16bb6b2dd321aa9447b9e8143145fbcc8c03333169c4da389fe6da968"
+          }
+        ]
+      },
+      {
+        "start": 524.9,
+        "end": 553.5,
+        "cues": [
+          {
+            "text": "probabilidad de equis igual a 10 queda igual a combinaciones de abre paréntesis, 10, cierra paréntesis elementos tomados de abre paréntesis, 10, cierra paréntesis en abre paréntesis, 10, cierra paréntesis 0 coma 8 elevado a abre paréntesis, 10, cierra paréntesis 0 coma 1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 6 elevado a abre paréntesis, 0, cierra paréntesis.",
+            "start": 524.9,
+            "end": 553.2,
+            "startFrame": 15747,
+            "endFrame": 16596,
+            "words": 66,
+            "sceneIndex": 32,
+            "cueIndex": 0,
+            "sourceCueSha256": "bfd8ff68efedf62ec0e757d855e13ec4d4539b3153540a0ea596376852579c83"
+          }
+        ]
+      },
+      {
+        "start": 553.5,
+        "end": 590.1333333333333,
+        "cues": [
+          {
+            "text": "Sumar los resultados compatibles.",
+            "start": 553.5,
+            "end": 555.2333333333333,
+            "startFrame": 16605,
+            "endFrame": 16657,
+            "words": 4,
+            "sceneIndex": 33,
+            "cueIndex": 0,
+            "sourceCueSha256": "63218c8ec63d0d4990c2d553ffac8123b68ac6f32b33f57860beae0365b1b6a9"
+          },
+          {
+            "text": "Al menos ocho incluye ocho, nueve y diez; no solo ocho. probabilidad de equis mayor o igual que 8 igual a 0 coma 3 0 1 9 8 9 8 8 8 0 0 0 0 0 0 0 4 más 0 coma 2 6 8 4 3 5 4 5 6 0 0 0 0 0 0 0 7 más 0 coma 1 0 7 3 7 4 1 8 2 4 0 0 0 0 0 0 6.",
+            "start": 555.5333333333333,
+            "end": 589.8333333333334,
+            "startFrame": 16666,
+            "endFrame": 17695,
+            "words": 80,
+            "sceneIndex": 33,
+            "cueIndex": 1,
+            "sourceCueSha256": "f905bfa2e4ee4da4368d7526a17d57023894efccd72ec25a224f34499604c34d"
+          }
+        ]
+      },
+      {
+        "start": 590.1333333333333,
+        "end": 609.1,
+        "cues": [
+          {
+            "text": "Comprobar por el complemento.",
+            "start": 590.1333333333333,
+            "end": 591.8666666666667,
+            "startFrame": 17704,
+            "endFrame": 17756,
+            "words": 4,
+            "sceneIndex": 34,
+            "cueIndex": 0,
+            "sourceCueSha256": "ccb70f172f23236f08538715ccab438d3b003f56a386e0064fe6da1fb2b44eef"
+          },
+          {
+            "text": "El caso contrario acaba en siete.",
+            "start": 592.1666666666666,
+            "end": 594.7666666666667,
+            "startFrame": 17765,
+            "endFrame": 17843,
+            "words": 6,
+            "sceneIndex": 34,
+            "cueIndex": 1,
+            "sourceCueSha256": "8e91200af68a5f5107bd7720d5177dcc3d400f6656b91045f149ae040c13179a"
+          },
+          {
+            "text": "Escribo la forma equivalente para no cometer un desfase de una unidad. probabilidad de equis mayor o igual que 8 igual a 1 menos efe subíndice equis abre paréntesis, 7, cierra paréntesis.",
+            "start": 595.0666666666667,
+            "end": 608.8,
+            "startFrame": 17852,
+            "endFrame": 18264,
+            "words": 32,
+            "sceneIndex": 34,
+            "cueIndex": 2,
+            "sourceCueSha256": "e1208464793013c81423813435140e4e49c2f2535cf2011d1a4d1b6944266cb0"
+          }
+        ]
+      },
+      {
+        "start": 609.1,
+        "end": 623,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 6 7 7 7 9 9 5 probabilidad entre 0 y 1.",
+            "start": 609.1,
+            "end": 616.4,
+            "startFrame": 18273,
+            "endFrame": 18492,
+            "words": 17,
+            "sceneIndex": 35,
+            "cueIndex": 0,
+            "sourceCueSha256": "96aa7de955cfec3f7787c27d7ec4c4f39b523a16e7252527db6ea328feda32dd"
+          },
+          {
+            "text": "La cifra depende de la independencia y de mantener la misma probabilidad de supervivencia.",
+            "start": 616.7,
+            "end": 622.7,
+            "startFrame": 18501,
+            "endFrame": 18681,
+            "words": 14,
+            "sceneIndex": 35,
+            "cueIndex": 1,
+            "sourceCueSha256": "ff7b7cf3b918014c0167af84d609587b56a419951352bb5e2c641ea00493c842"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
