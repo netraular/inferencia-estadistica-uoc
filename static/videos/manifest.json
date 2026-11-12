@@ -105797,6 +105797,1831 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "marginales": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "marginales",
+      "kind": "recap",
+      "title": "Marginales: conservar una medida y olvidar otra",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "82f486b09353e9a9b7826d9c870def6caa6343524d4611431f04073710264724",
+      "src": "videos/marginales/video.mp4",
+      "poster": "videos/marginales/poster.jpg",
+      "duration": 899.7666666666667,
+      "frames": 26993,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "ea41d22b03189f3cec16b407650fc520b668352334f4a5ccfff0eef3bdd29fea",
+      "videoSha256": "945ffc00f3f8bdc52277ae48dbc36020a463872dc50a9037af87026de42d84af",
+      "posterSha256": "14324a1457770ffb778cf8167325ee2dc107303451688dba1d06dfa828e4dbc4",
+      "canonicalSha256": "41fcacca7929ed3eb3be6e4e62dc3dbc848240833b5b6d88a8bb1019b40c498d",
+      "inputHash": "5940cbd13f0313ba4d0f6ebd3c7f9642164d2e62925b94ade9c21602d6344ca3",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "5bdcfb5ca934dd79ade4c7486e38073b12e1866e3f5a0ee55f816e4ca14b4113",
+        "canonicalSha256": "41fcacca7929ed3eb3be6e4e62dc3dbc848240833b5b6d88a8bb1019b40c498d",
+        "source": {
+          "document": "FundamentosInferencia_Tema4.pdf",
+          "section": "4.4 y 4.6.2: marginales de tablas y densidades; ejercicios U3 3 y 5"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "9c04c882e3f19a928be289ac8ac7e5eb8295adcd80189a82265ef4bcef88d091",
+        "transcriptSha256": "ea41d22b03189f3cec16b407650fc520b668352334f4a5ccfff0eef3bdd29fea",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "marginales",
+      "transcript": {
+        "id": "marginales",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "41fcacca7929ed3eb3be6e4e62dc3dbc848240833b5b6d88a8bb1019b40c498d",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 899.7666666666667,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 69.66666666666667,
+            "cues": [
+              {
+                "text": "Hola.",
+                "start": 0,
+                "end": 1.2,
+                "startFrame": 0,
+                "endFrame": 36,
+                "words": 1,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+              },
+              {
+                "text": "Vamos a obtener la distribución de una sola medida a partir de dos medidas conjuntas.",
+                "start": 1.5,
+                "end": 7.933333333333334,
+                "startFrame": 45,
+                "endFrame": 238,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "724c856f234e91237a1e6fe666e6c77fedcf22ed133a1c185cd38e03261ae8d9"
+              },
+              {
+                "text": "Usamos filas cero coma dos, cero coma tres, y cero coma uno, cero coma cuatro.",
+                "start": 8.233333333333333,
+                "end": 14.666666666666666,
+                "startFrame": 247,
+                "endFrame": 440,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "9dc972ef30d5bfdc34962c5d8feadcecd8c0e8bc96dba0c461cae1610097a057"
+              },
+              {
+                "text": "Ahora preguntamos solo por i griega; no se ha observado ni fijado equis.",
+                "start": 14.966666666666667,
+                "end": 20.566666666666666,
+                "startFrame": 449,
+                "endFrame": 617,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "sourceCueSha256": "e611abcc30a4bf93b61b7b54384301a5fd56ff5c46e63976492f4ff02a284556"
+              },
+              {
+                "text": "La marginal suma la masa conjunta sobre todos los valores de la coordenada que descartamos.",
+                "start": 20.866666666666667,
+                "end": 27.3,
+                "startFrame": 626,
+                "endFrame": 819,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "sourceCueSha256": "0fb4959419c365cc19b403f6f221e9685992783761e0ef49385fe5187e19b197"
+              },
+              {
+                "text": "Las posibilidades de equis son excluyentes y cubren todos los casos; por eso sumarlas no duplica ni pierde organismos.",
+                "start": 27.6,
+                "end": 35.766666666666666,
+                "startFrame": 828,
+                "endFrame": 1073,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "sourceCueSha256": "a334a482aeed60d2cef33e74330c901b415556d138860efa389f7ca4fc9af0de"
+              },
+              {
+                "text": "Para i griega uno sumamos su columna: cero coma tres más cero coma cuatro, igual a cero coma siete.",
+                "start": 36.06666666666667,
+                "end": 44.233333333333334,
+                "startFrame": 1082,
+                "endFrame": 1327,
+                "words": 19,
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "sourceCueSha256": "ce960f6e93afd71acaf072f1209d6044e4e8181a8e653652e3eb99b092f49bcb"
+              },
+              {
+                "text": "Para i griega cero obtenemos cero coma tres.",
+                "start": 44.53333333333333,
+                "end": 47.96666666666667,
+                "startFrame": 1336,
+                "endFrame": 1439,
+                "words": 8,
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "sourceCueSha256": "a46b83182cc8b7a5a2f8672d4ab71955e94fe0c53d54bb3bc8a7594e3bf34b84"
+              },
+              {
+                "text": "Ambas marginales suman uno, como debe hacer cualquier masa válida.",
+                "start": 48.266666666666666,
+                "end": 52.56666666666667,
+                "startFrame": 1448,
+                "endFrame": 1577,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "sourceCueSha256": "13e5df0789702621cc90410144063c87178f402790fe324bb6320cd493085240"
+              },
+              {
+                "text": "No dividimos por una fila: eso condicionaría en un valor conocido de equis.",
+                "start": 52.86666666666667,
+                "end": 58.46666666666667,
+                "startFrame": 1586,
+                "endFrame": 1754,
+                "words": 13,
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "sourceCueSha256": "9f053ba770def724089c3464a2539533233f4b5de5eb7836aa25010e1b5132c9"
+              },
+              {
+                "text": "Marginalizar borra esa distinción, mientras que condicionar conserva una parte de los casos y vuelve a normalizarla.",
+                "start": 58.766666666666666,
+                "end": 66.06666666666666,
+                "startFrame": 1763,
+                "endFrame": 1982,
+                "words": 17,
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "sourceCueSha256": "69b8ce6464cfb46960e962bfd250cbb1dd362ae7c7ee52b450d0b6523a248522"
+              },
+              {
+                "text": "Ninguna de las dos operaciones presupone independencia.",
+                "start": 66.36666666666666,
+                "end": 69.36666666666666,
+                "startFrame": 1991,
+                "endFrame": 2081,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "sourceCueSha256": "302a0b8ce1f972c437c3ae45af5a0b2f8cf91c90bad23694d5ac225e755a346e"
+              }
+            ]
+          },
+          {
+            "start": 69.66666666666667,
+            "end": 140.26666666666668,
+            "cues": [
+              {
+                "text": "En continuo sustituimos la suma por integral.",
+                "start": 69.66666666666667,
+                "end": 72.66666666666667,
+                "startFrame": 2090,
+                "endFrame": 2180,
+                "words": 7,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "81a15427ef33236504900952167f1ebc8ee34287ea98859231bb925b30587ef1"
+              },
+              {
+                "text": "Tomamos densidad una mitad sobre el triángulo no negativo de capacidad dos.",
+                "start": 72.96666666666667,
+                "end": 78.13333333333334,
+                "startFrame": 2189,
+                "endFrame": 2344,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "e5ea117ad67cd08a908ccf94ab52e5f33927b9be93f01640ca991615f96834fb"
+              },
+              {
+                "text": "Su área es dos y altura por área da uno: la conjunta está normalizada.",
+                "start": 78.43333333333334,
+                "end": 84.43333333333334,
+                "startFrame": 2353,
+                "endFrame": 2533,
+                "words": 14,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "25041a85929a62d7751f49582d98173286bcf35ed304741b3212b53bdb4a6ac7"
+              },
+              {
+                "text": "La fórmula marginal integra sobre toda la otra coordenada, pero fuera del triángulo la conjunta es cero.",
+                "start": 84.73333333333333,
+                "end": 92.03333333333333,
+                "startFrame": 2542,
+                "endFrame": 2761,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "d54b63391394815e906b595fca265290577e713f4e4b5288804b7a83fca024ef"
+              },
+              {
+                "text": "Con equis entre cero y dos, i griega recorre de cero a dos menos equis.",
+                "start": 92.33333333333333,
+                "end": 98.76666666666667,
+                "startFrame": 2770,
+                "endFrame": 2963,
+                "words": 15,
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "sourceCueSha256": "8982276a67577059ebcee4f6ace3f27868d890d898f4818c69b79982e8d414c3"
+              },
+              {
+                "text": "Integrar la altura constante da longitud del corte entre dos.",
+                "start": 99.06666666666666,
+                "end": 103.36666666666666,
+                "startFrame": 2972,
+                "endFrame": 3101,
+                "words": 10,
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "sourceCueSha256": "54e3d7706fb13c008a81a2be42671531edfd8115953ae7317a37e12f464d5080"
+              },
+              {
+                "text": "Fuera de cero a dos la marginal es cero.",
+                "start": 103.66666666666667,
+                "end": 107.53333333333333,
+                "startFrame": 3110,
+                "endFrame": 3226,
+                "words": 9,
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "sourceCueSha256": "36b9c591a42c0a30f9d555ae90e24fd25477bc0d05cc560ee23fe5b907746847"
+              },
+              {
+                "text": "Dentro disminuye porque al aumentar equis queda menos espacio para i griega.",
+                "start": 107.83333333333333,
+                "end": 113,
+                "startFrame": 3235,
+                "endFrame": 3390,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "sourceCueSha256": "bf2add71753f21bc598240b5c37e276358e9ae61424ff01599edac3c230f4a27"
+              },
+              {
+                "text": "Su integral vuelve a ser uno; una conjunta constante no implica marginal uniforme cuando cambia la longitud del corte.",
+                "start": 113.3,
+                "end": 121.46666666666667,
+                "startFrame": 3399,
+                "endFrame": 3644,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "sourceCueSha256": "673778cde3c8613b56cc15a968adc626f66f7c7dd05c2f20dfe57ea71d5ea56f"
+              },
+              {
+                "text": "Si buscamos una probabilidad de equis, todavía hay que integrar esta marginal sobre el intervalo pedido.",
+                "start": 121.76666666666667,
+                "end": 128.63333333333333,
+                "startFrame": 3653,
+                "endFrame": 3859,
+                "words": 16,
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "sourceCueSha256": "936d4b071616eba3dc2bca41b0aa2513ad7dc56ee8d8a5c8f64aaf2841ec6cb7"
+              },
+              {
+                "text": "Su valor en un punto sigue siendo densidad.",
+                "start": 128.93333333333334,
+                "end": 132.36666666666667,
+                "startFrame": 3868,
+                "endFrame": 3971,
+                "words": 8,
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "sourceCueSha256": "fe2e528eae39c789045e82dbb829c786a579219c108eddf9c17fa65e197d2b14"
+              },
+              {
+                "text": "Las marginales permiten responder sobre una coordenada, pero no recuperan por sí solas la relación entre ambas.",
+                "start": 132.66666666666666,
+                "end": 139.96666666666667,
+                "startFrame": 3980,
+                "endFrame": 4199,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 11,
+                "sourceCueSha256": "1ada0b5852905324d3746dc7575f266e52471fa46545607bca3c093e96cc5329"
+              }
+            ]
+          },
+          {
+            "start": 140.26666666666668,
+            "end": 150.73333333333332,
+            "cues": [
+              {
+                "text": "X indica presencia de un alelo (0/1) e Y respuesta a un estímulo (0/1).",
+                "start": 140.26666666666668,
+                "end": 146.26666666666668,
+                "startFrame": 4208,
+                "endFrame": 4388,
+                "words": 14,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "f92472863e2d4ef1ef3e3d88a10928502a5fb751cda731b21c7775e1dd3b14c1"
+              },
+              {
+                "text": "Se elige un organismo de una tabla de frecuencias.",
+                "start": 146.56666666666666,
+                "end": 150.43333333333334,
+                "startFrame": 4397,
+                "endFrame": 4513,
+                "words": 9,
+                "sceneIndex": 2,
+                "cueIndex": 1,
+                "sourceCueSha256": "bc14ba14973d3c3686098ae39cff4b2789264174d888d93e92e46ddebbd68cbe"
+              }
+            ]
+          },
+          {
+            "start": 150.73333333333332,
+            "end": 161.1,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 150.73333333333332,
+                "end": 153.33333333333334,
+                "startFrame": 4522,
+                "endFrame": 4600,
+                "words": 6,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de i griega igual a 1.",
+                "start": 153.63333333333333,
+                "end": 157.06666666666666,
+                "startFrame": 4609,
+                "endFrame": 4712,
+                "words": 8,
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "sourceCueSha256": "400abf5b40e82413ae1a3c7a76adf945f7c55d03e06c9dde48a8ec319c33b135"
+              },
+              {
+                "text": "Queremos describir una variable sin fijar la otra.",
+                "start": 157.36666666666667,
+                "end": 160.8,
+                "startFrame": 4721,
+                "endFrame": 4824,
+                "words": 8,
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "sourceCueSha256": "c04fe8e4c4914f54a7efbb8604f1845d1e1523b6d1126ebb1ebe1b0a75358b41"
+              }
+            ]
+          },
+          {
+            "start": 161.1,
+            "end": 179.1,
+            "cues": [
+              {
+                "text": "Cada celda de la conjunta representa dos valores del mismo resultado.",
+                "start": 161.1,
+                "end": 165.83333333333334,
+                "startFrame": 4833,
+                "endFrame": 4975,
+                "words": 11,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "3f702495895226a07fcbc476e9e4210a70b35a622f15b3fdc7a1e50c22b9d29d"
+              },
+              {
+                "text": "Sumar sobre la coordenada que descartamos produce una marginal.",
+                "start": 166.13333333333333,
+                "end": 170,
+                "startFrame": 4984,
+                "endFrame": 5100,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "d179f69456c855dcd1b6ae2f29bd995d8a3edb51fe3d9bd93119da517bf58848"
+              },
+              {
+                "text": "Si fijamos una coordenada, dividimos por su marginal positiva para normalizar la condicional.",
+                "start": 170.3,
+                "end": 175.9,
+                "startFrame": 5109,
+                "endFrame": 5277,
+                "words": 13,
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "sourceCueSha256": "b519009337c9d4c5ebf6a45c29e91b421da0ad1198b905e1ad259e6a61c28d2d"
+              },
+              {
+                "text": "No suponemos independencia de las coordenadas.",
+                "start": 176.2,
+                "end": 178.8,
+                "startFrame": 5286,
+                "endFrame": 5364,
+                "words": 6,
+                "sceneIndex": 4,
+                "cueIndex": 3,
+                "sourceCueSha256": "f3a0b63826844f6292a3cd1451eeef283234320558974f7c06ab7e1df4926c49"
+              }
+            ]
+          },
+          {
+            "start": 179.1,
+            "end": 187.13333333333333,
+            "cues": [
+              {
+                "text": "Filas equis igual a 0 y 1; columnas i griega igual a 0 y 1; total 100 organismos.",
+                "start": 179.1,
+                "end": 186.83333333333334,
+                "startFrame": 5373,
+                "endFrame": 5605,
+                "words": 18,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "9c8c62ad457ed0c95f50ab7fd779a7fc25eee6ee09a4b5dfdd41d81b96c3eaa9"
+              }
+            ]
+          },
+          {
+            "start": 187.13333333333333,
+            "end": 197.3,
+            "cues": [
+              {
+                "text": "Tabla de recuentos: equis igual a 0: intervalo cerrado desde 20 hasta 30; equis igual a 1: intervalo cerrado desde 20 hasta 30.",
+                "start": 187.13333333333333,
+                "end": 197,
+                "startFrame": 5614,
+                "endFrame": 5910,
+                "words": 23,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "e60f059598dceb4d23b3efade8ff8df50c049dc989953141187b183dbe330609"
+              }
+            ]
+          },
+          {
+            "start": 197.3,
+            "end": 201.03333333333333,
+            "cues": [
+              {
+                "text": "Cada organismo se selecciona con la misma probabilidad.",
+                "start": 197.3,
+                "end": 200.73333333333332,
+                "startFrame": 5919,
+                "endFrame": 6022,
+                "words": 8,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "686e9d892969e91413d61cf85bdd956932aa9da069e2a43ae85124ea0c81a745"
+              }
+            ]
+          },
+          {
+            "start": 201.03333333333333,
+            "end": 205.2,
+            "cues": [
+              {
+                "text": "No se supone independencia entre equis e i griega.",
+                "start": 201.03333333333333,
+                "end": 204.9,
+                "startFrame": 6031,
+                "endFrame": 6147,
+                "words": 9,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "cad74c7d08fbfd336b07a6752ce2036221e227babb14d68479a861e5be781ad5"
+              }
+            ]
+          },
+          {
+            "start": 205.2,
+            "end": 217.8,
+            "cues": [
+              {
+                "text": "Suma toda la columna i griega igual a 1 y divide por el total.",
+                "start": 205.2,
+                "end": 211.2,
+                "startFrame": 6156,
+                "endFrame": 6336,
+                "words": 14,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "f57e76bde018c0f33225130a467070e04175140427068b42cb2ffaa46b48e995"
+              },
+              {
+                "text": "Sumar o integrar sobre la coordenada descartada conserva todas sus posibilidades; no es condicionar.",
+                "start": 211.5,
+                "end": 217.5,
+                "startFrame": 6345,
+                "endFrame": 6525,
+                "words": 14,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "c64ec8bf86b07bd9e034dbe3156a73c4e39765cd458a248940c5ed9cc3b08226"
+              }
+            ]
+          },
+          {
+            "start": 217.8,
+            "end": 246.36666666666667,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 217.8,
+                "end": 220.8,
+                "startFrame": 6534,
+                "endFrame": 6624,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de i griega igual a 1.",
+                "start": 221.1,
+                "end": 224.53333333333333,
+                "startFrame": 6633,
+                "endFrame": 6736,
+                "words": 8,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "7bc5edd3989469b9c59c5399a972da9d31d89d392ad410e5e350baa91fc7c8be"
+              },
+              {
+                "text": "Cada celda es una pareja simultánea.",
+                "start": 224.83333333333334,
+                "end": 227.43333333333334,
+                "startFrame": 6745,
+                "endFrame": 6823,
+                "words": 6,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "e2801fd1402357ec73e430f3de0b0f8aeed1986f1564832b6df62e4a9918f9a5"
+              },
+              {
+                "text": "Sumar una fila o columna elimina una variable y produce una marginal; dividir la celda por la marginal de la condición normaliza el subgrupo seleccionado.",
+                "start": 227.73333333333332,
+                "end": 238.46666666666667,
+                "startFrame": 6832,
+                "endFrame": 7154,
+                "words": 25,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "92746bba307999c7b9afd7bc054897ff08d7caa15f0eab514cb2d5a1d77c34cd"
+              },
+              {
+                "text": "Para este apartado: Suma toda la columna i griega igual a 1 y divide por el total.",
+                "start": 238.76666666666668,
+                "end": 246.06666666666666,
+                "startFrame": 7163,
+                "endFrame": 7382,
+                "words": 17,
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "sourceCueSha256": "36c3b1f9cd1e5de866fc4ace406ce3d99358d7bff5338f6111a28b7cded75f99"
+              }
+            ]
+          },
+          {
+            "start": 246.36666666666667,
+            "end": 257.4,
+            "cues": [
+              {
+                "text": "Eliminar equis sumando. abre paréntesis, 30 más 30, cierra paréntesis dividido entre 100 igual a 0 coma 6. probabilidad de i griega igual a 1.",
+                "start": 246.36666666666667,
+                "end": 257.1,
+                "startFrame": 7391,
+                "endFrame": 7713,
+                "words": 25,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "b7e3b37461c4852ac33913b3a2c48b2953a957f6fb720d8fe558432ca7bcb337"
+              }
+            ]
+          },
+          {
+            "start": 257.4,
+            "end": 268.8666666666667,
+            "cues": [
+              {
+                "text": "probabilidad de i griega igual a 1 queda igual a suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de probabilidad de abre paréntesis, equis.",
+                "start": 257.4,
+                "end": 268.56666666666666,
+                "startFrame": 7722,
+                "endFrame": 8057,
+                "words": 26,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "560c6ff68f2b065ecda2b8b32f8645a1ea82fddcdbe5a7a718d6d8e04bb196e1"
+              }
+            ]
+          },
+          {
+            "start": 268.8666666666667,
+            "end": 275.6,
+            "cues": [
+              {
+                "text": "probabilidad de i griega igual a 1 queda igual a equis minúscula y i griega.",
+                "start": 268.8666666666667,
+                "end": 275.3,
+                "startFrame": 8066,
+                "endFrame": 8259,
+                "words": 15,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "3de248c99b80af00cfea0d4c7c85e2b4bb39c0d5871bf78ec8c96a2610985504"
+              }
+            ]
+          },
+          {
+            "start": 275.6,
+            "end": 281.5,
+            "cues": [
+              {
+                "text": "probabilidad de i griega igual a 1 queda igual a 1, cierra paréntesis.",
+                "start": 275.6,
+                "end": 281.2,
+                "startFrame": 8268,
+                "endFrame": 8436,
+                "words": 13,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "a5be7f5addf523373e22c1a74c2e9fc2f44b0c0af8abbceb3b385969fb507753"
+              }
+            ]
+          },
+          {
+            "start": 281.5,
+            "end": 300.76666666666665,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 281.5,
+                "end": 282.8,
+                "startFrame": 8445,
+                "endFrame": 8484,
+                "words": 3,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 6 probabilidad entre 0 y 1.",
+                "start": 283.1,
+                "end": 287.8333333333333,
+                "startFrame": 8493,
+                "endFrame": 8635,
+                "words": 11,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "5c8635658b7c1ca6842a864fe784afcc04992603ec1bbf2b718c2035147e4805"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 288.1333333333333,
+                "end": 295.43333333333334,
+                "startFrame": 8644,
+                "endFrame": 8863,
+                "words": 17,
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+              },
+              {
+                "text": "Una marginal ignora cuál de los dos valores de equis ocurrió.",
+                "start": 295.73333333333335,
+                "end": 300.46666666666664,
+                "startFrame": 8872,
+                "endFrame": 9014,
+                "words": 11,
+                "sceneIndex": 15,
+                "cueIndex": 3,
+                "sourceCueSha256": "ea47ddcd1293e580d75cae280e64062b47b525ba82dfdd3b12684e9dadf325f3"
+              }
+            ]
+          },
+          {
+            "start": 300.76666666666665,
+            "end": 310.8333333333333,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 6 probabilidad entre 0 y 1.",
+                "start": 300.76666666666665,
+                "end": 305.5,
+                "startFrame": 9023,
+                "endFrame": 9165,
+                "words": 11,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "1a52749b9cc69eba87513d46921eb9a0f096a4ee6d7519f6d02d053582b7bde3"
+              },
+              {
+                "text": "Una marginal ignora cuál de los dos valores de equis ocurrió.",
+                "start": 305.8,
+                "end": 310.53333333333336,
+                "startFrame": 9174,
+                "endFrame": 9316,
+                "words": 11,
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "sourceCueSha256": "e86308b7cc22e68964e3a199ddc18f843d32658f0f77ccb6eed31980a7395c88"
+              }
+            ]
+          },
+          {
+            "start": 310.8333333333333,
+            "end": 322.1666666666667,
+            "cues": [
+              {
+                "text": "X e Y son miligramos de nutriente asignados a dos microcultivos; puede quedar una parte sin asignar.",
+                "start": 310.8333333333333,
+                "end": 318.1333333333333,
+                "startFrame": 9325,
+                "endFrame": 9544,
+                "words": 17,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "187f2fa3bf4969eb06bdd156b91f972355f92fb19fd74254aa4bcd6e225b5435"
+              },
+              {
+                "text": "El reparto se modeliza uniformemente sobre un triángulo.",
+                "start": 318.43333333333334,
+                "end": 321.8666666666667,
+                "startFrame": 9553,
+                "endFrame": 9656,
+                "words": 8,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "7351be7929bca2bd2ff4d2ccf062e83aea6fe00da569be532fe111e27ba559e6"
+              }
+            ]
+          },
+          {
+            "start": 322.1666666666667,
+            "end": 332.53333333333336,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 322.1666666666667,
+                "end": 324.76666666666665,
+                "startFrame": 9665,
+                "endFrame": 9743,
+                "words": 6,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula ce para normalizar la densidad conjunta.",
+                "start": 325.06666666666666,
+                "end": 328.06666666666666,
+                "startFrame": 9752,
+                "endFrame": 9842,
+                "words": 7,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "8fa17891577add6f695630173b2eae8f5c72e3f4f48856f4c84c52f804de9ffd"
+              },
+              {
+                "text": "Queremos encontrar la constante que hace válida la distribución.",
+                "start": 328.3666666666667,
+                "end": 332.23333333333335,
+                "startFrame": 9851,
+                "endFrame": 9967,
+                "words": 9,
+                "sceneIndex": 18,
+                "cueIndex": 2,
+                "sourceCueSha256": "9bb1fc10dd2747ac88ab32290b84dd9cbf384043b826b4920dcca258652af841"
+              }
+            ]
+          },
+          {
+            "start": 332.53333333333336,
+            "end": 351.3666666666667,
+            "cues": [
+              {
+                "text": "El soporte conjunto delimita qué parejas son posibles.",
+                "start": 332.53333333333336,
+                "end": 335.96666666666664,
+                "startFrame": 9976,
+                "endFrame": 10079,
+                "words": 8,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "f63b1f9e0d6890ff071c86fe7ab857d8518bf681368256b515f543407de0de8d"
+              },
+              {
+                "text": "Al fijar una coordenada, la frontera determina el intervalo de la otra.",
+                "start": 336.26666666666665,
+                "end": 341.43333333333334,
+                "startFrame": 10088,
+                "endFrame": 10243,
+                "words": 12,
+                "sceneIndex": 19,
+                "cueIndex": 1,
+                "sourceCueSha256": "6d98d64f66ce3ab30c2bc7c848b2310a32c5d79e02ff0dffae96abc9814b787c"
+              },
+              {
+                "text": "Integramos solo esos cortes.",
+                "start": 341.73333333333335,
+                "end": 343.46666666666664,
+                "startFrame": 10252,
+                "endFrame": 10304,
+                "words": 4,
+                "sceneIndex": 19,
+                "cueIndex": 2,
+                "sourceCueSha256": "9cd49477efad5fe66a3ff67b7aa1491c3ff956f347c20c8f70fdb4be21b42e47"
+              },
+              {
+                "text": "Una densidad condicional divide por una marginal positiva, nunca por la probabilidad nula de un punto continuo.",
+                "start": 343.76666666666665,
+                "end": 351.06666666666666,
+                "startFrame": 10313,
+                "endFrame": 10532,
+                "words": 17,
+                "sceneIndex": 19,
+                "cueIndex": 3,
+                "sourceCueSha256": "5839ce4b45a37b8ed884e3b3c2836a7794be7698df4a2ab745141f175f1d8cc3"
+              }
+            ]
+          },
+          {
+            "start": 351.3666666666667,
+            "end": 373.1,
+            "cues": [
+              {
+                "text": "Soporte: equis minúscula mayor o igual que 0, i griega minúscula mayor o igual que 0, equis minúscula más i griega minúscula menor o igual que a igual a 5 mg; densidad conjunta efe minúscula abre paréntesis, equis minúscula,i griega minúscula, cierra paréntesis igual a ce dentro y cero fuera.",
+                "start": 351.3666666666667,
+                "end": 372.8,
+                "startFrame": 10541,
+                "endFrame": 11184,
+                "words": 50,
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "sourceCueSha256": "562c252383d07d7b5f8811d1a4537cc490ab53fdc9f7ccd62ec75324c8cdd86f"
+              }
+            ]
+          },
+          {
+            "start": 373.1,
+            "end": 391.8333333333333,
+            "cues": [
+              {
+                "text": "Se fija equis minúscula igual a 2 mg; be igual a 2 coma 5 mg para el evento equis más i griega menor o igual que be; de igual a 1 coma 2 5 mg para el corte i griega mayor que de.",
+                "start": 373.1,
+                "end": 391.53333333333336,
+                "startFrame": 11193,
+                "endFrame": 11746,
+                "words": 43,
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "sourceCueSha256": "a52fa82b891ab36366a37d8fedbe0173c8efda57f2a3a48ef92145f017a56f72"
+              }
+            ]
+          },
+          {
+            "start": 391.8333333333333,
+            "end": 404.1333333333333,
+            "cues": [
+              {
+                "text": "Uniforme sobre el área triangular, no sobre el cuadrado producto cartesiano de dos copias del intervalo cerrado desde 0 hasta a; equis e i griega no son independientes.",
+                "start": 391.8333333333333,
+                "end": 403.8333333333333,
+                "startFrame": 11755,
+                "endFrame": 12115,
+                "words": 28,
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "sourceCueSha256": "2b2db97d4c103847454f954cfc9ab1b818c33d97b1337792e73efd40d5a299ef"
+              }
+            ]
+          },
+          {
+            "start": 404.1333333333333,
+            "end": 433.3333333333333,
+            "cues": [
+              {
+                "text": "0 menor que equis minúscula menor que a y 0 menor que de menor que a menos equis minúscula; la condición continua equis igual a equis minúscula usa el cociente de densidades donde efe subíndice equis abre paréntesis, equis minúscula, cierra paréntesis mayor que 0.",
+                "start": 404.1333333333333,
+                "end": 423.43333333333334,
+                "startFrame": 12124,
+                "endFrame": 12703,
+                "words": 45,
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "sourceCueSha256": "28841250afcf13195e9bfa17015b943246d9862879e0c52fb78053bd1820f8dc"
+              },
+              {
+                "text": "Fijamos una sección del soporte y dividimos su densidad conjunta por la marginal positiva.",
+                "start": 423.73333333333335,
+                "end": 429.73333333333335,
+                "startFrame": 12712,
+                "endFrame": 12892,
+                "words": 14,
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "sourceCueSha256": "ea3e9a2e43a742a47c40304f7462c548efd025b13c21deffad755f2245200fc7"
+              },
+              {
+                "text": "Esto no exige independencia entre las coordenadas.",
+                "start": 430.03333333333336,
+                "end": 433.03333333333336,
+                "startFrame": 12901,
+                "endFrame": 12991,
+                "words": 7,
+                "sceneIndex": 23,
+                "cueIndex": 2,
+                "sourceCueSha256": "e929a58751cd20ffab6993f6a07fc218e1f1b4bb15770216d2580d7d86837de6"
+              }
+            ]
+          },
+          {
+            "start": 433.3333333333333,
+            "end": 446.4,
+            "cues": [
+              {
+                "text": "Para cada equis minúscula, y recorre desde cero hasta a menos equis minúscula.",
+                "start": 433.3333333333333,
+                "end": 438.93333333333334,
+                "startFrame": 13000,
+                "endFrame": 13168,
+                "words": 13,
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "sourceCueSha256": "2bc6c3071d250c640737294d8d4a9bf12b0352dd2f9ee0095a0df26996d261ca"
+              },
+              {
+                "text": "Exigimos probabilidad total uno sobre todo el soporte y comprobamos además que no haya valores negativos.",
+                "start": 439.23333333333335,
+                "end": 446.1,
+                "startFrame": 13177,
+                "endFrame": 13383,
+                "words": 16,
+                "sceneIndex": 24,
+                "cueIndex": 1,
+                "sourceCueSha256": "f2bc6c6925b2764f9ff6a2161b7f485debae6c2573edf8738e5ff55e4b612c10"
+              }
+            ]
+          },
+          {
+            "start": 446.4,
+            "end": 476.96666666666664,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 446.4,
+                "end": 449.4,
+                "startFrame": 13392,
+                "endFrame": 13482,
+                "words": 7,
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula ce para normalizar la densidad conjunta.",
+                "start": 449.7,
+                "end": 452.7,
+                "startFrame": 13491,
+                "endFrame": 13581,
+                "words": 7,
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "sourceCueSha256": "b868a71509f5c703c9b0c7b777d94c483cdc49160e98565e6255c77ac968cc64"
+              },
+              {
+                "text": "El soporte es un triángulo, no su rectángulo exterior.",
+                "start": 453,
+                "end": 456.8666666666667,
+                "startFrame": 13590,
+                "endFrame": 13706,
+                "words": 9,
+                "sceneIndex": 25,
+                "cueIndex": 2,
+                "sourceCueSha256": "46659cd11bfc6efd4074aa8923361fb2695c9814ae50c67af226900f57a12ebb"
+              },
+              {
+                "text": "Un corte fija una coordenada y determina los límites de la otra; la integral doble normaliza todo el soporte.",
+                "start": 457.1666666666667,
+                "end": 465.3333333333333,
+                "startFrame": 13715,
+                "endFrame": 13960,
+                "words": 19,
+                "sceneIndex": 25,
+                "cueIndex": 3,
+                "sourceCueSha256": "392188b4f68b75679fad796dfa79560299021cf85c761b2e07d4c101762ac6e6"
+              },
+              {
+                "text": "Una condicional divide el corte por su marginal positiva.",
+                "start": 465.6333333333333,
+                "end": 469.5,
+                "startFrame": 13969,
+                "endFrame": 14085,
+                "words": 9,
+                "sceneIndex": 25,
+                "cueIndex": 4,
+                "sourceCueSha256": "447ad712c579fe16c103a5730ecfadaf01ac8ef8ea5d6207ce7c7fd5c9fbae44"
+              },
+              {
+                "text": "Para este apartado: Para cada equis minúscula, y recorre desde cero hasta a menos equis minúscula.",
+                "start": 469.8,
+                "end": 476.6666666666667,
+                "startFrame": 14094,
+                "endFrame": 14300,
+                "words": 16,
+                "sceneIndex": 25,
+                "cueIndex": 5,
+                "sourceCueSha256": "def280007856f89600e5967306d6403c58bc16c7e69a8a3ff468c06018a9426e"
+              }
+            ]
+          },
+          {
+            "start": 476.96666666666664,
+            "end": 484.8666666666667,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 476.96666666666664,
+                "end": 480.4,
+                "startFrame": 14309,
+                "endFrame": 14412,
+                "words": 8,
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 480.7,
+                "end": 484.56666666666666,
+                "startFrame": 14421,
+                "endFrame": 14537,
+                "words": 9,
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 484.8666666666667,
+            "end": 523.2,
+            "cues": [
+              {
+                "text": "Integrar sobre el soporte.",
+                "start": 484.8666666666667,
+                "end": 486.6,
+                "startFrame": 14546,
+                "endFrame": 14598,
+                "words": 4,
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "sourceCueSha256": "cee273c214cdfbbc9971b3c84a89400820969bdbdeb7fb0264de795f48fe3467"
+              },
+              {
+                "text": "El corte vertical tiene longitud a menos equis minúscula; la integral total es ce por integral desde 0 hasta a de abre paréntesis, a menos equis minúscula, cierra paréntesis respecto de equis minúscula igual a ce a al cuadrado dividido entre 2. integral desde 0 hasta a de integral desde 0 hasta a menos equis minúscula de ce respecto de y respecto de equis minúscula igual a abre paréntesis, ce por a al cuadrado , cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis.",
+                "start": 486.9,
+                "end": 522.9,
+                "startFrame": 14607,
+                "endFrame": 15687,
+                "words": 84,
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "sourceCueSha256": "377e0750379268510278998a35e52e3476c7d73a0bc26675ea731276f2319ca9"
+              }
+            ]
+          },
+          {
+            "start": 523.2,
+            "end": 535.1,
+            "cues": [
+              {
+                "text": "integral desde 0 hasta a de integral desde 0 hasta a menos equis minúscula de ce respecto de y respecto de equis minúscula queda igual a 1.",
+                "start": 523.2,
+                "end": 534.8,
+                "startFrame": 15696,
+                "endFrame": 16044,
+                "words": 27,
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "sourceCueSha256": "8e7bc6383dc9ea76bd7b3efe8ce13923ae1a782867cce5d839ef2f39da74d7b0"
+              }
+            ]
+          },
+          {
+            "start": 535.1,
+            "end": 552.1333333333333,
+            "cues": [
+              {
+                "text": "Despejar la altura. ce igual a 2 dividido entre 5 elevado a abre paréntesis, 2, cierra paréntesis igual a 0 coma 0 8; tiene unidades mg elevado a abre paréntesis, menos 2, cierra paréntesis , no unidades de probabilidad.",
+                "start": 535.1,
+                "end": 551.8333333333334,
+                "startFrame": 16053,
+                "endFrame": 16555,
+                "words": 39,
+                "sceneIndex": 29,
+                "cueIndex": 0,
+                "sourceCueSha256": "65ef41cea31ef089fcc34fd51774146a659da597c2b9d6726593157c6b304b58"
+              }
+            ]
+          },
+          {
+            "start": 552.1333333333333,
+            "end": 573.1,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 552.1333333333333,
+                "end": 553.4333333333333,
+                "startFrame": 16564,
+                "endFrame": 16603,
+                "words": 3,
+                "sceneIndex": 30,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 0 8 mg a la potencia menos 2.",
+                "start": 553.7333333333333,
+                "end": 559.3333333333334,
+                "startFrame": 16612,
+                "endFrame": 16780,
+                "words": 13,
+                "sceneIndex": 30,
+                "cueIndex": 1,
+                "sourceCueSha256": "ca202b365bddca8b4139c7d4eecaec6bd31693be32a308a3b5c649b5774ae0ef"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 559.6333333333333,
+                "end": 565.6333333333333,
+                "startFrame": 16789,
+                "endFrame": 16969,
+                "words": 14,
+                "sceneIndex": 30,
+                "cueIndex": 2,
+                "sourceCueSha256": "c3973aeafad6dcf478005d128ea0671ff25eda02f2ab7c87fcf3e20d3d89dbf8"
+              },
+              {
+                "text": "La probabilidad es densidad por área; la altura de la superficie no es una probabilidad puntual.",
+                "start": 565.9333333333333,
+                "end": 572.8,
+                "startFrame": 16978,
+                "endFrame": 17184,
+                "words": 16,
+                "sceneIndex": 30,
+                "cueIndex": 3,
+                "sourceCueSha256": "1177e160d452271d16fbe27af94153c129506552c5a1dc5eec7893d83817f7cd"
+              }
+            ]
+          },
+          {
+            "start": 573.1,
+            "end": 586.1666666666666,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 0 8 mg a la potencia menos 2.",
+                "start": 573.1,
+                "end": 578.7,
+                "startFrame": 17193,
+                "endFrame": 17361,
+                "words": 13,
+                "sceneIndex": 31,
+                "cueIndex": 0,
+                "sourceCueSha256": "581a22388ca4cb1b7b73c61e27f1c7ad249e4534f5bdf32c5099684e41c1bfd2"
+              },
+              {
+                "text": "La probabilidad es densidad por área; la altura de la superficie no es una probabilidad puntual.",
+                "start": 579,
+                "end": 585.8666666666667,
+                "startFrame": 17370,
+                "endFrame": 17576,
+                "words": 16,
+                "sceneIndex": 31,
+                "cueIndex": 1,
+                "sourceCueSha256": "370c215bc6626791756a4354057600384d470b481b59c3e8c7ca5d36a6e794a1"
+              }
+            ]
+          },
+          {
+            "start": 586.1666666666666,
+            "end": 599.9666666666667,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 586.1666666666666,
+                "end": 588.7666666666667,
+                "startFrame": 17585,
+                "endFrame": 17663,
+                "words": 6,
+                "sceneIndex": 32,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula efe subíndice equis abre paréntesis, equis minúscula, cierra paréntesis en el valor interior dado.",
+                "start": 589.0666666666667,
+                "end": 595.5,
+                "startFrame": 17672,
+                "endFrame": 17865,
+                "words": 15,
+                "sceneIndex": 32,
+                "cueIndex": 1,
+                "sourceCueSha256": "f32f52d854f319886f9ed852b7283c0e050d48e456e457a7555160906faaebe1"
+              },
+              {
+                "text": "Queremos una altura de densidad, no una probabilidad puntual.",
+                "start": 595.8,
+                "end": 599.6666666666666,
+                "startFrame": 17874,
+                "endFrame": 17990,
+                "words": 9,
+                "sceneIndex": 32,
+                "cueIndex": 2,
+                "sourceCueSha256": "36ceb761277606088754605cac6ff783ed878f3fea4ced6e7ed10daf406fed02"
+              }
+            ]
+          },
+          {
+            "start": 599.9666666666667,
+            "end": 618.8,
+            "cues": [
+              {
+                "text": "El soporte conjunto delimita qué parejas son posibles.",
+                "start": 599.9666666666667,
+                "end": 603.4,
+                "startFrame": 17999,
+                "endFrame": 18102,
+                "words": 8,
+                "sceneIndex": 33,
+                "cueIndex": 0,
+                "sourceCueSha256": "f63b1f9e0d6890ff071c86fe7ab857d8518bf681368256b515f543407de0de8d"
+              },
+              {
+                "text": "Al fijar una coordenada, la frontera determina el intervalo de la otra.",
+                "start": 603.7,
+                "end": 608.8666666666667,
+                "startFrame": 18111,
+                "endFrame": 18266,
+                "words": 12,
+                "sceneIndex": 33,
+                "cueIndex": 1,
+                "sourceCueSha256": "6d98d64f66ce3ab30c2bc7c848b2310a32c5d79e02ff0dffae96abc9814b787c"
+              },
+              {
+                "text": "Integramos solo esos cortes.",
+                "start": 609.1666666666666,
+                "end": 610.9,
+                "startFrame": 18275,
+                "endFrame": 18327,
+                "words": 4,
+                "sceneIndex": 33,
+                "cueIndex": 2,
+                "sourceCueSha256": "9cd49477efad5fe66a3ff67b7aa1491c3ff956f347c20c8f70fdb4be21b42e47"
+              },
+              {
+                "text": "Una densidad condicional divide por una marginal positiva, nunca por la probabilidad nula de un punto continuo.",
+                "start": 611.2,
+                "end": 618.5,
+                "startFrame": 18336,
+                "endFrame": 18555,
+                "words": 17,
+                "sceneIndex": 33,
+                "cueIndex": 3,
+                "sourceCueSha256": "5839ce4b45a37b8ed884e3b3c2836a7794be7698df4a2ab745141f175f1d8cc3"
+              }
+            ]
+          },
+          {
+            "start": 618.8,
+            "end": 640.5333333333333,
+            "cues": [
+              {
+                "text": "Soporte: equis minúscula mayor o igual que 0, i griega minúscula mayor o igual que 0, equis minúscula más i griega minúscula menor o igual que a igual a 5 mg; densidad conjunta efe minúscula abre paréntesis, equis minúscula,i griega minúscula, cierra paréntesis igual a ce dentro y cero fuera.",
+                "start": 618.8,
+                "end": 640.2333333333333,
+                "startFrame": 18564,
+                "endFrame": 19207,
+                "words": 50,
+                "sceneIndex": 34,
+                "cueIndex": 0,
+                "sourceCueSha256": "562c252383d07d7b5f8811d1a4537cc490ab53fdc9f7ccd62ec75324c8cdd86f"
+              }
+            ]
+          },
+          {
+            "start": 640.5333333333333,
+            "end": 659.2666666666667,
+            "cues": [
+              {
+                "text": "Se fija equis minúscula igual a 2 mg; be igual a 2 coma 5 mg para el evento equis más i griega menor o igual que be; de igual a 1 coma 2 5 mg para el corte i griega mayor que de.",
+                "start": 640.5333333333333,
+                "end": 658.9666666666667,
+                "startFrame": 19216,
+                "endFrame": 19769,
+                "words": 43,
+                "sceneIndex": 35,
+                "cueIndex": 0,
+                "sourceCueSha256": "a52fa82b891ab36366a37d8fedbe0173c8efda57f2a3a48ef92145f017a56f72"
+              }
+            ]
+          },
+          {
+            "start": 659.2666666666667,
+            "end": 671.5666666666667,
+            "cues": [
+              {
+                "text": "Uniforme sobre el área triangular, no sobre el cuadrado producto cartesiano de dos copias del intervalo cerrado desde 0 hasta a; equis e i griega no son independientes.",
+                "start": 659.2666666666667,
+                "end": 671.2666666666667,
+                "startFrame": 19778,
+                "endFrame": 20138,
+                "words": 28,
+                "sceneIndex": 36,
+                "cueIndex": 0,
+                "sourceCueSha256": "2b2db97d4c103847454f954cfc9ab1b818c33d97b1337792e73efd40d5a299ef"
+              }
+            ]
+          },
+          {
+            "start": 671.5666666666667,
+            "end": 700.7666666666667,
+            "cues": [
+              {
+                "text": "0 menor que equis minúscula menor que a y 0 menor que de menor que a menos equis minúscula; la condición continua equis igual a equis minúscula usa el cociente de densidades donde efe subíndice equis abre paréntesis, equis minúscula, cierra paréntesis mayor que 0.",
+                "start": 671.5666666666667,
+                "end": 690.8666666666667,
+                "startFrame": 20147,
+                "endFrame": 20726,
+                "words": 45,
+                "sceneIndex": 37,
+                "cueIndex": 0,
+                "sourceCueSha256": "28841250afcf13195e9bfa17015b943246d9862879e0c52fb78053bd1820f8dc"
+              },
+              {
+                "text": "Fijamos una sección del soporte y dividimos su densidad conjunta por la marginal positiva.",
+                "start": 691.1666666666666,
+                "end": 697.1666666666666,
+                "startFrame": 20735,
+                "endFrame": 20915,
+                "words": 14,
+                "sceneIndex": 37,
+                "cueIndex": 1,
+                "sourceCueSha256": "ea3e9a2e43a742a47c40304f7462c548efd025b13c21deffad755f2245200fc7"
+              },
+              {
+                "text": "Esto no exige independencia entre las coordenadas.",
+                "start": 697.4666666666667,
+                "end": 700.4666666666667,
+                "startFrame": 20924,
+                "endFrame": 21014,
+                "words": 7,
+                "sceneIndex": 37,
+                "cueIndex": 2,
+                "sourceCueSha256": "e929a58751cd20ffab6993f6a07fc218e1f1b4bb15770216d2580d7d86837de6"
+              }
+            ]
+          },
+          {
+            "start": 700.7666666666667,
+            "end": 713.8,
+            "cues": [
+              {
+                "text": "Integra la conjunta a lo largo de todos los y compatibles con equis minúscula.",
+                "start": 700.7666666666667,
+                "end": 706.7666666666667,
+                "startFrame": 21023,
+                "endFrame": 21203,
+                "words": 14,
+                "sceneIndex": 38,
+                "cueIndex": 0,
+                "sourceCueSha256": "d021fd2243bda0a1cadcb209a5c83fd6d070a9fd86e78f9d6f45e03af8e3ced1"
+              },
+              {
+                "text": "Evaluar la función da densidad por unidad; solo su integral sobre una región da probabilidad.",
+                "start": 707.0666666666667,
+                "end": 713.5,
+                "startFrame": 21212,
+                "endFrame": 21405,
+                "words": 15,
+                "sceneIndex": 38,
+                "cueIndex": 1,
+                "sourceCueSha256": "2d7cd856ba98dc5f50ff5de9c6dc5fe4ccb96f7d1e9b9165f93fbc9021b5bf4c"
+              }
+            ]
+          },
+          {
+            "start": 713.8,
+            "end": 748.2333333333333,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 713.8,
+                "end": 716.8,
+                "startFrame": 21414,
+                "endFrame": 21504,
+                "words": 7,
+                "sceneIndex": 39,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula efe subíndice equis abre paréntesis, equis minúscula, cierra paréntesis en el valor interior dado.",
+                "start": 717.1,
+                "end": 723.5333333333333,
+                "startFrame": 21513,
+                "endFrame": 21706,
+                "words": 15,
+                "sceneIndex": 39,
+                "cueIndex": 1,
+                "sourceCueSha256": "60552b778f6136afee7048ca22b01ad2c71a7f02a46d73b67d1bf6c620e0c29d"
+              },
+              {
+                "text": "El soporte es un triángulo, no su rectángulo exterior.",
+                "start": 723.8333333333334,
+                "end": 727.7,
+                "startFrame": 21715,
+                "endFrame": 21831,
+                "words": 9,
+                "sceneIndex": 39,
+                "cueIndex": 2,
+                "sourceCueSha256": "bf8d916e26c9410f98412c1abfb3094894d5d9e7fa7cb53b55109bcdde4a54d3"
+              },
+              {
+                "text": "Un corte fija una coordenada y determina los límites de la otra; la integral doble normaliza todo el soporte.",
+                "start": 728,
+                "end": 736.1666666666666,
+                "startFrame": 21840,
+                "endFrame": 22085,
+                "words": 19,
+                "sceneIndex": 39,
+                "cueIndex": 3,
+                "sourceCueSha256": "bb6469a95ac29bdc922a739ba9b3c8ed3a0e56b359304d8452a3dfcd3838fc79"
+              },
+              {
+                "text": "Una condicional divide el corte por su marginal positiva.",
+                "start": 736.4666666666667,
+                "end": 740.3333333333334,
+                "startFrame": 22094,
+                "endFrame": 22210,
+                "words": 9,
+                "sceneIndex": 39,
+                "cueIndex": 4,
+                "sourceCueSha256": "97e87b7e661e8558f7030b826d59ee351a57934386382397bd86aef9f09f4b59"
+              },
+              {
+                "text": "Para este apartado: Integra la conjunta a lo largo de todos los y compatibles con equis minúscula.",
+                "start": 740.6333333333333,
+                "end": 747.9333333333333,
+                "startFrame": 22219,
+                "endFrame": 22438,
+                "words": 17,
+                "sceneIndex": 39,
+                "cueIndex": 5,
+                "sourceCueSha256": "9c1893ba52f77efc5933d17114e5c86e6aac02d6cb62783e6b0a7f1f12164906"
+              }
+            ]
+          },
+          {
+            "start": 748.2333333333333,
+            "end": 755.8333333333334,
+            "cues": [
+              {
+                "text": "Medir el corte vertical. a menos equis minúscula igual a 5 menos 2 igual a 3 mg.",
+                "start": 748.2333333333333,
+                "end": 755.5333333333333,
+                "startFrame": 22447,
+                "endFrame": 22666,
+                "words": 17,
+                "sceneIndex": 40,
+                "cueIndex": 0,
+                "sourceCueSha256": "b63a2c0a673f8a8b8f43563b755c677c3de2cf071d4604b3485c2bd88c032723"
+              }
+            ]
+          },
+          {
+            "start": 755.8333333333334,
+            "end": 763.7333333333333,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 755.8333333333334,
+                "end": 759.2666666666667,
+                "startFrame": 22675,
+                "endFrame": 22778,
+                "words": 8,
+                "sceneIndex": 41,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 759.5666666666667,
+                "end": 763.4333333333333,
+                "startFrame": 22787,
+                "endFrame": 22903,
+                "words": 9,
+                "sceneIndex": 41,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 763.7333333333333,
+            "end": 794.0333333333333,
+            "cues": [
+              {
+                "text": "Integrar su altura. efe subíndice equis abre paréntesis, equis minúscula, cierra paréntesis igual a ce abre paréntesis, a menos equis minúscula, cierra paréntesis igual a 0 coma 0 8 por 3 igual a 0 coma 2 4 mg elevado a abre paréntesis, menos 1, cierra paréntesis. efe subíndice equis abre paréntesis, equis minúscula, cierra paréntesis igual a integral desde 0 hasta a menos equis minúscula de ce respecto de y.",
+                "start": 763.7333333333333,
+                "end": 793.7333333333333,
+                "startFrame": 22912,
+                "endFrame": 23812,
+                "words": 70,
+                "sceneIndex": 42,
+                "cueIndex": 0,
+                "sourceCueSha256": "9f22b9a404c9bd180f20e9ea60ab3cff280375943ac8038f0fef3adbcb1db910"
+              }
+            ]
+          },
+          {
+            "start": 794.0333333333333,
+            "end": 814.0666666666667,
+            "cues": [
+              {
+                "text": "efe subíndice equis abre paréntesis, equis minúscula, cierra paréntesis queda igual a abre paréntesis, 2 por abre paréntesis, a menos equis minúscula, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, a al cuadrado , cierra paréntesis y 0 menor que equis minúscula menor que a.",
+                "start": 794.0333333333333,
+                "end": 813.7666666666667,
+                "startFrame": 23821,
+                "endFrame": 24413,
+                "words": 46,
+                "sceneIndex": 43,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e1a0e5ca0277672ca43105d8901548f4965e0949ce47e0ad20be2fe93abdd01"
+              }
+            ]
+          },
+          {
+            "start": 814.0666666666667,
+            "end": 835.0333333333333,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 814.0666666666667,
+                "end": 815.3666666666667,
+                "startFrame": 24422,
+                "endFrame": 24461,
+                "words": 3,
+                "sceneIndex": 44,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 2 4 mg a la potencia menos 1.",
+                "start": 815.6666666666666,
+                "end": 821.2666666666667,
+                "startFrame": 24470,
+                "endFrame": 24638,
+                "words": 13,
+                "sceneIndex": 44,
+                "cueIndex": 1,
+                "sourceCueSha256": "5304fc5c7f1dc01872fa806afc5c43a417a64279385606c143e330ada38ab062"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 821.5666666666667,
+                "end": 827.5666666666667,
+                "startFrame": 24647,
+                "endFrame": 24827,
+                "words": 14,
+                "sceneIndex": 44,
+                "cueIndex": 2,
+                "sourceCueSha256": "c3973aeafad6dcf478005d128ea0671ff25eda02f2ab7c87fcf3e20d3d89dbf8"
+              },
+              {
+                "text": "Es una densidad marginal decreciente, no probabilidad de equis igual a equis minúscula, que vale cero.",
+                "start": 827.8666666666667,
+                "end": 834.7333333333333,
+                "startFrame": 24836,
+                "endFrame": 25042,
+                "words": 16,
+                "sceneIndex": 44,
+                "cueIndex": 3,
+                "sourceCueSha256": "27625cf6744775915abec36d8e93e4708aeae03b45f4944be0768eb04f246287"
+              }
+            ]
+          },
+          {
+            "start": 835.0333333333333,
+            "end": 848.1,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 2 4 mg a la potencia menos 1.",
+                "start": 835.0333333333333,
+                "end": 840.6333333333333,
+                "startFrame": 25051,
+                "endFrame": 25219,
+                "words": 13,
+                "sceneIndex": 45,
+                "cueIndex": 0,
+                "sourceCueSha256": "61449fbf65dae3f67bfecd886b823827fb09f17f3cb28e79d0df6e538c55e6f1"
+              },
+              {
+                "text": "Es una densidad marginal decreciente, no probabilidad de equis igual a equis minúscula, que vale cero.",
+                "start": 840.9333333333333,
+                "end": 847.8,
+                "startFrame": 25228,
+                "endFrame": 25434,
+                "words": 16,
+                "sceneIndex": 45,
+                "cueIndex": 1,
+                "sourceCueSha256": "b177ae8462c7d7e5bf6d7ce2d5d554c74c1f1f730de0e08b4cb814d3a22b0dd6"
+              }
+            ]
+          },
+          {
+            "start": 848.1,
+            "end": 899.7666666666667,
+            "cues": [
+              {
+                "text": "Se reúnen todos los valores del componente que no se conserva.",
+                "start": 848.1,
+                "end": 852.8333333333334,
+                "startFrame": 25443,
+                "endFrame": 25585,
+                "words": 11,
+                "sceneIndex": 46,
+                "cueIndex": 0,
+                "sourceCueSha256": "962fae89f94da9d1434c89cc7c2da229b2e5602dab067fce6be7cb8c5ea90b86"
+              },
+              {
+                "text": "Las integrales se pueden restringir al soporte conjunto sin añadir regiones imposibles.",
+                "start": 853.1333333333333,
+                "end": 858.3,
+                "startFrame": 25594,
+                "endFrame": 25749,
+                "words": 12,
+                "sceneIndex": 46,
+                "cueIndex": 1,
+                "sourceCueSha256": "6b08362c7e1e1d571982d359baec7507b3423ec416db12d22d3498bdc7ecb523"
+              },
+              {
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 858.6,
+                "end": 862.4666666666667,
+                "startFrame": 25758,
+                "endFrame": 25874,
+                "words": 9,
+                "sceneIndex": 46,
+                "cueIndex": 2,
+                "sourceCueSha256": "8deb504200bd5ebed5188d4f1be592c33273dfc115e389336ae403f4e66505dc"
+              },
+              {
+                "text": "Para obtener la marginal de X a partir de una densidad conjunta, ¿qué componente se integra?",
+                "start": 862.7666666666667,
+                "end": 869.6333333333333,
+                "startFrame": 25883,
+                "endFrame": 26089,
+                "words": 16,
+                "sceneIndex": 46,
+                "cueIndex": 3,
+                "sourceCueSha256": "9ec8aa9fe65f08a85181a049b9bc134f8085451afa630e7e0b5cdbf1324f2378"
+              },
+              {
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 869.9333333333333,
+                "end": 873.8,
+                "startFrame": 26098,
+                "endFrame": 26214,
+                "words": 9,
+                "sceneIndex": 46,
+                "cueIndex": 4,
+                "sourceCueSha256": "7e6228a458d120ddf962ae56b10eab6f09ef2b9fd31e78cb6503172b2a903302"
+              },
+              {
+                "text": "Se conserva X y se reúnen todos los valores posibles de Y mediante integración.",
+                "start": 874.1,
+                "end": 880.1,
+                "startFrame": 26223,
+                "endFrame": 26403,
+                "words": 14,
+                "sceneIndex": 46,
+                "cueIndex": 5,
+                "sourceCueSha256": "f1f9f2faf3b47c697a749d2c9a7e441a16646ed7afd8d8c61eb7c1dd4191d60f"
+              },
+              {
+                "text": "Para revisar el próximo problema, evita este error: Confundir sumar una columna con condicionar en ella.",
+                "start": 880.4,
+                "end": 887.2666666666667,
+                "startFrame": 26412,
+                "endFrame": 26618,
+                "words": 16,
+                "sceneIndex": 46,
+                "cueIndex": 6,
+                "sourceCueSha256": "e17a01c46c95f6e39e19201c409568423ebf93bfcaeccd58bdeca9903050ce26"
+              },
+              {
+                "text": "Sumar una columna reúne todos los valores de la otra coordenada.",
+                "start": 887.5666666666667,
+                "end": 892.3,
+                "startFrame": 26627,
+                "endFrame": 26769,
+                "words": 11,
+                "sceneIndex": 46,
+                "cueIndex": 7,
+                "sourceCueSha256": "d350f5830aaacba31808702a7cfc4fd9adac0f17f15e07372fa66f9ec6a7b22b"
+              },
+              {
+                "text": "Condicionar selecciona un grupo conocido y divide por su peso; esa normalización no aparece al marginalizar.",
+                "start": 892.6,
+                "end": 899.4666666666667,
+                "startFrame": 26778,
+                "endFrame": 26984,
+                "words": 16,
+                "sceneIndex": 46,
+                "cueIndex": 8,
+                "sourceCueSha256": "7968c099c550cb9d775016957285ac2dc87498648d7b4afb0c1f24b3a5835a2f"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
