@@ -140656,6 +140656,680 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-capstone-pec1-1--c": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-capstone-pec1-1--c",
+      "kind": "exercise",
+      "title": "Explica por qué a y b no condicionan a la misma información, aunque ambos avisos mencionen un portador del lunes.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "01c3fcebdd185d641cf99a2bc9ca1ca44d90f0e594728aea4eefab723f2dccb3",
+      "src": "videos/ejercicio-capstone-pec1-1--c/video.mp4",
+      "poster": "videos/ejercicio-capstone-pec1-1--c/poster.jpg",
+      "duration": 278.46666666666664,
+      "frames": 8354,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "00c968fc3bc73791f1251f9184e299a309b6d03e071804384be3db43bfbf9583",
+      "videoSha256": "2aabdff8b347cec7f459246415ecd2bebe01dd76decaadcbc52f84f399d6e106",
+      "posterSha256": "211c2e6b372783993541e76a47c3161706990a4cfe5093340f2fbabfdda8b575",
+      "canonicalSha256": "32344a3e9de2110930faba0add2309f2ce3ac03c9503d82c2a82ebb3eb0bfdba",
+      "inputHash": "ea9c2812a865f4a25ead038bbe2bbff2902496ba96d8668910b8bdd174077839",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "ca00581ad42c213dd764e8d382db44c872a0bce5002a5571346dcdefafb93969",
+        "canonicalSha256": "32344a3e9de2110930faba0add2309f2ce3ac03c9503d82c2a82ebb3eb0bfdba",
+        "source": {
+          "file": "UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "url": "/materiales/UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+          "kind": "statement",
+          "title": "UOC MU IE 2026-27 S1: PEC 1, enunciado",
+          "number": "1"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "726bc3d343acefe9fa36ac3731fbaec0b33f667490febb30c77afcb31a3a71b7",
+        "transcriptSha256": "00c968fc3bc73791f1251f9184e299a309b6d03e071804384be3db43bfbf9583",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-capstone-pec1-1",
+      "transcript": {
+        "id": "ejercicio-capstone-pec1-1--c",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "32344a3e9de2110930faba0add2309f2ce3ac03c9503d82c2a82ebb3eb0bfdba",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 278.46666666666664,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 16.4,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Explica por qué a y be no condicionan a la misma información, aunque ambos avisos mencionen un portador del lunes.",
+                "start": 2.9,
+                "end": 11.5,
+                "startFrame": 87,
+                "endFrame": 345,
+                "words": 20,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "add5badde3de79814dfd090d7a2d76f3fb408c8783d4c306ca84fa4bb472a726"
+              },
+              {
+                "text": "Queremos explicar por qué los dos avisos dan posteriores distintas.",
+                "start": 11.8,
+                "end": 16.1,
+                "startFrame": 354,
+                "endFrame": 483,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "bb7a412f0a5ad9da531b6f1e1432c5f4a5d0c679e1fb526cc12f538e241736ea"
+              }
+            ]
+          },
+          {
+            "start": 16.4,
+            "end": 37.06666666666667,
+            "cues": [
+              {
+                "text": "El experimento conserva las identidades de los dos descendientes y el mecanismo que produce el aviso.",
+                "start": 16.4,
+                "end": 23.266666666666666,
+                "startFrame": 492,
+                "endFrame": 698,
+                "words": 16,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "6873baacd178f33c4c605be965efdb143fc37b14a4c38056a6428864c83f3c37"
+              },
+              {
+                "text": "La independencia de genotipo y día da diez estados equiprobables por descendiente.",
+                "start": 23.566666666666666,
+                "end": 28.733333333333334,
+                "startFrame": 707,
+                "endFrame": 862,
+                "words": 12,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "c17a612f5e8f65ebb85c44c7baac5a500584249747f8331fe12b7a5f2e3f4523"
+              },
+              {
+                "text": "Una selección previa añade otra coordenada al espacio de resultados; no equivale a preguntar si existe algún candidato.",
+                "start": 29.033333333333335,
+                "end": 36.766666666666666,
+                "startFrame": 871,
+                "endFrame": 1103,
+                "words": 18,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "ad73cdefdb2ccbe692f24002647a4ec455f58447371196f861470afcff944807"
+              }
+            ]
+          },
+          {
+            "start": 37.06666666666667,
+            "end": 42.96666666666667,
+            "cues": [
+              {
+                "text": "Cada descendiente es portador con probabilidad 1 dividido entre 2, independientemente del otro.",
+                "start": 37.06666666666667,
+                "end": 42.666666666666664,
+                "startFrame": 1112,
+                "endFrame": 1280,
+                "words": 13,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "8dd79f7cb824916efb09dd3a21c3e2dd8f0b0b004f026ca44e8e8678bc20dcc9"
+              }
+            ]
+          },
+          {
+            "start": 42.96666666666667,
+            "end": 51.43333333333333,
+            "cues": [
+              {
+                "text": "Cada día de genotipado es uniforme entre cinco días laborables, independiente del genotipo y del día del otro descendiente.",
+                "start": 42.96666666666667,
+                "end": 51.13333333333333,
+                "startFrame": 1289,
+                "endFrame": 1534,
+                "words": 19,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "e759d945748683052abc83fe203e7b0087b570988b727815f118453420c9c64b"
+              }
+            ]
+          },
+          {
+            "start": 51.43333333333333,
+            "end": 64.9,
+            "cues": [
+              {
+                "text": "En a basta con que alguno sea portador y haya sido genotipado el lunes.",
+                "start": 51.43333333333333,
+                "end": 57.43333333333333,
+                "startFrame": 1543,
+                "endFrame": 1723,
+                "words": 14,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "7f5090a5fa380b0d5a2937c211d517b1b78e66f58e46c276a290225d9c019b44"
+              },
+              {
+                "text": "En be se elige primero un descendiente al azar y se observa eso en el elegido.",
+                "start": 57.733333333333334,
+                "end": 64.6,
+                "startFrame": 1732,
+                "endFrame": 1938,
+                "words": 16,
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "sourceCueSha256": "d82f70396d606e63c53edea019fc79bff334b343b6247908d68b16bcd9fce441"
+              }
+            ]
+          },
+          {
+            "start": 64.9,
+            "end": 73.36666666666666,
+            "cues": [
+              {
+                "text": "ce subíndice i indica que el descendiente i es portador; ele subíndice i , que se genotipa el lunes.",
+                "start": 64.9,
+                "end": 73.06666666666666,
+                "startFrame": 1947,
+                "endFrame": 2192,
+                "words": 19,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "8ab5f653ccc520f5555ec7388001f31a944a5d9e3b0ae4822fbcff1f925adecf"
+              }
+            ]
+          },
+          {
+            "start": 73.36666666666666,
+            "end": 80.1,
+            "cues": [
+              {
+                "text": "Las identidades 1 y 2 se conservan; lunes puede corresponder a cualquiera de los dos.",
+                "start": 73.36666666666666,
+                "end": 79.8,
+                "startFrame": 2201,
+                "endFrame": 2394,
+                "words": 15,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "c841b47fa59231045f49294d0bf267988084b97b19d3bc18d1d01d8a11796049"
+              }
+            ]
+          },
+          {
+            "start": 80.1,
+            "end": 86.83333333333333,
+            "cues": [
+              {
+                "text": "La elección ese del técnico es uniforme e independiente, anterior a observar genotipo y día.",
+                "start": 80.1,
+                "end": 86.53333333333333,
+                "startFrame": 2403,
+                "endFrame": 2596,
+                "words": 15,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "afbcdc3de4ba4b2028b84d00402b1036d14a08e73d1f468e0f1f3c297bd70be7"
+              }
+            ]
+          },
+          {
+            "start": 86.83333333333333,
+            "end": 112.06666666666666,
+            "cues": [
+              {
+                "text": "En a recibo una afirmación existencial sobre la pareja completa.",
+                "start": 86.83333333333333,
+                "end": 91.13333333333334,
+                "startFrame": 2605,
+                "endFrame": 2734,
+                "words": 10,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "fd86ecf5848c2ae05a3e5811fc4fd7db344b164d8fa4a60c0ba083c6d2022615"
+              },
+              {
+                "text": "En be conozco el resultado de una selección previa.",
+                "start": 91.43333333333334,
+                "end": 95.3,
+                "startFrame": 2743,
+                "endFrame": 2859,
+                "words": 9,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "2b1e25fa5e8731bcf4ea2fbd84ca3cde8dc09f20e461e67918e9c56f021ad835"
+              },
+              {
+                "text": "Lunes puede ser cualquiera de los dos descendientes en ambos apartados; esa no es la diferencia.",
+                "start": 95.6,
+                "end": 102.46666666666667,
+                "startFrame": 2868,
+                "endFrame": 3074,
+                "words": 16,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "d8ab7fabf393009c3500df4315d44a6e67cbd2630866a76921d7538c1ed99268"
+              },
+              {
+                "text": "Una pareja con dos candidatos pesa una vez bajo el aviso existencial, pero tiene dos elecciones favorables bajo la selección previa.",
+                "start": 102.76666666666667,
+                "end": 111.76666666666667,
+                "startFrame": 3083,
+                "endFrame": 3353,
+                "words": 21,
+                "sceneIndex": 8,
+                "cueIndex": 3,
+                "sourceCueSha256": "b7299096a31a34a038a7c060fa8fbf79bcba6b555076d71a2837e2decc3ed0d7"
+              }
+            ]
+          },
+          {
+            "start": 112.06666666666666,
+            "end": 141.5,
+            "cues": [
+              {
+                "text": "Separar suceso y mecanismo.",
+                "start": 112.06666666666666,
+                "end": 113.8,
+                "startFrame": 3362,
+                "endFrame": 3414,
+                "words": 4,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "67a803b8f3f34ade2ff915ea81b14de2766178057b5621233dc7d0a0153ac6ec"
+              },
+              {
+                "text": "En a recibo una afirmación existencial sobre la pareja completa.",
+                "start": 114.1,
+                "end": 118.4,
+                "startFrame": 3423,
+                "endFrame": 3552,
+                "words": 10,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "b2e7307b14c52c40be19fd8ce1f3bea31c4c47a31c0a1197c748b9383207de4f"
+              },
+              {
+                "text": "En be conozco el resultado de una selección previa.",
+                "start": 118.7,
+                "end": 122.56666666666666,
+                "startFrame": 3561,
+                "endFrame": 3677,
+                "words": 9,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "a45c4b2be776c020a5b3b7ce06b2c30ae83db9d841d38f60e6b49e1e7655ae0e"
+              },
+              {
+                "text": "Lunes puede ser cualquiera de los dos descendientes en ambos apartados; esa no es la diferencia.",
+                "start": 122.86666666666666,
+                "end": 129.73333333333332,
+                "startFrame": 3686,
+                "endFrame": 3892,
+                "words": 16,
+                "sceneIndex": 9,
+                "cueIndex": 3,
+                "sourceCueSha256": "b0471d3083525d247585678cc5a49703a532036c26a44b7598fa8ddb7afcb11d"
+              },
+              {
+                "text": "E igual a abre paréntesis, ce subíndice 1 intersección ele subíndice 1, cierra paréntesis unión abre paréntesis, ce subíndice 2 intersección ele subíndice 2, cierra paréntesis.",
+                "start": 130.03333333333333,
+                "end": 141.2,
+                "startFrame": 3901,
+                "endFrame": 4236,
+                "words": 26,
+                "sceneIndex": 9,
+                "cueIndex": 4,
+                "sourceCueSha256": "2f2c6a52649f1ae9ad4cf1ac27e596fd431d461d54ccc557c33c68448a0575ae"
+              }
+            ]
+          },
+          {
+            "start": 141.5,
+            "end": 160.03333333333333,
+            "cues": [
+              {
+                "text": "Pesar cada familia por sus avisos.",
+                "start": 141.5,
+                "end": 144.1,
+                "startFrame": 4245,
+                "endFrame": 4323,
+                "words": 6,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "c36078a89e239aba5cbf36ef84a45e9209d1a477c8f8daf71849a054e81e9f98"
+              },
+              {
+                "text": "Sea eme el número de descendientes portadores de lunes de una pareja fija.",
+                "start": 144.4,
+                "end": 150,
+                "startFrame": 4332,
+                "endFrame": 4500,
+                "words": 13,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "2d753df34508bf2b6687cddac2ea48341fa49bce971e0c73cd80b116cb68cdda"
+              },
+              {
+                "text": "El aviso existencial se cumple una vez si eme es positivo; no cuenta dos veces una pareja con eme igual a dos.",
+                "start": 150.3,
+                "end": 159.73333333333332,
+                "startFrame": 4509,
+                "endFrame": 4792,
+                "words": 22,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "f5ecc6b815f4522d5d6cfa7f07824d5d0ddad3f62d486ce52a2a1e8afa463518"
+              }
+            ]
+          },
+          {
+            "start": 160.03333333333333,
+            "end": 167.93333333333334,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 160.03333333333333,
+                "end": 163.46666666666667,
+                "startFrame": 4801,
+                "endFrame": 4904,
+                "words": 8,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 163.76666666666668,
+                "end": 167.63333333333333,
+                "startFrame": 4913,
+                "endFrame": 5029,
+                "words": 9,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 167.93333333333334,
+            "end": 197.46666666666667,
+            "cues": [
+              {
+                "text": "Pesar la selección previa.",
+                "start": 167.93333333333334,
+                "end": 169.66666666666666,
+                "startFrame": 5038,
+                "endFrame": 5090,
+                "words": 4,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "c266309318f847fb1c64516e32eaea4425796145437aebad9ac9de68cb4f9010"
+              },
+              {
+                "text": "El técnico acierta con probabilidad eme entre dos.",
+                "start": 169.96666666666667,
+                "end": 173.4,
+                "startFrame": 5099,
+                "endFrame": 5202,
+                "words": 8,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "e41d5ecb9c5e8e53ff23c38652647885c34c98b1c79eae0612f927dd78283e99"
+              },
+              {
+                "text": "Una pareja con dos candidatos produce el aviso el doble de veces que una con uno.",
+                "start": 173.7,
+                "end": 180.56666666666666,
+                "startFrame": 5211,
+                "endFrame": 5417,
+                "words": 16,
+                "sceneIndex": 12,
+                "cueIndex": 2,
+                "sourceCueSha256": "d5e055776afa799757ded5b426a09f2a42c3ce05fdd797b30f5cf2e37fb16173"
+              },
+              {
+                "text": "En el espacio de doscientos estados eso se representa conservando ese. probabilidad de efe sabiendo que omega igual a abre paréntesis, eme abre paréntesis, omega , cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis.",
+                "start": 180.86666666666667,
+                "end": 197.16666666666666,
+                "startFrame": 5426,
+                "endFrame": 5915,
+                "words": 38,
+                "sceneIndex": 12,
+                "cueIndex": 3,
+                "sourceCueSha256": "52cd426673efc66ff329f34bbb0721a78bd7121f57a53ae0875f287913eb5940"
+              }
+            ]
+          },
+          {
+            "start": 197.46666666666667,
+            "end": 222.73333333333332,
+            "cues": [
+              {
+                "text": "Comparar sin mezclar denominadores.",
+                "start": 197.46666666666667,
+                "end": 199.2,
+                "startFrame": 5924,
+                "endFrame": 5976,
+                "words": 4,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "321957bb0bdb0fa4d293ea53d9fd736d33be48292fca2af35ca5e78e3b30fbd5"
+              },
+              {
+                "text": "El apartado a usa nueve entre diecinueve.",
+                "start": 199.5,
+                "end": 202.5,
+                "startFrame": 5985,
+                "endFrame": 6075,
+                "words": 7,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "ebd393ed8139222dbf9b78c61a35ceb1afce890f1bc1467cf056309ac5a3842a"
+              },
+              {
+                "text": "El be usa diez entre veinte.",
+                "start": 202.8,
+                "end": 205.4,
+                "startFrame": 6084,
+                "endFrame": 6162,
+                "words": 6,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "4a05368ed706e1662eb24ec62705858ef5fb20cb014956d999db0e440ecabe7e"
+              },
+              {
+                "text": "No es una contradicción: los avisos ponderan de forma distinta las mismas parejas. abre paréntesis, 9, cierra paréntesis dividido entre abre paréntesis, 19, cierra paréntesis distinto de abre paréntesis, 1, cierra paréntesis dividido entre abre paréntesis, 2, cierra paréntesis.",
+                "start": 205.7,
+                "end": 222.43333333333334,
+                "startFrame": 6171,
+                "endFrame": 6673,
+                "words": 39,
+                "sceneIndex": 13,
+                "cueIndex": 3,
+                "sourceCueSha256": "615ff87ac6258073afe337a2ee9637ba016fe0c84925f057a6543cabc1198df4"
+              }
+            ]
+          },
+          {
+            "start": 222.73333333333332,
+            "end": 240.36666666666667,
+            "cues": [
+              {
+                "text": "Precisar que haría falta para otro protocolo.",
+                "start": 222.73333333333332,
+                "end": 225.73333333333332,
+                "startFrame": 6682,
+                "endFrame": 6772,
+                "words": 7,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "170c396309b3c1e738ea9481cf4ee7ba900930ab1c05a0455df706aef9739e15"
+              },
+              {
+                "text": "Buscar primero un portador y después comunicar su día sería otro mecanismo, y habría que especificarlo.",
+                "start": 226.03333333333333,
+                "end": 232.9,
+                "startFrame": 6781,
+                "endFrame": 6987,
+                "words": 16,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "5e0d5e8d4341c971ef957d0a2af2c374adcdd5343bc5632def2718262baaa19d"
+              },
+              {
+                "text": "Aquí no sustituyo la unión de a por un descendiente fijado ni elijo después de mirar.",
+                "start": 233.2,
+                "end": 240.06666666666666,
+                "startFrame": 6996,
+                "endFrame": 7202,
+                "words": 16,
+                "sceneIndex": 14,
+                "cueIndex": 2,
+                "sourceCueSha256": "0f2dfd30e03b082c720a70432d02f7b63fddac449f21d32fb99c58cf090f85c5"
+              }
+            ]
+          },
+          {
+            "start": 240.36666666666667,
+            "end": 278.46666666666664,
+            "cues": [
+              {
+                "text": "La respuesta razonada es El aviso existencial conserva una vez cada pareja con algún portador de lunes; la selección previa la pondera por eme dividido entre 2.",
+                "start": 240.36666666666667,
+                "end": 251.96666666666667,
+                "startFrame": 7211,
+                "endFrame": 7559,
+                "words": 27,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "659e5c02567bc51a9d65e46bed9257e92d93ebb7106d83fd0e37aa95305b4169"
+              },
+              {
+                "text": "Una pareja con dos candidatos tiene multiplicidad dos en los 200 estados seleccionados, pero solo una en los 100 estados existenciales.",
+                "start": 252.26666666666668,
+                "end": 261.26666666666665,
+                "startFrame": 7568,
+                "endFrame": 7838,
+                "words": 21,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "8795439ef8699fca34d9695c8df220d9745c3b3ba40c3133ee0458d868686615"
+              },
+              {
+                "text": "Por eso las posteriores son 9 dividido entre 19 y 1 dividido entre 2..",
+                "start": 261.56666666666666,
+                "end": 267.56666666666666,
+                "startFrame": 7847,
+                "endFrame": 8027,
+                "words": 14,
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "sourceCueSha256": "2017472856152b054b97c9343be73de72c8f9d37afc9b3508e0786aba731958e"
+              },
+              {
+                "text": "La diferencia está en la regla que produce el aviso, no en reservar lunes a un descendiente ni en cambiar los supuestos de independencia.",
+                "start": 267.8666666666667,
+                "end": 278.1666666666667,
+                "startFrame": 8036,
+                "endFrame": 8345,
+                "words": 24,
+                "sceneIndex": 15,
+                "cueIndex": 3,
+                "sourceCueSha256": "f0e6299e1f940c9900a0a3876bb9fc706739496478ecdef2a8ce1df78285439a"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
