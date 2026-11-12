@@ -1,0 +1,482 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-practica-algebra-normalization--last-share",
+  "kind": "exercise",
+  "title": "¿Qué proporción corresponde al último estado?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "2b4d92e2fa20a86872a3b513e3115250dbcb7d1624bf072e2064b5ea8a535280",
+  "src": "videos/ejercicio-practica-algebra-normalization--last-share/video.mp4",
+  "poster": "videos/ejercicio-practica-algebra-normalization--last-share/poster.jpg",
+  "duration": 138,
+  "frames": 4140,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "2c3a814085c0595c7396f93fc6522d012723f88ad2e7acbde5ea58952184d092",
+  "videoSha256": "d54fb21a3a2220b3498d285ad8a6f4c49e0ac7dbe6ac21c6616be3a4aa6743b0",
+  "posterSha256": "c4fe054b3d458b1500d3bb95141b9d4e0bd2df9ba31a3b497cc9de3d99bd34c6",
+  "canonicalSha256": "5137f567daa5a0b8f48687336ea4ce986e89cd7091f78150976c7e22194eb186",
+  "inputHash": "876c61b21806f7a628aa498e860edbc1e22402605cc0b728492559c92a4ae9f7",
+  "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "151b3105e5b151037fb177519c781fd064f4e398fccc7cd39add1ae5f0a6640e",
+    "canonicalSha256": "5137f567daa5a0b8f48687336ea4ce986e89cd7091f78150976c7e22194eb186",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Despejar una constante"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "2c511720b267f9f4c1c33db51b3b27fabbd8a5ab7683790d5a2cb521fabf113e",
+    "transcriptSha256": "2c3a814085c0595c7396f93fc6522d012723f88ad2e7acbde5ea58952184d092",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-practica-algebra-normalization",
+  "transcript": {
+    "id": "ejercicio-practica-algebra-normalization--last-share",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "5137f567daa5a0b8f48687336ea4ce986e89cd7091f78150976c7e22194eb186",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 138,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 11.7,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Qué proporción corresponde al último estado?",
+            "start": 2.9,
+            "end": 5.5,
+            "startFrame": 87,
+            "endFrame": 165,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "defec83aec959bc8f4af866e39bb74a3f18c87e0df6a8631955354125680fb27"
+          },
+          {
+            "text": "Queremos comparar una parte con su propio total, no dar un recuento absoluto.",
+            "start": 5.8,
+            "end": 11.4,
+            "startFrame": 174,
+            "endFrame": 342,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "9d2d003a9fbe3398290d4830e52597de26915937790ca622e4322f780303f799"
+          }
+        ]
+      },
+      {
+        "start": 11.7,
+        "end": 25.5,
+        "cues": [
+          {
+            "text": "Los pesos describen importancia relativa, no probabilidades todavía.",
+            "start": 11.7,
+            "end": 15.133333333333333,
+            "startFrame": 351,
+            "endFrame": 454,
+            "words": 8,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "e33bfaa43d6e29ac4a8405b4023a154e8b3287c883e67e173ba8fa39d87a0ed4"
+          },
+          {
+            "text": "Multiplicar todos por la misma constante conserva sus razones.",
+            "start": 15.433333333333334,
+            "end": 19.3,
+            "startFrame": 463,
+            "endFrame": 579,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "04558fd9b838befe14a002abfc3fdfe20fc2cd32a72e6cd0f977f5df6b98c0ec"
+          },
+          {
+            "text": "Despejamos esa constante haciendo la misma operación en ambos lados de la igualdad.",
+            "start": 19.6,
+            "end": 25.2,
+            "startFrame": 588,
+            "endFrame": 756,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "09259802f8bd994869f33782c7049800cb7caab10126bdf5e085527f1963dc77"
+          }
+        ]
+      },
+      {
+        "start": 25.5,
+        "end": 27.533333333333335,
+        "cues": [
+          {
+            "text": "Pesos: 2, 3, 7.",
+            "start": 25.5,
+            "end": 27.233333333333334,
+            "startFrame": 765,
+            "endFrame": 817,
+            "words": 4,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ccf4282bf8dad4c49200c293bd2159154d4ab3f132d787201d36d153f7a62c1f"
+          }
+        ]
+      },
+      {
+        "start": 27.533333333333335,
+        "end": 35.13333333333333,
+        "cues": [
+          {
+            "text": "La igualdad es abre paréntesis, 2 más 3 más 7, cierra paréntesis por ce igual a 1.",
+            "start": 27.533333333333335,
+            "end": 34.833333333333336,
+            "startFrame": 826,
+            "endFrame": 1045,
+            "words": 17,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "5ad3cc6517360434d8f020c5a176d9bf55d55d836fefa15969415f184ea2ae8b"
+          }
+        ]
+      },
+      {
+        "start": 35.13333333333333,
+        "end": 39.3,
+        "cues": [
+          {
+            "text": "Los pesos son positivos y no son aún proporciones.",
+            "start": 35.13333333333333,
+            "end": 39,
+            "startFrame": 1054,
+            "endFrame": 1170,
+            "words": 9,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "c793b7518bf9f464832b23ab6bd84412633617d9c7ac7eed128c7a67849aad8c"
+          }
+        ]
+      },
+      {
+        "start": 39.3,
+        "end": 42.6,
+        "cues": [
+          {
+            "text": "La misma constante multiplica todos los pesos.",
+            "start": 39.3,
+            "end": 42.3,
+            "startFrame": 1179,
+            "endFrame": 1269,
+            "words": 7,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "0f46c206827d04f323348dffb90832008ef5451257996cd232c070eddadb32a1"
+          }
+        ]
+      },
+      {
+        "start": 42.6,
+        "end": 50.53333333333333,
+        "cues": [
+          {
+            "text": "Multiplica el último peso por ce.",
+            "start": 42.6,
+            "end": 45.2,
+            "startFrame": 1278,
+            "endFrame": 1356,
+            "words": 6,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "b7d24b1a65cc19c21e982996830a86dbb83aef40a88671e39e2186a8b82bea00"
+          },
+          {
+            "text": "Dividir por el total conserva la importancia relativa de esa parte.",
+            "start": 45.5,
+            "end": 50.233333333333334,
+            "startFrame": 1365,
+            "endFrame": 1507,
+            "words": 11,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "3bbf9fcb6a9705f39fbd48af37cdedfeaff3011f842d42ad16703e04d6dd8763"
+          }
+        ]
+      },
+      {
+        "start": 50.53333333333333,
+        "end": 74.4,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 50.53333333333333,
+            "end": 53.53333333333333,
+            "startFrame": 1516,
+            "endFrame": 1606,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "¿Qué proporción corresponde al último estado?",
+            "start": 53.833333333333336,
+            "end": 56.43333333333333,
+            "startFrame": 1615,
+            "endFrame": 1693,
+            "words": 6,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "0e5ada86f03cec6b31f253cec40ffd4fbdcb55d67ac645ad0b5063a200eebe82"
+          },
+          {
+            "text": "La igualdad funciona como una balanza: hacemos la misma operación en ambos lados.",
+            "start": 56.733333333333334,
+            "end": 62.333333333333336,
+            "startFrame": 1702,
+            "endFrame": 1870,
+            "words": 13,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "d8d7e5d590381d2d7ef0ad2de523c3c4d088d4b2d256fe4830efbffbd0180f5f"
+          },
+          {
+            "text": "Primero sumamos los pesos y después dividimos ambos lados por esa suma para dejar sola la constante.",
+            "start": 62.63333333333333,
+            "end": 69.93333333333334,
+            "startFrame": 1879,
+            "endFrame": 2098,
+            "words": 17,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "eafa39cca99cf50c4e6ebc80486b3d1d0ee4bf2cf907e03cd9f9e977aa2fcc04"
+          },
+          {
+            "text": "Para este apartado: Multiplica el último peso por ce.",
+            "start": 70.23333333333333,
+            "end": 74.1,
+            "startFrame": 2107,
+            "endFrame": 2223,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "9d390051115ff9029fc5debc58c3de1ac64ce6b259768c1afe7be9207aa7d9e1"
+          }
+        ]
+      },
+      {
+        "start": 74.4,
+        "end": 85,
+        "cues": [
+          {
+            "text": "Escalar el peso. 7 por abre paréntesis, 1 dividido entre 12, cierra paréntesis igual a 0 coma 5 8 3 3 3 3 3.",
+            "start": 74.4,
+            "end": 84.7,
+            "startFrame": 2232,
+            "endFrame": 2541,
+            "words": 24,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "1f658ecf5262ff14ac417d5c327506b75d36919bf47b851fcdf9f6badf7fbdbd"
+          }
+        ]
+      },
+      {
+        "start": 85,
+        "end": 102.66666666666667,
+        "cues": [
+          {
+            "text": "Revisar el total.",
+            "start": 85,
+            "end": 86.3,
+            "startFrame": 2550,
+            "endFrame": 2589,
+            "words": 3,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "51eb5e0532292562261bc6c68c82f870630f7dbbde9d8e2fb1f467c6f5b7f90c"
+          },
+          {
+            "text": "Las tres proporciones son 0 coma 1 6 6 6 6 6 7, 0 coma 2 5, 0 coma 5 8 3 3 3 3 3.",
+            "start": 86.6,
+            "end": 97.76666666666667,
+            "startFrame": 2598,
+            "endFrame": 2933,
+            "words": 26,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "3b3f6d2c8c093678708190856fd5d9ffe9f4394f996ecc602e8b63fe790a1915"
+          },
+          {
+            "text": "Sin redondear, suman 12 dividido entre 12 igual a 1.",
+            "start": 98.06666666666666,
+            "end": 102.36666666666666,
+            "startFrame": 2942,
+            "endFrame": 3071,
+            "words": 10,
+            "sceneIndex": 9,
+            "cueIndex": 2,
+            "sourceCueSha256": "0b238a5563d394c913cc2f8c7cda3f2806cc15b6801355fcbc19c4cdaa7673d9"
+          }
+        ]
+      },
+      {
+        "start": 102.66666666666667,
+        "end": 124.93333333333334,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 102.66666666666667,
+            "end": 103.96666666666667,
+            "startFrame": 3080,
+            "endFrame": 3119,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 5 8 3 3 3 3 3 probabilidad entre 0 y 1.",
+            "start": 104.26666666666667,
+            "end": 111.56666666666666,
+            "startFrame": 3128,
+            "endFrame": 3347,
+            "words": 17,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "dd889b3be2245c5840e0d6d0011e668d6d442271ddd293524b4dde294faa98e4"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 111.86666666666666,
+            "end": 119.16666666666667,
+            "startFrame": 3356,
+            "endFrame": 3575,
+            "words": 17,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "aa1d6d19c420ba9dcb2f5309dd1375dbb5f320164532f736c28fa346126dcc40"
+          },
+          {
+            "text": "Dividir todos los pesos por el mismo total conserva su importancia relativa.",
+            "start": 119.46666666666667,
+            "end": 124.63333333333334,
+            "startFrame": 3584,
+            "endFrame": 3739,
+            "words": 12,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "137cf053901f0221b6f3686b77a937be9520478cf83a8e2185bbda1c96dd1872"
+          }
+        ]
+      },
+      {
+        "start": 124.93333333333334,
+        "end": 138,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 5 8 3 3 3 3 3 probabilidad entre 0 y 1.",
+            "start": 124.93333333333334,
+            "end": 132.23333333333332,
+            "startFrame": 3748,
+            "endFrame": 3967,
+            "words": 17,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "81f72e5511523112dc9111e5ddb019954c4f7a3646f81e6193808024a55c80d1"
+          },
+          {
+            "text": "Dividir todos los pesos por el mismo total conserva su importancia relativa.",
+            "start": 132.53333333333333,
+            "end": 137.7,
+            "startFrame": 3976,
+            "endFrame": 4131,
+            "words": 12,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "1cffd413ae2647d44c72fb5ca2ef620a2ee91dd1ef1938eb4412d75691c52cb1"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
