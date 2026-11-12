@@ -255713,6 +255713,572 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-ejemplo-familia-exponencial-poisson-1--exact": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-ejemplo-familia-exponencial-poisson-1--exact",
+      "kind": "exercise",
+      "title": "Calcula P(X = k).",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "12ff26fd8eba550db8b3b3b17a5276dcf0abfe42658ac4fde25dc5861e47bedb",
+      "src": "videos/ejercicio-ejemplo-familia-exponencial-poisson-1--exact/video.mp4",
+      "poster": "videos/ejercicio-ejemplo-familia-exponencial-poisson-1--exact/poster.jpg",
+      "duration": 198.9,
+      "frames": 5967,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "dbef9d7a318460a22e9bc6934a8c4c0a64158bc293f4a176e8a8173742a01262",
+      "videoSha256": "fe480af408ec438b27e145763ec459fd3433e87f9585eb46c4c06e5c37bb0911",
+      "posterSha256": "d4236b842ceb995452c33bb726779b339cfc1eaadbc22520be5c9fcc411d4977",
+      "canonicalSha256": "0ce1332a1edd7b1597badf4959a229ff0fb6770843b660f831d04e106d92a7f9",
+      "inputHash": "f0bc12c7ac25c101ec46581bfa4cd5fe8f893ca25e0972f4ca376d8869af03e5",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "316ec3555cbaabe321e081b5f91590f6e1c73da3a74c571389901968dadf578f",
+        "canonicalSha256": "0ce1332a1edd7b1597badf4959a229ff0fb6770843b660f831d04e106d92a7f9",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Poisson"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "384227f1ed1a7322f52afaf804c4c67d8f00f9d7f824f17dee313ef1bcfac376",
+        "transcriptSha256": "dbef9d7a318460a22e9bc6934a8c4c0a64158bc293f4a176e8a8173742a01262",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-ejemplo-familia-exponencial-poisson-1",
+      "transcript": {
+        "id": "ejercicio-ejemplo-familia-exponencial-poisson-1--exact",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "0ce1332a1edd7b1597badf4959a229ff0fb6770843b660f831d04e106d92a7f9",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 198.9,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 9.5,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de equis igual a ka.",
+                "start": 2.9,
+                "end": 5.9,
+                "startFrame": 87,
+                "endFrame": 177,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "d04a8dbc4799ed13cd3ae17c132aaad8abc4c2fc7f6c4de67c8bf27f36361c81"
+              },
+              {
+                "text": "Queremos un recuento exacto, no una acumulada.",
+                "start": 6.2,
+                "end": 9.2,
+                "startFrame": 186,
+                "endFrame": 276,
+                "words": 7,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "a975cce045466b065af73a0d5bd21b43b333fafa659ba80e3072816c1604997c"
+              }
+            ]
+          },
+          {
+            "start": 9.5,
+            "end": 31.9,
+            "cues": [
+              {
+                "text": "equis cuenta eventos en una exposición fija y lambda es su recuento esperado en esa exposición, no una probabilidad.",
+                "start": 9.5,
+                "end": 17.666666666666668,
+                "startFrame": 285,
+                "endFrame": 530,
+                "words": 19,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "a993244c4393e65194e8e0c7bb9febac29b21dd2f4053edf6116522e527adfc4"
+              },
+              {
+                "text": "La masa de ka combina e elevado a menos lambda, lambda a ka y ka factorial; el factorial corrige las permutaciones de los mismos eventos.",
+                "start": 17.966666666666665,
+                "end": 28.7,
+                "startFrame": 539,
+                "endFrame": 861,
+                "words": 25,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "342ed2159c1346fa50af1e172cad92fadcfa3b85d9e9e92a2f0c363ec8f62f94"
+              },
+              {
+                "text": "La exponencial normaliza todas las masas.",
+                "start": 29,
+                "end": 31.6,
+                "startFrame": 870,
+                "endFrame": 948,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "9155a939092b4b4da0d10a07d78a451e70139382ab3d6853f74618fa04c6a588"
+              }
+            ]
+          },
+          {
+            "start": 31.9,
+            "end": 35.63333333333333,
+            "cues": [
+              {
+                "text": "Tasa: 3 llegadas por minuto; ventana: 2 minutos.",
+                "start": 31.9,
+                "end": 35.333333333333336,
+                "startFrame": 957,
+                "endFrame": 1060,
+                "words": 8,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "6809721d8d8e8c134d95c8c82901c446f7d96f132a461d95ea8d1dba4978be95"
+              }
+            ]
+          },
+          {
+            "start": 35.63333333333333,
+            "end": 40.666666666666664,
+            "cues": [
+              {
+                "text": "ka igual a 4; soporte equis igual a 0, 1, 2,...",
+                "start": 35.63333333333333,
+                "end": 40.36666666666667,
+                "startFrame": 1069,
+                "endFrame": 1211,
+                "words": 11,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "a65de4e09daa23d93068d27b321c8df2a2d3c48bf7a77b9bb94bcfce12c33e79"
+              }
+            ]
+          },
+          {
+            "start": 40.666666666666664,
+            "end": 44.833333333333336,
+            "cues": [
+              {
+                "text": "Proceso de Poisson homogéneo: tasa constante e incrementos independientes.",
+                "start": 40.666666666666664,
+                "end": 44.53333333333333,
+                "startFrame": 1220,
+                "endFrame": 1336,
+                "words": 9,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "fb1f9c448f9831d8b3144a1a9785796f2272e1c9bbb05898319e8ed847bc55ae"
+              }
+            ]
+          },
+          {
+            "start": 44.833333333333336,
+            "end": 52,
+            "cues": [
+              {
+                "text": "La probabilidad de dos llegadas en un intervalo muy breve es despreciable frente a su duración.",
+                "start": 44.833333333333336,
+                "end": 51.7,
+                "startFrame": 1345,
+                "endFrame": 1551,
+                "words": 16,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "713236ef7e494b28935ffcf0208da09d5a8f9d15bf8cb102aa766e9c626fa2c1"
+              }
+            ]
+          },
+          {
+            "start": 52,
+            "end": 62.06666666666667,
+            "cues": [
+              {
+                "text": "La media de la ventana es tasa por duración.",
+                "start": 52,
+                "end": 55.86666666666667,
+                "startFrame": 1560,
+                "endFrame": 1676,
+                "words": 9,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "bb370cb8159f743b31fda3985af93a3315eec7e8a09769a76f881cbc1923bb20"
+              },
+              {
+                "text": "Conservamos solo el entero pedido; las condiciones del modelo determinan qué masa utilizar.",
+                "start": 56.166666666666664,
+                "end": 61.766666666666666,
+                "startFrame": 1685,
+                "endFrame": 1853,
+                "words": 13,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "0a9fa882c836af1ae9f2fefdb1c1a16f37afcbdaf2a6d964ead18dbbdc4f9ca7"
+              }
+            ]
+          },
+          {
+            "start": 62.06666666666667,
+            "end": 90.93333333333334,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 62.06666666666667,
+                "end": 65.06666666666666,
+                "startFrame": 1862,
+                "endFrame": 1952,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de equis igual a ka.",
+                "start": 65.36666666666666,
+                "end": 68.36666666666666,
+                "startFrame": 1961,
+                "endFrame": 2051,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "fe3dadddf79849f7b24d3dfcbd6edbb8eb48fbe22451a3ab7ecccb5409e8a42e"
+              },
+              {
+                "text": "El parámetro lambda cuenta eventos esperados en la exposición especificada.",
+                "start": 68.66666666666667,
+                "end": 72.96666666666667,
+                "startFrame": 2060,
+                "endFrame": 2189,
+                "words": 10,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "444251c729b87f4d47e08de2ce8880d65ae2f404a7cd6bb4d309db3ef2fef382"
+              },
+              {
+                "text": "La masa combina la exponencial negativa, la potencia de lambda y el factorial del recuento.",
+                "start": 73.26666666666667,
+                "end": 79.7,
+                "startFrame": 2198,
+                "endFrame": 2391,
+                "words": 15,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "caa717ba2ae48ef908791e61e4bb3ea85f7c872b7065d0c4caccd3ca76b2cadc"
+              },
+              {
+                "text": "Para una cola sumamos masas o usamos el complemento de la acumulada.",
+                "start": 80,
+                "end": 85.16666666666667,
+                "startFrame": 2400,
+                "endFrame": 2555,
+                "words": 12,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "b973579cdb6755940c5d2a0d0ff40394e303fc0cb36adb98fe27310146948078"
+              },
+              {
+                "text": "Para este apartado: La media de la ventana es tasa por duración.",
+                "start": 85.46666666666667,
+                "end": 90.63333333333334,
+                "startFrame": 2564,
+                "endFrame": 2719,
+                "words": 12,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "e5c6a1a41329482a4e8bea9f3f72eeecdde1b2be35b67b1f87ab5c08f785e261"
+              }
+            ]
+          },
+          {
+            "start": 90.93333333333334,
+            "end": 97.23333333333333,
+            "cues": [
+              {
+                "text": "Ajustar la ventana. lambda igual a 3 por 2 igual a 6 llegadas esperadas.",
+                "start": 90.93333333333334,
+                "end": 96.93333333333334,
+                "startFrame": 2728,
+                "endFrame": 2908,
+                "words": 14,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "3766041031dcf83731a741ce33e70f8f2a024f55c8ab2e8a556408ae21f20026"
+              }
+            ]
+          },
+          {
+            "start": 97.23333333333333,
+            "end": 105.13333333333334,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 97.23333333333333,
+                "end": 100.66666666666667,
+                "startFrame": 2917,
+                "endFrame": 3020,
+                "words": 8,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 100.96666666666667,
+                "end": 104.83333333333333,
+                "startFrame": 3029,
+                "endFrame": 3145,
+                "words": 9,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 105.13333333333334,
+            "end": 116.16666666666667,
+            "cues": [
+              {
+                "text": "En este modelo Poisson, lambda es el recuento esperado por unidad de exposición del enunciado, no una probabilidad ni la inversa de una escala temporal.",
+                "start": 105.13333333333334,
+                "end": 115.86666666666666,
+                "startFrame": 3154,
+                "endFrame": 3476,
+                "words": 25,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "4af63908ce612aa816aadffd1f9991bacb63a4ea9a74f28db62d71249d038421"
+              }
+            ]
+          },
+          {
+            "start": 116.16666666666667,
+            "end": 150.16666666666666,
+            "cues": [
+              {
+                "text": "Sustituir y calcular.",
+                "start": 116.16666666666667,
+                "end": 117.46666666666667,
+                "startFrame": 3485,
+                "endFrame": 3524,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "0290755fd7ff275ca64ce7ce2a43180356dc6a4eb506dae310cade136832544a"
+              },
+              {
+                "text": "Lambda vale 6 y ka vale 4.",
+                "start": 117.76666666666667,
+                "end": 120.76666666666667,
+                "startFrame": 3533,
+                "endFrame": 3623,
+                "words": 7,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "9d4d51cc8670fab73f3d484ce93a5c914efb4119bc463866e6840de6867ac0e3"
+              },
+              {
+                "text": "El factorial 4 factorial significa multiplicar los enteros desde 1 hasta 4: vale 24.",
+                "start": 121.06666666666666,
+                "end": 127.06666666666666,
+                "startFrame": 3632,
+                "endFrame": 3812,
+                "words": 14,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "e7936b306df6312005a96b61b26ef1de42a9fdbfd7f5f916fa992b56e8eaec61"
+              },
+              {
+                "text": "La potencia 6 elevada a 4 vale 1296.",
+                "start": 127.36666666666666,
+                "end": 130.8,
+                "startFrame": 3821,
+                "endFrame": 3924,
+                "words": 8,
+                "sceneIndex": 11,
+                "cueIndex": 3,
+                "sourceCueSha256": "a68d5f38286df1d1ddd2c48d439d6baac8abba027e02c3b34cbe1d97995f4afc"
+              },
+              {
+                "text": "La exponencial de menos 6 vale aproximadamente 0 coma 0 0 2 4 7 8 7 5 2.",
+                "start": 131.1,
+                "end": 138.83333333333334,
+                "startFrame": 3933,
+                "endFrame": 4165,
+                "words": 18,
+                "sceneIndex": 11,
+                "cueIndex": 4,
+                "sourceCueSha256": "be5e3242bba1f874540519bbdd876ca756a2408ce3ed850405d3ccf917d8c455"
+              },
+              {
+                "text": "Multiplicamos esa exponencial por 1296 y dividimos entre 24: obtenemos 0 coma 1 3 3 8 5 2 6. probabilidad de equis igual a ka.",
+                "start": 139.13333333333333,
+                "end": 149.86666666666667,
+                "startFrame": 4174,
+                "endFrame": 4496,
+                "words": 25,
+                "sceneIndex": 11,
+                "cueIndex": 5,
+                "sourceCueSha256": "2e01338c987aca4f1009305b0b471307817ce46f42cf81bd34f6a0156016aa70"
+              }
+            ]
+          },
+          {
+            "start": 150.16666666666666,
+            "end": 165.9,
+            "cues": [
+              {
+                "text": "probabilidad de equis igual a ka queda igual a e elevado a abre paréntesis, - lambda , cierra paréntesis abre paréntesis, lambda elevado a ka, cierra paréntesis dividido entre abre paréntesis, ka factorial , cierra paréntesis.",
+                "start": 150.16666666666666,
+                "end": 165.6,
+                "startFrame": 4505,
+                "endFrame": 4968,
+                "words": 36,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "1f4628d1050fa7e6172727abcf8102b05795f6dd9ab9f07a587237f4e3a51977"
+              }
+            ]
+          },
+          {
+            "start": 165.9,
+            "end": 187,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 165.9,
+                "end": 167.2,
+                "startFrame": 4977,
+                "endFrame": 5016,
+                "words": 3,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 1 3 3 8 5 2 6 probabilidad entre 0 y 1.",
+                "start": 167.5,
+                "end": 174.8,
+                "startFrame": 5025,
+                "endFrame": 5244,
+                "words": 17,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "08e8ea0af0fa124a2a19ea9e12794ea7749de1b122bfd71d4d7b049178860010"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso. lambda es un número esperado de llegadas, no una probabilidad.",
+                "start": 175.1,
+                "end": 186.7,
+                "startFrame": 5253,
+                "endFrame": 5601,
+                "words": 27,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "d42e2f3c5841d515fabec20f4581d2f5eae0de41131ef164e459249ef5914b7f"
+              }
+            ]
+          },
+          {
+            "start": 187,
+            "end": 198.9,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 1 3 3 8 5 2 6 probabilidad entre 0 y 1. lambda es un número esperado de llegadas, no una probabilidad.",
+                "start": 187,
+                "end": 198.6,
+                "startFrame": 5610,
+                "endFrame": 5958,
+                "words": 27,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "004f4bd7b8e0f47871fdd134cd33766c54b71a8500e2306201a9813d07274a46"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
