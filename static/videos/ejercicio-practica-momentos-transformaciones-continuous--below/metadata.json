@@ -1,0 +1,504 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-practica-momentos-transformaciones-continuous--below",
+  "kind": "exercise",
+  "title": "Calcula P(X ≤ t).",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "e9149101f76026685e5106053c38e619e7b00670e05c557d9648558afe579a94",
+  "src": "videos/ejercicio-practica-momentos-transformaciones-continuous--below/video.mp4",
+  "poster": "videos/ejercicio-practica-momentos-transformaciones-continuous--below/poster.jpg",
+  "duration": 190.4,
+  "frames": 5712,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "2233123a9cf21442c20ab39604428209e04eb9d4a4d317f5de2d6b9fb96e7aad",
+  "videoSha256": "863955089f516006fa449390138ee05d7f85090be58445ad1456a29916068cd4",
+  "posterSha256": "744fe1cfeeb616ad18b39dbb0743530380e625cd873aa74d371d7dd63743c425",
+  "canonicalSha256": "422939f0f35ef8af6c10e7f4fcd97e24e90a88313c886a581c698442e5162690",
+  "inputHash": "d2203a8baa214400fef7331724199ba634291b32386853bc02ed86e7119d98fe",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "a5d8a2b2703cda714a05e306a81c2a9b3c5acc71399459782efa1ac4c73394bf",
+    "canonicalSha256": "422939f0f35ef8af6c10e7f4fcd97e24e90a88313c886a581c698442e5162690",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Variable continua"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "2b3ac2355bf8fb1bfec5a72b68279a1651018ace6166506f9ba432d45e5c25f1",
+    "transcriptSha256": "2233123a9cf21442c20ab39604428209e04eb9d4a4d317f5de2d6b9fb96e7aad",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-practica-momentos-transformaciones-continuous",
+  "transcript": {
+    "id": "ejercicio-practica-momentos-transformaciones-continuous--below",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "422939f0f35ef8af6c10e7f4fcd97e24e90a88313c886a581c698442e5162690",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 190.4,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 11.666666666666666,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula probabilidad de equis menor o igual que te minúscula.",
+            "start": 2.9,
+            "end": 7.2,
+            "startFrame": 87,
+            "endFrame": 216,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "31a4b074c72979d07eafb55ef75413bd7a4e4c32492299da2b54ec25a446a398"
+          },
+          {
+            "text": "Queremos el área que queda por debajo del umbral.",
+            "start": 7.5,
+            "end": 11.366666666666667,
+            "startFrame": 225,
+            "endFrame": 341,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "b264eb6426f11e11e88b87754f171e03c38bca43cd25afe5b1a171e5fc77f194"
+          }
+        ]
+      },
+      {
+        "start": 11.666666666666666,
+        "end": 28.033333333333335,
+        "cues": [
+          {
+            "text": "Una densidad es probabilidad por unidad, no probabilidad de un punto.",
+            "start": 11.666666666666666,
+            "end": 16.4,
+            "startFrame": 350,
+            "endFrame": 492,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "05d4efe578dbb94d081bb9622c4057e50cc4f2b1e5471faae321af144a49d26d"
+          },
+          {
+            "text": "Su integral suma pequeñas áreas de altura por anchura.",
+            "start": 16.7,
+            "end": 20.566666666666666,
+            "startFrame": 501,
+            "endFrame": 617,
+            "words": 9,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "3f297aeb4b5851aab819019a78ee0563797f31677a6427e0bc638b25dd980c2d"
+          },
+          {
+            "text": "El soporte fija los límites permitidos y la normalización exige área uno y altura no negativa.",
+            "start": 20.866666666666667,
+            "end": 27.733333333333334,
+            "startFrame": 626,
+            "endFrame": 832,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "61a5a64822a3f83b31f98c11ef42aed07badf4c99a844b54c50e8f1d6bbb4545"
+          }
+        ]
+      },
+      {
+        "start": 28.033333333333335,
+        "end": 33.93333333333333,
+        "cues": [
+          {
+            "text": "be igual a 3; umbral te minúscula igual a 0 coma 7 5.",
+            "start": 28.033333333333335,
+            "end": 33.63333333333333,
+            "startFrame": 841,
+            "endFrame": 1009,
+            "words": 13,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "ef5841ce340ae8469def35bcb41e95f9a9f66d6559bb68b571b4facbe52b3aad"
+          }
+        ]
+      },
+      {
+        "start": 33.93333333333333,
+        "end": 37.233333333333334,
+        "cues": [
+          {
+            "text": "La densidad no es una probabilidad puntual.",
+            "start": 33.93333333333333,
+            "end": 36.93333333333333,
+            "startFrame": 1018,
+            "endFrame": 1108,
+            "words": 7,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "279e84905e52328bc0a59b23ec5ebc9c84fca7a0c3caad072e9da0860f7ffa2a"
+          }
+        ]
+      },
+      {
+        "start": 37.233333333333334,
+        "end": 43.13333333333333,
+        "cues": [
+          {
+            "text": "equis es continua y su soporte es intervalo cerrado desde 0 hasta be.",
+            "start": 37.233333333333334,
+            "end": 42.833333333333336,
+            "startFrame": 1117,
+            "endFrame": 1285,
+            "words": 13,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "fecfe77dd1f176f77270ad2777ca14e94996b1bb86bbb9a182722abf077553e5"
+          }
+        ]
+      },
+      {
+        "start": 43.13333333333333,
+        "end": 48.166666666666664,
+        "cues": [
+          {
+            "text": "La integral de la densidad sobre el soporte debe ser uno.",
+            "start": 43.13333333333333,
+            "end": 47.86666666666667,
+            "startFrame": 1294,
+            "endFrame": 1436,
+            "words": 11,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "00a07a7cc2a6d98f5a2b767fa70da843253894404be5739d4d01cb285d68a846"
+          }
+        ]
+      },
+      {
+        "start": 48.166666666666664,
+        "end": 59.5,
+        "cues": [
+          {
+            "text": "La probabilidad es el área desde cero hasta te minúscula.",
+            "start": 48.166666666666664,
+            "end": 52.46666666666667,
+            "startFrame": 1445,
+            "endFrame": 1574,
+            "words": 10,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "a19598e47bee20c129d9bb4c43869032559959ae4d094204e89b1d7b0e34a9cc"
+          },
+          {
+            "text": "Acumulamos desde el inicio del soporte y mantenemos las mismas unidades al introducir el límite.",
+            "start": 52.766666666666666,
+            "end": 59.2,
+            "startFrame": 1583,
+            "endFrame": 1776,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "bac8a048360aeb77013bcf2664326242e2e71fd0dff16854b507dc3721ab364c"
+          }
+        ]
+      },
+      {
+        "start": 59.5,
+        "end": 88.4,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 59.5,
+            "end": 62.5,
+            "startFrame": 1785,
+            "endFrame": 1875,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula probabilidad de equis menor o igual que te minúscula.",
+            "start": 62.8,
+            "end": 67.1,
+            "startFrame": 1884,
+            "endFrame": 2013,
+            "words": 10,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "2068de4dd55ac4817d080441422d978de9762edf788f6d5ee3dcdec8479567ef"
+          },
+          {
+            "text": "La probabilidad continua es un área.",
+            "start": 67.4,
+            "end": 70,
+            "startFrame": 2022,
+            "endFrame": 2100,
+            "words": 6,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "f0e9fc153478029986e8c9b1b15243c248d6ea7b5dbfca761f782ef33e6c73e6"
+          },
+          {
+            "text": "Una integral suma altura por anchura y una primitiva permite evaluar esa acumulación entre dos límites.",
+            "start": 70.3,
+            "end": 77.16666666666667,
+            "startFrame": 2109,
+            "endFrame": 2315,
+            "words": 16,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "abd7b22a1f364aae5560b67b55bdbabe4a87e8c8eb3dec1a4559bbfb2bf6f03d"
+          },
+          {
+            "text": "Normalizamos sobre todo el soporte antes de integrar la región solicitada.",
+            "start": 77.46666666666667,
+            "end": 82.2,
+            "startFrame": 2324,
+            "endFrame": 2466,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "addfd0f9010547f1b05252bc5b0d6faffc122838e296ab643f474f6d51cefb43"
+          },
+          {
+            "text": "Para este apartado: La probabilidad es el área desde cero hasta te minúscula.",
+            "start": 82.5,
+            "end": 88.1,
+            "startFrame": 2475,
+            "endFrame": 2643,
+            "words": 13,
+            "sceneIndex": 7,
+            "cueIndex": 5,
+            "sourceCueSha256": "0ebaca7c06c2dbf04012bb165e53050b08e9cfe9050660db93f77e9abf01dcb1"
+          }
+        ]
+      },
+      {
+        "start": 88.4,
+        "end": 120,
+        "cues": [
+          {
+            "text": "Integrar en el intervalo pedido. ce te minúscula al cuadrado dividido entre 2 igual a 0 coma 2 2 2 2 2 2 2 por 0 coma 7 5 elevado a abre paréntesis, 2, cierra paréntesis dividido entre 2 igual a 0 coma 0 6 2 5. probabilidad de equis menor o igual que te minúscula igual a integral desde 0 hasta te minúscula de ce por equis minúscula respecto de equis minúscula.",
+            "start": 88.4,
+            "end": 119.7,
+            "startFrame": 2652,
+            "endFrame": 3591,
+            "words": 73,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "ecd1ff2413757fa0f051f4c9b414f83b30c3df14de53d1fade29dff40dd9acba"
+          }
+        ]
+      },
+      {
+        "start": 120,
+        "end": 148.26666666666668,
+        "cues": [
+          {
+            "text": "Comprobar el área.",
+            "start": 120,
+            "end": 121.3,
+            "startFrame": 3600,
+            "endFrame": 3639,
+            "words": 3,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "9c68ab23e50d9c0afcd24b93a924f5705ee4fe63398dc32ab4d51a7ff6d9a689"
+          },
+          {
+            "text": "La primitiva de ce por equis minúscula es ce por equis minúscula al cuadrado dividido entre dos: su derivada vuelve a ser ce por equis minúscula.",
+            "start": 121.6,
+            "end": 132.76666666666668,
+            "startFrame": 3648,
+            "endFrame": 3983,
+            "words": 26,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "513290edcf610ba1fb4d5752131d4be275b0a9a895ac1185afdcd03a77165a75"
+          },
+          {
+            "text": "En cero vale cero; en 0 coma 7 5 vale 0 coma 0 6 2 5.",
+            "start": 133.06666666666666,
+            "end": 139.93333333333334,
+            "startFrame": 3992,
+            "endFrame": 4198,
+            "words": 16,
+            "sceneIndex": 9,
+            "cueIndex": 2,
+            "sourceCueSha256": "d9b464afb90d2107ce161e79c0cc3505f8337a0f799b6bbed49f568cadb24d47"
+          },
+          {
+            "text": "Restamos el valor inicial y obtenemos 0 coma 0 6 2 5, una probabilidad entre cero y uno.",
+            "start": 140.23333333333332,
+            "end": 147.96666666666667,
+            "startFrame": 4207,
+            "endFrame": 4439,
+            "words": 18,
+            "sceneIndex": 9,
+            "cueIndex": 3,
+            "sourceCueSha256": "9e317e2cc84fe74fe95bacbaef6d97ea3a029efd642cb1939c458d76e367bd7e"
+          }
+        ]
+      },
+      {
+        "start": 148.26666666666668,
+        "end": 173.93333333333334,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 148.26666666666668,
+            "end": 149.56666666666666,
+            "startFrame": 4448,
+            "endFrame": 4487,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 0 6 2 5 probabilidad entre 0 y 1.",
+            "start": 149.86666666666667,
+            "end": 155.86666666666667,
+            "startFrame": 4496,
+            "endFrame": 4676,
+            "words": 14,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "dfeb8dd4efa127ffe3df1b9efe138d6dcef55ce9a759cce7d65f877d33307c5b"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 156.16666666666666,
+            "end": 163.46666666666667,
+            "startFrame": 4685,
+            "endFrame": 4904,
+            "words": 17,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "8e96b3b25cfd2acdf2e718f2af5d37c2ad86c84cfff05b08e5edfee560b94afc"
+          },
+          {
+            "text": "Al ser continua, probabilidad de equis menor que te minúscula es la misma; probabilidad de equis igual a te minúscula igual a 0.",
+            "start": 163.76666666666668,
+            "end": 173.63333333333333,
+            "startFrame": 4913,
+            "endFrame": 5209,
+            "words": 23,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "a2dea6f1d0ec5198dd49a5f31fed7c9d454410cb268bbd3a2497cc859316adce"
+          }
+        ]
+      },
+      {
+        "start": 173.93333333333334,
+        "end": 190.4,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 0 6 2 5 probabilidad entre 0 y 1.",
+            "start": 173.93333333333334,
+            "end": 179.93333333333334,
+            "startFrame": 5218,
+            "endFrame": 5398,
+            "words": 14,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "869263ba665a44272efbbb72cb4f3be231aaf0f40146e50b845cf38d9f3250ef"
+          },
+          {
+            "text": "Al ser continua, probabilidad de equis menor que te minúscula es la misma; probabilidad de equis igual a te minúscula igual a 0.",
+            "start": 180.23333333333332,
+            "end": 190.1,
+            "startFrame": 5407,
+            "endFrame": 5703,
+            "words": 23,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "27ba771227f8bd4a1676d7cffc284c61b46a1bb13d4b0a3dacef97f5aedb3cba"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
