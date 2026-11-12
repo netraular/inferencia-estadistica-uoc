@@ -1,0 +1,743 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-capstone-pec1-3--a-distribution",
+  "kind": "exercise",
+  "title": "Determina toda la distribución de Y condicionada a X=x, con su media, varianza y desviación típica.",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "d3e9a62652f6ede857a46bc62d68b98bccdc0fbfb5dd304cc81ecaa88669bdf7",
+  "src": "videos/ejercicio-capstone-pec1-3--a-distribution/video.mp4",
+  "poster": "videos/ejercicio-capstone-pec1-3--a-distribution/poster.jpg",
+  "duration": 331.26666666666665,
+  "frames": 9938,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "158ed48a30d3f80b56616b87578971f138a88fc2a8184e6e86e4debd9f1618e5",
+  "videoSha256": "894625610a2560b54a85f6db2e986ec703f7b7314dfb581f21ce7f80ccf545a4",
+  "posterSha256": "a432b342c2b4694b0510849703dee3d0c60e4af851c7d9d6c3322dc9c0a5817c",
+  "canonicalSha256": "ded34e429a45afdf380f0efa8463e70a6e93b3819ead04bc1066a75ef578e48b",
+  "inputHash": "d2f8386656fa4ab2a37eff3b4e5aa3333da92bd3c20540521b0bc95a31134181",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "582d9c08924970df9fdf237029fc37f0d702b25fc92a718cfafa19ec70a02666",
+    "canonicalSha256": "ded34e429a45afdf380f0efa8463e70a6e93b3819ead04bc1066a75ef578e48b",
+    "source": {
+      "file": "UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+      "url": "/materiales/UOC-MU-IE-2026-27-S1-PEC1-enunciado-1.pdf",
+      "kind": "statement",
+      "title": "UOC MU IE 2026-27 S1: PEC 1, enunciado",
+      "number": "3"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "58d2b8779fcd44f93a8c29860bc1cc3e8a6350beeba238a3b0253fde0cd2de6e",
+    "transcriptSha256": "158ed48a30d3f80b56616b87578971f138a88fc2a8184e6e86e4debd9f1618e5",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-capstone-pec1-3",
+  "transcript": {
+    "id": "ejercicio-capstone-pec1-3--a-distribution",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "ded34e429a45afdf380f0efa8463e70a6e93b3819ead04bc1066a75ef578e48b",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 331.26666666666665,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 18.5,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Determina toda la distribución de i griega condicionada a equis igual a equis minúscula, con su media, varianza y desviación típica.",
+            "start": 2.9,
+            "end": 11.9,
+            "startFrame": 87,
+            "endFrame": 357,
+            "words": 21,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "e500967242e427b86977b9867b573d1edbb2f860b97ba8bae6e654245c9cd210"
+          },
+          {
+            "text": "Queremos toda la ley de i griega al fijar equis, no solo una probabilidad.",
+            "start": 12.2,
+            "end": 18.2,
+            "startFrame": 366,
+            "endFrame": 546,
+            "words": 14,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "fb944c48d34c0fd17d1ddd69bb8fde8a735e998413dccf0cb24b8474c5f51910"
+          }
+        ]
+      },
+      {
+        "start": 18.5,
+        "end": 39.166666666666664,
+        "cues": [
+          {
+            "text": "La normalidad conjunta, no solo la de las marginales, garantiza una normal condicional.",
+            "start": 18.5,
+            "end": 24.1,
+            "startFrame": 555,
+            "endFrame": 723,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "d0943973df0964672f7d9655424f8644f8e13835b67018078267d270c123bcb0"
+          },
+          {
+            "text": "Su media desplaza el centro de i griega según la correlación y la razón de desviaciones.",
+            "start": 24.4,
+            "end": 31.266666666666666,
+            "startFrame": 732,
+            "endFrame": 938,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "f559429c6cbc60e87a8649517ca8f89c2ac6b722130c9dc6e53880f2a74d2c11"
+          },
+          {
+            "text": "Su varianza es la marginal por uno menos rho al cuadrado; la raíz es su desviación residual.",
+            "start": 31.566666666666666,
+            "end": 38.86666666666667,
+            "startFrame": 947,
+            "endFrame": 1166,
+            "words": 17,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "41cc95354bd68332fb3c24d9a2e06a61949f85bd892e867ba9b519286c22ea7d"
+          }
+        ]
+      },
+      {
+        "start": 39.166666666666664,
+        "end": 51.06666666666667,
+        "cues": [
+          {
+            "text": "abre paréntesis, equis,i griega, cierra paréntesis tiene distribución normal bivariante: media de equis 100, desviación 15; media de i griega 120, desviación 20; correlación 0 coma 6.",
+            "start": 39.166666666666664,
+            "end": 50.766666666666666,
+            "startFrame": 1175,
+            "endFrame": 1523,
+            "words": 27,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "c2b544988a71429351b0260a93ddf245dd4438d1bdc3d2007005920030884e8f"
+          }
+        ]
+      },
+      {
+        "start": 51.06666666666667,
+        "end": 61.233333333333334,
+        "cues": [
+          {
+            "text": "En a se observa equis igual a 110 y se pide la distribución condicional de i griega y su probabilidad de superar 140.",
+            "start": 51.06666666666667,
+            "end": 60.93333333333333,
+            "startFrame": 1532,
+            "endFrame": 1828,
+            "words": 23,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "41a9a0ea8c686ed0dd272f5976468a0c3aa3fcb3b59d97e5c7a44a6e973e39fc"
+          }
+        ]
+      },
+      {
+        "start": 61.233333333333334,
+        "end": 78.56666666666666,
+        "cues": [
+          {
+            "text": "En de se toman 10 individuos; las categorías son i griega menor que 100, 100 menor o igual que i griega menor o igual que 140 e i griega mayor que 140.",
+            "start": 61.233333333333334,
+            "end": 74.96666666666667,
+            "startFrame": 1837,
+            "endFrame": 2249,
+            "words": 32,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "535ab7a972499d9d7f83f997e7c07e83a9b56e69a45fe0d6006ea8bf22168d54"
+          },
+          {
+            "text": "Se piden exactamente 2, 6 y 2.",
+            "start": 75.26666666666667,
+            "end": 78.26666666666667,
+            "startFrame": 2258,
+            "endFrame": 2348,
+            "words": 7,
+            "sceneIndex": 4,
+            "cueIndex": 1,
+            "sourceCueSha256": "5b7beea16a69adfa703c9e7a45544145005433d2fd3ff2622912fb0ecfe06731"
+          }
+        ]
+      },
+      {
+        "start": 78.56666666666666,
+        "end": 88.3,
+        "cues": [
+          {
+            "text": "En e se toman 400 individuos y se aproxima la probabilidad de que al menos 75 tengan i griega mayor que 140.",
+            "start": 78.56666666666666,
+            "end": 88,
+            "startFrame": 2357,
+            "endFrame": 2640,
+            "words": 22,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "40d3cdce1502f302bc5ea9a80115afaac6eb433b95c0093d73a5628f3fb26239"
+          }
+        ]
+      },
+      {
+        "start": 88.3,
+        "end": 100.6,
+        "cues": [
+          {
+            "text": "La notación normal de media abre paréntesis, media, cierra paréntesis y varianza abre paréntesis, varianza, cierra paréntesis usa varianza como segundo parámetro; el diagrama normal usa desviación típica.",
+            "start": 88.3,
+            "end": 100.3,
+            "startFrame": 2649,
+            "endFrame": 3009,
+            "words": 28,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "7dc3546496f7dcac97b879887d43977e9287662ca2e9cb1655d11c23686d4e5f"
+          }
+        ]
+      },
+      {
+        "start": 100.6,
+        "end": 111.2,
+        "cues": [
+          {
+            "text": "Las unidades de equis e i griega son las unidades de medida del enunciado; no se atribuyen unidades físicas que no se han especificado.",
+            "start": 100.6,
+            "end": 110.9,
+            "startFrame": 3018,
+            "endFrame": 3327,
+            "words": 24,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a28ccb3c10c3d2d5a041b27fe2ee1d78830822428dd639d591c2cf0eb89f52e7"
+          }
+        ]
+      },
+      {
+        "start": 111.2,
+        "end": 122.13333333333334,
+        "cues": [
+          {
+            "text": "Las muestras de de y e contienen individuos independientes e identicamente distribuidos.",
+            "start": 111.2,
+            "end": 116.36666666666666,
+            "startFrame": 3336,
+            "endFrame": 3491,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "3c62aaa6b4abc74bb34c7b2ad3bca7c41ee47d8b7d2b4dba4d46324f71b521fa"
+          },
+          {
+            "text": "Las medidas equis e i griega del mismo individuo no son independientes.",
+            "start": 116.66666666666667,
+            "end": 121.83333333333333,
+            "startFrame": 3500,
+            "endFrame": 3655,
+            "words": 12,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "b06080496a9c3a9159557e8e479ac48016ae02c0c1371250330d14e451c37f58"
+          }
+        ]
+      },
+      {
+        "start": 122.13333333333334,
+        "end": 136.46666666666667,
+        "cues": [
+          {
+            "text": "i griega tiene densidad continua: incluir los extremos 100 y 140 no cambia las probabilidades.",
+            "start": 122.13333333333334,
+            "end": 128.56666666666666,
+            "startFrame": 3664,
+            "endFrame": 3857,
+            "words": 15,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "6fe68898fe79e5fc21c320e70d78e28b11cc07a624d34d9fd6ef589c1ccb7e45"
+          },
+          {
+            "text": "Condicionar a equis igual a equis minúscula se entiende mediante la distribución condicional regular de la normal.",
+            "start": 128.86666666666667,
+            "end": 136.16666666666666,
+            "startFrame": 3866,
+            "endFrame": 4085,
+            "words": 17,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "56ffc923edbe216144b0a5ccd07d050907add7af4e00d211c402f791ae6bf681"
+          }
+        ]
+      },
+      {
+        "start": 136.46666666666667,
+        "end": 154.53333333333333,
+        "cues": [
+          {
+            "text": "Una sección condicional de una normal bivariante sigue siendo normal.",
+            "start": 136.46666666666667,
+            "end": 140.76666666666668,
+            "startFrame": 4094,
+            "endFrame": 4223,
+            "words": 10,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "5fa24747ae377f7b020d009057979816c796b4768ac000bc7aeeb3545d905a7d"
+          },
+          {
+            "text": "Su centro puede cambiar con equis minúscula, pero su varianza no depende de equis minúscula.",
+            "start": 141.06666666666666,
+            "end": 147.5,
+            "startFrame": 4232,
+            "endFrame": 4425,
+            "words": 15,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "33c644750930aef7f12acbb0c2abcaf0e5d7e5cc2e1fc25f03760453986371ad"
+          },
+          {
+            "text": "La normalidad conjunta garantiza una normal condicional; calculamos por separado su media, varianza y desviación.",
+            "start": 147.8,
+            "end": 154.23333333333332,
+            "startFrame": 4434,
+            "endFrame": 4627,
+            "words": 15,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "2c12419c629da0b5aa83ac61056e5b12f38a16a6797e6425fe124ab51520f508"
+          }
+        ]
+      },
+      {
+        "start": 154.53333333333333,
+        "end": 165,
+        "cues": [
+          {
+            "text": "Mu nombra una media; sigma una desviación típica.",
+            "start": 154.53333333333333,
+            "end": 157.96666666666667,
+            "startFrame": 4636,
+            "endFrame": 4739,
+            "words": 8,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "7c10d7b79e3bfd55257abea734a614773830c4f3163702fa55aa303c54c27e48"
+          },
+          {
+            "text": "Sigma al cuadrado es la varianza: al tipificar dividimos por sigma, no por su cuadrado.",
+            "start": 158.26666666666668,
+            "end": 164.7,
+            "startFrame": 4748,
+            "endFrame": 4941,
+            "words": 15,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "4e83b9aaba1a7a0c63a83905551fdd1b42e1ed2466df1b9899c8e10c04fcbfd6"
+          }
+        ]
+      },
+      {
+        "start": 165,
+        "end": 177.93333333333334,
+        "cues": [
+          {
+            "text": "Usar normalidad conjunta.",
+            "start": 165,
+            "end": 166.3,
+            "startFrame": 4950,
+            "endFrame": 4989,
+            "words": 3,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "99709f1964afba93edaf6ea6dae9255b2a08d3ee22cea8268432ac3ca0c1155b"
+          },
+          {
+            "text": "Una sección condicional de una normal bivariante sigue siendo normal.",
+            "start": 166.6,
+            "end": 170.9,
+            "startFrame": 4998,
+            "endFrame": 5127,
+            "words": 10,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "ac361d7ca76a7f9ad4b2e24c1bc40a4111314ac89211198fa5ff11ec39b13279"
+          },
+          {
+            "text": "Su centro puede cambiar con equis minúscula, pero su varianza no depende de equis minúscula.",
+            "start": 171.2,
+            "end": 177.63333333333333,
+            "startFrame": 5136,
+            "endFrame": 5329,
+            "words": 15,
+            "sceneIndex": 12,
+            "cueIndex": 2,
+            "sourceCueSha256": "2d77859c366e91971e846dedfeb1fef9a35c5314d3feab3c72b1a2493458003b"
+          }
+        ]
+      },
+      {
+        "start": 177.93333333333334,
+        "end": 185.83333333333334,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 177.93333333333334,
+            "end": 181.36666666666667,
+            "startFrame": 5338,
+            "endFrame": 5441,
+            "words": 8,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 181.66666666666666,
+            "end": 185.53333333333333,
+            "startFrame": 5450,
+            "endFrame": 5566,
+            "words": 9,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 185.83333333333334,
+        "end": 202.63333333333333,
+        "cues": [
+          {
+            "text": "Calcular la pendiente condicional.",
+            "start": 185.83333333333334,
+            "end": 187.56666666666666,
+            "startFrame": 5575,
+            "endFrame": 5627,
+            "words": 4,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "582db0c21b0a2b5ffd459b214e574614b149610dbc659e08f30788f613291595"
+          },
+          {
+            "text": "Multiplico la correlación por la razón de desviaciones.",
+            "start": 187.86666666666667,
+            "end": 191.3,
+            "startFrame": 5636,
+            "endFrame": 5739,
+            "words": 8,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "70d22fb501381542f2b37dd9c872c601e173c784a96cf56b5164d29b10d6aaa4"
+          },
+          {
+            "text": "No uso la razón de varianzas. beta igual a 0 coma 6 por abre paréntesis, 20, cierra paréntesis dividido entre abre paréntesis, 15, cierra paréntesis.",
+            "start": 191.6,
+            "end": 202.33333333333334,
+            "startFrame": 5748,
+            "endFrame": 6070,
+            "words": 25,
+            "sceneIndex": 14,
+            "cueIndex": 2,
+            "sourceCueSha256": "68a5d54b8921a204d72975b0c77829d738e773ae2423c71174b451f55c2298dd"
+          }
+        ]
+      },
+      {
+        "start": 202.63333333333333,
+        "end": 213.13333333333333,
+        "cues": [
+          {
+            "text": "Evaluar la pendiente.",
+            "start": 202.63333333333333,
+            "end": 203.93333333333334,
+            "startFrame": 6079,
+            "endFrame": 6118,
+            "words": 3,
+            "sceneIndex": 15,
+            "cueIndex": 0,
+            "sourceCueSha256": "cdf4ceef32f918eafbea444003f3908a05dec9c3f5a4b8358d0e72abcf40ada6"
+          },
+          {
+            "text": "La pendiente es cero coma ocho unidades de i griega por unidad de equis. beta igual a 0 coma 8.",
+            "start": 204.23333333333332,
+            "end": 212.83333333333334,
+            "startFrame": 6127,
+            "endFrame": 6385,
+            "words": 20,
+            "sceneIndex": 15,
+            "cueIndex": 1,
+            "sourceCueSha256": "4f064e4fa8fe6e78ba2ee944c422dbde68dfffb59668ed71c75e3a665a25f300"
+          }
+        ]
+      },
+      {
+        "start": 213.13333333333333,
+        "end": 238.2,
+        "cues": [
+          {
+            "text": "Desplazar el centro de i griega.",
+            "start": 213.13333333333333,
+            "end": 215.73333333333332,
+            "startFrame": 6394,
+            "endFrame": 6472,
+            "words": 6,
+            "sceneIndex": 16,
+            "cueIndex": 0,
+            "sourceCueSha256": "c382d9fb7fc5fe39b5ceed5e8dde1803375897fa03c53fb19be568b1d556bc54"
+          },
+          {
+            "text": "A la media marginal de i griega le sumo la pendiente por el desplazamiento de equis minúscula respecto a la media de equis. mu subíndice abre paréntesis, i griega sabiendo que equis minúscula, cierra paréntesis igual a 120 más 0 coma 8 por abre paréntesis, equis minúscula menos 100, cierra paréntesis.",
+            "start": 216.03333333333333,
+            "end": 237.9,
+            "startFrame": 6481,
+            "endFrame": 7137,
+            "words": 51,
+            "sceneIndex": 16,
+            "cueIndex": 1,
+            "sourceCueSha256": "6bc3c7b197555a6c7f666d2f8ae50692b771745c1f3015608f3541283be9f676"
+          }
+        ]
+      },
+      {
+        "start": 238.2,
+        "end": 261.1333333333333,
+        "cues": [
+          {
+            "text": "Obtener la varianza residual.",
+            "start": 238.2,
+            "end": 239.93333333333334,
+            "startFrame": 7146,
+            "endFrame": 7198,
+            "words": 4,
+            "sceneIndex": 17,
+            "cueIndex": 0,
+            "sourceCueSha256": "c68fdbbd8a575113fa278f9fc83c21ce21e2fb6148d5e90a8d5af53f2082b4dd"
+          },
+          {
+            "text": "La correlación reduce la varianza de i griega por el factor uno menos rho al cuadrado. sigma al cuadrado subíndice abre paréntesis, i griega sabiendo que equis minúscula, cierra paréntesis igual a 20 al cuadrado por abre paréntesis, 1 menos 0 coma 6 al cuadrado , cierra paréntesis.",
+            "start": 240.23333333333332,
+            "end": 260.8333333333333,
+            "startFrame": 7207,
+            "endFrame": 7825,
+            "words": 48,
+            "sceneIndex": 17,
+            "cueIndex": 1,
+            "sourceCueSha256": "0337a0940397d6ce2b9626afbfe10e565434f719237849149cccc0a03ec1fd94"
+          }
+        ]
+      },
+      {
+        "start": 261.1333333333333,
+        "end": 276.76666666666665,
+        "cues": [
+          {
+            "text": "Evaluar la varianza.",
+            "start": 261.1333333333333,
+            "end": 262.43333333333334,
+            "startFrame": 7834,
+            "endFrame": 7873,
+            "words": 3,
+            "sceneIndex": 18,
+            "cueIndex": 0,
+            "sourceCueSha256": "62c6f818e2de72f1b68f3781d3ca6b868857b41cfbb67bae1eff5bf368237854"
+          },
+          {
+            "text": "La varianza condicional vale doscientos cincuenta y seis, en unidades de i griega al cuadrado. sigma al cuadrado subíndice abre paréntesis, i griega sabiendo que equis minúscula, cierra paréntesis igual a 256.",
+            "start": 262.73333333333335,
+            "end": 276.46666666666664,
+            "startFrame": 7882,
+            "endFrame": 8294,
+            "words": 32,
+            "sceneIndex": 18,
+            "cueIndex": 1,
+            "sourceCueSha256": "5df7bf96d6f0dde4a50a1b208ecb58861596d15bc36fe190a1acee2053147ad6"
+          }
+        ]
+      },
+      {
+        "start": 276.76666666666665,
+        "end": 289.8333333333333,
+        "cues": [
+          {
+            "text": "Recuperar la desviación.",
+            "start": 276.76666666666665,
+            "end": 278.06666666666666,
+            "startFrame": 8303,
+            "endFrame": 8342,
+            "words": 3,
+            "sceneIndex": 19,
+            "cueIndex": 0,
+            "sourceCueSha256": "1bb5ef20ebd6c62503bedc57a7b6e7d319e8a1babba7e8bb33fdbe1829951e5e"
+          },
+          {
+            "text": "Tomo la raiz positiva para recuperar las unidades de i griega. sigma subíndice abre paréntesis, i griega sabiendo que equis minúscula, cierra paréntesis igual a 16.",
+            "start": 278.3666666666667,
+            "end": 289.53333333333336,
+            "startFrame": 8351,
+            "endFrame": 8686,
+            "words": 26,
+            "sceneIndex": 19,
+            "cueIndex": 1,
+            "sourceCueSha256": "d6c025d5e31ad49e45ac76d4f4c28c80735ecb313b3c668ac483eaadd712e0c3"
+          }
+        ]
+      },
+      {
+        "start": 289.8333333333333,
+        "end": 299.46666666666664,
+        "cues": [
+          {
+            "text": "Escribir la ley completa.",
+            "start": 289.8333333333333,
+            "end": 291.56666666666666,
+            "startFrame": 8695,
+            "endFrame": 8747,
+            "words": 4,
+            "sceneIndex": 20,
+            "cueIndex": 0,
+            "sourceCueSha256": "819ef363f98001457ee9926748757b9b494ab6b80259e5d73cf3fa2c583e4cc1"
+          },
+          {
+            "text": "El segundo parámetro de esta normal es la varianza doscientos cincuenta y seis, no la desviación dieciseis.",
+            "start": 291.8666666666667,
+            "end": 299.1666666666667,
+            "startFrame": 8756,
+            "endFrame": 8975,
+            "words": 17,
+            "sceneIndex": 20,
+            "cueIndex": 1,
+            "sourceCueSha256": "dda19c712a0678fe11d78e8c12bf5635a7e004329e9e6a093164b2e1ffe0e86a"
+          }
+        ]
+      },
+      {
+        "start": 299.46666666666664,
+        "end": 331.26666666666665,
+        "cues": [
+          {
+            "text": "La respuesta razonada es La media condicional es 120 más 0 coma 8 por abre paréntesis, equis minúscula menos 100, cierra paréntesis , la varianza es 256 y la desviación típica es 16.",
+            "start": 299.46666666666664,
+            "end": 313.6333333333333,
+            "startFrame": 8984,
+            "endFrame": 9409,
+            "words": 33,
+            "sceneIndex": 21,
+            "cueIndex": 0,
+            "sourceCueSha256": "6d2585a871b989453ef65680770ca2e5a7c0acf99fc936189d467b19af542feb"
+          },
+          {
+            "text": "Para equis igual a 110 la ley es normal de media abre paréntesis, 128, cierra paréntesis y varianza abre paréntesis, 256, cierra paréntesis..",
+            "start": 313.93333333333334,
+            "end": 323.8,
+            "startFrame": 9418,
+            "endFrame": 9714,
+            "words": 23,
+            "sceneIndex": 21,
+            "cueIndex": 1,
+            "sourceCueSha256": "67a50abb5d7db0165c3ca76bb9870d15074635844b51e00265429193fd6a9c61"
+          },
+          {
+            "text": "La normalidad conjunta justifica la ley condicional completa; una correlación conocida sin ese supuesto no bastaría.",
+            "start": 324.1,
+            "end": 330.96666666666664,
+            "startFrame": 9723,
+            "endFrame": 9929,
+            "words": 16,
+            "sceneIndex": 21,
+            "cueIndex": 2,
+            "sourceCueSha256": "b544547688f73a86f209ac4c08895397fedde8a3e81ad1246f660d03a896e801"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
