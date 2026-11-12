@@ -5,6 +5,72 @@ Optional offline tooling for all 36 global classroom lectures and, with
 the existing curriculum and lecture exporters; it is not part of the website build or runtime.
 Requires Linux/WSL, Python 3.12+ and Node.js 20+. Synthesis requires NVIDIA CUDA.
 
+## Long Gemini Narration Alignment (CPU)
+
+Gemini production is managed by https://tts.raular.com using one request per
+complete video where possible, or a few long blocks. Do not resume the historical
+per-cue Gemini generator below. `align-queue-course.py` downloads already completed
+long jobs, validates their exact source text against a frozen catalogue and aligns
+them locally. It never submits synthesis requests, reads API keys, modifies queue
+state, publishes media or touches an active Ming/Remotion batch.
+
+Use a separate CPU environment; do not install these packages into Ming's runtime:
+
+```sh
+python3 -m venv --without-pip /home/aquiluer/Scripts/TTS/.venv-align
+/home/aquiluer/Scripts/TTS/.venv/bin/python -m pip \
+  --python /home/aquiluer/Scripts/TTS/.venv-align/bin/python \
+  install -r scripts/tts/requirements-alignment.txt
+PYTHON=/home/aquiluer/Scripts/TTS/.venv-align/bin/python
+BATCH=/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1
+OUTPUT=/home/aquiluer/Scripts/TTS/outputs/gemini-aligned-course-2026-11-12-v1
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 "$PYTHON" scripts/tts/align-queue-course.py \
+  --catalogue "$BATCH/catalogue.json" --output "$OUTPUT" --threads 2
+```
+
+FFmpeg is required. The first alignment downloads TorchAudio's Spanish VoxPopuli
+model into the normal Torch cache. Only this model download and queue GET requests
+use the network; processing stays on CPU. Add `--ids hipergeometrica` to select
+videos or `--download-only` to prepare WAVs without model dependencies. Rerunning
+collects newly completed videos and reuses checksummed downloads and alignments.
+The output directory must remain tied to the same catalogue and options; use a new
+directory when the source, pronunciation mappings, threshold or anchors change.
+All parts must be complete before a multi-block video's alignment starts.
+
+Per-video files under `items/<id>/`:
+
+- `parts/<job-id>.wav` and `.sha256`: unchanged original audio and local checksum.
+- `source.json`: immutable cue identity, original text, block offsets and hashes.
+- `alignment.json`: acoustic word/phrase/scene times, log scores, review flags,
+  automatic `cueMoments` and optional explicit `moments`.
+- `audio.vtt`: phrase subtitles, with review flags available in the JSON.
+
+All times are seconds from the beginning of the video's narration; concatenate
+its original parts in numeric order without adding silence to use those offsets.
+`cueMoments` includes each original cue and distinguishes scene starts. Indices
+are zero-based. `alignment-progress.json` records processed and waiting videos.
+An exclusive output-directory lock prevents concurrent writers.
+
+For a named moment inside a phrase, pass `--anchors /absolute/anchors.json`:
+
+```json
+{"hipergeometrica":[{"id":"introduccion","text":"Hoy vamos a contar","sceneIndex":0,"cueIndex":1}]}
+```
+
+Each anchor must match exactly one occurrence; ambiguous or missing text fails
+instead of choosing an arbitrary timestamp. `--pronunciations /absolute/map.json`
+accepts exact source-token mappings such as `{"X":"equis"}`. Numbers are expanded
+to Spanish only for the aligner; original narration and character references are
+preserved. Ambiguous mathematical readings may still require explicit mappings.
+
+Results use `cueTiming: forced-aligned`, not `measured`. `needsReview` flags low
+acoustic log scores (default `--min-score -1.5`), unknown characters and invalid
+intervals; this is a heuristic, not a calibrated accuracy guarantee or proof that
+Gemini spoke every word correctly. `listened` remains false. Even unflagged output
+needs editorial acceptance before conversion to the measured publication contract;
+the existing renderer/publication guards are unchanged. Existing silent videos
+must be retimed and rerendered, not merely muxed with the new audio.
+
 ## Current Whole-Course Temporary Ming Production
 
 `generate-ming-course.py` is the current fallback for all 538 explanations
