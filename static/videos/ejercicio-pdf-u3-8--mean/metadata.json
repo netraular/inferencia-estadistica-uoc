@@ -1,0 +1,512 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u3-8--mean",
+  "kind": "exercise",
+  "title": "Obtén E(Y1) para n general. Introduce su valor para n=6.",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "c29922f0980474554847e840ee3f23f4fe7cc268225ad6d293d115b7b8aaf870",
+  "src": "videos/ejercicio-pdf-u3-8--mean/video.mp4",
+  "poster": "videos/ejercicio-pdf-u3-8--mean/poster.jpg",
+  "duration": 173,
+  "frames": 5190,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "0cb30f6c97cba18b71b39f7f3165157daff3489ff40ea2ee3ecb0b3440946cf5",
+  "videoSha256": "6fad5efefcfca7726c95373c8f53fcb400fc507e9a6a94b277e5831f7f0d1940",
+  "posterSha256": "8000dd11a65a92c07f60fd8ae32689d219acbadc5c1261f5f0229c5889fa0bc4",
+  "canonicalSha256": "3fc48075af019b17987b296c04b296072831d0e89aedbe629be15c4e6d8a36e0",
+  "inputHash": "bfee5f17833566bb98b4bc498d7c449872999172e64decaa2c6e10264987c6a7",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "2941603d37a51f77c771ddff2c61d08fdd1d20e17e22df5c8c39f5639ac83a66",
+    "canonicalSha256": "3fc48075af019b17987b296c04b296072831d0e89aedbe629be15c4e6d8a36e0",
+    "source": {
+      "file": "Ejercicios_U3-Distribuciones_multivariantes-SOLUCIONES.pdf",
+      "number": "8",
+      "page": 17
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "66b9b87b7e255b37adc46045ae3179101b9904f2e27b2081b3695ebf4afe1025",
+    "transcriptSha256": "0cb30f6c97cba18b71b39f7f3165157daff3489ff40ea2ee3ecb0b3440946cf5",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u3-8",
+  "transcript": {
+    "id": "ejercicio-pdf-u3-8--mean",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "3fc48075af019b17987b296c04b296072831d0e89aedbe629be15c4e6d8a36e0",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 173,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 15.4,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Obtén esperanza de i griega subíndice 1 para ene general.",
+            "start": 2.9,
+            "end": 7.2,
+            "startFrame": 87,
+            "endFrame": 216,
+            "words": 10,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "52e3b1ef9330eae996da4d6864b8aa9553814411ffd8912348c284f1cb120180"
+          },
+          {
+            "text": "Introduce su valor para ene igual a 6.",
+            "start": 7.5,
+            "end": 10.933333333333334,
+            "startFrame": 225,
+            "endFrame": 328,
+            "words": 8,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "9cd20c7b962f11eb5f476f0d1c222c1a7f7b8bf9097e0b814b4ad9777981e250"
+          },
+          {
+            "text": "Queremos el valor medio teórico al repetir el experimento.",
+            "start": 11.233333333333333,
+            "end": 15.1,
+            "startFrame": 337,
+            "endFrame": 453,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "sourceCueSha256": "a78cc6d76a6af2232f6b07ccd2a485f60d99e9ff10e52840de69f2371e1f6d27"
+          }
+        ]
+      },
+      {
+        "start": 15.4,
+        "end": 35.63333333333333,
+        "cues": [
+          {
+            "text": "Cada ensayo independiente acaba en una sola de las categorías, cuyas probabilidades suman uno.",
+            "start": 15.4,
+            "end": 21.4,
+            "startFrame": 462,
+            "endFrame": 642,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "898dec525c92df230d425f02e79d87c3ddc5adabcf96aa69e948e366953f91b2"
+          },
+          {
+            "text": "Los recuentos comparten el total fijo y no son independientes entre sí.",
+            "start": 21.7,
+            "end": 26.866666666666667,
+            "startFrame": 651,
+            "endFrame": 806,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "4a359b088e44ab6e169bf3237c69860f1740bfb3054c242cc84ae4b66e779ac1"
+          },
+          {
+            "text": "El factorial multinomial cuenta ordenaciones de esos recuentos y el producto de potencias da el peso de cada ordenación.",
+            "start": 27.166666666666668,
+            "end": 35.333333333333336,
+            "startFrame": 815,
+            "endFrame": 1060,
+            "words": 19,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "6a0d161472745dfdd0e28ba737fd7d6adc132f452d859066b6bedacf7c030a8f"
+          }
+        ]
+      },
+      {
+        "start": 35.63333333333333,
+        "end": 51.36666666666667,
+        "cues": [
+          {
+            "text": "i griega subíndice 1 ,i griega subíndice 2 ,i griega subíndice 3 cuentan elecciones de cada salida; pe subíndice 1 igual a pe subíndice 2 igual a pe subíndice 3 igual a 1 dividido entre 3.",
+            "start": 35.63333333333333,
+            "end": 51.06666666666667,
+            "startFrame": 1069,
+            "endFrame": 1532,
+            "words": 36,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "376a4b4dabe5b4cf093ff7402218f5a5502816716020eb281baa454088927476"
+          }
+        ]
+      },
+      {
+        "start": 51.36666666666667,
+        "end": 58.96666666666667,
+        "cues": [
+          {
+            "text": "Para la probabilidad conjunta: ene igual a 6 y recuentos abre paréntesis, 3, 1, 2, cierra paréntesis.",
+            "start": 51.36666666666667,
+            "end": 58.666666666666664,
+            "startFrame": 1541,
+            "endFrame": 1760,
+            "words": 17,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "b6994b21152c79ac0ccc4993eeb47933d552d292ba5f1830f108579a3b29a19f"
+          }
+        ]
+      },
+      {
+        "start": 58.96666666666667,
+        "end": 69.13333333333334,
+        "cues": [
+          {
+            "text": "Para los demás apartados se pide una fórmula para ene general; el comprobador usa el ene igual a 6 original como representante numérico.",
+            "start": 58.96666666666667,
+            "end": 68.83333333333333,
+            "startFrame": 1769,
+            "endFrame": 2065,
+            "words": 23,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "4b4eb41b1d89211e639a178285badc6b7688006d6e6cf0bf5c77ea567176845c"
+          }
+        ]
+      },
+      {
+        "start": 69.13333333333334,
+        "end": 72.86666666666666,
+        "cues": [
+          {
+            "text": "Recorridos independientes, probabilidades constantes y tres salidas equiprobables.",
+            "start": 69.13333333333334,
+            "end": 72.56666666666666,
+            "startFrame": 2074,
+            "endFrame": 2177,
+            "words": 8,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "934e3fc85c8363af65f750c2a36e75be8be37f2dfbecd4bd0ce615da4fa3e292"
+          }
+        ]
+      },
+      {
+        "start": 72.86666666666666,
+        "end": 77.46666666666667,
+        "cues": [
+          {
+            "text": "La recompensa no modifica las probabilidades bajo la hipótesis solicitada.",
+            "start": 72.86666666666666,
+            "end": 77.16666666666667,
+            "startFrame": 2186,
+            "endFrame": 2315,
+            "words": 10,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "d93a4df3a1f5b4db912b9d3fc774f838b072c00582e0d171e3faaa03aba23262"
+          }
+        ]
+      },
+      {
+        "start": 77.46666666666667,
+        "end": 92.53333333333333,
+        "cues": [
+          {
+            "text": "Cada recorrido registra uno si se elige la salida uno.",
+            "start": 77.46666666666667,
+            "end": 81.76666666666667,
+            "startFrame": 2324,
+            "endFrame": 2453,
+            "words": 10,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "0407717c0567c45ca67f4e047264bf07def54b7cac9727c9c10234f0621a5293"
+          },
+          {
+            "text": "La suma de esos indicadores es binomial.",
+            "start": 82.06666666666666,
+            "end": 85.06666666666666,
+            "startFrame": 2462,
+            "endFrame": 2552,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "f42319fe1393e80d06a4363daabb29e578f41a47955aab68c8afba1f9016b752"
+          },
+          {
+            "text": "Ponderamos los valores por su probabilidad; el resultado no tiene por qué ser un valor observable.",
+            "start": 85.36666666666666,
+            "end": 92.23333333333333,
+            "startFrame": 2561,
+            "endFrame": 2767,
+            "words": 16,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "9684149a3297313f533c56eb853ea52206dc57333d2b7be7c5be73f1c4bedcb2"
+          }
+        ]
+      },
+      {
+        "start": 92.53333333333333,
+        "end": 110.63333333333334,
+        "cues": [
+          {
+            "text": "La marginal de una salida.",
+            "start": 92.53333333333333,
+            "end": 94.7,
+            "startFrame": 2776,
+            "endFrame": 2841,
+            "words": 5,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "ee50171520517ecb014c0e478ed9bea7b524399d25a149ede5842bd5d320ee3a"
+          },
+          {
+            "text": "Cada recorrido registra uno si se elige la salida uno.",
+            "start": 95,
+            "end": 99.3,
+            "startFrame": 2850,
+            "endFrame": 2979,
+            "words": 10,
+            "sceneIndex": 8,
+            "cueIndex": 1,
+            "sourceCueSha256": "d4e9a52e1c2a4acede8ede88574406dbfea4ea757ea899f0ec1073f765d89bea"
+          },
+          {
+            "text": "La suma de esos indicadores es binomial. i griega subíndice 1 sigue la distribución Bin abre paréntesis, ene y 1 dividido entre 3, cierra paréntesis.",
+            "start": 99.6,
+            "end": 110.33333333333333,
+            "startFrame": 2988,
+            "endFrame": 3310,
+            "words": 25,
+            "sceneIndex": 8,
+            "cueIndex": 2,
+            "sourceCueSha256": "706ad60ef2d7af9607ce7110b17f12659de5d00965e6a92d64881c88275f0d21"
+          }
+        ]
+      },
+      {
+        "start": 110.63333333333334,
+        "end": 121.13333333333334,
+        "cues": [
+          {
+            "text": "E entre corchetes significa esperanza.",
+            "start": 110.63333333333334,
+            "end": 112.8,
+            "startFrame": 3319,
+            "endFrame": 3384,
+            "words": 5,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
+          },
+          {
+            "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+            "start": 113.1,
+            "end": 120.83333333333333,
+            "startFrame": 3393,
+            "endFrame": 3625,
+            "words": 18,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
+          }
+        ]
+      },
+      {
+        "start": 121.13333333333334,
+        "end": 134.63333333333333,
+        "cues": [
+          {
+            "text": "La esperanza general.",
+            "start": 121.13333333333334,
+            "end": 122.43333333333334,
+            "startFrame": 3634,
+            "endFrame": 3673,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "24b1bb11597176687f6bb59aa2e0a5b69e042367a958433fc9407ca790630577"
+          },
+          {
+            "text": "La media es el número de recorridos por la probabilidad de esta salida. esperanza de i griega subíndice 1 igual a ene por 1 dividido entre 3.",
+            "start": 122.73333333333333,
+            "end": 134.33333333333334,
+            "startFrame": 3682,
+            "endFrame": 4030,
+            "words": 27,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "9a8fac5a9a899f3ff006fdd9488b427643fb61ca2313a53562160dfc463cc06b"
+          }
+        ]
+      },
+      {
+        "start": 134.63333333333333,
+        "end": 140.53333333333333,
+        "cues": [
+          {
+            "text": "esperanza de i griega subíndice 1 queda igual a ene dividido entre 3.",
+            "start": 134.63333333333333,
+            "end": 140.23333333333332,
+            "startFrame": 4039,
+            "endFrame": 4207,
+            "words": 13,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "7d09a19ef7ec998cd633170965e1330994d01a6a6aa1ae1d4d17f79f64aa89cb"
+          }
+        ]
+      },
+      {
+        "start": 140.53333333333333,
+        "end": 157.03333333333333,
+        "cues": [
+          {
+            "text": "Comprobar con seis.",
+            "start": 140.53333333333333,
+            "end": 141.83333333333334,
+            "startFrame": 4216,
+            "endFrame": 4255,
+            "words": 3,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "441908696524fbed4dc7cfd60756b731d23e05d6768a9c800b73cdf073a12ccb"
+          },
+          {
+            "text": "Sustituyo ene por seis sin sustituir la fórmula general por un caso inventado. esperanza de i griega subíndice 1 subíndice abre paréntesis, ene igual a 6, cierra paréntesis igual a 6 dividido entre 3.",
+            "start": 142.13333333333333,
+            "end": 156.73333333333332,
+            "startFrame": 4264,
+            "endFrame": 4702,
+            "words": 34,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "80250c6780743d6fa2d9db595c42c5d45800dff97ad2a4e3b950b31b35704afe"
+          }
+        ]
+      },
+      {
+        "start": 157.03333333333333,
+        "end": 165.5,
+        "cues": [
+          {
+            "text": "esperanza de i griega subíndice 1 subíndice abre paréntesis, ene igual a 6, cierra paréntesis queda igual a 2.",
+            "start": 157.03333333333333,
+            "end": 165.2,
+            "startFrame": 4711,
+            "endFrame": 4956,
+            "words": 19,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "a50496b0469eb31383f53341f04bfee81327d4177336cdfc25e2d8b819feb3cc"
+          }
+        ]
+      },
+      {
+        "start": 165.5,
+        "end": 173,
+        "cues": [
+          {
+            "text": "El resultado es 2 recorridos.",
+            "start": 165.5,
+            "end": 167.66666666666666,
+            "startFrame": 4965,
+            "endFrame": 5030,
+            "words": 5,
+            "sceneIndex": 14,
+            "cueIndex": 0,
+            "sourceCueSha256": "5c92aa7dfc7a1f57e528cbdeaffb3c9ee2efcfc545fd7c33be465e83f097fe7b"
+          },
+          {
+            "text": "La hipótesis aleatoria predice igual recuento esperado en las tres salidas.",
+            "start": 167.96666666666667,
+            "end": 172.7,
+            "startFrame": 5039,
+            "endFrame": 5181,
+            "words": 11,
+            "sceneIndex": 14,
+            "cueIndex": 1,
+            "sourceCueSha256": "17c03202c7c524abe80c996442bfd9754fac8ffc9ab035e1b53a5a0adc61c8b3"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
