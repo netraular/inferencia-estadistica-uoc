@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-pdf-u2-2.6--approximation-error",
+  "kind": "exercise",
+  "title": "¿Cuál es la diferencia absoluta entre la aproximación y la masa binomial exacta?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "914469178301139d3a0968663ee17a13a2913d92b031a6a566b69313e8d232ed",
+  "src": "videos/ejercicio-pdf-u2-2.6--approximation-error/video.mp4",
+  "poster": "videos/ejercicio-pdf-u2-2.6--approximation-error/poster.jpg",
+  "duration": 134.9,
+  "frames": 4047,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "6708bbf5b4f53223868f0afb74f51fa6abdbe34763098270347b0c973a363644",
+  "videoSha256": "20c3a7039bd9048d40f7422f57995de6c5aab225c6f0a3b631b7b3128f197b7c",
+  "posterSha256": "9bf320f95c890f8d6f95543bd0f42a528b44c27f4582a2b2ff0e3919edfc02c8",
+  "canonicalSha256": "f47c0e704d272170fa8e92eb76a1f1ecee9ddefcabbdc2523d597e4506b5de62",
+  "inputHash": "60f7b8a2e038ad5d82d127080a2f41ec7d7f5e59b0f9623f594c7553f577ccbc",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "ecd59aa02057a94231318d2a32816b8853472087b7f6915aba04bb996701c7d6",
+    "canonicalSha256": "f47c0e704d272170fa8e92eb76a1f1ecee9ddefcabbdc2523d597e4506b5de62",
+    "source": {
+      "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+      "number": "2.6",
+      "page": 17
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "4022665be81f757680c2c0b78d803580b7350b9c68eb852d12258653debbc6b5",
+    "transcriptSha256": "6708bbf5b4f53223868f0afb74f51fa6abdbe34763098270347b0c973a363644",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-pdf-u2-2.6",
+  "transcript": {
+    "id": "ejercicio-pdf-u2-2.6--approximation-error",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "f47c0e704d272170fa8e92eb76a1f1ecee9ddefcabbdc2523d597e4506b5de62",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 134.9,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 12.966666666666667,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "¿Cuál es la diferencia absoluta entre la aproximación y la masa binomial exacta?",
+            "start": 2.9,
+            "end": 8.5,
+            "startFrame": 87,
+            "endFrame": 255,
+            "words": 13,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "a5ab3c64652bde6b670b697bf268833e6963b2f546fc882bd7140ee539a7ad2f"
+          },
+          {
+            "text": "Queremos comparar probabilidades de dos descripciones del mismo suceso.",
+            "start": 8.8,
+            "end": 12.666666666666666,
+            "startFrame": 264,
+            "endFrame": 380,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "168ed6ac2e36e57349797a391d3d2a8468ebf59103bf8695c6e3fc9d887ec2d5"
+          }
+        ]
+      },
+      {
+        "start": 12.966666666666667,
+        "end": 34.46666666666667,
+        "cues": [
+          {
+            "text": "Con total fijo, el modelo exacto es binomial.",
+            "start": 12.966666666666667,
+            "end": 16.4,
+            "startFrame": 389,
+            "endFrame": 492,
+            "words": 8,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "b3ff99e848026be3ec23e4b017602acad905630c0e5441c24e894229c66bd605"
+          },
+          {
+            "text": "La Poisson con lambda igual a ene por pe conserva su media, pero permite recuentos mayores que ene y no conserva exactamente su varianza.",
+            "start": 16.7,
+            "end": 27,
+            "startFrame": 501,
+            "endFrame": 810,
+            "words": 24,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "122d9678dbeee70cda94d612a9d60424e675d62553ee525671403967f62e2a11"
+          },
+          {
+            "text": "Por eso aquí la llamamos aproximación y medimos su error, sin convertirla en otra respuesta exacta.",
+            "start": 27.3,
+            "end": 34.166666666666664,
+            "startFrame": 819,
+            "endFrame": 1025,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "e00c7255dce0867f9ff2e4d6e33f1ccc80b61e346512e6ff4bea6e1b0a60644d"
+          }
+        ]
+      },
+      {
+        "start": 34.46666666666667,
+        "end": 42.5,
+        "cues": [
+          {
+            "text": "ene igual a 150; pe igual a 0 coma 1 0; otras causas: probabilidad 0 coma 9 0.",
+            "start": 34.46666666666667,
+            "end": 42.2,
+            "startFrame": 1034,
+            "endFrame": 1266,
+            "words": 18,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "1da4033f9bd2d42cadef41b43cb4b93e7d77391d089c5663c838c67a96d07b79"
+          }
+        ]
+      },
+      {
+        "start": 42.5,
+        "end": 46.233333333333334,
+        "cues": [
+          {
+            "text": "La binomial supone atribuciones independientes y probabilidad común.",
+            "start": 42.5,
+            "end": 45.93333333333333,
+            "startFrame": 1275,
+            "endFrame": 1378,
+            "words": 8,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "08f99a87ffd51dcecb9b108ceb935d772c8b2d29d728e051fca7cd985b50557d"
+          }
+        ]
+      },
+      {
+        "start": 46.233333333333334,
+        "end": 53.4,
+        "cues": [
+          {
+            "text": "La Poisson se incluye solo como aproximación, no como un segundo modelo exacto del total fijo.",
+            "start": 46.233333333333334,
+            "end": 53.1,
+            "startFrame": 1387,
+            "endFrame": 1593,
+            "words": 16,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "fc1ee49166d17af1fd2b58009f95eeabb52ad1f2c32b952c47b54411cbd25d11"
+          }
+        ]
+      },
+      {
+        "start": 53.4,
+        "end": 66.46666666666667,
+        "cues": [
+          {
+            "text": "Lambda se obtiene de ene por pe, manteniendo la misma esperanza.",
+            "start": 53.4,
+            "end": 58.13333333333333,
+            "startFrame": 1602,
+            "endFrame": 1744,
+            "words": 11,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "f257cbb6e01055f199c7fc8add92f14a2f7c9a69cd18e7a12b6d0c648039a05e"
+          },
+          {
+            "text": "La diferencia absoluta mide el desacuerdo sin cancelación de signos; si se piden varios valores, los contrastamos todos.",
+            "start": 58.43333333333333,
+            "end": 66.16666666666667,
+            "startFrame": 1753,
+            "endFrame": 1985,
+            "words": 18,
+            "sceneIndex": 5,
+            "cueIndex": 1,
+            "sourceCueSha256": "8fa4d3674c4d870f06c636ddbd66b1b3c2bd505a2377e41bae48b86741280fed"
+          }
+        ]
+      },
+      {
+        "start": 66.46666666666667,
+        "end": 75.36666666666666,
+        "cues": [
+          {
+            "text": "En esta espera exponencial, lambda es la tasa por unidad de tiempo; su inversa es la escala o espera media.",
+            "start": 66.46666666666667,
+            "end": 75.06666666666666,
+            "startFrame": 1994,
+            "endFrame": 2252,
+            "words": 20,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "9793bf53beb149bfbce876a64b01d75f56a57353143ea97764fe80e11dd7d0ef"
+          }
+        ]
+      },
+      {
+        "start": 75.36666666666666,
+        "end": 86.73333333333333,
+        "cues": [
+          {
+            "text": "Fijar la media de la aproximación.",
+            "start": 75.36666666666666,
+            "end": 77.96666666666667,
+            "startFrame": 2261,
+            "endFrame": 2339,
+            "words": 6,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "fb9078de8b239905172abeea374e58ca83497450f28c689ca905965a7d8cd131"
+          },
+          {
+            "text": "Lambda se obtiene de ene por pe, manteniendo la misma esperanza. lambda igual a 150 por 0 coma 1.",
+            "start": 78.26666666666667,
+            "end": 86.43333333333334,
+            "startFrame": 2348,
+            "endFrame": 2593,
+            "words": 19,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "9667854e9117d98b126be98f199a4e5cda2056cb8f248facfc320e0155f41d02"
+          }
+        ]
+      },
+      {
+        "start": 86.73333333333333,
+        "end": 89.2,
+        "cues": [
+          {
+            "text": "lambda queda igual a 15.",
+            "start": 86.73333333333333,
+            "end": 88.9,
+            "startFrame": 2602,
+            "endFrame": 2667,
+            "words": 5,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "b938ec05eeed09c18ef22b1bc9cf8018898e1604d15e5703c2cc0a2f4e9a6df2"
+          }
+        ]
+      },
+      {
+        "start": 89.2,
+        "end": 117.56666666666666,
+        "cues": [
+          {
+            "text": "Comparar las masas.",
+            "start": 89.2,
+            "end": 90.5,
+            "startFrame": 2676,
+            "endFrame": 2715,
+            "words": 3,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "393c6a03cf3c5fa236c1a35e0b3b6d55a4eaac4472cb4e3f381bbf1415ca215a"
+          },
+          {
+            "text": "La Poisson no es el modelo exacto al condicionar en 150 mutaciones.",
+            "start": 90.8,
+            "end": 95.96666666666667,
+            "startFrame": 2724,
+            "endFrame": 2879,
+            "words": 12,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "47a51510cd2f27d6c6ee4e78204da8b01c863a92f62a66219b7cde1217f04f0a"
+          },
+          {
+            "text": "Resto las dos masas calculadas. sabiendo que 0 coma 0 4 8 6 1 0 7 5 0 8 2 9 6 0 5 3 1 6 menos 0 coma 0 4 5 9 1 6 8 1 0 2 4 9 8 8 6 7 4 sabiendo que.",
+            "start": 96.26666666666667,
+            "end": 117.26666666666667,
+            "startFrame": 2888,
+            "endFrame": 3518,
+            "words": 49,
+            "sceneIndex": 9,
+            "cueIndex": 2,
+            "sourceCueSha256": "afd638e62029d9c0f6d12c38e0e1499dcb6287d997be4afaa37890013004f799"
+          }
+        ]
+      },
+      {
+        "start": 117.56666666666666,
+        "end": 134.9,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 0 0 2 6 9 3 9 4 1 diferencia de probabilidades.",
+            "start": 117.56666666666666,
+            "end": 124.86666666666666,
+            "startFrame": 3527,
+            "endFrame": 3746,
+            "words": 17,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "684e600d3155b5d7b6b4b1bf717c6b81a03dff12d8e58eaf7eec53b5cfada197"
+          },
+          {
+            "text": "Con pe igual a 0 coma 1 0 no se debe declarar una aproximación perfecta; los datos permiten usar directamente la binomial.",
+            "start": 125.16666666666667,
+            "end": 134.6,
+            "startFrame": 3755,
+            "endFrame": 4038,
+            "words": 22,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "7660b7d7d674591e3dc2739233d61f533492d0a87f07a056220fc0868ed62494"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
