@@ -1,0 +1,549 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-ejemplo-cauchy-weibull-cauchy-1--interval",
+  "kind": "exercise",
+  "title": "Calcula la probabilidad de que X caiga en el intervalo indicado.",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "56499356f379abc5a5882c86116b98cd7176d9ee207f8da82bfcc40366fb6416",
+  "src": "videos/ejercicio-ejemplo-cauchy-weibull-cauchy-1--interval/video.mp4",
+  "poster": "videos/ejercicio-ejemplo-cauchy-weibull-cauchy-1--interval/poster.jpg",
+  "duration": 203.7,
+  "frames": 6111,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "9f7142fda3f11551560120366c9ec3c1246cf22e35d20480cd38dcf857cd2936",
+  "videoSha256": "68227658a35f6a93eb0233d8d83470628850d82e63fa6be69170ae867d72ae70",
+  "posterSha256": "84b8787c737c612a99a0afc16a7fb29c51c2c51f0013407b0711ee8b8ce63699",
+  "canonicalSha256": "61d78e08aa4d2cc80ece876f706fcf3891df6284defedf720323b6b73b8228f6",
+  "inputHash": "96b658f574eabe6be14c887e8189b77a495cb733a26f1c92b797354ca1c64b2c",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "688641bbdd97391a815582c304ab7379b15b2fa6bae5157415fe5ec5601028ef",
+    "canonicalSha256": "61d78e08aa4d2cc80ece876f706fcf3891df6284defedf720323b6b73b8228f6",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Cauchy"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "f80d23fa25944426ea9b902e858fc77b12e43c18e7e91efff96a1cafba5a3281",
+    "transcriptSha256": "9f7142fda3f11551560120366c9ec3c1246cf22e35d20480cd38dcf857cd2936",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-ejemplo-cauchy-weibull-cauchy-1",
+  "transcript": {
+    "id": "ejercicio-ejemplo-cauchy-weibull-cauchy-1--interval",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "61d78e08aa4d2cc80ece876f706fcf3891df6284defedf720323b6b73b8228f6",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 203.7,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 10.833333333333334,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula la probabilidad de que equis caiga en el intervalo indicado.",
+            "start": 2.9,
+            "end": 7.633333333333334,
+            "startFrame": 87,
+            "endFrame": 229,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "3fb961bc636bab810cfdb0b67ce61f5a92cbb91006ce94dc4ddf0f6102cf4832"
+          },
+          {
+            "text": "Queremos la probabilidad entre dos límites.",
+            "start": 7.933333333333334,
+            "end": 10.533333333333333,
+            "startFrame": 238,
+            "endFrame": 316,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "b520489ffbda9cea11bb7236403e42a9d6bdbb883f94809152ad5648c78d6804"
+          }
+        ]
+      },
+      {
+        "start": 10.833333333333334,
+        "end": 29.766666666666666,
+        "cues": [
+          {
+            "text": "La localización es el centro de simetría y la escala es positiva.",
+            "start": 10.833333333333334,
+            "end": 16,
+            "startFrame": 325,
+            "endFrame": 480,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "c0e5fa915b16cb839799f3fd5d02f2a6346b67598e21336eb01e4f037a0f0237"
+          },
+          {
+            "text": "La acumulada de Cauchy usa la arco tangente y permite calcular áreas y mediana.",
+            "start": 16.3,
+            "end": 22.3,
+            "startFrame": 489,
+            "endFrame": 669,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "261d81ce8a7c10d25bb2b83f5e16805ab97a8e414008d5c2ef30945adc2c7373"
+          },
+          {
+            "text": "Sus colas no tienen esperanza ni varianza: el centro de simetría no puede llamarse media poblacional.",
+            "start": 22.6,
+            "end": 29.466666666666665,
+            "startFrame": 678,
+            "endFrame": 884,
+            "words": 16,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "ae6d40f3b91591e3bcd273c5a5d042a0c1ab93e0904f69b393146666d2ae16a3"
+          }
+        ]
+      },
+      {
+        "start": 29.766666666666666,
+        "end": 40.36666666666667,
+        "cues": [
+          {
+            "text": "Localización equis minúscula subíndice 0 igual a menos 2 y escala gamma igual a 1, en unidades de señal; soporte toda la recta real.",
+            "start": 29.766666666666666,
+            "end": 40.06666666666667,
+            "startFrame": 893,
+            "endFrame": 1202,
+            "words": 24,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "9e42c94f62a6c0b8028ec8914b47b58a5347151d46f3391eaefe67c82f61285b"
+          }
+        ]
+      },
+      {
+        "start": 40.36666666666667,
+        "end": 52.13333333333333,
+        "cues": [
+          {
+            "text": "Intervalo intervalo cerrado desde menos 3 hasta menos 1.",
+            "start": 40.36666666666667,
+            "end": 44.233333333333334,
+            "startFrame": 1211,
+            "endFrame": 1327,
+            "words": 9,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "e8cba08365827b6c8a1e109197eed6a9ade71b83b7b18123592594890ca5f734"
+          },
+          {
+            "text": "La localización es mediana, no media: esperanza de equis no existe y la varianza no está definida.",
+            "start": 44.53333333333333,
+            "end": 51.833333333333336,
+            "startFrame": 1336,
+            "endFrame": 1555,
+            "words": 17,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "a14cd237a41299c564dbb54a8812f5eed0cfa41ff52274ba2fe36235ab986950"
+          }
+        ]
+      },
+      {
+        "start": 52.13333333333333,
+        "end": 60.166666666666664,
+        "cues": [
+          {
+            "text": "Se supone este modelo para una señal con signo, no para un recuento ni para toda señal biológica.",
+            "start": 52.13333333333333,
+            "end": 59.86666666666667,
+            "startFrame": 1564,
+            "endFrame": 1796,
+            "words": 18,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "820f910dfbe60d4a582114b6fe62de5eeee4204ee67a1aeb0c2b96a872bc4260"
+          }
+        ]
+      },
+      {
+        "start": 60.166666666666664,
+        "end": 65.63333333333334,
+        "cues": [
+          {
+            "text": "La simetría no permite cancelar integrales divergentes para definir una esperanza finita.",
+            "start": 60.166666666666664,
+            "end": 65.33333333333333,
+            "startFrame": 1805,
+            "endFrame": 1960,
+            "words": 12,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "4adda6411d92d6db431af46ba55e27daf0a427e2a39b0e45f8388dfe511a6c21"
+          }
+        ]
+      },
+      {
+        "start": 65.63333333333334,
+        "end": 79.1,
+        "cues": [
+          {
+            "text": "Resta las CDF de los extremos; no uses una media ni una desviación típica inexistentes.",
+            "start": 65.63333333333334,
+            "end": 72.06666666666666,
+            "startFrame": 1969,
+            "endFrame": 2162,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "20ef3111022ca4bf9af95d0c3c35c6f1a7cdfa69ef4a48195cf0513b24d4640c"
+          },
+          {
+            "text": "Restar las dos acumuladas elimina lo anterior al límite inferior y conserva solo el intervalo.",
+            "start": 72.36666666666666,
+            "end": 78.8,
+            "startFrame": 2171,
+            "endFrame": 2364,
+            "words": 15,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "f0b26360e136342fdd58238fedd44e0934b27fabbee8d7714eff2daef36a6891"
+          }
+        ]
+      },
+      {
+        "start": 79.1,
+        "end": 108.5,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 79.1,
+            "end": 82.1,
+            "startFrame": 2373,
+            "endFrame": 2463,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula la probabilidad de que equis caiga en el intervalo indicado.",
+            "start": 82.4,
+            "end": 87.13333333333334,
+            "startFrame": 2472,
+            "endFrame": 2614,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "470e0e3539b052e627e971ccead8c87a7990735ae850b13d9cf40a416006b579"
+          },
+          {
+            "text": "La acumulada de Cauchy se expresa mediante arctangentes y permite calcular intervalos y mediana.",
+            "start": 87.43333333333334,
+            "end": 93.43333333333334,
+            "startFrame": 2623,
+            "endFrame": 2803,
+            "words": 14,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "ac6797047fb51010f7e880151a6db150fbd82ef61809766073181475c2237043"
+          },
+          {
+            "text": "Sus colas impiden definir esperanza y varianza: la simetría no autoriza cancelar dos integrales divergentes.",
+            "start": 93.73333333333333,
+            "end": 100.16666666666667,
+            "startFrame": 2812,
+            "endFrame": 3005,
+            "words": 15,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "ddb86e52f96fe54b085e787d980308c0db9dcb6def7af642ccc878338ff9ed75"
+          },
+          {
+            "text": "Para este apartado: Resta las CDF de los extremos; no uses una media ni una desviación típica inexistentes.",
+            "start": 100.46666666666667,
+            "end": 108.2,
+            "startFrame": 3014,
+            "endFrame": 3246,
+            "words": 18,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "e037acf6fd37f450c8bd5ed216a916abde0475356af3bee320ea833751745c66"
+          }
+        ]
+      },
+      {
+        "start": 108.5,
+        "end": 126.4,
+        "cues": [
+          {
+            "text": "Cambiar a la escala estándar. abre paréntesis, ele menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma igual a menos 1 y abre paréntesis, u menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma igual a 1.",
+            "start": 108.5,
+            "end": 126.1,
+            "startFrame": 3255,
+            "endFrame": 3783,
+            "words": 41,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "103a35309b9bdd567a976e4e469aa54f3db2deb1d36096da77e7ce1a2ab422e9"
+          }
+        ]
+      },
+      {
+        "start": 126.4,
+        "end": 134.3,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 126.4,
+            "end": 129.83333333333334,
+            "startFrame": 3792,
+            "endFrame": 3895,
+            "words": 8,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 130.13333333333333,
+            "end": 134,
+            "startFrame": 3904,
+            "endFrame": 4020,
+            "words": 9,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 134.3,
+        "end": 153.46666666666667,
+        "cues": [
+          {
+            "text": "Escribir la acumulada. efe mayúscula abre paréntesis, equis minúscula, cierra paréntesis igual a 1 dividido entre 2 más arco tangente de abre paréntesis, abre paréntesis, equis minúscula menos equis minúscula subíndice 0 , cierra paréntesis dividido entre gamma , cierra paréntesis dividido entre pi.",
+            "start": 134.3,
+            "end": 153.16666666666666,
+            "startFrame": 4029,
+            "endFrame": 4595,
+            "words": 44,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "d6fd8757c81294cb956d8635b7e1d358ebe01c0481f6a31a168900aebf459412"
+          }
+        ]
+      },
+      {
+        "start": 153.46666666666667,
+        "end": 171.83333333333334,
+        "cues": [
+          {
+            "text": "Restar las áreas.",
+            "start": 153.46666666666667,
+            "end": 154.76666666666668,
+            "startFrame": 4604,
+            "endFrame": 4643,
+            "words": 3,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "0d46e78e6ee60267eb99e19801ee3a84020201bac582928bea31511c666f051c"
+          },
+          {
+            "text": "Al restar las acumuladas se cancelan las dos mitades.",
+            "start": 155.06666666666666,
+            "end": 158.93333333333334,
+            "startFrame": 4652,
+            "endFrame": 4768,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "7f1259c2441671b6c84c7d195164d9dfc87ea94db4c76f4c3e6a598dac85b89f"
+          },
+          {
+            "text": "Queda la diferencia entre arco tangente de 1 y arco tangente de menos uno, dividida entre pi: aproximadamente 0 coma 5.",
+            "start": 159.23333333333332,
+            "end": 168.23333333333332,
+            "startFrame": 4777,
+            "endFrame": 5047,
+            "words": 21,
+            "sceneIndex": 11,
+            "cueIndex": 2,
+            "sourceCueSha256": "9f69fd30fcaa6af4b54a87e0e393237e06e69d171e7ea2c1986111d67906ebbb"
+          },
+          {
+            "text": "Es el área entre los límites estandarizados.",
+            "start": 168.53333333333333,
+            "end": 171.53333333333333,
+            "startFrame": 5056,
+            "endFrame": 5146,
+            "words": 7,
+            "sceneIndex": 11,
+            "cueIndex": 3,
+            "sourceCueSha256": "a1331fac414ce4871d23cd8c9972c149f06576175bdd726bbde67b04fbee1447"
+          }
+        ]
+      },
+      {
+        "start": 171.83333333333334,
+        "end": 192.36666666666667,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 171.83333333333334,
+            "end": 173.13333333333333,
+            "startFrame": 5155,
+            "endFrame": 5194,
+            "words": 3,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+            "start": 173.43333333333334,
+            "end": 178.16666666666666,
+            "startFrame": 5203,
+            "endFrame": 5345,
+            "words": 11,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "50c6c5d1bad50ec3564511709f31053bd27c5f4d66de128356fc0db0e8e1f1cf"
+          },
+          {
+            "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+            "start": 178.46666666666667,
+            "end": 185.76666666666668,
+            "startFrame": 5354,
+            "endFrame": 5573,
+            "words": 17,
+            "sceneIndex": 12,
+            "cueIndex": 2,
+            "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+          },
+          {
+            "text": "Los extremos individuales tienen probabilidad cero; las colas no impiden calcular probabilidades de intervalos.",
+            "start": 186.06666666666666,
+            "end": 192.06666666666666,
+            "startFrame": 5582,
+            "endFrame": 5762,
+            "words": 14,
+            "sceneIndex": 12,
+            "cueIndex": 3,
+            "sourceCueSha256": "cd3a4f45a38b2889b7910d91fa4804d144140c00bcea90fb4bcd5376bbcbebce"
+          }
+        ]
+      },
+      {
+        "start": 192.36666666666667,
+        "end": 203.7,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+            "start": 192.36666666666667,
+            "end": 197.1,
+            "startFrame": 5771,
+            "endFrame": 5913,
+            "words": 11,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "a094fd16298cc02b5a91543659cdfdc4c95662e410268ecc69af07f8070307b3"
+          },
+          {
+            "text": "Los extremos individuales tienen probabilidad cero; las colas no impiden calcular probabilidades de intervalos.",
+            "start": 197.4,
+            "end": 203.4,
+            "startFrame": 5922,
+            "endFrame": 6102,
+            "words": 14,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "6e92a0073f51fc6204492dc6e2abc63ed9767d6d123690eea689e8df4a0eb58c"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
