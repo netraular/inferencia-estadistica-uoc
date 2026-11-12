@@ -1,0 +1,471 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-practica-varianza-discrete--normalizer",
+  "kind": "exercise",
+  "title": "Calcula la constante c.",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "9479c8ccc995cd697629815adf8ec64a90ac6a4d225274a73276372daa06ffa1",
+  "src": "videos/ejercicio-practica-varianza-discrete--normalizer/video.mp4",
+  "poster": "videos/ejercicio-practica-varianza-discrete--normalizer/poster.jpg",
+  "duration": 152.1,
+  "frames": 4563,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "923a02a3d93d791cefd10224c9715db0db5db6c237a8b79615bb16e3698bb7fb",
+  "videoSha256": "dbea0023be2cb06a5a63aa11e5111be19781c79e6318ba2edfd0e00e943842ff",
+  "posterSha256": "4c02024ab739cfb83a9db18f46df80456d2b52d276f6070a698f22a5afbcbd73",
+  "canonicalSha256": "fd872b2e71ea0d7c44b735772aecfc57df7bdbc83bce62591c8ae261919e3da6",
+  "inputHash": "e5039c0cb4fe7ec4b2dd8bcf11ad2e83a1571f769125863613573760210100b3",
+  "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "60d041e89a29037b365abc17d5b4f0db7046e85664de7e77681f5505a552709f",
+    "canonicalSha256": "fd872b2e71ea0d7c44b735772aecfc57df7bdbc83bce62591c8ae261919e3da6",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Variable discreta"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "60dc7f4f7ba6b5abb4ebfef45687f4b44c14e2652e474e9a9b31b27f1a7ea848",
+    "transcriptSha256": "923a02a3d93d791cefd10224c9715db0db5db6c237a8b79615bb16e3698bb7fb",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-practica-varianza-discrete",
+  "transcript": {
+    "id": "ejercicio-practica-varianza-discrete--normalizer",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "fd872b2e71ea0d7c44b735772aecfc57df7bdbc83bce62591c8ae261919e3da6",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 152.1,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 9.1,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula la constante ce.",
+            "start": 2.9,
+            "end": 4.633333333333334,
+            "startFrame": 87,
+            "endFrame": 139,
+            "words": 4,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "743a3ffa00d6f1b1e0c6801719731ac2429118dd251458f2737163805f889723"
+          },
+          {
+            "text": "Queremos encontrar la constante que hace válida la distribución.",
+            "start": 4.933333333333334,
+            "end": 8.8,
+            "startFrame": 148,
+            "endFrame": 264,
+            "words": 9,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "b40fe6d933998c22a7ce6408072557ad2263308712147c04d7872ace88ddf083"
+          }
+        ]
+      },
+      {
+        "start": 9.1,
+        "end": 27.2,
+        "cues": [
+          {
+            "text": "La masa asigna probabilidad a cada valor posible de equis.",
+            "start": 9.1,
+            "end": 13.4,
+            "startFrame": 273,
+            "endFrame": 402,
+            "words": 10,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "8e1a7ef9f2b6d5fde6074e805b798f5172925b2c0f21b7581af31d6133f8eab9"
+          },
+          {
+            "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
+            "start": 13.7,
+            "end": 18.866666666666667,
+            "startFrame": 411,
+            "endFrame": 566,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "524f9634a2328cfb90f0dd34442064d37094d995e52156111b959ca6951e08e2"
+          },
+          {
+            "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
+            "start": 19.166666666666668,
+            "end": 26.9,
+            "startFrame": 575,
+            "endFrame": 807,
+            "words": 18,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "2ad003c8547ab08837313c40c2a4884a7aab1c98e41ff7823d18fc9b0e571fb4"
+          }
+        ]
+      },
+      {
+        "start": 27.2,
+        "end": 40.8,
+        "cues": [
+          {
+            "text": "probabilidad de equis igual a 0 igual a ce, probabilidad de equis igual a 1 igual a 3 por ce, probabilidad de equis igual a 2 igual a 2 por ce.",
+            "start": 27.2,
+            "end": 40.5,
+            "startFrame": 816,
+            "endFrame": 1215,
+            "words": 31,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "21550596699c8d331d0391657eeb0dd6b3e7381f6954de5acf43371adbe17597"
+          }
+        ]
+      },
+      {
+        "start": 40.8,
+        "end": 47.1,
+        "cues": [
+          {
+            "text": "Fuera de conjunto de 0, 1, 2 fin del conjunto la probabilidad es cero.",
+            "start": 40.8,
+            "end": 46.8,
+            "startFrame": 1224,
+            "endFrame": 1404,
+            "words": 14,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "c97beeb4b3700acf6b49da7f44eaddd86296d7075eb16f963c70c62aeccab115"
+          }
+        ]
+      },
+      {
+        "start": 47.1,
+        "end": 51.7,
+        "cues": [
+          {
+            "text": "Los tres resultados son excluyentes y cubren todos los casos.",
+            "start": 47.1,
+            "end": 51.4,
+            "startFrame": 1413,
+            "endFrame": 1542,
+            "words": 10,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "3819eac2c7e2b4e285d8d55b78019a78247068908277b8233e302de507bf827f"
+          }
+        ]
+      },
+      {
+        "start": 51.7,
+        "end": 54.166666666666664,
+        "cues": [
+          {
+            "text": "Los pesos son no negativos.",
+            "start": 51.7,
+            "end": 53.86666666666667,
+            "startFrame": 1551,
+            "endFrame": 1616,
+            "words": 5,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "6b24fcecc57be7000ac03e429c7e33daa587c73318b5f6dc14efcf358c0ebecd"
+          }
+        ]
+      },
+      {
+        "start": 54.166666666666664,
+        "end": 65.5,
+        "cues": [
+          {
+            "text": "La suma de todas las masas debe ser uno.",
+            "start": 54.166666666666664,
+            "end": 58.03333333333333,
+            "startFrame": 1625,
+            "endFrame": 1741,
+            "words": 9,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "f554dae275cb573fffc3c80d03d96590e4b616b0156a6f01df2e7cecebca949e"
+          },
+          {
+            "text": "Exigimos probabilidad total uno sobre todo el soporte y comprobamos además que no haya valores negativos.",
+            "start": 58.333333333333336,
+            "end": 65.2,
+            "startFrame": 1750,
+            "endFrame": 1956,
+            "words": 16,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "e2af0073c9a7d125429291ef7c5f83dd5c593e498e83d5854c8e3a8afb76a1bc"
+          }
+        ]
+      },
+      {
+        "start": 65.5,
+        "end": 91.8,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 65.5,
+            "end": 68.5,
+            "startFrame": 1965,
+            "endFrame": 2055,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula la constante ce.",
+            "start": 68.8,
+            "end": 70.53333333333333,
+            "startFrame": 2064,
+            "endFrame": 2116,
+            "words": 4,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "25991ddc3b62aea7d14417ad5157c0d162f464f8045b7f626eff2f8a98fdc819"
+          },
+          {
+            "text": "Un peso expresa importancia relativa, no una probabilidad todavía.",
+            "start": 70.83333333333333,
+            "end": 74.7,
+            "startFrame": 2125,
+            "endFrame": 2241,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "b04a2ad0c3a2d1c59d04c3880f70ca05d968254fb7198527e41dde9a82219c88"
+          },
+          {
+            "text": "Sumamos los pesos y dividimos cada uno por ese total para obtener probabilidades que suman uno.",
+            "start": 75,
+            "end": 81.86666666666666,
+            "startFrame": 2250,
+            "endFrame": 2456,
+            "words": 16,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "00260c34b1d9b3b50ae21e600111c815985a84490da1f684f1b9982e81a1139a"
+          },
+          {
+            "text": "Una masa es la probabilidad de un valor exacto.",
+            "start": 82.16666666666667,
+            "end": 86.03333333333333,
+            "startFrame": 2465,
+            "endFrame": 2581,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "cb61a02571023cc077e3254535688ac03e3c03007aff442c7126a5098dc4a373"
+          },
+          {
+            "text": "Para este apartado: La suma de todas las masas debe ser uno.",
+            "start": 86.33333333333333,
+            "end": 91.5,
+            "startFrame": 2590,
+            "endFrame": 2745,
+            "words": 12,
+            "sceneIndex": 7,
+            "cueIndex": 5,
+            "sourceCueSha256": "ecbb210eb1ef405eea84eb04c1a45e068fa5a3bd9294e61adeb4250d83c2b3bd"
+          }
+        ]
+      },
+      {
+        "start": 91.8,
+        "end": 114.4,
+        "cues": [
+          {
+            "text": "Normalizar la masa. abre paréntesis, 1 más 3 más 2, cierra paréntesis ce igual a 1; ce igual a 1 dividido entre 6 igual a 0 coma 1 6 6 6 6 6 7. suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de probabilidad de equis igual a equis minúscula.",
+            "start": 91.8,
+            "end": 114.1,
+            "startFrame": 2754,
+            "endFrame": 3423,
+            "words": 52,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "2b1d3cf608e79c4bec789bd6d9f6d82b023e56b45d1fb963ade1a27dd4f58e0a"
+          }
+        ]
+      },
+      {
+        "start": 114.4,
+        "end": 124.13333333333334,
+        "cues": [
+          {
+            "text": "suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de probabilidad de equis igual a equis minúscula queda igual a 1.",
+            "start": 114.4,
+            "end": 123.83333333333333,
+            "startFrame": 3432,
+            "endFrame": 3715,
+            "words": 22,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "43682b6078614f324fea5c6d3bea002e57c47384ad5803359fe59814fe31f1f3"
+          }
+        ]
+      },
+      {
+        "start": 124.13333333333334,
+        "end": 142.06666666666666,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 124.13333333333334,
+            "end": 125.43333333333334,
+            "startFrame": 3724,
+            "endFrame": 3763,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 0 coma 1 6 6 6 6 6 7 constante de normalización.",
+            "start": 125.73333333333333,
+            "end": 132.16666666666666,
+            "startFrame": 3772,
+            "endFrame": 3965,
+            "words": 15,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "b69a808aa1470522df1ea6e1fc124799a57cc6fce89699e56742b61b848266e8"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 132.46666666666667,
+            "end": 138.46666666666667,
+            "startFrame": 3974,
+            "endFrame": 4154,
+            "words": 14,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "81a7b8a004818b6748fd017c8ee9d4335b3c95ec82a7f9a7dbab062ff0add45c"
+          },
+          {
+            "text": "Cada masa queda entre cero y uno.",
+            "start": 138.76666666666668,
+            "end": 141.76666666666668,
+            "startFrame": 4163,
+            "endFrame": 4253,
+            "words": 7,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "65f769e0c7de87d5369835b4f8f756d1b206c634dcb7a4f624ea07d6eca288db"
+          }
+        ]
+      },
+      {
+        "start": 142.06666666666666,
+        "end": 152.1,
+        "cues": [
+          {
+            "text": "El resultado es 0 coma 1 6 6 6 6 6 7 constante de normalización.",
+            "start": 142.06666666666666,
+            "end": 148.5,
+            "startFrame": 4262,
+            "endFrame": 4455,
+            "words": 15,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "c92f3c2ddc8048daa9942c037dc2812b8a83d928d22b25f4afa50872e097be91"
+          },
+          {
+            "text": "Cada masa queda entre cero y uno.",
+            "start": 148.8,
+            "end": 151.8,
+            "startFrame": 4464,
+            "endFrame": 4554,
+            "words": 7,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "18485ebedf276c7a03bcd59987389dfb92d11c1516726d0105078e9a805825a0"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
