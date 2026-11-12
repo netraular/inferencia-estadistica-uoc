@@ -1,0 +1,493 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-ejemplo-regiones-matrices-plane-regions-1--remaining",
+  "kind": "exercise",
+  "title": "Con x fijado, ¿cuál es el máximo permitido de y?",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "a2d6f1fe1fc0635e31e1c908a9128030da9fff1707d2abcd43707278e3c9a179",
+  "src": "videos/ejercicio-ejemplo-regiones-matrices-plane-regions-1--remaining/video.mp4",
+  "poster": "videos/ejercicio-ejemplo-regiones-matrices-plane-regions-1--remaining/poster.jpg",
+  "duration": 139.93333333333334,
+  "frames": 4198,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "81557e7b2d188a32e48bd946a5b8ba66aed8760811574a3530b0eea1656499dc",
+  "videoSha256": "8e5cb48a129c216dc101312b081dd5a56935e604152bc41273af3dd1bf540add",
+  "posterSha256": "bfa3906cc08fe62ffe82868350841b60dd838c099d85e96f8f99b34929cc102a",
+  "canonicalSha256": "70aa88103149efa24c9335308fb15d5d0899970b1997240b00472c49fcfab95a",
+  "inputHash": "7f5d19c60e465363bf37595057bcf1d94e48bf2322bb440fade38d818a7bedd7",
+  "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "f4c82d0b2ca9b7c64e325b76291e933fa1204efebf481f9ef756022c6466939e",
+    "canonicalSha256": "70aa88103149efa24c9335308fb15d5d0899970b1997240b00472c49fcfab95a",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Coordenadas y regiones"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "0f37f594041730243ff06cb7c74a1dba8832123085268b9628e0622af4bb907f",
+    "transcriptSha256": "81557e7b2d188a32e48bd946a5b8ba66aed8760811574a3530b0eea1656499dc",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-ejemplo-regiones-matrices-plane-regions-1",
+  "transcript": {
+    "id": "ejercicio-ejemplo-regiones-matrices-plane-regions-1--remaining",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "70aa88103149efa24c9335308fb15d5d0899970b1997240b00472c49fcfab95a",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 139.93333333333334,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 13.4,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Con equis minúscula fijado, ¿cuál es el máximo permitido de y?",
+            "start": 2.9,
+            "end": 7.633333333333334,
+            "startFrame": 87,
+            "endFrame": 229,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "d701695092fc2b683672669659556bef15e52d6139b4d99075fa3865e752911b"
+          },
+          {
+            "text": "Queremos el máximo de la segunda cantidad una vez fijada la primera.",
+            "start": 7.933333333333334,
+            "end": 13.1,
+            "startFrame": 238,
+            "endFrame": 393,
+            "words": 12,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "c1148f5faf1d6dfb31c3cb6182ac2ed1a66befe364f76342fb53edfe1a318209"
+          }
+        ]
+      },
+      {
+        "start": 13.4,
+        "end": 31.5,
+        "cues": [
+          {
+            "text": "Las coordenadas son cantidades para dos cultivos y no pueden ser negativas.",
+            "start": 13.4,
+            "end": 18.566666666666666,
+            "startFrame": 402,
+            "endFrame": 557,
+            "words": 12,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "fefd568b7001aadc3815c1742dec9e4facb604fafb9cf8a1bc8752b8ce13900d"
+          },
+          {
+            "text": "La desigualdad de capacidad es compartida, de modo que la frontera es inclinada.",
+            "start": 18.866666666666667,
+            "end": 24.466666666666665,
+            "startFrame": 566,
+            "endFrame": 734,
+            "words": 13,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "7dbacc0d4e0a81295bcf8e11ef79c0b9195b0d5b285caf7e7f1695556076482c"
+          },
+          {
+            "text": "Su área se expresa en unidades al cuadrado; sin densidad todavía no es una probabilidad.",
+            "start": 24.766666666666666,
+            "end": 31.2,
+            "startFrame": 743,
+            "endFrame": 936,
+            "words": 15,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "9d42a08795f7c28c1df235f996ed00cd4057b57a60cb6bd09e3d3a595dcaa763"
+          }
+        ]
+      },
+      {
+        "start": 31.5,
+        "end": 45.1,
+        "cues": [
+          {
+            "text": "Capacidad total: 4 mg; equis minúscula mayor o igual que 0, i griega minúscula mayor o igual que 0 y equis minúscula más i griega minúscula menor o igual que 4.",
+            "start": 31.5,
+            "end": 44.8,
+            "startFrame": 945,
+            "endFrame": 1344,
+            "words": 31,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "7cb606d166ff7619e857ed601f1a166ce5587f0cb08a12e47dabd4c29ccea504"
+          }
+        ]
+      },
+      {
+        "start": 45.1,
+        "end": 51.733333333333334,
+        "cues": [
+          {
+            "text": "Se fija equis minúscula igual a 2 mg.",
+            "start": 45.1,
+            "end": 48.53333333333333,
+            "startFrame": 1353,
+            "endFrame": 1456,
+            "words": 8,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "ed7995a3c35559f08b2800a6a2c08611f19c5016106b7e00703856059268ecdb"
+          },
+          {
+            "text": "Los ejes del dibujo representan miligramos.",
+            "start": 48.833333333333336,
+            "end": 51.43333333333333,
+            "startFrame": 1465,
+            "endFrame": 1543,
+            "words": 6,
+            "sceneIndex": 3,
+            "cueIndex": 1,
+            "sourceCueSha256": "76c116d9282543f8a0e27a7cf62306cb9dcc9ba8ab5afdb2e9c93054196baad7"
+          }
+        ]
+      },
+      {
+        "start": 51.733333333333334,
+        "end": 54.63333333333333,
+        "cues": [
+          {
+            "text": "No se pueden asignar cantidades negativas.",
+            "start": 51.733333333333334,
+            "end": 54.333333333333336,
+            "startFrame": 1552,
+            "endFrame": 1630,
+            "words": 6,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "00b579c8d48b540b86e5ef6b7f2f4cebba08ddd6333eab35f22adc5790ef2646"
+          }
+        ]
+      },
+      {
+        "start": 54.63333333333333,
+        "end": 60.93333333333333,
+        "cues": [
+          {
+            "text": "El límite es compartido: no se dispone de una capacidad completa para cada cultivo.",
+            "start": 54.63333333333333,
+            "end": 60.63333333333333,
+            "startFrame": 1639,
+            "endFrame": 1819,
+            "words": 14,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "fc315b9fe680d18dbf61f93d717f9947ee3e0aae7f011b8c0df25c48e85090ff"
+          }
+        ]
+      },
+      {
+        "start": 60.93333333333333,
+        "end": 73.13333333333334,
+        "cues": [
+          {
+            "text": "Resta lo que recibe el primer cultivo a la capacidad total.",
+            "start": 60.93333333333333,
+            "end": 65.66666666666667,
+            "startFrame": 1828,
+            "endFrame": 1970,
+            "words": 11,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "2c1c4a32c4a4b981367e124b3e9f27ca9d245db150851af8f6c6f92c6e5ea616"
+          },
+          {
+            "text": "La capacidad es compartida: lo asignado al primer cultivo ya no está disponible para el segundo.",
+            "start": 65.96666666666667,
+            "end": 72.83333333333333,
+            "startFrame": 1979,
+            "endFrame": 2185,
+            "words": 16,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "863d390964a21d4eff4f712a9505c82431af5ceba1c78a55d31d80b3f1d4dad9"
+          }
+        ]
+      },
+      {
+        "start": 73.13333333333334,
+        "end": 100.26666666666667,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 73.13333333333334,
+            "end": 76.13333333333334,
+            "startFrame": 2194,
+            "endFrame": 2284,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Con equis minúscula fijado, ¿cuál es el máximo permitido de y?",
+            "start": 76.43333333333334,
+            "end": 81.16666666666667,
+            "startFrame": 2293,
+            "endFrame": 2435,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "99c2133feb5e99f26a63d8f39a50a850e4504e2a5c462138b6abdef33fc99ab8"
+          },
+          {
+            "text": "Las coordenadas describen un punto mediante dos números.",
+            "start": 81.46666666666667,
+            "end": 84.9,
+            "startFrame": 2444,
+            "endFrame": 2547,
+            "words": 8,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "3190f891b7d81b0f1b73f7bbcea65caf2409e1ddf17b3c8b113bd978cd79b16e"
+          },
+          {
+            "text": "Fijar la primera cantidad deja un máximo para la segunda.",
+            "start": 85.2,
+            "end": 89.5,
+            "startFrame": 2556,
+            "endFrame": 2685,
+            "words": 10,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "4c24b9ceca3f8c0a7922459ffaca0070c391d42b4e38a8534ac38d192245f7a9"
+          },
+          {
+            "text": "La frontera del triángulo expresa la capacidad total disponible.",
+            "start": 89.8,
+            "end": 93.66666666666667,
+            "startFrame": 2694,
+            "endFrame": 2810,
+            "words": 9,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "bd5a0e3fc06dacec5439a580d43a16d3779ea3fd9b4c8287d5e9ca88137c38d4"
+          },
+          {
+            "text": "Para este apartado: Resta lo que recibe el primer cultivo a la capacidad total.",
+            "start": 93.96666666666667,
+            "end": 99.96666666666667,
+            "startFrame": 2819,
+            "endFrame": 2999,
+            "words": 14,
+            "sceneIndex": 7,
+            "cueIndex": 5,
+            "sourceCueSha256": "987211a9dcc6f2ea0140d54a6c289a35290aa3b297f8c891f9e19230e39bb4e3"
+          }
+        ]
+      },
+      {
+        "start": 100.26666666666667,
+        "end": 106.56666666666666,
+        "cues": [
+          {
+            "text": "Usar la capacidad compartida. 2 más i griega minúscula menor o igual que 4.",
+            "start": 100.26666666666667,
+            "end": 106.26666666666667,
+            "startFrame": 3008,
+            "endFrame": 3188,
+            "words": 14,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "1800d29b527416b68c8a6be05ab3adf2fd9283846cb50a6964600ab2ba99c686"
+          }
+        ]
+      },
+      {
+        "start": 106.56666666666666,
+        "end": 118.76666666666667,
+        "cues": [
+          {
+            "text": "Restar en ambos lados. i griega minúscula menor o igual que 4 menos 2 igual a 2.",
+            "start": 106.56666666666666,
+            "end": 113.86666666666666,
+            "startFrame": 3197,
+            "endFrame": 3416,
+            "words": 17,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "caa9f460d56a75c9e3ce0fa24c3889c408f2a7114fc0114b6574e13c1c60a368"
+          },
+          {
+            "text": "El segundo cultivo puede recibir entre cero y 2 mg.",
+            "start": 114.16666666666667,
+            "end": 118.46666666666667,
+            "startFrame": 3425,
+            "endFrame": 3554,
+            "words": 10,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "717af14e0687b82545fab47741713cbe320a04a0bebcb08f915123b7cbf01efc"
+          }
+        ]
+      },
+      {
+        "start": 118.76666666666667,
+        "end": 133.3,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 118.76666666666667,
+            "end": 120.06666666666666,
+            "startFrame": 3563,
+            "endFrame": 3602,
+            "words": 3,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es 2 miligramos.",
+            "start": 120.36666666666666,
+            "end": 122.53333333333333,
+            "startFrame": 3611,
+            "endFrame": 3676,
+            "words": 5,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "11eb1723d2dcc679c3fc3357c089fd5c5023a2309c610aa6f27223f0fbf9a92d"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 122.83333333333333,
+            "end": 128.83333333333334,
+            "startFrame": 3685,
+            "endFrame": 3865,
+            "words": 14,
+            "sceneIndex": 10,
+            "cueIndex": 2,
+            "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
+          },
+          {
+            "text": "El máximo de y cambia al cambiar equis minúscula.",
+            "start": 129.13333333333333,
+            "end": 133,
+            "startFrame": 3874,
+            "endFrame": 3990,
+            "words": 9,
+            "sceneIndex": 10,
+            "cueIndex": 3,
+            "sourceCueSha256": "d71f4ed1d7119fee8b10eb0ac66bfe934be0336602db3d53ba27bbbcce0d943f"
+          }
+        ]
+      },
+      {
+        "start": 133.3,
+        "end": 139.93333333333334,
+        "cues": [
+          {
+            "text": "El resultado es 2 miligramos.",
+            "start": 133.3,
+            "end": 135.46666666666667,
+            "startFrame": 3999,
+            "endFrame": 4064,
+            "words": 5,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "b5f9b3fc31b0d0b44baa1165145a44c623188cee923e5bc2ca204f5b29b56313"
+          },
+          {
+            "text": "El máximo de y cambia al cambiar equis minúscula.",
+            "start": 135.76666666666668,
+            "end": 139.63333333333333,
+            "startFrame": 4073,
+            "endFrame": 4189,
+            "words": 9,
+            "sceneIndex": 11,
+            "cueIndex": 1,
+            "sourceCueSha256": "02813106bac34cda980cad3055fc96e88a029d5c6b3c728b23209c5767730e35"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
