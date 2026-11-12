@@ -243938,6 +243938,538 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-practica-cauchy-weibull-weibull--quantile": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-practica-cauchy-weibull-weibull--quantile",
+      "kind": "exercise",
+      "title": "Calcula q tal que P(T≤q)=u.",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "1ebf937854aff4a45e33676a5f7fb6073e0e85588f0e2b696e014113ab8349e2",
+      "src": "videos/ejercicio-practica-cauchy-weibull-weibull--quantile/video.mp4",
+      "poster": "videos/ejercicio-practica-cauchy-weibull-weibull--quantile/poster.jpg",
+      "duration": 230.43333333333334,
+      "frames": 6913,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "668094616843e5fff2147c7d6e83db0864840d7f20aac4fe971308dacb167d38",
+      "videoSha256": "d53ba43a0d9e9f48a4c89134ca3a769bc2a28aee99a0cdda828118fd9954ba44",
+      "posterSha256": "cd94c3235e73126fcafda379820015ddb0cd4557cffc9e684b6de6f9a242a2cf",
+      "canonicalSha256": "949c05726af0f440a970d4c712e58ef60e0526637d67fa16b36c21c17aa0033f",
+      "inputHash": "50c99daa1eb83a9dde4975f9913b8922d1e4f0ec11eca6cd42df2222ea682468",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "d205873fc05877aa818753adfa43e84e6e8db4e246a459943ec7b28d5b7e25e7",
+        "canonicalSha256": "949c05726af0f440a970d4c712e58ef60e0526637d67fa16b36c21c17aa0033f",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Weibull"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "273b7303ac74612c5622aefd72449318a8dd6c3222f848d957d4a1aeccc983da",
+        "transcriptSha256": "668094616843e5fff2147c7d6e83db0864840d7f20aac4fe971308dacb167d38",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-practica-cauchy-weibull-weibull",
+      "transcript": {
+        "id": "ejercicio-practica-cauchy-weibull-weibull--quantile",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "949c05726af0f440a970d4c712e58ef60e0526637d67fa16b36c21c17aa0033f",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 230.43333333333334,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 14.666666666666666,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula cu tal que probabilidad de te menor o igual que cu igual a u.",
+                "start": 2.9,
+                "end": 9.333333333333334,
+                "startFrame": 87,
+                "endFrame": 280,
+                "words": 15,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "94069cf782be7be0cd7ccd746062c42650bf22d568cd974af0e69aa931d2a300"
+              },
+              {
+                "text": "Queremos el umbral que deja a su izquierda la probabilidad indicada.",
+                "start": 9.633333333333333,
+                "end": 14.366666666666667,
+                "startFrame": 289,
+                "endFrame": 431,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "9ef01c4dee2b45a332c4a9cf7943d0a3407632017fd11ba49af3410ed814c63a"
+              }
+            ]
+          },
+          {
+            "start": 14.666666666666666,
+            "end": 34.46666666666667,
+            "cues": [
+              {
+                "text": "La escala tiene unidades de tiempo y la forma es adimensional.",
+                "start": 14.666666666666666,
+                "end": 19.4,
+                "startFrame": 440,
+                "endFrame": 582,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "57a59883d4a4a41cd8e62570e24eae0fb16fd8c0f0bc4dbc97eb59eaddf0c5da"
+              },
+              {
+                "text": "La supervivencia es la exponencial negativa del tiempo relativo a la escala elevado a la forma.",
+                "start": 19.7,
+                "end": 26.566666666666666,
+                "startFrame": 591,
+                "endFrame": 797,
+                "words": 16,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "917a3aba3e32f6d908ad6b2f23619705348719c5640c8464377c1207881fbbe1"
+              },
+              {
+                "text": "Para recuperar un cuantil deshacemos la exponencial con un logaritmo y luego la potencia con una raíz.",
+                "start": 26.866666666666667,
+                "end": 34.166666666666664,
+                "startFrame": 806,
+                "endFrame": 1025,
+                "words": 17,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "510607f7912af4f3a411d4e00e5158d7654ce30c7283d5cae13a6d29685ceac9"
+              }
+            ]
+          },
+          {
+            "start": 34.46666666666667,
+            "end": 43.36666666666667,
+            "cues": [
+              {
+                "text": "Escala alfa igual a 6 horas; forma beta igual a 3, sin unidades; soporte te mayor o igual que 0.",
+                "start": 34.46666666666667,
+                "end": 43.06666666666667,
+                "startFrame": 1034,
+                "endFrame": 1292,
+                "words": 20,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "c395594aea74ba274b059d11b2c7d0593c0c86957205a727db43d1775216bc9a"
+              }
+            ]
+          },
+          {
+            "start": 43.36666666666667,
+            "end": 50.1,
+            "cues": [
+              {
+                "text": "Umbral te minúscula igual a 3 horas; cuantil solicitado u igual a 0 coma 8.",
+                "start": 43.36666666666667,
+                "end": 49.8,
+                "startFrame": 1301,
+                "endFrame": 1494,
+                "words": 15,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "0fe77bf5e3ad250b3d18fa838e7bfb89b5d0fc069044311ab8adf7c9771feb42"
+              }
+            ]
+          },
+          {
+            "start": 50.1,
+            "end": 57.266666666666666,
+            "cues": [
+              {
+                "text": "Forma y escala son positivas; el modelo describe el tiempo completo, sin censura en este ejercicio.",
+                "start": 50.1,
+                "end": 56.96666666666667,
+                "startFrame": 1503,
+                "endFrame": 1709,
+                "words": 16,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "eef81b79c9127f38c0ca7b03397c89a59cd285a9540cd3bc20028784ba90c8b2"
+              }
+            ]
+          },
+          {
+            "start": 57.266666666666666,
+            "end": 70.33333333333333,
+            "cues": [
+              {
+                "text": "La supervivencia es la exponencial de menos el tiempo relativo a la escala elevado a la forma.",
+                "start": 57.266666666666666,
+                "end": 64.56666666666666,
+                "startFrame": 1718,
+                "endFrame": 1937,
+                "words": 17,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "2c6955042ebfc39f17609dc9395fa92334c35749152935c360ed5ffeaa9937ac"
+              },
+              {
+                "text": "Dividimos por la escala antes de elevar: el exponente debe ser adimensional.",
+                "start": 64.86666666666666,
+                "end": 70.03333333333333,
+                "startFrame": 1946,
+                "endFrame": 2101,
+                "words": 12,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "32cf1bc7ba9ca43bdb07e382fd994fe0cdb277b2d0829e9c108bed2ffa94be77"
+              }
+            ]
+          },
+          {
+            "start": 70.33333333333333,
+            "end": 82.96666666666667,
+            "cues": [
+              {
+                "text": "El cuantil usa 1 menos u como supervivencia, no u.",
+                "start": 70.33333333333333,
+                "end": 74.63333333333334,
+                "startFrame": 2110,
+                "endFrame": 2239,
+                "words": 10,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "c2b7afc2cc33a1fe23c76940e1fe876d3657ab2b804040ab6d3f85f72295605c"
+              },
+              {
+                "text": "Aquí la probabilidad es el dato y el valor de la variable es la incógnita; invertimos la acumulada.",
+                "start": 74.93333333333334,
+                "end": 82.66666666666667,
+                "startFrame": 2248,
+                "endFrame": 2480,
+                "words": 18,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "880e2815657577ecc0142f72293b5ae397f39834045c2a88fcaf544a0e4625a9"
+              }
+            ]
+          },
+          {
+            "start": 82.96666666666667,
+            "end": 116.96666666666667,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 82.96666666666667,
+                "end": 85.96666666666667,
+                "startFrame": 2489,
+                "endFrame": 2579,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula cu tal que probabilidad de te menor o igual que cu igual a u.",
+                "start": 86.26666666666667,
+                "end": 92.7,
+                "startFrame": 2588,
+                "endFrame": 2781,
+                "words": 15,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "3e8070d9436d7be89a57d40a070ed7ecee48ece5197f193faaa72fee5f8dd508"
+              },
+              {
+                "text": "La supervivencia eleva el tiempo relativo a la escala a la potencia de forma.",
+                "start": 93,
+                "end": 99,
+                "startFrame": 2790,
+                "endFrame": 2970,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "7c30ecbf77bd8fb4a54cc2defbbcf3c155202da16beed7ccdcb8c52d5d181e94"
+              },
+              {
+                "text": "Para un cuantil, deshacemos primero la exponencial con el logaritmo y después la potencia con una raíz.",
+                "start": 99.3,
+                "end": 106.6,
+                "startFrame": 2979,
+                "endFrame": 3198,
+                "words": 17,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "c3fe16216684680a819d7dd530aeff4ace42233ca297874fcb4f73d7767a3659"
+              },
+              {
+                "text": "La escala tiene unidades de tiempo; la forma no.",
+                "start": 106.9,
+                "end": 110.76666666666667,
+                "startFrame": 3207,
+                "endFrame": 3323,
+                "words": 9,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "895bd4ea05c475fd479df2dcd521943ba061d283cccaf4533f33e34fb9fce780"
+              },
+              {
+                "text": "Para este apartado: El cuantil usa 1 menos u como supervivencia, no u.",
+                "start": 111.06666666666666,
+                "end": 116.66666666666667,
+                "startFrame": 3332,
+                "endFrame": 3500,
+                "words": 13,
+                "sceneIndex": 7,
+                "cueIndex": 5,
+                "sourceCueSha256": "f7791ffcf7deebfe7313c8d3f3c473b6a56dcec1264b952549adc9639d9d9d5f"
+              }
+            ]
+          },
+          {
+            "start": 116.96666666666667,
+            "end": 131.43333333333334,
+            "cues": [
+              {
+                "text": "Pasar a supervivencia. exponencial de abre paréntesis, menos abre paréntesis, cu dividido entre alfa , cierra paréntesis elevado a beta , cierra paréntesis igual a 1 menos u igual a 0 coma 2.",
+                "start": 116.96666666666667,
+                "end": 131.13333333333333,
+                "startFrame": 3509,
+                "endFrame": 3934,
+                "words": 33,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "c921a393833451b4037e3f39a7f82dfad3723b03bd599ec183fce8674139872a"
+              }
+            ]
+          },
+          {
+            "start": 131.43333333333334,
+            "end": 171.16666666666666,
+            "cues": [
+              {
+                "text": "Despejar con logaritmos. abre paréntesis, cu dividido entre alfa , cierra paréntesis elevado a beta igual a menos logaritmo natural de abre paréntesis, 1 menos u, cierra paréntesis; cu igual a alfa por abre corchete, menos logaritmo natural de abre paréntesis, 1 menos u, cierra paréntesis , cierra corchete elevado a abre paréntesis, 1 dividido entre beta , cierra paréntesis. cu subíndice u igual a alfa abre corchete, - logaritmo natural abre paréntesis, 1 menos u, cierra paréntesis , cierra corchete elevado a abre paréntesis, 1 dividido entre beta , cierra paréntesis.",
+                "start": 131.43333333333334,
+                "end": 170.86666666666667,
+                "startFrame": 3943,
+                "endFrame": 5126,
+                "words": 92,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "756d4ad9caf5e39c49cb7452823c8155a056804e8e9832cfe5c5e018e1e7b4cf"
+              }
+            ]
+          },
+          {
+            "start": 171.16666666666666,
+            "end": 191.26666666666668,
+            "cues": [
+              {
+                "text": "Sustituir forma y escala.",
+                "start": 171.16666666666666,
+                "end": 172.9,
+                "startFrame": 5135,
+                "endFrame": 5187,
+                "words": 4,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "548b9fd359b24ceb7882fb433c3d718cf88d0514703ed82367d29d7d06c67a69"
+              },
+              {
+                "text": "La supervivencia buscada es 0 coma 2.",
+                "start": 173.2,
+                "end": 176.2,
+                "startFrame": 5196,
+                "endFrame": 5286,
+                "words": 7,
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "sourceCueSha256": "6e83f6dce367114e1a7dc77ce0760952c68c73f85f995139a23977cef584fde8"
+              },
+              {
+                "text": "Tomamos menos su logaritmo, elevamos a uno dividido entre la forma 3 y multiplicamos por la escala 6 horas.",
+                "start": 176.5,
+                "end": 184.66666666666666,
+                "startFrame": 5295,
+                "endFrame": 5540,
+                "words": 19,
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "sourceCueSha256": "4bb018ccfee4739c60d81c698cbd412a653bcfb433e069e89dc566e3e98fd061"
+              },
+              {
+                "text": "El tiempo resultante es aproximadamente 7 coma 0 3 1 4 1 4 horas.",
+                "start": 184.96666666666667,
+                "end": 190.96666666666667,
+                "startFrame": 5549,
+                "endFrame": 5729,
+                "words": 14,
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "sourceCueSha256": "ca9f5de2a28ce7f34ddc65c8fc546fd59f30887d8ed229bbbc5db821172a98f0"
+              }
+            ]
+          },
+          {
+            "start": 191.26666666666668,
+            "end": 214.8,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 191.26666666666668,
+                "end": 192.56666666666666,
+                "startFrame": 5738,
+                "endFrame": 5777,
+                "words": 3,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 7 coma 0 3 1 4 1 4 horas.",
+                "start": 192.86666666666667,
+                "end": 198.03333333333333,
+                "startFrame": 5786,
+                "endFrame": 5941,
+                "words": 12,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "fdb08dc522511f52919161115cf366b9c99d8e07d3e546ed22bb4669e081b037"
+              },
+              {
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 198.33333333333334,
+                "end": 204.33333333333334,
+                "startFrame": 5950,
+                "endFrame": 6130,
+                "words": 14,
+                "sceneIndex": 11,
+                "cueIndex": 2,
+                "sourceCueSha256": "aab29efc08557594331314da6d376779f4cdea51251ce79f2650d9e9055628fe"
+              },
+              {
+                "text": "Bajo el modelo, la proporción 0 coma 8 pierde su actividad antes de este tiempo; no es una vida útil idéntica para todos.",
+                "start": 204.63333333333333,
+                "end": 214.5,
+                "startFrame": 6139,
+                "endFrame": 6435,
+                "words": 23,
+                "sceneIndex": 11,
+                "cueIndex": 3,
+                "sourceCueSha256": "857d720a16bf04cf049701a1ab006d4e40c7e92f14b5ecb908e059e1ead67be1"
+              }
+            ]
+          },
+          {
+            "start": 214.8,
+            "end": 230.43333333333334,
+            "cues": [
+              {
+                "text": "El resultado es 7 coma 0 3 1 4 1 4 horas.",
+                "start": 214.8,
+                "end": 219.96666666666667,
+                "startFrame": 6444,
+                "endFrame": 6599,
+                "words": 12,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "3b9493e1588c163e62cf3ee2081322b182ccbd0debac82e27f4e7d0882d32c4f"
+              },
+              {
+                "text": "Bajo el modelo, la proporción 0 coma 8 pierde su actividad antes de este tiempo; no es una vida útil idéntica para todos.",
+                "start": 220.26666666666668,
+                "end": 230.13333333333333,
+                "startFrame": 6608,
+                "endFrame": 6904,
+                "words": 23,
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "sourceCueSha256": "1dd38a0366ce32214dcf7bc2e3c5d98d139570d3d01ed9eadda125129b66b494"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
