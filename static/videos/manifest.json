@@ -125402,6 +125402,658 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-pdf-u2-2.8--posterior": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-pdf-u2-2.8--posterior",
+      "kind": "exercise",
+      "title": "Entre los clasificados como diabéticos, ¿qué probabilidad tiene diabetes real?",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "c61f63aa60909ce72c9f6b2feefa8270efa984d135681f4456210306377831e4",
+      "src": "videos/ejercicio-pdf-u2-2.8--posterior/video.mp4",
+      "poster": "videos/ejercicio-pdf-u2-2.8--posterior/poster.jpg",
+      "duration": 275.1333333333333,
+      "frames": 8254,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "4ce0163b439ce520f68711d2d647a82236acdd32bf3a060edeeb4f86ea9738da",
+      "videoSha256": "a58c135aedcbfb241545e4d313044ac997cd32ab07250b16e061cec1a3130f84",
+      "posterSha256": "c6d65c7edeab8514810ba66db9634e4c318c1a625068c4e14fb981fab68e1984",
+      "canonicalSha256": "ee7baec8d30348227d5fe53d76e93efdadf198128dcf26930904c3e09618e2ab",
+      "inputHash": "67e12e566fa37bb187462dbaef20bb1c377fe1a1bfa61557260528e61f5b652a",
+      "rendererSha256": "8887ddbdbe01c75ff814dfd9835706b935242f14bdcaeb06b0d6735a2de9e236",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "c265f1448de610cfe6f02f86983c94df964cb359fcd84df4021ee12ddfa32817",
+        "canonicalSha256": "ee7baec8d30348227d5fe53d76e93efdadf198128dcf26930904c3e09618e2ab",
+        "source": {
+          "file": "Ejercicios_Unidad_2-Soluciones.pdf",
+          "number": "2.8",
+          "page": 22
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "484b5160745589fe14623369bdf575246345cbf6992226990f1249e340a96358",
+        "transcriptSha256": "4ce0163b439ce520f68711d2d647a82236acdd32bf3a060edeeb4f86ea9738da",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v7/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-pdf-u2-2.8",
+      "transcript": {
+        "id": "ejercicio-pdf-u2-2.8--posterior",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "ee7baec8d30348227d5fe53d76e93efdadf198128dcf26930904c3e09618e2ab",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 275.1333333333333,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 12.533333333333333,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Entre los clasificados como diabéticos, ¿qué probabilidad tiene diabetes real?",
+                "start": 2.9,
+                "end": 7.2,
+                "startFrame": 87,
+                "endFrame": 216,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "d6396431a489055738d3afa2632f38e0897dceadd77ecc96a2ca6f0a763c5df2"
+              },
+              {
+                "text": "Queremos saber qué proporción de los positivos tiene realmente la condición.",
+                "start": 7.5,
+                "end": 12.233333333333333,
+                "startFrame": 225,
+                "endFrame": 367,
+                "words": 11,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "b3a571c04385522c6375803e163de5f9619227b35546ec2cbccd3f5aca350063"
+              }
+            ]
+          },
+          {
+            "start": 12.533333333333333,
+            "end": 30.233333333333334,
+            "cues": [
+              {
+                "text": "Una probabilidad previa describe el grupo antes de observar la prueba; una verosimilitud describe la prueba dentro de ese grupo.",
+                "start": 12.533333333333333,
+                "end": 21.133333333333333,
+                "startFrame": 376,
+                "endFrame": 634,
+                "words": 20,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "a78813f0593784db0080773fed28297f6d58b49427dced4db248ec9356fc77ee"
+              },
+              {
+                "text": "Multiplicar ambas da una ruta conjunta.",
+                "start": 21.433333333333334,
+                "end": 24.033333333333335,
+                "startFrame": 643,
+                "endFrame": 721,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "e0bfa350990103fc50ce34d85a3f06fac20352535039204a3248db305d959e10"
+              },
+              {
+                "text": "Los orígenes son excluyentes y exhaustivos: sumamos sus rutas para normalizar la posterior.",
+                "start": 24.333333333333332,
+                "end": 29.933333333333334,
+                "startFrame": 730,
+                "endFrame": 898,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "9e334d6cf001939223cef8fab9b903c166ad178ed9cdb956c098dbb84093b451"
+              }
+            ]
+          },
+          {
+            "start": 30.233333333333334,
+            "end": 42,
+            "cues": [
+              {
+                "text": "Sanos: normal con mu igual a 80 y sigma igual a 10.",
+                "start": 30.233333333333334,
+                "end": 35.4,
+                "startFrame": 907,
+                "endFrame": 1062,
+                "words": 12,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "895c9ac007305cf3322155f08be7e0f70d8cabb0760a96f2790e379ef7d191cc"
+              },
+              {
+                "text": "Diabéticos: normal con mu igual a 160 y sigma igual a 31 coma 4.",
+                "start": 35.7,
+                "end": 41.7,
+                "startFrame": 1071,
+                "endFrame": 1251,
+                "words": 14,
+                "sceneIndex": 2,
+                "cueIndex": 1,
+                "sourceCueSha256": "23fcbe6f7360b5c05ad176159932e2883e2c8e9278aa91152016e6a5a04a2622"
+              }
+            ]
+          },
+          {
+            "start": 42,
+            "end": 55.166666666666664,
+            "cues": [
+              {
+                "text": "Regla: sano si equis menor que ce; diabético si equis mayor o igual que ce. probabilidad de equis menor que ce sabiendo que de igual a 0 coma 0 2.",
+                "start": 42,
+                "end": 54.86666666666667,
+                "startFrame": 1260,
+                "endFrame": 1646,
+                "words": 30,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "b002e3cbaa964e8c736e5ab48f81787bd6c0fea62f7989eb313aecfda8b8e4a9"
+              }
+            ]
+          },
+          {
+            "start": 55.166666666666664,
+            "end": 66.2,
+            "cues": [
+              {
+                "text": "Prevalencia de diabetes en el segundo apartado: probabilidad de de igual a 0 coma 1 0; probabilidad de ese igual a 0 coma 9 0.",
+                "start": 55.166666666666664,
+                "end": 65.9,
+                "startFrame": 1655,
+                "endFrame": 1977,
+                "words": 25,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "1651866104eb041dc06f3ddf3bcabe0f3a46d59bf0d3542b8624c49fa81f24c7"
+              }
+            ]
+          },
+          {
+            "start": 66.2,
+            "end": 77.96666666666667,
+            "cues": [
+              {
+                "text": "Los grupos sano y diabético forman una partición.",
+                "start": 66.2,
+                "end": 69.63333333333334,
+                "startFrame": 1986,
+                "endFrame": 2089,
+                "words": 8,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "acab6a8b107e06e5ccd744dea5094b1134ed2dbc209027003b62fc2c56f641a4"
+              },
+              {
+                "text": "Cada resultado tiene un único origen entre los considerados: las rutas se pueden sumar sin omisiones ni duplicados.",
+                "start": 69.93333333333334,
+                "end": 77.66666666666667,
+                "startFrame": 2098,
+                "endFrame": 2330,
+                "words": 18,
+                "sceneIndex": 5,
+                "cueIndex": 1,
+                "sourceCueSha256": "c621d80f1f481aaa9f19b919290037509d6bfc619a1c775a3da997a5915c1cbe"
+              }
+            ]
+          },
+          {
+            "start": 77.96666666666667,
+            "end": 83.86666666666666,
+            "cues": [
+              {
+                "text": "El 2 por ciento es la cola inferior de diabéticos, no la superior.",
+                "start": 77.96666666666667,
+                "end": 83.56666666666666,
+                "startFrame": 2339,
+                "endFrame": 2507,
+                "words": 13,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "40449074f1e9ed5d4b3527d67a34c801834360313d04b9c760f237eefe424506"
+              }
+            ]
+          },
+          {
+            "start": 83.86666666666666,
+            "end": 89.33333333333333,
+            "cues": [
+              {
+                "text": "No se proporciona tamaño poblacional para un número absoluto de falsos positivos.",
+                "start": 83.86666666666666,
+                "end": 89.03333333333333,
+                "startFrame": 2516,
+                "endFrame": 2671,
+                "words": 12,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "3e19d54865b46670a26cbb27337dd94d828c0a98c98c41f827df5beb57a5469d"
+              }
+            ]
+          },
+          {
+            "start": 89.33333333333333,
+            "end": 104.4,
+            "cues": [
+              {
+                "text": "El 2 por ciento de los diabéticos queda debajo del umbral.",
+                "start": 89.33333333333333,
+                "end": 94.06666666666666,
+                "startFrame": 2680,
+                "endFrame": 2822,
+                "words": 11,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "0d519e0ba6c12157a41a23a9bce8d97c51dba96a0837c61a7ee803fd63228f87"
+              },
+              {
+                "text": "El resto queda en la clasificación positiva.",
+                "start": 94.36666666666666,
+                "end": 97.36666666666666,
+                "startFrame": 2831,
+                "endFrame": 2921,
+                "words": 7,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "86d70698e66a2aa7a3320c4e59bb013ef47db2c4bfe7097ea2d0a704ecc5201a"
+              },
+              {
+                "text": "La sensibilidad condiciona en el sentido contrario; Bayes cambia la referencia a todos los positivos.",
+                "start": 97.66666666666667,
+                "end": 104.1,
+                "startFrame": 2930,
+                "endFrame": 3123,
+                "words": 15,
+                "sceneIndex": 8,
+                "cueIndex": 2,
+                "sourceCueSha256": "3d7f45d0c060ee5665af19116a1283334e25b3a35eae7119253c5fea48435a98"
+              }
+            ]
+          },
+          {
+            "start": 104.4,
+            "end": 121.2,
+            "cues": [
+              {
+                "text": "La sensibilidad de la regla.",
+                "start": 104.4,
+                "end": 106.56666666666666,
+                "startFrame": 3132,
+                "endFrame": 3197,
+                "words": 5,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "2aa007adde4560f929e28768b70edddf243358ec01ae5aa7cb01a6a32efd0573"
+              },
+              {
+                "text": "El 2 por ciento de los diabéticos queda debajo del umbral.",
+                "start": 106.86666666666666,
+                "end": 111.6,
+                "startFrame": 3206,
+                "endFrame": 3348,
+                "words": 11,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "2cf4e6af8731e0ffc178f3dcc789ef5acb3ff3c103a274a1a0b29870102566a2"
+              },
+              {
+                "text": "El resto queda en la clasificación positiva. probabilidad de más sabiendo que de igual a 1 menos 0 coma 0 2.",
+                "start": 111.9,
+                "end": 120.9,
+                "startFrame": 3357,
+                "endFrame": 3627,
+                "words": 21,
+                "sceneIndex": 9,
+                "cueIndex": 2,
+                "sourceCueSha256": "d87b1fd2069fcf97dc845c4add4f81026d57f8db8a795d14bd10afbda855215a"
+              }
+            ]
+          },
+          {
+            "start": 121.2,
+            "end": 127.1,
+            "cues": [
+              {
+                "text": "probabilidad de más sabiendo que de queda igual a 0 coma 9 8.",
+                "start": 121.2,
+                "end": 126.8,
+                "startFrame": 3636,
+                "endFrame": 3804,
+                "words": 13,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "4f2044d2a43d58d8c7c10dbb3ed89220e39237aeb222a5a7dda0aeb0624f07c8"
+              }
+            ]
+          },
+          {
+            "start": 127.1,
+            "end": 139.73333333333332,
+            "cues": [
+              {
+                "text": "La ruta positiva verdadera.",
+                "start": 127.1,
+                "end": 128.83333333333334,
+                "startFrame": 3813,
+                "endFrame": 3865,
+                "words": 4,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "9c1b77112547bca5154e1809316104ce322dfc7b441a2da410f087f42cca002e"
+              },
+              {
+                "text": "Multiplico la sensibilidad por la prevalencia de diabetes. probabilidad de de intersección más igual a 0 coma 9 8 por 0 coma 1 0.",
+                "start": 129.13333333333333,
+                "end": 139.43333333333334,
+                "startFrame": 3874,
+                "endFrame": 4183,
+                "words": 24,
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "sourceCueSha256": "85f05661659d95b55d237856cc4e980cbd9b8427aa3767f5e932bf9e7c8624a7"
+              }
+            ]
+          },
+          {
+            "start": 139.73333333333332,
+            "end": 145.63333333333333,
+            "cues": [
+              {
+                "text": "probabilidad de de intersección más queda igual a 0 coma 0 9 8.",
+                "start": 139.73333333333332,
+                "end": 145.33333333333334,
+                "startFrame": 4192,
+                "endFrame": 4360,
+                "words": 13,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "9a391ccd3455adeee7d6ca7d9d5d53961f34fb6b58793f5c27c529e85f249758"
+              }
+            ]
+          },
+          {
+            "start": 145.63333333333333,
+            "end": 172.73333333333332,
+            "cues": [
+              {
+                "text": "La ruta positiva falsa.",
+                "start": 145.63333333333333,
+                "end": 147.36666666666667,
+                "startFrame": 4369,
+                "endFrame": 4421,
+                "words": 4,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "9f1d9b2560cbe937c8b517bc45130fd3cfe733dc2663e57344cc7da1d0f8654c"
+              },
+              {
+                "text": "Para los sanos uso la cola derecha cu y la pondero por 0 coma 9 0.",
+                "start": 147.66666666666666,
+                "end": 154.53333333333333,
+                "startFrame": 4430,
+                "endFrame": 4636,
+                "words": 16,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "66020c6965b7325d2a21ef3fa5459bb960dea83e889c4791e8bd42538ff3344b"
+              },
+              {
+                "text": "La acumulada izquierda sería la especificidad, no esta tasa. probabilidad de ese intersección más igual a 0 coma 0 6 0 4 2 3 4 7 6 7 6 8 6 0 4 0 4 5 por 0 coma 9 0.",
+                "start": 154.83333333333334,
+                "end": 172.43333333333334,
+                "startFrame": 4645,
+                "endFrame": 5173,
+                "words": 41,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "ae61d741b922b4128c1d67c23fbe174a706dc08a4dca57c21c404f2901b16f18"
+              }
+            ]
+          },
+          {
+            "start": 172.73333333333332,
+            "end": 184.63333333333333,
+            "cues": [
+              {
+                "text": "probabilidad de ese intersección más queda igual a 0 coma 0 5 4 3 8 1 1 2 9 0 9 1 7 4 3 6 4.",
+                "start": 172.73333333333332,
+                "end": 184.33333333333334,
+                "startFrame": 5182,
+                "endFrame": 5530,
+                "words": 27,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "7f0e9310c4828a8021ddb72661a38baffd6cf2cc22102e48532ce266317a73e7"
+              }
+            ]
+          },
+          {
+            "start": 184.63333333333333,
+            "end": 205.83333333333334,
+            "cues": [
+              {
+                "text": "Reunir todos los positivos.",
+                "start": 184.63333333333333,
+                "end": 186.36666666666667,
+                "startFrame": 5539,
+                "endFrame": 5591,
+                "words": 4,
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "sourceCueSha256": "a14de911c746b2f0884d6ef6e60d16a938263ad75f0e6e662aa6e470e42860c9"
+              },
+              {
+                "text": "Sumo las rutas verdadera y falsa para formar el denominador de Bayes. probabilidad de un resultado positivo igual a 0 coma 0 9 8 más 0 coma 0 5 4 3 8 1 1 2 9 0 9 1 7 4 3 6 4.",
+                "start": 186.66666666666666,
+                "end": 205.53333333333333,
+                "startFrame": 5600,
+                "endFrame": 6166,
+                "words": 44,
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "sourceCueSha256": "6a3d74c813ccf0d5363d2c663da395059a6fce4a6fca7be53d6281290634d5e1"
+              }
+            ]
+          },
+          {
+            "start": 205.83333333333334,
+            "end": 217.73333333333332,
+            "cues": [
+              {
+                "text": "probabilidad de un resultado positivo queda igual a 0 coma 1 5 2 3 8 1 1 2 9 0 9 1 7 4 3 6 4.",
+                "start": 205.83333333333334,
+                "end": 217.43333333333334,
+                "startFrame": 6175,
+                "endFrame": 6523,
+                "words": 27,
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "sourceCueSha256": "032dd775bcead942e141dbe3d1484cac635ccfd15b517489021897ed8042e5d5"
+              }
+            ]
+          },
+          {
+            "start": 217.73333333333332,
+            "end": 225.63333333333333,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 217.73333333333332,
+                "end": 221.16666666666666,
+                "startFrame": 6532,
+                "endFrame": 6635,
+                "words": 8,
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 221.46666666666667,
+                "end": 225.33333333333334,
+                "startFrame": 6644,
+                "endFrame": 6760,
+                "words": 9,
+                "sceneIndex": 17,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 225.63333333333333,
+            "end": 249.73333333333332,
+            "cues": [
+              {
+                "text": "La posterior.",
+                "start": 225.63333333333333,
+                "end": 226.83333333333334,
+                "startFrame": 6769,
+                "endFrame": 6805,
+                "words": 2,
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "sourceCueSha256": "3ee537bc0237328bf3140acdb3002b5d535faf40cd1641fa54b4954a5d99f978"
+              },
+              {
+                "text": "Divido solo la ruta diabética entre el total positivo. probabilidad de de sabiendo que resultado positivo igual a abre paréntesis, 0 coma 0 9 8, cierra paréntesis dividido entre abre paréntesis, 0 coma 1 5 2 3 8 1 1 2 9 0 9 1 7 4 3 6 4, cierra paréntesis.",
+                "start": 227.13333333333333,
+                "end": 249.43333333333334,
+                "startFrame": 6814,
+                "endFrame": 7483,
+                "words": 52,
+                "sceneIndex": 18,
+                "cueIndex": 1,
+                "sourceCueSha256": "ec45ee24eceafd50a6253b8d23f18b8e5e4ceaaca0639702c088db731dfad58f"
+              }
+            ]
+          },
+          {
+            "start": 249.73333333333332,
+            "end": 275.1333333333333,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 6 4 3 1 2 4 3 probabilidad entre 0 y 1.",
+                "start": 249.73333333333332,
+                "end": 257.03333333333336,
+                "startFrame": 7492,
+                "endFrame": 7711,
+                "words": 17,
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "sourceCueSha256": "795063e1ca2dbc9906e3dac24773419dfe05c29a8e89d93449511730051a3bc7"
+              },
+              {
+                "text": "La posterior es aproximadamente 0 coma 6 4 3 1, no 0 coma 1 0 3 8 5 5 5.",
+                "start": 257.3333333333333,
+                "end": 265.93333333333334,
+                "startFrame": 7720,
+                "endFrame": 7978,
+                "words": 20,
+                "sceneIndex": 19,
+                "cueIndex": 1,
+                "sourceCueSha256": "7f134b1ee9bb393302dd384f88f152a428080d35c1ab76808da125560f734d65"
+              },
+              {
+                "text": "El error impreso usa probabilidad de XS menor o igual que ce donde corresponde probabilidad de XS mayor que ce.",
+                "start": 266.23333333333335,
+                "end": 274.8333333333333,
+                "startFrame": 7987,
+                "endFrame": 8245,
+                "words": 20,
+                "sceneIndex": 19,
+                "cueIndex": 2,
+                "sourceCueSha256": "43ace8fb821b333d1c80c82d63be6aedd5db54b3ab46bae9c4403cd1d07eec77"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
