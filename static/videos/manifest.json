@@ -25450,26 +25450,1032 @@
       "nativePlanSha256": "ca0e3b50d440c41b123c8309e7feb7483e6037ada91bcda59a512549ec48f812",
       "src": "videos/esperanza/video.mp4",
       "poster": "videos/esperanza/poster.jpg",
-      "duration": 500.6333333333333,
-      "frames": 15019,
+      "duration": 424.2,
+      "frames": 12726,
       "fps": 30,
       "width": 1280,
       "height": 720,
-      "narrationMode": "transcript",
-      "cueTiming": "estimated",
+      "audioSource": "audio/aligned/esperanza.mp3",
+      "audioSha256": "91c08ae95930de34d5b6640729a54d1dc9241faaf5228a8868f1b822434731f3",
+      "voice": "Puck",
+      "model": "gemini-3.8-flash-tts",
+      "narrationMode": "forced-aligned",
+      "cueTiming": "forced-aligned",
+      "publication": "provisional-aligned",
       "temporary": true,
-      "silent": true,
-      "timing": {
-        "wordsPerMinute": 140,
-        "pauseSeconds": 0.3,
-        "minimumCueSeconds": 1.2
+      "listened": false,
+      "needsReview": true,
+      "alignmentSha256": "f19f4bcd90e08d5f9bfdcd8e38a18db56385f58aae66da51dfacb89b53e84e97",
+      "alignment": {
+        "version": 1,
+        "complete": true,
+        "id": "esperanza",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Puck",
+        "cueTiming": "forced-aligned",
+        "temporary": true,
+        "listened": false,
+        "needsReview": true,
+        "canonicalSha256": "d7a8462af43133cdd1fed036b216d0f736531b45300c7b808714f6e62d4a9b95",
+        "duration": 424.2,
+        "mp3Sha256": "91c08ae95930de34d5b6640729a54d1dc9241faaf5228a8868f1b822434731f3",
+        "mp3Bytes": 5091309,
+        "scenes": [
+          {
+            "start": 0.2725,
+            "end": 62.17250000000001,
+            "cues": [
+              {
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "text": "Hola.",
+                "start": 0.2725,
+                "end": 0.4325,
+                "score": -0.1684855978237465,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "text": "Vamos a calcular una esperanza como promedio ponderado, y después a transformar lo que promediamos.",
+                "start": 1.5325,
+                "end": 6.7725,
+                "score": -0.16238977015018463,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "text": "Un recuento vale cero, uno o dos con probabilidades un cuarto, una mitad y un cuarto.",
+                "start": 7.6725,
+                "end": 13.772499999999999,
+                "score": -0.1037171418689208,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "text": "No debemos tratar los tres valores como equiprobables.",
+                "start": 14.7125,
+                "end": 16.912499999999998,
+                "score": -0.10545993316918612,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "text": "La esperanza discreta suma cada valor multiplicado por su probabilidad.",
+                "start": 17.9325,
+                "end": 21.3925,
+                "score": -0.09704077203615372,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "text": "Los pesos ya suman uno; no dividimos otra vez entre el número de valores.",
+                "start": 22.3725,
+                "end": 25.6725,
+                "score": -0.2058620803679029,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "text": "Para una densidad, la misma idea usa una integral de valor por densidad.",
+                "start": 26.5925,
+                "end": 30.1725,
+                "score": -0.19805804279167205,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "text": "Cero aporta cero; uno, una mitad; dos, otra mitad.",
+                "start": 31.2925,
+                "end": 35.0525,
+                "score": -0.1446496307326015,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "text": "La suma es uno.",
+                "start": 35.892500000000005,
+                "end": 36.792500000000004,
+                "score": -0.10451392487933238,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "text": "Es el centro del modelo, no una promesa de que la siguiente observación valga uno.",
+                "start": 37.712500000000006,
+                "end": 41.49250000000001,
+                "score": -0.14373650518245995,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "text": "Bajo repeticiones independientes e idénticas con esperanza finita, la media observada se aproxima a ese centro.",
+                "start": 42.5925,
+                "end": 48.1525,
+                "score": -0.11239198967814445,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "text": "La condición de esperanza finita es que el promedio del valor absoluto sea finito.",
+                "start": 49.0525,
+                "end": 52.4525,
+                "score": -0.18256072490476072,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "text": "Si las colas son demasiado pesadas no podemos cancelar infinitos positivos y negativos para inventar una media.",
+                "start": 53.252500000000005,
+                "end": 58.2725,
+                "score": -0.18750770126158992,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "text": "Una variable no negativa también puede tener esperanza infinita.",
+                "start": 59.49250000000001,
+                "end": 62.17250000000001,
+                "score": -0.26721807941794395,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 63.17250000000001,
+            "end": 113.97250000000001,
+            "cues": [
+              {
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "text": "Para la esperanza de una función no hace falta hallar primero toda su distribución: transformamos cada valor y conservamos su peso original.",
+                "start": 63.17250000000001,
+                "end": 69.6525,
+                "score": -3.120753174647689,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "text": "Al cuadrar el recuento obtenemos cero, uno y cuatro, con las mismas probabilidades.",
+                "start": 70.47250000000001,
+                "end": 75.0925,
+                "score": -0.10687222080023276,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "text": "La nueva cuenta da cero más una mitad más uno: uno coma cinco.",
+                "start": 76.0725,
+                "end": 80.63250000000001,
+                "score": -5.760671377182007,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "text": "Cuadrar la media original daba uno.",
+                "start": 81.6525,
+                "end": 83.05250000000001,
+                "score": -0.13739034781853357,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "text": "La operación cuadrado no atraviesa la esperanza porque no es lineal.",
+                "start": 84.05250000000001,
+                "end": 86.9325,
+                "score": -0.47978927308161345,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "text": "En cambio, multiplicar por una constante y sumar otra sí respeta la linealidad.",
+                "start": 87.83250000000001,
+                "end": 91.77250000000001,
+                "score": -0.679925907868892,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "text": "Para dos veces el recuento más tres, la esperanza es cinco.",
+                "start": 92.69250000000001,
+                "end": 95.4925,
+                "score": -0.8454962174097697,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "text": "También se suman esperanzas de variables dependientes cuando las esperanzas implicadas son finitas.",
+                "start": 96.41250000000001,
+                "end": 100.5125,
+                "score": -0.22416958975372836,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "text": "No extendamos esa regla a un producto de variables.",
+                "start": 101.6725,
+                "end": 103.91250000000001,
+                "score": -0.20707296192025146,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "text": "La independencia permite separar la esperanza del producto bajo integrabilidad, pero la linealidad de una suma no la necesita.",
+                "start": 104.75250000000001,
+                "end": 110.61250000000001,
+                "score": -0.16122373760056993,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "text": "Distinguir ambas evita introducir supuestos innecesarios.",
+                "start": 111.5325,
+                "end": 113.97250000000001,
+                "score": -0.14027968646648029,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 115.0725,
+            "end": 120.91250000000001,
+            "cues": [
+              {
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "text": "X es el número de colonias resistentes en una microplaca que solo puede producir 0, 1 o 2 colonias.",
+                "start": 115.0725,
+                "end": 120.91250000000001,
+                "score": -4.072900295257568,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 121.5125,
+            "end": 129.83249999999998,
+            "cues": [
+              {
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 121.5125,
+                "end": 123.3725,
+                "score": -0.0968695670287291,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "text": "Calcula la constante ce.",
+                "start": 124.2925,
+                "end": 125.5925,
+                "score": -0.5931311473250389,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "text": "Queremos encontrar la constante que hace válida la distribución.",
+                "start": 126.5725,
+                "end": 129.83249999999998,
+                "score": -0.08667241821107878,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 130.67249999999999,
+            "end": 146.2325,
+            "cues": [
+              {
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "text": "La masa asigna probabilidad a cada valor posible de equis.",
+                "start": 130.67249999999999,
+                "end": 133.83249999999998,
+                "score": -1.145907568745315,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
+                "start": 134.8125,
+                "end": 138.7925,
+                "score": -0.17089882399886847,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
+                "start": 139.8125,
+                "end": 146.2325,
+                "score": -0.30179718871497446,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 146.89249999999998,
+            "end": 157.5925,
+            "cues": [
+              {
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "text": "probabilidad de equis igual a 0 igual a ce, probabilidad de equis igual a 1 igual a 3 por ce, probabilidad de equis igual a 2 igual a 6 por ce.",
+                "start": 146.89249999999998,
+                "end": 157.5925,
+                "score": -7.8794238567352295,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 157.6925,
+            "end": 163.4325,
+            "cues": [
+              {
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "text": "Fuera de conjunto de 0, 1, 2 fin del conjunto la probabilidad es cero.",
+                "start": 157.6925,
+                "end": 163.4325,
+                "score": -0.0984349399805069,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 164.3525,
+            "end": 167.2525,
+            "cues": [
+              {
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "text": "Los tres resultados son excluyentes y cubren todos los casos.",
+                "start": 164.3525,
+                "end": 167.2525,
+                "score": -0.11188826605484792,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 168.0925,
+            "end": 169.5125,
+            "cues": [
+              {
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "text": "Los pesos son no negativos.",
+                "start": 168.0925,
+                "end": 169.5125,
+                "score": -0.15661759251573434,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 170.3125,
+            "end": 178.4725,
+            "cues": [
+              {
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "text": "La suma de todas las masas debe ser uno.",
+                "start": 170.3125,
+                "end": 172.0725,
+                "score": -0.02158063060293595,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "text": "Exigimos probabilidad total uno sobre todo el soporte y comprobamos además que no haya valores negativos.",
+                "start": 172.7925,
+                "end": 178.4725,
+                "score": -0.16394767607562244,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 179.3125,
+            "end": 200.0725,
+            "cues": [
+              {
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 179.3125,
+                "end": 181.2925,
+                "score": -0.022241901606321335,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "text": "Calcula la constante ce.",
+                "start": 181.9525,
+                "end": 183.2525,
+                "score": -0.3100329630942724,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "text": "Un peso expresa importancia relativa, no una probabilidad todavía.",
+                "start": 184.11249999999998,
+                "end": 187.83249999999998,
+                "score": -0.16826993227005005,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "text": "Sumamos los pesos y dividimos cada uno por ese total para obtener probabilidades que suman uno.",
+                "start": 188.49249999999998,
+                "end": 193.1925,
+                "score": -0.12881355798454025,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "text": "Una masa es la probabilidad de un valor exacto.",
+                "start": 194.05249999999998,
+                "end": 196.5125,
+                "score": -0.04960441795682367,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 5,
+                "text": "Para este apartado: La suma de todas las masas debe ser uno.",
+                "start": 197.2525,
+                "end": 200.0725,
+                "score": -0.23193276518334946,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 201.0725,
+            "end": 218.9925,
+            "cues": [
+              {
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "text": "Normalizar la masa. abre paréntesis, 1 más 3 más 6, cierra paréntesis ce igual a 1; ce igual a 1 dividido entre 10 igual a 0 coma 1. suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de probabilidad de equis igual a equis minúscula.",
+                "start": 201.0725,
+                "end": 218.9925,
+                "score": -2.016282856464386,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 219.7325,
+            "end": 227.2125,
+            "cues": [
+              {
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "text": "suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de probabilidad de equis igual a equis minúscula queda igual a 1.",
+                "start": 219.7325,
+                "end": 227.2125,
+                "score": -1.6744076013565063,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 227.77249999999998,
+            "end": 239.1925,
+            "cues": [
+              {
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "text": "Comprobar e interpretar.",
+                "start": 227.77249999999998,
+                "end": 228.7925,
+                "score": -0.024980010464787483,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "text": "El resultado es 0 coma 1 constante de normalización.",
+                "start": 229.4125,
+                "end": 232.4725,
+                "score": -1.6993390023708344,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 233.2325,
+                "end": 236.89249999999998,
+                "score": -0.14757991713122465,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 13,
+                "cueIndex": 3,
+                "text": "Cada masa queda entre cero y uno.",
+                "start": 237.5125,
+                "end": 239.1925,
+                "score": -0.08386663668594944,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 239.7525,
+            "end": 245.0325,
+            "cues": [
+              {
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "text": "El resultado es 0 coma 1 constante de normalización.",
+                "start": 239.7525,
+                "end": 242.77249999999998,
+                "score": -1.505216583609581,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "text": "Cada masa queda entre cero y uno.",
+                "start": 243.2925,
+                "end": 245.0325,
+                "score": -0.01231260240698854,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 245.5725,
+            "end": 252.9325,
+            "cues": [
+              {
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 245.5725,
+                "end": 247.2125,
+                "score": -0.21853985264897346,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "text": "Calcula esperanza de equis.",
+                "start": 248.11249999999998,
+                "end": 249.5125,
+                "score": -0.9721273730508984,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "text": "Queremos el valor medio teórico al repetir el experimento.",
+                "start": 250.0925,
+                "end": 252.9325,
+                "score": -0.23959884388993183,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 253.67249999999999,
+            "end": 267.1525,
+            "cues": [
+              {
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "text": "La masa asigna probabilidad a cada valor posible de equis.",
+                "start": 253.67249999999999,
+                "end": 256.3925,
+                "score": -0.702751896266515,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
+                "start": 257.0125,
+                "end": 260.7525,
+                "score": -0.28550652116537095,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 16,
+                "cueIndex": 2,
+                "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
+                "start": 261.41249999999997,
+                "end": 267.1525,
+                "score": -0.30593525228970164,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 268.1725,
+            "end": 275.7125,
+            "cues": [
+              {
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "text": "probabilidad de equis igual a 0 igual a ce, probabilidad de equis igual a 1 igual a 3 por ce, probabilidad de equis igual a 2 igual a 6 por ce.",
+                "start": 268.1725,
+                "end": 275.7125,
+                "score": -2.9125231504440308,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 276.3125,
+            "end": 280.6125,
+            "cues": [
+              {
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "text": "Fuera de conjunto de 0, 1, 2 fin del conjunto la probabilidad es cero.",
+                "start": 276.3125,
+                "end": 280.6125,
+                "score": -0.546477521955967,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 281.6725,
+            "end": 284.4925,
+            "cues": [
+              {
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "text": "Los tres resultados son excluyentes y cubren todos los casos.",
+                "start": 281.6725,
+                "end": 284.4925,
+                "score": -0.09799459299392765,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 285.1525,
+            "end": 286.53249999999997,
+            "cues": [
+              {
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "text": "Los pesos son no negativos.",
+                "start": 285.1525,
+                "end": 286.53249999999997,
+                "score": -0.1583177939755842,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 287.3125,
+            "end": 295.47249999999997,
+            "cues": [
+              {
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "text": "Pondera cada valor por su probabilidad, no por su peso sin normalizar.",
+                "start": 287.3125,
+                "end": 290.6125,
+                "score": -0.17807286349125206,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 21,
+                "cueIndex": 1,
+                "text": "Ponderamos los valores por su probabilidad; el resultado no tiene por qué ser un valor observable.",
+                "start": 291.2525,
+                "end": 295.47249999999997,
+                "score": -1.498406079908212,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 296.3725,
+            "end": 318.3725,
+            "cues": [
+              {
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 296.3725,
+                "end": 298.5725,
+                "score": -0.07390465144817426,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 1,
+                "text": "Calcula esperanza de equis.",
+                "start": 299.2925,
+                "end": 300.7925,
+                "score": -1.0868074903264642,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 2,
+                "text": "Un peso expresa importancia relativa, no una probabilidad todavía.",
+                "start": 301.6725,
+                "end": 305.1525,
+                "score": -0.16655635724488932,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 3,
+                "text": "Sumamos los pesos y dividimos cada uno por ese total para obtener probabilidades que suman uno.",
+                "start": 305.7725,
+                "end": 310.1725,
+                "score": -0.18110282930799507,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 4,
+                "text": "Una masa es la probabilidad de un valor exacto.",
+                "start": 311.0125,
+                "end": 313.3125,
+                "score": -0.35587356984615326,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 5,
+                "text": "Para este apartado: Pondera cada valor por su probabilidad, no por su peso sin normalizar.",
+                "start": 314.1325,
+                "end": 318.3725,
+                "score": -0.1995552727021277,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 319.3725,
+            "end": 327.0125,
+            "cues": [
+              {
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "text": "E entre corchetes significa esperanza.",
+                "start": 319.3725,
+                "end": 321.4125,
+                "score": -2.072098731994629,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
+                "start": 322.0925,
+                "end": 327.0125,
+                "score": -0.14597802294883877,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 328.2325,
+            "end": 345.7725,
+            "cues": [
+              {
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "text": "Promediar con los pesos normalizados. abre paréntesis, 0 por 1 más 1 por 3 más 2 por 6, cierra paréntesis dividido entre 10 igual a 1 coma 5. esperanza de equis igual a suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de xP abre paréntesis, equis.",
+                "start": 328.2325,
+                "end": 345.7725,
+                "score": -6.317079782485962,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 345.8525,
+            "end": 348.7325,
+            "cues": [
+              {
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "text": "esperanza de equis queda igual a equis minúscula, cierra paréntesis.",
+                "start": 345.8525,
+                "end": 348.7325,
+                "score": -1.595343117415905,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 349.7725,
+            "end": 361.5525,
+            "cues": [
+              {
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "text": "Comprobar e interpretar.",
+                "start": 349.7725,
+                "end": 350.8325,
+                "score": -0.056332580634079935,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "text": "El resultado es 1 coma 5 número de colonias.",
+                "start": 351.4525,
+                "end": 353.7125,
+                "score": -8.870100021362305,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 26,
+                "cueIndex": 2,
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 354.53249999999997,
+                "end": 357.7925,
+                "score": -0.6689521074295044,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 26,
+                "cueIndex": 3,
+                "text": "La esperanza puede no ser entera aunque cada observación sí lo sea.",
+                "start": 358.4925,
+                "end": 361.5525,
+                "score": -0.933057060581632,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 362.2925,
+            "end": 369.47249999999997,
+            "cues": [
+              {
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "text": "El resultado es 1 coma 5 número de colonias.",
+                "start": 362.2925,
+                "end": 364.6525,
+                "score": -8.652903437614441,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "text": "La esperanza puede no ser entera aunque cada observación sí lo sea.",
+                "start": 365.3725,
+                "end": 369.47249999999997,
+                "score": -0.7344689369783737,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 370.3925,
+            "end": 423.8525,
+            "cues": [
+              {
+                "sceneIndex": 28,
+                "cueIndex": 0,
+                "text": "Se transforma cada valor y después se pondera, cuando la esperanza está definida.",
+                "start": 370.3925,
+                "end": 374.6925,
+                "score": -0.2370127749283191,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 1,
+                "text": "La linealidad no exige independencia; sí exige que las esperanzas sean utilizables.",
+                "start": 375.7925,
+                "end": 381.3325,
+                "score": -0.4150165361352265,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 2,
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 382.5725,
+                "end": 385.7325,
+                "score": -0.18388895690441132,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 3,
+                "text": "¿Hace falta independencia para que la esperanza de X más Y sea la suma de sus esperanzas finitas?",
+                "start": 387.1525,
+                "end": 393.03249999999997,
+                "score": -5.23006534576416,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 4,
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 394.1925,
+                "end": 397.2725,
+                "score": -0.11189094752522319,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 5,
+                "text": "La linealidad de la esperanza vale también para variables dependientes con esperanzas finitas.",
+                "start": 398.9125,
+                "end": 403.4525,
+                "score": -0.14055973553913645,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 6,
+                "text": "Para revisar el próximo problema, evita este error: Interpretar la esperanza como el resultado individual obligatorio.",
+                "start": 404.7325,
+                "end": 411.7725,
+                "score": -0.27471129580711323,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 7,
+                "text": "La esperanza pondera todos los valores posibles y describe un centro teórico.",
+                "start": 412.6925,
+                "end": 417.1325,
+                "score": -0.12779660329688342,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 28,
+                "cueIndex": 8,
+                "text": "Puede quedar entre valores que nunca se observan; no obliga a que una observación coincida con ese centro.",
+                "start": 417.9725,
+                "end": 423.8525,
+                "score": -0.14151592156849802,
+                "needsReview": false
+              }
+            ]
+          }
+        ],
+        "alignmentSha256": "f19f4bcd90e08d5f9bfdcd8e38a18db56385f58aae66da51dfacb89b53e84e97",
+        "alignmentEngine": "torchaudio-2.6-voxpopuli-es/forced-align",
+        "sourceSha256": "2511ae2b143e48b2f7ed2ee978cbf2be6622e8a120c020902219f97cedbf8a49",
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "queueParts": [
+          {
+            "jobId": "5ded2438-cd74-4616-b825-33ec9c4c648d",
+            "part": 0,
+            "offset": 0,
+            "duration": 424.2,
+            "wavSha256": "bdfa0a4570bf8e441108f59b03c9826999af064dbf94cf4417e42ccf9d51de08"
+          }
+        ]
       },
-      "transcriptSha256": "30a57d519067021b9dd0ca43354451b59eb5b4c37e88504aa4a8124c07d0d924",
-      "videoSha256": "ccadf967eb9321153213f6d773c28d1f502938a5071f87212dc60b044760c497",
+      "videoSha256": "113cabadc5df8c794e805fbe67297ce1ee1df01a80be11b1cadc5e75a07ee57c",
       "posterSha256": "cade4dea749dd688085d105db29aff5ea76d1169b88dbcb1ae770c7b35b52491",
       "canonicalSha256": "d7a8462af43133cdd1fed036b216d0f736531b45300c7b808714f6e62d4a9b95",
-      "inputHash": "58f9119689616d7c1d8b7458de20dd3baa4857ef6ec992b1af7d90a5ca7e3675",
-      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "inputHash": "ad47669af2318ecc02401c406674149c5a030c2580765e4656eb0f937aba693e",
+      "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
       "renderConcurrency": 8,
       "sourceSnapshot": {
         "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
@@ -25481,51 +26487,25 @@
         },
         "provenance": null,
         "renderedAnimationSha256": "d78ce802f172d19f519214bf36c9767bcac195e5f781cca06934cc022375a070",
-        "transcriptSha256": "30a57d519067021b9dd0ca43354451b59eb5b4c37e88504aa4a8124c07d0d924",
-        "sourceFiles": {
-          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-        },
-        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
-        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "audioMetadataSha256": "197e8e55f7a7559a1de8889a19560b4f21df744fbe7571d21a7c48aee7a9c659",
         "rendererSources": {
           "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
           "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
           "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
           "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
           "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
           "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
           "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
           "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
           "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
           "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
           "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
           "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
           "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
           "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -25533,1177 +26513,7 @@
         }
       },
       "testFixture": false,
-      "parentLesson": "esperanza",
-      "transcript": {
-        "id": "esperanza",
-        "narrationMode": "transcript",
-        "cueTiming": "estimated",
-        "temporary": true,
-        "silent": true,
-        "canonicalSha256": "d7a8462af43133cdd1fed036b216d0f736531b45300c7b808714f6e62d4a9b95",
-        "timing": {
-          "wordsPerMinute": 140,
-          "pauseSeconds": 0.3,
-          "minimumCueSeconds": 1.2
-        },
-        "duration": 500.6333333333333,
-        "scenes": [
-          {
-            "start": 0,
-            "end": 74.1,
-            "cues": [
-              {
-                "text": "Hola.",
-                "start": 0,
-                "end": 1.2,
-                "startFrame": 0,
-                "endFrame": 36,
-                "words": 1,
-                "sceneIndex": 0,
-                "cueIndex": 0,
-                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
-              },
-              {
-                "text": "Vamos a calcular una esperanza como promedio ponderado, y después a transformar lo que promediamos.",
-                "start": 1.5,
-                "end": 7.933333333333334,
-                "startFrame": 45,
-                "endFrame": 238,
-                "words": 15,
-                "sceneIndex": 0,
-                "cueIndex": 1,
-                "sourceCueSha256": "6b3e35e43b8a320a62d358979e22a5eeef66b2a9d703e416b942f6843a90729e"
-              },
-              {
-                "text": "Un recuento vale cero, uno o dos con probabilidades un cuarto, una mitad y un cuarto.",
-                "start": 8.233333333333333,
-                "end": 15.1,
-                "startFrame": 247,
-                "endFrame": 453,
-                "words": 16,
-                "sceneIndex": 0,
-                "cueIndex": 2,
-                "sourceCueSha256": "651e76717c5ad14e2aeb802b7dc7adcbfc037ba0388574ef723c3dfbd4e1d44b"
-              },
-              {
-                "text": "No debemos tratar los tres valores como equiprobables.",
-                "start": 15.4,
-                "end": 18.833333333333332,
-                "startFrame": 462,
-                "endFrame": 565,
-                "words": 8,
-                "sceneIndex": 0,
-                "cueIndex": 3,
-                "sourceCueSha256": "ef70e5223959ab977e2cd97b0b5498b2c498843ee20b2f86764790f77b2c9b44"
-              },
-              {
-                "text": "La esperanza discreta suma cada valor multiplicado por su probabilidad.",
-                "start": 19.133333333333333,
-                "end": 23.433333333333334,
-                "startFrame": 574,
-                "endFrame": 703,
-                "words": 10,
-                "sceneIndex": 0,
-                "cueIndex": 4,
-                "sourceCueSha256": "e85f2547bb8939e438a2360430e8cd1379de82023fd9b78d922106bb70b42eeb"
-              },
-              {
-                "text": "Los pesos ya suman uno; no dividimos otra vez entre el número de valores.",
-                "start": 23.733333333333334,
-                "end": 29.733333333333334,
-                "startFrame": 712,
-                "endFrame": 892,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 5,
-                "sourceCueSha256": "d20e498b374e2c6ad102add0252db331ef87a0d12b86c9bf1d691b17c5f24d37"
-              },
-              {
-                "text": "Para una densidad, la misma idea usa una integral de valor por densidad.",
-                "start": 30.033333333333335,
-                "end": 35.63333333333333,
-                "startFrame": 901,
-                "endFrame": 1069,
-                "words": 13,
-                "sceneIndex": 0,
-                "cueIndex": 6,
-                "sourceCueSha256": "9d7e8faf67512c3ce5eaf492e6c93f7c05cab4ce590c982b8b6aa49c9662a012"
-              },
-              {
-                "text": "Cero aporta cero; uno, una mitad; dos, otra mitad.",
-                "start": 35.93333333333333,
-                "end": 39.8,
-                "startFrame": 1078,
-                "endFrame": 1194,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 7,
-                "sourceCueSha256": "25c8a5b1d83f13cea34af5d968950cf663238704cc16e01a1f6065a9d3e38a72"
-              },
-              {
-                "text": "La suma es uno.",
-                "start": 40.1,
-                "end": 41.833333333333336,
-                "startFrame": 1203,
-                "endFrame": 1255,
-                "words": 4,
-                "sceneIndex": 0,
-                "cueIndex": 8,
-                "sourceCueSha256": "3e2113d25001da211b7a231f12574a762c9fa717fffdf6fa20f57a807342f558"
-              },
-              {
-                "text": "Es el centro del modelo, no una promesa de que la siguiente observación valga uno.",
-                "start": 42.13333333333333,
-                "end": 48.56666666666667,
-                "startFrame": 1264,
-                "endFrame": 1457,
-                "words": 15,
-                "sceneIndex": 0,
-                "cueIndex": 9,
-                "sourceCueSha256": "257623db716cf422a5bf181089ed74f8b67029bcba43d84ac9198750421c48eb"
-              },
-              {
-                "text": "Bajo repeticiones independientes e idénticas con esperanza finita, la media observada se aproxima a ese centro.",
-                "start": 48.86666666666667,
-                "end": 55.733333333333334,
-                "startFrame": 1466,
-                "endFrame": 1672,
-                "words": 16,
-                "sceneIndex": 0,
-                "cueIndex": 10,
-                "sourceCueSha256": "bb66835056433802323bc05e1a3ee3231726856ac2f9cdaab9bb24268b385a09"
-              },
-              {
-                "text": "La condición de esperanza finita es que el promedio del valor absoluto sea finito.",
-                "start": 56.03333333333333,
-                "end": 62.03333333333333,
-                "startFrame": 1681,
-                "endFrame": 1861,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 11,
-                "sourceCueSha256": "ca4df8affd20a56456d613611dddec6a8802f89ba881e0e1c655ce6ad6124c57"
-              },
-              {
-                "text": "Si las colas son demasiado pesadas no podemos cancelar infinitos positivos y negativos para inventar una media.",
-                "start": 62.333333333333336,
-                "end": 69.63333333333334,
-                "startFrame": 1870,
-                "endFrame": 2089,
-                "words": 17,
-                "sceneIndex": 0,
-                "cueIndex": 12,
-                "sourceCueSha256": "fc3551e565275ac7f0e94ed310b9f93d812cd0cf3a8e8e253af5559e87418e79"
-              },
-              {
-                "text": "Una variable no negativa también puede tener esperanza infinita.",
-                "start": 69.93333333333334,
-                "end": 73.8,
-                "startFrame": 2098,
-                "endFrame": 2214,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 13,
-                "sourceCueSha256": "ca946e21adb9235a8a695a71e0bd1bb85d86fd77e3064d57620e8eec74cd5b3c"
-              }
-            ]
-          },
-          {
-            "start": 74.1,
-            "end": 135.93333333333334,
-            "cues": [
-              {
-                "text": "Para la esperanza de una función no hace falta hallar primero toda su distribución: transformamos cada valor y conservamos su peso original.",
-                "start": 74.1,
-                "end": 83.53333333333333,
-                "startFrame": 2223,
-                "endFrame": 2506,
-                "words": 22,
-                "sceneIndex": 1,
-                "cueIndex": 0,
-                "sourceCueSha256": "4938cdad6d84d048142eefa837548ea8bfe93cd2a186b3cf3b7d55c24b4c3ad8"
-              },
-              {
-                "text": "Al cuadrar el recuento obtenemos cero, uno y cuatro, con las mismas probabilidades.",
-                "start": 83.83333333333333,
-                "end": 89.43333333333334,
-                "startFrame": 2515,
-                "endFrame": 2683,
-                "words": 13,
-                "sceneIndex": 1,
-                "cueIndex": 1,
-                "sourceCueSha256": "881b3da77a2fd31f632503f0907e778381e96f25daed103e3023124d8b4bc783"
-              },
-              {
-                "text": "La nueva cuenta da cero más una mitad más uno: uno coma cinco.",
-                "start": 89.73333333333333,
-                "end": 95.33333333333333,
-                "startFrame": 2692,
-                "endFrame": 2860,
-                "words": 13,
-                "sceneIndex": 1,
-                "cueIndex": 2,
-                "sourceCueSha256": "0a4c16a517db08e5cfe084f89b7d7f286d6723ada6f31fbcb66465c41b17f62c"
-              },
-              {
-                "text": "Cuadrar la media original daba uno.",
-                "start": 95.63333333333334,
-                "end": 98.23333333333333,
-                "startFrame": 2869,
-                "endFrame": 2947,
-                "words": 6,
-                "sceneIndex": 1,
-                "cueIndex": 3,
-                "sourceCueSha256": "a35f06f13c3c27ff697fba4c3922ec1bfbed09a221148d8403cfc8446394d807"
-              },
-              {
-                "text": "La operación cuadrado no atraviesa la esperanza porque no es lineal.",
-                "start": 98.53333333333333,
-                "end": 103.26666666666667,
-                "startFrame": 2956,
-                "endFrame": 3098,
-                "words": 11,
-                "sceneIndex": 1,
-                "cueIndex": 4,
-                "sourceCueSha256": "aab0db82ab9cdd3ea2f3125b7ac1ff747ab0d15de9b29d665346da18f053bd72"
-              },
-              {
-                "text": "En cambio, multiplicar por una constante y sumar otra sí respeta la linealidad.",
-                "start": 103.56666666666666,
-                "end": 109.16666666666667,
-                "startFrame": 3107,
-                "endFrame": 3275,
-                "words": 13,
-                "sceneIndex": 1,
-                "cueIndex": 5,
-                "sourceCueSha256": "318f91619d5f84d0cb914d8bb098342a88bcbe2387864396d219c41a27ac1030"
-              },
-              {
-                "text": "Para dos veces el recuento más tres, la esperanza es cinco.",
-                "start": 109.46666666666667,
-                "end": 114.2,
-                "startFrame": 3284,
-                "endFrame": 3426,
-                "words": 11,
-                "sceneIndex": 1,
-                "cueIndex": 6,
-                "sourceCueSha256": "6f3efaa22659bb6b63429fc0ff852031b05b0d4824258919fe3021351608f31c"
-              },
-              {
-                "text": "También se suman esperanzas de variables dependientes cuando las esperanzas implicadas son finitas.",
-                "start": 114.5,
-                "end": 120.1,
-                "startFrame": 3435,
-                "endFrame": 3603,
-                "words": 13,
-                "sceneIndex": 1,
-                "cueIndex": 7,
-                "sourceCueSha256": "8703f3dffd4157a94957f379e7a0dd0623aed8366e5042508b524c828ddfa485"
-              },
-              {
-                "text": "No extendamos esa regla a un producto de variables.",
-                "start": 120.4,
-                "end": 124.26666666666667,
-                "startFrame": 3612,
-                "endFrame": 3728,
-                "words": 9,
-                "sceneIndex": 1,
-                "cueIndex": 8,
-                "sourceCueSha256": "950ce6435ae24166e23dce966d830b5651f6dcd55c3736b411ce0c69ce878458"
-              },
-              {
-                "text": "La independencia permite separar la esperanza del producto bajo integrabilidad, pero la linealidad de una suma no la necesita.",
-                "start": 124.56666666666666,
-                "end": 132.73333333333332,
-                "startFrame": 3737,
-                "endFrame": 3982,
-                "words": 19,
-                "sceneIndex": 1,
-                "cueIndex": 9,
-                "sourceCueSha256": "c970728b26ee793e2670e9db62e0e20d801cb72d3708d3b5687ba1ee9f66cfcc"
-              },
-              {
-                "text": "Distinguir ambas evita introducir supuestos innecesarios.",
-                "start": 133.03333333333333,
-                "end": 135.63333333333333,
-                "startFrame": 3991,
-                "endFrame": 4069,
-                "words": 6,
-                "sceneIndex": 1,
-                "cueIndex": 10,
-                "sourceCueSha256": "05baa4dc10e6ee4e7f6ed7fb8779643a14647db7ce80ec728f30b7544b8ab05f"
-              }
-            ]
-          },
-          {
-            "start": 135.93333333333334,
-            "end": 144.4,
-            "cues": [
-              {
-                "text": "X es el número de colonias resistentes en una microplaca que solo puede producir 0, 1 o 2 colonias.",
-                "start": 135.93333333333334,
-                "end": 144.1,
-                "startFrame": 4078,
-                "endFrame": 4323,
-                "words": 19,
-                "sceneIndex": 2,
-                "cueIndex": 0,
-                "sourceCueSha256": "24f18bfbd086d89683b883e9541e81ba97c3b12ae9d91040bcacc0f0523b4e3f"
-              }
-            ]
-          },
-          {
-            "start": 144.4,
-            "end": 153.5,
-            "cues": [
-              {
-                "text": "Vamos a resolver este apartado juntos.",
-                "start": 144.4,
-                "end": 147,
-                "startFrame": 4332,
-                "endFrame": 4410,
-                "words": 6,
-                "sceneIndex": 3,
-                "cueIndex": 0,
-                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
-              },
-              {
-                "text": "Calcula la constante ce.",
-                "start": 147.3,
-                "end": 149.03333333333333,
-                "startFrame": 4419,
-                "endFrame": 4471,
-                "words": 4,
-                "sceneIndex": 3,
-                "cueIndex": 1,
-                "sourceCueSha256": "743a3ffa00d6f1b1e0c6801719731ac2429118dd251458f2737163805f889723"
-              },
-              {
-                "text": "Queremos encontrar la constante que hace válida la distribución.",
-                "start": 149.33333333333334,
-                "end": 153.2,
-                "startFrame": 4480,
-                "endFrame": 4596,
-                "words": 9,
-                "sceneIndex": 3,
-                "cueIndex": 2,
-                "sourceCueSha256": "b40fe6d933998c22a7ce6408072557ad2263308712147c04d7872ace88ddf083"
-              }
-            ]
-          },
-          {
-            "start": 153.5,
-            "end": 171.6,
-            "cues": [
-              {
-                "text": "La masa asigna probabilidad a cada valor posible de equis.",
-                "start": 153.5,
-                "end": 157.8,
-                "startFrame": 4605,
-                "endFrame": 4734,
-                "words": 10,
-                "sceneIndex": 4,
-                "cueIndex": 0,
-                "sourceCueSha256": "8e1a7ef9f2b6d5fde6074e805b798f5172925b2c0f21b7581af31d6133f8eab9"
-              },
-              {
-                "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
-                "start": 158.1,
-                "end": 163.26666666666668,
-                "startFrame": 4743,
-                "endFrame": 4898,
-                "words": 12,
-                "sceneIndex": 4,
-                "cueIndex": 1,
-                "sourceCueSha256": "524f9634a2328cfb90f0dd34442064d37094d995e52156111b959ca6951e08e2"
-              },
-              {
-                "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
-                "start": 163.56666666666666,
-                "end": 171.3,
-                "startFrame": 4907,
-                "endFrame": 5139,
-                "words": 18,
-                "sceneIndex": 4,
-                "cueIndex": 2,
-                "sourceCueSha256": "2ad003c8547ab08837313c40c2a4884a7aab1c98e41ff7823d18fc9b0e571fb4"
-              }
-            ]
-          },
-          {
-            "start": 171.6,
-            "end": 185.2,
-            "cues": [
-              {
-                "text": "probabilidad de equis igual a 0 igual a ce, probabilidad de equis igual a 1 igual a 3 por ce, probabilidad de equis igual a 2 igual a 6 por ce.",
-                "start": 171.6,
-                "end": 184.9,
-                "startFrame": 5148,
-                "endFrame": 5547,
-                "words": 31,
-                "sceneIndex": 5,
-                "cueIndex": 0,
-                "sourceCueSha256": "5d2a198a4a5195524dffc1de2062932cec05b57c0d5f3f6f9ea6b68b21dcf67c"
-              }
-            ]
-          },
-          {
-            "start": 185.2,
-            "end": 191.5,
-            "cues": [
-              {
-                "text": "Fuera de conjunto de 0, 1, 2 fin del conjunto la probabilidad es cero.",
-                "start": 185.2,
-                "end": 191.2,
-                "startFrame": 5556,
-                "endFrame": 5736,
-                "words": 14,
-                "sceneIndex": 6,
-                "cueIndex": 0,
-                "sourceCueSha256": "c97beeb4b3700acf6b49da7f44eaddd86296d7075eb16f963c70c62aeccab115"
-              }
-            ]
-          },
-          {
-            "start": 191.5,
-            "end": 196.1,
-            "cues": [
-              {
-                "text": "Los tres resultados son excluyentes y cubren todos los casos.",
-                "start": 191.5,
-                "end": 195.8,
-                "startFrame": 5745,
-                "endFrame": 5874,
-                "words": 10,
-                "sceneIndex": 7,
-                "cueIndex": 0,
-                "sourceCueSha256": "3819eac2c7e2b4e285d8d55b78019a78247068908277b8233e302de507bf827f"
-              }
-            ]
-          },
-          {
-            "start": 196.1,
-            "end": 198.56666666666666,
-            "cues": [
-              {
-                "text": "Los pesos son no negativos.",
-                "start": 196.1,
-                "end": 198.26666666666668,
-                "startFrame": 5883,
-                "endFrame": 5948,
-                "words": 5,
-                "sceneIndex": 8,
-                "cueIndex": 0,
-                "sourceCueSha256": "6b24fcecc57be7000ac03e429c7e33daa587c73318b5f6dc14efcf358c0ebecd"
-              }
-            ]
-          },
-          {
-            "start": 198.56666666666666,
-            "end": 209.9,
-            "cues": [
-              {
-                "text": "La suma de todas las masas debe ser uno.",
-                "start": 198.56666666666666,
-                "end": 202.43333333333334,
-                "startFrame": 5957,
-                "endFrame": 6073,
-                "words": 9,
-                "sceneIndex": 9,
-                "cueIndex": 0,
-                "sourceCueSha256": "f554dae275cb573fffc3c80d03d96590e4b616b0156a6f01df2e7cecebca949e"
-              },
-              {
-                "text": "Exigimos probabilidad total uno sobre todo el soporte y comprobamos además que no haya valores negativos.",
-                "start": 202.73333333333332,
-                "end": 209.6,
-                "startFrame": 6082,
-                "endFrame": 6288,
-                "words": 16,
-                "sceneIndex": 9,
-                "cueIndex": 1,
-                "sourceCueSha256": "e2af0073c9a7d125429291ef7c5f83dd5c593e498e83d5854c8e3a8afb76a1bc"
-              }
-            ]
-          },
-          {
-            "start": 209.9,
-            "end": 236.2,
-            "cues": [
-              {
-                "text": "Identificar la pregunta y justificar el método.",
-                "start": 209.9,
-                "end": 212.9,
-                "startFrame": 6297,
-                "endFrame": 6387,
-                "words": 7,
-                "sceneIndex": 10,
-                "cueIndex": 0,
-                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
-              },
-              {
-                "text": "Calcula la constante ce.",
-                "start": 213.2,
-                "end": 214.93333333333334,
-                "startFrame": 6396,
-                "endFrame": 6448,
-                "words": 4,
-                "sceneIndex": 10,
-                "cueIndex": 1,
-                "sourceCueSha256": "25991ddc3b62aea7d14417ad5157c0d162f464f8045b7f626eff2f8a98fdc819"
-              },
-              {
-                "text": "Un peso expresa importancia relativa, no una probabilidad todavía.",
-                "start": 215.23333333333332,
-                "end": 219.1,
-                "startFrame": 6457,
-                "endFrame": 6573,
-                "words": 9,
-                "sceneIndex": 10,
-                "cueIndex": 2,
-                "sourceCueSha256": "b04a2ad0c3a2d1c59d04c3880f70ca05d968254fb7198527e41dde9a82219c88"
-              },
-              {
-                "text": "Sumamos los pesos y dividimos cada uno por ese total para obtener probabilidades que suman uno.",
-                "start": 219.4,
-                "end": 226.26666666666668,
-                "startFrame": 6582,
-                "endFrame": 6788,
-                "words": 16,
-                "sceneIndex": 10,
-                "cueIndex": 3,
-                "sourceCueSha256": "00260c34b1d9b3b50ae21e600111c815985a84490da1f684f1b9982e81a1139a"
-              },
-              {
-                "text": "Una masa es la probabilidad de un valor exacto.",
-                "start": 226.56666666666666,
-                "end": 230.43333333333334,
-                "startFrame": 6797,
-                "endFrame": 6913,
-                "words": 9,
-                "sceneIndex": 10,
-                "cueIndex": 4,
-                "sourceCueSha256": "cb61a02571023cc077e3254535688ac03e3c03007aff442c7126a5098dc4a373"
-              },
-              {
-                "text": "Para este apartado: La suma de todas las masas debe ser uno.",
-                "start": 230.73333333333332,
-                "end": 235.9,
-                "startFrame": 6922,
-                "endFrame": 7077,
-                "words": 12,
-                "sceneIndex": 10,
-                "cueIndex": 5,
-                "sourceCueSha256": "ecbb210eb1ef405eea84eb04c1a45e068fa5a3bd9294e61adeb4250d83c2b3bd"
-              }
-            ]
-          },
-          {
-            "start": 236.2,
-            "end": 256.23333333333335,
-            "cues": [
-              {
-                "text": "Normalizar la masa. abre paréntesis, 1 más 3 más 6, cierra paréntesis ce igual a 1; ce igual a 1 dividido entre 10 igual a 0 coma 1. suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de probabilidad de equis igual a equis minúscula.",
-                "start": 236.2,
-                "end": 255.93333333333334,
-                "startFrame": 7086,
-                "endFrame": 7678,
-                "words": 46,
-                "sceneIndex": 11,
-                "cueIndex": 0,
-                "sourceCueSha256": "c0445db72376ff6daa6f54740c88f81668797280f73af7d84f27c41c39b55f67"
-              }
-            ]
-          },
-          {
-            "start": 256.23333333333335,
-            "end": 265.96666666666664,
-            "cues": [
-              {
-                "text": "suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de probabilidad de equis igual a equis minúscula queda igual a 1.",
-                "start": 256.23333333333335,
-                "end": 265.6666666666667,
-                "startFrame": 7687,
-                "endFrame": 7970,
-                "words": 22,
-                "sceneIndex": 12,
-                "cueIndex": 0,
-                "sourceCueSha256": "43682b6078614f324fea5c6d3bea002e57c47384ad5803359fe59814fe31f1f3"
-              }
-            ]
-          },
-          {
-            "start": 265.96666666666664,
-            "end": 281.3333333333333,
-            "cues": [
-              {
-                "text": "Comprobar e interpretar.",
-                "start": 265.96666666666664,
-                "end": 267.26666666666665,
-                "startFrame": 7979,
-                "endFrame": 8018,
-                "words": 3,
-                "sceneIndex": 13,
-                "cueIndex": 0,
-                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
-              },
-              {
-                "text": "El resultado es 0 coma 1 constante de normalización.",
-                "start": 267.56666666666666,
-                "end": 271.43333333333334,
-                "startFrame": 8027,
-                "endFrame": 8143,
-                "words": 9,
-                "sceneIndex": 13,
-                "cueIndex": 1,
-                "sourceCueSha256": "aa7b48a5dff7c453e7d54d1c06971fbe5c762af7896b0ffd055ca41c1f868e04"
-              },
-              {
-                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
-                "start": 271.73333333333335,
-                "end": 277.73333333333335,
-                "startFrame": 8152,
-                "endFrame": 8332,
-                "words": 14,
-                "sceneIndex": 13,
-                "cueIndex": 2,
-                "sourceCueSha256": "da5eb2e2e00451d68286b3102bf82db2641e6e59f6d52fe6638dcf8a68acec18"
-              },
-              {
-                "text": "Cada masa queda entre cero y uno.",
-                "start": 278.03333333333336,
-                "end": 281.03333333333336,
-                "startFrame": 8341,
-                "endFrame": 8431,
-                "words": 7,
-                "sceneIndex": 13,
-                "cueIndex": 3,
-                "sourceCueSha256": "f25195cecd002a0ca477b497f38a2ecbec7fde4dc9eb0c3e49d2abab3d53da1f"
-              }
-            ]
-          },
-          {
-            "start": 281.3333333333333,
-            "end": 288.8,
-            "cues": [
-              {
-                "text": "El resultado es 0 coma 1 constante de normalización.",
-                "start": 281.3333333333333,
-                "end": 285.2,
-                "startFrame": 8440,
-                "endFrame": 8556,
-                "words": 9,
-                "sceneIndex": 14,
-                "cueIndex": 0,
-                "sourceCueSha256": "272c66d9e7967171e61c47081fe4efcbefa621c8100f68ac3715743dce9dc316"
-              },
-              {
-                "text": "Cada masa queda entre cero y uno.",
-                "start": 285.5,
-                "end": 288.5,
-                "startFrame": 8565,
-                "endFrame": 8655,
-                "words": 7,
-                "sceneIndex": 14,
-                "cueIndex": 1,
-                "sourceCueSha256": "630bc8b6f8dbeedaba19c296060826d78ddae572d0d4ae3e18a3d2c11202c42d"
-              }
-            ]
-          },
-          {
-            "start": 288.8,
-            "end": 297.9,
-            "cues": [
-              {
-                "text": "Vamos a resolver este apartado juntos.",
-                "start": 288.8,
-                "end": 291.4,
-                "startFrame": 8664,
-                "endFrame": 8742,
-                "words": 6,
-                "sceneIndex": 15,
-                "cueIndex": 0,
-                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
-              },
-              {
-                "text": "Calcula esperanza de equis.",
-                "start": 291.7,
-                "end": 293.43333333333334,
-                "startFrame": 8751,
-                "endFrame": 8803,
-                "words": 4,
-                "sceneIndex": 15,
-                "cueIndex": 1,
-                "sourceCueSha256": "abf153c79fd9990c45fb9be89ee2a613ca70417d8661a4379bb6417d4390b083"
-              },
-              {
-                "text": "Queremos el valor medio teórico al repetir el experimento.",
-                "start": 293.73333333333335,
-                "end": 297.6,
-                "startFrame": 8812,
-                "endFrame": 8928,
-                "words": 9,
-                "sceneIndex": 15,
-                "cueIndex": 2,
-                "sourceCueSha256": "c280f28e2f367a4ad24d1ce432dfbfa0fb914ab0448da1d15426333e7bdad1be"
-              }
-            ]
-          },
-          {
-            "start": 297.9,
-            "end": 316,
-            "cues": [
-              {
-                "text": "La masa asigna probabilidad a cada valor posible de equis.",
-                "start": 297.9,
-                "end": 302.2,
-                "startFrame": 8937,
-                "endFrame": 9066,
-                "words": 10,
-                "sceneIndex": 16,
-                "cueIndex": 0,
-                "sourceCueSha256": "8e1a7ef9f2b6d5fde6074e805b798f5172925b2c0f21b7581af31d6133f8eab9"
-              },
-              {
-                "text": "Los pesos iniciales se convierten en masas dividiendo por su suma positiva.",
-                "start": 302.5,
-                "end": 307.6666666666667,
-                "startFrame": 9075,
-                "endFrame": 9230,
-                "words": 12,
-                "sceneIndex": 16,
-                "cueIndex": 1,
-                "sourceCueSha256": "524f9634a2328cfb90f0dd34442064d37094d995e52156111b959ca6951e08e2"
-              },
-              {
-                "text": "Una esperanza suma valores ponderados; para un segundo momento se elevan los valores al cuadrado antes de ponderarlos.",
-                "start": 307.96666666666664,
-                "end": 315.7,
-                "startFrame": 9239,
-                "endFrame": 9471,
-                "words": 18,
-                "sceneIndex": 16,
-                "cueIndex": 2,
-                "sourceCueSha256": "2ad003c8547ab08837313c40c2a4884a7aab1c98e41ff7823d18fc9b0e571fb4"
-              }
-            ]
-          },
-          {
-            "start": 316,
-            "end": 329.6,
-            "cues": [
-              {
-                "text": "probabilidad de equis igual a 0 igual a ce, probabilidad de equis igual a 1 igual a 3 por ce, probabilidad de equis igual a 2 igual a 6 por ce.",
-                "start": 316,
-                "end": 329.3,
-                "startFrame": 9480,
-                "endFrame": 9879,
-                "words": 31,
-                "sceneIndex": 17,
-                "cueIndex": 0,
-                "sourceCueSha256": "5d2a198a4a5195524dffc1de2062932cec05b57c0d5f3f6f9ea6b68b21dcf67c"
-              }
-            ]
-          },
-          {
-            "start": 329.6,
-            "end": 335.9,
-            "cues": [
-              {
-                "text": "Fuera de conjunto de 0, 1, 2 fin del conjunto la probabilidad es cero.",
-                "start": 329.6,
-                "end": 335.6,
-                "startFrame": 9888,
-                "endFrame": 10068,
-                "words": 14,
-                "sceneIndex": 18,
-                "cueIndex": 0,
-                "sourceCueSha256": "c97beeb4b3700acf6b49da7f44eaddd86296d7075eb16f963c70c62aeccab115"
-              }
-            ]
-          },
-          {
-            "start": 335.9,
-            "end": 340.5,
-            "cues": [
-              {
-                "text": "Los tres resultados son excluyentes y cubren todos los casos.",
-                "start": 335.9,
-                "end": 340.2,
-                "startFrame": 10077,
-                "endFrame": 10206,
-                "words": 10,
-                "sceneIndex": 19,
-                "cueIndex": 0,
-                "sourceCueSha256": "3819eac2c7e2b4e285d8d55b78019a78247068908277b8233e302de507bf827f"
-              }
-            ]
-          },
-          {
-            "start": 340.5,
-            "end": 342.96666666666664,
-            "cues": [
-              {
-                "text": "Los pesos son no negativos.",
-                "start": 340.5,
-                "end": 342.6666666666667,
-                "startFrame": 10215,
-                "endFrame": 10280,
-                "words": 5,
-                "sceneIndex": 20,
-                "cueIndex": 0,
-                "sourceCueSha256": "6b24fcecc57be7000ac03e429c7e33daa587c73318b5f6dc14efcf358c0ebecd"
-              }
-            ]
-          },
-          {
-            "start": 342.96666666666664,
-            "end": 355.6,
-            "cues": [
-              {
-                "text": "Pondera cada valor por su probabilidad, no por su peso sin normalizar.",
-                "start": 342.96666666666664,
-                "end": 348.1333333333333,
-                "startFrame": 10289,
-                "endFrame": 10444,
-                "words": 12,
-                "sceneIndex": 21,
-                "cueIndex": 0,
-                "sourceCueSha256": "644c3405c6cc97aaf05dda145b9a1de13e0410a4c51ac16b09883f0764fa08c3"
-              },
-              {
-                "text": "Ponderamos los valores por su probabilidad; el resultado no tiene por qué ser un valor observable.",
-                "start": 348.43333333333334,
-                "end": 355.3,
-                "startFrame": 10453,
-                "endFrame": 10659,
-                "words": 16,
-                "sceneIndex": 21,
-                "cueIndex": 1,
-                "sourceCueSha256": "af76439d6d70720f0f845b287ab58ad88f34d68844901625b34210a6c04cbebc"
-              }
-            ]
-          },
-          {
-            "start": 355.6,
-            "end": 383.1666666666667,
-            "cues": [
-              {
-                "text": "Identificar la pregunta y justificar el método.",
-                "start": 355.6,
-                "end": 358.6,
-                "startFrame": 10668,
-                "endFrame": 10758,
-                "words": 7,
-                "sceneIndex": 22,
-                "cueIndex": 0,
-                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
-              },
-              {
-                "text": "Calcula esperanza de equis.",
-                "start": 358.9,
-                "end": 360.6333333333333,
-                "startFrame": 10767,
-                "endFrame": 10819,
-                "words": 4,
-                "sceneIndex": 22,
-                "cueIndex": 1,
-                "sourceCueSha256": "92fc1b9f2d67deb7ea4d71bc8106cb9598624c31dffb645fce14309d60979960"
-              },
-              {
-                "text": "Un peso expresa importancia relativa, no una probabilidad todavía.",
-                "start": 360.93333333333334,
-                "end": 364.8,
-                "startFrame": 10828,
-                "endFrame": 10944,
-                "words": 9,
-                "sceneIndex": 22,
-                "cueIndex": 2,
-                "sourceCueSha256": "b04a2ad0c3a2d1c59d04c3880f70ca05d968254fb7198527e41dde9a82219c88"
-              },
-              {
-                "text": "Sumamos los pesos y dividimos cada uno por ese total para obtener probabilidades que suman uno.",
-                "start": 365.1,
-                "end": 371.96666666666664,
-                "startFrame": 10953,
-                "endFrame": 11159,
-                "words": 16,
-                "sceneIndex": 22,
-                "cueIndex": 3,
-                "sourceCueSha256": "00260c34b1d9b3b50ae21e600111c815985a84490da1f684f1b9982e81a1139a"
-              },
-              {
-                "text": "Una masa es la probabilidad de un valor exacto.",
-                "start": 372.26666666666665,
-                "end": 376.1333333333333,
-                "startFrame": 11168,
-                "endFrame": 11284,
-                "words": 9,
-                "sceneIndex": 22,
-                "cueIndex": 4,
-                "sourceCueSha256": "cb61a02571023cc077e3254535688ac03e3c03007aff442c7126a5098dc4a373"
-              },
-              {
-                "text": "Para este apartado: Pondera cada valor por su probabilidad, no por su peso sin normalizar.",
-                "start": 376.43333333333334,
-                "end": 382.8666666666667,
-                "startFrame": 11293,
-                "endFrame": 11486,
-                "words": 15,
-                "sceneIndex": 22,
-                "cueIndex": 5,
-                "sourceCueSha256": "bb68dfa886ca2bd63ae8d975de5475ade21c1c7777a0dfd793c0010607c116bf"
-              }
-            ]
-          },
-          {
-            "start": 383.1666666666667,
-            "end": 393.6666666666667,
-            "cues": [
-              {
-                "text": "E entre corchetes significa esperanza.",
-                "start": 383.1666666666667,
-                "end": 385.3333333333333,
-                "startFrame": 11495,
-                "endFrame": 11560,
-                "words": 5,
-                "sceneIndex": 23,
-                "cueIndex": 0,
-                "sourceCueSha256": "10cad504a3b8006d58ad81bbf2197dce3d8c86e7c1892dd103cef938488fff2b"
-              },
-              {
-                "text": "Si dentro hay un producto o un cuadrado, se realiza esa operación en cada resultado antes de ponderar.",
-                "start": 385.6333333333333,
-                "end": 393.3666666666667,
-                "startFrame": 11569,
-                "endFrame": 11801,
-                "words": 18,
-                "sceneIndex": 23,
-                "cueIndex": 1,
-                "sourceCueSha256": "d8b0e6615c93ba842492ade70b4ca63e012d8cf67ec3c069e6f1444d1244b964"
-              }
-            ]
-          },
-          {
-            "start": 393.6666666666667,
-            "end": 414.56666666666666,
-            "cues": [
-              {
-                "text": "Promediar con los pesos normalizados. abre paréntesis, 0 por 1 más 1 por 3 más 2 por 6, cierra paréntesis dividido entre 10 igual a 1 coma 5. esperanza de equis igual a suma para el índice abre paréntesis, equis minúscula, cierra paréntesis de xP abre paréntesis, equis.",
-                "start": 393.6666666666667,
-                "end": 414.26666666666665,
-                "startFrame": 11810,
-                "endFrame": 12428,
-                "words": 48,
-                "sceneIndex": 24,
-                "cueIndex": 0,
-                "sourceCueSha256": "16c767f4eaabd11c2e12619fb597c50696265933c756ef82ec84f6b6c970ccf0"
-              }
-            ]
-          },
-          {
-            "start": 414.56666666666666,
-            "end": 419.1666666666667,
-            "cues": [
-              {
-                "text": "esperanza de equis queda igual a equis minúscula, cierra paréntesis.",
-                "start": 414.56666666666666,
-                "end": 418.8666666666667,
-                "startFrame": 12437,
-                "endFrame": 12566,
-                "words": 10,
-                "sceneIndex": 25,
-                "cueIndex": 0,
-                "sourceCueSha256": "e8ec5e596e4798dabc2b3c3c79ed5037c24e9ab8f3725598c90a7bd4bec9da26"
-              }
-            ]
-          },
-          {
-            "start": 419.1666666666667,
-            "end": 436.7,
-            "cues": [
-              {
-                "text": "Comprobar e interpretar.",
-                "start": 419.1666666666667,
-                "end": 420.46666666666664,
-                "startFrame": 12575,
-                "endFrame": 12614,
-                "words": 3,
-                "sceneIndex": 26,
-                "cueIndex": 0,
-                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
-              },
-              {
-                "text": "El resultado es 1 coma 5 número de colonias.",
-                "start": 420.76666666666665,
-                "end": 424.6333333333333,
-                "startFrame": 12623,
-                "endFrame": 12739,
-                "words": 9,
-                "sceneIndex": 26,
-                "cueIndex": 1,
-                "sourceCueSha256": "e19bb64191613c773f4a5ca65ae3cfe5fd8ef2267c658c5e9091fd24fa85bda4"
-              },
-              {
-                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
-                "start": 424.93333333333334,
-                "end": 430.93333333333334,
-                "startFrame": 12748,
-                "endFrame": 12928,
-                "words": 14,
-                "sceneIndex": 26,
-                "cueIndex": 2,
-                "sourceCueSha256": "da5eb2e2e00451d68286b3102bf82db2641e6e59f6d52fe6638dcf8a68acec18"
-              },
-              {
-                "text": "La esperanza puede no ser entera aunque cada observación sí lo sea.",
-                "start": 431.23333333333335,
-                "end": 436.4,
-                "startFrame": 12937,
-                "endFrame": 13092,
-                "words": 12,
-                "sceneIndex": 26,
-                "cueIndex": 3,
-                "sourceCueSha256": "bbe44ea0bb6fec9d5385adf337c639601648229e63743704b7c26f1ab5194f4d"
-              }
-            ]
-          },
-          {
-            "start": 436.7,
-            "end": 446.3333333333333,
-            "cues": [
-              {
-                "text": "El resultado es 1 coma 5 número de colonias.",
-                "start": 436.7,
-                "end": 440.56666666666666,
-                "startFrame": 13101,
-                "endFrame": 13217,
-                "words": 9,
-                "sceneIndex": 27,
-                "cueIndex": 0,
-                "sourceCueSha256": "8ee7fddf96fb0ac7a9104f475e3b813ae249d71d05cbd66e9af111268d2e3d2d"
-              },
-              {
-                "text": "La esperanza puede no ser entera aunque cada observación sí lo sea.",
-                "start": 440.8666666666667,
-                "end": 446.03333333333336,
-                "startFrame": 13226,
-                "endFrame": 13381,
-                "words": 12,
-                "sceneIndex": 27,
-                "cueIndex": 1,
-                "sourceCueSha256": "7e692c1a3c0441f996facf10d4db72a5dbbf895246c41ae55b27247dab486416"
-              }
-            ]
-          },
-          {
-            "start": 446.3333333333333,
-            "end": 500.6333333333333,
-            "cues": [
-              {
-                "text": "Se transforma cada valor y después se pondera, cuando la esperanza está definida.",
-                "start": 446.3333333333333,
-                "end": 451.93333333333334,
-                "startFrame": 13390,
-                "endFrame": 13558,
-                "words": 13,
-                "sceneIndex": 28,
-                "cueIndex": 0,
-                "sourceCueSha256": "8f2f4aefcf22ef07b15eb3045f9f3a84c5cae31ae31c30e67a65905fdb0fcb8a"
-              },
-              {
-                "text": "La linealidad no exige independencia; sí exige que las esperanzas sean utilizables.",
-                "start": 452.23333333333335,
-                "end": 457.4,
-                "startFrame": 13567,
-                "endFrame": 13722,
-                "words": 12,
-                "sceneIndex": 28,
-                "cueIndex": 1,
-                "sourceCueSha256": "b7620b6140ec9ca3ad58c7e180f972a229befdf2157ec848592daecef7d39232"
-              },
-              {
-                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
-                "start": 457.7,
-                "end": 461.56666666666666,
-                "startFrame": 13731,
-                "endFrame": 13847,
-                "words": 9,
-                "sceneIndex": 28,
-                "cueIndex": 2,
-                "sourceCueSha256": "ae2758f24ddff2a475dd65b82fd587f959678f1197ab1a7ebcb43822ce7086eb"
-              },
-              {
-                "text": "¿Hace falta independencia para que la esperanza de X más Y sea la suma de sus esperanzas finitas?",
-                "start": 461.8666666666667,
-                "end": 469.6,
-                "startFrame": 13856,
-                "endFrame": 14088,
-                "words": 18,
-                "sceneIndex": 28,
-                "cueIndex": 3,
-                "sourceCueSha256": "3e2e59ac2432b084d14091a80707c6cde9edfedb1e04909b1299113150f138c1"
-              },
-              {
-                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
-                "start": 469.9,
-                "end": 473.76666666666665,
-                "startFrame": 14097,
-                "endFrame": 14213,
-                "words": 9,
-                "sceneIndex": 28,
-                "cueIndex": 4,
-                "sourceCueSha256": "e4613f88a4c67d28979c4a85b97a79d90aeb0c6525fe1200dd9e5a9797367645"
-              },
-              {
-                "text": "La linealidad de la esperanza vale también para variables dependientes con esperanzas finitas.",
-                "start": 474.06666666666666,
-                "end": 479.6666666666667,
-                "startFrame": 14222,
-                "endFrame": 14390,
-                "words": 13,
-                "sceneIndex": 28,
-                "cueIndex": 5,
-                "sourceCueSha256": "ceab560baee1af7631a70ae42969c9a2f0a13f383c762ed042211df53d7fee43"
-              },
-              {
-                "text": "Para revisar el próximo problema, evita este error: Interpretar la esperanza como el resultado individual obligatorio.",
-                "start": 479.96666666666664,
-                "end": 486.8333333333333,
-                "startFrame": 14399,
-                "endFrame": 14605,
-                "words": 16,
-                "sceneIndex": 28,
-                "cueIndex": 6,
-                "sourceCueSha256": "625fe2259abb06b2da989ab20f4504624c900532090aa885f10a26d1be1805ca"
-              },
-              {
-                "text": "La esperanza pondera todos los valores posibles y describe un centro teórico.",
-                "start": 487.1333333333333,
-                "end": 492.3,
-                "startFrame": 14614,
-                "endFrame": 14769,
-                "words": 12,
-                "sceneIndex": 28,
-                "cueIndex": 7,
-                "sourceCueSha256": "f57ee551f46f8f1156a5961b708cff6c8115011a039dc2c31291f5a42b5bbc25"
-              },
-              {
-                "text": "Puede quedar entre valores que nunca se observan; no obliga a que una observación coincida con ese centro.",
-                "start": 492.6,
-                "end": 500.3333333333333,
-                "startFrame": 14778,
-                "endFrame": 15010,
-                "words": 18,
-                "sceneIndex": 28,
-                "cueIndex": 8,
-                "sourceCueSha256": "ddcebfc765b3374741e6f17554cb097bd61352aa88ac4613537a9418d848ad4e"
-              }
-            ]
-          }
-        ]
-      },
-      "publication": "silent-transcript"
+      "parentLesson": "esperanza"
     },
     "varianza--distancias": {
       "version": 1,
