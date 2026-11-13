@@ -188,12 +188,15 @@ export function compatibleCourseVideo(animation, recording, video) {
       || video.needsReview !== video.alignment?.needsReview) return false;
     recording = {...video.alignment, src:video.audioSource, sha256:video.alignment?.mp3Sha256};
   }
+  const narrationDuration = recording?.sourceDuration ?? recording?.duration;
   if (!compatibleCourseRecording(animation, recording, {aligned}) || !video || video.engine !== 'remotion'
     || video.voice !== 'Puck' || video.model !== 'gemini-3.8-flash-tts'
     || video.audioSource !== recording.src || video.src !== `videos/${animation.id}/video.mp4`
     || video.poster !== `videos/${animation.id}/poster.jpg` || video.fps !== 30
     || video.width !== 1280 || video.height !== 720 || !Number.isInteger(video.frames) || video.frames <= 0
-    || !Number.isFinite(video.duration) || video.duration <= 0 || Math.abs(video.duration - recording.duration) > 1 / video.fps + 1e-6
+    || !Number.isFinite(narrationDuration) || narrationDuration <= 0 || narrationDuration > recording.duration
+    || recording.scenes.some(scene => scene.end > narrationDuration)
+    || !Number.isFinite(video.duration) || video.duration <= 0 || Math.abs(video.duration - narrationDuration) > 1 / video.fps + 1e-6
     || Math.abs(video.frames / video.fps - video.duration) > 1 / video.fps + 1e-6
     || !/^[a-f0-9]{64}$/.test(video.audioSha256)) return false;
   return ['audioSha256', 'canonicalSha256', 'voice', 'model'].every(key => recording[key] == null || recording[key] === video[key])
