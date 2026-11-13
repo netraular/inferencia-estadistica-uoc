@@ -27,6 +27,9 @@ incluidos los ya publicados. No debe reanudarse automaticamente. El importador
 Gemini ya no crea bloques parciales: informa de 14 guiones completos demasiado
 largos; los cuatro que ya tienen todas sus partes grabadas se conservan completos.
 Solo se retiran de la cola las partes aun pendientes, sin borrar audio ni historial.
+La retirada cancelo 22 partes y dejo 463 narraciones completas pendientes, sin
+duplicar trabajos. Se conservaron los 68 WAV de las 64 narraciones completadas,
+el estado de planificacion activo y las esperas de los seis proyectos Gemini.
 
 El proyecto `/home/aquiluer/Scripts/TTS` queda reservado a Ming local. Los
 materiales anteriores de Gemini, Remotion y depuracion se conservaron en
@@ -97,9 +100,9 @@ Consulta [el flujo Gemini](scripts/tts/README.md) y
 
 ## Verificacion Ming Local
 
-El lote Ming actual se controla con
-`inferencia-ming-temporary-20261112.service`. La generacion y reanudacion leen
-su propio catalogo congelado y no necesitan acceder al servicio Gemini.
+La unidad `inferencia-ming-temporary-20261113.service` esta detenida
+(`inactive`, `MainPID=0`). El siguiente comando solo consulta el lote congelado;
+no reanuda la generacion ni accede al servicio Gemini.
 
 ```bash
 MING=/home/aquiluer/Scripts/TTS/outputs/ming-temporary-course-2026-11-10-v1
