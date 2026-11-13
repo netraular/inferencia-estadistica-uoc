@@ -9,26 +9,235 @@
   "nativePlanSha256": "c55e0f85443e7f44693920652bdda1dcd2f57bdc3047900273623867d48d86fc",
   "src": "videos/axiomas--probabilidades-coherentes/video.mp4",
   "poster": "videos/axiomas--probabilidades-coherentes/poster.jpg",
-  "duration": 127.96666666666667,
-  "frames": 3839,
+  "duration": 113.56,
+  "frames": 3407,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "narrationMode": "transcript",
-  "cueTiming": "estimated",
+  "audioSource": "audio/aligned/axiomas--probabilidades-coherentes.mp3",
+  "audioSha256": "30fc63b62b06c1ec2b11b2e93d61214f947378cd320664b19d964a6c107249f3",
+  "voice": "Puck",
+  "model": "gemini-3.8-flash-tts",
+  "narrationMode": "forced-aligned",
+  "cueTiming": "forced-aligned",
+  "publication": "provisional-aligned",
   "temporary": true,
-  "silent": true,
-  "timing": {
-    "wordsPerMinute": 140,
-    "pauseSeconds": 0.3,
-    "minimumCueSeconds": 1.2
+  "listened": false,
+  "needsReview": true,
+  "alignmentSha256": "acfddd722807d977e59480cbcca8a27eb53a5c59e0023288cfa7770d65532cfc",
+  "alignment": {
+    "version": 1,
+    "complete": true,
+    "id": "axiomas--probabilidades-coherentes",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Puck",
+    "cueTiming": "forced-aligned",
+    "temporary": true,
+    "listened": false,
+    "needsReview": true,
+    "canonicalSha256": "49ffc7a4e6221c5715197f3ac3ca24291c58e47a0499d2bec86d623ac91ad86a",
+    "duration": 113.56,
+    "mp3Sha256": "30fc63b62b06c1ec2b11b2e93d61214f947378cd320664b19d964a6c107249f3",
+    "mp3Bytes": 1363725,
+    "scenes": [
+      {
+        "start": 0.3125,
+        "end": 113.27250000000001,
+        "cues": [
+          {
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "text": "Hola.",
+            "start": 0.3125,
+            "end": 0.4525,
+            "score": -0.7965428170282394,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "text": "Un cultivo puede estar en uno de tres estados excluyentes.",
+            "start": 1.3325,
+            "end": 4.4325,
+            "score": -0.06858001440663689,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "text": "Queremos repartir probabilidad entre ellos sin contradicciones.",
+            "start": 4.9725,
+            "end": 8.3125,
+            "score": -0.04599269193349755,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "text": "Los axiomas no eligen por nosotros el reparto que describe al cultivo, pero sí establecen las reglas mínimas que cualquier propuesta debe respetar.",
+            "start": 9.0925,
+            "end": 16.7125,
+            "score": -1.3757095824112184,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "text": "La primera regla es no asignar probabilidades negativas.",
+            "start": 18.0525,
+            "end": 20.7925,
+            "score": -0.054100792404245694,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "text": "La segunda fija pe de omega igual a uno: el espacio recoge todas las posibilidades, de modo que algo de él ocurrirá.",
+            "start": 21.8325,
+            "end": 29.0725,
+            "score": -0.7181461560539901,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "text": "Uno representa el total del modelo; no obliga a que una frecuencia de una muestra coincida exactamente con cada probabilidad.",
+            "start": 30.1325,
+            "end": 37.432500000000005,
+            "score": -0.18234560848213732,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "text": "Si dos estados distintos pesan dos décimas y tres décimas, reunirlos da cinco décimas.",
+            "start": 38.7725,
+            "end": 43.752500000000005,
+            "score": -0.23171968758106232,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "text": "Podemos sumar directamente porque son excluyentes: ningún resultado aparece en ambos.",
+            "start": 44.5925,
+            "end": 48.9525,
+            "score": -2.3288686643354595,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "text": "El estado restante completa la probabilidad que falta, sin que debamos repartir por igual entre los tres nombres.",
+            "start": 50.0125,
+            "end": 55.3725,
+            "score": -0.09189606664170112,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "text": "La tercera regla generaliza esa suma a una lista numerable de sucesos disjuntos dos a dos.",
+            "start": 56.7325,
+            "end": 61.392500000000005,
+            "score": -0.4763962094605501,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "text": "La unión acepta cualquiera de ellos y cada resultado entra una sola vez; por eso sumamos sus probabilidades.",
+            "start": 62.292500000000004,
+            "end": 68.5125,
+            "score": -0.1809446827641555,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 12,
+            "text": "La letra i recorre los sucesos de la lista.",
+            "start": 69.33250000000001,
+            "end": 71.27250000000001,
+            "score": -1.4039721488952637,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 13,
+            "text": "Sin disjunción, esta igualdad no vale en general.",
+            "start": 72.5125,
+            "end": 75.2325,
+            "score": -0.8144586224031324,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 14,
+            "text": "Si tres sucesos se solapan, usamos inclusión y exclusión: sumamos individuales, restamos intersecciones por parejas y añadimos la triple.",
+            "start": 76.1525,
+            "end": 84.19250000000001,
+            "score": -0.5944299101829529,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 15,
+            "text": "Un resultado presente en los tres entró tres veces y fue retirado tres veces; añadir la triple recupera exactamente una copia, que es lo que necesita la unión.",
+            "start": 85.3525,
+            "end": 94.61250000000001,
+            "score": -1.2820276319980621,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 16,
+            "text": "Con más sucesos seguimos alternando: sumamos intersecciones de un número impar de sucesos y restamos las de un número par, hasta incluir todas.",
+            "start": 95.9525,
+            "end": 103.4925,
+            "score": -1.143894006498158,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 17,
+            "text": "Es una corrección de copias, no una hipótesis de independencia.",
+            "start": 104.5925,
+            "end": 107.3525,
+            "score": -1.521394153436025,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 18,
+            "text": "El dibujo ayuda a seguirlas, pero el tamaño que demos a una región no establece su probabilidad real.",
+            "start": 108.27250000000001,
+            "end": 113.27250000000001,
+            "score": -0.32888931035995483,
+            "needsReview": false
+          }
+        ]
+      }
+    ],
+    "alignmentSha256": "acfddd722807d977e59480cbcca8a27eb53a5c59e0023288cfa7770d65532cfc",
+    "alignmentEngine": "torchaudio-2.6-voxpopuli-es/forced-align",
+    "sourceSha256": "66c6c5f8672008c26da23c87c57845c213b501dee5122603f35d3d1fc607d13b",
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "queueParts": [
+      {
+        "jobId": "c30fb40a-e290-4c7d-824a-6711cafb5357",
+        "part": 0,
+        "offset": 0,
+        "duration": 113.56,
+        "wavSha256": "673eea0f069496bcdced6e4ed79950df3055a6a49800f4ebc48fedb7d088a55c"
+      }
+    ]
   },
-  "transcriptSha256": "1dfcb7b92d88531115293b36f66235ffeaac99d18c66e3dc7b3fa08d8d1989fb",
-  "videoSha256": "417b179d42ee6e38f2768566b64a50f180da86ff43ea913bc88f0bd2146554d2",
-  "posterSha256": "7885e1343bd643304510a75d2317e9588527dafdbe3482357bb64e2a5e65f5fb",
+  "videoSha256": "f13a436fb2e34bfb17a611948db0fa4148fc2c508768a3bcf284f07d96729f1c",
+  "posterSha256": "1745bc6d48f9e13e6f6e9d800f983fb605bee2e4b8d2cf82699a1cb3c631e6fd",
   "canonicalSha256": "49ffc7a4e6221c5715197f3ac3ca24291c58e47a0499d2bec86d623ac91ad86a",
-  "inputHash": "b0ff1c3fcbbc418e679cf3efe844e2bfb518fe0ccce51f8bfa481cade59c1b8b",
-  "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
+  "inputHash": "3976cded1bbef381022ef870f93f09ceb5d0c1073554123eac604af77271e190",
+  "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
+  "renderConcurrency": 8,
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
     "itemSha256": "2bde8d3908c1e49aec926c8f3da1e50cbd262358f34b972622c2a9029ab2e200",
@@ -39,51 +248,25 @@
     },
     "provenance": null,
     "renderedAnimationSha256": "8a05a323d897f424d2a9c2c2ca184e438dae2f7d35459f6fb07f3c2c8142311c",
-    "transcriptSha256": "1dfcb7b92d88531115293b36f66235ffeaac99d18c66e3dc7b3fa08d8d1989fb",
-    "sourceFiles": {
-      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-    },
-    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
-    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "audioMetadataSha256": "487729981cd7f08e733817c2028def17d75c105ae81c5295dac4eed010e325f6",
     "rendererSources": {
-      "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
       "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
       "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
       "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
       "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-      "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+      "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
       "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
       "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
       "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
       "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
       "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
       "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
       "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
       "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -92,236 +275,2233 @@
   },
   "testFixture": false,
   "parentLesson": "axiomas",
-  "transcript": {
-    "id": "axiomas--probabilidades-coherentes",
-    "narrationMode": "transcript",
-    "cueTiming": "estimated",
-    "temporary": true,
-    "silent": true,
-    "canonicalSha256": "49ffc7a4e6221c5715197f3ac3ca24291c58e47a0499d2bec86d623ac91ad86a",
-    "timing": {
-      "wordsPerMinute": 140,
-      "pauseSeconds": 0.3,
-      "minimumCueSeconds": 1.2
-    },
-    "duration": 127.96666666666667,
-    "scenes": [
+  "evidence": {
+    "posterFrame": 3406,
+    "layout": [
       {
-        "start": 0,
-        "end": 127.96666666666667,
-        "cues": [
+        "frame": 0,
+        "scene": 0,
+        "cue": -1,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
           {
-            "text": "Hola.",
-            "start": 0,
-            "end": 1.2,
-            "startFrame": 0,
-            "endFrame": 36,
-            "words": 1,
-            "sceneIndex": 0,
-            "cueIndex": 0,
-            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
           },
           {
-            "text": "Un cultivo puede estar en uno de tres estados excluyentes.",
-            "start": 1.5,
-            "end": 5.8,
-            "startFrame": 45,
-            "endFrame": 174,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 1,
-            "sourceCueSha256": "8ccc26d55a21bf12a1cac2ec275b6384dc74def6ebb6511796656b226439e951"
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
           },
           {
-            "text": "Queremos repartir probabilidad entre ellos sin contradicciones.",
-            "start": 6.1,
-            "end": 9.1,
-            "startFrame": 183,
-            "endFrame": 273,
-            "words": 7,
-            "sceneIndex": 0,
-            "cueIndex": 2,
-            "sourceCueSha256": "635252f6b39b013f5fa6da7aff34b72ae28e590fc2a9ad2cfb91548c8f6b1c6e"
-          },
-          {
-            "text": "Los axiomas no eligen por nosotros el reparto que describe al cultivo, pero sí establecen las reglas mínimas que cualquier propuesta debe respetar.",
-            "start": 9.4,
-            "end": 19.266666666666666,
-            "startFrame": 282,
-            "endFrame": 578,
-            "words": 23,
-            "sceneIndex": 0,
-            "cueIndex": 3,
-            "sourceCueSha256": "6b5430a5a9b6e957c2bc76c6a8bb7190eac7f09439d31d9cc4879568efe64d67"
-          },
-          {
-            "text": "La primera regla es no asignar probabilidades negativas.",
-            "start": 19.566666666666666,
-            "end": 23,
-            "startFrame": 587,
-            "endFrame": 690,
-            "words": 8,
-            "sceneIndex": 0,
-            "cueIndex": 4,
-            "sourceCueSha256": "672d2fff991326c009a034ee7a9ab5f5ddcbb7cf9fefeb8852c313ff90caee38"
-          },
-          {
-            "text": "La segunda fija pe de omega igual a uno: el espacio recoge todas las posibilidades, de modo que algo de él ocurrirá.",
-            "start": 23.3,
-            "end": 32.733333333333334,
-            "startFrame": 699,
-            "endFrame": 982,
-            "words": 22,
-            "sceneIndex": 0,
-            "cueIndex": 5,
-            "sourceCueSha256": "52bc65fc0e00f835c551e2ea6dd40fccf852816f22d44c87bfebeef7400c803f"
-          },
-          {
-            "text": "Uno representa el total del modelo; no obliga a que una frecuencia de una muestra coincida exactamente con cada probabilidad.",
-            "start": 33.03333333333333,
-            "end": 41.63333333333333,
-            "startFrame": 991,
-            "endFrame": 1249,
-            "words": 20,
-            "sceneIndex": 0,
-            "cueIndex": 6,
-            "sourceCueSha256": "bbaa572e5ea92121a5b5d31fc616738304e016854f3892101be69a65c50f9203"
-          },
-          {
-            "text": "Si dos estados distintos pesan dos décimas y tres décimas, reunirlos da cinco décimas.",
-            "start": 41.93333333333333,
-            "end": 47.93333333333333,
-            "startFrame": 1258,
-            "endFrame": 1438,
-            "words": 14,
-            "sceneIndex": 0,
-            "cueIndex": 7,
-            "sourceCueSha256": "a2b847593996d3a011d4a73ca88fe4d496b70df3d38edaaf1b1bb7b3fe4f0e3a"
-          },
-          {
-            "text": "Podemos sumar directamente porque son excluyentes: ningún resultado aparece en ambos.",
-            "start": 48.233333333333334,
-            "end": 52.96666666666667,
-            "startFrame": 1447,
-            "endFrame": 1589,
-            "words": 11,
-            "sceneIndex": 0,
-            "cueIndex": 8,
-            "sourceCueSha256": "378e4e9e675578f68f87960cbc5a20294c70af54326db18fcd0159a077c8d804"
-          },
-          {
-            "text": "El estado restante completa la probabilidad que falta, sin que debamos repartir por igual entre los tres nombres.",
-            "start": 53.266666666666666,
-            "end": 61,
-            "startFrame": 1598,
-            "endFrame": 1830,
-            "words": 18,
-            "sceneIndex": 0,
-            "cueIndex": 9,
-            "sourceCueSha256": "b86f9a1b16f270c0bb868ad72de1d9c5bf48d3154f781c036823ad8bfaae94ee"
-          },
-          {
-            "text": "La tercera regla generaliza esa suma a una lista numerable de sucesos disjuntos dos a dos.",
-            "start": 61.3,
-            "end": 68.16666666666667,
-            "startFrame": 1839,
-            "endFrame": 2045,
-            "words": 16,
-            "sceneIndex": 0,
-            "cueIndex": 10,
-            "sourceCueSha256": "d4137c94ec03045620003b2683ffd685a9976bb616392464534683a18bce5a04"
-          },
-          {
-            "text": "La unión acepta cualquiera de ellos y cada resultado entra una sola vez; por eso sumamos sus probabilidades.",
-            "start": 68.46666666666667,
-            "end": 76.2,
-            "startFrame": 2054,
-            "endFrame": 2286,
-            "words": 18,
-            "sceneIndex": 0,
-            "cueIndex": 11,
-            "sourceCueSha256": "ae41a6226ac3465beab2a366af16632f021a18223cb2ad186da16af600b685f9"
-          },
-          {
-            "text": "La letra i recorre los sucesos de la lista.",
-            "start": 76.5,
-            "end": 80.36666666666666,
-            "startFrame": 2295,
-            "endFrame": 2411,
-            "words": 9,
-            "sceneIndex": 0,
-            "cueIndex": 12,
-            "sourceCueSha256": "09779335b0fb935340d8bd4d56259bcc98a190a716c5d870181793ed84e88aff"
-          },
-          {
-            "text": "Sin disjunción, esta igualdad no vale en general.",
-            "start": 80.66666666666667,
-            "end": 84.1,
-            "startFrame": 2420,
-            "endFrame": 2523,
-            "words": 8,
-            "sceneIndex": 0,
-            "cueIndex": 13,
-            "sourceCueSha256": "b9479334f44f6641d8540f41ff2b35e670f06d253413ef601a5b566fcee4ae66"
-          },
-          {
-            "text": "Si tres sucesos se solapan, usamos inclusión y exclusión: sumamos individuales, restamos intersecciones por parejas y añadimos la triple.",
-            "start": 84.4,
-            "end": 92.56666666666666,
-            "startFrame": 2532,
-            "endFrame": 2777,
-            "words": 19,
-            "sceneIndex": 0,
-            "cueIndex": 14,
-            "sourceCueSha256": "8f75f1ab365c7ab10d999ab4b33bff81f1525ef037ef08a8bc0a13b71a47efe4"
-          },
-          {
-            "text": "Un resultado presente en los tres entró tres veces y fue retirado tres veces; añadir la triple recupera exactamente una copia, que es lo que necesita la unión.",
-            "start": 92.86666666666666,
-            "end": 104.86666666666666,
-            "startFrame": 2786,
-            "endFrame": 3146,
-            "words": 28,
-            "sceneIndex": 0,
-            "cueIndex": 15,
-            "sourceCueSha256": "5367227d61d34544253e83791a4e12ffba79a859b274c0efdbbba4160869547e"
-          },
-          {
-            "text": "Con más sucesos seguimos alternando: sumamos intersecciones de un número impar de sucesos y restamos las de un número par, hasta incluir todas.",
-            "start": 105.16666666666667,
-            "end": 115.03333333333333,
-            "startFrame": 3155,
-            "endFrame": 3451,
-            "words": 23,
-            "sceneIndex": 0,
-            "cueIndex": 16,
-            "sourceCueSha256": "c94c1c79251652bf19a2375bf3dd5faeaaf49348c3ec10c62b986e3a2b36139e"
-          },
-          {
-            "text": "Es una corrección de copias, no una hipótesis de independencia.",
-            "start": 115.33333333333333,
-            "end": 119.63333333333334,
-            "startFrame": 3460,
-            "endFrame": 3589,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 17,
-            "sourceCueSha256": "a8e04cf8edf32a0314d92dbc8644cbc8d1519ac9b859a4961bf61a7e25fc0dc0"
-          },
-          {
-            "text": "El dibujo ayuda a seguirlas, pero el tamaño que demos a una región no establece su probabilidad real.",
-            "start": 119.93333333333334,
-            "end": 127.66666666666667,
-            "startFrame": 3598,
-            "endFrame": 3830,
-            "words": 18,
-            "sceneIndex": 0,
-            "cueIndex": 18,
-            "sourceCueSha256": "75950ca525db776d94df1fe4c5ece7c60333ec1893abbd13980d0817be708a05"
+            "name": "g",
+            "x": 88.294189453125,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "7bf9fde57dcff82630827143fd841de75f98d11dd8929d82d2acaeac42da1591"
+      },
+      {
+        "frame": 11,
+        "scene": 0,
+        "cue": 0,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 155.48907470703125,
+            "height": 11.30908203125
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "d11b759ce9fd54dd45f3b83dc5c9b73e661e25cad95475e3fc6489f722b302f7"
+      },
+      {
+        "frame": 60,
+        "scene": 0,
+        "cue": 1,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 23.51483154296875,
+            "height": 11.30908203125
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "ffc7db5dc5ad629a78c564c3cab282942cc8140d1c97837cebd99fc73a0bfa05"
+      },
+      {
+        "frame": 170,
+        "scene": 0,
+        "cue": 2,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 20.76116943359375,
+            "height": 11.30908203125
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "c2101410cdfcbe65be6be8289d2130748c7cc5cb5d58713cff7232f32342eb96"
+      },
+      {
+        "frame": 293,
+        "scene": 0,
+        "cue": 3,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "g",
+            "x": 89.16018676757812,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "f7c57e36c1f0c2b702de71d72ce572070e7a5dabb7a4c506a71fd3b8ca09cb88"
+      },
+      {
+        "frame": 562,
+        "scene": 0,
+        "cue": 4,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 38.56098937988281,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 74.109375,
+            "kind": "formula",
+            "text": "P(Ω)=1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "65552129f6bac836b0b30d9cb30d7b4c8f112dda02f4ef09fdca0b2e26104238"
+      },
+      {
+        "frame": 675,
+        "scene": 0,
+        "cue": 5,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "g",
+            "x": 89.30876159667969,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 74.109375,
+            "kind": "formula",
+            "text": "P(Ω)=1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "230af6169ac0a68966d9d39cc61e731476458bc2ffb1db72c9b0a76016bf038e"
+      },
+      {
+        "frame": 924,
+        "scene": 0,
+        "cue": 6,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "g",
+            "x": 89.27713012695312,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 74.109375,
+            "kind": "formula",
+            "text": "P(Ω)=1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "7342abf72c9176fd219931ab446371280b8c54f709ab8eb987126bd8ce0bcd29"
+      },
+      {
+        "frame": 1184,
+        "scene": 0,
+        "cue": 7,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 93.14877319335938,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 74.109375,
+            "kind": "formula",
+            "text": "P(Ω)=1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "a6e1f19c0f9d3ce5a67f17e104034156a282d0a7daa83bf18180e3cdbb70cc08"
+      },
+      {
+        "frame": 1358,
+        "scene": 0,
+        "cue": 8,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 95.4244384765625,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 74.109375,
+            "kind": "formula",
+            "text": "P(Ω)=1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "32891eaf1e10f1ec4048f7e6e26d345a92cbfe48d715b094fb2697a55752cd02"
+      },
+      {
+        "frame": 1521,
+        "scene": 0,
+        "cue": 9,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 91.85079956054688,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 74.109375,
+            "kind": "formula",
+            "text": "P(Ω)=1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "1a34099709fb847753b01392edf778880ea8a2c35b68c4f3c9367739e9d1c2ac"
+      },
+      {
+        "frame": 1722,
+        "scene": 0,
+        "cue": 10,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 93.66665649414062,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "228d6a03b552df0922c1000fcbd2fe0ba9313263faaff198af154b222223e04e"
+      },
+      {
+        "frame": 1889,
+        "scene": 0,
+        "cue": 11,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 90.17655944824219,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "92ab22551084a48baa79c5c4ea31b819dc6822bf678a2585ef2ff94de774ac76"
+      },
+      {
+        "frame": 2100,
+        "scene": 0,
+        "cue": 12,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 110.23028564453125,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "c0c95029bb11f16532d15e55ceb0b2debe052736dc9dce93a3ff26d28c9ba2f7"
+      },
+      {
+        "frame": 2196,
+        "scene": 0,
+        "cue": 13,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 40.857269287109375,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "26e3e22918b14d3dbe1964dc31dee95865c54b09d4d159362b38d271ff132811"
+      },
+      {
+        "frame": 2305,
+        "scene": 0,
+        "cue": 14,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 89.02577209472656,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 168.405029296875,
+            "height": 67,
+            "kind": "label",
+            "text": "Sumar individuales;restar parejas; añadirtriple",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "9f424dccac8e5d68132c10a0a911ee95d312cc41cade4ad49502832731a644a8"
+      },
+      {
+        "frame": 2581,
+        "scene": 0,
+        "cue": 15,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 88.71792602539062,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 168.405029296875,
+            "height": 67,
+            "kind": "label",
+            "text": "Sumar individuales;restar parejas; añadirtriple",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "982a23d6d6398c17bcc8cf80eabc98d0242e8218a3f5f5409bdc1b75a93888ef"
+      },
+      {
+        "frame": 2899,
+        "scene": 0,
+        "cue": 16,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 89.23080444335938,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 168.405029296875,
+            "height": 67,
+            "kind": "label",
+            "text": "Sumar individuales;restar parejas; añadirtriple",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "8633bbdfb03a1cbaaab917fd84b1ee15e1e033b059b19ac16e831fd1071aed21"
+      },
+      {
+        "frame": 3158,
+        "scene": 0,
+        "cue": 17,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 36.37931823730469,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 168.405029296875,
+            "height": 67,
+            "kind": "label",
+            "text": "Sumar individuales;restar parejas; añadirtriple",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "a2d953916c04d36f3daa5542ba886c68afe98b0d62eb066062bbe16ba247406e"
+      },
+      {
+        "frame": 3269,
+        "scene": 0,
+        "cue": 18,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 93.07681274414062,
+            "y": 409.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 168.405029296875,
+            "height": 67,
+            "kind": "label",
+            "text": "Sumar individuales;restar parejas; añadirtriple",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "30675e51b626b36f26ae7595be06e549fe50acfaf026c5d00d3a34c82afe17b8"
+      },
+      {
+        "frame": 3406,
+        "scene": 0,
+        "cue": 18,
+        "family": "probability",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 310.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 80,
+            "y": 110,
+            "width": 640,
+            "height": 210
+          },
+          {
+            "name": "text",
+            "x": 100,
+            "y": 340,
+            "width": 29.453125,
+            "height": 26,
+            "kind": "label",
+            "text": "0.2",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 228,
+            "y": 340,
+            "width": 29.96875,
+            "height": 26,
+            "kind": "label",
+            "text": "0.3",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 409.345458984375,
+            "width": 600,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "0,2+0,3=0,5",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 131.5,
+            "kind": "formula",
+            "text": "P(i⋃​Ai​)=i∑​P(Ai​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 168.405029296875,
+            "height": 67,
+            "kind": "label",
+            "text": "Sumar individuales;restar parejas; añadirtriple",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "712b4ec8fec7781238df1232a42051e41fb0223644cf29685fddba8da3503b81"
       }
-    ]
-  },
-  "publication": "silent-transcript"
+    ],
+    "pixels": [
+      {
+        "frame": 0,
+        "ink": 1799,
+        "sha256": "7144e66f023b36fc3fe7a165b93173372b1c34665ec0ac0f6f2ab31812a6b226"
+      },
+      {
+        "frame": 11,
+        "ink": 211,
+        "sha256": "48ab7d7ddeabcfc543ce2146a10f9babd14310f072074d1e0213952d6d3f0d3a"
+      },
+      {
+        "frame": 60,
+        "ink": 1805,
+        "sha256": "82c62366ab1d34a26ddfe7f72318a84edf295a86da2eb62f2eddd30feca232e5"
+      },
+      {
+        "frame": 170,
+        "ink": 1802,
+        "sha256": "55ed21bc529a4ff73d62696451560433aad3198862707ba73b6ad4cc671788e8"
+      },
+      {
+        "frame": 293,
+        "ink": 1802,
+        "sha256": "14423d06d17dbce3f223731ff8117e32a6a547f731c48f6c887c13a4f967576c"
+      },
+      {
+        "frame": 562,
+        "ink": 1807,
+        "sha256": "ee80660eabef407ec43923b5bcfd49579e07c0307da372b72dd4a930cc245049"
+      },
+      {
+        "frame": 675,
+        "ink": 1833,
+        "sha256": "b970b76a6a7b272f31fff6d5db0254311da8ad660baec53684707f743de3bf1b"
+      },
+      {
+        "frame": 924,
+        "ink": 1844,
+        "sha256": "ed75911b06226b03aa7cd785c6e4937dde80dbc7e4aa1e4e88ac2c5d153f45b8"
+      },
+      {
+        "frame": 1184,
+        "ink": 376,
+        "sha256": "82ae61bf1be9f253596e4e2b53771ede8e87ac904eab3db36dfbe59bcef10953"
+      },
+      {
+        "frame": 1358,
+        "ink": 506,
+        "sha256": "9110528b34436947c723e7ccf31f75daa8ba105ccb69b31dc13be1a7c1315c3d"
+      },
+      {
+        "frame": 1521,
+        "ink": 428,
+        "sha256": "ed174430046d988988c15960d370e8bb0e24c2dc8a3b79b52a4ecb6aa0370a8e"
+      },
+      {
+        "frame": 1722,
+        "ink": 427,
+        "sha256": "de676b81ed4b34347c0f9c69d34e7ba4e182c58264f80fbf4babfa2e62209a71"
+      },
+      {
+        "frame": 1889,
+        "ink": 457,
+        "sha256": "1c120e4fc99214790777e640b946b43cd4434797f296ed5e6eca70c60250276b"
+      },
+      {
+        "frame": 2100,
+        "ink": 1527,
+        "sha256": "8b9ef4de7d87e07ec01a1c19ca6331c04a260da0e87c2f492904c21cf790f64f"
+      },
+      {
+        "frame": 2196,
+        "ink": 1026,
+        "sha256": "4a7d444813e5bd07428ddfe5b83bfefeeddb18877c8ab4fc6943d4b2e9a0588c"
+      },
+      {
+        "frame": 2305,
+        "ink": 498,
+        "sha256": "9494a204ddf844d360319e68795072cf50f8bb1ae8c27ada0f36d489d62743e0"
+      },
+      {
+        "frame": 2581,
+        "ink": 428,
+        "sha256": "8804d303c2615a34bebd9ca4517f914811d67fc4f1f5da46632339fe093e4245"
+      },
+      {
+        "frame": 2899,
+        "ink": 501,
+        "sha256": "9d8d5bf7933491e322d966b5b5fa1fd383eddf56999bd85a393861b99c837d9b"
+      },
+      {
+        "frame": 3158,
+        "ink": 1010,
+        "sha256": "017980d36619c2e3cede7c608c394357f59c308c446cf5733be9108a8732e4ed"
+      },
+      {
+        "frame": 3269,
+        "ink": 577,
+        "sha256": "f0d819ebc5abe2be51929ea70b4fd40376f86e3d31251cabf90d854a88b98b43"
+      },
+      {
+        "frame": 3406,
+        "ink": 4725,
+        "sha256": "40b0ef2d148b833d6331f94b9944fa0430efcb3a4c0cdecd636c88413827f0c6"
+      }
+    ],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_time_base": "1/60",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 10221030,
+        "duration": "113.567000",
+        "bit_rate": "63668",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "3407",
+        "nb_read_frames": "3407",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_time_base": "1/24000",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "24000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/24000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2725608,
+        "duration": "113.567000",
+        "bit_rate": "112207",
+        "max_bit_rate": "144000",
+        "nb_frames": "2663",
+        "nb_read_frames": "2662",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler"
+        }
+      }
+    ],
+    "elapsedSeconds": 71.979
+  }
 }
