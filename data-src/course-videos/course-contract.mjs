@@ -27,14 +27,20 @@ export function selectItems(catalogue, {ids, limit} = {}) {
   return selected.slice(0, limit ?? selected.length);
 }
 
-export function validateCourseAudio(item, audio) {
+export function validateCourseAudio(item, audio, {aligned = false} = {}) {
   assert.ok(['section', 'recap', 'exercise'].includes(item.kind), 'Unsupported item kind');
   assert.ok(item.title && item.animation?.steps?.length, 'Missing frozen animation');
   assert.ok(digest(item.canonicalSha256), 'Missing canonical hash');
   assert.equal(audio.id, item.id, 'Audio id mismatch');
   assert.equal(audio.model, MODEL, 'Incompatible audio model');
   assert.equal(audio.voice, VOICE, 'Incompatible audio voice');
-  assert.equal(audio.cueTiming, 'measured', 'Audio cues must be measured');
+  assert.equal(audio.cueTiming, aligned ? 'forced-aligned' : 'measured', 'Incompatible audio cue timing');
+  if (aligned) {
+    assert.equal(audio.temporary, true, 'Aligned audio must remain provisional');
+    assert.equal(audio.listened, false, 'Automatic alignment is not listening review');
+    assert.equal(typeof audio.needsReview, 'boolean', 'Missing alignment review status');
+    assert.ok(digest(audio.alignmentSha256), 'Missing alignment provenance');
+  }
   assert.equal(audio.canonicalSha256, item.canonicalSha256, 'Stale canonical audio');
   assert.ok(digest(audio.mp3Sha256), 'Missing audio MP3 hash');
   assert.ok(Number.isInteger(audio.mp3Bytes) && audio.mp3Bytes > 0, 'Invalid audio MP3 size');
@@ -56,11 +62,12 @@ export function validateCourseAudio(item, audio) {
   }
 }
 
-export function prepareCourseItem(item, audio, mp3, {native = false} = {}) {
-  validateCourseAudio(item, audio);
+export function prepareCourseItem(item, audio, mp3, {native = false, aligned = false} = {}) {
+  validateCourseAudio(item, audio, {aligned});
   assert.equal(audio.mp3Sha256, sha256(mp3), 'Audio MP3 hash mismatch');
   assert.equal(audio.mp3Bytes, mp3.length, 'Audio MP3 size mismatch');
-  return {...VIDEO, frames:Math.ceil(audio.duration * VIDEO.fps), duration:audio.duration, item, animation:native ? item.animation : withCourseVisuals(item).animation, audio};
+  return {...VIDEO, frames:Math.ceil(audio.duration * VIDEO.fps), duration:audio.duration, item, animation:native ? item.animation : withCourseVisuals(item).animation, audio,
+    ...(aligned ? {narrationMode:'forced-aligned'} : {})};
 }
 
 export const TRANSCRIPT_TIMING = Object.freeze({wordsPerMinute:140, pauseSeconds:0.3, minimumCueSeconds:1.2});
