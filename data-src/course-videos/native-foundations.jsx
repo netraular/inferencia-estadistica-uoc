@@ -298,7 +298,7 @@ function Probability({lines, progress, mode, operation, cueIndex, anchor}) {
   const equation=lines.find(line=>/^0\{,\}\d+\+0\{,\}\d+=/.test(line.tex || ''));
   const weights=equation ? numbers(equation.tex).slice(0,2) : [];
   return <g {...mark('disjoint-probability-mass')}>
-    <rect {...bound} x={80} y={110} width={640} height={210} fill={PALETTE.soft} stroke={PALETTE.muted}/>
+    <rect {...bound} x={80} y={110} width={640} height={210} fill={PALETTE.soft} stroke={PALETTE.muted} strokeWidth={3}/>
     {weights.length ? weights.map((weight,index)=><g key={index}><rect x={80+640*weights.slice(0,index).reduce((sum,value)=>sum+value,0)} y={110} width={640*weight} height={210*progress} fill={colors[index]}/>{label(String(weight),100+640*weights.slice(0,index).reduce((sum,value)=>sum+value,0),360,150)}</g>) : <><rect x={110} y={140} width={180} height={150} fill={PALETTE.green} opacity={.2+.4*progress}/><rect x={510} y={140} width={180} height={150} fill={PALETTE.coral} opacity={.6-.4*progress}/></>}
     <Arrow from={[100,415]} to={[700,415]} progress={progress}/>
   </g>;
