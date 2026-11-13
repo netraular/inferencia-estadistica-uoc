@@ -9,26 +9,21 @@
   "nativePlanSha256": "0a64e2034c05746217c31b1e26fe8f11798fd5258f2961dcc52c25555994359f",
   "src": "videos/ejercicio-pdf-u1-1--a/video.mp4",
   "poster": "videos/ejercicio-pdf-u1-1--a/poster.jpg",
-  "duration": 99,
-  "frames": 2970,
+  "duration": 110.02,
+  "frames": 3301,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "narrationMode": "transcript",
-  "cueTiming": "estimated",
-  "temporary": true,
-  "silent": true,
-  "timing": {
-    "wordsPerMinute": 140,
-    "pauseSeconds": 0.3,
-    "minimumCueSeconds": 1.2
-  },
-  "transcriptSha256": "76a3518c7518ac9f030743e3a09ec5cd43123ccea60ef35c3afe0e22f95909eb",
-  "videoSha256": "125a1304d7db94fdb2bc6083186bb59f17f91baf171ee9cd24f5d2f7b2c91121",
-  "posterSha256": "74b32db22b89acb7bbc4b7622b88ed5a06225823371cf9fcba2f16e32c2c45e8",
+  "audioSource": "audio/ejercicio-pdf-u1-1--a.mp3",
+  "audioSha256": "ed6a0ddab94700508894bdf264eea97aeca761076bba548f2993455ee138a540",
+  "voice": "Puck",
+  "model": "gemini-3.8-flash-tts",
+  "cueTiming": "measured",
+  "videoSha256": "589202c15006261dd25241a4bad7150111e994fd425ddc640123c233f1fb47da",
+  "posterSha256": "47ecab11f91731893047fb9abdf5c8864d843ed8ad980d77efd2e21531382c59",
   "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
-  "inputHash": "4756659d66016ca3d942ef7af22ce101d7fa9e80a2d4fa9ece232312b35c565a",
-  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "inputHash": "18988bdb23ad6e927212322601396d9305041e801d9950136e1524c0ae9304c9",
+  "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
   "renderConcurrency": 8,
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
@@ -41,51 +36,25 @@
     },
     "provenance": null,
     "renderedAnimationSha256": "7dfe70ad0b7b1187a11fd0eb70ca81c5709a9ee3bcee9fd0730b352f240888ec",
-    "transcriptSha256": "76a3518c7518ac9f030743e3a09ec5cd43123ccea60ef35c3afe0e22f95909eb",
-    "sourceFiles": {
-      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-    },
-    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
-    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "audioMetadataSha256": "5e254ea4391768f216dbb31d4f45c29fb9259a52bee29ca10eca5dcd732fc50b",
     "rendererSources": {
       "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
       "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
       "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
       "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
       "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
       "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
       "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
       "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
       "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
       "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
       "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
       "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
       "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -94,267 +63,5577 @@
   },
   "testFixture": false,
   "parentLesson": "ejercicio-pdf-u1-1",
-  "transcript": {
-    "id": "ejercicio-pdf-u1-1--a",
-    "narrationMode": "transcript",
-    "cueTiming": "estimated",
-    "temporary": true,
-    "silent": true,
-    "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
-    "timing": {
-      "wordsPerMinute": 140,
-      "pauseSeconds": 0.3,
-      "minimumCueSeconds": 1.2
-    },
-    "duration": 99,
-    "scenes": [
+  "evidence": {
+    "posterFrame": 3300,
+    "layout": [
       {
-        "start": 0,
-        "end": 12.1,
-        "cues": [
+        "frame": 0,
+        "scene": 0,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
           {
-            "text": "Vamos a resolver este apartado juntos.",
-            "start": 0,
-            "end": 2.6,
-            "startFrame": 0,
-            "endFrame": 78,
-            "words": 6,
-            "sceneIndex": 0,
-            "cueIndex": 0,
-            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
           },
           {
-            "text": "¿Cuánto vale probabilidad de A unión be?",
-            "start": 2.9,
-            "end": 5.9,
-            "startFrame": 87,
-            "endFrame": 177,
-            "words": 7,
-            "sceneIndex": 0,
-            "cueIndex": 1,
-            "sourceCueSha256": "8a9685c383d79fe2229c778d8b8c0799ef6c3f7c1ae537e86c7866d473c6bc63"
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos.",
-            "start": 6.2,
-            "end": 11.8,
-            "startFrame": 186,
-            "endFrame": 354,
-            "words": 13,
-            "sceneIndex": 0,
-            "cueIndex": 2,
-            "sourceCueSha256": "45bd3f8b0f061610eb86d96d88c2b59ad5d35c8e023a465add64637fda559b42"
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "0280e85986212f853ac6a657f5b0a07f6dfb20fdb8e3b48b401ae7d1a54cf2c7"
       },
       {
-        "start": 12.1,
-        "end": 28.9,
-        "cues": [
+        "frame": 21,
+        "scene": 0,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
           {
-            "text": "A y be nombran sucesos, es decir, conjuntos de resultados.",
-            "start": 12.1,
-            "end": 16.4,
-            "startFrame": 363,
-            "endFrame": 492,
-            "words": 10,
-            "sceneIndex": 1,
-            "cueIndex": 0,
-            "sourceCueSha256": "25b27320e78d11ecd9917531e8f71b0cd173dc51daccc5891ef5937a764f7a5f"
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
           },
           {
-            "text": "La unión admite cualquiera de ellos; la intersección exige ambos.",
-            "start": 16.7,
-            "end": 21,
-            "startFrame": 501,
-            "endFrame": 630,
-            "words": 10,
-            "sceneIndex": 1,
-            "cueIndex": 1,
-            "sourceCueSha256": "9de818e8657efa3a8660a1dcad15c141bdf23dfec03ebe6c8be417bd4d19826c"
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be.",
-            "start": 21.3,
-            "end": 28.6,
-            "startFrame": 639,
-            "endFrame": 858,
-            "words": 17,
-            "sceneIndex": 1,
-            "cueIndex": 2,
-            "sourceCueSha256": "cd9df43d58a903b669cfc674208fb3f3d8856d269c85ad443a29858684fb2bb1"
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "ea2df9a286ad60036dd16fc329803c1206d63a8b9f79713cb4baf95a8c6a95b0"
       },
       {
-        "start": 28.9,
-        "end": 40.36666666666667,
-        "cues": [
+        "frame": 110,
+        "scene": 0,
+        "cue": 1,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
           {
-            "text": "probabilidad de A igual a 0 coma 3; probabilidad de be igual a 0 coma 6; probabilidad de A intersección be igual a 0 coma 1.",
-            "start": 28.9,
-            "end": 40.06666666666667,
-            "startFrame": 867,
-            "endFrame": 1202,
-            "words": 26,
-            "sceneIndex": 2,
-            "cueIndex": 0,
-            "sourceCueSha256": "13625706c4f2abf2cf372e57f8c1f608a0bb9ce6d62565c4ec433fe20be2d996"
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "ba136e8e7050130b2bb1746b186d7b68111734af81333b0e063d929c3ffa7d01"
       },
       {
-        "start": 40.36666666666667,
-        "end": 55.766666666666666,
-        "cues": [
+        "frame": 223,
+        "scene": 0,
+        "cue": 2,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
           {
-            "text": "pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
-            "start": 40.36666666666667,
-            "end": 46.8,
-            "startFrame": 1211,
-            "endFrame": 1404,
-            "words": 15,
-            "sceneIndex": 3,
-            "cueIndex": 0,
-            "sourceCueSha256": "dff4a635ed6c42b3b731085543063f60dab4fb82f41d4ed65a2f59026104bbc3"
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
           },
           {
-            "text": "Empiezo sumándolas.",
-            "start": 47.1,
-            "end": 48.3,
-            "startFrame": 1413,
-            "endFrame": 1449,
-            "words": 2,
-            "sceneIndex": 3,
-            "cueIndex": 1,
-            "sourceCueSha256": "9e431c74e3cbaf964f5a7a9e4f2ea848f721550b98271b764388c0e7148fd55e"
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez.",
-            "start": 48.6,
-            "end": 55.46666666666667,
-            "startFrame": 1458,
-            "endFrame": 1664,
-            "words": 16,
-            "sceneIndex": 3,
-            "cueIndex": 2,
-            "sourceCueSha256": "271a8cd74842b02231a350bfba823d46993fd245c0da8991be51ee24baef910d"
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "ba136e8e7050130b2bb1746b186d7b68111734af81333b0e063d929c3ffa7d01"
       },
       {
-        "start": 55.766666666666666,
-        "end": 70.53333333333333,
-        "cues": [
+        "frame": 414,
+        "scene": 1,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
           {
-            "text": "Sumar los dos sucesos. pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
-            "start": 55.766666666666666,
-            "end": 63.93333333333333,
-            "startFrame": 1673,
-            "endFrame": 1918,
-            "words": 19,
-            "sceneIndex": 4,
-            "cueIndex": 0,
-            "sourceCueSha256": "1f0fc5d176d529aff47806b7cb4c0915977de888787fa93f422e9d2e612f2c03"
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
           },
           {
-            "text": "Empiezo sumándolas. 0 coma 3 más 0 coma 6 igual a 0 coma 9.",
-            "start": 64.23333333333333,
-            "end": 70.23333333333333,
-            "startFrame": 1927,
-            "endFrame": 2107,
-            "words": 14,
-            "sceneIndex": 4,
-            "cueIndex": 1,
-            "sourceCueSha256": "8ada006208b13c55571e5fd5faced37674bfc789e85813a5c515749674682d3a"
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 46.78125,
+            "kind": "formula",
+            "text": "P(A∪B)=P(A)+P(B)−P(A∩B)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "a0f569ec5e1d56a6aa9faca66922f791d87d939b6017b72723bf42b0b72b4755"
       },
       {
-        "start": 70.53333333333333,
-        "end": 84.76666666666667,
-        "cues": [
+        "frame": 585,
+        "scene": 1,
+        "cue": 1,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
           {
-            "text": "Quitar el duplicado.",
-            "start": 70.53333333333333,
-            "end": 71.83333333333333,
-            "startFrame": 2116,
-            "endFrame": 2155,
-            "words": 3,
-            "sceneIndex": 5,
-            "cueIndex": 0,
-            "sourceCueSha256": "3a3f30d68c88f873030f0bb1e8f8d73d709584e868350e5c286fb36f6a7c244e"
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
           },
           {
-            "text": "La intersección, los resultados que cumplen ambos, se contó dos veces.",
-            "start": 72.13333333333334,
-            "end": 76.86666666666666,
-            "startFrame": 2164,
-            "endFrame": 2306,
-            "words": 11,
-            "sceneIndex": 5,
-            "cueIndex": 1,
-            "sourceCueSha256": "cb6eb70c14541e32ddac2a623a37ed7fc493cc8f263e699f9c59fe5341526a35"
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "Resto una copia. probabilidad de A unión be igual a 0 coma 9 menos 0 coma 1.",
-            "start": 77.16666666666667,
-            "end": 84.46666666666667,
-            "startFrame": 2315,
-            "endFrame": 2534,
-            "words": 17,
-            "sceneIndex": 5,
-            "cueIndex": 2,
-            "sourceCueSha256": "eb715216e75ad03fd4a80440501244b2e16d568b60e7fc09b333138607771f72"
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 46.78125,
+            "kind": "formula",
+            "text": "P(A∪B)=P(A)+P(B)−P(A∩B)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "cd5e2bd8e8438c3406a110b45da71cbc984ebb5e143988b0705e77ad970412ba"
       },
       {
-        "start": 84.76666666666667,
-        "end": 89.8,
-        "cues": [
+        "frame": 747,
+        "scene": 1,
+        "cue": 2,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
           {
-            "text": "probabilidad de A unión be queda igual a 0 coma 8.",
-            "start": 84.76666666666667,
-            "end": 89.5,
-            "startFrame": 2543,
-            "endFrame": 2685,
-            "words": 11,
-            "sceneIndex": 6,
-            "cueIndex": 0,
-            "sourceCueSha256": "deb36fa71b2eaccb7393dbfb1cc342d88b9d698a80afc54ee021bf198c7b87f0"
-          }
-        ]
-      },
-      {
-        "start": 89.8,
-        "end": 99,
-        "cues": [
-          {
-            "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
-            "start": 89.8,
-            "end": 94.53333333333333,
-            "startFrame": 2694,
-            "endFrame": 2836,
-            "words": 11,
-            "sceneIndex": 7,
-            "cueIndex": 0,
-            "sourceCueSha256": "690706cc7743fd1d5021626ec3a73982217a7f9104c246d58c55c3b03e90db1b"
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
           },
           {
-            "text": "La unión incluye el caso en que ocurren ambos.",
-            "start": 94.83333333333333,
-            "end": 98.7,
-            "startFrame": 2845,
-            "endFrame": 2961,
-            "words": 9,
-            "sceneIndex": 7,
-            "cueIndex": 1,
-            "sourceCueSha256": "476b8c9034571003d1c182128925d4f7a1107619fb4548dc110ebe27c811c442"
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 46.78125,
+            "kind": "formula",
+            "text": "P(A∪B)=P(A)+P(B)−P(A∩B)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "cd5e2bd8e8438c3406a110b45da71cbc984ebb5e143988b0705e77ad970412ba"
+      },
+      {
+        "frame": 991,
+        "scene": 2,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 63.046875,
+            "width": 375,
+            "height": 31.046875
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "7b8c744d242d3f5c2504d6d1d512c436b81a8c0c4648e787b4fed4ef5e548a22"
+      },
+      {
+        "frame": 1375,
+        "scene": 3,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 63.046875,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "e07afae72f44e9b46d0bdf236a55eea48c8659922e846802c80a61b95bd77528"
+      },
+      {
+        "frame": 1561,
+        "scene": 3,
+        "cue": 1,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 63.046875,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "03fc6ec1b850bee96de55321de80ff34356a49898666b230fd4e3dba9172f9b6"
+      },
+      {
+        "frame": 1624,
+        "scene": 3,
+        "cue": 2,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 63.046875,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "03fc6ec1b850bee96de55321de80ff34356a49898666b230fd4e3dba9172f9b6"
+      },
+      {
+        "frame": 1883,
+        "scene": 4,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 63.734375,
+            "kind": "formula",
+            "text": "0.3+0.6=0.9",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 132,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "2fe566e6076bae6b2ebb69f10ab012ed95ded63dac6a2ebf7cc451c6e8f20336"
+      },
+      {
+        "frame": 2126,
+        "scene": 4,
+        "cue": 1,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 63.734375,
+            "kind": "formula",
+            "text": "0.3+0.6=0.9",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 132,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "d882bd15aa38fd49bea3da08444b75375d9abbe7cb9e82c33b95ea36795d2033"
+      },
+      {
+        "frame": 2368,
+        "scene": 5,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 65.734375,
+            "kind": "formula",
+            "text": "P(A∪B)=0.9−0.1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 132,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "95dccdac4587a605ef5a69d88c2e13466ac35a6f2706e829c30baa2bbdb5b79d"
+      },
+      {
+        "frame": 2424,
+        "scene": 5,
+        "cue": 1,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 65.734375,
+            "kind": "formula",
+            "text": "P(A∪B)=0.9−0.1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 132,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "75175aaf4de94cfaff2a5914a266a7a61f868fe349c6d4e27e9a9b6da5f18115"
+      },
+      {
+        "frame": 2590,
+        "scene": 5,
+        "cue": 2,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 65.734375,
+            "kind": "formula",
+            "text": "P(A∪B)=0.9−0.1",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 132,
+            "width": 375,
+            "height": 93.140625
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "75175aaf4de94cfaff2a5914a266a7a61f868fe349c6d4e27e9a9b6da5f18115"
+      },
+      {
+        "frame": 2880,
+        "scene": 6,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 65.390625,
+            "kind": "formula",
+            "text": "P(A∪B)=0.9−0.1=0.8",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "59afbd4e58775be34398c1dc8f6b1d04dbb4ab514395a36908f38f6e740b89d3"
+      },
+      {
+        "frame": 3033,
+        "scene": 7,
+        "cue": 0,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 63.046875,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 106.09375,
+            "width": 375,
+            "height": 62.09375
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "bc85c34e3891ca7034fd12ab2fbf9639f5c2d131ebaa216a2b52b39f33344047"
+      },
+      {
+        "frame": 3214,
+        "scene": 7,
+        "cue": 1,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 63.046875,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 106.09375,
+            "width": 375,
+            "height": 62.09375
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "2681c6d01e09276bba59369f92b4028f436219093db7b8da125b04f17c3e6ab1"
+      },
+      {
+        "frame": 3300,
+        "scene": 7,
+        "cue": 1,
+        "family": "events",
+        "domain": "exercise",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 23.078125,
+            "y": 61,
+            "width": 691.921875,
+            "height": 396
+          },
+          {
+            "name": "text",
+            "x": 85,
+            "y": 61,
+            "width": 44.35997009277344,
+            "height": 25,
+            "kind": "label",
+            "text": "Valor",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 55.96875,
+            "y": 340,
+            "width": 11.03125,
+            "height": 21,
+            "kind": "label",
+            "text": "0",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 23.078125,
+            "y": 212.5,
+            "width": 43.921875,
+            "height": 21,
+            "kind": "label",
+            "text": "0,295",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 32.6875,
+            "y": 85,
+            "width": 34.3125,
+            "height": 21,
+            "kind": "label",
+            "text": "0,59",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 395.3828125,
+            "y": 432,
+            "width": 10,
+            "height": 25,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 136.71875,
+            "y": 364,
+            "width": 54.16114807128906,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 294.28125,
+            "y": 392,
+            "width": 54.1611328125,
+            "height": 24,
+            "kind": "label",
+            "text": "Solo B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 449.7109375,
+            "y": 364,
+            "width": 58.1151123046875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ambos",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 601.265625,
+            "y": 392,
+            "width": 69.96875,
+            "height": 24,
+            "kind": "label",
+            "text": "Ninguno",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 780,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 430
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 20,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 63.046875,
+            "width": 375,
+            "height": 31.046875
+          },
+          {
+            "name": "DIV",
+            "x": 805,
+            "y": 106.09375,
+            "width": 375,
+            "height": 62.09375
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "2681c6d01e09276bba59369f92b4028f436219093db7b8da125b04f17c3e6ab1"
       }
-    ]
-  },
-  "publication": "silent-transcript"
+    ],
+    "pixels": [
+      {
+        "frame": 0,
+        "ink": 2939,
+        "sha256": "ae8240bb51531daba24278107c1b396a319ef336ef5dacbf6478553417a17590"
+      },
+      {
+        "frame": 21,
+        "ink": 2939,
+        "sha256": "d0795dc26fc6824c99ec33adc0c83b0b8ccad6e016570342e8f42b97eac49c09"
+      },
+      {
+        "frame": 110,
+        "ink": 2968,
+        "sha256": "093e89266d55eae8b76a52b6742256739e7ab7fce4391b037d3f182ec9603130"
+      },
+      {
+        "frame": 223,
+        "ink": 2968,
+        "sha256": "ccba7a52ae00d66ffc7b10b08a177bba5ca08fb01a0aeb23e8150dc3f7e4899f"
+      },
+      {
+        "frame": 414,
+        "ink": 2937,
+        "sha256": "6b93b8a445188c729f8609571b24a74364c72ce27ad959f229e7b1ab08d24053"
+      },
+      {
+        "frame": 585,
+        "ink": 2964,
+        "sha256": "6c05a8d6fb8aa6cdac57ef5d3c3c082a35a0274517ec89c3b20f24959ba6055a"
+      },
+      {
+        "frame": 747,
+        "ink": 2970,
+        "sha256": "99793bdd69143bcccfc32db7eb73a15e3629f1ed8085cb038faeef64293b4333"
+      },
+      {
+        "frame": 991,
+        "ink": 2957,
+        "sha256": "7352dba216406d5360b763a53c279f99d143d658a8a5d9480c987894762fbcc6"
+      },
+      {
+        "frame": 1375,
+        "ink": 2937,
+        "sha256": "b5e9676af308ea4c3d2746033efc9aa105adae46845984a47292887b3cc2f275"
+      },
+      {
+        "frame": 1561,
+        "ink": 3125,
+        "sha256": "a55f038427fc59c4f110addaba42d6936d07c170c479c2350dc064b1bfe16fed"
+      },
+      {
+        "frame": 1624,
+        "ink": 3124,
+        "sha256": "6228473c9af76c68f750cf63a237ef647462cba48666c2c0fc02d7d1f4320835"
+      },
+      {
+        "frame": 1883,
+        "ink": 2939,
+        "sha256": "f64f64df9082a38dfdfc9749e12de704256af83a37a4ab8a2d6be7a18d508f5f"
+      },
+      {
+        "frame": 2126,
+        "ink": 3136,
+        "sha256": "b6959bb1f103485ee59c0fc8b87e2ac3d436a1f50c8731a983f9576a965f58d6"
+      },
+      {
+        "frame": 2368,
+        "ink": 2938,
+        "sha256": "ec91d4f43fb004a5df2c0b1570755309637579579e9db745cd54fae8b9553a89"
+      },
+      {
+        "frame": 2424,
+        "ink": 3107,
+        "sha256": "02c6d1f6921cba4b8df1426585720da051c80d48ab69343ff6fe5a49d420db64"
+      },
+      {
+        "frame": 2590,
+        "ink": 3118,
+        "sha256": "0865943f9bd9afcfc7da201ce9d7893d3c73b4fd164c64baa6354df4dce7b285"
+      },
+      {
+        "frame": 2880,
+        "ink": 2913,
+        "sha256": "3dcea8dc010bdf616191d69fc714fca7633b8eb60c091eeb57cf5cdb47ddd7a7"
+      },
+      {
+        "frame": 3033,
+        "ink": 2916,
+        "sha256": "5bd610f6cfc908c1f088e25e40708a1553cdd5d1515bf13dbe638845dc5e9a7d"
+      },
+      {
+        "frame": 3214,
+        "ink": 3076,
+        "sha256": "86e61e604e10d17cb8cbc561b463ecc103282a62792cb664915525792bbcbd59"
+      },
+      {
+        "frame": 3300,
+        "ink": 3077,
+        "sha256": "226cfde4f733201d05802ae226b187be9533185a7f41cf7b06c80252f5fdbcf8"
+      }
+    ],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_time_base": "1/60",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 9903060,
+        "duration": "110.034000",
+        "bit_rate": "62478",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "3301",
+        "nb_read_frames": "3301",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_time_base": "1/24000",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "24000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/24000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2640792,
+        "duration": "110.033000",
+        "bit_rate": "104055",
+        "max_bit_rate": "144000",
+        "nb_frames": "2580",
+        "nb_read_frames": "2579",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler"
+        }
+      }
+    ],
+    "elapsedSeconds": 35.403
+  }
 }

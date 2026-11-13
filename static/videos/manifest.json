@@ -77,26 +77,22 @@
       "nativePlanSha256": "aff54ce1dadecb9d31033ec58a671cd8196425db9ff6856405f97c790b201114",
       "src": "videos/proporciones--porcentaje-y-exposicion/video.mp4",
       "poster": "videos/proporciones--porcentaje-y-exposicion/poster.jpg",
-      "duration": 85.06666666666666,
-      "frames": 2552,
+      "duration": 87.9,
+      "frames": 2637,
       "fps": 30,
       "width": 1280,
       "height": 720,
-      "narrationMode": "transcript",
-      "cueTiming": "estimated",
-      "temporary": true,
-      "silent": true,
-      "timing": {
-        "wordsPerMinute": 140,
-        "pauseSeconds": 0.3,
-        "minimumCueSeconds": 1.2
-      },
-      "transcriptSha256": "f0ff61851035fcb20e1184a25c3999a25aa1c6e2be16f2a801fb8498cd3354ff",
-      "videoSha256": "ac1a7cbaacaba2988ffe07fd6b06adac956f960144c583e9cea66af2f2c04e19",
-      "posterSha256": "db26511c4ae2ebf749c2277b147f4627dcfc9d1082343275db83e4758e4af3a8",
+      "audioSource": "audio/proporciones--porcentaje-y-exposicion.mp3",
+      "audioSha256": "57344bcb8d7a997c32bc080bd480097038a03e636e3ea32bdb0809147ea67512",
+      "voice": "Puck",
+      "model": "gemini-3.8-flash-tts",
+      "cueTiming": "measured",
+      "videoSha256": "6856d3dca2dd5a057b1c9c5d3330f2dc07078c27a91cf241aab4a75b298034f6",
+      "posterSha256": "429ae2090e43742f849fc79ea41d3abfa4ec7c9f63aacef5f5b02d3762efc6d4",
       "canonicalSha256": "57b01fd871a625bc975e8fe5327a722468aaba96b4325c331109bac4143bf3cb",
-      "inputHash": "e3c922b471084660ac26f3ed75c835d3bb50209e3a0a6a647082f555bbd03d62",
-      "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
+      "inputHash": "e2245bd9839f88b8a72296ce709f4637b93cb963a17b8ae83f4e27fe2833934e",
+      "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
+      "renderConcurrency": 8,
       "sourceSnapshot": {
         "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
         "itemSha256": "707f914b56886be2592fd2bf33a3cf054d1d0254938275fa93982f5e12b27ecc",
@@ -107,51 +103,25 @@
         },
         "provenance": null,
         "renderedAnimationSha256": "899174180f37f9282d6162f8ec1d633f0fa99850cf945e3be37b5110b6945689",
-        "transcriptSha256": "f0ff61851035fcb20e1184a25c3999a25aa1c6e2be16f2a801fb8498cd3354ff",
-        "sourceFiles": {
-          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-        },
-        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
-        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "audioMetadataSha256": "f40b0ba9275b2b9322d805c7e3449053a183bb3440a0fa3b46faa3a1de05fd2f",
         "rendererSources": {
-          "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
           "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
           "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
           "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
           "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-          "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+          "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
           "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
           "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
           "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
           "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
           "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
           "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-          "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+          "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
           "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
           "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
           "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -159,206 +129,7 @@
         }
       },
       "testFixture": false,
-      "parentLesson": "proporciones",
-      "transcript": {
-        "id": "proporciones--porcentaje-y-exposicion",
-        "narrationMode": "transcript",
-        "cueTiming": "estimated",
-        "temporary": true,
-        "silent": true,
-        "canonicalSha256": "57b01fd871a625bc975e8fe5327a722468aaba96b4325c331109bac4143bf3cb",
-        "timing": {
-          "wordsPerMinute": 140,
-          "pauseSeconds": 0.3,
-          "minimumCueSeconds": 1.2
-        },
-        "duration": 85.06666666666666,
-        "scenes": [
-          {
-            "start": 0,
-            "end": 85.06666666666666,
-            "cues": [
-              {
-                "text": "Hola.",
-                "start": 0,
-                "end": 1.2,
-                "startFrame": 0,
-                "endFrame": 36,
-                "words": 1,
-                "sceneIndex": 0,
-                "cueIndex": 0,
-                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
-              },
-              {
-                "text": "Un cuarto de nuestras semillas germinó.",
-                "start": 1.5,
-                "end": 4.1,
-                "startFrame": 45,
-                "endFrame": 123,
-                "words": 6,
-                "sceneIndex": 0,
-                "cueIndex": 1,
-                "sourceCueSha256": "ca77c03f35b08020183adfeb902ca085986a0a5b2a4ef3a0f1d25f9eb6be4266"
-              },
-              {
-                "text": "¿Cómo contarlo en porcentaje, y por qué no es lo mismo que una tasa?",
-                "start": 4.4,
-                "end": 10.4,
-                "startFrame": 132,
-                "endFrame": 312,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 2,
-                "sourceCueSha256": "2e5ff33758e094ca7f137c3259ee666eafd5f92b1972ac95638cfdd365b5f11d"
-              },
-              {
-                "text": "Empecemos cambiando solo la escala de la proporción.",
-                "start": 10.7,
-                "end": 14.133333333333333,
-                "startFrame": 321,
-                "endFrame": 424,
-                "words": 8,
-                "sceneIndex": 0,
-                "cueIndex": 3,
-                "sourceCueSha256": "186e8e1c1a8bcb3dd1a0cfadb7d927081bc7cd9d923a2811b87c43e3d91adb3b"
-              },
-              {
-                "text": "Por ciento significa por cada cien partes del total.",
-                "start": 14.433333333333334,
-                "end": 18.3,
-                "startFrame": 433,
-                "endFrame": 549,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 4,
-                "sourceCueSha256": "8aa9f3c4a06f28609392aa3f2a7572563edadd3c0647f2a4ced7f2d47e368577"
-              },
-              {
-                "text": "Como un cuarto de cien son veinticinco, multiplicar cero coma veinticinco por cien nos da la nueva expresión.",
-                "start": 18.6,
-                "end": 26.333333333333332,
-                "startFrame": 558,
-                "endFrame": 790,
-                "words": 18,
-                "sceneIndex": 0,
-                "cueIndex": 5,
-                "sourceCueSha256": "9e743499a755f743ae672eb04b18dfd919eeb8c6bf23194c1f321b007efacb56"
-              },
-              {
-                "text": "Veinticinco por ciento sigue representando las dieciocho de setenta y dos.",
-                "start": 26.633333333333333,
-                "end": 31.366666666666667,
-                "startFrame": 799,
-                "endFrame": 941,
-                "words": 11,
-                "sceneIndex": 0,
-                "cueIndex": 6,
-                "sourceCueSha256": "3504ee2b0a4da92a35ed28179a5e953afe2cd1e3a4949da8dda152ad6d9eefb7"
-              },
-              {
-                "text": "No hemos observado cien semillas nuevas ni cambiado el resultado; hemos usado otra forma de nombrar la misma fracción.",
-                "start": 31.666666666666668,
-                "end": 39.833333333333336,
-                "startFrame": 950,
-                "endFrame": 1195,
-                "words": 19,
-                "sceneIndex": 0,
-                "cueIndex": 7,
-                "sourceCueSha256": "e98cfdae231b29c4cd289a83118d5b7d24ce793a712e3f9e3bcc1eeb678bae82"
-              },
-              {
-                "text": "Cambiemos de pregunta: un sensor ve seis llegadas en tres horas.",
-                "start": 40.13333333333333,
-                "end": 44.86666666666667,
-                "startFrame": 1204,
-                "endFrame": 1346,
-                "words": 11,
-                "sceneIndex": 0,
-                "cueIndex": 8,
-                "sourceCueSha256": "5dd008b9b44c6c3db35f16baf60987318c4e4a27bbeed405257ac862c07333ae"
-              },
-              {
-                "text": "Cada hora aporta exposición, y seis repartido entre tres da dos llegadas por hora.",
-                "start": 45.166666666666664,
-                "end": 51.166666666666664,
-                "startFrame": 1355,
-                "endFrame": 1535,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 9,
-                "sourceCueSha256": "4c8bebe3bf3f4d23df92ee674ccccd42b383ddbc1c776f6265710ef7093d5920"
-              },
-              {
-                "text": "Este cociente es una tasa y puede superar uno.",
-                "start": 51.46666666666667,
-                "end": 55.333333333333336,
-                "startFrame": 1544,
-                "endFrame": 1660,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 10,
-                "sourceCueSha256": "202d379b62c45678b6963d262c36b1283981a6919fdb1d488a106ef1e601d7ba"
-              },
-              {
-                "text": "Si el denominador fuese volumen, hablaríamos de concentración.",
-                "start": 55.63333333333333,
-                "end": 59.06666666666667,
-                "startFrame": 1669,
-                "endFrame": 1772,
-                "words": 8,
-                "sceneIndex": 0,
-                "cueIndex": 11,
-                "sourceCueSha256": "ae6fcdd0f5a810ffdb2872c6b1127173b0de3700253874e909b33af7ecff7d90"
-              },
-              {
-                "text": "Dos colonias por mililitro significa cantidad por volumen, no probabilidad de dos.",
-                "start": 59.36666666666667,
-                "end": 64.53333333333333,
-                "startFrame": 1781,
-                "endFrame": 1936,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 12,
-                "sourceCueSha256": "f3f4f60a4af77b1c75c4998671d36d92efe3a66fcd62c8a9a06a4cb08861aa67"
-              },
-              {
-                "text": "La unidad nos dice qué interpretación admite el número.",
-                "start": 64.83333333333333,
-                "end": 68.7,
-                "startFrame": 1945,
-                "endFrame": 2061,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 13,
-                "sourceCueSha256": "ef5d8ef6ff4492515081d1423303d444d5d6acdf500e8c64da272d07c0c96924"
-              },
-              {
-                "text": "Para reunir dos bandejas sumamos germinadas y sembradas antes de dividir.",
-                "start": 69,
-                "end": 73.73333333333333,
-                "startFrame": 2070,
-                "endFrame": 2212,
-                "words": 11,
-                "sceneIndex": 0,
-                "cueIndex": 14,
-                "sourceCueSha256": "096f70be6e66d3395b711336be67b6974761f6b3a417dff2c5934b20a56a4909"
-              },
-              {
-                "text": "Un promedio simple de porcentajes daría el mismo peso a una bandeja pequeña y a otra grande; contar cada semilla exige ponderar por sus tamaños.",
-                "start": 74.03333333333333,
-                "end": 84.76666666666667,
-                "startFrame": 2221,
-                "endFrame": 2543,
-                "words": 25,
-                "sceneIndex": 0,
-                "cueIndex": 15,
-                "sourceCueSha256": "db2c0ac82e8a2767e21081ee1207b1d8b2077b6404b7ea2dba4a3b0642387603"
-              }
-            ]
-          }
-        ]
-      },
-      "publication": "silent-transcript"
+      "parentLesson": "proporciones"
     },
     "ejercicio-pdf-u1-1--a": {
       "version": 1,
@@ -371,26 +142,21 @@
       "nativePlanSha256": "0a64e2034c05746217c31b1e26fe8f11798fd5258f2961dcc52c25555994359f",
       "src": "videos/ejercicio-pdf-u1-1--a/video.mp4",
       "poster": "videos/ejercicio-pdf-u1-1--a/poster.jpg",
-      "duration": 99,
-      "frames": 2970,
+      "duration": 110.02,
+      "frames": 3301,
       "fps": 30,
       "width": 1280,
       "height": 720,
-      "narrationMode": "transcript",
-      "cueTiming": "estimated",
-      "temporary": true,
-      "silent": true,
-      "timing": {
-        "wordsPerMinute": 140,
-        "pauseSeconds": 0.3,
-        "minimumCueSeconds": 1.2
-      },
-      "transcriptSha256": "76a3518c7518ac9f030743e3a09ec5cd43123ccea60ef35c3afe0e22f95909eb",
-      "videoSha256": "125a1304d7db94fdb2bc6083186bb59f17f91baf171ee9cd24f5d2f7b2c91121",
-      "posterSha256": "74b32db22b89acb7bbc4b7622b88ed5a06225823371cf9fcba2f16e32c2c45e8",
+      "audioSource": "audio/ejercicio-pdf-u1-1--a.mp3",
+      "audioSha256": "ed6a0ddab94700508894bdf264eea97aeca761076bba548f2993455ee138a540",
+      "voice": "Puck",
+      "model": "gemini-3.8-flash-tts",
+      "cueTiming": "measured",
+      "videoSha256": "589202c15006261dd25241a4bad7150111e994fd425ddc640123c233f1fb47da",
+      "posterSha256": "47ecab11f91731893047fb9abdf5c8864d843ed8ad980d77efd2e21531382c59",
       "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
-      "inputHash": "4756659d66016ca3d942ef7af22ce101d7fa9e80a2d4fa9ece232312b35c565a",
-      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "inputHash": "18988bdb23ad6e927212322601396d9305041e801d9950136e1524c0ae9304c9",
+      "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
       "renderConcurrency": 8,
       "sourceSnapshot": {
         "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
@@ -403,51 +169,25 @@
         },
         "provenance": null,
         "renderedAnimationSha256": "7dfe70ad0b7b1187a11fd0eb70ca81c5709a9ee3bcee9fd0730b352f240888ec",
-        "transcriptSha256": "76a3518c7518ac9f030743e3a09ec5cd43123ccea60ef35c3afe0e22f95909eb",
-        "sourceFiles": {
-          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-        },
-        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
-        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "audioMetadataSha256": "5e254ea4391768f216dbb31d4f45c29fb9259a52bee29ca10eca5dcd732fc50b",
         "rendererSources": {
           "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
           "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
           "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
           "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
           "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
           "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
           "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
           "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
           "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
           "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
           "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
           "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
           "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
           "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -455,270 +195,7 @@
         }
       },
       "testFixture": false,
-      "parentLesson": "ejercicio-pdf-u1-1",
-      "transcript": {
-        "id": "ejercicio-pdf-u1-1--a",
-        "narrationMode": "transcript",
-        "cueTiming": "estimated",
-        "temporary": true,
-        "silent": true,
-        "canonicalSha256": "f61cf8fdd6d6a697110a9074a611e61e40511e92280f1870ff74c7ffbfdb03e9",
-        "timing": {
-          "wordsPerMinute": 140,
-          "pauseSeconds": 0.3,
-          "minimumCueSeconds": 1.2
-        },
-        "duration": 99,
-        "scenes": [
-          {
-            "start": 0,
-            "end": 12.1,
-            "cues": [
-              {
-                "text": "Vamos a resolver este apartado juntos.",
-                "start": 0,
-                "end": 2.6,
-                "startFrame": 0,
-                "endFrame": 78,
-                "words": 6,
-                "sceneIndex": 0,
-                "cueIndex": 0,
-                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
-              },
-              {
-                "text": "¿Cuánto vale probabilidad de A unión be?",
-                "start": 2.9,
-                "end": 5.9,
-                "startFrame": 87,
-                "endFrame": 177,
-                "words": 7,
-                "sceneIndex": 0,
-                "cueIndex": 1,
-                "sourceCueSha256": "8a9685c383d79fe2229c778d8b8c0799ef6c3f7c1ae537e86c7866d473c6bc63"
-              },
-              {
-                "text": "Queremos que ocurra al menos uno de los sucesos, incluidos los resultados compartidos.",
-                "start": 6.2,
-                "end": 11.8,
-                "startFrame": 186,
-                "endFrame": 354,
-                "words": 13,
-                "sceneIndex": 0,
-                "cueIndex": 2,
-                "sourceCueSha256": "45bd3f8b0f061610eb86d96d88c2b59ad5d35c8e023a465add64637fda559b42"
-              }
-            ]
-          },
-          {
-            "start": 12.1,
-            "end": 28.9,
-            "cues": [
-              {
-                "text": "A y be nombran sucesos, es decir, conjuntos de resultados.",
-                "start": 12.1,
-                "end": 16.4,
-                "startFrame": 363,
-                "endFrame": 492,
-                "words": 10,
-                "sceneIndex": 1,
-                "cueIndex": 0,
-                "sourceCueSha256": "25b27320e78d11ecd9917531e8f71b0cd173dc51daccc5891ef5937a764f7a5f"
-              },
-              {
-                "text": "La unión admite cualquiera de ellos; la intersección exige ambos.",
-                "start": 16.7,
-                "end": 21,
-                "startFrame": 501,
-                "endFrame": 630,
-                "words": 10,
-                "sceneIndex": 1,
-                "cueIndex": 1,
-                "sourceCueSha256": "9de818e8657efa3a8660a1dcad15c141bdf23dfec03ebe6c8be417bd4d19826c"
-              },
-              {
-                "text": "Si partimos de recuentos, dividir por el total requiere selección equiprobable, no independencia entre A y be.",
-                "start": 21.3,
-                "end": 28.6,
-                "startFrame": 639,
-                "endFrame": 858,
-                "words": 17,
-                "sceneIndex": 1,
-                "cueIndex": 2,
-                "sourceCueSha256": "cd9df43d58a903b669cfc674208fb3f3d8856d269c85ad443a29858684fb2bb1"
-              }
-            ]
-          },
-          {
-            "start": 28.9,
-            "end": 40.36666666666667,
-            "cues": [
-              {
-                "text": "probabilidad de A igual a 0 coma 3; probabilidad de be igual a 0 coma 6; probabilidad de A intersección be igual a 0 coma 1.",
-                "start": 28.9,
-                "end": 40.06666666666667,
-                "startFrame": 867,
-                "endFrame": 1202,
-                "words": 26,
-                "sceneIndex": 2,
-                "cueIndex": 0,
-                "sourceCueSha256": "13625706c4f2abf2cf372e57f8c1f608a0bb9ce6d62565c4ec433fe20be2d996"
-              }
-            ]
-          },
-          {
-            "start": 40.36666666666667,
-            "end": 55.766666666666666,
-            "cues": [
-              {
-                "text": "pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
-                "start": 40.36666666666667,
-                "end": 46.8,
-                "startFrame": 1211,
-                "endFrame": 1404,
-                "words": 15,
-                "sceneIndex": 3,
-                "cueIndex": 0,
-                "sourceCueSha256": "dff4a635ed6c42b3b731085543063f60dab4fb82f41d4ed65a2f59026104bbc3"
-              },
-              {
-                "text": "Empiezo sumándolas.",
-                "start": 47.1,
-                "end": 48.3,
-                "startFrame": 1413,
-                "endFrame": 1449,
-                "words": 2,
-                "sceneIndex": 3,
-                "cueIndex": 1,
-                "sourceCueSha256": "9e431c74e3cbaf964f5a7a9e4f2ea848f721550b98271b764388c0e7148fd55e"
-              },
-              {
-                "text": "La suma cuenta dos veces la intersección; retirarla una vez conserva cada resultado una sola vez.",
-                "start": 48.6,
-                "end": 55.46666666666667,
-                "startFrame": 1458,
-                "endFrame": 1664,
-                "words": 16,
-                "sceneIndex": 3,
-                "cueIndex": 2,
-                "sourceCueSha256": "271a8cd74842b02231a350bfba823d46993fd245c0da8991be51ee24baef910d"
-              }
-            ]
-          },
-          {
-            "start": 55.766666666666666,
-            "end": 70.53333333333333,
-            "cues": [
-              {
-                "text": "Sumar los dos sucesos. pe de A es la probabilidad del primer suceso; pe de be, la del segundo.",
-                "start": 55.766666666666666,
-                "end": 63.93333333333333,
-                "startFrame": 1673,
-                "endFrame": 1918,
-                "words": 19,
-                "sceneIndex": 4,
-                "cueIndex": 0,
-                "sourceCueSha256": "1f0fc5d176d529aff47806b7cb4c0915977de888787fa93f422e9d2e612f2c03"
-              },
-              {
-                "text": "Empiezo sumándolas. 0 coma 3 más 0 coma 6 igual a 0 coma 9.",
-                "start": 64.23333333333333,
-                "end": 70.23333333333333,
-                "startFrame": 1927,
-                "endFrame": 2107,
-                "words": 14,
-                "sceneIndex": 4,
-                "cueIndex": 1,
-                "sourceCueSha256": "8ada006208b13c55571e5fd5faced37674bfc789e85813a5c515749674682d3a"
-              }
-            ]
-          },
-          {
-            "start": 70.53333333333333,
-            "end": 84.76666666666667,
-            "cues": [
-              {
-                "text": "Quitar el duplicado.",
-                "start": 70.53333333333333,
-                "end": 71.83333333333333,
-                "startFrame": 2116,
-                "endFrame": 2155,
-                "words": 3,
-                "sceneIndex": 5,
-                "cueIndex": 0,
-                "sourceCueSha256": "3a3f30d68c88f873030f0bb1e8f8d73d709584e868350e5c286fb36f6a7c244e"
-              },
-              {
-                "text": "La intersección, los resultados que cumplen ambos, se contó dos veces.",
-                "start": 72.13333333333334,
-                "end": 76.86666666666666,
-                "startFrame": 2164,
-                "endFrame": 2306,
-                "words": 11,
-                "sceneIndex": 5,
-                "cueIndex": 1,
-                "sourceCueSha256": "cb6eb70c14541e32ddac2a623a37ed7fc493cc8f263e699f9c59fe5341526a35"
-              },
-              {
-                "text": "Resto una copia. probabilidad de A unión be igual a 0 coma 9 menos 0 coma 1.",
-                "start": 77.16666666666667,
-                "end": 84.46666666666667,
-                "startFrame": 2315,
-                "endFrame": 2534,
-                "words": 17,
-                "sceneIndex": 5,
-                "cueIndex": 2,
-                "sourceCueSha256": "eb715216e75ad03fd4a80440501244b2e16d568b60e7fc09b333138607771f72"
-              }
-            ]
-          },
-          {
-            "start": 84.76666666666667,
-            "end": 89.8,
-            "cues": [
-              {
-                "text": "probabilidad de A unión be queda igual a 0 coma 8.",
-                "start": 84.76666666666667,
-                "end": 89.5,
-                "startFrame": 2543,
-                "endFrame": 2685,
-                "words": 11,
-                "sceneIndex": 6,
-                "cueIndex": 0,
-                "sourceCueSha256": "deb36fa71b2eaccb7393dbfb1cc342d88b9d698a80afc54ee021bf198c7b87f0"
-              }
-            ]
-          },
-          {
-            "start": 89.8,
-            "end": 99,
-            "cues": [
-              {
-                "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
-                "start": 89.8,
-                "end": 94.53333333333333,
-                "startFrame": 2694,
-                "endFrame": 2836,
-                "words": 11,
-                "sceneIndex": 7,
-                "cueIndex": 0,
-                "sourceCueSha256": "690706cc7743fd1d5021626ec3a73982217a7f9104c246d58c55c3b03e90db1b"
-              },
-              {
-                "text": "La unión incluye el caso en que ocurren ambos.",
-                "start": 94.83333333333333,
-                "end": 98.7,
-                "startFrame": 2845,
-                "endFrame": 2961,
-                "words": 9,
-                "sceneIndex": 7,
-                "cueIndex": 1,
-                "sourceCueSha256": "476b8c9034571003d1c182128925d4f7a1107619fb4548dc110ebe27c811c442"
-              }
-            ]
-          }
-        ]
-      },
-      "publication": "silent-transcript"
+      "parentLesson": "ejercicio-pdf-u1-1"
     },
     "proporciones--unidades-y-cotas": {
       "version": 1,
@@ -731,26 +208,22 @@
       "nativePlanSha256": "b633f715ef0c5e93aba8820c326fc19d1d298690fcb115e878b8cb5c9046453f",
       "src": "videos/proporciones--unidades-y-cotas/video.mp4",
       "poster": "videos/proporciones--unidades-y-cotas/poster.jpg",
-      "duration": 79.2,
-      "frames": 2376,
+      "duration": 86.32,
+      "frames": 2590,
       "fps": 30,
       "width": 1280,
       "height": 720,
-      "narrationMode": "transcript",
-      "cueTiming": "estimated",
-      "temporary": true,
-      "silent": true,
-      "timing": {
-        "wordsPerMinute": 140,
-        "pauseSeconds": 0.3,
-        "minimumCueSeconds": 1.2
-      },
-      "transcriptSha256": "488eabbcaad2138faca78ab1c1183ac4d384742b733ead6edaecf2d3f80e9654",
-      "videoSha256": "3ca8bd4e4d3edc34197d856b21d86cd7be26b0aab29d63f9dbec4f13902fba19",
-      "posterSha256": "fd92937e9bbb1d66d3a6e1bb611a91d9bd8d10fcd26e4d4e19e5b677280cf31b",
+      "audioSource": "audio/proporciones--unidades-y-cotas.mp3",
+      "audioSha256": "fb1f22cf11cf206341103ac239afb423fe0cd8bd660c65053bb3880be3d4cd8b",
+      "voice": "Puck",
+      "model": "gemini-3.8-flash-tts",
+      "cueTiming": "measured",
+      "videoSha256": "d00e9fb0d7dfda2779b5fe8e1f327995dee130aaf316ba13f408b40a608a3ea0",
+      "posterSha256": "63a9ee5b841b6f84dcb9079a579d2ef8eb24e979147060a5ef189c9ac7d89e01",
       "canonicalSha256": "46b3a2efffe078b7c3bfc4118be4d9e3a85e15d6e875fdf491e5051cd4e5f912",
-      "inputHash": "efb8daaa765919977f42691f25f69601a67f96cf428197b31b68b7239b7b96dd",
-      "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
+      "inputHash": "6289dbbeec3290f0c5fa02c29376c706ef73b6a19da6896ab2fb5b203be163d1",
+      "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
+      "renderConcurrency": 8,
       "sourceSnapshot": {
         "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
         "itemSha256": "445ddecee203df21d3bc88ce269a9ef4849cc246683c5c035e55e2b580012121",
@@ -761,51 +234,25 @@
         },
         "provenance": null,
         "renderedAnimationSha256": "b24feecc8eeae13d516fd98638913e376785bb93c73a8989503a353547d6a627",
-        "transcriptSha256": "488eabbcaad2138faca78ab1c1183ac4d384742b733ead6edaecf2d3f80e9654",
-        "sourceFiles": {
-          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-        },
-        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
-        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "audioMetadataSha256": "461ff74ce785411cf3c3f04192f8ff81c71f9684bb92664c861903d3570a5653",
         "rendererSources": {
-          "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
           "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
           "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
           "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
           "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-          "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+          "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
           "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
           "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
           "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
           "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
           "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
           "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-          "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+          "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
           "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
           "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
           "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -813,195 +260,7 @@
         }
       },
       "testFixture": false,
-      "parentLesson": "proporciones",
-      "transcript": {
-        "id": "proporciones--unidades-y-cotas",
-        "narrationMode": "transcript",
-        "cueTiming": "estimated",
-        "temporary": true,
-        "silent": true,
-        "canonicalSha256": "46b3a2efffe078b7c3bfc4118be4d9e3a85e15d6e875fdf491e5051cd4e5f912",
-        "timing": {
-          "wordsPerMinute": 140,
-          "pauseSeconds": 0.3,
-          "minimumCueSeconds": 1.2
-        },
-        "duration": 79.2,
-        "scenes": [
-          {
-            "start": 0,
-            "end": 79.2,
-            "cues": [
-              {
-                "text": "Hola.",
-                "start": 0,
-                "end": 1.2,
-                "startFrame": 0,
-                "endFrame": 36,
-                "words": 1,
-                "sceneIndex": 0,
-                "cueIndex": 0,
-                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
-              },
-              {
-                "text": "Tenemos tres miligramos de una sustancia y el aparato pide microgramos.",
-                "start": 1.5,
-                "end": 6.233333333333333,
-                "startFrame": 45,
-                "endFrame": 187,
-                "words": 11,
-                "sceneIndex": 0,
-                "cueIndex": 1,
-                "sourceCueSha256": "58780e39582255747f8b7793758406c0725a4fd6505173c427051970020355c5"
-              },
-              {
-                "text": "¿Cambia la cantidad?",
-                "start": 6.533333333333333,
-                "end": 7.833333333333333,
-                "startFrame": 196,
-                "endFrame": 235,
-                "words": 3,
-                "sceneIndex": 0,
-                "cueIndex": 2,
-                "sourceCueSha256": "5f5fe5c38b96a94727907224968d913fc650a73875d2c4c8758e76b59b5f8602"
-              },
-              {
-                "text": "No: cambia el tamaño de la unidad con la que la contamos.",
-                "start": 8.133333333333333,
-                "end": 13.3,
-                "startFrame": 244,
-                "endFrame": 399,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 3,
-                "sourceCueSha256": "d7284f56d51855d1a32627b2baca47a06b96a05b81e35c0b6c8ad8417b5521c3"
-              },
-              {
-                "text": "En cada miligramo caben mil microgramos.",
-                "start": 13.6,
-                "end": 16.2,
-                "startFrame": 408,
-                "endFrame": 486,
-                "words": 6,
-                "sceneIndex": 0,
-                "cueIndex": 4,
-                "sourceCueSha256": "1d8ae38ac1ed0548234fe22f9cf4653cdfa26a3119aeed7e3431be8a7868b6ff"
-              },
-              {
-                "text": "La potencia diez elevado a tres abrevia ese millar: al usar unidades mil veces menores necesitaremos mil veces más unidades.",
-                "start": 16.5,
-                "end": 25.1,
-                "startFrame": 495,
-                "endFrame": 753,
-                "words": 20,
-                "sceneIndex": 0,
-                "cueIndex": 5,
-                "sourceCueSha256": "17ef43e6e7c9f872fd21782bed1f0a0befc4a96cb3010606c1426059b2e60db9"
-              },
-              {
-                "text": "Hay tres miligramos y cada uno aporta mil microgramos.",
-                "start": 25.4,
-                "end": 29.266666666666666,
-                "startFrame": 762,
-                "endFrame": 878,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 6,
-                "sourceCueSha256": "1016745df874394f197b0514bdcc6e6fca848c3cad06c93000583d5da7327b32"
-              },
-              {
-                "text": "Por eso tres por mil da tres mil, no tres miligramos adicionales.",
-                "start": 29.566666666666666,
-                "end": 34.733333333333334,
-                "startFrame": 887,
-                "endFrame": 1042,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 7,
-                "sourceCueSha256": "54ccfb30b6eae976b31484017f66bda680628a4ace20ec3a89ac62b4a219cbf8"
-              },
-              {
-                "text": "Tres miligramos y tres mil microgramos describen la misma cantidad.",
-                "start": 35.03333333333333,
-                "end": 39.333333333333336,
-                "startFrame": 1051,
-                "endFrame": 1180,
-                "words": 10,
-                "sceneIndex": 0,
-                "cueIndex": 8,
-                "sourceCueSha256": "27716dbee68621f54507210208bd6280f14d45d22a1775c16f7ce28f872a4943"
-              },
-              {
-                "text": "Una media sigue ese factor; una varianza usa distancias al cuadrado y, por eso, el factor también se eleva al cuadrado.",
-                "start": 39.63333333333333,
-                "end": 48.63333333333333,
-                "startFrame": 1189,
-                "endFrame": 1459,
-                "words": 21,
-                "sceneIndex": 0,
-                "cueIndex": 9,
-                "sourceCueSha256": "4ce7f8a4a90dd443bd24e9e55c725c5c1efd1d32645a7aac76cd053d738b1fd2"
-              },
-              {
-                "text": "Podemos detectar errores antes de repetir toda la cuenta: ¿la unidad responde a la pregunta?, ¿el valor cabe en su rango?",
-                "start": 48.93333333333333,
-                "end": 57.93333333333333,
-                "startFrame": 1468,
-                "endFrame": 1738,
-                "words": 21,
-                "sceneIndex": 0,
-                "cueIndex": 10,
-                "sourceCueSha256": "9e04991de73fb95ce9c6bf6cf29960b5e0b3aae0ffdf6ba36d851e392a3440ed"
-              },
-              {
-                "text": "Una probabilidad no puede superar uno; un tiempo esperado debe llevar unidades de tiempo.",
-                "start": 58.233333333333334,
-                "end": 64.23333333333333,
-                "startFrame": 1747,
-                "endFrame": 1927,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 11,
-                "sourceCueSha256": "7e4c49a179bbeeb6d9cd62d6f24fd7005efb7d35207fdc2777d9478734191a7b"
-              },
-              {
-                "text": "Conservemos precisión hasta el final.",
-                "start": 64.53333333333333,
-                "end": 66.7,
-                "startFrame": 1936,
-                "endFrame": 2001,
-                "words": 5,
-                "sceneIndex": 0,
-                "cueIndex": 12,
-                "sourceCueSha256": "3b5a536b4a6ed1e849d0287f2036b9f92e8acd1254f817a14152c05b26b7673e"
-              },
-              {
-                "text": "Si redondeamos una probabilidad pequeña a cero antes de multiplicar, borraremos su contribución y confundiremos raro con imposible.",
-                "start": 67,
-                "end": 74.73333333333333,
-                "startFrame": 2010,
-                "endFrame": 2242,
-                "words": 18,
-                "sceneIndex": 0,
-                "cueIndex": 13,
-                "sourceCueSha256": "381dd95a23bcb558099336cb1864521fcc62a8f81003425a18a2cfbbe2c5daa5"
-              },
-              {
-                "text": "Redondear sirve para comunicar, no para cambiar el modelo.",
-                "start": 75.03333333333333,
-                "end": 78.9,
-                "startFrame": 2251,
-                "endFrame": 2367,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 14,
-                "sourceCueSha256": "989962da936fb2b5199edbaae56f4324dec852ee6f01637eb0bea560eda220f8"
-              }
-            ]
-          }
-        ]
-      },
-      "publication": "silent-transcript"
+      "parentLesson": "proporciones"
     },
     "proporciones": {
       "version": 1,
