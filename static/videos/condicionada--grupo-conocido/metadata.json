@@ -9,26 +9,225 @@
   "nativePlanSha256": "9707682858bb130ba0902825f415131dce1f8150265911b92fb771da81fa577d",
   "src": "videos/condicionada--grupo-conocido/video.mp4",
   "poster": "videos/condicionada--grupo-conocido/poster.jpg",
-  "duration": 125.13333333333334,
-  "frames": 3754,
+  "duration": 111.32,
+  "frames": 3340,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "narrationMode": "transcript",
-  "cueTiming": "estimated",
+  "audioSource": "audio/aligned/condicionada--grupo-conocido.mp3",
+  "audioSha256": "4d9b54d02f22b72049a680b648dff95182f2831453173969659956cb3bd007b7",
+  "voice": "Puck",
+  "model": "gemini-3.8-flash-tts",
+  "narrationMode": "forced-aligned",
+  "cueTiming": "forced-aligned",
+  "publication": "provisional-aligned",
   "temporary": true,
-  "silent": true,
-  "timing": {
-    "wordsPerMinute": 140,
-    "pauseSeconds": 0.3,
-    "minimumCueSeconds": 1.2
+  "listened": false,
+  "needsReview": true,
+  "alignmentSha256": "1926ee7c942820f5af9fc0cc95fd1766fc8431aa589d97226f7e9956c2b7bb06",
+  "alignment": {
+    "version": 1,
+    "complete": true,
+    "id": "condicionada--grupo-conocido",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Puck",
+    "cueTiming": "forced-aligned",
+    "temporary": true,
+    "listened": false,
+    "needsReview": true,
+    "canonicalSha256": "b7eae0881e02625a7327abdcd86af1f3a5c60532f73a926cc6f8ee6812b420b7",
+    "duration": 111.32,
+    "mp3Sha256": "4d9b54d02f22b72049a680b648dff95182f2831453173969659956cb3bd007b7",
+    "mp3Bytes": 1336941,
+    "scenes": [
+      {
+        "start": 0.21250000000000002,
+        "end": 110.9925,
+        "cues": [
+          {
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "text": "Hola.",
+            "start": 0.21250000000000002,
+            "end": 0.3725,
+            "score": -0.6975059258984402,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "text": "De doscientas muestras, ochenta pasan un filtro; veinticuatro de esas ochenta tienen marcador.",
+            "start": 1.5525,
+            "end": 7.2925,
+            "score": -0.16515719477918842,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "text": "Queremos la proporción con marcador sabiendo que pasaron el filtro.",
+            "start": 8.3325,
+            "end": 11.4725,
+            "score": -0.14082865383137355,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "text": "Ese dato conocido descarta alternativas y cambia el grupo de referencia: empecemos identificando quiénes siguen dentro.",
+            "start": 12.532499999999999,
+            "end": 19.1525,
+            "score": -0.21823431551456451,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "text": "Las veinticuatro que cumplen ambas condiciones están dentro de las ochenta filtradas.",
+            "start": 20.232499999999998,
+            "end": 23.9725,
+            "score": -0.09408510718744115,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "text": "Las ciento veinte que no pasaron no pueden ser la muestra cuya condición conocemos.",
+            "start": 24.9125,
+            "end": 28.6925,
+            "score": -0.2743058254321416,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "text": "Por eso comparamos veinticuatro con ochenta; usar doscientas mediría cumplir ambas en toda la población y respondería otra pregunta.",
+            "start": 29.5525,
+            "end": 37.112500000000004,
+            "score": -0.5337834457556406,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "text": "Dividimos veinticuatro entre ochenta y obtenemos tres décimas: tres de cada diez filtradas tienen marcador en este reparto.",
+            "start": 38.392500000000005,
+            "end": 45.6525,
+            "score": -0.7352761468916599,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "text": "No hemos aumentado el número de muestras con marcador; hemos expresado su peso relativo dentro de un grupo más pequeño que conocemos de antemano.",
+            "start": 46.5125,
+            "end": 53.3325,
+            "score": -1.6770746855375667,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "text": "Llamemos a al marcador y be a pasar el filtro.",
+            "start": 54.49250000000001,
+            "end": 57.892500000000005,
+            "score": -0.826874315738678,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "text": "Pe de a dado be, con la barra leída dado que, divide la probabilidad conjunta por la de be.",
+            "start": 59.13250000000001,
+            "end": 64.8925,
+            "score": -0.6659617237746716,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "text": "Dividir por pe de be convierte ese grupo en nuestro nuevo total uno; requiere que tenga probabilidad positiva y no exige independencia.",
+            "start": 65.8725,
+            "end": 73.4325,
+            "score": -2.063923617359251,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 12,
+            "text": "Si preguntamos por be sabiendo be, el numerador y el denominador coinciden y obtenemos uno.",
+            "start": 74.55250000000001,
+            "end": 79.9525,
+            "score": -1.1249253749847412,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 13,
+            "text": "La normalización conserva una medida de probabilidad: ninguna respuesta es negativa, los complementos dentro del grupo completan uno y las uniones disjuntas se suman.",
+            "start": 81.0325,
+            "end": 89.8925,
+            "score": -0.1514443134268125,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 14,
+            "text": "Solo ha cambiado la información que damos por conocida.",
+            "start": 90.55250000000001,
+            "end": 92.7125,
+            "score": -0.1463785682572052,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 15,
+            "text": "Si pe de be fuese cero, también lo sería la intersección, pero cero entre cero no define una respuesta.",
+            "start": 93.83250000000001,
+            "end": 99.0125,
+            "score": -2.1051594838500023,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 16,
+            "text": "No asignamos cero por defecto ni declaramos imposible todo condicionamiento posterior.",
+            "start": 99.77250000000001,
+            "end": 103.8125,
+            "score": -0.23970732443154297,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 17,
+            "text": "El caso de observar un valor continuo exige otra construcción mediante densidades, que no consiste en dividir por su probabilidad puntual.",
+            "start": 104.63250000000001,
+            "end": 110.9925,
+            "score": -0.11966378365953763,
+            "needsReview": false
+          }
+        ]
+      }
+    ],
+    "alignmentSha256": "1926ee7c942820f5af9fc0cc95fd1766fc8431aa589d97226f7e9956c2b7bb06",
+    "alignmentEngine": "torchaudio-2.6-voxpopuli-es/forced-align",
+    "sourceSha256": "1eb51ac63e569b2b8166d69984595d7100d03447e2fd2cfa0e0a921ffa1a2ae6",
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "queueParts": [
+      {
+        "jobId": "1e068427-12b7-4fb0-9ec8-5a0920d6e640",
+        "part": 0,
+        "offset": 0,
+        "duration": 111.32,
+        "wavSha256": "e172fe0f92ee485b7e08b0429d3ddd3e2c1557f983ae57609e3de36e4b76c2f8"
+      }
+    ]
   },
-  "transcriptSha256": "d44b7781b152775eb075d873e8b068aed7f95717aa2aa471db2e4261515a1245",
-  "videoSha256": "76820c400c4ee1aca5a66c626d118216f3a270d1d34e9791584859b8eafb68dc",
+  "videoSha256": "d7438cc9dbd9dfa7af33aacce9f485f5aeaaacf76a6aceb33d9b78757d2028ee",
   "posterSha256": "e0322e1a3e09c8e209504b008d5b8b701ed69a1c6bd8fb08b42256d12312bc05",
   "canonicalSha256": "b7eae0881e02625a7327abdcd86af1f3a5c60532f73a926cc6f8ee6812b420b7",
-  "inputHash": "5de2b4db7028b4a1c8c3011ce7f70a31dbe0f8a0d2a248e46fa6569a3a10c198",
-  "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+  "inputHash": "6d9f3736bd6cd32278f771dab1be29d36ef775c7fbae021cd4521e3081a716d6",
+  "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
   "renderConcurrency": 8,
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
@@ -40,51 +239,25 @@
     },
     "provenance": null,
     "renderedAnimationSha256": "ab55827178d5d8c5e41c34ccdb1046f645c426ffaaeee5e38393458174f8cf7f",
-    "transcriptSha256": "d44b7781b152775eb075d873e8b068aed7f95717aa2aa471db2e4261515a1245",
-    "sourceFiles": {
-      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-    },
-    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
-    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "audioMetadataSha256": "858b8c8a6769806bbda4b1b8697b9f68f267a0d7ed8b38a3819afe54f36a34ad",
     "rendererSources": {
       "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
       "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
       "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
       "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
       "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
       "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
       "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
       "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
       "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
       "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
       "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
       "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
       "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -93,225 +266,3744 @@
   },
   "testFixture": false,
   "parentLesson": "condicionada",
-  "transcript": {
-    "id": "condicionada--grupo-conocido",
-    "narrationMode": "transcript",
-    "cueTiming": "estimated",
-    "temporary": true,
-    "silent": true,
-    "canonicalSha256": "b7eae0881e02625a7327abdcd86af1f3a5c60532f73a926cc6f8ee6812b420b7",
-    "timing": {
-      "wordsPerMinute": 140,
-      "pauseSeconds": 0.3,
-      "minimumCueSeconds": 1.2
-    },
-    "duration": 125.13333333333334,
-    "scenes": [
+  "evidence": {
+    "posterFrame": 3339,
+    "layout": [
       {
-        "start": 0,
-        "end": 125.13333333333334,
-        "cues": [
+        "frame": 0,
+        "scene": 0,
+        "cue": -1,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
           {
-            "text": "Hola.",
-            "start": 0,
-            "end": 1.2,
-            "startFrame": 0,
-            "endFrame": 36,
-            "words": 1,
-            "sceneIndex": 0,
-            "cueIndex": 0,
-            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+            "name": "g",
+            "x": 100,
+            "y": 75,
+            "width": 600,
+            "height": 320
           },
           {
-            "text": "De doscientas muestras, ochenta pasan un filtro; veinticuatro de esas ochenta tienen marcador.",
-            "start": 1.5,
-            "end": 7.1,
-            "startFrame": 45,
-            "endFrame": 213,
-            "words": 13,
-            "sceneIndex": 0,
-            "cueIndex": 1,
-            "sourceCueSha256": "6315207c48fdfcf86aca7f4761eea4425b79c51dce5585b176190edb78b6500d"
+            "name": "rect",
+            "x": 100,
+            "y": 75,
+            "width": 600,
+            "height": 320
           },
           {
-            "text": "Queremos la proporción con marcador sabiendo que pasaron el filtro.",
-            "start": 7.4,
-            "end": 11.7,
-            "startFrame": 222,
-            "endFrame": 351,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 2,
-            "sourceCueSha256": "943a5928a0ce3659a7c959c3c71914bf4c632e04ae4f6c5877e234191745764c"
+            "name": "text",
+            "x": 210,
+            "y": 225,
+            "width": 13.15625,
+            "height": 26,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "Ese dato conocido descarta alternativas y cambia el grupo de referencia: empecemos identificando quiénes siguen dentro.",
-            "start": 12,
-            "end": 18.866666666666667,
-            "startFrame": 360,
-            "endFrame": 566,
-            "words": 16,
-            "sceneIndex": 0,
-            "cueIndex": 3,
-            "sourceCueSha256": "ebc8188b625254ad2562302ba11a7a9c57fb7f9bb790582adef7d4fda6b6feb1"
-          },
-          {
-            "text": "Las veinticuatro que cumplen ambas condiciones están dentro de las ochenta filtradas.",
-            "start": 19.166666666666668,
-            "end": 24.333333333333332,
-            "startFrame": 575,
-            "endFrame": 730,
-            "words": 12,
-            "sceneIndex": 0,
-            "cueIndex": 4,
-            "sourceCueSha256": "5a1b0ef9f94b9c93e24e72f6b912586fdc685a04ee89852435e4bd502487b321"
-          },
-          {
-            "text": "Las ciento veinte que no pasaron no pueden ser la muestra cuya condición conocemos.",
-            "start": 24.633333333333333,
-            "end": 30.633333333333333,
-            "startFrame": 739,
-            "endFrame": 919,
-            "words": 14,
-            "sceneIndex": 0,
-            "cueIndex": 5,
-            "sourceCueSha256": "9c98d0370c7e58e8d5a4e5157b11f551cf30c1f8a84c6c1ad60a424568357be0"
-          },
-          {
-            "text": "Por eso comparamos veinticuatro con ochenta; usar doscientas mediría cumplir ambas en toda la población y respondería otra pregunta.",
-            "start": 30.933333333333334,
-            "end": 39.1,
-            "startFrame": 928,
-            "endFrame": 1173,
-            "words": 19,
-            "sceneIndex": 0,
-            "cueIndex": 6,
-            "sourceCueSha256": "272830a24a383ef29366330c18571ce13127adb5807a33add50ad05f1ea28e96"
-          },
-          {
-            "text": "Dividimos veinticuatro entre ochenta y obtenemos tres décimas: tres de cada diez filtradas tienen marcador en este reparto.",
-            "start": 39.4,
-            "end": 47.13333333333333,
-            "startFrame": 1182,
-            "endFrame": 1414,
-            "words": 18,
-            "sceneIndex": 0,
-            "cueIndex": 7,
-            "sourceCueSha256": "7824e0b5827cd78d13c8dda97b45a5d4932bd9402decaf0027c07302a7e9d7be"
-          },
-          {
-            "text": "No hemos aumentado el número de muestras con marcador; hemos expresado su peso relativo dentro de un grupo más pequeño que conocemos de antemano.",
-            "start": 47.43333333333333,
-            "end": 57.733333333333334,
-            "startFrame": 1423,
-            "endFrame": 1732,
-            "words": 24,
-            "sceneIndex": 0,
-            "cueIndex": 8,
-            "sourceCueSha256": "7427ba23cbcca8f76cd75638fcc2fb4b5a05ed8671ef56130f188147674ea64c"
-          },
-          {
-            "text": "Llamemos a al marcador y be a pasar el filtro.",
-            "start": 58.03333333333333,
-            "end": 62.333333333333336,
-            "startFrame": 1741,
-            "endFrame": 1870,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 9,
-            "sourceCueSha256": "f7063be95cda3337dc5a16d0855ab470208d723195bb325c2f4d4257812d5797"
-          },
-          {
-            "text": "Pe de a dado be, con la barra leída dado que, divide la probabilidad conjunta por la de be.",
-            "start": 62.63333333333333,
-            "end": 70.8,
-            "startFrame": 1879,
-            "endFrame": 2124,
-            "words": 19,
-            "sceneIndex": 0,
-            "cueIndex": 10,
-            "sourceCueSha256": "b289bd5dd54f7fe072b7177cdfaaf68c276a06d4c7f6b874dce043b4c9e79cd4"
-          },
-          {
-            "text": "Dividir por pe de be convierte ese grupo en nuestro nuevo total uno; requiere que tenga probabilidad positiva y no exige independencia.",
-            "start": 71.1,
-            "end": 80.53333333333333,
-            "startFrame": 2133,
-            "endFrame": 2416,
-            "words": 22,
-            "sceneIndex": 0,
-            "cueIndex": 11,
-            "sourceCueSha256": "55bfd1358b05051a093daf0017c44205164ee1e675609056559a3c6ec49353f4"
-          },
-          {
-            "text": "Si preguntamos por be sabiendo be, el numerador y el denominador coinciden y obtenemos uno.",
-            "start": 80.83333333333333,
-            "end": 87.26666666666667,
-            "startFrame": 2425,
-            "endFrame": 2618,
-            "words": 15,
-            "sceneIndex": 0,
-            "cueIndex": 12,
-            "sourceCueSha256": "8219dfd8bb485c928f70bc0dc40f645ce571e213bf74be8c63250c54e06b18a6"
-          },
-          {
-            "text": "La normalización conserva una medida de probabilidad: ninguna respuesta es negativa, los complementos dentro del grupo completan uno y las uniones disjuntas se suman.",
-            "start": 87.56666666666666,
-            "end": 97.86666666666666,
-            "startFrame": 2627,
-            "endFrame": 2936,
-            "words": 24,
-            "sceneIndex": 0,
-            "cueIndex": 13,
-            "sourceCueSha256": "a052c020b5a210c3aca8ed61ca31ac4a795613206033e3e26e3e65dc50f5cf51"
-          },
-          {
-            "text": "Solo ha cambiado la información que damos por conocida.",
-            "start": 98.16666666666667,
-            "end": 102.03333333333333,
-            "startFrame": 2945,
-            "endFrame": 3061,
-            "words": 9,
-            "sceneIndex": 0,
-            "cueIndex": 14,
-            "sourceCueSha256": "45d9ddc216302b14eea04595e713cd72806907be4689fd074023b0b45ef37a44"
-          },
-          {
-            "text": "Si pe de be fuese cero, también lo sería la intersección, pero cero entre cero no define una respuesta.",
-            "start": 102.33333333333333,
-            "end": 110.5,
-            "startFrame": 3070,
-            "endFrame": 3315,
-            "words": 19,
-            "sceneIndex": 0,
-            "cueIndex": 15,
-            "sourceCueSha256": "6e22a1685e04d766fae4d854309e0e9c1d068a441ee5c0a6fcd56210a3ce0010"
-          },
-          {
-            "text": "No asignamos cero por defecto ni declaramos imposible todo condicionamiento posterior.",
-            "start": 110.8,
-            "end": 115.53333333333333,
-            "startFrame": 3324,
-            "endFrame": 3466,
-            "words": 11,
-            "sceneIndex": 0,
-            "cueIndex": 16,
-            "sourceCueSha256": "15fb1d1c2a22a4169233c86a4a1748ba3259f59ce725a704fd665c97919eb9a3"
-          },
-          {
-            "text": "El caso de observar un valor continuo exige otra construcción mediante densidades, que no consiste en dividir por su probabilidad puntual.",
-            "start": 115.83333333333333,
-            "end": 124.83333333333333,
-            "startFrame": 3475,
-            "endFrame": 3745,
-            "words": 21,
-            "sceneIndex": 0,
-            "cueIndex": 17,
-            "sourceCueSha256": "3eb6fb2950a2a733be15ade34a0f2701d8e463e2f069a2271c26e23f4406a19a"
+            "name": "text",
+            "x": 590,
+            "y": 225,
+            "width": 13,
+            "height": 26,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "1d3cef23ab491c838eafb44b818e058df325fdce4d954c1c75fac6851479ad62"
+      },
+      {
+        "frame": 8,
+        "scene": 0,
+        "cue": 0,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 142.84375,
+            "y": 120.69999694824219,
+            "width": 17.4375,
+            "height": 18.600006103515625
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 377.9134521484375,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 562.84375,
+            "y": 120.69999694824219,
+            "width": 17.4375,
+            "height": 18.600006103515625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "a153d7854293f55bf97ea6428f16ba42a752e56a4d20a924bc492485136bde6f"
+      },
+      {
+        "frame": 67,
+        "scene": 0,
+        "cue": 1,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 104.09375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.5370178222656,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 524.09375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "041e7720b1bcbb371de21d755b6af4aa29da84503262e9dd50f72112555e5fb0"
+      },
+      {
+        "frame": 270,
+        "scene": 0,
+        "cue": 2,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 220.34375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 370.3548278808594,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 640.34375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "c004c267416b83abf061ba5c46fff835dceb7236bf3b341ff7a19903230f95a1"
+      },
+      {
+        "frame": 396,
+        "scene": 0,
+        "cue": 3,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 84.71875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.4252014160156,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 504.71875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "7aa36a90f984d8f5c037e9595847e802aba30fb9cd53db4e9fa3b42e6c06435d"
+      },
+      {
+        "frame": 627,
+        "scene": 0,
+        "cue": 4,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 162.21875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 369.3980712890625,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 528.5499877929688,
+            "y": 101.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "974eb56a0f83a1793787efde0071f959dba1a5376c9bad734c49fe4007c3675b"
+      },
+      {
+        "frame": 768,
+        "scene": 0,
+        "cue": 5,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 162.21875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 369.4760437011719,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 528.5499877929688,
+            "y": 101.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "3b70f9217d037e78009522b43028374b67745a0cc0014d0001c77f0a0aa5f485"
+      },
+      {
+        "frame": 907,
+        "scene": 0,
+        "cue": 6,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 65.34375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.3791809082031,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 466.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.89996337890625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "01561bd3d988bdbc84ef7e6608141a9447b12439d993bc1f661151b4f2553119"
+      },
+      {
+        "frame": 1172,
+        "scene": 0,
+        "cue": 7,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 65.34375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.3898010253906,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 466.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.89996337890625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "1e824ffafcdd06bde6b4632c31b2f638672dc0a6e65209e911eecc70fe0bc103"
+      },
+      {
+        "frame": 1416,
+        "scene": 0,
+        "cue": 8,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 84.71875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.4250793457031,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 466.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.89996337890625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "3a8cde9161b1e8390691dfcbda1745cda902806c031e32a8259934c5d9f6f60a"
+      },
+      {
+        "frame": 1655,
+        "scene": 0,
+        "cue": 9,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 200.96875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 369.90496826171875,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 528.5499877929688,
+            "y": 101.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "58485f34f67f408759e4c0474ac2a52a86d1aae175d717aa90a65c34e1d9ffb0"
+      },
+      {
+        "frame": 1794,
+        "scene": 0,
+        "cue": 10,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 84.71875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.5165710449219,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 466.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.89996337890625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "8009010ef9fb659d06c6d06097246dba56e9f7a13ca511f2cda1eae0f9b9046d"
+      },
+      {
+        "frame": 1997,
+        "scene": 0,
+        "cue": 11,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 65.34375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.3857421875,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 466.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.89996337890625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "256374069ddea6900ebed4c42acb9d22b0db3148f4895c53068b116e2d8e8388"
+      },
+      {
+        "frame": 2257,
+        "scene": 0,
+        "cue": 12,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 104.09375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.5998229980469,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 497.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "550a529d9b704eea9baffafc4a009d1997d5951e98ffb484f32482fd18e3f005"
+      },
+      {
+        "frame": 2451,
+        "scene": 0,
+        "cue": 13,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 65.34375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.3368835449219,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 466.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.89996337890625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "a63672d9f9029d86cddcfb4f3407cd4c031bc48b85a44d9c5ec894ef7fb21c49"
+      },
+      {
+        "frame": 2737,
+        "scene": 0,
+        "cue": 14,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 84.71875,
+            "y": 120.69999694824219,
+            "width": 17.4375,
+            "height": 18.600006103515625
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 376.00384521484375,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 621.5499877929688,
+            "y": 101.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "aea106e695702fe6b4ca746f298c3652c363e615cacf1654cdfea17b7c2bd6b4"
+      },
+      {
+        "frame": 2835,
+        "scene": 0,
+        "cue": 15,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 104.09375,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.6259460449219,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 497.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "7e2031dfa5fc3c5575a995a83e39adb10bcb624b728c33fedb97dad6aa004770"
+      },
+      {
+        "frame": 3014,
+        "scene": 0,
+        "cue": 16,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 162.21875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 369.2559509277344,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 497.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "c92e1be755825cf98a751ebf5dddc8f2106bc4ca8dcbcbae8cd4e0203b795707"
+      },
+      {
+        "frame": 3159,
+        "scene": 0,
+        "cue": 17,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 84.71875,
+            "y": 100.69999694824219,
+            "width": 17.4375,
+            "height": 18.599990844726562
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 368.44683837890625,
+            "y": 224.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 466.54998779296875,
+            "y": 101.3699951171875,
+            "width": 27.89996337890625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "7ab990e6c07e28c22555244d7c6eed76b214852843a8d61c1f4b1f059002ea87"
+      },
+      {
+        "frame": 3339,
+        "scene": 0,
+        "cue": 17,
+        "family": "filter",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 37,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 37,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 45.96875,
+            "y": 200.70001220703125,
+            "width": 17.4375,
+            "height": 18.5999755859375
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 376,
+            "width": 101.140625,
+            "height": 31,
+            "kind": "label",
+            "text": "80 / 200",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 45,
+            "y": 53,
+            "width": 120.484375,
+            "height": 25,
+            "kind": "label",
+            "text": "Pasan el filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 380,
+            "y": 224.345458984375,
+            "width": 55,
+            "height": 11.30908203125
+          },
+          {
+            "name": "g",
+            "x": 457,
+            "y": 53,
+            "width": 326,
+            "height": 354
+          },
+          {
+            "name": "rect",
+            "x": 457,
+            "y": 90,
+            "width": 326,
+            "height": 280
+          },
+          {
+            "name": "ellipse",
+            "x": 590.5499877929688,
+            "y": 166.3699951171875,
+            "width": 27.9000244140625,
+            "height": 29.760009765625
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 376,
+            "width": 83.890625,
+            "height": 31,
+            "kind": "label",
+            "text": "24 / 80",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 465,
+            "y": 53,
+            "width": 224.921875,
+            "height": 25,
+            "kind": "label",
+            "text": "Marcador dentro del filtro",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "24/80=0,30",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 111.90625,
+            "kind": "formula",
+            "text": "P(A∣B)=P(B)P(A∩B)​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 5,
+        "geometrySha256": "d20647c17ba6932c26284474b44437b2a0e4e8ab7fa7120481307207801d0138"
       }
-    ]
-  },
-  "publication": "silent-transcript"
+    ],
+    "pixels": [
+      {
+        "frame": 0,
+        "ink": 174,
+        "sha256": "cd385a35a08d7ffe652cadfb495b9d6b4bcca835709df41d96f6016b5259938c"
+      },
+      {
+        "frame": 8,
+        "ink": 1117,
+        "sha256": "85d52b6d9da4d952a606fa05f72fe6dc8af1fd4a66681a6be7f62502d9898a3c"
+      },
+      {
+        "frame": 67,
+        "ink": 738,
+        "sha256": "667fbd268743a752c0f8cfad070b249cbba91e3bf556f07df6deedc91980f49d"
+      },
+      {
+        "frame": 270,
+        "ink": 813,
+        "sha256": "e7de0ecc38deb1c50733d33ce1faee9af9088f06f2e2808f38e843c843baa493"
+      },
+      {
+        "frame": 396,
+        "ink": 723,
+        "sha256": "64b6c250ed5d53e8a7fa62490861e761510ab04a45c154b673ebfb22282cfe97"
+      },
+      {
+        "frame": 627,
+        "ink": 793,
+        "sha256": "c8bbabb557256e45b7b13a3b28cb2815f54d59ce27aa611a792d04587c4609c6"
+      },
+      {
+        "frame": 768,
+        "ink": 801,
+        "sha256": "06a54745d98bbe8853c9789a9e35933129d3d78408e1509f6ff23c5141c6db4f"
+      },
+      {
+        "frame": 907,
+        "ink": 744,
+        "sha256": "adb99b32a647831a465d0a8298f401e35482d6ceb8562a55536ae75237de90fc"
+      },
+      {
+        "frame": 1172,
+        "ink": 744,
+        "sha256": "21aadbaa88606c80245f998c66e2a06ff2662b27262752569dd22cc360af891b"
+      },
+      {
+        "frame": 1416,
+        "ink": 794,
+        "sha256": "d762d97087916d7715f0a3c28fb0398d1a24e9cd6a9a17385b30db160feb1253"
+      },
+      {
+        "frame": 1655,
+        "ink": 892,
+        "sha256": "1ff9ce22ac7ff94cdc0f54767fea1749927aef151ebcac0261e2f370741b160e"
+      },
+      {
+        "frame": 1794,
+        "ink": 925,
+        "sha256": "9e0069bfb29cf8b8c90bff9bdf956a13f8b4c8e4b15721cd76025888027fb5e0"
+      },
+      {
+        "frame": 1997,
+        "ink": 909,
+        "sha256": "1020ca4817964835341a807a8aad222601a1c1fdb7cf9df75cbd409b5d3706af"
+      },
+      {
+        "frame": 2257,
+        "ink": 925,
+        "sha256": "aeb619180782127bc2c1d82d184025b4c86283f4724fb38ebad10ab58a9d3548"
+      },
+      {
+        "frame": 2451,
+        "ink": 888,
+        "sha256": "0835bd419dc61e7127dfbdb575457d4737e1766d93f81afbf544c9de7763487b"
+      },
+      {
+        "frame": 2737,
+        "ink": 1193,
+        "sha256": "3d9fab341de9506f7d552d9327ec7cf7560423a517084c2907ac44979cc3e4fa"
+      },
+      {
+        "frame": 2835,
+        "ink": 915,
+        "sha256": "897551199e79e14eb6f8720cf3e5e12cc98d0e020d85fa32961a1160b2db7b2d"
+      },
+      {
+        "frame": 3014,
+        "ink": 968,
+        "sha256": "5508a5072ad2337f53eaa03afc7c584a5b24d4a5b4cdb3da856e346b55f1b65e"
+      },
+      {
+        "frame": 3159,
+        "ink": 906,
+        "sha256": "05ae0098828946907311a7adcb0c868429a9eba5ae02599d5c59e3e9166d995b"
+      },
+      {
+        "frame": 3339,
+        "ink": 1552,
+        "sha256": "b3643886a872ad0d99fbc9b3cc8389aecc34753b2bf6a8440c53a68f27ecf1ac"
+      }
+    ],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_time_base": "1/60",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 10020060,
+        "duration": "111.334000",
+        "bit_rate": "279869",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "3340",
+        "nb_read_frames": "3340",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_time_base": "1/24000",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "24000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/24000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2671992,
+        "duration": "111.333000",
+        "bit_rate": "111697",
+        "max_bit_rate": "144000",
+        "nb_frames": "2611",
+        "nb_read_frames": "2610",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler"
+        }
+      }
+    ],
+    "elapsedSeconds": 62.079
+  }
 }
