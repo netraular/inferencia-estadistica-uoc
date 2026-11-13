@@ -7,8 +7,9 @@ La voz elegida para las narraciones es **Puck**, con
 soluciones de preguntas: 541 piezas y 17.872 frases. El exportador congela los
 guiones y sus visuales; cada frase se genera por separado y se mide antes de
 ensamblar el audio en los lotes historicos. La produccion Gemini actual usa
-narraciones completas por video o bloques largos si exceden el presupuesto de
-salida. Las frases originales se conservan para alinearlas localmente despues;
+narraciones completas por video en una sola peticion. Si exceden el presupuesto
+seguro de salida quedan pendientes de revisar el guion completo, sin dividirlas
+ni truncarlas. Las frases originales se conservan para alinearlas localmente despues;
 no se asignan tiempos estimados a grabaciones reales.
 
 La gestion online se realiza en https://tts.raular.com, desplegada desde
@@ -19,6 +20,13 @@ se sustituyeron las frases pendientes por 553 trabajos largos para 537 videos:
 523 de una peticion y 14 por bloques. Los 71 fragmentos completados en la cola
 anterior y sus historiales se conservaron. La publicacion de los audios de esa
 cola en el curso todavia es un paso separado.
+
+Desde el 13 de noviembre de 2026, la generacion Ming local esta detenida por
+preferencia de calidad de voz. Se conservan todos sus audios y checkpoints,
+incluidos los ya publicados. No debe reanudarse automaticamente. El importador
+Gemini ya no crea bloques parciales: informa de 14 guiones completos demasiado
+largos; los cuatro que ya tienen todas sus partes grabadas se conservan completos.
+Solo se retiran de la cola las partes aun pendientes, sin borrar audio ni historial.
 
 El proyecto `/home/aquiluer/Scripts/TTS` queda reservado a Ming local. Los
 materiales anteriores de Gemini, Remotion y depuracion se conservaron en
@@ -56,6 +64,13 @@ tiempos por palabra, frase y escena, marcadores `cueMoments`, anclas opcionales
 y alertas `needsReview`; tambien escribe subtitulos `audio.vtt`.
 Se puede limitar con `--ids hipergeometrica` o descargar sin inferencia con
 `--download-only`. Una repeticion reutiliza los resultados sellados.
+
+Los reproductores nativos de lecciones y ejercicios generan tambien una pista
+WebVTT opcional desde las mismas frases y tiempos de su video. Los tiempos
+`forced-aligned` se identifican como aproximados, sin pasarlos a `measured`.
+La pista queda desactivada inicialmente para no duplicar los subtitulos ya
+incrustados; se libera al cerrar o desmontar el reproductor. Los videos actuales
+no necesitan otro render para disponer de esta pista.
 
 La primera narracion de 609,6 segundos produjo 32 escenas, 104 frases y 1417
 palabras alineadas; 61 palabras quedaron senaladas para revision. Son

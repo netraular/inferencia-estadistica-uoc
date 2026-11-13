@@ -204,6 +204,25 @@ export function courseMediaUrl(baseUrl, path) {
   return `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
 }
 
+export function attachCourseSubtitles(player, timeline) {
+  const view = player.ownerDocument.defaultView;
+  if (!view?.Blob || !view.URL?.createObjectURL || !timeline?.scenes) return () => {};
+  const timestamp = seconds => {
+    const milliseconds = Math.round(seconds * 1000);
+    return `${String(Math.floor(milliseconds / 3600000)).padStart(2, '0')}:${String(Math.floor(milliseconds / 60000) % 60).padStart(2, '0')}:${String(Math.floor(milliseconds / 1000) % 60).padStart(2, '0')}.${String(milliseconds % 1000).padStart(3, '0')}`;
+  };
+  const lines = ['WEBVTT', ''];
+  for (const cue of timeline.scenes.flatMap(scene => scene.cues)) {
+    const text = cue.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/[\r\n]/g, ' ');
+    lines.push(`${timestamp(cue.start)} --> ${timestamp(cue.end)}`, text, '');
+  }
+  const url = view.URL.createObjectURL(new view.Blob([lines.join('\n')], {type: 'text/vtt'}));
+  const track = player.ownerDocument.createElement('track');
+  track.kind = 'subtitles';track.srclang = 'es';track.label = timeline.cueTiming === 'measured' ? 'Espa\u00f1ol' : 'Espa\u00f1ol (aproximado)';track.src = url;
+  player.append(track);
+  return () => {track.remove();view.URL.revokeObjectURL(url);};
+}
+
 export function createExerciseSpeech(owner,animation) {
   const view=owner.defaultView;
   const synthesis=view.speechSynthesis;
@@ -356,10 +375,12 @@ export function mountExercises(root, {exercises, lessonId, formatMath, audio, vi
         const source=owner.createElement('source');
         source.setAttribute('src',courseMediaUrl(baseUrl,video.src));source.setAttribute('type','video/mp4');
         player.append(source);
+        const timeline=video.silent ? video.transcript : video.publication === 'provisional-aligned' ? video.alignment : track;
+        const clearSubtitles=attachCourseSubtitles(player,timeline);
         const transcript=owner.createElement('details');
         transcript.className='animation-transcript';
         const summary=owner.createElement('summary');summary.textContent='Transcripci\u00f3n';transcript.append(summary);
-        for(const cue of (video.silent ? video.transcript : video.publication === 'provisional-aligned' ? video.alignment : track).scenes.flatMap(scene=>scene.cues)) {
+        for(const cue of timeline.scenes.flatMap(scene=>scene.cues)) {
           const paragraph=owner.createElement('p');paragraph.textContent=cue.text;transcript.append(paragraph);
         }
         let native=true;
@@ -371,6 +392,7 @@ export function mountExercises(root, {exercises, lessonId, formatMath, audio, vi
         };
         cleanup=()=>{
           player.removeEventListener('error',fail);source.removeEventListener('error',fail);owner.removeEventListener('visibilitychange',onHidden);
+          clearSubtitles();
           pause();source.removeAttribute('src');player.removeAttribute('src');player.load?.();host.replaceChildren();
         };
         player.addEventListener('error',fail);source.addEventListener('error',fail);owner.addEventListener('visibilitychange',onHidden);

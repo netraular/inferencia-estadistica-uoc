@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import videos from '../../static/videos/manifest.json';
 import audio from '../../static/audio/manifest.json';
-import {compatibleCourseVideo, courseMediaUrl} from '../../pages/inferencia/exercise-solutions.js';
+import {attachCourseSubtitles, compatibleCourseVideo, courseMediaUrl} from '../../pages/inferencia/exercise-solutions.js';
 import styles from './LessonVideo.module.css';
 
 export default function LessonVideo({animation, fallback}) {
@@ -25,17 +25,20 @@ function NativeLessonVideo({video, recording, baseUrl, fallback}) {
       source.setAttribute('src', courseMediaUrl(baseUrl, video.src));
       player.load();
     }
+    const timeline = video.silent ? video.transcript : video.publication === 'provisional-aligned' ? video.alignment : recording;
+    const clearSubtitles = attachCourseSubtitles(player, timeline);
     const owner = player.ownerDocument;
     const onHidden = () => {if (owner.hidden) player.pause();};
     owner.addEventListener('visibilitychange', onHidden);
     return () => {
       owner.removeEventListener('visibilitychange', onHidden);
+      clearSubtitles();
       player.pause();
       player.querySelector('source')?.removeAttribute('src');
       player.removeAttribute('src');
       player.load();
     };
-  }, [failed, baseUrl, video.src]);
+  }, [failed, baseUrl, video, recording]);
   if (failed) return fallback;
   const cues = (video.silent ? video.transcript : video.publication === 'provisional-aligned' ? video.alignment : recording).scenes.flatMap(scene => scene.cues);
   return <section className={styles.lesson} aria-label={video.title}>
