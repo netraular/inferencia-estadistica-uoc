@@ -9,26 +9,235 @@
   "nativePlanSha256": "02a29cb859b39f51cf892487c2b18d464570b1945c87a17e5a91779584363a68",
   "src": "videos/combinatoria--multiplicidades/video.mp4",
   "poster": "videos/combinatoria--multiplicidades/poster.jpg",
-  "duration": 126.3,
-  "frames": 3789,
+  "duration": 112.6,
+  "frames": 3378,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "narrationMode": "transcript",
-  "cueTiming": "estimated",
+  "audioSource": "audio/aligned/combinatoria--multiplicidades.mp3",
+  "audioSha256": "8319276614ddd9e988f3c437bd88313555ed5ec20a4f1a2c81e0bb088a156814",
+  "voice": "Puck",
+  "model": "gemini-3.8-flash-tts",
+  "narrationMode": "forced-aligned",
+  "cueTiming": "forced-aligned",
+  "publication": "provisional-aligned",
   "temporary": true,
-  "silent": true,
-  "timing": {
-    "wordsPerMinute": 140,
-    "pauseSeconds": 0.3,
-    "minimumCueSeconds": 1.2
+  "listened": false,
+  "needsReview": true,
+  "alignmentSha256": "20f658284ca38f1d0ebdf6d195de8bc6d5d1c1e8917fc4a6a2fd651e5f61e73e",
+  "alignment": {
+    "version": 1,
+    "complete": true,
+    "id": "combinatoria--multiplicidades",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Puck",
+    "cueTiming": "forced-aligned",
+    "temporary": true,
+    "listened": false,
+    "needsReview": true,
+    "canonicalSha256": "e42ab9c13b17740e1804b1e7b1c66630f07c46188c1f9631e9fa4219865ef185",
+    "duration": 112.6,
+    "mp3Sha256": "8319276614ddd9e988f3c437bd88313555ed5ec20a4f1a2c81e0bb088a156814",
+    "mp3Bytes": 1352205,
+    "scenes": [
+      {
+        "start": 0.29250000000000004,
+        "end": 112.13250000000001,
+        "cues": [
+          {
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "text": "Hola.",
+            "start": 0.29250000000000004,
+            "end": 0.4525,
+            "score": -0.2933766217902303,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "text": "Coloquemos tres etiquetas a y dos be en cinco posiciones.",
+            "start": 1.2325,
+            "end": 5.3325000000000005,
+            "score": -1.8297098875045776,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "text": "La secuencia sí tiene orden, pero las a son indistinguibles entre sí y también las be.",
+            "start": 6.1925,
+            "end": 11.3925,
+            "score": -3.5457520335912704,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "text": "Queremos contar cambios visibles de secuencia, sin inventar resultados nuevos al intercambiar dos etiquetas iguales.",
+            "start": 12.2925,
+            "end": 18.0125,
+            "score": -0.12251762696541846,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "text": "Imaginemos que numeramos temporalmente las cinco etiquetas para distinguirlas.",
+            "start": 19.1525,
+            "end": 22.732499999999998,
+            "score": -0.11476255333982407,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "text": "Ordenarlas daría cinco factorial: cinco por cuatro por tres por dos por uno, ciento veinte.",
+            "start": 23.6125,
+            "end": 29.3125,
+            "score": -0.11297301075602365,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "text": "Ese recuento incluye diferencias que desaparecerán al borrar los números; lo usamos como punto de partida para identificar las repeticiones.",
+            "start": 30.5525,
+            "end": 37.6325,
+            "score": -0.17292816619738005,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "text": "Dentro de una misma secuencia visible podemos permutar las tres a de seis maneras y las dos be de dos maneras sin cambiar lo que vemos.",
+            "start": 38.6925,
+            "end": 46.352500000000006,
+            "score": -0.9687707126140594,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "text": "Multiplicamos esas posibilidades internas: tres factorial por dos factorial da doce.",
+            "start": 47.212500000000006,
+            "end": 51.81250000000001,
+            "score": -0.2229827307164669,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "text": "Cada secuencia visible estaba contada exactamente doce veces con las etiquetas numeradas.",
+            "start": 52.9525,
+            "end": 57.2325,
+            "score": -0.45290422849357126,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "text": "Dividimos ciento veinte entre doce y quedan diez secuencias visibles.",
+            "start": 58.292500000000004,
+            "end": 61.8725,
+            "score": -0.21526860232864106,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 11,
+            "text": "El numerador cuenta ordenaciones distinguiendo todo y el denominador agrupa las que se vuelven idénticas.",
+            "start": 62.932500000000005,
+            "end": 67.9325,
+            "score": -0.13997018265602973,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 12,
+            "text": "Esta división está justificada por doce copias por secuencia, no simplemente porque haya dos tipos de letra.",
+            "start": 68.91250000000001,
+            "end": 74.11250000000001,
+            "score": -0.10551890800707042,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 13,
+            "text": "En general, ene es el total de posiciones y ene sub uno hasta ene sub ka son las cantidades de cada categoría, cuya suma debe ser ene.",
+            "start": 75.2525,
+            "end": 83.3725,
+            "score": -3.3285380601882935,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 14,
+            "text": "Dividimos ene factorial por el factorial de cada multiplicidad para quitar sus permutaciones internas.",
+            "start": 84.27250000000001,
+            "end": 89.41250000000001,
+            "score": -0.16226384416222572,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 15,
+            "text": "Esta misma cuenta explicará el coeficiente de una distribución multinomial.",
+            "start": 90.41250000000001,
+            "end": 93.5725,
+            "score": -0.2300271224230528,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 16,
+            "text": "Hemos obtenido un número de secuencias, diez, no una probabilidad.",
+            "start": 94.8125,
+            "end": 98.2925,
+            "score": -0.1163248543938001,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 17,
+            "text": "Para preguntar por un conjunto de ellas debemos conocer cómo se generan y ponderar sus pesos.",
+            "start": 99.0925,
+            "end": 103.3525,
+            "score": -0.12096134573221207,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 18,
+            "text": "Si el mecanismo las hace equiprobables podremos usar favorables entre posibles; si no, el mismo recuento seguirá siendo válido, pero ese cociente no lo será.",
+            "start": 104.19250000000001,
+            "end": 112.13250000000001,
+            "score": -0.3975668545147831,
+            "needsReview": false
+          }
+        ]
+      }
+    ],
+    "alignmentSha256": "20f658284ca38f1d0ebdf6d195de8bc6d5d1c1e8917fc4a6a2fd651e5f61e73e",
+    "alignmentEngine": "torchaudio-2.6-voxpopuli-es/forced-align",
+    "sourceSha256": "01ce718980e7b9c7a07e4fa67c838e7fad08a1df89ed73fea47d065c92418f80",
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "queueParts": [
+      {
+        "jobId": "81f3ae10-6629-4118-aaf1-a7729b4463ca",
+        "part": 0,
+        "offset": 0,
+        "duration": 112.6,
+        "wavSha256": "ef28225a2142257889ac91c2bb67b2ede3e3ee923c8da0297dbaf3a805ac0c60"
+      }
+    ]
   },
-  "transcriptSha256": "1a7aa044eac1e8a0669ff140a4adc11e4d68f5733855eb693bd309eba520ba2e",
-  "videoSha256": "9fc71eda2a125da91e1bf3e57184e6fb782de4a5b0467c96234d7748c7b1c477",
+  "videoSha256": "b9a6119381a53f4ec0c5652ff241f158c2d226fbf86f66856a0c0d29ac05a0f9",
   "posterSha256": "3c29e5a06896e91e0091e8a4e0a19c6c79b10029c050c08e78090ae46292d5e5",
   "canonicalSha256": "e42ab9c13b17740e1804b1e7b1c66630f07c46188c1f9631e9fa4219865ef185",
-  "inputHash": "695a2081bd6cdcbfe65d53ccb4b4ddd461dab053aa89605c2a9783a3c3b837d4",
-  "rendererSha256": "da223f1dcc48414491e812ac44733ff24644c6f9a0f5be64edb1df652c61ac99",
+  "inputHash": "4e18aceb97c9222980765284c438a388e665515d8d2617d416a0cac598dfee01",
+  "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
+  "renderConcurrency": 8,
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
     "itemSha256": "42a5a844e0ccbe29607be6f549d4bf405c61cc5ff7c19e4650d92bbd7590092a",
@@ -39,51 +248,25 @@
     },
     "provenance": null,
     "renderedAnimationSha256": "f7af7f02b023a3988cb1921c8beec400b79f6514fb4e8f8a0a41f657c2a6090d",
-    "transcriptSha256": "1a7aa044eac1e8a0669ff140a4adc11e4d68f5733855eb693bd309eba520ba2e",
-    "sourceFiles": {
-      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-    },
-    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-    "sourceCatalogue": "/home/aquiluer/Scripts/TTS-archive/2026-11-11/video/remotion-native-transcripts-course-2026-11-11-v5/catalogue.json",
-    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "audioMetadataSha256": "c7a07ac9d2cd5bd485f723c3f711dcf3ac6afe89ddb09b5db492bb98564298c0",
     "rendererSources": {
       "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
       "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
       "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
       "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
       "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-      "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+      "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
       "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
       "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
       "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
       "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
       "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
       "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
       "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
       "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -92,236 +275,5043 @@
   },
   "testFixture": false,
   "parentLesson": "combinatoria",
-  "transcript": {
-    "id": "combinatoria--multiplicidades",
-    "narrationMode": "transcript",
-    "cueTiming": "estimated",
-    "temporary": true,
-    "silent": true,
-    "canonicalSha256": "e42ab9c13b17740e1804b1e7b1c66630f07c46188c1f9631e9fa4219865ef185",
-    "timing": {
-      "wordsPerMinute": 140,
-      "pauseSeconds": 0.3,
-      "minimumCueSeconds": 1.2
-    },
-    "duration": 126.3,
-    "scenes": [
+  "evidence": {
+    "posterFrame": 3377,
+    "layout": [
       {
-        "start": 0,
-        "end": 126.3,
-        "cues": [
+        "frame": 0,
+        "scene": 0,
+        "cue": -1,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
           {
-            "text": "Hola.",
-            "start": 0,
-            "end": 1.2,
-            "startFrame": 0,
-            "endFrame": 36,
-            "words": 1,
-            "sceneIndex": 0,
-            "cueIndex": 0,
-            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+            "name": "g",
+            "x": 62,
+            "y": 82,
+            "width": 666,
+            "height": 329
           },
           {
-            "text": "Coloquemos tres etiquetas a y dos be en cinco posiciones.",
-            "start": 1.5,
-            "end": 5.8,
-            "startFrame": 45,
-            "endFrame": 174,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 1,
-            "sourceCueSha256": "040b0286376df7615eaa55f4427ec3df48fe16db705538f14ea21319a6cc62c1"
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
           },
           {
-            "text": "La secuencia sí tiene orden, pero las a son indistinguibles entre sí y también las be.",
-            "start": 6.1,
-            "end": 12.966666666666667,
-            "startFrame": 183,
-            "endFrame": 389,
-            "words": 16,
-            "sceneIndex": 0,
-            "cueIndex": 2,
-            "sourceCueSha256": "5d8308587c7a2396eb240ef33d83854c97b29c7ce8340888f7dc6766552a2406"
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "Queremos contar cambios visibles de secuencia, sin inventar resultados nuevos al intercambiar dos etiquetas iguales.",
-            "start": 13.266666666666667,
-            "end": 19.7,
-            "startFrame": 398,
-            "endFrame": 591,
-            "words": 15,
-            "sceneIndex": 0,
-            "cueIndex": 3,
-            "sourceCueSha256": "37af401b17f54dce7bbe17dc52a2d3f1515007b31bf223b5a433d0ecc69a04a4"
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
           },
           {
-            "text": "Imaginemos que numeramos temporalmente las cinco etiquetas para distinguirlas.",
-            "start": 20,
-            "end": 23.866666666666667,
-            "startFrame": 600,
-            "endFrame": 716,
-            "words": 9,
-            "sceneIndex": 0,
-            "cueIndex": 4,
-            "sourceCueSha256": "15d265012c8935810ffe9b0f149a3cf72df484ec974a7bf7fcae0dd9212bce9e"
-          },
-          {
-            "text": "Ordenarlas daría cinco factorial: cinco por cuatro por tres por dos por uno, ciento veinte.",
-            "start": 24.166666666666668,
-            "end": 30.6,
-            "startFrame": 725,
-            "endFrame": 918,
-            "words": 15,
-            "sceneIndex": 0,
-            "cueIndex": 5,
-            "sourceCueSha256": "080a67850df212cdc058da7fdb776d8867b0a8b5c71fe4a2f66185c9bbb25916"
-          },
-          {
-            "text": "Ese recuento incluye diferencias que desaparecerán al borrar los números; lo usamos como punto de partida para identificar las repeticiones.",
-            "start": 30.9,
-            "end": 39.5,
-            "startFrame": 927,
-            "endFrame": 1185,
-            "words": 20,
-            "sceneIndex": 0,
-            "cueIndex": 6,
-            "sourceCueSha256": "44bd88917b5bf00823a4c3ce3a49af8ee66bc7618dba61b6ce0a014e8c365078"
-          },
-          {
-            "text": "Dentro de una misma secuencia visible podemos permutar las tres a de seis maneras y las dos be de dos maneras sin cambiar lo que vemos.",
-            "start": 39.8,
-            "end": 50.96666666666667,
-            "startFrame": 1194,
-            "endFrame": 1529,
-            "words": 26,
-            "sceneIndex": 0,
-            "cueIndex": 7,
-            "sourceCueSha256": "3a9fe7a5c865ee4160ea90a9c882a01d19373c5366dd1885a0fdca46eca768c0"
-          },
-          {
-            "text": "Multiplicamos esas posibilidades internas: tres factorial por dos factorial da doce.",
-            "start": 51.266666666666666,
-            "end": 56,
-            "startFrame": 1538,
-            "endFrame": 1680,
-            "words": 11,
-            "sceneIndex": 0,
-            "cueIndex": 8,
-            "sourceCueSha256": "22ecbc320b4ac3ca61546dfac0ce863fbb03e8639db47e2de2b3d056f00f9474"
-          },
-          {
-            "text": "Cada secuencia visible estaba contada exactamente doce veces con las etiquetas numeradas.",
-            "start": 56.3,
-            "end": 61.46666666666667,
-            "startFrame": 1689,
-            "endFrame": 1844,
-            "words": 12,
-            "sceneIndex": 0,
-            "cueIndex": 9,
-            "sourceCueSha256": "93f4bd37c2156f7f0c536273538cd76043fff39d4b5d61f90f670964077bf583"
-          },
-          {
-            "text": "Dividimos ciento veinte entre doce y quedan diez secuencias visibles.",
-            "start": 61.766666666666666,
-            "end": 66.06666666666666,
-            "startFrame": 1853,
-            "endFrame": 1982,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 10,
-            "sourceCueSha256": "be1278eea980bb9b4a6e132e5575055fef390033eebfa5d3934558f1d0c0c9e2"
-          },
-          {
-            "text": "El numerador cuenta ordenaciones distinguiendo todo y el denominador agrupa las que se vuelven idénticas.",
-            "start": 66.36666666666666,
-            "end": 72.8,
-            "startFrame": 1991,
-            "endFrame": 2184,
-            "words": 15,
-            "sceneIndex": 0,
-            "cueIndex": 11,
-            "sourceCueSha256": "a41f6d2a188fea36371a5b4d6841aafa1c1e8013671a1123985d79a15f869844"
-          },
-          {
-            "text": "Esta división está justificada por doce copias por secuencia, no simplemente porque haya dos tipos de letra.",
-            "start": 73.1,
-            "end": 80.4,
-            "startFrame": 2193,
-            "endFrame": 2412,
-            "words": 17,
-            "sceneIndex": 0,
-            "cueIndex": 12,
-            "sourceCueSha256": "851eaf7d86abe49e8de149aec98df6e1bf93c103eabc4c426d22b29f6152f5ea"
-          },
-          {
-            "text": "En general, ene es el total de posiciones y ene sub uno hasta ene sub ka son las cantidades de cada categoría, cuya suma debe ser ene.",
-            "start": 80.7,
-            "end": 92.3,
-            "startFrame": 2421,
-            "endFrame": 2769,
-            "words": 27,
-            "sceneIndex": 0,
-            "cueIndex": 13,
-            "sourceCueSha256": "6f5cfad6550eb3c97b5fced29baba35396bcf7165f2486069a19f9d57ded995d"
-          },
-          {
-            "text": "Dividimos ene factorial por el factorial de cada multiplicidad para quitar sus permutaciones internas.",
-            "start": 92.6,
-            "end": 98.6,
-            "startFrame": 2778,
-            "endFrame": 2958,
-            "words": 14,
-            "sceneIndex": 0,
-            "cueIndex": 14,
-            "sourceCueSha256": "fe135f607a654aa8005564550eae1917789be00733fa06267ec2ac4bc012fbb8"
-          },
-          {
-            "text": "Esta misma cuenta explicará el coeficiente de una distribución multinomial.",
-            "start": 98.9,
-            "end": 103.2,
-            "startFrame": 2967,
-            "endFrame": 3096,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 15,
-            "sourceCueSha256": "4b052aaa66b41f2e9449ff17b2aaf29b077ce02725a461d507106445fb0bc94e"
-          },
-          {
-            "text": "Hemos obtenido un número de secuencias, diez, no una probabilidad.",
-            "start": 103.5,
-            "end": 107.8,
-            "startFrame": 3105,
-            "endFrame": 3234,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 16,
-            "sourceCueSha256": "6ab3b1a0f0450dbef001a3cf5fb6992c11e37f2538d63f41f7f71561a15d2495"
-          },
-          {
-            "text": "Para preguntar por un conjunto de ellas debemos conocer cómo se generan y ponderar sus pesos.",
-            "start": 108.1,
-            "end": 114.96666666666667,
-            "startFrame": 3243,
-            "endFrame": 3449,
-            "words": 16,
-            "sceneIndex": 0,
-            "cueIndex": 17,
-            "sourceCueSha256": "2f5abd00b93c960276ee4c3bd51bc16f3879cf05ace8bcd5ae16d54f3e69b977"
-          },
-          {
-            "text": "Si el mecanismo las hace equiprobables podremos usar favorables entre posibles; si no, el mismo recuento seguirá siendo válido, pero ese cociente no lo será.",
-            "start": 115.26666666666667,
-            "end": 126,
-            "startFrame": 3458,
-            "endFrame": 3780,
-            "words": 25,
-            "sceneIndex": 0,
-            "cueIndex": 18,
-            "sourceCueSha256": "5d988884ef9759d604f0a8dcb4f3c74e6e4365ba2db8b9e0774e3cb8d9a4c40e"
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "ba6d7eff9bfd0d4b8345716e705997f4c080cb577f4f175a28c627e502bcdc5b"
+      },
+      {
+        "frame": 11,
+        "scene": 0,
+        "cue": 0,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 135.22691345214844,
+            "y": 161.50350952148438,
+            "width": 523.7305297851562,
+            "height": 249.49649047851562
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "9fa99d4509a0742f54bd650ceadb01ac8dfaccbb404ef1c66bf9f87d21cd0e15"
+      },
+      {
+        "frame": 57,
+        "scene": 0,
+        "cue": 1,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 64.51335906982422,
+            "y": 84.72879028320312,
+            "width": 661.1168823242188,
+            "height": 326.2712097167969
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "eae7a2dd8578ec97e73691b88bc7948bc73782531f5c45ea7f825cef088147ee"
+      },
+      {
+        "frame": 206,
+        "scene": 0,
+        "cue": 2,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 63.079925537109375,
+            "y": 83.1724853515625,
+            "width": 663.90185546875,
+            "height": 327.8275146484375
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "1d347dc67dab3ff989cf7511ea75b0da42b96cfb94f0e669bd61aa1916789ae1"
+      },
+      {
+        "frame": 389,
+        "scene": 0,
+        "cue": 3,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 62.754302978515625,
+            "y": 82.81895446777344,
+            "width": 664.5345458984375,
+            "height": 328.1810302734375
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "3014a7b8b33ffd13ed2e5a1be6b8c0f944f0411b8d43b9d76b15ab2d6eccbedd"
+      },
+      {
+        "frame": 595,
+        "scene": 0,
+        "cue": 4,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 675.8372192382812,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "5!=120",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "0a1f8a08e97ea94966e3c312bebe23a8e615b088d7eb4fb1d95c85d31a95b540"
+      },
+      {
+        "frame": 729,
+        "scene": 0,
+        "cue": 5,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 679.2239990234375,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "5!=120",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "bf5b40bbf4e3674653c8cbfd28a290473e585191e05d8c04c5b8d2e205e0f28a"
+      },
+      {
+        "frame": 937,
+        "scene": 0,
+        "cue": 6,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 679.672119140625,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "5!=120",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "e8ad44470d1b17c279b9ae9c4941a6f301e4fd6305d80f9785ccb4bc6cb8900b"
+      },
+      {
+        "frame": 1181,
+        "scene": 0,
+        "cue": 7,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 679.7666015625,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "5!=120",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "3!⋅2!=12",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "ab4cddc45a3699cd3ca480a72fcf0ffacf09a310a048a7d3a674671e181ef330"
+      },
+      {
+        "frame": 1437,
+        "scene": 0,
+        "cue": 8,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 678.2705078125,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "5!=120",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "3!⋅2!=12",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "57eca91638ce216811d5b31f59eaf67dab49f655b14bb7cc8acac8da74f222b4"
+      },
+      {
+        "frame": 1609,
+        "scene": 0,
+        "cue": 9,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 677.823486328125,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "5!=120",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "3!⋅2!=12",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "870491c941740fe8e96102a9f30c8b17c118a2515eb9e2909976febfde187ce9"
+      },
+      {
+        "frame": 1769,
+        "scene": 0,
+        "cue": 10,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 675.9815673828125,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "3!⋅2!=12",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "13a8f9892169548f720869783a12553c7e9c3d57b08c2e7f3eeed8d8232e89ad"
+      },
+      {
+        "frame": 1908,
+        "scene": 0,
+        "cue": 11,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 678.86376953125,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "3!⋅2!=12",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "73d45b40c19cbca38d051fffa0fb7aede3859410783554e295d96bd75b4a314a"
+      },
+      {
+        "frame": 2088,
+        "scene": 0,
+        "cue": 12,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 678.9042358398438,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "3!⋅2!=12",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "736ed8009fdfd27ef04f25fde2cca68dc1ffba588b10463ca4c99c24b1bc6ae5"
+      },
+      {
+        "frame": 2278,
+        "scene": 0,
+        "cue": 13,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 679.8063354492188,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 106.453125,
+            "kind": "formula",
+            "text": "n1​!⋯nk​!n!​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "edfb5ec960e6305f3bffd16cdbe0dda017d07d6f24923cd962184b1a2edf2048"
+      },
+      {
+        "frame": 2549,
+        "scene": 0,
+        "cue": 14,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 678.8135986328125,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 106.453125,
+            "kind": "formula",
+            "text": "n1​!⋯nk​!n!​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "55e94b639b09461beba16943e9cc9ecd15ca3d42e3cb48395b1b33e1db341707"
+      },
+      {
+        "frame": 2733,
+        "scene": 0,
+        "cue": 15,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 673.2946166992188,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 106.453125,
+            "kind": "formula",
+            "text": "n1​!⋯nk​!n!​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "140fabb4f8b49c4387d9b88aa84c79bcf2288ffb8b4d777fd7f6a1110d8aa398"
+      },
+      {
+        "frame": 2865,
+        "scene": 0,
+        "cue": 16,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 675.23046875,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 106.453125,
+            "kind": "formula",
+            "text": "n1​!⋯nk​!n!​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "b8f67ec567a635e456c8f5e56d89173f2ef5a9fa1a886cd7dbdf002148947cf4"
+      },
+      {
+        "frame": 2993,
+        "scene": 0,
+        "cue": 17,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 677.8643798828125,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 106.453125,
+            "kind": "formula",
+            "text": "n1​!⋯nk​!n!​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "9073a8d6fee712c44d8f018731e32b91f6760617325b4d16d1440ad2779ea007"
+      },
+      {
+        "frame": 3146,
+        "scene": 0,
+        "cue": 18,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 679.7967529296875,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 106.453125,
+            "kind": "formula",
+            "text": "n1​!⋯nk​!n!​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "622ebfe215339891e6d43d4c3113b0a1ac31f8e3d805de618193e17d79e32a96"
+      },
+      {
+        "frame": 3377,
+        "scene": 0,
+        "cue": 18,
+        "family": "allocation",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 48,
+            "y": 63,
+            "width": 572,
+            "height": 348
+          },
+          {
+            "name": "circle",
+            "x": 48,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 60,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "A",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 178,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 190,
+            "y": 75,
+            "width": 11.15625,
+            "height": 22,
+            "kind": "label",
+            "text": "B",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 308,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 320,
+            "y": 75,
+            "width": 12,
+            "height": 22,
+            "kind": "label",
+            "text": "C",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 438,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 450,
+            "y": 75,
+            "width": 12.125,
+            "height": 22,
+            "kind": "label",
+            "text": "D",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "circle",
+            "x": 568,
+            "y": 63,
+            "width": 44,
+            "height": 44
+          },
+          {
+            "name": "text",
+            "x": 580,
+            "y": 75,
+            "width": 10.21875,
+            "height": 22,
+            "kind": "label",
+            "text": "E",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 180,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 185,
+            "y": 386,
+            "width": 68.78125,
+            "height": 25,
+            "kind": "label",
+            "text": "Primera",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 450,
+            "y": 240,
+            "width": 170,
+            "height": 120
+          },
+          {
+            "name": "text",
+            "x": 455,
+            "y": 386,
+            "width": 77.125,
+            "height": 25,
+            "kind": "label",
+            "text": "Segunda",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "120/12=10",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 106.453125,
+            "kind": "formula",
+            "text": "n1​!⋯nk​!n!​",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 1,
+        "geometrySha256": "43857e90f12f94d655f80f76d87292a408f2ec1d2cf07f72f383d9d1ae646eb2"
       }
-    ]
-  },
-  "publication": "silent-transcript"
+    ],
+    "pixels": [
+      {
+        "frame": 0,
+        "ink": 394,
+        "sha256": "0963b6248b94467667b3f8c4ee1ad5b439ce82536d031b42346f1bebcfacdb03"
+      },
+      {
+        "frame": 11,
+        "ink": 395,
+        "sha256": "bbdd3f84b3c6da54077be0806f7f3f42baafef1f3ebe233047ab8e07d21a59da"
+      },
+      {
+        "frame": 57,
+        "ink": 399,
+        "sha256": "fa14471b9024cd74da4d67fc212d0d61655d93bb706e43a426fc6ffe9b2b1697"
+      },
+      {
+        "frame": 206,
+        "ink": 396,
+        "sha256": "d4f00373c0e8e4bf7830dfde2ca4e469844f7a05f2c7493cb3ab328e8d4d577c"
+      },
+      {
+        "frame": 389,
+        "ink": 393,
+        "sha256": "1063aba11624c4d847318e13a7733623d24fa8b1cff7dfc175377f84fe3cfc26"
+      },
+      {
+        "frame": 595,
+        "ink": 839,
+        "sha256": "3b69a767ae6c8ee89612f782a98d7581690244f8dfa989f56cac535730147fa9"
+      },
+      {
+        "frame": 729,
+        "ink": 858,
+        "sha256": "c1fa28d35194c91d8304656502a53f07e3ea52211bd358304813e9aea97931c2"
+      },
+      {
+        "frame": 937,
+        "ink": 863,
+        "sha256": "d4525709dfaeb659fbd70399b3db33ea1abd46db95bdc921033c0f1366b27b1d"
+      },
+      {
+        "frame": 1181,
+        "ink": 866,
+        "sha256": "8b4119d3da9514a699b2c9815ea57044fdf626a3b99d6cac6d6e37f229de39ff"
+      },
+      {
+        "frame": 1437,
+        "ink": 904,
+        "sha256": "ccc5b6cb0a645c7aac614416a31349ac24976086a31e0fa4d8dfaa092cb27adc"
+      },
+      {
+        "frame": 1609,
+        "ink": 904,
+        "sha256": "312edb7793c5919af23cb29f7ffed15ffeff765ae7aa4e2eaee23dad7277c200"
+      },
+      {
+        "frame": 1769,
+        "ink": 875,
+        "sha256": "9a12652888d1c91b855a10e1f0f4711429ac68a7524e817c3861cac82a827fe2"
+      },
+      {
+        "frame": 1908,
+        "ink": 918,
+        "sha256": "49dc6bcd7c1b86c59b1307bd14f7dd2d93d623315c9ee68e7132cd5f957fa004"
+      },
+      {
+        "frame": 2088,
+        "ink": 919,
+        "sha256": "af258b2cdf015d7b157750f7dfd2aa14390f24389f8cc3aca615c833e3ae692c"
+      },
+      {
+        "frame": 2278,
+        "ink": 891,
+        "sha256": "17cb80d4d53065ade4ac1c9d868e53dc421b919dedee47e3919698e86f19ee82"
+      },
+      {
+        "frame": 2549,
+        "ink": 917,
+        "sha256": "2574f11822229e95681f7dd2b44e43612f9633cfbea7be05f1d00dc871decfd5"
+      },
+      {
+        "frame": 2733,
+        "ink": 931,
+        "sha256": "19bdf4f793a9a236ba649249bd7cec4ca3c79e431f461135ba3950ca80f1eef7"
+      },
+      {
+        "frame": 2865,
+        "ink": 928,
+        "sha256": "3e72850b24d30f8434a108014749bb0d3d9b3bca8de45174d1f8764483bdc75b"
+      },
+      {
+        "frame": 2993,
+        "ink": 923,
+        "sha256": "1f9429f450395ba9396e8ab4cd8e9664c27a5e185185d3fc61711464542c51c6"
+      },
+      {
+        "frame": 3146,
+        "ink": 920,
+        "sha256": "5e9e042a2f1e1b4efd054f54ac9b9e1e6ac6927b5900f35d740d4187717d5184"
+      },
+      {
+        "frame": 3377,
+        "ink": 944,
+        "sha256": "e10b85f404ea1c1a74b0290cb7d4f26b120b7eff6091e71a3909c367e3f44fdb"
+      }
+    ],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_time_base": "1/60",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 10134000,
+        "duration": "112.600000",
+        "bit_rate": "82568",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "3378",
+        "nb_read_frames": "3378",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_time_base": "1/24000",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "24000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/24000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2702400,
+        "duration": "112.600000",
+        "bit_rate": "113282",
+        "max_bit_rate": "144000",
+        "nb_frames": "2641",
+        "nb_read_frames": "2640",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler"
+        }
+      }
+    ],
+    "elapsedSeconds": 61.811
+  }
 }
