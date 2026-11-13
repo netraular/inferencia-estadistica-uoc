@@ -1243,26 +1243,1063 @@
       "nativePlanSha256": "912aa4da77d2ecaafbb203f4edd166e32786d2d0725a5e57e0c2a0103d153f3b",
       "src": "videos/proporciones/video.mp4",
       "poster": "videos/proporciones/poster.jpg",
-      "duration": 427.7,
-      "frames": 12831,
+      "duration": 390.64,
+      "frames": 11720,
       "fps": 30,
       "width": 1280,
       "height": 720,
-      "narrationMode": "transcript",
-      "cueTiming": "estimated",
+      "audioSource": "audio/aligned/proporciones.mp3",
+      "audioSha256": "74431ae94d5cf257ab456cac7d3c585414cfd0936a79dea986f92b3dae4451eb",
+      "voice": "Puck",
+      "model": "gemini-3.8-flash-tts",
+      "narrationMode": "forced-aligned",
+      "cueTiming": "forced-aligned",
+      "publication": "provisional-aligned",
       "temporary": true,
-      "silent": true,
-      "timing": {
-        "wordsPerMinute": 140,
-        "pauseSeconds": 0.3,
-        "minimumCueSeconds": 1.2
+      "listened": false,
+      "needsReview": true,
+      "alignmentSha256": "6bd93cba8373e0824b3c3b636ceae830adf18758b77bd3055f5aaf6410208721",
+      "alignment": {
+        "version": 1,
+        "complete": true,
+        "id": "proporciones",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Puck",
+        "cueTiming": "forced-aligned",
+        "temporary": true,
+        "listened": false,
+        "needsReview": true,
+        "canonicalSha256": "8889d2e1dd7ce3ce34922cac660817c6aa8b88b8a7dd7ff5ed3ffaeb49ab151a",
+        "duration": 390.64,
+        "mp3Sha256": "74431ae94d5cf257ab456cac7d3c585414cfd0936a79dea986f92b3dae4451eb",
+        "mp3Bytes": 4688685,
+        "scenes": [
+          {
+            "start": 0.3125,
+            "end": 60.3325,
+            "cues": [
+              {
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "text": "Hola.",
+                "start": 0.3125,
+                "end": 0.47250000000000003,
+                "score": -0.5493655735626817,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "text": "Hoy vamos a comparar dos ensayos de germinación sin dejarnos engañar por sus tamaños.",
+                "start": 1.3725,
+                "end": 6.5525,
+                "score": -0.3033890292042218,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "text": "En uno germinan dieciocho semillas y en otro treinta.",
+                "start": 7.532500000000001,
+                "end": 10.4125,
+                "score": -0.28439102534736904,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "text": "¿Cuál tiene mayor proporción de germinaciones?",
+                "start": 11.192499999999999,
+                "end": 12.952499999999999,
+                "score": -0.23962584734060025,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "text": "Todavía no podemos responder: nos faltan los totales.",
+                "start": 13.952499999999999,
+                "end": 16.7725,
+                "score": -0.10925833904184401,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "text": "Una proporción divide la parte que nos interesa por el total del que procede.",
+                "start": 17.6525,
+                "end": 21.2525,
+                "score": -0.2547000640382369,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "text": "Ese total debe ser positivo y contener la parte.",
+                "start": 22.1525,
+                "end": 24.4925,
+                "score": -0.06552792402605216,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "text": "En el primer ensayo sembramos setenta y dos semillas; las dieciocho germinadas están dentro de esas setenta y dos.",
+                "start": 25.5325,
+                "end": 30.9725,
+                "score": -0.3205288853496313,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "text": "Dividimos dieciocho entre setenta y dos: queda un cuarto.",
+                "start": 31.7925,
+                "end": 35.1925,
+                "score": -0.1217349444826444,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "text": "Para expresarlo como porcentaje multiplicamos por cien, sin cambiar la cantidad observada.",
+                "start": 35.972500000000004,
+                "end": 40.432500000000005,
+                "score": -1.0571505166590214,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "text": "Cero coma veinticinco y veinticinco por ciento describen la misma fracción.",
+                "start": 41.212500000000006,
+                "end": 44.81250000000001,
+                "score": -11.509058634440104,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "text": "En el segundo ensayo sembramos doscientas.",
+                "start": 45.892500000000005,
+                "end": 47.8325,
+                "score": -0.14294137805700302,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "text": "Treinta entre doscientas es cero coma quince: quince por ciento.",
+                "start": 48.6925,
+                "end": 52.212500000000006,
+                "score": -8.90085514386495,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "text": "Hay más semillas germinadas, pero una proporción menor.",
+                "start": 52.99250000000001,
+                "end": 55.752500000000005,
+                "score": -0.9227241931774188,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 14,
+                "text": "Estamos describiendo estos ensayos, no demostrando aún que un tratamiento sea mejor.",
+                "start": 56.6925,
+                "end": 60.3325,
+                "score": -0.16781929088756442,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 61.31250000000001,
+            "end": 114.0125,
+            "cues": [
+              {
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "text": "Si juntamos los ensayos, debemos juntar primero las partes y sus totales.",
+                "start": 61.31250000000001,
+                "end": 64.8525,
+                "score": -0.1377807108607764,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "text": "Son cuarenta y ocho germinaciones entre doscientas setenta y dos semillas.",
+                "start": 65.5725,
+                "end": 68.69250000000001,
+                "score": -0.28420785088639927,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "text": "Promediar veinticinco y quince por ciento daría veinte por ciento, pero daría el mismo peso a dos ensayos de tamaños distintos.",
+                "start": 69.4325,
+                "end": 75.69250000000001,
+                "score": -10.125000635782877,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "text": "No todos los cocientes son proporciones.",
+                "start": 77.1725,
+                "end": 78.9325,
+                "score": -0.0994239076486944,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 4,
+                "text": "Seis llegadas en tres horas dan dos llegadas por hora: una tasa.",
+                "start": 79.6525,
+                "end": 83.0725,
+                "score": -0.09970733796944842,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 5,
+                "text": "Puede superar uno porque el denominador mide exposición, no un conjunto que contiene las llegadas.",
+                "start": 83.8725,
+                "end": 88.7925,
+                "score": -0.0983987944200635,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 6,
+                "text": "Cambiar la unidad tampoco cambia la sustancia.",
+                "start": 89.83250000000001,
+                "end": 91.7325,
+                "score": -0.12898870262415585,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 7,
+                "text": "Cada miligramo contiene mil microgramos; por eso dos miligramos son dos mil microgramos.",
+                "start": 92.33250000000001,
+                "end": 97.0925,
+                "score": -0.41572538018226624,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 8,
+                "text": "El número crece porque la unidad es más pequeña.",
+                "start": 97.9525,
+                "end": 99.9525,
+                "score": -0.11515273813468714,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 9,
+                "text": "La media se convierte con ese factor mil, pero la varianza usa distancias al cuadrado y se convierte con un millón.",
+                "start": 100.77250000000001,
+                "end": 106.5925,
+                "score": -0.341845195392621,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 1,
+                "cueIndex": 10,
+                "text": "Al revisar una respuesta, conserva unidades y decimales: una probabilidad pequeña redondeada a cero no se ha vuelto imposible.",
+                "start": 107.5325,
+                "end": 114.0125,
+                "score": -0.6837456226348877,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 115.1525,
+            "end": 121.1725,
+            "cues": [
+              {
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "text": "Un ensayo de germinación registra cuántas semillas germinan.",
+                "start": 115.1525,
+                "end": 117.8525,
+                "score": -0.24541674226020405,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 2,
+                "cueIndex": 1,
+                "text": "Por separado, se prepara una cantidad de nutriente.",
+                "start": 118.3925,
+                "end": 121.1725,
+                "score": -0.1811644732952118,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 121.8125,
+            "end": 131.0125,
+            "cues": [
+              {
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 121.8125,
+                "end": 123.2925,
+                "score": -0.14984537856653332,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 3,
+                "cueIndex": 1,
+                "text": "¿Qué proporción de las semillas germinó?",
+                "start": 124.27250000000001,
+                "end": 126.0325,
+                "score": -0.672723383484279,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 3,
+                "cueIndex": 2,
+                "text": "Queremos comparar una parte con su propio total, no dar un recuento absoluto.",
+                "start": 127.11250000000001,
+                "end": 131.0125,
+                "score": -0.10131808979591976,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 131.9325,
+            "end": 144.5325,
+            "cues": [
+              {
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "text": "Una proporción divide la parte por el total al que pertenece.",
+                "start": 131.9325,
+                "end": 134.6325,
+                "score": -0.27088111780837854,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 4,
+                "cueIndex": 1,
+                "text": "El porcentaje multiplica esa proporción por cien.",
+                "start": 135.4725,
+                "end": 137.89249999999998,
+                "score": -0.6307113517541438,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 4,
+                "cueIndex": 2,
+                "text": "Para cambiar unidades multiplicamos por una equivalencia que vale uno físicamente, conservando la cantidad medida.",
+                "start": 138.6525,
+                "end": 144.5325,
+                "score": -0.12436574378516525,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 145.5725,
+            "end": 147.8125,
+            "cues": [
+              {
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "text": "Se siembran 40 semillas y germinan 20.",
+                "start": 145.5725,
+                "end": 147.8125,
+                "score": -0.1865768875402864,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 148.5725,
+            "end": 153.27249999999998,
+            "cues": [
+              {
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "text": "Se pesan 2 miligramos de nutriente; un miligramo contiene 1000 microgramos.",
+                "start": 148.5725,
+                "end": 153.27249999999998,
+                "score": -0.2722744599942906,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 154.2325,
+            "end": 156.4525,
+            "cues": [
+              {
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "text": "Las semillas germinadas forman parte de las sembradas.",
+                "start": 154.2325,
+                "end": 156.4525,
+                "score": -0.2834298386005685,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 157.3525,
+            "end": 160.1525,
+            "cues": [
+              {
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "text": "Cambiar la unidad de masa no cambia la cantidad de nutriente.",
+                "start": 157.3525,
+                "end": 160.1525,
+                "score": -0.12916248970889552,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 161.1925,
+            "end": 166.99249999999998,
+            "cues": [
+              {
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "text": "El total son todas las semillas sembradas.",
+                "start": 161.1925,
+                "end": 163.2925,
+                "score": -0.27087631102185694,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "text": "Dividir por el total conserva la importancia relativa de esa parte.",
+                "start": 163.9725,
+                "end": 166.99249999999998,
+                "score": -0.5645381212234497,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 168.05249999999998,
+            "end": 189.5725,
+            "cues": [
+              {
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 168.05249999999998,
+                "end": 170.1525,
+                "score": -0.029707986789747207,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 1,
+                "text": "¿Qué proporción de las semillas germinó?",
+                "start": 171.05249999999998,
+                "end": 172.6525,
+                "score": -0.501105643200895,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 2,
+                "text": "Una proporción compara una parte con su propio total.",
+                "start": 173.7525,
+                "end": 176.2125,
+                "score": -0.3859977489067075,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 3,
+                "text": "Dividir conserva la comparación; multiplicar por cien solo cambia su escritura a porcentaje.",
+                "start": 176.9125,
+                "end": 181.7125,
+                "score": -0.7253330945968628,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 4,
+                "text": "En una conversión de unidades conservamos la cantidad física.",
+                "start": 182.5925,
+                "end": 185.4325,
+                "score": -0.0925186962184463,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 10,
+                "cueIndex": 5,
+                "text": "Para este apartado: El total son todas las semillas sembradas.",
+                "start": 186.17249999999999,
+                "end": 189.5725,
+                "score": -0.4046152522787452,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 190.4325,
+            "end": 195.9325,
+            "cues": [
+              {
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "text": "Nombrar parte y total.",
+                "start": 190.4325,
+                "end": 191.3125,
+                "score": -0.0530879498858537,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 11,
+                "cueIndex": 1,
+                "text": "La parte son 20 semillas germinadas y el total son 40 sembradas.",
+                "start": 192.27249999999998,
+                "end": 195.9325,
+                "score": -0.28067976669505396,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 196.8125,
+            "end": 206.0325,
+            "cues": [
+              {
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "text": "Dividir. 20 dividido entre 40 igual a 0 coma 5.",
+                "start": 196.8125,
+                "end": 200.6525,
+                "score": -3.5270318388938904,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 12,
+                "cueIndex": 1,
+                "text": "De cada cien semillas, la misma proporción equivale a 50: 50 por ciento.",
+                "start": 201.39249999999998,
+                "end": 206.0325,
+                "score": -9.578760147094727,
+                "needsReview": true
+              }
+            ]
+          },
+          {
+            "start": 206.9325,
+            "end": 222.4325,
+            "cues": [
+              {
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "text": "Comprobar e interpretar.",
+                "start": 206.9325,
+                "end": 207.9725,
+                "score": -0.03764533861906854,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 208.9325,
+                "end": 212.4725,
+                "score": -1.9354941844940186,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 213.2925,
+                "end": 218.5325,
+                "score": -1.1386894669383765,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 13,
+                "cueIndex": 3,
+                "text": "La proporción permite comparar ensayos con distinto número de semillas.",
+                "start": 219.4125,
+                "end": 222.4325,
+                "score": -0.31291437687468715,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 223.27249999999998,
+            "end": 230.55249999999998,
+            "cues": [
+              {
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
+                "start": 223.27249999999998,
+                "end": 226.8725,
+                "score": -1.3470453023910522,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "text": "La proporción permite comparar ensayos con distinto número de semillas.",
+                "start": 227.4525,
+                "end": 230.55249999999998,
+                "score": -0.14850505081833237,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 231.1525,
+            "end": 239.4125,
+            "cues": [
+              {
+                "sceneIndex": 15,
+                "cueIndex": 0,
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 231.1525,
+                "end": 232.5125,
+                "score": -0.10056394916027785,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 15,
+                "cueIndex": 1,
+                "text": "¿Cuántos microgramos son la cantidad de nutriente indicada?",
+                "start": 233.11249999999998,
+                "end": 235.9325,
+                "score": -0.1463513026634852,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 15,
+                "cueIndex": 2,
+                "text": "Queremos expresar la misma masa en una unidad más pequeña.",
+                "start": 236.6525,
+                "end": 239.4125,
+                "score": -0.04807777523981511,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 240.17249999999999,
+            "end": 253.89249999999998,
+            "cues": [
+              {
+                "sceneIndex": 16,
+                "cueIndex": 0,
+                "text": "Una proporción divide la parte por el total al que pertenece.",
+                "start": 240.17249999999999,
+                "end": 243.4725,
+                "score": -0.29050191581094015,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 16,
+                "cueIndex": 1,
+                "text": "El porcentaje multiplica esa proporción por cien.",
+                "start": 244.1325,
+                "end": 246.9125,
+                "score": -0.1063015580823828,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 16,
+                "cueIndex": 2,
+                "text": "Para cambiar unidades multiplicamos por una equivalencia que vale uno físicamente, conservando la cantidad medida.",
+                "start": 247.8125,
+                "end": 253.89249999999998,
+                "score": -0.1438436396769248,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 255.0325,
+            "end": 257.6725,
+            "cues": [
+              {
+                "sceneIndex": 17,
+                "cueIndex": 0,
+                "text": "Se siembran 40 semillas y germinan 20.",
+                "start": 255.0325,
+                "end": 257.6725,
+                "score": -0.336164873058442,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 258.47249999999997,
+            "end": 263.1925,
+            "cues": [
+              {
+                "sceneIndex": 18,
+                "cueIndex": 0,
+                "text": "Se pesan 2 miligramos de nutriente; un miligramo contiene 1000 microgramos.",
+                "start": 258.47249999999997,
+                "end": 263.1925,
+                "score": -0.11183907993004791,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 264.6125,
+            "end": 267.41249999999997,
+            "cues": [
+              {
+                "sceneIndex": 19,
+                "cueIndex": 0,
+                "text": "Las semillas germinadas forman parte de las sembradas.",
+                "start": 264.6125,
+                "end": 267.41249999999997,
+                "score": -0.4434542020011577,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 268.47249999999997,
+            "end": 271.2725,
+            "cues": [
+              {
+                "sceneIndex": 20,
+                "cueIndex": 0,
+                "text": "Cambiar la unidad de masa no cambia la cantidad de nutriente.",
+                "start": 268.47249999999997,
+                "end": 271.2725,
+                "score": -0.1414016946897997,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 272.2525,
+            "end": 279.97249999999997,
+            "cues": [
+              {
+                "sceneIndex": 21,
+                "cueIndex": 0,
+                "text": "Cada miligramo equivale a mil microgramos.",
+                "start": 272.2525,
+                "end": 274.3525,
+                "score": -0.06458887062035501,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 21,
+                "cueIndex": 1,
+                "text": "El factor de conversión multiplica el número de unidades, no la cantidad de nutriente.",
+                "start": 275.47249999999997,
+                "end": 279.97249999999997,
+                "score": -0.23908381692599506,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 281.0525,
+            "end": 304.8125,
+            "cues": [
+              {
+                "sceneIndex": 22,
+                "cueIndex": 0,
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 281.0525,
+                "end": 283.4125,
+                "score": -0.08933768641542304,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 1,
+                "text": "¿Cuántos microgramos son la cantidad de nutriente indicada?",
+                "start": 284.5525,
+                "end": 287.2325,
+                "score": -0.48175119614990597,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 2,
+                "text": "Una proporción compara una parte con su propio total.",
+                "start": 288.3725,
+                "end": 290.8725,
+                "score": -0.0686169684886977,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 3,
+                "text": "Dividir conserva la comparación; multiplicar por cien solo cambia su escritura a porcentaje.",
+                "start": 291.7725,
+                "end": 296.5525,
+                "score": -0.13474191061686724,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 4,
+                "text": "En una conversión de unidades conservamos la cantidad física.",
+                "start": 297.6725,
+                "end": 300.4325,
+                "score": -0.055282073095440865,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 22,
+                "cueIndex": 5,
+                "text": "Para este apartado: Cada miligramo equivale a mil microgramos.",
+                "start": 301.2925,
+                "end": 304.8125,
+                "score": -0.07899331053098042,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 306.1325,
+            "end": 312.97249999999997,
+            "cues": [
+              {
+                "sceneIndex": 23,
+                "cueIndex": 0,
+                "text": "Elegir el factor.",
+                "start": 306.1325,
+                "end": 306.8525,
+                "score": -0.019828044366607043,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 23,
+                "cueIndex": 1,
+                "text": "Pasamos a una unidad mil veces más pequeña: necesitamos mil veces más unidades.",
+                "start": 307.7125,
+                "end": 312.97249999999997,
+                "score": -0.16792549192905426,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 314.03249999999997,
+            "end": 318.7125,
+            "cues": [
+              {
+                "sceneIndex": 24,
+                "cueIndex": 0,
+                "text": "Multiplicar conservando la cantidad. 2 por 1000 igual a 2000 microgramos.",
+                "start": 314.03249999999997,
+                "end": 318.7125,
+                "score": -0.2582004318634669,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 319.9125,
+            "end": 332.6725,
+            "cues": [
+              {
+                "sceneIndex": 25,
+                "cueIndex": 0,
+                "text": "Comprobar e interpretar.",
+                "start": 319.9125,
+                "end": 321.2125,
+                "score": -0.0451116230856964,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 25,
+                "cueIndex": 1,
+                "text": "El resultado es 2000 microgramos.",
+                "start": 322.1725,
+                "end": 324.1725,
+                "score": -0.04791044172764357,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 25,
+                "cueIndex": 2,
+                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+                "start": 325.1125,
+                "end": 329.0525,
+                "score": -0.11408597829618625,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 25,
+                "cueIndex": 3,
+                "text": "El número aumenta, pero no hemos añadido nutriente.",
+                "start": 329.97249999999997,
+                "end": 332.6725,
+                "score": -0.05219624171149917,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 333.5925,
+            "end": 339.03249999999997,
+            "cues": [
+              {
+                "sceneIndex": 26,
+                "cueIndex": 0,
+                "text": "El resultado es 2000 microgramos.",
+                "start": 333.5925,
+                "end": 335.3725,
+                "score": -0.08465284722236295,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 26,
+                "cueIndex": 1,
+                "text": "El número aumenta, pero no hemos añadido nutriente.",
+                "start": 336.1525,
+                "end": 339.03249999999997,
+                "score": -0.102429270304648,
+                "needsReview": false
+              }
+            ]
+          },
+          {
+            "start": 340.03249999999997,
+            "end": 390.3525,
+            "cues": [
+              {
+                "sceneIndex": 27,
+                "cueIndex": 0,
+                "text": "El total debe corresponder a la misma población y periodo que la parte.",
+                "start": 340.03249999999997,
+                "end": 343.03249999999997,
+                "score": -0.17259615380316973,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 1,
+                "text": "El número cambia para conservar la misma cantidad al cambiar de unidad.",
+                "start": 343.8725,
+                "end": 347.1325,
+                "score": -0.09574246654907863,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 2,
+                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
+                "start": 348.3325,
+                "end": 350.9125,
+                "score": -0.10775687545537949,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 3,
+                "text": "Un 0,04 de las semillas germina.",
+                "start": 352.1925,
+                "end": 355.0725,
+                "score": -2.8633968121776627,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 4,
+                "text": "¿Qué porcentaje representa?",
+                "start": 355.9525,
+                "end": 357.1125,
+                "score": -0.0661599703059134,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 5,
+                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
+                "start": 358.0925,
+                "end": 360.9525,
+                "score": -0.24115393791968623,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 6,
+                "text": "Para expresar una proporción como porcentaje se multiplica por cien: 0,04 corresponde al 4 %.",
+                "start": 362.0725,
+                "end": 367.6725,
+                "score": -0.450566783528775,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 7,
+                "text": "Para revisar el próximo problema, evita este error: Sumar porcentajes de grupos con tamaños distintos sin ponderarlos.",
+                "start": 368.6525,
+                "end": 376.8525,
+                "score": -0.2045487262463818,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 8,
+                "text": "Al reunir grupos, sumamos primero éxitos y totales.",
+                "start": 377.9325,
+                "end": 381.5125,
+                "score": -0.09160551393870264,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 27,
+                "cueIndex": 9,
+                "text": "Así cada observación pesa lo mismo; promediar porcentajes sin ponderar daría el mismo peso a grupos de tamaños distintos.",
+                "start": 382.5525,
+                "end": 390.3525,
+                "score": -1.1202703254297375,
+                "needsReview": false
+              }
+            ]
+          }
+        ],
+        "alignmentSha256": "6bd93cba8373e0824b3c3b636ceae830adf18758b77bd3055f5aaf6410208721",
+        "alignmentEngine": "torchaudio-2.6-voxpopuli-es/forced-align",
+        "sourceSha256": "60e68aa604a41b5358659fe9ffc84fce3f551e5fac026db414ba0adb04b5dab4",
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "queueParts": [
+          {
+            "jobId": "d19772ed-23ed-44cf-a8cd-a60166e4fc82",
+            "part": 0,
+            "offset": 0,
+            "duration": 390.64,
+            "wavSha256": "ba78ba84843f13d4b72608117575377fdc7d5c05cb2c50222b98d017705ca03d"
+          }
+        ]
       },
-      "transcriptSha256": "cf5b138d1537bc791c97baad7ff0a5f60cd416b1d6929e23e9cae484ff2fe800",
-      "videoSha256": "711ef69ae7211ba916026c63375d723bad5c1049016a4ca536ac9c91091d2491",
+      "videoSha256": "d6d6d02cc5501643c158a8ada0f05319d7260f222155c9c6657633d79bf6eb77",
       "posterSha256": "ee51250d4ed6da3826f27c3d459999b6b2d258e19ab1a1f856aaba2a4916216c",
       "canonicalSha256": "8889d2e1dd7ce3ce34922cac660817c6aa8b88b8a7dd7ff5ed3ffaeb49ab151a",
-      "inputHash": "702efff25cf74e94af23d1e9200c3fa7c6e21dab4ee8c0852139eaea98c02cb3",
-      "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
+      "inputHash": "58786fc3267c0befa59449e5c40ec213c0a967f179e792815353d99476031da3",
+      "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
+      "renderConcurrency": 8,
       "sourceSnapshot": {
         "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
         "itemSha256": "2c979a6f03b5058c3184a8d5448f89e907f244db0271bfd77e06e77be103022a",
@@ -1273,51 +2310,25 @@
         },
         "provenance": null,
         "renderedAnimationSha256": "c2bf8ed700a6ae0602fd4b90fce0f18e7c282abfe841a34d21a40303b9e833a8",
-        "transcriptSha256": "cf5b138d1537bc791c97baad7ff0a5f60cd416b1d6929e23e9cae484ff2fe800",
-        "sourceFiles": {
-          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-        },
-        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
-        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "audioMetadataSha256": "824ac651ac4949db8fa75a3c89c7477cf2011686c87c0a61e6435f72338256e9",
         "rendererSources": {
-          "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
           "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
           "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
           "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
           "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-          "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+          "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
           "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
           "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
           "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
           "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
           "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
           "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-          "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+          "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
           "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
           "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
           "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -1325,1215 +2336,7 @@
         }
       },
       "testFixture": false,
-      "parentLesson": "proporciones",
-      "transcript": {
-        "id": "proporciones",
-        "narrationMode": "transcript",
-        "cueTiming": "estimated",
-        "temporary": true,
-        "silent": true,
-        "canonicalSha256": "8889d2e1dd7ce3ce34922cac660817c6aa8b88b8a7dd7ff5ed3ffaeb49ab151a",
-        "timing": {
-          "wordsPerMinute": 140,
-          "pauseSeconds": 0.3,
-          "minimumCueSeconds": 1.2
-        },
-        "duration": 427.7,
-        "scenes": [
-          {
-            "start": 0,
-            "end": 68.9,
-            "cues": [
-              {
-                "text": "Hola.",
-                "start": 0,
-                "end": 1.2,
-                "startFrame": 0,
-                "endFrame": 36,
-                "words": 1,
-                "sceneIndex": 0,
-                "cueIndex": 0,
-                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
-              },
-              {
-                "text": "Hoy vamos a comparar dos ensayos de germinación sin dejarnos engañar por sus tamaños.",
-                "start": 1.5,
-                "end": 7.5,
-                "startFrame": 45,
-                "endFrame": 225,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 1,
-                "sourceCueSha256": "5bbb099262d506b18e76522530484b40b347b099855b8b56b331934a95056dfc"
-              },
-              {
-                "text": "En uno germinan dieciocho semillas y en otro treinta.",
-                "start": 7.8,
-                "end": 11.666666666666666,
-                "startFrame": 234,
-                "endFrame": 350,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 2,
-                "sourceCueSha256": "ced50c64c12cee840ef1041d88d16793ffdd598dd084b5cf9492e0d9f8ab8dcb"
-              },
-              {
-                "text": "¿Cuál tiene mayor proporción de germinaciones?",
-                "start": 11.966666666666667,
-                "end": 14.566666666666666,
-                "startFrame": 359,
-                "endFrame": 437,
-                "words": 6,
-                "sceneIndex": 0,
-                "cueIndex": 3,
-                "sourceCueSha256": "c9c37da3a8eb11215ccf2bf8b7dced89718ff49150377a55d3fe593b0a5384a3"
-              },
-              {
-                "text": "Todavía no podemos responder: nos faltan los totales.",
-                "start": 14.866666666666667,
-                "end": 18.3,
-                "startFrame": 446,
-                "endFrame": 549,
-                "words": 8,
-                "sceneIndex": 0,
-                "cueIndex": 4,
-                "sourceCueSha256": "b10943227f6fce51416039ede18961d200756d55d541be4c06df0c8c5e1384f8"
-              },
-              {
-                "text": "Una proporción divide la parte que nos interesa por el total del que procede.",
-                "start": 18.6,
-                "end": 24.6,
-                "startFrame": 558,
-                "endFrame": 738,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 5,
-                "sourceCueSha256": "f114e13a8c313b4cb86bac635e2486f8d59b4929f3c28d471b277e0db25ae7ab"
-              },
-              {
-                "text": "Ese total debe ser positivo y contener la parte.",
-                "start": 24.9,
-                "end": 28.766666666666666,
-                "startFrame": 747,
-                "endFrame": 863,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 6,
-                "sourceCueSha256": "c88583a75a0300c0b72ff2b93afb2f71642627d88a9363d9a4d16f0ae4a78cee"
-              },
-              {
-                "text": "En el primer ensayo sembramos setenta y dos semillas; las dieciocho germinadas están dentro de esas setenta y dos.",
-                "start": 29.066666666666666,
-                "end": 37.233333333333334,
-                "startFrame": 872,
-                "endFrame": 1117,
-                "words": 19,
-                "sceneIndex": 0,
-                "cueIndex": 7,
-                "sourceCueSha256": "927dafdb0d630ac2968e126e99bb99ed091909909668dd31c336455deb0faaff"
-              },
-              {
-                "text": "Dividimos dieciocho entre setenta y dos: queda un cuarto.",
-                "start": 37.53333333333333,
-                "end": 41.4,
-                "startFrame": 1126,
-                "endFrame": 1242,
-                "words": 9,
-                "sceneIndex": 0,
-                "cueIndex": 8,
-                "sourceCueSha256": "63f7b15269a8460651bc8cf8f78a337f265ed5d158c2254149ef75c69545cb8a"
-              },
-              {
-                "text": "Para expresarlo como porcentaje multiplicamos por cien, sin cambiar la cantidad observada.",
-                "start": 41.7,
-                "end": 46.86666666666667,
-                "startFrame": 1251,
-                "endFrame": 1406,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 9,
-                "sourceCueSha256": "aae7305d829d884fdaea8d29882ca4517bc83fb003432e91f960371fcd5656fc"
-              },
-              {
-                "text": "Cero coma veinticinco y veinticinco por ciento describen la misma fracción.",
-                "start": 47.166666666666664,
-                "end": 51.9,
-                "startFrame": 1415,
-                "endFrame": 1557,
-                "words": 11,
-                "sceneIndex": 0,
-                "cueIndex": 10,
-                "sourceCueSha256": "01e44faf4014eebaa71dd377e4a584751bbf814aca305c9883e121e72a117be7"
-              },
-              {
-                "text": "En el segundo ensayo sembramos doscientas.",
-                "start": 52.2,
-                "end": 54.8,
-                "startFrame": 1566,
-                "endFrame": 1644,
-                "words": 6,
-                "sceneIndex": 0,
-                "cueIndex": 11,
-                "sourceCueSha256": "b661e7e515a71a4919ff186367db830292b21ae7259dbf5e4791016dac4eadd1"
-              },
-              {
-                "text": "Treinta entre doscientas es cero coma quince: quince por ciento.",
-                "start": 55.1,
-                "end": 59.4,
-                "startFrame": 1653,
-                "endFrame": 1782,
-                "words": 10,
-                "sceneIndex": 0,
-                "cueIndex": 12,
-                "sourceCueSha256": "b0742161e2d67d72ce02f38a3e09e23fe3b345af8a208c597e8e7c7884417f43"
-              },
-              {
-                "text": "Hay más semillas germinadas, pero una proporción menor.",
-                "start": 59.7,
-                "end": 63.13333333333333,
-                "startFrame": 1791,
-                "endFrame": 1894,
-                "words": 8,
-                "sceneIndex": 0,
-                "cueIndex": 13,
-                "sourceCueSha256": "c073bbd5a3f2dde312009f28b6bc648e20d376b0c076f4d8815ae72cbae52a1e"
-              },
-              {
-                "text": "Estamos describiendo estos ensayos, no demostrando aún que un tratamiento sea mejor.",
-                "start": 63.43333333333333,
-                "end": 68.6,
-                "startFrame": 1903,
-                "endFrame": 2058,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 14,
-                "sourceCueSha256": "b9f46c8f225b9e6f6f9471fb27856054c2cab4153b16bf9de870655ba5284313"
-              }
-            ]
-          },
-          {
-            "start": 68.9,
-            "end": 134.93333333333334,
-            "cues": [
-              {
-                "text": "Si juntamos los ensayos, debemos juntar primero las partes y sus totales.",
-                "start": 68.9,
-                "end": 74.06666666666666,
-                "startFrame": 2067,
-                "endFrame": 2222,
-                "words": 12,
-                "sceneIndex": 1,
-                "cueIndex": 0,
-                "sourceCueSha256": "e3a72a67009fb1a82093c31db03e133b5d0ef78e7b5ecce79d06fcc51021e950"
-              },
-              {
-                "text": "Son cuarenta y ocho germinaciones entre doscientas setenta y dos semillas.",
-                "start": 74.36666666666666,
-                "end": 79.1,
-                "startFrame": 2231,
-                "endFrame": 2373,
-                "words": 11,
-                "sceneIndex": 1,
-                "cueIndex": 1,
-                "sourceCueSha256": "8e4d629f74de404f276de9b04fdb0e17ae591d2313f826886652cd5b3ed7a22b"
-              },
-              {
-                "text": "Promediar veinticinco y quince por ciento daría veinte por ciento, pero daría el mismo peso a dos ensayos de tamaños distintos.",
-                "start": 79.4,
-                "end": 88.4,
-                "startFrame": 2382,
-                "endFrame": 2652,
-                "words": 21,
-                "sceneIndex": 1,
-                "cueIndex": 2,
-                "sourceCueSha256": "05295560d7cb19d88bbe4b163a889716fb235ba7f7faff8abc256f4801746dcf"
-              },
-              {
-                "text": "No todos los cocientes son proporciones.",
-                "start": 88.7,
-                "end": 91.3,
-                "startFrame": 2661,
-                "endFrame": 2739,
-                "words": 6,
-                "sceneIndex": 1,
-                "cueIndex": 3,
-                "sourceCueSha256": "ab57f959ca8a4651b04b2ec4f304f210febcbdc7d730260bf7887d8530b87ff2"
-              },
-              {
-                "text": "Seis llegadas en tres horas dan dos llegadas por hora: una tasa.",
-                "start": 91.6,
-                "end": 96.76666666666667,
-                "startFrame": 2748,
-                "endFrame": 2903,
-                "words": 12,
-                "sceneIndex": 1,
-                "cueIndex": 4,
-                "sourceCueSha256": "8ff1579514e82c1352ce196be0ebd2bf4e7d5438f9f4f92ca35a901ae7fc9cca"
-              },
-              {
-                "text": "Puede superar uno porque el denominador mide exposición, no un conjunto que contiene las llegadas.",
-                "start": 97.06666666666666,
-                "end": 103.5,
-                "startFrame": 2912,
-                "endFrame": 3105,
-                "words": 15,
-                "sceneIndex": 1,
-                "cueIndex": 5,
-                "sourceCueSha256": "aeb16559fac2bacfd03f6cc2831111714361280384599a24f023bc71fb6cabdc"
-              },
-              {
-                "text": "Cambiar la unidad tampoco cambia la sustancia.",
-                "start": 103.8,
-                "end": 106.8,
-                "startFrame": 3114,
-                "endFrame": 3204,
-                "words": 7,
-                "sceneIndex": 1,
-                "cueIndex": 6,
-                "sourceCueSha256": "ffca0a8c23876989a2d5deb191ec7d865a732431043be463dc7c2129ffce1dd5"
-              },
-              {
-                "text": "Cada miligramo contiene mil microgramos; por eso dos miligramos son dos mil microgramos.",
-                "start": 107.1,
-                "end": 112.7,
-                "startFrame": 3213,
-                "endFrame": 3381,
-                "words": 13,
-                "sceneIndex": 1,
-                "cueIndex": 7,
-                "sourceCueSha256": "de537cfb159aea0f36314b50a80910065578c3ac94575a5fc6c01ac1e3329254"
-              },
-              {
-                "text": "El número crece porque la unidad es más pequeña.",
-                "start": 113,
-                "end": 116.86666666666666,
-                "startFrame": 3390,
-                "endFrame": 3506,
-                "words": 9,
-                "sceneIndex": 1,
-                "cueIndex": 8,
-                "sourceCueSha256": "bae10ca9bc86e0cce2e3b4b71bcb611c8570fc24d29b4124450f059ec62913ac"
-              },
-              {
-                "text": "La media se convierte con ese factor mil, pero la varianza usa distancias al cuadrado y se convierte con un millón.",
-                "start": 117.16666666666667,
-                "end": 126.16666666666667,
-                "startFrame": 3515,
-                "endFrame": 3785,
-                "words": 21,
-                "sceneIndex": 1,
-                "cueIndex": 9,
-                "sourceCueSha256": "1fe7078316c07bb1081872f995d2b35a7f6cc174e5f6be718a5bb1545e719b9a"
-              },
-              {
-                "text": "Al revisar una respuesta, conserva unidades y decimales: una probabilidad pequeña redondeada a cero no se ha vuelto imposible.",
-                "start": 126.46666666666667,
-                "end": 134.63333333333333,
-                "startFrame": 3794,
-                "endFrame": 4039,
-                "words": 19,
-                "sceneIndex": 1,
-                "cueIndex": 10,
-                "sourceCueSha256": "f01a37b67fc7147d777b30e9c434d9e4f9fc42aa5e9ee1131e1ea3af8a813c7d"
-              }
-            ]
-          },
-          {
-            "start": 134.93333333333334,
-            "end": 142.4,
-            "cues": [
-              {
-                "text": "Un ensayo de germinación registra cuántas semillas germinan.",
-                "start": 134.93333333333334,
-                "end": 138.36666666666667,
-                "startFrame": 4048,
-                "endFrame": 4151,
-                "words": 8,
-                "sceneIndex": 2,
-                "cueIndex": 0,
-                "sourceCueSha256": "53901bf58f485886a7b72633bacb3532ed09055f4ed8d50ff717960751904565"
-              },
-              {
-                "text": "Por separado, se prepara una cantidad de nutriente.",
-                "start": 138.66666666666666,
-                "end": 142.1,
-                "startFrame": 4160,
-                "endFrame": 4263,
-                "words": 8,
-                "sceneIndex": 2,
-                "cueIndex": 1,
-                "sourceCueSha256": "010055312b6470c23674e3e5dc4f375233fc43d87cc0e4a6808f8fcfa723d63a"
-              }
-            ]
-          },
-          {
-            "start": 142.4,
-            "end": 154.1,
-            "cues": [
-              {
-                "text": "Vamos a resolver este apartado juntos.",
-                "start": 142.4,
-                "end": 145,
-                "startFrame": 4272,
-                "endFrame": 4350,
-                "words": 6,
-                "sceneIndex": 3,
-                "cueIndex": 0,
-                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
-              },
-              {
-                "text": "¿Qué proporción de las semillas germinó?",
-                "start": 145.3,
-                "end": 147.9,
-                "startFrame": 4359,
-                "endFrame": 4437,
-                "words": 6,
-                "sceneIndex": 3,
-                "cueIndex": 1,
-                "sourceCueSha256": "321788c6aa3471d2dc00b96edfabef9c8ae32a155d63e79726b2661a5b38043f"
-              },
-              {
-                "text": "Queremos comparar una parte con su propio total, no dar un recuento absoluto.",
-                "start": 148.2,
-                "end": 153.8,
-                "startFrame": 4446,
-                "endFrame": 4614,
-                "words": 13,
-                "sceneIndex": 3,
-                "cueIndex": 2,
-                "sourceCueSha256": "9d2d003a9fbe3398290d4830e52597de26915937790ca622e4322f780303f799"
-              }
-            ]
-          },
-          {
-            "start": 154.1,
-            "end": 169.16666666666666,
-            "cues": [
-              {
-                "text": "Una proporción divide la parte por el total al que pertenece.",
-                "start": 154.1,
-                "end": 158.83333333333334,
-                "startFrame": 4623,
-                "endFrame": 4765,
-                "words": 11,
-                "sceneIndex": 4,
-                "cueIndex": 0,
-                "sourceCueSha256": "7afcb52b5a25efc34290b9b5455e104973d1f4261e18072295a66eb7ec8ecb4d"
-              },
-              {
-                "text": "El porcentaje multiplica esa proporción por cien.",
-                "start": 159.13333333333333,
-                "end": 162.13333333333333,
-                "startFrame": 4774,
-                "endFrame": 4864,
-                "words": 7,
-                "sceneIndex": 4,
-                "cueIndex": 1,
-                "sourceCueSha256": "56aba128c1e151c16e02f1e012a0db5e9143592207a46858797e4d5f066e8b35"
-              },
-              {
-                "text": "Para cambiar unidades multiplicamos por una equivalencia que vale uno físicamente, conservando la cantidad medida.",
-                "start": 162.43333333333334,
-                "end": 168.86666666666667,
-                "startFrame": 4873,
-                "endFrame": 5066,
-                "words": 15,
-                "sceneIndex": 4,
-                "cueIndex": 2,
-                "sourceCueSha256": "7f516cc3357456e9ec56eab10cbf14395048b4bb8b9635572fab4cf320563de7"
-              }
-            ]
-          },
-          {
-            "start": 169.16666666666666,
-            "end": 172.46666666666667,
-            "cues": [
-              {
-                "text": "Se siembran 40 semillas y germinan 20.",
-                "start": 169.16666666666666,
-                "end": 172.16666666666666,
-                "startFrame": 5075,
-                "endFrame": 5165,
-                "words": 7,
-                "sceneIndex": 5,
-                "cueIndex": 0,
-                "sourceCueSha256": "857a6ddbeb0be1ab7f3dce1b32b55af6b475c74b29a953027cfa71b84964afac"
-              }
-            ]
-          },
-          {
-            "start": 172.46666666666667,
-            "end": 177.5,
-            "cues": [
-              {
-                "text": "Se pesan 2 miligramos de nutriente; un miligramo contiene 1000 microgramos.",
-                "start": 172.46666666666667,
-                "end": 177.2,
-                "startFrame": 5174,
-                "endFrame": 5316,
-                "words": 11,
-                "sceneIndex": 6,
-                "cueIndex": 0,
-                "sourceCueSha256": "379c3edc6e8957a3aa84f8a314b1ee47edf96f3411161b22abf7f53b032364de"
-              }
-            ]
-          },
-          {
-            "start": 177.5,
-            "end": 181.23333333333332,
-            "cues": [
-              {
-                "text": "Las semillas germinadas forman parte de las sembradas.",
-                "start": 177.5,
-                "end": 180.93333333333334,
-                "startFrame": 5325,
-                "endFrame": 5428,
-                "words": 8,
-                "sceneIndex": 7,
-                "cueIndex": 0,
-                "sourceCueSha256": "fb621b158505dab3f1e2e802851ae1dd5e1e2f0296ae44a31545cf61695e57cc"
-              }
-            ]
-          },
-          {
-            "start": 181.23333333333332,
-            "end": 186.26666666666668,
-            "cues": [
-              {
-                "text": "Cambiar la unidad de masa no cambia la cantidad de nutriente.",
-                "start": 181.23333333333332,
-                "end": 185.96666666666667,
-                "startFrame": 5437,
-                "endFrame": 5579,
-                "words": 11,
-                "sceneIndex": 8,
-                "cueIndex": 0,
-                "sourceCueSha256": "b11666d22980529273834164eb23afbda16ef0c0d14a311be62eecb131275daa"
-              }
-            ]
-          },
-          {
-            "start": 186.26666666666668,
-            "end": 194.6,
-            "cues": [
-              {
-                "text": "El total son todas las semillas sembradas.",
-                "start": 186.26666666666668,
-                "end": 189.26666666666668,
-                "startFrame": 5588,
-                "endFrame": 5678,
-                "words": 7,
-                "sceneIndex": 9,
-                "cueIndex": 0,
-                "sourceCueSha256": "0a7ccdf454016925ed4e43a0b677310488e69aafb81afba1f810133b27d0e537"
-              },
-              {
-                "text": "Dividir por el total conserva la importancia relativa de esa parte.",
-                "start": 189.56666666666666,
-                "end": 194.3,
-                "startFrame": 5687,
-                "endFrame": 5829,
-                "words": 11,
-                "sceneIndex": 9,
-                "cueIndex": 1,
-                "sourceCueSha256": "84781d3bb90edc21ae445a3f33e961f5b9a6a159d4173fbeb141f65dec2473cb"
-              }
-            ]
-          },
-          {
-            "start": 194.6,
-            "end": 219.63333333333333,
-            "cues": [
-              {
-                "text": "Identificar la pregunta y justificar el método.",
-                "start": 194.6,
-                "end": 197.6,
-                "startFrame": 5838,
-                "endFrame": 5928,
-                "words": 7,
-                "sceneIndex": 10,
-                "cueIndex": 0,
-                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
-              },
-              {
-                "text": "¿Qué proporción de las semillas germinó?",
-                "start": 197.9,
-                "end": 200.5,
-                "startFrame": 5937,
-                "endFrame": 6015,
-                "words": 6,
-                "sceneIndex": 10,
-                "cueIndex": 1,
-                "sourceCueSha256": "1d48c3c7005bfb580c5467928dca1d92199cdf68ed2e2af74adc772a888305af"
-              },
-              {
-                "text": "Una proporción compara una parte con su propio total.",
-                "start": 200.8,
-                "end": 204.66666666666666,
-                "startFrame": 6024,
-                "endFrame": 6140,
-                "words": 9,
-                "sceneIndex": 10,
-                "cueIndex": 2,
-                "sourceCueSha256": "1c321ce65f0e7c974103cbe5cb7f12f4862997561df1f9fb58ef30d0f105e399"
-              },
-              {
-                "text": "Dividir conserva la comparación; multiplicar por cien solo cambia su escritura a porcentaje.",
-                "start": 204.96666666666667,
-                "end": 210.56666666666666,
-                "startFrame": 6149,
-                "endFrame": 6317,
-                "words": 13,
-                "sceneIndex": 10,
-                "cueIndex": 3,
-                "sourceCueSha256": "2fa79a28862a4803f98a8ada7469d9a23d0d522a1139636558a9d8201f14971a"
-              },
-              {
-                "text": "En una conversión de unidades conservamos la cantidad física.",
-                "start": 210.86666666666667,
-                "end": 214.73333333333332,
-                "startFrame": 6326,
-                "endFrame": 6442,
-                "words": 9,
-                "sceneIndex": 10,
-                "cueIndex": 4,
-                "sourceCueSha256": "f4f0d78b4c76530c08c8bf7fcaccb8290e3ceb6c60e6fa5df58af206540ec5da"
-              },
-              {
-                "text": "Para este apartado: El total son todas las semillas sembradas.",
-                "start": 215.03333333333333,
-                "end": 219.33333333333334,
-                "startFrame": 6451,
-                "endFrame": 6580,
-                "words": 10,
-                "sceneIndex": 10,
-                "cueIndex": 5,
-                "sourceCueSha256": "f3cb961bf657eaca36453cc95769b2be26a4f021440fd86a79421de8c34229cd"
-              }
-            ]
-          },
-          {
-            "start": 219.63333333333333,
-            "end": 227.13333333333333,
-            "cues": [
-              {
-                "text": "Nombrar parte y total.",
-                "start": 219.63333333333333,
-                "end": 221.36666666666667,
-                "startFrame": 6589,
-                "endFrame": 6641,
-                "words": 4,
-                "sceneIndex": 11,
-                "cueIndex": 0,
-                "sourceCueSha256": "ac3d3e76404003971d7c9e0c75ad93c62285aa0a502457b969acb605d45b6fc8"
-              },
-              {
-                "text": "La parte son 20 semillas germinadas y el total son 40 sembradas.",
-                "start": 221.66666666666666,
-                "end": 226.83333333333334,
-                "startFrame": 6650,
-                "endFrame": 6805,
-                "words": 12,
-                "sceneIndex": 11,
-                "cueIndex": 1,
-                "sourceCueSha256": "6e329d5213b771640729b32a3ca165a73f5776667a116b335a4ce4f02d679e45"
-              }
-            ]
-          },
-          {
-            "start": 227.13333333333333,
-            "end": 237.63333333333333,
-            "cues": [
-              {
-                "text": "Dividir. 20 dividido entre 40 igual a 0 coma 5.",
-                "start": 227.13333333333333,
-                "end": 231.43333333333334,
-                "startFrame": 6814,
-                "endFrame": 6943,
-                "words": 10,
-                "sceneIndex": 12,
-                "cueIndex": 0,
-                "sourceCueSha256": "581bd1505a31ee13389d129a601f2ba65aed13a8a2e084629051d88b5a4a8a37"
-              },
-              {
-                "text": "De cada cien semillas, la misma proporción equivale a 50: 50 por ciento.",
-                "start": 231.73333333333332,
-                "end": 237.33333333333334,
-                "startFrame": 6952,
-                "endFrame": 7120,
-                "words": 13,
-                "sceneIndex": 12,
-                "cueIndex": 1,
-                "sourceCueSha256": "8526d681a93069d8fbd881a522c62a8b10dd5968ca5881ca38119ddf62f14697"
-              }
-            ]
-          },
-          {
-            "start": 237.63333333333333,
-            "end": 256.46666666666664,
-            "cues": [
-              {
-                "text": "Comprobar e interpretar.",
-                "start": 237.63333333333333,
-                "end": 238.93333333333334,
-                "startFrame": 7129,
-                "endFrame": 7168,
-                "words": 3,
-                "sceneIndex": 13,
-                "cueIndex": 0,
-                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
-              },
-              {
-                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
-                "start": 239.23333333333332,
-                "end": 243.96666666666667,
-                "startFrame": 7177,
-                "endFrame": 7319,
-                "words": 11,
-                "sceneIndex": 13,
-                "cueIndex": 1,
-                "sourceCueSha256": "50c6c5d1bad50ec3564511709f31053bd27c5f4d66de128356fc0db0e8e1f1cf"
-              },
-              {
-                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
-                "start": 244.26666666666668,
-                "end": 251.56666666666666,
-                "startFrame": 7328,
-                "endFrame": 7547,
-                "words": 17,
-                "sceneIndex": 13,
-                "cueIndex": 2,
-                "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
-              },
-              {
-                "text": "La proporción permite comparar ensayos con distinto número de semillas.",
-                "start": 251.86666666666667,
-                "end": 256.1666666666667,
-                "startFrame": 7556,
-                "endFrame": 7685,
-                "words": 10,
-                "sceneIndex": 13,
-                "cueIndex": 3,
-                "sourceCueSha256": "b6fff63eb9e0dcdece0c30d3ae38575c8b1d4167208bb64c43be09347b5e15ad"
-              }
-            ]
-          },
-          {
-            "start": 256.46666666666664,
-            "end": 266.1,
-            "cues": [
-              {
-                "text": "El resultado es 0 coma 5 probabilidad entre 0 y 1.",
-                "start": 256.46666666666664,
-                "end": 261.2,
-                "startFrame": 7694,
-                "endFrame": 7836,
-                "words": 11,
-                "sceneIndex": 14,
-                "cueIndex": 0,
-                "sourceCueSha256": "a094fd16298cc02b5a91543659cdfdc4c95662e410268ecc69af07f8070307b3"
-              },
-              {
-                "text": "La proporción permite comparar ensayos con distinto número de semillas.",
-                "start": 261.5,
-                "end": 265.8,
-                "startFrame": 7845,
-                "endFrame": 7974,
-                "words": 10,
-                "sceneIndex": 14,
-                "cueIndex": 1,
-                "sourceCueSha256": "2849c4d195b852f8064847fa27273e6223b5c884b3ea94e03ea0c91ceb949a31"
-              }
-            ]
-          },
-          {
-            "start": 266.1,
-            "end": 277.3333333333333,
-            "cues": [
-              {
-                "text": "Vamos a resolver este apartado juntos.",
-                "start": 266.1,
-                "end": 268.7,
-                "startFrame": 7983,
-                "endFrame": 8061,
-                "words": 6,
-                "sceneIndex": 15,
-                "cueIndex": 0,
-                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
-              },
-              {
-                "text": "¿Cuántos microgramos son la cantidad de nutriente indicada?",
-                "start": 269,
-                "end": 272.43333333333334,
-                "startFrame": 8070,
-                "endFrame": 8173,
-                "words": 8,
-                "sceneIndex": 15,
-                "cueIndex": 1,
-                "sourceCueSha256": "639ba5c7b0968464e5ec7d6e1a1ddee2516e3cb6f5ff82a1991b0b64d2dbfe2c"
-              },
-              {
-                "text": "Queremos expresar la misma masa en una unidad más pequeña.",
-                "start": 272.73333333333335,
-                "end": 277.03333333333336,
-                "startFrame": 8182,
-                "endFrame": 8311,
-                "words": 10,
-                "sceneIndex": 15,
-                "cueIndex": 2,
-                "sourceCueSha256": "e0ffc44a5caded548d7cf5df33ccc6840419a184ff2a3bb1ee207f4c6ab7386e"
-              }
-            ]
-          },
-          {
-            "start": 277.3333333333333,
-            "end": 292.4,
-            "cues": [
-              {
-                "text": "Una proporción divide la parte por el total al que pertenece.",
-                "start": 277.3333333333333,
-                "end": 282.06666666666666,
-                "startFrame": 8320,
-                "endFrame": 8462,
-                "words": 11,
-                "sceneIndex": 16,
-                "cueIndex": 0,
-                "sourceCueSha256": "7afcb52b5a25efc34290b9b5455e104973d1f4261e18072295a66eb7ec8ecb4d"
-              },
-              {
-                "text": "El porcentaje multiplica esa proporción por cien.",
-                "start": 282.3666666666667,
-                "end": 285.3666666666667,
-                "startFrame": 8471,
-                "endFrame": 8561,
-                "words": 7,
-                "sceneIndex": 16,
-                "cueIndex": 1,
-                "sourceCueSha256": "56aba128c1e151c16e02f1e012a0db5e9143592207a46858797e4d5f066e8b35"
-              },
-              {
-                "text": "Para cambiar unidades multiplicamos por una equivalencia que vale uno físicamente, conservando la cantidad medida.",
-                "start": 285.6666666666667,
-                "end": 292.1,
-                "startFrame": 8570,
-                "endFrame": 8763,
-                "words": 15,
-                "sceneIndex": 16,
-                "cueIndex": 2,
-                "sourceCueSha256": "7f516cc3357456e9ec56eab10cbf14395048b4bb8b9635572fab4cf320563de7"
-              }
-            ]
-          },
-          {
-            "start": 292.4,
-            "end": 295.7,
-            "cues": [
-              {
-                "text": "Se siembran 40 semillas y germinan 20.",
-                "start": 292.4,
-                "end": 295.4,
-                "startFrame": 8772,
-                "endFrame": 8862,
-                "words": 7,
-                "sceneIndex": 17,
-                "cueIndex": 0,
-                "sourceCueSha256": "857a6ddbeb0be1ab7f3dce1b32b55af6b475c74b29a953027cfa71b84964afac"
-              }
-            ]
-          },
-          {
-            "start": 295.7,
-            "end": 300.73333333333335,
-            "cues": [
-              {
-                "text": "Se pesan 2 miligramos de nutriente; un miligramo contiene 1000 microgramos.",
-                "start": 295.7,
-                "end": 300.43333333333334,
-                "startFrame": 8871,
-                "endFrame": 9013,
-                "words": 11,
-                "sceneIndex": 18,
-                "cueIndex": 0,
-                "sourceCueSha256": "379c3edc6e8957a3aa84f8a314b1ee47edf96f3411161b22abf7f53b032364de"
-              }
-            ]
-          },
-          {
-            "start": 300.73333333333335,
-            "end": 304.46666666666664,
-            "cues": [
-              {
-                "text": "Las semillas germinadas forman parte de las sembradas.",
-                "start": 300.73333333333335,
-                "end": 304.1666666666667,
-                "startFrame": 9022,
-                "endFrame": 9125,
-                "words": 8,
-                "sceneIndex": 19,
-                "cueIndex": 0,
-                "sourceCueSha256": "fb621b158505dab3f1e2e802851ae1dd5e1e2f0296ae44a31545cf61695e57cc"
-              }
-            ]
-          },
-          {
-            "start": 304.46666666666664,
-            "end": 309.5,
-            "cues": [
-              {
-                "text": "Cambiar la unidad de masa no cambia la cantidad de nutriente.",
-                "start": 304.46666666666664,
-                "end": 309.2,
-                "startFrame": 9134,
-                "endFrame": 9276,
-                "words": 11,
-                "sceneIndex": 20,
-                "cueIndex": 0,
-                "sourceCueSha256": "b11666d22980529273834164eb23afbda16ef0c0d14a311be62eecb131275daa"
-              }
-            ]
-          },
-          {
-            "start": 309.5,
-            "end": 318.7,
-            "cues": [
-              {
-                "text": "Cada miligramo equivale a mil microgramos.",
-                "start": 309.5,
-                "end": 312.1,
-                "startFrame": 9285,
-                "endFrame": 9363,
-                "words": 6,
-                "sceneIndex": 21,
-                "cueIndex": 0,
-                "sourceCueSha256": "d6f4483dad2c0c33631941c3cc77c0426506a898778d2b3eb00fe44896feaa6d"
-              },
-              {
-                "text": "El factor de conversión multiplica el número de unidades, no la cantidad de nutriente.",
-                "start": 312.4,
-                "end": 318.4,
-                "startFrame": 9372,
-                "endFrame": 9552,
-                "words": 14,
-                "sceneIndex": 21,
-                "cueIndex": 1,
-                "sourceCueSha256": "30db2d2d48bd98f0d5061d38b7d6b44aa8057d19a0e177107e3b5632c46de2a8"
-              }
-            ]
-          },
-          {
-            "start": 318.7,
-            "end": 344.1333333333333,
-            "cues": [
-              {
-                "text": "Identificar la pregunta y justificar el método.",
-                "start": 318.7,
-                "end": 321.7,
-                "startFrame": 9561,
-                "endFrame": 9651,
-                "words": 7,
-                "sceneIndex": 22,
-                "cueIndex": 0,
-                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
-              },
-              {
-                "text": "¿Cuántos microgramos son la cantidad de nutriente indicada?",
-                "start": 322,
-                "end": 325.43333333333334,
-                "startFrame": 9660,
-                "endFrame": 9763,
-                "words": 8,
-                "sceneIndex": 22,
-                "cueIndex": 1,
-                "sourceCueSha256": "17f3093cc66d1b57ff9c3f7114b3276ba87cdcfd5ad2e1a33dc202f4a5fe0053"
-              },
-              {
-                "text": "Una proporción compara una parte con su propio total.",
-                "start": 325.73333333333335,
-                "end": 329.6,
-                "startFrame": 9772,
-                "endFrame": 9888,
-                "words": 9,
-                "sceneIndex": 22,
-                "cueIndex": 2,
-                "sourceCueSha256": "bd4838584e2b7eb3bd1221723dbc578647510416190d2f18ab7cd684e2605cae"
-              },
-              {
-                "text": "Dividir conserva la comparación; multiplicar por cien solo cambia su escritura a porcentaje.",
-                "start": 329.9,
-                "end": 335.5,
-                "startFrame": 9897,
-                "endFrame": 10065,
-                "words": 13,
-                "sceneIndex": 22,
-                "cueIndex": 3,
-                "sourceCueSha256": "940857d6e79beae58da1fdff49a83eeb2680fe305ebe817e472560295a11fcd3"
-              },
-              {
-                "text": "En una conversión de unidades conservamos la cantidad física.",
-                "start": 335.8,
-                "end": 339.6666666666667,
-                "startFrame": 10074,
-                "endFrame": 10190,
-                "words": 9,
-                "sceneIndex": 22,
-                "cueIndex": 4,
-                "sourceCueSha256": "e81869ad6663e70c198f740460a3a7b896aec175a49c532f2bdf8c18cdbc273d"
-              },
-              {
-                "text": "Para este apartado: Cada miligramo equivale a mil microgramos.",
-                "start": 339.96666666666664,
-                "end": 343.8333333333333,
-                "startFrame": 10199,
-                "endFrame": 10315,
-                "words": 9,
-                "sceneIndex": 22,
-                "cueIndex": 5,
-                "sourceCueSha256": "a293b8dec85873332b73943403f9ea179008cf5ca8f79f6110c20b3c58c669ba"
-              }
-            ]
-          },
-          {
-            "start": 344.1333333333333,
-            "end": 351.6333333333333,
-            "cues": [
-              {
-                "text": "Elegir el factor.",
-                "start": 344.1333333333333,
-                "end": 345.43333333333334,
-                "startFrame": 10324,
-                "endFrame": 10363,
-                "words": 3,
-                "sceneIndex": 23,
-                "cueIndex": 0,
-                "sourceCueSha256": "9e6ea87f0b085d02969e11b489935f82d2c82fe9ced0997d9accecac3a032201"
-              },
-              {
-                "text": "Pasamos a una unidad mil veces más pequeña: necesitamos mil veces más unidades.",
-                "start": 345.73333333333335,
-                "end": 351.3333333333333,
-                "startFrame": 10372,
-                "endFrame": 10540,
-                "words": 13,
-                "sceneIndex": 23,
-                "cueIndex": 1,
-                "sourceCueSha256": "10aed89057e11b9618ec8c7aecb88d975976f62099fbac5515ff06c7f73136f7"
-              }
-            ]
-          },
-          {
-            "start": 351.6333333333333,
-            "end": 356.6666666666667,
-            "cues": [
-              {
-                "text": "Multiplicar conservando la cantidad. 2 por 1000 igual a 2000 microgramos.",
-                "start": 351.6333333333333,
-                "end": 356.3666666666667,
-                "startFrame": 10549,
-                "endFrame": 10691,
-                "words": 11,
-                "sceneIndex": 24,
-                "cueIndex": 0,
-                "sourceCueSha256": "608631e13d1b21ee712307a5acbf4f6cb6442935e3ae9c84fa9109131ea03ecf"
-              }
-            ]
-          },
-          {
-            "start": 356.6666666666667,
-            "end": 370.76666666666665,
-            "cues": [
-              {
-                "text": "Comprobar e interpretar.",
-                "start": 356.6666666666667,
-                "end": 357.96666666666664,
-                "startFrame": 10700,
-                "endFrame": 10739,
-                "words": 3,
-                "sceneIndex": 25,
-                "cueIndex": 0,
-                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
-              },
-              {
-                "text": "El resultado es 2000 microgramos.",
-                "start": 358.26666666666665,
-                "end": 360.43333333333334,
-                "startFrame": 10748,
-                "endFrame": 10813,
-                "words": 5,
-                "sceneIndex": 25,
-                "cueIndex": 1,
-                "sourceCueSha256": "68bc9d9c7aeb05070424a6bb3d3cd1032d30719ca8b18650fad468b920d319a5"
-              },
-              {
-                "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
-                "start": 360.73333333333335,
-                "end": 366.73333333333335,
-                "startFrame": 10822,
-                "endFrame": 11002,
-                "words": 14,
-                "sceneIndex": 25,
-                "cueIndex": 2,
-                "sourceCueSha256": "ad25228bf90bed4827d889916b9376b32234d117202777d0c9cb911fb0e63f96"
-              },
-              {
-                "text": "El número aumenta, pero no hemos añadido nutriente.",
-                "start": 367.03333333333336,
-                "end": 370.46666666666664,
-                "startFrame": 11011,
-                "endFrame": 11114,
-                "words": 8,
-                "sceneIndex": 25,
-                "cueIndex": 3,
-                "sourceCueSha256": "020b4ee520a0e6149fe148622a4f420fd9b9346065496e3c0059fac6d713a510"
-              }
-            ]
-          },
-          {
-            "start": 370.76666666666665,
-            "end": 376.96666666666664,
-            "cues": [
-              {
-                "text": "El resultado es 2000 microgramos.",
-                "start": 370.76666666666665,
-                "end": 372.93333333333334,
-                "startFrame": 11123,
-                "endFrame": 11188,
-                "words": 5,
-                "sceneIndex": 26,
-                "cueIndex": 0,
-                "sourceCueSha256": "2d94e558696d4ce0b55adafef23fcd1a51c55ab9d67c67f38a4160375c796f2d"
-              },
-              {
-                "text": "El número aumenta, pero no hemos añadido nutriente.",
-                "start": 373.23333333333335,
-                "end": 376.6666666666667,
-                "startFrame": 11197,
-                "endFrame": 11300,
-                "words": 8,
-                "sceneIndex": 26,
-                "cueIndex": 1,
-                "sourceCueSha256": "4a06ecb5cdf20dd24a90fa741418480b101bb7dd274788736c27d6943b8410e1"
-              }
-            ]
-          },
-          {
-            "start": 376.96666666666664,
-            "end": 427.7,
-            "cues": [
-              {
-                "text": "El total debe corresponder a la misma población y periodo que la parte.",
-                "start": 376.96666666666664,
-                "end": 382.56666666666666,
-                "startFrame": 11309,
-                "endFrame": 11477,
-                "words": 13,
-                "sceneIndex": 27,
-                "cueIndex": 0,
-                "sourceCueSha256": "20ac6f1cb393b2e01b442f28eebfa940705b2e3dfe2b47183915a192369bb0ae"
-              },
-              {
-                "text": "El número cambia para conservar la misma cantidad al cambiar de unidad.",
-                "start": 382.8666666666667,
-                "end": 388.03333333333336,
-                "startFrame": 11486,
-                "endFrame": 11641,
-                "words": 12,
-                "sceneIndex": 27,
-                "cueIndex": 1,
-                "sourceCueSha256": "bb25d442bf052ff64a362ef58bbb2b6ebd0f277c39d7de66a0c8f5aa58c0b224"
-              },
-              {
-                "text": "Comprobemos si podemos aplicar esa idea a otra situación.",
-                "start": 388.3333333333333,
-                "end": 392.2,
-                "startFrame": 11650,
-                "endFrame": 11766,
-                "words": 9,
-                "sceneIndex": 27,
-                "cueIndex": 2,
-                "sourceCueSha256": "ae2758f24ddff2a475dd65b82fd587f959678f1197ab1a7ebcb43822ce7086eb"
-              },
-              {
-                "text": "Un 0,04 de las semillas germina.",
-                "start": 392.5,
-                "end": 395.1,
-                "startFrame": 11775,
-                "endFrame": 11853,
-                "words": 6,
-                "sceneIndex": 27,
-                "cueIndex": 3,
-                "sourceCueSha256": "7c9a07c962887f1f6ec12783809bc95c2b5e3260a366cfad9337bc3bc70b2ba9"
-              },
-              {
-                "text": "¿Qué porcentaje representa?",
-                "start": 395.4,
-                "end": 396.7,
-                "startFrame": 11862,
-                "endFrame": 11901,
-                "words": 3,
-                "sceneIndex": 27,
-                "cueIndex": 4,
-                "sourceCueSha256": "c0c6c38ff36a9e4944d9bac85a06244ad67e868c0dcfef7536b206e1be435b32"
-              },
-              {
-                "text": "¿Qué relación permite decidirlo antes de mirar el resultado?",
-                "start": 397,
-                "end": 400.8666666666667,
-                "startFrame": 11910,
-                "endFrame": 12026,
-                "words": 9,
-                "sceneIndex": 27,
-                "cueIndex": 5,
-                "sourceCueSha256": "c745c8f392e98f8d9c167593a4bad513dec13605ccc402b6ac8f30dd51b6e524"
-              },
-              {
-                "text": "Para expresar una proporción como porcentaje se multiplica por cien: 0,04 corresponde al 4 %.",
-                "start": 401.1666666666667,
-                "end": 407.6,
-                "startFrame": 12035,
-                "endFrame": 12228,
-                "words": 15,
-                "sceneIndex": 27,
-                "cueIndex": 6,
-                "sourceCueSha256": "fe5e031f812b317cde17410ec9c9b680d4f559a81a5088dec19bbb41a0b6e434"
-              },
-              {
-                "text": "Para revisar el próximo problema, evita este error: Sumar porcentajes de grupos con tamaños distintos sin ponderarlos.",
-                "start": 407.9,
-                "end": 415.2,
-                "startFrame": 12237,
-                "endFrame": 12456,
-                "words": 17,
-                "sceneIndex": 27,
-                "cueIndex": 7,
-                "sourceCueSha256": "20129a6f7497ead0a7815f7d8a156af231a33a30d08790719ab3e0b6c21c529b"
-              },
-              {
-                "text": "Al reunir grupos, sumamos primero éxitos y totales.",
-                "start": 415.5,
-                "end": 418.93333333333334,
-                "startFrame": 12465,
-                "endFrame": 12568,
-                "words": 8,
-                "sceneIndex": 27,
-                "cueIndex": 8,
-                "sourceCueSha256": "f138954e33b255dcaa4fee67c6b315e0e67998f322b9f13e359935f12fec915f"
-              },
-              {
-                "text": "Así cada observación pesa lo mismo; promediar porcentajes sin ponderar daría el mismo peso a grupos de tamaños distintos.",
-                "start": 419.23333333333335,
-                "end": 427.4,
-                "startFrame": 12577,
-                "endFrame": 12822,
-                "words": 19,
-                "sceneIndex": 27,
-                "cueIndex": 9,
-                "sourceCueSha256": "5c6a40acf828b52a8f732da6b6ee169b63904ec22873e9eb45dea1935fa02f56"
-              }
-            ]
-          }
-        ]
-      },
-      "publication": "silent-transcript"
+      "parentLesson": "proporciones"
     },
     "algebra--balanza": {
       "version": 1,
