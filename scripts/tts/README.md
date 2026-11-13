@@ -67,9 +67,35 @@ Results use `cueTiming: forced-aligned`, not `measured`. `needsReview` flags low
 acoustic log scores (default `--min-score -1.5`), unknown characters and invalid
 intervals; this is a heuristic, not a calibrated accuracy guarantee or proof that
 Gemini spoke every word correctly. `listened` remains false. Even unflagged output
-needs editorial acceptance before conversion to the measured publication contract;
-the existing renderer/publication guards are unchanged. Existing silent videos
-must be retimed and rerendered, not merely muxed with the new audio.
+needs editorial acceptance before conversion to the measured publication contract.
+Existing silent videos must be retimed and rerendered, not merely muxed with the new audio.
+
+### Provisional Voiced Videos
+
+`--video-batch /absolute/new/batch` also prepares MP3 and original cue timing inputs
+for Remotion. Blocks are concatenated in source order without added silence.
+The resulting inputs retain `forced-aligned`, `temporary:true`, `listened:false`,
+review flags, source checksums and original queue job IDs. Change pronunciation
+mappings only in a new alignment output; already prepared inputs stay sealed.
+
+```sh
+node data-src/course-videos/render-course.mjs --batch "$VIDEO_BATCH" \
+  --native --aligned --ready --worker --concurrency 8
+```
+
+`--aligned --publish` publishes these as `provisional-aligned`, never as measured
+or reviewed videos. MP3s live under `static/audio/aligned/` separately from existing
+Puck and Ming recordings. Final measured videos cannot be replaced by provisional
+ones. Both lesson and exercise players use the video's own aligned transcript.
+
+For incremental production, `scripts/complete-course-videos.mjs --aligned --batch
+/absolute/new/batch --ids id1,id2 --concurrency 8` waits for those sealed audio inputs,
+renders one item at a time and uses the existing publication integrity checks
+before committing and pushing each complete video. Run it only in a dedicated
+clean task worktree after explicitly authorizing main publication. Failed items
+remain visible in `publication-progress.json`; source and publication failures stop
+the coordinator. The server queue handles its own quota cooldowns; never start a
+competing local Gemini generator or reset cooldowns to force progress.
 
 ## Current Whole-Course Temporary Ming Production
 

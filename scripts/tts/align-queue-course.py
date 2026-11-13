@@ -211,7 +211,7 @@ def align_part(path, cues, runtime, min_score, pronunciations):
             for character in unicodedata.normalize("NFC", spoken.casefold()):
                 if character.isspace():
                     character = "|"
-                if character in vocabulary:
+                if character in vocabulary and vocabulary[character] != 0:
                     letters.append(vocabulary[character])
                 elif character.isalnum() or unicodedata.category(character).startswith("S") or character in "-\\_":
                     unsupported.append(character)

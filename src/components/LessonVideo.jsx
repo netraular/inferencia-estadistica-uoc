@@ -37,7 +37,7 @@ function NativeLessonVideo({video, recording, baseUrl, fallback}) {
     };
   }, [failed, baseUrl, video.src]);
   if (failed) return fallback;
-  const cues = (video.silent ? video.transcript : recording).scenes.flatMap(scene => scene.cues);
+  const cues = (video.silent ? video.transcript : video.publication === 'provisional-aligned' ? video.alignment : recording).scenes.flatMap(scene => scene.cues);
   return <section className={styles.lesson} aria-label={video.title}>
     <video ref={media} className={styles.player} controls playsInline preload="metadata" poster={courseMediaUrl(baseUrl, video.poster)} aria-label={video.title} onError={() => setFailed(true)}>
       <source src={courseMediaUrl(baseUrl, video.src)} type="video/mp4" onError={() => setFailed(true)} />

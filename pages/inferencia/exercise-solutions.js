@@ -359,7 +359,7 @@ export function mountExercises(root, {exercises, lessonId, formatMath, audio, vi
         const transcript=owner.createElement('details');
         transcript.className='animation-transcript';
         const summary=owner.createElement('summary');summary.textContent='Transcripci\u00f3n';transcript.append(summary);
-        for(const cue of (video.silent ? video.transcript : track).scenes.flatMap(scene=>scene.cues)) {
+        for(const cue of (video.silent ? video.transcript : video.publication === 'provisional-aligned' ? video.alignment : track).scenes.flatMap(scene=>scene.cues)) {
           const paragraph=owner.createElement('p');paragraph.textContent=cue.text;transcript.append(paragraph);
         }
         let native=true;
