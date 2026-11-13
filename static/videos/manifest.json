@@ -24374,26 +24374,243 @@
       "nativePlanSha256": "2cae9921cbb50d17e223c1c7746e6144d6a2af3082174225e4d0ffabd0a87915",
       "src": "videos/densidad--acumulada-por-tramos/video.mp4",
       "poster": "videos/densidad--acumulada-por-tramos/poster.jpg",
-      "duration": 123.66666666666667,
-      "frames": 3710,
+      "duration": 109.96,
+      "frames": 3299,
       "fps": 30,
       "width": 1280,
       "height": 720,
-      "narrationMode": "transcript",
-      "cueTiming": "estimated",
+      "audioSource": "audio/aligned/densidad--acumulada-por-tramos.mp3",
+      "audioSha256": "33152612047fb120d6732509d3f1fc20b8be38de3048a23fd1b4ecca3115e2b3",
+      "voice": "Puck",
+      "model": "gemini-3.8-flash-tts",
+      "narrationMode": "forced-aligned",
+      "cueTiming": "forced-aligned",
+      "publication": "provisional-aligned",
       "temporary": true,
-      "silent": true,
-      "timing": {
-        "wordsPerMinute": 140,
-        "pauseSeconds": 0.3,
-        "minimumCueSeconds": 1.2
+      "listened": false,
+      "needsReview": true,
+      "alignmentSha256": "a920cf38075d549f4795a29ed5ecea16b6a21eedc047b6e438c4c0b3dc6d05c7",
+      "alignment": {
+        "version": 1,
+        "complete": true,
+        "id": "densidad--acumulada-por-tramos",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Puck",
+        "cueTiming": "forced-aligned",
+        "temporary": true,
+        "listened": false,
+        "needsReview": true,
+        "canonicalSha256": "0a1ac1de9c8143263b9904fd9d7aa23227664b2b25014be6fdf8b19d692de573",
+        "duration": 109.96,
+        "mp3Sha256": "33152612047fb120d6732509d3f1fc20b8be38de3048a23fd1b4ecca3115e2b3",
+        "mp3Bytes": 1320525,
+        "scenes": [
+          {
+            "start": 0.3125,
+            "end": 109.63250000000001,
+            "cues": [
+              {
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "text": "Hola.",
+                "start": 0.3125,
+                "end": 0.4525,
+                "score": -0.41150784492492676,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "text": "Ya sabemos acumular la densidad dos por equis dentro de cero a uno.",
+                "start": 1.2925,
+                "end": 5.612500000000001,
+                "score": -0.6026612222194672,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "text": "Ahora construiremos efe para cualquier umbral real, también fuera de ese soporte.",
+                "start": 6.532500000000001,
+                "end": 10.6325,
+                "score": -0.761021132580936,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 3,
+                "text": "La regla de la acumulada debe seguir siendo una probabilidad aunque la fórmula de la densidad deje de actuar.",
+                "start": 11.7125,
+                "end": 17.232499999999998,
+                "score": -0.5686307940632105,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 4,
+                "text": "Antes de cero no entra área y efe vale cero.",
+                "start": 18.8525,
+                "end": 21.9325,
+                "score": -3.0864800374644497,
+                "needsReview": true
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 5,
+                "text": "De cero a uno, integrar dos por equis desde el origen da el cuadrado del umbral.",
+                "start": 23.1325,
+                "end": 27.9325,
+                "score": -1.1093629032373429,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 6,
+                "text": "Después de uno no hay más densidad que añadir y efe queda en uno.",
+                "start": 28.9325,
+                "end": 32.4125,
+                "score": -0.20574566084542312,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 7,
+                "text": "Esas tres situaciones explican los tres tramos.",
+                "start": 33.6925,
+                "end": 36.0925,
+                "score": -0.2682542335242033,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 8,
+                "text": "La gráfica enlaza los niveles cero y uno con el tramo curvo.",
+                "start": 37.0925,
+                "end": 40.2325,
+                "score": -1.2804743188549765,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 9,
+                "text": "Las partes horizontales dicen que mover el umbral allí no añade probabilidad.",
+                "start": 41.1525,
+                "end": 44.9125,
+                "score": -0.32903517823121675,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 10,
+                "text": "Prolongar el cuadrado después de uno daría alturas mayores que uno y dejaría de representar este modelo.",
+                "start": 46.032500000000006,
+                "end": 51.352500000000006,
+                "score": -0.08468230813741684,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 11,
+                "text": "En el interior, derivar el cuadrado devuelve dos por equis: la pendiente de lo acumulado recupera la densidad que aporta cada franja.",
+                "start": 52.9125,
+                "end": 60.5925,
+                "score": -0.3850262608379126,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 12,
+                "text": "Fuera del soporte la pendiente es cero.",
+                "start": 61.532500000000006,
+                "end": 63.5525,
+                "score": -0.08158407067821827,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 13,
+                "text": "Para una distribución absolutamente continua la recuperación vale casi en todas partes; no necesitamos derivabilidad en cada frontera.",
+                "start": 64.91250000000001,
+                "end": 72.05250000000001,
+                "score": -0.11095933988690376,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 14,
+                "text": "Cambiar una altura de densidad en un único punto no modifica ninguna integral, porque ese punto carece de anchura.",
+                "start": 73.13250000000001,
+                "end": 78.7325,
+                "score": -0.12063934609694923,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 15,
+                "text": "Por la misma razón, incluir o excluir los extremos de un intervalo no cambia su probabilidad aquí.",
+                "start": 79.7925,
+                "end": 84.7325,
+                "score": -0.21348855702672154,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 16,
+                "text": "Esta propiedad no se puede trasladar a una variable con masas puntuales.",
+                "start": 85.9325,
+                "end": 89.1725,
+                "score": -0.11201160173125875,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 17,
+                "text": "Al comprobar una respuesta revisamos densidad no negativa, soporte y área total uno.",
+                "start": 90.63250000000001,
+                "end": 95.6725,
+                "score": -0.21938567953475285,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 18,
+                "text": "Después calculamos el intervalo integrando solo donde hay densidad o restando acumuladas.",
+                "start": 96.6725,
+                "end": 101.47250000000001,
+                "score": -0.22136272133502644,
+                "needsReview": false
+              },
+              {
+                "sceneIndex": 0,
+                "cueIndex": 19,
+                "text": "Ambos caminos deben coincidir: efe hasta el extremo superior menos efe hasta el inferior retira exactamente el área anterior.",
+                "start": 102.5125,
+                "end": 109.63250000000001,
+                "score": -0.21329102851450443,
+                "needsReview": false
+              }
+            ]
+          }
+        ],
+        "alignmentSha256": "a920cf38075d549f4795a29ed5ecea16b6a21eedc047b6e438c4c0b3dc6d05c7",
+        "alignmentEngine": "torchaudio-2.6-voxpopuli-es/forced-align",
+        "sourceSha256": "62f16c54935269257e442973a6a1f0496e6c118fc0e5aee3b00a5ae12e638c2e",
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "queueParts": [
+          {
+            "jobId": "beed899e-e4a3-43b2-b5b7-edf449208b7b",
+            "part": 0,
+            "offset": 0,
+            "duration": 109.96,
+            "wavSha256": "70231d1ab7ac41e1be60b7cc3fad893cbd78babfaa47212c549ec871c0e7dbfd"
+          }
+        ]
       },
-      "transcriptSha256": "4b7d7be01fc4aab12b74fba2038aaee776d691750bbfafd332ef5e89e5582896",
-      "videoSha256": "0c4191b50a29c609cb8b6e0203bb5b78a88d2e3e48ca96a173b0433d53b893d7",
+      "videoSha256": "5d0734a042d31f51bed9bb8988165d752d262b32c054a8c44ce121d87ec0346a",
       "posterSha256": "1fdfe9241ae65cafd137fa3554529258ff28d4e374235c69892321fcaf5ba8c6",
       "canonicalSha256": "0a1ac1de9c8143263b9904fd9d7aa23227664b2b25014be6fdf8b19d692de573",
-      "inputHash": "92f8519a75025f4319c6b9c4988940a1413a7f9d35cc9a09bed9597dd4b26a6b",
-      "rendererSha256": "ad151759427e604bc3abe6ad9c77bc082884ac51e0b9ee17c79e6e3ec9b65be1",
+      "inputHash": "979172d11c1014690fae826ce5bbb172430ca00d135844d36cf3d461c7940d93",
+      "rendererSha256": "74a332bad0936e391fadf4a8623f46d211d3def7a124d9766ae882389efc071e",
       "renderConcurrency": 8,
       "sourceSnapshot": {
         "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
@@ -24405,51 +24622,25 @@
         },
         "provenance": null,
         "renderedAnimationSha256": "eb7775573d767b1f4d564a717f3cf34fcc3c514030276dfab06004024f4db6c1",
-        "transcriptSha256": "4b7d7be01fc4aab12b74fba2038aaee776d691750bbfafd332ef5e89e5582896",
-        "sourceFiles": {
-          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-        },
-        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v6/catalogue.json",
-        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "audioMetadataSha256": "82919aff8e7d719d8a77a9ee08705c44f51435afa9ed6737d1749a9b8c79a2b1",
         "rendererSources": {
           "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
           "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
           "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-          "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
           "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
           "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-          "native-foundations.jsx": "c87c327b63ac3ab1963ac290f020741ffd3c9c8b8376535bb849ce7e6073101e",
+          "native-foundations.jsx": "9bacea398f0bc70fea375864a0881840e3300bf5e7b762e8b6088efbe60023e3",
           "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-          "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
           "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
           "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
           "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-          "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
           "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
           "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
           "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
           "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
           "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -24457,250 +24648,7 @@
         }
       },
       "testFixture": false,
-      "parentLesson": "densidad",
-      "transcript": {
-        "id": "densidad--acumulada-por-tramos",
-        "narrationMode": "transcript",
-        "cueTiming": "estimated",
-        "temporary": true,
-        "silent": true,
-        "canonicalSha256": "0a1ac1de9c8143263b9904fd9d7aa23227664b2b25014be6fdf8b19d692de573",
-        "timing": {
-          "wordsPerMinute": 140,
-          "pauseSeconds": 0.3,
-          "minimumCueSeconds": 1.2
-        },
-        "duration": 123.66666666666667,
-        "scenes": [
-          {
-            "start": 0,
-            "end": 123.66666666666667,
-            "cues": [
-              {
-                "text": "Hola.",
-                "start": 0,
-                "end": 1.2,
-                "startFrame": 0,
-                "endFrame": 36,
-                "words": 1,
-                "sceneIndex": 0,
-                "cueIndex": 0,
-                "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
-              },
-              {
-                "text": "Ya sabemos acumular la densidad dos por equis dentro de cero a uno.",
-                "start": 1.5,
-                "end": 7.1,
-                "startFrame": 45,
-                "endFrame": 213,
-                "words": 13,
-                "sceneIndex": 0,
-                "cueIndex": 1,
-                "sourceCueSha256": "0685cc399ba9e06bf10f780e1215879398405b634dad19b8df3bcd6804b6c593"
-              },
-              {
-                "text": "Ahora construiremos efe para cualquier umbral real, también fuera de ese soporte.",
-                "start": 7.4,
-                "end": 12.566666666666666,
-                "startFrame": 222,
-                "endFrame": 377,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 2,
-                "sourceCueSha256": "3d8d944eb54e1077bafda1bc7285e2e98369284d2510a2cb564c3ce6cc4fe832"
-              },
-              {
-                "text": "La regla de la acumulada debe seguir siendo una probabilidad aunque la fórmula de la densidad deje de actuar.",
-                "start": 12.866666666666667,
-                "end": 21.033333333333335,
-                "startFrame": 386,
-                "endFrame": 631,
-                "words": 19,
-                "sceneIndex": 0,
-                "cueIndex": 3,
-                "sourceCueSha256": "2264393d48309efa01dcf72dfa14585e1c89712ffd07e642fbafaf2c8ee6c069"
-              },
-              {
-                "text": "Antes de cero no entra área y efe vale cero.",
-                "start": 21.333333333333332,
-                "end": 25.633333333333333,
-                "startFrame": 640,
-                "endFrame": 769,
-                "words": 10,
-                "sceneIndex": 0,
-                "cueIndex": 4,
-                "sourceCueSha256": "c3a70d1fa780027d0eac50c650320490ddc1943f26467b3423cbdfe0d72894ac"
-              },
-              {
-                "text": "De cero a uno, integrar dos por equis desde el origen da el cuadrado del umbral.",
-                "start": 25.933333333333334,
-                "end": 32.8,
-                "startFrame": 778,
-                "endFrame": 984,
-                "words": 16,
-                "sceneIndex": 0,
-                "cueIndex": 5,
-                "sourceCueSha256": "876d09744874980572e4032d5cbb244866546bc28571f80210347376e523574f"
-              },
-              {
-                "text": "Después de uno no hay más densidad que añadir y efe queda en uno.",
-                "start": 33.1,
-                "end": 39.1,
-                "startFrame": 993,
-                "endFrame": 1173,
-                "words": 14,
-                "sceneIndex": 0,
-                "cueIndex": 6,
-                "sourceCueSha256": "c857406a246f7e37ac6f5d8795ddf91a09caeaa1b763c82bebdb494844b6d320"
-              },
-              {
-                "text": "Esas tres situaciones explican los tres tramos.",
-                "start": 39.4,
-                "end": 42.4,
-                "startFrame": 1182,
-                "endFrame": 1272,
-                "words": 7,
-                "sceneIndex": 0,
-                "cueIndex": 7,
-                "sourceCueSha256": "5eb833b1badcd6eb01b489b8069acd24a9219986ef58ba7bb9ba83f1f8a66a33"
-              },
-              {
-                "text": "La gráfica enlaza los niveles cero y uno con el tramo curvo.",
-                "start": 42.7,
-                "end": 47.86666666666667,
-                "startFrame": 1281,
-                "endFrame": 1436,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 8,
-                "sourceCueSha256": "2ee95140a9a29a7c93227992c1de321a609028eb77ecb10ef8df4744f76036e6"
-              },
-              {
-                "text": "Las partes horizontales dicen que mover el umbral allí no añade probabilidad.",
-                "start": 48.166666666666664,
-                "end": 53.333333333333336,
-                "startFrame": 1445,
-                "endFrame": 1600,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 9,
-                "sourceCueSha256": "9530c677758f9f0c861c66aec20b8cba563c2f4b358d909344fb10573e1d608d"
-              },
-              {
-                "text": "Prolongar el cuadrado después de uno daría alturas mayores que uno y dejaría de representar este modelo.",
-                "start": 53.63333333333333,
-                "end": 60.93333333333333,
-                "startFrame": 1609,
-                "endFrame": 1828,
-                "words": 17,
-                "sceneIndex": 0,
-                "cueIndex": 10,
-                "sourceCueSha256": "a2b9e2f687fa02918b85e6ed832695a5fe62892aea6d6efc55b9a28211fedd2e"
-              },
-              {
-                "text": "En el interior, derivar el cuadrado devuelve dos por equis: la pendiente de lo acumulado recupera la densidad que aporta cada franja.",
-                "start": 61.233333333333334,
-                "end": 70.66666666666667,
-                "startFrame": 1837,
-                "endFrame": 2120,
-                "words": 22,
-                "sceneIndex": 0,
-                "cueIndex": 11,
-                "sourceCueSha256": "a955076d1ee6cabd1ecb485c7c8191a2fa8530dae4ffc315be9bd582ba9d40c1"
-              },
-              {
-                "text": "Fuera del soporte la pendiente es cero.",
-                "start": 70.96666666666667,
-                "end": 73.96666666666667,
-                "startFrame": 2129,
-                "endFrame": 2219,
-                "words": 7,
-                "sceneIndex": 0,
-                "cueIndex": 12,
-                "sourceCueSha256": "32343804b3f110a1273956255d0287f34c96eaf3626bb84498339cbf29eb8655"
-              },
-              {
-                "text": "Para una distribución absolutamente continua la recuperación vale casi en todas partes; no necesitamos derivabilidad en cada frontera.",
-                "start": 74.26666666666667,
-                "end": 82,
-                "startFrame": 2228,
-                "endFrame": 2460,
-                "words": 18,
-                "sceneIndex": 0,
-                "cueIndex": 13,
-                "sourceCueSha256": "e0485ed8aca9937d94ce15088042f5a07b2d9fe2eefe4df46cade57302b25706"
-              },
-              {
-                "text": "Cambiar una altura de densidad en un único punto no modifica ninguna integral, porque ese punto carece de anchura.",
-                "start": 82.3,
-                "end": 90.46666666666667,
-                "startFrame": 2469,
-                "endFrame": 2714,
-                "words": 19,
-                "sceneIndex": 0,
-                "cueIndex": 14,
-                "sourceCueSha256": "d5717fdd6ca544ad7df1b8276ec18ac054a0d583d629d2baf9c5befbea97c1c8"
-              },
-              {
-                "text": "Por la misma razón, incluir o excluir los extremos de un intervalo no cambia su probabilidad aquí.",
-                "start": 90.76666666666667,
-                "end": 98.06666666666666,
-                "startFrame": 2723,
-                "endFrame": 2942,
-                "words": 17,
-                "sceneIndex": 0,
-                "cueIndex": 15,
-                "sourceCueSha256": "3cdadf197d75c70fb9bab7ca05ec4cc93e4919c5aecdee8f8727d417038ede30"
-              },
-              {
-                "text": "Esta propiedad no se puede trasladar a una variable con masas puntuales.",
-                "start": 98.36666666666666,
-                "end": 103.53333333333333,
-                "startFrame": 2951,
-                "endFrame": 3106,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 16,
-                "sourceCueSha256": "b1586fd24bbcefb2f3e11a456ffe9ae68acbfc3df58b939cf44857894d6720bd"
-              },
-              {
-                "text": "Al comprobar una respuesta revisamos densidad no negativa, soporte y área total uno.",
-                "start": 103.83333333333333,
-                "end": 109.43333333333334,
-                "startFrame": 3115,
-                "endFrame": 3283,
-                "words": 13,
-                "sceneIndex": 0,
-                "cueIndex": 17,
-                "sourceCueSha256": "82bf8df144c7709227c68c32b578d57df799626b3786a7435c794eb461f2cb50"
-              },
-              {
-                "text": "Después calculamos el intervalo integrando solo donde hay densidad o restando acumuladas.",
-                "start": 109.73333333333333,
-                "end": 114.9,
-                "startFrame": 3292,
-                "endFrame": 3447,
-                "words": 12,
-                "sceneIndex": 0,
-                "cueIndex": 18,
-                "sourceCueSha256": "b5b84d9e21ca0c9ccb67e1ee70e5104a3139c45d07cfbe4d926488e49d061bc0"
-              },
-              {
-                "text": "Ambos caminos deben coincidir: efe hasta el extremo superior menos efe hasta el inferior retira exactamente el área anterior.",
-                "start": 115.2,
-                "end": 123.36666666666666,
-                "startFrame": 3456,
-                "endFrame": 3701,
-                "words": 19,
-                "sceneIndex": 0,
-                "cueIndex": 19,
-                "sourceCueSha256": "98638f22a4b73f20ded3ba9308e48d755e295315f05bc8118bb23d09fd105518"
-              }
-            ]
-          }
-        ]
-      },
-      "publication": "silent-transcript"
+      "parentLesson": "densidad"
     },
     "esperanza--promedio-ponderado": {
       "version": 1,
