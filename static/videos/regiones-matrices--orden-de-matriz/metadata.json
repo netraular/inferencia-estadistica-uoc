@@ -9,26 +9,163 @@
   "nativePlanSha256": "a4675651a826efbbc2c253bc854a03bc7c877835b4effebf90a4ebcbb61b55f2",
   "src": "videos/regiones-matrices--orden-de-matriz/video.mp4",
   "poster": "videos/regiones-matrices--orden-de-matriz/poster.jpg",
-  "duration": 74.86666666666666,
-  "frames": 2246,
+  "duration": 67.44,
+  "frames": 2024,
   "fps": 30,
   "width": 1280,
   "height": 720,
-  "narrationMode": "transcript",
-  "cueTiming": "estimated",
+  "audioSource": "audio/aligned/regiones-matrices--orden-de-matriz.mp3",
+  "audioSha256": "4fba53b0f0a7aa1b909297e0c0854f985b5b7ff734acc4988e805c91f6fb916f",
+  "voice": "Puck",
+  "model": "gemini-3.8-flash-tts",
+  "narrationMode": "forced-aligned",
+  "cueTiming": "forced-aligned",
+  "publication": "provisional-aligned",
   "temporary": true,
-  "silent": true,
-  "timing": {
-    "wordsPerMinute": 140,
-    "pauseSeconds": 0.3,
-    "minimumCueSeconds": 1.2
+  "listened": false,
+  "needsReview": true,
+  "alignmentSha256": "344d0a78000a2009fec70a295fe9a51a1b6e40f241e8e5f07826c502ee85b9b5",
+  "alignment": {
+    "version": 1,
+    "complete": true,
+    "id": "regiones-matrices--orden-de-matriz",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Puck",
+    "cueTiming": "forced-aligned",
+    "temporary": true,
+    "listened": false,
+    "needsReview": true,
+    "canonicalSha256": "eafc689e7e9e2a8bf16a049eec7b67898f8f7896686b2c50fcf4879ece668dc2",
+    "duration": 67.44,
+    "mp3Sha256": "4fba53b0f0a7aa1b909297e0c0854f985b5b7ff734acc4988e805c91f6fb916f",
+    "mp3Bytes": 810189,
+    "scenes": [
+      {
+        "start": 0.3125,
+        "end": 67.1525,
+        "cues": [
+          {
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "text": "Hola.",
+            "start": 0.3125,
+            "end": 0.4525,
+            "score": -0.182687409222126,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "text": "El vector mu guarda las medias de dos biomarcadores en orden: mu uno para el primero y mu dos para el segundo.",
+            "start": 1.7125,
+            "end": 8.6725,
+            "score": -1.0895415544509888,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "text": "Así sabemos a qué medida pertenece cada número.",
+            "start": 9.372499999999999,
+            "end": 11.8525,
+            "score": -0.11732337914872915,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 3,
+            "text": "La matriz sigma coloca las varianzas cuatro y nueve en la diagonal, y la covarianza uno en las dos posiciones cruzadas.",
+            "start": 13.032499999999999,
+            "end": 19.9725,
+            "score": -1.1686489060909178,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 4,
+            "text": "Las etiquetas de fila y columna identifican qué par resume cada entrada.",
+            "start": 20.9125,
+            "end": 25.232499999999998,
+            "score": -0.3664065971970558,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 5,
+            "text": "En fila uno, columna dos, el uno resume cómo varían juntas las medidas primera y segunda.",
+            "start": 26.1125,
+            "end": 31.4925,
+            "score": -0.4337011937584196,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 6,
+            "text": "Invertir el orden del par no cambia la covarianza, y por eso la otra entrada cruzada coincide.",
+            "start": 32.352500000000006,
+            "end": 37.6325,
+            "score": -1.2882286859676242,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 7,
+            "text": "La primera fila multiplicada por la columna dos, tres da cuatro por dos más uno por tres: ocho más tres, once.",
+            "start": 38.6325,
+            "end": 46.112500000000004,
+            "score": -1.5226975282033284,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 8,
+            "text": "Emparejamos posiciones antes de sumar; no multiplicamos filas con filas.",
+            "start": 46.932500000000005,
+            "end": 50.9525,
+            "score": -0.16074725230842327,
+            "needsReview": false
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 9,
+            "text": "Cambiar el orden de biomarcadores exige cambiar también el vector y ambas etiquetas de la matriz.",
+            "start": 52.13250000000001,
+            "end": 57.112500000000004,
+            "score": -1.564644366541567,
+            "needsReview": true
+          },
+          {
+            "sceneIndex": 0,
+            "cueIndex": 10,
+            "text": "Además las unidades importan: varianzas y covarianzas usan cuadrados o productos de unidades, no son probabilidades comparables entre cero y uno.",
+            "start": 58.0125,
+            "end": 67.1525,
+            "score": -0.2515980899333954,
+            "needsReview": false
+          }
+        ]
+      }
+    ],
+    "alignmentSha256": "344d0a78000a2009fec70a295fe9a51a1b6e40f241e8e5f07826c502ee85b9b5",
+    "alignmentEngine": "torchaudio-2.6-voxpopuli-es/forced-align",
+    "sourceSha256": "5ac2bf0b61a0334dd57a5731551151e4997f0d886ec17bda54a1b54307ceac52",
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "queueParts": [
+      {
+        "jobId": "32da1aef-4e4e-4000-b2d5-bba1f40cf7fe",
+        "part": 0,
+        "offset": 0,
+        "duration": 67.44,
+        "wavSha256": "6fe65669ecd3ecbfec7f8ed16d90977592290b200a509d688dc3eee8ff70ec86"
+      }
+    ]
   },
-  "transcriptSha256": "a3d6e1013d7c82aadc1df95b3f2b50c295ee99377345be9b4f5626a051d4b67f",
-  "videoSha256": "53b98a09975b5ec3b34b1ff04b5a1e76932a32b58af340963e318dc3c93f4107",
+  "videoSha256": "9ed8e7b9559d368edd9cc985ec79e9efec9ebd8f78278a8abe861e466ad07c8b",
   "posterSha256": "63c2bc4e555a0f29c4f6a0a6a1f16866ed76031fdd9a9fc24c0ae76040269109",
   "canonicalSha256": "eafc689e7e9e2a8bf16a049eec7b67898f8f7896686b2c50fcf4879ece668dc2",
-  "inputHash": "07e73e365c9e66fd052ad3ea2d694e775fd63f4add8269fd7e2ec6d72dc5f50a",
-  "rendererSha256": "3392ae85c1a9f5d283ec9e55989ebfec46a32f8d6dd163fb6d39f7d864e9f282",
+  "inputHash": "dd2233846c48747a6048d5e8d24a15d86bf3aa6aab5aab9543ca9ac56d640709",
+  "rendererSha256": "a7b5a2665c80e7c8836eca36eee552e0e37d0072eed90373286a340277876849",
+  "renderConcurrency": 8,
   "sourceSnapshot": {
     "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
     "itemSha256": "771b28ccc8eba2f9b85208fbd8259f182e13a6a7638617eee448276af87a4321",
@@ -39,51 +176,25 @@
     },
     "provenance": null,
     "renderedAnimationSha256": "6943686fc85820b084d7a81594ee0ecc47bf14c18389c9639ba5577497c2de1b",
-    "transcriptSha256": "a3d6e1013d7c82aadc1df95b3f2b50c295ee99377345be9b4f5626a051d4b67f",
-    "sourceFiles": {
-      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
-      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
-      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
-      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
-      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
-      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
-      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
-      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
-      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
-      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
-      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
-      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
-      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
-      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
-      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
-      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
-      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
-      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
-      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
-      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
-      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
-    },
-    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
-    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/gemini-puck-course-2026-11-10-v1/catalogue.json",
-    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "audioMetadataSha256": "5414a3c50e3ba4ebee0dc22a7628a65dec390bea3d26ddf5337c5725b3aebbf5",
     "rendererSources": {
-      "NativeCourse.jsx": "a61564d74964ec4991bf7d8b4cdd39b21c384594a4fcc9dcaec9b1ba83a409c1",
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
       "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
       "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
-      "native-primitives.jsx": "8f993d2d021b9bbb7549d1d7e1ae5318a94125a7180322f195ac06c01e212068",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
       "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
       "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
-      "native-foundations.jsx": "339a9b1d56f7131b9412d91dc543a5f82e0983a0b4eae042bc881985144dad41",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
       "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
-      "native-univariate.jsx": "97c903f8067d9d4e2978b2b24376d5fcbd196cade9270aa59d211a4f11ad7109",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
       "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
       "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
       "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
-      "native-exercises.jsx": "7ea7be34320818b942a45305d16174cbe38efc6d589308659dd264cef1d30a3b",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
       "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
-      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-contract.mjs": "2c85d1d7d061c5de3a3743b65e35edc857c9f33a72d7627295fdcf28fdfbf176",
       "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
-      "render-course.mjs": "d5aec557c6f81664822f608bc16bbb215108770ee331b9fd75d0f269b19b197f",
+      "render-course.mjs": "18706669e3bfa58908ab316ac296705c4d0b4b7b8f914e13faabfa8335059784",
       "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
       "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
       "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
@@ -92,148 +203,2505 @@
   },
   "testFixture": false,
   "parentLesson": "regiones-matrices",
-  "transcript": {
-    "id": "regiones-matrices--orden-de-matriz",
-    "narrationMode": "transcript",
-    "cueTiming": "estimated",
-    "temporary": true,
-    "silent": true,
-    "canonicalSha256": "eafc689e7e9e2a8bf16a049eec7b67898f8f7896686b2c50fcf4879ece668dc2",
-    "timing": {
-      "wordsPerMinute": 140,
-      "pauseSeconds": 0.3,
-      "minimumCueSeconds": 1.2
-    },
-    "duration": 74.86666666666666,
-    "scenes": [
+  "evidence": {
+    "posterFrame": 2023,
+    "layout": [
       {
-        "start": 0,
-        "end": 74.86666666666666,
-        "cues": [
+        "frame": 0,
+        "scene": 0,
+        "cue": -1,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
           {
-            "text": "Hola.",
-            "start": 0,
-            "end": 1.2,
-            "startFrame": 0,
-            "endFrame": 36,
-            "words": 1,
-            "sceneIndex": 0,
-            "cueIndex": 0,
-            "sourceCueSha256": "d667990b4462a367df44b384d7672a5e67c291c4916f5ed3e5a36d2d23e41bca"
+            "name": "g",
+            "x": 88.294189453125,
+            "y": 70,
+            "width": 596.705810546875,
+            "height": 345.654541015625
           },
           {
-            "text": "El vector mu guarda las medias de dos biomarcadores en orden: mu uno para el primero y mu dos para el segundo.",
-            "start": 1.5,
-            "end": 10.933333333333334,
-            "startFrame": 45,
-            "endFrame": 328,
-            "words": 22,
-            "sceneIndex": 0,
-            "cueIndex": 1,
-            "sourceCueSha256": "21aec7d60e9f6f1ee797b2f020a81ec7ae03358de623efa3a301ad4b8f87277b"
+            "name": "path",
+            "x": 150,
+            "y": 120,
+            "width": 500,
+            "height": 230
           },
           {
-            "text": "Así sabemos a qué medida pertenece cada número.",
-            "start": 11.233333333333333,
-            "end": 14.666666666666666,
-            "startFrame": 337,
-            "endFrame": 440,
-            "words": 8,
-            "sceneIndex": 0,
-            "cueIndex": 2,
-            "sourceCueSha256": "9d865344cd4342882ad8694e694f76b3ef54efc6c837cd9ecd37a094990b1b8d"
+            "name": "g",
+            "x": 144.34544372558594,
+            "y": 108.294189453125,
+            "width": 11.309112548828125,
+            "height": 11.705810546875
           },
           {
-            "text": "La matriz sigma coloca las varianzas cuatro y nueve en la diagonal, y la covarianza uno en las dos posiciones cruzadas.",
-            "start": 14.966666666666667,
-            "end": 23.966666666666665,
-            "startFrame": 449,
-            "endFrame": 719,
-            "words": 21,
-            "sceneIndex": 0,
-            "cueIndex": 3,
-            "sourceCueSha256": "61d10d7df162793f6b91d0335cd1bbc2bc4b781eb4f346067c377af96de0662d"
+            "name": "g",
+            "x": 238.294189453125,
+            "y": 114.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
           },
           {
-            "text": "Las etiquetas de fila y columna identifican qué par resume cada entrada.",
-            "start": 24.266666666666666,
-            "end": 29.433333333333334,
-            "startFrame": 728,
-            "endFrame": 883,
-            "words": 12,
-            "sceneIndex": 0,
-            "cueIndex": 4,
-            "sourceCueSha256": "ce92c7c2b36349c635acd97840f0723562dc9584b41c06a6b1905dd11ca4d491"
+            "name": "text",
+            "x": 110,
+            "y": 70,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "En fila uno, columna dos, el uno resume cómo varían juntas las medidas primera y segunda.",
-            "start": 29.733333333333334,
-            "end": 36.6,
-            "startFrame": 892,
-            "endFrame": 1098,
-            "words": 16,
-            "sceneIndex": 0,
-            "cueIndex": 5,
-            "sourceCueSha256": "dc202c20d1c7adf9a802c1342159154e71dc69cda500b656ed4af496e4f27c17"
+            "name": "text",
+            "x": 675,
+            "y": 110,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "y",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
           },
           {
-            "text": "Invertir el orden del par no cambia la covarianza, y por eso la otra entrada cruzada coincide.",
-            "start": 36.9,
-            "end": 44.2,
-            "startFrame": 1107,
-            "endFrame": 1326,
-            "words": 17,
-            "sceneIndex": 0,
-            "cueIndex": 6,
-            "sourceCueSha256": "d0b0e3d5299b273edbf59b0336ab6394d7e4f6d4a5946f0dad6a013d316ef1d8"
-          },
-          {
-            "text": "La primera fila multiplicada por la columna dos, tres da cuatro por dos más uno por tres: ocho más tres, once.",
-            "start": 44.5,
-            "end": 53.5,
-            "startFrame": 1335,
-            "endFrame": 1605,
-            "words": 21,
-            "sceneIndex": 0,
-            "cueIndex": 7,
-            "sourceCueSha256": "5fef8e9607bda372c108f2fe4832007debe0f4b5567e33e3bd111914d01fe2d2"
-          },
-          {
-            "text": "Emparejamos posiciones antes de sumar; no multiplicamos filas con filas.",
-            "start": 53.8,
-            "end": 58.1,
-            "startFrame": 1614,
-            "endFrame": 1743,
-            "words": 10,
-            "sceneIndex": 0,
-            "cueIndex": 8,
-            "sourceCueSha256": "f036fac15736c332307bd11fdaf82df953a5e4aca5e413c095f42694da3f5005"
-          },
-          {
-            "text": "Cambiar el orden de biomarcadores exige cambiar también el vector y ambas etiquetas de la matriz.",
-            "start": 58.4,
-            "end": 65.26666666666667,
-            "startFrame": 1752,
-            "endFrame": 1958,
-            "words": 16,
-            "sceneIndex": 0,
-            "cueIndex": 9,
-            "sourceCueSha256": "dd1545e2efe520ac94c20614e4a492ac4b64d66b40ff1ae6b27f47b601432a3f"
-          },
-          {
-            "text": "Además las unidades importan: varianzas y covarianzas usan cuadrados o productos de unidades, no son probabilidades comparables entre cero y uno.",
-            "start": 65.56666666666666,
-            "end": 74.56666666666666,
-            "startFrame": 1967,
-            "endFrame": 2237,
-            "words": 21,
-            "sceneIndex": 0,
-            "cueIndex": 10,
-            "sourceCueSha256": "d7aa1553de425fc902d8bce52c19d4a2bacc47d3f90d642cb875a92bddbfd314"
+            "name": "g",
+            "x": 88.294189453125,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
           }
-        ]
+        ],
+        "errors": [],
+        "marks": 4,
+        "geometrySha256": "56211552300f8e797e0d9fc9b4ea943e5b4899a8daf5edad4e8102074e0fa1fc"
+      },
+      {
+        "frame": 11,
+        "scene": 0,
+        "cue": 0,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 100,
+            "y": 70,
+            "width": 585,
+            "height": 345.654541015625
+          },
+          {
+            "name": "path",
+            "x": 150,
+            "y": 120,
+            "width": 500,
+            "height": 230
+          },
+          {
+            "name": "g",
+            "x": 144.34544372558594,
+            "y": 120,
+            "width": 11.309112548828125,
+            "height": 59.604156494140625
+          },
+          {
+            "name": "g",
+            "x": 250,
+            "y": 114.345458984375,
+            "width": 103.65939331054688,
+            "height": 11.30908203125
+          },
+          {
+            "name": "text",
+            "x": 110,
+            "y": 70,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 675,
+            "y": 110,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "y",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 404.345458984375,
+            "width": 142.53167724609375,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "μ=(μ1​μ2​​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 4,
+        "geometrySha256": "d849b09582acab6b738bd0ebd868fa8e3a06eab94144b8c56d1b089da1fcd0ee"
+      },
+      {
+        "frame": 72,
+        "scene": 0,
+        "cue": 1,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 89.50540161132812,
+            "y": 70,
+            "width": 595.49462890625,
+            "height": 345.654541015625
+          },
+          {
+            "name": "path",
+            "x": 150,
+            "y": 120,
+            "width": 500,
+            "height": 230
+          },
+          {
+            "name": "g",
+            "x": 144.34544372558594,
+            "y": 108.80068969726562,
+            "width": 11.309112548828125,
+            "height": 11.705810546875
+          },
+          {
+            "name": "g",
+            "x": 239.175048828125,
+            "y": 114.345458984375,
+            "width": 11.705841064453125,
+            "height": 11.30908203125
+          },
+          {
+            "name": "text",
+            "x": 110,
+            "y": 70,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 675,
+            "y": 110,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "y",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 89.50540161132812,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "μ=(μ1​μ2​​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 4,
+        "geometrySha256": "7dd929e8b6cc81321a96f6ad60a58c61bde7c7f30b4f0629a5f410803f94ccbd"
+      },
+      {
+        "frame": 302,
+        "scene": 0,
+        "cue": 2,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 100,
+            "y": 70,
+            "width": 585,
+            "height": 345.654541015625
+          },
+          {
+            "name": "path",
+            "x": 150,
+            "y": 120,
+            "width": 500,
+            "height": 230
+          },
+          {
+            "name": "g",
+            "x": 144.34544372558594,
+            "y": 120,
+            "width": 11.309112548828125,
+            "height": 22.005538940429688
+          },
+          {
+            "name": "g",
+            "x": 250,
+            "y": 114.345458984375,
+            "width": 38.2705078125,
+            "height": 11.30908203125
+          },
+          {
+            "name": "text",
+            "x": 110,
+            "y": 70,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "x",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 675,
+            "y": 110,
+            "width": 10,
+            "height": 26,
+            "kind": "label",
+            "text": "y",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 404.345458984375,
+            "width": 52.62193298339844,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "μ=(μ1​μ2​​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 4,
+        "geometrySha256": "ea64aeeb553f1865a329bcc356b1b12a3b5185df989dade93f18528824709a7b"
+      },
+      {
+        "frame": 411,
+        "scene": 0,
+        "cue": 3,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 89.38800048828125,
+            "y": 100,
+            "width": 420.61199951171875,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 89.38800048828125,
+            "y": 404.345458984375,
+            "width": 11.705825805664062,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "μ=(μ1​μ2​​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "6a1c2cd7d8412aef3712efd6ae82b5a1515b8821559d058683ec8571d3d8047b"
+      },
+      {
+        "frame": 648,
+        "scene": 0,
+        "cue": 4,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 95.56094360351562,
+            "y": 100,
+            "width": 414.4390563964844,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 95.56094360351562,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "μ=(μ1​μ2​​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "9ffff68b5d682c70c6e2278ae8c0bcaacc8d50bf800bce008f70b14515a3a1ea"
+      },
+      {
+        "frame": 804,
+        "scene": 0,
+        "cue": 5,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 91.50914001464844,
+            "y": 100,
+            "width": 418.4908447265625,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 91.50914001464844,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "μ=(μ1​μ2​​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 102.953125,
+            "height": 22,
+            "kind": "label",
+            "text": "Covarianza: 1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "16442be243622b507020400757dfdf3c23b0a14fe6490b2a3d2e3b0880b1545f"
+      },
+      {
+        "frame": 991,
+        "scene": 0,
+        "cue": 6,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 91.61982727050781,
+            "y": 100,
+            "width": 418.38018798828125,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 91.61982727050781,
+            "y": 404.345458984375,
+            "width": 11.705825805664062,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "μ=(μ1​μ2​​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 102.953125,
+            "height": 22,
+            "kind": "label",
+            "text": "Covarianza: 1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "823c405d3ea5bf5c35c5d8cdad05c95b016b46436e432f7769a9e86cce861a84"
+      },
+      {
+        "frame": 1179,
+        "scene": 0,
+        "cue": 7,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 89.11471557617188,
+            "y": 100,
+            "width": 420.8852844238281,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 89.11471557617188,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "4⋅2+1⋅3=11",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 102.953125,
+            "height": 22,
+            "kind": "label",
+            "text": "Covarianza: 1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "2327fe9d12fa81673f0938c899e800e923196d1c86621dcd174917da93c6da28"
+      },
+      {
+        "frame": 1428,
+        "scene": 0,
+        "cue": 8,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 96.78384399414062,
+            "y": 100,
+            "width": 413.2161560058594,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 96.78384399414062,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "4⋅2+1⋅3=11",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 102.953125,
+            "height": 22,
+            "kind": "label",
+            "text": "Covarianza: 1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "cfbdf74b84ad3ca31c682bc2f0fde573a29e8e70aa4ee05a86e08c5b433be5dd"
+      },
+      {
+        "frame": 1584,
+        "scene": 0,
+        "cue": 9,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 92.13888549804688,
+            "y": 100,
+            "width": 417.8611145019531,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 92.13888549804688,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "4⋅2+1⋅3=11",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 102.953125,
+            "height": 22,
+            "kind": "label",
+            "text": "Covarianza: 1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "a430fd0ef62780e3359568b9e07f96a2a3509bb24a285884ff872dd8fd4cacea"
+      },
+      {
+        "frame": 1761,
+        "scene": 0,
+        "cue": 10,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 88.71847534179688,
+            "y": 100,
+            "width": 421.2815246582031,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 88.71847534179688,
+            "y": 404.345458984375,
+            "width": 11.705810546875,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "4⋅2+1⋅3=11",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 102.953125,
+            "height": 22,
+            "kind": "label",
+            "text": "Covarianza: 1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "3a4edee6db9914a361a2bff0c9cc0bf8475fc590213e622a4ab72bf670b43c9d"
+      },
+      {
+        "frame": 2023,
+        "scene": 0,
+        "cue": 10,
+        "family": "region",
+        "domain": "foundations",
+        "boxes": [
+          {
+            "name": "g",
+            "x": 100,
+            "y": 100,
+            "width": 550,
+            "height": 315.654541015625
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 136,
+            "width": 22.109375,
+            "height": 44,
+            "kind": "label",
+            "text": "4",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 100,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 136,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 175,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 245,
+            "y": 276,
+            "width": 14.484375,
+            "height": 44,
+            "kind": "label",
+            "text": "1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "rect",
+            "x": 355,
+            "y": 240,
+            "width": 155,
+            "height": 115
+          },
+          {
+            "name": "text",
+            "x": 425,
+            "y": 276,
+            "width": 21.53125,
+            "height": 44,
+            "kind": "label",
+            "text": "9",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "x": 100,
+            "y": 404.345458984375,
+            "width": 550,
+            "height": 11.30908203125
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 90,
+            "width": 350,
+            "height": 113.203125,
+            "kind": "formula",
+            "text": "Σ=(41​19​)",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "DIV",
+            "x": 820,
+            "y": 215,
+            "width": 350,
+            "height": 71.109375,
+            "kind": "formula",
+            "text": "4⋅2+1⋅3=11",
+            "clips": [
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          },
+          {
+            "name": "text",
+            "x": 835,
+            "y": 316,
+            "width": 102.953125,
+            "height": 22,
+            "kind": "label",
+            "text": "Covarianza: 1",
+            "clips": [
+              {
+                "name": "svg",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              },
+              {
+                "name": "DIV",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 480
+              }
+            ]
+          }
+        ],
+        "errors": [],
+        "marks": 2,
+        "geometrySha256": "52c72577f8bd742edd584dca11b053a12eddc8f60470e0b4f4a813f223f8ef34"
       }
-    ]
-  },
-  "publication": "silent-transcript"
+    ],
+    "pixels": [
+      {
+        "frame": 0,
+        "ink": 280,
+        "sha256": "45b104fb4cc145bf40d67bd518d3acae6040f0a9bbab81e717eb8a7b40756aa1"
+      },
+      {
+        "frame": 11,
+        "ink": 308,
+        "sha256": "ae8c86ca984c459d63981f2a71afd5387478954758be484df380ea7cc21ed6c7"
+      },
+      {
+        "frame": 72,
+        "ink": 344,
+        "sha256": "4eb3172f3cb04ce0ce9f8318ab9be05c93aabaf7fbbc340f376d4dbbc79ada24"
+      },
+      {
+        "frame": 302,
+        "ink": 349,
+        "sha256": "6be82e7ac6c6d6783e97d44f17133e9c74094d2e17bfbc5bf2d16640b4078577"
+      },
+      {
+        "frame": 411,
+        "ink": 489,
+        "sha256": "b872b369eb2e24982da063ca02aa18e5d1ca9395af85b6cbf4fc5599fbf44cf8"
+      },
+      {
+        "frame": 648,
+        "ink": 570,
+        "sha256": "2a4acfb88c6b387bdef3bf02ba91c481667fbe8d92e716f63701c1db784c4a2c"
+      },
+      {
+        "frame": 804,
+        "ink": 583,
+        "sha256": "5f26d42f571bdb0e560f2227dbe081c3a4d7a61e0ab929d876970596be13504e"
+      },
+      {
+        "frame": 991,
+        "ink": 585,
+        "sha256": "e7a3b6478aa19964a8fecb184069ff59c3f9b6ea17b3b50b62ac854daed09c65"
+      },
+      {
+        "frame": 1179,
+        "ink": 526,
+        "sha256": "7ea8683dbee2763373784d5721de2c26ce59b310af3a8354580dc90b7fc82143"
+      },
+      {
+        "frame": 1428,
+        "ink": 567,
+        "sha256": "20c0858648f4c6ca6245664b3e60a6756b666c495cf06a53e969255e9515a0b5"
+      },
+      {
+        "frame": 1584,
+        "ink": 573,
+        "sha256": "ea476b48daf7de325c8fbf78066c7df54271ed727cd45e68125e99d90300e491"
+      },
+      {
+        "frame": 1761,
+        "ink": 583,
+        "sha256": "adfd2526bc4a89b482f20be5ae17d40936d3fde46b58676f7964abea23b731f2"
+      },
+      {
+        "frame": 2023,
+        "ink": 706,
+        "sha256": "cac60541fccf8951438c9c6815212f104e95644c511d1d295c0c1c8b484373ae"
+      }
+    ],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_time_base": "1/60",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 6072030,
+        "duration": "67.467000",
+        "bit_rate": "56331",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "2024",
+        "nb_read_frames": "2024",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_time_base": "1/24000",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "24000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/24000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 1619208,
+        "duration": "67.467000",
+        "bit_rate": "112359",
+        "max_bit_rate": "144000",
+        "nb_frames": "1583",
+        "nb_read_frames": "1582",
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler"
+        }
+      }
+    ],
+    "elapsedSeconds": 46.526
+  }
 }
