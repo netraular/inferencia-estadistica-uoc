@@ -286230,6 +286230,550 @@
         ]
       },
       "publication": "silent-transcript"
+    },
+    "ejercicio-practica-covarianza-matrices-joint--conditional-y": {
+      "version": 1,
+      "complete": true,
+      "engine": "remotion",
+      "id": "ejercicio-practica-covarianza-matrices-joint--conditional-y",
+      "kind": "exercise",
+      "title": "Calcula P(Y=1 | X=1).",
+      "sceneEngine": "native-svg",
+      "nativePlanSha256": "26a278a493466518bf185332616cb4097473c3aaa55f06620e96ddbd9ff2d014",
+      "src": "videos/ejercicio-practica-covarianza-matrices-joint--conditional-y/video.mp4",
+      "poster": "videos/ejercicio-practica-covarianza-matrices-joint--conditional-y/poster.jpg",
+      "duration": 183.36666666666667,
+      "frames": 5501,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "narrationMode": "transcript",
+      "cueTiming": "estimated",
+      "temporary": true,
+      "silent": true,
+      "timing": {
+        "wordsPerMinute": 140,
+        "pauseSeconds": 0.3,
+        "minimumCueSeconds": 1.2
+      },
+      "transcriptSha256": "59f18cca0ffe0599f8a24c91002ec3c66132e23f2cee3786e0e6b73841733b54",
+      "videoSha256": "c1ca4da3985281401482ad973c38046b319c8e2bec62a219264f8ad55f28bb12",
+      "posterSha256": "7801b8274cab041d47672fd679289a16f97ec89b3a19387e1519393f07858911",
+      "canonicalSha256": "996b5fc9d837e97479a082adb8291e89405b43f580fe8d689aedf05dff4a6076",
+      "inputHash": "a5a78ea1cd5866c9df030df869c13dcd791aeedc472f32b78ebdc3d19a99a69d",
+      "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+      "renderConcurrency": 8,
+      "sourceSnapshot": {
+        "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+        "itemSha256": "95675b4a240e8d39555e9865973916c762ea660bfc0e9dcb0152b8b2f9b70370",
+        "canonicalSha256": "996b5fc9d837e97479a082adb8291e89405b43f580fe8d689aedf05dff4a6076",
+        "source": {
+          "document": "Práctica didáctica de la lección",
+          "section": "Distribución conjunta"
+        },
+        "provenance": null,
+        "renderedAnimationSha256": "19c1dc12af857e33fc41bcb22af2b40db57ec8d76cb2b4e1ada159d612988150",
+        "transcriptSha256": "59f18cca0ffe0599f8a24c91002ec3c66132e23f2cee3786e0e6b73841733b54",
+        "sourceFiles": {
+          "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+          "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+          "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+          "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+          "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+          "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+          "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+          "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+          "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+          "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+          "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+          "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+          "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+          "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+          "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+          "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+          "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+          "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+          "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+          "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+          "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+        },
+        "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+        "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+        "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+        "rendererSources": {
+          "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+          "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+          "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+          "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+          "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+          "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+          "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+          "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+          "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+          "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+          "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+          "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+          "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+          "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+          "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+          "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+          "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+          "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+          "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+          "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+          "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+        }
+      },
+      "testFixture": false,
+      "parentLesson": "ejercicio-practica-covarianza-matrices-joint",
+      "transcript": {
+        "id": "ejercicio-practica-covarianza-matrices-joint--conditional-y",
+        "narrationMode": "transcript",
+        "cueTiming": "estimated",
+        "temporary": true,
+        "silent": true,
+        "canonicalSha256": "996b5fc9d837e97479a082adb8291e89405b43f580fe8d689aedf05dff4a6076",
+        "timing": {
+          "wordsPerMinute": 140,
+          "pauseSeconds": 0.3,
+          "minimumCueSeconds": 1.2
+        },
+        "duration": 183.36666666666667,
+        "scenes": [
+          {
+            "start": 0,
+            "end": 13.8,
+            "cues": [
+              {
+                "text": "Vamos a resolver este apartado juntos.",
+                "start": 0,
+                "end": 2.6,
+                "startFrame": 0,
+                "endFrame": 78,
+                "words": 6,
+                "sceneIndex": 0,
+                "cueIndex": 0,
+                "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+              },
+              {
+                "text": "Calcula probabilidad de i griega igual a 1 sabiendo que equis igual a 1.",
+                "start": 2.9,
+                "end": 8.9,
+                "startFrame": 87,
+                "endFrame": 267,
+                "words": 14,
+                "sceneIndex": 0,
+                "cueIndex": 1,
+                "sourceCueSha256": "51889adaf4e52483174dffe1112671c3beea295c83aceac0f540c6705e8d350d"
+              },
+              {
+                "text": "Queremos una probabilidad después de fijar información sobre otra variable.",
+                "start": 9.2,
+                "end": 13.5,
+                "startFrame": 276,
+                "endFrame": 405,
+                "words": 10,
+                "sceneIndex": 0,
+                "cueIndex": 2,
+                "sourceCueSha256": "803457f3f51a6ac5c07915e54754a3d6b3f952110f557eda6cd58d2acea080a1"
+              }
+            ]
+          },
+          {
+            "start": 13.8,
+            "end": 31.8,
+            "cues": [
+              {
+                "text": "Cada celda de la conjunta representa dos valores del mismo resultado.",
+                "start": 13.8,
+                "end": 18.533333333333335,
+                "startFrame": 414,
+                "endFrame": 556,
+                "words": 11,
+                "sceneIndex": 1,
+                "cueIndex": 0,
+                "sourceCueSha256": "3f702495895226a07fcbc476e9e4210a70b35a622f15b3fdc7a1e50c22b9d29d"
+              },
+              {
+                "text": "Sumar sobre la coordenada que descartamos produce una marginal.",
+                "start": 18.833333333333332,
+                "end": 22.7,
+                "startFrame": 565,
+                "endFrame": 681,
+                "words": 9,
+                "sceneIndex": 1,
+                "cueIndex": 1,
+                "sourceCueSha256": "d179f69456c855dcd1b6ae2f29bd995d8a3edb51fe3d9bd93119da517bf58848"
+              },
+              {
+                "text": "Si fijamos una coordenada, dividimos por su marginal positiva para normalizar la condicional.",
+                "start": 23,
+                "end": 28.6,
+                "startFrame": 690,
+                "endFrame": 858,
+                "words": 13,
+                "sceneIndex": 1,
+                "cueIndex": 2,
+                "sourceCueSha256": "b519009337c9d4c5ebf6a45c29e91b421da0ad1198b905e1ad259e6a61c28d2d"
+              },
+              {
+                "text": "No suponemos independencia de las coordenadas.",
+                "start": 28.9,
+                "end": 31.5,
+                "startFrame": 867,
+                "endFrame": 945,
+                "words": 6,
+                "sceneIndex": 1,
+                "cueIndex": 3,
+                "sourceCueSha256": "f3a0b63826844f6292a3cd1451eeef283234320558974f7c06ab7e1df4926c49"
+              }
+            ]
+          },
+          {
+            "start": 31.8,
+            "end": 39.833333333333336,
+            "cues": [
+              {
+                "text": "Filas equis igual a 0 y 1; columnas i griega igual a 0 y 1; total 100 organismos.",
+                "start": 31.8,
+                "end": 39.53333333333333,
+                "startFrame": 954,
+                "endFrame": 1186,
+                "words": 18,
+                "sceneIndex": 2,
+                "cueIndex": 0,
+                "sourceCueSha256": "9c8c62ad457ed0c95f50ab7fd779a7fc25eee6ee09a4b5dfdd41d81b96c3eaa9"
+              }
+            ]
+          },
+          {
+            "start": 39.833333333333336,
+            "end": 50,
+            "cues": [
+              {
+                "text": "Tabla de recuentos: equis igual a 0: intervalo cerrado desde 20 hasta 30; equis igual a 1: intervalo cerrado desde 10 hasta 40.",
+                "start": 39.833333333333336,
+                "end": 49.7,
+                "startFrame": 1195,
+                "endFrame": 1491,
+                "words": 23,
+                "sceneIndex": 3,
+                "cueIndex": 0,
+                "sourceCueSha256": "7f36005ffdf01f2156a5d031c317fe15cca05eb912a6dc6447893ab93fc73ded"
+              }
+            ]
+          },
+          {
+            "start": 50,
+            "end": 53.733333333333334,
+            "cues": [
+              {
+                "text": "Cada organismo se selecciona con la misma probabilidad.",
+                "start": 50,
+                "end": 53.43333333333333,
+                "startFrame": 1500,
+                "endFrame": 1603,
+                "words": 8,
+                "sceneIndex": 4,
+                "cueIndex": 0,
+                "sourceCueSha256": "686e9d892969e91413d61cf85bdd956932aa9da069e2a43ae85124ea0c81a745"
+              }
+            ]
+          },
+          {
+            "start": 53.733333333333334,
+            "end": 57.9,
+            "cues": [
+              {
+                "text": "No se supone independencia entre equis e i griega.",
+                "start": 53.733333333333334,
+                "end": 57.6,
+                "startFrame": 1612,
+                "endFrame": 1728,
+                "words": 9,
+                "sceneIndex": 5,
+                "cueIndex": 0,
+                "sourceCueSha256": "cad74c7d08fbfd336b07a6752ce2036221e227babb14d68479a861e5be781ad5"
+              }
+            ]
+          },
+          {
+            "start": 57.9,
+            "end": 68.4,
+            "cues": [
+              {
+                "text": "El denominador es el total de la fila equis igual a 1.",
+                "start": 57.9,
+                "end": 63.06666666666667,
+                "startFrame": 1737,
+                "endFrame": 1892,
+                "words": 12,
+                "sceneIndex": 6,
+                "cueIndex": 0,
+                "sourceCueSha256": "016794ef42c72cdb54ab0c28ab4756b8c875a661c2a0a313f5a1b1d8e65b9941"
+              },
+              {
+                "text": "Normalizamos dentro de la condición; una marginal no incorpora esa información.",
+                "start": 63.36666666666667,
+                "end": 68.1,
+                "startFrame": 1901,
+                "endFrame": 2043,
+                "words": 11,
+                "sceneIndex": 6,
+                "cueIndex": 1,
+                "sourceCueSha256": "4dd0282b756274e711cdd6665edd154587a62ce8e087b07e182fc86edd37dc88"
+              }
+            ]
+          },
+          {
+            "start": 68.4,
+            "end": 98.66666666666667,
+            "cues": [
+              {
+                "text": "Identificar la pregunta y justificar el método.",
+                "start": 68.4,
+                "end": 71.4,
+                "startFrame": 2052,
+                "endFrame": 2142,
+                "words": 7,
+                "sceneIndex": 7,
+                "cueIndex": 0,
+                "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+              },
+              {
+                "text": "Calcula probabilidad de i griega igual a 1 sabiendo que equis igual a 1.",
+                "start": 71.7,
+                "end": 77.7,
+                "startFrame": 2151,
+                "endFrame": 2331,
+                "words": 14,
+                "sceneIndex": 7,
+                "cueIndex": 1,
+                "sourceCueSha256": "e8a0385858b92c65e8db71b1b7a93bec9d4165497305c890689abb57423c3aa3"
+              },
+              {
+                "text": "Cada celda es una pareja simultánea.",
+                "start": 78,
+                "end": 80.6,
+                "startFrame": 2340,
+                "endFrame": 2418,
+                "words": 6,
+                "sceneIndex": 7,
+                "cueIndex": 2,
+                "sourceCueSha256": "df929247ecf424326b21d363246da85e00aa02a9e43f5d6c7439e5c6f76e4079"
+              },
+              {
+                "text": "Sumar una fila o columna elimina una variable y produce una marginal; dividir la celda por la marginal de la condición normaliza el subgrupo seleccionado.",
+                "start": 80.9,
+                "end": 91.63333333333334,
+                "startFrame": 2427,
+                "endFrame": 2749,
+                "words": 25,
+                "sceneIndex": 7,
+                "cueIndex": 3,
+                "sourceCueSha256": "81d22ef00a0841c5f28fe546ef633488395075396a73dfcb2e157f27d6b932fd"
+              },
+              {
+                "text": "Para este apartado: El denominador es el total de la fila equis igual a 1.",
+                "start": 91.93333333333334,
+                "end": 98.36666666666666,
+                "startFrame": 2758,
+                "endFrame": 2951,
+                "words": 15,
+                "sceneIndex": 7,
+                "cueIndex": 4,
+                "sourceCueSha256": "0af89cfc48079c8559f95376bda57088a904384a52a1e28970efd1a3e638d4c4"
+              }
+            ]
+          },
+          {
+            "start": 98.66666666666667,
+            "end": 106.6,
+            "cues": [
+              {
+                "text": "Restringir a la fila.",
+                "start": 98.66666666666667,
+                "end": 100.4,
+                "startFrame": 2960,
+                "endFrame": 3012,
+                "words": 4,
+                "sceneIndex": 8,
+                "cueIndex": 0,
+                "sourceCueSha256": "f2310791b6b6e1152fb539d794ee91aa5bf6968e62de953958143cec35c3efdd"
+              },
+              {
+                "text": "La fila equis igual a 1 suma 10 más 40 igual a 50.",
+                "start": 100.7,
+                "end": 106.3,
+                "startFrame": 3021,
+                "endFrame": 3189,
+                "words": 13,
+                "sceneIndex": 8,
+                "cueIndex": 1,
+                "sourceCueSha256": "eba6b1818af28a7616d8793587e444c0e0b4e81d36ae41ba6aaed156a8557664"
+              }
+            ]
+          },
+          {
+            "start": 106.6,
+            "end": 114.5,
+            "cues": [
+              {
+                "text": "Una fracción divide el numerador entre el denominador.",
+                "start": 106.6,
+                "end": 110.03333333333333,
+                "startFrame": 3198,
+                "endFrame": 3301,
+                "words": 8,
+                "sceneIndex": 9,
+                "cueIndex": 0,
+                "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+              },
+              {
+                "text": "Los paréntesis conservan juntos los términos de cada parte.",
+                "start": 110.33333333333333,
+                "end": 114.2,
+                "startFrame": 3310,
+                "endFrame": 3426,
+                "words": 9,
+                "sceneIndex": 9,
+                "cueIndex": 1,
+                "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+              }
+            ]
+          },
+          {
+            "start": 114.5,
+            "end": 126.4,
+            "cues": [
+              {
+                "text": "Dividir la celda por la fila. 40 dividido entre 50 igual a 0 coma 8. probabilidad de abre paréntesis, i griega igual a 1 sabiendo que equis.",
+                "start": 114.5,
+                "end": 126.1,
+                "startFrame": 3435,
+                "endFrame": 3783,
+                "words": 27,
+                "sceneIndex": 10,
+                "cueIndex": 0,
+                "sourceCueSha256": "42d916c827947f378003ab252f117519f78563219f6610b3d29f530e06b7a421"
+              }
+            ]
+          },
+          {
+            "start": 126.4,
+            "end": 134.43333333333334,
+            "cues": [
+              {
+                "text": "probabilidad de abre paréntesis, i griega igual a 1 sabiendo que equis queda igual a 1, cierra paréntesis.",
+                "start": 126.4,
+                "end": 134.13333333333333,
+                "startFrame": 3792,
+                "endFrame": 4024,
+                "words": 18,
+                "sceneIndex": 11,
+                "cueIndex": 0,
+                "sourceCueSha256": "96b311a51b29c3ba99e3fe95538ee6dbc719a1c272005794fa7fb6563513f0ae"
+              }
+            ]
+          },
+          {
+            "start": 134.43333333333334,
+            "end": 153.16666666666666,
+            "cues": [
+              {
+                "text": "probabilidad de abre paréntesis, i griega igual a 1 sabiendo que equis queda igual a abre paréntesis, probabilidad de equis igual a 1 y i griega igual a 1, cierra paréntesis dividido entre abre paréntesis, probabilidad de equis igual a 1, cierra paréntesis.",
+                "start": 134.43333333333334,
+                "end": 152.86666666666667,
+                "startFrame": 4033,
+                "endFrame": 4586,
+                "words": 43,
+                "sceneIndex": 12,
+                "cueIndex": 0,
+                "sourceCueSha256": "eebec6e90ee81b1296d792ecef4ac33e869dc8ab224c5a812d9cad688c10cb60"
+              }
+            ]
+          },
+          {
+            "start": 153.16666666666666,
+            "end": 172.86666666666667,
+            "cues": [
+              {
+                "text": "Comprobar e interpretar.",
+                "start": 153.16666666666666,
+                "end": 154.46666666666667,
+                "startFrame": 4595,
+                "endFrame": 4634,
+                "words": 3,
+                "sceneIndex": 13,
+                "cueIndex": 0,
+                "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+              },
+              {
+                "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
+                "start": 154.76666666666668,
+                "end": 159.5,
+                "startFrame": 4643,
+                "endFrame": 4785,
+                "words": 11,
+                "sceneIndex": 13,
+                "cueIndex": 1,
+                "sourceCueSha256": "709e20efcd3b8285570efc796342bb8bb22989556ef2997220d7676d87dbf5ab"
+              },
+              {
+                "text": "Está entre cero y uno; si lo expresamos como porcentaje multiplicamos por cien, sin cambiar el suceso.",
+                "start": 159.8,
+                "end": 167.1,
+                "startFrame": 4794,
+                "endFrame": 5013,
+                "words": 17,
+                "sceneIndex": 13,
+                "cueIndex": 2,
+                "sourceCueSha256": "aee7aa7f459227fe3169942c310bf051d5daefa61d107ed0999c163ee69af9ca"
+              },
+              {
+                "text": "No se divide por el total general una vez que se condiciona.",
+                "start": 167.4,
+                "end": 172.56666666666666,
+                "startFrame": 5022,
+                "endFrame": 5177,
+                "words": 12,
+                "sceneIndex": 13,
+                "cueIndex": 3,
+                "sourceCueSha256": "e5036c6043904d9ce6df1e0557b82747bedf8e855172a85e951f1726b1ac4f79"
+              }
+            ]
+          },
+          {
+            "start": 172.86666666666667,
+            "end": 183.36666666666667,
+            "cues": [
+              {
+                "text": "El resultado es 0 coma 8 probabilidad entre 0 y 1.",
+                "start": 172.86666666666667,
+                "end": 177.6,
+                "startFrame": 5186,
+                "endFrame": 5328,
+                "words": 11,
+                "sceneIndex": 14,
+                "cueIndex": 0,
+                "sourceCueSha256": "690706cc7743fd1d5021626ec3a73982217a7f9104c246d58c55c3b03e90db1b"
+              },
+              {
+                "text": "No se divide por el total general una vez que se condiciona.",
+                "start": 177.9,
+                "end": 183.06666666666666,
+                "startFrame": 5337,
+                "endFrame": 5492,
+                "words": 12,
+                "sceneIndex": 14,
+                "cueIndex": 1,
+                "sourceCueSha256": "5207aa53b0209f609a87714bc152be57236f05110c76a34804d54ef17611ae11"
+              }
+            ]
+          }
+        ]
+      },
+      "publication": "silent-transcript"
     }
   }
 }
