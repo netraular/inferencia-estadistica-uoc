@@ -322,6 +322,54 @@ def align_item(directory, snapshot, runtime, min_score, anchors, pronunciations)
     return result
 
 
+def prepare_video_audio(directory, snapshot, aligned, batch):
+    alignment_sha = digest((directory / "alignment.json").read_bytes())
+    target = batch / "items" / snapshot["id"]
+    target.mkdir(parents=True, exist_ok=True)
+    metadata_path = target / "audio.json"
+    mp3_path = target / "audio.mp3"
+    if metadata_path.exists():
+        previous = json.loads(metadata_path.read_text())
+        require(previous["alignmentSha256"] == alignment_sha, "Prepared alignment changed; use a new video batch")
+        require(previous["mp3Sha256"] == digest(mp3_path.read_bytes()), "Prepared MP3 checksum changed")
+        return previous
+    require(not mp3_path.exists(), "Unsealed prepared MP3 requires manual review")
+    temporary_wav = target / f".audio-{os.getpid()}.wav"
+    temporary_mp3 = target / f".audio-{os.getpid()}.mp3"
+    try:
+        with wave.open(str(temporary_wav), "wb") as output:
+            output.setnchannels(1)
+            output.setsampwidth(2)
+            output.setframerate(24000)
+            for part in snapshot["parts"]:
+                source = directory / part["path"]
+                require(digest(source.read_bytes()) == part["wavSha256"], "Original queue WAV changed")
+                with wave.open(str(source), "rb") as audio:
+                    while frames := audio.readframes(65536):
+                        output.writeframesraw(frames)
+        require(abs(wav_duration(temporary_wav) - snapshot["duration"]) < 1 / 24000, "Concatenated audio duration changed")
+        subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", str(temporary_wav),
+                        "-map_metadata", "-1", "-ac", "1", "-ar", "24000", "-c:a", "libmp3lame",
+                        "-b:a", "96k", str(temporary_mp3)], check=True)
+        mp3 = temporary_mp3.read_bytes()
+        require(mp3, "Empty prepared MP3")
+        metadata = {"version": 1, "complete": True, "id": snapshot["id"],
+                    "model": "gemini-3.8-flash-tts", "voice": "Puck", "cueTiming": "forced-aligned",
+                    "temporary": True, "listened": False, "needsReview": aligned["needsReview"],
+                    "canonicalSha256": snapshot["canonicalSha256"], "duration": snapshot["duration"],
+                    "mp3Sha256": digest(mp3), "mp3Bytes": len(mp3), "scenes": aligned["scenes"],
+                    "alignmentSha256": alignment_sha, "alignmentEngine": aligned["engine"],
+                    "sourceSha256": aligned["sourceSha256"], "catalogueSha256": snapshot["catalogueSha256"],
+                    "queueParts": [{key: part[key] for key in ("jobId", "part", "offset", "duration", "wavSha256")}
+                                   for part in snapshot["parts"]]}
+        temporary_mp3.replace(mp3_path)
+        save_json(metadata_path, metadata)
+        return metadata
+    finally:
+        temporary_wav.unlink(missing_ok=True)
+        temporary_mp3.unlink(missing_ok=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Align completed long Gemini narrations locally; never submits synthesis requests.")
     parser.add_argument("--catalogue", type=Path, required=True)
@@ -333,8 +381,10 @@ def main():
     parser.add_argument("--threads", type=int, default=2)
     parser.add_argument("--min-score", type=float, default=-1.5)
     parser.add_argument("--download-only", action="store_true")
+    parser.add_argument("--video-batch", type=Path, help="Prepare provisional MP3/timing inputs in a separate immutable Remotion batch")
     args = parser.parse_args()
     require(1 <= args.threads <= 8 and math.isfinite(args.min_score), "Invalid alignment settings")
+    require(not (args.download_only and args.video_batch), "Video preparation requires acoustic alignment")
     endpoint = args.endpoint.rstrip("/")
     require(urllib.parse.urlsplit(endpoint).scheme == "https", "Queue endpoint must use HTTPS")
     catalogue_bytes = args.catalogue.read_bytes()
@@ -363,6 +413,16 @@ def main():
             require(frozen.read_bytes() == catalogue_bytes, "Frozen catalogue changed")
         else:
             save(frozen, catalogue_bytes)
+        if args.video_batch:
+            require(args.video_batch.is_absolute(), "Video batch must be absolute")
+            require(not args.video_batch.resolve().is_relative_to(args.catalogue.resolve().parent)
+                    and not args.video_batch.resolve().is_relative_to(args.output.resolve()), "Use a separate video batch")
+            args.video_batch.mkdir(parents=True, exist_ok=True)
+            video_catalogue = args.video_batch / "catalogue.json"
+            if video_catalogue.exists():
+                require(video_catalogue.read_bytes() == catalogue_bytes, "Video catalogue changed")
+            else:
+                save(video_catalogue, catalogue_bytes)
         grouped = {}
         completed, queued_items = completed_jobs(endpoint, GROUP_PREFIX + source_sha[:24])
         require(queued_items <= items.keys(), "Queue contains unknown source items")
@@ -387,6 +447,8 @@ def main():
                 if runtime is None and not (directory / "alignment.json").exists():
                     runtime = load_aligner(args.threads)
                 aligned = align_item(directory, snapshot, runtime, args.min_score, anchors.get(item_id, []), pronunciations)
+                if args.video_batch:
+                    prepare_video_audio(directory, snapshot, aligned, args.video_batch)
                 report.append({"id": item_id, "state": "needs-review" if aligned["needsReview"] else "aligned",
                                "words": len(aligned["words"]), "moments": len(aligned["cueMoments"]) + len(aligned["moments"])})
             print(json.dumps(report[-1]), flush=True)
