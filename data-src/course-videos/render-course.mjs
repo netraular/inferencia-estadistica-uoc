@@ -10,6 +10,7 @@ import {probeMedia, verifyMedia} from './course-media.mjs';
 import {representativeFrame, courseTimeline} from './course-frame.mjs';
 import {prepareTranscriptBatch, loadTranscriptBatch, prepareTranscriptInputs, assertPublishable, assertTranscriptResume, writeProgress} from './transcript-batch.mjs';
 import {createNativePlan} from './native-scenes.mjs';
+import {compatibleCourseVideo} from '../../pages/inferencia/exercise-solutions.js';
 
 const owned = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(owned, '../..');
@@ -24,7 +25,7 @@ export function parseOptions(args) {
   const options = {};
   for (let index = 0; index < args.length; index++) {
     const flag = args[index];
-    if (['--ready', '--publish', '--worker', '--help', '--transcript', '--prepare', '--status', '--native', '--continue-on-error'].includes(flag)) options[flag.slice(2)] = true;
+    if (['--ready', '--publish', '--worker', '--help', '--transcript', '--aligned', '--prepare', '--status', '--native', '--continue-on-error'].includes(flag)) options[flag.slice(2)] = true;
     else if (['--batch', '--ids', '--limit', '--source', '--concurrency'].includes(flag)) {
       assert.ok(args[index + 1] && !args[index + 1].startsWith('--'), `Missing value for ${flag}`);
       const value = args[++index];
@@ -33,6 +34,7 @@ export function parseOptions(args) {
   }
   if (!options.help) assert.ok(options.batch && path.isAbsolute(options.batch), '--batch must be absolute');
   if (options.concurrency !== undefined) assert.ok(Number.isInteger(options.concurrency) && options.concurrency >= 1 && options.concurrency <= 8, '--concurrency must be an integer from 1 to 8');
+  assert.ok(!options.aligned || (options.native && !options.transcript), '--aligned requires native scenes and is separate from silent transcripts');
   assert.ok(!options['continue-on-error'] || options.transcript, '--continue-on-error requires --transcript');
   if (options.transcript) {
     assert.ok(!options.publish, 'Cannot publish transcript drafts as Puck videos');
@@ -78,14 +80,14 @@ export function prepareBatchInputs(batch, catalogue, options = {}, {probe = prob
       const audioBytes = optionalBytes(audioPath);
       const audio = audioBytes === undefined ? undefined : JSON.parse(audioBytes);
       if (audioBytes !== undefined) {
-        assertPublishable(audio);
-        validateCourseAudio(item, audio);
+        if (!options.aligned) assertPublishable(audio);
+        validateCourseAudio(item, audio, {aligned:options.aligned});
         if (options.publish) {
           assert.ok(!audio.preview, 'Cannot publish partial preview narration');
           assert.ok(!audio.testFixture, 'Cannot publish fixture narration');
         }
       }
-      const storyboard = audioBytes !== undefined && mp3 !== undefined ? prepareCourseItem(item, audio, mp3, {native:options.native}) : undefined;
+      const storyboard = audioBytes !== undefined && mp3 !== undefined ? prepareCourseItem(item, audio, mp3, {native:options.native, aligned:options.aligned}) : undefined;
       if (mp3 !== undefined) {
         const sound = probe(mp3Path);
         assert.ok(sound && Number.isFinite(Number(sound.duration)) && Number(sound.duration) > 0, 'Invalid MP3 audio stream');
@@ -231,6 +233,12 @@ export async function worker(options, {
           if (transcript) {
             assertTranscriptResume(metadata, {inputHash, rendererSha256, sourceSnapshot});
             assert.deepEqual(readJson(path.join(destination, 'transcript.json')), timeline, 'Stale transcript cue plan');
+          } else if (options.aligned) {
+            assert.equal(metadata.publication, 'provisional-aligned');
+            assert.equal(metadata.cueTiming, 'forced-aligned');
+            assert.equal(metadata.temporary, true);
+            assert.equal(metadata.listened, false);
+            assert.deepEqual(metadata.alignment, timeline);
           } else assertPublishable(metadata);
           assert.equal(metadata.inputHash, inputHash, `${item.id}: stale render; use a new batch or explicitly remove that item's old outputs`);
           assert.equal(metadata.complete, true, 'Incomplete render metadata');
@@ -294,7 +302,11 @@ export async function worker(options, {
             ...(options.native ? {sceneEngine:'native-svg', nativePlanSha256:sha256(JSON.stringify(storyboard.nativePlan))} : {}),
             src:`videos/${item.id}/video.mp4`, poster:`videos/${item.id}/poster.jpg`, duration:storyboard.duration, frames:storyboard.frames,
             fps:storyboard.fps, width:storyboard.width, height:storyboard.height,
-            ...(transcript ? {narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true, timing:timeline.timing, transcriptSha256:sha256(JSON.stringify(timeline))} : {audioSource:`audio/${item.id}.mp3`, audioSha256:timeline.mp3Sha256, voice:VOICE, model:MODEL, cueTiming:'measured'}),
+            ...(transcript ? {narrationMode:'transcript', cueTiming:'estimated', temporary:true, silent:true, timing:timeline.timing, transcriptSha256:sha256(JSON.stringify(timeline))}
+              : options.aligned ? {audioSource:`audio/aligned/${item.id}.mp3`, audioSha256:timeline.mp3Sha256, voice:VOICE, model:MODEL,
+                narrationMode:'forced-aligned', cueTiming:'forced-aligned', publication:'provisional-aligned', temporary:true,
+                listened:false, needsReview:timeline.needsReview, alignmentSha256:timeline.alignmentSha256, alignment:timeline}
+              : {audioSource:`audio/${item.id}.mp3`, audioSha256:timeline.mp3Sha256, voice:VOICE, model:MODEL, cueTiming:'measured'}),
             videoSha256:verification.videoSha256, posterSha256:verification.posterSha256, canonicalSha256:item.canonicalSha256,
             inputHash, rendererSha256, renderConcurrency, sourceSnapshot, testFixture:Boolean(catalogue.testFixture || timeline.testFixture),
             ...(catalogue.preview || timeline.preview ? {preview:true, originalId:item.originalId, partialCoverage:item.partialCoverage, provenance:catalogue.provenance ?? timeline.provenance} : {}),
@@ -309,10 +321,19 @@ export async function worker(options, {
         }
         verifyInputs();
         if (options.publish) {
-          assertPublishable(metadata);
+          if (!options.aligned) assertPublishable(metadata);
           assert.ok(!metadata.preview, 'Cannot publish partial preview narration');
           assert.ok(!metadata.testFixture, 'Cannot publish fixture narration');
           const publishedAudio = path.join(root, 'static', metadata.audioSource);
+          if (options.aligned) {
+            assert.ok(compatibleCourseVideo(item.animation, undefined, metadata), 'Incompatible provisional aligned video');
+            const previous = readJson(path.join(root, 'static/videos/manifest.json')).lessons[item.id];
+            assert.ok(!previous || previous.silent || previous.temporary, 'Provisional audio cannot replace a final measured video');
+            fs.mkdirSync(path.dirname(publishedAudio), {recursive:true});
+            const temporaryAudio = `${publishedAudio}.${process.pid}.tmp`;
+            fs.copyFileSync(mp3Path, temporaryAudio);
+            fs.renameSync(temporaryAudio, publishedAudio);
+          }
           assert.equal(sha256(fs.readFileSync(publishedAudio)), metadata.audioSha256, 'Publish matching audio first');
           const publishDirectory = path.join(root, 'static/videos', item.id);
           fs.mkdirSync(publishDirectory, {recursive:true});
@@ -374,6 +395,7 @@ async function main() {
   if (options.help) {
     console.log('node /absolute/path/render-course.mjs --batch /absolute/batch [--native] [--ready] [--ids id1,id2] [--limit N] [--publish]\n--native selects narration-specific SVG/HTML scenes, never the legacy whiteboard. Use a fresh batch.\n--ready skips pending audio; --ids always requires complete compatible audio. --limit counts ready items.\n--transcript --prepare --source /absolute/catalogue.json freezes a silent draft batch (541 native or 538 legacy items). --transcript --worker renders/resumes it. --transcript --status reports persistent counts. Transcript drafts cannot --publish or --ready.\n--transcript --continue-on-error attempts each selected item once, continuing after individual render/media failures only. Integrity failures still abort. Any failed items give a nonzero exit; inspect progress.json and videos/remotion-run.json.');
     console.log('--concurrency N renders up to 8 frames in parallel (default 1 for transcript). Ensure nproc exposes enough CPUs; OMP_NUM_THREADS=1 limits its result. Changing concurrency requires a fresh batch for existing outputs.');
+    console.log('--aligned --native renders prepared Puck acoustic timings as provisional voiced videos, never measured or listened. --publish preserves final measured videos and copies audio/aligned/<id>.mp3.');
     return;
   }
   if (options.prepare) {

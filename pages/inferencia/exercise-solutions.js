@@ -139,10 +139,12 @@ function writtenResult(question) {
   return question.answerText || (Number.isFinite(question.answer) ? `${Number(question.answer.toPrecision(7)).toString().replace('.', ',')} ${question.unit}` : question.interpretation);
 }
 
-export function compatibleCourseRecording(animation, recording) {
-  if (!animation?.steps?.length || !recording || recording.cueTiming !== 'measured'
-    || recording.src !== `audio/${animation.id}.mp3` || !Number.isFinite(recording.duration) || recording.duration <= 0
+export function compatibleCourseRecording(animation, recording, {aligned = false} = {}) {
+  if (!animation?.steps?.length || !recording || recording.cueTiming !== (aligned ? 'forced-aligned' : 'measured')
+    || recording.src !== `audio/${aligned ? 'aligned/' : ''}${animation.id}.mp3` || !Number.isFinite(recording.duration) || recording.duration <= 0
     || !Array.isArray(recording.scenes) || recording.scenes.length !== animation.steps.length) return false;
+  if (aligned && (recording.temporary !== true || recording.listened !== false
+    || typeof recording.needsReview !== 'boolean' || !/^[a-f0-9]{64}$/.test(recording.alignmentSha256))) return false;
   let previous = 0;
   return recording.scenes.every((scene, index) => {
     const step = animation.steps[index];
@@ -177,7 +179,16 @@ export function compatibleCourseVideo(animation, recording, video) {
     const timeline = {...video.transcript, src:`audio/${animation.id}.mp3`, duration:video.duration, cueTiming:'measured'};
     return compatibleCourseRecording(animation, timeline);
   }
-  if (!compatibleCourseRecording(animation, recording) || !video || video.engine !== 'remotion'
+  const aligned = video?.publication === 'provisional-aligned';
+  if (aligned) {
+    if (video.complete !== true || video.sceneEngine !== 'native-svg' || video.narrationMode !== 'forced-aligned'
+      || video.cueTiming !== 'forced-aligned' || video.temporary !== true || video.listened !== false
+      || typeof video.needsReview !== 'boolean' || video.id !== animation?.id
+      || video.alignmentSha256 !== video.alignment?.alignmentSha256
+      || video.needsReview !== video.alignment?.needsReview) return false;
+    recording = {...video.alignment, src:video.audioSource, sha256:video.alignment?.mp3Sha256};
+  }
+  if (!compatibleCourseRecording(animation, recording, {aligned}) || !video || video.engine !== 'remotion'
     || video.voice !== 'Puck' || video.model !== 'gemini-3.8-flash-tts'
     || video.audioSource !== recording.src || video.src !== `videos/${animation.id}/video.mp4`
     || video.poster !== `videos/${animation.id}/poster.jpg` || video.fps !== 30

@@ -34,7 +34,7 @@ export function validateCourseAudio(item, audio, {aligned = false} = {}) {
   assert.equal(audio.id, item.id, 'Audio id mismatch');
   assert.equal(audio.model, MODEL, 'Incompatible audio model');
   assert.equal(audio.voice, VOICE, 'Incompatible audio voice');
-  assert.equal(audio.cueTiming, aligned ? 'forced-aligned' : 'measured', 'Incompatible audio cue timing');
+  assert.equal(audio.cueTiming, aligned ? 'forced-aligned' : 'measured', aligned ? 'Aligned audio cues must be forced-aligned' : 'Audio cues must be measured');
   if (aligned) {
     assert.equal(audio.temporary, true, 'Aligned audio must remain provisional');
     assert.equal(audio.listened, false, 'Automatic alignment is not listening review');
