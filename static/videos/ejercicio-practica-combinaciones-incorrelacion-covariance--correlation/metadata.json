@@ -1,0 +1,516 @@
+{
+  "version": 1,
+  "complete": true,
+  "engine": "remotion",
+  "id": "ejercicio-practica-combinaciones-incorrelacion-covariance--correlation",
+  "kind": "exercise",
+  "title": "Calcula la correlación ρ(X,Y).",
+  "sceneEngine": "native-svg",
+  "nativePlanSha256": "b31763ab785dd7de1a24f213bf78bef25d97517ec33ba1139ef4331ad6c6f3ee",
+  "src": "videos/ejercicio-practica-combinaciones-incorrelacion-covariance--correlation/video.mp4",
+  "poster": "videos/ejercicio-practica-combinaciones-incorrelacion-covariance--correlation/poster.jpg",
+  "duration": 194.7,
+  "frames": 5841,
+  "fps": 30,
+  "width": 1280,
+  "height": 720,
+  "narrationMode": "transcript",
+  "cueTiming": "estimated",
+  "temporary": true,
+  "silent": true,
+  "timing": {
+    "wordsPerMinute": 140,
+    "pauseSeconds": 0.3,
+    "minimumCueSeconds": 1.2
+  },
+  "transcriptSha256": "43d4d76a750d2a7e0e9a3617804c65ce315d5f307968d4a5e89de576b0620435",
+  "videoSha256": "6c8d21bfcdfc6142cec10d6b6bed2e76a94c0124a48148ee5c8a95a7d709fe00",
+  "posterSha256": "d776e4261a905f97d167a44d0465f084bcd0b72b0ae11277acb56fe85c9d307e",
+  "canonicalSha256": "bbd63808f2d785bc184277656523117a044ce5d9bab8d5f16ccd808767f719a6",
+  "inputHash": "c139d07fe66adc7da34597ee996822948183d85d11e3543cb7846d3f202a50f5",
+  "rendererSha256": "dc0d3b2b01e8a882e3b89c8ad8b08570a8683cd2820958474cbeba79fa78b610",
+  "renderConcurrency": 8,
+  "sourceSnapshot": {
+    "catalogueSha256": "d5949849809ea14c13b3cdd5b6771fd81c88678d555f3fe0da59af8559e0a274",
+    "itemSha256": "81cb4f0cb454268717da566eb9f0b28a1ada99ee598bd4cf3e06a87bcefd2597",
+    "canonicalSha256": "bbd63808f2d785bc184277656523117a044ce5d9bab8d5f16ccd808767f719a6",
+    "source": {
+      "document": "Práctica didáctica de la lección",
+      "section": "Covarianza"
+    },
+    "provenance": null,
+    "renderedAnimationSha256": "6458ffec7638edaba9357ca02533b3471d479c68281f321bf27246dc1dff32c6",
+    "transcriptSha256": "43d4d76a750d2a7e0e9a3617804c65ce315d5f307968d4a5e89de576b0620435",
+    "sourceFiles": {
+      "data-src/inferencia-estadistica/export-lecturas.mjs": "581fe0cd57b7937e8a06fb0010e9f7c850fdc79bba297a6f99edd2dead244056",
+      "package-lock.json": "2058c6d7775f808f736be01958701addb6e41bba052e93b096a325264d93ecf2",
+      "pages/inferencia/animations.js": "22184408abd28231869e5ee8629529c25ebfd93b8aec8d1cd2f04cbdb868487b",
+      "pages/inferencia/app.js": "28708da014161501e7715dda47e984907db462b4bf335ea936119a107186df61",
+      "pages/inferencia/capstone.js": "acfdc92184cf4bb0cfee1183daf83fa4e4eee04d98a14bd4014de36d061e01df",
+      "pages/inferencia/context-diagram.js": "643d4f546e3ef9d79d5a897fe1fe632dffa43c8dcd93d5ec65dd6c8f605a7d44",
+      "pages/inferencia/course.js": "2eb74cdf8fabd191b3535aee68258f35606c7558e2d5e993c78a01c9e3115244",
+      "pages/inferencia/exercise-narration.js": "edc2aec824a723f827f5ce33426d3be36bbfb85c7211931e28b28237faed0d12",
+      "pages/inferencia/exercise-solutions.js": "a5965e8557ba4998c55b84a639e16266df62ecb00c0e32010f7dbcc4dac53081",
+      "pages/inferencia/exercise-tutor.js": "f405affbef3758c95a542c6a0cb22fe8f739344529a7e4eb60d718af21a97f4e",
+      "pages/inferencia/exercises.js": "492ef5e920357d15885fcf5a870574162018ae7898b4f2706ccbe9b1dbd66155",
+      "pages/inferencia/labs.js": "2f4aa757b74fcaa1df12c23c023238345f87ee0b0b502889e8b68530ae4d6d44",
+      "pages/inferencia/lecture-story.js": "7df21981ee5edee69a6b85c790bcbaf5bd89b7008dfefa5399270c91a6c778bc",
+      "pages/inferencia/lesson-sections.js": "692e17275005c8703278bf61a8f7f8c885ff6eb4b39f0699ca37ac4b997cf4e7",
+      "pages/inferencia/lesson-visuals.js": "00babaa724d9c0b22f9381a094910e78474848f36620e6363ee526470c8a2ba1",
+      "pages/inferencia/pdf-exercises.js": "c7879552421f6283f262b66b427e4cb83d8a7a9953ad31322da0090773ce88df",
+      "pages/inferencia/teaching.js": "251983817529428e1249d59b555082d4d2d17b63dc6782504338cffd68dc5f7c",
+      "pages/inferencia/vendor/jstat.min.js": "e478a6ab6324e735d927529b5e97506df97dd3a4ced8c744c8e00b90da95dcc0",
+      "pages/inferencia/vendor/katex/katex.min.js": "76d534cf1167067008fca12c4e903fc44cf8cfda8c5279c318d1f78cd90b086e",
+      "pages/inferencia/vendor/lucide.min.js": "3411692820cb8d47543f69496aa25fd603a358f4498046f41c508a5a3342210e",
+      "scripts/tts/export-narration.mjs": "ba05a6280aa977ddcccac46c1c2a84855559cd99726fe5252fa72b371324b952"
+    },
+    "sourceInputSha256": "84ad8264f941f3af5551c31337044e2cd51efdbb4876622d994b1d14b06cd7d9",
+    "sourceCatalogue": "/home/aquiluer/Scripts/TTS/outputs/remotion-native-transcripts-course-2026-11-11-v8/catalogue.json",
+    "sourceRevision": "8f09c402cde9bf26132333a1c083674beeaf71b6",
+    "rendererSources": {
+      "NativeCourse.jsx": "9e91d6dc5a4c622cb7f1c4379a9ac7efe67d731736b18bdefd2e59f52368b505",
+      "native-scenes.mjs": "ec4b783383bfaee2a9ba79d138148285344b8e0c1ef060b9576b4be0d4703697",
+      "native-plan.mjs": "7155cf8a0103b4146603739137145bcf7c17c0057083cd76d3b0a9793781cadd",
+      "native-primitives.jsx": "59f336a93dd2b34e42da301a9ebbddb7275c5a79b23c4d9887e1c11ed1440930",
+      "native-layout.mjs": "41f487025bc08a611d9d35bfaf5307994972b6bb4690d452603423607bb635d6",
+      "native-foundations.mjs": "b909bffec10621d5de88ce20bfeb5980d8d5a4ed7a62be591d413918a8f0fb89",
+      "native-foundations.jsx": "dc1ae727527dac0989755fe1c4033d956adfd36ab09253ef28fb1490fa88baec",
+      "native-univariate.mjs": "52c7c1d55161ff5d29a1aa322390854a69692d3e9b6db1c05bdad84e986d7c2f",
+      "native-univariate.jsx": "be33ac99f38888d93f33485023094de5c1fa07e7b1a70792212aca4e114074db",
+      "native-multivariate.mjs": "4086dfcdd1851b601dc7dfaf3c79565415e62715063378b13004c44d33ee198e",
+      "native-multivariate.jsx": "a3009d3c525c21b30e7b84ebadf623bdc86dd61c2fafe9e97473daed33e93c7e",
+      "native-exercises.mjs": "42ec109f9e1229c897cbaeea4760aae8fa12975664c0277f6719f305bf216fc5",
+      "native-exercises.jsx": "3f7ac8ba0f202ee6d9d16d8472b8d885a62b9156976530c4610ef37a04308820",
+      "course-frame.mjs": "1d35e327232da450149648cc2e17de8d3ccffca7606846a9e632c9f20598ae65",
+      "course-contract.mjs": "fed51b016d1de8178c7c579454421e08545eedf741df1a12b7c738fa13311d1e",
+      "course-media.mjs": "2d7e6c4ab09ac48295137141a608b6f9d14fa911abcd6d719ff2673f6006fc99",
+      "render-course.mjs": "0cc0fd857bd951db8edd1eb41acf39bde2f0c0f0294d85c85966cf9b08cde795",
+      "transcript-batch.mjs": "a8b3f83bc389935dfad617dd1690a5702f63c3feea39e9495d8caf70012f31b3",
+      "package-lock.json": "2c353a0f18acaf07bf4b43152d24df62593f94e90eaa3024051e9287e83fb807",
+      "pages/inferencia/vendor/atkinson-latin-400.woff2": "b09653e3ba9d95e26da5c408979f40451990a4573ce5f96abe6982e2fcb09e6c",
+      "pages/inferencia/vendor/atkinson-latin-700.woff2": "d8e8b1e0e929651439e25e23ade4b9d6cac073f2444aadb8e8b85431726c2036"
+    }
+  },
+  "testFixture": false,
+  "parentLesson": "ejercicio-practica-combinaciones-incorrelacion-covariance",
+  "transcript": {
+    "id": "ejercicio-practica-combinaciones-incorrelacion-covariance--correlation",
+    "narrationMode": "transcript",
+    "cueTiming": "estimated",
+    "temporary": true,
+    "silent": true,
+    "canonicalSha256": "bbd63808f2d785bc184277656523117a044ce5d9bab8d5f16ccd808767f719a6",
+    "timing": {
+      "wordsPerMinute": 140,
+      "pauseSeconds": 0.3,
+      "minimumCueSeconds": 1.2
+    },
+    "duration": 194.7,
+    "scenes": [
+      {
+        "start": 0,
+        "end": 11.233333333333333,
+        "cues": [
+          {
+            "text": "Vamos a resolver este apartado juntos.",
+            "start": 0,
+            "end": 2.6,
+            "startFrame": 0,
+            "endFrame": 78,
+            "words": 6,
+            "sceneIndex": 0,
+            "cueIndex": 0,
+            "sourceCueSha256": "8586fca739b63ef74da218c127714f71629ba791147b7f6563f99bea49d9b641"
+          },
+          {
+            "text": "Calcula la correlación rho por abre paréntesis, equis,i griega, cierra paréntesis.",
+            "start": 2.9,
+            "end": 7.633333333333334,
+            "startFrame": 87,
+            "endFrame": 229,
+            "words": 11,
+            "sceneIndex": 0,
+            "cueIndex": 1,
+            "sourceCueSha256": "51a8efa98f1b70f39647789e753d1662668a778c639f581914aad18cd4058efb"
+          },
+          {
+            "text": "Queremos expresar la asociación lineal sin unidades.",
+            "start": 7.933333333333334,
+            "end": 10.933333333333334,
+            "startFrame": 238,
+            "endFrame": 328,
+            "words": 7,
+            "sceneIndex": 0,
+            "cueIndex": 2,
+            "sourceCueSha256": "3e21802bd5ee78e1037e8699b45dcf78680bc5b36bc6915a4673f847e5268fb7"
+          }
+        ]
+      },
+      {
+        "start": 11.233333333333333,
+        "end": 28.866666666666667,
+        "cues": [
+          {
+            "text": "La covarianza es la esperanza del producto de las desviaciones respecto a las medias.",
+            "start": 11.233333333333333,
+            "end": 17.233333333333334,
+            "startFrame": 337,
+            "endFrame": 517,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 0,
+            "sourceCueSha256": "b39e2810a077a18227c868732906dbf70c19784ba5fc55eb0e5d1af3b2a657c1"
+          },
+          {
+            "text": "Desarrollar ese producto da esperanza del producto menos producto de medias.",
+            "start": 17.533333333333335,
+            "end": 22.266666666666666,
+            "startFrame": 526,
+            "endFrame": 668,
+            "words": 11,
+            "sceneIndex": 1,
+            "cueIndex": 1,
+            "sourceCueSha256": "8e0dfaba82469a1d895ee5707c712dd27b3535a1b2b7658934903b541009c469"
+          },
+          {
+            "text": "La correlación divide por ambas desviaciones positivas y elimina las unidades; no demuestra causalidad.",
+            "start": 22.566666666666666,
+            "end": 28.566666666666666,
+            "startFrame": 677,
+            "endFrame": 857,
+            "words": 14,
+            "sceneIndex": 1,
+            "cueIndex": 2,
+            "sourceCueSha256": "5d200402079f3ee8f4daaaf8e3e04a5ff134d488ce132653ffa859e0574dcabe"
+          }
+        ]
+      },
+      {
+        "start": 28.866666666666667,
+        "end": 45.9,
+        "cues": [
+          {
+            "text": "Tabla de probabilidades, filas equis igual a 0 y 1 y columnas i griega igual a 0 y 1: intervalo cerrado desde 0 coma 2 hasta 0 coma 3; intervalo cerrado desde 0 coma 3 hasta 0 coma 2.",
+            "start": 28.866666666666667,
+            "end": 45.6,
+            "startFrame": 866,
+            "endFrame": 1368,
+            "words": 39,
+            "sceneIndex": 2,
+            "cueIndex": 0,
+            "sourceCueSha256": "4c88dada7ded6dfe0dc2cb3206739fb1b4dae8c5ae6080d611aab25071147f9f"
+          }
+        ]
+      },
+      {
+        "start": 45.9,
+        "end": 50.5,
+        "cues": [
+          {
+            "text": "Ambas marginales tienen probabilidad 0 coma 5 de valer uno.",
+            "start": 45.9,
+            "end": 50.2,
+            "startFrame": 1377,
+            "endFrame": 1506,
+            "words": 10,
+            "sceneIndex": 3,
+            "cueIndex": 0,
+            "sourceCueSha256": "1cce34ed32309754bf1953ab78725588608def29bac244298bcb12e03b44eec9"
+          }
+        ]
+      },
+      {
+        "start": 50.5,
+        "end": 55.96666666666667,
+        "cues": [
+          {
+            "text": "La tabla es una distribución conjunta: entradas no negativas y suma uno.",
+            "start": 50.5,
+            "end": 55.666666666666664,
+            "startFrame": 1515,
+            "endFrame": 1670,
+            "words": 12,
+            "sceneIndex": 4,
+            "cueIndex": 0,
+            "sourceCueSha256": "ab04ec2aec3d84e99ebce1d14b600643530f34dc228410f3b392fa361ebf3b8b"
+          }
+        ]
+      },
+      {
+        "start": 55.96666666666667,
+        "end": 58.86666666666667,
+        "cues": [
+          {
+            "text": "Los indicadores no se presuponen independientes.",
+            "start": 55.96666666666667,
+            "end": 58.56666666666667,
+            "startFrame": 1679,
+            "endFrame": 1757,
+            "words": 6,
+            "sceneIndex": 5,
+            "cueIndex": 0,
+            "sourceCueSha256": "8034116aa706d74baa32ba892b5dd23865f8b3df62eeb76ad34b91365677b669"
+          }
+        ]
+      },
+      {
+        "start": 58.86666666666667,
+        "end": 77.5,
+        "cues": [
+          {
+            "text": "Cada indicador tiene varianza 0 coma 5 por abre paréntesis, 1 menos 0 coma 5, cierra paréntesis igual a 0 coma 2 5.",
+            "start": 58.86666666666667,
+            "end": 68.73333333333333,
+            "startFrame": 1766,
+            "endFrame": 2062,
+            "words": 23,
+            "sceneIndex": 6,
+            "cueIndex": 0,
+            "sourceCueSha256": "2bfdf68acd514f224b25913bbd1dd0dc0703a3bd3748a8a8452ec3dfb784acce"
+          },
+          {
+            "text": "Dividimos por el producto de desviaciones positivas y contrastamos el resultado con el intervalo de menos uno a uno.",
+            "start": 69.03333333333333,
+            "end": 77.2,
+            "startFrame": 2071,
+            "endFrame": 2316,
+            "words": 19,
+            "sceneIndex": 6,
+            "cueIndex": 1,
+            "sourceCueSha256": "ee6647e283a49f4c0f3d790ab85ec12a1cde2929bea377a289cd67a315a06604"
+          }
+        ]
+      },
+      {
+        "start": 77.5,
+        "end": 112.5,
+        "cues": [
+          {
+            "text": "Identificar la pregunta y justificar el método.",
+            "start": 77.5,
+            "end": 80.5,
+            "startFrame": 2325,
+            "endFrame": 2415,
+            "words": 7,
+            "sceneIndex": 7,
+            "cueIndex": 0,
+            "sourceCueSha256": "a3a9facd0d7e0e39df126691d21c1de17e3b3772c883acb32c3f895204dd4e94"
+          },
+          {
+            "text": "Calcula la correlación rho por abre paréntesis, equis,i griega, cierra paréntesis.",
+            "start": 80.8,
+            "end": 85.53333333333333,
+            "startFrame": 2424,
+            "endFrame": 2566,
+            "words": 11,
+            "sceneIndex": 7,
+            "cueIndex": 1,
+            "sourceCueSha256": "e5d31a42ba7cf3aa8f27feb46d4af1a08aac2e473ff85b6f33e2f320c7a5d82a"
+          },
+          {
+            "text": "La covarianza compara variación compartida: calculamos la esperanza del producto y restamos el producto de medias.",
+            "start": 85.83333333333333,
+            "end": 92.7,
+            "startFrame": 2575,
+            "endFrame": 2781,
+            "words": 16,
+            "sceneIndex": 7,
+            "cueIndex": 2,
+            "sourceCueSha256": "dc3f4b06ed88b4c75c9b0cf868a712765a899ceb259bf15bf7d4921679f0896c"
+          },
+          {
+            "text": "La correlación divide además por las dos desviaciones, siempre que sean positivas; ninguna de las dos implica causalidad.",
+            "start": 93,
+            "end": 100.73333333333333,
+            "startFrame": 2790,
+            "endFrame": 3022,
+            "words": 18,
+            "sceneIndex": 7,
+            "cueIndex": 3,
+            "sourceCueSha256": "ad004597be8b99989e46e588057b0ae5f62064d1dacb539c612bbba83fea0187"
+          },
+          {
+            "text": "Para este apartado: Cada indicador tiene varianza 0 coma 5 por abre paréntesis, 1 menos 0 coma 5, cierra paréntesis igual a 0 coma 2 5.",
+            "start": 101.03333333333333,
+            "end": 112.2,
+            "startFrame": 3031,
+            "endFrame": 3366,
+            "words": 26,
+            "sceneIndex": 7,
+            "cueIndex": 4,
+            "sourceCueSha256": "72ac897ab513ab43a0c58cc56d8bd15aaeace232c4b3253e12ad2faea19f6f7e"
+          }
+        ]
+      },
+      {
+        "start": 112.5,
+        "end": 127.8,
+        "cues": [
+          {
+            "text": "Calcular las desviaciones. sigma subíndice equis igual a sigma subíndice i griega igual a raíz cuadrada de 0 coma 2 5 igual a 0 coma 5; el producto de desviaciones es 0 coma 2 5.",
+            "start": 112.5,
+            "end": 127.5,
+            "startFrame": 3375,
+            "endFrame": 3825,
+            "words": 35,
+            "sceneIndex": 8,
+            "cueIndex": 0,
+            "sourceCueSha256": "b96e06be391f2ed6dcd2326ad2a622d1c7ece686493a806a5fec8aafa38cc3cd"
+          }
+        ]
+      },
+      {
+        "start": 127.8,
+        "end": 135.7,
+        "cues": [
+          {
+            "text": "Una fracción divide el numerador entre el denominador.",
+            "start": 127.8,
+            "end": 131.23333333333332,
+            "startFrame": 3834,
+            "endFrame": 3937,
+            "words": 8,
+            "sceneIndex": 9,
+            "cueIndex": 0,
+            "sourceCueSha256": "030a54bc54d916f476731eecea57f3c6601fb20de34414a1eec4315aef609243"
+          },
+          {
+            "text": "Los paréntesis conservan juntos los términos de cada parte.",
+            "start": 131.53333333333333,
+            "end": 135.4,
+            "startFrame": 3946,
+            "endFrame": 4062,
+            "words": 9,
+            "sceneIndex": 9,
+            "cueIndex": 1,
+            "sourceCueSha256": "a556f6180cd592286eba13e4b7b8d155e4c0e59ec2bb22c800d04ebe744c0f93"
+          }
+        ]
+      },
+      {
+        "start": 135.7,
+        "end": 144.06666666666666,
+        "cues": [
+          {
+            "text": "Rho es la correlación: covarianza dividida por el producto de desviaciones positivas.",
+            "start": 135.7,
+            "end": 140.86666666666667,
+            "startFrame": 4071,
+            "endFrame": 4226,
+            "words": 12,
+            "sceneIndex": 10,
+            "cueIndex": 0,
+            "sourceCueSha256": "7faaed6529cc9c47f3bac671fab79a83ba99d37ca2e6a0076e59c3bd894ea635"
+          },
+          {
+            "text": "Está entre menos uno y uno.",
+            "start": 141.16666666666666,
+            "end": 143.76666666666668,
+            "startFrame": 4235,
+            "endFrame": 4313,
+            "words": 6,
+            "sceneIndex": 10,
+            "cueIndex": 1,
+            "sourceCueSha256": "ccfe017d7e66abccf44ad326f1d42e008ee1b7ee7d8f112ffcdc87cc374bd1b1"
+          }
+        ]
+      },
+      {
+        "start": 144.06666666666666,
+        "end": 165.8,
+        "cues": [
+          {
+            "text": "Normalizar la covarianza. menos 0 coma 0 5 dividido entre 0 coma 2 5 igual a menos 0 coma 2. rho igual a abre paréntesis, Cov abre paréntesis, equis y i griega, cierra paréntesis , cierra paréntesis dividido entre abre paréntesis, sigma subíndice equis sigma subíndice i griega, cierra paréntesis.",
+            "start": 144.06666666666666,
+            "end": 165.5,
+            "startFrame": 4322,
+            "endFrame": 4965,
+            "words": 50,
+            "sceneIndex": 11,
+            "cueIndex": 0,
+            "sourceCueSha256": "b931bbba91440eb87315f68534ac2558b759dcf13cda9bab677828369406d7b3"
+          }
+        ]
+      },
+      {
+        "start": 165.8,
+        "end": 184.2,
+        "cues": [
+          {
+            "text": "Comprobar e interpretar.",
+            "start": 165.8,
+            "end": 167.1,
+            "startFrame": 4974,
+            "endFrame": 5013,
+            "words": 3,
+            "sceneIndex": 12,
+            "cueIndex": 0,
+            "sourceCueSha256": "cf55d2dee61fecaefaf517d976559bb39558cb6d8cca4785a5a69cdccecd549a"
+          },
+          {
+            "text": "El resultado es menos 0 coma 2 correlación sin unidades.",
+            "start": 167.4,
+            "end": 171.7,
+            "startFrame": 5022,
+            "endFrame": 5151,
+            "words": 10,
+            "sceneIndex": 12,
+            "cueIndex": 1,
+            "sourceCueSha256": "aa3a386e255a109cb1bcf376c231f008f8b3d48b18286e5fff3625ccd0581a82"
+          },
+          {
+            "text": "Revisamos que la respuesta use la unidad pedida y tenga sentido en el contexto.",
+            "start": 172,
+            "end": 178,
+            "startFrame": 5160,
+            "endFrame": 5340,
+            "words": 14,
+            "sceneIndex": 12,
+            "cueIndex": 2,
+            "sourceCueSha256": "63bf4fd8d55f10aaa61ed18ebc9ecdbefec8a81700044e65e95c97f2acd82b61"
+          },
+          {
+            "text": "La correlación mide asociación lineal y debe estar entre menos 1 y 1.",
+            "start": 178.3,
+            "end": 183.9,
+            "startFrame": 5349,
+            "endFrame": 5517,
+            "words": 13,
+            "sceneIndex": 12,
+            "cueIndex": 3,
+            "sourceCueSha256": "f768e379eb3d520f93acc79b416775e3b8802c629f25899938ae3b8900ba04ac"
+          }
+        ]
+      },
+      {
+        "start": 184.2,
+        "end": 194.7,
+        "cues": [
+          {
+            "text": "El resultado es menos 0 coma 2 correlación sin unidades.",
+            "start": 184.2,
+            "end": 188.5,
+            "startFrame": 5526,
+            "endFrame": 5655,
+            "words": 10,
+            "sceneIndex": 13,
+            "cueIndex": 0,
+            "sourceCueSha256": "0ef9f5740922b74487a5602c7e83cd5a834c01828480a8f3547e96994e0c859e"
+          },
+          {
+            "text": "La correlación mide asociación lineal y debe estar entre menos 1 y 1.",
+            "start": 188.8,
+            "end": 194.4,
+            "startFrame": 5664,
+            "endFrame": 5832,
+            "words": 13,
+            "sceneIndex": 13,
+            "cueIndex": 1,
+            "sourceCueSha256": "c607ae86dd66c265e44d3f312408982a25edb21e3d015fe7ee64acd27eace988"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": "silent-transcript"
+}
